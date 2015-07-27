@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor;
 
 /**
  * @generated
  */
-public class CacheEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public CacheEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public CacheEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,44 +21,34 @@ public class CacheEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentStructuredResource_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentStructuredResource_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorMemoryAccess_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorMemoryAccess_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorMemoryType_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorIsVolatile_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorWritePolicy_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorWritePolicy_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorReplacementPolicy_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReplacementPolicy_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorNbSets_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorAssociativity_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorAssociativity_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorUsedByProcessor_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -69,47 +57,37 @@ public class CacheEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentStructuredResource_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentStructuredResource_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorMemoryAccess_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorMemoryAccess_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorMemoryType_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorIsVolatile_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorWritePolicy_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorWritePolicy_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorReplacementPolicy_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReplacementPolicy_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorNbSets_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorAssociativity_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorAssociativity_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorUsedByProcessor_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -155,7 +133,8 @@ public class CacheEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
-			editor.setTooltipMessage("Specifies the number of sets.\n If the nbSets are one, the cache is full-associative.");
+			editor.setTooltipMessage(
+					"Specifies the number of sets.\n If the nbSets are one, the cache is full-associative.");
 
 			this.editorNbSets_GeneralTab = editor;
 		}
@@ -170,7 +149,8 @@ public class CacheEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
-			editor.setTooltipMessage("The associativity of this cache. It represents the number of blocks in one set. An associativity of 1 represents a direct mapped cache.");
+			editor.setTooltipMessage(
+					"The associativity of this cache. It represents the number of blocks in one set. An associativity of 1 represents a direct mapped cache.");
 
 			this.editorAssociativity_GeneralTab = editor;
 		}
@@ -215,7 +195,8 @@ public class CacheEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("Specifies if this MemoryResource is volatile or non-volatile. \nNon-volatile Memory (i.e. ROM) could be used to store the binary code.\nVolatile Memory (i.e SRAM) is used during execution of code.");
+			editor.setTooltipMessage(
+					"Specifies if this MemoryResource is volatile or non-volatile. \nNon-volatile Memory (i.e. ROM) could be used to store the binary code.\nVolatile Memory (i.e SRAM) is used during execution of code.");
 
 			this.editorIsVolatile_GeneralTab = editor;
 		}
@@ -300,36 +281,25 @@ public class CacheEditor
 	 * @generated
 	 */
 	public CacheEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getCache());
+		this(tab, de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE.getCache());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new CacheEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.extensions"}).contains(tab);
 		}
 	}
 

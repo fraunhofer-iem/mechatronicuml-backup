@@ -60,202 +60,202 @@
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.HWPlatformEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#HWPlatform">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#HWPlatform">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.HWPlatformPartEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#HWPlatformPart">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#HWPlatformPart">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.ResourcePartEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#ResourcePart">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#ResourcePart">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.DelegationHWPortEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#DelegationHWPort">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#DelegationHWPort">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.HWPortPartEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#HWPortPart">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#HWPortPart">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.NetworkConnectorEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#NetworkConnector">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#NetworkConnector">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.BusEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#Bus">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#Bus">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.NetworkBridgeEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatform/1.0/#NetworkBridge">
+             type="http://www.fujaba.de/muml/hardware/hwplatform/1.1/#NetworkBridge">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.MemoryResourceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#MemoryResource">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#MemoryResource">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.DeviceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#Device">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#Device">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.CacheEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#Cache">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#Cache">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.ProgrammableLogicDeviceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#ProgrammableLogicDevice">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#ProgrammableLogicDevice">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.ProcessorEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#Processor">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#Processor">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.StructuredResourceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#StructuredResource">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#StructuredResource">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.ResourceRepositoryEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#ResourceRepository">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#ResourceRepository">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.CommunicationProtocolRepositoryEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#CommunicationProtocolRepository">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#CommunicationProtocolRepository">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.BusProtocolEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#BusProtocol">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#BusProtocol">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.LinkProtocolEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#LinkProtocol">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#LinkProtocol">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor.CommunicationResourceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresource/1.0/#CommunicationResource">
+             type="http://www.fujaba.de/muml/hardware/hwresource/1.1/#CommunicationResource">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.DataSizeEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.0/#DataSize">
+             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/#DataSize">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.FrequencyEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.0/#Frequency">
+             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/#Frequency">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.DataRateEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.0/#DataRate">
+             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/#DataRate">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.TimeIntervalEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.0/#TimeInterval">
+             type="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/#TimeInterval">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.StorageMemoryInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#StorageMemoryInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#StorageMemoryInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.ProcessingMemoryInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#ProcessingMemoryInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#ProcessingMemoryInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.CacheInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#CacheInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#CacheInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.ProgrammableLogicDeviceInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#ProgrammableLogicDeviceInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#ProgrammableLogicDeviceInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.ProcessorInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#ProcessorInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#ProcessorInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.StructuredResourceInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#StructuredResourceInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#StructuredResourceInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.SensorInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#SensorInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#SensorInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.ActuatorInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#ActuatorInstance">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#ActuatorInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.ResourceInstanceRepositoryEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#ResourceInstanceRepository">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#ResourceInstanceRepository">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.HWPortEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#HWPort">
+             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/#HWPort">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.HWPlatformInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#HWPlatformInstance">
+             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/#HWPlatformInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.HWPlatformInstanceConfigurationEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#HWPlatformInstanceConfiguration">
+             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/#HWPlatformInstanceConfiguration">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.HWPortInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#HWPortInstance">
+             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/#HWPortInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.BusInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#BusInstance">
+             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/#BusInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.DelegationHWPortInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#DelegationHWPortInstance">
+             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/#DelegationHWPortInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.NetworkBridgeInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#NetworkBridgeInstance">
+             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/#NetworkBridgeInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.NetworkConnectorInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#NetworkConnectorInstance">
+             type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/#NetworkConnectorInstance">
        </propertyEditor>
     
     </propertyEditors>

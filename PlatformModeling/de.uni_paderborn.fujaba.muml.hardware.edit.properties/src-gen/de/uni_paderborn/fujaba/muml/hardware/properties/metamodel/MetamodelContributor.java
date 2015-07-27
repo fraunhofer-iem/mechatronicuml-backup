@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,23 +17,22 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory());
 
 	}
 

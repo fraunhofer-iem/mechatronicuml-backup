@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class AtomicResourceEditor
 	/**
 	 * @generated
 	 */
-	public AtomicResourceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public AtomicResourceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,14 +23,11 @@ public abstract class AtomicResourceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentStructuredResource_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentStructuredResource_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -38,16 +35,13 @@ public abstract class AtomicResourceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentStructuredResource_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentStructuredResource_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 

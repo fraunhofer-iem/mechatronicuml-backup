@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class NetworkingHardwareInstanceEditor
 	/**
 	 * @generated
 	 */
-	public NetworkingHardwareInstanceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public NetworkingHardwareInstanceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +23,7 @@ public abstract class NetworkingHardwareInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -34,8 +33,7 @@ public abstract class NetworkingHardwareInstanceEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 

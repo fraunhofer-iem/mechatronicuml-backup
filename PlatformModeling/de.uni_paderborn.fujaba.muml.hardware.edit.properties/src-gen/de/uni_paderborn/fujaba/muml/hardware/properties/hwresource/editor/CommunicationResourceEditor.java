@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor;
 
 /**
@@ -10,8 +11,7 @@ public class CommunicationResourceEditor
 	/**
 	 * @generated
 	 */
-	public CommunicationResourceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public CommunicationResourceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,18 +23,15 @@ public class CommunicationResourceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorProtocol_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentResource_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentResource_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -44,18 +41,15 @@ public class CommunicationResourceEditor
 
 			addPropertyEditor(createEditorProtocol_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentResource_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentResource_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -86,7 +80,8 @@ public class CommunicationResourceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The cardinality of this HWPort.\nIt determines the number of allowed hardware port instances.");
+			editor.setTooltipMessage(
+					"The cardinality of this HWPort.\nIt determines the number of allowed hardware port instances.");
 
 			this.editorCardinality_GeneralTab = editor;
 		}
@@ -100,6 +95,8 @@ public class CommunicationResourceEditor
 					.getCommunicationResource_ParentResource();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
+
+			editor.setTooltipMessage("The hardware resource this CommunicationResource belongs to.");
 
 			this.editorParentResource_GeneralTab = editor;
 		}
@@ -154,10 +151,7 @@ public class CommunicationResourceEditor
 	 * @generated
 	 */
 	public CommunicationResourceEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 						.getCommunicationResource());
 	}
@@ -165,22 +159,16 @@ public class CommunicationResourceEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new CommunicationResourceEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

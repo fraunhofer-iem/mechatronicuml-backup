@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.util;
 
 /**
@@ -20,15 +21,13 @@ public class PropertiesUtil {
 	 * @generated
 	 */
 	public org.eclipse.emf.common.notify.AdapterFactory getAdapterFactory() {
-		return de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-				.getDefault().getAdapterFactory();
+		return de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.getDefault().getAdapterFactory();
 	}
 
 	/**
 	 * @generated
 	 */
 	public org.eclipse.emf.common.notify.AdapterFactory getItemProvidersAdapterFactory() {
-		return de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-				.getDefault().getAdapterFactory();
+		return de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.getDefault().getAdapterFactory();
 	}
 }

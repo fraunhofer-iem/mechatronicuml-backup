@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor;
 
 /**
  * @generated
  */
-public class ProcessorInstanceEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class ProcessorInstanceEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ProcessorInstanceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ProcessorInstanceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,13 +21,11 @@ public class ProcessorInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorResourceType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResourceType_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorFrequency_GeneralTab_Editor(), false);
 
@@ -37,8 +33,7 @@ public class ProcessorInstanceEditor
 
 			addPropertyEditor(createEditorCPI_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorOwnedCacheInstance_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOwnedCacheInstance_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -46,8 +41,7 @@ public class ProcessorInstanceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorResourceType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResourceType_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorFrequency_GeneralTab_Editor(), false);
 
@@ -55,15 +49,13 @@ public class ProcessorInstanceEditor
 
 			addPropertyEditor(createEditorCPI_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorOwnedCacheInstance_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOwnedCacheInstance_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -194,10 +186,7 @@ public class ProcessorInstanceEditor
 	 * @generated
 	 */
 	public ProcessorInstanceEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 						.getProcessorInstance());
 	}
@@ -205,23 +194,17 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ProcessorInstanceEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

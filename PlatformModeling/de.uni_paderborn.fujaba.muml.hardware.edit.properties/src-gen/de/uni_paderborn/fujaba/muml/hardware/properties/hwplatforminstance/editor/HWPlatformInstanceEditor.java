@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor;
 
 /**
  * @generated
  */
-public class HWPlatformInstanceEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class HWPlatformInstanceEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public HWPlatformInstanceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public HWPlatformInstanceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,16 +21,13 @@ public class HWPlatformInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorHwplatformType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorHwplatformType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorEmbeddedHPIC_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorEmbeddedHPIC_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorParentHPIC_GeneralTab_Editor(), false);
 
@@ -42,11 +37,9 @@ public class HWPlatformInstanceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorHwplatformType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorHwplatformType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorEmbeddedHPIC_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorEmbeddedHPIC_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorParentHPIC_GeneralTab_Editor(), false);
 
@@ -54,8 +47,7 @@ public class HWPlatformInstanceEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -86,6 +78,8 @@ public class HWPlatformInstanceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
+			editor.setTooltipMessage("The embedded Hardware Platform Instance Configuration.\n");
+
 			this.editorEmbeddedHPIC_GeneralTab = editor;
 		}
 		return this.editorEmbeddedHPIC_GeneralTab;
@@ -98,6 +92,9 @@ public class HWPlatformInstanceEditor
 					.getHWPlatformInstance_ParentHPIC();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The Hardware Platform Instance Configuration in which this HWPlatformInstance is embedded.\n");
 
 			this.editorParentHPIC_GeneralTab = editor;
 		}
@@ -152,10 +149,7 @@ public class HWPlatformInstanceEditor
 	 * @generated
 	 */
 	public HWPlatformInstanceEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 						.getHWPlatformInstance());
 	}
@@ -163,22 +157,16 @@ public class HWPlatformInstanceEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new HWPlatformInstanceEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 
