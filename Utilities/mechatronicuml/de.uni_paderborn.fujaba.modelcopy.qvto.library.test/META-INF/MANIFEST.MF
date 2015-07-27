@@ -3,7 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Test
 Bundle-SymbolicName: de.uni_paderborn.fujaba.modelcopy.qvto.library.test
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.modelcopy.qvto.library.test.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.junit;bundle-version="4.12.0",
