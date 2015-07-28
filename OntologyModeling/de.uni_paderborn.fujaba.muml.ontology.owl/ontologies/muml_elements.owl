@@ -21,6 +21,8 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>https://trac.cs.uni-paderborn.de/mechatronicuml/attachment/wiki/OntologyGuide/lego_devices.owl</Import>
+    <Import>https://trac.cs.uni-paderborn.de/mechatronicuml/attachment/wiki/OntologyGuide/units.owl</Import>
     <Declaration>
         <Class IRI="#AtomicComponent"/>
     </Declaration>
@@ -878,6 +880,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HybridAtomicComponent"/>
+        <Class IRI="#AtomicComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HybridAtomicComponent"/>
         <Class IRI="#HybridComponent"/>
     </SubClassOf>
     <SubClassOf>
@@ -1003,6 +1009,14 @@
         <ObjectProperty IRI="#hasUnit"/>
         <Class IRI="#Port"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#providesData"/>
+        <Class IRI="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#LegoDevice"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#representedBy"/>
+        <Class IRI="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#LegoDevice"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#connecting"/>
         <Class IRI="#Port"/>
@@ -1018,6 +1032,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#connectingSender"/>
         <Class IRI="#SenderPort"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUnit"/>
+        <Class IRI="http://purl.obolibrary.org/obo/UO_0000000"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#providesData"/>
