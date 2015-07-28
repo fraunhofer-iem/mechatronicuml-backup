@@ -148,4 +148,12 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.muml.ontology.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.unitontology.feature"
+         version="0.0.0"/>
+
 </feature>
