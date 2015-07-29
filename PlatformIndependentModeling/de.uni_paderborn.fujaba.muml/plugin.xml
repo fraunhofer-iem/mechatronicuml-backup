@@ -11,6 +11,7 @@
      Software Engineering Group - initial API and implementation
  </copyright>
 --><plugin>
+
 <!-- manual extensions -->
 <extension point="de.uni_paderborn.fujaba.modelinstance.version">
       <artefact id="de.uni_paderborn.fujaba.muml.metamodel" name="muml metamodel" resource="plugin.xml" version="0.3.2">
@@ -19,9 +20,21 @@
          </lastchange>
       </artefact>
    </extension>
-<extension point="org.eclipse.emf.ecore.generated_package">
+   <extension
+         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+      <Migrator
+            file="model/muml.migrator">
+      </Migrator>
+   </extension>
+  
+  
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="de.uni_paderborn.fujaba.muml.MumlPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/0.4.0"/>
    </extension>
+   
+   
+   
+   
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated muml -->
       <package

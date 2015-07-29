@@ -2,6 +2,14 @@
 <?eclipse version="3.0"?><!--
 --><plugin>
 
+   <extension
+         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+      <Migrator
+            file="model/actionlanguage.migrator">
+      </Migrator>
+   </extension>
+   
+   
    <extension point="org.eclipse.emf.ecore.generated_package">
       
       <package class="de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage" genModel="model/actionlanguage.genmodel" uri="http://www.fujaba.de/muml/actionlanguage/0.4.0"/>
