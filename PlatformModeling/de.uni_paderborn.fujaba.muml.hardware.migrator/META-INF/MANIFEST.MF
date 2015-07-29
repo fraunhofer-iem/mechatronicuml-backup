@@ -3,4 +3,5 @@ Bundle-ManifestVersion: 2
 Bundle-Name: de.uni_paderborn.fujaba.muml.hardware.migrator
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.migrator; singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore
+Require-Bundle: org.eclipse.emf.ecore,
+ de.uni_paderborn.fujaba.ecore.migration;bundle-version="0.1.0"
