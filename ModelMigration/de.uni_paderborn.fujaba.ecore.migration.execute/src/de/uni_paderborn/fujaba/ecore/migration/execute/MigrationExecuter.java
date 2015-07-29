@@ -135,7 +135,7 @@ public class MigrationExecuter {
 					  }
 					  EPackage pack = super.getEPackage(nsURI);
 					  if (pack != null) {
-						  throw new UnsupportedOperationException("No Migrator found for Package \"" + pack.getName() + "\".");
+						  throw new UnsupportedOperationException("No Migrator found for Package \"" + pack.getNsURI() + "\". Did you also register an extension for it?");
 					  }
 					  return pack;
 				  }
