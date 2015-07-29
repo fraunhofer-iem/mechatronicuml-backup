@@ -8,6 +8,14 @@
  $Id$
 -->
 <plugin>
+
+   <extension
+         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+      <Migrator
+            file="model/modelinstance.migrator">
+      </Migrator>
+   </extension>
+
 <extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
 
