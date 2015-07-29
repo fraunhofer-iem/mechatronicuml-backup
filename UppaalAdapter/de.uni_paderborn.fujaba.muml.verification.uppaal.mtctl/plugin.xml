@@ -6,6 +6,15 @@
 
 <plugin>
 
+
+   <extension
+         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+      <Migrator
+            file="model/Mtctl.migrator">
+      </Migrator>
+   </extension>
+
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Mtctl -->
       <package

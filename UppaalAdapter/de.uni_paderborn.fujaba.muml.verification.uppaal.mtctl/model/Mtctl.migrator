@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:migration="http://migration/0.1">
+  <sourcePackages href="Mtctl.ecore#/"/>
+  <sourcePackages href="Mtctl.ecore#//BooleanLogic"/>
+  <sourcePackages href="Mtctl.ecore#//Comparables"/>
+  <sourcePackages href="Mtctl.ecore#//Predicates"/>
+  <sourcePackages href="Mtctl.ecore#//Quantifiers"/>
+  <sourcePackages href="Mtctl.ecore#//Sets"/>
+  <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
+</migration:Migrator>
