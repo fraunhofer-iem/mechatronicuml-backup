@@ -1,5 +1,7 @@
 import StateChartLibrary;
 import APIBindingLibrary;
+import CommonLibrary;
+import MessageLibrary;
 
 library ComponentLibrary;
 
@@ -23,15 +25,13 @@ modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/p
 modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
 
-// the message Type Repository for the api values 
-property property_apiMessageRepository:MessageTypeRepository;
-property property_genComponentInstance:Set(GenComponentInstance);
+
 
 
 /***************************************************************************
@@ -49,27 +49,20 @@ abstract mapping Component::abstractmapComponent():Component{
 }
 
 mapping Component::mapComponent():Component
-	disjuncts StaticStructuredComponent::ChangeHybridStructuredComponent2StructuredDiscreteComponent, StaticAtomicComponent::ChangeContinousComponent2DiscreteComponent,StaticAtomicComponent::ChangeSoftwareComponent2DiscreteComponent {}
+	disjuncts StaticStructuredComponent::mapStaticStructuredComponent, StaticAtomicComponent::ChangeContinousComponent2DiscreteComponent,StaticAtomicComponent::ChangeSoftwareComponent2DiscreteComponent {}
 	
 
-/**
-* The HybridPorts of a SturcutedComponent are Replaced  with DiscretePorts
-*/
-mapping in StaticStructuredComponent::ChangeHybridStructuredComponent2StructuredDiscreteComponent():StaticStructuredComponent when {self.componentKind=muml::component::ComponentKind::HYBRID_COMPONENT}{
-	componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
-	ports:=self.ports->map ReplacePortWithDiscretePort(null);	
-}
 
 
 
 /**
-* Changes a ContiniusComponent to a DiscreteComponent and Replaces its ContinousPorts with DiscretePorts
+* Map Structed Component and
+*  HybridPorts of a SturcutedComponent are Replaced  with DiscretePorts
 */
-mapping in StaticAtomicComponent::ChangeContinousComponent2DiscreteComponent():StaticAtomicComponent when {self.componentKind=muml::component::ComponentKind::CONTINUOUS_COMPONENT}{
+mapping in StaticStructuredComponent::mapStaticStructuredComponent():StaticStructuredComponent{
 	componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
-	//create empty statechart here
-	//createEmptyRealtimeStateChart(muml.rootObjects()[RootNode]->any(true),self);
-	ports:=self.ports[ContinuousPort]->map ReplacePortWithDiscretePort(self.behavior.oclAsType(RealtimeStatechart));	
+	ports:=self.ports->map mapPort(null);	
+	embeddedComponentParts:=self.embeddedComponentParts->map mapComponentPart();
 }
 
 
@@ -77,14 +70,55 @@ mapping in StaticAtomicComponent::ChangeContinousComponent2DiscreteComponent():S
 * The HybridPorts of a HybridComponent are Replaced  with DiscretePorts
 */
 mapping in StaticAtomicComponent::ChangeSoftwareComponent2DiscreteComponent():StaticAtomicComponent when {self.componentKind=muml::component::ComponentKind::SOFTWARE_COMPONENT}{
-	ports+=self.ports[HybridPort]->map ReplacePortWithDiscretePort(self.behavior.oclAsType(RealtimeStatechart));	
+	behavior:=self.behavior.deepclone().oclAsType(RealtimeStatechart);
+	ports:=self.ports->map mapPort(behavior.oclAsType(RealtimeStatechart));	
 }
 
 
 /**
-* The General Logic to replace a Port with a  DiscretePort
+* Changes a ContinousComponent to a DiscreteComponent and Replaces its ContinousPorts with DiscretePorts
 */
-abstract mapping Port::abstractReplacePortWithDiscretePort():Port{
+mapping in StaticAtomicComponent::ChangeContinousComponent2DiscreteComponent():StaticAtomicComponent when {self.componentKind=muml::component::ComponentKind::CONTINUOUS_COMPONENT}{
+	componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
+	//behavior:=self.behavior.deepclone().oclAsType(RealtimeStatechart);
+	//create empty statechart here
+	createEmptyRealtimeStateChart(result);
+	ports:=self.ports->map mapPort(behavior.oclAsType(RealtimeStatechart));	
+}
+
+
+/**
+* Map ComponentParts
+**/
+mapping in ComponentPart::mapComponentPart():ComponentPart{
+	annotation:=self.annotation;
+	name:=self.name;
+	comment:=self.comment;
+	parentComponent:=self.parentComponent.resolveone(StructuredComponent);
+	portParts:=self.portParts->map mapPortPart();
+}
+
+mapping in PortPart::mapPortPart():PortPart{
+	connectors:=self.connectors.resolve(Connector);
+	portType:=self.portType.resolveone(Port);
+	coordinationProtocolPart:=self.coordinationProtocolPart;
+}
+
+
+
+
+/**
+* Mapping the Ports
+**/
+
+mapping Port::mapPort(inout componentStateChart:RealtimeStatechart):Port
+	disjuncts DiscretePort::ReplacePortWithDiscretePort, HybridPort::ReplacePortWithDiscretePort, ContinuousPort::ReplacePortWithDiscretePort;
+
+
+/**
+* The General Logic to map  Port 
+*/
+abstract mapping Port::abstractReplacePortWithDiscretePort(inout componentStateChart:RealtimeStatechart):Port{
 	name:=self.name;
 	annotation:=self.annotation;
 	extension:=self.extension;
@@ -94,7 +128,7 @@ abstract mapping Port::abstractReplacePortWithDiscretePort():Port{
 	
 }
 
-mapping DiscretePort::ReplacePortWithDiscretePort():DiscretePort inherits Port::abstractReplacePortWithDiscretePort{
+mapping DiscretePort::ReplacePortWithDiscretePort(inout componentStateChart:RealtimeStatechart):DiscretePort inherits Port::abstractReplacePortWithDiscretePort{
 	cardinality:=object Cardinality{
 			lowerBound:=object NaturalNumber{
 				value:=1;
@@ -113,9 +147,9 @@ mapping HybridPort::ReplacePortWithDiscretePort(inout componentStateChart:Realti
 	
 	if(self.component.oclIsKindOf(AtomicComponent)) then{
 		//create the message stuff
-		var messageType:MessageType:=self.connectedContiniousPort.map CreateMessageTypeForDiscretePort();
+		var messageType:MessageType:=self.getMessageForDirectedTypedPort();
 		var variable:Variable:=self.CreateStateChartVariable();
-		self.CreateMessageAttributesForDiscretePort(result,messageType);
+		self.CreateMessageBufferForDiscretePort(result,messageType);
 		//statechart stuff
 		AddVariableToStateChart(componentStateChart,variable);
 		self.ReplacePortExpressionWithVariableExpression(componentStateChart,variable);
@@ -134,9 +168,9 @@ mapping ContinuousPort::ReplacePortWithDiscretePort(inout componentStateChart:Re
 
 	if(self.component.oclIsKindOf(AtomicComponent)) then{
 		//create the message stuff
-		var messageType:MessageType:=self.map CreateMessageTypeForDiscretePort();
+		var messageType:MessageType:=self.getMessageForDirectedTypedPort();
 		var variable:Variable:=self.CreateStateChartVariable();
-		self.CreateMessageAttributesForDiscretePort(result,messageType);
+		self.CreateMessageBufferForDiscretePort(result,messageType);
 		//statechart stuff		
 		AddVariableToStateChart(componentStateChart,variable);
 		var portStateChart:RealtimeStatechart;
@@ -150,93 +184,3 @@ mapping ContinuousPort::ReplacePortWithDiscretePort(inout componentStateChart:Re
 
 
 
-/***************************************************************************
-* 
-*  Here starts the logic for the transformation of Messages
-*
-*****************************************************************************/
-
-// message stuff
-/**
-*	For each new DiscretePort (created from a ContinousPort) corresponding MessageBuffer and Messages are created
-**/
-helper DirectedTypedPort::CreateMessageAttributesForDiscretePort(inout port:DiscretePort, message:MessageType){
-	if(self.inPort) then{
-		port.receiverMessageBuffer := object MessageBuffer {
-				bufferSize := object NaturalNumber {
-						value := 1;
-						infinity := false;
-				};
-			messageType := message;
-		//discreteInteractionEndpoint := self;
-		name:="Buffer";
-		bufferOverflowAvoidanceStrategy:=BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER;
-		};
-		port.receiverMessageTypes:=message;
-	}
-	else{
-		port.senderMessageTypes:=message;		
-	}endif;
-	return null;
-}
-
-
-/**
-*	For each ConitniousPort and new Message is generated
-**/
-mapping ContinuousPort::CreateMessageTypeForDiscretePort():MessageType{
-	name:=self.component.name+"_"+self.name+"_message";
-	var parameter:Parameter := object Parameter{
-		name:=self.name+"_value";
-		dataType:=self.dataType;
-	};
-	parameters:=parameter;
-	apiMessageRepository.messageTypes+=result;
-}
-
-
-
-/***************************************************************************
-* 
-*  Here starts the logic for the transformation of StateCharts
-*
-*****************************************************************************/
-/**
-	For each hybrid-port / continius port a new Variable in the RealtimeStateCharts is created,
-	which represents the (old and now deleted) hybrid Port
-**/
-//StateChart stuff
-helper DirectedTypedPort::CreateStateChartVariable():Variable{
-	var variable:Variable;
-	variable:=object Variable{
-		name:=self.name+"_apiValue";
-		dataType:=self.dataType;
-		//we need the initalize Expression from the ContinousPort, also for the new Variable of the HybridPort
-		if(self.oclIsKindOf(HybridPort)) then{
-				initializeExpression:=self.oclAsType(HybridPort).connectedContiniousPort.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
-		}
-		else{
-			initializeExpression:=self.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
-		}endif;
-	};
-	return variable;
-}
-
-
-/**
- 	In the RealtimeStateChart of a discret component with hybridPorts, all references to the hybridPort are replaced
- 	with references to the new RealtimeStateChart Variable, that (now) represents the old hybirdPort
-*/
-helper HybridPort::ReplacePortExpressionWithVariableExpression(inout componentStateChart:RealtimeStatechart, in variable:Variable){
-	actionlanguage::TypedNamedElementExpression.allInstances()->select(e|e.typedNamedElement=self)->forEach(typedNamedElementexpression){
-		typedNamedElementexpression.typedNamedElement:=variable;
-	}
-}
-
-/**
- A Variable is added to a RealtimeStateChart
-**/
-helper AddVariableToStateChart(inout stateChart:RealtimeStatechart, in variable:Variable){
-	stateChart.variables+=variable;
-	return null;
-}
