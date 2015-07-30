@@ -1,5 +1,5 @@
 import de.uni_paderborn.fujaba.muml.software.transform._blackbox.TimeUnitLibUnit;
-
+import CommonLibrary;
 library StateChartLibrary;
 
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
@@ -123,11 +123,6 @@ helper createEmptyRealtimeStateChart(inout component : AtomicComponent){
 }
 
 
-query getPrimitiveDataType(in theRootNode:RootNode) : PrimitiveDataType{
-	var category: ModelElementCategory :=theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
-	return category.modelElements[PrimitiveDataType]->select(type|type.primitiveType=PrimitiveTypes::INT32)->any(true);
-	
-}
 
 -- constructor for creating new regions
 constructor Region::Region() {
@@ -148,22 +143,16 @@ constructor State::State(_name:String,_initial : Boolean, _final : Boolean) {
 
 ///here starts marios stuff
 
-property initApiName : String = "InitApi";
-property execApiName : String = "ExecApi";
+property prop_execApiName : String = "ExecApi";
 property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
-property samplingParameterName : String = "SamplingInterval";
+property prop_samplingTimeParameterName : String = "SamplingInterval";
 
-//todo FIX
 mapping  ContinuousPort::createStatechartContinuousPort(
 			in messageTyp : MessageType, in variable:Variable,
-			in hybridPortSamplingTimes : Set(TimeValue),
 			in createApiRegion : Boolean): ParameterizedRealtimeStatechart {
 	-- creates a statechart for the behavior of a continuous port
 	name := self.component.name + "_" + self.name + "_behavior";
-	
-	var hybridPortSamplingTime : TimeValue;
-	hybridPortSamplingTime:=hybridPortSamplingTimes->getMinTimeValue();
-	
+		
 	-- create a new state, that contains more regions
 	var multiState : State;
 
@@ -179,9 +168,9 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 	var regionTransmission : Region;
 	
 	if (self.inPort) then {
-		regionTransmission := result.createRegionForPeriodicReceiving(variable, messageTyp, hybridPortSamplingTime);
+		regionTransmission := result.createRegionForPeriodicReceiving(variable, messageTyp);
 	} else {
-		regionTransmission := result.createRegionForPeriodicSending(variable, messageTyp, hybridPortSamplingTime);
+		regionTransmission := result.createRegionForPeriodicSending(variable, messageTyp);
 	} endif;
 	regionTransmission.priority := 1;
 	multiState.embeddedRegions += regionTransmission;
@@ -189,19 +178,14 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 	--create a region for getting/setting the new value of the sensor/actuator
 	if (createApiRegion) then {
 		-- add parameter to the statechart
-		var initApiParam : APICallParameter;
 		var execApiParam : APICallParameter;
 		var timeBetweenApiExecutes : TimeParameter;
 		
-		initApiParam := object APICallParameter {
-				name := initApiName;
-				parameters:=null;
-				returnType:=PrimitiveDataType.allInstances()->select(type|type.name.equalsIgnoreCase("VOID"))->any(true);
-			};
+	
 		execApiParam := object APICallParameter {
-				name := execApiName;
+				name := prop_execApiName;
 				if(self.inPort)then{
-					returnType:=  PrimitiveDataType.allInstances()->select(type|type.name.equalsIgnoreCase("VOID"))->any(true);
+					returnType:=  getPrimitiveDataType("VOID");
 					parameters:=object Parameter{
 						name:=self.name;
 						dataType:=variable.dataType;
@@ -216,7 +200,7 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 				initializeExpression:= object core::expressions::common::LiteralExpression{
 					value:="20";
 				};
-				dataType:=getPrimitiveDataType(theRootNode);
+				dataType:=getPrimitiveDataType("INT32");
 			};
 	//	result.parameters += initApiParam;
 	//	result.parameters += execApiParam;
@@ -225,7 +209,7 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 		-- create the region
 		var regionApi : Region;
 		
-		regionApi := result.createRegionForApiCommand(variable, initApiParam, execApiParam, timeBetweenApiExecutes,self);
+		regionApi := result.createRegionForApiCommand(variable, execApiParam, timeBetweenApiExecutes,self);
 		regionApi.priority := 2;
 		multiState.embeddedRegions += regionApi;
 	} endif;
@@ -237,8 +221,7 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 
 query RealtimeStatechart::createRegionForPeriodicSending(
 			in portVariable : Variable,
-			in messageTyp : MessageType,
-			in samplingTime: TimeValue) : Region {
+			in messageTyp : MessageType) : Region {
 	var newRegion : Region;
 	var newStatechart : ParameterizedRealtimeStatechart;
 	
@@ -247,6 +230,28 @@ query RealtimeStatechart::createRegionForPeriodicSending(
 			name := "PeriodicTransmission";
 		};
 	newRegion.embeddedStatechart := newStatechart;
+	
+	
+	
+	var samplingParameter := object TimeParameter {
+				name := prop_samplingTimeParameterName;
+				initializeExpression:= object core::expressions::common::LiteralExpression{
+					value:="20";
+				};
+				dataType:=getPrimitiveDataType("INT32");
+			};
+			
+	newStatechart.parameters+=samplingParameter;
+	
+	var samplingTime := object TimeValue {
+					value := object Actionlanguage::TypedNamedElementExpression {
+					typedNamedElement:=samplingParameter;	
+					};
+					unit:= getTimeUnitMilliSeconds();
+				};
+	
+	
+	
 	
 	-- create a clock for the sending intervall
 	var newClock : Clock;
@@ -313,8 +318,7 @@ query RealtimeStatechart::createRegionForPeriodicSending(
 
 query RealtimeStatechart::createRegionForPeriodicReceiving(
 			in portVariable : Variable,
-			in messageTyp : MessageType,
-			in samplingTime : TimeValue) : Region {
+			in messageTyp : MessageType) : Region {
 	var newRegion : Region;
 	var newStatechart : ParameterizedRealtimeStatechart;
 	
@@ -324,13 +328,36 @@ query RealtimeStatechart::createRegionForPeriodicReceiving(
 		};
 	newRegion.embeddedStatechart := newStatechart;
 	
+	 
+	
+	var samplingParameter := object TimeParameter {
+				name := prop_samplingTimeParameterName;
+				initializeExpression:= object core::expressions::common::LiteralExpression{
+					value:="20";
+				};
+				dataType:=getPrimitiveDataType("INT32");
+			};
+			
+	newStatechart.parameters+=samplingParameter;
+	
+	var newSamplingTime := object TimeValue {
+					value := object Actionlanguage::TypedNamedElementExpression {
+					typedNamedElement:=samplingParameter;	
+					};
+					unit:= getTimeUnitMilliSeconds();
+				};
+	
+	
+	
 	-- create new samplinintervall with a little buffer from the original one
-	var newSamplingTime : TimeValue;
+	//TODO look what to do with this
+	//	newSamplingTime := samplingTime.createAddToTimeValue(
+	//		createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+		//);
 	
-	newSamplingTime := samplingTime.createAddToTimeValue(
-			createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
-		);
 	
+	
+
 	-- create a clock for the sending intervall
 	var newClock : Clock;
 	
@@ -457,7 +484,6 @@ query RealtimeStatechart::createRegionForPeriodicReceiving(
 }
 query RealtimeStatechart::createRegionForApiCommand(
 			in portVariable : Variable,
-			in initApiParam: APICallParameter,
 			in execApiParam: APICallParameter,
 			in timeBetweenApiExecutes: TimeParameter, port: ContinuousPort) : Region {
 	var newRegion : Region;
@@ -468,7 +494,6 @@ query RealtimeStatechart::createRegionForApiCommand(
 			name := "ApiExecution";
 		};
 	newRegion.embeddedStatechart := newStatechart;
-	newStatechart.parameters += initApiParam;
 	newStatechart.parameters += execApiParam;
 	newStatechart.parameters += timeBetweenApiExecutes;
 	-- create init-state
@@ -483,16 +508,6 @@ query RealtimeStatechart::createRegionForApiCommand(
 		};
 	newStatechart.states += stateInit;
 	-- entry action to the state
-	stateInit.entryEvent := object EntryEvent {
-			action := object Action {
-					name := "initCommand";
-					expressions += object APICall {
-							operation := initApiParam;
-							parameterBinding:=OrderedSet {};
-							apiCallSignature:=initApiParam;
-						};
-				};
-		};
 	var stateExec : State;
 
 	stateExec := object State {
@@ -609,9 +624,9 @@ mapping in HybridPort::createStatechartHybridPort(
 	var regionTransmission : Region;
 	
 	if (self.inPort) then {
-		regionTransmission := result.createRegionForPeriodicReceiving(portVariable, messageTyp, self.samplingInterval);
+		regionTransmission := result.createRegionForPeriodicReceiving(portVariable, messageTyp);
 	} else {
-		regionTransmission := result.createRegionForPeriodicSending(portVariable, messageTyp, self.samplingInterval);
+		regionTransmission := result.createRegionForPeriodicSending(portVariable, messageTyp);
 	} endif;
 	regionTransmission.priority := 1;
 	multiState.embeddedRegions += regionTransmission;

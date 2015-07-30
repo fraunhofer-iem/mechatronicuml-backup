@@ -1,5 +1,4 @@
 import StateChartLibrary;
-import APIBindingLibrary;
 import CommonLibrary;
 import MessageLibrary;
 
@@ -15,6 +14,8 @@ modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
 modeltype Behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
 modeltype RTSC uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types('http://www.fujaba.de/muml/0.4.0');
+
 modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
 modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 
@@ -174,12 +175,13 @@ mapping ContinuousPort::ReplacePortWithDiscretePort(inout componentStateChart:Re
 		//statechart stuff		
 		AddVariableToStateChart(componentStateChart,variable);
 		var portStateChart:RealtimeStatechart;
-		portStateChart:=self.map createStatechartContinuousPort(messageType,variable,self.samplingTimes,true,rootNode);
+		portStateChart:=self.map createStatechartContinuousPort(messageType,variable,true);
 		storeRealtimeStatechart(portStateChart,componentStateChart);
 		behavior:=portStateChart;
 	}endif;
 	
 }
+
 
 
 
