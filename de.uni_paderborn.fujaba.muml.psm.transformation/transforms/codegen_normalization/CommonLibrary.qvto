@@ -9,6 +9,8 @@ modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
 modeltype Behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
 modeltype RTSC uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types('http://www.fujaba.de/muml/0.4.0');
+
 modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
 modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 
@@ -19,11 +21,11 @@ modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/p
 modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
 
 // the message Type Repository for the api values 
 property property_apiMessageRepository:MessageTypeRepository;
@@ -40,4 +42,8 @@ query ComponentInstance::getGenComponentInstance():GenComponentInstance{
 
 query PortInstance::getGenPortInstance():GenPortInstance{
 	return property_genComponentInstance.genPortInstances->select(port|port.portInstance=self)->any(true);
+}
+
+query getPrimitiveDataType(_name:String):PrimitiveDataType {
+	return PrimitiveDataType.allInstances()->select(type|type.name.equalsIgnoreCase(_name))->any(true);
 }

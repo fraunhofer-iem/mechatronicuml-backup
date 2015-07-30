@@ -162,4 +162,3 @@ when {self.componentInstance.oclIsKindOf(StructuredComponentInstance)}{
 
 
 
-
