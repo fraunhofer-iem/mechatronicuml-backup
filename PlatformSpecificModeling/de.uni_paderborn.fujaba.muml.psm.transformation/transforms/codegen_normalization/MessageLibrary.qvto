@@ -1,0 +1,92 @@
+import CommonLibrary;
+
+library MessageLibrary;
+
+
+modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype BehaviorPackage uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+
+modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+
+
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype Codegen uses psm::codegen('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMInstance uses psm::psm_instance('http://www.fujaba.de/muml/psm/0.4.0/');
+
+modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
+modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+
+
+
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of Messages
+*
+*****************************************************************************/
+
+
+helper DirectedTypedPort::getMessageForDirectedTypedPort():MessageType{
+	//get the ports which are connected to this port, because they have to share the same Message
+	var genportInstancesWithThisPortType : Bag(GenPortInstance) := property_genComponentInstance.genPortInstances->select(genPortInstance|genPortInstance.portInstance.portType=self);
+	var targetPortInstances : Bag(PortInstance) := genportInstancesWithThisPortType.targetPortInstance;
+	var setOfConnectedPorts : Bag(Port) := targetPortInstances.portType->union(genportInstancesWithThisPortType.portInstance.portType);
+	var message:MessageType :=setOfConnectedPorts.oclAsType(DirectedTypedPort)->asSet()->map createMessageForPorts();
+	property_apiMessageRepository.messageTypes += message; 
+	return message;
+}
+
+/**
+* Create a Message Type for
+*	1) a continous and a hybrid port
+*   2) for two hybrid ports
+**/
+mapping Set(DirectedTypedPort)::createMessageForPorts():MessageType{
+	var port:DirectedTypedPort:=self->any(true);
+	name:=port.component.name+"_"+port.name+"_message";
+	var parameter:Parameter := object Parameter{
+		name:=port.name+"_value";
+		dataType:=port.dataType;
+	};
+	parameters:=parameter;
+}
+
+// message stuff
+/**
+*	For each new DiscretePort (created from a ContinousPort) corresponding MessageBuffer and Messages are created
+**/
+helper DirectedTypedPort::CreateMessageBufferForDiscretePort(inout port:DiscretePort, message:MessageType){
+	if(self.inPort) then{
+		port.receiverMessageBuffer := object MessageBuffer {
+				bufferSize := object NaturalNumber {
+						value := 1;
+						infinity := false;
+				};
+			messageType := message;
+		//discreteInteractionEndpoint := self;
+		name:="Buffer";
+		bufferOverflowAvoidanceStrategy:=BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER;
+		};
+		port.receiverMessageTypes:=message;
+	}
+	else{
+		port.senderMessageTypes:=message;		
+	}endif;
+	return null;
+}

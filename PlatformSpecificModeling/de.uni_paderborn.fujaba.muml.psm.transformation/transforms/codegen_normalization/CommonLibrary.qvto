@@ -1,9 +1,4 @@
-import CommonLibrary;
-import ComponentInstanceLibrary;
-
-transformation CodeGenNormalizationTransformation(in inCodeGenModel:Codegen, out outCodeGenModel:Codegen);
-
-
+library CommonLibrary;
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
@@ -11,6 +6,8 @@ modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0
 modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype Behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSC uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
 modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
@@ -28,22 +25,19 @@ modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.
 modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
 
-main() {
-	inCodeGenModel.rootObjects()[GenSystem]->map mapGenSystem();
-	
+// the message Type Repository for the api values 
+property property_apiMessageRepository:MessageTypeRepository;
+property property_genComponentInstance:Set(GenComponentInstance);
+
+
+
+/***
+* Query the CodeGen Model to get relevant information
+**/
+query ComponentInstance::getGenComponentInstance():GenComponentInstance{
+	return property_genComponentInstance->select(genComp|genComp.componentInstance=self)->any(true);
 }
 
-mapping GenSystem::mapGenSystem():GenSystem{
-	genECUs:=self.genECUs->map mapGenECU();
-	cic:=self.cic.map mapCIC2CIC();
-}
-
-
-mapping GenECU::mapGenECU():GenECU{
-	ecu:=self.ecu;
-	allocatedGenTasks:=self.allocatedGenTasks->map mapGenTask();
-}
-
-mapping GenTask::mapGenTask():GenTask{
-	genComponentInstances:=self.genComponentInstances.late resolve(RefinedAtomicComponentInstance);
+query PortInstance::getGenPortInstance():GenPortInstance{
+	return property_genComponentInstance.genPortInstances->select(port|port.portInstance=self)->any(true);
 }

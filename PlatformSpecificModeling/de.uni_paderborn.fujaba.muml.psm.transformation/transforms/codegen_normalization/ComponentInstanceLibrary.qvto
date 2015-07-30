@@ -1,4 +1,9 @@
+import ComponentLibrary;
+import CommonLibrary;
+
 library ComponentInstanceLibrary;
+
+
 
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
 
@@ -16,18 +21,15 @@ modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/'
 modeltype Codegen uses psm::codegen('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype PSMInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMInstance uses psm::psm_instance('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
 
-// the message Type Repository for the api values 
-property property_apiMessageRepository:MessageTypeRepository;
-property property_genComponentInstance:Set(GenComponentInstance);
 
 
 helper ComponentInstanceConfiguration::createPSMCIC(genComponentInstances:Set(GenComponentInstance),apiMessageRepository:MessageTypeRepository):ComponentInstanceConfiguration{
@@ -36,9 +38,13 @@ helper ComponentInstanceConfiguration::createPSMCIC(genComponentInstances:Set(Ge
 	return self.map mapCIC2CIC();
 }
 
-/**********************
-* Here is the logic for mapping the ComponentInstances
-***********************/
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of Component-Instances (Instance Level)
+*
+*****************************************************************************/
+
 mapping ComponentInstanceConfiguration::mapCIC2CIC():ComponentInstanceConfiguration{	
 	annotation:=self.annotation;
 	extension:=self.extension.deepclone().oclAsType(Extension);
@@ -69,11 +75,13 @@ mapping DelegationConnectorInstance::mapDelegationConnectorInstance():Delegation
 **/
 abstract mapping ComponentInstance::abstractmapComponentInstance():ComponentInstance{
 	name:=self.name;
-	componentType:=self.componentType;
+	// Map the Component Type 
+	componentType:=self.componentType.map mapComponent();
 	portInstances:=self.portInstances->map mapPortInstance();
 	annotation:=self.annotation;
 	extension:=self.extension;
-	componentPart:=self.componentPart;
+	// Resolve the Component Part 
+	componentPart:=self.componentPart.resolveone(ComponentPart);
 	parentCIC:=self.parentCIC;
 }
 
@@ -89,11 +97,14 @@ mapping StructuredComponentInstance::mapStructuredComponentInstance():Structured
 mapping AtomicComponentInstance::mapAtomicComponentInstance():AtomicComponentInstance inherits ComponentInstance::abstractmapComponentInstance{
 }
 
-
+/***
+* Mapping the Port Instances
+***/
 
 abstract mapping PortInstance::abstractmapPortInstance():PortInstance{
 	name:=self.name;
-	type:=self.type;
+	// Resolve the Mapped Port Type (it is mapped via the the parent Component) 
+	type:=self.type.resolveone(Port);
 	annotation:=self.annotation;
 	extension:=self.extension;
 	comment:=self.comment;
@@ -126,12 +137,6 @@ mapping HybridPortInstance::mapHybridPortInstance():DiscreteSinglePortInstance i
 }
 
 
-/***************************************************************************
-* 
-*  Here starts the logic for the transformation of Component-Instances (Instance Level)
-*
-*****************************************************************************/
-
 
 /**
 * Replace a ContiniuosPortIsntance with a  ParametiredDiscreteSinglePortinstance
@@ -139,6 +144,7 @@ mapping HybridPortInstance::mapHybridPortInstance():DiscreteSinglePortInstance i
 mapping ContinuousPortInstance::ReplaceContinusPortInstanceWithParaDiscretePortInstance():ParameterisableDiscreteSinglePortInstance inherits PortInstance::abstractmapPortInstance 
 when {self.componentInstance.oclIsKindOf(AtomicComponentInstance)}{
 	// fix it
+	//TODO
  	//bindings:=createPortBindingParameter(apiMappingRepository,result,self);
 }
 
@@ -157,14 +163,3 @@ when {self.componentInstance.oclIsKindOf(StructuredComponentInstance)}{
 
 
 
-
-/***
-* Query the CodeGen Model to get relevant information
-**/
-query ComponentInstance::getGenComponentInstance():GenComponentInstance{
-	return property_genComponentInstance->select(genComp|genComp.componentInstance=self)->any(true);
-}
-
-query PortInstance::getGenPortInstance():GenPortInstance{
-	return property_genComponentInstance.getPortInstances->select(port|port.portInstance=self)->any(true);
-}
