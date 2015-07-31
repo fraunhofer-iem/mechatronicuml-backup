@@ -173,12 +173,6 @@ mapping AtomicComponentInstance :: AtomicComponentInstance2RuntimeAtomicComponen
 
 mapping StructuredComponentInstance :: StructuredComponentInstance2RuntimeStructuredComponentInstance(diagState :uppaal_trace::State) : RuntimeComponentInstance{
 	assert fatal(false) with log ('UppaalTrace2MumlTrace does not support StructuredComponentInstance\'s at the moment');
-/*	_name := self._name;
-    _componentType := self._componentType;
-    _portInstances := self._portInstances.map PortInstance2RuntimePortInstance(diagState);
-    _componentPart := self._componentPart;
-    _parentCIC := self._parentCIC.map CIC2RuntimeCIC(diagState);
-    _embeddedCIC := self._embeddedCIC.map CIC2RuntimeCIC(diagState);*/
 }
 
 mapping DiscreteInteractionEndpointInstance :: DiscreteInteractionEndpointInstance2RuntimeDiscreteInteractionEndpointInstance(diagState :uppaal_trace::State) : RuntimeDiscreteInteractionEndpointInstance disjuncts

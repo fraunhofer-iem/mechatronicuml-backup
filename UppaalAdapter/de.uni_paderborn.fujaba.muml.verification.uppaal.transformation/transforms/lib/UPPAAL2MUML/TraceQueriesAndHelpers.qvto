@@ -143,87 +143,25 @@ query VariableValue :: getNamedElementAtPosition(position : Integer) : uppaal::c
 ///// Get Muml Elements for Trace Model Elements/References
 ////////////////////////////////////
 query Location :: getRTSCVertex() : Vertex {
-
-	var resolvedStates : OrderedSet(muml_rtsc::Vertex) = self.invresolve(muml_rtsc::Vertex)->asOrderedSet();	
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : resolvedStates := resolvedStates->union(resolvedStates->closure(s | s.invresolve(muml_rtsc::State)))->asOrderedSet();
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := resolvedStates->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		resolvedStates += resolvedStates->invresolve(muml_rtsc::Vertex);
-		oldSize := newSize;
-		newSize := resolvedStates->size();
-	};
-	
-	var state := resolvedStates->intersection(inputVertices)->any(true);
-	
-	return state;	
+	var vertex := self.recursiveInvresolve()->intersection(inputVertices)->any(true).oclAsType(Vertex);
+	return vertex;	
 }
 
 query Location :: getRTSCTransition() : muml_rtsc::Transition {
-
-	var resolvedElements = self.invresolve()->asOrderedSet();
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : resolvedElements := resolvedElements->union(resolvedElements->closure(s | s.invresolve()))->asOrderedSet();
-	//When QVTO supports more efficient closure computation
-/*	var oldSize : Integer := resolvedElements->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		resolvedElements += resolvedElements->invresolve();
-		oldSize := newSize;
-		newSize := resolvedElements->size();
-	};*/
-	resolvedElements := resolvedElements->union(resolvedElements->closure(s | s.invresolve()))->asOrderedSet();
-	
-	var transition := resolvedElements->intersection(inputTransitions)->any(true).oclAsType(muml_rtsc::Transition);	
+	var transition := self.recursiveInvresolve()->intersection(inputTransitions)->any(true).oclAsType(muml_rtsc::Transition);	
 	return transition;	
 }
 
 query LocationActivity :: getPortInstance() : DiscretePortInstance{
 	var templateDeclaration := self.process.template.oclAsType(RedefinedTemplate).declaration;
-	
-	var resolvedElements = templateDeclaration.invresolve()->asOrderedSet();
-	
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : resolvedElements := resolvedElements->union(resolvedElements->closure(invresolve()))->asOrderedSet();
-	//When QVTO supports more efficient closure computation
-	var oldSize : Integer := resolvedElements->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		resolvedElements += resolvedElements->invresolve();
-		oldSize := newSize;
-		newSize := resolvedElements->size();
-	};
-	
-	var instance := resolvedElements->intersection(inputPortInstances)->any(true).oclAsType(muml::instance::DiscretePortInstance);	
+	var instance := templateDeclaration.recursiveInvresolve()->intersection(inputPortInstances)->any(true).oclAsType(muml::instance::DiscretePortInstance);	
 	return instance;	
 }
 
 
 query LocationActivity :: getComponentInstance() : ComponentInstance{
 	var templateDeclaration := self.process.template.oclAsType(RedefinedTemplate).declaration;
-	
-	var resolvedElements = templateDeclaration.invresolve()->asOrderedSet();
-	
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : resolvedElements := resolvedElements->union(resolvedElements->closure(invresolve()))->asOrderedSet();
-	//When QVTO supports more efficient closure computation
-
-	var oldSize : Integer := resolvedElements->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		resolvedElements += resolvedElements->invresolve();
-		oldSize := newSize;
-		newSize := resolvedElements->size();
-	};
-	
-	var instance := resolvedElements->intersection(inputComponentInstances)->any(true).oclAsType(muml::instance::ComponentInstance);	
+	var instance := templateDeclaration.recursiveInvresolve()->intersection(inputComponentInstances)->any(true).oclAsType(muml::instance::ComponentInstance);	
 	return instance;	
 }
 
@@ -233,41 +171,11 @@ query LocationActivity :: getComponentInstance() : ComponentInstance{
 ////////////////////////////////////
 
 query NamedElement :: getUppaalVariable() : uppaal::declarations::Variable{
-	var resolvedVariables := self.resolve()->asOrderedSet();
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : resolvedVariables := resolvedVariables->union(resolvedVariables->closure(resolve()))->asOrderedSet();
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := resolvedVariables->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		resolvedVariables += resolvedVariables->resolve();
-		oldSize := newSize;
-		newSize := resolvedVariables->size();
-	};
-	
-	
-	var uppaalVariable := resolvedVariables -> select(oclIsTypeOf(uppaal::declarations::Variable))->any(true).oclAsType(uppaal::declarations::Variable);
+	var uppaalVariable := self.recursiveResolve()->select(oclIsTypeOf(uppaal::declarations::Variable))->any(true).oclAsType(uppaal::declarations::Variable);
 	return uppaalVariable;
 }
 
 query DiscretePortInstance :: getID() : Integer{
-	var mumlResolves := self.resolve(DiscretePortInstance)->asOrderedSet();
-
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(DiscretePortInstance)).oclAsSet());
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := mumlResolves->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		mumlResolves += mumlResolves->resolve(DiscretePortInstance);
-		oldSize := newSize;
-		newSize := mumlResolves->size();
-	};
-	
-	//Get corresponding Template
 	var theTemplate : Template;
 	
 	if(self.type.oclAsType(DiscretePort).multi and self.oclIsTypeOf(DiscreteSinglePortInstance))
@@ -279,7 +187,7 @@ query DiscretePortInstance :: getID() : Integer{
 	}
 	endif;
 	
-	var templateDeclaration := mumlResolves->resolve(TemplateDeclaration);
+	var templateDeclaration := self.recursiveResolve()->resolve(TemplateDeclaration);
 	templateDeclaration := templateDeclaration->select(td | td.oclAsType(TemplateDeclaration).declaredTemplate.referredTemplate = theTemplate);
 	
 	
@@ -314,99 +222,29 @@ query RealtimeStatechart :: getTemplate() : Template{
 }
 
 query MessageType :: getMessageKindConstant() : uppaal::declarations::Variable{
-	var mumlResolves := self.resolve(MessageType)->asOrderedSet();
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(MessageType)).oclAsSet());
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := mumlResolves->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		mumlResolves += mumlResolves->resolve(MessageType);
-		oldSize := newSize;
-		newSize := mumlResolves->size();
-	};
-	
-	var parameterTypeBufferFieldVariable := mumlResolves->resolveIn(MessageType::createMessageKindConstant, uppaal::declarations::Variable)->any(true);
+	var parameterTypeBufferFieldVariable := self.recursiveResolve()->resolveIn(MessageType::createMessageKindConstant, uppaal::declarations::Variable)->any(true);
 	return parameterTypeBufferFieldVariable;
 }
 
 query MessageType :: getParameterTypeBufferFieldVariable() : uppaal::declarations::Variable{
-	var mumlResolves := self.resolve(MessageType)->asOrderedSet();
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(MessageType)).oclAsSet());
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := mumlResolves->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		mumlResolves += mumlResolves->resolve(MessageType)->asOrderedSet();
-		oldSize := newSize;
-		newSize := mumlResolves->size();
-	};
-	
-	var parameterTypeBufferFieldVariable := mumlResolves->resolveIn(MessageType::createParameterTypeBufferFieldVariable, uppaal::declarations::Variable)->any(true);
+	var parameterTypeBufferFieldVariable := self.recursiveResolve()->resolveIn(MessageType::createParameterTypeBufferFieldVariable, uppaal::declarations::Variable)->any(true);
 	return parameterTypeBufferFieldVariable;
 }
 	
 query MessageType :: getParameterTypeMessageIdVariable() : uppaal::declarations::Variable{
-	var mumlResolves := self.resolve(MessageType)->asOrderedSet();
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(MessageType)).oclAsSet());
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := mumlResolves->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		mumlResolves += mumlResolves->resolve(MessageType)->asOrderedSet();
-		oldSize := newSize;
-		newSize := mumlResolves->size();
-	};
-	
-	var parameterTypeBufferFieldVariable := mumlResolves->resolveIn(MessageType::createParameterTypeMessageIdVariable, uppaal::declarations::Variable)->any(true);
+	var parameterTypeBufferFieldVariable := self.recursiveResolve()->resolveIn(MessageType::createParameterTypeMessageIdVariable, uppaal::declarations::Variable)->any(true);
 	return parameterTypeBufferFieldVariable;
 }
 
 
 query Parameter :: getVariable() : uppaal::declarations::Variable{
-	var mumlResolves := self.resolve(Parameter)->asOrderedSet();
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : mumlResolves := mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(Parameter)).oclAsSet());
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := mumlResolves->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		mumlResolves += mumlResolves->resolve(Parameter)->asOrderedSet();
-		oldSize := newSize;
-		newSize := mumlResolves->size();
-	};
-	
-	var variable := mumlResolves->resolveIn(Parameter::Parameter2Variable, uppaal::declarations::Variable)->any(true);
+	var variable := self.recursiveResolve()->resolveIn(Parameter::Parameter2Variable, uppaal::declarations::Variable)->any(true);
 	return variable;
 }
 
 
 query RealtimeStatechartInstance::  getTemplateDeclaration() : TemplateDeclaration{
-	var resolvedElements : OrderedSet(OclAny) = self.invresolve()->asOrderedSet();	
-	
-	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
-	//Replace implementation below with : resolvedStates := resolvedStates->union(resolvedStates->closure(s | s.invresolve(muml_rtsc::State)))->asOrderedSet();
-	//When QVTO supports more efficient closure computation
-	
-	var oldSize : Integer := resolvedElements->size();
-	var newSize : Integer := 0;
-	while(not (oldSize = newSize)){
-		resolvedElements += resolvedElements->invresolve();
-		oldSize := newSize;
-		newSize := resolvedElements->size();
-	};
-	
-	var declaration : TemplateDeclaration := resolvedElements->any(oclIsTypeOf(LocationActivity)).oclAsType(LocationActivity).process.template.oclAsType(RedefinedTemplate).declaration;
+	var declaration : TemplateDeclaration := self.recursiveInvresolve()->any(oclIsTypeOf(LocationActivity)).oclAsType(LocationActivity).process.template.oclAsType(RedefinedTemplate).declaration;
 	return declaration;
 }
 ////////////////////////////////////
@@ -695,3 +533,35 @@ helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagSta
 		};
 }
 
+query OclAny :: recursiveInvresolve() : OrderedSet(OclAny){
+var resolvedElements = self.invresolve()->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedElements := resolvedElements->union(resolvedElements->closure(s | s.invresolve()))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+	var oldSize : Integer := resolvedElements->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedElements += resolvedElements->invresolve();
+		oldSize := newSize;
+		newSize := resolvedElements->size();
+	};
+	return resolvedElements;
+}
+
+query OclAny :: recursiveResolve() : OrderedSet(OclAny){
+	var resolvedVariables := self.resolve()->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedVariables := resolvedVariables->union(resolvedVariables->closure(resolve()))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := resolvedVariables->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedVariables += resolvedVariables->resolve();
+		oldSize := newSize;
+		newSize := resolvedVariables->size();
+	};
+	return resolvedVariables;
+}
