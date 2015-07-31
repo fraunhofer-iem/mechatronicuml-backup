@@ -275,9 +275,12 @@ query RealtimeStatechart::createRegionForPeriodicSending(
 	-- add invariant to the state
 	newState.invariants += object ClockConstraint {
 			clock := newClock;
-			bound := samplingTime.createAddToTimeValue(
-					createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
-				);
+			bound:=samplingTime;
+			
+			//TODO look if +5ms makes sesne
+			//bound := samplingTime.createAddToTimeValue(
+		//			createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+	//			);
 			operator := Core::expressions::common::ComparingOperator::LESS_OR_EQUAL;
 		};
 	-- entry action to the state
@@ -380,9 +383,12 @@ query RealtimeStatechart::createRegionForPeriodicReceiving(
 	-- add invariant to the state
 	stateReceiving.invariants += object ClockConstraint {
 			clock := newClock;
-			bound := newSamplingTime.createAddToTimeValue(
-					createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
-				);
+			
+			bound:=newSamplingTime;
+			//TODO look if +5ms makes sense
+		//	bound := newSamplingTime.createAddToTimeValue(
+		//			createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+		//		);
 			--bound := object TimeValue {
 			--		value := samplingTime.value.deepclone()[Core::expressions::Expression]->any(true);
 			--		unit := samplingTime.unit;
