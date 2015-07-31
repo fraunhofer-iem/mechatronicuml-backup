@@ -60,7 +60,7 @@ mapping Component::mapComponent():Component
 * Map Structed Component and
 *  HybridPorts of a SturcutedComponent are Replaced  with DiscretePorts
 */
-mapping in StaticStructuredComponent::mapStaticStructuredComponent():StaticStructuredComponent{
+mapping in StaticStructuredComponent::mapStaticStructuredComponent():StaticStructuredComponent inherits Component::abstractmapComponent{
 	componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
 	ports:=self.ports->map mapPort(null);	
 	embeddedComponentParts:=self.embeddedComponentParts->map mapComponentPart();
@@ -70,8 +70,13 @@ mapping in StaticStructuredComponent::mapStaticStructuredComponent():StaticStruc
 /**
 * The HybridPorts of a HybridComponent are Replaced  with DiscretePorts
 */
-mapping in StaticAtomicComponent::ChangeSoftwareComponent2DiscreteComponent():StaticAtomicComponent when {self.componentKind=muml::component::ComponentKind::SOFTWARE_COMPONENT}{
-	behavior:=self.behavior.deepclone().oclAsType(RealtimeStatechart);
+mapping in StaticAtomicComponent::ChangeSoftwareComponent2DiscreteComponent():StaticAtomicComponent inherits Component::abstractmapComponent when {self.componentKind=muml::component::ComponentKind::SOFTWARE_COMPONENT}{
+	if(self.behavior.oclIsUndefined())then{
+			createEmptyRealtimeStateChart(result);
+		}else{
+				behavior:=self.behavior.deepclone().oclAsType(RealtimeStatechart);
+			
+		}endif;
 	ports:=self.ports->map mapPort(behavior.oclAsType(RealtimeStatechart));	
 }
 
@@ -79,7 +84,7 @@ mapping in StaticAtomicComponent::ChangeSoftwareComponent2DiscreteComponent():St
 /**
 * Changes a ContinousComponent to a DiscreteComponent and Replaces its ContinousPorts with DiscretePorts
 */
-mapping in StaticAtomicComponent::ChangeContinousComponent2DiscreteComponent():StaticAtomicComponent when {self.componentKind=muml::component::ComponentKind::CONTINUOUS_COMPONENT}{
+mapping in StaticAtomicComponent::ChangeContinousComponent2DiscreteComponent():StaticAtomicComponent inherits Component::abstractmapComponent when {self.componentKind=muml::component::ComponentKind::CONTINUOUS_COMPONENT}{
 	componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
 	//behavior:=self.behavior.deepclone().oclAsType(RealtimeStatechart);
 	//create empty statechart here

@@ -31,8 +31,9 @@ modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.
 modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
 
 main() {
+	//initialoize propery
+	property_genComponentInstance:=inCodeGenModel.rootObjects()[GenSystem]->any(true).genECUs.allocatedGenTasks.genComponentInstances;
 	inCodeGenModel.rootObjects()[GenSystem]->map mapGenSystem();
-	
 }
 
 mapping GenSystem::mapGenSystem():GenSystem{
@@ -47,5 +48,9 @@ mapping GenECU::mapGenECU():GenECU{
 }
 
 mapping GenTask::mapGenTask():GenTask{
-	genComponentInstances:=self.genComponentInstances.late resolve(RefinedAtomicComponentInstance);
+	genComponentInstances:=self.genComponentInstances->map mapGenComponentInstance();
+}
+
+mapping GenComponentInstance::mapGenComponentInstance():GenComponentInstance{
+	componentInstance:=self.componentInstance.resolveone(ComponentInstance);
 }

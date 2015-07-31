@@ -28,7 +28,9 @@ modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.
 modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
 
 // the message Type Repository for the api values 
-property property_apiMessageRepository:MessageTypeRepository;
+property property_apiMessageRepository: MessageTypeRepository= object MessageTypeRepository{
+	name:="API_MESSAGES"	
+};
 property property_genComponentInstance:Set(GenComponentInstance);
 
 
