@@ -2587,6 +2587,24 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 				};
 			};
 			
+			//buffer.messageDiscarded = true
+			statement += object ExpressionStatement{
+				expression := object AssignmentExpression{
+					operator := AssignmentOperator::EQUAL;
+					firstExpr := object ScopedIdentifierExpression{
+						scope := object IdentifierExpression{
+							identifier := b;
+						};
+						identifier := object IdentifierExpression{
+							identifier := map createMessageDiscardedFieldVariable();
+						};
+					};
+					secondExpr := object LiteralExpression{
+						text := 'true'
+					};
+				};
+			};
+			
 			--if(message.mType == muml_m){
 			--	removemuml_mArguments(messageToDiscard); 
 	 		--	}

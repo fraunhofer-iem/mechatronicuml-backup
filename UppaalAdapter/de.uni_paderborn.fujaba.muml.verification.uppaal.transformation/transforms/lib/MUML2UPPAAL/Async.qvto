@@ -120,6 +120,8 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 		declaration += map createTailFieldDeclaration();
 		
 		declaration += map createMessagesFieldDeclaration();
+		
+		declaration += map createMessageDiscardedFieldDeclaration();
 			
 	}
 
@@ -376,6 +378,14 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 		
 		variable += map createMessagesFieldVariable()
 		
+	}
+	
+	mapping createMessageDiscardedFieldDeclaration() : DataVariableDeclaration{
+		typeDefinition := object TypeReference{
+			referredType := BOOL;
+		};
+		
+		variable += map createMessageDiscardedFieldVariable();
 	}
 	
 	

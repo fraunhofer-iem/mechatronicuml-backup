@@ -190,7 +190,7 @@ mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2Realt
 		clocks := self.clocks->map Clock2Clock();				
 	}
 	
-	
+//TODO clean this up: mappings for subtypes do not have to be called here	
 mapping Expression :: Expression2Expression() : Expression disjuncts
 	TransitionFiringExpr::TransitionFiringExpr2OrExpr,
 	 TransitionFiringExpr::TransitionFiringExpr2NonUrgentTransitionFiringExpr,
@@ -216,25 +216,26 @@ mapping Expression :: Expression2Expression() : Expression disjuncts
 	                     mtctl::Sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
 	                      mtctl::Sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
 	                       mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
-	                        mtctl::Sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
-	                         mtctl::Comparables::TransitionMap::TransitionMap2TransitionMap,
-	                          mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
-	                           mtctl::Predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
-	                            mtctl::Quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
-	                             mtctl::Predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
-	                              mtctl::Comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
-	                               mtctl::Comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
-	                                mtctl::Sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
-	                                 mtctl::Quantifiers::EGExpr::EGExpr2EGExpr,
-	                                  mtctl::BooleanLogic::NotExpr::NotExpr2NotExpr,
-	                                   mtctl::Quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
-	                                    mtctl::Quantifiers::AGExpr::AGExpr2AGExpr,
-	                                     mtctl::Sets::StateSetExpr::StateSetExpr2StateSetExpr,
-	                                      mtctl::Quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
-	                                       mtctl::Quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
-	                                        TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
-	                                         mtctl::Predicates::TrueExpr::TrueExpr2TrueExpr,
-	                                          mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+	                        mtctl::Predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
+	                         mtctl::Sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
+	                          mtctl::Comparables::TransitionMap::TransitionMap2TransitionMap,
+	                           mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+	                            mtctl::Predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+	                             mtctl::Quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
+	                              mtctl::Predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
+	                               mtctl::Comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+	                                mtctl::Comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
+	                                 mtctl::Sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
+	                                  mtctl::Quantifiers::EGExpr::EGExpr2EGExpr,
+	                                   mtctl::BooleanLogic::NotExpr::NotExpr2NotExpr,
+	                                    mtctl::Quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
+	                                     mtctl::Quantifiers::AGExpr::AGExpr2AGExpr,
+	                                      mtctl::Sets::StateSetExpr::StateSetExpr2StateSetExpr,
+	                                       mtctl::Quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
+	                                        mtctl::Quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
+	                                         TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
+	                                          mtctl::Predicates::TrueExpr::TrueExpr2TrueExpr,
+	                                           mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
 
 // Create an OrExpr to capture the cases in which two transitions are created (i.e. when urgent and non-urgent transitions synchronize and a transition is non-urgent)
 mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and not self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent} {

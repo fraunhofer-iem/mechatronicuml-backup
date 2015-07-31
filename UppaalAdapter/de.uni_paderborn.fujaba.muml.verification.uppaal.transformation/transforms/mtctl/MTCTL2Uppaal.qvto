@@ -103,6 +103,7 @@ mapping Expression::Expression2Expression() : uppaalExpr::Expression disjuncts
 	ConnectorOverflowExpr::ConnectorOverflowExpr2Expression,
 	BufferMsgCountExpr::BufferMsgCount2Expression,
 	MessageInBufferExpr::MessageInBufferExpr2Expression,
+	MessageDiscardedExpr::MessageDiscardedExpr2Expression,
 	MessageInTransitExpr::MessageInTransitExpr2Expression,
 	TransitionFiringExpr::TransitionFiringExpr2IdentifierExpression
 ;
@@ -203,6 +204,23 @@ mapping MessageInBufferExpr::MessageInBufferExpr2Expression() : FunctionCallExpr
 			identifier := self.message.oclAsType(MumlElemExpr).elem.resolveoneIn(MessageType::createMessageKindConstant).oclAsType(uppaal_core::NamedElement);
 	};
 }
+
+// not buffers[roleIndex][bufferIndex].messageDiscarded
+mapping MessageDiscardedExpr::MessageDiscardedExpr2Expression() : ScopedIdentifierExpression{
+		scope := object IdentifierExpression{
+			identifier := map createBuffersVariable();
+			index += object LiteralExpression{
+				text := self.buffer.oclAsType(MumlElemExpr).instance.getInstanceID().repr()
+			};
+			index += object LiteralExpression{
+				text := self.buffer.oclAsType(MumlElemExpr).elem.oclAsType(MessageBuffer).getBufferIndex().repr()
+			};
+		};
+		identifier := object IdentifierExpression{
+			identifier := map createMessageDiscardedFieldVariable();
+		};
+	}
+
 
 mapping MessageInTransitExpr::MessageInTransitExpr2Expression() : QuantificationExpression { //exists(i:instances) checkMessageInBuffer(connectors[i], messageType)
 	quantifier := Quantifier::EXISTENTIAL;
