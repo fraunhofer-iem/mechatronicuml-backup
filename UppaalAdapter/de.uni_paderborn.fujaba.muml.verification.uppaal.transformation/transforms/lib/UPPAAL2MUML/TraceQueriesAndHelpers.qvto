@@ -205,7 +205,6 @@ query LocationActivity :: getPortInstance() : DiscretePortInstance{
 }
 
 
-//TODO at the moment this always returns null, because a ComponentInstance is never mapped to a TemplateDeclaration
 query LocationActivity :: getComponentInstance() : ComponentInstance{
 	var templateDeclaration := self.process.template.oclAsType(RedefinedTemplate).declaration;
 	
@@ -563,7 +562,8 @@ helper RealtimeStatechartInstance :: setBehavioralElement(inout runtimePortInsta
 		var runtimeComponentInstance : RuntimeComponentInstance := locationActivity.getComponentInstance().resolve()->asOrderedSet()
 		->intersection(runtimeComponentInstancesOfDiagState)->any(oclAsType(RuntimeComponentInstance).componentType.oclAsType(BehavioralElement).behavior = self.instanceOf).oclAsType(RuntimeComponentInstance);
 		
-		runtimeComponentInstance.statechartInstance := self;
+		if(not runtimeComponentInstance.oclIsUndefined())
+			runtimeComponentInstance.statechartInstance := self;
 	};
 		
 		
@@ -676,17 +676,12 @@ helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagSta
 	if (self.getUppaalVariable().container.oclIsKindOf(uppaal::declarations::DataVariableDeclaration)) {
         var dataVariableDec := self.getUppaalVariable().container.oclAsType(uppaal::declarations::DataVariableDeclaration);
         if (dataVariableDec.prefix = uppaal::declarations::DataVariablePrefix::CONST) {
-            // var integerValue := self.getUppaalVariable().initializer; 
-            // var varValue : VariableValue;
-            // varValue.value := integerValue;
-            // variableValues->append(varValue);
             variableIsConstant := true;
             assert(false) with log ('Found constant variable : '+self.name.toString() + '. We will not find a value for this variable in the trace as Uppaal does not write them into it.');
         };
     };
     
     if (not variableIsConstant) {
-        // log('variable is NOT constant');
         variableValues := self.getUppaalVariable().getVariableValue(diagState, parentIndexes, null); 
 	};
 
