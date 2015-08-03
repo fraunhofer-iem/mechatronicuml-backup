@@ -52,5 +52,5 @@ mapping GenTask::mapGenTask():GenTask{
 }
 
 mapping GenComponentInstance::mapGenComponentInstance():GenComponentInstance{
-	componentInstance:=self.componentInstance.resolveone(ComponentInstance);
+	componentInstance:=self.componentInstance.late resolveone(ComponentInstance);
 }
