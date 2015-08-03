@@ -1,9 +1,10 @@
 import CommonLibrary;
 import ComponentInstanceLibrary;
 
+import ComponentLibrary;
 import ModelcopyLibrary;
 
-transformation CodeGenNormalizationTransformation(in inCodeGenModel:Codegen, out outCodeGenModel:Codegen, out componentInstanceConfig:InstancePackage, out rtscs:RTSCPackage, out components : ComponentPackage, out msgs:MessagePackage);
+transformation CodeGenNormalizationTransformation(in inCodeGenModel:Codegen, out outCodeGenModel:Codegen);
 
 
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
@@ -40,7 +41,7 @@ main() {
 
 mapping GenSystem::mapGenSystem():GenSystem{
 	genECUs:=self.genECUs->map mapGenECU();
-	cic:=self.cic.map mapCIC2CIC();
+	cic:=self.cic.map transform().oclAsType(ComponentInstanceConfiguration);
 	hpic:=self.hpic;
 }
 
@@ -56,4 +57,4 @@ mapping GenTask::mapGenTask():GenTask{
 
 mapping GenComponentInstance::mapGenComponentInstance():GenComponentInstance{
 	componentInstance:=self.componentInstance.late resolveone(ComponentInstance);
-}
+} 
