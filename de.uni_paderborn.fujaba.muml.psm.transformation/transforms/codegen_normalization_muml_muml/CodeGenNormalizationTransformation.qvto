@@ -1,6 +1,8 @@
 import CommonLibrary;
 import ComponentInstanceLibrary;
 
+import ModelcopyLibrary;
+
 transformation CodeGenNormalizationTransformation(in inCodeGenModel:Codegen, out outCodeGenModel:Codegen, out componentInstanceConfig:InstancePackage, out rtscs:RTSCPackage, out components : ComponentPackage, out msgs:MessagePackage);
 
 
