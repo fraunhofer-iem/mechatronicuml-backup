@@ -121,13 +121,16 @@ helper Transition :: Schema2PositionKindSelector(kind : PositionSelectorKind) : 
 	
 	--Transfer Schemata Guards, Clock Constraints, CLock Resets
 	
-mapping Transition :: TransferSchemataLogicalExpression( context:EObject, position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
-				
-		rightExpression := self.map TransferSchemataEndpointReference(result, position);
+helper Transition :: TransferSchemataLogicalExpression( position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
 		
-		leftExpression := self.map TransferSchemataEndpointReference(result, PositionSelectorKind::SELF);
+		var comp : ComparisonExpression := new ComparisonExpression();
+			
+		comp.rightExpression := self.map TransferSchemataEndpointReference(position);
+		
+		comp.leftExpression := self.map TransferSchemataEndpointReference( PositionSelectorKind::SELF);
 				
-		operator := compOperator;
+		comp.operator := compOperator;
+		return comp;
 				
 	}
 	
@@ -538,7 +541,7 @@ mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region
 		
 		priority := 2;
 		
-		guard := self.map TransferSchemataLogicalExpression(result, PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		synchronization := self.TransferSchemata2Synchronization("switchState",SynchronizationKind::SEND  ,PositionSelectorKind::SELF,PositionSelectorKind::NEXT);
 		
@@ -552,7 +555,7 @@ mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:Re
 		
 		priority := 1;
 		
-		guard := self.map TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 	}
 	
@@ -596,12 +599,12 @@ mapping Transition:: Transition2LogicalExpression(context : OclAny, logicoperato
 
 
 ----------------------------------------------** new transformations that should replace the old ones ** 
-mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
+mapping Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
 	position := self. Schema2PositionKindSelector(positionSelectorKind);
 	typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedTypedNamedElement);
 }
 
-mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
+mapping Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
 	position := self. Schema2PositionKindSelector( positionSelectorKind);	
 }
 

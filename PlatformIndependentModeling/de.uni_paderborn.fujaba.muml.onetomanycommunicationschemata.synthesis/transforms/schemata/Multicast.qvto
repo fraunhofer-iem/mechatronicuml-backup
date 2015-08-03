@@ -195,7 +195,7 @@ mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, r
 		
 		synchronization := self. TransferSchemata2Synchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
-		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 			
@@ -207,7 +207,7 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 		
 		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);		
 		
-		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
@@ -253,7 +253,7 @@ mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		synchronization := self.TransferSchemata2Synchronization( "multicastCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
@@ -267,7 +267,7 @@ mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, re
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		synchronization := self.TransferSchemata2Synchronization(multicastCheckDone,SynchronizationKind::SEND);
 					
