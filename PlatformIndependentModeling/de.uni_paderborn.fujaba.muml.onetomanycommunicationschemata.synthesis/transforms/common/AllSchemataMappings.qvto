@@ -355,23 +355,27 @@ mapping Transition :: TransferSchemata2Literal(context:OclAny, assignValue:Strin
 
 
 
-mapping Transition :: TransferSchemata2Synchronization(rtsc : RealtimeStatechart,identifier : EObject,  channelName : String, syncKind : SynchronizationKind) : Synchronization{
+helper Transition :: TransferSchemata2Synchronization(channelName : String, syncKind : SynchronizationKind) : Synchronization{
 
-	kind := syncKind;
-	syncChannel := _rtsc.map TransferSchemataChannel( channelName, false,self);
+	var sync : Synchronization := new Synchronization();
+	sync.kind := syncKind;
+	sync.syncChannel :=self.map TransferSchemataChannel( channelName, false,self);
+	return sync;
 }
 
-mapping Transition :: TransferSchemata2Synchronization(context : RealtimeStatechart,identifier : EObject, channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind) : Synchronization{
-	
-	kind := syncKind;
-	syncChannel := context.map TransferSchemataChannel(channelName,true, self);
-	selectorExpression := self.map Schema2PositionKindSelector(result,result,result, selectorKind);
+helper Transition :: TransferSchemata2Synchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind) : Synchronization{
+	var sync : Synchronization := new Synchronization();
+	sync.kind := syncKind;
+	sync.syncChannel := self.map TransferSchemataChannel(channelName,true, self);
+	sync.selectorExpression := self.map Schema2PositionKindSelector(sync,sync,sync, selectorKind);
+	return sync;
 }
-mapping Transition :: TransferSchemata2Synchronization(context : RealtimeStatechart,identifier : EObject, channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
-	
-	kind := syncKind;
-	syncChannel := context.map TransferSchemataChannel(channelName,true, self);
-	selectorExpression := self.map Schema2PositionKindSelector(result,result,result, selectorKind, successorKind);
+helper Transition :: TransferSchemata2Synchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
+	var sync : Synchronization := new Synchronization();
+	sync.kind := syncKind;
+	sync.syncChannel := self.map TransferSchemataChannel(channelName,true, self);
+	sync.selectorExpression := self.map Schema2PositionKindSelector(sync,sync,sync, selectorKind, successorKind);
+	return sync;
 }
 	//dict->hasKey(transition);
 	//dict->get(transition);
@@ -379,7 +383,7 @@ mapping Transition :: TransferSchemata2Synchronization(context : RealtimeStatech
 	//if(dict->hasKey(transition))
 	// dict-> 
 property usedChannelNames : Dict(String,Integer); // stores how often a channel with a certain name exists. Used for enumerating the channel names in case of multiple occurences of the same schema
-mapping RealtimeStatechart :: TransferSchemataChannel(channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
+mapping Transition :: TransferSchemataChannel(channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
 		
 		if(usedChannelNames->hasKey(channelName))
 		{
@@ -393,11 +397,12 @@ mapping RealtimeStatechart :: TransferSchemataChannel(channelName: String, selec
 			name := channelName + 1.toString();
 			usedChannelNames->put(channelName,1);	
 		};		
-		state := self.map Rtsc2InitialState();
+		var portOrRoleStatechart : RealtimeStatechart := self.statechart.getPortOrRoleStatechart();
+		state := portOrRoleStatechart.map Rtsc2InitialState();
 		
 		if(selector){
-			assert fatal (self.behavioralElement.oclIsKindOf(Role) or self.behavioralElement.oclIsKindOf(muml::component::DiscretePort)) with log ("behavorial Element must be DiscretePort or Role!");
-			selectorType := self.behavioralElement.oclAsType(DataType);			
+			assert fatal (portOrRoleStatechart.behavioralElement.oclIsKindOf(Role) or portOrRoleStatechart.behavioralElement.oclIsKindOf(muml::component::DiscretePort)) with log ("behavorial Element must be DiscretePort or Role!");
+			selectorType := portOrRoleStatechart.behavioralElement.oclAsType(DataType);			
 		}endif;		
 						
 	}
@@ -508,7 +513,7 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint(1, region);
 		
 		guard := self.guard.map Expression2Expression(1);
-		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  "switchState",SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
+		synchronization := self.TransferSchemata2Synchronization("switchState",SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
 		
 	}
@@ -533,7 +538,7 @@ mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region
 		
 		guard := self.map TransferSchemataLogicalExpression(result, PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  "switchState",SynchronizationKind::SEND  ,PositionSelectorKind::SELF,PositionSelectorKind::NEXT);
+		synchronization := self.TransferSchemata2Synchronization("switchState",SynchronizationKind::SEND  ,PositionSelectorKind::SELF,PositionSelectorKind::NEXT);
 		
 		
 	}
