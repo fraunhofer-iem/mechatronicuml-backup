@@ -386,6 +386,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		muml_actionLanguage::Block::createSingleExpression,
 		muml_actionLanguage::TriggerMessageExpression::TriggerMessageExpression2ArgumentAccessExpression,
 		muml_actionLanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2InstanceReference,
+		muml_actionLanguage::ArrayIndexExpression::ArrayIndexExpression2Expression,
 		storydriven_expressions::Expression::failOnUnsupportedExpression
 	when {
 		-- the following expression subtypes are processed separately and should not be mapped to UPPAAL expressions
@@ -460,6 +461,12 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 			
 		};
 
+	}
+	
+	mapping ArrayIndexExpression::ArrayIndexExpression2Expression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : uppaal_expressions::Expression{
+		init{
+			result := self.index.map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		}
 	}
 	
 	mapping DiscreteInteractionEndpointReference :: DiscreteInteractionEndpointReference2InstanceReference(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : uppaal_expressions::IdentifierExpression  {
@@ -762,9 +769,8 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		endif;
 		
 		
-		-- map indices
-				
-		//index += self.indices->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		-- map indices	
+		index += self.elementAccessors->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 	
 	}
 	
@@ -774,7 +780,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		identifier := self.typedNamedElement.oclAsType(muml_behavior::Parameter).map Parameter2Variable();
 						
 		-- map indices
-				
+		index += self.elementAccessors->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);		
 		//index += self.indices->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 	
 	}
