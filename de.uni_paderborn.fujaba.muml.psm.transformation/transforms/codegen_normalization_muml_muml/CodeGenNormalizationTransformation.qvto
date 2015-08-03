@@ -1,7 +1,6 @@
 import CommonLibrary;
 import ComponentInstanceLibrary;
 
-import ComponentLibrary;
 import ModelcopyLibrary;
 
 transformation CodeGenNormalizationTransformation(in inCodeGenModel:Codegen, out outCodeGenModel:Codegen);
@@ -36,6 +35,9 @@ modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.
 modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
 
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
 main() {
 	//initialoize propery
 	property_genComponentInstance:=inCodeGenModel.rootObjects()[GenSystem]->any(true).genECUs.allocatedGenTasks.genComponentInstances;
@@ -43,9 +45,9 @@ main() {
 }
 
 mapping GenSystem::mapGenSystem():GenSystem{
-	genECUs:=self.genECUs->map mapGenECU();
 	cic:=self.cic.map transform().oclAsType(ComponentInstanceConfiguration);
 	hpic:=self.hpic;
+	genECUs:=self.genECUs->map mapGenECU();	
 }
 
 
@@ -61,3 +63,6 @@ mapping GenTask::mapGenTask():GenTask{
 mapping GenComponentInstance::mapGenComponentInstance():GenComponentInstance{
 	componentInstance:=self.componentInstance.map transform().oclAsType(ComponentInstance);
 } 
+
+
+
