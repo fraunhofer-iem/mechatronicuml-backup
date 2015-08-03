@@ -9,7 +9,7 @@ modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0
 modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
 
 
-transformation CopyRolePropertiesToPort(inout input : ComponentPackage, out output : RTSCPackage);
+transformation CopyRolePropertiesToPort(in input : ComponentPackage, out output : RTSCPackage);
 configuration property replacePortRTSC : Boolean;
 configuration property createComponentRTSC : Boolean;
 	
@@ -187,7 +187,7 @@ constructor Region::Region() {
 	
 }
 
-constructor RealtimeStatechart::RealtimeStatechart(_name : String) {
+constructor RealtimeStatechart::RealtimeStatechart(_name : String)  {
 	name := _name;
 	states += new State(true, false);
 }
