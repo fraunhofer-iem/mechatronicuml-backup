@@ -68,9 +68,12 @@ mapping ComponentInstance::mapComponentInstance2Task():GenTask{
 mapping ComponentInstance::mapComponentInstance2GenComponentInstance():GenComponentInstance{
 	componentInstance:=self;
 	initCommands:=self.getInitCommands();
-	genPortInstances:=self.portInstances[ContinuousPortInstance]->map mapPortInstance2GenPortInstance();
+	genPortInstances:=self.portInstances->map mapPortInstance2GenPortInstance();
 	
 }
+
+
+mapping PortInstance::mapPortInstance2GenPortInstance():GenPortInstance disjuncts ContinuousPortInstance::mapPortInstance2GenPortInstance, HybridPortInstance::mapPortInstance2GenPortInstance, DiscreteSinglePortInstance::mapPortInstance2GenPortInstance, DiscreteMultiPortInstance::mapPortInstance2GenPortInstance;
 
 mapping ContinuousPortInstance::mapPortInstance2GenPortInstance():GenPortInstance{
 	portInstance:=self;
@@ -78,6 +81,18 @@ mapping ContinuousPortInstance::mapPortInstance2GenPortInstance():GenPortInstanc
 	execCommand:=self.getExecCommand();
 }
 
+
+mapping HybridPortInstance::mapPortInstance2GenPortInstance():GenPortInstance{
+	portInstance:=self;
+}
+
+mapping DiscreteSinglePortInstance::mapPortInstance2GenPortInstance():GenPortInstance{
+	portInstance:=self;
+}
+
+mapping DiscreteMultiPortInstance::mapPortInstance2GenPortInstance():GenPortInstance{
+	portInstance:=self;
+}
 
 query ComponentInstance::getInitCommands():Set(core::expressions::Expression){
 	var initExpressions:Set(core::expressions::Expression):=Set{};
