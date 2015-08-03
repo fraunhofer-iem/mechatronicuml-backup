@@ -17,8 +17,11 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.reachanalysis.core.export.ApplicationSpecificDecorator;
 import de.uni_paderborn.fujaba.muml.reachanalysis.core.export.GraphVizExport;
 import de.uni_paderborn.fujaba.muml.reachanalysis.core.export.GraphVizExportFileTypes;
+import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ActionTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
+import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CICZoneGraphState;
+import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
@@ -76,6 +79,16 @@ public class CICGraphvizExport extends GraphVizExport {
 		predecessorCicState = cicState;
 
 		return result.toString();
+	}
+	
+	@Override
+	protected String getTransitionLabel(ReachabilityGraphTransition transition) {
+		if (transition instanceof DelayTransition) {
+			return "delay";
+		}
+		else if(transition instanceof ActionTransition)
+			return "action";
+		return super.getTransitionLabel(transition);
 	}
 
 	protected GraphvizHTMLTable createCICTable(
