@@ -178,20 +178,8 @@ mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, c
 	
 	}
 	
-mapping Transition :: TransferSchemaNotVarAndVarGuard(context:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
-		
-		if(notOp){
-			leftExpression := self.map TransferSchemaGuard(result, varName1, notOp);
-		}else{
-			leftExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName1));
-		}endif;
-		
-		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName2));
-		
-		operator := LogicOperator::AND;
-	
-	}
-	
+
+	// replace!!, used only once
 mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, transMapping: Integer) : LogicalExpression {
 		
 		leftExpression := self.guard.map Expression2Expression(context2);
@@ -225,18 +213,6 @@ mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, 
 		operator := LogicOperator::AND;
 }
 
-mapping Transition :: TransferSchemaErrorOrNotPossibleGuard(context1:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
-		
-		if(notOp){
-			rightExpression := self.map TransferSchemaGuard(result, varName2, true);
-		}else{
-			rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName2));
-		}endif;
-		
-		leftExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName1));
-		
-		operator := LogicOperator::OR;
-}
 
 mapping Transition :: TransferSchemaThreeVariablesGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
@@ -533,31 +509,9 @@ mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeSt
 		
 		
 }
-mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : Transition {
-		
-		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
-		
-		target := self.map Transition2StateSubrole(region,self.target, false);
-		
-		priority := 2;
-		
-		guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
-		
-		synchronization := self.TransferSchemata2Synchronization("switchState",SynchronizationKind::SEND  ,PositionSelectorKind::SELF,PositionSelectorKind::NEXT);
-		
-		
-	}
+
 	
-mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : Transition {
-		
-		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
-		target := self.map Transition2StateSubrole(region,self.target, false);
-		
-		priority := 1;
-		
-		guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
-		
-	}
+
 	
 mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : State {
 		
