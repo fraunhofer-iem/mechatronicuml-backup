@@ -92,7 +92,7 @@ query TemplateDeclaration :: getInstanceID() : Integer{
 
 
 // parent variables have to be passed in correct order
-// indexes refers to first parent variable (self if there are no parent variables)
+// indexes refers to first parent variable (null if there are no parent variables)
 query uppaal::declarations::Variable :: getVariableValue(diagState : diagnosticTrace::State, indexes : Sequence(Integer), parentVariables : OrderedSet(uppaal::declarations::Variable)) : OrderedSet(VariableValue){
 	
 	var variables : OrderedSet(uppaal::declarations::Variable):= parentVariables;
@@ -120,7 +120,7 @@ query uppaal::declarations::Variable :: getVariableValue(diagState : diagnosticT
 	if(indexes = null)
 		return fittingValues;
 	
-	return fittingValues -> select(firstNamedElementReference.singleNamedElementReference.indexes = indexes);
+	return fittingValues -> select(firstNamedElementReference.singleNamedElementReference.indexes->subSequence(1, indexes->size()) = indexes);
 }
 
 

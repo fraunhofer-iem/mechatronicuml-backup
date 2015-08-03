@@ -781,8 +781,6 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 						
 		-- map indices
 		index += self.elementAccessors->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);		
-		//index += self.indices->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-	
 	}
 	
 	mapping muml_actionLanguage::OperationCall :: createCall(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : uppaal_expressions::FunctionCallExpression {
