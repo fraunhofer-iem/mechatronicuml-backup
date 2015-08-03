@@ -23,6 +23,8 @@ modeltype Codegen uses psm::codegen('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype PSMInstance uses psm::psm_instance('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMRTSC uses psm::psm_realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMRTSCParameter uses psm::psm_realtimestatechart::realtimestatechartparameter('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
 modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
@@ -56,12 +58,12 @@ mapping HybridPortInstance::transform():EObject{
 	}
 	var portInstance: DiscreteSinglePortInstance := result.oclAsType(DiscreteSinglePortInstance);
 	portInstance.name:=self.name;
-	portInstance.type:=self.type.late resolveone(Port);
+	portInstance.type:=self.type.map transform().oclAsType(DiscretePort);
 	portInstance.annotation:=self.annotation;
 	portInstance.extension:=self.extension;
 	portInstance.comment:=self.comment;
 	portInstance.componentInstance:=self.componentInstance;
-	portInstance.connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
+	portInstance.connectorInstances:=self.connectorInstances->map transform().oclAsType(ConnectorInstance);
 	
 }
 
@@ -84,12 +86,12 @@ init{
 	}
 	var portInstance: DiscreteSinglePortInstance := result.oclAsType(DiscreteSinglePortInstance);
 	portInstance.name:=self.name;
-	portInstance.type:=self.type.late resolveone(Port);
+	portInstance.type:=self.type.map transform().oclAsType(DiscretePort);
 	portInstance.annotation:=self.annotation;
 	portInstance.extension:=self.extension;
 	portInstance.comment:=self.comment;
 	portInstance.componentInstance:=self.componentInstance;
-	portInstance.connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
+	portInstance.connectorInstances:=self.connectorInstances->map transform().oclAsType(ConnectorInstance);
 	
 	if(result.oclIsKindOf(ParameterisableDiscreteSinglePortInstance)) then{
 	
