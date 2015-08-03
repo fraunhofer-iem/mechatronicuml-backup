@@ -37,7 +37,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 helper ComponentInstanceConfiguration::createPSMCIC(genComponentInstances:Set(GenComponentInstance),apiMessageRepository:MessageTypeRepository):ComponentInstanceConfiguration{
 	property_genComponentInstance:=genComponentInstances;
 	property_apiMessageRepository:=apiMessageRepository;
-	return self.map mapCIC2CIC();
+	return self.map transform().oclAsType(ComponentInstanceConfiguration);
 }
 
 
@@ -66,23 +66,23 @@ mapping HybridPortInstance::transform():EObject{
 }
 
 
-
 /**
 * Replace a ContiniuosPortIsntance with a  ParametiredDiscreteSinglePortinstance
 */
-mapping ContinuousPortInstance::transforms():EObject 
-when {self.componentInstance.oclIsKindOf(AtomicComponentInstance)}{
+mapping ContinuousPortInstance::transform():EObject {
 init{
 	if(self.componentInstance.oclIsKindOf(AtomicComponentInstance)) then {
 	result:=new ParameterisableDiscreteSinglePortInstance();
 	}
 	else{
-	
+		if(self.componentInstance.oclIsKindOf(StructuredComponentInstance)) then {
+		result:=new DiscreteSinglePortInstance();
+	}endif;
 	}
 	endif;
 	
 	}
-	var portInstance: DiscreteSinglePortInstance := result.oclAsType(ParameterisableDiscreteSinglePortInstance);
+	var portInstance: DiscreteSinglePortInstance := result.oclAsType(DiscreteSinglePortInstance);
 	portInstance.name:=self.name;
 	portInstance.type:=self.type.late resolveone(Port);
 	portInstance.annotation:=self.annotation;
@@ -105,7 +105,6 @@ init{
 //mapping ContinuousPortInstance::mapParameterisableDiscreteSinglePortInstance():ParameterisableDiscreteSinglePortInstance merges PortInstance::abstractmapPortInstance{
 //	bindings:=self.bindings.deepclone().oclAsType(RealtimeStatechartParameterBinding);
 //}
-
 
 
 

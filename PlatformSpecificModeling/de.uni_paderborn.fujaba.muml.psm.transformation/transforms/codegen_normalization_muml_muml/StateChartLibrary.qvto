@@ -117,12 +117,9 @@ helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout rootStateC
 
 
 
-helper createEmptyRealtimeStateChart(inout component : AtomicComponent){
+mapping  StaticAtomicComponent::mapcreateEmptyRealtimeStateChart(): ParameterizedRealtimeStatechart when {self.behavior.oclIsUndefined()}{
 	-- create component RTSC if it does not exists yet
-	if (component.behavior.oclIsUndefined()) then{
-		var behavior := new ParameterizedRealtimeStatechart(component.name);
-		component.behavior := behavior;
-	} endif;
+	name:=self.name;
 }
 
 
