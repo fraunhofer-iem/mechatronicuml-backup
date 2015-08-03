@@ -138,8 +138,9 @@ mapping Clock :: createClockBinding(diagState : diagnosticTrace::State, instance
 	if(fittingValues ->size() > 1)
 			assert warning (false) with log("Found more than one clock value ("+fittingValues->size().toString()+ ") for clock "+self.toString()+" in trace");
 	
-	//value :=  fittingValues->first().value;
-	value :=  fittingValues->select(value >= 0)->sortedBy(value)->last().value;
+	//TODO see https://trac.cs.upb.de/mechatronicuml/ticket/1135
+	value :=  fittingValues->first().value;
+	//value :=  fittingValues->select(value >= 0)->sortedBy(value)->last().value;
 }
 
 ////////////////////////////////////
