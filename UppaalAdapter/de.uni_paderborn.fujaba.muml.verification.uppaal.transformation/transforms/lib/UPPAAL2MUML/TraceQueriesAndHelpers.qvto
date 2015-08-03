@@ -452,16 +452,21 @@ query MessageBuffer :: getLastMappedMessageBuffer() : MessageBuffer{
 }
 
 query VariableValue :: getMessageIdValuesForMessageTypeValue(mIDValues : OrderedSet(VariableValue)) : VariableValue{
+//TODO remove mIDV when https://bugs.eclipse.org/bugs/show_bug.cgi?id=472376 is closed
+	var mIDV : VariableValue := null;
 	mIDValues->forEach(mIDValue){
 		//compare connectors/buffers index
-		if(self.firstNamedElementReference.singleNamedElementReference.indexes 
-				= mIDValue.firstNamedElementReference.singleNamedElementReference.indexes)
+		if(self.firstNamedElementReference.singleNamedElementReference.indexes->first() 
+				= mIDValue.firstNamedElementReference.singleNamedElementReference.indexes->first()) then{
 			//compare messages index
-			if(self.firstNamedElementReference.namedElementReference.singleNamedElementReference.indexes 
-					= mIDValue.firstNamedElementReference.namedElementReference.singleNamedElementReference.indexes)
-				return mIDValue;
+			if(self.firstNamedElementReference.namedElementReference.singleNamedElementReference.indexes->first() 
+					= mIDValue.firstNamedElementReference.namedElementReference.singleNamedElementReference.indexes->first()) then{
+				mIDV := mIDValue;}
+			endif;
+		}
+		endif;
 	};
-	return null
+	return mIDV;
 }
 
 
