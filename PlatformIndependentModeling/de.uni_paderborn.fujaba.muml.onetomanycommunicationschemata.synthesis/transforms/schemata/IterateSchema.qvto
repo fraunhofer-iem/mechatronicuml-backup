@@ -144,7 +144,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 		
 	//TransferSchemataEndpointReference(context:OclAny, region:OclAny, pos: String, transMapping: Integer)
 	
-	var rhs : Expression := self.map TransferSchemataEndpointReference(lastPosition);
+	var rhs : Expression := self. TransferSchemataEndpointReference(lastPosition);
 	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,lhs, rhs);
 	
 	action := self.action.deepclone().oclAsType(Action);
@@ -153,7 +153,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 		action.name :="";
 	};
 	
-	var rhsAss : Expression := self.map TransferSchemataEndpointReference(firstPosition);
+	var rhsAss : Expression := self. TransferSchemataEndpointReference(firstPosition);
 	action.name := action.name + iterateRoleVariableName + ":=" + firstPosition.toString();
 	action.expressions+= self.map Transition2Block(self.map Schema2TypedNamedElementAssignmentExpression(result,AssignOperator::ASSIGN, self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()),rhsAss));
 	
@@ -195,7 +195,7 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	
 	var lhs : Expression :=  self.map Schema2TypedNamedElementExpression(result,self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
 			
-	var rhs : Expression  := self.map TransferSchemataEndpointReference(lastPosition);	
+	var rhs : Expression  := self. TransferSchemataEndpointReference(lastPosition);	
 	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::UNEQUAL,lhs, rhs);
 	
 	// create the condition for the multicast call!

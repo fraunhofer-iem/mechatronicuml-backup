@@ -125,9 +125,9 @@ helper Transition :: TransferSchemataLogicalExpression( position:PositionSelecto
 		
 		var comp : ComparisonExpression := new ComparisonExpression();
 			
-		comp.rightExpression := self.map TransferSchemataEndpointReference(position);
+		comp.rightExpression := self. TransferSchemataEndpointReference(position);
 		
-		comp.leftExpression := self.map TransferSchemataEndpointReference( PositionSelectorKind::SELF);
+		comp.leftExpression := self. TransferSchemataEndpointReference( PositionSelectorKind::SELF);
 				
 		comp.operator := compOperator;
 		return comp;
@@ -604,8 +604,10 @@ mapping Transition :: TransferSchemataEndpointReference(positionSelectorKind: Po
 	typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedTypedNamedElement);
 }
 
-mapping Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
-	position := self. Schema2PositionKindSelector( positionSelectorKind);	
+helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
+	var ref : DiscreteInteractionEndpointReference := new DiscreteInteractionEndpointReference();
+	ref.position := self. Schema2PositionKindSelector( positionSelectorKind);
+	return ref;
 }
 
 
