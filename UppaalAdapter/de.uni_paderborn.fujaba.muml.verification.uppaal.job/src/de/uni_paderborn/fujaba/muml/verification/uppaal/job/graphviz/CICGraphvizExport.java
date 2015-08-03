@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.job.graphviz;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -25,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeAssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
@@ -397,7 +399,7 @@ public class CICGraphvizExport extends GraphVizExport {
 			// get predecessor
 			RuntimeMessage rMPre = null;
 			if (predecessor != null)
-				rMPre = getPredecessor(rM, predecessor.getMessages());
+				rMPre = getPredecessor(rM, predecessor.getMessages(), predecessor);
 
 			GraphvizHTMLTableCell rMCell = createRuntimeMessageCell(rM, rMPre);
 			rMRow.addTableCell(rMCell);
@@ -662,6 +664,7 @@ public class CICGraphvizExport extends GraphVizExport {
 				|| candidatesOfPredecessorState.isEmpty())
 			return null;
 
+		EList<MessageOnConnector> remainingCandidates = new BasicEList<MessageOnConnector>();
 		for (MessageOnConnector candidate : candidatesOfPredecessorState) {
 			// Compare name of the receiver, because
 			// RuntimeBehavioralElements are NamedElements
@@ -669,7 +672,21 @@ public class CICGraphvizExport extends GraphVizExport {
 					.equals(candidate.getReceiver().getName())
 					&& isPredecessorOf(curObject.getMessage(),
 							candidate.getMessage()))
-				return candidate;
+				remainingCandidates.add(candidate);
+		}
+		
+		EList<MessageOnConnector> curIsoMessagesOnCon = new BasicEList<MessageOnConnector>();
+		if(curObject.eContainer() instanceof RuntimeConnectorInstance){
+			RuntimeConnectorInstance container = (RuntimeConnectorInstance) curObject.eContainer();
+			for (MessageOnConnector m : container.getTransientMessages()) {
+				if (isPredecessorOf(curObject.getMessage(), m.getMessage()))
+					curIsoMessagesOnCon.add(m);
+			}
+			
+			if(curIsoMessagesOnCon.indexOf(curObject) > remainingCandidates.size()-1)
+				return null;
+			
+			return remainingCandidates.get(curIsoMessagesOnCon.indexOf(curObject));
 		}
 		return null;
 	}
@@ -690,15 +707,30 @@ public class CICGraphvizExport extends GraphVizExport {
 	}
 
 	private RuntimeMessage getPredecessor(RuntimeMessage curObject,
-			EList<RuntimeMessage> candidatesOfPredecessorState) {
+			EList<RuntimeMessage> candidatesOfPredecessorState, RuntimeMessageBuffer predBuffer) {
 
 		if (candidatesOfPredecessorState == null
 				|| candidatesOfPredecessorState.isEmpty())
 			return null;
 
+		EList<RuntimeMessage> remainingCandidates = new BasicEList<RuntimeMessage>();
 		for (RuntimeMessage candidate : candidatesOfPredecessorState) {
 			if (isPredecessorOf(curObject, candidate))
-				return candidate;
+				remainingCandidates.add(candidate);
+		}
+		
+		EList<RuntimeMessage> curIsoMessagesInBuffer = new BasicEList<RuntimeMessage>();
+		if(curObject.eContainer() instanceof RuntimeMessageBuffer){
+			RuntimeMessageBuffer container = (RuntimeMessageBuffer) curObject.eContainer();
+			for (RuntimeMessage m : container.getMessages()) {
+				if (isPredecessorOf(curObject, m))
+					curIsoMessagesInBuffer.add(m);
+			}
+			
+			if(curIsoMessagesInBuffer.indexOf(curObject) > remainingCandidates.size()-1)
+				return null;
+			
+			return remainingCandidates.get(curIsoMessagesInBuffer.indexOf(curObject));
 		}
 		return null;
 	}
