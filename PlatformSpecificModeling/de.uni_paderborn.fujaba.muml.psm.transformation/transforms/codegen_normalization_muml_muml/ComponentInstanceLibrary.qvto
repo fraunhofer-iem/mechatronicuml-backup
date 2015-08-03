@@ -35,14 +35,6 @@ modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
-
-helper ComponentInstanceConfiguration::createPSMCIC(genComponentInstances:Set(GenComponentInstance),apiMessageRepository:MessageTypeRepository):ComponentInstanceConfiguration{
-	property_genComponentInstance:=genComponentInstances;
-	property_apiMessageRepository:=apiMessageRepository;
-	return self.map transform().oclAsType(ComponentInstanceConfiguration);
-}
-
-
 /***************************************************************************
 * 
 *  Here starts the logic for the transformation of Component-Instances (Instance Level)
@@ -101,6 +93,9 @@ init{
 	} endif;
 	
 }
+
+
+
 
 
 //don't know yet
