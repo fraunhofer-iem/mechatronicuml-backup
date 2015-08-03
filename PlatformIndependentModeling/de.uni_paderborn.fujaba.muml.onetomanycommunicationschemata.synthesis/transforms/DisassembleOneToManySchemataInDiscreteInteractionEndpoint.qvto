@@ -40,7 +40,7 @@ helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) :
 	// step 1: normalize transitions that define two schemata:
 	normalizeRTSC(currentRealtimeStatechart);
 	// step 2: normalize schemata that can be expressed by other schemata:
-	var iterateTransitions : Set(Transition) :=currentRealtimeStatechart.transitions->select(t : Transition | t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) ;
+	var iterateTransitions : Set(Transition) := currentRealtimeStatechart.transitions->select(t : Transition | t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) ;
 	iterateTransitions.disassembleIterateSchema();	
 	// step 3: disassemble schematas
 	currentRealtimeStatechart.transitions := currentRealtimeStatechart.transitions-(iterateTransitions);
@@ -115,6 +115,23 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 		};
 		
+		// iterate without condition?? 
+		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate) 
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
+			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("terminate");
+			var initExpression := new LiteralExpression();
+			initExpression.value := "false";
+			newVar.initializeExpression := initExpression;			
+			variables +=newVar ;
+			
+			newVar := transition.map Transition2SubroleSpecificBooleanVaribale("iteratePossible");
+			initExpression := new LiteralExpression();
+			initExpression.value := "false";
+			newVar.initializeExpression := initExpression;			
+			variables +=newVar ;
+		};
+		
 		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)
 				and (not t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){			
@@ -125,15 +142,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 		};
 		
-		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive))->forEach(transition){
-			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("error");
-			var initExpression := new LiteralExpression();
-			initExpression.value := "false";
-			newVar.initializeExpression := initExpression;
-			variables +=newVar ;
-		};
-		
+				
 		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))->forEach(transition){
 			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("consumeSingleReceive");
@@ -175,7 +184,7 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny,  toplevel: Bo
 		
 		
 		// @author: sthiele2 -- there is no unicast without condition anymore!
-		--transition with unicast not conditional
+		--transition with unicast  conditional
 		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2CoordinatorStartTransition(context, region,toplevel);
 		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2CoordinatorIntermediateTransition(context, region,toplevel);
 		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2CoordinatorEndTransition(context, region,toplevel);
@@ -315,7 +324,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 		entryEvent := self.entryEvent.map EntryEvent2EntryEventCoordinator(context, region);			
 		
 		// @author: sthiele2 -- add clock resets for the source states of schema transitions 
-		self.outgoingTransitions->select(t|(not t.relativeDeadline.oclIsUndefined())and ((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
+		self.outgoingTransitions->select(t|((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
 		or (not t.triggerMessageEvent.oclIsUndefined() and not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
 		 ))->forEach(t){
 			if(entryEvent.oclIsUndefined())
@@ -323,23 +332,67 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 				entryEvent :=  new EntryEvent();
 				entryEvent.kind := EventKind::RAISE;
 			}; 
+		
+			var block : Block := new Block();
+			
 			var raiseSchema : OneToManyCommunicationSchema := t.raiseMessageEvent.oneToManyCommunicationSchema;
 			if(raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast))  
 			{
-				entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+				if(entryEvent.action.oclIsUndefined()) {
+					entryEvent.action := new Action();
+					entryEvent.action.name := "";				
+				};
+				entryEvent.action.name := entryEvent.action.name.concat(" unicastPossible := false;");
+				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("unicastPossible"),t.map Schema2LiteralExpression(result,"false")  );
+				if(not t.relativeDeadline.oclIsUndefined()) {
+					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+				};
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast))
 			{
-				entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+				if(entryEvent.action.oclIsUndefined()) {
+					entryEvent.action := new Action();
+					entryEvent.action.name := "";				
+				};
+				entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
+				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("multicastPossible"),t.map Schema2LiteralExpression(result,"false")  );
+				if(not t.relativeDeadline.oclIsUndefined()) {
+					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+				};
+			}
+			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
+				if(entryEvent.action.oclIsUndefined()) {
+					entryEvent.action := new Action();
+					entryEvent.action.name := "";				
+				};
+				entryEvent.action.name := entryEvent.action.name.concat(" loadBalancingPossible := false;");
+				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("loadBalancingPossible"),t.map Schema2LiteralExpression(result,"false")  );
+			}
+			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) {
+				if(entryEvent.action.oclIsUndefined()) {
+					entryEvent.action := new Action();
+					entryEvent.action.name := "";				
+				};
+				entryEvent.action.name := entryEvent.action.name.concat(" iteratePossible := false;");
+				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("iteratePossible"),t.map Schema2LiteralExpression(result,"false")  );
+				entryEvent.action.name.concat(" terminate := false;");
+				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("terminate"),t.map Schema2LiteralExpression(result,"false")  );
 			};
 			var triggerSchema : OneToManyCommunicationSchema := t.triggerMessageEvent.oneToManyCommunicationSchema;
 			if(triggerSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))
 			{
-				entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(singleReceiveDLCName)
+				if(not t.relativeDeadline.oclIsUndefined()) {
+					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(singleReceiveDLCName)
+				};
 			}else if(triggerSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive))
 			{
-				entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(multiReceiveDLCName);
-			}
+				if(not t.relativeDeadline.oclIsUndefined()) {
+					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(multiReceiveDLCName);
+				};
+			};
+			if(block.expressions->size() > 0) {
+				entryEvent.action.expressions += block;
+			};
 		};
 		
 		
