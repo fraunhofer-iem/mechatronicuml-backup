@@ -105,16 +105,18 @@ mapping Transition :: Transition2ClockConstraint(context : OclAny, clockName : S
 }
 
 
-mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : OclAny, identifier : EObject, _kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
+helper Transition :: Schema2PositionKindSelector(_kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
 	
-		kind := _kind;
-		
-		successor := self.map Schema2PositionKindSelector(context,region,identifier,_successor);
+		var selector : PositionSelector := new PositionSelector();
+		selector.kind := _kind;		
+		selector.successor := self. Schema2PositionKindSelector(_successor);
+		return selector;
 }
 
-mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : OclAny, identifier : EObject, _kind : PositionSelectorKind) : PositionSelector{
-	
-		kind := _kind;
+helper Transition :: Schema2PositionKindSelector(kind : PositionSelectorKind) : PositionSelector{
+		var selector : PositionSelector := new PositionSelector();
+		selector.kind := _kind;
+		return selector;
 }
 	
 	--Transfer Schemata Guards, Clock Constraints, CLock Resets
@@ -367,14 +369,14 @@ helper Transition :: TransferSchemata2Synchronization( channelName : String,   s
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
 	sync.syncChannel := self.map TransferSchemataChannel(channelName,true, self);
-	sync.selectorExpression := self.map Schema2PositionKindSelector(sync,sync,sync, selectorKind);
+	sync.selectorExpression := self. Schema2PositionKindSelector( selectorKind);
 	return sync;
 }
 helper Transition :: TransferSchemata2Synchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
 	sync.syncChannel := self.map TransferSchemataChannel(channelName,true, self);
-	sync.selectorExpression := self.map Schema2PositionKindSelector(sync,sync,sync, selectorKind, successorKind);
+	sync.selectorExpression := self. Schema2PositionKindSelector(selectorKind, successorKind);
 	return sync;
 }
 	//dict->hasKey(transition);
@@ -595,12 +597,12 @@ mapping Transition:: Transition2LogicalExpression(context : OclAny, logicoperato
 
 ----------------------------------------------** new transformations that should replace the old ones ** 
 mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
-	position := self.map Schema2PositionKindSelector(result,result,identifier, positionSelectorKind);
+	position := self. Schema2PositionKindSelector(positionSelectorKind);
 	typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedTypedNamedElement);
 }
 
 mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
-	position := self.map Schema2PositionKindSelector(result,result,identifier, positionSelectorKind);	
+	position := self. Schema2PositionKindSelector( positionSelectorKind);	
 }
 
 
