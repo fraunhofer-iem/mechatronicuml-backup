@@ -1,4 +1,4 @@
-package de.uni_paderborn.cmd;
+package de.uni_paderborn.fujaba.common.cmd;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,15 +8,11 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Process implements Runnable {
-	
-	private boolean running;
-	
+		
 	private java.lang.Process process;
-	private Thread programThread;
+	private Thread processThread;
 	
 	private Reader reader;
 	private Writer[] writers;
@@ -24,7 +20,7 @@ public class Process implements Runnable {
 	private InputStream inputStream;
 	private OutputStream outputStream;
 			
-	public <P extends Process> Process(Command command, Reader reader, Writer... writers) {
+	public Process(Command command, Reader reader, Writer... writers) {
 		
 		this.reader = reader;
 		this.writers = writers;
@@ -41,38 +37,25 @@ public class Process implements Runnable {
 			throw new RuntimeException(e);
 		}
 		
-		running = true;
-		
 		write();
 			
 	}
 	
 	
-	public <P extends Process> Process(Command command, Writer... writers) {
+	public Process(Command command, Writer... writers) {
 		
 		this(command, null, writers);
 	
 	}	
 	
-	
+	protected boolean isRunning() {
+		return true;
+	};
 	
 	protected java.lang.Process getProcess() {
 		return process;
 	}
-	
-	private synchronized String readLine(BufferedReader reader) throws IOException {
 		
-		// synchronize in order to avoid reading while program is destroyed
-		
-		if (running) {
-			
-			return reader.readLine();
-			
-		};
-		
-		return null;
-	}
-	
 	@Override
 	public void run() {
 		
@@ -85,6 +68,15 @@ public class Process implements Runnable {
 		// start reading the input stream first to ensure that the full output stream is processed 
 		inputStreamThread.start();
 		outputStreamThread.start();
+		
+		while (process.isAlive()) {
+			if (isRunning()) {
+				Thread.yield();
+			}
+			else {
+				process.destroyForcibly();
+			}
+		}
 				
 		try {
 			outputStreamThread.join();			
@@ -97,7 +89,7 @@ public class Process implements Runnable {
 	}
 	
 	
-	protected <P extends Process> ProcessBuilder getProcessBuilder(Command command) {
+	protected ProcessBuilder getProcessBuilder(Command command) {
 		return command.createProcessBuilder();
 	}
 	
@@ -106,7 +98,7 @@ public class Process implements Runnable {
 			
 		try {
 
-			programThread.join();
+			processThread.join();
 			
 			return process.waitFor();
 			
@@ -117,7 +109,7 @@ public class Process implements Runnable {
 	}
 	
 	public boolean isAlive() {
-		return programThread.isAlive();
+		return processThread.isAlive();
 	}
 	
 	public OutputStream getOutputStream() {
@@ -141,23 +133,11 @@ public class Process implements Runnable {
 		this.outputStream = out;
 		this.inputStream = in;
 		
-		programThread = new Thread(this, "Program Thread for " + toString());
-		programThread.start();
+		processThread = new Thread(this, "Program Thread for " + toString());
+		processThread.start();
 		
 	}
-	
-	public void destroy() {
 		
-		synchronized(this) {
-			
-			// synchronize in order to avoid destruction while the stream is being read
-			running = false;
-		}
-		
-		process.destroy();	
-		
-	}
-	
 	private class ReadWriteThread extends Thread {
 		
 		private Writer[] writers;
@@ -174,104 +154,27 @@ public class Process implements Runnable {
 		public void run() {
 
 			if (bufferedReader != null) {
-							
-				List<FlusherThread> threads = new ArrayList<FlusherThread>();
-				for (Writer writer : writers) {
-					FlusherThread thread = new FlusherThread(writer);
-					threads.add(thread);
-					thread.start();
-				}
-				
+											
 				String line = null;
 				
 				try {
 												
-					while ((line = readLine(bufferedReader)) != null) {
+					while ((line = bufferedReader.readLine()) != null) {
 						
-						for (FlusherThread thread : threads) {
+						for (Writer writer : writers) {
 													
-							synchronized (thread.writer) {
-								
-								thread.writer.write(line);
-								thread.writer.write(System.getProperty("line.separator"));
-								
-								// notify writer thread
-								thread.pending = true;
-								thread.writer.notifyAll();
-							
+							synchronized (writer) {
+								writer.write(line);
+								writer.write(System.getProperty("line.separator"));							
 							}	
 													
 						}
-					}
-					
+					}					
 				}
 				catch (IOException e) {
 					throw new RuntimeException(e);
-				}
-								
-				for (FlusherThread thread : threads) {
-					thread.terminate();
-				}
-				
+				}				
 			}
 		}
-		
-		private class FlusherThread extends Thread {
-			
-			private Writer writer;
-			private boolean running = false;
-			private boolean pending = false;
-			
-			FlusherThread(Writer writer) {
-				super("Flusher Thread for " + writer.toString());
-				this.writer = writer;
-			}
-			
-			@Override
-			public void start() {
-				
-				running = true;
-				
-				super.start();
-				
-			}
-										
-			@Override
-			public void run() {
-										
-				try {
-					
-					while (running || pending) {
-						
-						synchronized (writer) {
-						
-							if (pending) {
-								writer.flush();
-								pending = false;
-							}
-							
-							writer.wait();
-						}
-												
-					}
-					
-				}	
-				catch (Exception e) {
-					throw new RuntimeException(e);
-				}
-				
-			}
-			
-			void terminate() {
-				running = false;
-							
-				try {
-					this.join();
-				} 
-				catch (InterruptedException e) {
-					throw new RuntimeException(e);
-				}	
-			}
-		}	
 	}
 }

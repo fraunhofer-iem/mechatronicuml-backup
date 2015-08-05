@@ -1,4 +1,4 @@
-package de.uni_paderborn.cmd;
+package de.uni_paderborn.fujaba.common.cmd;
 
 import java.util.List;
 

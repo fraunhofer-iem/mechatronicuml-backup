@@ -30,9 +30,9 @@ import com.google.inject.Injector;
 import com.google.inject.Key;
 import com.google.inject.name.Names;
 
-import de.uni_paderborn.cmd.Command;
-import de.uni_paderborn.cmd.PathArgument;
-import de.uni_paderborn.cmd.Process;
+import de.uni_paderborn.fujaba.common.cmd.Command;
+import de.uni_paderborn.fujaba.common.cmd.PathArgument;
+import de.uni_paderborn.fujaba.common.cmd.Process;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.VerifyTACommand;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.misc.NoOptionSummaryOption;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.misc.NoProgressIndicatorOption;
@@ -147,22 +147,19 @@ public class VerifyTAJob extends SynchronousJob {
 		    Writer stringWriter = new StringWriter();
 		    Writer progressWriter = new ProgressWriter(subMonitor, properties.getProperties().size());
 			
-			Process proc = cmd.execute(null, new PrintWriter(System.out), stringWriter, progressWriter);
-			
-			// TODO avoid polling, instead pass the IProgressMonitor on to the Command
-			while (proc.isAlive()) {
-				if(monitor.isCanceled()) {
-					proc.destroy();
-					return Status.CANCEL_STATUS;
-				}
+			Process proc = new Process(cmd, new PrintWriter(System.out, true), stringWriter, progressWriter) {
 				
-				try {
-					Thread.sleep(500);
+				@Override
+				protected boolean isRunning() {
+					return !monitor.isCanceled();
 				}
-				catch(InterruptedException e) {}
-			}
-			
+			};
+						
 			int exitCode = proc.waitFor();
+						
+			if (monitor.isCanceled()) {
+				return Status.CANCEL_STATUS;
+			};
 			
 			String result = stringWriter.toString();
 			
@@ -170,11 +167,7 @@ public class VerifyTAJob extends SynchronousJob {
 				return BasicDiagnostic.toIStatus(new BasicDiagnostic(org.eclipse.emf.common.util.Diagnostic.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", 0, result, null));
 			}
 						
-			if (monitor.isCanceled()) {
-				return Status.CANCEL_STATUS;
-			};
-		    
-		    
+				    
 			subMonitor.subTask("Parsing Results");
 			
 		    if (injector == null) {
@@ -247,7 +240,7 @@ public class VerifyTAJob extends SynchronousJob {
 	public static class ProgressWriter extends Writer {
 		StringBuilder currentLine = new StringBuilder();
 		SubMonitor monitor;
-		Pattern pattern = Pattern.compile("Verifying property ([0-9]+) at line .*", Pattern.DOTALL);
+		Pattern pattern = Pattern.compile("Verifying (property|formula) ([0-9]+) at line .*", Pattern.DOTALL);
 		int totalProperties;
 		
 		public ProgressWriter(SubMonitor monitor, int totalNumberOfProperties) {
@@ -273,7 +266,7 @@ public class VerifyTAJob extends SynchronousJob {
 					//Try to parse the line
 					Matcher matcher = pattern.matcher(currentLine.toString());
 					if (matcher.matches()) {
-						int currentProperty = Integer.parseInt(matcher.group(1));
+						int currentProperty = Integer.parseInt(matcher.group(2));
 						monitor.worked(80/totalProperties);
 						monitor.subTask("Verifying Uppaal Property "+currentProperty+" of "+totalProperties);
 					}

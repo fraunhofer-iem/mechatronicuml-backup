@@ -3,8 +3,8 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.tuning;
 import java.util.Collections;
 import java.util.List;
 
-import de.uni_paderborn.cmd.Option;
-import de.uni_paderborn.cmd.OptionArgument;
+import de.uni_paderborn.fujaba.common.cmd.Option;
+import de.uni_paderborn.fujaba.common.cmd.OptionArgument;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.VerifyTACommand;
 
 public class SpaceConsumptionOption extends Option<VerifyTACommand> {
