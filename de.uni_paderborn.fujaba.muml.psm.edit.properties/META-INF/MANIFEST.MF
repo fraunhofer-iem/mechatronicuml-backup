@@ -30,5 +30,11 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.psm.properties.metamodel, de.uni_paderborn.fujaba.muml.psm.properties.constraint,
  de.uni_paderborn.fujaba.muml.psm.properties.properties.editor,
  de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.portapimapping.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechart.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.apiexpressions.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.psm.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.instance.editor,
  de.uni_paderborn.fujaba.muml.psm.properties.tabs
 Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT 

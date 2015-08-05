@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.psm.properties.properties.editor;
 
 /**
  * @generated
  */
-public class SchedulingEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class SchedulingEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public SchedulingEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public SchedulingEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +21,7 @@ public class SchedulingEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorDeadline_PSMTab_Editor(), false);
 
@@ -46,8 +43,7 @@ public class SchedulingEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -117,33 +113,25 @@ public class SchedulingEditor
 	 * @generated
 	 */
 	public SchedulingEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE
-						.getScheduling());
+		this(tab, de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE.getScheduling());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new SchedulingEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.psm",
-							"property.tab.psm", "property.tab.psm",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm", "property.tab.psm",
+							"property.tab.extensions", "property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 
