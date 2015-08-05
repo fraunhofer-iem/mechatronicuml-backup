@@ -76,15 +76,19 @@ public class Process implements Runnable {
 	@Override
 	public void run() {
 		
-		Thread output = new OutputThread("Output Thread for " + toString());
-		Thread input = new InputThread("Input Thread for " + toString());
+		// reads the output of the specified reader and writes it to the process output stream
+		Thread outputStreamThread = new ReadWriteThread("Output Thread for " + toString(), reader, new OutputStreamWriter(outputStream));
 		
-		output.start();
-		input.start();
+		// reads the the process input stream and writes it to the specified writers  
+		Thread inputStreamThread = new ReadWriteThread("Input Thread for " + toString(), new InputStreamReader(inputStream), writers);
 		
+		// start reading the input stream first to ensure that the full output stream is processed 
+		inputStreamThread.start();
+		outputStreamThread.start();
+				
 		try {
-			output.join();			
-			input.join();
+			outputStreamThread.join();			
+			inputStreamThread.join();
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
@@ -153,183 +157,121 @@ public class Process implements Runnable {
 		process.destroy();	
 		
 	}
-
 	
-	private class OutputThread extends Thread {
-				
-		private BufferedReader outReader;
-		private Writer outWriter = new OutputStreamWriter(outputStream);
+	private class ReadWriteThread extends Thread {
 		
-		WriterThread thread = new WriterThread(outWriter);
+		private Writer[] writers;
 		
-		OutputThread(String name) {
+		private BufferedReader bufferedReader;
+		
+		public ReadWriteThread(String name, Reader reader, Writer... writers) {
 			super(name);
+			this.bufferedReader = (reader == null || reader instanceof BufferedReader) ? (BufferedReader) reader : new BufferedReader(reader);
+			this.writers = writers;
 		}
-				
+		
 		@Override
 		public void run() {
-			
-			if (reader != null) {
+
+			if (bufferedReader != null) {
+							
+				List<FlusherThread> threads = new ArrayList<FlusherThread>();
+				for (Writer writer : writers) {
+					FlusherThread thread = new FlusherThread(writer);
+					threads.add(thread);
+					thread.start();
+				}
 				
-				outReader = new BufferedReader(reader);
-			
 				String line = null;
 				
-				thread.start();
-				
 				try {
-				
-					while ((line = readLine(outReader)) != null) {
 												
-						thread.writer.write(line);
-						thread.writer.write(System.getProperty("line.separator"));
+					while ((line = readLine(bufferedReader)) != null) {
 						
-						synchronized (thread) {
+						for (FlusherThread thread : threads) {
+													
+							synchronized (thread.writer) {
+								
+								thread.writer.write(line);
+								thread.writer.write(System.getProperty("line.separator"));
+								
+								// notify writer thread
+								thread.pending = true;
+								thread.writer.notifyAll();
 							
-							// kick off writer thread
-												
-							thread.pending = true;
-						
-							thread.notifyAll();
-						
+							}	
+													
 						}
-						
 					}
 					
-					//close writer to make process execute
-					thread.writer.close();
+				}
+				catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+								
+				for (FlusherThread thread : threads) {
+					thread.terminate();
+				}
+				
+			}
+		}
+		
+		private class FlusherThread extends Thread {
+			
+			private Writer writer;
+			private boolean running = false;
+			private boolean pending = false;
+			
+			FlusherThread(Writer writer) {
+				super("Flusher Thread for " + writer.toString());
+				this.writer = writer;
+			}
+			
+			@Override
+			public void start() {
+				
+				running = true;
+				
+				super.start();
+				
+			}
+										
+			@Override
+			public void run() {
+										
+				try {
 					
+					while (running || pending) {
+						
+						synchronized (writer) {
+						
+							if (pending) {
+								writer.flush();
+								pending = false;
+							}
+							
+							writer.wait();
+						}
+												
+					}
 					
-				} catch (IOException e) {
+				}	
+				catch (Exception e) {
 					throw new RuntimeException(e);
 				}
 				
-				thread.terminate();
-				
-			}	
-			
-		}
-		
-	}
-	
-	private class InputThread extends Thread  {
-		
-		InputThread(String name) {
-			super(name);
-		}
-		
-		@Override
-		public void run() {
-			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-			
-			List<WriterThread> threads = new ArrayList<WriterThread>();
-			for (Writer writer : writers) {
-				WriterThread thread = new WriterThread(writer);
-				threads.add(thread);
-				thread.start();
 			}
 			
-			String line = null;
-			
-			try {
-											
-				while ((line = readLine(reader)) != null) {
-					
-					for (WriterThread thread : threads) {
-						
-						thread.writer.write(line);
-						thread.writer.write(System.getProperty("line.separator"));
-					
-						synchronized (thread) {
+			void terminate() {
+				running = false;
 							
-							// kick off writer thread
-												
-							thread.pending = true;
-						
-							thread.notifyAll();
-						
-						}	
-												
-					}
-				}
-				
+				try {
+					this.join();
+				} 
+				catch (InterruptedException e) {
+					throw new RuntimeException(e);
+				}	
 			}
-			catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-							
-			for (WriterThread thread : threads) {
-				thread.terminate();
-			}
-			
-		}
-		
+		}	
 	}
-		
-	private class WriterThread extends Thread {
-		
-		private Writer writer;
-		private boolean running = false;
-		private boolean pending = false;
-		
-		WriterThread(Writer writer) {
-			super("Writer Thread for " + writer.toString());
-			this.writer = writer;
-		}
-		
-		@Override
-		public void start() {
-			
-			running = true;
-			
-			super.start();
-			
-		}
-									
-		@Override
-		public void run() {
-									
-			try {
-				
-				synchronized (this) {
-					
-					while (running || pending) {
-											
-						if (!pending) {
-							this.wait();
-						}
-						else {
-							writer.flush();
-							pending = false;
-						}					
-					}
-					
-				};
-				
-			}	
-			catch (Exception e) {
-				throw new RuntimeException(e);
-			}
-			
-		}
-		
-		void terminate() {
-			running = false;
-			
-			synchronized (this) {
-				this.notifyAll();
-			}
-			
-			try {
-				this.join();
-			} 
-			catch (InterruptedException e) {
-				throw new RuntimeException(e);
-			}
-			
-		}
-
-	}
-
 }
