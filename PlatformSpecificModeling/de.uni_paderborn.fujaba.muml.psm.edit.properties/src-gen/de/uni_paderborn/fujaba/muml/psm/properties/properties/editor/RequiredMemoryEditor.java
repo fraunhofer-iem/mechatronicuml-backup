@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.psm.properties.properties.editor;
 
 /**
  * @generated
  */
-public class RequiredMemoryEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class RequiredMemoryEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public RequiredMemoryEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public RequiredMemoryEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,20 +21,17 @@ public class RequiredMemoryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorRequiredMemory_PSMTab_Editor(), false);
 
-			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
 			addPropertyEditor(createEditorRequiredMemory_PSMTab_Editor(), false);
 
-			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -44,8 +39,7 @@ public class RequiredMemoryEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -106,33 +100,23 @@ public class RequiredMemoryEditor
 	 * @generated
 	 */
 	public RequiredMemoryEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE
-						.getRequiredMemory());
+		this(tab, de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE.getRequiredMemory());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new RequiredMemoryEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.psm",
-							"property.tab.psm", "property.tab.extensions",
-							"property.tab.general", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm",
+					"property.tab.extensions", "property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor;
 
 /**
  * @generated
  */
-public class AllocationEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class AllocationEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public AllocationEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public AllocationEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,22 +21,17 @@ public class AllocationEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(), false);
 
-			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(), false);
 
-			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResourceInstance_PSMTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -46,8 +39,7 @@ public class AllocationEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -108,31 +100,23 @@ public class AllocationEditor
 	 * @generated
 	 */
 	public AllocationEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE
-						.getAllocation());
+		this(tab, de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE.getAllocation());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new AllocationEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.psm",
-							"property.tab.psm", "property.tab.extensions"})
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

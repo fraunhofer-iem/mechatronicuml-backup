@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor;
 
 /**
  * @generated
  */
-public class SystemAllocationEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public SystemAllocationEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public SystemAllocationEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +21,7 @@ public class SystemAllocationEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorCic_PSMTab_Editor(), false);
 
@@ -42,8 +39,7 @@ public class SystemAllocationEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -104,31 +100,23 @@ public class SystemAllocationEditor
 	 * @generated
 	 */
 	public SystemAllocationEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE
-						.getSystemAllocation());
+		this(tab, de.uni_paderborn.fujaba.muml.psm.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE.getSystemAllocation());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new SystemAllocationEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.psm",
-							"property.tab.psm", "property.tab.extensions"})
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}
