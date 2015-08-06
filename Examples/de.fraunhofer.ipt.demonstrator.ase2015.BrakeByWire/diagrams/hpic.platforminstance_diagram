@@ -20,17 +20,17 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_EHlCcDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_EHlCcTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_j8UJdvjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_j8UJdvjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EHkbYTwKEeWOou-sN3FugA" x="137" y="-12"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_EHlpgDwKEeWOou-sN3FugA" type="3043" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_EHm3oDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_EHm3oTwKEeWOou-sN3FugA" x="20" y="-36"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_j8UJd_jtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_j8UJd_jtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EHlpgTwKEeWOou-sN3FugA" x="249" y="100"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_j8UJdfjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_j8UJdfjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EBwuUTwKEeWOou-sN3FugA" x="322" y="112"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_EByjgDwKEeWOou-sN3FugA" type="3042" fontName="Segoe UI" lineColor="0">
@@ -43,17 +43,17 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_EQa1YTwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_EQa1YjwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_j8UJf_jtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_j8UJf_jtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EQa1YDwKEeWOou-sN3FugA" x="-12" y="12"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_EQbccDwKEeWOou-sN3FugA" type="3043" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_EQbccjwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_EQcDgDwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_j8UJgPjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_j8UJgPjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EQbccTwKEeWOou-sN3FugA" x="133" y="-12"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_j8UJfvjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_j8UJfvjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EByjgTwKEeWOou-sN3FugA" x="686" y="104"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_EB3cADwKEeWOou-sN3FugA" type="3042" fontName="Segoe UI" lineColor="0">
@@ -66,20 +66,20 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_Ej5yEDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_Ej5yETwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_j8UJiPjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_j8UJiPjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ej5LATwKEeWOou-sN3FugA" x="204" y="-12"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_j8UJh_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_j8UJh_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EB3cATwKEeWOou-sN3FugA" x="27" y="116"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_EB5RMDwKEeWOou-sN3FugA" type="3046" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_EB54QDwKEeWOou-sN3FugA" type="5114"/>
                     <children xmi:type="notation:DecorationNode" xmi:id="_EB54QTwKEeWOou-sN3FugA" type="5115"/>
-                    <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.fujaba#_j8UJdPjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.muml#_j8UJdPjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EB5RMTwKEeWOou-sN3FugA" x="399" y="9"/>
                   </children>
                 </children>
-                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.fujaba#_j8UJc_jtEeSrLMFBH0QA8A"/>
+                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.muml#_j8UJc_jtEeSrLMFBH0QA8A"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EBoygTwKEeWOou-sN3FugA" x="-5" y="-5" width="1020" height="300"/>
               </children>
             </children>
@@ -87,17 +87,17 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_E7MQsjwKEeWOou-sN3FugA" type="5100">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_E7MQszwKEeWOou-sN3FugA" y="5"/>
               </children>
-              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.fujaba#_j8UJcfjtEeSrLMFBH0QA8A"/>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.muml#_j8UJcfjtEeSrLMFBH0QA8A"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E7MQsTwKEeWOou-sN3FugA" x="1140" y="204"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_E7M3wDwKEeWOou-sN3FugA" type="3041" fontName="Segoe UI" lineColor="0">
               <children xmi:type="notation:DecorationNode" xmi:id="_E7M3wjwKEeWOou-sN3FugA" type="5100">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_E7M3wzwKEeWOou-sN3FugA" y="5"/>
               </children>
-              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.fujaba#_j8UJcvjtEeSrLMFBH0QA8A"/>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.muml#_j8UJcvjtEeSrLMFBH0QA8A"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E7M3wTwKEeWOou-sN3FugA" x="1140" y="335"/>
             </children>
-            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.fujaba#_j8UJcPjtEeSrLMFBH0QA8A"/>
+            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.muml#_j8UJcPjtEeSrLMFBH0QA8A"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D-9R8TwKEeWOou-sN3FugA" x="2" y="70" width="1034" height="345"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_D--gEDwKEeWOou-sN3FugA" type="3040" fontName="Segoe UI" lineColor="0">
@@ -113,10 +113,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_FSEfoDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_FSEfoTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XZfjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XZfjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FSD4kTwKEeWOou-sN3FugA" x="72" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../brakeByWire.fujaba#_kt5XZPjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../brakeByWire.muml#_kt5XZPjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQ6CATwKEeWOou-sN3FugA" x="1071" y="18"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FQ6pETwKEeWOou-sN3FugA" type="3042" fontName="Segoe UI" lineColor="0">
@@ -129,17 +129,17 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_FTp0AjwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_FTvTkDwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XZ_jtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XZ_jtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FTp0ATwKEeWOou-sN3FugA" x="-12" y="12"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_FTv6oDwKEeWOou-sN3FugA" type="3043" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_FTwhsDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_FTwhsTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XaPjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XaPjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FTv6oTwKEeWOou-sN3FugA" x="261" y="12"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_kt5XZvjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_kt5XZvjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQ6pEjwKEeWOou-sN3FugA" x="967" y="246"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FQ7QIjwKEeWOou-sN3FugA" type="3044" fontName="Segoe UI" lineColor="0">
@@ -150,10 +150,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_FWDAsjwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_FWDnwDwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XcPjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XcPjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FWDAsTwKEeWOou-sN3FugA" x="96" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../brakeByWire.fujaba#_kt5Xb_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../brakeByWire.muml#_kt5Xb_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQ7QIzwKEeWOou-sN3FugA" x="783" y="6"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FQ8eQDwKEeWOou-sN3FugA" type="3042" fontName="Segoe UI" lineColor="0">
@@ -166,10 +166,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_FZ6NAjwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_FZ60EDwKEeWOou-sN3FugA" x="36" y="-36"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XcvjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XcvjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FZ6NATwKEeWOou-sN3FugA" x="180" y="-12"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_kt5XcfjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_kt5XcfjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQ8eQTwKEeWOou-sN3FugA" x="7" y="246"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FRAIoDwKEeWOou-sN3FugA" type="3045" fontName="Segoe UI" lineColor="0">
@@ -180,10 +180,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_FhmJYDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_FhmJYTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XevjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XevjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FhliUTwKEeWOou-sN3FugA" x="144" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.fujaba#_kt5XefjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.muml#_kt5XefjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FRAIoTwKEeWOou-sN3FugA" x="3" y="6" width="193"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FRAvsjwKEeWOou-sN3FugA" type="3042" fontName="Segoe UI" lineColor="0">
@@ -196,10 +196,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_FtvvADwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_FtvvATwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XfPjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XfPjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FtvH8TwKEeWOou-sN3FugA" x="156" y="-12"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_kt5Xe_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_kt5Xe_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FRAvszwKEeWOou-sN3FugA" x="331" y="246"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FRBWwzwKEeWOou-sN3FugA" type="3042" fontName="Segoe UI" lineColor="0">
@@ -212,10 +212,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_F9rBYDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_F9rBYTwKEeWOou-sN3FugA" x="-72" y="-36"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XhPjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XhPjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F9qaUTwKEeWOou-sN3FugA" x="24" y="-12"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_kt5Xg_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_kt5Xg_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FRBWxDwKEeWOou-sN3FugA" x="655" y="246"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FRB91DwKEeWOou-sN3FugA" type="3045" fontName="Segoe UI" lineColor="0">
@@ -226,10 +226,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_F-HGQDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_F-HGQTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XjPjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XjPjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F-GfMTwKEeWOou-sN3FugA" x="168" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.fujaba#_kt5Xi_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.muml#_kt5Xi_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FRB91TwKEeWOou-sN3FugA" x="243" y="6"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FRHdYDwKEeWOou-sN3FugA" type="3045" fontName="Segoe UI" lineColor="0">
@@ -240,20 +240,20 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_F-dEgDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_F-dEgTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_kt5XjvjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_kt5XjvjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F-cdcTwKEeWOou-sN3FugA" x="144" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.fujaba#_kt5XjfjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.muml#_kt5XjfjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FRHdYTwKEeWOou-sN3FugA" x="507" y="6"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_FRIEcjwKEeWOou-sN3FugA" type="3046" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_FRIrgDwKEeWOou-sN3FugA" type="5114"/>
                     <children xmi:type="notation:DecorationNode" xmi:id="_FRIrgTwKEeWOou-sN3FugA" type="5115"/>
-                    <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.fujaba#_kt5XY_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.muml#_kt5XY_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FRIEczwKEeWOou-sN3FugA" x="459" y="126"/>
                   </children>
                 </children>
-                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.fujaba#_kt5XYvjtEeSrLMFBH0QA8A"/>
+                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.muml#_kt5XYvjtEeSrLMFBH0QA8A"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQrYgTwKEeWOou-sN3FugA" x="-4" width="1329" height="444"/>
               </children>
             </children>
@@ -261,10 +261,10 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_GA57kjwKEeWOou-sN3FugA" type="5100">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_GA57kzwKEeWOou-sN3FugA" y="5"/>
               </children>
-              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.fujaba#_kt5XYfjtEeSrLMFBH0QA8A"/>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.muml#_kt5XYfjtEeSrLMFBH0QA8A"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GA57kTwKEeWOou-sN3FugA"/>
             </children>
-            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.fujaba#_kt5XYPjtEeSrLMFBH0QA8A"/>
+            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.muml#_kt5XYPjtEeSrLMFBH0QA8A"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D--gETwKEeWOou-sN3FugA" x="4" y="466" width="1342" height="526"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_D-_uMDwKEeWOou-sN3FugA" type="3040" fontName="Segoe UI" lineColor="0">
@@ -282,17 +282,17 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_GFguwDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_GFguwTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_lOoF5_jtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_lOoF5_jtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GFgHsTwKEeWOou-sN3FugA" x="187" y="-12"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_GFguwjwKEeWOou-sN3FugA" type="3043" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_GFhV0DwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_GFhV0TwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_lOoF6PjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_lOoF6PjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GFguwzwKEeWOou-sN3FugA" x="223" y="118"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_lOoF5vjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_lOoF5vjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCq2ITwKEeWOou-sN3FugA" x="51" y="209"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_GCrdMzwKEeWOou-sN3FugA" type="3044" fontName="Segoe UI" lineColor="0">
@@ -303,10 +303,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_GIcG8DwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_GIcG8TwKEeWOou-sN3FugA" x="-51" y="46"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_lOoF8PjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_lOoF8PjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GIbf4TwKEeWOou-sN3FugA" x="84" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../brakeByWire.fujaba#_lOoF7_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../brakeByWire.muml#_lOoF7_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCrdNDwKEeWOou-sN3FugA" x="657" y="21"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_GCsrUjwKEeWOou-sN3FugA" type="3045" fontName="Segoe UI" lineColor="0">
@@ -317,10 +317,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_GI4y4DwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_GI4y4TwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_lOoF8vjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_lOoF8vjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GI4L0TwKEeWOou-sN3FugA" x="144" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.fujaba#_lOoF8fjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.muml#_lOoF8fjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCsrUzwKEeWOou-sN3FugA" x="59" y="12"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_GCtSYzwKEeWOou-sN3FugA" type="3045" fontName="Segoe UI" lineColor="0">
@@ -331,10 +331,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_GJblcDwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_GJblcTwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_lOoF9PjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_lOoF9PjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GJa-YTwKEeWOou-sN3FugA" x="-12" y="24"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.fujaba#_lOoF8_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.muml#_lOoF8_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCtSZDwKEeWOou-sN3FugA" x="656" y="128"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_GCt5cDwKEeWOou-sN3FugA" type="3042" fontName="Segoe UI" lineColor="0">
@@ -347,10 +347,10 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_GLNuIjwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_GLNuIzwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_lOoF9vjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_lOoF9vjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GLNuITwKEeWOou-sN3FugA" x="130" y="-12"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.fujaba#_lOoF9fjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../brakeByWire.muml#_lOoF9fjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCt5cTwKEeWOou-sN3FugA" x="370" y="214"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_GCuggDwKEeWOou-sN3FugA" type="3045" fontName="Segoe UI" lineColor="0">
@@ -361,20 +361,20 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_GLfa8jwKEeWOou-sN3FugA" type="5102">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_GLfa8zwKEeWOou-sN3FugA" y="5"/>
                       </children>
-                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.fujaba#_lOoF5fjtEeSrLMFBH0QA8A"/>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../brakeByWire.muml#_lOoF5fjtEeSrLMFBH0QA8A"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GLfa8TwKEeWOou-sN3FugA" x="144" y="68"/>
                     </children>
-                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.fujaba#_lOoF5PjtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../brakeByWire.muml#_lOoF5PjtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCuggTwKEeWOou-sN3FugA" x="359" y="14"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_GCughTwKEeWOou-sN3FugA" type="3046" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_GCvHkDwKEeWOou-sN3FugA" type="5114"/>
                     <children xmi:type="notation:DecorationNode" xmi:id="_GCvHkTwKEeWOou-sN3FugA" type="5115"/>
-                    <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.fujaba#_lOoF4_jtEeSrLMFBH0QA8A"/>
+                    <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.muml#_lOoF4_jtEeSrLMFBH0QA8A"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCughjwKEeWOou-sN3FugA" x="309" y="128"/>
                   </children>
                 </children>
-                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.fujaba#_lOoF4vjtEeSrLMFBH0QA8A"/>
+                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.muml#_lOoF4vjtEeSrLMFBH0QA8A"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCOKMTwKEeWOou-sN3FugA" x="-8" y="-11" width="960" height="434"/>
               </children>
             </children>
@@ -382,158 +382,158 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_GNXqQDwKEeWOou-sN3FugA" type="5100">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_GNXqQTwKEeWOou-sN3FugA" y="5"/>
               </children>
-              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.fujaba#_lOoF4fjtEeSrLMFBH0QA8A"/>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../brakeByWire.muml#_lOoF4fjtEeSrLMFBH0QA8A"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GNXDMDwKEeWOou-sN3FugA" x="1342" y="408"/>
             </children>
-            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.fujaba#_lOoF4PjtEeSrLMFBH0QA8A"/>
+            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.muml#_lOoF4PjtEeSrLMFBH0QA8A"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D-_uMTwKEeWOou-sN3FugA" x="17" y="1030" width="1022" height="478"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_D_DYkDwKEeWOou-sN3FugA" type="3046" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_D_D_oDwKEeWOou-sN3FugA" type="5114"/>
             <children xmi:type="notation:DecorationNode" xmi:id="_D_D_oTwKEeWOou-sN3FugA" type="5115"/>
-            <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.fujaba#_zj8kIPo2EeSsIq-QKcT_-Q"/>
+            <element xmi:type="hwplatforminstance:BusInstance" href="../brakeByWire.muml#_zj8kIPo2EeSsIq-QKcT_-Q"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D_DYkTwKEeWOou-sN3FugA" x="1433" y="620" width="152" height="60"/>
           </children>
         </children>
-        <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.fujaba#_aUBZgfjtEeSrLMFBH0QA8A"/>
+        <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.muml#_aUBZgfjtEeSrLMFBH0QA8A"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D-nTsTwKEeWOou-sN3FugA" x="-16" y="-30" width="1607" height="1687"/>
       </children>
     </children>
-    <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.fujaba#_aUBZgPjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../brakeByWire.muml#_aUBZgPjtEeSrLMFBH0QA8A"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DbLPcTwKEeWOou-sN3FugA" width="1644" height="1668"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_j8GoMTwDEeWyi-Df_f8s_g"/>
-  <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.fujaba#_YyqUcPjtEeSrLMFBH0QA8A"/>
+  <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../brakeByWire.muml#_YyqUcPjtEeSrLMFBH0QA8A"/>
   <edges xmi:type="notation:Connector" xmi:id="_GQpAsDwKEeWOou-sN3FugA" type="4012" source="_D_DYkDwKEeWOou-sN3FugA" target="_E7M3wDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GQpnwDwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_6skMoPo2EeSsIq-QKcT_-Q"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_6skMoPo2EeSsIq-QKcT_-Q"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GQpnwTwKEeWOou-sN3FugA" points="[0, -9, 424, 229]$[0, -248, 424, -10]$[-412, -248, 12, -10]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iyOJ0DwVEeWOou-sN3FugA" id="(0.17763157894736842,0.15)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GR2hoDwKEeWOou-sN3FugA" type="4012" source="_D_DYkDwKEeWOou-sN3FugA" target="_GA57kDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GR2hoTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_7cemoPo2EeSsIq-QKcT_-Q"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_7cemoPo2EeSsIq-QKcT_-Q"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GR2hojwKEeWOou-sN3FugA" points="[-9, 30, 154, -61]$[-27, 91, 136, 0]$[-151, 91, 12, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mQUBUDwVEeWOou-sN3FugA" id="(0.2631578947368421,0.8666666666666667)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GR6zEDwKEeWOou-sN3FugA" type="4012" source="_D_DYkDwKEeWOou-sN3FugA" target="_GNWcIDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GR6zETwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_8ivrIPo2EeSsIq-QKcT_-Q"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_8ivrIPo2EeSsIq-QKcT_-Q"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GR6zEjwKEeWOou-sN3FugA" points="[0, 30, 470, -770]$[0, 810, 470, 10]$[-458, 810, 12, 10]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GSASoDwKEeWOou-sN3FugA" type="4012" source="_E7MQsDwKEeWOou-sN3FugA" target="_D_DYkDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GSASoTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_gpZwQPo3EeSsIq-QKcT_-Q"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_gpZwQPo3EeSsIq-QKcT_-Q"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSASojwKEeWOou-sN3FugA" points="[12, 0, -461, -364]$[473, 0, 0, -364]$[473, 334, 0, -30]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GSFyMDwKEeWOou-sN3FugA" type="4012" source="_EHkbYDwKEeWOou-sN3FugA" target="_EB5RMDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GSFyMTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_j8UJj_jtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_j8UJj_jtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSFyMjwKEeWOou-sN3FugA" points="[-12, -2, 154, 18]$[-101, -12, 65, 8]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GSOVEDwKEeWOou-sN3FugA" type="4012" source="_Ej5LADwKEeWOou-sN3FugA" target="_EB5RMDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GSOVETwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_j8UJkPjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_j8UJkPjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSOVEjwKEeWOou-sN3FugA" points="[-12, -3, 174, 37]$[-121, -26, 65, 14]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GSYtIDwKEeWOou-sN3FugA" type="4012" source="_EQaOUDwKEeWOou-sN3FugA" target="_EB5RMDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GSYtITwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_j8UJkfjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_j8UJkfjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSYtIjwKEeWOou-sN3FugA" points="[-12, -2, 176, 28]$[-123, -20, 65, 10]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GSkTUDwKEeWOou-sN3FugA" type="4012" source="_EHlpgDwKEeWOou-sN3FugA" target="_E7M3wDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GSkTUTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_j8UJkvjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_j8UJkvjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSkTUjwKEeWOou-sN3FugA" points="[12, 8, -107, -75]$[107, 74, -12, -9]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GS8GwDwKEeWOou-sN3FugA" type="4012" source="_EQbccDwKEeWOou-sN3FugA" target="_E7MQsDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GS8GwTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_j8UJk_jtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_j8UJk_jtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GS8GwjwKEeWOou-sN3FugA" points="[11, 12, -86, -93]$[85, 93, -12, -12]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTA_QDwKEeWOou-sN3FugA" type="4012" source="_FZ6NADwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTBmUDwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5Xj_jtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5Xj_jtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTBmUTwKEeWOou-sN3FugA" points="[-12, 0, 124, -10]$[-71, 5, 65, -5]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTHs8DwKEeWOou-sN3FugA" type="4012" source="_FtvH8DwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTHs8TwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5XkPjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5XkPjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTHs8jwKEeWOou-sN3FugA" points="[-12, -10, 156, 0]$[-103, 0, 65, 10]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTQP0DwKEeWOou-sN3FugA" type="4012" source="_F9qaUDwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTQP0TwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5XkfjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5XkfjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTQP0jwKEeWOou-sN3FugA" points="[-12, -2, 166, 18]$[-113, -13, 65, 7]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTXkkDwKEeWOou-sN3FugA" type="4012" source="_FTp0ADwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTXkkTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5XkvjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5XkvjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTXkkjwKEeWOou-sN3FugA" points="[-12, 2, 116, -28]$[-63, 15, 65, -15]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTe5UDwKEeWOou-sN3FugA" type="4012" source="_GA57kDwKEeWOou-sN3FugA" target="_FTv6oDwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTe5UTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5Xk_jtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5Xk_jtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTe5UjwKEeWOou-sN3FugA" points="[-12, -9, 135, 96]$[-135, -97, 12, 8]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTijsDwKEeWOou-sN3FugA" type="4012" source="_F-cdcDwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTijsTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5XlPjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5XlPjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTijsjwKEeWOou-sN3FugA" points="[-12, -2, 150, 13]$[-97, -9, 65, 6]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTqfgDwKEeWOou-sN3FugA" type="4012" source="_F-GfMDwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTqfgTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5XlfjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5XlfjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTqfgjwKEeWOou-sN3FugA" points="[-12, -5, 126, 0]$[-73, 0, 65, 5]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GTuJ4DwKEeWOou-sN3FugA" type="4012" source="_FhliUDwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GTuJ4TwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5XlvjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5XlvjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTuJ4jwKEeWOou-sN3FugA" points="[-12, 4, 54, -21]$[-1, 0, 65, -25]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GUHygDwKEeWOou-sN3FugA" type="4012" source="_FSD4kDwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GUHygTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5Xl_jtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5Xl_jtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GUHygjwKEeWOou-sN3FugA" points="[-12, 10, 62, -55]$[-43, 38, 31, -27]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GUQVYDwKEeWOou-sN3FugA" type="4012" source="_FWDAsDwKEeWOou-sN3FugA" target="_FRIEcjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GUQVYTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_kt5XmPjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_kt5XmPjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GUQVYjwKEeWOou-sN3FugA" points="[-12, 6, 79, -39]$[-36, 18, 55, -27]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GbXC8DwKEeWOou-sN3FugA" type="4012" source="_GLNuIDwKEeWOou-sN3FugA" target="_GCughTwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GbXqADwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_lOoF_fjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_lOoF_fjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GbXqATwKEeWOou-sN3FugA" points="[-12, -2, 176, 28]$[-123, -20, 65, 10]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GdJLoDwKEeWOou-sN3FugA" type="4012" source="_GFgHsDwKEeWOou-sN3FugA" target="_GCughTwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GdJLoTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_lOoF_vjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_lOoF_vjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GdJLojwKEeWOou-sN3FugA" points="[-12, 0, 136, -10]$[-83, 5, 65, -5]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GdZDQDwKEeWOou-sN3FugA" type="4012" source="_GNWcIDwKEeWOou-sN3FugA" target="_GFguwjwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GdZDQTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_lOoF__jtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_lOoF__jtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GdZDQjwKEeWOou-sN3FugA" points="[-12, 10, 704, 39]$[-722, 10, -6, 39]$[-722, -17, -6, 12]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Gdg_EDwKEeWOou-sN3FugA" type="4012" source="_GIbf4DwKEeWOou-sN3FugA" target="_GCughTwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_Gdg_ETwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_lOoGAPjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_lOoGAPjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GdhmIDwKEeWOou-sN3FugA" points="[-12, 2, 109, -23]$[-56, 11, 65, -14]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GdrXIDwKEeWOou-sN3FugA" type="4012" source="_GLfa8DwKEeWOou-sN3FugA" target="_GCughTwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GdrXITwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_lOoGAfjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_lOoGAfjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GdrXIjwKEeWOou-sN3FugA" points="[-12, 5, 197, -48]$[-68, 32, 141, -21]$[-144, 43, 65, -10]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Ge9JgDwKEeWOou-sN3FugA" type="4012" source="_GJa-YDwKEeWOou-sN3FugA" target="_GCughTwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_Ge9JgTwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_lOoGAvjtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_lOoGAvjtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ge9JgjwKEeWOou-sN3FugA" points="[-12, 5, 172, 0]$[-119, 0, 65, -5]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GfAz4DwKEeWOou-sN3FugA" type="4012" source="_GI4L0DwKEeWOou-sN3FugA" target="_GCughTwKEeWOou-sN3FugA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_GfAz4TwKEeWOou-sN3FugA" fontName="Segoe UI"/>
-    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.fujaba#_lOoGA_jtEeSrLMFBH0QA8A"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../brakeByWire.muml#_lOoGA_jtEeSrLMFBH0QA8A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GfAz4jwKEeWOou-sN3FugA" points="[-12, 1, 120, -14]$[-67, 7, 65, -8]"/>
   </edges>
 </notation:Diagram>
