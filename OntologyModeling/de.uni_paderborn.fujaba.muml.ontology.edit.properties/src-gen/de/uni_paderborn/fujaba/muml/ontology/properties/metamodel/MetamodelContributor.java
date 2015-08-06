@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.ontology.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,11 +17,9 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.ontology.provider.OntologyItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.ontology.provider.OntologyItemProviderAdapterFactory());
 
 	}
 

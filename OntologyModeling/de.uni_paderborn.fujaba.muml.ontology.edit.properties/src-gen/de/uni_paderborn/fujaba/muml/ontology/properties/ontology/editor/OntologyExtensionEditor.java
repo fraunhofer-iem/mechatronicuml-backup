@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.ontology.properties.ontology.editor;
 
 /**
  * @generated
  */
-public class OntologyExtensionEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class OntologyExtensionEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public OntologyExtensionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public OntologyExtensionEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,16 +21,13 @@ public class OntologyExtensionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorOntologyReference_OntologyTab_Editor(), false);
+			addPropertyEditor(createEditorOntologyReference_OntologyTab_Editor(), false);
 
 		} else if ("property.tab.ontology".equals(tab)) { // Tab Ontology
 
-			addPropertyEditor(
-					createEditorOntologyReference_OntologyTab_Editor(), false);
+			addPropertyEditor(createEditorOntologyReference_OntologyTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -40,8 +35,7 @@ public class OntologyExtensionEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -83,32 +77,23 @@ public class OntologyExtensionEditor
 	 * @generated
 	 */
 	public OntologyExtensionEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.ontology.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.ontology.OntologyPackage.eINSTANCE
-						.getOntologyExtension());
+		this(tab, de.uni_paderborn.fujaba.muml.ontology.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.ontology.OntologyPackage.eINSTANCE.getOntologyExtension());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new OntologyExtensionEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.ontology",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.ontology", "property.tab.extensions",
+					"property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

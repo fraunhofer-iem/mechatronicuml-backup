@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.ontology.properties.constraint;
 
 public class CreationConstraintContributor
@@ -22,11 +23,9 @@ public class CreationConstraintContributor
 			de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
 
 				@Override
-				public boolean select(Object object,
-						org.eclipse.emf.ecore.EClass eClass) {
+				public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
 					return !eClass.isSuperTypeOf(myClass)
-							|| (object != null && Boolean.TRUE.equals(query
-									.evaluate(object)));
+							|| (object != null && Boolean.TRUE.equals(query.evaluate(object)));
 				}
 
 			};

@@ -22,14 +22,10 @@ Require-Bundle: org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.muml.common,
  org.eclipse.core.resources,
  org.eclipse.jface,
- de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi;bundle-version="4.0.0"
+ de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.ontology.properties.metamodel, de.uni_paderborn.fujaba.muml.ontology.properties.constraint,
  de.uni_paderborn.fujaba.muml.ontology.properties.ontology.editor,
  de.uni_paderborn.fujaba.muml.ontology.properties.tabs
 Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT 
-Bundle-ClassPath: libs/owlapi-distribution-4.0.0-javadoc.jar,
- libs/owlapi-distribution-4.0.0-sources.jar,
- libs/owlapi-distribution-4.0.0.jar,
- .
