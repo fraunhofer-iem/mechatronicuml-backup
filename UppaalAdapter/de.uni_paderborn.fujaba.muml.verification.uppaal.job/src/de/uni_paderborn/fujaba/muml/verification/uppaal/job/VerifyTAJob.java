@@ -69,7 +69,7 @@ public class VerifyTAJob extends SynchronousJob {
 	}
 	
 	@Override
-	protected IStatus run(IProgressMonitor monitor) {
+	protected IStatus run(final IProgressMonitor monitor) {
 		
 		IStatus status;
 		
