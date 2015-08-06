@@ -333,7 +333,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 				entryEvent.kind := EventKind::RAISE;
 			}; 
 		
-			var block : Block := new Block();
+			var block : Block;
 			
 			var raiseSchema : OneToManyCommunicationSchema := t.raiseMessageEvent.oneToManyCommunicationSchema;
 			if(raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast))  
@@ -342,6 +342,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 					entryEvent.action := new Action();
 					entryEvent.action.name := "";				
 				};
+				block := new Block();
 				entryEvent.action.name := entryEvent.action.name.concat(" unicastPossible := false;");
 				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("unicastPossible"),t.map Schema2LiteralExpression(result,"false")  );
 				if(not t.relativeDeadline.oclIsUndefined()) {
@@ -349,16 +350,21 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 				};
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast))
-			{
-				if(entryEvent.action.oclIsUndefined()) {
-					entryEvent.action := new Action();
-					entryEvent.action.name := "";				
-				};				
+			{						
 				if(not raiseSchema.condition.oclIsUndefined()) {
+					if(entryEvent.action.oclIsUndefined()) {
+						entryEvent.action := new Action();
+						entryEvent.action.name := "";				
+					};		
 					entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
+					block := new Block();
 					block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("multicastPossible"),t.map Schema2LiteralExpression(result,"false")  );
 				};
 				if(not t.relativeDeadline.oclIsUndefined()) {
+					if(entryEvent.action.oclIsUndefined()) {
+						entryEvent.action := new Action();
+						entryEvent.action.name := "";				
+					};		
 					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
 				};
 			}
@@ -368,6 +374,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 					entryEvent.action.name := "";				
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" loadBalancingPossible := false;");
+				block := new Block();
 				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("loadBalancingPossible"),t.map Schema2LiteralExpression(result,"false")  );
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) {
@@ -376,6 +383,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 					entryEvent.action.name := "";				
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" iteratePossible := false;");
+				block := new Block();
 				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("iteratePossible"),t.map Schema2LiteralExpression(result,"false")  );
 				entryEvent.action.name.concat(" terminate := false;");
 				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("terminate"),t.map Schema2LiteralExpression(result,"false")  );
