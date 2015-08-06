@@ -353,9 +353,11 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 				if(entryEvent.action.oclIsUndefined()) {
 					entryEvent.action := new Action();
 					entryEvent.action.name := "";				
+				};				
+				if(not raiseSchema.condition.oclIsUndefined()) {
+					entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
+					block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("multicastPossible"),t.map Schema2LiteralExpression(result,"false")  );
 				};
-				entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
-				block.expressions += t.map Schema2TypedNamedElementAssignmentExpression(context,AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale("multicastPossible"),t.map Schema2LiteralExpression(result,"false")  );
 				if(not t.relativeDeadline.oclIsUndefined()) {
 					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
 				};
