@@ -67,7 +67,7 @@ mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny
 		
 		target := self.map RegionState(context, region, "Requesting", false);
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(2, region);
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 		
 		guard := self.guard.map Expression2Expression(context);
 		
@@ -96,7 +96,7 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(c
 	
 	source := self.map Schema2CoordinatorIntermediateState(context, region, 1, singleReceiveDLCName,toplevel);
 	//invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
-	clockConstraints += self.map RelativeDeadline2ClockConstraint(result, region, false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
+	clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
 }
 	
 mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
@@ -109,7 +109,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceivePossible, SynchronizationKind::RECEIVE);
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result, region);
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 		
 						
 	}
@@ -232,7 +232,7 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		
 		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result, region);
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 				
 		}
 		

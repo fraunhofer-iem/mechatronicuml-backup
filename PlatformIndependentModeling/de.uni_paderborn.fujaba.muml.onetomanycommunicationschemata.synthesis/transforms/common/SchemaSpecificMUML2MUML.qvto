@@ -312,17 +312,17 @@ mapping Clock :: Clock2Clock() : Clock {
 		}		
 	}
 	
-mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny, region:RealtimeStatechart) : ClockConstraint {
+mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny) : ClockConstraint {
 				
 		clock := self.clock.map Clock2Clock();
 				
 		operator := self.operator;
 		
-		bound := self.bound.map TimeValue2TimeValue(context, region);
+		bound := self.bound.map TimeValue2TimeValue(context);
 		
 	}
 	
-mapping TimeValue :: TimeValue2TimeValue(context:OclAny, region:RealtimeStatechart) : TimeValue {
+mapping TimeValue :: TimeValue2TimeValue(context:OclAny) : TimeValue {
 	
 		value := self.value.map Expression2Expression(context);
 		unit := self.unit;
@@ -331,8 +331,8 @@ mapping TimeValue :: TimeValue2TimeValue(context:OclAny, region:RealtimeStatecha
 	
 mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, region:RealtimeStatechart) : AbsoluteDeadline {
 		
-		upperBound := self.upperBound.map TimeValue2TimeValue(context, region);
-		lowerBound := self.lowerBound.map TimeValue2TimeValue(context, region);
+		upperBound := self.upperBound.map TimeValue2TimeValue(context);
+		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
 		
 		clock := self.clock.map Clock2Clock();
 		
@@ -340,8 +340,8 @@ mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, re
 	
 mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny, region:RealtimeStatechart) : RelativeDeadline {
 		
-		upperBound := self.upperBound.map TimeValue2TimeValue(context, region);
-		lowerBound := self.lowerBound.map TimeValue2TimeValue(context, region);
+		upperBound := self.upperBound.map TimeValue2TimeValue(context);
+		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
 				
 	}
 	
@@ -407,7 +407,7 @@ mapping DoEvent :: Do2Do(context:OclAny, region:RealtimeStatechart) : DoEvent {
 	
 		action := self.action.map Action2Action(context, region);
 		
-		period := self.period.map TimeValue2TimeValue(context, region);
+		period := self.period.map TimeValue2TimeValue(context);
 			
 	}
 	

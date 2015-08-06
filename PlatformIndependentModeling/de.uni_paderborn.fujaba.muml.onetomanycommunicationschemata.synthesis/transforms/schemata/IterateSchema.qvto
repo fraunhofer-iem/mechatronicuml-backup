@@ -136,7 +136,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 	target := self.target;
 	
 	if(self.transitionDefinesRelativeDeadline()){
-		clockConstraints+= self.map RelativeDeadline2ClockConstraint(result, null, true, ComparingOperator::GREATER_OR_EQUAL, IterateDLC_ClockName);
+		clockConstraints+= self. RelativeDeadline2ClockConstraint(true, ComparingOperator::GREATER_OR_EQUAL, IterateDLC_ClockName);
 	}endif;
 	
 	
@@ -169,7 +169,7 @@ mapping Transition :: Iterate2Transition2FromIntermediateToTarget(): Transition{
 	target := self.target;
 	
 	if(self.transitionDefinesRelativeDeadline()){
-		clockConstraints+= self.map RelativeDeadline2ClockConstraint(result, null, true, ComparingOperator::GREATER_OR_EQUAL, IterateDLC_ClockName);
+		clockConstraints+= self. RelativeDeadline2ClockConstraint( true, ComparingOperator::GREATER_OR_EQUAL, IterateDLC_ClockName);
 	}endif;
 	
 	action := self.action.deepclone().oclAsType(Action);
@@ -190,7 +190,7 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	target := self.map Schema2IntermediateState(1);
 	
 	if(self.iterateDefinesDelay()){
-		clockConstraints+=self.map Transition2ClockConstraint(result,IterateDelayTimeClockName,self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map TimeValue2TimeValue(result,null), ComparingOperator::GREATER_OR_EQUAL);
+		clockConstraints+=self.map Transition2ClockConstraint(result,IterateDelayTimeClockName,self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map TimeValue2TimeValue(result), ComparingOperator::GREATER_OR_EQUAL);
 	};
 	
 	var lhs : Expression :=  self.map Schema2TypedNamedElementExpression(result,self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
@@ -256,7 +256,7 @@ mapping  Transition :: Schema2IntermediateState(stateID : Integer) : State {
 	
 		if(self.transitionDefinesRelativeDeadline())
 		{
-			invariants+=self.map RelativeDeadline2ClockConstraint(result, null, false, ComparingOperator::LESS_OR_EQUAL, IterateDLC_ClockName);
+			invariants+=self. RelativeDeadline2ClockConstraint(false, ComparingOperator::LESS_OR_EQUAL, IterateDLC_ClockName);
 		}endif;
 	}
 	

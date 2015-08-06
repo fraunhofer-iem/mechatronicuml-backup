@@ -27,7 +27,7 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 	target := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName,toplevel);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
-	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
+	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 	
 	synchronization := self. TransferSchemata2Synchronization(  multicastCheckDone,SynchronizationKind::RECEIVE);
 }
@@ -41,7 +41,7 @@ mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny
 	priority := 1;
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
-		result.clockConstraints += self.map RelativeDeadline2ClockConstraint(result, region, true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName );
+		result.clockConstraints += self. RelativeDeadline2ClockConstraint( true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName );
 	};
 	
 	synchronization := self. TransferSchemata2Synchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
@@ -72,7 +72,7 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 		
 		synchronization := self. TransferSchemata2Synchronization(  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 		
-		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(context,region);
+		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(result);
 		
 		guard := self.guard.map Expression2Expression(result);
 }
@@ -124,7 +124,7 @@ mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny, re
 		
 		target := self.map RegionState(context, region, "Requesting", false);
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(2, region);
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 		
 		guard := self.guard.map Expression2Expression(context);
 		
@@ -163,7 +163,7 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		
 		synchronization := self.TransferSchemata2Synchronization( multicast,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
-		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
+		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 		

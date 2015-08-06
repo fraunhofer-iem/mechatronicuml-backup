@@ -410,7 +410,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 		
 		doEvent := self.doEvent.map Do2Do(context, region);
 		
-		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
+		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 	
 	
 		-- copy the embedded regions of the state:

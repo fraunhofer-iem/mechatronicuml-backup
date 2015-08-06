@@ -83,19 +83,21 @@ mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : St
 }	
 
 //@author: sthiele2 -- creates a clock constraint in order to disassamble a deadline at a schema-specifying-transition
-mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region:RealtimeStatechart, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
+helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 {
+	var cc : ClockConstraint := new ClockConstraint();
 		var timeValue : TimeValue;
 		if(mapLowerBound)
 		{
-			result.bound := self.relativeDeadline.lowerBound.map TimeValue2TimeValue(context,region);
+			cc.bound := self.relativeDeadline.lowerBound.map TimeValue2TimeValue(cc);
 		}
 		else
 		{
-			result.bound := self.relativeDeadline.upperBound.map TimeValue2TimeValue(context,region);
+			cc.bound := self.relativeDeadline.upperBound.map TimeValue2TimeValue(cc);
 		}endif;
-		result.operator := operator;
-		result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
+		cc.operator := operator;
+		cc.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
+		return cc;
 }
 
 mapping Transition :: Transition2ClockConstraint(context : OclAny, clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
@@ -256,7 +258,7 @@ mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region
 	// creates an intermediate state in the coordinator region
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
-		invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
+		invariants += self. RelativeDeadline2ClockConstraint(false, ComparingOperator::LESS_OR_EQUAL, clockName);
 	}endif;
 	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, toplevel);	
 	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name + "_" + intermediateStateCount.toString();
@@ -463,7 +465,7 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 		
 		clockResets := self.clockResets->select(c|not isClockSubRoleSpecific(c))->map Clock2Clock();
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(context, region);
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(context);
 		
 		guard := self.guard.map Expression2Expression(context);
 		
@@ -491,7 +493,7 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 		
 		clockResets := self.clockResets->select(c|isClockSubRoleSpecific(c))->map Clock2Clock();
 		
-		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint(1, region);
+		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint(1);
 		
 		guard := self.guard.map Expression2Expression(1);
 		synchronization := self.TransferSchemata2Synchronization("switchState",SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
