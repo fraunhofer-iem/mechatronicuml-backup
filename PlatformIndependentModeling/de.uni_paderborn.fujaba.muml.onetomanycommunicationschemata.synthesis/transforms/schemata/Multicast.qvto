@@ -144,7 +144,7 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 		
 		synchronization :=  self. TransferSchemata2Synchronization( multicastCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self. TransferSchemaGuard( "multicastPossible", true);
+		guard := self. TransferSchemaGuard( "multicastPossible", UnaryOperator::NOT);
 			
 	}
 	

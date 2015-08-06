@@ -172,31 +172,12 @@ mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, c
 	}
 	
 
-	// replace!!, used only once
-mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, transMapping: Integer) : LogicalExpression {
-		
-		leftExpression := self.guard.map Expression2Expression(context2);
-		
-		rightExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
-		
-		operator := LogicOperator::AND;
-	
-	}
-	
-mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, transMapping: Integer) : LogicalExpression {
-		
-		leftExpression := self.guard.map Expression2Expression(context2);
-		
-		rightExpression := self. TransferSchemaGuard( varName, true);
-		
-		operator := LogicOperator::AND;
-	
-	}
+
 	
 mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
-			leftExpression := self. TransferSchemaGuard( varName1, true);
+			leftExpression := self. TransferSchemaGuard( varName1, UnaryOperator::NOT);
 		}else{
 			leftExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName1));
 		}endif;
@@ -228,13 +209,13 @@ mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:Realtime
 	
 	}
 	
-helper Transition :: TransferSchemaGuard(varName:String, op:Boolean) : UnaryExpression {
+helper Transition :: TransferSchemaGuard(varName:String, operator:UnaryOperator) : UnaryExpression {
 
 		var unex : UnaryExpression := new UnaryExpression();
 		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
-		if(op){
-			unex.operator := UnaryOperator::NOT;
+		if(not operator.oclIsUndefined()){
+			unex.operator := _operator;
 		}endif;
 		return unex;
 	
@@ -318,13 +299,13 @@ helper Transition :: TransferSchemata2Assignment(varName:String, assignValue:Str
 		
 		ass.assignOperator := AssignOperator::ASSIGN;
 		
-		ass.rhs_assignExpression := self.TransferSchemata2Literal(assignValue);
+		ass.rhs_assignExpression := self.Schema2LiterarExpression(assignValue);
 		
 		return ass;
 		
 	}
 	
-helper Transition :: TransferSchemata2Literal(assignValue:String) : LiteralExpression {
+helper Transition :: Schema2LiterarExpression(assignValue:String) : LiteralExpression {
 		
 		var lit : LiteralExpression := new LiteralExpression();
 		
@@ -577,13 +558,6 @@ mapping Transition :: Schema2TypedNamedElementAssignmentExpression(context : Ocl
 	result.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(referencedElement);
 	result.rhs_assignExpression := assignedExpression;
 	result.assignOperator := operator;
-}
-
-
-
-mapping Transition :: Schema2LiteralExpression(context : OclAny, _value : String) : core::expressions::common::LiteralExpression{
-	value := _value;
-	
 }
 
 helper Transition :: Schema2TypedNamedElementExpression(referencedElement : TypedNamedElement) : TypedNamedElementExpression{
