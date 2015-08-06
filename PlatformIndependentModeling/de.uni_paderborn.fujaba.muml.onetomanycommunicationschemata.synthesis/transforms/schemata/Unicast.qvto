@@ -134,7 +134,7 @@ mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 		
 		synchronization := self. TransferSchemata2Synchronization( unicastCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self.map TransferSchemaGuard(result, "unicastPossible", true);
+		guard := self. TransferSchemaGuard( "unicastPossible", true);
 			
 	}
 	
@@ -372,7 +372,7 @@ mapping Transition :: UnicastNotLastAndPossibleExpression(context:OclAny, region
 		leftExpression := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		if(notOp){
-			rightExpression := self.map TransferSchemaGuard(result, varName, true);
+			rightExpression := self. TransferSchemaGuard(varName, true);
 		}else{
 			rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		}endif;

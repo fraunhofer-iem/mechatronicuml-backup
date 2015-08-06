@@ -93,12 +93,12 @@ mapping Transition :: Iterate2TransitionFromSourceToIntermediate() : Transition
 	
 	// create the condition for the multicast call!
 			
-	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.Schema2TypedNamedElementExpression(variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
+	var firstmulticastCondition : Expression  :=self.Transition2ComparisonExpression( ComparingOperator::EQUAL,self.Schema2TypedNamedElementExpression(variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
 	var secondmulticastCondition := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.deepclone().oclAsType(Expression);
 	
 	var multicastCondition : Expression;
 	if(not secondmulticastCondition.oclIsUndefined()){
-		multicastCondition := self.map Transition2LogicalExpression(result,LogicOperator::AND,firstmulticastCondition,secondmulticastCondition);
+		multicastCondition := self.Transition2LogicalExpression(LogicOperator::AND,firstmulticastCondition,secondmulticastCondition);
 	}else{
 		multicastCondition := firstmulticastCondition;
 	}endif;
@@ -145,7 +145,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 	//TransferSchemataEndpointReference(context:OclAny, region:OclAny, pos: String, transMapping: Integer)
 	
 	var rhs : Expression := self. TransferSchemataEndpointReference(lastPosition);
-	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,lhs, rhs);
+	guard := self.Transition2ComparisonExpression( ComparingOperator::EQUAL,lhs, rhs);
 	
 	action := self.action.deepclone().oclAsType(Action);
 	if(action.oclIsUndefined()){
@@ -196,19 +196,19 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	var lhs : Expression :=  self. Schema2TypedNamedElementExpression(self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
 			
 	var rhs : Expression  := self. TransferSchemataEndpointReference(lastPosition);	
-	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::UNEQUAL,lhs, rhs);
+	guard := self. Transition2ComparisonExpression(ComparingOperator::UNEQUAL,lhs, rhs);
 	
 	// create the condition for the multicast call!
 	
 	var variable : Variable := self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());		
 	
-	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.Schema2TypedNamedElementExpression(variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
+	var firstmulticastCondition : Expression  :=self. Transition2ComparisonExpression( ComparingOperator::EQUAL,self.Schema2TypedNamedElementExpression(variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
 	
 	var secondmulticastCondition := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.deepclone().oclAsType(Expression);
 	
 	var multicastCondition : Expression;
 	if(not secondmulticastCondition.oclIsUndefined()){
-		multicastCondition := self.map Transition2LogicalExpression(result,LogicOperator::AND,firstmulticastCondition,secondmulticastCondition);
+		multicastCondition := self. Transition2LogicalExpression(LogicOperator::AND,firstmulticastCondition,secondmulticastCondition);
 	}else{
 		multicastCondition := firstmulticastCondition;
 	}endif;

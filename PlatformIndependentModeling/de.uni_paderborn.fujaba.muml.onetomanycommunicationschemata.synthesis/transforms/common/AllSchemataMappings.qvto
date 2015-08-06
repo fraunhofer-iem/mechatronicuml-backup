@@ -187,7 +187,7 @@ mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, co
 		
 		leftExpression := self.guard.map Expression2Expression(context2);
 		
-		rightExpression := self.map TransferSchemaGuard(result, varName, true);
+		rightExpression := self. TransferSchemaGuard( varName, true);
 		
 		operator := LogicOperator::AND;
 	
@@ -196,7 +196,7 @@ mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, co
 mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
-			leftExpression := self.map TransferSchemaGuard(result, varName1, true);
+			leftExpression := self. TransferSchemaGuard( varName1, true);
 		}else{
 			leftExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName1));
 		}endif;
@@ -228,13 +228,15 @@ mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:Realtime
 	
 	}
 	
-mapping Transition :: TransferSchemaGuard(context:OclAny, varName:String, op:Boolean) : UnaryExpression {
+helper Transition :: TransferSchemaGuard(varName:String, op:Boolean) : UnaryExpression {
 
-		enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		var unex : UnaryExpression := new UnaryExpression();
+		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		if(op){
-			operator := UnaryOperator::NOT;
-		}endif
+			unex.operator := UnaryOperator::NOT;
+		}endif;
+		return unex;
 	
 	}
 	
@@ -537,16 +539,22 @@ mapping Transition :: Transition2Block(blockExpression : Expression) : Block{
 		result := self.map Transition2Block(Set{blockExpression});
 	}
 }
-mapping Transition:: Transition2ComparisonExpression(context : OclAny, comparingoperator : ComparingOperator,lhs:Expression, rhs:Expression): core::expressions::common::ComparisonExpression{
-	result.leftExpression := lhs;
-	result.rightExpression :=rhs;
-	result.operator := comparingoperator;	
+
+
+helper Transition:: Transition2ComparisonExpression(comparingoperator : ComparingOperator,lhs:Expression, rhs:Expression): core::expressions::common::ComparisonExpression{
+	var cex : ComparisonExpression := new ComparisonExpression();
+	cex.leftExpression := lhs;
+	cex.rightExpression :=rhs;
+	cex.operator := comparingoperator;	
+	return cex;
 }
 
-mapping Transition:: Transition2LogicalExpression(context : OclAny, logicoperator : LogicOperator, lhs:Expression, rhs:Expression): core::expressions::common::LogicalExpression{
-	result.leftExpression := lhs;
-	result.rightExpression :=rhs;
-	result.operator := logicoperator;
+helper Transition:: Transition2LogicalExpression( logicoperator : LogicOperator, lhs:Expression, rhs:Expression): core::expressions::common::LogicalExpression{
+	var lex : LogicalExpression := new LogicalExpression();
+	lex.leftExpression := lhs;
+	lex.rightExpression :=rhs;
+	lex.operator := logicoperator;
+	return lex;
 }
 
 
