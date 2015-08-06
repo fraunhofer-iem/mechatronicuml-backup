@@ -174,7 +174,7 @@ mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, c
 			
 		}endif;
 		
-		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		rightExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		operator := LogicOperator::AND;
 	
@@ -186,7 +186,7 @@ mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, conte
 		
 		leftExpression := self.guard.map Expression2Expression(context2);
 		
-		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		rightExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		operator := LogicOperator::AND;
 	
@@ -207,10 +207,10 @@ mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, 
 		if(notOp){
 			leftExpression := self.map TransferSchemaGuard(result, varName1, true);
 		}else{
-			leftExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName1));
+			leftExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName1));
 		}endif;
 		
-		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName2));
+		rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName2));
 		
 		operator := LogicOperator::AND;
 }
@@ -239,7 +239,7 @@ mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:Realtime
 	
 mapping Transition :: TransferSchemaGuard(context:OclAny, varName:String, op:Boolean) : UnaryExpression {
 
-		enclosedExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		if(op){
 			operator := UnaryOperator::NOT;
@@ -279,7 +279,7 @@ mapping Transition :: TransferSchemata2Action(context:OclAny, actionName:String,
 	
 mapping Transition :: TransferSchemata2Block(context:OclAny, varName:String, assignValue:String, transMapping:Integer) : Block {
 		
-		result.expressions += self.map TransferSchemata2Assignment(context, varName, assignValue, transMapping);
+		result.expressions += self. TransferSchemata2Assignment( varName, assignValue);
 		
 	}
 	
@@ -293,8 +293,8 @@ mapping Transition :: TransferSchemata2TwoActions(context:OclAny, actionName:Str
 	
 mapping Transition :: TransferSchemata2TwoActionsBlock(context:OclAny, varName1:String, varName2:String, assignValue:String, transMapping:Integer) : Block {
 		
-		result.expressions += self.map TransferSchemata2Assignment(context, varName1, assignValue, 20+transMapping);
-		result.expressions += self.map TransferSchemata2Assignment(context, varName2, assignValue, 21+transMapping);
+		result.expressions += self. TransferSchemata2Assignment( varName1, assignValue);
+		result.expressions += self. TransferSchemata2Assignment( varName2, assignValue);
 		
 	}
 	
@@ -308,7 +308,7 @@ mapping Transition :: TransferSchemata2TwoActionsTransAct(context:OclAny, action
 	
 mapping Transition :: TransferSchemata2TwoActionsTransActBlock(context:OclAny, varName1:String, assignValue:String, transMapping:Integer) : Block {
 		
-		result.expressions += self.map TransferSchemata2Assignment(context, varName1, assignValue, 20+transMapping);
+		result.expressions += self. TransferSchemata2Assignment(varName1, assignValue);
 		
 		if(self.action.expressions->first().oclIsTypeOf(Block)){
 			result.expressions += self.action.expressions.oclAsType(Block).expressions.map Expression2Expression(context);
@@ -318,20 +318,26 @@ mapping Transition :: TransferSchemata2TwoActionsTransActBlock(context:OclAny, v
 			
 	}
 	
-mapping Transition :: TransferSchemata2Assignment(context:OclAny, varName:String, assignValue:String, transMapping:Integer) : Assignment {
+helper Transition :: TransferSchemata2Assignment(varName:String, assignValue:String) : Assignment {
 		
-		lhs_typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		var ass : Assignment := new Assignment();
+		ass.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
-		assignOperator := AssignOperator::ASSIGN;
+		ass.assignOperator := AssignOperator::ASSIGN;
 		
-		rhs_assignExpression := self.map TransferSchemata2Literal(context, assignValue, transMapping);
+		ass.rhs_assignExpression := self.TransferSchemata2Literal(assignValue);
+		
+		return ass;
 		
 	}
 	
-mapping Transition :: TransferSchemata2Literal(context:OclAny, assignValue:String, transMapping:Integer) : LiteralExpression {
+helper Transition :: TransferSchemata2Literal(assignValue:String) : LiteralExpression {
 		
-		value := assignValue;		
+		var lit : LiteralExpression := new LiteralExpression();
 		
+		lit.value := assignValue;		
+		
+		return lit;
 	}
 
 --Transfer Schemata Synchronization
@@ -557,7 +563,7 @@ mapping Transition:: Transition2LogicalExpression(context : OclAny, logicoperato
 ----------------------------------------------** new transformations that should replace the old ones ** 
 mapping Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
 	position := self. Schema2PositionKindSelector(positionSelectorKind);
-	typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedTypedNamedElement);
+	typedNamedElementExpression := self.Schema2TypedNamedElementExpression(referencedTypedNamedElement);
 }
 
 helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
@@ -569,7 +575,7 @@ helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: Pos
 
 mapping Transition :: Schema2TypedNamedElementAssignmentExpression(context : OclAny,operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
 
-	result.lhs_typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedElement);
+	result.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(referencedElement);
 	result.rhs_assignExpression := assignedExpression;
 	result.assignOperator := operator;
 }
@@ -581,9 +587,13 @@ mapping Transition :: Schema2LiteralExpression(context : OclAny, _value : String
 	
 }
 
-mapping Transition :: Schema2TypedNamedElementExpression(context : OclAny,referencedElement : TypedNamedElement) : TypedNamedElementExpression{
+helper Transition :: Schema2TypedNamedElementExpression(referencedElement : TypedNamedElement) : TypedNamedElementExpression{
 	
-	typedNamedElement := referencedElement;
+	var ex : TypedNamedElementExpression := new TypedNamedElementExpression();
+	
+	ex.typedNamedElement := referencedElement;
+	
+	return ex;
 }
 
 mapping Transition :: Schema2Variable(_name : String, _type : DataType) : Variable{

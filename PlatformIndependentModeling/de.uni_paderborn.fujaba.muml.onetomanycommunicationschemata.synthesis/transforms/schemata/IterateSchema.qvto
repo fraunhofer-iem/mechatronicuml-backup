@@ -93,7 +93,7 @@ mapping Transition :: Iterate2TransitionFromSourceToIntermediate() : Transition
 	
 	// create the condition for the multicast call!
 			
-	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.map Schema2TypedNamedElementExpression(result,variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
+	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.Schema2TypedNamedElementExpression(variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
 	var secondmulticastCondition := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.deepclone().oclAsType(Expression);
 	
 	var multicastCondition : Expression;
@@ -140,7 +140,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 	}endif;
 	
 	
-	var lhs : Expression :=  self.map Schema2TypedNamedElementExpression(result,self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
+	var lhs : Expression :=  self. Schema2TypedNamedElementExpression(self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
 		
 	//TransferSchemataEndpointReference(context:OclAny, region:OclAny, pos: String, transMapping: Integer)
 	
@@ -193,7 +193,7 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 		clockConstraints+=self.map Transition2ClockConstraint(result,IterateDelayTimeClockName,self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map TimeValue2TimeValue(result), ComparingOperator::GREATER_OR_EQUAL);
 	};
 	
-	var lhs : Expression :=  self.map Schema2TypedNamedElementExpression(result,self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
+	var lhs : Expression :=  self. Schema2TypedNamedElementExpression(self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
 			
 	var rhs : Expression  := self. TransferSchemataEndpointReference(lastPosition);	
 	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::UNEQUAL,lhs, rhs);
@@ -202,7 +202,7 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	
 	var variable : Variable := self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());		
 	
-	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.map Schema2TypedNamedElementExpression(1,variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
+	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.Schema2TypedNamedElementExpression(variable),self.map TransferSchemataEndpointReference(PositionSelectorKind::SELF));
 	
 	var secondmulticastCondition := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.deepclone().oclAsType(Expression);
 	

@@ -125,7 +125,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 		
 		target := self.map Schema2SubroleIntermediateState(context,region,1, toplevel);
 	
-		guard := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale("consumeSingleReceive"));
+		guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale("consumeSingleReceive"));
 	}
 	
 
@@ -313,7 +313,7 @@ mapping Transition :: SingleReceiveNotLastAndPossibleExpression(context:OclAny, 
 		if(notOp){
 			rightExpression := self.map UnaryOperatorTransferSchemata2TypedNamedElementExpr(context, varName, transMapping, UnaryOperator::NOT);
 		}else{
-			rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
+			rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		}endif;
 		
 		operator := LogicOperator::AND;
@@ -323,7 +323,7 @@ mapping Transition :: UnaryOperatorTransferSchemata2TypedNamedElementExpr(contex
 {
 	result.operator := _operator;
 	
-	result.enclosedExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
+	result.enclosedExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 	
 }
 mapping Transition :: SingleReceiveLastAndPossibleExpression(context:OclAny, region:RealtimeStatechart, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
@@ -333,7 +333,7 @@ mapping Transition :: SingleReceiveLastAndPossibleExpression(context:OclAny, reg
 		if(notOp){
 			rightExpression := self.map UnaryOperatorTransferSchemata2TypedNamedElementExpr(context, varName, transMapping, UnaryOperator::NOT);
 		}else{
-			rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
+			rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		}endif;
 		
 		operator := LogicOperator::AND;
