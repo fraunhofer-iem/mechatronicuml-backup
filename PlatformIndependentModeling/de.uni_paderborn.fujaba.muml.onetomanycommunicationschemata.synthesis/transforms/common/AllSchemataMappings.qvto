@@ -100,10 +100,12 @@ helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, 
 		return cc;
 }
 
-mapping Transition :: Transition2ClockConstraint(context : OclAny, clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
-	result.bound := _timeValue;
-	result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
-	result.operator:= compareOperator;
+helper Transition :: Transition2ClockConstraint(clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
+	var cc : ClockConstraint := new ClockConstraint();
+	cc.bound := _timeValue;
+	cc.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
+	cc.operator:= compareOperator;
+	return cc;
 }
 
 
@@ -136,18 +138,7 @@ helper Transition :: TransferSchemataLogicalExpression( position:PositionSelecto
 				
 	}
 	
-
-
 	
-
-	
-mapping Transition :: TransferSchemataTimeValue(context:OclAny, region:RealtimeStatechart, val:Expression, timeUnit:TimeUnit) : TimeValue {
-
-		value := val;
-		
-		unit := timeUnit;
-		
-	}
 	
 ----------------------------------------------------XXXXXXXXXXXXXXXX--MAPPINGS FOR ALL TRANSFER SCHEMATA--XXXXXXXXXXXXXXXXXX--------------------------------------------
 	

@@ -190,7 +190,7 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	target := self.map Schema2IntermediateState(1);
 	
 	if(self.iterateDefinesDelay()){
-		clockConstraints+=self.map Transition2ClockConstraint(result,IterateDelayTimeClockName,self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map TimeValue2TimeValue(result), ComparingOperator::GREATER_OR_EQUAL);
+		clockConstraints+=self.Transition2ClockConstraint(IterateDelayTimeClockName,self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map TimeValue2TimeValue(result), ComparingOperator::GREATER_OR_EQUAL);
 	};
 	
 	var lhs : Expression :=  self. Schema2TypedNamedElementExpression(self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
