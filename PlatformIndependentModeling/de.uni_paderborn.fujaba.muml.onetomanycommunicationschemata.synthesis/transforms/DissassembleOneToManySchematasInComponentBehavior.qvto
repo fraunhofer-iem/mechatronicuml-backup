@@ -27,7 +27,8 @@ main() {
 	assert fatal (componentRTSC.behavioralElement.oclIsKindOf(muml::component::Component)) with log ("The specified RealtimeStatechart must be the behavior of a Component!");
 
 	var childrenRTSCs : Set(RealtimeStatechart) := componentRTSC->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart);
-	
+		
+	rootNode :=componentRTSC.getHighestParentStatechart().eContainer().eContainer().oclAsType(RootNode);
 	childrenRTSCs->select(statechart:RealtimeStatechart|statechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint) and not statechart.behavioralElement.oclIsUndefined())->forEach(chart){
 		
 		var region : Region := chart.oclAsType(RealtimeStatechart).parentRegion;
