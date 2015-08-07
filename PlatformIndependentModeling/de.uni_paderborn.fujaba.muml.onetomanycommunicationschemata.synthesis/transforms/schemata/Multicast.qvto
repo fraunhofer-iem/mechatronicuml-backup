@@ -297,7 +297,7 @@ mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny,
 		
 		source := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map TransferSchemaNotCondition(3, region, 3);
+		guard := self. TransferSchemaNotCondition();
 
 		synchronization := self.TransferSchemata2Synchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 					

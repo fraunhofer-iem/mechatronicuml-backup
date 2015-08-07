@@ -360,7 +360,7 @@ mapping Transition :: LoadBalancing2IdleRequestedFulfilledSubrole(context:OclAny
 		
 		synchronization := self. TransferSchemata2Synchronization( loadBalancingCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self.map TransferSchemata2TwoActions(context, "loadBalancingPossible:=true; sendLoadBalancing:=true", "loadBalancingPossible", "sendLoadBalancing", "true", 10);
+		action := self. TransferSchemata2TwoActions("loadBalancingPossible:=true; sendLoadBalancing:=true", "loadBalancingPossible", "sendLoadBalancing", "true");
 					
 	}
 	
@@ -372,7 +372,7 @@ mapping Transition :: LoadBalancing2IdleRequestedNotFulfilledSubrole(context:Ocl
 		
 		source := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map TransferSchemaNotCondition(3, region, 3);
+		guard := self. TransferSchemaNotCondition();
 		
 		synchronization := self. TransferSchemata2Synchronization(loadBalancingCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 					

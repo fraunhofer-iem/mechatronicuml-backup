@@ -161,7 +161,7 @@ mapping Transition :: RegionState(context:OclAny, region:RealtimeStatechart, Sta
 mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
-			leftExpression := self.map TransferSchemaNotCondition(context2, region, transMapping);
+			leftExpression := self. TransferSchemaNotCondition();
 		}else{
 			if(not self.raiseMessageEvent.oclIsUndefined()){
 				leftExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
@@ -203,15 +203,18 @@ mapping Transition :: TransferSchemaThreeVariablesGuard(context1:OclAny, context
 		operator := LogicOperator::AND;
 }
 	
-mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:RealtimeStatechart, transMapping: Integer) : UnaryExpression {
+helper Transition :: TransferSchemaNotCondition() : UnaryExpression {
 
+		var un : UnaryExpression := new UnaryExpression();
 		if(not self.raiseMessageEvent.oclIsUndefined()){
-			enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context);
+			un.enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(un);
 		}else{
-			enclosedExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context);
+			un.enclosedExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(un);
 		}endif;	
 
-		operator := UnaryOperator::NOT;
+		un.operator := UnaryOperator::NOT;
+		
+		return un;
 	
 	}
 	
@@ -275,39 +278,54 @@ helper Transition :: TransferSchemata2AssignmentBlock(varName:String, assignValu
 		
 	}
 	
-mapping Transition :: TransferSchemata2TwoActions(context:OclAny, actionName:String, varName1:String, varName2:String, assignValue:String, transMapping:Integer) : Action {
+helper Transition :: TransferSchemata2TwoActions(actionName:String, varName1:String, varName2:String, assignValue:String) : Action {
 	
-		name := actionName;
+		var act : Action := new Action();
 		
-		result.expressions += self.map TransferSchemata2TwoActionsBlock(context, varName1, varName2, assignValue, transMapping);
+		act.name := actionName;
+		
+		act.expressions += self. TransferSchemata2TwoActionsBlock( varName1, varName2, assignValue);
+		
+		return act;
 		
 	}
 	
-mapping Transition :: TransferSchemata2TwoActionsBlock(context:OclAny, varName1:String, varName2:String, assignValue:String, transMapping:Integer) : Block {
+helper Transition :: TransferSchemata2TwoActionsBlock(varName1:String, varName2:String, assignValue:String) : Block {
 		
-		result.expressions += self. TransferSchemata2Assignment( varName1, assignValue);
-		result.expressions += self. TransferSchemata2Assignment( varName2, assignValue);
+		var block : Block := new Block();
 		
-	}
-	
-mapping Transition :: TransferSchemata2TwoActionsTransAct(context:OclAny, actionName:String, varName:String, assignValue:String, transMapping:Integer) : Action {
-	
-		name := actionName + ', ' + self.action.name;
+		block.expressions += self. TransferSchemata2Assignment( varName1, assignValue);
 		
-		result.expressions += self.map TransferSchemata2TwoActionsTransActBlock(context, varName, assignValue, transMapping);
+		block.expressions += self. TransferSchemata2Assignment( varName2, assignValue);
+		
+		return block;
 		
 	}
 	
-mapping Transition :: TransferSchemata2TwoActionsTransActBlock(context:OclAny, varName1:String, assignValue:String, transMapping:Integer) : Block {
+helper Transition :: TransferSchemata2TwoActionsTransAct(actionName:String, varName:String, assignValue:String) : Action {
+	
+		var act : Action := new Action();
 		
-		result.expressions += self. TransferSchemata2Assignment(varName1, assignValue);
+		act.name := actionName + ', ' + self.action.name;
+		
+		act.expressions += self. TransferSchemata2TwoActionsTransActBlock( varName, assignValue);
+		
+		return act;
+	}
+	
+helper Transition :: TransferSchemata2TwoActionsTransActBlock(varName1:String, assignValue:String) : Block {
+		
+		var block : Block := new Block();
+		
+		block.expressions += self. TransferSchemata2Assignment(varName1, assignValue);
 		
 		if(self.action.expressions->first().oclIsTypeOf(Block)){
-			result.expressions += self.action.expressions.oclAsType(Block).expressions.map Expression2Expression(context);
+			block.expressions += self.action.expressions.oclAsType(Block).expressions.map Expression2Expression(block);
 		}else{
-			result.expressions += self.action.expressions.map Expression2Expression(context);
+			block.expressions += self.action.expressions.map Expression2Expression(block);
 		}endif;
-			
+		
+		return block;
 	}
 
 
