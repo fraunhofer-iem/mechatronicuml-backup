@@ -220,7 +220,7 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		
 		var assignExpr : LiteralExpression := new LiteralExpression();
 		assignExpr.value := "false";
-		action.expressions += self.map Schema2TypedNamedElementAssignmentExpression(result, AssignOperator::ASSIGN, getFreeForWorkVariable(),assignExpr);
+		action.expressions += self. Schema2TypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getFreeForWorkVariable(),assignExpr);
 	}
 	
 mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {

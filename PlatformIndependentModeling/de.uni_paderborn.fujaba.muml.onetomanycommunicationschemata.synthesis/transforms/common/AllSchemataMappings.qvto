@@ -561,11 +561,16 @@ helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: Pos
 }
 
 
-mapping Transition :: Schema2TypedNamedElementAssignmentExpression(context : OclAny,operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
-
-	result.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(referencedElement);
-	result.rhs_assignExpression := assignedExpression;
-	result.assignOperator := operator;
+helper Transition :: Schema2TypedNamedElementAssignmentExpression(operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
+	var ass : Assignment := new Assignment();
+	
+	ass.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(referencedElement);
+	
+	ass.rhs_assignExpression := assignedExpression;
+	
+	ass.assignOperator := operator;
+	
+	return ass;
 }
 
 helper Transition :: Schema2TypedNamedElementExpression(referencedElement : TypedNamedElement) : TypedNamedElementExpression{
