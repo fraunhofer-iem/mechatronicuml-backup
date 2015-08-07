@@ -190,7 +190,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 			guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"sendUnicast", "unicastPossible", false, 3);
 			
 			if(self.action.oclIsUndefined()){
-				action := self.map TransferSchemata2Action(context, "sendUnicast:=false", "sendUnicast", "false", 1)
+				action := self. TransferSchemata2Action( "sendUnicast:=false", "sendUnicast", "false");
 			}else{
 				action := self.map TransferSchemata2TwoActionsTransAct(context, "sendUnicast:=false", "sendUnicast", "false", 1);
 			}endif;
@@ -246,7 +246,7 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			action := self.map TransferSchemata2Action(context, "unicastPossible:=false", "unicastPossible", "false", 12);
+			action := self. TransferSchemata2Action("unicastPossible:=false", "unicastPossible", "false");
 			
 		}endif;
 			

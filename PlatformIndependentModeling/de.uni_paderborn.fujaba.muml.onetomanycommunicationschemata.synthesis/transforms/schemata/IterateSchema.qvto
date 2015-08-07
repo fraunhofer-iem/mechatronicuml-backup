@@ -89,7 +89,7 @@ mapping Transition :: Iterate2TransitionFromSourceToIntermediate() : Transition
 	var variable : Variable := self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());
 	
 	//  set the entry action of the source state depending on the startFromFirst flag	
-	sourceState.entryEvent.action.expressions += self.map Transition2Block(self. Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,variable,self.map TransferSchemataEndpointReference(firstPosition)));	
+	sourceState.entryEvent.action.expressions += self. Transition2Block(self. Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,variable,self.map TransferSchemataEndpointReference(firstPosition)));	
 	
 	// create the condition for the multicast call!
 			
@@ -155,7 +155,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 	
 	var rhsAss : Expression := self. TransferSchemataEndpointReference(firstPosition);
 	action.name := action.name + iterateRoleVariableName + ":=" + firstPosition.toString();
-	action.expressions+= self.map Transition2Block(self. Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN, self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()),rhsAss));
+	action.expressions+= self. Transition2Block(self. Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN, self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()),rhsAss));
 	
 	clockResets := self.clockResets;
 }
@@ -223,7 +223,7 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	
 	action := new Action();
 	action.name := iterateRoleVariableName +" := " +iterateRoleVariableName + ".next";
-	action.expressions+= self.map Transition2Block(assignment);
+	action.expressions+= self. Transition2Block(assignment);
 }
 
 

@@ -213,7 +213,7 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			action := self.map TransferSchemata2Action(context, "multicastPossible:=false", "multicastPossible", "false", 12);
+			action := self. TransferSchemata2Action("multicastPossible:=false", "multicastPossible", "false");
 			
 		}endif;
 		synchronization := self. TransferSchemata2Synchronization( multicastDone,SynchronizationKind::SEND);			
@@ -285,7 +285,7 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		synchronization := 	self.TransferSchemata2Synchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self.map TransferSchemata2Action(context, "multicastPossible:=true", "multicastPossible", "true", 10);
+		action := self. TransferSchemata2Action( "multicastPossible:=true", "multicastPossible", "true");
 					
 	}
 	

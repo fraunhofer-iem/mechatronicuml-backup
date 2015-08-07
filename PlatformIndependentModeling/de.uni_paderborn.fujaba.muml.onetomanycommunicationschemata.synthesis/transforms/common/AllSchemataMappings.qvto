@@ -226,7 +226,14 @@ helper Transition :: TransferSchemaGuard(varName:String, operator:UnaryOperator)
 		return unex;
 	
 	}
+helper Transition :: TransferSchemaGuard(varName:String) : UnaryExpression {
+
+		var unex : UnaryExpression := new UnaryExpression();
+		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		
+		return unex;
 	
+	}	
 
 	
 // @author: sthiele2
@@ -249,17 +256,22 @@ mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region
 
 --Transfer Schemata Action
 
-mapping Transition :: TransferSchemata2Action(context:OclAny, actionName:String, varName:String, assignValue:String, transMapping:Integer) : Action {
+helper  Transition :: TransferSchemata2Action(actionName:String, varName:String, assignValue:String) : Action {
 	
-		name := actionName;
+		var act : Action := new Action();
 		
-		result.expressions += self.map TransferSchemata2Block(context, varName, assignValue, transMapping);
+		act.name := actionName;		
 		
+		act.expressions +=self.TransferSchemata2AssignmentBlock( varName ,	assignValue);
+		
+		return act;
 	}
 	
-mapping Transition :: TransferSchemata2Block(context:OclAny, varName:String, assignValue:String, transMapping:Integer) : Block {
+helper Transition :: TransferSchemata2AssignmentBlock(varName:String, assignValue:String ) : Block {
 		
-		result.expressions += self. TransferSchemata2Assignment( varName, assignValue);
+
+		return self.Transition2Block(self.TransferSchemata2Assignment( varName, assignValue));
+		
 		
 	}
 	
@@ -300,17 +312,10 @@ mapping Transition :: TransferSchemata2TwoActionsTransActBlock(context:OclAny, v
 
 
 	
-helper Transition :: TransferSchemata2Assignment(varName:String, assignValue:String) : Assignment {
+helper Transition :: TransferSchemata2Assignment(varName:String, assignValue:String) : Assignment {		
 		
-		var ass : Assignment := new Assignment();
-		ass.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
-		
-		ass.assignOperator := AssignOperator::ASSIGN;
-		
-		ass.rhs_assignExpression := self.Schema2LiterarExpression(assignValue);
-		
-		return ass;
-		
+		return self.Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,self.map Transition2SubroleSpecificBooleanVaribale(varName),self.Schema2LiterarExpression(assignValue));
+	
 	}
 	
 helper Transition :: Schema2LiterarExpression(assignValue:String) : LiteralExpression {
@@ -519,14 +524,18 @@ mapping Expression :: Expression2UnaryExpression(context : OclAny, _operator : U
 }	
 
 
-mapping Transition :: Transition2Block(blockExpressions : Set(Expression)) : Block {
-	result.expressions+=blockExpressions;
+helper Transition :: Transition2Block(blockExpressions : Set(Expression)) : Block {
+	
+	var block : Block := new Block();
+	
+	block.expressions += blockExpressions;
+	
+	return block;
 }
 
-mapping Transition :: Transition2Block(blockExpression : Expression) : Block{
-	init{
-		result := self.map Transition2Block(Set{blockExpression});
-	}
+helper Transition :: Transition2Block(blockExpression : Expression) : Block{
+	return  self. Transition2Block(Set{blockExpression});
+	
 }
 
 

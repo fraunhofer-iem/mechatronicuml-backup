@@ -22,6 +22,10 @@ property neverHadATask : Variable;
 property freeForWork: Variable;
 property freeForWorkName : String = "freeForWork";
 property neverHadATaskName : String = "neverHadATask";
+property taskPlannedName : String = "taskPlanned";
+property taskMessageClockName : String = "c_taksMsg";
+property loadBalancingPossibleName : String = "loadBalancingPossible";
+
 // lazy initialisation of LoadBalancing specific variables:
 helper getNeverHadATaskVariable() : Variable {
 	if(neverHadATask.oclIsUndefined()) {
@@ -198,13 +202,12 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 
 		priority := (self.priority-1)*2+2;
 		
-		source := self.map Transition2StateSubrole(region,self.source, true);
+		source := self.map Transition2StateSubrole(region, self.source, true);
 		
 		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
 				
 		synchronization := self.TransferSchemata2Synchronization(  loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
-		
-				
+						
 		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
 		
 		clockResets += self.clockResets->map Clock2Clock();
@@ -216,11 +219,14 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 			action.name := "";
 		};
 		action.name := action.name + freeForWorkName + ":= false";
-		//Schema2TypedNamedElementAssignmentExpression(context : OclAny,operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
+	
+		action.expressions +=self.Transition2Block( self. Schema2TypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getFreeForWorkVariable(),	self.Schema2LiterarExpression("false")));
 		
-		var assignExpr : LiteralExpression := new LiteralExpression();
-		assignExpr.value := "false";
-		action.expressions += self. Schema2TypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getFreeForWorkVariable(),assignExpr);
+		clockResets += self.map TransitionDeadline2CoordinatorDeadlineClock(taskMessageClockName);
+				
+		guard := self.TransferSchemaGuard(taskPlannedName);
+		
+		
 	}
 	
 mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
@@ -233,9 +239,7 @@ mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny,
 					
 		synchronization :=self. TransferSchemata2Synchronization(loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);--error
 		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-		
-		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
+		guard := self.TransferSchemaGuard(taskPlannedName,UnaryOperator::NOT);	
 		
 	}
 	
@@ -267,7 +271,9 @@ mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			action := self.map TransferSchemata2Action(context, "loadBalancingPossible:=false", "loadBalancingPossible", "false", 12);
+			//: TransferSchemata2Action(actionName:String, varName:String, assignValue:String)
+			
+			action := self. TransferSchemata2Action("loadBalancingPossible:=false", loadBalancingPossibleName, "false");
 			
 		}endif;
 			
