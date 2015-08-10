@@ -57,7 +57,7 @@ mapping StaticStructuredComponent::transform():EObject  inherits OclAny::transfo
 	}
 	var component:StaticStructuredComponent = result.oclAsType(StaticStructuredComponent);
 	component.componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
-	
+	component.name:=self.name;
 } 
 
 
@@ -68,7 +68,7 @@ mapping StaticStructuredComponent::transform():EObject  inherits OclAny::transfo
 * The HybridPorts of a HybridComponent are Replaced  with DiscretePorts
 */
 
-mapping StaticAtomicComponent::transform():EObject  inherits OclAny::transform{
+mapping StaticAtomicComponent::transform():EObject inherits OclAny::transform{
 	init {
 		result := self.map create();
 	}
@@ -77,6 +77,8 @@ mapping StaticAtomicComponent::transform():EObject  inherits OclAny::transform{
 	if(self.behavior.oclIsUndefined())then{
 			component.behavior:=self.map mapcreateEmptyRealtimeStateChart();
 	}endif;
+		component.name:=self.name;
+	
 }
 
 
