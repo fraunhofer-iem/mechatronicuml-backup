@@ -16,6 +16,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.Hwresourceinstan
 
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
@@ -33,11 +34,6 @@ import de.uni_paderborn.fujaba.muml.psm.apiexpressions.util.ApiexpressionsValida
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.impl.PsmPackageImpl;
-
-import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.muml.psm.instance.impl.InstancePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
@@ -46,18 +42,14 @@ import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-
+import de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instancePackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_instance.impl.Psm_instancePackageImpl;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.impl.Psm_realtimestatechartPackageImpl;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 import org.eclipse.emf.ecore.EClass;
@@ -156,10 +148,10 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
 		PropertiesPackageImpl thePropertiesPackage = (PropertiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PropertiesPackage.eNS_URI) instanceof PropertiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PropertiesPackage.eNS_URI) : PropertiesPackage.eINSTANCE);
-		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
+		Psm_realtimestatechartPackageImpl thePsm_realtimestatechartPackage = (Psm_realtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_realtimestatechartPackage.eNS_URI) instanceof Psm_realtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_realtimestatechartPackage.eNS_URI) : Psm_realtimestatechartPackage.eINSTANCE);
 		RealtimestatechartparameterPackageImpl theRealtimestatechartparameterPackage = (RealtimestatechartparameterPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterPackage.eNS_URI) instanceof RealtimestatechartparameterPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterPackage.eNS_URI) : RealtimestatechartparameterPackage.eINSTANCE);
 		RealtimestatechartparameterbindingPackageImpl theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) instanceof RealtimestatechartparameterbindingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) : RealtimestatechartparameterbindingPackage.eINSTANCE);
-		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
+		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
 
@@ -168,10 +160,10 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		thePsmPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
 		thePropertiesPackage.createPackageContents();
-		theRealtimestatechartPackage.createPackageContents();
+		thePsm_realtimestatechartPackage.createPackageContents();
 		theRealtimestatechartparameterPackage.createPackageContents();
 		theRealtimestatechartparameterbindingPackage.createPackageContents();
-		theInstancePackage.createPackageContents();
+		thePsm_instancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theCodegenPackage.createPackageContents();
 
@@ -180,10 +172,10 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		thePsmPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
 		thePropertiesPackage.initializePackageContents();
-		theRealtimestatechartPackage.initializePackageContents();
+		thePsm_realtimestatechartPackage.initializePackageContents();
 		theRealtimestatechartparameterPackage.initializePackageContents();
 		theRealtimestatechartparameterbindingPackage.initializePackageContents();
-		theInstancePackage.initializePackageContents();
+		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theCodegenPackage.initializePackageContents();
 
@@ -334,7 +326,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		SwplatformPackage theSwplatformPackage = (SwplatformPackage)EPackage.Registry.INSTANCE.getEPackage(SwplatformPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -354,7 +346,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		initEReference(getEnumerationValueExpression_EnumValue(), theSwplatformPackage.getEnumerationValue(), null, "enumValue", null, 1, 1, EnumerationValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(continuousPortExpressionEClass, ContinuousPortExpression.class, "ContinuousPortExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContinuousPortExpression_ContinuousPort(), theInstancePackage_1.getContinuousPortInstance(), null, "continuousPort", null, 1, 1, ContinuousPortExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContinuousPortExpression_ContinuousPort(), theInstancePackage.getContinuousPortInstance(), null, "continuousPort", null, 1, 1, ContinuousPortExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

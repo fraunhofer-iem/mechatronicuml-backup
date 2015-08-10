@@ -65,7 +65,6 @@ public class GenComponentInstanceItemProvider
 
 			addComponentInstancePropertyDescriptor(object);
 			addInitCommandsPropertyDescriptor(object);
-			addGetPortInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -115,28 +114,6 @@ public class GenComponentInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Get Port Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGetPortInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GenComponentInstance_getPortInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GenComponentInstance_getPortInstances_feature", "_UI_GenComponentInstance_type"),
-				 CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -148,7 +125,7 @@ public class GenComponentInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES);
+			childrenFeatures.add(CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -201,7 +178,7 @@ public class GenComponentInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GenComponentInstance.class)) {
-			case CodegenPackage.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES:
+			case CodegenPackage.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -221,7 +198,7 @@ public class GenComponentInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES,
+				(CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES,
 				 CodegenFactory.eINSTANCE.createGenPortInstance()));
 	}
 

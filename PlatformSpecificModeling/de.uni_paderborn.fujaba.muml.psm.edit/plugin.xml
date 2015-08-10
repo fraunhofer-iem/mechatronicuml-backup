@@ -49,7 +49,7 @@
       <!-- @generated psm -->
       <factory
             uri="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory"
+            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.provider.Psm_realtimestatechartItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -62,7 +62,7 @@
       <!-- @generated psm -->
       <factory
             uri="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.provider.RealtimestatechartparameterItemProviderAdapterFactory"
+            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider.RealtimestatechartparameterItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -71,11 +71,12 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated psm -->
       <factory
             uri="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.provider.RealtimestatechartparameterbindingItemProviderAdapterFactory"
+            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.provider.RealtimestatechartparameterbindingItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -88,7 +89,7 @@
       <!-- @generated psm -->
       <factory
             uri="http://www.fujaba.de/muml/psm/instance/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.instance.provider.InstanceItemProviderAdapterFactory"
+            class="de.uni_paderborn.fujaba.muml.psm.psm_instance.provider.Psm_instanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

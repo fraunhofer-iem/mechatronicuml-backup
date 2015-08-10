@@ -50,44 +50,44 @@
             ecoreFeature="ecore:EReference psm.ecore#//properties/Scheduling/priority"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.psm"
-        disposableProviderFactory="true" ecorePackage="psm.ecore#//realtimestatechart">
-      <genClasses ecoreClass="psm.ecore#//realtimestatechart/ParameterizedRealtimeStatechart">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/ParameterizedRealtimeStatechart/parameters"/>
+    <nestedGenPackages prefix="Psm_realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//psm_realtimestatechart">
+      <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/ParameterizedRealtimeStatechart">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/ParameterizedRealtimeStatechart/parameters"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/ParameterizedRealtimeStatechart/allParameters"/>
+            ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/ParameterizedRealtimeStatechart/allParameters"/>
       </genClasses>
-      <genClasses ecoreClass="psm.ecore#//realtimestatechart/APICall">
+      <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/APICall">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/APICall/apiCallSignature"/>
+            ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/APICall/apiCallSignature"/>
       </genClasses>
-      <nestedGenPackages prefix="Realtimestatechartparameter" basePackage="de.uni_paderborn.fujaba.muml.psm.realtimestatechart"
-          disposableProviderFactory="true" ecorePackage="psm.ecore#//realtimestatechart/realtimestatechartparameter">
-        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameter/APICallParameter"/>
-        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameter/TimeParameter"/>
-        <genClasses image="false" ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
+      <nestedGenPackages prefix="Realtimestatechartparameter" basePackage="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart"
+          disposableProviderFactory="true" ecorePackage="psm.ecore#//psm_realtimestatechart/realtimestatechartparameter">
+        <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/APICallParameter"/>
+        <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/TimeParameter"/>
+        <genClasses image="false" ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Realtimestatechartparameterbinding" basePackage="de.uni_paderborn.fujaba.muml.psm.realtimestatechart"
-          disposableProviderFactory="true" ecorePackage="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding">
-        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding/expression"/>
+      <nestedGenPackages prefix="Realtimestatechartparameterbinding" basePackage="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart"
+          disposableProviderFactory="true" ecorePackage="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding">
+        <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding/expression"/>
         </genClasses>
-        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding/timeValue"/>
+        <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding/timeValue"/>
         </genClasses>
-        <genClasses image="false" ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
+        <genClasses image="false" ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/parameter"/>
+              ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/parameter"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.psm"
-        disposableProviderFactory="true" ecorePackage="psm.ecore#//instance">
-      <genClasses ecoreClass="psm.ecore#//instance/ParameterisableDiscreteSinglePortInstance">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//instance/ParameterisableDiscreteSinglePortInstance/bindings"/>
+    <nestedGenPackages prefix="Psm_instance" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//psm_instance">
+      <genClasses ecoreClass="psm.ecore#//psm_instance/ParameterisableDiscreteSinglePortInstance">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_instance/ParameterisableDiscreteSinglePortInstance/bindings"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Portapimapping" basePackage="de.uni_paderborn.fujaba.muml.psm"
@@ -141,8 +141,7 @@
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/componentInstance"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/initCommands"/>
-        <genFeatures children="true" createChild="true" propertyCategory="" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/getPortInstances"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/genPortInstances"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/GenPortInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -151,6 +150,8 @@
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/samplingTime"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/execCommand"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/targetPortInstance"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/GenECU">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -164,6 +165,8 @@
       <genClasses ecoreClass="psm.ecore#//codegen/GenSystem">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/genECUs"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/cic"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/hpic"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

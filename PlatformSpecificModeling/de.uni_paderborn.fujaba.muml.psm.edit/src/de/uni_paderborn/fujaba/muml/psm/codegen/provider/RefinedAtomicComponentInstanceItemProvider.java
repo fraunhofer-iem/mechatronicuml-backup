@@ -7,15 +7,14 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 import de.uni_paderborn.fujaba.muml.instance.provider.AtomicComponentInstanceItemProvider;
 
+import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
-
-import de.uni_paderborn.fujaba.muml.psm.instance.InstanceFactory;
-
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
+import de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instanceFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,9 +23,11 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 
 /**
@@ -57,9 +58,55 @@ public class RefinedAtomicComponentInstanceItemProvider extends AtomicComponentI
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addComponentInstancePropertyDescriptor(object);
+			addInitCommandsPropertyDescriptor(object);
 			addAllocatedResourceInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Component Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenComponentInstance_componentInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenComponentInstance_componentInstance_feature", "_UI_GenComponentInstance_type"),
+				 CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__COMPONENT_INSTANCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Init Commands feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitCommandsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenComponentInstance_initCommands_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenComponentInstance_initCommands_feature", "_UI_GenComponentInstance_type"),
+				 CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__INIT_COMMANDS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -82,6 +129,36 @@ public class RefinedAtomicComponentInstanceItemProvider extends AtomicComponentI
 				 null,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -120,6 +197,12 @@ public class RefinedAtomicComponentInstanceItemProvider extends AtomicComponentI
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(RefinedAtomicComponentInstance.class)) {
+			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__GEN_PORT_INSTANCES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -152,7 +235,12 @@ public class RefinedAtomicComponentInstanceItemProvider extends AtomicComponentI
 		newChildDescriptors.add
 			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
-				 InstanceFactory.eINSTANCE.createParameterisableDiscreteSinglePortInstance()));
+				 Psm_instanceFactory.eINSTANCE.createParameterisableDiscreteSinglePortInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES,
+				 CodegenFactory.eINSTANCE.createGenPortInstance()));
 	}
 
 	/**

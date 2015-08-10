@@ -24,17 +24,20 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.resources,
  org.eclipse.jface,
  de.uni_paderborn.fujaba.muml.psm,
- de.uni_paderborn.fujaba.muml.psm.edit
+ de.uni_paderborn.fujaba.muml.psm.edit,
+ de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.psm.properties.metamodel, de.uni_paderborn.fujaba.muml.psm.properties.constraint,
+ de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechartparameterbinding.editor,
  de.uni_paderborn.fujaba.muml.psm.properties.properties.editor,
- de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor,
- de.uni_paderborn.fujaba.muml.psm.properties.portapimapping.editor,
- de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechart.editor,
- de.uni_paderborn.fujaba.muml.psm.properties.apiexpressions.editor,
  de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor,
  de.uni_paderborn.fujaba.muml.psm.properties.psm.editor,
- de.uni_paderborn.fujaba.muml.psm.properties.instance.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.psm_realtimestatechart.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.portapimapping.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechartparameter.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.apiexpressions.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.psm_instance.editor,
  de.uni_paderborn.fujaba.muml.psm.properties.tabs
 Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT 

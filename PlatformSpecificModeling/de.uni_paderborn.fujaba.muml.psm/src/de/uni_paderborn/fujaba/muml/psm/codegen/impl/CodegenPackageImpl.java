@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.Hwresourceinstan
 
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 
 import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
@@ -38,11 +39,6 @@ import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
 
 import de.uni_paderborn.fujaba.muml.psm.impl.PsmPackageImpl;
-
-import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.muml.psm.instance.impl.InstancePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
@@ -51,18 +47,14 @@ import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-
+import de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instancePackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_instance.impl.Psm_instancePackageImpl;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.impl.Psm_realtimestatechartPackageImpl;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -195,10 +187,10 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
 		PropertiesPackageImpl thePropertiesPackage = (PropertiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PropertiesPackage.eNS_URI) instanceof PropertiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PropertiesPackage.eNS_URI) : PropertiesPackage.eINSTANCE);
-		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
+		Psm_realtimestatechartPackageImpl thePsm_realtimestatechartPackage = (Psm_realtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_realtimestatechartPackage.eNS_URI) instanceof Psm_realtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_realtimestatechartPackage.eNS_URI) : Psm_realtimestatechartPackage.eINSTANCE);
 		RealtimestatechartparameterPackageImpl theRealtimestatechartparameterPackage = (RealtimestatechartparameterPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterPackage.eNS_URI) instanceof RealtimestatechartparameterPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterPackage.eNS_URI) : RealtimestatechartparameterPackage.eINSTANCE);
 		RealtimestatechartparameterbindingPackageImpl theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) instanceof RealtimestatechartparameterbindingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) : RealtimestatechartparameterbindingPackage.eINSTANCE);
-		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
+		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
 
@@ -207,10 +199,10 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		thePsmPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
 		thePropertiesPackage.createPackageContents();
-		theRealtimestatechartPackage.createPackageContents();
+		thePsm_realtimestatechartPackage.createPackageContents();
 		theRealtimestatechartparameterPackage.createPackageContents();
 		theRealtimestatechartparameterbindingPackage.createPackageContents();
-		theInstancePackage.createPackageContents();
+		thePsm_instancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
 
@@ -219,10 +211,10 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		thePsmPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
 		thePropertiesPackage.initializePackageContents();
-		theRealtimestatechartPackage.initializePackageContents();
+		thePsm_realtimestatechartPackage.initializePackageContents();
 		theRealtimestatechartparameterPackage.initializePackageContents();
 		theRealtimestatechartparameterbindingPackage.initializePackageContents();
-		theInstancePackage.initializePackageContents();
+		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
 
@@ -339,7 +331,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGenComponentInstance_GetPortInstances() {
+	public EReference getGenComponentInstance_GenPortInstances() {
 		return (EReference)genComponentInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -377,6 +369,15 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 */
 	public EReference getGenPortInstance_ExecCommand() {
 		return (EReference)genPortInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenPortInstance_TargetPortInstance() {
+		return (EReference)genPortInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -447,6 +448,24 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getGenSystem_Cic() {
+		return (EReference)genSystemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenSystem_Hpic() {
+		return (EReference)genSystemEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CodegenFactory getCodegenFactory() {
 		return (CodegenFactory)getEFactoryInstance();
 	}
@@ -484,12 +503,13 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		genComponentInstanceEClass = createEClass(GEN_COMPONENT_INSTANCE);
 		createEReference(genComponentInstanceEClass, GEN_COMPONENT_INSTANCE__COMPONENT_INSTANCE);
 		createEReference(genComponentInstanceEClass, GEN_COMPONENT_INSTANCE__INIT_COMMANDS);
-		createEReference(genComponentInstanceEClass, GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES);
+		createEReference(genComponentInstanceEClass, GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES);
 
 		genPortInstanceEClass = createEClass(GEN_PORT_INSTANCE);
 		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__PORT_INSTANCE);
 		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__SAMPLING_TIME);
 		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__EXEC_COMMAND);
+		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE);
 
 		genECUEClass = createEClass(GEN_ECU);
 		createEReference(genECUEClass, GEN_ECU__ECU);
@@ -500,6 +520,8 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		genSystemEClass = createEClass(GEN_SYSTEM);
 		createEReference(genSystemEClass, GEN_SYSTEM__GEN_EC_US);
+		createEReference(genSystemEClass, GEN_SYSTEM__CIC);
+		createEReference(genSystemEClass, GEN_SYSTEM__HPIC);
 	}
 
 	/**
@@ -526,7 +548,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		HwplatforminstancePackage theHwplatforminstancePackage = (HwplatforminstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI);
@@ -538,7 +560,8 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		refinedAtomicComponentInstanceEClass.getESuperTypes().add(theInstancePackage_1.getAtomicComponentInstance());
+		refinedAtomicComponentInstanceEClass.getESuperTypes().add(theInstancePackage.getAtomicComponentInstance());
+		refinedAtomicComponentInstanceEClass.getESuperTypes().add(this.getGenComponentInstance());
 		refinedStructuredResourceInstanceEClass.getESuperTypes().add(theHwresourceinstancePackage.getStructuredResourceInstance());
 
 		// Initialize classes, features, and operations; add parameters
@@ -551,17 +574,18 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		initEClass(codeGenAllocationEClass, CodeGenAllocation.class, "CodeGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCodeGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCodeGenAllocation_Cic(), theInstancePackage_1.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCodeGenAllocation_Cic(), theInstancePackage.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(genComponentInstanceEClass, GenComponentInstance.class, "GenComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGenComponentInstance_ComponentInstance(), theInstancePackage_1.getComponentInstance(), null, "componentInstance", null, 1, 1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenComponentInstance_ComponentInstance(), theInstancePackage.getComponentInstance(), null, "componentInstance", null, 1, 1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenComponentInstance_InitCommands(), theExpressionsPackage.getExpression(), null, "initCommands", null, 0, -1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGenComponentInstance_GetPortInstances(), this.getGenPortInstance(), null, "getPortInstances", null, 0, -1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenComponentInstance_GenPortInstances(), this.getGenPortInstance(), null, "genPortInstances", null, 0, -1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(genPortInstanceEClass, GenPortInstance.class, "GenPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGenPortInstance_PortInstance(), theInstancePackage_1.getPortInstance(), null, "portInstance", null, 1, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenPortInstance_PortInstance(), theInstancePackage.getPortInstance(), null, "portInstance", null, 1, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenPortInstance_SamplingTime(), theValuetypePackage.getTimeValue(), null, "samplingTime", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenPortInstance_ExecCommand(), theExpressionsPackage.getExpression(), null, "execCommand", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenPortInstance_TargetPortInstance(), theInstancePackage.getPortInstance(), null, "targetPortInstance", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(genECUEClass, GenECU.class, "GenECU", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGenECU_Ecu(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "ecu", null, 1, 1, GenECU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -572,6 +596,8 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		initEClass(genSystemEClass, GenSystem.class, "GenSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGenSystem_GenECUs(), this.getGenECU(), null, "genECUs", null, 0, -1, GenSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenSystem_Cic(), theInstancePackage.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, GenSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenSystem_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, GenSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
@@ -611,6 +637,12 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		   source, 
 		   new String[] {
 			 "derivation", "let discretePortInstance : Set(instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(instance::DiscretePortInstance)).oclAsType(instance::DiscretePortInstance)->asOrderedSet() in\ndiscretePortInstance.receiverMessageTypes->asOrderedSet()->union(discretePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()\n\n\n\n"
+		   });	
+		addAnnotation
+		  (getGenPortInstance_TargetPortInstance(), 
+		   source, 
+		   new String[] {
+			 "derivation", "let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in\nconnectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance)->any(true)\n"
 		   });
 	}
 

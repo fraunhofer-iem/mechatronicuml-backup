@@ -176,6 +176,11 @@ public class GenTaskItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CodegenPackage.Literals.GEN_TASK__GEN_COMPONENT_INSTANCES,
+				 CodegenFactory.eINSTANCE.createRefinedAtomicComponentInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CodegenPackage.Literals.GEN_TASK__GEN_COMPONENT_INSTANCES,
 				 CodegenFactory.eINSTANCE.createGenComponentInstance()));
 	}
 

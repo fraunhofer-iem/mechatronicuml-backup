@@ -21,7 +21,7 @@ import org.storydriven.core.expressions.Expression;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getInitCommands <em>Init Commands</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getGetPortInstances <em>Get Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getGenPortInstances <em>Gen Port Instances</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getGenComponentInstance()
@@ -72,19 +72,19 @@ public interface GenComponentInstance extends EObject {
 	EList<Expression> getInitCommands();
 
 	/**
-	 * Returns the value of the '<em><b>Get Port Instances</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Gen Port Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Get Port Instances</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Gen Port Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Get Port Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getGenComponentInstance_GetPortInstances()
+	 * @return the value of the '<em>Gen Port Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getGenComponentInstance_GenPortInstances()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<GenPortInstance> getGetPortInstances();
+	EList<GenPortInstance> getGenPortInstances();
 
 } // GenComponentInstance
