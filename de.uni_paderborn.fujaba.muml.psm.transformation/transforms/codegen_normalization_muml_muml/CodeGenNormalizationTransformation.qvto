@@ -42,7 +42,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 main() {
 	//initialoize propery
-	//property_genComponentInstance:=inCodeGenModel.rootObjects()[GenSystem]->any(true).genECUs.allocatedGenTasks.genComponentInstances;
+	property_genComponentInstance:=inCodeGenModel.rootObjects()[GenSystem]->any(true).genECUs.allocatedGenTasks.genComponentInstances;
 	
 	//inCodeGenModel.rootObjects()[GenSystem].genECUs.allocatedGenTasks->map transform();
 //	log(outCodeGenModel.toString());
@@ -87,6 +87,14 @@ init {
 		result := new ComponentInstanceConfiguration().oclAsType(EObject);
 	}
 }
+
+
+mapping MessageTypeRepository::create():EObject{
+init {
+		result := new MessageTypeRepository().oclAsType(EObject);
+	}
+}
+
 
 
 mapping StaticAtomicComponent::create():EObject{
