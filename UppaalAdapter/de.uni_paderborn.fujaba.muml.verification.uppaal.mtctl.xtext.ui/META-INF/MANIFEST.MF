@@ -27,7 +27,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext;vis
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.uni_paderborn.fujaba.muml.ui.properties,
  de.uni_paderborn.fujaba.muml.verification.uppaal.ui,
  de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist,

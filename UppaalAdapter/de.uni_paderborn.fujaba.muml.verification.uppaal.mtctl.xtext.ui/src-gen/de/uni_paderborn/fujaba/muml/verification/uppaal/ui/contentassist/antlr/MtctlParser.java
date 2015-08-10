@@ -53,6 +53,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStateMapExprAccess().getAlternatives(), "rule__StateMapExpr__Alternatives");
 					put(grammarAccess.getTimeUnitExprAccess().getAlternatives(), "rule__TimeUnitExpr__Alternatives");
 					put(grammarAccess.getSetExprAccess().getAlternatives(), "rule__SetExpr__Alternatives");
+					put(grammarAccess.getQualifiedNameAccess().getAlternatives(), "rule__QualifiedName__Alternatives");
 					put(grammarAccess.getComparisonOpAccess().getAlternatives(), "rule__ComparisonOp__Alternatives");
 					put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");
 					put(grammarAccess.getLeadsToExprAccess().getGroup(), "rule__LeadsToExpr__Group__0");
@@ -98,8 +99,6 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIntervalSetExprAccess().getGroup(), "rule__IntervalSetExpr__Group__0");
 					put(grammarAccess.getInstanceSetExprAccess().getGroup(), "rule__InstanceSetExpr__Group__0");
 					put(grammarAccess.getSubinstanceSetExprAccess().getGroup(), "rule__SubinstanceSetExpr__Group__0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 					put(grammarAccess.getPropertyRepositoryAccess().getPropertiesAssignment(), "rule__PropertyRepository__PropertiesAssignment");
 					put(grammarAccess.getPropertyAccess().getExpressionAssignment_0(), "rule__Property__ExpressionAssignment_0");
