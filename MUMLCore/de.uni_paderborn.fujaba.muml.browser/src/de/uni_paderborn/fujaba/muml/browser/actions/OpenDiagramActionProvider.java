@@ -17,7 +17,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.runtime.notation.impl.ViewImpl;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -73,9 +75,10 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 
 	private static class OpenDiagramAction extends Action {
 
+		private Set<URI> diagrams;
+		
 		private boolean containerSelected;
-		private Set<Diagram> diagrams;
-
+		
 		private ICommonViewerWorkbenchSite viewerSite;
 
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
@@ -87,7 +90,9 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 		}
 
 		public void selectionChanged(IStructuredSelection selection) {
-			diagrams = new HashSet<Diagram>();
+			setText("Open Diagram");
+			setEnabled(false);
+			diagrams = new HashSet<URI>();
 			containerSelected = false;
 			Iterator<?> it = selection.iterator();
 			while (it.hasNext()) {
@@ -103,25 +108,16 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			}
 			if (diagrams.size() > 1) {
 				setText("Open multiple Diagrams");
-			} else {
-				setText("Open Diagram");
 			}
 			setEnabled(!diagrams.isEmpty());
 		}
-		private void findDiagramsForView(Set<Diagram> diagrams, View view) {
-			Diagram diagram = null;
-			if (view instanceof Diagram) {
-				diagram = (Diagram) diagram;
-			} else if (view != null) {
-				diagram = view.getDiagram();
-			}
-
-			if (diagram != null) {
-				diagrams.add(diagram);
+		private void findDiagramsForView(Set<URI> diagrams, View view) {
+			if (view != null && view.eResource() != null) {
+				diagrams.add(view.eResource().getURI());
 			}
 		}
 		
-		private void findDiagramsForIResource(final Set<Diagram> diagrams, IResource resource) throws CoreException { 
+		private void findDiagramsForIResource(final Set<URI> diagrams, IResource resource) throws CoreException { 
 			if (!resource.isAccessible()) {
 				return;
 			}
@@ -146,20 +142,19 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			
 			});
 		}
-		private boolean findDiagramsForResource(Set<Diagram> diagrams, Resource resource) {
+		private boolean findDiagramsForResource(Set<URI> diagrams, Resource resource) {
 			if (resource == null) {
 				return false;
 			}
-			boolean found = false;
-			for (Object contents : resource.getContents()) {
+			for (EObject contents : resource.getContents()) {
 				if (contents instanceof Diagram) {
-					diagrams.add((Diagram) contents);
-					found = true;
+					diagrams.add(resource.getURI());
+					return true;
 				}
 			}
-			return found;
+			return false;
 		}
-		private void findDiagramsForObject(Set<Diagram> diagrams, Object object) throws CoreException {
+		private void findDiagramsForObject(Set<URI> diagrams, Object object) throws CoreException {
 			if (object instanceof IAdaptable) {
 				findDiagramsForView(diagrams, (View) ((IAdaptable) object).getAdapter(View.class));
 				findDiagramsForIResource(diagrams, (IResource) ((IAdaptable) object).getAdapter(IResource.class));
@@ -168,7 +163,9 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			} else if (object instanceof View) {
 				findDiagramsForView(diagrams, (View) object);
 			} else if (object instanceof Diagram) {
-				diagrams.add((Diagram) object);
+				if (((Diagram) object).eResource() != null) {
+					diagrams.add(((Diagram) object).eResource().getURI());
+				}
 			} else if (object instanceof EObject) {
 				EObject element = (EObject) object;
 				if (element.eResource() != null) {
@@ -176,8 +173,9 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 						for (Object contents : resource.getContents()) {
 							if (contents instanceof Diagram) {
 								Diagram diagram = (Diagram) contents;
-								if (diagram.getElement() == element) {
-									diagrams.add(diagram);
+								EObject diagramElement = (EObject) diagram.eGet(NotationPackage.Literals.VIEW__ELEMENT, false); // non resolving
+								if (diagramElement == element && diagramElement.eResource() != null) {
+									diagrams.add(diagramElement.eResource().getURI());
 								}
 							}
 						}
@@ -187,11 +185,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 		}
 
 		public void run() {
-			for (Diagram diagram : diagrams) {
-				if (diagram.eResource() == null) {
-					continue;
-				}
-				URI uri = diagram.eResource().getURI();
+			for (URI uri : diagrams) {
 				IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
 				IWorkbenchPage page = viewerSite.getPage();
 				try {

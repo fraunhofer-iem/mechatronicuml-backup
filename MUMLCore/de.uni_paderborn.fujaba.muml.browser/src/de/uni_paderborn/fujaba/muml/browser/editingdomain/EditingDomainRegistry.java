@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.browser.editingdomain;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,6 +15,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.impl.ViewImpl;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.Saveable;
 import org.eclipse.ui.navigator.SaveablesProvider;
 
@@ -24,9 +28,10 @@ public class EditingDomainRegistry {
 		@Override
 		public Saveable[] getSaveables() {
 			List<Saveable> saveables = new ArrayList<Saveable>();
-
-			for (MumlEditingDomain domain : map.values()) {
-				saveables.add(domain.getSaveable());
+			synchronized (map) {
+				for (MumlEditingDomain domain : map.values()) {
+					saveables.add(domain.getSaveable());
+				}
 			}
 			return saveables.toArray(new Saveable[] { });
 		}
@@ -73,10 +78,18 @@ public class EditingDomainRegistry {
 		}
 		public void saveableAdded(Saveable saveable) {
 		}
-
+ 
 		@Override
 		public void editingDomainCreated(MumlEditingDomain domain) {
-			fireSaveablesOpened(new Saveable[] { domain.getSaveable() });			
+			try {
+			if (domain.getSaveable() != null) {
+				fireSaveablesOpened(new Saveable[] { domain.getSaveable() });
+			} else {
+				System.out.println("??");
+			}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 	};
@@ -108,11 +121,15 @@ public class EditingDomainRegistry {
 	}
 	
 	public Collection<MumlEditingDomain> getEditingDomains() {
-		return map.values();
+		synchronized (map) {
+			return new ArrayList<MumlEditingDomain>(map.values());
+		}
 	}
-	
+
 	public Set<URI> getURIs() {
-		return map.keySet();
+		synchronized (map) {
+			return new HashSet<URI>(map.keySet());
+		}
 	}
 
 	public MumlEditingDomain getEditingDomain(URI uri, boolean create) {
@@ -120,19 +137,23 @@ public class EditingDomainRegistry {
 		if (editingDomain != null) {
 			Resource resource;
 			try {
-				resource = editingDomain.getResourceSet().getResource(uri, true);
+				resource = editingDomain.getResourceSet().getResource(uri, create);
 			} catch (Exception e) {
 				return null;
 			}
-			if (resource.getContents().size() == 1) {
+			if (resource != null && resource.getContents().size() == 1) {
 				EObject root = resource.getContents().get(0);
 				if (root instanceof Diagram) {
 					Diagram diagram = (Diagram) root;
-					EObject element = diagram.getElement();
-					if (element != null && element.eResource() != null && element.eResource() != resource) {
-						URI semanticURI = diagram.getElement().eResource().getURI();
-						return internalGetEditingDomain(semanticURI, create);
-					}
+					EObject diagramElement = (EObject) diagram.eGet(NotationPackage.Literals.VIEW__ELEMENT, false); // non resolving
+					if (diagramElement != null && diagramElement.eResource() != null && diagramElement.eResource() != resource) {
+						URI semanticURI = diagramElement.eResource().getURI();
+						MumlEditingDomain domain = internalGetEditingDomain(semanticURI, create);
+						synchronized (map) {
+							map.put(uri, domain); // set uri of diagram to semantic element.
+						}
+						return domain;
+					} 
 				}
 			}
 		}
@@ -144,23 +165,35 @@ public class EditingDomainRegistry {
 			return null;
 		}
 		if (uri != null) {
+			boolean created = false;
+			MumlEditingDomain domain = null;
 			synchronized (map) {
 				uri = uri.trimFragment();
 				if (!map.containsKey(uri)) {
-					MumlEditingDomain domain = createDomain(uri);
+					domain = createDomain(uri);
 					map.put(uri, domain);
-					fireCreated(domain);
+					created = true;
+				} else {
+					domain = map.get(uri);
 				}
-				return map.get(uri);
 			}
+			if (created) {
+				fireCreated(domain);
+			}
+			return domain;
 		}
 		return null;
 	}
 	
-	protected void fireCreated(MumlEditingDomain domain) {
-		for (Listener listener : listeners) {
-			listener.editingDomainCreated(domain);
-		}
+	protected void fireCreated(final MumlEditingDomain domain) {
+		Display.getDefault().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				for (Listener listener : listeners) {
+					listener.editingDomainCreated(domain);
+				}				
+			}
+		});
 	}
 
 	protected MumlEditingDomain createDomain(URI uri) {

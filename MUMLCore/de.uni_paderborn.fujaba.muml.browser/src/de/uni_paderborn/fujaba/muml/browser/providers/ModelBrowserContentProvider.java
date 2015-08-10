@@ -30,6 +30,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -39,6 +40,7 @@ import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -70,7 +72,6 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
 		public void resourceSetChanged(final ResourceSetChangeEvent event) {
-			final Set<IFile> refreshes = new HashSet<IFile>();
 			final Set<Object> notifiers = new HashSet<Object>(); 
 			for (Notification notification : event.getNotifications()) {
 				Object notifier = notification.getNotifier();
@@ -83,16 +84,24 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				}
 				if (resource != null) {
 					URI uri = resource.getURI();
-					final IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
-					refreshes.add(iFile);
 					if (notifier instanceof EObject && !resource.getContents().contains(notifier)) {
 						notifiers.add(notifier);
 					} else {
-						notifiers.add(iFile);
+						String fullPath = uri.toPlatformString(true);
+						if (fullPath != null) {
+							IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(fullPath));
+							if (iFile != null) {
+								notifiers.add(iFile);
+							}
+						}
 					}
-					MumlEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+					final MumlEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
 					if (domain != null && domain.getSaveable() != null) {
-						ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider().dirtyChanged(domain.getSaveable());
+						Display.getDefault().asyncExec(new Runnable() {
+							public void run() {
+								ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider().dirtyChanged(domain.getSaveable());
+							}
+						});
 					}
 				}
 				
@@ -133,7 +142,26 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		for (TransactionalEditingDomain domain : ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomains()) {
 			domain.addResourceSetListener(resourceSetListener);
 		}
-		runUpdate(Collections.singletonList((IResource) ResourcesPlugin.getWorkspace().getRoot()));
+		final List<IFile> files = new ArrayList<IFile>();
+		try {
+			ResourcesPlugin.getWorkspace().getRoot().accept(new IResourceVisitor() {
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					if (resource.getName().startsWith(".")) {
+						return false;
+					}
+					if (resource instanceof IFile) {
+						IFile iFile = (IFile) resource;
+						files.add(iFile);
+					}
+					return true;
+				}
+			});
+		} catch (CoreException e) {
+			ModelBrowserPlugin.log(e);
+		}
+		
+		runUpdate(files, false);
 	}
 
 	@Override
@@ -141,33 +169,20 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		editingDomain.addResourceSetListener(resourceSetListener);
 	}
 	
-	private void runUpdate(final List<IResource> resources) {
+	private void runUpdate(final List<IFile> files, final boolean reload) {
 		Job job = new Job("Update MechatronicUML Browser Contents") {
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				// set total number of work units
-				final List<IFile> files = new ArrayList<IFile>();
-				for (IResource resource : resources) {
-					try {
-						resource.accept(new IResourceVisitor() {
-							@Override
-							public boolean visit(IResource resource) throws CoreException {
-								if (resource instanceof IFile) {
-									IFile iFile = (IFile) resource;
-									files.add(iFile);
-								}
-								return true;
-							}
-						});
-					} catch (CoreException e) {
-						ModelBrowserPlugin.log(e);
-					}
-				}
 				monitor.beginTask("Reloading changes", files.size());
 				
 				for (IFile file : files) {
 					if (ModelBrowserPlugin.canLoad(file.getFileExtension())) {
-						reload(file);
+						try {
+							load(file, reload);
+						} catch (Exception e) {
+							ModelBrowserPlugin.log(e, "Error while loading file " + file);
+						}
 					}
 					monitor.worked(1);
 				}
@@ -179,36 +194,37 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	}
 
-	protected void reload(final IFile iFile) {
+	protected void load(final IFile iFile, boolean reload) {
 		refreshActive = false;
 		try {
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, false);
+
+			if (editingDomain != null) {
+				if (reload) {
+					editingDomain.getResourceSet().getResources().clear();
+				}
+			} else {
+				editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+			}
 			if (editingDomain == null) {
 				return;
 			}
+			
+			boolean refresh = false;
 			synchronized (editingDomain) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, true);
 				if (resource instanceof XMIResource) {
 					System.out.println("Reloading " + iFile);
 					try {
-						resource.unload();
-						resource.load(Collections.emptyMap());
 						for (EObject element : resource.getContents()) {
 							if (element instanceof Diagram) {
 								Diagram diagram = (Diagram) element;
-								if (diagram.getElement() != null) {
-									Resource targetResource = diagram.getElement().eResource();
-									if (targetResource != null) {
-										URI targetUri = targetResource.getURI();
-										if (!targetResource.getContents().contains(diagram.getElement())) {
-											String fragment = targetResource.getURIFragment(diagram.getElement());
-											if (fragment != null) {
-												targetUri = targetUri.appendFragment(fragment);
-											}
-										}
-										addRelocation(uri, targetUri);	
-									}
+								EObject diagramElement = (EObject) diagram.eGet(NotationPackage.Literals.VIEW__ELEMENT, false); // non resolving
+								if (diagramElement != null) {
+									URI targetUri = EcoreUtil.getURI(diagramElement);
+									addRelocation(uri, targetUri);
+									refresh = true;
 								}
 							}
 						}
@@ -217,14 +233,16 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					}
 				}
 			}
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {			
-					if (viewer != null) {
-						((StructuredViewer) viewer).refresh(); //((StructuredViewer) viewer).update(iFile, null);
+			if (refresh) {
+				Display.getDefault().asyncExec(new Runnable() {
+					@Override
+					public void run() {			
+						if (viewer != null) {
+							((StructuredViewer) viewer).refresh(); //((StructuredViewer) viewer).update(iFile, null);
+						}
 					}
-				}
-			});
+				});
+			}
 		} finally {
 			refreshActive = true;
 		}
@@ -246,18 +264,20 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	protected void processDelta(IResourceDelta delta) {		
 		super.processDelta(delta);
 		try {
-			final List<IResource> changedFiles = new ArrayList<IResource>();
+			final List<IFile> changedFiles = new ArrayList<IFile>();
 			delta.accept(new IResourceDeltaVisitor() {
 				@Override
 				public boolean visit(IResourceDelta delta) throws CoreException {
 					if ((delta.getFlags() & IResourceDelta.CONTENT) != 0 || delta.getKind() == IResourceDelta.ADDED) {
-						changedFiles.add(delta.getResource());
+						if (delta.getResource() instanceof IFile) {
+							changedFiles.add((IFile) delta.getResource());
+						}
 					}
 					return true;
 				}
 			});
 			if (!changedFiles.isEmpty()) {
-				runUpdate(changedFiles);
+				runUpdate(changedFiles, true);
 			}
 		} catch (CoreException e) {
 			ModelBrowserPlugin.log(e);
@@ -302,7 +322,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		URI parentUri = getUri(element);
 		Set<URI> relocated = this.relocatedChildren.get(parentUri);
 		if (relocated != null) {
-			for (URI targetUri : relocated) {
+			for (URI targetUri : new HashSet<URI>(relocated)) {
 				EditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(targetUri, true);
 				if (editingDomain != null) {
 					Resource resource = editingDomain.getResourceSet().getResource(targetUri, false);
@@ -323,13 +343,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	private URI getUri(Object object) {
 		if (object instanceof EObject) {
 			EObject element = (EObject) object;
-			Resource resource = element.eResource();
-			URI uri = resource.getURI();
-			String fragment = resource.getURIFragment(element);
-			if (fragment != null) {
-				uri = uri.appendFragment(fragment);
-			}
-			return uri;
+			return EcoreUtil.getURI(element);
 		}
 		if (object instanceof Resource) {
 			return ((Resource) object).getURI();

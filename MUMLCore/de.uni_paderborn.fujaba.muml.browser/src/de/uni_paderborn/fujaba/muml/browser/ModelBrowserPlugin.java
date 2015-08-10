@@ -33,6 +33,9 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 	
 
 	public static boolean canLoad(String extension) {
+		if ("muml".equals(extension) || "fujaba".equals(extension)) {
+			return true;
+		}
 		final Set<String> extensions = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().keySet();
 		return extensions.contains(extension); // Check if suffix is registered as EMF file
 	}
