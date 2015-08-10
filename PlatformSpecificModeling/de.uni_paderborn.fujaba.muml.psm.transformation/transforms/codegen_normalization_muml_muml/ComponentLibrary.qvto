@@ -86,7 +86,7 @@ mapping StaticAtomicComponent::transform():EObject inherits OclAny::transform{
 /**
 * Replace a HybridPort with a  DiscretePort
 */
-mapping HybridPort::transform():EObject{
+mapping HybridPort::transform():EObject {
 	init{
 	result:=new DiscretePort();
 	}
@@ -95,8 +95,12 @@ mapping HybridPort::transform():EObject{
 	discretePort.annotation:=self.annotation;
 	discretePort.extension:=self.extension;
 	discretePort.comment:=self.comment;
-	//discretePort.connectors:=self.connectors.late resolve(Connector);
+	discretePort.connectors:=self.connectors.late resolve(Connector);
 	//component:=self.component;
+	
+	//create the message stuff
+	var messageType:MessageType:=self.getMessageForDirectedTypedPort();
+	self.CreateMessageBufferForDiscretePort(discretePort,messageType);
 	
 	if(self.component.oclIsKindOf(AtomicComponent)) then{
 		var componentStateChart:RealtimeStatechart;
@@ -106,10 +110,8 @@ mapping HybridPort::transform():EObject{
 		else {
 			componentStateChart:=self.component.oclAsType(AtomicComponent).behavior.map transform().oclAsType(RealtimeStatechart);
 		}endif;
-		//create the message stuff
-		var messageType:MessageType:=self.getMessageForDirectedTypedPort();
+		
 		var variable:Variable:=self.CreateStateChartVariable();
-		self.CreateMessageBufferForDiscretePort(discretePort,messageType);
 		//statechart stuff
 		AddVariableToStateChart(componentStateChart,variable);
 		self.ReplacePortExpressionWithVariableExpression(componentStateChart,variable);
@@ -129,6 +131,8 @@ mapping HybridPort::transform():EObject{
 }
 
 
+
+
 /**
 * Replace a ContinuousPort with a  DiscretePort
 */
@@ -143,19 +147,22 @@ mapping ContinuousPort::transform():EObject{
 	discretePort.extension:=self.extension;
 	discretePort.comment:=self.comment;
 	discretePort.connectors:=self.connectors.late resolve(Connector);
+	
+		//create the message stuff
+		var messageType:MessageType:=self.getMessageForDirectedTypedPort();
+		self.CreateMessageBufferForDiscretePort(discretePort,messageType);
+		
 	if(self.component.oclIsKindOf(AtomicComponent)) then{
 	
-	var componentStateChart:RealtimeStatechart;
+		var componentStateChart:RealtimeStatechart;
 		if(self.component.oclAsType(AtomicComponent).behavior.oclIsUndefined()) then{
 			componentStateChart:= self.component.oclAsType(StaticAtomicComponent).map mapcreateEmptyRealtimeStateChart();
 		}
 		else {
 			componentStateChart:=self.component.oclAsType(AtomicComponent).behavior.map transform().oclAsType(RealtimeStatechart);
 		}endif;
-		//create the message stuff
-		var messageType:MessageType:=self.getMessageForDirectedTypedPort();
+	
 		var variable:Variable:=self.CreateStateChartVariable();
-		self.CreateMessageBufferForDiscretePort(discretePort,messageType);
 		//statechart stuff		
 		AddVariableToStateChart(componentStateChart,variable);
 		var portStateChart:RealtimeStatechart;

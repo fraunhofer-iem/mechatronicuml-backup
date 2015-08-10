@@ -43,8 +43,13 @@ modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware
 
 
 helper DirectedTypedPort::getMessageForDirectedTypedPort():MessageType{
+	var port:DirectedTypedPort:=self;
+	if(port.component.oclIsKindOf(StaticStructuredComponent)) then{
+	//select the real port (not just the dummy delegation port)
+		port:=port.connectors.connectorEndpoints->select(p|p.oclIsKindOf(PortPart))->any(true).oclAsType(PortPart).portType.oclAsType(DirectedTypedPort);
+	}endif;
 	//get the ports which are connected to this port, because they have to share the same Message
-	var genportInstancesWithThisPortType : Bag(GenPortInstance) := property_genComponentInstance.genPortInstances->select(genPortInstance|genPortInstance.portInstance.portType=self);
+	var genportInstancesWithThisPortType : Bag(GenPortInstance) := property_genComponentInstance.genPortInstances->select(genPortInstance|genPortInstance.portInstance.portType=port);
 	var targetPortInstances : Bag(PortInstance) := genportInstancesWithThisPortType.targetPortInstance;
 	var setOfConnectedPorts : Bag(Port) := targetPortInstances.portType->union(genportInstancesWithThisPortType.portInstance.portType);
 	var message:MessageType :=setOfConnectedPorts.oclAsType(DirectedTypedPort)->asSet()->map createMessageForPorts();
