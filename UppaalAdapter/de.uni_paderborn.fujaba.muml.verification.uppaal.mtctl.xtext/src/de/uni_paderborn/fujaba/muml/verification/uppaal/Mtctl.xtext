@@ -226,10 +226,14 @@ SubinstanceSetExpr returns mtctl::SetExpr:
 ;
 
 //Other necessary definitions
+
 QualifiedName:
-	ID ('.' ID)*
+	QNAME | ID
 ;
 
+terminal QNAME:
+	ID ('.' ID)+
+;
 
 EInt returns ecore::EInt:
 	'-'? INT

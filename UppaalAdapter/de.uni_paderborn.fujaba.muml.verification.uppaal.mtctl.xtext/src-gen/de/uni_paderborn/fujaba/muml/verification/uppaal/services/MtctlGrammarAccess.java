@@ -1647,31 +1647,23 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cQNAMETerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		////Other necessary definitions
 		//QualifiedName:
-		//	ID ("." ID)*;
+		//	QNAME | ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//ID ("." ID)*
-		public Group getGroup() { return cGroup; }
+		//QNAME | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//QNAME
+		public RuleCall getQNAMETerminalRuleCall_0() { return cQNAMETerminalRuleCall_0; }
 
 		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-
-		//("." ID)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
 	public class EIntElements extends AbstractParserRuleElementFinder {
@@ -1808,6 +1800,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private final InstanceSetExprElements pInstanceSetExpr;
 	private final SubinstanceSetExprElements pSubinstanceSetExpr;
 	private final QualifiedNameElements pQualifiedName;
+	private final TerminalRule tQNAME;
 	private final EIntElements pEInt;
 	
 	private final Grammar grammar;
@@ -1872,6 +1865,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pInstanceSetExpr = new InstanceSetExprElements();
 		this.pSubinstanceSetExpr = new SubinstanceSetExprElements();
 		this.pQualifiedName = new QualifiedNameElements();
+		this.tQNAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "QNAME");
 		this.pEInt = new EIntElements();
 	}
 	
@@ -2433,7 +2427,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Other necessary definitions
 	//QualifiedName:
-	//	ID ("." ID)*;
+	//	QNAME | ID;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return pQualifiedName;
 	}
@@ -2441,6 +2435,12 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
 	}
+
+	//terminal QNAME:
+	//	ID ("." ID)+;
+	public TerminalRule getQNAMERule() {
+		return tQNAME;
+	} 
 
 	//EInt returns ecore::EInt:
 	//	"-"? INT;

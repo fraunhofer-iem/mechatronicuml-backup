@@ -2836,27 +2836,22 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(    this_ID_0=RULE_ID    {
-		$current.merge(this_ID_0);
+(    this_QNAME_0=RULE_QNAME    {
+		$current.merge(this_QNAME_0);
     }
 
     { 
-    newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
+    newLeafNode(this_QNAME_0, grammarAccess.getQualifiedNameAccess().getQNAMETerminalRuleCall_0()); 
     }
-(
-	kw='.' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-    }
-    this_ID_2=RULE_ID    {
-		$current.merge(this_ID_2);
+
+    |    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
     }
 
     { 
-    newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
+    newLeafNode(this_ID_1, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1()); 
     }
-)*)
+)
     ;
 
 
@@ -2939,6 +2934,8 @@ ruleComparisonOp returns [Enumerator current=null]
 ));
 
 
+
+RULE_QNAME : RULE_ID ('.' RULE_ID)+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
