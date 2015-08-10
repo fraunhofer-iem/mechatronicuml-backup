@@ -244,8 +244,7 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 			clockResets += getLoadBalancingClockTaskPlanned();
 		};		
 				
-		guard := self.TransferSchemaGuard(taskPlannedName);
-		
+		guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(taskPlannedName));
 		
 	}
 	
@@ -273,7 +272,7 @@ mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAn
 		
 		synchronization := 	self.TransferSchemata2Synchronization( loadBalancing,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
-		guard := self.TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 			
@@ -285,7 +284,7 @@ mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, 
 		
 		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);		
 		
-		guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
@@ -319,6 +318,17 @@ mapping Transition :: LoadBalancing2SourceEmbeddedRTSCSubrole(context:OclAny, re
 		
 		transitions += self.map LoadBalancing2TransitionFromIdleToCheck(context,region);
 					
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).responseMessage.oclIsUndefined()) {
+			transitions += self.map LoadBalancingResponseMessage2TransitionFromCheckToRequested1(context,region);
+			transitions += self.map LoadBalancingResponseMessage2TransitionFromCheckToRequested2(context,region);
+		};
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.oclIsUndefined()) {
+			
+		};
+		
+		transitions += self.map LoadBalancing2TransitionFromRequestedToIdle1(context,region);
+		transitions += self.map LoadBalancing2TransitionFromRequestedToIdle2(context,region);
+		transitions += self.map LoadBalancing2TransitionFromRequestedToIdle3(context,region);
 	}
 
 mapping Transition :: LoadBalancing2TransitionFromIdleToCheck(context:OclAny, region:RealtimeStatechart) : Transition {
@@ -326,16 +336,84 @@ mapping Transition :: LoadBalancing2TransitionFromIdleToCheck(context:OclAny, re
 		priority := 1;
 		
 		source := self.map RegionState(context,region,"Idle",true);
+		
 		target := self.map RegionState(context,region,"Check",false);
 		
 		synchronization := self.TransferSchemata2Synchronization(loadBalancingCheck, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 }
 
-mapping Transition :: LoadBalancing2TransitionFromCheckToRequested1(context:OclAny,region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancingResponseMessage2TransitionFromCheckToRequested1(context:OclAny,region:RealtimeStatechart) : Transition {
+		
+		priority := 1;
 		
 		source := self.map RegionState(context,region,"Check",false);
 		
-		target := self.map RegionState(context,region,"Requested",false);
+		target := self.map RegionState(context,region,"Requested",false);		
 		
+		result.guard := self.TransferSchemataLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2UnaryExpression(result,UnaryOperator::NOT),self.TransferSchemaGuard(getFreeForWorkVariable(), UnaryOperator::NOT),LogicOperator::OR);
+
+		action := self.TransferSchemata2Action(taskPlannedName + " := false;",taskPlannedName,"false");		
+}
+
+
+mapping Transition :: LoadBalancingResponseMessage2TransitionFromCheckToRequested2(context:OclAny,region:RealtimeStatechart) : Transition {
+		
+		priority :=2;
+		
+		source := self.map RegionState(context,region,"Check",false);
+		
+		target := self.map RegionState(context,region,"Requested",false);		
+		
+		result.guard := self.TransferSchemataLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result),self.TransferSchemaGuard(getFreeForWorkVariable(),null),LogicOperator::AND);
+		
+		action := self.TransferSchemata2TwoActions(loadBalancingPossibleName + " := true; " + taskPlannedName + " := true;",loadBalancingPossibleName, taskPlannedName, "true");
 		
 }
+
+mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle1(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 1;
+		
+		target := self.map RegionState(context,region,"Check",false);
+		
+		source := self.map RegionState(context,region,"Requested",false);	
+		
+		guard := self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::EQUAL);
+		
+		synchronization := self.TransferSchemata2Synchronization(loadBalancingCheckDone, SynchronizationKind::SEND);
+		
+}
+
+mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle2(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 2;
+		
+		target := self.map RegionState(context,region,"Check",false);
+		
+		source := self.map RegionState(context,region,"Requested",false);	
+		
+		guard := self.TransferSchemataLogicalExpression(self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.TransferSchemaGuard(loadBalancingPossibleName, UnaryOperator::NOT),LogicOperator::AND);
+		
+		synchronization := self.TransferSchemata2Synchronization(loadBalancingCheck, SynchronizationKind::SEND,PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		
+}
+
+mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 3;
+		
+		target := self.map RegionState(context,region,"Check",false);
+		
+		source := self.map RegionState(context,region,"Requested",false);	
+		
+		guard := self.TransferSchemataLogicalExpression(self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName)),LogicOperator::AND);
+		
+		synchronization := self.TransferSchemata2Synchronization(loadBalancingCheck, SynchronizationKind::SEND,PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		
+}
+
+
+
+
+
+

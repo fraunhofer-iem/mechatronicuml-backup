@@ -133,7 +133,7 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context 
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 	
 		synchronization := 	self. TransferSchemata2Synchronization( multiReceiveDoneChannelName,SynchronizationKind::SEND);
 }
@@ -148,7 +148,7 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate2ToTarget(context 
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 			
 		synchronization := self. TransferSchemata2Synchronization( multiReceiceChannelName,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 }

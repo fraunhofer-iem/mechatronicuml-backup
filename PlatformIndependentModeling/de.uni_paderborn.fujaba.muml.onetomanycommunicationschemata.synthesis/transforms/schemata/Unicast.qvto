@@ -196,7 +196,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 			}endif;
 			
 		}else{	
-			guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);
+			guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);
 			action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map Action2Action(context, region);
 		}endif;
 		
@@ -214,7 +214,7 @@ mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, regio
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 		
-		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
+		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
 		
 	}
 	
@@ -228,7 +228,7 @@ mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		
 		synchronization := 	self. TransferSchemata2Synchronization( unicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
-		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 			
@@ -240,7 +240,7 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 		
 		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);		
 		
-		guard := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
@@ -301,7 +301,7 @@ mapping Transition :: Unicast2RequestedIdleCheckDoneLastSubrole(context:OclAny, 
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.  TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		synchronization := self. TransferSchemata2Synchronization(unicastCheckDone,SynchronizationKind::SEND);
 					
@@ -369,7 +369,7 @@ mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, r
 	
 mapping Transition :: UnicastNotLastAndPossibleExpression(context:OclAny, region:RealtimeStatechart, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
 
-		leftExpression := self. TransferSchemataLogicalExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		leftExpression := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		if(notOp){
 			rightExpression := self. TransferSchemaGuard(varName, UnaryOperator::NOT);

@@ -131,7 +131,7 @@ helper Transition :: Schema2PositionKindSelector(kind : PositionSelectorKind) : 
 	
 	--Transfer Schemata Guards, Clock Constraints, CLock Resets
 	
-helper Transition :: TransferSchemataLogicalExpression( position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
+helper Transition :: TransferSchemataComparisonExpression( position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
 		
 		var comp : ComparisonExpression := new ComparisonExpression();
 			
@@ -143,9 +143,19 @@ helper Transition :: TransferSchemataLogicalExpression( position:PositionSelecto
 		return comp;
 				
 	}
-	
-	
-	
+
+helper Transition :: TransferSchemataLogicalExpression(_leftExpression : Expression, _rightExpression : Expression, _operator:LogicOperator) : LogicalExpression {
+		var logical : LogicalExpression := new LogicalExpression();
+		
+		logical.leftExpression := _leftExpression;
+		
+		logical.rightExpression := _rightExpression;
+		
+		logical.operator := _operator;
+		
+		return logical;	
+}
+
 ----------------------------------------------------XXXXXXXXXXXXXXXX--MAPPINGS FOR ALL TRANSFER SCHEMATA--XXXXXXXXXXXXXXXXXX--------------------------------------------
 	
 --Transfer Schemata State
@@ -229,15 +239,17 @@ helper Transition :: TransferSchemaGuard(varName:String, operator:UnaryOperator)
 		return unex;
 	
 	}
-helper Transition :: TransferSchemaGuard(varName:String) : UnaryExpression {
+
+helper Transition :: TransferSchemaGuard(variable : Variable, operator:UnaryOperator) : UnaryExpression {
 
 		var unex : UnaryExpression := new UnaryExpression();
-		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
-		
+		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(variable);
+		if(not operator.oclIsUndefined()){
+			unex.operator := _operator;
+		}endif;
 		return unex;
 	
 	}	
-
 	
 // @author: sthiele2
 mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region:RealtimeStatechart, intermediateStateNumber : Integer, clockName : String,toplevel : Boolean) : State

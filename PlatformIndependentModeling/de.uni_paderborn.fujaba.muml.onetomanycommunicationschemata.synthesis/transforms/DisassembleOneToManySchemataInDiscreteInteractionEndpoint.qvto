@@ -4,6 +4,7 @@ import schemata.Unicast;
 import schemata.MultiReceive;
 import schemata.UniReceive;
 import schemata.IterateSchema;
+import schemata.LoadBalancing;
 import normalisations;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
@@ -221,11 +222,27 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		var prio : Integer := 1;
 		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()))->union(self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())))
 		->forEach(t) {
+			
+			if(not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsKindOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
+				// add global subrole clocks and variables for LoadBalancing:
+				var lb : muml::realtimestatechart::one_to_n_schemata::LoadBalancing := t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing);
+				// distinguish variants of LoadBalancing: maxWCET or responseMessage 
+				if(not lb.maxWorkingTime.oclIsUndefined()) {
+					clocks+= getLoadBalancingClockTaskPlanned();
+					variables += getNeverHadATaskVariable();
+				};
+				if(not lb.responseMessage.oclIsUndefined()) {
+					variables += getFreeForWorkVariable();
+				};
+			};
 			mainState.embeddedRegions += t.map OneToManyCommunicationSchema2SubroleRegion(self, prio);
 			prio := prio +1;
 		};		
 		
 		states += mainState;
+		
+		
+		
 		
 		self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior := result;
 }
@@ -256,6 +273,11 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 			variables += transition.map Transition2SubroleSpecificBooleanVaribale("sendUnicast");
 		};
 		
+		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
+			variables += transition.map Transition2SubroleSpecificBooleanVaribale(taskPlannedName);
+		};
 		// add the source and target of the schema transition to the subrole schema realtimestatechart
 		states += self.map Transition2StateSubrole(region, self.source,true);		
 		states += self.map Transition2StateSubrole(region, self.target,false);		
@@ -458,6 +480,8 @@ mapping Transition::Transition2StateSubrole(inout containerRegion : RealtimeStat
 			embeddedRegions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2SourceRegionSubrole(result, containerRegion);
 			embeddedRegions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2SourceRegionSubrole(result, containerRegion);	
 			embeddedRegions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2SourceRegionSubrole(result, containerRegion);	
+			embeddedRegions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map LoadBalancing2SourceRegionSubrole(result, containerRegion);	
+			
 		};
 }
 
