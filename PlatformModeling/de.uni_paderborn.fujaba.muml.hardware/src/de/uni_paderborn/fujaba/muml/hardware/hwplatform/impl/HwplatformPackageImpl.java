@@ -695,7 +695,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		initEClass(networkingHardwareEClass, NetworkingHardware.class, "NetworkingHardware", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(networkConnectorEClass, NetworkConnector.class, "NetworkConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNetworkConnector_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 0, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNetworkConnector_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 0, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnector_Bandwidth(), theHwvaluetypePackage.getDataRate(), null, "bandwidth", null, 0, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnector_HwportParts(), this.getHWPortPart(), null, "hwportParts", null, 0, 2, NetworkConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNetworkConnector_ConnectorKind(), theHwresourcePackage.getCommunicationKind(), "connectorKind", null, 1, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

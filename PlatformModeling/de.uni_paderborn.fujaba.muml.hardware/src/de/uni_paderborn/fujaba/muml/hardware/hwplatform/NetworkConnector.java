@@ -46,7 +46,7 @@ public interface NetworkConnector extends Connector {
 	 * @return the value of the '<em>Protocol</em>' reference.
 	 * @see #setProtocol(CommunicationProtocol)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getNetworkConnector_Protocol()
-	 * @model volatile="true"
+	 * @model volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.hwportParts->notEmpty()) then \t\n\tself.hwportParts.hwport->select(p| not p.protocol.oclIsUndefined())->any(true).protocol \nelse      \n\tnull \nendif'"
 	 * @generated
 	 */
