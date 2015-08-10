@@ -11,13 +11,13 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.presentation,
  de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation,
  de.uni_paderborn.fujaba.muml.psm.codegen.presentation,
- de.uni_paderborn.fujaba.muml.psm.instance.presentation,
  de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation,
  de.uni_paderborn.fujaba.muml.psm.presentation,
  de.uni_paderborn.fujaba.muml.psm.properties.presentation,
- de.uni_paderborn.fujaba.muml.psm.realtimestatechart.presentation,
- de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.presentation,
- de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.presentation
+ de.uni_paderborn.fujaba.muml.psm.psm_instance.presentation,
+ de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.presentation,
+ de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation,
+ de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

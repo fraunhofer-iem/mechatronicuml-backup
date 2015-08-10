@@ -37,7 +37,7 @@ import org.storydriven.core.expressions.Expression;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenComponentInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenComponentInstanceImpl#getInitCommands <em>Init Commands</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenComponentInstanceImpl#getGetPortInstances <em>Get Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenComponentInstanceImpl#getGenPortInstances <em>Gen Port Instances</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,14 +64,14 @@ public class GenComponentInstanceImpl extends MinimalEObjectImpl.Container imple
 	protected EList<Expression> initCommands;
 
 	/**
-	 * The cached value of the '{@link #getGetPortInstances() <em>Get Port Instances</em>}' containment reference list.
+	 * The cached value of the '{@link #getGenPortInstances() <em>Gen Port Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGetPortInstances()
+	 * @see #getGenPortInstances()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<GenPortInstance> getPortInstances;
+	protected EList<GenPortInstance> genPortInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,11 +147,11 @@ public class GenComponentInstanceImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<GenPortInstance> getGetPortInstances() {
-		if (getPortInstances == null) {
-			getPortInstances = new EObjectContainmentEList<GenPortInstance>(GenPortInstance.class, this, CodegenPackage.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES);
+	public EList<GenPortInstance> getGenPortInstances() {
+		if (genPortInstances == null) {
+			genPortInstances = new EObjectContainmentEList<GenPortInstance>(GenPortInstance.class, this, CodegenPackage.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES);
 		}
-		return getPortInstances;
+		return genPortInstances;
 	}
 
 	/**
@@ -162,8 +162,8 @@ public class GenComponentInstanceImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CodegenPackage.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES:
-				return ((InternalEList<?>)getGetPortInstances()).basicRemove(otherEnd, msgs);
+			case CodegenPackage.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES:
+				return ((InternalEList<?>)getGenPortInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -181,8 +181,8 @@ public class GenComponentInstanceImpl extends MinimalEObjectImpl.Container imple
 				return basicGetComponentInstance();
 			case CodegenPackage.GEN_COMPONENT_INSTANCE__INIT_COMMANDS:
 				return getInitCommands();
-			case CodegenPackage.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES:
-				return getGetPortInstances();
+			case CodegenPackage.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES:
+				return getGenPortInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,9 +203,9 @@ public class GenComponentInstanceImpl extends MinimalEObjectImpl.Container imple
 				getInitCommands().clear();
 				getInitCommands().addAll((Collection<? extends Expression>)newValue);
 				return;
-			case CodegenPackage.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES:
-				getGetPortInstances().clear();
-				getGetPortInstances().addAll((Collection<? extends GenPortInstance>)newValue);
+			case CodegenPackage.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES:
+				getGenPortInstances().clear();
+				getGenPortInstances().addAll((Collection<? extends GenPortInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,8 +225,8 @@ public class GenComponentInstanceImpl extends MinimalEObjectImpl.Container imple
 			case CodegenPackage.GEN_COMPONENT_INSTANCE__INIT_COMMANDS:
 				getInitCommands().clear();
 				return;
-			case CodegenPackage.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES:
-				getGetPortInstances().clear();
+			case CodegenPackage.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES:
+				getGenPortInstances().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,8 +244,8 @@ public class GenComponentInstanceImpl extends MinimalEObjectImpl.Container imple
 				return componentInstance != null;
 			case CodegenPackage.GEN_COMPONENT_INSTANCE__INIT_COMMANDS:
 				return initCommands != null && !initCommands.isEmpty();
-			case CodegenPackage.GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES:
-				return getPortInstances != null && !getPortInstances.isEmpty();
+			case CodegenPackage.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES:
+				return genPortInstances != null && !genPortInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

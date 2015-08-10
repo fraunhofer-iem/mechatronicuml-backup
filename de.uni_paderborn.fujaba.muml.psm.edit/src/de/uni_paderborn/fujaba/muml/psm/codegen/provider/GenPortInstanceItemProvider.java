@@ -62,6 +62,7 @@ public class GenPortInstanceItemProvider
 			addPortInstancePropertyDescriptor(object);
 			addSamplingTimePropertyDescriptor(object);
 			addExecCommandPropertyDescriptor(object);
+			addTargetPortInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,6 +126,28 @@ public class GenPortInstanceItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_GenPortInstance_execCommand_feature", "_UI_GenPortInstance_type"),
 				 CodegenPackage.Literals.GEN_PORT_INSTANCE__EXEC_COMMAND,
 				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Port Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetPortInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenPortInstance_targetPortInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenPortInstance_targetPortInstance_feature", "_UI_GenPortInstance_type"),
+				 CodegenPackage.Literals.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE,
+				 false,
 				 false,
 				 true,
 				 null,

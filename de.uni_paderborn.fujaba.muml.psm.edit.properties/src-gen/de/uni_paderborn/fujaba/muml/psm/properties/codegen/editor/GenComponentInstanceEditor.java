@@ -23,27 +23,13 @@ public class GenComponentInstanceEditor extends de.uni_paderborn.fujaba.properti
 
 			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorInitCommands_PSMTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorGetPortInstances_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorInitCommands_PSMTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
 			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorInitCommands_PSMTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorGetPortInstances_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorInitCommands_PSMTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -85,19 +71,6 @@ public class GenComponentInstanceEditor extends de.uni_paderborn.fujaba.properti
 		return this.editorInitCommands_PSMTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGetPortInstances_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGetPortInstances_PSMTab_Editor() {
-		if (this.editorGetPortInstances_PSMTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE
-					.getGenComponentInstance_GetPortInstances();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorGetPortInstances_PSMTab = editor;
-		}
-		return this.editorGetPortInstances_PSMTab;
-	}
-
 	//
 	// instantiation
 	//
@@ -121,8 +94,7 @@ public class GenComponentInstanceEditor extends de.uni_paderborn.fujaba.properti
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm", "property.tab.psm"})
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm"})
 					.contains(tab);
 		}
 	}

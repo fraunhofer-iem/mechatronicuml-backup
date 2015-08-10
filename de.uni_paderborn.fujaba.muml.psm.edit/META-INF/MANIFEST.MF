@@ -23,13 +23,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.provider;
    org.storydriven.core.expressions.provider,
    org.eclipse.emf.common.notify",
  de.uni_paderborn.fujaba.muml.psm.codegen.provider,
- de.uni_paderborn.fujaba.muml.psm.instance.provider;
-  uses:="org.eclipse.emf.ecore,
-   de.uni_paderborn.fujaba.muml.instance.provider,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.psm.instance.util,
-   org.eclipse.emf.edit.provider,
-   org.eclipse.emf.common.notify",
  de.uni_paderborn.fujaba.muml.psm.portapimapping.provider;
   uses:="org.eclipse.emf.ecore,
    org.storydriven.core.provider,
@@ -49,27 +42,10 @@ Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.provider;
    org.eclipse.emf.common,
    org.eclipse.emf.edit.provider,
    org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.realtimestatechart.provider;
-  uses:="de.uni_paderborn.fujaba.muml.realtimestatechart.provider,
-   org.eclipse.emf.ecore,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.actionlanguage.provider,
-   org.eclipse.emf.edit.provider,
-   org.eclipse.emf.common.notify,
-   de.uni_paderborn.fujaba.muml.psm.realtimestatechart.util",
- de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.provider;
-  uses:="org.eclipse.emf.ecore,
-   org.storydriven.core.provider,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.util,
-   org.eclipse.emf.edit.provider,
-   org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.provider;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.util,
-   org.eclipse.emf.edit.provider,
-   org.eclipse.emf.common.notify"
+ de.uni_paderborn.fujaba.muml.psm.psm_instance.provider,
+ de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.provider,
+ de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider,
+ de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.psm;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

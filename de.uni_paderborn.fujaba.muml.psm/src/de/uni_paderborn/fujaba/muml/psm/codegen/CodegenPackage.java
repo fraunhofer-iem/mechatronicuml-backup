@@ -146,13 +146,40 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL = InstancePackage.ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL;
 
 	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINED_ATOMIC_COMPONENT_INSTANCE__COMPONENT_INSTANCE = InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Init Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINED_ATOMIC_COMPONENT_INSTANCE__INIT_COMMANDS = InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Gen Port Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINED_ATOMIC_COMPONENT_INSTANCE__GEN_PORT_INSTANCES = InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Allocated Resource Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE = InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 0;
+	int REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE = InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Refined Atomic Component Instance</em>' class.
@@ -161,7 +188,7 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINED_ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT = InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 1;
+	int REFINED_ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT = InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -690,13 +717,13 @@ public interface CodegenPackage extends EPackage {
 	int GEN_COMPONENT_INSTANCE__INIT_COMMANDS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Get Port Instances</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Gen Port Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES = 2;
+	int GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES = 2;
 
 	/**
 	 * The number of structural features of the '<em>Gen Component Instance</em>' class.
@@ -754,13 +781,22 @@ public interface CodegenPackage extends EPackage {
 	int GEN_PORT_INSTANCE__EXEC_COMMAND = 2;
 
 	/**
+	 * The feature id for the '<em><b>Target Port Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Gen Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_PORT_INSTANCE_FEATURE_COUNT = 3;
+	int GEN_PORT_INSTANCE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Gen Port Instance</em>' class.
@@ -874,13 +910,31 @@ public interface CodegenPackage extends EPackage {
 	int GEN_SYSTEM__GEN_EC_US = 0;
 
 	/**
+	 * The feature id for the '<em><b>Cic</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_SYSTEM__CIC = 1;
+
+	/**
+	 * The feature id for the '<em><b>Hpic</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_SYSTEM__HPIC = 2;
+
+	/**
 	 * The number of structural features of the '<em>Gen System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_SYSTEM_FEATURE_COUNT = 1;
+	int GEN_SYSTEM_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Gen System</em>' class.
@@ -1010,15 +1064,15 @@ public interface CodegenPackage extends EPackage {
 	EReference getGenComponentInstance_InitCommands();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getGetPortInstances <em>Get Port Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getGenPortInstances <em>Gen Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Get Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getGetPortInstances()
+	 * @return the meta object for the containment reference list '<em>Gen Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance#getGenPortInstances()
 	 * @see #getGenComponentInstance()
 	 * @generated
 	 */
-	EReference getGenComponentInstance_GetPortInstances();
+	EReference getGenComponentInstance_GenPortInstances();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance <em>Gen Port Instance</em>}'.
@@ -1062,6 +1116,17 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGenPortInstance_ExecCommand();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getTargetPortInstance <em>Target Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getTargetPortInstance()
+	 * @see #getGenPortInstance()
+	 * @generated
+	 */
+	EReference getGenPortInstance_TargetPortInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenECU <em>Gen ECU</em>}'.
@@ -1136,6 +1201,28 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGenSystem_GenECUs();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem#getCic <em>Cic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Cic</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem#getCic()
+	 * @see #getGenSystem()
+	 * @generated
+	 */
+	EReference getGenSystem_Cic();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem#getHpic <em>Hpic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Hpic</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem#getHpic()
+	 * @see #getGenSystem()
+	 * @generated
+	 */
+	EReference getGenSystem_Hpic();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1257,12 +1344,12 @@ public interface CodegenPackage extends EPackage {
 		EReference GEN_COMPONENT_INSTANCE__INIT_COMMANDS = eINSTANCE.getGenComponentInstance_InitCommands();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Port Instances</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Gen Port Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES = eINSTANCE.getGenComponentInstance_GetPortInstances();
+		EReference GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES = eINSTANCE.getGenComponentInstance_GenPortInstances();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenPortInstanceImpl <em>Gen Port Instance</em>}' class.
@@ -1297,6 +1384,14 @@ public interface CodegenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GEN_PORT_INSTANCE__EXEC_COMMAND = eINSTANCE.getGenPortInstance_ExecCommand();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Port Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE = eINSTANCE.getGenPortInstance_TargetPortInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenECUImpl <em>Gen ECU</em>}' class.
@@ -1359,6 +1454,22 @@ public interface CodegenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GEN_SYSTEM__GEN_EC_US = eINSTANCE.getGenSystem_GenECUs();
+
+		/**
+		 * The meta object literal for the '<em><b>Cic</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GEN_SYSTEM__CIC = eINSTANCE.getGenSystem_Cic();
+
+		/**
+		 * The meta object literal for the '<em><b>Hpic</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GEN_SYSTEM__HPIC = eINSTANCE.getGenSystem_Hpic();
 
 	}
 

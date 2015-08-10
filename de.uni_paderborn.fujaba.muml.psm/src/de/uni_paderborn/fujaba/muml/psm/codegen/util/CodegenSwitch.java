@@ -79,6 +79,7 @@ public class CodegenSwitch<T> extends Switch<T> {
 				RefinedAtomicComponentInstance refinedAtomicComponentInstance = (RefinedAtomicComponentInstance)theEObject;
 				T result = caseRefinedAtomicComponentInstance(refinedAtomicComponentInstance);
 				if (result == null) result = caseAtomicComponentInstance(refinedAtomicComponentInstance);
+				if (result == null) result = caseGenComponentInstance(refinedAtomicComponentInstance);
 				if (result == null) result = caseComponentInstance(refinedAtomicComponentInstance);
 				if (result == null) result = caseNamedElement(refinedAtomicComponentInstance);
 				if (result == null) result = caseExtendableElement(refinedAtomicComponentInstance);

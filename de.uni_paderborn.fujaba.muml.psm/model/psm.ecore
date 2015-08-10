@@ -119,8 +119,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="priority" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
-      nsPrefix="realtimestatechart">
+  <eSubpackages name="psm_realtimestatechart" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
+      nsPrefix="psm_realtimestatechart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introdused."/>
     </eAnnotations>
@@ -134,17 +134,17 @@
         <details key="documentation" value="This class is a extension of a real-time statechart, which has aditional plattformspecific parameters."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-          eType="#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"
-          containment="true" eOpposite="#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart">
+          eType="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"
+          containment="true" eOpposite="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="All parameter for this statechart."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allParameters" upperBound="-1"
-          eType="#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"
+          eType="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"
           volatile="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self->closure(states.embeddedRegions.embeddedStatechart.oclAsType(realtimestatechart::ParameterizedRealtimeStatechart)).parameters->asOrderedSet()"/>
+          <details key="derivation" value="self->closure(states.embeddedRegions.embeddedStatechart.oclAsType(psm_realtimestatechart::ParameterizedRealtimeStatechart)).parameters->asOrderedSet()"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -153,16 +153,16 @@
         <details key="documentation" value="This class represents a expression for a CallParameter. This Expression can be used within the realtimestatechart. It refers to the parameter, which is given to the realtimestatechart."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="apiCallSignature" lowerBound="1"
-          eType="#//realtimestatechart/realtimestatechartparameter/APICallParameter"/>
+          eType="#//psm_realtimestatechart/realtimestatechartparameter/APICallParameter"/>
     </eClassifiers>
     <eSubpackages name="realtimestatechartparameter" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/"
         nsPrefix="realtimestatechartparameter">
-      <eClassifiers xsi:type="ecore:EClass" name="APICallParameter" eSuperTypes="#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation">
+      <eClassifiers xsi:type="ecore:EClass" name="APICallParameter" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="With this parameter a discrete port instance can insert a expression into its behavior described by a realtimestatechart."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TimeParameter" eSuperTypes="#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable">
+      <eClassifiers xsi:type="ecore:EClass" name="TimeParameter" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="With this parameter a discrete port instance can insert a time value into its behavior described by a realtimestatechart."/>
         </eAnnotations>
@@ -173,7 +173,7 @@
           <details key="documentation" value="This class represents a parameter of a realtimestatechart, which can be bound by a instance of a discrete port. A parameter is used to add parts of a realtimestatechart that are only known in a instance of a discrete port."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
-            eType="#//realtimestatechart/ParameterizedRealtimeStatechart" eOpposite="#//realtimestatechart/ParameterizedRealtimeStatechart/parameters">
+            eType="#//psm_realtimestatechart/ParameterizedRealtimeStatechart" eOpposite="#//psm_realtimestatechart/ParameterizedRealtimeStatechart/parameters">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The statechart, to which this parameter belongs."/>
           </eAnnotations>
@@ -182,7 +182,7 @@
     </eSubpackages>
     <eSubpackages name="realtimestatechartparameterbinding" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/"
         nsPrefix="realtimestatechartparameterbinding">
-      <eClassifiers xsi:type="ecore:EClass" name="APICallParameterBinding" eSuperTypes="#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation">
+      <eClassifiers xsi:type="ecore:EClass" name="APICallParameterBinding" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="onlyCallParameterAllowed"/>
         </eAnnotations>
@@ -197,7 +197,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TimeParameterBinding" eSuperTypes="#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
+      <eClassifiers xsi:type="ecore:EClass" name="TimeParameterBinding" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="onlyTimeParameterAllowed"/>
         </eAnnotations>
@@ -218,13 +218,13 @@
           <details key="documentation" value="This class represents a binding for a parameter of a realtimestatechart."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" lowerBound="1"
-            eType="#//instance/ParameterisableDiscreteSinglePortInstance" eOpposite="#//instance/ParameterisableDiscreteSinglePortInstance/bindings">
+            eType="#//psm_instance/ParameterisableDiscreteSinglePortInstance" eOpposite="#//psm_instance/ParameterisableDiscreteSinglePortInstance/bindings">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The instance of a discrete port."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-            eType="#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter">
+            eType="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The parameter, to which a concrete value will be assigned."/>
           </eAnnotations>
@@ -232,8 +232,8 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/psm/instance/0.4.0/"
-      nsPrefix="instance">
+  <eSubpackages name="psm_instance" nsURI="http://www.fujaba.de/muml/psm/instance/0.4.0/"
+      nsPrefix="psm_instance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -248,8 +248,8 @@
         <details key="documentation" value="This class is a extension of a discrete port at instance level. The behavior of this port instance can have parameters. To these parameters this class defines parameter bindings."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindings" upperBound="-1"
-          eType="#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding"
-          containment="true" eOpposite="#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance">
+          eType="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding"
+          containment="true" eOpposite="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The parameter bindings for each parameter of the statechart of the port."/>
         </eAnnotations>
@@ -375,7 +375,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all classes which are necessary for a CodeGeneration Model"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="RefinedAtomicComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AtomicComponentInstance">
+    <eClassifiers xsi:type="ecore:EClass" name="RefinedAtomicComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AtomicComponentInstance #//codegen/GenComponentInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an AtomicComponentInstance on PSM level, which references the ECU to which is allocated."/>
       </eAnnotations>
@@ -431,7 +431,7 @@
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="initCommands" upperBound="-1"
           eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="getPortInstances" upperBound="-1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="genPortInstances" upperBound="-1"
           eType="#//codegen/GenPortInstance" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="GenPortInstance">
@@ -439,6 +439,12 @@
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortInstance"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="samplingTime" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="execCommand" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortInstance" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortInstance"
+          volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in&#xA;connectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance)->any(true)&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="GenECU">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ecu" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
@@ -452,6 +458,17 @@
     <eClassifiers xsi:type="ecore:EClass" name="GenSystem">
       <eStructuralFeatures xsi:type="ecore:EReference" name="genECUs" upperBound="-1"
           eType="#//codegen/GenECU" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The allocated ComponentInstanceConfiguration on PSM-level."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The used HardwarePlatformInstanceConfiguration on PSM-level."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

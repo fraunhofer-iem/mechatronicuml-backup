@@ -13,8 +13,7 @@ import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartFactory;
-
+import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -197,7 +196,7 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
-				 RealtimestatechartFactory.eINSTANCE.createAPICall()));
+				 Psm_realtimestatechartFactory.eINSTANCE.createAPICall()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -342,7 +341,7 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
-				 RealtimestatechartFactory.eINSTANCE.createAPICall()));
+				 Psm_realtimestatechartFactory.eINSTANCE.createAPICall()));
 
 		newChildDescriptors.add
 			(createChildParameter

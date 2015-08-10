@@ -2,18 +2,22 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.GenECU;
 import de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -28,6 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenSystemImpl#getGenECUs <em>Gen EC Us</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenSystemImpl#getCic <em>Cic</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenSystemImpl#getHpic <em>Hpic</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +48,25 @@ public class GenSystemImpl extends MinimalEObjectImpl.Container implements GenSy
 	 * @ordered
 	 */
 	protected EList<GenECU> genECUs;
+
+	/**
+	 * The cached value of the '{@link #getCic() <em>Cic</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCic()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentInstanceConfiguration cic;
+	/**
+	 * The cached value of the '{@link #getHpic() <em>Hpic</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHpic()
+	 * @generated
+	 * @ordered
+	 */
+	protected HWPlatformInstanceConfiguration hpic;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,6 +104,82 @@ public class GenSystemImpl extends MinimalEObjectImpl.Container implements GenSy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentInstanceConfiguration getCic() {
+		if (cic != null && cic.eIsProxy()) {
+			InternalEObject oldCic = (InternalEObject)cic;
+			cic = (ComponentInstanceConfiguration)eResolveProxy(oldCic);
+			if (cic != oldCic) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CodegenPackage.GEN_SYSTEM__CIC, oldCic, cic));
+			}
+		}
+		return cic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentInstanceConfiguration basicGetCic() {
+		return cic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCic(ComponentInstanceConfiguration newCic) {
+		ComponentInstanceConfiguration oldCic = cic;
+		cic = newCic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CodegenPackage.GEN_SYSTEM__CIC, oldCic, cic));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HWPlatformInstanceConfiguration getHpic() {
+		if (hpic != null && hpic.eIsProxy()) {
+			InternalEObject oldHpic = (InternalEObject)hpic;
+			hpic = (HWPlatformInstanceConfiguration)eResolveProxy(oldHpic);
+			if (hpic != oldHpic) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CodegenPackage.GEN_SYSTEM__HPIC, oldHpic, hpic));
+			}
+		}
+		return hpic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HWPlatformInstanceConfiguration basicGetHpic() {
+		return hpic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHpic(HWPlatformInstanceConfiguration newHpic) {
+		HWPlatformInstanceConfiguration oldHpic = hpic;
+		hpic = newHpic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CodegenPackage.GEN_SYSTEM__HPIC, oldHpic, hpic));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -98,6 +199,12 @@ public class GenSystemImpl extends MinimalEObjectImpl.Container implements GenSy
 		switch (featureID) {
 			case CodegenPackage.GEN_SYSTEM__GEN_EC_US:
 				return getGenECUs();
+			case CodegenPackage.GEN_SYSTEM__CIC:
+				if (resolve) return getCic();
+				return basicGetCic();
+			case CodegenPackage.GEN_SYSTEM__HPIC:
+				if (resolve) return getHpic();
+				return basicGetHpic();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,6 +222,12 @@ public class GenSystemImpl extends MinimalEObjectImpl.Container implements GenSy
 				getGenECUs().clear();
 				getGenECUs().addAll((Collection<? extends GenECU>)newValue);
 				return;
+			case CodegenPackage.GEN_SYSTEM__CIC:
+				setCic((ComponentInstanceConfiguration)newValue);
+				return;
+			case CodegenPackage.GEN_SYSTEM__HPIC:
+				setHpic((HWPlatformInstanceConfiguration)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -130,6 +243,12 @@ public class GenSystemImpl extends MinimalEObjectImpl.Container implements GenSy
 			case CodegenPackage.GEN_SYSTEM__GEN_EC_US:
 				getGenECUs().clear();
 				return;
+			case CodegenPackage.GEN_SYSTEM__CIC:
+				setCic((ComponentInstanceConfiguration)null);
+				return;
+			case CodegenPackage.GEN_SYSTEM__HPIC:
+				setHpic((HWPlatformInstanceConfiguration)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -144,6 +263,10 @@ public class GenSystemImpl extends MinimalEObjectImpl.Container implements GenSy
 		switch (featureID) {
 			case CodegenPackage.GEN_SYSTEM__GEN_EC_US:
 				return genECUs != null && !genECUs.isEmpty();
+			case CodegenPackage.GEN_SYSTEM__CIC:
+				return cic != null;
+			case CodegenPackage.GEN_SYSTEM__HPIC:
+				return hpic != null;
 		}
 		return super.eIsSet(featureID);
 	}
