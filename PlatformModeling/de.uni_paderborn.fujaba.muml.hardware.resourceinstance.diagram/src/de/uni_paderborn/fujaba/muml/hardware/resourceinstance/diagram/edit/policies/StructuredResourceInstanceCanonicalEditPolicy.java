@@ -25,8 +25,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StructuredResourceInstanceCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+public class StructuredResourceInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
 	public StructuredResourceInstanceCanonicalEditPolicy() {
@@ -104,15 +103,15 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID });
+				List<Integer> visualIDs = Arrays.asList(new Integer[] {
+						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(
+							new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
+									childElement, visualID));
 					continue;
 				}
 			}
@@ -129,10 +128,8 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -176,8 +173,7 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -201,11 +197,9 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 		for (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor next : childDescriptors) {
 			String hint = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -214,10 +208,10 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -226,8 +220,8 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

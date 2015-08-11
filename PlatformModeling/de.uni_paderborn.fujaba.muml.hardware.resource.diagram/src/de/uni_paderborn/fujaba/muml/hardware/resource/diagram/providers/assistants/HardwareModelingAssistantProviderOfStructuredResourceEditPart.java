@@ -10,7 +10,6 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
  * @generated
  */
 public class HardwareModelingAssistantProviderOfStructuredResourceEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareModelingAssistantProvider {
 
 }

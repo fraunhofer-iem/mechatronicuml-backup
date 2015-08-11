@@ -29,8 +29,7 @@ public class ActuatorInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -48,16 +47,15 @@ public class ActuatorInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ActuatorInstance newElement = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
 				.createActuatorInstance();
 
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository) getElementToEdit();
 		owner.getResourceInstances().add(newElement);
 
-		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_ActuatorInstance_2008(newElement);
+		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers.getInstance()
+				.init_ActuatorInstance_2008(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -68,19 +66,13 @@ public class ActuatorInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ActuatorInstance newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+	protected void doConfigure(de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ActuatorInstance newElement,
+			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

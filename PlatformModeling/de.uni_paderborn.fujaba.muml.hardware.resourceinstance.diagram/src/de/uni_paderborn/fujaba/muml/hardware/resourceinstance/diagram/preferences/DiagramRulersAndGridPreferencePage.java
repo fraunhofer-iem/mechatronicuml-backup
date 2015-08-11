@@ -11,7 +11,8 @@ public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage 
 	 * @generated
 	 */
 	public DiagramRulersAndGridPreferencePage() {
-		setPreferenceStore(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.getInstance().getPreferenceStore());
+		setPreferenceStore(
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
+						.getInstance().getPreferenceStore());
 	}
 }

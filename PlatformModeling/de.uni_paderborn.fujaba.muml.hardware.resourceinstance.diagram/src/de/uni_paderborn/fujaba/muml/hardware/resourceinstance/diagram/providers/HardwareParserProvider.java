@@ -17,8 +17,7 @@ import org.storydriven.core.CorePackage;
 /**
  * @generated
  */
-public class HardwareParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class HardwareParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -30,10 +29,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getSensorInstanceName_5072Parser() {
 		if (sensorInstanceName_5072Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			sensorInstanceName_5072Parser = parser;
@@ -65,10 +62,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getActuatorInstanceName_5075Parser() {
 		if (actuatorInstanceName_5075Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			actuatorInstanceName_5075Parser = parser;
@@ -100,8 +95,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStructuredResourceInstanceName_5101Parser() {
 		if (structuredResourceInstanceName_5101Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features);
 			structuredResourceInstanceName_5101Parser = parser;
@@ -140,8 +134,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCacheInstanceName_5078Parser() {
 		if (cacheInstanceName_5078Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features);
 			cacheInstanceName_5078Parser = parser;
@@ -180,8 +173,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getProgrammableLogicDeviceInstanceName_5082Parser() {
 		if (programmableLogicDeviceInstanceName_5082Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features);
 			programmableLogicDeviceInstanceName_5082Parser = parser;
@@ -220,8 +212,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getProcessorInstanceName_5086Parser() {
 		if (processorInstanceName_5086Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features);
 			processorInstanceName_5086Parser = parser;
@@ -267,8 +258,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getProcessingMemoryInstanceName_5091Parser() {
 		if (processingMemoryInstanceName_5091Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features);
 			processingMemoryInstanceName_5091Parser = parser;
@@ -314,8 +304,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStorageMemoryInstanceName_5096Parser() {
 		if (storageMemoryInstanceName_5096Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.MessageFormatParser(
 					features);
 			storageMemoryInstanceName_5096Parser = parser;
@@ -430,10 +419,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
@@ -442,13 +429,15 @@ public class HardwareParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(
+					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
+							.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(view));
+			return getParser(
+					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
+							.getVisualID(view));
 		}
 		return null;
 	}

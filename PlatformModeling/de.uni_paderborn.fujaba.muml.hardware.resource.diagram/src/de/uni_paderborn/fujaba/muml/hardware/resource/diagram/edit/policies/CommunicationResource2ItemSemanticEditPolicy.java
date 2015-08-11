@@ -11,16 +11,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CommunicationResource2ItemSemanticEditPolicy
-		extends
+public class CommunicationResource2ItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CommunicationResource2ItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3012);
+		super(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3012);
 	}
 
 	/**
@@ -28,8 +26,7 @@ public class CommunicationResource2ItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {

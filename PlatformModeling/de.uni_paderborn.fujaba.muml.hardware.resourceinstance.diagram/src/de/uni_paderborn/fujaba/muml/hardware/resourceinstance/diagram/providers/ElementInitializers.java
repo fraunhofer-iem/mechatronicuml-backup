@@ -18,11 +18,11 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.SensorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							32,
+					.getExpression(32,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getSensorInstance(), null).evaluate(
-							instance);
+									.getSensorInstance(),
+							null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
@@ -37,11 +37,11 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ActuatorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							33,
+					.getExpression(33,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getActuatorInstance(), null).evaluate(
-							instance);
+									.getActuatorInstance(),
+							null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
@@ -56,10 +56,10 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							34,
+					.getExpression(34,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getStructuredResourceInstance(), null)
+									.getStructuredResourceInstance(),
+							null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
@@ -71,14 +71,14 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPort_3017(
-			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort instance) {
+	public void init_HWPort_3017(de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							35,
+					.getExpression(35,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getHWPort(), null).evaluate(instance);
+									.getHWPort(),
+							null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
@@ -93,11 +93,11 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							36,
+					.getExpression(36,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getCacheInstance(), null).evaluate(
-							instance);
+									.getCacheInstance(),
+							null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
@@ -112,10 +112,10 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProgrammableLogicDeviceInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							37,
+					.getExpression(37,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getProgrammableLogicDeviceInstance(), null)
+									.getProgrammableLogicDeviceInstance(),
+							null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
@@ -131,11 +131,11 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							38,
+					.getExpression(38,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getProcessorInstance(), null).evaluate(
-							instance);
+									.getProcessorInstance(),
+							null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
@@ -153,22 +153,19 @@ public class ElementInitializers {
 					.createDataSize();
 			instance.setMemorySize(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							18,
-							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
-									.getDataSize(), null).evaluate(
-							newInstance_0_0);
+					.getExpression(18, de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
+							.getDataSize(), null)
+					.evaluate(newInstance_0_0);
 
 			value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression
-					.performCast(value_0_0_0,
-							EcorePackage.eINSTANCE.getEDouble());
+					.performCast(value_0_0_0, EcorePackage.eINSTANCE.getEDouble());
 			newInstance_0_0.setValue(((Double) value_0_0_0).doubleValue());
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							39,
+					.getExpression(39,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getProcessingMemoryInstance(), null)
+									.getProcessingMemoryInstance(),
+							null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
@@ -187,22 +184,19 @@ public class ElementInitializers {
 					.createDataSize();
 			instance.setMemorySize(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							24,
-							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
-									.getDataSize(), null).evaluate(
-							newInstance_0_0);
+					.getExpression(24, de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
+							.getDataSize(), null)
+					.evaluate(newInstance_0_0);
 
 			value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression
-					.performCast(value_0_0_0,
-							EcorePackage.eINSTANCE.getEDouble());
+					.performCast(value_0_0_0, EcorePackage.eINSTANCE.getEDouble());
 			newInstance_0_0.setValue(((Double) value_0_0_0).doubleValue());
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(
-							40,
+					.getExpression(40,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getStorageMemoryInstance(), null)
+									.getStorageMemoryInstance(),
+							null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
@@ -219,8 +213,7 @@ public class ElementInitializers {
 				.getInstance().getElementInitializers();
 		if (cached == null) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().setElementInitializers(
-							cached = new ElementInitializers());
+					.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

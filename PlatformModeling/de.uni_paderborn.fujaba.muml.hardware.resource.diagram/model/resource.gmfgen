@@ -5,6 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
     packageNamePrefix="de.uni_paderborn.fujaba.muml.hardware.resource.diagram"
+    modelID="Resource"
     diagramFileExtension="resource_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
@@ -295,6 +296,8 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -556,6 +559,8 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -652,6 +657,8 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -926,6 +933,8 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -1015,6 +1024,8 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -1116,6 +1127,8 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
         </modelElementInitializer>
       </modelFacet>
       <labels

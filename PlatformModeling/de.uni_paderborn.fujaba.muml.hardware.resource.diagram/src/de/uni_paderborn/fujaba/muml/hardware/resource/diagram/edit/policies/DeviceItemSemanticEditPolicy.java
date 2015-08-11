@@ -16,16 +16,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class DeviceItemSemanticEditPolicy
-		extends
+public class DeviceItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DeviceItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Device_2006);
+		super(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Device_2006);
 	}
 
 	/**
@@ -34,8 +32,9 @@ public class DeviceItemSemanticEditPolicy
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3011 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.commands.CommunicationResourceCreateCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.commands.CommunicationResourceCreateCommand(
+							req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -45,8 +44,7 @@ public class DeviceItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -72,8 +70,8 @@ public class DeviceItemSemanticEditPolicy
 					.getVisualID(node)) {
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
 
-				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false)));
+				cmd.add(new DestroyElementCommand(
+						new DestroyElementRequest(getEditingDomain(), node.getElement(), false)));
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 

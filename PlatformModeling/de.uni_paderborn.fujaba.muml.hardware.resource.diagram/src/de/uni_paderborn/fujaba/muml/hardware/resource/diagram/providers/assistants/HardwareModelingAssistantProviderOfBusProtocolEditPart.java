@@ -4,7 +4,6 @@ package de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.assista
  * @generated
  */
 public class HardwareModelingAssistantProviderOfBusProtocolEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareModelingAssistantProvider {
 
 }

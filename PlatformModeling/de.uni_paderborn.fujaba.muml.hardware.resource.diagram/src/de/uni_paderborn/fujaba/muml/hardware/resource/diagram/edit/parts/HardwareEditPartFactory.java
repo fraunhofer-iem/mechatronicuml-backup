@@ -26,12 +26,10 @@ public class HardwareEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabelEditPart(
@@ -70,8 +68,7 @@ public class HardwareEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart(
@@ -90,12 +87,10 @@ public class HardwareEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel7EditPart(
@@ -114,8 +109,7 @@ public class HardwareEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel11EditPart(
@@ -178,16 +172,14 @@ public class HardwareEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolNameEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolNameEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolNameEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolNameEditPart(
@@ -221,10 +213,8 @@ public class HardwareEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

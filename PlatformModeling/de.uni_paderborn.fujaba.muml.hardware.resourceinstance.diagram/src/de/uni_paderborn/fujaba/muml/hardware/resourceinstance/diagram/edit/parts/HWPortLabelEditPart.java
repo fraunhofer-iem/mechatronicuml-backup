@@ -55,8 +55,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class HWPortLabelEditPart extends LabelEditPart implements
-		ITextAwareEditPart, IBorderItemEditPart {
+public class HWPortLabelEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -116,8 +115,8 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 */
 	static {
 		registerSnapBackPosition(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID),
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
 
@@ -133,10 +132,8 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
-				new LabelDirectEditPolicy());
-		installEditPolicy(
-				EditPolicy.SELECTION_FEEDBACK_ROLE,
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareTextSelectionEditPolicy());
 	}
 
@@ -146,8 +143,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
 		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
-			Object constraint = parentFigure.getLayoutManager().getConstraint(
-					getFigure());
+			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
 			return (IBorderItemLocator) constraint;
 		}
 		return null;
@@ -157,16 +153,11 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	public void refreshBounds() {
-		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
-				.getLocation_X())).intValue();
-		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
-				.getLocation_Y())).intValue();
-		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
-				.getSize_Width())).intValue();
-		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
-				.getSize_Height())).intValue();
-		getBorderItemLocator()
-				.setConstraint(new Rectangle(x, y, width, height));
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		getBorderItemLocator().setConstraint(new Rectangle(x, y, width, height));
 	}
 
 	/**
@@ -270,9 +261,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 		String text = null;
 		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
-			text = getParser().getPrintString(
-					new EObjectAdapter(parserElement),
-					getParserOptions().intValue());
+			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
 		if (text == null || text.length() == 0) {
 			text = defaultText;
@@ -295,9 +284,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
 		}
-		return getParser().getEditString(
-				new EObjectAdapter(getParserElement()),
-				getParserOptions().intValue());
+		return getParser().getEditString(new EObjectAdapter(getParserElement()), getParserOptions().intValue());
 	}
 
 	/**
@@ -319,19 +306,13 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 					final IParser parser = getParser();
 					try {
 						IParserEditStatus valid = (IParserEditStatus) getEditingDomain()
-								.runExclusive(
-										new RunnableWithResult.Impl<IParserEditStatus>() {
+								.runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
-											public void run() {
-												setResult(parser
-														.isValidEditString(
-																new EObjectAdapter(
-																		element),
-																(String) value));
-											}
-										});
-						return valid.getCode() == ParserEditStatus.EDITABLE ? null
-								: valid.getMessage();
+							public void run() {
+								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
+							}
+						});
+						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
 					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
@@ -350,8 +331,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 		if (getParserElement() == null || getParser() == null) {
 			return null;
 		}
-		return getParser().getCompletionProcessor(
-				new EObjectAdapter(getParserElement()));
+		return getParser().getCompletionProcessor(new EObjectAdapter(getParserElement()));
 	}
 
 	/**
@@ -371,7 +351,8 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 							de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPort_3017,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
+									.getType(
+											de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -381,9 +362,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(
-					this,
-					null,
+			setManager(new TextDirectEditManager(this, null,
 					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HardwareEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
@@ -409,8 +388,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 */
 	protected void performDirectEdit(Point eventLocation) {
 		if (getManager().getClass() == TextDirectEditManager.class) {
-			((TextDirectEditManager) getManager()).show(eventLocation
-					.getSWTPoint());
+			((TextDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
 		}
 	}
 
@@ -436,15 +414,13 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 
 				public void run() {
 					if (isActive() && isEditable()) {
-						if (theRequest
-								.getExtendedData()
+						if (theRequest.getExtendedData()
 								.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-							Character initialChar = (Character) theRequest
-									.getExtendedData()
+							Character initialChar = (Character) theRequest.getExtendedData()
 									.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
-						} else if ((theRequest instanceof DirectEditRequest)
-								&& (getEditText().equals(getLabelText()))) {
+						} else
+							if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
 							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {
@@ -498,11 +474,9 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void refreshStrikeThrough() {
-		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(
-				NotationPackage.eINSTANCE.getFontStyle());
+		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null && getFigure() instanceof WrappingLabel) {
-			((WrappingLabel) getFigure()).setTextStrikeThrough(style
-					.isStrikeThrough());
+			((WrappingLabel) getFigure()).setTextStrikeThrough(style.isStrikeThrough());
 		}
 	}
 
@@ -510,13 +484,10 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void refreshFont() {
-		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(
-				NotationPackage.eINSTANCE.getFontStyle());
+		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null) {
-			FontData fontData = new FontData(style.getFontName(),
-					style.getFontHeight(), (style.isBold() ? SWT.BOLD
-							: SWT.NORMAL)
-							| (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
+			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(),
+					(style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
 			setFont(fontData);
 		}
 	}
@@ -599,8 +570,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 			myOclRegistrator = new OclTracker.Registrator() {
 
 				@Override
-				public void registerListener(String filterId,
-						NotificationListener listener, EObject element) {
+				public void registerListener(String filterId, NotificationListener listener, EObject element) {
 					addListenerFilter(filterId, listener, element);
 				}
 
@@ -647,25 +617,17 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
 			Integer c = (Integer) event.getNewValue();
 			setFontColor(DiagramColorRegistry.getInstance().getColor(c));
-		} else if (NotationPackage.eINSTANCE.getFontStyle_Underline().equals(
-				feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
 			refreshUnderline();
-		} else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough()
-				.equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
 			refreshStrikeThrough();
-		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(
-				feature)
-				|| NotationPackage.eINSTANCE.getFontStyle_FontName().equals(
-						feature)
-				|| NotationPackage.eINSTANCE.getFontStyle_Bold()
-						.equals(feature)
-				|| NotationPackage.eINSTANCE.getFontStyle_Italic().equals(
-						feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			refreshFont();
 		} else {
-			if (getParser() != null
-					&& getParser().isAffectingEvent(event,
-							getParserOptions().intValue())) {
+			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
 				refreshLabel();
 			}
 			if (getParser() instanceof ISemanticParser) {

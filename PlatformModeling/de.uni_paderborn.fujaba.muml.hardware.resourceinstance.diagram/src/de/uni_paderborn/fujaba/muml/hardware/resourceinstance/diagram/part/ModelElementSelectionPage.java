@@ -12,10 +12,8 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	public ModelElementSelectionPage(String pageName) {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory(),
-				pageName);
+		super(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
+				.getInstance().getItemProvidersAdapterFactory(), pageName);
 	}
 
 	/**

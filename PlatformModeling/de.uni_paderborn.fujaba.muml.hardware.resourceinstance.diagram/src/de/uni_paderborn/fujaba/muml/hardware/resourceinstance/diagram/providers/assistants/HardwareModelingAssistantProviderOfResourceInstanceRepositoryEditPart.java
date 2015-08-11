@@ -9,8 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPart
-		extends
+public class HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPart extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareModelingAssistantProvider {
 
 	/**
@@ -19,9 +18,12 @@ public class HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPa
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.SensorInstance_2007);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ActuatorInstance_2008);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_2009);
+		types.add(
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.SensorInstance_2007);
+		types.add(
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ActuatorInstance_2008);
+		types.add(
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_2009);
 		return types;
 	}
 

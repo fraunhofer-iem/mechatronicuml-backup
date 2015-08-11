@@ -10,16 +10,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 /**
  * @generated
  */
-public class ResourceInstanceRepositoryItemSemanticEditPolicy
-		extends
+public class ResourceInstanceRepositoryItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ResourceInstanceRepositoryItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ResourceInstanceRepository_1000);
+		super(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ResourceInstanceRepository_1000);
 	}
 
 	/**
@@ -28,18 +26,21 @@ public class ResourceInstanceRepositoryItemSemanticEditPolicy
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.SensorInstance_2007 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.SensorInstanceCreateCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.SensorInstanceCreateCommand(
+							req));
 		}
 		if (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ActuatorInstance_2008 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.ActuatorInstanceCreateCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.ActuatorInstanceCreateCommand(
+							req));
 		}
 		if (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_2009 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.StructuredResourceInstanceCreateCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.StructuredResourceInstanceCreateCommand(
+							req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -48,26 +49,20 @@ public class ResourceInstanceRepositoryItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
-				.getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class DuplicateAnythingCommand extends
-			DuplicateEObjectsCommand {
+	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
 		 * @generated
 		 */
-		public DuplicateAnythingCommand(
-				TransactionalEditingDomain editingDomain,
-				DuplicateElementsRequest req) {
-			super(editingDomain, req.getLabel(), req
-					.getElementsToBeDuplicated(), req
-					.getAllDuplicatedElementsMap());
+		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
 
 	}

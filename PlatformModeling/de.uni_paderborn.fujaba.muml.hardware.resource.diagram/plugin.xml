@@ -7,10 +7,19 @@
       <fileTypes type="text" extension="resource_diagram"/>
    </extension>
 
+
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
          type="resource_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="resourcerepository"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -59,16 +68,15 @@
 	
 	
 	<extension point="org.eclipse.ui.menus">
-
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
+                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository.browser.create"
                  icon="icons/obj16/HwresourceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
-                 label="Create new Hardware Model"
+                 id="de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository.browser.create"
+                 label="ResourceRepository"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
@@ -79,7 +87,6 @@
               </visibleWhen>
            </command>
       </menuContribution>
-      
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
@@ -88,14 +95,14 @@
 	            commandId="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.createDiagram"
 	            icon="icons/obj16/HwresourceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.createDiagram"
-	            label="Create Hardware Diagram"
+	            label="Create Resource Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 		            	<or>
 		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
 						<iterate ifEmpty="false" operator="or">
 		            		<adapt type="org.eclipse.core.resources.IResource">
-		            			<test property="org.eclipse.core.resources.name" value="*.resource"></test>
+		            			<test property="org.eclipse.core.resources.name" value="*.hwresource"></test>
 	              			</adapt>
 		    			</iterate>
 		    			</or>
@@ -107,19 +114,21 @@
 	
 	
 	<extension point="org.eclipse.ui.commands">
-	<?gmfgen generated="true"?>   
+	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
-           description="Create new Hardware Model"
-           id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
-           name="Create new Hardware Model">
+           description="Create new Resource"
+           id="de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository.browser.create"
+           name="Create new Resource">
     </command>
     </extension>
 	
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
-   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="resource"/>
+   		<!--
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="hwresource"/>
+   		-->
     </extension>
 
 	
@@ -139,8 +148,8 @@
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.resource.category"
-            name="resource">
+            key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
+            name="hwresource">
          
          <child
                class="ResourceRepository"
@@ -157,10 +166,10 @@
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.hardware.resource.diagram"
             editorId="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorID"
-            editorName="Hardware Editor"
+            editorName="Resource Editor"
             fileExtension="resource_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
-            modelId="Hardware">
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
+            modelId="Resource">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/"
                className="ResourceRepository">
@@ -189,7 +198,7 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="HardwarePresentation">
+         id="ResourcePresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -206,7 +215,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="HardwarePresentationIDE">
+         id="ResourcePresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -216,7 +225,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="HardwareRender">
+            id="ResourceRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -391,7 +400,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Hardware"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Resource"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,2007,2008,3011,3012,3013,3014,3015,3016,3017,3018"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002"/>
       </viewProvider>
@@ -402,7 +411,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Hardware"/>
+            <method name="getType()" value="Resource"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2006,2007,2008,3011,3012,3013,3014,3015,3016,3017,3018"/>

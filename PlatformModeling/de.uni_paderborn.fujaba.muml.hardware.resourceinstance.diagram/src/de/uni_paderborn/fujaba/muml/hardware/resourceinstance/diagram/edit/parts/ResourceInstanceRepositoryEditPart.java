@@ -58,19 +58,15 @@ public class ResourceInstanceRepositoryEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.ResourceInstanceRepositoryItemSemanticEditPolicy());
 
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.ResourceInstanceRepositoryCanonicalEditPolicy(
 						true));
 
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

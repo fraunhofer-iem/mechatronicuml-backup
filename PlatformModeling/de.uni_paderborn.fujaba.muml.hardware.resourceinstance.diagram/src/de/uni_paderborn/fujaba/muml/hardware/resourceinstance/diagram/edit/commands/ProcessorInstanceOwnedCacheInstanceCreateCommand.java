@@ -12,8 +12,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ProcessorInstanceOwnedCacheInstanceCreateCommand extends
-		EditElementCommand {
+public class ProcessorInstanceOwnedCacheInstanceCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -28,8 +27,8 @@ public class ProcessorInstanceOwnedCacheInstanceCreateCommand extends
 	/**
 	 * @generated
 	 */
-	public ProcessorInstanceOwnedCacheInstanceCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public ProcessorInstanceOwnedCacheInstanceCreateCommand(CreateRelationshipRequest request, EObject source,
+			EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -60,15 +59,12 @@ public class ProcessorInstanceOwnedCacheInstanceCreateCommand extends
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canCreateProcessorInstanceOwnedCacheInstance_4003(getSource(),
-						getTarget(), sourceView, targetView)) {
+				.canCreateProcessorInstanceOwnedCacheInstance_4003(getSource(), getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorProcessorInstanceOwnedCacheInstance_4003(
-							getSource(), getTarget(), sourceView, targetView);
+					.getErrorProcessorInstanceOwnedCacheInstance_4003(getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -77,11 +73,9 @@ public class ProcessorInstanceOwnedCacheInstanceCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

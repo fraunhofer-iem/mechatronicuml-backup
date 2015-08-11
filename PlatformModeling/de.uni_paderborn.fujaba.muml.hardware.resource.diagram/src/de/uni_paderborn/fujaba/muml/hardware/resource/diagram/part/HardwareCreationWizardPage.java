@@ -21,8 +21,7 @@ public class HardwareCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public HardwareCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public HardwareCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -64,8 +63,7 @@ public class HardwareCreationWizardPage extends WizardNewFileCreationPage {
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		setFileName(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorUtil
-				.getUniqueFileName(getContainerFullPath(), getFileName(),
-						getExtension()));
+				.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -77,11 +75,10 @@ public class HardwareCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS
-					.bind(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HardwareCreationWizardPageExtensionError,
-							extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(
+					de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HardwareCreationWizardPageExtensionError,
+					extension));
 			return false;
 		}
 		return true;

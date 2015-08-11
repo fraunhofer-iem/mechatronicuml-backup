@@ -29,8 +29,7 @@ public class StorageMemoryInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -48,16 +47,15 @@ public class StorageMemoryInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StorageMemoryInstance newElement = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
 				.createStorageMemoryInstance();
 
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance) getElementToEdit();
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
-		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_StorageMemoryInstance_3022(newElement);
+		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers.getInstance()
+				.init_StorageMemoryInstance_3022(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -70,17 +68,12 @@ public class StorageMemoryInstanceCreateCommand extends EditElementCommand {
 	 */
 	protected void doConfigure(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StorageMemoryInstance newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

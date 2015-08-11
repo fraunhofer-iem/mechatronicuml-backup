@@ -11,16 +11,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StorageMemoryInstanceItemSemanticEditPolicy
-		extends
+public class StorageMemoryInstanceItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StorageMemoryInstanceItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3022);
+		super(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3022);
 	}
 
 	/**
@@ -28,8 +26,7 @@ public class StorageMemoryInstanceItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {

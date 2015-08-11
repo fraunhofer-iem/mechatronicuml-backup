@@ -90,19 +90,16 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.StructuredResourceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -114,8 +111,7 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -153,27 +149,25 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureStructuredResourceNameFigure());
+					.setLabel(getPrimaryShape().getFigureStructuredResourceNameFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel3EditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureStructuredResourceKindFigure());
+					.setLabel(getPrimaryShape().getFigureStructuredResourceKindFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel4EditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureStructuredResourceCardinalityFigure());
+					.setLabel(getPrimaryShape().getFigureStructuredResourceCardinalityFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureEmbeddedAtomicResources();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -194,8 +188,9 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureEmbeddedAtomicResources();
-			pane.remove(((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -238,10 +233,10 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -335,8 +330,9 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -392,9 +388,8 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 
 			structuredContainer0.setFill(false);
 			structuredContainer0.setOutline(false);
-			structuredContainer0.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
+			structuredContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			GridData constraintStructuredContainer0 = new GridData();
 			constraintStructuredContainer0.verticalAlignment = GridData.BEGINNING;
@@ -424,8 +419,7 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 			constraintStructuredName1.verticalSpan = 1;
 			constraintStructuredName1.grabExcessHorizontalSpace = true;
 			constraintStructuredName1.grabExcessVerticalSpace = true;
-			structuredContainer0
-					.add(structuredName1, constraintStructuredName1);
+			structuredContainer0.add(structuredName1, constraintStructuredName1);
 
 			GridLayout layoutStructuredName1 = new GridLayout();
 			layoutStructuredName1.numColumns = 3;
@@ -436,8 +430,7 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 
 			fFigureStructuredResourceNameFigure.setText("<...>");
 
-			fFigureStructuredResourceNameFigure
-					.setFont(FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT);
+			fFigureStructuredResourceNameFigure.setFont(FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT);
 
 			GridData constraintFFigureStructuredResourceNameFigure = new GridData();
 			constraintFFigureStructuredResourceNameFigure.verticalAlignment = GridData.CENTER;
@@ -447,15 +440,13 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 			constraintFFigureStructuredResourceNameFigure.verticalSpan = 1;
 			constraintFFigureStructuredResourceNameFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureStructuredResourceNameFigure.grabExcessVerticalSpace = true;
-			structuredName1.add(fFigureStructuredResourceNameFigure,
-					constraintFFigureStructuredResourceNameFigure);
+			structuredName1.add(fFigureStructuredResourceNameFigure, constraintFFigureStructuredResourceNameFigure);
 
 			fFigureStructuredResourceKindFigure = new WrappingLabel();
 
 			fFigureStructuredResourceKindFigure.setText("<...>");
 
-			fFigureStructuredResourceKindFigure
-					.setFont(FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT);
+			fFigureStructuredResourceKindFigure.setFont(FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT);
 
 			GridData constraintFFigureStructuredResourceKindFigure = new GridData();
 			constraintFFigureStructuredResourceKindFigure.verticalAlignment = GridData.CENTER;
@@ -465,15 +456,13 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 			constraintFFigureStructuredResourceKindFigure.verticalSpan = 1;
 			constraintFFigureStructuredResourceKindFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureStructuredResourceKindFigure.grabExcessVerticalSpace = true;
-			structuredName1.add(fFigureStructuredResourceKindFigure,
-					constraintFFigureStructuredResourceKindFigure);
+			structuredName1.add(fFigureStructuredResourceKindFigure, constraintFFigureStructuredResourceKindFigure);
 
 			fFigureStructuredResourceCardinalityFigure = new WrappingLabel();
 
 			fFigureStructuredResourceCardinalityFigure.setText("<...>");
 
-			fFigureStructuredResourceCardinalityFigure
-					.setFont(FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT);
+			fFigureStructuredResourceCardinalityFigure.setFont(FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT);
 
 			GridData constraintFFigureStructuredResourceCardinalityFigure = new GridData();
 			constraintFFigureStructuredResourceCardinalityFigure.verticalAlignment = GridData.CENTER;
@@ -496,8 +485,7 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 			constraintMyCustomStructuredIconFigure.verticalSpan = 1;
 			constraintMyCustomStructuredIconFigure.grabExcessHorizontalSpace = true;
 			constraintMyCustomStructuredIconFigure.grabExcessVerticalSpace = true;
-			structuredContainer0.add(myCustomStructuredIconFigure,
-					constraintMyCustomStructuredIconFigure);
+			structuredContainer0.add(myCustomStructuredIconFigure, constraintMyCustomStructuredIconFigure);
 
 			fFigureEmbeddedAtomicResources = new RectangleFigure();
 
@@ -509,8 +497,7 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 			constraintFFigureEmbeddedAtomicResources.verticalSpan = 1;
 			constraintFFigureEmbeddedAtomicResources.grabExcessHorizontalSpace = true;
 			constraintFFigureEmbeddedAtomicResources.grabExcessVerticalSpace = true;
-			this.add(fFigureEmbeddedAtomicResources,
-					constraintFFigureEmbeddedAtomicResources);
+			this.add(fFigureEmbeddedAtomicResources, constraintFFigureEmbeddedAtomicResources);
 
 		}
 
@@ -554,22 +541,19 @@ public class StructuredResourceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

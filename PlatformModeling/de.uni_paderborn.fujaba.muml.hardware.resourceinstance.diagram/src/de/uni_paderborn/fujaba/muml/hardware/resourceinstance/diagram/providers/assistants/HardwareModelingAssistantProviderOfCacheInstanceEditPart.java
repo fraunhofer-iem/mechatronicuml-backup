@@ -10,8 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfCacheInstanceEditPart
-		extends
+public class HardwareModelingAssistantProviderOfCacheInstanceEditPart extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareModelingAssistantProvider {
 
 	/**
@@ -19,9 +18,9 @@ public class HardwareModelingAssistantProviderOfCacheInstanceEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart) targetEditPart);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget(
+				(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart) targetEditPart);
 	}
 
 	/**
@@ -30,7 +29,8 @@ public class HardwareModelingAssistantProviderOfCacheInstanceEditPart
 	public List<IElementType> doGetRelTypesOnTarget(
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003);
+		types.add(
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003);
 		return types;
 	}
 
@@ -38,10 +38,8 @@ public class HardwareModelingAssistantProviderOfCacheInstanceEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForSource(
 				(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart) targetEditPart,
 				relationshipType);
@@ -55,7 +53,8 @@ public class HardwareModelingAssistantProviderOfCacheInstanceEditPart
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003) {
-			types.add(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstance_3020);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstance_3020);
 		}
 		return types;
 	}

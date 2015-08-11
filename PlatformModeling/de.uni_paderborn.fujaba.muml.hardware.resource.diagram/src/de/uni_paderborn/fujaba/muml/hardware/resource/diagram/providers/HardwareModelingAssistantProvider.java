@@ -21,25 +21,20 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 /**
  * @generated
  */
-public class HardwareModelingAssistantProvider extends
-		ModelingAssistantProvider {
+public class HardwareModelingAssistantProvider extends ModelingAssistantProvider {
 
 	/**
 	 * @generated
 	 */
-	public EObject selectExistingElementForSource(IAdaptable target,
-			IElementType relationshipType) {
-		return selectExistingElement(target,
-				getTypesForSource(target, relationshipType));
+	public EObject selectExistingElementForSource(IAdaptable target, IElementType relationshipType) {
+		return selectExistingElement(target, getTypesForSource(target, relationshipType));
 	}
 
 	/**
 	 * @generated
 	 */
-	public EObject selectExistingElementForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		return selectExistingElement(source,
-				getTypesForTarget(source, relationshipType));
+	public EObject selectExistingElementForTarget(IAdaptable source, IElementType relationshipType) {
+		return selectExistingElement(source, getTypesForTarget(source, relationshipType));
 	}
 
 	/**
@@ -49,15 +44,13 @@ public class HardwareModelingAssistantProvider extends
 		if (types.isEmpty()) {
 			return null;
 		}
-		IGraphicalEditPart editPart = (IGraphicalEditPart) host
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 		if (editPart == null) {
 			return null;
 		}
 		Diagram diagram = (Diagram) editPart.getRoot().getContents().getModel();
 		HashSet<EObject> elements = new HashSet<EObject>();
-		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it
-				.hasNext();) {
+		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it.hasNext();) {
 			EObject element = it.next();
 			if (isApplicableElement(element, types)) {
 				elements.add(element);
@@ -66,16 +59,14 @@ public class HardwareModelingAssistantProvider extends
 		if (elements.isEmpty()) {
 			return null;
 		}
-		return selectElement((EObject[]) elements.toArray(new EObject[elements
-				.size()]));
+		return selectElement((EObject[]) elements.toArray(new EObject[elements.size()]));
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean isApplicableElement(EObject element, Collection types) {
-		IElementType type = ElementTypeRegistry.getInstance().getElementType(
-				element);
+		IElementType type = ElementTypeRegistry.getInstance().getElementType(element);
 		return types.contains(type);
 	}
 
@@ -85,12 +76,13 @@ public class HardwareModelingAssistantProvider extends
 	protected EObject selectElement(EObject[] elements) {
 		Shell shell = Display.getCurrent().getActiveShell();
 		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory());
-		ElementListSelectionDialog dialog = new ElementListSelectionDialog(
-				shell, labelProvider);
-		dialog.setMessage(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HardwareModelingAssistantProviderMessage);
-		dialog.setTitle(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HardwareModelingAssistantProviderTitle);
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
+						.getItemProvidersAdapterFactory());
+		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
+		dialog.setMessage(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HardwareModelingAssistantProviderMessage);
+		dialog.setTitle(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HardwareModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);
 		dialog.setElements(elements);
 		EObject selected = null;

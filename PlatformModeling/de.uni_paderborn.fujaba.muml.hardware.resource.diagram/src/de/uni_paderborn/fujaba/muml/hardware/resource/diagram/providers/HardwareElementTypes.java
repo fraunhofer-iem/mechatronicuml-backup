@@ -34,8 +34,8 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
+					.getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -45,66 +45,79 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ResourceRepository_1000 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ResourceRepository_1000"); //$NON-NLS-1$
+	public static final IElementType ResourceRepository_1000 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ResourceRepository_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Device_2006 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Device_2006"); //$NON-NLS-1$
+	public static final IElementType Device_2006 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Device_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType StructuredResource_2007 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.StructuredResource_2007"); //$NON-NLS-1$
+	public static final IElementType StructuredResource_2007 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.StructuredResource_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType CommunicationProtocolRepository_2008 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2008"); //$NON-NLS-1$
+	public static final IElementType CommunicationProtocolRepository_2008 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType CommunicationResource_3011 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3011"); //$NON-NLS-1$
+	public static final IElementType CommunicationResource_3011 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType CommunicationResource_3012 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3012"); //$NON-NLS-1$
+	public static final IElementType CommunicationResource_3012 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Cache_3013 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Cache_3013"); //$NON-NLS-1$
+	public static final IElementType Cache_3013 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Cache_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Processor_3014 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Processor_3014"); //$NON-NLS-1$
+	public static final IElementType Processor_3014 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Processor_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProgrammableLogicDevice_3015 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProgrammableLogicDevice_3015"); //$NON-NLS-1$
+	public static final IElementType ProgrammableLogicDevice_3015 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProgrammableLogicDevice_3015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType MemoryResource_3016 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.MemoryResource_3016"); //$NON-NLS-1$
+	public static final IElementType MemoryResource_3016 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.MemoryResource_3016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType BusProtocol_3017 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3017"); //$NON-NLS-1$
+	public static final IElementType BusProtocol_3017 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType LinkProtocol_3018 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3018"); //$NON-NLS-1$
+	public static final IElementType LinkProtocol_3018 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3018"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProcessorOwnedCache_4002 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProcessorOwnedCache_4002"); //$NON-NLS-1$
+	public static final IElementType ProcessorOwnedCache_4002 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProcessorOwnedCache_4002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -144,68 +157,49 @@ public class HardwareElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ResourceRepository_1000,
+			elements.put(ResourceRepository_1000,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getResourceRepository());
 
-			elements.put(
-					Device_2006,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getDevice());
+			elements.put(Device_2006,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE.getDevice());
 
-			elements.put(
-					StructuredResource_2007,
+			elements.put(StructuredResource_2007,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getStructuredResource());
 
-			elements.put(
-					CommunicationProtocolRepository_2008,
+			elements.put(CommunicationProtocolRepository_2008,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getCommunicationProtocolRepository());
 
-			elements.put(
-					CommunicationResource_3011,
+			elements.put(CommunicationResource_3011,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getCommunicationResource());
 
-			elements.put(
-					CommunicationResource_3012,
+			elements.put(CommunicationResource_3012,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getCommunicationResource());
 
-			elements.put(
-					Cache_3013,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getCache());
+			elements.put(Cache_3013,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE.getCache());
 
-			elements.put(
-					Processor_3014,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getProcessor());
+			elements.put(Processor_3014,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE.getProcessor());
 
-			elements.put(
-					ProgrammableLogicDevice_3015,
+			elements.put(ProgrammableLogicDevice_3015,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getProgrammableLogicDevice());
 
-			elements.put(
-					MemoryResource_3016,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getMemoryResource());
+			elements.put(MemoryResource_3016,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE.getMemoryResource());
 
-			elements.put(
-					BusProtocol_3017,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getBusProtocol());
+			elements.put(BusProtocol_3017,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE.getBusProtocol());
 
-			elements.put(
-					LinkProtocol_3018,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getLinkProtocol());
+			elements.put(LinkProtocol_3018,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE.getLinkProtocol());
 
-			elements.put(
-					ProcessorOwnedCache_4002,
+			elements.put(ProcessorOwnedCache_4002,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getProcessor_OwnedCache());
 		}
@@ -280,33 +274,34 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
 			return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
 					.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
 			return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
 					.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
 					.getElement(elementTypeAdapter);
 		}

@@ -20,23 +20,20 @@ public abstract class HardwareAbstractNavigatorItem extends PlatformObject {
 				return "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem.class);
 	}
 
 	/**

@@ -27,8 +27,7 @@ public class ProcessorOwnedCacheCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public ProcessorOwnedCacheCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target) {
+	public ProcessorOwnedCacheCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -41,12 +40,10 @@ public class ProcessorOwnedCacheCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor) {
+		if (source != null && false == source instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache) {
+		if (target != null && false == target instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -58,14 +55,13 @@ public class ProcessorOwnedCacheCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateProcessorOwnedCache_4002(
-						getSource(), getTarget(), sourceView, targetView)) {
+				.getLinkConstraints()
+				.canCreateProcessorOwnedCache_4002(getSource(), getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorProcessorOwnedCache_4002(
-							getSource(), getTarget(), sourceView, targetView);
+					.getLinkConstraints()
+					.getErrorProcessorOwnedCache_4002(getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -74,11 +70,9 @@ public class ProcessorOwnedCacheCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

@@ -17,7 +17,7 @@ public class ResourceRepositoryEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Hardware"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Resource"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -59,19 +59,15 @@ public class ResourceRepositoryEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.ResourceRepositoryItemSemanticEditPolicy());
 
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.ResourceRepositoryCanonicalEditPolicy(
 						true));
 
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

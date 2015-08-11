@@ -13,8 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends
-		EditElementCommand {
+public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -39,8 +38,7 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public ProcessorInstanceOwnedCacheInstanceReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public ProcessorInstanceOwnedCacheInstanceReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -68,7 +66,8 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -76,16 +75,12 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistProcessorInstanceOwnedCacheInstance_4003(
-						getNewSource(), getOldTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistProcessorInstanceOwnedCacheInstance_4003(getNewSource(), getOldTarget(),
+						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorProcessorInstanceOwnedCacheInstance_4003(
-							getNewSource(), getOldTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints().getErrorProcessorInstanceOwnedCacheInstance_4003(getNewSource(),
+							getOldTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -95,7 +90,8 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -103,16 +99,12 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistProcessorInstanceOwnedCacheInstance_4003(
-						getOldSource(), getNewTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistProcessorInstanceOwnedCacheInstance_4003(getOldSource(), getNewTarget(),
+						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorProcessorInstanceOwnedCacheInstance_4003(
-							getOldSource(), getNewTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView, errorMessage);
+					.getLinkConstraints().getErrorProcessorInstanceOwnedCacheInstance_4003(getOldSource(),
+							getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -121,11 +113,9 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

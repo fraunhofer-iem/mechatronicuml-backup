@@ -17,8 +17,7 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 /**
  * @generated
  */
-public class HardwarePropertySection extends DefaultPropertySection implements
-		IPropertySourceProvider {
+public class HardwarePropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
 	 * Modify/unwrap selection.
@@ -38,13 +37,11 @@ public class HardwarePropertySection extends DefaultPropertySection implements
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
 			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
+					.getInstance().getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.ID,
 							true);
 			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
+					.getInstance().getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.ID,
 							false);
 
@@ -65,8 +62,7 @@ public class HardwarePropertySection extends DefaultPropertySection implements
 		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
 			return (AdapterFactoryEditingDomain) getEditingDomain();
 		}
-		return (AdapterFactoryEditingDomain) TransactionUtil
-				.getEditingDomain(object);
+		return (AdapterFactoryEditingDomain) TransactionUtil.getEditingDomain(object);
 	}
 
 }

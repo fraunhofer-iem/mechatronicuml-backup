@@ -22,8 +22,7 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 /**
  * @generated
  */
-public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart
-		extends ListCompartmentEditPart {
+public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -56,8 +55,7 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 	/**
 	 * @generated
 	 */
-	public CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart(
-			View view) {
+	public CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -79,14 +77,12 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -102,17 +98,12 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentCanonicalEditPolicy());
 	}
 
@@ -130,11 +121,9 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3017) {
 				return this;
 			}

@@ -6,15 +6,13 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
 /**
  * @generated
  */
-public class HardwareIconProvider extends DefaultElementTypeIconProvider
-		implements IIconProvider {
+public class HardwareIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
 
 	/**
 	 * @generated
 	 */
 	public HardwareIconProvider() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.TYPED_INSTANCE);
+		super(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.TYPED_INSTANCE);
 	}
 
 }

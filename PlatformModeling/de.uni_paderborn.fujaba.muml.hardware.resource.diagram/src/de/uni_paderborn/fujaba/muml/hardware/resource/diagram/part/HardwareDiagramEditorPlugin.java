@@ -42,8 +42,7 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(
-			ID);
+	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(ID);
 
 	/**
 	 * @generated
@@ -88,8 +87,7 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 		super.start(context);
 		instance = this;
 		myLogHelper = new LogHelper(this);
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-				getPreferenceStore());
+		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 	}
 
@@ -126,52 +124,42 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance()
+				.getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance()
+				.getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);
@@ -190,11 +178,9 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
-				.adapt(item, IItemLabelProvider.class);
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
 		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
-					labelProvider.getImage(item));
+			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
 		return null;
 	}
@@ -223,8 +209,8 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p
-					.removeFirstSegments(1).makeAbsolute().toString());
+			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0),
+					p.removeFirstSegments(1).makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}

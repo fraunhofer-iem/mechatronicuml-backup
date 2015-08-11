@@ -59,16 +59,15 @@
 	
 	
 	<extension point="org.eclipse.ui.menus">
-
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
+                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
                  icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
-                 label="Create new ResourceInstance Model"
+                 id="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+                 label="ResourceInstanceRepository"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
@@ -79,7 +78,6 @@
               </visibleWhen>
            </command>
       </menuContribution>
-      
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
@@ -95,7 +93,7 @@
 		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
 						<iterate ifEmpty="false" operator="or">
 		            		<adapt type="org.eclipse.core.resources.IResource">
-		            			<test property="org.eclipse.core.resources.name" value="*.resource"></test>
+		            			<test property="org.eclipse.core.resources.name" value="*.hwresource"></test>
 	              			</adapt>
 		    			</iterate>
 		    			</or>
@@ -107,19 +105,21 @@
 	
 	
 	<extension point="org.eclipse.ui.commands">
-	<?gmfgen generated="true"?>   
+	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
-           description="Create new ResourceInstance Model"
-           id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
-           name="Create new ResourceInstance Model">
+           description="Create new ResourceInstance"
+           id="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+           name="Create new ResourceInstance">
     </command>
     </extension>
 	
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
-   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="resource"/>
+   		<!--
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="hwresource"/>
+   		-->
     </extension>
 
 	
@@ -139,8 +139,8 @@
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.resource.category"
-            name="resource">
+            key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
+            name="hwresource">
          
          <child
                class="ResourceInstanceRepository"
@@ -159,7 +159,7 @@
             editorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
             editorName="ResourceInstance Editor"
             fileExtension="resourceinstance_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
             modelId="ResourceInstance">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
@@ -781,6 +781,14 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="resourceinstancerepository"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

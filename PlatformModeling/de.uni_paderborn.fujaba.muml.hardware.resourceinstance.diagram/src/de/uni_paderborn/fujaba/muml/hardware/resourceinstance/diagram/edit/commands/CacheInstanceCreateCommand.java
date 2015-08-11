@@ -29,8 +29,7 @@ public class CacheInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -48,16 +47,15 @@ public class CacheInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance newElement = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
 				.createCacheInstance();
 
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance) getElementToEdit();
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
-		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_CacheInstance_3018(newElement);
+		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers.getInstance()
+				.init_CacheInstance_3018(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -68,19 +66,13 @@ public class CacheInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+	protected void doConfigure(de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance newElement,
+			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

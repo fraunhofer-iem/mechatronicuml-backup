@@ -18,16 +18,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CacheInstanceItemSemanticEditPolicy
-		extends
+public class CacheInstanceItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CacheInstanceItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CacheInstance_3018);
+		super(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CacheInstance_3018);
 	}
 
 	/**
@@ -35,15 +33,14 @@ public class CacheInstanceItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+					.getVisualID(
+							incomingLink) == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -68,15 +65,13 @@ public class CacheInstanceItemSemanticEditPolicy
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003 == req
 				.getElementType()) {
 			return null;
@@ -87,12 +82,12 @@ public class CacheInstanceItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceCreateCommand(
+							req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -103,12 +98,12 @@ public class CacheInstanceItemSemanticEditPolicy
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceReorientCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceReorientCommand(
+							req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

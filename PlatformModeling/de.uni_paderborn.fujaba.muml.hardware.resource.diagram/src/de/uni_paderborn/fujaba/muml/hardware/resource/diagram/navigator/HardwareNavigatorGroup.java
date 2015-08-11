@@ -7,8 +7,7 @@ import java.util.LinkedList;
  * @generated
  */
 public class HardwareNavigatorGroup
-		extends
-		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem {
+		extends de.uni_paderborn.fujaba.muml.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem {
 
 	/**
 	 * @generated

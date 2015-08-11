@@ -16,8 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ProcessorOwnedCacheEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class ProcessorOwnedCacheEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -59,8 +58,7 @@ public class ProcessorOwnedCacheEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.ProcessorOwnedCacheItemSemanticEditPolicy());
 	}
 

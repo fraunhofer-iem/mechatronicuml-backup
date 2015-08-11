@@ -45,56 +45,67 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ResourceInstanceRepository_1000 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ResourceInstanceRepository_1000"); //$NON-NLS-1$
+	public static final IElementType ResourceInstanceRepository_1000 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ResourceInstanceRepository_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SensorInstance_2007 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2007"); //$NON-NLS-1$
+	public static final IElementType SensorInstance_2007 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActuatorInstance_2008 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2008"); //$NON-NLS-1$
+	public static final IElementType ActuatorInstance_2008 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType StructuredResourceInstance_2009 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"); //$NON-NLS-1$
+	public static final IElementType StructuredResourceInstance_2009 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType HWPort_3017 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3017"); //$NON-NLS-1$
+	public static final IElementType HWPort_3017 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType CacheInstance_3018 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3018"); //$NON-NLS-1$
+	public static final IElementType CacheInstance_3018 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3018"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProgrammableLogicDeviceInstance_3019 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"); //$NON-NLS-1$
+	public static final IElementType ProgrammableLogicDeviceInstance_3019 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProcessorInstance_3020 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3020"); //$NON-NLS-1$
+	public static final IElementType ProcessorInstance_3020 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3020"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProcessingMemoryInstance_3021 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"); //$NON-NLS-1$
+	public static final IElementType ProcessingMemoryInstance_3021 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType StorageMemoryInstance_3022 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"); //$NON-NLS-1$
+	public static final IElementType StorageMemoryInstance_3022 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProcessorInstanceOwnedCacheInstance_4003 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"); //$NON-NLS-1$
+	public static final IElementType ProcessorInstanceOwnedCacheInstance_4003 = getElementType(
+			"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -134,58 +145,47 @@ public class HardwareElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ResourceInstanceRepository_1000,
+			elements.put(ResourceInstanceRepository_1000,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getResourceInstanceRepository());
 
-			elements.put(
-					SensorInstance_2007,
+			elements.put(SensorInstance_2007,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getSensorInstance());
 
-			elements.put(
-					ActuatorInstance_2008,
+			elements.put(ActuatorInstance_2008,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getActuatorInstance());
 
-			elements.put(
-					StructuredResourceInstance_2009,
+			elements.put(StructuredResourceInstance_2009,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getStructuredResourceInstance());
 
-			elements.put(
-					HWPort_3017,
+			elements.put(HWPort_3017,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getHWPort());
 
-			elements.put(
-					CacheInstance_3018,
+			elements.put(CacheInstance_3018,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getCacheInstance());
 
-			elements.put(
-					ProgrammableLogicDeviceInstance_3019,
+			elements.put(ProgrammableLogicDeviceInstance_3019,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProgrammableLogicDeviceInstance());
 
-			elements.put(
-					ProcessorInstance_3020,
+			elements.put(ProcessorInstance_3020,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProcessorInstance());
 
-			elements.put(
-					ProcessingMemoryInstance_3021,
+			elements.put(ProcessingMemoryInstance_3021,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProcessingMemoryInstance());
 
-			elements.put(
-					StorageMemoryInstance_3022,
+			elements.put(StorageMemoryInstance_3022,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getStorageMemoryInstance());
 
-			elements.put(
-					ProcessorInstanceOwnedCacheInstance_4003,
+			elements.put(ProcessorInstanceOwnedCacheInstance_4003,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProcessorInstance_OwnedCacheInstance());
 		}
@@ -254,33 +254,34 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
 			return de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes
 					.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
 			return de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes
 					.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes
 					.getElement(elementTypeAdapter);
 		}

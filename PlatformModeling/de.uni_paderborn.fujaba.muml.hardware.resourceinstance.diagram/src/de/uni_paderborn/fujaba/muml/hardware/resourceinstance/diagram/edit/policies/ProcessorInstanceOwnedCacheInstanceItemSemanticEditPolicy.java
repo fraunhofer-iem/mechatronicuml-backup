@@ -7,16 +7,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 /**
  * @generated
  */
-public class ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy
-		extends
+public class ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003);
+		super(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003);
 	}
 
 	/**

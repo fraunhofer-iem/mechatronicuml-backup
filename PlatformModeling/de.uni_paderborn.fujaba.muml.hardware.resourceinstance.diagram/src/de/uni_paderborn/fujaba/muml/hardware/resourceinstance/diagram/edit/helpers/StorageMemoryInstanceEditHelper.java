@@ -4,6 +4,5 @@ package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.help
  * @generated
  */
 public class StorageMemoryInstanceEditHelper
-		extends
-		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.HardwareBaseEditHelper {
+		extends de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.HardwareBaseEditHelper {
 }

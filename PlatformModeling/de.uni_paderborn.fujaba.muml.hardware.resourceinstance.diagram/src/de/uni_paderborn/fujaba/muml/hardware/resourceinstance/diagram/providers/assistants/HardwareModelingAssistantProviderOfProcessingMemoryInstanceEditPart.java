@@ -3,8 +3,7 @@ package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfProcessingMemoryInstanceEditPart
-		extends
+public class HardwareModelingAssistantProviderOfProcessingMemoryInstanceEditPart extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareModelingAssistantProvider {
 
 }

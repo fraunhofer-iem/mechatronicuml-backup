@@ -64,12 +64,10 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 		if (!myContribute) {
 			return;
 		}
-		IStructuredSelection selection = (IStructuredSelection) getContext()
-				.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) getContext().getSelection();
 		myOpenDiagramAction.selectionChanged(selection);
 		if (myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
-					myOpenDiagramAction);
+			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, myOpenDiagramAction);
 		}
 	}
 
@@ -98,8 +96,7 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(
-					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+			super(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -114,8 +111,7 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 					selectedElement = ((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorItem) selectedElement)
 							.getView();
 				} else if (selectedElement instanceof IAdaptable) {
-					selectedElement = ((IAdaptable) selectedElement)
-							.getAdapter(View.class);
+					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
@@ -140,13 +136,11 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 			IEditorInput editorInput = getEditorInput(myDiagram);
 			IWorkbenchPage page = myViewerSite.getPage();
 			try {
-				page.openEditor(
-						editorInput,
+				page.openEditor(editorInput,
 						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditor.ID);
 			} catch (PartInitException e) {
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-						.getInstance().logError(
-								"Exception while openning diagram", e); //$NON-NLS-1$
+						.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -157,16 +151,14 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 			Resource diagramResource = diagram.eResource();
 			for (EObject nextEObject : diagramResource.getContents()) {
 				if (nextEObject == diagram) {
-					return new FileEditorInput(
-							WorkspaceSynchronizer.getFile(diagramResource));
+					return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 				}
 				if (nextEObject instanceof Diagram) {
 					break;
 				}
 			}
 			URI uri = EcoreUtil.getURI(diagram);
-			String editorName = uri.lastSegment() + '#'
-					+ diagram.eResource().getContents().indexOf(diagram);
+			String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 			IEditorInput editorInput = new URIEditorInput(uri, editorName);
 			return editorInput;
 		}

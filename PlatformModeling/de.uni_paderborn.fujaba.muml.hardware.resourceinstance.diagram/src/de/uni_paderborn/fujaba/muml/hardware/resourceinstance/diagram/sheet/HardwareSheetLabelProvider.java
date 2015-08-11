@@ -12,8 +12,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class HardwareSheetLabelProvider extends BaseLabelProvider implements
-		ILabelProvider {
+public class HardwareSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -85,8 +84,7 @@ public class HardwareSheetLabelProvider extends BaseLabelProvider implements
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

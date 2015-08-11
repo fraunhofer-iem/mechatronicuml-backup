@@ -16,16 +16,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CommunicationProtocolRepositoryItemSemanticEditPolicy
-		extends
+public class CommunicationProtocolRepositoryItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CommunicationProtocolRepositoryItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008);
+		super(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008);
 	}
 
 	/**
@@ -33,8 +31,7 @@ public class CommunicationProtocolRepositoryItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -59,16 +56,14 @@ public class CommunicationProtocolRepositoryItemSemanticEditPolicy
 			switch (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 					.getVisualID(node)) {
 			case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 							.getVisualID(cnode)) {
 					case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
@@ -76,8 +71,7 @@ public class CommunicationProtocolRepositoryItemSemanticEditPolicy
 					case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 

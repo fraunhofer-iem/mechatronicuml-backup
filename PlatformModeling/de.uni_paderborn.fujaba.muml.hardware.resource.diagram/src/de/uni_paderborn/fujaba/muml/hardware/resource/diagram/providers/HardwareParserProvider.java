@@ -17,8 +17,7 @@ import org.storydriven.core.CorePackage;
 /**
  * @generated
  */
-public class HardwareParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class HardwareParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -30,10 +29,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getDeviceName_5041Parser() {
 		if (deviceName_5041Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			deviceName_5041Parser = parser;
@@ -65,10 +62,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStructuredResourceName_5065Parser() {
 		if (structuredResourceName_5065Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			structuredResourceName_5065Parser = parser;
@@ -100,8 +95,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCommunicationProtocolRepositoryName_5070Parser() {
 		if (communicationProtocolRepositoryName_5070Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features);
 			communicationProtocolRepositoryName_5070Parser = parser;
@@ -126,10 +120,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCommunicationResourceName_5044Parser() {
 		if (communicationResourceName_5044Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			communicationResourceName_5044Parser = parser;
@@ -161,10 +153,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCacheName_5047Parser() {
 		if (cacheName_5047Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			cacheName_5047Parser = parser;
@@ -217,10 +207,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getProcessorName_5053Parser() {
 		if (processorName_5053Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			processorName_5053Parser = parser;
@@ -259,10 +247,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getProgrammableLogicDeviceName_5057Parser() {
 		if (programmableLogicDeviceName_5057Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			programmableLogicDeviceName_5057Parser = parser;
@@ -294,10 +280,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getMemoryResourceName_5060Parser() {
 		if (memoryResourceName_5060Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			memoryResourceName_5060Parser = parser;
@@ -343,8 +327,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getBusProtocolName_5068Parser() {
 		if (busProtocolName_5068Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features);
 			busProtocolName_5068Parser = parser;
@@ -362,8 +345,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getLinkProtocolName_5069Parser() {
 		if (linkProtocolName_5069Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
 					features);
 			linkProtocolName_5069Parser = parser;
@@ -446,10 +428,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
