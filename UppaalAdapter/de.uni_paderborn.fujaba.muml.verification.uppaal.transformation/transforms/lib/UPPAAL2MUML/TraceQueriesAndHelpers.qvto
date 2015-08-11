@@ -472,7 +472,7 @@ query VariableValue :: getMessageIdValuesForMessageTypeValue(mIDValues : Ordered
 
 query RealtimeStatechartInstance :: isParentInstanceOf(rtscInstance : RealtimeStatechartInstance) : Boolean {
 	
-	if(rtscInstance.instanceOf.parentRegion.parentState.oclIsUndefined() or rtscInstance.activeVertex.oclIsUndefined())
+	if(rtscInstance.instanceOf.parentRegion.parentState.oclIsUndefined() or self.activeVertex.oclIsUndefined())
 		return false;
 		
 	if(self.activeVertex = rtscInstance.instanceOf.parentRegion.parentState){
