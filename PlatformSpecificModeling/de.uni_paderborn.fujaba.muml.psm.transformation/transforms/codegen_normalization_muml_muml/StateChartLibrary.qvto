@@ -51,9 +51,9 @@ modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware
 	which represents the (old and now deleted) hybrid/continous Port
 **/
 //StateChart stuff
-helper DirectedTypedPort::CreateStateChartVariable():Variable{
-	var variable:Variable;
-	variable:=object Variable{
+mapping DirectedTypedPort::mapCreateStateChartVariable():Variable{
+
+	
 		name:=self.name+"_apiValue";
 		dataType:=self.dataType;
 		//we need the initalize Expression from the ContinousPort, also for the new Variable of the HybridPort
@@ -61,12 +61,36 @@ helper DirectedTypedPort::CreateStateChartVariable():Variable{
 	//			initializeExpression:=self.oclAsType(HybridPort).connectedContiniousPort.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
 	//	}
 	//	else{
-			initializeExpression:=self.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
-	//	}endif;
-	};
-	return variable;
+		initializeExpression:=self.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
+	//	}endif
+	
 }
 
+
+mapping ContinuousPort::mapContinuousPort2APICallParameter():APICallParameter{
+	name := prop_execApiName;
+				if(self.inPort)then{
+					returnType:=  getPrimitiveDataType("VOID");
+					parameters:=object Parameter{
+						name:=self.name;
+						dataType:=self.dataType;
+					};
+				}
+				else{
+					returnType:=self.dataType;
+				}endif;
+	
+}
+
+
+mapping DirectedTypedPort::mapDirectedTypedPort2SamplingTimeParameter():TimeParameter{
+	name := prop_samplingTimeParameterName;
+				initializeExpression:= object core::expressions::common::LiteralExpression{
+					value:="20";
+				};
+				dataType:=getPrimitiveDataType("INT32");
+	
+}
 
 /**
  	In the RealtimeStateChart of a discret component with hybridPorts, all references to the hybridPort are replaced
@@ -169,9 +193,9 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 	var regionTransmission : Region;
 	
 	if (self.inPort) then {
-		regionTransmission := result.createRegionForPeriodicReceiving(variable, messageTyp);
+		regionTransmission := result.createRegionForPeriodicReceiving(variable, messageTyp, self);
 	} else {
-		regionTransmission := result.createRegionForPeriodicSending(variable, messageTyp);
+		regionTransmission := result.createRegionForPeriodicSending(variable, messageTyp, self);
 	} endif;
 	regionTransmission.priority := 1;
 	multiState.embeddedRegions += regionTransmission;
@@ -179,23 +203,10 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 	--create a region for getting/setting the new value of the sensor/actuator
 	if (createApiRegion) then {
 		-- add parameter to the statechart
-		var execApiParam : APICallParameter;
+		var execApiParam : APICallParameter := self.map mapContinuousPort2APICallParameter();
 		var timeBetweenApiExecutes : TimeParameter;
 		
 	
-		execApiParam := object APICallParameter {
-				name := prop_execApiName;
-				if(self.inPort)then{
-					returnType:=  getPrimitiveDataType("VOID");
-					parameters:=object Parameter{
-						name:=self.name;
-						dataType:=variable.dataType;
-					};
-				}
-				else{
-					returnType:=variable.dataType;
-				}endif;
-			};
 		timeBetweenApiExecutes := object TimeParameter {
 				name := timeBetweenApiExecsName;
 				initializeExpression:= object core::expressions::common::LiteralExpression{
@@ -222,7 +233,7 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 
 query RealtimeStatechart::createRegionForPeriodicSending(
 			in portVariable : Variable,
-			in messageTyp : MessageType) : Region {
+			in messageTyp : MessageType, port:DirectedTypedPort) : Region {
 	var newRegion : Region;
 	var newStatechart : ParameterizedRealtimeStatechart;
 	
@@ -234,13 +245,7 @@ query RealtimeStatechart::createRegionForPeriodicSending(
 	
 	
 	
-	var samplingParameter := object TimeParameter {
-				name := prop_samplingTimeParameterName;
-				initializeExpression:= object core::expressions::common::LiteralExpression{
-					value:="20";
-				};
-				dataType:=getPrimitiveDataType("INT32");
-			};
+	var samplingParameter := port.map mapDirectedTypedPort2SamplingTimeParameter();
 			
 	newStatechart.parameters+=samplingParameter;
 	
@@ -322,7 +327,7 @@ query RealtimeStatechart::createRegionForPeriodicSending(
 
 query RealtimeStatechart::createRegionForPeriodicReceiving(
 			in portVariable : Variable,
-			in messageTyp : MessageType) : Region {
+			in messageTyp : MessageType, port:DirectedTypedPort) : Region {
 	var newRegion : Region;
 	var newStatechart : ParameterizedRealtimeStatechart;
 	
@@ -334,13 +339,7 @@ query RealtimeStatechart::createRegionForPeriodicReceiving(
 	
 	 
 	
-	var samplingParameter := object TimeParameter {
-				name := prop_samplingTimeParameterName;
-				initializeExpression:= object core::expressions::common::LiteralExpression{
-					value:="20";
-				};
-				dataType:=getPrimitiveDataType("INT32");
-			};
+	var samplingParameter := port.map mapDirectedTypedPort2SamplingTimeParameter();
 			
 	newStatechart.parameters+=samplingParameter;
 	
@@ -631,9 +630,9 @@ mapping in HybridPort::createStatechartHybridPort(
 	var regionTransmission : Region;
 	
 	if (self.inPort) then {
-		regionTransmission := result.createRegionForPeriodicReceiving(portVariable, messageTyp);
+		regionTransmission := result.createRegionForPeriodicReceiving(portVariable, messageTyp, self);
 	} else {
-		regionTransmission := result.createRegionForPeriodicSending(portVariable, messageTyp);
+		regionTransmission := result.createRegionForPeriodicSending(portVariable, messageTyp, self);
 	} endif;
 	regionTransmission.priority := 1;
 	multiState.embeddedRegions += regionTransmission;

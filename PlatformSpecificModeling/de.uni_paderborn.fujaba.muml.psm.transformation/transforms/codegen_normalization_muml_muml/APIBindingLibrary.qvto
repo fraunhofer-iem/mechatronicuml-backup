@@ -6,11 +6,14 @@ modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
 
-modeltype APIInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype APIStateChart uses psm::realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMInstance uses psm::psm_instance('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMStateChart uses psm::psm_realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype Realtimestatechartparameter uses psm::psm_realtimestatechart::realtimestatechartparameter('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMparameterBinding uses psm::psm_realtimestatechart::realtimestatechartparameterbinding('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype Modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
 modeltype Muml uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
@@ -24,11 +27,11 @@ property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
 * Creates the ParameterBinding for a ParametriableDiscreteSinglePortInstance
 * These ParameterBindings containts the API-Calls and TimeConstraints for the StateCharts of the "sensor/actuator" component
 **/
-helper createPortBindingParameter(in mappingRepository:PortMappingModel::MappingRepository, inout newPortInstance:PSM::instance::ParameterisableDiscreteSinglePortInstance, in oldPortInstance:Muml::instance::ContinuousPortInstance){
+helper createPortBindingParameter(in mappingRepository:PortMappingModel::MappingRepository, inout newPortInstance:ParameterisableDiscreteSinglePortInstance, in oldPortInstance:Muml::instance::ContinuousPortInstance){
 	var portMapping : PortMappingModel::PortApiMapping;
 	portMapping := mappingRepository.portApiMappings->select(mapp|mapp.port = oldPortInstance)->any(true);
 	//portMapping:=API::portapimapping::PortApiMapping.allInstances()->select(mapp|mapp.port.name = oldPortInstance.name and mapp.port.componentInstance.name=oldPortInstance.componentInstance.name)->any(true);
-	var apiSignature:APIStateChart::realtimestatechartparameter::APICallParameter;
+	var apiSignature:APICallParameter;
 	apiSignature:=getAPICallSignature(newPortInstance,initApiName);
 	if(not apiSignature.oclIsInvalid()) then{
 		newPortInstance.bindings+=newPortInstance.createAPICallParameterBinding(portMapping.initCommand,apiSignature);
@@ -45,8 +48,8 @@ helper createPortBindingParameter(in mappingRepository:PortMappingModel::Mapping
 * requires the concrete Expression which describes the API-Call
 * and the signature of the API-Call as it is used in the RealtimeStateChart
 **/
-helper PSM::instance::ParameterisableDiscreteSinglePortInstance::createAPICallParameterBinding(mappingExpressiong:Core::expressions::Expression, signature:APIStateChart::realtimestatechartparameter::APICallParameter):APIStateChart::realtimestatechartparameterbinding::APICallParameterBinding{
-	var binding:APIStateChart::realtimestatechartparameterbinding::APICallParameterBinding:=new APIStateChart::realtimestatechartparameterbinding::APICallParameterBinding();
+helper ParameterisableDiscreteSinglePortInstance::createAPICallParameterBinding(mappingExpressiong:Core::expressions::Expression, signature:APICallParameter):APICallParameterBinding{
+	var binding:APICallParameterBinding:=new APICallParameterBinding();
 	binding.name:=self.componentInstance.name+"_"+self.name+"_"+signature.name;
 	binding.parameter:=signature;
 	binding.returnType:=signature.returnType;
@@ -58,8 +61,8 @@ helper PSM::instance::ParameterisableDiscreteSinglePortInstance::createAPICallPa
 /**
 * Returns the Signatire of the API-Calls as it is used in the ParametirzedRealtimeStateChart
 **/
-query getAPICallSignature(portInstance:PSM::instance::ParameterisableDiscreteSinglePortInstance , signatureName:String):APIStateChart::realtimestatechartparameter::APICallParameter{
-	return portInstance.portType.oclAsType(Muml::component::DiscretePort).behavior.oclAsType(PSM::realtimestatechart::ParameterizedRealtimeStatechart).allParameters->select(p|p.oclIsKindOf(APIStateChart::realtimestatechartparameter::APICallParameter) and p.name.equalsIgnoreCase(signatureName)).oclAsType(APIStateChart::realtimestatechartparameter::APICallParameter)->any(true);
+query getAPICallSignature(portInstance:ParameterisableDiscreteSinglePortInstance , signatureName:String):APICallParameter{
+	return portInstance.portType.oclAsType(DiscretePort).behavior.oclAsType(ParameterizedRealtimeStatechart).allParameters->select(p|p.oclIsKindOf(APICallParameter) and p.name.equalsIgnoreCase(signatureName)).oclAsType(APICallParameter)->any(true);
 }
 
 
