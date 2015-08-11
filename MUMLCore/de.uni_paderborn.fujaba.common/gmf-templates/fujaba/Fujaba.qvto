@@ -22,11 +22,11 @@ helper usesModelElementCategory(genDiagram : gmfgen::GenDiagram) : Boolean {
 helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
 	switch {
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceRepository'){
-			return 'de.uni_paderborn.fujaba.muml.hardware.resource.category';
+			return 'de.uni_paderborn.fujaba.muml.hardware.hwresource.category';
 		}
 		
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceInstanceRepository'){
-						return 'de.uni_paderborn.fujaba.muml.hardware.resource.category';
+						return 'de.uni_paderborn.fujaba.muml.hardware.hwresource.category';
 		}
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'HWPlatformInstanceConfiguration'){
 				return 'de.uni_paderborn.fujaba.muml.hardware.hwplatform.category';
@@ -41,11 +41,11 @@ helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
 helper modelElementCategoryName(genDiagram : gmfgen::GenDiagram) : String {
 switch {
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceRepository'){
-			return 'resource';
+			return 'hwresource';
 		}
 		
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceInstanceRepository'){
-				return 'resource';
+				return 'hwresource';
 		}
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'HWPlatformInstanceConfiguration'){
 				return 'hwplatform';
