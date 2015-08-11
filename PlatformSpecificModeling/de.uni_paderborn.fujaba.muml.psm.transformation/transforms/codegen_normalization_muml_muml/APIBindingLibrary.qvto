@@ -29,10 +29,25 @@ property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
 /**
 * Creates the ParameterBinding for a ParametriableDiscreteSinglePortInstance
 * These ParameterBindings containts the API-Calls and TimeConstraints for the StateCharts of the "sensor/actuator" component
+* self has to be the orignal PortInstance
 **/
-helper ContinuousPortInstance::createPortBindingExecParameter(inout newPortInstance:ParameterisableDiscreteSinglePortInstance){
-	newPortInstance.bindings+=newPortInstance.createAPICallParameterBinding(self.getGenPortInstance().execCommand,self.type.oclAsType(ContinuousPort));
-	
+helper ContinuousPortInstance::createPortBindingExecParameter(in newPortInstance:ParameterisableDiscreteSinglePortInstance) : APICallParameterBinding{
+	return newPortInstance.createAPICallParameterBinding(self.getGenPortInstance().execCommand,self.type.oclAsType(ContinuousPort));
+}
+
+
+
+/**
+ self is the orignal PortInstance
+**/
+helper PortInstance::createPortBindingSamplingTimeParameter(in newPortInstance:ParameterisableDiscreteSinglePortInstance) : TimeParameterBinding{
+	var timeParameterBinding: TimeParameterBinding := null;
+	if(self.oclIsKindOf(HybridPortInstance) or self.oclIsKindOf(ContinuousPortInstance)) then{
+			timeParameterBinding:=new TimeParameterBinding();
+			timeParameterBinding.parameter:=self.portType.oclAsType(DirectedTypedPort).map mapDirectedTypedPort2SamplingTimeParameter();
+			timeParameterBinding.timeValue:=self.getGenPortInstance().samplingTime;
+	}endif;
+	return timeParameterBinding;
 }
 
 
