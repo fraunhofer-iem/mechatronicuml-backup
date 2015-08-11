@@ -56,12 +56,26 @@ mapping HybridPortInstance::transform():EObject inherits OclAny::transform{
 	portInstance.comment:=self.comment;
 	portInstance.componentInstance:=self.componentInstance;
 	portInstance.connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance); */
+	if(result.oclIsKindOf(ParameterisableDiscreteSinglePortInstance)) then{
+		var paraPort : ParameterisableDiscreteSinglePortInstance := result.oclAsType(ParameterisableDiscreteSinglePortInstance);
+ 		// create Binding for the SamplingTime parameter
+ 		paraPort.bindings+=self.createPortBindingSamplingTimeParameter(result.oclAsType(ParameterisableDiscreteSinglePortInstance));
+	} endif; 
 	
 }
 
 mapping HybridPortInstance::create():EObject{
 	init{
-	result:=new DiscreteSinglePortInstance();
+	if(self.componentInstance.oclIsKindOf(AtomicComponentInstance)) then {
+	result:=new ParameterisableDiscreteSinglePortInstance();
+	}
+	else{
+		if(self.componentInstance.oclIsKindOf(StructuredComponentInstance)) then {
+		result:=new DiscreteSinglePortInstance();
+	}endif;
+	}
+	endif;
+
 	}
 }
 
@@ -87,10 +101,10 @@ init{
 	if(result.oclIsKindOf(ParameterisableDiscreteSinglePortInstance)) then{
 		var paraPort : ParameterisableDiscreteSinglePortInstance := result.oclAsType(ParameterisableDiscreteSinglePortInstance);
 		//Create the Binding for the ExecCommand
- 		paraPort.bindings:=self.createPortBindingExecParameter(paraPort);
- 		
- 		//TODO: create Binding for the SamplingTime parameter
-
+ 		paraPort.bindings+=self.createPortBindingExecParameter(result.oclAsType(ParameterisableDiscreteSinglePortInstance));
+ 		// create Binding for the SamplingTime parameter
+ 		paraPort.bindings+=self.createPortBindingSamplingTimeParameter(result.oclAsType(ParameterisableDiscreteSinglePortInstance));
+		//TODO: create Binding for the TimeBetween API Execution parameter
 	} endif; 
 	
 }
