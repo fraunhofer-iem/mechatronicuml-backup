@@ -1,6 +1,6 @@
 import ComponentLibrary;
 import CommonLibrary;
-
+import APIBindingLibrary;
 library ComponentInstanceLibrary;
 
 import ModelcopyLibrary;
@@ -85,10 +85,12 @@ init{
 	portInstance.componentInstance:=self.componentInstance;
 	portInstance.connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);	 */
 	if(result.oclIsKindOf(ParameterisableDiscreteSinglePortInstance)) then{
-	
-		// fix it
-		//TODO
- 		//bindings:=createPortBindingParameter(apiMappingRepository,result,self);
+		var paraPort : ParameterisableDiscreteSinglePortInstance := result.oclAsType(ParameterisableDiscreteSinglePortInstance);
+		//Create the Binding for the ExecCommand
+ 		paraPort.bindings:=self.createPortBindingExecParameter(paraPort);
+ 		
+ 		//TODO: create Binding for the SamplingTime parameter
+
 	} endif; 
 	
 }

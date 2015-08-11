@@ -1,4 +1,6 @@
 library APIBindingLibrary;
+import CommonLibrary;
+import StateChartLibrary;
 
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
 
@@ -13,6 +15,7 @@ modeltype PSMparameterBinding uses psm::psm_realtimestatechart::realtimestatecha
 
 modeltype Modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
 modeltype Muml uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype InstancePacakge uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
@@ -27,19 +30,9 @@ property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
 * Creates the ParameterBinding for a ParametriableDiscreteSinglePortInstance
 * These ParameterBindings containts the API-Calls and TimeConstraints for the StateCharts of the "sensor/actuator" component
 **/
-helper createPortBindingParameter(in mappingRepository:PortMappingModel::MappingRepository, inout newPortInstance:ParameterisableDiscreteSinglePortInstance, in oldPortInstance:Muml::instance::ContinuousPortInstance){
-	var portMapping : PortMappingModel::PortApiMapping;
-	portMapping := mappingRepository.portApiMappings->select(mapp|mapp.port = oldPortInstance)->any(true);
-	//portMapping:=API::portapimapping::PortApiMapping.allInstances()->select(mapp|mapp.port.name = oldPortInstance.name and mapp.port.componentInstance.name=oldPortInstance.componentInstance.name)->any(true);
-	var apiSignature:APICallParameter;
-	apiSignature:=getAPICallSignature(newPortInstance,initApiName);
-	if(not apiSignature.oclIsInvalid()) then{
-		newPortInstance.bindings+=newPortInstance.createAPICallParameterBinding(portMapping.initCommand,apiSignature);
-	}endif;
-	apiSignature:=getAPICallSignature(newPortInstance,execApiName);
-	if(not apiSignature.oclIsInvalid()) then{
-		newPortInstance.bindings+=newPortInstance.createAPICallParameterBinding(portMapping.execCommand,apiSignature);
-	}endif;
+helper ContinuousPortInstance::createPortBindingExecParameter(inout newPortInstance:ParameterisableDiscreteSinglePortInstance){
+	newPortInstance.bindings+=newPortInstance.createAPICallParameterBinding(self.getGenPortInstance().execCommand,self.type.oclAsType(ContinuousPort));
+	
 }
 
 
@@ -48,22 +41,16 @@ helper createPortBindingParameter(in mappingRepository:PortMappingModel::Mapping
 * requires the concrete Expression which describes the API-Call
 * and the signature of the API-Call as it is used in the RealtimeStateChart
 **/
-helper ParameterisableDiscreteSinglePortInstance::createAPICallParameterBinding(mappingExpressiong:Core::expressions::Expression, signature:APICallParameter):APICallParameterBinding{
+helper ParameterisableDiscreteSinglePortInstance::createAPICallParameterBinding(mappingExpressiong:Core::expressions::Expression, org_port:ContinuousPort):APICallParameterBinding{
 	var binding:APICallParameterBinding:=new APICallParameterBinding();
-	binding.name:=self.componentInstance.name+"_"+self.name+"_"+signature.name;
-	binding.parameter:=signature;
-	binding.returnType:=signature.returnType;
-	binding.parameters:=signature.parameters->deepclone()->oclAsType(Muml::behavior::Parameter);
+	binding.name:=self.componentInstance.name+"_"+self.name+"_"+org_port.map mapContinuousPort2APICallParameter().name;
+	binding.parameter:=org_port.map mapContinuousPort2APICallParameter();
+	binding.returnType:=org_port.map mapContinuousPort2APICallParameter().returnType;
+	binding.parameters:=org_port.map mapContinuousPort2APICallParameter().parameters->deepclone()->oclAsType(Muml::behavior::Parameter);
 	binding.implementations+=mappingExpressiong.createMumlValidExpression();
 	return binding;
 }
 
-/**
-* Returns the Signatire of the API-Calls as it is used in the ParametirzedRealtimeStateChart
-**/
-query getAPICallSignature(portInstance:ParameterisableDiscreteSinglePortInstance , signatureName:String):APICallParameter{
-	return portInstance.portType.oclAsType(DiscretePort).behavior.oclAsType(ParameterizedRealtimeStatechart).allParameters->select(p|p.oclIsKindOf(APICallParameter) and p.name.equalsIgnoreCase(signatureName)).oclAsType(APICallParameter)->any(true);
-}
 
 
 
