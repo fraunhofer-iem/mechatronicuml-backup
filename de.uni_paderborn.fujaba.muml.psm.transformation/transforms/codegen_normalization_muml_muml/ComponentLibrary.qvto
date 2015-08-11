@@ -111,7 +111,7 @@ mapping HybridPort::transform():EObject {
 			componentStateChart:=self.component.oclAsType(AtomicComponent).behavior.map transform().oclAsType(RealtimeStatechart);
 		}endif;
 		
-		var variable:Variable:=self.CreateStateChartVariable();
+		var variable:Variable:=self.map mapCreateStateChartVariable();
 		//statechart stuff
 		AddVariableToStateChart(componentStateChart,variable);
 		self.ReplacePortExpressionWithVariableExpression(componentStateChart,variable);
@@ -162,7 +162,7 @@ mapping ContinuousPort::transform():EObject{
 			componentStateChart:=self.component.oclAsType(AtomicComponent).behavior.map transform().oclAsType(RealtimeStatechart);
 		}endif;
 	
-		var variable:Variable:=self.CreateStateChartVariable();
+		var variable:Variable:=self.map mapCreateStateChartVariable();
 		//statechart stuff		
 		AddVariableToStateChart(componentStateChart,variable);
 		var portStateChart:RealtimeStatechart;
