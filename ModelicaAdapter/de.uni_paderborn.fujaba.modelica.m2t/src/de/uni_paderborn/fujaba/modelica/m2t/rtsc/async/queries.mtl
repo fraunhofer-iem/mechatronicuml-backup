@@ -20,7 +20,7 @@
  * @param typeName the type of the returned parameter bindings
 */]
 [query private getTypeParameterBindings(ev : AsynchronousMessageEvent, typeName : String) : OrderedSet(ParameterBinding) =
-	ev.message.parameterBinding->select(parameter.dataType.name = typeName)->sortedBy(parameter.dataType.name)
+	ev.message.parameterBinding->select(parameter.dataType.name.toString().contains(typeName) )->sortedBy(parameter.dataType.name)
 /]
 
 [**
@@ -276,7 +276,7 @@
 */]
 [query public getExpressionTypeInstanceName(pb : ParameterBinding, ev : AsynchronousMessageEvent) : String =
  	ev.getMessageName() + '_' + pb.parameter.getName() +
-	if pb.parameter.dataType.name = 'INT' then
+	if pb.parameter.dataType.name.contains('INT') then
 		'integerExpression'
 	else if pb.parameter.dataType.name = 'DOUBLE' then
 		'realExpression'
@@ -294,7 +294,7 @@
  * @param pb the parameter binding
 */]
 [query public getExpressionTypeName(pb : ParameterBinding) : String =
-	if pb.parameter.dataType.name = 'INT' then
+	if pb.parameter.dataType.name.contains('INT') then
 		'Modelica.Blocks.Sources.IntegerExpression'
 	else if pb.parameter.dataType.name = 'DOUBLE' then
 		'Modelica.Blocks.Sources.RealExpression'
