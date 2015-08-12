@@ -16,7 +16,7 @@
  * @param typeName the type of the returned parameter bindings
 */]
 [query public getTypeParameters(messageType : MessageType, typeName : String) : OrderedSet(Parameter) =
-	messageType.parameters->select(dataType.name = typeName)->sortedBy(dataType.name)
+	messageType.parameters->select(dataType.name.toString().contains(typeName))->sortedBy(dataType.name)
 /]
 
 [**
