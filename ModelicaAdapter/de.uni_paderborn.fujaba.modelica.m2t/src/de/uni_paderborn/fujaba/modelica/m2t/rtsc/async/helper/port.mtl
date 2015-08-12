@@ -5,6 +5,7 @@
 [**
  * Create a declaration for an output delegation port
  * @param messageType the messageType
+ *  @param portName the name of the port where the message is referenced as sender message type
 */]
 [template public createOutputDelegationPortDecl(messageType : MessageType, portName : String)]
 RealTimeCoordinationLibrary.RealTimeCoordination.MessageInterface.OutputDelegationPort [portName/](
@@ -14,8 +15,9 @@ RealTimeCoordinationLibrary.RealTimeCoordination.MessageInterface.OutputDelegati
 [/template]
 
 [**
- * Create a declaration for an output delegation port
+ * Create a declaration for an input delegation port
  * @param messageType the messageType
+ *  @param portName the name of the port where the message is referenced as receiver message type
 */]
 [template public createInputDelegationPortDecl(messageType : MessageType, portName : String)]
 RealTimeCoordinationLibrary.RealTimeCoordination.MessageInterface.InputDelegationPort [portName/](
