@@ -60,11 +60,11 @@
  * @param type the primitive data type
 */]
 [query private _getType(type : DataType) : String =
-	if type.name.contains('INT')  then
+	if type.name.contains('int')  then
 		'Integer'
-	else if type.name = 'DOUBLE' then
+	else if type.name = 'double' then
 		'Real'
-	else if type.name = 'BOOLEAN' then
+	else if type.name = 'boolean' then
 		'Boolean'
 	else
 		-- this might be incorrect

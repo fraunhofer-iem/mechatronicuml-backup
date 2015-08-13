@@ -28,7 +28,7 @@
  * @param ev the AsynchronousMessageEvent
 */]
 [query public getIntegerParameterBindings(ev : AsynchronousMessageEvent) : OrderedSet(ParameterBinding) =
-	ev.getTypeParameterBindings('INT')
+	ev.getTypeParameterBindings('int')
 /]
 
 [**
@@ -36,7 +36,7 @@
  * @param ev the AsynchronousMessageEvent
 */]
 [query public getRealParameterBindings(ev : AsynchronousMessageEvent) : OrderedSet(ParameterBinding) =
-	ev.getTypeParameterBindings('DOUBLE')
+	ev.getTypeParameterBindings('double')
 /]
 
 [**
@@ -44,7 +44,7 @@
  * @param ev the AsynchronousMessageEvent
 */]
 [query public getBooleanParameterBindings(ev : AsynchronousMessageEvent) : OrderedSet(ParameterBinding) =
-	ev.getTypeParameterBindings('BOOLEAN')
+	ev.getTypeParameterBindings('boolean')
 /]
 
 [**
@@ -276,11 +276,11 @@
 */]
 [query public getExpressionTypeInstanceName(pb : ParameterBinding, ev : AsynchronousMessageEvent) : String =
  	ev.getMessageName() + '_' + pb.parameter.getName() +
-	if pb.parameter.dataType.name.contains('INT') then
+	if pb.parameter.dataType.name.contains('int') then
 		'integerExpression'
-	else if pb.parameter.dataType.name = 'DOUBLE' then
+	else if pb.parameter.dataType.name = 'double' then
 		'realExpression'
-	else if pb.parameter.dataType.name = 'BOOLEAN' then
+	else if pb.parameter.dataType.name = 'boolean' then
 		'booleanExpression'
 	else
 		'unsupported parameterbinding type'
@@ -294,11 +294,11 @@
  * @param pb the parameter binding
 */]
 [query public getExpressionTypeName(pb : ParameterBinding) : String =
-	if pb.parameter.dataType.name.contains('INT') then
+	if pb.parameter.dataType.name.contains('int') then
 		'Modelica.Blocks.Sources.IntegerExpression'
-	else if pb.parameter.dataType.name = 'DOUBLE' then
+	else if pb.parameter.dataType.name = 'double' then
 		'Modelica.Blocks.Sources.RealExpression'
-	else if pb.parameter.dataType.name = 'BOOLEAN' then
+	else if pb.parameter.dataType.name = 'boolean' then
 		'Modelica.Blocks.Sources.BooleanExpression'
 	else
 		'unsupported parameterbinding type'

@@ -24,7 +24,7 @@
  * @param ev the AsynchronousMessageEvent
 */]
 [query public getIntegerParameters(ev : AsynchronousMessageEvent) : OrderedSet(Parameter) =
-	ev.message.instanceOf.getTypeParameters('INT')
+	ev.message.instanceOf.getTypeParameters('int')
 /]
 
 [**
@@ -32,7 +32,7 @@
  * @param ev the AsynchronousMessageEvent
 */]
 [query public getRealParameters(ev : AsynchronousMessageEvent) : OrderedSet(Parameter) =
-	ev.message.instanceOf.getTypeParameters('DOUBLE')
+	ev.message.instanceOf.getTypeParameters('double')
 /]
 
 [**
@@ -40,7 +40,7 @@
  * @param ev the AsynchronousMessageEvent
 */]
 [query public getBooleanParameters(ev : AsynchronousMessageEvent) : OrderedSet(Parameter) =
-	ev.message.instanceOf.getTypeParameters('BOOLEAN')
+	ev.message.instanceOf.getTypeParameters('boolean')
 /]
 
 [**
@@ -48,7 +48,7 @@
  * @param messageType the MessageType
 */]
 [query public getIntegerParameters(messageType : MessageType) : OrderedSet(Parameter) =
-	messageType.getTypeParameters('INT')
+	messageType.getTypeParameters('int')
 /]
 
 [**
@@ -56,7 +56,7 @@
  * @param messageType the MessageType
 */]
 [query public getRealParameters(messageType : MessageType) : OrderedSet(Parameter) =
-	messageType.getTypeParameters('DOUBLE')
+	messageType.getTypeParameters('double')
 /]
 
 [**
@@ -64,7 +64,7 @@
  * @param messageType the MessageType
 */]
 [query public getBooleanParameters(messageType : MessageType) : OrderedSet(Parameter) =
-	messageType.getTypeParameters('BOOLEAN')
+	messageType.getTypeParameters('boolean')
 /]
 
 [**
