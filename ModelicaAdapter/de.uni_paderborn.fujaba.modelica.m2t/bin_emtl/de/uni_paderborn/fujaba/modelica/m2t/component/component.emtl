@@ -32,6 +32,7 @@
     </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
     <imports href="naming.emtl#/0"/>
     <imports href="component_queries.emtl#/0"/>
@@ -393,7 +394,7 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;// the behavior of the atomic component&#xA;&#x9;&#x9;"/>
-        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toUpperFirst">
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -404,7 +405,7 @@
           </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="."/>
-        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toUpperFirst">
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -944,7 +945,7 @@
       <parameter name="rtsc">
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
       </parameter>
-      <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
+      <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/109">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
@@ -968,7 +969,7 @@
     </ownedModuleElement>
   </mtl:Module>
   <ecore:EPackage name="additions">
-    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </eAnnotations>
@@ -977,17 +978,17 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
       </eAnnotations>
@@ -1386,7 +1387,7 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
       </eAnnotations>
@@ -1404,97 +1405,97 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstanceConfiguration_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponentInstance_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="instance_AtomicComponentInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StructuredComponentInstance_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="instance_StructuredComponentInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/instance/0.4.0#//StructuredComponentInstance"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_RealtimeStatechart_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PortInstance_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="instance_PortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Map_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="transform_Map_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//Map"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Set(PortInstance)_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="collections_Set(PortInstance)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="port.emtl#/3/Set(PortInstance)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Set(ContinuousPortInstance)_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="collections_Set(ContinuousPortInstance)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="port.emtl#/3/Set(ContinuousPortInstance)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Region_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Region_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Transition_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Transition_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="State_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_State_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Vertex_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Vertex_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageType_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Parameter_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Parameter_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NamedElement_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="core_NamedElement_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.storydriven.org/core/0.3.1#//NamedElement"/>
       </eAnnotations>
