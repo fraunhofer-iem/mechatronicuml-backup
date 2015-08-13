@@ -31,7 +31,7 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="../../util/query/naming.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Query" name="getTypeParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
         <body startPosition="547" endPosition="714" value="&#xA;Returns an OrderedSet of parameter bindings of type typeName&#xA;@param messageType the MessageType&#xA;@param typeName the type of the returned parameter bindings&#xA;&#xA;"/>
@@ -119,7 +119,7 @@
           </source>
           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message/instanceOf"/>
         </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="INT">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="int">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </expression>
@@ -146,7 +146,7 @@
           </source>
           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message/instanceOf"/>
         </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DOUBLE">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="double">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </expression>
@@ -173,7 +173,7 @@
           </source>
           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message/instanceOf"/>
         </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BOOLEAN">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="boolean">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </expression>
@@ -192,7 +192,7 @@
         <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getIntegerParameters.1/messageType">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
         </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="INT">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="int">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </expression>
@@ -211,7 +211,7 @@
         <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getRealParameters.1/messageType">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
         </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DOUBLE">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="double">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </expression>
@@ -230,7 +230,7 @@
         <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getBooleanParameters.1/messageType">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
         </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BOOLEAN">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="boolean">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </expression>
@@ -249,7 +249,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../../util/query/naming.emtl#/0/getName.2"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName.2"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getOutputDelegationPortName/messageType">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
           </argument>
@@ -274,7 +274,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../../util/query/naming.emtl#/0/getName.2"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName.2"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getInputDelegationPortName/messageType">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
           </argument>
@@ -411,7 +411,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../../util/query/naming.emtl#/0/getName.2"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName.2"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="namedElement">

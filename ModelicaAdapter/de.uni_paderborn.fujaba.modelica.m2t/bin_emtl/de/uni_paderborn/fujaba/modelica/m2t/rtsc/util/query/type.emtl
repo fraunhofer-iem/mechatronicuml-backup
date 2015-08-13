@@ -265,7 +265,7 @@
             </source>
             <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
           </source>
-          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="INT">
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="int">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           </argument>
         </condition>
@@ -283,7 +283,7 @@
               </source>
               <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
             </source>
-            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DOUBLE">
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="double">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
@@ -302,7 +302,7 @@
                 </source>
                 <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
               </source>
-              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BOOLEAN">
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="boolean">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               </argument>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
