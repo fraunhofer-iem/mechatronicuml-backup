@@ -228,7 +228,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 				var lb : muml::realtimestatechart::one_to_n_schemata::LoadBalancing := t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing);
 				// distinguish variants of LoadBalancing: maxWCET or responseMessage 
 				if(not lb.maxWorkingTime.oclIsUndefined()) {
-					clocks+= getLoadBalancingClockTaskPlanned();
+					clocks+= getLoadBalancingTaskMessageClock();
 					variables += getNeverHadATaskVariable();
 				};
 				if(not lb.responseMessage.oclIsUndefined()) {

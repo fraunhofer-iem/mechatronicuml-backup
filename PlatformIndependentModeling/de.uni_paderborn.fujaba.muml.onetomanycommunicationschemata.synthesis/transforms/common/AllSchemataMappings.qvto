@@ -107,13 +107,20 @@ helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, 
 }
 
 helper Transition :: Transition2ClockConstraint(clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
-	var cc : ClockConstraint := new ClockConstraint();
-	cc.bound := _timeValue;
-	cc.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
-	cc.operator:= compareOperator;
-	return cc;
+		return self.Transition2ClockConstraint(self.map TransitionDeadline2CoordinatorDeadlineClock(clockName), _timeValue, compareOperator);
 }
 
+
+helper Transition :: Transition2ClockConstraint(_clock : Clock, _timeValue: TimeValue, compareOperator : ComparingOperator) : ClockConstraint {
+		
+		
+		var cc : ClockConstraint := new ClockConstraint();
+		cc.bound := _timeValue;
+		cc.clock := _clock;
+		cc.operator:= compareOperator;
+		return cc;
+		
+}
 
 helper Transition :: Schema2PositionKindSelector(_kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
 	
