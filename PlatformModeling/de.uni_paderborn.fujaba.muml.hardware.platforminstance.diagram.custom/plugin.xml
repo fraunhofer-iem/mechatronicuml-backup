@@ -30,9 +30,9 @@
                         variable="selection">
                      <iterate
                            ifEmpty="false">
-                        <instanceof
-                              value="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart">
-                        </instanceof>
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform">
+                        </adapt>
                      </iterate>
                   </with>
                </and>

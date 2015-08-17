@@ -1,4 +1,4 @@
-transformation PlatformInstanceTransformation(inout input:ModelInstancePackage);
+transformation PlatformInstanceTransformation(inout input:ModelInstancePackage, out output:ModelInstancePackage);
 
 
 modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
@@ -26,18 +26,18 @@ main() {
 		
 		//create a HWPlatformInstance from a HWPlatformType
 		var hwplatformInstances:Bag(HWPlatformInstance) := input.rootObjects()[HWPlatform]->map createHWPlatformInstance(".0", null);
+	if(hwplatformInstances->notEmpty()) then{
+		var hwplatformInstanceConfiguration : HWPlatformInstanceConfiguration := map createHWPlatformInstanceConfiguration(); 
+		hwplatformInstanceConfiguration.hwplatformInstances+=hwplatformInstances;
 		
+	}endif;
 		
 		var hwplatformInstancesToconfigure : Set(HWPlatformInstance) := input.rootObjects()[HWPlatformInstance];
 		hwplatformInstancesToconfigure->forEach(hwplatformInstance){
 		log("Create HWPlatform instnace");
 			hwplatformInstance.configureHWPlatformInstance(hwplatformInstance,".0");
 		};
-	if(hwplatformInstances->notEmpty()) then{
-		var hwplatformInstanceConfiguration : HWPlatformInstanceConfiguration := new HWPlatformInstanceConfiguration();
-		hwplatformInstanceConfiguration.hwplatformInstances+=hwplatformInstances;
-		
-	}endif;
+	
 		
 		
 /*		hwplatformInstanceConfig.rootObjects()[HWPlatformInstanceConfiguration]->forEach(pi){
@@ -81,13 +81,13 @@ helper HWPlatformInstance::configureHWPlatformInstance(inout platformInstance:HW
 	
 }
 
-// This is an intermediate property used to map the connectedMedia of the HWPortInstances (used as DelegationPorts) in the HWPlatform-Model
-//to connectedMedia of this HWPlatformInstance 
-//From a HWPortInstance (used as a Delegation) point of view this is the grandparent
+mapping createHWPlatformInstanceConfiguration():HWPlatformInstanceConfiguration @output{
+	
+}
 
 //create a HWPlatformInstance derived from a HWPlatform
 //the number is used to distinguish between multiple instances of the same HWPlatform
-mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformInstanceConfiguration):HWPlatformInstance{
+mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformInstanceConfiguration):HWPlatformInstance {
 	result.name:=self.name;//+number.toString();
 	result.hwplatformType:=self;
 	//result.parentOfPlatformInstance:=parent;

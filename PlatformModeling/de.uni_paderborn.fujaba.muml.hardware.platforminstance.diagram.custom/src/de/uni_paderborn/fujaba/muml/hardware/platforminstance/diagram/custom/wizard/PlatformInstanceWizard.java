@@ -143,7 +143,7 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 				input1 = new BasicModelExtent(Collections.singletonList(hwplatform));
 			}
 
-			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { input1 });
+			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { input1 ,output });
 			// Load QVTO script
 			TransformationExecutor transformationExecutor = Activator.getDefault().getTransformationExecutor();
 
