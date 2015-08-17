@@ -1,6 +1,7 @@
-transformation PlatformInstanceTransformation(inout hwplatformInstanceConfig:PlatformInstancePackage, in platform:PlatformPackage);
+transformation PlatformInstanceTransformation(inout input:ModelInstancePackage);
 
 
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
@@ -19,11 +20,65 @@ modeltype HWValueTypePackage uses hardware::hwvaluetype('http://www.fujaba.de/mu
 //are created according to their cardinality of the HWPlatform type.
 
 main() {
+
+	
 	log("QVT-O Script \"PlatformInstanceTransformation.qvto\" started.");
-		hwplatformInstanceConfig.rootObjects()[HWPlatformInstanceConfiguration]->forEach(pi){
+		
+		//create a HWPlatformInstance from a HWPlatformType
+		var hwplatformInstances:Bag(HWPlatformInstance) := input.rootObjects()[HWPlatform]->map createHWPlatformInstance(".0", null);
+		
+		
+		var hwplatformInstancesToconfigure : Set(HWPlatformInstance) := input.rootObjects()[HWPlatformInstance];
+		hwplatformInstancesToconfigure->forEach(hwplatformInstance){
+		log("Create HWPlatform instnace");
+			hwplatformInstance.configureHWPlatformInstance(hwplatformInstance,".0");
+		};
+	if(hwplatformInstances->notEmpty()) then{
+		var hwplatformInstanceConfiguration : HWPlatformInstanceConfiguration := new HWPlatformInstanceConfiguration();
+		hwplatformInstanceConfiguration.hwplatformInstances+=hwplatformInstances;
+		
+	}endif;
+		
+		
+/*		hwplatformInstanceConfig.rootObjects()[HWPlatformInstanceConfiguration]->forEach(pi){
 		pi.hwplatformInstances+=platform.rootObjects()[HWPlatform]->map createHWPlatformInstance(".0",pi);
 		//pi.hwplatformType->map createHWPlatformInstance(".0",null);
+	}; */
+	
+	
+}
+
+helper HWPlatformInstance::configureHWPlatformInstance(inout platformInstance:HWPlatformInstance, number:String){
+
+	platformInstance.name:=platformInstance.hwplatformType.name+number.toString();
+	log("Start to create the HWPlatformInstance for:" +platformInstance.hwplatformType.eClass().name +", Name:" +platformInstance.name);
+	
+	platformInstance.embeddedHPIC:=new HWPlatformInstanceConfiguration();
+	//create the embedded CommunicationMedia	
+	platformInstance.embeddedHPIC.networkingHardwareInstances+=platformInstance.hwplatformType.networkingHardware->map createNetworkingResourceInstance(number, platformInstance.embeddedHPIC)->asOrderedSet();
+	platformInstance.embeddedHPIC.networkConnectorInstances+=platformInstance.hwplatformType.networkConnectors->map mapNetworkConnector2NetworkConnectorInstance();
+	//create the delegation ports
+	
+	platformInstance.delegationPorts:=platformInstance.hwplatformType.delegationPorts->map createDelegationHWPortInstance(number, platformInstance);
+	
+	//create the embedded ResourceInstances
+	var instances:Set(ResourceInstance);
+	platformInstance.hwplatformType.embeddedPlatformParts[ResourcePart]->forEach(rip){
+		instances+=rip.ResourcePart2ResourceInstance(number,platformInstance.embeddedHPIC)->asOrderedSet();
 	};
+	platformInstance.embeddedHPIC.resources:=instances;
+	
+	
+	//the delegation and delegation Ports are created by the mapping createPort(), to ease resolving
+	//so each port with a delegation creats its delegation and corresponding DelegationPort
+	
+	//initialize the embedded HWPlatforms
+	var platforminstances:Set(HWPlatformInstance);
+	platformInstance.hwplatformType.embeddedPlatformParts[HWPlatformPart]->forEach(hwp){
+		platforminstances+=hwp.HWPlatformPart2HWPlatformInstance(number,platformInstance.embeddedHPIC);
+	};
+	platformInstance.embeddedHPIC.hwplatformInstances:=platforminstances;
+	
 }
 
 // This is an intermediate property used to map the connectedMedia of the HWPortInstances (used as DelegationPorts) in the HWPlatform-Model
@@ -73,8 +128,7 @@ mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformIns
 // the argument parent is used to resolve the correct CommunicationMedia of the HWPortInstances
 query ResourcePart::ResourcePart2ResourceInstance(number:String,parent:HWPlatformInstanceConfiguration):Set(ResourceInstance){
 	var instances:Set(ResourceInstance);
-	var lowerBound: Integer;
-	lowerBound:=InitValue(self);
+	var lowerBound: Integer:=InitValue(self);
 	while(lowerBound>0){
 			instances+=self.map createResourceInstance(self.name,number+"."+lowerBound.toString(),parent)->asOrderedSet();
 			lowerBound:=lowerBound-1;
@@ -89,8 +143,7 @@ query ResourcePart::ResourcePart2ResourceInstance(number:String,parent:HWPlatfor
 //the number is used to distinguish between multiple instances of the same HWPlatformIstance
 query HWPlatformPart::HWPlatformPart2HWPlatformInstance(number:String,parent:HWPlatformInstanceConfiguration):Set(HWPlatformInstance){
 	var instances:Set(HWPlatformInstance);
-	var lowerBound: Integer;
-	lowerBound:=InitValue(self);
+	var lowerBound: Integer:=InitValue(self);
 	while(lowerBound>0){
 			log("create embedded HWPlatformInstance for:"+self.eClass().name +", Name:" +self.name+", Parent is"+self.parentHWPlatform.name);
 			instances+=self.hwplatformType.map createHWPlatformInstance(number+"."+lowerBound.toString(),parent);

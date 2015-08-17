@@ -26,8 +26,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class DelegationHWPortInstanceEditPart extends
-		BorderedBorderItemEditPart {
+public class DelegationHWPortInstanceEditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -79,10 +78,8 @@ public class DelegationHWPortInstanceEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
-				getPrimaryDragEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.DelegationHWPortInstanceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
@@ -93,12 +90,10 @@ public class DelegationHWPortInstanceEditPart extends
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -116,8 +111,7 @@ public class DelegationHWPortInstanceEditPart extends
 				case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
 					return new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -152,8 +146,7 @@ public class DelegationHWPortInstanceEditPart extends
 	/**
 	 * @generated
 	 */
-	protected void addBorderItem(IFigure borderItemContainer,
-			IBorderItemEditPart borderItemEditPart) {
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart) {
 			// bug-fix: allows the free positioning of external Labels
 			de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator(
@@ -172,10 +165,10 @@ public class DelegationHWPortInstanceEditPart extends
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -263,8 +256,9 @@ public class DelegationHWPortInstanceEditPart extends
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
 	}
 
 }

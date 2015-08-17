@@ -1,6 +1,9 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wizard;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
@@ -9,11 +12,18 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
+import org.eclipse.m2m.qvt.oml.ModelExtent;
+import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
+import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.commands.CreateInstancesCommand;
+import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.part.Activator;
 
 public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
@@ -26,20 +36,22 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 	// the workbench instance
 	private IWorkbench workbench;
 
-	// private TransactionalEditingDomain editingDomain =
-	// GMFEditingDomainFactory.INSTANCE
-	// .createEditingDomain();
 
 	private TransactionalEditingDomain editingDomain;
 
 	private IStructuredSelection selection;
 
-	public PlatformInstanceWizard(
-			HWPlatformInstanceConfiguration selectedElement,
+	public PlatformInstanceWizard(HWPlatformInstanceConfiguration selectedElement,
 			TransactionalEditingDomain editingDomain) {
+		this(null, selectedElement, editingDomain);
+	}
+
+	public PlatformInstanceWizard(HWPlatformInstance platformInstanceToConfigure,
+			HWPlatformInstanceConfiguration selectedElement, TransactionalEditingDomain editingDomain) {
 		super();
 		model = new WizardModel();
 		model.setSelectedHWPlatformInstanceConfiguration(selectedElement);
+		model.setPlatformInstanceToConfigure(platformInstanceToConfigure);
 		this.editingDomain = editingDomain;
 		this.setForcePreviousAndNextButtons(true);
 	}
@@ -53,10 +65,8 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 	@Override
 	public IWizardPage getNextPage(IWizardPage page) {
 		// TODO Auto-generated method stub
-		if (page instanceof PlatformTypePage
-				&& ((PlatformTypePage) page).neddFurtherPage()) {
-			IWizardPage nextPage = new PlatformTypePage(
-					((PlatformTypePage) page).getFollowUpPlatforms(), false);
+		if (page instanceof PlatformTypePage && ((PlatformTypePage) page).neddFurtherPage()) {
+			IWizardPage nextPage = new PlatformTypePage(((PlatformTypePage) page).getFollowUpPlatforms(), false);
 			addPage(nextPage);
 			// nextPage.setVisible(true);
 
@@ -73,8 +83,7 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 			if (object instanceof IResource) {
 				selectedResource = (IResource) object;
 			} else if (object instanceof IAdaptable) {
-				selectedResource = (IResource) ((IAdaptable) object)
-						.getAdapter(IResource.class);
+				selectedResource = (IResource) ((IAdaptable) object).getAdapter(IResource.class);
 			}
 			if (selectedResource != null) {
 				return selectedResource.getFullPath();
@@ -123,10 +132,37 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 	private void executeTransformation() {
 		if (editingDomain != null) {
-			CreateInstancesCommand command = new CreateInstancesCommand(
-					model.getSelectedHWPlatformInstanceConfiguration(),
-					model.getSelectedHWPlatform(), model.getConfiguration());
-			editingDomain.getCommandStack().execute(command);
+			HWPlatformInstance hwPlatformInstanceToConfigure = model.getPlatformInstanceToConfigure();
+			HWPlatform hwplatform = model.getSelectedHWPlatform();
+			ModelExtent input1;
+			ModelExtent output = new BasicModelExtent();
+			if (hwPlatformInstanceToConfigure != null) {
+				hwPlatformInstanceToConfigure.setHwplatformType(hwplatform);
+				input1 = new BasicModelExtent(Collections.singletonList(hwPlatformInstanceToConfigure));
+			} else {
+				input1 = new BasicModelExtent(Collections.singletonList(hwplatform));
+			}
+
+			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { input1 });
+			// Load QVTO script
+			TransformationExecutor transformationExecutor = Activator.getDefault().getTransformationExecutor();
+
+			// Create execution context
+			ExecutionContextImpl context = new ExecutionContextImpl();
+
+			/**
+			 * TODO Test config parameter
+			 */
+			context.setConfigProperty("initVector", model.getConfiguration());
+
+			ExecuteQvtoTransformationCommand cmd = new ExecuteQvtoTransformationCommand(transformationExecutor,
+					modelExtents, context);
+
+			/*
+			 * CreateInstancesCommand command = new CreateInstancesCommand( ,
+			 * model.getSelectedHWPlatform(), model.getConfiguration());
+			 */
+			editingDomain.getCommandStack().execute(cmd);
 		}
 	}
 

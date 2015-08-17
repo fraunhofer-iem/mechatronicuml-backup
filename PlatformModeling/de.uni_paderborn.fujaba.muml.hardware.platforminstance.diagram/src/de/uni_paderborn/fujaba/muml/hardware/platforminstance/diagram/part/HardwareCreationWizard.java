@@ -8,8 +8,7 @@ import org.eclipse.ui.IWorkbench;
  * @generated
  */
 public class HardwareCreationWizard
-		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+		extends de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -17,8 +16,9 @@ public class HardwareCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewHwplatforminstanceWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+						.getBundledImageDescriptor("icons/wizban/NewHwplatforminstanceWizard.gif")); //$NON-NLS-1$
 
 	}
 

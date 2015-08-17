@@ -17,28 +17,13 @@ import org.storydriven.core.CorePackage;
 /**
  * @generated
  */
-public class HardwareParserProvider extends AbstractProvider implements
-		IParserProvider {
-
-	/**
-	 * @generated
-	 */
-	private IParser getHWPlatformInstanceLabel_5117Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.HWPlatformInstanceLabelExpressionLabelParser5117();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getHWPlatformInstanceLabel_5101Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.HWPlatformInstanceLabelExpressionLabelParser5101();
-	}
+public class HardwareParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
 	 */
 	private IParser getDelegationHWPortInstanceLabel_5100Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.DelegationHWPortInstanceLabelExpressionLabelParser5100();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.DelegationHWPortInstanceLabelExpressionLabelParser();
 	}
 
 	/**
@@ -51,8 +36,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStructuredResourceInstanceName_5103Parser() {
 		if (structuredResourceInstanceName_5103Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.MessageFormatParser(
 					features);
 			structuredResourceInstanceName_5103Parser = parser;
@@ -64,35 +48,35 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getStructuredResourceInstanceLabel_5104Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser5104();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredResourceInstanceLabel_5105Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser5105();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredResourceInstanceLabel_5106Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser5106();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredResourceInstanceLabel_5107Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser5107();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.StructuredResourceInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getHWPortInstanceLabel_5102Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.HWPortInstanceLabelExpressionLabelParser5102();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.HWPortInstanceLabelExpressionLabelParser();
 	}
 
 	/**
@@ -105,10 +89,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getActuatorInstanceName_5108Parser() {
 		if (actuatorInstanceName_5108Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			actuatorInstanceName_5108Parser = parser;
@@ -120,14 +102,14 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getActuatorInstanceLabel_5109Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.ActuatorInstanceLabelExpressionLabelParser5109();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.ActuatorInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getActuatorInstanceLabel_5110Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.ActuatorInstanceLabelExpressionLabelParser5110();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.ActuatorInstanceLabelExpressionLabelParser();
 	}
 
 	/**
@@ -140,10 +122,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getSensorInstanceName_5111Parser() {
 		if (sensorInstanceName_5111Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			sensorInstanceName_5111Parser = parser;
@@ -155,35 +135,35 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getSensorInstanceLabel_5112Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.SensorInstanceLabelExpressionLabelParser5112();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.SensorInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getSensorInstanceLabel_5113Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.SensorInstanceLabelExpressionLabelParser5113();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.SensorInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getBusInstanceLabel_5114Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.BusInstanceLabelExpressionLabelParser5114();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.BusInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getBusInstanceLabel_5115Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.BusInstanceLabelExpressionLabelParser5115();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.BusInstanceLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getNetworkBridgeInstanceLabel_5116Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.NetworkBridgeInstanceLabelExpressionLabelParser5116();
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.NetworkBridgeInstanceLabelExpressionLabelParser();
 	}
 
 	/**
@@ -191,10 +171,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getHWPlatformInstanceLabel_5117Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getHWPlatformInstanceLabel_5101Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
 			return getDelegationHWPortInstanceLabel_5100Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID:
@@ -235,10 +211,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
@@ -247,13 +221,15 @@ public class HardwareParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
+							.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(view));
+			return getParser(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
+							.getVisualID(view));
 		}
 		return null;
 	}

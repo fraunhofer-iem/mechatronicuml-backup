@@ -59,19 +59,15 @@ public class HWPlatformInstanceConfigurationEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationItemSemanticEditPolicy());
 
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationCanonicalEditPolicy(
 						true));
 
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

@@ -32,8 +32,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class StructuredResourceInstanceEditPart extends
-		AbstractBorderedShapeEditPart {
+public class StructuredResourceInstanceEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -84,18 +83,13 @@ public class StructuredResourceInstanceEditPart extends
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.StructuredResourceInstanceItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.StructuredResourceInstanceCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
@@ -103,19 +97,16 @@ public class StructuredResourceInstanceEditPart extends
 				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -133,8 +124,7 @@ public class StructuredResourceInstanceEditPart extends
 				case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -182,8 +172,7 @@ public class StructuredResourceInstanceEditPart extends
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel4EditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureResourceCardinalityFigure());
+					.setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel5EditPart) {
@@ -197,10 +186,8 @@ public class StructuredResourceInstanceEditPart extends
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.EAST);
-			getBorderedFigure()
-					.getBorderItemContainer()
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+			getBorderedFigure().getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
@@ -228,8 +215,7 @@ public class StructuredResourceInstanceEditPart extends
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
+			getBorderedFigure().getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart) childEditPart)
 							.getFigure());
 			return true;
@@ -274,10 +260,10 @@ public class StructuredResourceInstanceEditPart extends
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -371,8 +357,9 @@ public class StructuredResourceInstanceEditPart extends
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID));
 	}
 
 }

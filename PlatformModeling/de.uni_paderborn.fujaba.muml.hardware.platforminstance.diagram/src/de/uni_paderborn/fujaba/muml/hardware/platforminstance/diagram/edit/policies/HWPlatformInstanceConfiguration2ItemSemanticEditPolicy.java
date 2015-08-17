@@ -16,16 +16,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HWPlatformInstanceConfiguration2ItemSemanticEditPolicy
-		extends
+public class HWPlatformInstanceConfiguration2ItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public HWPlatformInstanceConfiguration2ItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstanceConfiguration_3039);
+		super(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstanceConfiguration_3039);
 	}
 
 	/**
@@ -33,8 +31,7 @@ public class HWPlatformInstanceConfiguration2ItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -59,16 +56,14 @@ public class HWPlatformInstanceConfiguration2ItemSemanticEditPolicy
 			switch (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getVisualID(node)) {
 			case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 							.getVisualID(cnode)) {
 					case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
@@ -76,8 +71,7 @@ public class HWPlatformInstanceConfiguration2ItemSemanticEditPolicy
 					case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
@@ -85,8 +79,7 @@ public class HWPlatformInstanceConfiguration2ItemSemanticEditPolicy
 					case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
@@ -94,78 +87,67 @@ public class HWPlatformInstanceConfiguration2ItemSemanticEditPolicy
 					case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
 					case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
+									.getVisualID(
+											incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
 						}
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
+									.getVisualID(
+											outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
 						}
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
 					case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
+									.getVisualID(
+											incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
 						}
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
+									.getVisualID(
+											outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
 						}
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 

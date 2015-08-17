@@ -21,8 +21,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class NetworkConnectorInstanceEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class NetworkConnectorInstanceEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -64,8 +63,7 @@ public class NetworkConnectorInstanceEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.NetworkConnectorInstanceItemSemanticEditPolicy());
 	}
 
@@ -115,7 +113,6 @@ public class NetworkConnectorInstanceEditPart extends ConnectionNodeEditPart
 			fFigureLinkCommentFigure = new WrappingLabel();
 
 			fFigureLinkCommentFigure.setText("<...>");
-			fFigureLinkCommentFigure.setTextWrap(true);
 
 			this.add(fFigureLinkCommentFigure);
 
@@ -145,16 +142,13 @@ public class NetworkConnectorInstanceEditPart extends ConnectionNodeEditPart
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
 			Display.getCurrent().asyncExec(new Runnable() {
 				@Override
 				public void run() {

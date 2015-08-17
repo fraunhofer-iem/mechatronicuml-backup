@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.pa
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
@@ -34,6 +35,10 @@ public class CustomHWPlatformInstanceEditPart extends HWPlatformInstanceEditPart
 		super.activate();
 	}
 	
+	
+	
+
+
 	public class CustomHWPlatformFigure extends HWPlatform{
 		@Override
 		protected void fillShape(Graphics graphics) {

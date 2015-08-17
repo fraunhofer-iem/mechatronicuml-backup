@@ -11,8 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
-		extends
+public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart extends
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareModelingAssistantProvider {
 
 	/**
@@ -20,9 +19,9 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) sourceEditPart);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource(
+				(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) sourceEditPart);
 	}
 
 	/**
@@ -31,7 +30,8 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 	public List<IElementType> doGetRelTypesOnSource(
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+		types.add(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
 		return types;
 	}
 
@@ -39,12 +39,9 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSourceAndTarget(
 				(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) sourceEditPart,
 				targetEditPart);
@@ -58,16 +55,20 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
 		}
 		return types;
 	}
@@ -76,10 +77,8 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForTarget(
 				(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) sourceEditPart,
 				relationshipType);
@@ -93,10 +92,14 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012) {
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationHWPortInstance_3041);
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046);
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationHWPortInstance_3041);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047);
 		}
 		return types;
 	}
@@ -106,9 +109,9 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) targetEditPart);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget(
+				(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) targetEditPart);
 	}
 
 	/**
@@ -117,7 +120,8 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 	public List<IElementType> doGetRelTypesOnTarget(
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+		types.add(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
 		return types;
 	}
 
@@ -125,10 +129,8 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForSource(
 				(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) targetEditPart,
 				relationshipType);
@@ -142,10 +144,14 @@ public class HardwareModelingAssistantProviderOfDelegationHWPortInstanceEditPart
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012) {
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationHWPortInstance_3041);
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046);
-			types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationHWPortInstance_3041);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046);
+			types.add(
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047);
 		}
 		return types;
 	}

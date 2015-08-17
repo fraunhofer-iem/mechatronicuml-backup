@@ -58,6 +58,27 @@
          </Priority>
       </editpolicyProvider>
    </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel
+            nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
+         <adviceBinding
+               class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.edit.helper.HWPlatformInstanceEditHelperAdvice"
+               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.adviceBinding1"
+               inheritance="none"
+               typeId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstance_2005">
+         </adviceBinding>
+      </metamodel>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding
+            context="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.TypeContext">
+         <advice
+               ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.adviceBinding1">
+         </advice>
+      </binding>
+   </extension>
  <!--   <extension
          point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <decoratorProvider

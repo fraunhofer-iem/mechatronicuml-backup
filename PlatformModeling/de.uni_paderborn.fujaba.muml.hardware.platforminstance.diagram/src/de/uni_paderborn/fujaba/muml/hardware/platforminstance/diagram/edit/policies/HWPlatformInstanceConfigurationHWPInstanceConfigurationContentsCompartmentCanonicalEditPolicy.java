@@ -123,21 +123,20 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] {
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID });
+				List<Integer> visualIDs = Arrays.asList(new Integer[] {
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(
+							new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
+									childElement, visualID));
 					continue;
 				}
 			}
@@ -147,17 +146,16 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment_7013SemanticChildren(viewObject);
+				.getHWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment_7013SemanticChildren(
+						viewObject);
 
 	}
 
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -211,8 +209,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -236,11 +233,9 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 		for (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNodeDescriptor next : childDescriptors) {
 			String hint = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -249,10 +244,10 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -261,8 +256,8 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

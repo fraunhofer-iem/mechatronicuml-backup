@@ -7,16 +7,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 /**
  * @generated
  */
-public class NetworkConnectorInstanceItemSemanticEditPolicy
-		extends
+public class NetworkConnectorInstanceItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public NetworkConnectorInstanceItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+		super(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
 	}
 
 	/**

@@ -9,8 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfSensorInstanceEditPart
-		extends
+public class HardwareModelingAssistantProviderOfSensorInstanceEditPart extends
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareModelingAssistantProvider {
 
 	/**
@@ -19,7 +18,8 @@ public class HardwareModelingAssistantProviderOfSensorInstanceEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
+		types.add(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
 		return types;
 	}
 

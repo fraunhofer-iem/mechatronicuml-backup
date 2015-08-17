@@ -103,15 +103,15 @@ public class HWPlatformInstance2CanonicalEditPolicy extends CanonicalEditPolicy 
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID });
+				List<Integer> visualIDs = Arrays.asList(new Integer[] {
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(
+							new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
+									childElement, visualID));
 					continue;
 				}
 			}
@@ -128,10 +128,8 @@ public class HWPlatformInstance2CanonicalEditPolicy extends CanonicalEditPolicy 
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -175,8 +173,7 @@ public class HWPlatformInstance2CanonicalEditPolicy extends CanonicalEditPolicy 
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -200,11 +197,9 @@ public class HWPlatformInstance2CanonicalEditPolicy extends CanonicalEditPolicy 
 		for (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNodeDescriptor next : childDescriptors) {
 			String hint = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -213,10 +208,10 @@ public class HWPlatformInstance2CanonicalEditPolicy extends CanonicalEditPolicy 
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -225,8 +220,8 @@ public class HWPlatformInstance2CanonicalEditPolicy extends CanonicalEditPolicy 
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

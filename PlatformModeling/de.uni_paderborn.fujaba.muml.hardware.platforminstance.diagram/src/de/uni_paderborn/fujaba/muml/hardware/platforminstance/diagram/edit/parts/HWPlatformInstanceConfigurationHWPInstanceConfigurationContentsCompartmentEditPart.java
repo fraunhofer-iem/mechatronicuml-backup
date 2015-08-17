@@ -56,8 +56,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	/**
 	 * @generated
 	 */
-	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart(
-			View view) {
+	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -72,14 +71,12 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -95,17 +92,12 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy());
 	}
 
@@ -123,11 +115,9 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3040) {
 				return this;
 			}
@@ -150,12 +140,11 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 		}
 		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
 			if (RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
-				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request)
-						.getElementTypes()) {
+				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012))
+						if (elementType.equals(
+								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012))
 							return super.getTargetEditPart(request);
 					}
 				}

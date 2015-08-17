@@ -91,29 +91,22 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -131,8 +124,7 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 				case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -168,23 +160,17 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabelEditPart) {
-			((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureHWPlatformNameLabel());
-			return true;
-		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureHWPlatformCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.EAST);
-			getBorderedFigure()
-					.getBorderItemContainer()
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+			getBorderedFigure().getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
@@ -196,18 +182,15 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabelEditPart) {
-			return true;
-		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureHWPlatformCompartment();
-			pane.remove(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
+			getBorderedFigure().getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart) childEditPart)
 							.getFigure());
 			return true;
@@ -255,10 +238,10 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(400, 400) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -351,14 +334,6 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
 	public class HWPlatform extends RectangleFigure {
 
 		/**
@@ -380,8 +355,7 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -404,14 +378,12 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 			constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;
 			constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;
 			constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;
-			this.add(hWPlatformTitleAreaFigure0,
-					constraintHWPlatformTitleAreaFigure0);
+			this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);
 
 			GridLayout layoutHWPlatformTitleAreaFigure0 = new GridLayout();
 			layoutHWPlatformTitleAreaFigure0.numColumns = 1;
 			layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;
-			hWPlatformTitleAreaFigure0
-					.setLayoutManager(layoutHWPlatformTitleAreaFigure0);
+			hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);
 
 			fFigureHWPlatformNameLabel = new WrappingLabel();
 
@@ -431,8 +403,7 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureHWPlatformCompartment.verticalSpan = 1;
 			constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;
-			this.add(fFigureHWPlatformCompartment,
-					constraintFFigureHWPlatformCompartment);
+			this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);
 
 		}
 

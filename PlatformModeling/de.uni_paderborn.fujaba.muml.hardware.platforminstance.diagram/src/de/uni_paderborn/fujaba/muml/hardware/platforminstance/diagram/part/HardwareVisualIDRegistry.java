@@ -59,12 +59,9 @@ public class HardwareVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.getInstance().logError(
-								"Unable to parse view type as a visualID number: "
-										+ type);
+						.getInstance().logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -85,9 +82,9 @@ public class HardwareVisualIDRegistry {
 			return -1;
 		}
 		if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-				.getHWPlatformInstanceConfiguration().isSuperTypeOf(
-						domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) domainElement)) {
+				.getHWPlatformInstanceConfiguration().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram(
+						(de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -121,22 +118,19 @@ public class HardwareVisualIDRegistry {
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstance().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getHWPlatformInstance().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getDelegationHWPortInstance().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getDelegationHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getDelegationHWPortInstance().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getDelegationHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID;
 			}
 			break;
@@ -160,25 +154,21 @@ public class HardwareVisualIDRegistry {
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstanceConfiguration().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getHWPlatformInstanceConfiguration().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstance().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getHWPlatformInstance().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID;
 			}
 			if (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-					.getStructuredResourceInstance().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getStructuredResourceInstance().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID;
 			}
 			if (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-					.getActuatorInstance()
-					.isSuperTypeOf(domainElement.eClass())) {
+					.getActuatorInstance().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID;
 			}
 			if (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
@@ -190,15 +180,13 @@ public class HardwareVisualIDRegistry {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID;
 			}
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getNetworkBridgeInstance().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getNetworkBridgeInstance().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstanceConfiguration().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getHWPlatformInstanceConfiguration().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID;
 			}
 			break;
@@ -235,9 +223,6 @@ public class HardwareVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -251,9 +236,6 @@ public class HardwareVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -374,8 +356,7 @@ public class HardwareVisualIDRegistry {
 			return -1;
 		}
 		if (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-				.getNetworkConnectorInstance().isSuperTypeOf(
-						domainElement.eClass())) {
+				.getNetworkConnectorInstance().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -395,8 +376,7 @@ public class HardwareVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -443,55 +423,60 @@ public class HardwareVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.isSemanticLeafVisualID(visualID);

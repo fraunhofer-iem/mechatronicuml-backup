@@ -11,7 +11,8 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
-		setPreferenceStore(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getPreferenceStore());
+		setPreferenceStore(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+						.getInstance().getPreferenceStore());
 	}
 }

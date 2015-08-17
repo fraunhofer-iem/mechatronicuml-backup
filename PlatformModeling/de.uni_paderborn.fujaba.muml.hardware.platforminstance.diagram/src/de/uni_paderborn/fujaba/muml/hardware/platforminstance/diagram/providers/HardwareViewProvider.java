@@ -46,8 +46,7 @@ import org.eclipse.swt.graphics.FontData;
 /**
  * @generated
  */
-public class HardwareViewProvider extends AbstractProvider implements
-		IViewProvider {
+public class HardwareViewProvider extends AbstractProvider implements IViewProvider {
 
 	/**
 	 * @generated
@@ -72,11 +71,11 @@ public class HardwareViewProvider extends AbstractProvider implements
 	 */
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		 if (op.getViewKind() == Node.class)
-		 return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		 if (op.getViewKind() == Edge.class)
-		 return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		 */
+		    if (op.getViewKind() == Node.class)
+		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Edge.class)
+		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		*/
 		return true;
 	}
 
@@ -87,8 +86,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
 				.equals(op.getSemanticHint())
 				&& de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getDiagramVisualID(getSemanticElement(op
-								.getSemanticAdapter())) != -1;
+						.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
 	}
 
 	/**
@@ -98,8 +96,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 		if (op.getContainerView() == null) {
 			return false;
 		}
-		IElementType elementType = getSemanticElementType(op
-				.getSemanticAdapter());
+		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
 		EObject domainElement = getSemanticElement(op.getSemanticAdapter());
 		int visualID;
 		if (op.getSemanticHint() == null) {
@@ -116,19 +113,16 @@ public class HardwareViewProvider extends AbstractProvider implements
 					.getVisualID(op.getSemanticHint());
 			if (elementType != null) {
 				if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes
-						.isKnownElementType(elementType)
-						|| (!(elementType instanceof IHintedType))) {
+						.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
 					return false; // foreign element type
 				}
-				String elementTypeHint = ((IHintedType) elementType)
-						.getSemanticHint();
+				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 				if (!op.getSemanticHint().equals(elementTypeHint)) {
 					return false; // if semantic hint is specified it should be the same as in element type
 				}
 				if (domainElement != null
 						&& visualID != de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getNodeVisualID(op.getContainerView(),
-										domainElement)) {
+								.getNodeVisualID(op.getContainerView(), domainElement)) {
 					return false; // visual id for node EClass should match visual id from element type
 				}
 			} else {
@@ -150,8 +144,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 				case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-									.getNodeVisualID(op.getContainerView(),
-											domainElement)) {
+									.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
 					}
 					break;
@@ -176,17 +169,14 @@ public class HardwareViewProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	protected boolean provides(CreateEdgeViewOperation op) {
-		IElementType elementType = getSemanticElementType(op
-				.getSemanticAdapter());
+		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes
-				.isKnownElementType(elementType)
-				|| (!(elementType instanceof IHintedType))) {
+				.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
 			return false; // foreign element type
 		}
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		if (elementTypeHint == null
-				|| (op.getSemanticHint() != null && !elementTypeHint.equals(op
-						.getSemanticHint()))) {
+				|| (op.getSemanticHint() != null && !elementTypeHint.equals(op.getSemanticHint()))) {
 			return false; // our hint is visual id and must be specified, and it should be the same as in element type
 		}
 		int visualID = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
@@ -203,11 +193,11 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Diagram createDiagram(IAdaptable semanticAdapter,
-			String diagramKind, PreferencesHint preferencesHint) {
+	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
-		diagram.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID);
+		diagram.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID);
 		diagram.setElement(getSemanticElement(semanticAdapter));
 		diagram.setMeasurementUnit(MeasurementUnit.PIXEL_LITERAL);
 		return diagram;
@@ -216,9 +206,8 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createNode(IAdaptable semanticAdapter, View containerView,
-			String semanticHint, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createNode(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		final EObject domainElement = getSemanticElement(semanticAdapter);
 		final int visualID;
 		if (semanticHint == null) {
@@ -230,35 +219,27 @@ public class HardwareViewProvider extends AbstractProvider implements
 		}
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
-			return createHWPlatformInstance_2005(domainElement, containerView,
-					index, persisted, preferencesHint);
+			return createHWPlatformInstance_2005(domainElement, containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
-			return createHWPlatformInstanceConfiguration_3039(domainElement,
-					containerView, index, persisted, preferencesHint);
+			return createHWPlatformInstanceConfiguration_3039(domainElement, containerView, index, persisted,
+					preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
-			return createHWPlatformInstance_3040(domainElement, containerView,
-					index, persisted, preferencesHint);
+			return createHWPlatformInstance_3040(domainElement, containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
-			return createDelegationHWPortInstance_3041(domainElement,
-					containerView, index, persisted, preferencesHint);
+			return createDelegationHWPortInstance_3041(domainElement, containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			return createStructuredResourceInstance_3042(domainElement,
-					containerView, index, persisted, preferencesHint);
+			return createStructuredResourceInstance_3042(domainElement, containerView, index, persisted,
+					preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
-			return createHWPortInstance_3043(domainElement, containerView,
-					index, persisted, preferencesHint);
+			return createHWPortInstance_3043(domainElement, containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			return createActuatorInstance_3044(domainElement, containerView,
-					index, persisted, preferencesHint);
+			return createActuatorInstance_3044(domainElement, containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			return createSensorInstance_3045(domainElement, containerView,
-					index, persisted, preferencesHint);
+			return createSensorInstance_3045(domainElement, containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
-			return createBusInstance_3046(domainElement, containerView, index,
-					persisted, preferencesHint);
+			return createBusInstance_3046(domainElement, containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
-			return createNetworkBridgeInstance_3047(domainElement,
-					containerView, index, persisted, preferencesHint);
+			return createNetworkBridgeInstance_3047(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -267,16 +248,14 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createEdge(IAdaptable semanticAdapter, View containerView,
-			String semanticHint, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		switch (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(elementTypeHint)) {
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
-			return createNetworkConnectorInstance_4012(
-					getSemanticElement(semanticAdapter), containerView, index,
+			return createNetworkConnectorInstance_4012(getSemanticElement(semanticAdapter), containerView, index,
 					persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -286,52 +265,41 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createHWPlatformInstance_2005(EObject domainElement,
-			View containerView, int index, boolean persisted,
+	public Node createHWPlatformInstance_2005(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5117 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		createCompartment(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID),
+		createCompartment(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID),
 				false, false, false, false);
 		return node;
 	}
@@ -339,47 +307,40 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createHWPlatformInstanceConfiguration_3039(
-			EObject domainElement, View containerView, int index,
+	public Node createHWPlatformInstanceConfiguration_3039(EObject domainElement, View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		createCompartment(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID),
+		createCompartment(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID),
 				false, false, false, false);
 		return node;
 	}
@@ -387,51 +348,40 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createHWPlatformInstance_3040(EObject domainElement,
-			View containerView, int index, boolean persisted,
+	public Node createHWPlatformInstance_3040(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5101 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
-		createCompartment(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID),
+		createCompartment(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID),
 				false, false, false, false);
 		return node;
 	}
@@ -439,49 +389,41 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createDelegationHWPortInstance_3041(EObject domainElement,
-			View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createDelegationHWPortInstance_3041(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5100 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
-		label5100.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
+		Node label5100 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
+		label5100.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5100 = (Location) label5100.getLayoutConstraint();
 		location5100.setX(0);
 		location5100.setY(5);
@@ -491,112 +433,93 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createStructuredResourceInstance_3042(EObject domainElement,
-			View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createStructuredResourceInstance_3042(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5103 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID));
-		Node label5104 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
-		Node label5105 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
-		Node label5106 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
-		Node label5107 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+		Node label5103 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID));
+		Node label5104 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+		Node label5105 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		Node label5106 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
+		Node label5107 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createHWPortInstance_3043(EObject domainElement,
-			View containerView, int index, boolean persisted,
+	public Node createHWPortInstance_3043(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5102 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID));
-		label5102.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
+		Node label5102 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID));
+		label5102.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5102 = (Location) label5102.getLayoutConstraint();
 		location5102.setX(0);
 		location5102.setY(5);
@@ -606,260 +529,217 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createActuatorInstance_3044(EObject domainElement,
-			View containerView, int index, boolean persisted,
+	public Node createActuatorInstance_3044(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5108 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceNameEditPart.VISUAL_ID));
-		Node label5109 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
-		Node label5110 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+		Node label5108 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceNameEditPart.VISUAL_ID));
+		Node label5109 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
+		Node label5110 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createSensorInstance_3045(EObject domainElement,
-			View containerView, int index, boolean persisted,
+	public Node createSensorInstance_3045(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5111 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceNameEditPart.VISUAL_ID));
-		Node label5112 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
-		Node label5113 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID));
+		Node label5111 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceNameEditPart.VISUAL_ID));
+		Node label5112 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
+		Node label5113 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createBusInstance_3046(EObject domainElement,
-			View containerView, int index, boolean persisted,
+	public Node createBusInstance_3046(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5114 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID));
-		Node label5115 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID));
+		Node label5114 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID));
+		Node label5115 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createNetworkBridgeInstance_3047(EObject domainElement,
-			View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createNetworkBridgeInstance_3047(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID));
+		node.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			nodeFontStyle.setFontName(fontData.getName());
 			nodeFontStyle.setFontHeight(fontData.getHeight());
 			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5116 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
+		Node label5116 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Edge createNetworkConnectorInstance_4012(EObject domainElement,
-			View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Edge createNetworkConnectorInstance_4012(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
-				.createRelativeBendpoints();
-		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
-				2);
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
 		points.add(new RelativeBendpoint());
 		points.add(new RelativeBendpoint());
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID));
+		edge.setType(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID));
 		edge.setElement(domainElement);
 		// initializePreferences
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(edge,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle edgeFontStyle = (FontStyle) edge
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
 			edgeFontStyle.setFontName(fontData.getName());
 			edgeFontStyle.setFontHeight(fontData.getHeight());
 			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
 			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		Routing routing = Routing.get(prefStore
-				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
 		if (routing != null) {
-			ViewUtil.setStructuralFeatureValue(edge,
-					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
-					routing);
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
 		return edge;
 	}
@@ -871,12 +751,10 @@ public class HardwareViewProvider extends AbstractProvider implements
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
 				.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 						.getModelID(containerView))) {
-			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE
-					.createEAnnotation();
+			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
-			shortcutAnnotation
-					.getDetails()
-					.put("modelID", de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID); //$NON-NLS-1$
+			shortcutAnnotation.getDetails().put("modelID", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID);
 			target.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
@@ -894,8 +772,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private Node createCompartment(View owner, String hint,
-			boolean canCollapse, boolean hasTitle, boolean canSort,
+	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort,
 			boolean canFilter) {
 		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
 		//rv.setShowTitle(showTitle);
@@ -915,8 +792,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 			rv.getStyles().add(NotationFactory.eINSTANCE.createSortingStyle());
 		}
 		if (canFilter) {
-			rv.getStyles()
-					.add(NotationFactory.eINSTANCE.createFilteringStyle());
+			rv.getStyles().add(NotationFactory.eINSTANCE.createFilteringStyle());
 		}
 		rv.setType(hint);
 		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
@@ -932,8 +808,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 		}
 		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
 		if (eObject != null) {
-			return EMFCoreUtil.resolve(
-					TransactionUtil.getEditingDomain(eObject), eObject);
+			return EMFCoreUtil.resolve(TransactionUtil.getEditingDomain(eObject), eObject);
 		}
 		return null;
 	}

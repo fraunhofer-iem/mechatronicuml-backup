@@ -59,16 +59,15 @@
 	
 	
 	<extension point="org.eclipse.ui.menus">
-
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category.create"
+                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
                  icon="icons/obj16/HwplatforminstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category.create"
-                 label="Create new PlatformInstance Model"
+                 id="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
+                 label="HWPlatformInstanceConfiguration"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
@@ -79,7 +78,6 @@
               </visibleWhen>
            </command>
       </menuContribution>
-      
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
@@ -107,19 +105,21 @@
 	
 	
 	<extension point="org.eclipse.ui.commands">
-	<?gmfgen generated="true"?>   
+	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
-           description="Create new PlatformInstance Model"
-           id="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category.create"
-           name="Create new PlatformInstance Model">
+           description="Create new PlatformInstance"
+           id="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
+           name="Create new PlatformInstance">
     </command>
     </extension>
 	
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
+   		<!--
    		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="hwplatform"/>
+   		-->
     </extension>
 
 	
@@ -390,7 +390,7 @@
             <method name="getType()" value="4012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5117,5101,5100,5103,5104,5105,5106,5107,5102,5108,5109,5110,5111,5112,5113,5114,5115,5116"/>
+            <method name="getType()" value="5100,5103,5104,5105,5106,5107,5102,5108,5109,5110,5111,5112,5113,5114,5115,5116"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7012,7013,7014"/>
@@ -786,6 +786,14 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="hwplatforminstanceconfiguration"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

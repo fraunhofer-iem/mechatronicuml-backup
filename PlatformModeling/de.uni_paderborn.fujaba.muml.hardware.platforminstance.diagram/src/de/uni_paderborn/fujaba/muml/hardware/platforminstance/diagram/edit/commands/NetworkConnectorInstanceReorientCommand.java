@@ -32,8 +32,7 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	public NetworkConnectorInstanceReorientCommand(
-			ReorientRelationshipRequest request) {
+	public NetworkConnectorInstanceReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
 		oldEnd = request.getOldRelationshipEnd();
@@ -60,7 +59,8 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -68,10 +68,11 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
 		  return false;
 		}
-		 */
+		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
+		if (!(getLink()
+				.eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
 			return false;
 		}
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getLink()
@@ -81,15 +82,12 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistNetworkConnectorInstance_4012(
-						container, getLink(), getNewSource(), target,
-						sourceView, targetView)) {
+				.getLinkConstraints().canExistNetworkConnectorInstance_4012(container, getLink(), getNewSource(),
+						target, sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorNetworkConnectorInstance_4012(container,
-							getNewSource(), target, sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getErrorNetworkConnectorInstance_4012(container, getNewSource(), target, sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -99,7 +97,8 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -107,10 +106,11 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
 		  return false;
 		}
-		 */
+		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
+		if (!(getLink()
+				.eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
 			return false;
 		}
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getLink()
@@ -120,15 +120,12 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistNetworkConnectorInstance_4012(
-						container, getLink(), source, getNewTarget(),
-						sourceView, targetView)) {
+				.getLinkConstraints().canExistNetworkConnectorInstance_4012(container, getLink(), source,
+						getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorNetworkConnectorInstance_4012(container, source,
-							getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getErrorNetworkConnectorInstance_4012(container, source, getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -137,11 +134,9 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
