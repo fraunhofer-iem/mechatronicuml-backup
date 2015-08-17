@@ -54,7 +54,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwplatform/NetworkingHardware"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/NetworkConnector">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/protocol"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/bandwidth"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/hwportParts"/>

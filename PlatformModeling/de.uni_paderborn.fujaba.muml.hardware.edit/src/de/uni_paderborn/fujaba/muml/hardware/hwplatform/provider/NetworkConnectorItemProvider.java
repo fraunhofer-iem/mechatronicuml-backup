@@ -70,7 +70,7 @@ public class NetworkConnectorItemProvider extends ConnectorItemProvider {
 				 getString("_UI_NetworkConnector_protocol_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NetworkConnector_protocol_feature", "_UI_NetworkConnector_type"),
 				 HwplatformPackage.Literals.NETWORK_CONNECTOR__PROTOCOL,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -160,6 +160,7 @@ public class NetworkConnectorItemProvider extends ConnectorItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NetworkConnector.class)) {
+			case HwplatformPackage.NETWORK_CONNECTOR__PROTOCOL:
 			case HwplatformPackage.NETWORK_CONNECTOR__BANDWIDTH:
 			case HwplatformPackage.NETWORK_CONNECTOR__HWPORT_PARTS:
 			case HwplatformPackage.NETWORK_CONNECTOR__CONNECTOR_KIND:
