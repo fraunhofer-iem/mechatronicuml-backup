@@ -61,9 +61,11 @@ helper getLoadBalancingTaskMessageClock() : Clock {
 }
 ------------------------------------------------------------Transfer Schema LoadBalancing of Coordinator------------------------------------------------------------------
 	
-mapping Transition :: LoadBalancing2TransSendSyncCoordinator(context:OclAny, region:RealtimeStatechart, conditional:Boolean, toplevel : Boolean) : Transition {
+mapping Transition :: LoadBalancing2TransSendSyncCoordinator(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
 
-		priority := self.priority;
+		priority := self.priority;		
+		
+		var conditional : Boolean := not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined();
 		
 		if(conditional){			
 			source := self.map LoadBalancing2StateCoordinator(context, region, toplevel);
@@ -323,7 +325,10 @@ mapping Transition :: LoadBalancing2SourceEmbeddedRTSCSubrole(context:OclAny, re
 			transitions += self.map LoadBalancingResponseMessage2TransitionFromCheckToRequested2(context,region);
 		};
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.oclIsUndefined()) {
-			
+			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested1(context,region);
+			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2(context,region);
+			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3(context,region);
+			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested4(context,region);
 		};
 		
 		transitions += self.map LoadBalancing2TransitionFromRequestedToIdle1(context,region);
@@ -435,7 +440,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle1(context:OclAn
 	
 		priority := 1;
 		
-		target := self.map RegionState(context,region,"Check",false);
+		target := self.map RegionState(context,region,"Idle",false);
 		
 		source := self.map RegionState(context,region,"Requested",false);	
 		
@@ -449,7 +454,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle2(context:OclAn
 	
 		priority := 2;
 		
-		target := self.map RegionState(context,region,"Check",false);
+		target := self.map RegionState(context,region,"Idle",false);
 		
 		source := self.map RegionState(context,region,"Requested",false);	
 		
@@ -463,7 +468,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAn
 	
 		priority := 3;
 		
-		target := self.map RegionState(context,region,"Check",false);
+		target := self.map RegionState(context,region,"Idle",false);
 		
 		source := self.map RegionState(context,region,"Requested",false);	
 		
