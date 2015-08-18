@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.common.cmd;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.Reader;
@@ -27,8 +28,8 @@ public abstract class Command {
 		
 	}
 		
-	public Process execute(Reader reader, Writer... writers) {
-		return new Process(this,reader,writers);
+	public Process execute(Reader reader, Writer... writers) throws IOException {
+		return new Process(this, reader, writers);
 	}
 	
 	public void addParameter(Parameter<? extends Command> param) {
@@ -37,20 +38,22 @@ public abstract class Command {
 		
 	}
 	
-	public String getOutput(Reader reader) {
+	public String getOutput(Reader reader) throws IOException {
 		
 		StringWriter stringWriter = new StringWriter();
 				
 		this.execute(reader, stringWriter).waitFor();
 		
+		stringWriter.close();
+		
 		return stringWriter.toString();		
 		
 	}
 	
-	public void printOutput(Reader reader, OutputStream stream) {
-				
-		this.execute(reader, new PrintWriter(stream));
-		
+	public void printOutput(Reader reader, OutputStream stream) throws IOException {
+		Writer writer = new PrintWriter(stream);		
+		this.execute(reader, writer);
+		writer.close();
 	}
 			
 	public List<String> getSegments() {

@@ -11,16 +11,13 @@ import java.io.Writer;
 
 public class Process implements Runnable {
 		
-	private java.lang.Process process;
-	private Thread processThread;
+	private final java.lang.Process process;
+	private final Thread processThread = new Thread(this, "Process Thread for " + toString());;
 	
 	private Reader reader;
 	private Writer[] writers;
-	
-	private InputStream inputStream;
-	private OutputStream outputStream;
-			
-	public Process(Command command, Reader reader, Writer... writers) {
+				
+	public Process(Command command, Reader reader, Writer... writers) throws IOException {
 		
 		this.reader = reader;
 		this.writers = writers;
@@ -29,20 +26,14 @@ public class Process implements Runnable {
 												
 		pbuilder.redirectErrorStream(true);
 						
-		try {
-		
-			process = pbuilder.start();
-			
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		
+		process = pbuilder.start();
+				
 		write();
 			
 	}
 	
 	
-	public Process(Command command, Writer... writers) {
+	public Process(Command command, Writer... writers) throws IOException {
 		
 		this(command, null, writers);
 	
@@ -60,21 +51,21 @@ public class Process implements Runnable {
 	public void run() {
 		
 		// reads the output of the specified reader and writes it to the process output stream
-		Thread outputStreamThread = new ReadWriteThread("Output Thread for " + toString(), reader, new OutputStreamWriter(outputStream));
+		Thread outputStreamThread = new Thread(new ReadWriteRunnable(reader, new OutputStreamWriter(getOutputStream())), "Output Thread for " + toString());
 		
 		// reads the the process input stream and writes it to the specified writers  
-		Thread inputStreamThread = new ReadWriteThread("Input Thread for " + toString(), new InputStreamReader(inputStream), writers);
+		Thread inputStreamThread = new Thread(new ReadWriteRunnable(new InputStreamReader(getInputStream()), writers), "Input Thread for " + toString());
 		
 		// start reading the input stream first to ensure that the full output stream is processed 
 		inputStreamThread.start();
 		outputStreamThread.start();
 		
-		while (process.isAlive()) {
+		while (isProcessAlive()) {
 			if (isRunning()) {
 				Thread.yield();
 			}
 			else {
-				process.destroyForcibly();
+				process.destroy();
 			}
 		}
 				
@@ -84,10 +75,17 @@ public class Process implements Runnable {
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
-		
-		
 	}
 	
+	private boolean isProcessAlive() {
+		try {
+			process.exitValue();
+			return false;
+		}
+		catch(IllegalThreadStateException e) {
+			return true;
+		}
+	}	
 	
 	protected ProcessBuilder getProcessBuilder(Command command) {
 		return command.createProcessBuilder();
@@ -128,24 +126,17 @@ public class Process implements Runnable {
 		write(getOutputStream(), getInputStream());
 	}	
 				
-	private void write(OutputStream out, InputStream in) {
-		
-		this.outputStream = out;
-		this.inputStream = in;
-		
-		processThread = new Thread(this, "Program Thread for " + toString());
+	private void write(OutputStream out, InputStream in) {		
 		processThread.start();
-		
 	}
 		
-	private class ReadWriteThread extends Thread {
+	private class ReadWriteRunnable implements Runnable {
 		
 		private Writer[] writers;
 		
 		private BufferedReader bufferedReader;
 		
-		public ReadWriteThread(String name, Reader reader, Writer... writers) {
-			super(name);
+		public ReadWriteRunnable(Reader reader, Writer... writers) {
 			this.bufferedReader = (reader == null || reader instanceof BufferedReader) ? (BufferedReader) reader : new BufferedReader(reader);
 			this.writers = writers;
 		}
@@ -158,16 +149,10 @@ public class Process implements Runnable {
 				String line = null;
 				
 				try {
-												
 					while ((line = bufferedReader.readLine()) != null) {
-						
 						for (Writer writer : writers) {
-													
-							synchronized (writer) {
-								writer.write(line);
-								writer.write(System.getProperty("line.separator"));							
-							}	
-													
+							writer.write(line);
+							writer.write(System.getProperty("line.separator"));						
 						}
 					}					
 				}
