@@ -69,15 +69,6 @@
         </embeddedRegions>
         <embeddedRegions xmi:id="_0UcaMBjFEeWz7J5_ceJ04A" priority="2">
           <embeddedStatechart xmi:id="_0UcaMRjFEeWz7J5_ceJ04A" name="PortRegion" behavioralElement="_naco8BjFEeWz7J5_ceJ04A">
-            <transitions xmi:id="_2131IBjFEeWz7J5_ceJ04A" priority="1" target="_13PCoBjFEeWz7J5_ceJ04A" source="_0UcaMhjFEeWz7J5_ceJ04A">
-              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_Y1kNwBjGEeWz7J5_ceJ04A">
-                <message xmi:id="_ZRYnEBjGEeWz7J5_ceJ04A" instanceOf="_hGTLUBi6EeWsFZ_Un4dxHg"/>
-                <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:Unicast" xmi:id="_a9sX4BjGEeWz7J5_ceJ04A">
-                  <condition xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_iED9oBjGEeWz7J5_ceJ04A" typedNamedElement="_dI8ugBjGEeWz7J5_ceJ04A"/>
-                </oneToManyCommunicationSchema>
-              </events>
-            </transitions>
-            <transitions xmi:id="_oeXiYDwXEeWTWs5c5MySlg" priority="2" target="_mj6A0DwXEeWTWs5c5MySlg" source="_0UcaMhjFEeWz7J5_ceJ04A"/>
             <transitions xmi:id="_rnPX0DwXEeWTWs5c5MySlg" priority="1" target="_pry-0DwXEeWTWs5c5MySlg" source="_13PCoBjFEeWz7J5_ceJ04A">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_u2oE8DwXEeWTWs5c5MySlg">
                 <message xmi:id="_vMrNcDwXEeWTWs5c5MySlg" instanceOf="_hGTLUBi6EeWsFZ_Un4dxHg"/>
@@ -97,10 +88,8 @@
                 </oneToManyCommunicationSchema>
               </events>
             </transitions>
-            <states xmi:id="_0UcaMhjFEeWz7J5_ceJ04A" name="PortState1" outgoingTransitions="_2131IBjFEeWz7J5_ceJ04A _oeXiYDwXEeWTWs5c5MySlg" initial="true"/>
-            <states xmi:id="_13PCoBjFEeWz7J5_ceJ04A" name="PortState2" outgoingTransitions="_rnPX0DwXEeWTWs5c5MySlg" incomingTransitions="_2131IBjFEeWz7J5_ceJ04A"/>
-            <states xmi:id="_mj6A0DwXEeWTWs5c5MySlg" name="PortState3" incomingTransitions="_oeXiYDwXEeWTWs5c5MySlg"/>
-            <states xmi:id="_pry-0DwXEeWTWs5c5MySlg" name="PortState4" incomingTransitions="_rnPX0DwXEeWTWs5c5MySlg"/>
+            <states xmi:id="_13PCoBjFEeWz7J5_ceJ04A" name="PortState1" outgoingTransitions="_rnPX0DwXEeWTWs5c5MySlg" initial="true"/>
+            <states xmi:id="_pry-0DwXEeWTWs5c5MySlg" name="PortState2" incomingTransitions="_rnPX0DwXEeWTWs5c5MySlg"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
