@@ -308,6 +308,13 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		
 		transitions += self.map Transition2TransitionFromSourceToTarget(region);
 		
+		--transitions with LoadBalancing
+		transitions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)).map LoadBalancing2TransSendSyncFirstSubrole(context, region);
+		transitions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)).map LoadBalancing2TransReceiveSyncNotLastSubrole(context, region);
+		transitions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)).map LoadBalancing2TransReceiveSyncLastSubrole(context, region);
+		transitions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)).map LoadBalancing2TransSendSynNotFirstcSubrole(context, region);
+		
+		
 		--transition with multicast
 		transitions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransSendSyncSubrole(context, region, toplevel);
 		transitions += self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransReceiveSyncNotLastSubrole(context, region, toplevel);

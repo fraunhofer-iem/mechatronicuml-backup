@@ -184,13 +184,13 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 	
 --------------------------------------------------------------- Transfer Schema LoadBalancing of Subrole----------------------------------------------------------------------
 	
-mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 
 		priority := (self.priority-1)*2+2;
 		
 		source := self.map Transition2StateSubrole(region, self.source, true);
 		
-		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context, region,1,false);
 				
 		synchronization := self.TransferSchemata2Synchronization(  loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 						
@@ -223,13 +223,13 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		
 	}
 	
-mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 
 		priority := (self.priority-1)*2+1;
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
-		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context, region,1, false);
 					
 		synchronization :=self. TransferSchemata2Synchronization(loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
@@ -237,13 +237,13 @@ mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny,
 		
 	}
 	
-mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
+		source := self.map Schema2SubroleIntermediateState(context, region,1,false);
 		
 		synchronization := 	self.TransferSchemata2Synchronization( loadBalancing,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -251,13 +251,13 @@ mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAn
 					
 	}
 			
-mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);		
+		source := self.map Schema2SubroleIntermediateState(context, region,1, false);		
 		
 		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
