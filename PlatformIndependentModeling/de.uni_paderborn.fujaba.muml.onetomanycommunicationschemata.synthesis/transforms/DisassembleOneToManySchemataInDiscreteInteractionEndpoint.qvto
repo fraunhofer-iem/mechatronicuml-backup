@@ -218,13 +218,12 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny,  toplevel: Bo
 		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromIntermediate2ToTarget(context,region,toplevel);
 		
 		--transitions with LoadBalancing
-		transitions += self.transitions->forEach(t) {
+		self.transitions->forEach(t) {
 		
 			if(not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
-				t.map LoadBalancing2TransSendSyncCoordinator(context,region, toplevel);
-				t.map LoadBalancing2CoordinatorStartTransition(context, region,toplevel);
-				t.map LoadBalancing2CoordinatorIntermediateTransition(context,region,toplevel);
-				t.map LoadBalancing2CoordinatorEndTransition(context,region,toplevel);
+				transitions += t.map LoadBalancing2CoordinatorStartTransition(context, region,toplevel);
+				transitions += t.map LoadBalancing2CoordinatorIntermediateTransition(context,region,toplevel);
+				transitions += t.map LoadBalancing2CoordinatorEndTransition(context,region,toplevel);
 			};
 		
 		

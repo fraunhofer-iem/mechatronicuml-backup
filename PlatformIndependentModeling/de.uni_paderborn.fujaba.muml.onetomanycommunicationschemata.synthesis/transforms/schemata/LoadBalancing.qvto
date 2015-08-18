@@ -61,33 +61,6 @@ helper getLoadBalancingTaskMessageClock() : Clock {
 }
 ------------------------------------------------------------Transfer Schema LoadBalancing of Coordinator------------------------------------------------------------------
 	
-mapping Transition :: LoadBalancing2TransSendSyncCoordinator(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
-
-		priority := self.priority;		
-		
-		var conditional : Boolean := not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined();
-		
-		if(conditional){			
-			source := self.map LoadBalancing2StateCoordinator(context, region, toplevel);
-		}else{
-			source := self.source.map Vertex2VertexCoordinator(context, region);
-		} ;
-		
-		target := self.target.map Vertex2VertexCoordinator(context, region);
-		
-		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
-		
-		if(not conditional){
-			guard := self.guard.map Expression2Expression(context);
-			
-			clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
-		}endif;
-		// @author: sthiele2 changed first paramter of Action2Action from 1 to context
-		action := self.action.map Action2Action(context, region);
-		
-		synchronization := self.TransferSchemata2Synchronization( loadBalancing,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
-			
-	}
 
 // @author: sthiele2
 mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
@@ -258,7 +231,7 @@ mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny,
 		
 		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
 					
-		synchronization :=self. TransferSchemata2Synchronization(loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);--error
+		synchronization :=self. TransferSchemata2Synchronization(loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
 		guard := self.TransferSchemaGuard(taskPlannedName,UnaryOperator::NOT);	
 		
@@ -440,7 +413,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle1(context:OclAn
 	
 		priority := 1;
 		
-		target := self.map RegionState(context,region,"Idle",false);
+		target := self.map RegionState(context,region,"Idle",true);
 		
 		source := self.map RegionState(context,region,"Requested",false);	
 		
@@ -454,7 +427,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle2(context:OclAn
 	
 		priority := 2;
 		
-		target := self.map RegionState(context,region,"Idle",false);
+		target := self.map RegionState(context,region,"Idle",true);
 		
 		source := self.map RegionState(context,region,"Requested",false);	
 		
@@ -468,7 +441,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAn
 	
 		priority := 3;
 		
-		target := self.map RegionState(context,region,"Idle",false);
+		target := self.map RegionState(context,region,"Idle",true);
 		
 		source := self.map RegionState(context,region,"Requested",false);	
 		
