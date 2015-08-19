@@ -21,6 +21,7 @@ property iterateDLCName : String = "DLC_Iterate";
 property iteratePossibleName : String = "iteratePossible";
 property terminateIterationName : String = "terminate";
 property iterateDelayVariableName : String = "iterateDelay";
+property sendIterateName : String = "sendIterate";
 
 ----------------------------------------------------------------Transfer Schema Iterate of Coordinator------------------------------------------------------------------
 
@@ -289,7 +290,7 @@ mapping Transition :: Iterate2IdleRequestedFulfilledSubrole(context:OclAny, regi
 		
 		synchronization := 	self.TransferSchemata2Synchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self. TransferSchemata2Action( "iteratePossible:=true", iteratePossibleName, "true");
+		action := self.TransferSchemata2TwoActions(iteratePossibleName + " :=true; " + sendIterateName + ":= true;",iteratePossibleName, sendIterateName,"true");
 					
 	}
 	

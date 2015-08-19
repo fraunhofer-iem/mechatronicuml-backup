@@ -287,8 +287,8 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		synchronization := 	self.TransferSchemata2Synchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self.TransferSchemata2TwoActions("multicastPossible:=true",multicastPossibleName, sendMulticastName,"true");
-					
+		action := self.TransferSchemata2TwoActions(multicastPossibleName + " :=true; " + sendMulticastName + ":= true;",multicastPossibleName, sendMulticastName,"true");
+		
 	}
 	
 mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
