@@ -24,8 +24,6 @@ property multiReceiveDLCName : String = "DLC_multiReceive";
 property variableNamesDict : Dict(String, Integer);	
 property usedClockNames : Dict(String,Integer);
 
-property multicastSubRoleSpecificVariableName : String = "sendMulticast";
-
 property intermediateStateCount : Integer = 0;
 
 mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String): Variable

@@ -284,10 +284,18 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		var toplevel = false;
 		
 		
+		// add subrole specific schema variables: 
+		
 		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
-			variables += transition.map Transition2SubroleSpecificBooleanVaribale("sendUnicast");
+			variables += transition.map Transition2SubroleSpecificBooleanVaribale(sendUnicastName);
+		};
+		
+		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
+			variables += transition.map Transition2SubroleSpecificBooleanVaribale(sendMulticastName);
 		};
 		
 		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
@@ -295,6 +303,18 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
 			variables += transition.map Transition2SubroleSpecificBooleanVaribale(taskPlannedName);
 		};
+		
+		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate))			
+				->forEach(transition){
+				if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+					variables += transition.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName);
+				};
+				if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
+					variables += transition.map Transition2SubroleSpecificBooleanVaribale(iterateDelayVariableName);
+				};					
+		};
+		
 		// add the source and target of the schema transition to the subrole schema realtimestatechart
 		states += self.map Transition2StateSubrole(region, self.source,true);		
 		states += self.map Transition2StateSubrole(region, self.target,false);		
@@ -341,10 +361,6 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		
 		variables += sourceRealtimeStatechart.subRoleSpecificVariables->map Variable2Variable();
 		
-		// @author: sthiele2 -- add subrole specific boolean variables for every conditional multicast schema:		
-		variables +=self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(multicastSubRoleSpecificVariableName);
-		variables +=self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(unicastSubRoleSpecificVariableName);
-			
 		clocks += sourceRealtimeStatechart.subRoleSpecificClocks.map Clock2Clock();
 				
 	}

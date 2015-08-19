@@ -12,8 +12,7 @@ modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
-----------------------------------------------------------XXXXXXXXXXXXXXXXX--UNICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
-
+----------------------------------------------------------XXXXXXXXXXXXXXXXX--LOADBALANCING--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
 property loadBalancing : String = "loadBalancing";
 property loadBalancingCheckDone : String = "loadBalancingCheckDone";
 property loadBalancingCheck : String = "loadBalancingCheck";
@@ -27,8 +26,7 @@ property loadBalancingtaskMessageClockName : String = "c_taksMsg";
 property loadBalancingTaskMessageClock : Clock ;
 property loadBalancingPossibleName : String = "loadBalancingPossible";
 
-
-// lazy initialisation of LoadBalancing specific variables and clocks that may only exist ones (not for every LoadBalancing instance as it usually is the case):
+// lazy initialization of LoadBalancing specific variables and clocks that may only exist ones (not for every LoadBalancing instance as it usually is the case):
 helper getNeverHadATaskVariable() : Variable {
 	if(neverHadATask.oclIsUndefined()) {
 		neverHadATask := new Variable();
@@ -55,12 +53,10 @@ helper getLoadBalancingTaskMessageClock() : Clock {
 	if(loadBalancingTaskMessageClock.oclIsUndefined()) {
 		loadBalancingTaskMessageClock := new Clock();
 		loadBalancingTaskMessageClock.name := loadBalancingtaskMessageClockName;
-	};
-	
+	};	
 	return loadBalancingTaskMessageClock;
 }
 ------------------------------------------------------------Transfer Schema LoadBalancing of Coordinator------------------------------------------------------------------
-	
 
 // @author: sthiele2
 mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
@@ -69,14 +65,12 @@ mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, r
 	target := self.map Schema2CoordinatorIntermediateState(context,region,1,loadBalancingDLCName,toplevel);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
-	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
-	
+	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);	
 	synchronization := self. TransferSchemata2Synchronization( loadBalancingCheckDone,SynchronizationKind::SEND);
 }
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean): Transition
-{
+mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean): Transition {
 	// creates the transition from intermediate state 1 to intermediate state 2
 	source := self.map Schema2CoordinatorIntermediateState(context,region,1, loadBalancingDLCName,toplevel);
 	target := self.map Schema2CoordinatorIntermediateState(context,region,2,loadBalancingDLCName,toplevel);	
@@ -89,8 +83,7 @@ mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:Oc
 }
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart, toplevel: Boolean): Transition
-{
+mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart, toplevel: Boolean): Transition {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
 	source := self.map Schema2CoordinatorIntermediateState(context,region,2,loadBalancingDLCName, toplevel);
 	target := self.target.map Vertex2VertexCoordinator(context,region);
@@ -103,25 +96,21 @@ mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, reg
 
 mapping Transition :: LoadBalancing2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region {
 		
-		priority := self.priority;
-		
-		parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);
-		
-		embeddedStatechart := self.map LoadBalancing2SourceEmbeddedRTSCCoordinator(context, region);
-					
-	}
+	priority := self.priority;		
+	parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);		
+	embeddedStatechart := self.map LoadBalancing2SourceEmbeddedRTSCCoordinator(context, region);					
+}
 	
 mapping Transition :: LoadBalancing2SourceEmbeddedRTSCCoordinator(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
 		
-		name:= "loadBalancingCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
-		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requesting", false);
-		
-		transitions += self.map LoadBalancing2TransCheckEmbeddedCoordinator(context, region);
-		transitions += self.map LoadBalancing2TransCheckDoneEmbeddedCoordinator(context, region);
-					
-	}
+	name:= "loadBalancingCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
+	
+	states += self.map RegionState(context, region, "Idle", true);
+	states += self.map RegionState(context, region, "Requesting", false);
+	
+	transitions += self.map LoadBalancing2TransCheckEmbeddedCoordinator(context, region);
+	transitions += self.map LoadBalancing2TransCheckDoneEmbeddedCoordinator(context, region);
+}
 	
 mapping Transition :: LoadBalancing2TransCheckEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 

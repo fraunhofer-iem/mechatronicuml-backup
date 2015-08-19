@@ -18,6 +18,7 @@ property multicast : String = "multicast";
 property multicastDone : String = "multicastDone";
 property multicastCheck : String = "multicastCheck";
 property multicastPossibleName : String = "multicastPossible";
+property sendMulticastName : String = "sendMulticast";
 
 ----------------------------------------------------------------Transfer Schema Multicast of Coordinator------------------------------------------------------------------
 
@@ -286,7 +287,7 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		synchronization := 	self.TransferSchemata2Synchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self. TransferSchemata2Action( "multicastPossible:=true", multicastPossibleName, "true");
+		action := self.TransferSchemata2TwoActions("multicastPossible:=true",multicastPossibleName, sendMulticastName,"true");
 					
 	}
 	

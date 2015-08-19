@@ -12,7 +12,7 @@ modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
-----------------------------------------------------------XXXXXXXXXXXXXXXXX--MULTICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------	
+----------------------------------------------------------XXXXXXXXXXXXXXXXX--ITERATE--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------	
 property iterateCheckDone : String = "iterateCheckDone";
 property iterate : String = "iterate";
 property iterateDone : String = "iterateDone";
@@ -20,6 +20,7 @@ property iterateCheck : String = "iterateCheck";
 property iterateDLCName : String = "DLC_Iterate";
 property iteratePossibleName : String = "iteratePossible";
 property terminateIterationName : String = "terminate";
+property iterateDelayVariableName : String = "iterateDelay";
 
 ----------------------------------------------------------------Transfer Schema Iterate of Coordinator------------------------------------------------------------------
 
