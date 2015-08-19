@@ -24,6 +24,8 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 transformation DisassembleOneToManySchemataInDiscreteInteractionEndpoint(inout input:rtsc);
 
 property currentRealtimeStatechart : RealtimeStatechart;
+property schemaCount : Integer =0; // counter for the schemata in order to enumerate the realtimestatechart names
+
 
 main() {
  	//debug:
@@ -72,8 +74,7 @@ helper isOperationSubRoleSpecific(o : Operation): Boolean
 }	
 
 
-mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
-		
+mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {		
 		
 		var allRTSCs : Set(RealtimeStatechart) := self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self);
 		internalClocks := allRTSCs.clocks;
@@ -105,6 +106,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
 			variables +=newVar ;
+			
 		};
 		
 		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
@@ -263,10 +265,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 			prio := prio +1;
 		};		
 		
-		states += mainState;
-		
-		
-		
+		states += mainState;		
 		
 		self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior := result;
 }
@@ -278,7 +277,7 @@ mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeSt
 		result.embeddedStatechart := self.map RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart);		
 }
 
-property schemaCount : Integer =0;
+
 
 mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart) : RealtimeStatechart {
 		

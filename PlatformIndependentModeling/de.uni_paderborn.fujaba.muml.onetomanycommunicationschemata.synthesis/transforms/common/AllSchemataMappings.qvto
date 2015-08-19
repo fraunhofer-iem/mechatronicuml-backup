@@ -412,6 +412,9 @@ mapping Transition :: TransferSchemataChannel(channelName: String, selector: Boo
 		};		
 		var portOrRoleStatechart : RealtimeStatechart := self.statechart.getPortOrRoleStatechart();
 		state := portOrRoleStatechart.map Rtsc2InitialState();
+		if(state.oclIsUndefined()) {
+			assert fatal (false) with log ("state of the channel must be specified");
+		};
 		
 		if(selector){
 			assert fatal (portOrRoleStatechart.behavioralElement.oclIsKindOf(Role) or portOrRoleStatechart.behavioralElement.oclIsKindOf(muml::component::DiscretePort)) with log ("behavorial Element must be DiscretePort or Role!");
