@@ -209,7 +209,7 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		var lb : muml::realtimestatechart::one_to_n_schemata::LoadBalancing :=
 			self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing);
 		
-		if (not lb.asynchronousMessageEvent.oclIsUndefined()) {
+		if (not lb.responseMessage.oclIsUndefined()) {
 			action.name := action.name + freeForWorkName + ":= false";	
 			action.expressions +=self.Transition2Block( self. Schema2TypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getFreeForWorkVariable(),	self.Schema2LiterarExpression("false")));
 		
