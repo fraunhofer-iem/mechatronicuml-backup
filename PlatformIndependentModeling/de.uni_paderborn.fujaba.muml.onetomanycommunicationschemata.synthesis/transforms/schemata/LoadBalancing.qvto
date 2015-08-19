@@ -298,8 +298,8 @@ mapping Transition :: LoadBalancing2SourceEmbeddedRTSCSubrole(context:OclAny, re
 			transitions += self.map LoadBalancingResponseMessage2TransitionFromCheckToRequested2(context,region);
 		};
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.oclIsUndefined()) {
-		//	transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested1(context,region);
-			//transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2(context,region);
+			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested1(context,region);
+			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2(context,region);
 			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3(context,region);
 			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested4(context,region);
 		};
@@ -390,7 +390,7 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3
 
 	 	guard := self.TransferSchemataLogicalExpression(self.TransferSchemaGuard(getNeverHadATaskVariable(), UnaryOperator::NOT),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result), LogicOperator::AND);
 			
-	//	action := self.TransferSchemata2TwoActions(loadBalancingPossibleName + " := false; "+ taskPlannedName + " :=false;",loadBalancingPossibleName,taskPlannedName,"false");
+		action := self.TransferSchemata2TwoActions(loadBalancingPossibleName + " := false; "+ taskPlannedName + " :=false;",loadBalancingPossibleName,taskPlannedName,"false");
 		
 		clockConstraints += self.Transition2ClockConstraint(getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map TimeValue2TimeValue(result),ComparingOperator::GREATER);
 		
@@ -406,7 +406,7 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested4
 		
 		guard := self.TransferSchemataLogicalExpression(self.Schema2TypedNamedElementExpression(getNeverHadATaskVariable()),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result), LogicOperator::AND);
 			
-	//	action := self.TransferSchemata2TwoActions(loadBalancingPossibleName + " := true; "+ taskPlannedName + " :=true;",loadBalancingPossibleName,taskPlannedName,"true");
+		action := self.TransferSchemata2TwoActions(loadBalancingPossibleName + " := true; "+ taskPlannedName + " :=true;",loadBalancingPossibleName,taskPlannedName,"true");
 				
 }
 mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle1(context:OclAny, region:RealtimeStatechart) : Transition {
