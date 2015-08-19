@@ -18,6 +18,7 @@ property unicast : String = "unicast";
 property unicastCheckDone : String = "unicastCheckDone";
 property unicastCheck : String = "unicastCheck";
 property unicastDone : String = "unicastDone";
+property unicastPossibleName : String = "unicastPossible";
 
 ------------------------------------------------------------Transfer Schema Unicast of Coordinator------------------------------------------------------------------
 	
@@ -109,7 +110,7 @@ mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 		
 		synchronization := self. TransferSchemata2Synchronization( unicastCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self. TransferSchemaGuard( "unicastPossible", UnaryOperator::NOT);
+		guard := self. TransferSchemaGuard( unicastPossibleName, UnaryOperator::NOT);
 			
 	}
 	
@@ -135,9 +136,9 @@ mapping Transition :: Unicast2TransReceiveSyncCoordinator(context:OclAny, region
 		synchronization := self.TransferSchemata2Synchronization( unicastCheckDone,SynchronizationKind::RECEIVE);
 		
 		if(self.guard.oclIsUndefined()){
-			guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale("unicastPossible"));
+			guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(unicastPossibleName));
 		}else{
-			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale("unicastPossible")));
+			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(unicastPossibleName)));
 		};
 					
 	}
@@ -162,7 +163,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"sendUnicast", "unicastPossible", false, 3);
+			guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"sendUnicast", unicastPossibleName, false, 3);
 			
 			if(self.action.oclIsUndefined()){
 				action := self. TransferSchemata2Action( "sendUnicast:=false", "sendUnicast", "false");
@@ -221,7 +222,7 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			action := self. TransferSchemata2Action("unicastPossible:=false", "unicastPossible", "false");
+			action := self. TransferSchemata2Action("unicastPossible:=false", unicastPossibleName, "false");
 			
 		}endif;
 			
@@ -262,7 +263,7 @@ mapping Transition :: Unicast2RequestedIdleCheckSubrole(context:OclAny, region:R
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map UnicastNotLastAndPossibleExpression(context, region, "unicastPossible", true, 60);
+		guard := self.map UnicastNotLastAndPossibleExpression(context, region, unicastPossibleName, true, 60);
 
 		synchronization := 	self. TransferSchemata2Synchronization( unicastCheck,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -290,7 +291,7 @@ mapping Transition :: Unicast2RequestedIdleCheckDonePossibleSubrole(context:OclA
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map UnicastNotLastAndPossibleExpression(context, region, "unicastPossible", false, 7);
+		guard := self.map UnicastNotLastAndPossibleExpression(context, region, unicastPossibleName, false, 7);
 		
 		synchronization := self. TransferSchemata2Synchronization( unicastCheckDone,SynchronizationKind::SEND);
 		
@@ -308,7 +309,7 @@ mapping Transition :: Unicast2IdleRequestedFulfilledSubrole(context:OclAny, regi
 		
 		synchronization := self. TransferSchemata2Synchronization( unicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self. TransferSchemata2TwoActions( "unicastPossible:=true; sendUnicast:=true", "unicastPossible", "sendUnicast", "true");
+		action := self. TransferSchemata2TwoActions( "unicastPossible:=true; sendUnicast:=true", unicastPossibleName, "sendUnicast", "true");
 					
 	}
 	
@@ -336,7 +337,7 @@ mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, r
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 				
-		guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"sendUnicast", "unicastPossible", true, 11);
+		guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"sendUnicast", unicastPossibleName, true, 11);
 		
 		priority := (self.priority-1)*2+1;
 		

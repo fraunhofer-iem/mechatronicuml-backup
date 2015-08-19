@@ -149,7 +149,7 @@ mapping Transition :: LoadBalancing2TransCheckDoneEmbeddedCoordinator(context:Oc
 		
 		synchronization := self. TransferSchemata2Synchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self. TransferSchemaGuard( "loadBalancingPossible", UnaryOperator::NOT);
+		guard := self. TransferSchemaGuard( loadBalancingPossibleName, UnaryOperator::NOT);
 			
 	}
 	
@@ -175,9 +175,9 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 		synchronization := self.TransferSchemata2Synchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 		
 		if(self.guard.oclIsUndefined()){
-			guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale("loadBalancingPossible"));
+			guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName));
 		}else{
-			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale("loadBalancingPossible")));
+			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName)));
 		};
 					
 	}

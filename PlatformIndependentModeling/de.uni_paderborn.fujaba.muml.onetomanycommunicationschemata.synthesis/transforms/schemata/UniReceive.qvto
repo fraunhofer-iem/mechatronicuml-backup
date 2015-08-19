@@ -17,8 +17,8 @@ property singleReceiveDone : String = "singleReceiveDone";
 property singleReceiveCheck: String = "singleReceiveCheck";
 property singleReceive : String = "singleReceive";
 property singleReceiveCheckDone : String = "singleReceiveCheckDone";
-property singleReceivePossible : String = "singleReceivePossible";
-
+property singleReceivePossibleName : String = "singleReceivePossible";
+property consumeSingleReceiveName : String = "consumeSingleReceive";
 --------------------------------------------------------------Transfer Schema SingleReceive of Coordinator------------------------------------------------------------------
 	
 mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
@@ -107,7 +107,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);		
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceivePossible, SynchronizationKind::RECEIVE);
+		synchronization := self. TransferSchemata2Synchronization( singleReceivePossibleName, SynchronizationKind::RECEIVE);
 		
 		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 		
@@ -125,7 +125,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 		
 		target := self.map Schema2SubroleIntermediateState(context,region,1, toplevel);
 	
-		guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale("consumeSingleReceive"));
+		guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(consumeSingleReceiveName));
 	}
 	
 
@@ -156,7 +156,7 @@ mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 				
-		action := self. TransferSchemata2Action("consumeSingleReceive:=false", "consumeSingleReceive", "false");
+		action := self. TransferSchemata2Action("consumeSingleReceive:=false", consumeSingleReceiveName, "false");
 			
 		synchronization := self. TransferSchemata2Synchronization(singleReceiveDone, SynchronizationKind::SEND );			
 	}
@@ -197,7 +197,7 @@ mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateSt
 		
 		target := self.map Schema2SubroleIntermediateState(context,region,1, toplevel);
 		
-		action := self.TransferSchemata2Action("consumeSingleReceive := true","consumeSingleReceive", "true");
+		action := self.TransferSchemata2Action("consumeSingleReceive := true",consumeSingleReceiveName, "true");
 		
 		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined())
 			{
@@ -227,7 +227,7 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		}
 		endif;
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceivePossible, SynchronizationKind::SEND);
+		synchronization := self. TransferSchemata2Synchronization( singleReceivePossibleName, SynchronizationKind::SEND);
 		
 		
 		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
@@ -260,7 +260,7 @@ mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAn
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map SingleReceiveLastAndPossibleExpression(context,region,"consumeSingleReceive",true, 100);
+		guard := self.map SingleReceiveLastAndPossibleExpression(context,region,consumeSingleReceiveName,true, 100);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 					
@@ -274,7 +274,7 @@ mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAn
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map SingleReceiveNotLastAndPossibleExpression(context,region,"consumeSingleReceive",true, 3);
+		guard := self.map SingleReceiveNotLastAndPossibleExpression(context,region,consumeSingleReceiveName,true, 3);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
@@ -288,7 +288,7 @@ mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(contex
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map SingleReceiveNotLastAndPossibleExpression(context, region, "singleReceivePossible", false, 7);
+		guard := self.map SingleReceiveNotLastAndPossibleExpression(context, region, singleReceivePossibleName, false, 7);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 		

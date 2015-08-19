@@ -17,6 +17,7 @@ property multicastCheckDone : String = "multicastCheckDone";
 property multicast : String = "multicast";
 property multicastDone : String = "multicastDone";
 property multicastCheck : String = "multicastCheck";
+property multicastPossibleName : String = "multicastPossible";
 
 ----------------------------------------------------------------Transfer Schema Multicast of Coordinator------------------------------------------------------------------
 
@@ -144,7 +145,7 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 		
 		synchronization :=  self. TransferSchemata2Synchronization( multicastCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self. TransferSchemaGuard( "multicastPossible", UnaryOperator::NOT);
+		guard := self. TransferSchemaGuard( multicastPossibleName, UnaryOperator::NOT);
 			
 	}
 	
@@ -175,7 +176,7 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			guard := self.map TransferSchemaConditionAndPossibleGuard(context, 1, region, "multicastPossible", false, 3);
+			guard := self.map TransferSchemaConditionAndPossibleGuard(context, 1, region, multicastPossibleName, false, 3);
 			priority := (self.priority-1)*2+2;
 			
 		}else{
@@ -213,7 +214,7 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			action := self. TransferSchemata2Action("multicastPossible:=false", "multicastPossible", "false");
+			action := self. TransferSchemata2Action("multicastPossible:=false", multicastPossibleName, "false");
 			
 		}endif;
 		synchronization := self. TransferSchemata2Synchronization( multicastDone,SynchronizationKind::SEND);			
@@ -285,7 +286,7 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		synchronization := 	self.TransferSchemata2Synchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self. TransferSchemata2Action( "multicastPossible:=true", "multicastPossible", "true");
+		action := self. TransferSchemata2Action( "multicastPossible:=true", multicastPossibleName, "true");
 					
 	}
 	
@@ -313,7 +314,7 @@ mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny,
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 				
-		guard := self.map TransferSchemaConditionAndPossibleGuard(context, 4, region, "multicastPossible", true, 11);
+		guard := self.map TransferSchemaConditionAndPossibleGuard(context, 4, region, multicastPossibleName, true, 11);
 		
 		priority := (self.priority-1)*2+1;
 		
