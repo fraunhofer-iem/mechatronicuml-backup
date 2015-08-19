@@ -98,7 +98,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		
 		// if the one-to-many-coordination-schema defined a condition, we need a boolean variable that checks whether the schema eexecution works or not.
 		
-		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
 			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("multicastPossible");
@@ -109,7 +109,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			
 		};
 		
-		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
 			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("loadBalancingPossible");
@@ -119,7 +119,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 		};
 		
-		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
 			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("unicastPossible");
@@ -130,7 +130,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		};
 		
 		// iterate without condition?? 
-		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
 			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("terminate");
@@ -146,7 +146,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 		};
 		
-		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		allRTSCs.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)
 				and (not t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){			
 			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("MultiReceivePossible");
@@ -157,7 +157,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		};
 		
 				
-		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		allRTSCs.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))->forEach(transition){
 			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("consumeSingleReceive");
 			var initExpression := new LiteralExpression();
@@ -246,7 +246,9 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		
 		// add embedded reigon for every used schema
 		var prio : Integer := 1;
-		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()))->union(self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())))
+		
+		var allRTSCs : Set(RealtimeStatechart) := self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self);
+		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()))->union(self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())))
 		->forEach(t) {
 			
 			if(not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsKindOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
