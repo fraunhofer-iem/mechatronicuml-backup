@@ -140,6 +140,10 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;			
 			variables +=newVar ;
+			
+			if(transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
+				clocks += transitions.map TransitionDeadline2CoordinatorDeadlineClock(iterateDelayClockName);
+			};
 		};
 			
 				
@@ -317,6 +321,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		
 		// add the source and target of the schema transition to the subrole schema realtimestatechart
 		states += self.map Transition2StateSubrole(region, self.source,true);		
+		 
 		states += self.map Transition2StateSubrole(region, self.target,false);		
 		
 		transitions += self.map Transition2TransitionFromSourceToTarget(region);

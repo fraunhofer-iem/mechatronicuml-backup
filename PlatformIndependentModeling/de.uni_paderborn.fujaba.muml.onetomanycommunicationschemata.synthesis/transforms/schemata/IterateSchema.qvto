@@ -188,7 +188,10 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		
 		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
 		
-		guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendIterateName));
+		var leftExpression : Expression := 	self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
+		var rightExpression : Expression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendIterateName));
+		
+		guard := self.TransferSchemataLogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
 				
 	}
 	
@@ -205,20 +208,108 @@ mapping Transition :: Iterate2TransSendSyncNotConditionSubrole(context:OclAny, r
 		
 		action := self.TransferSchemata2Action(iterateDelayVariableName + " := false;",iterateDelayVariableName,"false");			
 		
-		guard :=  self.TransferSchemaGuard(sendIterateName, UnaryOperator::NOT);
-		
+		var leftExpression : Expression := 	self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
+		var rightExpression : Expression := self.TransferSchemaGuard(sendIterateName, UnaryOperator::NOT);
+		guard :=  self.TransferSchemataLogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
+				
 		priority :=2;
 		
 	}
 	
+
+mapping Transition :: Iterate2IdleToIntermediate2SubroleRegion(context: OclAny, region: RealtimeStatechart, toplevel:Boolean) : Transition {
 	
+	priority := 3;
+	
+	source := self.map Transition2StateSubrole(region,self.source, true);
+		
+	target := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);
+	
+	guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName));
+		
+}
+
+
+mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRegion(context:OclAny, region: RealtimeStatechart, toplevel: Boolean) : Transition {
+	
+	priority := 1;
+	
+	source := self.map Schema2SubroleIntermediateState(context,region, 1,toplevel);
+	
+	target := self.map Schema2SubroleIntermediateState(context,region, 2,toplevel);
+	
+	var expr1 :=  self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
+	var expr2 := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(iterateDelayVariableName));
+		
+	var logic := self.TransferSchemataLogicalExpression(expr1,expr2,LogicOperator::AND);
+	
+	var logic2 : Expression;
+	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate)
+		.terminationCondition.map Expression2Expression(result);
+		logic2 := self.TransferSchemataLogicalExpression(logic,expr3, LogicOperator::AND);
+	}
+	else {
+		logic2 := logic;
+	};
+	
+	guard := logic2;
+	
+	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {	
+		clockConstraints += self.Transition2ClockConstraint(iterateDelayClockName, self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map TimeValue2TimeValue(result), ComparingOperator:: GREATER_OR_EQUAL);
+	};
+	
+}
+
+mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRegion(context:OclAny, region: RealtimeStatechart, toplevel: Boolean) : Transition {
+	
+	priority := 2;
+	
+	source := self.map Schema2SubroleIntermediateState(context,region, 1,toplevel);
+	
+	target := self.map Schema2SubroleIntermediateState(context,region, 2,toplevel);
+	
+	var expr1 :=  self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
+	var expr2 := self.TransferSchemaGuard(iterateDelayVariableName, UnaryOperator::NOT);
+	var logic := self.TransferSchemataLogicalExpression(expr1,expr2,LogicOperator::AND);
+	
+	var logic2 : Expression;
+	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate)
+		.terminationCondition.map Expression2Expression(result);
+		logic2 := self.TransferSchemataLogicalExpression(logic,expr3, LogicOperator::AND);
+	}
+	else {
+		logic2 := logic;
+	};
+	
+	guard := logic2;
+	
+}
+
+mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRegion(context:OclAny, region: RealtimeStatechart, toplevel: Boolean) : Transition {
+	
+	priority := 3;
+	
+	source := self.map Schema2SubroleIntermediateState(context,region, 1,toplevel);
+	
+	target := self.map Schema2SubroleIntermediateState(context,region, 2,toplevel);
+	
+	var expr1 :=  self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName));
+		
+	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map Expression2Expression(result);
+	
+	guard := self.TransferSchemataLogicalExpression(expr1,expr2,LogicOperator::OR);
+	
+}
+
 mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 	
 		priority := 2;
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);	
+		source := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);	
 		
 		synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -232,7 +323,7 @@ mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);		
+		source := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);		
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
