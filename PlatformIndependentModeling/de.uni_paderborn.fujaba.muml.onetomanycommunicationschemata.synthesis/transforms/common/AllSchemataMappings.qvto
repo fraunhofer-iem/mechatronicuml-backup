@@ -172,26 +172,7 @@ mapping Transition :: RegionState(context:OclAny, region:RealtimeStatechart, Sta
 		
 	}
 	
---Transfer Schemata Guard
-mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
-		
-		if(notOp){
-			leftExpression := self. TransferSchemaNotCondition();
-		}else{
-			if(not self.raiseMessageEvent.oclIsUndefined()){
-				leftExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
-			}else{
-				leftExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
-			}endif;
-			
-		}endif;
-		
-		rightExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
-		
-		operator := LogicOperator::AND;
-	
-	}
-	
+
 
 
 	
@@ -629,7 +610,4 @@ helper Transition :: Schema2TypedNamedElementExpression(referencedElement : Type
 	return ex;
 }
 
-mapping Transition :: Schema2Variable(_name : String, _type : DataType) : Variable{
-	result.name := _name;
-	result.dataType := _type;
-}
+

@@ -355,8 +355,49 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition1FromIntermediateToReceivedSubrole(context, region,toplevel);
 		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition2FromIntermediateToReceivedSubrole(context, region,toplevel);
 		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context,region,toplevel);
+				
+		-- add variable assignments to Entry Events of intermediate states of multicast and iterate 
 		
+		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)) {
+			
+			var intermediateState1 : State := self.map Schema2SubroleIntermediateState(context,region, 1,false);
+			if(intermediateState1.entryEvent.oclIsUndefined()) {
+				
+				intermediateState1.entryEvent := new EntryEvent();
+				
+				intermediateState1.entryEvent.kind := EventKind::RAISE;
+							
+			};
+			if(intermediateState1.entryEvent.action.oclIsUndefined()) {
+				intermediateState1.entryEvent.action := new Action();
+				intermediateState1.entryEvent.action.name := "";
+			};
+			intermediateState1.entryEvent.action.expressions += self.TransferSchemata2AssignmentBlock(sendMulticastName, "false");
+			intermediateState1.entryEvent.action.name := intermediateState1.entryEvent.action.name + " " + sendMulticastName + " := false;";
+		};
 		
+		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) {
+			
+			var intermediateState1 : State := self.map Schema2SubroleIntermediateState(context,region, 1,false);
+			if(intermediateState1.entryEvent.oclIsUndefined()) {
+				
+				intermediateState1.entryEvent := new EntryEvent();
+				
+				intermediateState1.entryEvent.kind := EventKind::RAISE;
+							
+			};
+			if(intermediateState1.entryEvent.action.oclIsUndefined()) {
+				intermediateState1.entryEvent.action := new Action();
+				intermediateState1.entryEvent.action.name := "";
+			};
+			intermediateState1.entryEvent.action.expressions += self.TransferSchemata2AssignmentBlock(sendIterateName, "false");
+			intermediateState1.entryEvent.action.name := intermediateState1.entryEvent.action.name + " " + sendIterateName + " := false;";
+			
+			if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
+				intermediateState1.entryEvent.clockResets += self.map TransitionDeadline2CoordinatorDeadlineClock(iterateDelayClockName);
+			};
+		};
+				
 		operations += sourceRealtimeStatechart.subRoleSpecificOperations.map Operation2Operation(context);
 		
 		variables += sourceRealtimeStatechart.subRoleSpecificVariables->map Variable2Variable();

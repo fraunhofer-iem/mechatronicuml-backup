@@ -156,8 +156,10 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 
 	
 ----------------------------------------------------------------- Transfer Schema Multicast of Subrole-------------------------------------------------------------------
-	
+
+// first mapping from 	
 mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+		priority := 1;
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
@@ -165,27 +167,31 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		
 		synchronization := self.TransferSchemata2Synchronization( multicast,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
-		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
-		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 		
 		action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map Action2Action(context, region);
 		
 		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
 		
-		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
-				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
-				
-			guard := self.map TransferSchemaConditionAndPossibleGuard(context, 1, region, multicastPossibleName, false, 3);
-			priority := (self.priority-1)*2+2;
-			
-		}else{
-			priority := self.priority;
-		};
-		
+		guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendMulticastName));
 		
 	}
+	
+	
+mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+		
+		source := self.map Transition2StateSubrole(region,self.source, true);
+		
+		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
+		
+		synchronization := self.TransferSchemata2Synchronization(multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+								
+		guard := self.TransferSchemaGuard(sendMulticastName, UnaryOperator::NOT);
+		
+		priority := 2;
+		
+	}
+	
 	
 mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 	
@@ -305,19 +311,5 @@ mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny,
 					
 	}
 	
-mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
-		
-		source := self.map Transition2StateSubrole(region,self.source, true);
-		
-		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
-		
-		synchronization := self.TransferSchemata2Synchronization(multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-				
-		guard := self.map TransferSchemaConditionAndPossibleGuard(context, 4, region, multicastPossibleName, true, 11);
-		
-		priority := (self.priority-1)*2+1;
-		
-	}
+
 	
