@@ -167,6 +167,8 @@ mapping Transition :: Iterate2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 	
 mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 		
+		priority := 1; 
+		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
 		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
