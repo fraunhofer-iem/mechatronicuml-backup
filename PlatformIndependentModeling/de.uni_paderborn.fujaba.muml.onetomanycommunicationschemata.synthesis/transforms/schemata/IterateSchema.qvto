@@ -49,8 +49,12 @@ mapping Transition :: Iterate2CoordinatorIntermediateTransition(context:OclAny, 
 	{
 		result.clockConstraints += self. RelativeDeadline2ClockConstraint( true, ComparingOperator::GREATER_OR_EQUAL, iterateDLCName );
 	};
-	
-	synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+	if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
+		synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+	}
+	else {
+		synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::LAST);
+	};
 }
 
 // @author: sthiele2
@@ -311,10 +315,14 @@ mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		
 		source := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);	
 		
-		synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
-		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
-					
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
+			synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+			guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		}
+		else {
+			synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
+			guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
+		}endif;		
 	}
 			
 mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
@@ -325,7 +333,13 @@ mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region
 		
 		source := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);		
 		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
+			guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);			
+		}		
+		else {
+			guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);	
+		}endif;	
+		
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate) 
@@ -334,7 +348,7 @@ mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region
 			action := self. TransferSchemata2Action("iteratePossible:=false", iteratePossibleName, "false");
 			
 		}endif;
-		synchronization := self. TransferSchemata2Synchronization( iterateDone,SynchronizationKind::SEND);			
+		synchronization := self. TransferSchemata2Synchronization( iterateDone,SynchronizationKind::SEND);
 	}
 	
 
