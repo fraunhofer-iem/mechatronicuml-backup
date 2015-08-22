@@ -141,8 +141,8 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			newVar.initializeExpression := initExpression;			
 			variables +=newVar ;
 			
-			if(transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
-				clocks += transitions.map TransitionDeadline2CoordinatorDeadlineClock(iterateDelayClockName);
+			if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
+				clocks += transition.map TransitionDeadline2CoordinatorDeadlineClock(iterateDelayClockName);
 			};
 		};
 			
@@ -312,7 +312,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate))			
 				->forEach(transition){
 				if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
-					variables += transition.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName);
+					variables += transition.map Transition2SubroleSpecificBooleanVaribale(sendIterateName);
 				};
 				if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
 					variables += transition.map Transition2SubroleSpecificBooleanVaribale(iterateDelayVariableName);
