@@ -173,7 +173,8 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		
 		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
 		
-		guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendMulticastName));
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
+			guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendMulticastName));
 		
 	}
 	
@@ -185,8 +186,9 @@ mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny,
 		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
 		
 		synchronization := self.TransferSchemata2Synchronization(multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
-								
-		guard := self.TransferSchemaGuard(sendMulticastName, UnaryOperator::NOT);
+		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())					
+			guard := self.TransferSchemaGuard(sendMulticastName, UnaryOperator::NOT);
 		
 		priority := 2;
 		
