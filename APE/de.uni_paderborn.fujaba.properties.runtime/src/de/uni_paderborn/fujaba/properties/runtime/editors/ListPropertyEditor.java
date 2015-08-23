@@ -36,6 +36,7 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
@@ -48,7 +49,12 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	protected Adapter refreshAdapter = new AdapterImpl() {
 		@Override
 		public void notifyChanged(Notification notification) {
-			refresh();
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					refresh();					
+				}
+			});
 		}
 	};
 	protected Label label;
@@ -195,6 +201,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		super.inputChanged(oldObject);
 		if (element != null && element.eResource() != null && resourceSet == null) {
 			resourceSet = element.eResource().getResourceSet();
+		}
+		if (resourceSet != null) {
 			resourceSet.eAdapters().add(refreshAdapter);
 		}
 	}
