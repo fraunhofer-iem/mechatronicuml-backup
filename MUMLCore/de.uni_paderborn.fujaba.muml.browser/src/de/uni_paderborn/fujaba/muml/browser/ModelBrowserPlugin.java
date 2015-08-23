@@ -4,19 +4,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Set;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
-import de.uni_paderborn.fujaba.muml.browser.editingdomain.EditingDomainRegistry;
+import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
+import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserSaveablesProvider;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -29,20 +28,12 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 	// The shared instance
 	private static ModelBrowserPlugin plugin;
 		
-	public static EditingDomainRegistry EDITING_DOMAIN_REGISTRY = new EditingDomainRegistry();
+	public static MumlEditingDomainRegistry EDITING_DOMAIN_REGISTRY = new MumlEditingDomainRegistry();
+
+	public static ModelBrowserSaveablesProvider SAVEABLES_PROVIDER = new ModelBrowserSaveablesProvider();
 	
 
-	public static boolean canLoad(String extension) {
-		if ("muml".equals(extension) || "fujaba".equals(extension)) {
-			return true;
-		}
-		final Set<String> extensions = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().keySet();
-		return extensions.contains(extension); // Check if suffix is registered as EMF file
-	}
 
-	public static boolean canLoad(URI uri) {
-		return canLoad(uri.fileExtension());
-	}
 	
 	/**
 	 * The constructor

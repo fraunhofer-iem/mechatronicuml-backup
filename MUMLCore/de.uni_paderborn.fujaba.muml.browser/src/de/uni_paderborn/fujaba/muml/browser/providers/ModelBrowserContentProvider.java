@@ -50,8 +50,9 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.navigator.SaveablesProvider;
 
+import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomain;
+import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
-import de.uni_paderborn.fujaba.muml.browser.editingdomain.MumlEditingDomain;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 // XXX Open Diagram Resources in Editing Domain of Semantic Element.
@@ -59,7 +60,7 @@ import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 //    can check if there is a Diagram file open in the ResourceSet!
 // -> Use generated XXXNavigatorActionProvider
 
-public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider implements de.uni_paderborn.fujaba.muml.browser.editingdomain.EditingDomainRegistry.Listener, IAdaptable {
+public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider implements de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry.Listener, IAdaptable {
 	
 	private Viewer viewer;
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
@@ -99,7 +100,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					if (domain != null && domain.getSaveable() != null) {
 						Display.getDefault().asyncExec(new Runnable() {
 							public void run() {
-								ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider().dirtyChanged(domain.getSaveable());
+								ModelBrowserPlugin.SAVEABLES_PROVIDER.dirtyChanged(domain.getSaveable());
 							}
 						});
 					}
@@ -177,7 +178,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				monitor.beginTask("Reloading changes", files.size());
 				
 				for (IFile file : files) {
-					if (ModelBrowserPlugin.canLoad(file.getFileExtension())) {
+					if (MumlEditingDomainRegistry.canLoad(file.getFileExtension())) {
 						try {
 							load(file, reload);
 						} catch (Exception e) {
@@ -469,7 +470,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	@Override
 	public <T> T getAdapter(Class<T> adapter) {
 		if (adapter == SaveablesProvider.class) {
-			return (T) ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider();
+			return (T) ModelBrowserPlugin.SAVEABLES_PROVIDER;
 		}
 		return null;
 	}
