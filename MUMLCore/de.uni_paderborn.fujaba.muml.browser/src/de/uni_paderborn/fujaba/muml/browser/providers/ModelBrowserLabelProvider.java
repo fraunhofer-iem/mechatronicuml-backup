@@ -7,7 +7,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -29,7 +28,7 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 public class ModelBrowserLabelProvider extends LabelProvider implements IColorProvider,
@@ -77,7 +76,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public String getText(Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(MumlEditingDomainRegistry.INSTANCE.getEditingDomainDispatch(element, true));
 			if (labelProvider != null) {
 				return labelProvider.getText(element);
 			}
@@ -85,7 +84,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+			TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
 			if (editingDomain != null) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
@@ -102,7 +101,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public StyledString getStyledText(final Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(MumlEditingDomainRegistry.INSTANCE.getEditingDomainDispatch(element, true));
 			if (labelProvider != null) {
 				return labelProvider.getStyledText(element);
 			}
@@ -120,7 +119,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+			TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
 			if (editingDomain != null) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
@@ -136,7 +135,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public Image getImage(Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(MumlEditingDomainRegistry.INSTANCE.getEditingDomainDispatch(element, true));
 			if (labelProvider != null) {
 				return labelProvider.getImage(element);
 			}
@@ -147,7 +146,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+			TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
 			if (editingDomain != null) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {

@@ -30,11 +30,10 @@ import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
-import org.eclipse.ui.navigator.WizardActionGroup;
 import org.eclipse.ui.wizards.IWizardCategory;
 import org.eclipse.ui.wizards.IWizardRegistry;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 
 public class NewActionProvider extends CommonActionProvider {
 	private static final String FULL_EXAMPLES_WIZARD_CATEGORY = "org.eclipse.ui.Examples"; //$NON-NLS-1$
@@ -121,7 +120,7 @@ public class NewActionProvider extends CommonActionProvider {
 		
 		if (iFile != null) {
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, false);
+			TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, false);
 			if (editingDomain != null) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
@@ -173,7 +172,7 @@ public class NewActionProvider extends CommonActionProvider {
 		//
 		Collection<?> newChildDescriptors = null;
 
-		EditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(element, false);
+		EditingDomain domain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(element, false);
 		if (domain != null) {
 			newChildDescriptors = domain.getNewChildDescriptors(element, null);
 		}

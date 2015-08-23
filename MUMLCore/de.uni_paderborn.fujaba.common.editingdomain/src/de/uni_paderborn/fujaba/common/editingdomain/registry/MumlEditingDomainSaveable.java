@@ -17,7 +17,7 @@ import org.eclipse.ui.Saveable;
 public class MumlEditingDomainSaveable extends Saveable {
 	
 	public static interface Listener {
-		void dirtyChanged(MumlEditingDomainSaveable saveable);
+		void saveableDirtyChanged(MumlEditingDomainSaveable saveable);
 	}
 	
 	private MumlEditingDomain domain;
@@ -60,7 +60,7 @@ public class MumlEditingDomainSaveable extends Saveable {
 			domain.save();
 			((BasicCommandStack)domain.getCommandStack()).saveIsDone();
 			for (Listener listener : listeners) {
-				listener.dirtyChanged(this);
+				listener.saveableDirtyChanged(this);
 			}
 			
 		} catch (IOException e) {

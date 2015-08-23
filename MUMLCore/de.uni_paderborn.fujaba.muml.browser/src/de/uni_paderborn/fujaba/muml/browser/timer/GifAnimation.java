@@ -11,7 +11,6 @@ import org.eclipse.swt.graphics.ImageLoader;
 import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
-import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 public class GifAnimation extends Timer {
 	private volatile int frame = 0;

@@ -7,7 +7,6 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.ui.action.CopyAction;
 import org.eclipse.emf.edit.ui.action.CutAction;
 import org.eclipse.emf.edit.ui.action.DeleteAction;
@@ -17,8 +16,6 @@ import org.eclipse.emf.edit.ui.action.RedoAction;
 import org.eclipse.emf.edit.ui.action.UndoAction;
 import org.eclipse.emf.edit.ui.action.ValidateAction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.workspace.ui.actions.RedoActionWrapper;
-import org.eclipse.emf.workspace.ui.actions.UndoActionWrapper;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -32,7 +29,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 
 public class EditCommandsFactory implements IPropertyListener {
 	
@@ -203,7 +200,7 @@ public class EditCommandsFactory implements IPropertyListener {
 		TransactionalEditingDomain domain = null;
 		for (Iterator<?> iterator = selection.iterator(); iterator.hasNext();) {
 			Object item = iterator.next();
-			TransactionalEditingDomain currentDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(item,  true);
+			TransactionalEditingDomain currentDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomainDispatch(item,  true);
 			if (domain != null && currentDomain != null && currentDomain != domain) {
 				return null; // we do not support elements from multiple domains.
 			}

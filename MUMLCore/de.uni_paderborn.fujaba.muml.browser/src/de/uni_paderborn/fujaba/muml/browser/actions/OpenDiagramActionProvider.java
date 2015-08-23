@@ -19,7 +19,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.runtime.notation.impl.ViewImpl;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -32,6 +31,7 @@ import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 
+import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
 public class OpenDiagramActionProvider extends CommonActionProvider {
@@ -126,7 +126,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 				public boolean visit(IResource iResource) throws CoreException {
 					if (iResource.getType() == IResource.FILE) {
 						URI uri = URI.createPlatformResourceURI(iResource.getFullPath().toString(), true);
-						TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, false);
+						TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, false);
 						if (editingDomain != null) {
 							Resource directResource = editingDomain.getResourceSet().getResource(uri, false);
 							if (!findDiagramsForResource(diagrams, directResource)) {
@@ -168,7 +168,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 				}
 			} else if (object instanceof EObject) {
 				EObject element = (EObject) object;
-				if (element.eResource() != null) {
+				if (element.eResource() != null && element.eResource().getResourceSet() != null) {
 					for (Resource resource : element.eResource().getResourceSet().getResources()) {
 						for (Object contents : resource.getContents()) {
 							if (contents instanceof Diagram) {

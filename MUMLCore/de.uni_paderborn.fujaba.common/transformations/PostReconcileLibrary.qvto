@@ -14,12 +14,13 @@ mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginNam
 	self.sameFileForDiagramAndModel := false;
 	
 	self.domainFileExtension := "fujaba"; 
-	self.diagramFileExtension :=diagramFileExtension;
+	self.diagramFileExtension := diagramFileExtension;
 	
 
 	//self.plugin.version := "1.0.0.qualifier";
 	self.plugin.provider := "Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn";
 	self.plugin.name := pluginName;
+	self.plugin.requiredPlugins += 'de.uni_paderborn.fujaba.common.editingdomain';
 	
 	self.diagram.validationDecorators := true;
 	self.diagram.validationEnabled := true;

@@ -96,11 +96,11 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 							}
 						}
 					}
-					final MumlEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+					final MumlEditingDomain domain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
 					if (domain != null && domain.getSaveable() != null) {
 						Display.getDefault().asyncExec(new Runnable() {
 							public void run() {
-								ModelBrowserPlugin.SAVEABLES_PROVIDER.dirtyChanged(domain.getSaveable());
+								ModelBrowserSaveablesProvider.INSTANCE.dirtyChanged(domain.getSaveable());
 							}
 						});
 					}
@@ -139,8 +139,8 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	}
 
 	public ModelBrowserContentProvider() throws CoreException {
-		ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.addListener(this);
-		for (TransactionalEditingDomain domain : ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomains()) {
+		MumlEditingDomainRegistry.INSTANCE.addListener(this);
+		for (TransactionalEditingDomain domain : MumlEditingDomainRegistry.INSTANCE.getEditingDomains()) {
 			domain.addResourceSetListener(resourceSetListener);
 		}
 		final List<IFile> files = new ArrayList<IFile>();
@@ -199,20 +199,22 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		refreshActive = false;
 		try {
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, false);
+			TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, false);
+			
+			boolean refresh = false;
 
 			if (editingDomain != null) {
 				if (reload) {
 					editingDomain.getResourceSet().getResources().clear();
+					refresh = true;
 				}
 			} else {
-				editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+				editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
 			}
 			if (editingDomain == null) {
 				return;
 			}
 			
-			boolean refresh = false;
 			synchronized (editingDomain) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, true);
 				if (resource instanceof XMIResource) {
@@ -300,7 +302,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					return null;
 				}
 			}
-			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
+			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(MumlEditingDomainRegistry.INSTANCE.getEditingDomainDispatch(element, true));
 			if (contentProvider != null) {
 				return contentProvider.getParent(element);
 			}
@@ -324,7 +326,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		Set<URI> relocated = this.relocatedChildren.get(parentUri);
 		if (relocated != null) {
 			for (URI targetUri : new HashSet<URI>(relocated)) {
-				EditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(targetUri, true);
+				EditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(targetUri, true);
 				if (editingDomain != null) {
 					Resource resource = editingDomain.getResourceSet().getResource(targetUri, false);
 					if (targetUri.fragment() != null) {
@@ -358,7 +360,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	private Collection<Object> getDirectChildren(Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
+			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(MumlEditingDomainRegistry.INSTANCE.getEditingDomainDispatch(element, true));
 			if (contentProvider != null) {
 				return Arrays.asList(contentProvider.getChildren(element));
 			}
@@ -366,7 +368,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+			TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
 			if (editingDomain != null) {
 				synchronized (editingDomain) {
 					Resource resource = editingDomain.getResourceSet().getResource(uri, false);
@@ -405,10 +407,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	@Override
 	public void dispose() {
 		super.dispose();
-		for (TransactionalEditingDomain domain : ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomains()) {
+		for (TransactionalEditingDomain domain : MumlEditingDomainRegistry.INSTANCE.getEditingDomains()) {
 			domain.removeResourceSetListener(resourceSetListener);
 		}
-		ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.removeListener(this);
+		MumlEditingDomainRegistry.INSTANCE.removeListener(this);
 		
 		setViewer(null);
 		for (ProgressNavigatorItem item : loadingFiles.values()) {
@@ -446,7 +448,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				if (element instanceof IFile) {
 					IFile iFile = (IFile) element;
 					URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-					TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+					TransactionalEditingDomain editingDomain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
 					if (editingDomain != null) {
 						synchronized (editingDomain) {
 							Resource resource = editingDomain.getResourceSet().getResource(uri, false);
@@ -470,7 +472,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	@Override
 	public <T> T getAdapter(Class<T> adapter) {
 		if (adapter == SaveablesProvider.class) {
-			return (T) ModelBrowserPlugin.SAVEABLES_PROVIDER;
+			return (T) ModelBrowserSaveablesProvider.INSTANCE;
 		}
 		return null;
 	}

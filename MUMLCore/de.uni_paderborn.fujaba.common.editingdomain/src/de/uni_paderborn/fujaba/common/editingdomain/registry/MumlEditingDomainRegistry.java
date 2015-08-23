@@ -17,6 +17,8 @@ import org.eclipse.swt.widgets.Display;
 
 public class MumlEditingDomainRegistry {
 	
+	public static MumlEditingDomainRegistry INSTANCE = new MumlEditingDomainRegistry();
+
 	public static interface Listener {
 		void editingDomainCreated(MumlEditingDomain domain);
 	}
@@ -125,7 +127,7 @@ public class MumlEditingDomainRegistry {
 	}
 
 	protected MumlEditingDomain createDomain(URI uri) {
-		return MumlEditingDomain.create(uri);
+		return MumlEditingDomainFactory.INSTANCE.createMumlEditingDomain(uri);
 	}
 
 	public MumlEditingDomain getEditingDomain(Resource resource, boolean create) {

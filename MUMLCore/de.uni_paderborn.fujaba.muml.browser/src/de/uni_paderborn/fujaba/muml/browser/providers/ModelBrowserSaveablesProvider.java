@@ -15,18 +15,20 @@ import org.eclipse.ui.navigator.SaveablesProvider;
 import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomain;
 import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainSaveable;
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
 public class ModelBrowserSaveablesProvider extends SaveablesProvider implements MumlEditingDomainRegistry.Listener, MumlEditingDomainSaveable.Listener {
 
+	public static ModelBrowserSaveablesProvider INSTANCE = new ModelBrowserSaveablesProvider();
+
+	
 	public ModelBrowserSaveablesProvider() {
-		ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.addListener(this);
+		MumlEditingDomainRegistry.INSTANCE.addListener(this);
 	}
 
 	@Override
 	public Saveable[] getSaveables() {
 		List<Saveable> saveables = new ArrayList<Saveable>();
-		for (MumlEditingDomain domain : ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomains()) {
+		for (MumlEditingDomain domain : MumlEditingDomainRegistry.INSTANCE.getEditingDomains()) {
 			saveables.add(domain.getSaveable());
 		}
 		return saveables.toArray(new Saveable[] {});
@@ -35,7 +37,7 @@ public class ModelBrowserSaveablesProvider extends SaveablesProvider implements 
 	@Override
 	public Object[] getElements(Saveable saveable) {
 		List<Object> elements = new ArrayList<Object>();
-		for (MumlEditingDomain domain : ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomains()) {
+		for (MumlEditingDomain domain : MumlEditingDomainRegistry.INSTANCE.getEditingDomains()) {
 			if (saveable == domain.getSaveable()) {
 				URI uri = domain.getURI();
 				final IFile iFile = ResourcesPlugin.getWorkspace().getRoot()
@@ -62,7 +64,7 @@ public class ModelBrowserSaveablesProvider extends SaveablesProvider implements 
 			uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
 		}
 		if (uri != null) {
-			MumlEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, false);
+			MumlEditingDomain domain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, false);
 			if (domain != null) {
 				return domain.getSaveable();
 			}
@@ -93,7 +95,7 @@ public class ModelBrowserSaveablesProvider extends SaveablesProvider implements 
 	}
 
 	@Override
-	public void dirtyChanged(MumlEditingDomainSaveable saveable) {
+	public void saveableDirtyChanged(MumlEditingDomainSaveable saveable) {
 		dirtyChanged(saveable);
 	}
 
