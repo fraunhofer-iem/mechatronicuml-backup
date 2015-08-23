@@ -514,8 +514,8 @@
       </verificationConstraintRepositories>
       <roles xmi:id="_GQwUAITCEeKO9r0VL65xcg" connectors="_GRMY5oTCEeKO9r0VL65xcg" behavior="_ZOLusIS_EeKO9r0VL65xcg" name="Overtaker" senderMessageTypes="_9xK4kITBEeKO9r0VL65xcg _fSrzEJ2-EeKCPPYajybjTw _mYhlsCqaEeO22YgZcbz7_A" receiverMessageTypes="_0ciEwEnREeWrj50P7Divew">
         <cardinality xmi:id="_GQ5d8ITCEeKO9r0VL65xcg">
-          <lowerBound xmi:id="_3ObvMEnSEeWrj50P7Divew"/>
-          <upperBound xmi:id="_3OeLcEnSEeWrj50P7Divew" infinity="true"/>
+          <lowerBound xmi:id="_JLdqkEnVEeWrj50P7Divew"/>
+          <upperBound xmi:id="_JLk_UEnVEeWrj50P7Divew" infinity="true"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_FRm7cITTEeKO9r0VL65xcg" name="buffer1" messageType="_0ciEwEnREeWrj50P7Divew">
           <bufferSize xmi:id="_ybHC4LqzEeS_yNxpQx27dg" value="3"/>
