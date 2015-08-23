@@ -346,24 +346,7 @@ mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny, re
 	}
 	
 	
--- Entry/Exit Points and States
 
-
-mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny, region:RealtimeStatechart) : StateConnectionPoint
-		disjuncts EntryPoint::EntryPoint2EntryPointCoordinator, ExitPoint::ExitPoint2ExitPointCoordinator;
-		
-
-	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny, region:RealtimeStatechart) : EntryPoint {
-		
-		name := self.name;
-		
-	}
-	
-	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny, region:RealtimeStatechart) : ExitPoint {
-		
-		name := self.name;
-		
-	}
 	
 
 	

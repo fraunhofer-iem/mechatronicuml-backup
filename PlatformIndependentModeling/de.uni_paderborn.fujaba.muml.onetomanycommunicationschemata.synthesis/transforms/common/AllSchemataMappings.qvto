@@ -408,7 +408,27 @@ mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:RealtimeStatec
 		
 
 
+-- Entry/Exit Points and States
 
+
+mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny, region:RealtimeStatechart) : StateConnectionPoint
+		disjuncts EntryPoint::EntryPoint2EntryPointCoordinator, ExitPoint::ExitPoint2ExitPointCoordinator;
+		
+
+	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny, region:RealtimeStatechart) : EntryPoint {
+		
+		name := self.name;
+		self.state.map States2StatesCoordinator(context,region).connectionPoints += result;
+		//state := self.state.map States2StatesCoordinator(context,region);
+		
+	}
+	
+	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny, region:RealtimeStatechart) : ExitPoint {
+		
+		name := self.name;
+		self.state.map States2StatesCoordinator(context,region).connectionPoints += result;
+		//state := self.state.map States2StatesCoordinator(context,region);
+	}
 
 mapping RealtimeStatechart :: Rtsc2InitialState() : State {
 		
@@ -470,8 +490,8 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:Realti
 -- to coordinator
 mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 		
-		source := self.source.oclAsType(State).map Vertex2VertexCoordinator(context, region);
-		target := self.target.oclAsType(State).map Vertex2VertexCoordinator(context, region);
+		source := self.source.map Vertex2VertexCoordinator(context, region);
+		target := self.target.map Vertex2VertexCoordinator(context, region);
 		
 		priority := self.priority;
 		
