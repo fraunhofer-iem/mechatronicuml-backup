@@ -29,9 +29,9 @@ property schemaCount : Integer =0; // counter for the schemata in order to enume
 
 main() {
  	//debug:
-	//currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
+	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
 	// not debug:
-	currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);	
+	//currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);	
 	disassembleDiscreteInteractionPointRTSC(currentRealtimeStatechart);
 }
 
@@ -249,9 +249,11 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		var prio : Integer := 1;
 		
 		var allRTSCs : Set(RealtimeStatechart) := self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self);
-		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()))->union(self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())))
-		->forEach(t) {
-			
+		allRTSCs.transitions
+			->select(t|not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())		
+		->union(allRTSCs.transitions
+			->select(t|not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()))		
+		->forEach(t) {			
 			if(not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsKindOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
 				// add global subrole clocks and variables for LoadBalancing:
 				var lb : muml::realtimestatechart::one_to_n_schemata::LoadBalancing := t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing);

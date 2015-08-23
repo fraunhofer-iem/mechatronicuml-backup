@@ -1,6 +1,7 @@
 import DisassembleOneToManySchemataInDiscreteInteractionEndpoint;
 
 
+
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
