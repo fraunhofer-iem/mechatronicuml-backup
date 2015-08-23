@@ -170,7 +170,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_4wzjk-QxEeO5YYImi9Q4Mg" x="343" y="213"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_fU-PsKwwEeKPNaIATZRLqw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qrGbuQxEeO5YYImi9Q4Mg" x="14" y="10" width="415" height="289"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qrGbuQxEeO5YYImi9Q4Mg" x="14" y="5" width="415" height="289"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_liNIQITDEeKO9r0VL65xcg"/>
