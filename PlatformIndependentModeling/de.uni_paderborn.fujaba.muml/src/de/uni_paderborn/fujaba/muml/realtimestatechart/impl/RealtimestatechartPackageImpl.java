@@ -1787,6 +1787,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// null
+		createNullAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
 	}
@@ -1866,6 +1868,22 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition AtMostOneConnectingRegionWithSynchronizations AtMostOneConnectingRegionWithTriggerMessageEvents"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>null</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createNullAnnotations() {
+		String source = null;	
+		addAnnotation
+		  (relativeDeadlineEClass, 
+		   source, 
+		   new String[] {
+			 "", null
 		   });
 	}
 
@@ -2049,7 +2067,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRealtimeStatechart_UsesOneToManyCommunicationSchemata(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema\r\nself.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))\r\n\r\n"
+			 "derivation", "-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema or one of the its children statecharts\r\nlet allRTSCs : Set(RealtimeStatechart) = self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self) in \r\nallRTSCs.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))\r\n"
 		   });	
 		addAnnotation
 		  (stateConnectionPointEClass, 

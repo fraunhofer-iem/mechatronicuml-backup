@@ -1194,6 +1194,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
       </eAnnotations>
+      <eAnnotations>
+        <details key=""/>
+      </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1870,7 +1873,7 @@
           <details key="documentation" value="This derived attribute allows to easily check whether a oneToManyCommunicationSchema is used or not. "/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema&#xD;&#xA;self.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))&#xD;&#xA;&#xD;&#xA;"/>
+          <details key="derivation" value="-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema or one of the its children statecharts&#xD;&#xA;let allRTSCs : Set(RealtimeStatechart) = self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self) in &#xD;&#xA;allRTSCs.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleSpecificVariables"
