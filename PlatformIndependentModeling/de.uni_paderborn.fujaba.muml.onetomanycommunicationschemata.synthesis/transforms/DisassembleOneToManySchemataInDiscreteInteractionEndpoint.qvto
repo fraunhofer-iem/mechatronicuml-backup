@@ -343,8 +343,10 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 			
 			transitions += self.map Iterate2Transition1Intermediate1ToIntermedediate2SubroleRegion(context,region,false);
 			transitions += self.map Iterate2Transition2Intermediate1ToIntermedediate2SubroleRegion(context,region,false);
-			transitions += self.map Iterate2Transition3Intermediate1ToIntermedediate2SubroleRegion(context,region,false);
 			
+			if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+				transitions += self.map Iterate2Transition3Intermediate1ToIntermedediate2SubroleRegion(context,region,false);
+			};
 			transitions += self.map Iterate2TransSendSyncSubrole(context,region,false);
 			transitions += self.map Iterate2TransSendSyncNotConditionSubrole(context,region,false);
 			transitions += self.map Iterate2IdleToIntermediate2SubroleRegion(context,region,false);

@@ -65,7 +65,18 @@ mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:Re
 	target := self.target.map Vertex2VertexCoordinator(context,region);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
-	result.action := self.action.map Action2Action(context,region);
+	
+	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+		
+		result.action := self.TransferSchemata2Action(terminateIterationName +  " := false;",terminateIterationName,"false");
+		if(not self.action.name.oclIsUndefined()) {
+			result.action.name := result.action.name + self.action.name;
+		};
+		result.action.expressions += self.action.expressions.map Expression2Expression(result);
+		
+	} else {
+		result.action := self.action.map Action2Action(context,region);
+	};
 	
 	synchronization := self. TransferSchemata2Synchronization(iterateDone,SynchronizationKind::RECEIVE);
 }
@@ -253,7 +264,10 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
 		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate)
 		.terminationCondition.map Expression2Expression(result);
-		logic2 := self.TransferSchemataLogicalExpression(logic,expr3, LogicOperator::AND);
+		var expr4 := new UnaryExpression();
+		expr4.enclosedExpression := expr3;
+		expr4.operator := UnaryOperator::NOT;
+		logic2 := self.TransferSchemataLogicalExpression(logic,expr4, LogicOperator::AND);
 	}
 	else {
 		logic2 := logic;
@@ -283,7 +297,10 @@ mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRe
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
 		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate)
 		.terminationCondition.map Expression2Expression(result);
-		logic2 := self.TransferSchemataLogicalExpression(logic,expr3, LogicOperator::AND);
+		var expr4 := new UnaryExpression();
+		expr4.enclosedExpression := expr3;
+		expr4.operator := UnaryOperator::NOT;
+		logic2 := self.TransferSchemataLogicalExpression(logic,expr4, LogicOperator::AND);
 	}
 	else {
 		logic2 := logic;
@@ -306,6 +323,8 @@ mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRe
 	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map Expression2Expression(result);
 	
 	guard := self.TransferSchemataLogicalExpression(expr1,expr2,LogicOperator::OR);
+	
+	action := self.TransferSchemata2Action(terminateIterationName + ":= true;",terminateIterationName,"true");
 	
 }
 
