@@ -78,7 +78,7 @@
         <details key="DiscretePortCardinalityMustComplyWithRefinedRoleCardinality"
             value="-- Cardinality of discrete port and its refined role must match&#xD;&#xA;((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) &#xD;&#xA;implies &#xD;&#xA;((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))"/>
         <details key="MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"
-            value="-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multiport&#xD;&#xA;((self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
+            value="-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multiport&#xD;&#xA;(self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies (self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1031,7 +1031,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="RoleRequiresBehavior" value="-- Role requires behavior&#xA;not self.behavior.oclIsUndefined()"/>
         <details key="RoleRequiresMessageTypes" value="-- Role requires message types to be set&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
-        <details key="MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior" value="-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole&#xD;&#xA;(self.multiRole = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
+        <details key="MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior" value="-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole&#xD;&#xA;(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roles">

@@ -430,7 +430,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_COORDINATOR_BEHAVIOR__EEXPRESSION = "-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole\r\n" +
-		"(self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\n" +
+		"(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\n" +
 		"and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
 
 	/**

@@ -599,7 +599,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   new String[] {
 			 "RoleRequiresBehavior", "-- Role requires behavior\nnot self.behavior.oclIsUndefined()",
 			 "RoleRequiresMessageTypes", "-- Role requires message types to be set\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
-			 "MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior", "-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole\r\n(self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\nand self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"
+			 "MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior", "-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole\r\n(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\nand self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (getRole_RoleConnector(), 
