@@ -47,7 +47,10 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.properties.feature"
          version="0.0.0"
          name=""/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.properties.source.feature"
+         version="0.0.0"
+         name=""/>
    <includes
          id="de.uni_paderborn.uppaal.feature"
          version="0.0.0"/>
