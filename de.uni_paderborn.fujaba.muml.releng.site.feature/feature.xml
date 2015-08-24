@@ -30,6 +30,9 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="de.uni_paderborn.fujaba.muml.pim.feature"
          version="0.0.0"/>
+    <includes
+         id="de.uni_paderborn.fujaba.muml.pim.source.feature"
+         version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.muml.example.sectionEntry.feature"
@@ -42,7 +45,10 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.source.feature"
+         version="0.0.0"/>
+         
    <includes
          id="de.uni_paderborn.fujaba.properties.feature"
          version="0.0.0"
@@ -51,8 +57,12 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.properties.source.feature"
          version="0.0.0"
          name=""/>
+         
    <includes
          id="de.uni_paderborn.uppaal.feature"
+         version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.uppaal.source.feature"
          version="0.0.0"/>
 
    <includes
@@ -62,49 +72,87 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="org.eclipse.emf.ecore.improved.feature"
          version="0.0.0"/>
-
+   <includes
+         id="org.eclipse.emf.ecore.improved.source.feature"
+         version="0.0.0"/>
+         
    <includes
          id="de.uni_paderborn.fujaba.core.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.core.source.feature"
+         version="0.0.0"/>
+         
    <includes
          id="de.uni_paderborn.fujaba.muml.pm.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.muml.pm.source.feature"
+         version="0.0.0"/>
+         
    <includes
          id="de.uni_paderborn.fujaba.muml.codegen.c.feature"
+         version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.fujaba.muml.codegen.c.source.feature"
          version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.muml.verification.core.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.muml.verification.core.source.feature"
+         version="0.0.0"/>
+         
+         
    <includes
          id="de.uni_paderborn.fujaba.muml.verification.uppaal.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.muml.verification.uppaal.source.feature"
+         version="0.0.0"/>
+         
+         
    <includes
          id="de.uni_paderborn.fujaba.udbm.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.udbm.source.feature"
+         version="0.0.0"/>
+         
+         
    <includes
          id="de.uni_paderborn.fujaba.graphviz.feature"
+         version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.fujaba.graphviz.source.feature"
          version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.muml.reconfiguration.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.muml.reconfiguration.source.feature"
+         version="0.0.0"/>
+         
+         
    <includes
          id="de.uni_paderborn.fujaba.muml.storydiagrams.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.muml.storydiagrams.source.feature"
+         version="0.0.0"/>
+         
+         
    <includes
          id="de.uni_paderborn.fujaba.muml.example.railcab.feature"
          version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.muml.psm.feature"
+         version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.fujaba.muml.psm.source.feature"
          version="0.0.0"/>
 
    <includes
@@ -150,7 +198,9 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="de.uni_paderborn.fujaba.muml.ontology.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.muml.ontology.source.feature"
+         version="0.0.0"/>
    <includes
          id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi.feature"
          version="0.0.0"/>
@@ -161,6 +211,9 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
 
    <includes
          id="de.uni_paderborn.fujaba.modelcopy.feature"
+         version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.fujaba.modelcopy.source.feature"
          version="0.0.0"/>
 
 </feature>
