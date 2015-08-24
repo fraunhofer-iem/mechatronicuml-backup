@@ -55,6 +55,17 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_odDlkEnSEeWrj50P7Divew" kind="TRIGGER">
                 <message xmi:id="_51ppEEnSEeWrj50P7Divew" instanceOf="_0ciEwEnREeWrj50P7Divew"/>
                 <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:MultiReceive" xmi:id="_pc1AgEnSEeWrj50P7Divew">
+                  <action xmi:id="_dx3PwEo2EeWzCZyutnSGOQ" name="allAccept := allAccept &amp;&amp; answer->accept;">
+                    <expressions xsi:type="actionlanguage:Block" xmi:id="_fMO8AEo2EeWzCZyutnSGOQ">
+                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fMO8AUo2EeWzCZyutnSGOQ" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="sdcec:LogicalExpression" xmi:id="_fMO8Ako2EeWzCZyutnSGOQ">
+                          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fMO8A0o2EeWzCZyutnSGOQ" typedNamedElement="_gH2gEEnQEeWrj50P7Divew"/>
+                          <rightExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_fMO8BEo2EeWzCZyutnSGOQ" messageType="_0ciEwEnREeWrj50P7Divew" parameter="_1bgOcEnREeWrj50P7Divew"/>
+                        </rhs_assignExpression>
+                        <lhs_typedNamedElementExpression xmi:id="_fMO8BUo2EeWzCZyutnSGOQ" typedNamedElement="_gH2gEEnQEeWrj50P7Divew"/>
+                      </expressions>
+                    </expressions>
+                  </action>
                   <failureAction xmi:id="_puNrcEnSEeWrj50P7Divew" name="allAccept := false;">
                     <expressions xsi:type="actionlanguage:Block" xmi:id="_rVTlEEnSEeWrj50P7Divew">
                       <expressions xsi:type="actionlanguage:Assignment" xmi:id="_rVTlEUnSEeWrj50P7Divew" assignOperator=":=">
