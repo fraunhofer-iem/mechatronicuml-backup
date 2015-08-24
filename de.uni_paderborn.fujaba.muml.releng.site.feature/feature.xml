@@ -158,10 +158,17 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="de.uni_paderborn.fujaba.properties.migrator.feature"
          version="0.0.0"/>
-
+   <includes
+         id="de.uni_paderborn.fujaba.properties.migrator.source.feature"
+         version="0.0.0"/>
+         
    <includes
          id="de.uni_paderborn.fujaba.ecore.migration.feature"
          version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.fujaba.ecore.migration.source.feature"
+         version="0.0.0"/>
+         
 
    <includes
          id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance.feature"
