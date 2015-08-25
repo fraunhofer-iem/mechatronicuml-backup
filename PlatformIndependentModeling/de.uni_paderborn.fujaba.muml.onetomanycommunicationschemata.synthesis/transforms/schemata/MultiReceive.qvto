@@ -22,7 +22,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 	
 		priority := self.priority;
 		
-		source := self.source.map Vertex2VertexCoordinator(context, region);
+		source := self.source.map Vertex2VertexCoordinator(context);
 		
 		
 		target := self.map Schema2CoordinatorIntermediateState(context, region, 1,multiReceiveDLCName);
@@ -42,7 +42,7 @@ mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator
 		
 		source := self.map Schema2CoordinatorIntermediateState(context, region,1,multiReceiveDLCName);
 		
-		target := self.target.map Vertex2VertexCoordinator(context, region);
+		target := self.target.map Vertex2VertexCoordinator(context);
 				
 		clockResets := self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
 		

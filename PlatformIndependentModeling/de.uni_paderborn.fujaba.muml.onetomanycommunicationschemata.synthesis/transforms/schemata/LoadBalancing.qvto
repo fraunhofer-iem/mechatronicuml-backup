@@ -61,7 +61,7 @@ helper getLoadBalancingTaskMessageClock() : Clock {
 // @author: sthiele2
 mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
-	source := self.source.map Vertex2VertexCoordinator(context, region);
+	source := self.source.map Vertex2VertexCoordinator(context);
 	target := self.map Schema2CoordinatorIntermediateState(context,region,1,loadBalancingDLCName);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
@@ -86,7 +86,7 @@ mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:Oc
 mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
 	source := self.map Schema2CoordinatorIntermediateState(context,region,2,loadBalancingDLCName);
-	target := self.target.map Vertex2VertexCoordinator(context,region);
+	target := self.target.map Vertex2VertexCoordinator(context);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
 	result.action := self.action.map Action2Action(context,region);
@@ -94,31 +94,31 @@ mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, reg
 }
 
 
-mapping Transition :: LoadBalancing2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region {
+mapping Transition :: LoadBalancing2SourceRegionCoordinator(context:OclAny) : Region {
 		
 	priority := self.priority;		
-	parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);		
-	embeddedStatechart := self.map LoadBalancing2SourceEmbeddedRTSCCoordinator(context, region);					
+	parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);		
+	embeddedStatechart := self.map LoadBalancing2SourceEmbeddedRTSCCoordinator(context);					
 }
 	
-mapping Transition :: LoadBalancing2SourceEmbeddedRTSCCoordinator(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
+mapping Transition :: LoadBalancing2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart {
 		
 	name:= "loadBalancingCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 	
-	states += self.map RegionState(context, region, "Idle", true);
-	states += self.map RegionState(context, region, "Requesting", false);
+	states += self.map RegionState(context,  "Idle", true);
+	states += self.map RegionState(context,  "Requesting", false);
 	
-	transitions += self.map LoadBalancing2TransCheckEmbeddedCoordinator(context, region);
-	transitions += self.map LoadBalancing2TransCheckDoneEmbeddedCoordinator(context, region);
+	transitions += self.map LoadBalancing2TransCheckEmbeddedCoordinator(context);
+	transitions += self.map LoadBalancing2TransCheckDoneEmbeddedCoordinator(context);
 }
 	
-mapping Transition :: LoadBalancing2TransCheckEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancing2TransCheckEmbeddedCoordinator(context:OclAny) : Transition {
 
 		priority := 1;
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
-		target := self.map RegionState(context, region, "Requesting", false);
+		target := self.map RegionState(context,  "Requesting", false);
 		
 		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(result);
 		
@@ -128,13 +128,13 @@ mapping Transition :: LoadBalancing2TransCheckEmbeddedCoordinator(context:OclAny
 			
 	}
 	
-mapping Transition :: LoadBalancing2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancing2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition {
 
 		priority := 1;
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
-		source := self.map RegionState(context, region, "Requesting", false);
+		source := self.map RegionState(context,  "Requesting", false);
 		
 		synchronization := self. TransferSchemata2Synchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 		
@@ -157,7 +157,7 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 		
 		target := self.map LoadBalancing2StateCoordinator(context, region);
 		
-		source := self.source.map Vertex2VertexCoordinator(context, region);
+		source := self.source.map Vertex2VertexCoordinator(context);
 		
 		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);		
 		
@@ -276,9 +276,9 @@ mapping Transition :: LoadBalancing2SourceEmbeddedRTSCSubrole(context:OclAny, re
 		
 		name:= "loadBalancingCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requested", false);
-		states += self.map RegionState(context, region, "Check", false);
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requested", false);
+		states += self.map RegionState(context,  "Check", false);
 		
 		transitions += self.map LoadBalancing2TransitionFromIdleToCheck(context,region);
 					
@@ -302,9 +302,9 @@ mapping Transition :: LoadBalancing2TransitionFromIdleToCheck(context:OclAny, re
 		
 		priority := 1;
 		
-		source := self.map RegionState(context,region,"Idle",true);
+		source := self.map RegionState(context, "Idle",true);
 		
-		target := self.map RegionState(context,region,"Check",false);
+		target := self.map RegionState(context, "Check",false);
 		
 		synchronization := self.TransferSchemata2Synchronization(loadBalancingCheck, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 }
@@ -313,9 +313,9 @@ mapping Transition :: LoadBalancingResponseMessage2TransitionFromCheckToRequeste
 		
 		priority := 1;
 		
-		source := self.map RegionState(context,region,"Check",false);
+		source := self.map RegionState(context, "Check",false);
 		
-		target := self.map RegionState(context,region,"Requested",false);		
+		target := self.map RegionState(context, "Requested",false);		
 		
 		result.guard := self.TransferSchemataLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2UnaryExpression(result,UnaryOperator::NOT),self.TransferSchemaGuard(getFreeForWorkVariable(), UnaryOperator::NOT),LogicOperator::OR);
 
@@ -327,9 +327,9 @@ mapping Transition :: LoadBalancingResponseMessage2TransitionFromCheckToRequeste
 		
 		priority :=2;
 		
-		source := self.map RegionState(context,region,"Check",false);
+		source := self.map RegionState(context, "Check",false);
 		
-		target := self.map RegionState(context,region,"Requested",false);		
+		target := self.map RegionState(context, "Requested",false);		
 		
 		result.guard := self.TransferSchemataLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result),self.TransferSchemaGuard(getFreeForWorkVariable(),null),LogicOperator::AND);
 		
@@ -343,9 +343,9 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested1
 	
 		priority := 1;
 		
-		source := self.map RegionState(context,region,"Check",false);
+		source := self.map RegionState(context, "Check",false);
 		
-		target := self.map RegionState(context,region,"Requested",false);
+		target := self.map RegionState(context, "Requested",false);
 		
 		guard := self.TransferSchemaNotCondition();
 		
@@ -357,9 +357,9 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2
 	
 		priority := 2;
 		
-		source := self.map RegionState(context,region,"Check",false);
+		source := self.map RegionState(context, "Check",false);
 		
-		target := self.map RegionState(context,region,"Requested",false);
+		target := self.map RegionState(context, "Requested",false);
 		
 		guard := self.TransferSchemaGuard(getNeverHadATaskVariable(),UnaryOperator::NOT);
 		
@@ -373,9 +373,9 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3
 	
 		priority := 3;
 		
-		source := self.map RegionState(context,region,"Check",false);
+		source := self.map RegionState(context, "Check",false);
 		
-		target := self.map RegionState(context,region,"Requested",false);		
+		target := self.map RegionState(context, "Requested",false);		
 
 	 	guard := self.TransferSchemataLogicalExpression(self.TransferSchemaGuard(getNeverHadATaskVariable(), UnaryOperator::NOT),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result), LogicOperator::AND);
 			
@@ -389,9 +389,9 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested4
 	
 		priority := 4;
 		
-		source := self.map RegionState(context,region,"Check",false);
+		source := self.map RegionState(context, "Check",false);
 		
-		target := self.map RegionState(context,region,"Requested",false);		
+		target := self.map RegionState(context, "Requested",false);		
 		
 		guard := self.TransferSchemataLogicalExpression(self.Schema2TypedNamedElementExpression(getNeverHadATaskVariable()),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result), LogicOperator::AND);
 			
@@ -402,9 +402,9 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle1(context:OclAn
 	
 		priority := 1;
 		
-		target := self.map RegionState(context,region,"Idle",true);
+		target := self.map RegionState(context, "Idle",true);
 		
-		source := self.map RegionState(context,region,"Requested",false);	
+		source := self.map RegionState(context, "Requested",false);	
 		
 		guard := self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::EQUAL);
 		
@@ -416,9 +416,9 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle2(context:OclAn
 	
 		priority := 2;
 		
-		target := self.map RegionState(context,region,"Idle",true);
+		target := self.map RegionState(context, "Idle",true);
 		
-		source := self.map RegionState(context,region,"Requested",false);	
+		source := self.map RegionState(context, "Requested",false);	
 		
 		guard := self.TransferSchemataLogicalExpression(self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.TransferSchemaGuard(loadBalancingPossibleName, UnaryOperator::NOT),LogicOperator::AND);
 		
@@ -430,9 +430,9 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAn
 	
 		priority := 3;
 		
-		target := self.map RegionState(context,region,"Idle",true);
+		target := self.map RegionState(context, "Idle",true);
 		
-		source := self.map RegionState(context,region,"Requested",false);	
+		source := self.map RegionState(context, "Requested",false);	
 		
 		guard := self.TransferSchemataLogicalExpression(self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName)),LogicOperator::AND);
 		

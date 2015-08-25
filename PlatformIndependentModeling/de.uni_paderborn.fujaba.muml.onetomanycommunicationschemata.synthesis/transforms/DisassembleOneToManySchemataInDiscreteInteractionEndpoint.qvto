@@ -178,12 +178,20 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 	
 mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeStatechart {		
 		
-		parentRegion := self.parentRegion.map EmbeddedRegion2EmbeddedCoordinatorRegion(context);
-		
+		result.name := self.name;
 		var region : RealtimeStatechart := result;
+		
+		if(self = currentRealtimeStatechart){	
+			parentRegion := self.map State2CoordinatorRegion(self);
+		}
+		else {
+			parentRegion := self.parentRegion.map EmbeddedRegion2EmbeddedCoordinatorRegion(context );
+		} endif;
+		
+		
 	
 		
-		states += self.states.map States2StatesCoordinator(context, region);
+		states += self.states.map States2StatesCoordinator(context);
 		
 		transitions += self.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionCoordinator(context, region);
 		
@@ -449,7 +457,7 @@ mapping Transition :: Transition2TransitionFromSourceToTarget(container : Realti
 		source := self.map Transition2StateSubrole(container, self.target, false);
 }
 
-mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatechart) : State {
+mapping State :: States2StatesCoordinator(context:OclAny) : State {
 		
 		self.parentStatechart.map RTSC2CoordinatorRTSC(context);
 		
@@ -461,7 +469,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 		
 		urgent := self.urgent;				
 	
-		entryEvent := self.entryEvent.map EntryEvent2EntryEventCoordinator(context, region);			
+		entryEvent := self.entryEvent.map EntryEvent2EntryEventCoordinator(context,null);			
 		
 		// @author: sthiele2 -- add clock resets for the source states of schema transitions 
 		self.outgoingTransitions->select(t|((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
@@ -546,9 +554,9 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 		};
 		
 		
-		exitEvent := self.exitEvent.map ExitEvent2ExitEventCoordinator(context, region);
+		exitEvent := self.exitEvent.map ExitEvent2ExitEventCoordinator(context, null);
 		
-		doEvent := self.doEvent.map Do2Do(context, region);
+		doEvent := self.doEvent.map Do2Do(context, null);
 		
 		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 	
@@ -557,18 +565,18 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatech
 		embeddedRegions += self.embeddedRegions.map EmbeddedRegion2EmbeddedCoordinatorRegion(context);
 		
 		-- add embedded Regions for transfer schemata
-		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2SourceRegionCoordinator(context, region);
-		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2SourceRegionCoordinator(context, region);
-		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map LoadBalancing2SourceRegionCoordinator(context, region);
+		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2SourceRegionCoordinator(context);
+		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2SourceRegionCoordinator(context);
+		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map LoadBalancing2SourceRegionCoordinator(context);
 	
-		embeddedRegions += self.outgoingTransitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2SourceRegionCoordinator(context, region);
+		embeddedRegions += self.outgoingTransitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2SourceRegionCoordinator(context);
 		
 	}
 
 mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny) : Region{
 	
-		priority := self.priority;
-		
+		result.priority := self.priority;		
+		result.parentState := self.parentState.map States2StatesCoordinator(context);
 		result.embeddedStatechart := self.embeddedStatechart.map RTSC2CoordinatorRTSC(context);	
 }
 

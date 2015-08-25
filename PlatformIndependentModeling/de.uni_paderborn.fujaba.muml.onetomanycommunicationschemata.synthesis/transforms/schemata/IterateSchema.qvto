@@ -29,7 +29,7 @@ property iterateDelayClockName : String = "Delay_Clock";
 // @author: sthiele2
 mapping Transition :: Iterate2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
-	source := self.source.map Vertex2VertexCoordinator(context, region);
+	source := self.source.map Vertex2VertexCoordinator(context);
 	target := self.map Schema2CoordinatorIntermediateState(context,region,1,iterateDLCName);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
@@ -62,7 +62,7 @@ mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:Re
 {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
 	source := self.map Schema2CoordinatorIntermediateState(context,region, 2, iterateDLCName);
-	target := self.target.map Vertex2VertexCoordinator(context,region);
+	target := self.target.map Vertex2VertexCoordinator(context);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
 	
@@ -87,7 +87,7 @@ mapping Transition :: NonConditionalIterate2TranssitionFromSourceToIntermediate(
 
 		priority := self.priority;
 						
-		source := self.source.map Vertex2VertexCoordinator(context, region);
+		source := self.source.map Vertex2VertexCoordinator(context);
 		
 		target := self.map Schema2CoordinatorIntermediateState(context, region,1, iterateDLCName);
 		
@@ -104,7 +104,7 @@ mapping Transition :: NonConditionalIterate2TransitionFromIntermediateToTarget(c
 		
 		source := self.map Schema2CoordinatorIntermediateState(context,region, 1,iterateDLCName);
 	
-		target := self.target.map Vertex2VertexCoordinator(context,region);
+		target := self.target.map Vertex2VertexCoordinator(context);
 		
 		action := self.action.map Action2Action(context, region);
 		
@@ -119,7 +119,7 @@ mapping Transition :: Iterate2SourceRegionCoordinator(context:OclAny, region:Rea
 		
 		priority := self.priority;
 		
-		parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);
+		parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);
 		
 		embeddedStatechart := self.map Iterate2SourceEmbeddedRTSCCoordinator(context, region);
 					
@@ -129,8 +129,8 @@ mapping Transition :: Iterate2SourceEmbeddedRTSCCoordinator(context:OclAny, regi
 		
 		name:= "iterateCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requesting", false);
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requesting", false);
 		
 		transitions += self.map Iterate2TransCheckEmbeddedCoordinator(context, region);
 		transitions += self.map Iterate2TransCheckDoneEmbeddedCoordinator(context, region);
@@ -141,9 +141,9 @@ mapping Transition :: Iterate2TransCheckEmbeddedCoordinator(context:OclAny, regi
 
 		priority := 1;
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
-		target := self.map RegionState(context, region, "Requesting", false);
+		target := self.map RegionState(context,  "Requesting", false);
 		
 		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 		
@@ -157,9 +157,9 @@ mapping Transition :: Iterate2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 
 		priority := 1;
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
-		source := self.map RegionState(context, region, "Requesting", false);
+		source := self.map RegionState(context,  "Requesting", false);
 		
 	
 		
@@ -388,8 +388,8 @@ mapping Transition :: Iterate2SourceEmbeddedRTSCSubrole(context:OclAny, region:R
 		
 		name:= "iterateCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requested", false);
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requested", false);
 		
 		transitions += self.map Iterate2RequestedIdleCheckSubrole(context, region);
 		transitions += self.map Iterate2RequestedIdleCheckDoneSubrole(context, region);
@@ -402,9 +402,9 @@ mapping Transition :: Iterate2RequestedIdleCheckSubrole(context:OclAny, region:R
 	
 		priority := 2;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
@@ -416,9 +416,9 @@ mapping Transition :: Iterate2RequestedIdleCheckDoneSubrole(context:OclAny, regi
 	
 		priority := 1;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
@@ -430,9 +430,9 @@ mapping Transition :: Iterate2IdleRequestedFulfilledSubrole(context:OclAny, regi
 	
 		priority := 2;
 				
-		target := self.map RegionState(context, region, "Requested", false);
+		target := self.map RegionState(context,  "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(2);
 		
@@ -446,9 +446,9 @@ mapping Transition :: Iterate2IdleRequestedNotFulfilledSubrole(context:OclAny, r
 	
 		priority := 1;
 				
-		target := self.map RegionState(context, region, "Requested", false);
+		target := self.map RegionState(context,  "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
 		guard := self. TransferSchemaNotCondition();
 

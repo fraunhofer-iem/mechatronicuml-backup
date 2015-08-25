@@ -27,7 +27,7 @@ property sendUnicastName : String = "sendUnicast";
 // @author: sthiele2
 mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
-	source := self.source.map Vertex2VertexCoordinator(context, region);
+	source := self.source.map Vertex2VertexCoordinator(context);
 	target := self.map Schema2CoordinatorIntermediateState(context,region,1,unicastDLCName);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
@@ -55,7 +55,7 @@ mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region:Re
 {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
 	source := self.map Schema2CoordinatorIntermediateState(context,region,2,unicastDLCName);
-	target := self.target.map Vertex2VertexCoordinator(context,region);
+	target := self.target.map Vertex2VertexCoordinator(context);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
 	result.action := self.action.map Action2Action(context,region);
@@ -63,35 +63,35 @@ mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region:Re
 }
 
 
-mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region {
+mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny): Region {
 		
 		priority := self.priority;
 		
-		parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);
+		parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);
 		
-		embeddedStatechart := self.map Unicast2SourceEmbeddedRTSCCoordinator(context, region);
+		embeddedStatechart := self.map Unicast2SourceEmbeddedRTSCCoordinator(context);
 					
 	}
 	
-mapping Transition :: Unicast2SourceEmbeddedRTSCCoordinator(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
+mapping Transition :: Unicast2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart {
 		
 		name:= "unicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requesting", false);
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requesting", false);
 		
-		transitions += self.map Unicast2TransCheckEmbeddedCoordinator(context, region);
-		transitions += self.map Unicast2TransCheckDoneEmbeddedCoordinator(context, region);
+		transitions += self.map Unicast2TransCheckEmbeddedCoordinator(context);
+		transitions += self.map Unicast2TransCheckDoneEmbeddedCoordinator(context);
 					
 	}
 	
-mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny) : Transition {
 
 		priority := 1;
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
-		target := self.map RegionState(context, region, "Requesting", false);
+		target := self.map RegionState(context,  "Requesting", false);
 		
 		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(result);
 		
@@ -101,13 +101,13 @@ mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny, regi
 			
 	}
 	
-mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition {
 
 		priority := 1;
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
-		source := self.map RegionState(context, region, "Requesting", false);
+		source := self.map RegionState(context,  "Requesting", false);
 		
 		synchronization := self. TransferSchemata2Synchronization( unicastCheckDone,SynchronizationKind::RECEIVE);
 		
@@ -115,34 +115,7 @@ mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 			
 	}
 	
-	
-mapping Transition :: Unicast2StateCoordinator(context:OclAny, region:RealtimeStatechart, toplevel: Boolean) : State {
-	
-		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
-		
-		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context);	
-						
-	}
-	
-mapping Transition :: Unicast2TransReceiveSyncCoordinator(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
-	
-		priority := self.priority;
-		
-		target := self.map Unicast2StateCoordinator(context, region,toplevel);
-		
-		source := self.source.map Vertex2VertexCoordinator(context, region);
-		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);		
-		
-		synchronization := self.TransferSchemata2Synchronization( unicastCheckDone,SynchronizationKind::RECEIVE);
-		
-		if(self.guard.oclIsUndefined()){
-			guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(unicastPossibleName));
-		}else{
-			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(unicastPossibleName)));
-		};
-					
-	}
+
 	
 --------------------------------------------------------------- Transfer Schema Unicast of Subrole----------------------------------------------------------------------
 	
@@ -245,8 +218,8 @@ mapping Transition :: Unicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:R
 		
 		name:= "unicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requested", false);
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requested", false);
 		
 		transitions += self.map Unicast2RequestedIdleCheckSubrole(context, region);
 		transitions += self.map Unicast2RequestedIdleCheckDoneLastSubrole(context, region);
@@ -260,9 +233,9 @@ mapping Transition :: Unicast2RequestedIdleCheckSubrole(context:OclAny, region:R
 	
 		priority := 2;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.map UnicastNotLastAndPossibleExpression(context, region, unicastPossibleName, true, 60);
 
@@ -274,9 +247,9 @@ mapping Transition :: Unicast2RequestedIdleCheckDoneLastSubrole(context:OclAny, 
 	
 		priority := 1;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
@@ -288,9 +261,9 @@ mapping Transition :: Unicast2RequestedIdleCheckDonePossibleSubrole(context:OclA
 	
 		priority := 3;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.map UnicastNotLastAndPossibleExpression(context, region, unicastPossibleName, false, 7);
 		
@@ -302,9 +275,9 @@ mapping Transition :: Unicast2IdleRequestedFulfilledSubrole(context:OclAny, regi
 	
 		priority := 2;
 				
-		target := self.map RegionState(context, region, "Requested", false);
+		target := self.map RegionState(context,  "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(2);
 		
@@ -318,9 +291,9 @@ mapping Transition :: Unicast2IdleRequestedNotFulfilledSubrole(context:OclAny, r
 	
 		priority := 1;
 				
-		target := self.map RegionState(context, region, "Requested", false);
+		target := self.map RegionState(context,  "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
 		guard := self. TransferSchemaNotCondition();
 		

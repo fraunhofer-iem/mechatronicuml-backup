@@ -164,7 +164,7 @@ helper Transition :: TransferSchemataLogicalExpression(_leftExpression : Express
 ----------------------------------------------------XXXXXXXXXXXXXXXX--MAPPINGS FOR ALL TRANSFER SCHEMATA--XXXXXXXXXXXXXXXXXX--------------------------------------------
 	
 --Transfer Schemata State
-mapping Transition :: RegionState(context:OclAny, region:RealtimeStatechart, StateName:String, ini:Boolean) : State {
+mapping Transition :: RegionState(context:OclAny, StateName:String, ini:Boolean) : State {
 		
 		name := StateName;
 		
@@ -403,7 +403,7 @@ mapping Transition :: TransferSchemataChannel(channelName: String, selector: Boo
 	}
 
 
-mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:RealtimeStatechart) : Vertex
+mapping Vertex :: Vertex2VertexCoordinator(context:OclAny) : Vertex
 		disjuncts State::States2StatesCoordinator, StateConnectionPoint::StateConnectionPoint2StateConnectionPointCoordinator;
 		
 
@@ -411,25 +411,25 @@ mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:RealtimeStatec
 -- Entry/Exit Points and States
 
 
-mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny, region:RealtimeStatechart) : StateConnectionPoint
+mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny) : StateConnectionPoint
 		disjuncts EntryPoint::EntryPoint2EntryPointCoordinator, ExitPoint::ExitPoint2ExitPointCoordinator;
 		
 
-	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny, region:RealtimeStatechart) : EntryPoint {
+	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny) : EntryPoint {
 		
 		name := self.name;
 		
-		self.state.map States2StatesCoordinator(context,region).connectionPoints += result;
+		self.state.map States2StatesCoordinator(context).connectionPoints += result;
 		
 		
 		//state := self.state.map States2StatesCoordinator(context,region);
 		
 	}
 	
-	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny, region:RealtimeStatechart) : ExitPoint {
+	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny) : ExitPoint {
 		
 		name := self.name;
-		self.state.map States2StatesCoordinator(context,region).connectionPoints += result;
+		self.state.map States2StatesCoordinator(context).connectionPoints += result;
 		//state := self.state.map States2StatesCoordinator(context,region);
 	}
 
@@ -473,7 +473,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		assert fatal (false) with log ("Do not go here!");	
 }	
 
-mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatechart) : State{
+mapping State :: States2StatesCoordinator(context:OclAny) : State{
 	
 	assert fatal (false) with log ("Do not go here!");
 }
@@ -497,21 +497,21 @@ helper Transition :: Vertex2VertexCoordinator(context:OclAny, region:RealtimeSta
 		if(vertex.oclIsTypeOf(ExitPoint)) {
 			if(self.source = vertex){
 				// case source
-				return vertex.map Vertex2VertexCoordinator(context, region);
+				return vertex.map Vertex2VertexCoordinator(context);
 			} else {
-				// case target
-				return vertex.map Vertex2VertexCoordinator(context, region.parentRegion.parentState.parentStatechart);
+				// case target 	
+				return vertex.map Vertex2VertexCoordinator(context);
 			}endif;
 		} else if (vertex.oclIsTypeOf(EntryPoint)) {
 			if(self.source = vertex){
 				// case source
-				return vertex.map Vertex2VertexCoordinator(context, region.parentRegion.parentState.parentStatechart);
+				return vertex.map Vertex2VertexCoordinator(context);
 			} else {
 				// case target
-				return vertex.map Vertex2VertexCoordinator(context, region);
+				return vertex.map Vertex2VertexCoordinator(context);
 			}endif;
 		} else {
-			return vertex.map Vertex2VertexCoordinator(context, region);
+			return vertex.map Vertex2VertexCoordinator(context);
 		}endif;
 		
 		
@@ -546,23 +546,7 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 						
 	}
 	
-	mapping Transition :: Transition2TransitionSubrole(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
-		
-		source := self.map Transition2StateSubrole(region,self.source, true);
 
-		target := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
-		
-		priority := self.priority;
-		
-		clockResets := self.clockResets->select(c|isClockSubRoleSpecific(c))->map Clock2Clock();
-		
-		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint(1);
-		
-		guard := self.guard.map Expression2Expression(1);
-		synchronization := self.TransferSchemata2Synchronization("switchState",SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
-		
-		
-	}
 	
 mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex,_initial: Boolean): State {
 		

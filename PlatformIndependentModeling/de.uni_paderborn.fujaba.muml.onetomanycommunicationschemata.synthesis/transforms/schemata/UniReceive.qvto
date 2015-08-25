@@ -27,7 +27,7 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:
 		
 		source := self.map Schema2CoordinatorIntermediateState(context,region,2,singleReceiveDLCName );
 		
-		target := self.target.map Vertex2VertexCoordinator(context, region);
+		target := self.target.map Vertex2VertexCoordinator(context);
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
 		
@@ -37,35 +37,35 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:
 			
 	}
 
-mapping Transition :: SingleReceive2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region {
+mapping Transition :: SingleReceive2SourceRegionCoordinator(context:OclAny) : Region {
 		
 		priority := self.priority;
 		
-		parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);
+		parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);
 		
-		embeddedStatechart := self.map SingleReceive2SourceEmbeddedRTSCCoordinator(context, region);
+		embeddedStatechart := self.map SingleReceive2SourceEmbeddedRTSCCoordinator(context);
 					
 	}
 	
-mapping Transition :: SingleReceive2SourceEmbeddedRTSCCoordinator(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
+mapping Transition :: SingleReceive2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart {
 		
 		name:= "singleReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requesting", false);
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requesting", false);
 		
-		transitions += self.map SingleReceive2TransCheckEmbeddedCoordinator(context, region);
-		transitions += self.map SingleReceive2TransCheckDoneEmbeddedCoordinator(context, region);
+		transitions += self.map SingleReceive2TransCheckEmbeddedCoordinator(context);
+		transitions += self.map SingleReceive2TransCheckDoneEmbeddedCoordinator(context);
 					
 	}
 	
-mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny) : Transition {
 
 		priority := 1;
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
-		target := self.map RegionState(context, region, "Requesting", false);
+		target := self.map RegionState(context,  "Requesting", false);
 		
 		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 		
@@ -75,13 +75,13 @@ mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny
 			
 	}
 	
-mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition {
 
 		priority := 1;
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
-		source := self.map RegionState(context, region, "Requesting", false);
+		source := self.map RegionState(context,  "Requesting", false);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::RECEIVE);
 			
@@ -105,7 +105,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 		
 		target := self.map Schema2CoordinatorIntermediateState(context,region,1,singleReceiveDLCName);
 		
-		source := self.source.map Vertex2VertexCoordinator(context, region);		
+		source := self.source.map Vertex2VertexCoordinator(context);		
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceivePossibleName, SynchronizationKind::RECEIVE);
 		
@@ -175,9 +175,9 @@ mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, re
 		
 		name:= "singleReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
-		states += self.map RegionState(context, region, "Idle", true);
+		states += self.map RegionState(context,  "Idle", true);
 	
-		states += self.map RegionState(context, region, "Requested", false);	
+		states += self.map RegionState(context,  "Requested", false);	
 	
 		transitions += self.map SingleReceive2Transition1FromRequestedToIdle(context,region);
 	
@@ -209,7 +209,7 @@ mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateSt
 mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(context : OclAny, region:RealtimeStatechart) : Transition {
 		priority := 3;
 		
-		source := self.map RegionState(context, region, "Requested", false);	
+		source := self.map RegionState(context,  "Requested", false);	
 		
 		target := self.map SingleReceive2StateExitPoint(context,region);
 		
@@ -256,9 +256,9 @@ mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAn
 	
 		priority := 1;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.map SingleReceiveLastAndPossibleExpression(context,region,consumeSingleReceiveName,true, 100);
 		
@@ -270,9 +270,9 @@ mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAn
 	
 		priority := 2;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.map SingleReceiveNotLastAndPossibleExpression(context,region,consumeSingleReceiveName,true, 3);
 		
@@ -284,9 +284,9 @@ mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(contex
 	
 		priority := 3;
 				
-		source := self.map RegionState(context, region, "Requested", false);
+		source := self.map RegionState(context,  "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		target := self.map RegionState(context,  "Idle", true);
 		
 		guard := self.map SingleReceiveNotLastAndPossibleExpression(context, region, singleReceivePossibleName, false, 7);
 		
@@ -298,9 +298,9 @@ mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny
 	
 		priority := 1;
 				
-		target := self.map RegionState(context, region, "Requested", false);
+		target := self.map RegionState(context,  "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map RegionState(context,  "Idle", true);
 		
 		synchronization := self. TransferSchemata2Synchronization(singleReceiveCheck, SynchronizationKind::RECEIVE,PositionSelectorKind::SELF);
 					
