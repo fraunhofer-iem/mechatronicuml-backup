@@ -18,14 +18,14 @@ property multiReceiveDoneChannelName : String = "multiReceiveDone";
 -------------------------------------------------------------Transfer Schema MultiReceive of Coordinator------------------------------------------------------------------
 
 // @author: sthiele2 -- creates a transition in the coordinator region from the schema-transition's soruce to the intermediate state
-mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator(context : OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator(context : OclAny, region:RealtimeStatechart) : Transition{
 	
 		priority := self.priority;
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);
 		
 		
-		target := self.map Schema2CoordinatorIntermediateState(context, region, 1,multiReceiveDLCName, toplevel);
+		target := self.map Schema2CoordinatorIntermediateState(context, region, 1,multiReceiveDLCName);
 		
 		guard := self.guard.map Expression2Expression(context);
 		
@@ -36,11 +36,11 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 }
 
 // @author: sthiele2 -- create a transition in the coordinator region from the intermediate state to the schema-transition's target 
-mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator(context : OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator(context : OclAny, region:RealtimeStatechart) : Transition{
 		
 		priority := 1;
 		
-		source := self.map Schema2CoordinatorIntermediateState(context, region,1,multiReceiveDLCName,toplevel);
+		source := self.map Schema2CoordinatorIntermediateState(context, region,1,multiReceiveDLCName);
 		
 		target := self.target.map Vertex2VertexCoordinator(context, region);
 				

@@ -21,11 +21,11 @@ property singleReceivePossibleName : String = "singleReceivePossible";
 property consumeSingleReceiveName : String = "consumeSingleReceive";
 --------------------------------------------------------------Transfer Schema SingleReceive of Coordinator------------------------------------------------------------------
 	
-mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
+mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:RealtimeStatechart) : Transition {
 		// creates in the coordinator region the transition from the intermediate state 2 to the (mapped) target state of the schema transition
 		priority := 1;
 		
-		source := self.map Schema2CoordinatorIntermediateState(context,region,2,singleReceiveDLCName,toplevel );
+		source := self.map Schema2CoordinatorIntermediateState(context,region,2,singleReceiveDLCName );
 		
 		target := self.target.map Vertex2VertexCoordinator(context, region);
 		
@@ -89,21 +89,21 @@ mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:Oc
 //mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region:RealtimeStatechart, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 	
 	
-mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(context : OclAny, region:RealtimeStatechart, toplevel : Boolean): Transition{
+mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(context : OclAny, region:RealtimeStatechart): Transition{
 	priority := 1;
 	
-	target := self.map Schema2CoordinatorIntermediateState(context,region, 2, singleReceiveDLCName, toplevel);
+	target := self.map Schema2CoordinatorIntermediateState(context,region, 2, singleReceiveDLCName);
 	
-	source := self.map Schema2CoordinatorIntermediateState(context, region, 1, singleReceiveDLCName,toplevel);
+	source := self.map Schema2CoordinatorIntermediateState(context, region, 1, singleReceiveDLCName);
 	//invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
 	clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
 }
 	
-mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := self.priority;
 		
-		target := self.map Schema2CoordinatorIntermediateState(context,region,1,singleReceiveDLCName,toplevel);
+		target := self.map Schema2CoordinatorIntermediateState(context,region,1,singleReceiveDLCName);
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);		
 		

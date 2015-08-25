@@ -59,10 +59,10 @@ helper getLoadBalancingTaskMessageClock() : Clock {
 ------------------------------------------------------------Transfer Schema LoadBalancing of Coordinator------------------------------------------------------------------
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
+mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
 	source := self.source.map Vertex2VertexCoordinator(context, region);
-	target := self.map Schema2CoordinatorIntermediateState(context,region,1,loadBalancingDLCName,toplevel);
+	target := self.map Schema2CoordinatorIntermediateState(context,region,1,loadBalancingDLCName);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
 	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);	
@@ -70,10 +70,10 @@ mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, r
 }
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean): Transition {
+mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition {
 	// creates the transition from intermediate state 1 to intermediate state 2
-	source := self.map Schema2CoordinatorIntermediateState(context,region,1, loadBalancingDLCName,toplevel);
-	target := self.map Schema2CoordinatorIntermediateState(context,region,2,loadBalancingDLCName,toplevel);	
+	source := self.map Schema2CoordinatorIntermediateState(context,region,1, loadBalancingDLCName);
+	target := self.map Schema2CoordinatorIntermediateState(context,region,2,loadBalancingDLCName);	
 	priority := 1;
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
@@ -83,9 +83,9 @@ mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:Oc
 }
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart, toplevel: Boolean): Transition {
+mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
-	source := self.map Schema2CoordinatorIntermediateState(context,region,2,loadBalancingDLCName, toplevel);
+	source := self.map Schema2CoordinatorIntermediateState(context,region,2,loadBalancingDLCName);
 	target := self.target.map Vertex2VertexCoordinator(context,region);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
@@ -143,19 +143,19 @@ mapping Transition :: LoadBalancing2TransCheckDoneEmbeddedCoordinator(context:Oc
 	}
 	
 	
-mapping Transition :: LoadBalancing2StateCoordinator(context:OclAny, region:RealtimeStatechart, toplevel: Boolean) : State {
+mapping Transition :: LoadBalancing2StateCoordinator(context:OclAny, region:RealtimeStatechart) : State {
 	
 		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
 		
-		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context,toplevel);	
+		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context);	
 						
 	}
 	
-mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
+mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := self.priority;
 		
-		target := self.map LoadBalancing2StateCoordinator(context, region,toplevel);
+		target := self.map LoadBalancing2StateCoordinator(context, region);
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);
 		
