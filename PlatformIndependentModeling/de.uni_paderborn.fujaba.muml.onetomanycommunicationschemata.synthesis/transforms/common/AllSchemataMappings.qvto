@@ -58,7 +58,7 @@ query getBooleanPrimitiveDataType(theRootNode : RootNode) : PrimitiveDataType {
 
 
 // @author: sthiele2 -- creates an intermediate state in the subrole region
-mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:RealtimeStatechart, stateID : Integer,toplevel : Boolean) : State {
+mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, stateID : Integer) : State {
 	
 		name := self.source.name + "_Intermediate_"+ stateID.toString()+ "_" + self.target.name  ;
 				
@@ -532,13 +532,13 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 		
 		guard := self.guard.map Expression2Expression(context);
 		
-		action := self.action.map Action2Action(context, region);
+		action := self.action.cloneAction();
 		
-		synchronization := self.synchronization.map Synchronization2Synchronization(context,region);
+		synchronization := self.synchronization.map Synchronization2Synchronization(context);
 		
-		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline(context, region);
+		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline(context);
 		
-		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline(context, region);
+		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline(context);
 		
 		blockable := self.blockable;
 		
@@ -566,7 +566,7 @@ mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAn
 		
 		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_SwitchState";
 	
-		parentStatechart := self.RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart));
+		parentStatechart := self.map RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart));
 		
 	}
 	

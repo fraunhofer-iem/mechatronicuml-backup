@@ -31,6 +31,33 @@ property internalOperations			: Set(Operation);
 property internalClocks				: Set(Clock);
 property internalSynchronizations	: Set(SynchronizationChannel);
 
+
+
+
+
+
+
+// helpers that are needed to deepCopy Elements. In order to simplify the helpers, they use internally the MUML2MUML library. 
+// When a Variable is acces
+// It is not possible to use self.deepclone() since references to other elements should reference the mapped elements instead of the original values, as it is done in deepClone()
+
+property counter : Integer = 1;
+
+helper Expression :: cloneExpression() : Expression {
+	counter := counter +1;
+	return self.map Expression2Expression(counter);
+}
+
+helper Action :: cloneAction() : Action {
+	counter := counter + 1;
+	return self.map Action2Action(counter);
+}
+
+helper DoEvent :: cloneDoEvent() : DoEvent {
+	counter := counter + 1;
+	return self.map DoEvent2DoEvent(counter);
+}
+
 	-- expressions
 		
 	mapping Expression :: Expression2Expression(context:OclAny) : Expression disjuncts
@@ -277,7 +304,7 @@ mapping Operation :: Operation2Operation(context:OclAny) : Operation {
 	
 		-- synchronizations
 	
-mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region:RealtimeStatechart) : SynchronizationChannel {		
+mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny) : SynchronizationChannel {		
 		init{
 			if(internalSynchronizations->includes(self))
 			{
@@ -292,9 +319,9 @@ mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region
 		}		
 	}
 	
-mapping Synchronization :: Synchronization2Synchronization(context:OclAny, region:RealtimeStatechart) : Synchronization {			
+mapping Synchronization :: Synchronization2Synchronization(context:OclAny) : Synchronization {			
 		result.kind := self.kind;
-		result.syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context, region);
+		result.syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context);
 		result.selectorExpression := self.selectorExpression.map Expression2Expression(context);				
 	}
 	
@@ -329,7 +356,7 @@ mapping TimeValue :: TimeValue2TimeValue(context:OclAny) : TimeValue {
 		
 	}
 	
-mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, region:RealtimeStatechart) : AbsoluteDeadline {
+mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny) : AbsoluteDeadline {
 		
 		upperBound := self.upperBound.map TimeValue2TimeValue(context);
 		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
@@ -338,7 +365,7 @@ mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, re
 		
 	}
 	
-mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny, region:RealtimeStatechart) : RelativeDeadline {
+mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny) : RelativeDeadline {
 		
 		upperBound := self.upperBound.map TimeValue2TimeValue(context);
 		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
@@ -355,7 +382,7 @@ mapping EntryEvent :: EntryEvent2EntryEventCoordinator(context:OclAny, region:Re
 		
 		clockResets += self.clockResets.map Clock2Clock();
 		
-		action := self.action.map Action2Action(context, region);
+		action := self.action.map Action2Action(context);
 					
 	}
 	
@@ -363,7 +390,7 @@ mapping ExitEvent :: ExitEvent2ExitEventCoordinator(context:OclAny, region:Realt
 		
 		clockResets += self.clockResets.map Clock2Clock();
 		
-		action := self.action.map Action2Action(context, region);
+		action := self.action.map Action2Action(context);
 					
 	}
 	
@@ -384,17 +411,17 @@ mapping ExitEvent :: ExitEvent2ExitEventSubrole(context:OclAny, region:RealtimeS
 					
 	}
 	
-mapping DoEvent :: Do2Do(context:OclAny, region:RealtimeStatechart) : DoEvent {
+mapping DoEvent :: DoEvent2DoEvent(context:OclAny) : DoEvent {
 
 		kind := self.kind;
 	
-		action := self.action.map Action2Action(context, region);
+		action := self.action.map Action2Action(context);
 		
 		period := self.period.map TimeValue2TimeValue(context);
 			
 	}
 	
-mapping Action :: Action2Action(context:OclAny, region:RealtimeStatechart) : Action {
+mapping Action :: Action2Action(context:OclAny) : Action {
 	
 		name := self.name;
 		

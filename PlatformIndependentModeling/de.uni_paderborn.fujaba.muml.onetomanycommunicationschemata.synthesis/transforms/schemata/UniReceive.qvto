@@ -31,7 +31,7 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
 		
-		action := self.action.map Action2Action(context, region);
+		action := self.action.cloneAction();
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveDone,SynchronizationKind::RECEIVE);
 			
@@ -117,13 +117,13 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 --------------------------------------------------------------- Transfer Schema SingleReceive of Subrole------------------------------------------------------------------
 	
 // @author: sthiele2 -- this mapping generates the transition from the source of the schema-transition to an intermediate state
-mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:OclAny, region:RealtimeStatechart) : Transition {
 
 		priority := (self.priority);
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
-		target := self.map Schema2SubroleIntermediateState(context,region,1, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context,1);
 	
 		guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(consumeSingleReceiveName));
 	}
@@ -131,13 +131,13 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 
  
 // @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region
-mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
+mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context,region,1,toplevel);	
+		source := self.map Schema2SubroleIntermediateState(context,1);	
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -146,13 +146,13 @@ mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole
 	}
 	
 // @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region			
-mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
+mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context,region,1,toplevel);	
+		source := self.map Schema2SubroleIntermediateState(context,1);	
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 				
@@ -190,12 +190,12 @@ mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, re
 	}
 
 // @author: sthiele2 -- creates a transition from the exit point of the schema-transition's source to the intermediate state in the subrole region
-mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition{
+mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region:RealtimeStatechart) : Transition{
 		priority := 1;
 		
 		source := self.map SingleReceive2StateExitPoint(context,region);
 		
-		target := self.map Schema2SubroleIntermediateState(context,region,1, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context,1);
 		
 		action := self.TransferSchemata2Action("consumeSingleReceive := true",consumeSingleReceiveName, "true");
 		

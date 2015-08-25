@@ -75,7 +75,7 @@ mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:Re
 		result.action.expressions += self.action.expressions.map Expression2Expression(result);
 		
 	} else {
-		result.action := self.action.map Action2Action(context,region);
+		result.action := self.action.cloneAction();
 	};
 	
 	synchronization := self. TransferSchemata2Synchronization(iterateDone,SynchronizationKind::RECEIVE);
@@ -106,7 +106,7 @@ mapping Transition :: NonConditionalIterate2TransitionFromIntermediateToTarget(c
 	
 		target := self.target.map Vertex2VertexCoordinator(context);
 		
-		action := self.action.map Action2Action(context, region);
+		action := self.action.cloneAction();
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
 	
@@ -182,7 +182,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
-		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context,1);
 		
 		synchronization := self.TransferSchemata2Synchronization( iterate,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
@@ -219,7 +219,7 @@ mapping Transition :: Iterate2TransSendSyncNotConditionSubrole(context:OclAny, r
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
-		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context,1);
 		
 		synchronization := self.TransferSchemata2Synchronization(iterate,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
@@ -240,7 +240,7 @@ mapping Transition :: Iterate2IdleToIntermediate2SubroleRegion(context: OclAny, 
 	
 	source := self.map Transition2StateSubrole(region,self.source, true);
 		
-	target := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);
+	target := self.map Schema2SubroleIntermediateState(context,2);
 	
 	guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName));
 		
@@ -251,9 +251,9 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	
 	priority := 1;
 	
-	source := self.map Schema2SubroleIntermediateState(context,region, 1,toplevel);
+	source := self.map Schema2SubroleIntermediateState(context, 1);
 	
-	target := self.map Schema2SubroleIntermediateState(context,region, 2,toplevel);
+	target := self.map Schema2SubroleIntermediateState(context, 2);
 	
 	var expr1 :=  self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
 	var expr2 := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(iterateDelayVariableName));
@@ -285,9 +285,9 @@ mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRe
 	
 	priority := 2;
 	
-	source := self.map Schema2SubroleIntermediateState(context,region, 1,toplevel);
+	source := self.map Schema2SubroleIntermediateState(context, 1);
 	
-	target := self.map Schema2SubroleIntermediateState(context,region, 2,toplevel);
+	target := self.map Schema2SubroleIntermediateState(context, 2);
 	
 	var expr1 :=  self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
 	var expr2 := self.TransferSchemaGuard(iterateDelayVariableName, UnaryOperator::NOT);
@@ -314,9 +314,9 @@ mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRe
 	
 	priority := 3;
 	
-	source := self.map Schema2SubroleIntermediateState(context,region, 1,toplevel);
+	source := self.map Schema2SubroleIntermediateState(context, 1);
 	
-	target := self.map Schema2SubroleIntermediateState(context,region, 2,toplevel);
+	target := self.map Schema2SubroleIntermediateState(context, 2);
 	
 	var expr1 :=  self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName));
 		
@@ -334,7 +334,7 @@ mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);	
+		source := self.map Schema2SubroleIntermediateState(context,2);	
 		
 		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
 			synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
@@ -352,7 +352,7 @@ mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region
 		
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
-		source := self.map Schema2SubroleIntermediateState(context, region,2, toplevel);		
+		source := self.map Schema2SubroleIntermediateState(context,2);		
 		
 		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
 			guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);			
