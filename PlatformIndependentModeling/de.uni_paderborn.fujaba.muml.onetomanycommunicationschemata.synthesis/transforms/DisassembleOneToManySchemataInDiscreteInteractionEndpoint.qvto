@@ -26,13 +26,21 @@ transformation DisassembleOneToManySchemataInDiscreteInteractionEndpoint(inout i
 property currentRealtimeStatechart : RealtimeStatechart;
 property schemaCount : Integer =0; // counter for the schemata in order to enumerate the realtimestatechart names
 
-
 main() {
+	var debugging : Boolean := true;
  	//debug:
 	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
 	// not debug:
-	//currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);	
+	//currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);		
 	disassembleDiscreteInteractionPointRTSC(currentRealtimeStatechart);
+	
+	if( not debugging ) {
+		// when deleting the original/input statechart, we only have to consider the case when the currentRealtimeStatechart was contained in a ModelElementCategory.
+		// Otherwise, it is embedded in a region. In this case it is deleted anyways.
+		if(currentRealtimeStatechart.eContainer().oclIsTypeOf(ModelElementCategory)) {
+			currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements := currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements->excluding(currentRealtimeStatechart);
+		}
+	};
 }
 
 helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) : RealtimeStatechart
@@ -46,7 +54,6 @@ helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) :
 	// step 2: disassemble schematas
 	return currentRealtimeStatechart.map RTSC2RTSC();	
 }
-
 
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
@@ -170,6 +177,8 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 
 	
 mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny,  toplevel: Boolean) : RealtimeStatechart {		
+		
+		parentRegion := self.parentRegion.map EmbeddedRegion2EmbeddedCoordinatorRegion(context);
 		
 		var region : RealtimeStatechart := result;
 		if(toplevel) {
@@ -446,6 +455,8 @@ mapping Transition :: Transition2TransitionFromSourceToTarget(container : Realti
 }
 
 mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatechart) : State {
+		
+		self.parentStatechart.map RTSC2CoordinatorRTSC(context,false);
 		
 		name := self.name;
 		

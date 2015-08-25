@@ -418,7 +418,10 @@ mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordin
 	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny, region:RealtimeStatechart) : EntryPoint {
 		
 		name := self.name;
+		
 		self.state.map States2StatesCoordinator(context,region).connectionPoints += result;
+		
+		
 		//state := self.state.map States2StatesCoordinator(context,region);
 		
 	}
@@ -486,12 +489,40 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:Realti
 }
 
 
-	
--- to coordinator
-mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
+helper Transition :: Vertex2VertexCoordinator(context:OclAny, region:RealtimeStatechart, vertex: Vertex) : Vertex{
+		// helper that distinguishes between StateConnectionPoints and states as source or target of the transition
+		// depending on the kind of StateConnectionPoint, the region argument of the mapping Vertex2VertexCoordinator has to be modified.
+		assert fatal (self.source = vertex or self.target = vertex) with log ("Given vertex must be the source or the target of the given Transition!");		
 		
-		source := self.source.map Vertex2VertexCoordinator(context, region);
-		target := self.target.map Vertex2VertexCoordinator(context, region);
+		if(vertex.oclIsTypeOf(ExitPoint)) {
+			if(self.source = vertex){
+				// case source
+				return vertex.map Vertex2VertexCoordinator(context, region);
+			} else {
+				// case target
+				return vertex.map Vertex2VertexCoordinator(context, region.parentRegion.parentState.parentStatechart);
+			}endif;
+		} else if (vertex.oclIsTypeOf(EntryPoint)) {
+			if(self.source = vertex){
+				// case source
+				return vertex.map Vertex2VertexCoordinator(context, region.parentRegion.parentState.parentStatechart);
+			} else {
+				// case target
+				return vertex.map Vertex2VertexCoordinator(context, region);
+			}endif;
+		} else {
+			return vertex.map Vertex2VertexCoordinator(context, region);
+		}endif;
+		
+		
+		
+}
+-- to coordinator
+mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {		
+			
+		source := self. Vertex2VertexCoordinator(context, region, self.source);		
+		
+		target := self. Vertex2VertexCoordinator(context, region, self.target);
 		
 		priority := self.priority;
 		
