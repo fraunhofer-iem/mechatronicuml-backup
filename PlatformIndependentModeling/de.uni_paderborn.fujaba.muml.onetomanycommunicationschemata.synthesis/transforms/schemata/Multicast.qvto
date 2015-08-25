@@ -26,7 +26,7 @@ property sendMulticastName : String = "sendMulticast";
 mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
 	source := self.source.map Vertex2VertexCoordinator(context);
-	target := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName);
+	target := self.map Schema2CoordinatorIntermediateState(context,1,multicastDLCName);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
 	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
@@ -38,8 +38,8 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition
 {
 	// creates the transition from intermediate state 1 to intermediate state 2
-	source := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName);
-	target := self.map Schema2CoordinatorIntermediateState(context,region,2,multicastDLCName);	
+	source := self.map Schema2CoordinatorIntermediateState(context,1,multicastDLCName);
+	target := self.map Schema2CoordinatorIntermediateState(context,2,multicastDLCName);	
 	priority := 1;
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
@@ -53,7 +53,7 @@ mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny
 mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition
 {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
-	source := self.map Schema2CoordinatorIntermediateState(context,region, 2, multicastDLCName);
+	source := self.map Schema2CoordinatorIntermediateState(context, 2, multicastDLCName);
 	target := self.target.map Vertex2VertexCoordinator(context);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
@@ -70,7 +70,7 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 						
 		source := self.source.map Vertex2VertexCoordinator(context);
 		
-		target := self.map Schema2CoordinatorIntermediateState(context, region,1, multicastDLCName);
+		target := self.map Schema2CoordinatorIntermediateState(context,1, multicastDLCName);
 		
 		synchronization := self. TransferSchemata2Synchronization(  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 		
@@ -83,7 +83,7 @@ mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget
 	
 		priority := 1;
 		
-		source := self.map Schema2CoordinatorIntermediateState(context,region, 1,multicastDLCName);
+		source := self.map Schema2CoordinatorIntermediateState(context, 1,multicastDLCName);
 	
 		target := self.target.map Vertex2VertexCoordinator(context);
 		

@@ -25,7 +25,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 		source := self.source.map Vertex2VertexCoordinator(context);
 		
 		
-		target := self.map Schema2CoordinatorIntermediateState(context, region, 1,multiReceiveDLCName);
+		target := self.map Schema2CoordinatorIntermediateState(context, 1,multiReceiveDLCName);
 		
 		guard := self.guard.map Expression2Expression(context);
 		
@@ -40,7 +40,7 @@ mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator
 		
 		priority := 1;
 		
-		source := self.map Schema2CoordinatorIntermediateState(context, region,1,multiReceiveDLCName);
+		source := self.map Schema2CoordinatorIntermediateState(context,1,multiReceiveDLCName);
 		
 		target := self.target.map Vertex2VertexCoordinator(context);
 				

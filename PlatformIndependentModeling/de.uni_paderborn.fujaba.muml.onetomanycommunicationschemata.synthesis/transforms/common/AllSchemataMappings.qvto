@@ -238,7 +238,7 @@ helper Transition :: TransferSchemaGuard(variable : Variable, operator:UnaryOper
 	}	
 	
 // @author: sthiele2
-mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region:RealtimeStatechart, intermediateStateNumber : Integer, clockName : String) : State
+mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, intermediateStateNumber : Integer, clockName : String) : State
 {
 	// use a counter for unique intermediate state names
 	intermediateStateCount := intermediateStateCount + 1;
