@@ -1,4 +1,5 @@
 library SchemaSpecificMUML2MUML;
+import MUML2MUMLContext;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -51,206 +52,88 @@ helper DoEvent :: cloneDoEvent() : DoEvent {
 	return self.map DoEvent2DoEvent(counter);
 }
 
-
+helper AsynchronousMessageEvent :: cloneAsynchronousMessageEvent() : AsynchronousMessageEvent{
+	counter := counter +1;
+	return self.map AsynchronousMessageEvent2AsynchronousMessageEvent(counter);
+	
+}
 	-- expressions
-		
-	mapping Expression :: Expression2Expression(context:OclAny) : Expression disjuncts
-		LiteralExpression::Literal2Literal,
-		UnaryExpression::Unary2Unary, 
-		BinaryExpression::Binary2Binary,
-		Block::Block2Block,
-		Loop::Loop2Loop,
-		Assignment::Assignment2Assignment,
-		IfStatement::If2If,
-		TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression,
-		OperationCall::Call2Call,
-		ReturnStatement::Return2Return,
-		TriggerMessageExpression::Trigger2Trigger,
-		DiscreteInteractionEndpointReference::EndpointReference2EndpointReference,
-		PositionSelector::Position2Position,
-		LocalVariableDeclarationStatement::Local2Local,
-		NondeterministicChoiceExpression::Choice2Choice,
-		Expression::failOnUnsupportedExpression;
-		
-	mapping Expression :: failOnUnsupportedExpression(context:OclAny) : Expression {
-		init {
-			assert fatal (false) with log('Unsupported expression type.')
-		}
-	}	
-			
-	mapping LiteralExpression :: Literal2Literal(context:OclAny) : LiteralExpression {
-		
-		value := self.value;		
-		
-	}
-	
-	mapping BinaryExpression :: Binary2Binary(context:OclAny) : BinaryExpression disjuncts
-		ComparisonExpression::Comparison2Comparison,
-		ArithmeticExpression::Arithmetic2Arithmetic,
-		LogicalExpression::BinaryLogic2BinaryLogic;	
-		
-	
-	mapping LogicalExpression :: BinaryLogic2BinaryLogic(context:OclAny) : LogicalExpression {
-		
-		leftExpression := self.leftExpression.map Expression2Expression(context);
-		rightExpression := self.rightExpression.map Expression2Expression(context);
-		
-		operator := self.operator;
-		
-	}
-		
-	mapping UnaryExpression :: Unary2Unary(context:OclAny) : UnaryExpression {
-				
-		enclosedExpression := self.enclosedExpression.map Expression2Expression(context);
-		
-		operator := self.operator;
-				
-	}	
-	
-	mapping TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression(context:OclAny) : TypedNamedElementExpression {
-			
-		typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement();
-					
-					
-	}
-			
-	mapping ComparisonExpression :: Comparison2Comparison(context:OclAny) : ComparisonExpression inherits BinaryExpression::Binary2BinaryPrimitive {
-		
-		operator := self.operator;
-		
-	}
-	
-	mapping ArithmeticExpression :: Arithmetic2Arithmetic(context:OclAny) : ArithmeticExpression inherits BinaryExpression::Binary2BinaryPrimitive {
-		
-		operator := self.operator;
-		
-	}
-	
-	abstract mapping BinaryExpression :: Binary2BinaryPrimitive(context:OclAny) : BinaryExpression {
-		
-		leftExpression := self.leftExpression.map Expression2Expression(context);
-		rightExpression := self.rightExpression.map Expression2Expression(context);
-		
-	}
-		
-	mapping Block :: Block2Block(context:OclAny) : Block {
-		
-		result.expressions += self.expressions->map Expression2Expression(context);
-		
-	}
-	
-	mapping Loop :: Loop2Loop(context:OclAny) : Loop disjuncts
-		WhileLoop::While2While,
-		DoWhileLoop::DoWhile2DoWhile,
-		ForLoop::For2For;
-	
-	mapping WhileLoop :: While2While(context:OclAny) : WhileLoop inherits Loop::Loop2LoopPrimitive{};
-	
-	mapping DoWhileLoop :: DoWhile2DoWhile(context:OclAny) : DoWhileLoop inherits Loop::Loop2LoopPrimitive{};
 
-	mapping ForLoop :: For2For(context:OclAny) : ForLoop inherits Loop::Loop2LoopPrimitive {
 		
-		initializeExpression := self.initializeExpression.map Assignment2Assignment(context);
-		countingExpression := self.countingExpression.map Assignment2Assignment(context);
+mapping Expression :: failOnUnsupportedExpression(context:OclAny) : Expression {
+	init {
+		assert fatal (false) with log('Unsupported expression type.')
+	}
+}	
 			
+		
+mapping UnaryExpression :: Unary2Unary(context:OclAny) : UnaryExpression {
+			
+	enclosedExpression := self.enclosedExpression.map Expression2Expression(context);
+	
+	operator := self.operator;
+			
+}	
+	
+	
+	mapping actionlanguage::TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression(context : OclAny) : actionlanguage::TypedNamedElementExpression{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+    	_extension := self._extension.map Extension2Extension(context);
+    	_typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
+    	_elementAccessors := self._elementAccessors.map ElementAccessorExpression2ElementAccessorExpression(context);
+   		 }
+		
+	mapping TypedNamedElement:: TypedNamedElement2TypedNamedElement() : TypedNamedElement {
+		init {
+			result := null;
+			if(self.oclIsTypeOf(muml::behavior::Variable)){
+				result :=  self.oclAsType(muml::behavior::Variable).map Variable2Variable();
+			};
+			if(self.oclIsTypeOf(muml::behavior::Parameter)){
+				result :=  self.oclAsType(muml::behavior::Parameter).map Parameter2Parameter();
+			};
+			
+			assert fatal (not (result = null)) with log ("Error: The result may not be null! Probably an additional type check is necessary!");
+			
+		}
 	}
-	
-	abstract mapping Loop :: Loop2LoopPrimitive(context:OclAny) : Loop {
-		
-		block := self.block.map Block2Block(context);
-		loopTest := self.loopTest.map Expression2Expression(context);
-		
-	}	
-	
-	mapping Assignment :: Assignment2Assignment(context:OclAny) : Assignment {
-		
-		lhs_typedNamedElementExpression := self.lhs_typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression(context);
-		
-		assignOperator := self.assignOperator;
-		
-		rhs_assignExpression := self.rhs_assignExpression.map Expression2Expression(context);
-		
-		incrementDecrementOperator := self.incrementDecrementOperator;
-		
-	}
-	
-	mapping IfStatement :: If2If(context:OclAny) : IfStatement {
-	
-		ifCondition := self.ifCondition.map Expression2Expression(context);
-		
-		ifBlock := self.ifBlock.map Block2Block(context);
-		
-		elseIfConditions := self.elseIfConditions->map Expression2Expression(context);
-		
-		elseIfBlocks := self.elseIfBlocks->map Block2Block(context);
-		
-		elseBlock := self.elseBlock.map Block2Block(context);
-		
-	}
-	
-	mapping OperationCall :: Call2Call(context:OclAny) : OperationCall {
-		
-		operation := self.operation.map Operation2Operation();
-		
-		parameterBinding := self.parameterBinding->map Binding2Binding(context);
-		
-	}
-	
-	mapping ReturnStatement :: Return2Return(context:OclAny) : ReturnStatement {
-		
-		expression := self.expression.map Expression2Expression(context);
-		
-	}
-	
-	mapping TriggerMessageExpression :: Trigger2Trigger(context:OclAny) : TriggerMessageExpression {
-		
-		messageType := self.messageType;
-		parameter := self.parameter;
-		
-		
-	}
-	
-	mapping DiscreteInteractionEndpointReference :: EndpointReference2EndpointReference(context:OclAny) : DiscreteInteractionEndpointReference {
-		
-		typedNamedElementExpression := self.typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression(context);
-		
-		position := self.position.map Position2Position(context);
-		
-	}
-	
-	mapping PositionSelector :: Position2Position(context:OclAny) : PositionSelector {
-		
-		kind := self.kind;
-		successor := self.successor.map Position2Position(context);
-		
-	}
-	
-	mapping LocalVariableDeclarationStatement :: Local2Local(context:OclAny) : LocalVariableDeclarationStatement {
-		
-		variable := self.variable.map Variable2Variable();
-		
-	}
-	
-	mapping NondeterministicChoiceExpression :: Choice2Choice(context:OclAny) : NondeterministicChoiceExpression {
-		
-		range := self.range.map Range2Range(context);
-		
-		dataType := self.dataType;
-		
-	}
-	
-	mapping Range :: Range2Range(context:OclAny) : Range {
-		
-		lowerBound := self.lowerBound;
-		upperBound := self.upperBound;
-	}
-	
+
+	mapping actionlanguage::OperationCall :: OperationCall2OperationCall(context : OclAny) : actionlanguage::OperationCall{
+	    	_comment := self._comment;
+	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+	    	_extension := self._extension.map Extension2Extension(context);
+	    	_operation := self._operation.map Operation2Operation();
+	    	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding(context);
+	   		 }
+
+
+	mapping actionlanguage::TriggerMessageExpression :: TriggerMessageExpression2TriggerMessageExpression(context : OclAny) : actionlanguage::TriggerMessageExpression{
+	    	_comment := self._comment;
+	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+	    	_extension := self._extension.map Extension2Extension(context);
+	    	_messageType := self._messageType;
+	    	_parameter := self._parameter;
+	   		 }
+
+	mapping actionlanguage::LocalVariableDeclarationStatement :: LocalVariableDeclarationStatement2LocalVariableDeclarationStatement(context : OclAny) : actionlanguage::LocalVariableDeclarationStatement{
+	    	_comment := self._comment;
+	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+	    	_extension := self._extension.map Extension2Extension(context);
+	    	_variable := self._variable.map Variable2Variable();
+	   		 }
+	   		 
+	mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoiceExpression2NondeterministicChoiceExpression(context : OclAny) : actionlanguage::NondeterministicChoiceExpression{
+	    	_comment := self._comment;
+	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+	    	_extension := self._extension.map Extension2Extension(context);
+	    	_range := self._range.map Range2Range(context);
+	    	_dataType := self._dataType;
+	   		 }
 
 	
 -- variables, operations, parametes... 
-mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedElement
-		disjuncts Variable::Variable2Variable,Parameter::Parameter2Parameter;
-	
+
 	abstract mapping TypedNamedElement :: BasicTypedNamedElement2TypedNamedElement() : TypedNamedElement {
 		name := self.name;
 		dataType := self.dataType;		
@@ -272,13 +155,16 @@ mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedE
 		}
 	};
 		
+		
+		
+mapping muml::behavior::ParameterBinding :: ParameterBinding2ParameterBinding(context : OclAny) : muml::behavior::ParameterBinding{
+	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+	_extension := self._extension.map Extension2Extension(context);
+	_parameter := self._parameter.map Parameter2Parameter();
+	_value := self._value.map Expression2Expression(context);
+	 }
 	
-	
-	
-	mapping ParameterBinding :: Binding2Binding(context:OclAny) : ParameterBinding {
-		parameter := self.parameter.map Parameter2Parameter();
-		value := self.value.map Expression2Expression(context);
-	}
+
 	
 mapping Operation :: Operation2Operation() : Operation {
 		init{
@@ -297,19 +183,24 @@ mapping Operation :: Operation2Operation() : Operation {
 		}			
 	}			
 	
-mapping Parameter :: Parameter2Parameter() : Parameter {
-	name := self.name;
-	dataType := self.dataType;
-	
-}
+
+	mapping muml::behavior::Parameter :: Parameter2Parameter() : muml::behavior::Parameter{
+	    	counter := counter +1;
+	    	_name := self._name;
+	    	_comment := self._comment;
+	    	_annotation := self._annotation.map EAnnotation2EAnnotation(counter);
+	    	_extension := self._extension.map Extension2Extension(counter);
+	    	_dataType := self.dataType;
+	   		 }	
+
 		-- synchronizations
 	
 mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny) : SynchronizationChannel {		
 		init{
 			if(internalSynchronizations->includes(self))
 			{
-				result.name := self.name;
-							
+				result := new SynchronizationChannel();
+				result.name := self.name;							
 				result.selectorType := self.selectorType;		
 			}
 			else
@@ -318,12 +209,9 @@ mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny) : Sync
 			}
 		}		
 	}
-	
-mapping Synchronization :: Synchronization2Synchronization(context:OclAny) : Synchronization {			
-		result.kind := self.kind;
-		result.syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context);
-		result.selectorExpression := self.selectorExpression.map Expression2Expression(context);				
-	}
+
+
+
 	
 	-- Clocks	
 mapping Clock :: Clock2Clock() : Clock {
@@ -339,46 +227,20 @@ mapping Clock :: Clock2Clock() : Clock {
 			}		
 		}		
 	}
-	
-mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny) : ClockConstraint {
-				
-		clock := self.clock.map Clock2Clock();
-				
-		operator := self.operator;
-		
-		bound := self.bound.map TimeValue2TimeValue(context);
-		
-	}
-	
-mapping TimeValue :: TimeValue2TimeValue(context:OclAny) : TimeValue {
-	
-		value := self.value.map Expression2Expression(context);
-		unit := self.unit;
-		
-	}
-	
-mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny) : AbsoluteDeadline {
-		
-		upperBound := self.upperBound.map TimeValue2TimeValue(context);
-		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
-		
-		clock := self.clock.map Clock2Clock();
-		
-	}
-	
-mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny) : RelativeDeadline {
-		
-		upperBound := self.upperBound.map TimeValue2TimeValue(context);
-		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
-				
-	}
-	
-	
+	mapping muml::realtimestatechart::ClockConstraint :: ClockConstraint2ClockConstraint(context : OclAny) : muml::realtimestatechart::ClockConstraint{
+	    	_operator := self._operator;
+	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+	    	_extension := self._extension.map Extension2Extension(context);
+	    	_bound := self._bound.map TimeValue2TimeValue(context);
+	    	_clock := self._clock.map Clock2Clock();
+	   		 }	
 
-	
+mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny) : AbsoluteDeadline {		
+		upperBound := self.upperBound.map TimeValue2TimeValue(context);
+		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);		
+		clock := self.clock.map Clock2Clock();		
+	}
 
-	
-	
 mapping EntryEvent :: EntryEvent2EntryEventCoordinator(context:OclAny, region:RealtimeStatechart) : EntryEvent {
 		
 		clockResets += self.clockResets.map Clock2Clock();
@@ -412,28 +274,11 @@ mapping ExitEvent :: ExitEvent2ExitEventSubrole(context:OclAny, region:RealtimeS
 					
 	}
 	
-mapping DoEvent :: DoEvent2DoEvent(context:OclAny) : DoEvent {
 
-		kind := self.kind;
 	
-		action := self.action.map Action2Action(context);
-		
-		period := self.period.map TimeValue2TimeValue(context);
-			
-	}
-	
-mapping Action :: Action2Action(context:OclAny) : Action {
-	
-		name := self.name;
-		
-		result.expressions += self.expressions->map Expression2Expression(context);
-		
-	}
-	
-mapping TransitionEvent :: TransitionEvent2TransitionEvent(context:OclAny) : TransitionEvent disjuncts
-		AsynchronousMessageEvent::Asynchronous2Asynchronous;
-	
-mapping AsynchronousMessageEvent :: Asynchronous2Asynchronous(context:OclAny) : AsynchronousMessageEvent {
+
+
+mapping AsynchronousMessageEvent :: AsynchronousMessageEvent2AsynchronousMessageEvent(context:OclAny) : AsynchronousMessageEvent {
 		
 		kind := self.kind;
 		
@@ -441,11 +286,12 @@ mapping AsynchronousMessageEvent :: Asynchronous2Asynchronous(context:OclAny) : 
 		
 	}
 	
-mapping Message :: Message2Message(context:OclAny) : Message {
-		
-		instanceOf := self.instanceOf;
-		
-		parameterBinding += self.parameterBinding.map Binding2Binding(context);
-		
-	}
+
+mapping muml::realtimestatechart::Message :: Message2Message(context : OclAny) : muml::realtimestatechart::Message{
+    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+    	_extension := self._extension.map Extension2Extension(context);
+    	_instanceOf := self._instanceOf;
+    	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding(context);
+   		 }
+	   		 
 

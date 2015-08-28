@@ -103,7 +103,7 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate1ToIntermediate2Su
 		
 		target := self.map Schema2SubroleIntermediateState(context,2);
 		
-		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
+		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
 		
 		action := self.triggerMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::MultiReceive).failureAction.cloneAction();
 }
@@ -118,7 +118,7 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Su
 		
 		target := self.map Schema2SubroleIntermediateState(context,2);
 		
-		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
+		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
 		
 		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.cloneAction();
 }	

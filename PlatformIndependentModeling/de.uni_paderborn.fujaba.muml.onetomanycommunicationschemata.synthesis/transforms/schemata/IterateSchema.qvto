@@ -203,7 +203,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		
 		action.name := action.name + " " + iterateDelayVariableName + " := true";
 		
-		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
+		events += self.raiseMessageEvent.cloneAsynchronousMessageEvent();
 		
 		var leftExpression : Expression := 	self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
 		var rightExpression : Expression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendIterateName));

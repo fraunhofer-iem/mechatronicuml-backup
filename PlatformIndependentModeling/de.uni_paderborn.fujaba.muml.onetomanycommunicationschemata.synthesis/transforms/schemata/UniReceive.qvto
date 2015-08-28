@@ -230,7 +230,7 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		synchronization := self. TransferSchemata2Synchronization( singleReceivePossibleName, SynchronizationKind::SEND);
 		
 		
-		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
+		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
 		
 		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 				
@@ -239,8 +239,8 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 
 mapping Transition :: TransferSchemaGuardAndLocalConditions(context : OclAny) : expressions::common::LogicalExpression
 {
-		leftExpression := self.guard.map Expression2Expression(context);
-		rightExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context);
+		leftExpression := self.guard.cloneExpression();
+		rightExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.cloneExpression();
 		operator := LogicOperator::AND;	
 }
 	

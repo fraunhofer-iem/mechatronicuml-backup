@@ -183,7 +183,7 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 				
 		synchronization := self.TransferSchemata2Synchronization(  loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 						
-		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
+		events += self.raiseMessageEvent.cloneAsynchronousMessageEvent();
 		
 		clockResets += self.clockResets->map Clock2Clock();
 		
