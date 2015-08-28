@@ -15,15 +15,18 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 helper normalize(inout rtsc : RealtimeStatechart) {
 	// normalize the statechart rtsc and all of its children statecharts	
-	rtsc->closure(rtsc.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(rtsc)->forEach(statechart) {
+	var allRTSC : Set(RealtimeStatechart) := 
+	rtsc->closure(rtsc.states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(rtsc);
+	
+	allRTSC->forEach(statechart) {
 		normalizeTransformationThatUseTwoSchemata(statechart);
-		normalizeTransitionsWithStateExitPoint(statechart);
+		normalizeTransitionsWithStateConnectionPoint(statechart);
 	};	
 }
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 // normalize transitions that use two synchronization schemata
-helper normalizeTransformationThatUseTwoSchemata(inout rtsc : RealtimeStatechart){	
+helper normalizeTransformationThatUseTwoSchemata(inout rtsc : RealtimeStatechart) {	
 	// normalize transitions that use two synchronization schemata	
 	rtsc.transitions->select(t|t.usesTwoSchemata())->forEach(t){
 		rtsc.states += t.map Transition2NormalizationIntermediateState();
@@ -33,12 +36,12 @@ helper normalizeTransformationThatUseTwoSchemata(inout rtsc : RealtimeStatechart
 	};	
 }
 
-mapping Transition::Transition2NormalizationIntermediateState():State{
+mapping Transition :: Transition2NormalizationIntermediateState(): State {
 	name:= "SynchronizationNormalizationIntermediate_"+ self.source.name + "_"+self.target.name;
 	result.parentStatechart := self.statechart;	
 }
 
-mapping Transition::Transition2NormalizationTransition1(): Transition{
+mapping Transition :: Transition2NormalizationTransition1() : Transition{
 	priority := self.priority;
 	source:= self.source;
 	target := self.map Transition2NormalizationIntermediateState();
@@ -53,7 +56,7 @@ mapping Transition::Transition2NormalizationTransition1(): Transition{
 	events += self.triggerMessageEvent;
 }
 
-mapping Transition::Transition2NormalizationTransition2(): Transition{
+mapping Transition :: Transition2NormalizationTransition2() : Transition{
 	priority := 1;
 	source := self.map Transition2NormalizationIntermediateState();
 	// take the <effects> of the input transition
@@ -71,40 +74,36 @@ mapping Transition::Transition2NormalizationTransition2(): Transition{
 	events += self.raiseMessageEvent;
 }
 
-query Transition::usesTwoSchemata():Boolean{
+query Transition :: usesTwoSchemata() : Boolean{
 	return not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined();	
 }
 
-
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-// normalize transitions that use Schemata and that source vertex is StateExitPoint
+// normalize transitions that use Schemata and that source vertex is a StateConnectionPoint
 
-helper normalizeTransitionsWithStateExitPoint(inout rtsc : RealtimeStatechart) {
-	rtsc.transitions->select(t|t.usesSchemataAndHasStateExitPointAsSource())-> forEach(transition) {
-		transition.createNewTransitionFromStateExitPointToIntermediateState();
+helper normalizeTransitionsWithStateConnectionPoint(inout rtsc : RealtimeStatechart) {
+	rtsc.transitions->select(t|t.usesSchemataAndHasStateConnectionPointAsSource())-> forEach(transition) {
+		rtsc.transitions += transition.createNewTransitionFromStateExitPointToIntermediateState();
 		transition.source := transition.map StateExitPointIntermediateState();
+		rtsc.states += transition.map StateExitPointIntermediateState();
 	};
 }
 
 helper Transition:: createNewTransitionFromStateExitPointToIntermediateState() : Transition {
 	var transition : Transition := new Transition();
 	transition.source := self.source;
-	transition.target := self.map StateExitPointIntermediateState();	
+	transition.target := self.map StateExitPointIntermediateState();
+	transition.priority := self.priority;
 	return transition;
 }
 
 mapping Transition :: StateExitPointIntermediateState() : State {
-	result.name := "Intermediate Node for StateExitPoint " + self.source.name;
+	result.name := "Intermediate Node for StateConnectionPoint " + self.source.name;
 	result.urgent := true;
+	result.parentStatechart := self.statechart;
 }
 
-query Transition::usesSchemataAndHasStateExitPointAsSource() : Boolean {
+query Transition :: usesSchemataAndHasStateConnectionPointAsSource() : Boolean {
 	// check only raise event, since trigger is not allowed anyway!	
-	return  not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and self.source.oclIsTypeOf(muml::realtimestatechart::ExitPoint);
+	return  not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and self.source.oclIsKindOf(muml::realtimestatechart::StateConnectionPoint);
 }
-
-
-
-
-
-
