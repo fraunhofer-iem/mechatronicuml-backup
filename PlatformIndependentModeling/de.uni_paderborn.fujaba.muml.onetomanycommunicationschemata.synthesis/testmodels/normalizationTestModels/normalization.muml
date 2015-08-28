@@ -84,7 +84,12 @@
         </action>
       </transitions>
       <transitions xmi:id="_gUFZAE1kEeWkUO0CoSdR4g" priority="1" target="_bVpJEE1kEeWkUO0CoSdR4g" source="_2i5nkBA6EeW1iK9uryto1Q"/>
-      <transitions xmi:id="_hpS4cE1kEeWkUO0CoSdR4g" priority="1" target="_2i5nkBA6EeW1iK9uryto1Q" source="_ZWswIE1kEeWkUO0CoSdR4g"/>
+      <transitions xmi:id="_hpS4cE1kEeWkUO0CoSdR4g" priority="1" target="_2i5nkBA6EeW1iK9uryto1Q" source="_ZWswIE1kEeWkUO0CoSdR4g">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_u9fVkE1oEeWkUO0CoSdR4g">
+          <message xmi:id="_vQOrYE1oEeWkUO0CoSdR4g" instanceOf="_JKgb4BA7EeW1iK9uryto1Q"/>
+          <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:Iterate" xmi:id="_wbPF8E1oEeWkUO0CoSdR4g"/>
+        </events>
+      </transitions>
       <states xmi:id="_0cG6MRA6EeW1iK9uryto1Q" name="init" outgoingTransitions="_6KfZUBA6EeW1iK9uryto1Q" initial="true">
         <embeddedRegions xmi:id="_XiWdoE1kEeWkUO0CoSdR4g" priority="1">
           <embeddedStatechart xmi:id="_XickQE1kEeWkUO0CoSdR4g" name="statechart">
