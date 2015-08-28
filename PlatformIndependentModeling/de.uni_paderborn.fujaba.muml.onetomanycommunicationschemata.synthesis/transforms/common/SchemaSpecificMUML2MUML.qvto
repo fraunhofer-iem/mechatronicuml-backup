@@ -25,17 +25,10 @@ helper isOperationSubRoleSpecific(o : Operation): Boolean
 	
 }
 
-
 property internalVariables			: Set(Variable);
 property internalOperations			: Set(Operation);
 property internalClocks				: Set(Clock);
 property internalSynchronizations	: Set(SynchronizationChannel);
-
-
-
-
-
-
 
 // helpers that are needed to deepCopy Elements. In order to simplify the helpers, they use internally the MUML2MUML library. 
 // When a Variable is acces
@@ -57,6 +50,7 @@ helper DoEvent :: cloneDoEvent() : DoEvent {
 	counter := counter + 1;
 	return self.map DoEvent2DoEvent(counter);
 }
+
 
 	-- expressions
 		
@@ -196,7 +190,7 @@ helper DoEvent :: cloneDoEvent() : DoEvent {
 	
 	mapping OperationCall :: Call2Call(context:OclAny) : OperationCall {
 		
-		operation := self.operation.map Operation2Operation(context);
+		operation := self.operation.map Operation2Operation();
 		
 		parameterBinding := self.parameterBinding->map Binding2Binding(context);
 		
@@ -251,6 +245,7 @@ helper DoEvent :: cloneDoEvent() : DoEvent {
 		upperBound := self.upperBound;
 	}
 	
+
 	
 -- variables, operations, parametes... 
 mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedElement
@@ -265,6 +260,7 @@ mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedE
 		init{
 			if(internalVariables->includes(self))
 			{
+				result := new Variable();
 				result.initializeExpression := self.initializeExpression.map Expression2Expression("INPUT");
 				result.constant := self.constant;
 
@@ -276,23 +272,22 @@ mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedE
 		}
 	};
 		
-	mapping Parameter :: Parameter2Parameter() : Parameter inherits TypedNamedElement::BasicTypedNamedElement2TypedNamedElement{
-		
-	};
+	
 	
 	
 	mapping ParameterBinding :: Binding2Binding(context:OclAny) : ParameterBinding {
-		parameter := self.parameter;
+		parameter := self.parameter.map Parameter2Parameter();
 		value := self.value.map Expression2Expression(context);
 	}
 	
-mapping Operation :: Operation2Operation(context:OclAny) : Operation {
+mapping Operation :: Operation2Operation() : Operation {
 		init{
 			if(internalOperations->includes(self))
 			{
+				result := new Operation();
 				result.name := self.name;
 				result.returnType := self.returnType;
-				result.implementations := self.implementations->map Expression2Expression(context);
+				result.implementations := self.implementations->cloneExpression();
 				result.parameters := self.parameters->map Parameter2Parameter();
 			}
 			else
@@ -302,6 +297,11 @@ mapping Operation :: Operation2Operation(context:OclAny) : Operation {
 		}			
 	}			
 	
+mapping Parameter :: Parameter2Parameter() : Parameter {
+	name := self.name;
+	dataType := self.dataType;
+	
+}
 		-- synchronizations
 	
 mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny) : SynchronizationChannel {		
@@ -330,6 +330,7 @@ mapping Clock :: Clock2Clock() : Clock {
 		init{
 			if(internalClocks->includes(self))
 			{
+				result := new Clock();
 				result.name := self.name;	
 			}
 			else

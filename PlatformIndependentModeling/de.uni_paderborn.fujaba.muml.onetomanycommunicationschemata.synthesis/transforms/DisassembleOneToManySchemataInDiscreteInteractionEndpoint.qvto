@@ -95,7 +95,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		
 		variables += self.variables.map Variable2Variable();
 		
-		operations += self.operations.map Operation2Operation(self);
+		operations += self.operations.map Operation2Operation();
 		// the proper transformation
 		states += self.map Rtsc2InitialState();
 		
@@ -440,7 +440,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 			};
 		};
 				
-		operations += sourceRealtimeStatechart.subRoleSpecificOperations.map Operation2Operation(context);
+		operations += sourceRealtimeStatechart.subRoleSpecificOperations.map Operation2Operation();
 		
 		variables += sourceRealtimeStatechart.subRoleSpecificVariables->map Variable2Variable();
 		
