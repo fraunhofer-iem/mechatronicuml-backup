@@ -33,7 +33,7 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:
 		
 		action := self.action.cloneAction();
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceiveDone,SynchronizationKind::RECEIVE);
+		synchronization := self. createSynchronization( singleReceiveDone,SynchronizationKind::RECEIVE);
 			
 	}
 
@@ -71,7 +71,7 @@ mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny
 		
 		guard := self.guard.map Expression2Expression(context);
 		
-		synchronization := self. TransferSchemata2Synchronization(singleReceiveCheck, SynchronizationKind::SEND,PositionSelectorKind::FIRST);
+		synchronization := self. createSynchronization(singleReceiveCheck, SynchronizationKind::SEND,PositionSelectorKind::FIRST);
 			
 	}
 	
@@ -83,7 +83,7 @@ mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:Oc
 		
 		source := self.map RegionState(context,  "Requesting", false);
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::RECEIVE);
+		synchronization := self. createSynchronization( singleReceiveCheckDone, SynchronizationKind::RECEIVE);
 			
 	}
 //mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region:RealtimeStatechart, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
@@ -107,7 +107,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 		
 		source := self.source.map Vertex2VertexCoordinator(context);		
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceivePossibleName, SynchronizationKind::RECEIVE);
+		synchronization := self. createSynchronization( singleReceivePossibleName, SynchronizationKind::RECEIVE);
 		
 		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
 		
@@ -139,7 +139,7 @@ mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);	
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		synchronization := self. createSynchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
@@ -156,9 +156,9 @@ mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 				
-		action := self. TransferSchemata2Action("consumeSingleReceive:=false", consumeSingleReceiveName, "false");
+		action := self. createActionWithVariableAssignmentBlock("consumeSingleReceive:=false", consumeSingleReceiveName, "false");
 			
-		synchronization := self. TransferSchemata2Synchronization(singleReceiveDone, SynchronizationKind::SEND );			
+		synchronization := self. createSynchronization(singleReceiveDone, SynchronizationKind::SEND );			
 	}
 	
 mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region {
@@ -197,7 +197,7 @@ mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateSt
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
-		action := self.TransferSchemata2Action("consumeSingleReceive := true",consumeSingleReceiveName, "true");
+		action := self.createActionWithVariableAssignmentBlock("consumeSingleReceive := true",consumeSingleReceiveName, "true");
 		
 		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined())
 			{
@@ -227,7 +227,7 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		}
 		endif;
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceivePossibleName, SynchronizationKind::SEND);
+		synchronization := self. createSynchronization( singleReceivePossibleName, SynchronizationKind::SEND);
 		
 		
 		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
@@ -262,7 +262,7 @@ mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAn
 		
 		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::EQUAL,consumeSingleReceiveName,true);
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
+		synchronization := self. createSynchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 					
 	}
 	
@@ -276,7 +276,7 @@ mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAn
 		
 		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL,consumeSingleReceiveName,true);
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		synchronization := self. createSynchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
 	}
 	
@@ -290,7 +290,7 @@ mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(contex
 		
 		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL, singleReceivePossibleName, false);
 		
-		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
+		synchronization := self. createSynchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 		
 	}
 	
@@ -302,7 +302,7 @@ mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny
 		
 		source := self.map RegionState(context,  "Idle", true);
 		
-		synchronization := self. TransferSchemata2Synchronization(singleReceiveCheck, SynchronizationKind::RECEIVE,PositionSelectorKind::SELF);
+		synchronization := self. createSynchronization(singleReceiveCheck, SynchronizationKind::RECEIVE,PositionSelectorKind::SELF);
 					
 	}
 	

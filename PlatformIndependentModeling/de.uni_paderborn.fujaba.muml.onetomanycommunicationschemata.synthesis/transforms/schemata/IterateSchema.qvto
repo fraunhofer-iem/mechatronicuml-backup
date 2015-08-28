@@ -35,7 +35,7 @@ mapping Transition :: Iterate2CoordinatorStartTransition(context:OclAny, region:
 	guard := self.guard.map Expression2Expression(result);		
 	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 	
-	synchronization := self. TransferSchemata2Synchronization(  iterateCheckDone,SynchronizationKind::RECEIVE);
+	synchronization := self. createSynchronization(  iterateCheckDone,SynchronizationKind::RECEIVE);
 }
 
 // @author: sthiele2
@@ -50,10 +50,10 @@ mapping Transition :: Iterate2CoordinatorIntermediateTransition(context:OclAny, 
 		result.clockConstraints += self. RelativeDeadline2ClockConstraint( true, ComparingOperator::GREATER_OR_EQUAL, iterateDLCName );
 	};
 	if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
-		synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+		synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 	}
 	else {
-		synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::LAST);
+		synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::LAST);
 	};
 }
 
@@ -68,7 +68,7 @@ mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:Re
 	
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
 		
-		result.action := self.TransferSchemata2Action(terminateIterationName +  " := false;",terminateIterationName,"false");
+		result.action := self.createActionWithVariableAssignmentBlock(terminateIterationName +  " := false;",terminateIterationName,"false");
 		if(not self.action.name.oclIsUndefined()) {
 			result.action.name := result.action.name + self.action.name;
 		};
@@ -78,7 +78,7 @@ mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:Re
 		result.action := self.action.cloneAction();
 	};
 	
-	synchronization := self. TransferSchemata2Synchronization(iterateDone,SynchronizationKind::RECEIVE);
+	synchronization := self. createSynchronization(iterateDone,SynchronizationKind::RECEIVE);
 }
 
 	
@@ -91,7 +91,7 @@ mapping Transition :: NonConditionalIterate2TranssitionFromSourceToIntermediate(
 		
 		target := self.map Schema2CoordinatorIntermediateState(context,1, iterateDLCName);
 		
-		synchronization := self. TransferSchemata2Synchronization(  iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+		synchronization := self. createSynchronization(  iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 		
 		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(result);
 		
@@ -110,7 +110,7 @@ mapping Transition :: NonConditionalIterate2TransitionFromIntermediateToTarget(c
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
 	
-		synchronization := self. TransferSchemata2Synchronization(  iterateDone,SynchronizationKind::RECEIVE);	
+		synchronization := self. createSynchronization(  iterateDone,SynchronizationKind::RECEIVE);	
 }
 
 ---------------- Coordinator Mappings for Embedded State
@@ -149,7 +149,7 @@ mapping Transition :: Iterate2TransCheckEmbeddedCoordinator(context:OclAny, regi
 		
 		guard := self.guard.map Expression2Expression(context);
 		
-		synchronization := 	self. TransferSchemata2Synchronization( iterateCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+		synchronization := 	self. createSynchronization( iterateCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 			
 	}
 	
@@ -163,7 +163,7 @@ mapping Transition :: Iterate2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 		
 	
 		
-		synchronization :=  self. TransferSchemata2Synchronization( iterateCheckDone,SynchronizationKind::RECEIVE);
+		synchronization :=  self. createSynchronization( iterateCheckDone,SynchronizationKind::RECEIVE);
 		
 		guard := self. TransferSchemaGuard( iteratePossibleName, UnaryOperator::NOT);
 			
@@ -184,7 +184,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
-		synchronization := self.TransferSchemata2Synchronization( iterate,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
+		synchronization := self.createSynchronization( iterate,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
 		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 		
@@ -199,7 +199,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 			action.name :=  action.name + self.raiseMessageEvent.oneToManyCommunicationSchema.action.name;
 		};
 		
-		action.expressions+= self.TransferSchemata2AssignmentBlock(iterateDelayVariableName,"true");
+		action.expressions+= self.createBlockWithVariableAssignment(iterateDelayVariableName,"true");
 		
 		action.name := action.name + " " + iterateDelayVariableName + " := true";
 		
@@ -221,9 +221,9 @@ mapping Transition :: Iterate2TransSendSyncNotConditionSubrole(context:OclAny, r
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
-		synchronization := self.TransferSchemata2Synchronization(iterate,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := self.createSynchronization(iterate,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self.TransferSchemata2Action(iterateDelayVariableName + " := false;",iterateDelayVariableName,"false");			
+		action := self.createActionWithVariableAssignmentBlock(iterateDelayVariableName + " := false;",iterateDelayVariableName,"false");			
 		
 		var leftExpression : Expression := 	self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
 		var rightExpression : Expression := self.TransferSchemaGuard(sendIterateName, UnaryOperator::NOT);
@@ -324,7 +324,7 @@ mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRe
 	
 	guard := self.TransferSchemataLogicalExpression(expr1,expr2,LogicOperator::OR);
 	
-	action := self.TransferSchemata2Action(terminateIterationName + ":= true;",terminateIterationName,"true");
+	action := self.createActionWithVariableAssignmentBlock(terminateIterationName + ":= true;",terminateIterationName,"true");
 	
 }
 
@@ -337,11 +337,11 @@ mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		source := self.map Schema2SubroleIntermediateState(context,2);	
 		
 		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
-			synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+			synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 			guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		}
 		else {
-			synchronization := self. TransferSchemata2Synchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
+			synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
 			guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
 		}endif;		
 	}
@@ -366,10 +366,10 @@ mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			action := self. TransferSchemata2Action("iteratePossible:=false", iteratePossibleName, "false");
+			action := self. createActionWithVariableAssignmentBlock("iteratePossible:=false", iteratePossibleName, "false");
 			
 		}endif;
-		synchronization := self. TransferSchemata2Synchronization( iterateDone,SynchronizationKind::SEND);
+		synchronization := self. createSynchronization( iterateDone,SynchronizationKind::SEND);
 	}
 	
 
@@ -408,7 +408,7 @@ mapping Transition :: Iterate2RequestedIdleCheckSubrole(context:OclAny, region:R
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
-		synchronization := self.TransferSchemata2Synchronization( "iterateCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		synchronization := self.createSynchronization( "iterateCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
 	}
 	
@@ -422,7 +422,7 @@ mapping Transition :: Iterate2RequestedIdleCheckDoneSubrole(context:OclAny, regi
 		
 		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
-		synchronization := self.TransferSchemata2Synchronization(iterateCheckDone,SynchronizationKind::SEND);
+		synchronization := self.createSynchronization(iterateCheckDone,SynchronizationKind::SEND);
 					
 	}
 	
@@ -436,9 +436,9 @@ mapping Transition :: Iterate2IdleRequestedFulfilledSubrole(context:OclAny, regi
 		
 		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(2);
 		
-		synchronization := 	self.TransferSchemata2Synchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := 	self.createSynchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self.TransferSchemata2TwoActions(iteratePossibleName + " :=true; " + sendIterateName + ":= true;",iteratePossibleName, sendIterateName,"true");
+		action := self.createActionWithTwoVariableAssignments(iteratePossibleName + " :=true; " + sendIterateName + ":= true;",iteratePossibleName, sendIterateName,"true");
 					
 	}
 	
@@ -452,7 +452,7 @@ mapping Transition :: Iterate2IdleRequestedNotFulfilledSubrole(context:OclAny, r
 		
 		guard := self. TransferSchemaNotCondition();
 
-		synchronization := self.TransferSchemata2Synchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := self.createSynchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 					
 	}
 

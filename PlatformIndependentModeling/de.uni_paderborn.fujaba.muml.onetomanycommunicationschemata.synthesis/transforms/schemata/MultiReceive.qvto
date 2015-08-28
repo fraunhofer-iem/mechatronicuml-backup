@@ -31,7 +31,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 		
 		clockConstraints := self.clockConstraints->select(c | not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 		
-		synchronization := self. TransferSchemata2Synchronization( multiReceiceChannelName,SynchronizationKind::SEND  ,PositionSelectorKind::FIRST);
+		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::SEND  ,PositionSelectorKind::FIRST);
 		
 }
 
@@ -52,7 +52,7 @@ mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator
 			clockConstraints += self. RelativeDeadline2ClockConstraint(true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName);
 		}endif;		
 		
-		synchronization := self. TransferSchemata2Synchronization( multiReceiveDoneChannelName,SynchronizationKind::RECEIVE);
+		synchronization := self. createSynchronization( multiReceiveDoneChannelName,SynchronizationKind::RECEIVE);
 }
 
 	
@@ -72,7 +72,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subro
 			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
 		}endif;
 			
-		synchronization := self. TransferSchemata2Synchronization( multiReceiceChannelName,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 }
 
 // @author: sthiele2 -- creates a transition in the subrole region from the schema-transition's source to the intermediate state 2
@@ -89,7 +89,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediate2Subrole(co
 			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2UnaryExpression(result,UnaryOperator::NOT);
 		}endif;
 		
-		synchronization := self. TransferSchemata2Synchronization( multiReceiceChannelName,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 }
 
 
@@ -135,7 +135,7 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context 
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 	
-		synchronization := 	self. TransferSchemata2Synchronization( multiReceiveDoneChannelName,SynchronizationKind::SEND);
+		synchronization := 	self. createSynchronization( multiReceiveDoneChannelName,SynchronizationKind::SEND);
 }
 
 // @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state
@@ -150,6 +150,6 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate2ToTarget(context 
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 			
-		synchronization := self. TransferSchemata2Synchronization( multiReceiceChannelName,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 }
 

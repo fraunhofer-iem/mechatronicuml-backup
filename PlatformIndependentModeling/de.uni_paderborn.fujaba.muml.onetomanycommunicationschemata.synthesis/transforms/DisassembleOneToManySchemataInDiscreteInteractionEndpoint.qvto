@@ -149,7 +149,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 			
 			if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
-				clocks += transition.map TransitionDeadline2CoordinatorDeadlineClock(iterateDelayClockName);
+				clocks += transition.map Schema2Clock(iterateDelayClockName);
 			};
 		};
 			
@@ -239,11 +239,11 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeSta
 		
 		
 		// @author: sthiele2 -- add clocks for the implementation of the relative deadlines
-		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
-		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map TransitionDeadline2CoordinatorDeadlineClock(multicastDLCName);
-		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map TransitionDeadline2CoordinatorDeadlineClock(singleReceiveDLCName);
-		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map TransitionDeadline2CoordinatorDeadlineClock(multiReceiveDLCName);
-		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map TransitionDeadline2CoordinatorDeadlineClock(loadBalancingDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map Schema2Clock(unicastDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Schema2Clock(multicastDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map Schema2Clock(singleReceiveDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map Schema2Clock(multiReceiveDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map Schema2Clock(loadBalancingDLCName);
 			
 		self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).coordinatorBehavior := result;
 		}
@@ -414,7 +414,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 				intermediateState1.entryEvent.action := new Action();
 				intermediateState1.entryEvent.action.name := "";
 			};
-			intermediateState1.entryEvent.action.expressions += self.TransferSchemata2AssignmentBlock(sendMulticastName, "false");
+			intermediateState1.entryEvent.action.expressions += self.createBlockWithVariableAssignment(sendMulticastName, "false");
 			intermediateState1.entryEvent.action.name := intermediateState1.entryEvent.action.name + " " + sendMulticastName + " := false;";
 		};
 		
@@ -432,11 +432,11 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 				intermediateState1.entryEvent.action := new Action();
 				intermediateState1.entryEvent.action.name := "";
 			};
-			intermediateState1.entryEvent.action.expressions += self.TransferSchemata2AssignmentBlock(sendIterateName, "false");
+			intermediateState1.entryEvent.action.expressions += self.createBlockWithVariableAssignment(sendIterateName, "false");
 			intermediateState1.entryEvent.action.name := intermediateState1.entryEvent.action.name + " " + sendIterateName + " := false;";
 			
 			if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
-				intermediateState1.entryEvent.clockResets += self.map TransitionDeadline2CoordinatorDeadlineClock(iterateDelayClockName);
+				intermediateState1.entryEvent.clockResets += self.map Schema2Clock(iterateDelayClockName);
 			};
 		};
 				
@@ -492,9 +492,9 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				block := new Block();
 				entryEvent.action.name := entryEvent.action.name.concat(" unicastPossible := false;");
-				block.expressions += t. createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(unicastPossibleName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t. createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(unicastPossibleName),t. createLiteralExpression("false")  );
 				if(not t.relativeDeadline.oclIsUndefined()) {
-					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+					entryEvent.clockResets += t.map Schema2Clock(unicastDLCName);
 				};
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast))
@@ -506,14 +506,14 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 					};		
 					entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
 					block := new Block();
-					block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(multicastPossibleName),t.map Schema2LiterarExpression("false")  );
+					block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(multicastPossibleName),t.map createLiteralExpression("false")  );
 				};
 				if(not t.relativeDeadline.oclIsUndefined()) {
 					if(entryEvent.action.oclIsUndefined()) {
 						entryEvent.action := new Action();
 						entryEvent.action.name := "";				
 					};		
-					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+					entryEvent.clockResets += t.map Schema2Clock(unicastDLCName);
 				};
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
@@ -523,7 +523,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" loadBalancingPossible := false;");
 				block := new Block();
-				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(loadBalancingPossibleName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(loadBalancingPossibleName),t. createLiteralExpression("false")  );
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) {
 				if(entryEvent.action.oclIsUndefined()) {
@@ -532,20 +532,20 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" iteratePossible := false;");
 				block := new Block();
-				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(iteratePossibleName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(iteratePossibleName),t. createLiteralExpression("false")  );
 				entryEvent.action.name.concat(" terminate := false;");
-				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(terminateIterationName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(terminateIterationName),t. createLiteralExpression("false")  );
 			};
 			var triggerSchema : OneToManyCommunicationSchema := t.triggerMessageEvent.oneToManyCommunicationSchema;
 			if(triggerSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))
 			{
 				if(not t.relativeDeadline.oclIsUndefined()) {
-					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(singleReceiveDLCName)
+					entryEvent.clockResets += t.map Schema2Clock(singleReceiveDLCName)
 				};
 			}else if(triggerSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive))
 			{
 				if(not t.relativeDeadline.oclIsUndefined()) {
-					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(multiReceiveDLCName);
+					entryEvent.clockResets += t.map Schema2Clock(multiReceiveDLCName);
 				};
 			};
 			if(block.expressions->size() > 0) {

@@ -31,7 +31,7 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 	guard := self.guard.map Expression2Expression(result);		
 	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
 	
-	synchronization := self. TransferSchemata2Synchronization(  multicastCheckDone,SynchronizationKind::RECEIVE);
+	synchronization := self. createSynchronization(  multicastCheckDone,SynchronizationKind::RECEIVE);
 }
 
 // @author: sthiele2
@@ -46,7 +46,7 @@ mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny
 		result.clockConstraints += self. RelativeDeadline2ClockConstraint( true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName );
 	};
 	
-	synchronization := self. TransferSchemata2Synchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+	synchronization := self. createSynchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 }
 
 // @author: sthiele2
@@ -59,7 +59,7 @@ mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
 	result.action := self.action.cloneAction();
 	
-	synchronization := self. TransferSchemata2Synchronization(multicastDone,SynchronizationKind::RECEIVE);
+	synchronization := self. createSynchronization(multicastDone,SynchronizationKind::RECEIVE);
 }
 
 	
@@ -72,7 +72,7 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 		
 		target := self.map Schema2CoordinatorIntermediateState(context,1, multicastDLCName);
 		
-		synchronization := self. TransferSchemata2Synchronization(  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+		synchronization := self. createSynchronization(  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 		
 		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(result);
 		
@@ -91,7 +91,7 @@ mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
 	
-		synchronization := self. TransferSchemata2Synchronization(  multicastDone,SynchronizationKind::RECEIVE);	
+		synchronization := self. createSynchronization(  multicastDone,SynchronizationKind::RECEIVE);	
 }
 
 ---------------- Coordinator Mappings for Embedded State
@@ -130,7 +130,7 @@ mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny) : 
 		
 		guard := self.guard.map Expression2Expression(context);
 		
-		synchronization := 	self. TransferSchemata2Synchronization( multicastCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+		synchronization := 	self. createSynchronization( multicastCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 			
 	}
 	
@@ -144,7 +144,7 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 		
 	
 		
-		synchronization :=  self. TransferSchemata2Synchronization( multicastCheckDone,SynchronizationKind::RECEIVE);
+		synchronization :=  self. createSynchronization( multicastCheckDone,SynchronizationKind::RECEIVE);
 		
 		guard := self. TransferSchemaGuard( multicastPossibleName, UnaryOperator::NOT);
 			
@@ -165,7 +165,7 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
-		synchronization := self.TransferSchemata2Synchronization( multicast,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
+		synchronization := self.createSynchronization( multicast,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 		
@@ -185,7 +185,7 @@ mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny,
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
-		synchronization := self.TransferSchemata2Synchronization(multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := self.createSynchronization(multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())					
 			guard := self.TransferSchemaGuard(sendMulticastName, UnaryOperator::NOT);
@@ -203,7 +203,7 @@ mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, r
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);	
 		
-		synchronization := self. TransferSchemata2Synchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		synchronization := self. createSynchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
@@ -223,10 +223,10 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
-			action := self. TransferSchemata2Action("multicastPossible:=false", multicastPossibleName, "false");
+			action := self. createActionWithVariableAssignmentBlock("multicastPossible:=false", multicastPossibleName, "false");
 			
 		}endif;
-		synchronization := self. TransferSchemata2Synchronization( multicastDone,SynchronizationKind::SEND);			
+		synchronization := self. createSynchronization( multicastDone,SynchronizationKind::SEND);			
 	}
 	
 
@@ -265,7 +265,7 @@ mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region
 		
 		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
-		synchronization := self.TransferSchemata2Synchronization( "multicastCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		synchronization := self.createSynchronization( "multicastCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
 	}
 	
@@ -279,7 +279,7 @@ mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, re
 		
 		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
-		synchronization := self.TransferSchemata2Synchronization(multicastCheckDone,SynchronizationKind::SEND);
+		synchronization := self.createSynchronization(multicastCheckDone,SynchronizationKind::SEND);
 					
 	}
 	
@@ -293,9 +293,9 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(2);
 		
-		synchronization := 	self.TransferSchemata2Synchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := 	self.createSynchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
-		action := self.TransferSchemata2TwoActions(multicastPossibleName + " :=true; " + sendMulticastName + ":= true;",multicastPossibleName, sendMulticastName,"true");
+		action := self.createActionWithTwoVariableAssignments(multicastPossibleName + " :=true; " + sendMulticastName + ":= true;",multicastPossibleName, sendMulticastName,"true");
 		
 	}
 	
@@ -309,7 +309,7 @@ mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny,
 		
 		guard := self. TransferSchemaNotCondition();
 
-		synchronization := self.TransferSchemata2Synchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		synchronization := self.createSynchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 					
 	}
 	

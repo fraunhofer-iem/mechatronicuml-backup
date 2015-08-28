@@ -69,7 +69,7 @@ mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, stateID :
 
 
 //@author: sthiele2 -- creates a clock for in order to disassamble a deadline at a schema-specifying-transition
-mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : String) : Clock
+mapping Transition :: Schema2Clock(clockName : String) : Clock
 {	
 	var nameSuffix : String := "";
 	if(usedClockNames->hasKey(clockName))
@@ -100,12 +100,12 @@ helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, 
 			cc.bound := self.relativeDeadline.upperBound.map TimeValue2TimeValue(cc);
 		}endif;
 		cc.operator := operator;
-		cc.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
+		cc.clock := self.map Schema2Clock(clockName);
 		return cc;
 }
 
 helper Transition :: Transition2ClockConstraint(clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
-		return self.Transition2ClockConstraint(self.map TransitionDeadline2CoordinatorDeadlineClock(clockName), _timeValue, compareOperator);
+		return self.Transition2ClockConstraint(self.map Schema2Clock(clockName), _timeValue, compareOperator);
 }
 
 
@@ -236,18 +236,18 @@ mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, interm
 
 --Transfer Schemata Action
 
-helper  Transition :: TransferSchemata2Action(actionName:String, varName:String, assignValue:String) : Action {
+helper  Transition :: createActionWithVariableAssignmentBlock(actionName:String, varName:String, assignValue:String) : Action {
 	
 		var act : Action := new Action();
 		
 		act.name := actionName;		
 		
-		act.expressions +=self.TransferSchemata2AssignmentBlock( varName ,	assignValue);
+		act.expressions +=self.createBlockWithVariableAssignment( varName ,	assignValue);
 		
 		return act;
 	}
 	
-helper Transition :: TransferSchemata2AssignmentBlock(varName:String, assignValue:String ) : Block {
+helper Transition :: createBlockWithVariableAssignment(varName:String, assignValue:String ) : Block {
 		
 
 		return self.Transition2Block(self.createAssignment( varName, assignValue));
@@ -255,19 +255,19 @@ helper Transition :: TransferSchemata2AssignmentBlock(varName:String, assignValu
 		
 	}
 	
-helper Transition :: TransferSchemata2TwoActions(actionName:String, varName1:String, varName2:String, assignValue:String) : Action {
+helper Transition :: createActionWithTwoVariableAssignments(actionName:String, varName1:String, varName2:String, assignValue:String) : Action {
 	
 		var act : Action := new Action();
 		
 		act.name := actionName;
 		
-		act.expressions += self. TransferSchemata2TwoActionsBlock( varName1, varName2, assignValue);
+		act.expressions += self. createBlockWithTwoVariableAssignments( varName1, varName2, assignValue);
 		
 		return act;
 		
 	}
 	
-helper Transition :: TransferSchemata2TwoActionsBlock(varName1:String, varName2:String, assignValue:String) : Block {
+helper Transition :: createBlockWithTwoVariableAssignments(varName1:String, varName2:String, assignValue:String) : Block {
 		
 		var block : Block := new Block();
 		
@@ -279,29 +279,24 @@ helper Transition :: TransferSchemata2TwoActionsBlock(varName1:String, varName2:
 		
 	}
 	
-helper Transition :: TransferSchemata2TwoActionsTransAct(actionName:String, varName:String, assignValue:String) : Action {
+helper Transition :: createActionWithVariableAssignmentAndCloneAllExpressionsOfAction(actionName:String, varName:String, assignValue:String) : Action {
 	
 		var act : Action := new Action();
 		
 		act.name := actionName + ', ' + self.action.name;
 		
-		act.expressions += self. TransferSchemata2TwoActionsTransActBlock( varName, assignValue);
+		act.expressions += self. createBlockWithAssignmentAndCloneAllActionExpressions( varName, assignValue);
 		
 		return act;
 	}
 	
-helper Transition :: TransferSchemata2TwoActionsTransActBlock(varName1:String, assignValue:String) : Block {
+helper Transition :: createBlockWithAssignmentAndCloneAllActionExpressions(varName1:String, assignValue:String) : Block {
 		
 		var block : Block := new Block();
 		
 		block.expressions += self. createAssignment(varName1, assignValue);
-		
-		if(self.action.expressions->first().oclIsTypeOf(Block)){
-			block.expressions += self.action.expressions.oclAsType(Block).expressions.map Expression2Expression(block);
-		}else{
-			block.expressions += self.action.expressions.map Expression2Expression(block);
-		}endif;
-		
+		block.expressions += self.action.expressions.cloneExpression();
+			
 		return block;
 	}
 
@@ -309,11 +304,11 @@ helper Transition :: TransferSchemata2TwoActionsTransActBlock(varName1:String, a
 	
 helper Transition :: createAssignment(varName:String, assignValue:String) : Assignment {		
 		
-		return self.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,self.map Schema2BooleanVariable(varName),self.Schema2LiterarExpression(assignValue));
+		return self.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,self.map Schema2BooleanVariable(varName),self.createLiteralExpression(assignValue));
 	
 	}
 	
-helper Transition :: Schema2LiterarExpression(assignValue:String) : LiteralExpression {
+helper Transition :: createLiteralExpression(assignValue:String) : LiteralExpression {
 		
 		var lit : LiteralExpression := new LiteralExpression();
 		
@@ -326,25 +321,25 @@ helper Transition :: Schema2LiterarExpression(assignValue:String) : LiteralExpre
 
 
 
-helper Transition :: TransferSchemata2Synchronization(channelName : String, syncKind : SynchronizationKind) : Synchronization{
+helper Transition :: createSynchronization(channelName : String, syncKind : SynchronizationKind) : Synchronization{
 
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
-	sync.syncChannel :=self.map TransferSchemataChannel( channelName, false,self);
+	sync.syncChannel :=self.map Schema2Channel( channelName, false,self);
 	return sync;
 }
 
-helper Transition :: TransferSchemata2Synchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind) : Synchronization{
+helper Transition :: createSynchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind) : Synchronization{
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
-	sync.syncChannel := self.map TransferSchemataChannel(channelName,true, self);
+	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
 	sync.selectorExpression := self. Schema2PositionKindSelector( selectorKind);
 	return sync;
 }
-helper Transition :: TransferSchemata2Synchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
+helper Transition :: createSynchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
-	sync.syncChannel := self.map TransferSchemataChannel(channelName,true, self);
+	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
 	sync.selectorExpression := self. Schema2PositionKindSelector(selectorKind, successorKind);
 	return sync;
 }
@@ -354,7 +349,7 @@ helper Transition :: TransferSchemata2Synchronization( channelName : String,   s
 	//if(dict->hasKey(transition))
 	// dict-> 
 property usedChannelNames : Dict(String,Integer); // stores how often a channel with a certain name exists. Used for enumerating the channel names in case of multiple occurences of the same schema
-mapping Transition :: TransferSchemataChannel(channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
+mapping Transition :: Schema2Channel(channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
 		
 		if(usedChannelNames->hasKey(channelName))
 		{
