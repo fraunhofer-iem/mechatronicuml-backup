@@ -260,7 +260,7 @@ mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAn
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.map SingleReceiveLastAndPossibleExpression(context,region,consumeSingleReceiveName,true, 100);
+		guard := self.createEPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::EQUAL,consumeSingleReceiveName,true);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 					
@@ -274,7 +274,7 @@ mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAn
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.map SingleReceiveNotLastAndPossibleExpression(context,region,consumeSingleReceiveName,true, 3);
+		guard := self.createEPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL,consumeSingleReceiveName,true);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
@@ -288,7 +288,7 @@ mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(contex
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.map SingleReceiveNotLastAndPossibleExpression(context, region, singleReceivePossibleName, false, 7);
+		guard := self.createEPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL, singleReceivePossibleName, false);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 		
@@ -306,35 +306,6 @@ mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny
 					
 	}
 	
-mapping Transition :: SingleReceiveNotLastAndPossibleExpression(context:OclAny, region:RealtimeStatechart, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
 
-		leftExpression := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
-		
-		if(notOp){
-			rightExpression := self.map UnaryOperatorTransferSchemata2TypedNamedElementExpr(context, varName, transMapping, UnaryOperator::NOT);
-		}else{
-			rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
-		}endif;
-		
-		operator := LogicOperator::AND;
-}
 
-mapping Transition :: UnaryOperatorTransferSchemata2TypedNamedElementExpr(context : OclAny, varName : String, transMapping: Integer, _operator : UnaryOperator): UnaryExpression
-{
-	result.operator := _operator;
-	
-	result.enclosedExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
-	
-}
-mapping Transition :: SingleReceiveLastAndPossibleExpression(context:OclAny, region:RealtimeStatechart, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
 
-		leftExpression := self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
-		
-		if(notOp){
-			rightExpression := self.map UnaryOperatorTransferSchemata2TypedNamedElementExpr(context, varName, transMapping, UnaryOperator::NOT);
-		}else{
-			rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
-		}endif;
-		
-		operator := LogicOperator::AND;
-}

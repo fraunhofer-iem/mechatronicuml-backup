@@ -218,10 +218,9 @@ helper Transition :: TransferSchemaGuard(varName:String, operator:UnaryOperator)
 
 		var unex : UnaryExpression := new UnaryExpression();
 		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
+	
+		assert fatal (not operator.oclIsUndefined()) with log ("unaryOperator must exist!");
 		
-		if(not operator.oclIsUndefined()){
-			unex.operator := _operator;
-		}endif;
 		return unex;
 	
 	}
@@ -645,4 +644,19 @@ helper Transition :: Schema2TypedNamedElementExpression(referencedElement : Type
 	return ex;
 }
 
+helper Transition :: createEPositionSelektorCheckAndVariableCheckGuardExpression(comparingOperator : ComparingOperator, varName:String, notOp: Boolean) : LogicalExpression {
+		var logical : LogicalExpression := new LogicalExpression();
+
+		logical.leftExpression := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		
+		if(notOp){
+			logical.rightExpression := self.TransferSchemaGuard( varName, UnaryOperator::NOT);
+		}else{
+			logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		}endif;
+		
+		logical.operator := LogicOperator::AND;
+		
+		return logical;
+}
 
