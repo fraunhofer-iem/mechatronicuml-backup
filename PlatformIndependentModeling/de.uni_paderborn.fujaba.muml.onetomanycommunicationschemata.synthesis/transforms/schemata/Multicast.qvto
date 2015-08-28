@@ -146,7 +146,7 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 		
 		synchronization :=  self. createSynchronization( multicastCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self. TransferSchemaGuard( multicastPossibleName, UnaryOperator::NOT);
+		guard := self. createUnaryExpressionEnclosingTypedNamedElementExpression( multicastPossibleName, UnaryOperator::NOT);
 			
 	}
 	
@@ -174,7 +174,7 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		events += self.raiseMessageEvent.cloneAsynchronousMessageEvent();
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
-			guard := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(sendMulticastName));
+			guard := self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendMulticastName));
 		
 	}
 	
@@ -188,7 +188,7 @@ mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny,
 		synchronization := self.createSynchronization(multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())					
-			guard := self.TransferSchemaGuard(sendMulticastName, UnaryOperator::NOT);
+			guard := self.createUnaryExpressionEnclosingTypedNamedElementExpression(sendMulticastName, UnaryOperator::NOT);
 		
 		priority := 2;
 		
@@ -205,7 +205,7 @@ mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, r
 		
 		synchronization := self. createSynchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 			
@@ -217,7 +217,7 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);		
 		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
@@ -263,7 +263,7 @@ mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		synchronization := self.createSynchronization( "multicastCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
@@ -277,7 +277,7 @@ mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, re
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self. createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		synchronization := self.createSynchronization(multicastCheckDone,SynchronizationKind::SEND);
 					

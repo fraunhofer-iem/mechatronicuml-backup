@@ -104,12 +104,12 @@ helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, 
 		return cc;
 }
 
-helper Transition :: Transition2ClockConstraint(clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
-		return self.Transition2ClockConstraint(self.map Schema2Clock(clockName), _timeValue, compareOperator);
+helper Transition :: createClockConstraint(clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
+		return self.createClockConstraint(self.map Schema2Clock(clockName), _timeValue, compareOperator);
 }
 
 
-helper Transition :: Transition2ClockConstraint(_clock : Clock, _timeValue: TimeValue, compareOperator : ComparingOperator) : ClockConstraint {
+helper Transition :: createClockConstraint(_clock : Clock, _timeValue: TimeValue, compareOperator : ComparingOperator) : ClockConstraint {
 		
 		
 		var cc : ClockConstraint := new ClockConstraint();
@@ -120,15 +120,15 @@ helper Transition :: Transition2ClockConstraint(_clock : Clock, _timeValue: Time
 		
 }
 
-helper Transition :: Schema2PositionKindSelector(_kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
+helper Transition :: createPositionSelector(_kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
 	
 		var selector : PositionSelector := new PositionSelector();
 		selector.kind := _kind;		
-		selector.successor := self. Schema2PositionKindSelector(_successor);
+		selector.successor := self. createPositionSelector(_successor);
 		return selector;
 }
 
-helper Transition :: Schema2PositionKindSelector(kind : PositionSelectorKind) : PositionSelector{
+helper Transition :: createPositionSelector(kind : PositionSelectorKind) : PositionSelector{
 		var selector : PositionSelector := new PositionSelector();
 		selector.kind := _kind;
 		return selector;
@@ -136,7 +136,7 @@ helper Transition :: Schema2PositionKindSelector(kind : PositionSelectorKind) : 
 	
 	--Transfer Schemata Guards, Clock Constraints, CLock Resets
 	
-helper Transition :: TransferSchemataComparisonExpression( position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
+helper Transition :: createComparisonExpressionForSelectorKind( position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
 		
 		var comp : ComparisonExpression := new ComparisonExpression();
 			
@@ -149,7 +149,7 @@ helper Transition :: TransferSchemataComparisonExpression( position:PositionSele
 				
 	}
 
-helper Transition :: TransferSchemataLogicalExpression(_leftExpression : Expression, _rightExpression : Expression, _operator:LogicOperator) : LogicalExpression {
+helper Transition :: createLogicalExpression(_leftExpression : Expression, _rightExpression : Expression, _operator:LogicOperator) : LogicalExpression {
 		var logical : LogicalExpression := new LogicalExpression();
 		
 		logical.leftExpression := _leftExpression;
@@ -194,10 +194,10 @@ helper Transition :: TransferSchemaNotCondition() : UnaryExpression {
 	
 	}
 	
-helper Transition :: TransferSchemaGuard(varName:String, operator:UnaryOperator) : UnaryExpression {
+helper Transition :: createUnaryExpressionEnclosingTypedNamedElementExpression(varName:String, operator:UnaryOperator) : UnaryExpression {
 
 		var unex : UnaryExpression := new UnaryExpression();
-		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
+		unex.enclosedExpression := self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
 	
 		assert fatal (not operator.oclIsUndefined()) with log ("unaryOperator must exist!");
 		
@@ -205,10 +205,10 @@ helper Transition :: TransferSchemaGuard(varName:String, operator:UnaryOperator)
 	
 	}
 
-helper Transition :: TransferSchemaGuard(variable : Variable, operator:UnaryOperator) : UnaryExpression {
+helper Transition :: createUnaryExpressionEnclosingTypedNamedElementExpression(variable : Variable, operator:UnaryOperator) : UnaryExpression {
 
 		var unex : UnaryExpression := new UnaryExpression();
-		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(variable);
+		unex.enclosedExpression := self.createTypedNamedElementExpression(variable);
 		if(not operator.oclIsUndefined()){
 			unex.operator := _operator;
 		}endif;
@@ -333,14 +333,14 @@ helper Transition :: createSynchronization( channelName : String,   syncKind : S
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
 	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
-	sync.selectorExpression := self. Schema2PositionKindSelector( selectorKind);
+	sync.selectorExpression := self. createPositionSelector( selectorKind);
 	return sync;
 }
 helper Transition :: createSynchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
 	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
-	sync.selectorExpression := self. Schema2PositionKindSelector(selectorKind, successorKind);
+	sync.selectorExpression := self. createPositionSelector(selectorKind, successorKind);
 	return sync;
 }
 	//dict->hasKey(transition);
@@ -587,13 +587,13 @@ helper Transition:: Transition2LogicalExpression( logicoperator : LogicOperator,
 
 ----------------------------------------------** new transformations that should replace the old ones ** 
 mapping Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
-	position := self. Schema2PositionKindSelector(positionSelectorKind);
-	typedNamedElementExpression := self.Schema2TypedNamedElementExpression(referencedTypedNamedElement);
+	position := self. createPositionSelector(positionSelectorKind);
+	typedNamedElementExpression := self.createTypedNamedElementExpression(referencedTypedNamedElement);
 }
 
 helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
 	var ref : DiscreteInteractionEndpointReference := new DiscreteInteractionEndpointReference();
-	ref.position := self. Schema2PositionKindSelector( positionSelectorKind);
+	ref.position := self. createPositionSelector( positionSelectorKind);
 	return ref;
 }
 
@@ -601,7 +601,7 @@ helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: Pos
 helper Transition :: createTypedNamedElementAssignmentExpression(operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
 	var ass : Assignment := new Assignment();
 	
-	ass.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(referencedElement);
+	ass.lhs_typedNamedElementExpression := self. createTypedNamedElementExpression(referencedElement);
 	
 	ass.rhs_assignExpression := assignedExpression;
 	
@@ -610,7 +610,7 @@ helper Transition :: createTypedNamedElementAssignmentExpression(operator : Assi
 	return ass;
 }
 
-helper Transition :: Schema2TypedNamedElementExpression(referencedElement : TypedNamedElement) : TypedNamedElementExpression{
+helper Transition :: createTypedNamedElementExpression(referencedElement : TypedNamedElement) : TypedNamedElementExpression{
 	
 	var ex : TypedNamedElementExpression := new TypedNamedElementExpression();
 	
@@ -623,12 +623,12 @@ helper Transition :: Schema2TypedNamedElementExpression(referencedElement : Type
 helper Transition :: createPositionSelektorCheckAndVariableCheckGuardExpression(comparingOperator : ComparingOperator, varName:String, notOp: Boolean) : LogicalExpression {
 		var logical : LogicalExpression := new LogicalExpression();
 
-		logical.leftExpression := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, comparingOperator);
+		logical.leftExpression := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, comparingOperator);
 		
 		if(notOp){
-			logical.rightExpression := self.TransferSchemaGuard( varName, UnaryOperator::NOT);
+			logical.rightExpression := self.createUnaryExpressionEnclosingTypedNamedElementExpression( varName, UnaryOperator::NOT);
 		}else{
-			logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
+			logical.rightExpression := self. createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
 		}endif;
 		
 		logical.operator := LogicOperator::AND;
@@ -638,12 +638,12 @@ helper Transition :: createPositionSelektorCheckAndVariableCheckGuardExpression(
 helper Transition :: createLogicalExpressionWithTwoConcatenatedVariables(varName1:String, varName2:String, notOp:Boolean) : LogicalExpression {
 		var logical : LogicalExpression := new LogicalExpression();
 		if(notOp){
-			logical.leftExpression := self. TransferSchemaGuard( varName1, UnaryOperator::NOT);
+			logical.leftExpression := self. createUnaryExpressionEnclosingTypedNamedElementExpression( varName1, UnaryOperator::NOT);
 		}else{
-			logical.leftExpression := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName1));
+			logical.leftExpression := self. createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName1));
 		}endif;
 		
-		logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName2));
+		logical.rightExpression := self. createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName2));
 		
 		logical.operator := LogicOperator::AND;
 		return logical;

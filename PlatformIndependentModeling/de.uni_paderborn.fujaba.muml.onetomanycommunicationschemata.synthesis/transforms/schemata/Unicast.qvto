@@ -111,7 +111,7 @@ mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny) 
 		
 		synchronization := self. createSynchronization( unicastCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self. TransferSchemaGuard( unicastPossibleName, UnaryOperator::NOT);
+		guard := self. createUnaryExpressionEnclosingTypedNamedElementExpression( unicastPossibleName, UnaryOperator::NOT);
 			
 	}
 	
@@ -147,7 +147,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 			}endif;
 			
 		}else{	
-			guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);
+			guard := self. createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);
 			action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.cloneAction();
 		}endif;
 		
@@ -165,7 +165,7 @@ mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, regio
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
+		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
 		
 	}
 	
@@ -179,7 +179,7 @@ mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		
 		synchronization := 	self. createSynchronization( unicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 			
@@ -191,7 +191,7 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);		
 		
-		guard := self. TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self. createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
@@ -252,7 +252,7 @@ mapping Transition :: Unicast2RequestedIdleCheckDoneLastSubrole(context:OclAny, 
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		synchronization := self. createSynchronization(unicastCheckDone,SynchronizationKind::SEND);
 					
