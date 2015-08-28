@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r14616)-->
+<!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:one_to_n_schemata="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_wNe9oBA6EeW1iK9uryto1Q">
   <categories xmi:id="_wNe9oRA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfksBA6EeW1iK9uryto1Q" name="void"/>
@@ -18,10 +18,10 @@
   <categories xmi:id="_wNfkvBA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
   <categories xmi:id="_wNfkvRA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_yTx7wBA6EeW1iK9uryto1Q" name="C1">
-      <roles xmi:id="_yT4CYBA6EeW1iK9uryto1Q" connectors="_yUXKkBA6EeW1iK9uryto1Q" name="role1">
+      <roles xmi:id="_yT4CYBA6EeW1iK9uryto1Q" connectors="_yUXKkBA6EeW1iK9uryto1Q" behavior="_0cG6MBA6EeW1iK9uryto1Q" name="role1" senderMessageTypes="_JKgb4BA7EeW1iK9uryto1Q" receiverMessageTypes="_JKgb4BA7EeW1iK9uryto1Q">
         <cardinality xmi:id="_yUUHQBA6EeW1iK9uryto1Q">
-          <lowerBound xmi:id="_yUVVYBA6EeW1iK9uryto1Q"/>
-          <upperBound xmi:id="_yUV8cBA6EeW1iK9uryto1Q"/>
+          <lowerBound xmi:id="_6YyJoE1nEeWkUO0CoSdR4g"/>
+          <upperBound xmi:id="_6YyJoU1nEeWkUO0CoSdR4g" value="2"/>
         </cardinality>
       </roles>
       <roles xmi:id="_yUWjgBA6EeW1iK9uryto1Q" connectors="_yUXKkBA6EeW1iK9uryto1Q">
@@ -48,7 +48,7 @@
     </modelElements>
   </categories>
   <categories xmi:id="_wNfkvxA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_0cG6MBA6EeW1iK9uryto1Q" name="statechartRole1">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_0cG6MBA6EeW1iK9uryto1Q" name="statechartRole1" behavioralElement="_yT4CYBA6EeW1iK9uryto1Q">
       <variables xmi:id="_bxC8YBA_EeW1iK9uryto1Q" name="v1" dataType="_wNfktRA6EeW1iK9uryto1Q"/>
       <transitions xmi:id="_6KfZUBA6EeW1iK9uryto1Q" priority="1" target="_2i5nkBA6EeW1iK9uryto1Q" source="_0cG6MRA6EeW1iK9uryto1Q">
         <relativeDeadline xmi:id="_8Oe4EBA_EeW1iK9uryto1Q">
@@ -83,8 +83,29 @@
           </expressions>
         </action>
       </transitions>
-      <states xmi:id="_0cG6MRA6EeW1iK9uryto1Q" name="init" outgoingTransitions="_6KfZUBA6EeW1iK9uryto1Q" initial="true"/>
-      <states xmi:id="_2i5nkBA6EeW1iK9uryto1Q" name="S1" incomingTransitions="_6KfZUBA6EeW1iK9uryto1Q"/>
+      <transitions xmi:id="_gUFZAE1kEeWkUO0CoSdR4g" priority="1" target="_bVpJEE1kEeWkUO0CoSdR4g" source="_2i5nkBA6EeW1iK9uryto1Q"/>
+      <transitions xmi:id="_hpS4cE1kEeWkUO0CoSdR4g" priority="1" target="_2i5nkBA6EeW1iK9uryto1Q" source="_ZWswIE1kEeWkUO0CoSdR4g"/>
+      <states xmi:id="_0cG6MRA6EeW1iK9uryto1Q" name="init" outgoingTransitions="_6KfZUBA6EeW1iK9uryto1Q" initial="true">
+        <embeddedRegions xmi:id="_XiWdoE1kEeWkUO0CoSdR4g" priority="1">
+          <embeddedStatechart xmi:id="_XickQE1kEeWkUO0CoSdR4g" name="statechart">
+            <transitions xmi:id="_bx8qkE1kEeWkUO0CoSdR4g" priority="1" target="_XidLUE1kEeWkUO0CoSdR4g" source="_bVpJEE1kEeWkUO0CoSdR4g">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_zL7owE1kEeWkUO0CoSdR4g">
+                <message xmi:id="_z139oE1kEeWkUO0CoSdR4g" instanceOf="_JKgb4BA7EeW1iK9uryto1Q"/>
+                <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:LoadBalancing" xmi:id="_11DAEE1kEeWkUO0CoSdR4g">
+                  <maxWorkingTime xmi:id="_XmmkIE1nEeWkUO0CoSdR4g">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_YGng8E1nEeWkUO0CoSdR4g" value="100"/>
+                  </maxWorkingTime>
+                </oneToManyCommunicationSchema>
+              </events>
+            </transitions>
+            <transitions xmi:id="_cQKQkE1kEeWkUO0CoSdR4g" priority="1" target="_ZWswIE1kEeWkUO0CoSdR4g" source="_XidLUE1kEeWkUO0CoSdR4g"/>
+            <states xmi:id="_XidLUE1kEeWkUO0CoSdR4g" name="init" outgoingTransitions="_cQKQkE1kEeWkUO0CoSdR4g" incomingTransitions="_bx8qkE1kEeWkUO0CoSdR4g" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_ZWswIE1kEeWkUO0CoSdR4g" name="exitPoint1" outgoingTransitions="_hpS4cE1kEeWkUO0CoSdR4g" incomingTransitions="_cQKQkE1kEeWkUO0CoSdR4g"/>
+        <connectionPoints xsi:type="realtimestatechart:EntryPoint" xmi:id="_bVpJEE1kEeWkUO0CoSdR4g" name="entry1" outgoingTransitions="_bx8qkE1kEeWkUO0CoSdR4g" incomingTransitions="_gUFZAE1kEeWkUO0CoSdR4g"/>
+      </states>
+      <states xmi:id="_2i5nkBA6EeW1iK9uryto1Q" name="S1" outgoingTransitions="_gUFZAE1kEeWkUO0CoSdR4g" incomingTransitions="_6KfZUBA6EeW1iK9uryto1Q _hpS4cE1kEeWkUO0CoSdR4g"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
