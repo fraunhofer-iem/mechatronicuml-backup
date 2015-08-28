@@ -206,7 +206,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		events += self.raiseMessageEvent.cloneAsynchronousMessageEvent();
 		
 		var leftExpression : Expression := 	self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
-		var rightExpression : Expression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendIterateName));
+		var rightExpression : Expression := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(sendIterateName));
 		
 		guard := self.TransferSchemataLogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
 				
@@ -242,7 +242,7 @@ mapping Transition :: Iterate2IdleToIntermediate2SubroleRegion(context: OclAny, 
 		
 	target := self.map Schema2SubroleIntermediateState(context,2);
 	
-	guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName));
+	guard := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
 		
 }
 
@@ -256,7 +256,7 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	target := self.map Schema2SubroleIntermediateState(context, 2);
 	
 	var expr1 :=  self.TransferSchemaGuard(terminateIterationName, UnaryOperator::NOT);
-	var expr2 := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(iterateDelayVariableName));
+	var expr2 := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(iterateDelayVariableName));
 		
 	var logic := self.TransferSchemataLogicalExpression(expr1,expr2,LogicOperator::AND);
 	
@@ -318,7 +318,7 @@ mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRe
 	
 	target := self.map Schema2SubroleIntermediateState(context, 2);
 	
-	var expr1 :=  self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName));
+	var expr1 :=  self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
 		
 	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map Expression2Expression(result);
 	

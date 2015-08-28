@@ -104,7 +104,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
-			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale(multicastPossibleName);
+			var newVar : Variable := transition.map Schema2BooleanVariable(multicastPossibleName);
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
@@ -115,7 +115,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
-			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName);
+			var newVar : Variable := transition.map Schema2BooleanVariable(loadBalancingPossibleName);
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
@@ -125,7 +125,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
-			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale(unicastPossibleName);
+			var newVar : Variable := transition.map Schema2BooleanVariable(unicastPossibleName);
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
@@ -136,13 +136,13 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		allRTSCs.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
-			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName);
+			var newVar : Variable := transition.map Schema2BooleanVariable(terminateIterationName);
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;			
 			variables +=newVar ;
 			
-			newVar := transition.map Transition2SubroleSpecificBooleanVaribale(iteratePossibleName);
+			newVar := transition.map Schema2BooleanVariable(iteratePossibleName);
 			initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;			
@@ -156,13 +156,13 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 				
 		allRTSCs.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))->forEach(transition){
-			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale(consumeSingleReceiveName);
+			var newVar : Variable := transition.map Schema2BooleanVariable(consumeSingleReceiveName);
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
 			variables +=newVar ;
 			
-			newVar := transition.map Transition2SubroleSpecificBooleanVaribale(singleReceivePossibleName);
+			newVar := transition.map Schema2BooleanVariable(singleReceivePossibleName);
 			initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
@@ -312,29 +312,29 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
-			variables += transition.map Transition2SubroleSpecificBooleanVaribale(sendUnicastName);
+			variables += transition.map Schema2BooleanVariable(sendUnicastName);
 		};
 		
 		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
-			variables += transition.map Transition2SubroleSpecificBooleanVaribale(sendMulticastName);
+			variables += transition.map Schema2BooleanVariable(sendMulticastName);
 		};
 		
 		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
-			variables += transition.map Transition2SubroleSpecificBooleanVaribale(taskPlannedName);
+			variables += transition.map Schema2BooleanVariable(taskPlannedName);
 		};
 		
 		self->asSet()->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate))			
 				->forEach(transition){
 				if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
-					variables += transition.map Transition2SubroleSpecificBooleanVaribale(sendIterateName);
+					variables += transition.map Schema2BooleanVariable(sendIterateName);
 				};
 				if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
-					variables += transition.map Transition2SubroleSpecificBooleanVaribale(iterateDelayVariableName);
+					variables += transition.map Schema2BooleanVariable(iterateDelayVariableName);
 				};					
 		};
 		
@@ -492,7 +492,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				block := new Block();
 				entryEvent.action.name := entryEvent.action.name.concat(" unicastPossible := false;");
-				block.expressions += t. Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale(unicastPossibleName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t. createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(unicastPossibleName),t. Schema2LiterarExpression("false")  );
 				if(not t.relativeDeadline.oclIsUndefined()) {
 					entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
 				};
@@ -506,7 +506,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 					};		
 					entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
 					block := new Block();
-					block.expressions += t.Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale(multicastPossibleName),t.map Schema2LiterarExpression("false")  );
+					block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(multicastPossibleName),t.map Schema2LiterarExpression("false")  );
 				};
 				if(not t.relativeDeadline.oclIsUndefined()) {
 					if(entryEvent.action.oclIsUndefined()) {
@@ -523,7 +523,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" loadBalancingPossible := false;");
 				block := new Block();
-				block.expressions += t.Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(loadBalancingPossibleName),t. Schema2LiterarExpression("false")  );
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) {
 				if(entryEvent.action.oclIsUndefined()) {
@@ -532,9 +532,9 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" iteratePossible := false;");
 				block := new Block();
-				block.expressions += t.Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale(iteratePossibleName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(iteratePossibleName),t. Schema2LiterarExpression("false")  );
 				entryEvent.action.name.concat(" terminate := false;");
-				block.expressions += t.Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Transition2SubroleSpecificBooleanVaribale(terminateIterationName),t. Schema2LiterarExpression("false")  );
+				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(terminateIterationName),t. Schema2LiterarExpression("false")  );
 			};
 			var triggerSchema : OneToManyCommunicationSchema := t.triggerMessageEvent.oneToManyCommunicationSchema;
 			if(triggerSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))

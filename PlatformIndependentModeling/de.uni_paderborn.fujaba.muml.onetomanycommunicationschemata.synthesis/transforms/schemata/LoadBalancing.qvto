@@ -164,9 +164,9 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 		synchronization := self.TransferSchemata2Synchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 		
 		if(self.guard.oclIsUndefined()){
-			guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName));
+			guard := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName));
 		}else{
-			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName)));
+			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)));
 		};
 					
 	}
@@ -200,15 +200,15 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		
 		if (not lb.responseMessage.oclIsUndefined()) {
 			action.name := action.name + freeForWorkName + ":= false";	
-			action.expressions +=self.Transition2Block( self. Schema2TypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getFreeForWorkVariable(),	self.Schema2LiterarExpression("false")));
+			action.expressions +=self.Transition2Block( self. createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getFreeForWorkVariable(),	self.Schema2LiterarExpression("false")));
 		
 		}else if(not lb.maxWorkingTime.oclIsUndefined()) {
 			action.name := action.name + neverHadATaskName + ":= false";	
-			action.expressions +=self.Transition2Block( self. Schema2TypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getNeverHadATaskVariable(),	self.Schema2LiterarExpression("false")));
+			action.expressions +=self.Transition2Block( self. createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, getNeverHadATaskVariable(),	self.Schema2LiterarExpression("false")));
 			clockResets += getLoadBalancingTaskMessageClock();
 		};		
 				
-		guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(taskPlannedName));
+		guard := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(taskPlannedName));
 		
 	}
 	
@@ -434,7 +434,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAn
 		
 		source := self.map RegionState(context, "Requested",false);	
 		
-		guard := self.TransferSchemataLogicalExpression(self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(loadBalancingPossibleName)),LogicOperator::AND);
+		guard := self.TransferSchemataLogicalExpression(self.TransferSchemataComparisonExpression(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)),LogicOperator::AND);
 		
 		synchronization := self.TransferSchemata2Synchronization(loadBalancingCheck, SynchronizationKind::SEND,PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		

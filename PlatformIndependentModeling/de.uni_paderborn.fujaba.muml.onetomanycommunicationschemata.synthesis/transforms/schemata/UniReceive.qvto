@@ -125,7 +125,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 	
-		guard := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(consumeSingleReceiveName));
+		guard := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(consumeSingleReceiveName));
 	}
 	
 

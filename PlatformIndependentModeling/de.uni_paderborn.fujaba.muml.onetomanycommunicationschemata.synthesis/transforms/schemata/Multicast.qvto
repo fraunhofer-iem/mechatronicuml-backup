@@ -174,7 +174,7 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		events += self.raiseMessageEvent.cloneAsynchronousMessageEvent();
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
-			guard := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(sendMulticastName));
+			guard := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(sendMulticastName));
 		
 	}
 	

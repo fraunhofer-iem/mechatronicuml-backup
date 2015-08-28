@@ -26,7 +26,7 @@ property usedClockNames : Dict(String,Integer);
 
 property intermediateStateCount : Integer = 0;
 
-mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String): Variable
+mapping Transition::Schema2BooleanVariable(varName : String): Variable
 {
 	var namePrefix : String = "";
 		if(variableNamesDict->hasKey(varName)) {
@@ -197,7 +197,7 @@ helper Transition :: TransferSchemaNotCondition() : UnaryExpression {
 helper Transition :: TransferSchemaGuard(varName:String, operator:UnaryOperator) : UnaryExpression {
 
 		var unex : UnaryExpression := new UnaryExpression();
-		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
+		unex.enclosedExpression := self.Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
 	
 		assert fatal (not operator.oclIsUndefined()) with log ("unaryOperator must exist!");
 		
@@ -250,7 +250,7 @@ helper  Transition :: TransferSchemata2Action(actionName:String, varName:String,
 helper Transition :: TransferSchemata2AssignmentBlock(varName:String, assignValue:String ) : Block {
 		
 
-		return self.Transition2Block(self.TransferSchemata2Assignment( varName, assignValue));
+		return self.Transition2Block(self.createAssignment( varName, assignValue));
 		
 		
 	}
@@ -271,9 +271,9 @@ helper Transition :: TransferSchemata2TwoActionsBlock(varName1:String, varName2:
 		
 		var block : Block := new Block();
 		
-		block.expressions += self. TransferSchemata2Assignment( varName1, assignValue);
+		block.expressions += self. createAssignment( varName1, assignValue);
 		
-		block.expressions += self. TransferSchemata2Assignment( varName2, assignValue);
+		block.expressions += self. createAssignment( varName2, assignValue);
 		
 		return block;
 		
@@ -294,7 +294,7 @@ helper Transition :: TransferSchemata2TwoActionsTransActBlock(varName1:String, a
 		
 		var block : Block := new Block();
 		
-		block.expressions += self. TransferSchemata2Assignment(varName1, assignValue);
+		block.expressions += self. createAssignment(varName1, assignValue);
 		
 		if(self.action.expressions->first().oclIsTypeOf(Block)){
 			block.expressions += self.action.expressions.oclAsType(Block).expressions.map Expression2Expression(block);
@@ -307,9 +307,9 @@ helper Transition :: TransferSchemata2TwoActionsTransActBlock(varName1:String, a
 
 
 	
-helper Transition :: TransferSchemata2Assignment(varName:String, assignValue:String) : Assignment {		
+helper Transition :: createAssignment(varName:String, assignValue:String) : Assignment {		
 		
-		return self.Schema2TypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,self.map Transition2SubroleSpecificBooleanVaribale(varName),self.Schema2LiterarExpression(assignValue));
+		return self.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,self.map Schema2BooleanVariable(varName),self.Schema2LiterarExpression(assignValue));
 	
 	}
 	
@@ -603,7 +603,7 @@ helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: Pos
 }
 
 
-helper Transition :: Schema2TypedNamedElementAssignmentExpression(operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
+helper Transition :: createTypedNamedElementAssignmentExpression(operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
 	var ass : Assignment := new Assignment();
 	
 	ass.lhs_typedNamedElementExpression := self. Schema2TypedNamedElementExpression(referencedElement);
@@ -633,7 +633,7 @@ helper Transition :: createPositionSelektorCheckAndVariableCheckGuardExpression(
 		if(notOp){
 			logical.rightExpression := self.TransferSchemaGuard( varName, UnaryOperator::NOT);
 		}else{
-			logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName));
+			logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
 		}endif;
 		
 		logical.operator := LogicOperator::AND;
@@ -645,10 +645,10 @@ helper Transition :: createLogicalExpressionWithTwoConcatenatedVariables(varName
 		if(notOp){
 			logical.leftExpression := self. TransferSchemaGuard( varName1, UnaryOperator::NOT);
 		}else{
-			logical.leftExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName1));
+			logical.leftExpression := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName1));
 		}endif;
 		
-		logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName2));
+		logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Schema2BooleanVariable(varName2));
 		
 		logical.operator := LogicOperator::AND;
 		return logical;
