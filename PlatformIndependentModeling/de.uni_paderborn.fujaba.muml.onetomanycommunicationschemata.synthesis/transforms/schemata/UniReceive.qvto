@@ -260,7 +260,7 @@ mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAn
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.createEPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::EQUAL,consumeSingleReceiveName,true);
+		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::EQUAL,consumeSingleReceiveName,true);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 					
@@ -274,7 +274,7 @@ mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAn
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.createEPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL,consumeSingleReceiveName,true);
+		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL,consumeSingleReceiveName,true);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
@@ -288,7 +288,7 @@ mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(contex
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.createEPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL, singleReceivePossibleName, false);
+		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL, singleReceivePossibleName, false);
 		
 		synchronization := self. TransferSchemata2Synchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
 		

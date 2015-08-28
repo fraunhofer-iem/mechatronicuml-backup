@@ -176,28 +176,8 @@ mapping Transition :: RegionState(context:OclAny, StateName:String, ini:Boolean)
 
 
 	
-mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
-		
-		if(notOp){
-			leftExpression := self. TransferSchemaGuard( varName1, UnaryOperator::NOT);
-		}else{
-			leftExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName1));
-		}endif;
-		
-		rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName2));
-		
-		operator := LogicOperator::AND;
-}
 
 
-mapping Transition :: TransferSchemaThreeVariablesGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
-		
-		rightExpression := self.map TransferSchemaSingleSendAndPossibleGuard(context1, context2, region, varName1, varName2, true, transMapping);
-		
-		leftExpression := self.guard.map Expression2Expression(context2);
-		
-		operator := LogicOperator::AND;
-}
 	
 helper Transition :: TransferSchemaNotCondition() : UnaryExpression {
 
@@ -644,10 +624,11 @@ helper Transition :: Schema2TypedNamedElementExpression(referencedElement : Type
 	return ex;
 }
 
-helper Transition :: createEPositionSelektorCheckAndVariableCheckGuardExpression(comparingOperator : ComparingOperator, varName:String, notOp: Boolean) : LogicalExpression {
+
+helper Transition :: createPositionSelektorCheckAndVariableCheckGuardExpression(comparingOperator : ComparingOperator, varName:String, notOp: Boolean) : LogicalExpression {
 		var logical : LogicalExpression := new LogicalExpression();
 
-		logical.leftExpression := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		logical.leftExpression := self.  TransferSchemataComparisonExpression(PositionSelectorKind::LAST, comparingOperator);
 		
 		if(notOp){
 			logical.rightExpression := self.TransferSchemaGuard( varName, UnaryOperator::NOT);
@@ -659,4 +640,18 @@ helper Transition :: createEPositionSelektorCheckAndVariableCheckGuardExpression
 		
 		return logical;
 }
+helper Transition :: createLogicalExpressionWithTwoConcatenatedVariables(varName1:String, varName2:String, notOp:Boolean) : LogicalExpression {
+		var logical : LogicalExpression := new LogicalExpression();
+		if(notOp){
+			logical.leftExpression := self. TransferSchemaGuard( varName1, UnaryOperator::NOT);
+		}else{
+			logical.leftExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName1));
+		}endif;
+		
+		logical.rightExpression := self. Schema2TypedNamedElementExpression(self.map Transition2SubroleSpecificBooleanVaribale(varName2));
+		
+		logical.operator := LogicOperator::AND;
+		return logical;
+}
+
 
