@@ -20,6 +20,6 @@ main() {
 	var rtscCategory : ModelElementCategory := root.categories-> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category')-> any(true);
 	var current : RealtimeStatechart :=  	rtscCategory.modelElements->at(1).oclAsType(RealtimeStatechart);
 
-	normalizeRTSC(current);
+	normalizeTransformationThatUseTwoSchemata(current);
 	
 }

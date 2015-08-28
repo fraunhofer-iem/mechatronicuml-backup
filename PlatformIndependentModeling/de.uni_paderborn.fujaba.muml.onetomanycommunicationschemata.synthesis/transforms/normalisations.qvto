@@ -13,9 +13,18 @@ modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 
-helper normalizeRTSC(inout rtsc : RealtimeStatechart){	
-	// normalize transitions that use two synchronization schemata
-	var b : Sequence(Boolean) := rtsc.transitions.usesTwoSchemata();
+helper normalize(inout rtsc : RealtimeStatechart) {
+	// normalize the statechart rtsc and all of its children statecharts	
+	rtsc->closure(rtsc.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(rtsc)->forEach(statechart) {
+		normalizeTransformationThatUseTwoSchemata(statechart);
+		normalizeTransitionsWithStateExitPoint(statechart);
+	};	
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+// normalize transitions that use two synchronization schemata
+helper normalizeTransformationThatUseTwoSchemata(inout rtsc : RealtimeStatechart){	
+	// normalize transitions that use two synchronization schemata	
 	rtsc.transitions->select(t|t.usesTwoSchemata())->forEach(t){
 		rtsc.states += t.map Transition2NormalizationIntermediateState();
 		rtsc.transitions += t.map Transition2NormalizationTransition1();
@@ -62,8 +71,40 @@ mapping Transition::Transition2NormalizationTransition2(): Transition{
 	events += self.raiseMessageEvent;
 }
 
-
-
 query Transition::usesTwoSchemata():Boolean{
 	return not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined();	
 }
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+// normalize transitions that use Schemata and that source vertex is StateExitPoint
+
+helper normalizeTransitionsWithStateExitPoint(inout rtsc : RealtimeStatechart) {
+	rtsc.transitions->select(t|t.usesSchemataAndHasStateExitPointAsSource())-> forEach(transition) {
+		transition.createNewTransitionFromStateExitPointToIntermediateState();
+		transition.source := transition.map StateExitPointIntermediateState();
+	};
+}
+
+helper Transition:: createNewTransitionFromStateExitPointToIntermediateState() : Transition {
+	var transition : Transition := new Transition();
+	transition.source := self.source;
+	transition.target := self.map StateExitPointIntermediateState();	
+	return transition;
+}
+
+mapping Transition :: StateExitPointIntermediateState() : State {
+	result.name := "Intermediate Node for StateExitPoint " + self.source.name;
+	result.urgent := true;
+}
+
+query Transition::usesSchemataAndHasStateExitPointAsSource() : Boolean {
+	// check only raise event, since trigger is not allowed anyway!	
+	return  not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and self.source.oclIsTypeOf(muml::realtimestatechart::ExitPoint);
+}
+
+
+
+
+
+

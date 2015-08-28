@@ -50,7 +50,7 @@ helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) :
 	assert fatal (currentRealtimeStatechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) with log ("The specified RealtimeStatechart must be the behavior of a discrete port or a role!");
 	
 	// step 1: normalize transitions that define two schemata:
-	normalizeRTSC(currentRealtimeStatechart);
+	normalize(currentRealtimeStatechart);
 	// step 2: disassemble schematas
 	return currentRealtimeStatechart.map RTSC2RTSC();	
 }
