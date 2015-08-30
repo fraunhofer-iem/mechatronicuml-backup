@@ -2086,7 +2086,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The communication schema allows for assigning a task to one coordination partner that is currently not working on a task assigned using the same message."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="responseMessage" eType="#//realtimestatechart/AsynchronousMessageEvent">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="responseMessage" eType="#//msgtype/MessageType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The response message must be a trigger message. By receiving the message, a subrole is allowed to assign a new task to the corresponding coordination partner."/>
           </eAnnotations>

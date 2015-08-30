@@ -12,6 +12,7 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
 
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
@@ -47,12 +48,12 @@ public interface LoadBalancing extends SendingOneToManyCommunicationSchema {
 	 * The response message must be a trigger message. By receiving the message, a subrole is allowed to assign a new task to the corresponding coordination partner.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Response Message</em>' reference.
-	 * @see #setResponseMessage(AsynchronousMessageEvent)
+	 * @see #setResponseMessage(MessageType)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getLoadBalancing_ResponseMessage()
 	 * @model
 	 * @generated
 	 */
-	AsynchronousMessageEvent getResponseMessage();
+	MessageType getResponseMessage();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getResponseMessage <em>Response Message</em>}' reference.
@@ -62,7 +63,7 @@ public interface LoadBalancing extends SendingOneToManyCommunicationSchema {
 	 * @see #getResponseMessage()
 	 * @generated
 	 */
-	void setResponseMessage(AsynchronousMessageEvent value);
+	void setResponseMessage(MessageType value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Working Time</b></em>' containment reference.

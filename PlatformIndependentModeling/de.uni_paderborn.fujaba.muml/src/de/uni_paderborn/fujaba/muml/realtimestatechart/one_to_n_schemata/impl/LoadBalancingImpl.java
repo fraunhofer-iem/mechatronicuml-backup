@@ -12,6 +12,7 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl;
 
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing;
@@ -50,7 +51,7 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	 * @generated
 	 * @ordered
 	 */
-	protected AsynchronousMessageEvent responseMessage;
+	protected MessageType responseMessage;
 
 	/**
 	 * The cached value of the '{@link #getMaxWorkingTime() <em>Max Working Time</em>}' containment reference.
@@ -86,10 +87,10 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AsynchronousMessageEvent getResponseMessage() {
+	public MessageType getResponseMessage() {
 		if (responseMessage != null && responseMessage.eIsProxy()) {
 			InternalEObject oldResponseMessage = (InternalEObject)responseMessage;
-			responseMessage = (AsynchronousMessageEvent)eResolveProxy(oldResponseMessage);
+			responseMessage = (MessageType)eResolveProxy(oldResponseMessage);
 			if (responseMessage != oldResponseMessage) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, One_to_n_schemataPackage.LOAD_BALANCING__RESPONSE_MESSAGE, oldResponseMessage, responseMessage));
@@ -103,7 +104,7 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AsynchronousMessageEvent basicGetResponseMessage() {
+	public MessageType basicGetResponseMessage() {
 		return responseMessage;
 	}
 
@@ -112,8 +113,8 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResponseMessage(AsynchronousMessageEvent newResponseMessage) {
-		AsynchronousMessageEvent oldResponseMessage = responseMessage;
+	public void setResponseMessage(MessageType newResponseMessage) {
+		MessageType oldResponseMessage = responseMessage;
 		responseMessage = newResponseMessage;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, One_to_n_schemataPackage.LOAD_BALANCING__RESPONSE_MESSAGE, oldResponseMessage, responseMessage));
@@ -202,7 +203,7 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case One_to_n_schemataPackage.LOAD_BALANCING__RESPONSE_MESSAGE:
-				setResponseMessage((AsynchronousMessageEvent)newValue);
+				setResponseMessage((MessageType)newValue);
 				return;
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
 				setMaxWorkingTime((TimeValue)newValue);
@@ -220,7 +221,7 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case One_to_n_schemataPackage.LOAD_BALANCING__RESPONSE_MESSAGE:
-				setResponseMessage((AsynchronousMessageEvent)null);
+				setResponseMessage((MessageType)null);
 				return;
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
 				setMaxWorkingTime((TimeValue)null);
