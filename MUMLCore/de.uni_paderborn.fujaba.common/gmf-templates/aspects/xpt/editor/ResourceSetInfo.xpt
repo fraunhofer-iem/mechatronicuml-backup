@@ -1,0 +1,17 @@
+«AROUND dispose FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public void dispose() {
+	«IF null = editorGen.application-»
+	stopResourceListening();
+	«ENDIF-»
+	getResourceSet().eAdapters().remove(myResourceSetListener);
+	//«EXPAND CodeStyle::iterate('resource', 'org.eclipse.emf.ecore.resource.Resource', 'it', 'getLoadedResourcesIterator()')-»
+	//	resource.unload();
+	//}
+
+	org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = getEditingDomain();
+	if (editingDomain instanceof de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomain) {
+		((de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomain) getEditingDomain()).removeConnectedDocument(fDocument);
+	}
+}
+«ENDAROUND»

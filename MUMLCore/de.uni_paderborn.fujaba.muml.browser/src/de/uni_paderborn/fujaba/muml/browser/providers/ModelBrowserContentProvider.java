@@ -97,13 +97,14 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 						}
 					}
 					final MumlEditingDomain domain = MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true);
-					if (domain != null && domain.getSaveable() != null) {
-						Display.getDefault().asyncExec(new Runnable() {
-							public void run() {
+					Display.getDefault().asyncExec(new Runnable() {
+						public void run() {
+							if (domain != null && domain.getSaveable() != null) {
 								ModelBrowserSaveablesProvider.INSTANCE.dirtyChanged(domain.getSaveable());
 							}
-						});
-					}
+						}
+					});
+					
 				}
 				
 			}
