@@ -171,7 +171,6 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_LoadbalancingEitherHasResponseMessageOrWcet(loadBalancing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet(loadBalancing, diagnostics, context);
 		return result;
 	}
@@ -205,45 +204,6 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "LoadbalancingEitherHasResponseMessageOrWcet",
 				 LOAD_BALANCING__LOADBALANCING_EITHER_HAS_RESPONSE_MESSAGE_OR_WCET__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage constraint of '<em>Load Balancing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String LOAD_BALANCING__RESPONSE_MESSAGE_OF_COMMUNICATION_SCHEMA_LOADBALANCING_MUST_BE_TRIGGER_MESSAGE__EEXPRESSION = "-- responseMessage must be a TRIGGER-MessageEvent\r\n" +
-		"if(self.responseMessage.oclIsUndefined()) then\r\n" +
-		"\ttrue\r\n" +
-		"else\r\n" +
-		"\tif self.responseMessage.kind=realtimestatechart::EventKind::TRIGGER then\r\n" +
-		"\t\ttrue\r\n" +
-		"\telse\r\n" +
-		"\t\tfalse\r\n" +
-		"\tendif\r\n" +
-		"endif\r\n" +
-		"";
-
-	/**
-	 * Validates the ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage constraint of '<em>Load Balancing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLoadBalancing_ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(One_to_n_schemataPackage.Literals.LOAD_BALANCING,
-				 loadBalancing,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage",
-				 LOAD_BALANCING__RESPONSE_MESSAGE_OF_COMMUNICATION_SCHEMA_LOADBALANCING_MUST_BE_TRIGGER_MESSAGE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
