@@ -1,0 +1,105 @@
+
+«EXTENSION xpt::StringOperations»
+
+«EXTENSION impl::parsers::expression»
+
+
+«REM» Increase visibility of private methods to protected. «ENDREM»
+«AROUND body FOR gmfgen::ExpressionLabelParser»
+
+«IF isViewExpressionDefinedAndOcl()-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	«EXPAND CodeStyle::override FOR self.holder.editorGen.diagram»
+	protected String getExpressionBody() {
+		return «EXPAND impl::parsers::ExpressionLabelParser::getExpression(self, viewExpression) FOR viewExpression.provider».body();
+	}
+«ELSE-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public String getPrintString(org.eclipse.core.runtime.IAdaptable element, int flags) {
+		«EXPAND impl::parsers::ExpressionLabelParser::accessViewExpression-»
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public boolean isAffectingEvent(Object event, int flags) {
+		// XXX Any event is recognized as important, unless there's a way to extract this information from expression itself.
+		// TODO analyze expressions (e.g. using OCL parser) to find out structural features in use  
+		return true;
+	}
+«ENDIF-»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public String getEditString(org.eclipse.core.runtime.IAdaptable element, int flags) {
+		«EXPAND impl::parsers::ExpressionLabelParser::accessEditExpression-»
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus isValidEditString(org.eclipse.core.runtime.IAdaptable element, String editString) {
+		«EXPAND impl::parsers::ExpressionLabelParser::accessValidateExpression-»
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.gmf.runtime.common.core.command.ICommand getParseCommand(org.eclipse.core.runtime.IAdaptable element, final String newString, int flags) {
+		final org.eclipse.emf.ecore.EObject target = (org.eclipse.emf.ecore.EObject) element.getAdapter(org.eclipse.emf.ecore.EObject.class);
+		if (!validateValues(target, newString)) {
+			return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
+		}
+		org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = org.eclipse.emf.transaction.util.TransactionUtil.getEditingDomain(target);
+		if (editingDomain == null) {
+			return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
+		}
+		org.eclipse.core.resources.IFile affectedFile = org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(target.eResource());
+		return new org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand(editingDomain, "Set Values", affectedFile == null ? null : java.util.Collections.singletonList(affectedFile)) {«EXPAND xpt::Common::nonNLS» 
+			protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor monitor, org.eclipse.core.runtime.IAdaptable info) throws org.eclipse.core.commands.ExecutionException {
+				return new org.eclipse.gmf.runtime.common.core.command.CommandResult(updateValues(target, newString));
+			}
+		};
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.jface.text.contentassist.IContentAssistProcessor getCompletionProcessor(org.eclipse.core.runtime.IAdaptable element) {
+    	return null;
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected boolean validateValues(org.eclipse.emf.ecore.EObject target, String newString) {
+		// TODO implement as needed«REM»with default 'true' I assume isValidEditString() has been called prior to getParseCommand and generally I don't need to do anything else here«ENDREM»
+		return true;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.core.runtime.IStatus updateValues(org.eclipse.emf.ecore.EObject target, String newString) throws org.eclipse.core.commands.ExecutionException {
+		// TODO implement this method
+		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
+		throw new org.eclipse.core.commands.ExecutionException("Please implement parsing and value modification"); 
+	}
+«EXPAND impl::parsers::ExpressionLabelParser::extraMethods-»
+«ENDAROUND»
+
+«REM» Added empty method "initializeEnvironment" to be overriden by subclasses «ENDREM»
+«AROUND additions FOR gmfgen::ExpressionLabelParser-»
+	«targetDef.proceed()»
+«REM»
+	Removed because official GMF templates now support OCL tracker.
+	
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public java.util.List<org.eclipse.emf.ecore.EObject> getSemanticElementsBeingParsed(org.eclipse.emf.ecore.EObject element) {
+		return java.util.Arrays.asList(new org.eclipse.emf.ecore.EObject[] { element, element.eContainer() });
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public boolean areSemanticElementsAffected(org.eclipse.emf.ecore.EObject listener, Object notification) {
+		return false;
+	}
+«ENDREM»	
+	«EXPAND xpt::Common::generatedMemberComment»
+	//
+	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
+	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {
+	//	// CAUTION: This is never called, because of newest GMF template changes according OCL-Tracking make it impossible to access the OCL object!
+	//  // TODO: See MUML #516
+	//}
+	//
+«ENDAROUND»

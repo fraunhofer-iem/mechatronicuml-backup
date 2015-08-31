@@ -1,0 +1,30 @@
+«AROUND additions FOR gmfgen::GenCompartment»
+	«targetDef.proceed()»
+	
+	«REM»
+		What I mean is: IF hideIfEmpty && listLayout
+	«ENDREM»
+	«IF hideIfEmpty»
+	«IF listLayout»
+		// Fix to hide this Compartment, if it has no children. See also GMF bug:
+		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=147855
+		// and workaround:
+		// http://www.eclipse.org/forums/index.php/m/9761/
+		«EXPAND xpt::Common::generatedMemberComment»
+		protected void refreshVisibility() {
+			final org.eclipse.gmf.runtime.notation.View notationView = getNotationView();
+			final boolean hasChildren = notationView.getChildren().size() > 0;
+			setVisibility(hasChildren);
+		}
+		
+		// This is also part of the fix mentioned above.
+		«EXPAND xpt::Common::generatedMemberComment»
+		@Override
+		protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification event) {
+			refreshVisibility();
+			super.handleNotificationEvent(event);
+		}
+	«ENDIF»
+	«ENDIF»
+
+«ENDAROUND»

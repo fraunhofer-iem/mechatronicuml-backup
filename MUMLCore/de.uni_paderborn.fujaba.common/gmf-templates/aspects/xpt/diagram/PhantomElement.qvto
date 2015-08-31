@@ -1,0 +1,53 @@
+
+
+modeltype genmodel uses "http://www.eclipse.org/emf/2002/GenModel";
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+modeltype gmfgen uses "http://www.eclipse.org/gmf/2009/GenModel";
+
+library PhantomElement;
+
+-- helper method to find out the meta class (GenClass) of a GenContainerBase.
+helper domainMetaClass(genContainerBase : Element) : genmodel::GenClass {
+	return null
+}
+
+-- helper method to find out the meta class (GenClass) of a GenContainerBase.
+helper domainMetaClass(genNode : gmfgen::GenNode) : genmodel::GenClass {
+	return genNode.getDomainMetaClass()
+}
+
+-- helper method to find out the meta class (GenClass) of a GenContainerBase.
+helper domainMetaClass(genDiagram : gmfgen::GenDiagram) : genmodel::GenClass {
+	return genDiagram.domainDiagramElement
+}
+
+helper isDiagram(genNode : gmfgen::GenNode) : Boolean {
+	return false
+}
+
+helper isDiagram(genDiagram : gmfgen::GenDiagram) : Boolean {
+	return true
+}
+
+-- helper method to find out, if a node is a phantom node, which should derive the containing node
+-- (is the case, if the domainMetaClass is the same for the node and its containing node)
+helper derivesContainer(genNode : gmfgen::GenNode) : Boolean {
+	return genNode.modelFacet.isPhantomElement() and
+		genNode.container().oclIsKindOf(GenContainerBase) and
+		genNode.getDomainMetaClass() = (
+			if genNode.container().oclIsKindOf(gmfgen::GenDiagram) then
+				genNode.container().oclAsType(gmfgen::GenDiagram).domainDiagramElement
+			else
+				genNode.container().oclAsType(gmfgen::GenNode).getDomainMetaClass()
+			endif
+		)
+}
+
+helper derivesContainer(genContainerBase : gmfgen::GenContainerBase) : Boolean {
+	return
+		if genContainerBase.oclIsKindOf(GenNode) then
+			derivesContainer(genContainerBase.oclAsType(GenNode))
+		else
+			false
+		endif
+}

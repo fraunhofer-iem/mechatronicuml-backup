@@ -1,0 +1,42 @@
+«REM»
+	This template was added because of muml bug #252.
+«ENDREM»
+
+
+«REM» If the editor input is of type FileEditorInputProxy, we reuse it's EditingDomain for the new Document. «ENDREM»
+«DEFINE fileEditorInputProxyClassFQName FOR gmfgen::GenDiagram»org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy«ENDDEFINE»
+
+«REM» It is cleaner to use the interface in favor of the implementation for type checks. «ENDREM»
+«AROUND fileEditorInputClassFQName FOR gmfgen::GenDiagram»org.eclipse.ui.IFileEditorInput«ENDAROUND»
+
+
+«REM» Modified to reuse the EditingDomain of the editor input for the created Document, if it is of type FileEditorInputProxy. «ENDREM»
+«AROUND createDocument FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument createDocument(Object element) throws org.eclipse.core.runtime.CoreException {
+	«EXPAND xpt::editor::DocumentProvider::checkEditorInputInstance-»
+	// Get URI from editor input
+	org.eclipse.emf.common.util.URI uri = null;
+	if (element instanceof org.eclipse.emf.common.ui.URIEditorInput) {
+		uri = ((org.eclipse.emf.common.ui.URIEditorInput) element).getURI();
+	}
+	if (element instanceof org.eclipse.ui.IFileEditorInput) {
+		org.eclipse.core.resources.IFile file = ((org.eclipse.ui.IFileEditorInput) element).getFile();
+		uri = org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+	}
+
+	org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument document = new org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument();
+	document.setEditingDomain(de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry.INSTANCE.getEditingDomain(uri, true));
+
+	// Begin added to reuse the EditingDomain if the input element is of type FileEditorInputProxy (see muml bug #252)
+	//if (element instanceof «EXPAND fileEditorInputProxyClassFQName») {
+	//«EXPAND fileEditorInputProxyClassFQName» proxy = («EXPAND fileEditorInputProxyClassFQName») element;
+	//	((org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument) document).setEditingDomain(proxy.getEditingDomain());
+	//}
+	// End added
+
+	setDocumentContent(document, (org.eclipse.ui.IEditorInput) element);
+	setupDocument(element, document);
+	return document;
+}
+«ENDAROUND»
