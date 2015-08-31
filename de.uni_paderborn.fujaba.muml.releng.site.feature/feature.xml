@@ -31,7 +31,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.muml.pim.feature"
          version="0.0.0"/>
     <includes
-         id="de.uni_paderborn.fujaba.muml.pim.source.feature"
+         id="de.uni_paderborn.fujaba.muml.pim.sdk.feature"
          version="0.0.0"/>
 
    <includes
@@ -80,7 +80,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.core.feature"
          version="0.0.0"/>
    <includes
-         id="de.uni_paderborn.fujaba.core.source.feature"
+         id="de.uni_paderborn.fujaba.core.sdk.feature"
          version="0.0.0"/>
          
    <includes
@@ -101,7 +101,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.muml.verification.core.feature"
          version="0.0.0"/>
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.core.source.feature"
+         id="de.uni_paderborn.fujaba.muml.verification.core.sdk.feature"
          version="0.0.0"/>
          
          
@@ -109,7 +109,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.muml.verification.uppaal.feature"
          version="0.0.0"/>
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.source.feature"
+         id="de.uni_paderborn.fujaba.muml.verification.uppaal.sdk.feature"
          version="0.0.0"/>
          
          
