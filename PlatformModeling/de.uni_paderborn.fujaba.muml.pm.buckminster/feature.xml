@@ -20,6 +20,10 @@
          id="de.uni_paderborn.fujaba.muml.pm.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.pm.sdk.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.junit" version="4.11.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.10.0" match="greaterOrEqual"/>
