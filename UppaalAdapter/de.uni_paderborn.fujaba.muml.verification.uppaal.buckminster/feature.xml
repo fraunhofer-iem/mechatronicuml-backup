@@ -20,6 +20,10 @@
          id="de.uni_paderborn.fujaba.muml.verification.uppaal.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.verification.uppaal.sdk.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui"/>
