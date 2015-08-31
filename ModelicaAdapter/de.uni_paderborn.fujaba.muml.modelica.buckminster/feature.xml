@@ -20,6 +20,10 @@
          id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.sdk.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="de.uni_paderborn.fujaba.graphviz.dot.xtext"/>
       <import plugin="de.uni_paderborn.fujaba.graphviz.dot.xtext.ui"/>
