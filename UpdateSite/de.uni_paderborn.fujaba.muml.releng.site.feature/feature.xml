@@ -87,7 +87,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.muml.pm.feature"
          version="0.0.0"/>
    <includes
-         id="de.uni_paderborn.fujaba.muml.pm.source.feature"
+         id="de.uni_paderborn.fujaba.muml.pm.sdk.feature"
          version="0.0.0"/>
          
    <includes
