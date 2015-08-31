@@ -98,7 +98,7 @@ helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, 
 		else
 		{
 			cc.bound := self.relativeDeadline.upperBound.map TimeValue2TimeValue(cc);
-		}endif;
+		};
 		cc.operator := operator;
 		cc.clock := self.map Schema2Clock(clockName);
 		return cc;
@@ -140,9 +140,9 @@ helper Transition :: createComparisonExpressionForSelectorKind( position:Positio
 		
 		var comp : ComparisonExpression := new ComparisonExpression();
 			
-		comp.rightExpression := self. TransferSchemataEndpointReference(position);
+		comp.rightExpression := self. createDiscreteInteractionEndpointReference(position);
 		
-		comp.leftExpression := self. TransferSchemataEndpointReference( PositionSelectorKind::SELF);
+		comp.leftExpression := self. createDiscreteInteractionEndpointReference( PositionSelectorKind::SELF);
 				
 		comp.operator := compOperator;
 		return comp;
@@ -186,7 +186,7 @@ helper Transition :: TransferSchemaNotCondition() : UnaryExpression {
 			un.enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(un);
 		}else{
 			un.enclosedExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(un);
-		}endif;	
+		};	
 
 		un.operator := UnaryOperator::NOT;
 		
@@ -333,14 +333,14 @@ helper Transition :: createSynchronization( channelName : String,   syncKind : S
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
 	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
-	sync.selectorExpression := self. createPositionSelector( selectorKind);
+	sync.selectorExpression := self. createDiscreteInteractionEndpointReference(selectorKind);
 	return sync;
 }
 helper Transition :: createSynchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
 	var sync : Synchronization := new Synchronization();
 	sync.kind := syncKind;
 	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
-	sync.selectorExpression := self. createPositionSelector(selectorKind, successorKind);
+	sync.selectorExpression := self. createDiscreteInteractionEndpointReference(selectorKind, successorKind);
 	return sync;
 }
 	//dict->hasKey(transition);
@@ -586,17 +586,22 @@ helper Transition:: Transition2LogicalExpression( logicoperator : LogicOperator,
 
 
 ----------------------------------------------** new transformations that should replace the old ones ** 
-mapping Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
+mapping Transition :: createDiscreteInteractionEndpointReference(positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
 	position := self. createPositionSelector(positionSelectorKind);
 	typedNamedElementExpression := self.createTypedNamedElementExpression(referencedTypedNamedElement);
 }
 
-helper Transition :: TransferSchemataEndpointReference(positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
+helper Transition :: createDiscreteInteractionEndpointReference(positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
 	var ref : DiscreteInteractionEndpointReference := new DiscreteInteractionEndpointReference();
 	ref.position := self. createPositionSelector( positionSelectorKind);
 	return ref;
 }
 
+helper Transition :: createDiscreteInteractionEndpointReference(positionSelectorKind: PositionSelectorKind,successorSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
+	var ref : DiscreteInteractionEndpointReference := new DiscreteInteractionEndpointReference();
+	ref.position := self. createPositionSelector( positionSelectorKind,successorSelectorKind);
+	return ref;
+}
 
 helper Transition :: createTypedNamedElementAssignmentExpression(operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
 	var ass : Assignment := new Assignment();

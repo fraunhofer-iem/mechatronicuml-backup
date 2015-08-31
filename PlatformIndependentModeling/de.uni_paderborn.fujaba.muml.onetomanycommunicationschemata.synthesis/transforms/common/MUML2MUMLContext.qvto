@@ -735,7 +735,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	mapping muml::realtimestatechart::AsynchronousMessageEvent :: AsynchronousMessageEvent2AsynchronousMessageEvent(context : OclAny) : muml::realtimestatechart::AsynchronousMessageEvent{
 	    	_kind := self._kind;
 	    	_message := self._message.map Message2Message(context);
-	    	_oneToManyCommunicationSchema := self._oneToManyCommunicationSchema.map OneToManyCommunicationSchema2OneToManyCommunicationSchema(context);
+	    	
 	   		 }
 	   		 
 	mapping muml::realtimestatechart::DoEvent :: DoEvent2DoEvent(context : OclAny) : muml::realtimestatechart::DoEvent{
@@ -893,10 +893,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_usedCategories := self._usedCategories.map ModelElementCategory2ModelElementCategory(context);
 	   		 }
 	   		 
-	mapping muml::realtimestatechart::one_to_n_schemata::OneToManyCommunicationSchema :: OneToManyCommunicationSchema2OneToManyCommunicationSchema(context : OclAny) : muml::realtimestatechart::one_to_n_schemata::OneToManyCommunicationSchema disjuncts
-			muml::realtimestatechart::one_to_n_schemata::SendingOneToManyCommunicationSchema::SendingOneToManyCommunicationSchema2SendingOneToManyCommunicationSchema,
-			muml::realtimestatechart::one_to_n_schemata::ReceivingOneToManyCommunicationSchema::ReceivingOneToManyCommunicationSchema2ReceivingOneToManyCommunicationSchema;
-	      	
+    	
 	mapping muml::realtimestatechart::one_to_n_schemata::Multicast :: Multicast2Multicast(context : OclAny) : muml::realtimestatechart::one_to_n_schemata::Multicast{
 	    	_condition := self._condition.map Expression2Expression(context);
 	    	_asynchronousMessageEvent := self._asynchronousMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent(context);
@@ -918,13 +915,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_delay := self._delay.map TimeValue2TimeValue(context);
 	   		 }
 	   		 
-	mapping muml::realtimestatechart::one_to_n_schemata::LoadBalancing :: LoadBalancing2LoadBalancing(context : OclAny) : muml::realtimestatechart::one_to_n_schemata::LoadBalancing{
-	    	_condition := self._condition.map Expression2Expression(context);
-	    	_asynchronousMessageEvent := self._asynchronousMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent(context);
-	    	_action := self._action.map Action2Action(context);
-	    	_responseMessage := self._responseMessage.map AsynchronousMessageEvent2AsynchronousMessageEvent(context);
-	    	_maxWorkingTime := self._maxWorkingTime.map TimeValue2TimeValue(context);
-	   		 }
+
 	   		 
 	mapping muml::realtimestatechart::one_to_n_schemata::SingleReceive :: SingleReceive2SingleReceive(context : OclAny) : muml::realtimestatechart::one_to_n_schemata::SingleReceive{
 	    	_condition := self._condition.map Expression2Expression(context);
@@ -941,13 +932,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	mapping muml::realtimestatechart::one_to_n_schemata::ReceivingOneToManyCommunicationSchema :: ReceivingOneToManyCommunicationSchema2ReceivingOneToManyCommunicationSchema(context : OclAny) : muml::realtimestatechart::one_to_n_schemata::ReceivingOneToManyCommunicationSchema disjuncts
 			muml::realtimestatechart::one_to_n_schemata::SingleReceive::SingleReceive2SingleReceive,
 			muml::realtimestatechart::one_to_n_schemata::MultiReceive::MultiReceive2MultiReceive;
-	      	
-	mapping muml::realtimestatechart::one_to_n_schemata::SendingOneToManyCommunicationSchema :: SendingOneToManyCommunicationSchema2SendingOneToManyCommunicationSchema(context : OclAny) : muml::realtimestatechart::one_to_n_schemata::SendingOneToManyCommunicationSchema disjuncts
-			muml::realtimestatechart::one_to_n_schemata::Iterate::Iterate2Iterate,
-			muml::realtimestatechart::one_to_n_schemata::Multicast::Multicast2Multicast,
-			muml::realtimestatechart::one_to_n_schemata::LoadBalancing::LoadBalancing2LoadBalancing,
-			muml::realtimestatechart::one_to_n_schemata::Unicast::Unicast2Unicast;
-	      	
+	
 	mapping muml::types::ArrayDataType :: ArrayDataType2ArrayDataType(context : OclAny) : muml::types::ArrayDataType{
 	    	_name := self._name;
 	    	_comment := self._comment;
