@@ -46,7 +46,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
          version="0.0.0"/>
    <includes
-         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.source.feature"
+         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.sdk.feature"
          version="0.0.0"/>
          
    <includes
