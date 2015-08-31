@@ -20,6 +20,10 @@
          id="de.uni_paderborn.fujaba.muml.verification.core.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.verification.core.sdk.feature"
+         version="0.0.0"/>
+
    <plugin
          id="de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.test"
          download-size="0"
