@@ -23,10 +23,10 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.ReturnStatementImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

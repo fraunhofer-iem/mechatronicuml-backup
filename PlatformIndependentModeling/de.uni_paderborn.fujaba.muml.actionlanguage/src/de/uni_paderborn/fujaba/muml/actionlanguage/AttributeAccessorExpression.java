@@ -21,10 +21,10 @@ import de.uni_paderborn.fujaba.muml.types.Attribute;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAttributeAccessorExpression()
  * @model

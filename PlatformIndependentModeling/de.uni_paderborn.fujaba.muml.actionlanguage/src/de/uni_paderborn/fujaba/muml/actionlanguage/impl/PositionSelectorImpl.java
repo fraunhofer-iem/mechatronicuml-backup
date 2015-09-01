@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.PositionSelectorImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.PositionSelectorImpl#getSuccessor <em>Successor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

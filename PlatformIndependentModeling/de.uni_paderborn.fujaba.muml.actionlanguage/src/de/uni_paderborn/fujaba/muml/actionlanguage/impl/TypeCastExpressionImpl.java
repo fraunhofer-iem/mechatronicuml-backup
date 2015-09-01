@@ -35,11 +35,11 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypeCastExpressionImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypeCastExpressionImpl#getEnclosedExpression <em>Enclosed Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -117,7 +117,6 @@ public class WhileLoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS ||
 			childFeature == ActionlanguagePackage.Literals.LOOP__BLOCK ||
 			childFeature == ActionlanguagePackage.Literals.LOOP__LOOP_TEST;
 

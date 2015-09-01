@@ -29,11 +29,11 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression#getDataType <em>Data Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression#getEnclosedExpression <em>Enclosed Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypeCastExpression()
  * @model

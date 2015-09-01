@@ -20,10 +20,10 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression#getExpressions <em>Expressions</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getArrayInitializeExpression()
  * @model

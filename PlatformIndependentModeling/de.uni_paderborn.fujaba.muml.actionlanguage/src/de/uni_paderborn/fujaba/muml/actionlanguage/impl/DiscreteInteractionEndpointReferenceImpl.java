@@ -24,11 +24,11 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.DiscreteInteractionEndpointReferenceImpl#getTypedNamedElementExpression <em>Typed Named Element Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.DiscreteInteractionEndpointReferenceImpl#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -22,11 +22,11 @@ import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTriggerMessageExpression()
  * @model

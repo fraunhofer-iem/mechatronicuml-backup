@@ -19,17 +19,17 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.Loop#getBlock <em>Block</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.Loop#getLoopTest <em>Loop Test</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLoop()
  * @model abstract="true"
  * @generated
  */
-public interface Loop extends Block {
+public interface Loop extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

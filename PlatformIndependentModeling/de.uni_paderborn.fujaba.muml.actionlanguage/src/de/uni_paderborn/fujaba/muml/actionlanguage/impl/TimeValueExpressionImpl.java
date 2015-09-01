@@ -32,10 +32,10 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TimeValueExpressionImpl#getTimeValue <em>Time Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

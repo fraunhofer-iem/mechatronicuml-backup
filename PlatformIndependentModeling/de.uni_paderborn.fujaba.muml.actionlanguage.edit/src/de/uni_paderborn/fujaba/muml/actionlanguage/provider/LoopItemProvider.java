@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -24,6 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 
+import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
@@ -35,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
  * @generated
  */
 public class LoopItemProvider
-	extends BlockItemProvider {
+	extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -201,21 +203,6 @@ public class LoopItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.LOOP__BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.LOOP__BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.LOOP__BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
@@ -352,7 +339,6 @@ public class LoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS ||
 			childFeature == ActionlanguagePackage.Literals.LOOP__BLOCK ||
 			childFeature == ActionlanguagePackage.Literals.LOOP__LOOP_TEST;
 
@@ -362,6 +348,17 @@ public class LoopItemProvider
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

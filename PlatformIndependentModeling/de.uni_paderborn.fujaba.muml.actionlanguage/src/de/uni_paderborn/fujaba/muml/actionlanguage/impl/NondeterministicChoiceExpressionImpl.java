@@ -20,11 +20,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.Range;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.NondeterministicChoiceExpressionImpl#getRange <em>Range</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.NondeterministicChoiceExpressionImpl#getDataType <em>Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

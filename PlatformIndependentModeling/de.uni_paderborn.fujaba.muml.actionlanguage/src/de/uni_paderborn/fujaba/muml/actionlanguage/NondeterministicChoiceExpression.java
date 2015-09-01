@@ -22,11 +22,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.Range;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression#getRange <em>Range</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression#getDataType <em>Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getNondeterministicChoiceExpression()
  * @model

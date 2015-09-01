@@ -215,7 +215,6 @@ public class ForLoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS ||
 			childFeature == ActionlanguagePackage.Literals.LOOP__BLOCK ||
 			childFeature == ActionlanguagePackage.Literals.LOOP__LOOP_TEST ||
 			childFeature == ActionlanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION ||

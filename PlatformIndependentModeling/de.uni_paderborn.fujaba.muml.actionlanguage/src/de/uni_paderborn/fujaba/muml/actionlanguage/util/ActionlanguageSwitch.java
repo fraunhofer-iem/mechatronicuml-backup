@@ -70,7 +70,7 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -101,7 +101,6 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 			case ActionlanguagePackage.LOOP: {
 				Loop loop = (Loop)theEObject;
 				T result = caseLoop(loop);
-				if (result == null) result = caseBlock(loop);
 				if (result == null) result = caseExpression(loop);
 				if (result == null) result = caseCommentableElement(loop);
 				if (result == null) result = caseExtendableElement(loop);
@@ -112,7 +111,6 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 				WhileLoop whileLoop = (WhileLoop)theEObject;
 				T result = caseWhileLoop(whileLoop);
 				if (result == null) result = caseLoop(whileLoop);
-				if (result == null) result = caseBlock(whileLoop);
 				if (result == null) result = caseExpression(whileLoop);
 				if (result == null) result = caseCommentableElement(whileLoop);
 				if (result == null) result = caseExtendableElement(whileLoop);
@@ -123,7 +121,6 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 				DoWhileLoop doWhileLoop = (DoWhileLoop)theEObject;
 				T result = caseDoWhileLoop(doWhileLoop);
 				if (result == null) result = caseLoop(doWhileLoop);
-				if (result == null) result = caseBlock(doWhileLoop);
 				if (result == null) result = caseExpression(doWhileLoop);
 				if (result == null) result = caseCommentableElement(doWhileLoop);
 				if (result == null) result = caseExtendableElement(doWhileLoop);
@@ -143,7 +140,6 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 				ForLoop forLoop = (ForLoop)theEObject;
 				T result = caseForLoop(forLoop);
 				if (result == null) result = caseLoop(forLoop);
-				if (result == null) result = caseBlock(forLoop);
 				if (result == null) result = caseExpression(forLoop);
 				if (result == null) result = caseCommentableElement(forLoop);
 				if (result == null) result = caseExtendableElement(forLoop);

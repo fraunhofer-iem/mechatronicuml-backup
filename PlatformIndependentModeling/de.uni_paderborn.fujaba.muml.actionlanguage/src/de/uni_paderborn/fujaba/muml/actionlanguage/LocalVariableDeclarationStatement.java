@@ -25,11 +25,11 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getVariable <em>Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getAllSurroundingBlocks <em>All Surrounding Blocks</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueName'"

@@ -29,11 +29,11 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.OperationCallImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.OperationCallImpl#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

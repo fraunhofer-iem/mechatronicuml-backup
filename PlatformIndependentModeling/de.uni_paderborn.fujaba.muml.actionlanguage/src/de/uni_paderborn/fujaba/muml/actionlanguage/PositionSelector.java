@@ -25,11 +25,11 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector#getSuccessor <em>Successor</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getPositionSelector()
  * @model

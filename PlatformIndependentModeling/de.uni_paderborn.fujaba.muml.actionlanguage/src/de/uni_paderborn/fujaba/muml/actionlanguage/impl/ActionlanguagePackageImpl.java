@@ -990,7 +990,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		// Add supertypes to classes
 		blockEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		loopEClass.getESuperTypes().add(this.getBlock());
+		loopEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		whileLoopEClass.getESuperTypes().add(this.getLoop());
 		doWhileLoopEClass.getESuperTypes().add(this.getLoop());
 		assignmentEClass.getESuperTypes().add(theExpressionsPackage.getExpression());

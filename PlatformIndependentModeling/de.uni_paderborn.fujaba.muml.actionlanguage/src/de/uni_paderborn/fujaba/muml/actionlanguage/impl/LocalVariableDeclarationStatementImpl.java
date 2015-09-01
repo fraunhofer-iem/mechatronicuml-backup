@@ -26,11 +26,11 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.LocalVariableDeclarationStatementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.LocalVariableDeclarationStatementImpl#getAllSurroundingBlocks <em>All Surrounding Blocks</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

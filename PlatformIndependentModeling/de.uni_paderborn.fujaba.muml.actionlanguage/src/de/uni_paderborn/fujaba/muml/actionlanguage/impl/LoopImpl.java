@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.Expression;
 
+import org.storydriven.core.expressions.impl.ExpressionImpl;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
@@ -23,15 +24,15 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.LoopImpl#getBlock <em>Block</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.LoopImpl#getLoopTest <em>Loop Test</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class LoopImpl extends BlockImpl implements Loop {
+public abstract class LoopImpl extends ExpressionImpl implements Loop {
 	/**
 	 * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
 	 * <!-- begin-user-doc -->

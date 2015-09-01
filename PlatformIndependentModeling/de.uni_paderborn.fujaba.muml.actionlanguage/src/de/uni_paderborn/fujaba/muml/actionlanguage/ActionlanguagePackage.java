@@ -325,7 +325,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__ANNOTATION = BLOCK__ANNOTATION;
+	int LOOP__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -334,7 +334,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__EXTENSION = BLOCK__EXTENSION;
+	int LOOP__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -343,16 +343,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__COMMENT = BLOCK__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP__EXPRESSIONS = BLOCK__EXPRESSIONS;
+	int LOOP__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -361,7 +352,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__BLOCK = BLOCK_FEATURE_COUNT + 0;
+	int LOOP__BLOCK = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Loop Test</b></em>' containment reference.
@@ -370,7 +361,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__LOOP_TEST = BLOCK_FEATURE_COUNT + 1;
+	int LOOP__LOOP_TEST = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Loop</em>' class.
@@ -379,7 +370,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP_FEATURE_COUNT = BLOCK_FEATURE_COUNT + 2;
+	int LOOP_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -388,7 +379,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ECLASS = BLOCK___ECLASS;
+	int LOOP___ECLASS = ExpressionsPackage.EXPRESSION___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -397,7 +388,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___EIS_PROXY = BLOCK___EIS_PROXY;
+	int LOOP___EIS_PROXY = ExpressionsPackage.EXPRESSION___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -406,7 +397,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ERESOURCE = BLOCK___ERESOURCE;
+	int LOOP___ERESOURCE = ExpressionsPackage.EXPRESSION___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -415,7 +406,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ECONTAINER = BLOCK___ECONTAINER;
+	int LOOP___ECONTAINER = ExpressionsPackage.EXPRESSION___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -424,7 +415,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ECONTAINING_FEATURE = BLOCK___ECONTAINING_FEATURE;
+	int LOOP___ECONTAINING_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -433,7 +424,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ECONTAINMENT_FEATURE = BLOCK___ECONTAINMENT_FEATURE;
+	int LOOP___ECONTAINMENT_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -442,7 +433,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ECONTENTS = BLOCK___ECONTENTS;
+	int LOOP___ECONTENTS = ExpressionsPackage.EXPRESSION___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -451,7 +442,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___EALL_CONTENTS = BLOCK___EALL_CONTENTS;
+	int LOOP___EALL_CONTENTS = ExpressionsPackage.EXPRESSION___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -460,7 +451,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ECROSS_REFERENCES = BLOCK___ECROSS_REFERENCES;
+	int LOOP___ECROSS_REFERENCES = ExpressionsPackage.EXPRESSION___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -469,7 +460,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___EGET__ESTRUCTURALFEATURE = BLOCK___EGET__ESTRUCTURALFEATURE;
+	int LOOP___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -478,7 +469,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___EGET__ESTRUCTURALFEATURE_BOOLEAN = BLOCK___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int LOOP___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -487,7 +478,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___ESET__ESTRUCTURALFEATURE_OBJECT = BLOCK___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int LOOP___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -496,7 +487,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___EIS_SET__ESTRUCTURALFEATURE = BLOCK___EIS_SET__ESTRUCTURALFEATURE;
+	int LOOP___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -505,7 +496,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___EUNSET__ESTRUCTURALFEATURE = BLOCK___EUNSET__ESTRUCTURALFEATURE;
+	int LOOP___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -514,7 +505,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___EINVOKE__EOPERATION_ELIST = BLOCK___EINVOKE__EOPERATION_ELIST;
+	int LOOP___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -523,7 +514,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___GET_EXTENSION__ECLASS = BLOCK___GET_EXTENSION__ECLASS;
+	int LOOP___GET_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -532,7 +523,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___PROVIDE_EXTENSION__ECLASS = BLOCK___PROVIDE_EXTENSION__ECLASS;
+	int LOOP___PROVIDE_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -541,7 +532,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___GET_ANNOTATION__STRING = BLOCK___GET_ANNOTATION__STRING;
+	int LOOP___GET_ANNOTATION__STRING = ExpressionsPackage.EXPRESSION___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -550,7 +541,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP___PROVIDE_ANNOTATION__STRING = BLOCK___PROVIDE_ANNOTATION__STRING;
+	int LOOP___PROVIDE_ANNOTATION__STRING = ExpressionsPackage.EXPRESSION___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Loop</em>' class.
@@ -559,7 +550,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP_OPERATION_COUNT = BLOCK_OPERATION_COUNT + 0;
+	int LOOP_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.WhileLoopImpl <em>While Loop</em>}' class.
@@ -597,15 +588,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int WHILE_LOOP__COMMENT = LOOP__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE_LOOP__EXPRESSIONS = LOOP__EXPRESSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -850,15 +832,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int DO_WHILE_LOOP__COMMENT = LOOP__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_WHILE_LOOP__EXPRESSIONS = LOOP__EXPRESSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -1365,15 +1338,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int FOR_LOOP__COMMENT = LOOP__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOR_LOOP__EXPRESSIONS = LOOP__EXPRESSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Block</b></em>' containment reference.

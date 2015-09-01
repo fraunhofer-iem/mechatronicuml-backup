@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall#getOperation <em>Operation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getOperationCall()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ParameterBindingForEveryParameter'"

@@ -27,13 +27,13 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.AssignmentImpl#getAssignOperator <em>Assign Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.AssignmentImpl#getRhs_assignExpression <em>Rhs assign Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.AssignmentImpl#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.AssignmentImpl#getLhs_typedNamedElementExpression <em>Lhs typed Named Element Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -22,11 +22,11 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.ForLoopImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.ForLoopImpl#getCountingExpression <em>Counting Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

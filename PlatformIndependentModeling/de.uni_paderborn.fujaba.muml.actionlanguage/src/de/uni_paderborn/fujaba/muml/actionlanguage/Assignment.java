@@ -19,13 +19,13 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.Assignment#getAssignOperator <em>Assign Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.Assignment#getRhs_assignExpression <em>Rhs assign Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.Assignment#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.Assignment#getLhs_typedNamedElementExpression <em>Lhs typed Named Element Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignment()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints=''"

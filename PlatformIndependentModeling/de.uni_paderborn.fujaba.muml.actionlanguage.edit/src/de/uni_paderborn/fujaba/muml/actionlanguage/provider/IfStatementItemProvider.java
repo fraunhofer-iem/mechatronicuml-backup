@@ -404,21 +404,6 @@ public class IfStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
@@ -549,38 +534,8 @@ public class IfStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
-				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
-				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
-				 ActionlanguageFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
 				 ActionlanguageFactory.eINSTANCE.createBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
-				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 	}
 
 	/**

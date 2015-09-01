@@ -30,11 +30,11 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypedNamedElementExpressionImpl#getTypedNamedElement <em>Typed Named Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypedNamedElementExpressionImpl#getElementAccessors <em>Element Accessors</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

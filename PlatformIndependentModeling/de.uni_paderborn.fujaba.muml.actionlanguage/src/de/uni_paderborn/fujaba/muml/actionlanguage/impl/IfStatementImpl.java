@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getIfCondition <em>If Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getIfBlock <em>If Block</em>}</li>
@@ -37,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getElseIfBlocks <em>Else If Blocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getElseBlock <em>Else Block</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

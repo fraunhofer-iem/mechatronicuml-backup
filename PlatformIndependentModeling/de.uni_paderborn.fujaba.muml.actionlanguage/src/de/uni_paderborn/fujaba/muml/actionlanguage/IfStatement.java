@@ -22,6 +22,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getIfCondition <em>If Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getIfBlock <em>If Block</em>}</li>
@@ -29,7 +30,6 @@ import org.storydriven.core.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfBlocks <em>Else If Blocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseBlock <em>Else Block</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement()
  * @model

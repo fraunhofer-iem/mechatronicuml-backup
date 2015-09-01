@@ -27,10 +27,10 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.BlockImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

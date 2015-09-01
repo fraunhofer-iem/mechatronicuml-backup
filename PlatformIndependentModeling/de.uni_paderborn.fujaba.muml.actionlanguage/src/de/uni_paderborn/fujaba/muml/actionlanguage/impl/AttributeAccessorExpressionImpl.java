@@ -30,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.AttributeAccessorExpressionImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

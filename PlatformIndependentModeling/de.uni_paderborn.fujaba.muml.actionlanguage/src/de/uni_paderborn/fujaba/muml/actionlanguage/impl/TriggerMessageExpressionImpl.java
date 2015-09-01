@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TriggerMessageExpressionImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TriggerMessageExpressionImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
