@@ -20,4 +20,8 @@
          id="de.uni_paderborn.uppaal.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.uppaal.sdk.feature"
+         version="0.0.0"/>
+
 </feature>
