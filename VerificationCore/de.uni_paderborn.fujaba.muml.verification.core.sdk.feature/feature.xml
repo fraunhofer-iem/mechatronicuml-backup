@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.uni_paderborn.fujaba.muml.verification.core.sdk.feature"
-      label="Verification Core"
+      label="Verification Core SDK"
       version="0.5.0.qualifier">
 
    <description>
@@ -27,6 +27,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="de.uni_paderborn.fujaba.muml.verification.core.feature"
          version="0.0.0"/>
+
    <includes
          id="de.uni_paderborn.fujaba.muml.verification.core.source.feature"
          version="0.0.0"/>
