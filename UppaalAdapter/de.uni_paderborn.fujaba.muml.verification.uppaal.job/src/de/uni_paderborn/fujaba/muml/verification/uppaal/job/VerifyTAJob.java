@@ -147,13 +147,18 @@ public class VerifyTAJob extends SynchronousJob {
 		    Writer stringWriter = new StringWriter();
 		    Writer progressWriter = new ProgressWriter(subMonitor, properties.getProperties().size());
 			
-			Process proc = new Process(cmd, new PrintWriter(System.out, true), stringWriter, progressWriter) {
+		    Process proc = null;
+		    try {
+		    	proc = new Process(cmd, new PrintWriter(System.out, true), stringWriter, progressWriter) {
 				
-				@Override
-				protected boolean isRunning() {
-					return !monitor.isCanceled();
-				}
-			};
+		    		@Override
+		    		protected boolean isRunning() {
+		    			return !monitor.isCanceled();
+		    		}
+		    	};
+		    } catch (IOException e) {
+		    	throw new RuntimeException(e);
+		    }
 						
 			int exitCode = proc.waitFor();
 						
