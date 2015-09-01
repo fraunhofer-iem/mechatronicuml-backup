@@ -20,5 +20,9 @@
 	<cq:advisorNode namePattern="^org\.w3c.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^javax.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.tukaani.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^.*\.source" componentType="osgi.bundle"
+		skipComponent="true"/>
+	<cq:advisorNode namePattern="^.*\.source" componentType="eclipse.feature"
+		skipComponent="true"/>
 	<cq:advisorNode namePattern=".*" useMaterialization="false" useTargetPlatform="false"/>
 </cq:componentQuery>
