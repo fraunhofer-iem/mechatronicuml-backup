@@ -23,6 +23,6 @@
 	<cq:advisorNode namePattern=".*" useMaterialization="false" useTargetPlatform="false"/>
 	<cq:advisorNode namePattern="^.*\.source" componentType="osgi.bundle"
 		skipComponent="true"/>
-	<cq:advisorNode namePattern="^.*\.source" componentType="eclipse.feature"
+	<cq:advisorNode namePattern="^.*\.source.feature" componentType="eclipse.feature"
 		skipComponent="true"/>
 </cq:componentQuery>
