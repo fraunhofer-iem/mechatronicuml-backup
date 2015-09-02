@@ -17,7 +17,7 @@
   <eSubpackages name="allocation" nsURI="http://www.fujaba.de/muml/psm/allocation/0.4.0/"
       nsPrefix="allocation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This package provides the modelelements to allocate a ComponentInstanceConfiguration to a HarwarePlatformInstanceConfiguration."/>
+      <details key="documentation" value="This package provides the model elements to allocate a ComponentInstanceConfiguration to a HarwarePlatformInstanceConfiguration."/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -122,7 +122,7 @@
   <eSubpackages name="psm_realtimestatechart" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
       nsPrefix="psm_realtimestatechart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introdused."/>
+      <details key="documentation" value="The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introduced."/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -131,7 +131,7 @@
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ParameterizedRealtimeStatechart" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class is a extension of a real-time statechart, which has aditional plattformspecific parameters."/>
+        <details key="documentation" value="This class is a extension of a real-time statechart, which has additional plattformspecific parameters."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
           eType="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"
