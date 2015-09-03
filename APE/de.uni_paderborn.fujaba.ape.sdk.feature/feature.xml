@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.fujaba.ape.sdk.feature"
+      label="APE SDK"
+      version="0.5.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="de.uni_paderborn.emf.codegen.oclfilter.feature"
+         version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.emf.codegen.oclfilter.source.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="de.uni_paderborn.fujaba.properties.feature"
+         version="0.0.0"/>
+  <includes
+         id="de.uni_paderborn.fujaba.properties.source.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="de.uni_paderborn.fujaba.properties.migrator.feature"
+         version="0.0.0"/>
+   <includes
+         id="de.uni_paderborn.fujaba.properties.migrator.source.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="org.eclipse.emf.ecore.improved.feature"
+         version="0.0.0"/>
+   <includes
+         id="org.eclipse.emf.ecore.improved.source.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.9.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.codegen.ecore"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xpand" version="0.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtend" version="0.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtend.typesystem.emf" version="0.7.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.7.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="org.eclipse.emf.codegen.ecore.ui"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.reconcile" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.codegen" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.300" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.runtime" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.emf.edit" version="2.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.gef" version="3.9.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.examples.xtext.console" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.examples.impactanalyzer" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.examples.eventmanager" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+   </requires>
+
+</feature>
