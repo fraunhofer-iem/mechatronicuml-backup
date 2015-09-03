@@ -6,12 +6,11 @@
     <cq:advisorNode namePattern="^org\.eclipse\.emf\.ecore\.improved*" useMaterialization="false" useTargetPlatform="false"/>
     <cq:advisorNode namePattern="^org\.eclipse.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.hamcrest.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.junit.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.google.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.ibm.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.sun.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.javax.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.antl.*" useMaterialization="false" useTargetPlatform="true"/>
