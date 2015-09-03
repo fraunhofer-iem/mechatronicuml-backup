@@ -277,8 +277,15 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 				if(not lb.responseMessage.oclIsUndefined()) {
 					variables += getFreeForWorkVariable();
 				};
+				// create exactly one extra region for all LoadBalancing Schemata that define a response Message
+				if( not lb.responseMessage.oclIsUndefined()) {
+					mainState.embeddedRegions += self.map DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRegion(prio,lb.responseMessage);
+					prio := prio + 1;
+				};
+				
 			};
 			mainState.embeddedRegions += t.map OneToManyCommunicationSchema2SubroleRegion(self, prio);
+			
 			prio := prio +1;
 		};		
 		
@@ -286,6 +293,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		
 		self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior := result;
 }
+
 
 mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeStatechart : RealtimeStatechart, _priority : Integer): Region {
 		

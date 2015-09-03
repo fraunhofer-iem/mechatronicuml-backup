@@ -440,8 +440,44 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAn
 		
 }
 
+mapping RealtimeStatechart :: DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRegion(_priority : Integer,message : muml::msgtype::MessageType) : Region {
+		
+		result.priority := _priority;
+		
+		embeddedStatechart := self.map DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRTSC(message);
+		
+		
+}
 
-
-
+mapping RealtimeStatechart :: DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRTSC(messageType : muml::msgtype::MessageType) : RealtimeStatechart {	
+	
+		name := "LoadBalancingResponseMessageRTSC";
+		
+		var state : State := new State();
+		state.name := "initial";
+		state.initial := true;
+		var transition : Transition := new Transition();
+		transition.source := state;
+		transition.target := state;
+		transition.priority := 1;
+		var event := new AsynchronousMessageEvent();
+		event.kind := EventKind::TRIGGER;
+		event.message := new Message();
+		event.message.instanceOf := messageType;
+		
+		transition.events += event;	
+		
+		transition.action := new Action();
+		transition.action.name := "freeForWork := true";
+		var ass : Assignment := new Assignment();
+		ass.assignOperator := AssignOperator::ASSIGN;
+		ass.rhs_assignExpression := transition.createLiteralExpression("true");
+		ass.lhs_typedNamedElementExpression := transition.createTypedNamedElementExpression(getFreeForWorkVariable());
+		transition.action.expressions += ass;
+		
+		result.states += state;
+		result.transitions += transition;
+	
+}
 
 

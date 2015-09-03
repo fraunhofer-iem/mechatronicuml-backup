@@ -268,7 +268,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration;
 	      	
 	mapping actionlanguage::Block :: Block2Block(context : OclAny) : actionlanguage::Block disjuncts
-			actionlanguage::Loop::Loop2Loop, actionlanguage::Block::normalBlock2Block;
+			actionlanguage::Block::normalBlock2Block;
 	 	 			
 	 mapping actionlanguage::Block :: normalBlock2Block(context : OclAny) : actionlanguage::Block{
 	 _comment := self._comment;
@@ -286,7 +286,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_comment := self._comment;
 	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
 	    	_extension := self._extension.map Extension2Extension(context);
-	    	_expressions := self._expressions.map Expression2Expression(context);
+	    	
 	    	_block := self._block.map Block2Block(context);
 	    	_loopTest := self._loopTest.map Expression2Expression(context);
 	   		 }
@@ -295,7 +295,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_comment := self._comment;
 	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
 	    	_extension := self._extension.map Extension2Extension(context);
-	    	_expressions := self._expressions.map Expression2Expression(context);
+	    	
 	    	_block := self._block.map Block2Block(context);
 	    	_loopTest := self._loopTest.map Expression2Expression(context);
 	   		 }
@@ -314,7 +314,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_comment := self._comment;
 	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
 	    	_extension := self._extension.map Extension2Extension(context);
-	    	_expressions := self._expressions.map Expression2Expression(context);
+	    
 	    	_block := self._block.map Block2Block(context);
 	    	_loopTest := self._loopTest.map Expression2Expression(context);
 	    	_initializeExpression := self._initializeExpression.map Assignment2Assignment(context);
