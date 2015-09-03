@@ -57,7 +57,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          name=""/>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.source.feature"
+         id="de.uni_paderborn.fujaba.ape.sdk.feature"
          version="0.0.0"
          name=""/>
 
@@ -77,9 +77,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="org.eclipse.emf.ecore.improved.feature"
          version="0.0.0"/>
 
-   <includes
-         id="org.eclipse.emf.ecore.improved.source.feature"
-         version="0.0.0"/>
+
 
    <includes
          id="de.uni_paderborn.fujaba.core.feature"
@@ -169,9 +167,6 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.properties.migrator.feature"
          version="0.0.0"/>
 
-   <includes
-         id="de.uni_paderborn.fujaba.properties.migrator.source.feature"
-         version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.ecore.migration.feature"
