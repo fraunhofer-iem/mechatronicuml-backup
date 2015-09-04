@@ -173,7 +173,7 @@ public class GenerateAll {
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.worked(1);
 		try {	
-			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.arduino.Activator.PLUGIN_ID).getEntry("resources"));
+			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
 			File sourceFolder = new File(resources.toURI());
 			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
 
