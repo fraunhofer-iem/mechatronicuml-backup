@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_1g9oYFL0EeWl58eUwm1Yvw" type="Component" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_2uaS8FL0EeWl58eUwm1Yvw" type="2006" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_2u-6sFL0EeWl58eUwm1Yvw" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_86urQFL0EeWl58eUwm1Yvw" type="3013" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_86vSUFL0EeWl58eUwm1Yvw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_86vSUVL0EeWl58eUwm1Yvw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="model.muml#_86mIYFL0EeWl58eUwm1Yvw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_86urQVL0EeWl58eUwm1Yvw"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="model.muml#_2sZgwFL0EeWl58eUwm1Yvw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2uaS8VL0EeWl58eUwm1Yvw" x="396" y="54" width="136" height="82"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_46d60FL0EeWl58eUwm1Yvw" type="2006" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_46d60lL0EeWl58eUwm1Yvw" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_6WKcwFL0EeWl58eUwm1Yvw" type="3011" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_6WKcwlL0EeWl58eUwm1Yvw" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_6WKcw1L0EeWl58eUwm1Yvw" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="model.muml#_6WB54FL0EeWl58eUwm1Yvw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6WKcwVL0EeWl58eUwm1Yvw"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="model.muml#_46ZpYFL0EeWl58eUwm1Yvw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46d60VL0EeWl58eUwm1Yvw" x="801" y="45" width="136" height="73"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_3g-tcFL2EeWl58eUwm1Yvw" type="2005" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3g-tclL2EeWl58eUwm1Yvw" type="5021"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_3g-tc1L2EeWl58eUwm1Yvw" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_4exLYFL2EeWl58eUwm1Yvw" type="3012" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_4exycFL2EeWl58eUwm1Yvw" type="5017"/>
+        <children xmi:type="notation:Shape" xmi:id="_5ApwcFL2EeWl58eUwm1Yvw" type="3022" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_5ApwclL2EeWl58eUwm1Yvw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5Apwc1L2EeWl58eUwm1Yvw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="model.muml#_5AkQ4FL2EeWl58eUwm1Yvw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5ApwcVL2EeWl58eUwm1Yvw"/>
+        </children>
+        <element xmi:type="component:ComponentPart" href="model.muml#_4err0FL2EeWl58eUwm1Yvw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4exLYVL2EeWl58eUwm1Yvw" x="8" y="43" width="154" height="91"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_51UuoFL2EeWl58eUwm1Yvw" type="3012" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_51UuolL2EeWl58eUwm1Yvw" type="5017"/>
+        <children xmi:type="notation:Shape" xmi:id="_6Q53YFL2EeWl58eUwm1Yvw" type="3022" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_6Q53YlL2EeWl58eUwm1Yvw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_6Q53Y1L2EeWl58eUwm1Yvw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="model.muml#_6Q0-4FL2EeWl58eUwm1Yvw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Q53YVL2EeWl58eUwm1Yvw"/>
+        </children>
+        <element xmi:type="component:ComponentPart" href="model.muml#_51RrUFL2EeWl58eUwm1Yvw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_51UuoVL2EeWl58eUwm1Yvw" x="242" y="43" width="136" height="91"/>
+      </children>
+    </children>
+    <element xmi:type="component:StaticStructuredComponent" href="model.muml#_3g4m0FL2EeWl58eUwm1Yvw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3g-tcVL2EeWl58eUwm1Yvw" x="333" y="306" width="415" height="262"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_1g9oYVL0EeWl58eUwm1Yvw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="model.muml#_yGgTv1L0EeWl58eUwm1Yvw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_7DUy0FL2EeWl58eUwm1Yvw" type="4001" source="_5ApwcFL2EeWl58eUwm1Yvw" target="_6Q53YFL2EeWl58eUwm1Yvw" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_7DVZ4FL2EeWl58eUwm1Yvw" fontName=".Helvetica Neue DeskInterface" fontHeight="11"/>
+    <element xmi:type="component:AssemblyConnector" href="model.muml#_7DQhYFL2EeWl58eUwm1Yvw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7DVZ4VL2EeWl58eUwm1Yvw" points="[12, 5, -222, 5]$[232, 12, -2, 12]"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r15221)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_yGfsoFL0EeWl58eUwm1Yvw">
+  <categories xmi:id="_yGfsoVL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTsFL0EeWl58eUwm1Yvw" name="void"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTsVL0EeWl58eUwm1Yvw" name="boolean" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTslL0EeWl58eUwm1Yvw" name="int8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTs1L0EeWl58eUwm1Yvw" name="int16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTtFL0EeWl58eUwm1Yvw" name="int32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTtVL0EeWl58eUwm1Yvw" name="int64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTtlL0EeWl58eUwm1Yvw" name="double" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTt1L0EeWl58eUwm1Yvw" name="uint8" primitiveType="UINT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTuFL0EeWl58eUwm1Yvw" name="uint16" primitiveType="UINT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTuVL0EeWl58eUwm1Yvw" name="uint32" primitiveType="UINT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTulL0EeWl58eUwm1Yvw" name="uint64" primitiveType="UINT64"/>
+  </categories>
+  <categories xmi:id="_yGgTu1L0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QbiYcFL1EeWl58eUwm1Yvw" name="rootRTSC" behavioralElement="_2sZgwFL0EeWl58eUwm1Yvw">
+      <states xmi:id="_QbiYcVL1EeWl58eUwm1Yvw" name="init" initial="true">
+        <embeddedRegions xmi:id="_5KHq8FL1EeWl58eUwm1Yvw" priority="1">
+          <embeddedStatechart xmi:id="_5KRb8FL1EeWl58eUwm1Yvw" name="Main">
+            <transitions xmi:id="_Yvmq8FL2EeWl58eUwm1Yvw" priority="1" target="_BVWnAFL2EeWl58eUwm1Yvw" source="_5KSqEFL1EeWl58eUwm1Yvw">
+              <clockConstraints xmi:id="_dXFzcFL2EeWl58eUwm1Yvw" clock="_Fd-pQFL2EeWl58eUwm1Yvw" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_ef-uIFL2EeWl58eUwm1Yvw">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_i-EqEFL2EeWl58eUwm1Yvw" value="500"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
+            <transitions xmi:id="_avL9EFL2EeWl58eUwm1Yvw" priority="1" target="_5KSqEFL1EeWl58eUwm1Yvw" source="_BVWnAFL2EeWl58eUwm1Yvw">
+              <clockConstraints xmi:id="_gJBIgFL2EeWl58eUwm1Yvw" clock="_Fd-pQFL2EeWl58eUwm1Yvw" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_ggmiEFL2EeWl58eUwm1Yvw">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_g7JJAFL2EeWl58eUwm1Yvw" value="500"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
+            <states xmi:id="_5KSqEFL1EeWl58eUwm1Yvw" name="LED_off" outgoingTransitions="_Yvmq8FL2EeWl58eUwm1Yvw" incomingTransitions="_avL9EFL2EeWl58eUwm1Yvw" initial="true">
+              <entryEvent xmi:id="_IsoWkFL2EeWl58eUwm1Yvw" clockResets="_Fd-pQFL2EeWl58eUwm1Yvw">
+                <action xmi:id="_lQpwsFL2EeWl58eUwm1Yvw" name="turnOff">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_oxNtYFL2EeWl58eUwm1Yvw">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_oxNtYVL2EeWl58eUwm1Yvw" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_oxNtYlL2EeWl58eUwm1Yvw" value="0"/>
+                      <lhs_typedNamedElementExpression xmi:id="_oxNtY1L2EeWl58eUwm1Yvw" typedNamedElement="_86mIYFL0EeWl58eUwm1Yvw"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
+            <states xmi:id="_BVWnAFL2EeWl58eUwm1Yvw" name="LED_on" outgoingTransitions="_avL9EFL2EeWl58eUwm1Yvw" incomingTransitions="_Yvmq8FL2EeWl58eUwm1Yvw">
+              <entryEvent xmi:id="_KjZD4FL2EeWl58eUwm1Yvw" clockResets="_Fd-pQFL2EeWl58eUwm1Yvw">
+                <action xmi:id="_pi_voFL2EeWl58eUwm1Yvw" name="turnOn">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_rusLIFL2EeWl58eUwm1Yvw">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_rusLIVL2EeWl58eUwm1Yvw" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_rusLIlL2EeWl58eUwm1Yvw" value="1"/>
+                      <lhs_typedNamedElementExpression xmi:id="_rusLI1L2EeWl58eUwm1Yvw" typedNamedElement="_86mIYFL0EeWl58eUwm1Yvw"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
+            <clocks xmi:id="_Fd-pQFL2EeWl58eUwm1Yvw" name="changingClock"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_yGgTvFL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
+  <categories xmi:id="_yGgTvVL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_yGgTvlL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_HSyZUFL3EeWl58eUwm1Yvw" name="root-cic">
+      <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_Ik_BAFL3EeWl58eUwm1Yvw" name="sys" componentType="_3g4m0FL2EeWl58eUwm1Yvw">
+        <embeddedCIC xmi:id="_JbMQQFL3EeWl58eUwm1Yvw" name="System">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_JbMQQVL3EeWl58eUwm1Yvw" name="C1" componentType="_2sZgwFL0EeWl58eUwm1Yvw" componentPart="_4err0FL2EeWl58eUwm1Yvw">
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_JbMQQlL3EeWl58eUwm1Yvw" name="LED_voltage" connectorInstances="_JbMQRVL3EeWl58eUwm1Yvw" type="_86mIYFL0EeWl58eUwm1Yvw"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_JbMQQ1L3EeWl58eUwm1Yvw" name="C2" componentType="_46ZpYFL0EeWl58eUwm1Yvw" componentPart="_51RrUFL2EeWl58eUwm1Yvw">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_JbMQRFL3EeWl58eUwm1Yvw" name="voltage" connectorInstances="_JbMQRVL3EeWl58eUwm1Yvw" type="_6WB54FL0EeWl58eUwm1Yvw"/>
+          </componentInstances>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_JbMQRVL3EeWl58eUwm1Yvw" type="_7DQhYFL2EeWl58eUwm1Yvw" connectorEndpointInstances="_JbMQRFL3EeWl58eUwm1Yvw _JbMQQlL3EeWl58eUwm1Yvw"/>
+        </embeddedCIC>
+      </componentInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_yGgTv1L0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_2sZgwFL0EeWl58eUwm1Yvw" name="Main" behavior="_QbiYcFL1EeWl58eUwm1Yvw">
+      <ports xsi:type="component:HybridPort" xmi:id="_86mIYFL0EeWl58eUwm1Yvw" name="LED_voltage" dataType="_yGgTslL0EeWl58eUwm1Yvw" kind="OUT">
+        <samplingInterval xmi:id="_LgNt8FL1EeWl58eUwm1Yvw">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_ME69gFL1EeWl58eUwm1Yvw" value="50"/>
+        </samplingInterval>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_46ZpYFL0EeWl58eUwm1Yvw" name="LED" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_6WB54FL0EeWl58eUwm1Yvw" name="voltage" dataType="_yGgTslL0EeWl58eUwm1Yvw"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_3g4m0FL2EeWl58eUwm1Yvw" name="System" componentKind="hybrid component">
+      <embeddedComponentParts xmi:id="_4err0FL2EeWl58eUwm1Yvw" name="C1" componentType="_2sZgwFL0EeWl58eUwm1Yvw">
+        <cardinality xmi:id="_4es58FL2EeWl58eUwm1Yvw">
+          <lowerBound xmi:id="_5c1WIFL2EeWl58eUwm1Yvw"/>
+          <upperBound xmi:id="_5c_uMFL2EeWl58eUwm1Yvw"/>
+        </cardinality>
+        <portParts xmi:id="_5AkQ4FL2EeWl58eUwm1Yvw" connectors="_7DQhYFL2EeWl58eUwm1Yvw" portType="_86mIYFL0EeWl58eUwm1Yvw"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_51RrUFL2EeWl58eUwm1Yvw" name="C2" componentType="_46ZpYFL0EeWl58eUwm1Yvw">
+        <cardinality xmi:id="_51SSYFL2EeWl58eUwm1Yvw">
+          <lowerBound xmi:id="_7o-dkFL2EeWl58eUwm1Yvw"/>
+          <upperBound xmi:id="_7pIOkFL2EeWl58eUwm1Yvw"/>
+        </cardinality>
+        <portParts xmi:id="_6Q0-4FL2EeWl58eUwm1Yvw" connectors="_7DQhYFL2EeWl58eUwm1Yvw" portType="_6WB54FL0EeWl58eUwm1Yvw"/>
+      </embeddedComponentParts>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_7DQhYFL2EeWl58eUwm1Yvw" connectorEndpoints="_5AkQ4FL2EeWl58eUwm1Yvw _6Q0-4FL2EeWl58eUwm1Yvw"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>
