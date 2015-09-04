@@ -453,9 +453,9 @@ if (port.oclIsUndefined()) then
 '#error null value '
 else
 	if (port.oclIsTypeOf(HybridPort) or port.oclIsTypeOf(ContinuousPort)) then
-			getStructVariableName(port).toLowerFirst()
+			getStructVariableName(port)
 	else
-		getName(port).toLowerFirst() + 'Port'
+		getName(port) + 'Port'
 	endif
 endif
 /]

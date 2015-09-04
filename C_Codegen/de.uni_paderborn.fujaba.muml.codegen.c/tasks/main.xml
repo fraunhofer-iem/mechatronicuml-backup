@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="main" name="de.uni_paderborn.fujaba.muml.codegen.c">
-    <property name="ECLIPSE_HOME" value="../../../../Desktop/Eclipse.app/Contents/Eclipse"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Applications/Eclipse.app/Contents/Eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
@@ -32,17 +32,17 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.6.0.201506080954.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.11.0.v20150601-0402.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.11.0.v20150601-0402.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage_0.5.0.201506291604.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml_0.5.0.201506291604.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.common_0.5.0.201506291600.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.modelinstance_0.5.0.201506291600.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.storydriven.core_1.0.1.201506291600.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage_0.5.0.201509021032.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml_0.5.0.201509021032.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.common_0.5.0.201509021021.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.modelinstance_0.5.0.201509021021.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.storydriven.core_1.0.1.201509021021.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_2.1.0.v20150601-0733.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.common_0.5.0.201506291604.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.psm_1.0.0.201506291622.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.hardware_1.0.0.201506291617.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.swplatform_0.5.0.201506291617.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage.xtext_0.5.0.201506291604.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.common_0.5.0.201509021032.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.psm_1.0.0.201509021042.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.hardware_1.0.0.201509020954.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.swplatform_0.5.0.201509020954.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage.xtext_0.5.0.201509021032.jar"/>
     </path>
 
     <path id="de.uni_paderborn.fujaba.muml.codegen.c.classpath">
