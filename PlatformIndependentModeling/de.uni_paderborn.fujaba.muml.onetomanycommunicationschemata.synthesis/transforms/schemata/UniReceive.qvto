@@ -66,9 +66,10 @@ mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny
 		source := self.map RegionState(context,  "Idle", true);
 		
 		target := self.map RegionState(context,  "Requesting", false);
-		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
-		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty())
+			urgent := false;			
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+	
 		guard := self.guard.map Expression2Expression(context);
 		
 		synchronization := self. createSynchronization(singleReceiveCheck, SynchronizationKind::SEND,PositionSelectorKind::FIRST);
@@ -96,7 +97,10 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(c
 	
 	source := self.map Schema2CoordinatorIntermediateState(context, 1, singleReceiveDLCName);
 	//invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
-	clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
+	if(not self.relativeDeadline.oclIsUndefined()) {
+		clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
+		urgent := false;
+	};
 }
 	
 mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart) : Transition {
@@ -109,10 +113,10 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 		
 		synchronization := self. createSynchronization( singleReceivePossibleName, SynchronizationKind::RECEIVE);
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
-		
-						
-	}
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
+			urgent := false;		
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+}
 	
 --------------------------------------------------------------- Transfer Schema SingleReceive of Subrole------------------------------------------------------------------
 	
@@ -229,12 +233,12 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		
 		synchronization := self. createSynchronization( singleReceivePossibleName, SynchronizationKind::SEND);
 		
-		
 		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
-				
-		}
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
+			urgent := false;		
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+}
 		
 
 mapping Transition :: TransferSchemaGuardAndLocalConditions(context : OclAny) : expressions::common::LogicalExpression

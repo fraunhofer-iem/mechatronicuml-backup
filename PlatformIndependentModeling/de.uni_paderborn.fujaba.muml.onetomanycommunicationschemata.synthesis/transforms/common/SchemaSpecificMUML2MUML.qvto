@@ -57,6 +57,11 @@ helper AsynchronousMessageEvent :: cloneAsynchronousMessageEvent() : Asynchronou
 	return self.map AsynchronousMessageEvent2AsynchronousMessageEvent(counter);
 	
 }
+
+helper ClockConstraint :: cloneClockConstraint() : ClockConstraint {
+	counter := counter + 1; 
+	return self.map ClockConstraint2ClockConstraint(counter);
+}
 	-- expressions
 
 		

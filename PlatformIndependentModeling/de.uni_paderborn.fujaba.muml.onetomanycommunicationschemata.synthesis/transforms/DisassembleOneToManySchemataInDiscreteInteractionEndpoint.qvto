@@ -257,8 +257,8 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		mainState.name := "subrole Main";
 		mainState.initial := true;
 		
-		// add embedded reigon for every used schema
-		var prio : Integer := 1;
+		// add embedded regions for every used schema
+	
 		
 		var allRTSCs : Set(RealtimeStatechart) := self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self);
 		allRTSCs.transitions
@@ -271,22 +271,25 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 				var lb : muml::realtimestatechart::one_to_n_schemata::LoadBalancing := t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing);
 				// distinguish variants of LoadBalancing: maxWCET or responseMessage 
 				if(not lb.maxWorkingTime.oclIsUndefined()) {
-					clocks+= getLoadBalancingTaskMessageClock();
-					variables += getNeverHadATaskVariable();
+					clocks+= self.getPortOrRoleStatechart().map getLoadBalancingTaskMessageClock();
+					variables += self.getPortOrRoleStatechart().map getNeverHadATaskVariable();
 				};
 				if(not lb.responseMessage.oclIsUndefined()) {
-					variables += getFreeForWorkVariable();
+					variables += self.getPortOrRoleStatechart().map getFreeForWorkVariable();
 				};
 				// create exactly one extra region for all LoadBalancing Schemata that define a response Message
 				if( not lb.responseMessage.oclIsUndefined()) {
-					mainState.embeddedRegions += self.map DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRegion(prio,lb.responseMessage);
-					prio := prio + 1;
-				};
-				
+					var region := self.map DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRegion(lb.responseMessage);
+					mainState.embeddedRegions += region;
+					region.priority := mainState.embeddedRegions->size() + 1;
+					if (not lb.onResponseAction.oclIsUndefined()) {
+						self.AddResponseActionsToResponseMessageRTSC(lb);
+					};
+				};				
 			};
-			mainState.embeddedRegions += t.map OneToManyCommunicationSchema2SubroleRegion(self, prio);
-			
-			prio := prio +1;
+			var region :=  t.map OneToManyCommunicationSchema2SubroleRegion(self);
+			mainState.embeddedRegions += region;
+			region.priority := mainState.embeddedRegions->size() +1;
 		};		
 		
 		states += mainState;		
@@ -295,9 +298,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 }
 
 
-mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeStatechart : RealtimeStatechart, _priority : Integer): Region {
-		
-		result.priority := _priority;
+mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeStatechart : RealtimeStatechart) : Region {		
 		
 		result.embeddedStatechart := self.map RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart);		
 }

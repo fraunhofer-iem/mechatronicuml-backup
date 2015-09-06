@@ -28,9 +28,10 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 		target := self.map Schema2CoordinatorIntermediateState(context, 1,multiReceiveDLCName);
 		
 		guard := self.guard.map Expression2Expression(context);
-		
-		clockConstraints := self.clockConstraints->select(c | not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
-		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
+			urgent := false;		
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+	
 		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::SEND  ,PositionSelectorKind::FIRST);
 		
 }
@@ -49,6 +50,7 @@ mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator
 		action := self.action.cloneAction();
 		
 		if(not self.relativeDeadline.oclIsUndefined()){
+			urgent := false;
 			clockConstraints += self. RelativeDeadline2ClockConstraint(true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName);
 		}endif;		
 		

@@ -29,7 +29,10 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 	target := self.map Schema2CoordinatorIntermediateState(context,1,multicastDLCName);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
-	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
+	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
+		urgent := false;
+	};	
+	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
 	
 	synchronization := self. createSynchronization(  multicastCheckDone,SynchronizationKind::RECEIVE);
 }
@@ -43,6 +46,7 @@ mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny
 	priority := 1;
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
+		urgent := false;
 		result.clockConstraints += self. RelativeDeadline2ClockConstraint( true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName );
 	};
 	
@@ -74,7 +78,9 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 		
 		synchronization := self. createSynchronization(  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 		
-		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(result);
+		if(not self.clockConstraints->isEmpty())
+			urgent := false;
+		clockConstraints += self.clockConstraints->cloneClockConstraint();
 		
 		guard := self.guard.map Expression2Expression(result);
 }
@@ -125,9 +131,10 @@ mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny) : 
 		source := self.map RegionState(context, "Idle", true);
 		
 		target := self.map RegionState(context,  "Requesting", false);
-		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(result);
-		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
+			urgent := false;			
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+	
 		guard := self.guard.map Expression2Expression(context);
 		
 		synchronization := 	self. createSynchronization( multicastCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
