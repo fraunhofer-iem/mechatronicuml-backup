@@ -13,6 +13,7 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl;
 
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.LoadBalancingImpl#getResponseMessage <em>Response Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.LoadBalancingImpl#getMaxWorkingTime <em>Max Working Time</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.LoadBalancingImpl#getOnResponseAction <em>On Response Action</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +64,16 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	 * @ordered
 	 */
 	protected TimeValue maxWorkingTime;
+
+	/**
+	 * The cached value of the '{@link #getOnResponseAction() <em>On Response Action</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOnResponseAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected Action onResponseAction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,11 +180,56 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Action getOnResponseAction() {
+		return onResponseAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOnResponseAction(Action newOnResponseAction, NotificationChain msgs) {
+		Action oldOnResponseAction = onResponseAction;
+		onResponseAction = newOnResponseAction;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION, oldOnResponseAction, newOnResponseAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOnResponseAction(Action newOnResponseAction) {
+		if (newOnResponseAction != onResponseAction) {
+			NotificationChain msgs = null;
+			if (onResponseAction != null)
+				msgs = ((InternalEObject)onResponseAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION, null, msgs);
+			if (newOnResponseAction != null)
+				msgs = ((InternalEObject)newOnResponseAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION, null, msgs);
+			msgs = basicSetOnResponseAction(newOnResponseAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION, newOnResponseAction, newOnResponseAction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
 				return basicSetMaxWorkingTime(null, msgs);
+			case One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION:
+				return basicSetOnResponseAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -190,6 +247,8 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 				return basicGetResponseMessage();
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
 				return getMaxWorkingTime();
+			case One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION:
+				return getOnResponseAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,6 +266,9 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 				return;
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
 				setMaxWorkingTime((TimeValue)newValue);
+				return;
+			case One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION:
+				setOnResponseAction((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +288,9 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
 				setMaxWorkingTime((TimeValue)null);
 				return;
+			case One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION:
+				setOnResponseAction((Action)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,6 +307,8 @@ public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl i
 				return responseMessage != null;
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
 				return maxWorkingTime != null;
+			case One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION:
+				return onResponseAction != null;
 		}
 		return super.eIsSet(featureID);
 	}

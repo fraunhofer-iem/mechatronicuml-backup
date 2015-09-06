@@ -172,6 +172,7 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_LoadbalancingEitherHasResponseMessageOrWcet(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet(loadBalancing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseActionCanOnlyBeSetIfResponseMessageIsUsed(loadBalancing, diagnostics, context);
 		return result;
 	}
 
@@ -234,6 +235,36 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet",
 				 LOAD_BALANCING__RESPONSE_MESSAGE_OR_WCET_OF_COMMUNICATION_SCHEMA_LOADBALANCING_MUST_BE_SET__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ResponseActionCanOnlyBeSetIfResponseMessageIsUsed constraint of '<em>Load Balancing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String LOAD_BALANCING__RESPONSE_ACTION_CAN_ONLY_BE_SET_IF_RESPONSE_MESSAGE_IS_USED__EEXPRESSION = "-- if onResponseAction is set, the responseMessage must be set, too.\r\n" +
+		"(not onResponseAction.oclIsUndefined()) implies (not responseMessage.oclIsUndefined())";
+
+	/**
+	 * Validates the ResponseActionCanOnlyBeSetIfResponseMessageIsUsed constraint of '<em>Load Balancing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLoadBalancing_ResponseActionCanOnlyBeSetIfResponseMessageIsUsed(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(One_to_n_schemataPackage.Literals.LOAD_BALANCING,
+				 loadBalancing,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ResponseActionCanOnlyBeSetIfResponseMessageIsUsed",
+				 LOAD_BALANCING__RESPONSE_ACTION_CAN_ONLY_BE_SET_IF_RESPONSE_MESSAGE_IS_USED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

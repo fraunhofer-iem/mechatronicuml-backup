@@ -29,6 +29,8 @@ public class LoadBalancingEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorOnResponseAction_GeneralTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -40,6 +42,8 @@ public class LoadBalancingEditor extends de.uni_paderborn.fujaba.properties.runt
 			addPropertyEditor(createEditorResponseMessage_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorOnResponseAction_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -79,6 +83,19 @@ public class LoadBalancingEditor extends de.uni_paderborn.fujaba.properties.runt
 			this.editorMaxWorkingTime_GeneralTab = editor;
 		}
 		return this.editorMaxWorkingTime_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOnResponseAction_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOnResponseAction_GeneralTab_Editor() {
+		if (this.editorOnResponseAction_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
+					.getLoadBalancing_OnResponseAction();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			this.editorOnResponseAction_GeneralTab = editor;
+		}
+		return this.editorOnResponseAction_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_GeneralTab;
@@ -137,7 +154,8 @@ public class LoadBalancingEditor extends de.uni_paderborn.fujaba.properties.runt
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

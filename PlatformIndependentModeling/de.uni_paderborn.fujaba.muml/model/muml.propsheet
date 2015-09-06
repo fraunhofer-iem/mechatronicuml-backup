@@ -1329,6 +1329,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/LoadBalancing/onResponseAction"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.11/@classes.7">
       <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/SingleReceive"/>

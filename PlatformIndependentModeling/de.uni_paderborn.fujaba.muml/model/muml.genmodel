@@ -390,6 +390,7 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/onResponseAction"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/SingleReceive"/>
         <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive">

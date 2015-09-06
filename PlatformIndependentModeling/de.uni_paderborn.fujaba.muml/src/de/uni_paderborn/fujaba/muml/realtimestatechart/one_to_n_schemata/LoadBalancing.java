@@ -13,6 +13,7 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
 
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
@@ -32,11 +33,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getResponseMessage <em>Response Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getMaxWorkingTime <em>Max Working Time</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getOnResponseAction <em>On Response Action</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getLoadBalancing()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet='-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\nnot self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()' LoadbalancingEitherHasResponseMessageOrWcet='-- responseMessage and maxWorkingTime exclude each other\r\nif not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\ttrue\r\nendif'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LoadbalancingEitherHasResponseMessageOrWcet ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet='-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\nnot self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()' LoadbalancingEitherHasResponseMessageOrWcet='-- responseMessage and maxWorkingTime exclude each other\r\nif not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\ttrue\r\nendif' ResponseActionCanOnlyBeSetIfResponseMessageIsUsed='-- if onResponseAction is set, the responseMessage must be set, too.\r\n(not onResponseAction.oclIsUndefined()) implies (not responseMessage.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LoadbalancingEitherHasResponseMessageOrWcet ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet ResponseActionCanOnlyBeSetIfResponseMessageIsUsed'"
  * @generated
  */
 public interface LoadBalancing extends SendingOneToManyCommunicationSchema {
@@ -89,5 +91,31 @@ public interface LoadBalancing extends SendingOneToManyCommunicationSchema {
 	 * @generated
 	 */
 	void setMaxWorkingTime(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>On Response Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>On Response Action</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>On Response Action</em>' containment reference.
+	 * @see #setOnResponseAction(Action)
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getLoadBalancing_OnResponseAction()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Action getOnResponseAction();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getOnResponseAction <em>On Response Action</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Response Action</em>' containment reference.
+	 * @see #getOnResponseAction()
+	 * @generated
+	 */
+	void setOnResponseAction(Action value);
 
 } // LoadBalancing

@@ -382,6 +382,15 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLoadBalancing_OnResponseAction() {
+		return (EReference)loadBalancingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSingleReceive() {
 		return singleReceiveEClass;
 	}
@@ -467,6 +476,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		loadBalancingEClass = createEClass(LOAD_BALANCING);
 		createEReference(loadBalancingEClass, LOAD_BALANCING__RESPONSE_MESSAGE);
 		createEReference(loadBalancingEClass, LOAD_BALANCING__MAX_WORKING_TIME);
+		createEReference(loadBalancingEClass, LOAD_BALANCING__ON_RESPONSE_ACTION);
 
 		singleReceiveEClass = createEClass(SINGLE_RECEIVE);
 
@@ -539,6 +549,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		initEClass(loadBalancingEClass, LoadBalancing.class, "LoadBalancing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoadBalancing_ResponseMessage(), theMsgtypePackage.getMessageType(), null, "responseMessage", null, 0, 1, LoadBalancing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLoadBalancing_MaxWorkingTime(), theValuetypePackage.getTimeValue(), null, "maxWorkingTime", null, 0, 1, LoadBalancing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLoadBalancing_OnResponseAction(), theRealtimestatechartPackage.getAction(), null, "onResponseAction", null, 0, 1, LoadBalancing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singleReceiveEClass, SingleReceive.class, "SingleReceive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -576,7 +587,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		  (loadBalancingEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "LoadbalancingEitherHasResponseMessageOrWcet ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet"
+			 "constraints", "LoadbalancingEitherHasResponseMessageOrWcet ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet ResponseActionCanOnlyBeSetIfResponseMessageIsUsed"
 		   });
 	}
 
@@ -593,7 +604,8 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		   source, 
 		   new String[] {
 			 "ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet", "-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\nnot self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()",
-			 "LoadbalancingEitherHasResponseMessageOrWcet", "-- responseMessage and maxWorkingTime exclude each other\r\nif not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\ttrue\r\nendif"
+			 "LoadbalancingEitherHasResponseMessageOrWcet", "-- responseMessage and maxWorkingTime exclude each other\r\nif not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\ttrue\r\nendif",
+			 "ResponseActionCanOnlyBeSetIfResponseMessageIsUsed", "-- if onResponseAction is set, the responseMessage must be set, too.\r\n(not onResponseAction.oclIsUndefined()) implies (not responseMessage.oclIsUndefined())"
 		   });
 	}
 

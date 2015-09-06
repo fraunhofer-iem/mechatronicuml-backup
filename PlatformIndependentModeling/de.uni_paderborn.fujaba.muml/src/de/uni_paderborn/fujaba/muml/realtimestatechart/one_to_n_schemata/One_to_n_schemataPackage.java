@@ -428,13 +428,22 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int LOAD_BALANCING__MAX_WORKING_TIME = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>On Response Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_BALANCING__ON_RESPONSE_ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Load Balancing</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING_FEATURE_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 2;
+	int LOAD_BALANCING_FEATURE_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Load Balancing</em>' class.
@@ -758,6 +767,17 @@ public interface One_to_n_schemataPackage extends EPackage {
 	EReference getLoadBalancing_MaxWorkingTime();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getOnResponseAction <em>On Response Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>On Response Action</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getOnResponseAction()
+	 * @see #getLoadBalancing()
+	 * @generated
+	 */
+	EReference getLoadBalancing_OnResponseAction();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SingleReceive <em>Single Receive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -944,6 +964,14 @@ public interface One_to_n_schemataPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOAD_BALANCING__MAX_WORKING_TIME = eINSTANCE.getLoadBalancing_MaxWorkingTime();
+
+		/**
+		 * The meta object literal for the '<em><b>On Response Action</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOAD_BALANCING__ON_RESPONSE_ACTION = eINSTANCE.getLoadBalancing_OnResponseAction();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.SingleReceiveImpl <em>Single Receive</em>}' class.

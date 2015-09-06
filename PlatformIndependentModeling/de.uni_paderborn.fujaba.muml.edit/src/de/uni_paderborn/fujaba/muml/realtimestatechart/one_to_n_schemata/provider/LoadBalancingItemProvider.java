@@ -13,6 +13,7 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider;
 
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
 
@@ -60,6 +61,7 @@ public class LoadBalancingItemProvider extends SendingOneToManyCommunicationSche
 
 			addResponseMessagePropertyDescriptor(object);
 			addMaxWorkingTimePropertyDescriptor(object);
+			addOnResponseActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +111,28 @@ public class LoadBalancingItemProvider extends SendingOneToManyCommunicationSche
 	}
 
 	/**
+	 * This adds a property descriptor for the On Response Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnResponseActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LoadBalancing_onResponseAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LoadBalancing_onResponseAction_feature", "_UI_LoadBalancing_type"),
+				 One_to_n_schemataPackage.Literals.LOAD_BALANCING__ON_RESPONSE_ACTION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -121,6 +145,7 @@ public class LoadBalancingItemProvider extends SendingOneToManyCommunicationSche
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(One_to_n_schemataPackage.Literals.LOAD_BALANCING__MAX_WORKING_TIME);
+			childrenFeatures.add(One_to_n_schemataPackage.Literals.LOAD_BALANCING__ON_RESPONSE_ACTION);
 		}
 		return childrenFeatures;
 	}
@@ -174,6 +199,7 @@ public class LoadBalancingItemProvider extends SendingOneToManyCommunicationSche
 
 		switch (notification.getFeatureID(LoadBalancing.class)) {
 			case One_to_n_schemataPackage.LOAD_BALANCING__MAX_WORKING_TIME:
+			case One_to_n_schemataPackage.LOAD_BALANCING__ON_RESPONSE_ACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -195,6 +221,34 @@ public class LoadBalancingItemProvider extends SendingOneToManyCommunicationSche
 			(createChildParameter
 				(One_to_n_schemataPackage.Literals.LOAD_BALANCING__MAX_WORKING_TIME,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(One_to_n_schemataPackage.Literals.LOAD_BALANCING__ON_RESPONSE_ACTION,
+				 RealtimestatechartFactory.eINSTANCE.createAction()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION ||
+			childFeature == One_to_n_schemataPackage.Literals.LOAD_BALANCING__ON_RESPONSE_ACTION;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
