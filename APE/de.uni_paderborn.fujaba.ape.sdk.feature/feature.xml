@@ -26,14 +26,6 @@
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.migrator.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="de.uni_paderborn.fujaba.properties.migrator.source.feature"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.emf.ecore.improved.feature"
          version="0.0.0"/>
 
