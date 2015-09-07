@@ -90,7 +90,7 @@
                 <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_0i12MUnTEeWrj50P7Divew" typedNamedElement="_gH2gEEnQEeWrj50P7Divew"/>
               </guard>
             </transitions>
-            <transitions xmi:id="_LRweIEnUEeWrj50P7Divew" priority="3" target="_ZOLusYS_EeKO9r0VL65xcg" source="_e7PREEnSEeWrj50P7Divew">
+            <transitions xmi:id="_LRweIEnUEeWrj50P7Divew" priority="3" target="_ZOLusYS_EeKO9r0VL65xcg" source="_e7PREEnSEeWrj50P7Divew" urgent="false">
               <clockConstraints xmi:id="_Y1xcwEnUEeWrj50P7Divew" clock="_HMl0sITDEeKO9r0VL65xcg" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_ZzlI0EnUEeWrj50P7Divew">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_aLkyEEnUEeWrj50P7Divew" value="4"/>
