@@ -4,6 +4,9 @@ modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype ValueTypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype TypePackage uses muml::types('http://www.fujaba.de/muml/0.4.0');
+
 
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
@@ -17,6 +20,9 @@ main() {
 		components->forEach(component) {
 			structuredComponent.embeddedComponentParts += new ComponentPart(component);
 		};
+		if(not components->select(c|c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->isEmpty()) then{
+			structuredComponent.componentKind:=ComponentKind::HYBRID_COMPONENT;
+		}endif;
 	} endif;
 	
 }
@@ -31,6 +37,7 @@ constructor StaticStructuredComponent::StaticStructuredComponent(_name : String)
 **/
 constructor ComponentPart::ComponentPart(_type : Component) {
 	componentType := _type;
+	name:=_type.name;
 	componentType.ports -> forEach(port){
 		-- if no port part exists that references this port as its port type, create new port part (see #591)
 		if((portParts -> select(p : PortPart | p.portType = port)) -> isEmpty()) then {
@@ -39,5 +46,19 @@ constructor ComponentPart::ComponentPart(_type : Component) {
 			};
 		} endif;
 	};
+	cardinality:=object Cardinality{
+		lowerBound:=new NaturalNumber(1);
+		upperBound:=new NaturalNumber(1);
+	};
 	
+}
+
+constructor NaturalNumber::NaturalNumber(_number : Integer) {
+	if(_number<0) then{
+		infinity:=true;
+	}
+	else{
+		value:=_number;
+	}
+	endif;
 }
