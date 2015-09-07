@@ -29,7 +29,10 @@ public class ModelBrowserSaveablesProvider extends SaveablesProvider implements 
 	public Saveable[] getSaveables() {
 		List<Saveable> saveables = new ArrayList<Saveable>();
 		for (MumlEditingDomain domain : MumlEditingDomainRegistry.INSTANCE.getEditingDomains()) {
-			saveables.add(domain.getSaveable());
+			Saveable saveable = domain.getSaveable();
+			if (saveable != null) {
+				saveables.add(saveable);
+			}
 		}
 		return saveables.toArray(new Saveable[] {});
 	}
