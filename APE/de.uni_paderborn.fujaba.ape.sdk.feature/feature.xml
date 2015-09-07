@@ -25,12 +25,4 @@
          id="de.uni_paderborn.fujaba.properties.source.feature"
          version="0.0.0"/>
 
-   <includes
-         id="org.eclipse.emf.ecore.improved.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.emf.ecore.improved.source.feature"
-         version="0.0.0"/>
-
 </feature>
