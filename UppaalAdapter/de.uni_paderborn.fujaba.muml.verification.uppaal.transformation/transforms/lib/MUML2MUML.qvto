@@ -34,7 +34,7 @@ mapping ElementToVerifyExtension :: ElementToVerifyExtension2ElementToVerifyExte
 	
 }
 
-mapping actionlanguage::Block :: Block2Block() : actionlanguage::Block disjuncts actionlanguage::Loop::Loop2Loop, actionlanguage::Block::normalBlock2Block;
+mapping actionlanguage::Block :: Block2Block() : actionlanguage::Block disjuncts actionlanguage::Block::normalBlock2Block;
  	 			
  mapping actionlanguage::Block :: normalBlock2Block() : actionlanguage::Block{
  _comment := self._comment;
@@ -49,7 +49,6 @@ mapping actionlanguage::WhileLoop :: WhileLoop2WhileLoop() : actionlanguage::Whi
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
-    	_expressions := self._expressions.map Expression2Expression();
     	_block := self._block.map Block2Block();
     	_loopTest := self._loopTest.map Expression2Expression();
    		 }
@@ -58,7 +57,6 @@ mapping actionlanguage::DoWhileLoop :: DoWhileLoop2DoWhileLoop() : actionlanguag
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
-    	_expressions := self._expressions.map Expression2Expression();
     	_block := self._block.map Block2Block();
     	_loopTest := self._loopTest.map Expression2Expression();
    		 }
@@ -77,7 +75,6 @@ mapping actionlanguage::ForLoop :: ForLoop2ForLoop() : actionlanguage::ForLoop{
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
-    	_expressions := self._expressions.map Expression2Expression();
     	_block := self._block.map Block2Block();
     	_loopTest := self._loopTest.map Expression2Expression();
     	_initializeExpression := self._initializeExpression.map Assignment2Assignment();
@@ -1154,7 +1151,7 @@ mapping core::expressions::common::LiteralExpression :: LiteralExpression2Litera
     	_extension := self._extension.map Extension2Extension();
    		 }
    		 
-mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall;
+mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression, actionlanguage::Loop::Loop2Loop, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall;
       	
 mapping core::expressions::TextualExpression :: TextualExpression2TextualExpression() : core::expressions::TextualExpression{
     	_comment := self._comment;
