@@ -18,19 +18,13 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.emf.codegen.oclfilter.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="de.uni_paderborn.emf.codegen.oclfilter.source.feature"
-         version="0.0.0"/>
-
-   <includes
          id="de.uni_paderborn.fujaba.properties.feature"
          version="0.0.0"/>
+
    <includes
          id="de.uni_paderborn.fujaba.properties.source.feature"
          version="0.0.0"/>
+
    <includes
          id="de.uni_paderborn.fujaba.properties.migrator.feature"
          version="0.0.0"/>
