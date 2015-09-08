@@ -71,8 +71,7 @@
  * @param rtsc
 */]
 [template public includes(rtsc : RealtimeStatechart, component : Component) post(cdtbeautifier())]
-	#include <stdio.h>
-	#include <stdlib.h>
+
 	#include "../Middleware/GlobalIdentifier.h"
 	#include "[getClassName(rtsc).toLowerFirst()/].h"
 

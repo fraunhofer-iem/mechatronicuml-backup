@@ -66,14 +66,13 @@
  * @param rsri the given ECU (home-ECU for the middleware)
 */]
 [template private MWincludes(CIs : OrderedSet(ComponentInstance))]
-#include "stdlib.h"
 #include "../lib/MiddlewareTypes.h"
 #include "GlobalIdentifier.h"
 #include "../lib/NetworkMessageBuffer.h"
 #include "../lib/NetworkInterface.h"
 #include "../lib/port.h"
 #include "../messages/messages_types.h" 
-#include <string.h>
+
 
 //import all needed ComponentHeaders
 [for (component : Component | CIs.componentType) ? (component.oclIsKindOf(AtomicComponent))]
@@ -327,7 +326,7 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	if (p != NULL){
 		Port_addMessage(p, nwMsg);
 		
-		fflush(stdout);
+		
 		return true;
 	}
 	else

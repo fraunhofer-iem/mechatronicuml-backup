@@ -54,8 +54,7 @@
 */]
 [template private includes(component : Component) post(cdtbeautifier())]
 	// Standard library
-	#include <stdlib.h>
-	#include <stdio.h>
+
 	[if component.oclIsKindOf(AtomicComponent)]
 		#include "../[getFileName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart), true, false)/]"
 	[/if]
