@@ -39,6 +39,9 @@
 [file (path+'operations/operations.h', false, 'UTF-8')]
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
+#ifdef __cplusplus
+  extern "C" {
+#endif
 
 	#include "../types/standardTypes.h"
 	#include "../types/customTypes.h"
@@ -51,7 +54,9 @@
  */
 [operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]);
 [/for]
-
+#ifdef __cplusplus
+  }
+#endif
 #endif /*OPERATIONS_H_ */
 [/file]
 [/template]

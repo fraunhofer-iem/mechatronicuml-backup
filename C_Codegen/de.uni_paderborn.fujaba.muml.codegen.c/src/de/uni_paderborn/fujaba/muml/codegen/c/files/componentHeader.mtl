@@ -34,6 +34,10 @@
  */
 		#ifndef [getHeaderDefine(component)/]
 		#define [getHeaderDefine(component)/]
+
+#ifdef __cplusplus
+  extern "C" {
+#endif
 			[includes(component)/]
 	
 			[variables(component)/]
@@ -53,7 +57,9 @@
 			[queueMethods(component)/]
 
 
-
+#ifdef __cplusplus
+  }
+#endif
 		#endif /* [getHeaderDefine(component)/] */
 	[/file]
 [/template]

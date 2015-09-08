@@ -101,6 +101,9 @@
 
 #ifndef MIDDLEWARECORE_H_
 #define MIDDLEWARECORE_H_
+#ifdef __cplusplus
+  extern "C" {
+#endif
 [MWincludes(CIs)/]
 
 
@@ -218,7 +221,9 @@ Port* MW_getPortforIdentifier(PortID portID);
  */
 PortID MW_getTargetPortIDforIdentifier(PortID portID);
 
-
+#ifdef __cplusplus
+  }
+#endif
 #endif /* MIDDLEWARECORE_H_ */
 
 [/file]

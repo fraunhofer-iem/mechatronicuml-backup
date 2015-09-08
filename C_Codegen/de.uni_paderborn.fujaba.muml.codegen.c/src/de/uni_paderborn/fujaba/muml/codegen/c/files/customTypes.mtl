@@ -31,6 +31,9 @@
 	[file (path+'types/customTypes.h', false, 'UTF-8')]
 #ifndef CUSTOM_TYPES_H_
 #define CUSTOM_TYPES_H_
+#ifdef __cplusplus
+  extern "C" {
+#endif
 	#include "standardTypes.h"
 			[for (structType : StructureDataType | sTypes)]
 			typedef struct [structType.getName()/] [structType.getName()/];
@@ -46,6 +49,9 @@
 				[/for]
 			};
 		[/for]
+#ifdef __cplusplus
+  }
+#endif
 #endif
 	[/file]
 [/template]

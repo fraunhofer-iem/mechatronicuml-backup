@@ -34,6 +34,11 @@
 
 [template public generateContinuousPortHeaderFile(CIs : OrderedSet(ComponentInstance), path : String)]
 [file (path +'continuousComponents/ContImplementations.h',false, 'UTF-8')]
+#ifndef CONTIMPLEMENTATION_H
+#define CONTIMPLEMENTATION_H
+#ifdef __cplusplus
+  extern "C" {
+#endif
 [includesCont(CIs)/]
 
 [for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
@@ -48,7 +53,12 @@
 [/for]
 
 [/for]
+#ifdef __cplusplus
+  }
+#endif
+#endif /* CONTIMPLEMENTATION_H */
 [/file]
+
 [/template]
 
 [template public generateContinuousPortClassFile(CIs : OrderedSet(ComponentInstance), path : String)]
