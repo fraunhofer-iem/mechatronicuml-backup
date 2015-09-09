@@ -15,8 +15,8 @@ library Util
 	access Naming;
 	
 property KEY : String = "de.uni_paderborn.fujaba.muml.types.category";
-property BOOL : String = "BOOLEAN";
-property INT : String = "INT";
+property BOOL : String = "boolean";
+property INT : String = "int32";
 property INIT : String = "generatedInitState";
 property OUT : String = "generatedOutputState";
 property EXITVAR : String = "ExitVar";

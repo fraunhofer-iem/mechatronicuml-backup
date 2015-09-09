@@ -15,9 +15,6 @@ modeltype TRANSFORM uses transform('http://www.fujaba.de/modelica/m2t/transform/
 library EntryPoints
 	access Naming extends Util; // extends is only used due to a qvto bug, which is fixed in luna
 	
-property KEY : String = "de.uni_paderborn.fujaba.muml.types.category";
-property BOOL : String = "BOOLEAN";
-property INT : String = "INT";
 property INIT : String = "generatedInitState";
 property OUT : String = "generatedOutputState";
 property EXITVAR : String = "ExitVar";
