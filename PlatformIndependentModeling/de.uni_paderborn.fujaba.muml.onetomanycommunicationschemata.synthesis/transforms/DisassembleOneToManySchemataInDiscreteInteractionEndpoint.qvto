@@ -309,7 +309,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		
 		schemaCount := schemaCount + 1;
 		
-		name := "subrole schema statechart" + schemaCount.toString();
+		name := "subrole_schema_statechart" + schemaCount.toString();
 		
 		var region : RealtimeStatechart := result;		
 		var context = sourceRealtimeStatechart;

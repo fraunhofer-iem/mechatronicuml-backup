@@ -98,7 +98,7 @@ helper Transition:: createNewTransitionFromStateExitPointToIntermediateState() :
 }
 
 mapping Transition :: StateExitPointIntermediateState() : State {
-	result.name := "Intermediate Node for StateConnectionPoint " + self.source.name;
+	result.name := "Intermediate_Node_for_StateConnectionPoint_" + self.source.name;
 	result.urgent := true;
 	result.parentStatechart := self.statechart;
 }
