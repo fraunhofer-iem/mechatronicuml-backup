@@ -110,26 +110,13 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 									"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 					null));
 		}
-		// Get URI from editor input
-		URI uri = null;
-		if (element instanceof URIEditorInput) {
-			uri = ((URIEditorInput) element).getURI();
-		}
-		if (element instanceof IFileEditorInput) {
-			IFile file = ((IFileEditorInput) element).getFile();
-			uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
-		}
-
-		DiagramDocument document = new DiagramDocument();
-		document.setEditingDomain(
-				de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry.INSTANCE
-						.getEditingDomain(uri, true));
+		IDocument document = createEmptyDocument();
 
 		// Begin added to reuse the EditingDomain if the input element is of type FileEditorInputProxy (see muml bug #252)
-		//if (element instanceof org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy) {
-		//org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy proxy = (org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy) element;
-		//	((org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument) document).setEditingDomain(proxy.getEditingDomain());
-		//}
+		if (element instanceof FileEditorInputProxy) {
+			FileEditorInputProxy proxy = (FileEditorInputProxy) element;
+			((DiagramDocument) document).setEditingDomain(proxy.getEditingDomain());
+		}
 		// End added
 
 		setDocumentContent(document, (IEditorInput) element);
