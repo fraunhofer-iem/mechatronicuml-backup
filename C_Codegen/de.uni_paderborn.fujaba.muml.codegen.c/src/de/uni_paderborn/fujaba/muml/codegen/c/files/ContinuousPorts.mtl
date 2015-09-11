@@ -41,6 +41,8 @@
 #endif
 [includesCont(CIs)/]
 
+void initializeContinuousImplementations();
+
 [for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
 [for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
 	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
@@ -68,14 +70,27 @@
 /** [protected ('user includes **/')]
 
 /**[/protected]**/
+
+
+void initializeContinuousImplementations(){
+/** [protected ('initialize continuous components **/')]
+
+/**[/protected]**/
+
+}
 [for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
 [for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
 	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
+	[cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] [cpi.getReferenceVariableName()/] = [cpi.portType.oclAsType(ContinuousPort).dataType.getDefaultValue()/];
 	[if (cpi.portType.oclAsType(ContinuousPort).inPort)]
 	void [cpi.getWriteMethod()/]([cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] value){
+
+	if ([cpi.getReferenceVariableName()/] != value){
 	/** [protected (cpi.getWriteMethod()+' **/')] 
 
 	/**[/protected]**/
+	[cpi.getReferenceVariableName()/] = value;
+	}
 
 }
 	[else]

@@ -806,6 +806,12 @@ endif
 	endif
 
 /]
+
+[query public getReferenceVariableName(cpi : ContinuousPortInstance) : String = 
+cpi.getQualifiedName() + '_Reference'
+
+ /]
+
 [query public getDefaultValue(type : StructureDataType) : String = 
 	'#warning structs have to be initialized explicitly'
 /]
