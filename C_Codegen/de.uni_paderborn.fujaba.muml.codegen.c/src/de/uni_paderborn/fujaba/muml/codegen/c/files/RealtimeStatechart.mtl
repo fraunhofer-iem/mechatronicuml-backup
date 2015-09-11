@@ -24,13 +24,13 @@
  * @param component the component which is embedding the statechart
  * @param rtsc the realtime statechart
  */]
-[template public generate_RTSC(component : Component, rtsc : RealtimeStatechart, path : String) post(cdtbeautifier())]
-	[file (path+getFileName(rtsc, false, false), false, 'UTF-8')]
+[template public generate_RTSC(component : Component, rtsc : RealtimeStatechart, path : String, useSubDir: Boolean) post(cdtbeautifier())]
+	[file (path+getFileName(rtsc, false, useSubDir), false, 'UTF-8')]
 
 		////////////////////////////////////////////////////////////////////////////////
 		// Includes
 		////////////////////////////////////////////////////////////////////////////////
-		[includes(rtsc, component)/]
+		[includes(rtsc, component, useSubDir)/]
 
 
 		////////////////////////////////////////////////////////////////////////////////
@@ -70,9 +70,9 @@
  * @param component
  * @param rtsc
 */]
-[template public includes(rtsc : RealtimeStatechart, component : Component) post(cdtbeautifier())]
+[template public includes(rtsc : RealtimeStatechart, component : Component, useSubDir: Boolean) post(cdtbeautifier())]
 
-	#include "../Middleware/GlobalIdentifier.h"
+	#include "[if (useSubDir)]../Middleware/[/if]GlobalIdentifier.h"
 	#include "[getClassName(rtsc).toLowerFirst()/].h"
 
 [/template]

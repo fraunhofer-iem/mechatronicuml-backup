@@ -11,7 +11,7 @@
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
-[template public generateMakeFile(CIs : OrderedSet(ComponentInstance), path : String)]
+[template public generateMakeFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
 [file (path+'makefile', false, 'UTF-8')]
 [let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
@@ -28,38 +28,38 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType
 	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o[/if] -o app
 [for (comp : Component | CIs.componentType->asSet())? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
 [let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
-[rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,false)/]
-	$(CC) $(CFLAGS) [rtsc.getFileName(false,false)/]
+[rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,useSubDir)/]
+	$(CC) $(CFLAGS) [rtsc.getFileName(false,useSubDir)/]
 [/let]
 [/for]
 [for (comp : Component | CIs.componentType->asSet()) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT) and oclIsKindOf(AtomicComponent))]
-[comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,false)/]
-	$(CC) $(CFLAGS) [comp.getFileName(false,false)/]
+[comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,useSubDir)/]
+	$(CC) $(CFLAGS) [comp.getFileName(false,useSubDir)/]
 [/for]
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-ContImplementations.o: continuousComponents/ContImplementations.c
-	$(CC) $(CFLAGS) continuousComponents/ContImplementations.c
+ContImplementations.o: [if (useSubDir)]continuousComponents/[/if]ContImplementations.c
+	$(CC) $(CFLAGS) [if (useSubDir)]continuousComponents/[/if]ContImplementations.c
 [/if]
-port.o: lib/port.c
-	$(CC) $(CFLAGS) lib/port.c
-Debug.o: lib/Debug.c
-	$(CC) $(CFLAGS) lib/Debug.c
-MessageBuffer.o: lib/MessageBuffer.c
-	$(CC) $(CFLAGS) lib/MessageBuffer.c
-NetworkMessageBuffer.o: lib/NetworkMessageBuffer.c
-	$(CC) $(CFLAGS) lib/NetworkMessageBuffer.c
-NetworkInterface.o: lib/NetworkInterface.c
-	$(CC) $(CFLAGS) lib/NetworkInterface.c
-Messages.o: messages/Messages.c
-	$(CC) $(CFLAGS) messages/Messages.c
-MiddlewareCore.o: Middleware/MiddlewareCore.c
-	$(CC) $(CFLAGS) Middleware/MiddlewareCore.c
-MiddlewareInternalLogic.o: Middleware/MiddlewareInternalLogic.c
-	$(CC) $(CFLAGS) Middleware/MiddlewareInternalLogic.c
-NetworkInterfaceImplementation.o: Middleware/NetworkInterfaceImplementation.c
-	$(CC) $(CFLAGS) Middleware/NetworkInterfaceImplementation.c
-[if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o: operations/operations.c
-	$(CC) $(CFLAGS) operations/operations.c
+port.o: [if (useSubDir)]lib/[/if]port.c
+	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]port.c
+Debug.o: [if (useSubDir)]lib/[/if]Debug.c
+	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]Debug.c
+MessageBuffer.o: [if (useSubDir)]lib/[/if]MessageBuffer.c
+	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]MessageBuffer.c
+NetworkMessageBuffer.o: [if (useSubDir)]lib/[/if]NetworkMessageBuffer.c
+	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]NetworkMessageBuffer.c
+NetworkInterface.o: [if (useSubDir)]lib/[/if]NetworkInterface.c
+	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]NetworkInterface.c
+Messages.o: [if (useSubDir)]messages/[/if]Messages.c
+	$(CC) $(CFLAGS) [if (useSubDir)]messages/[/if]Messages.c
+MiddlewareCore.o: [if (useSubDir)]Middleware/[/if]MiddlewareCore.c
+	$(CC) $(CFLAGS) [if (useSubDir)]Middleware/[/if]MiddlewareCore.c
+MiddlewareInternalLogic.o: [if (useSubDir)]Middleware/[/if]MiddlewareInternalLogic.c
+	$(CC) $(CFLAGS) [if (useSubDir)]Middleware/[/if]MiddlewareInternalLogic.c
+NetworkInterfaceImplementation.o: [if (useSubDir)]Middleware/[/if]NetworkInterfaceImplementation.c
+	$(CC) $(CFLAGS) [if (useSubDir)]Middleware/[/if]NetworkInterfaceImplementation.c
+[if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o: [if (useSubDir)]operations/[/if]operations.c
+	$(CC) $(CFLAGS) [if (useSubDir)]operations/[/if]operations.c
 [/if]
 [/let]
 

@@ -24,8 +24,8 @@
  * @param rsri the root-ECU
  * @param path the path for generated files
  */]
-[template public generateProtobufMessageFile(CIs : OrderedSet(ComponentInstance), path : String)]
-[file (path+'messages/Messages.proto', false, 'UTF-8')]
+[template public generateProtobufMessageFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
+[file (path+getFileName4ProtoFile(useSubDir), false, 'UTF-8')]
 //File: messages.proto
 [comment @TODO determine values for these constants/]
 //@max_string_length=16
@@ -68,10 +68,10 @@ message MiddlewareMessage{
  * Generates file, which contains typedefs for every Message-Struct, which is generated
  * by Protobuf. Therefore, you can use the name of the message without 'struct' in front.
  */]
-[template public generateProtobufNewHeader(CIs : OrderedSet(ComponentInstance), path : String)]
+[template public generateProtobufNewHeader(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
 [comment @TODO protobuf files/]
-[file (path+'messages/messages_types.h', false, 'UTF-8')]
+[file (path+getFileName4MessageTypes(useSubDir), false, 'UTF-8')]
 /**
  * @file 
  * @author generated

@@ -193,11 +193,11 @@ getQualifiedName(channel)
 [**
  * @param component
 */]
-[query public getFileName(component : Component, header : Boolean) : String = 
+[query public getFileName(component : Component, header : Boolean, useSubDir : Boolean) : String = 
 if (component.oclIsUndefined()) then
 '#error null value '
 else
-	'components/' + 
+	if useSubDir then 'components/' else '' endif + 
 		getClassName(component).toLowerFirst()
 	+
 	if (header) then
@@ -206,6 +206,7 @@ else
 		'.c'
 	endif
 endif
+
 /]
 
 [query public getFileName(cpart : ComponentPart, header : Boolean) : String = 
@@ -240,36 +241,123 @@ else
 endif
 /]
 
-[query public getFileName(rtsc : RealtimeStatechart, header : Boolean, operations : Boolean) : String = 
+[query public getFileName(rtsc : RealtimeStatechart, header : Boolean, useSubDir : Boolean) : String = 
 if (rtsc.oclIsUndefined()) then
 '#error null value '
 else
-	if(operations) then
-		'impl/' + getClassName(rtsc).toLowerFirst() + 'Operations.c'
+		if (useSubDir) then 
+		'RTSCs/' else '' endif + getClassName(rtsc).toLowerFirst()  + 
+		if(header) then
+			'.h'
+		else
+			'.c'
+		endif
+
+endif
+/]
+
+[query public getFileName4ContinuousImpl( header : Boolean, useSubDir : Boolean) : String = 
+
+	if useSubDir then 'continuousComponents/' else '' endif + 
+		'contImplementations'
+	+
+	if (header) then
+		'.h'
 	else
-		'RTSCs/' + getClassName(rtsc).toLowerFirst()  + 
-		if(header) then
-			'.h'
-		else
-			'.c'
-		endif
+		'.c'
 	endif
-endif
-/]
-
-[query public getFileName(ci : Component, header : Boolean, operations : Boolean) : String = 
-	if (ci.oclIsUndefined()) then
-'#error null value '
-else
-		'components/' + getClassName(ci).toLowerFirst()  + 
-		if(header) then
-			'.h'
-		else
-			'.c'
-		endif
-endif
 
 /]
+
+[query public getFileName4CustomTypes( header : Boolean, useSubDir : Boolean) : String = 
+
+	if useSubDir then 'types/' else '' endif + 
+		'customTypes'
+	+
+	if (header) then
+		'.h'
+	else
+		'.c'
+	endif
+
+/]
+[query public getFileName4OS(useSubDir : Boolean) : String = 
+
+	if useSubDir then 'Middleware/' else '' endif + 
+		'OS.h'
+
+
+/]
+
+[query public getFileName4MWInternalLogic( header : Boolean, useSubDir : Boolean) : String = 
+
+	if useSubDir then 'Middleware/' else '' endif + 
+		'MiddlewareInternalLogic'
+	+
+	if (header) then
+		'.h'
+	else
+		'.c'
+	endif
+
+/]
+
+[query public getFileName4MWNetworkInterfaces( header : Boolean, useSubDir : Boolean) : String = 
+
+	if useSubDir then 'Middleware/' else '' endif + 
+		'NetworkInterfaceImplementation'
+	+
+	if (header) then
+		'.h'
+	else
+		'.c'
+	endif
+
+/]
+
+[query public getFileName4MWCore( header : Boolean, useSubDir : Boolean) : String = 
+
+	if useSubDir then 'Middleware/' else '' endif + 
+		'MiddlewareCore'
+	+
+	if (header) then
+		'.h'
+	else
+		'.c'
+	endif
+
+/]
+
+[query public getFileName4ProtoFile(useSubDir : Boolean) : String = 
+
+	if useSubDir then 'messages/' else '' endif + 
+		'Messages.proto'
+
+
+/]
+
+[query public getFileName4MessageTypes(useSubDir : Boolean) : String = 
+
+	if useSubDir then 'messages/' else '' endif + 
+		'messages_types.h'
+
+
+/]
+
+[query public getFileName4Operations( header : Boolean, useSubDir : Boolean) : String = 
+
+	if useSubDir then 'operations/' else '' endif + 
+		'operations'
+	+
+	if (header) then
+		'.h'
+	else
+		'.c'
+	endif
+
+/]
+
+
 
 [query public getFileName(rep : MessageTypeRepository, header : Boolean) : String = 
 if (rep.oclIsUndefined()) then

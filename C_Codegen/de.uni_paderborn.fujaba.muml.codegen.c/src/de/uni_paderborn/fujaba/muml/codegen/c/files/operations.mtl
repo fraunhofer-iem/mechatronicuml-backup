@@ -19,11 +19,11 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationFiles(CIs : OrderedSet(ComponentInstance), path : String)]
+[template public generateOperationFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 [let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
 [let allOperations : Set(Operation) = atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
-	[generateOperationHeader(allOperations, path)/]
-	[generateOperationClass(allOperations, path)/]
+	[generateOperationHeader(allOperations, path, useSubDir)/]
+	[generateOperationClass(allOperations, path, useSubDir)/]
 [/let]
 [/let]
 
@@ -34,17 +34,17 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationHeader(allOperations : Set(Operation), path : String)]
+[template public generateOperationHeader(allOperations : Set(Operation), path : String, useSubDir: Boolean)]
 
-[file (path+'operations/operations.h', false, 'UTF-8')]
+[file (path+getFileName4Operations(true, useSubDir), false, 'UTF-8')]
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
 #ifdef __cplusplus
   extern "C" {
 #endif
 
-	#include "../types/standardTypes.h"
-	#include "../types/customTypes.h"
+	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
+	#include "[if (useSubDir)]../types/[/if]customTypes.h"
 [for (operation : Operation | allOperations)]
 /**
  * @brief Implementation stub of operation [operation.name/]
@@ -65,9 +65,9 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationClass(allOperations : Set(Operation), path : String)]
+[template public generateOperationClass(allOperations : Set(Operation), path : String, useSubDir: Boolean)]
 
-[file (path+'operations/operations.c', false, 'UTF-8')]
+[file (path+getFileName4Operations(false, useSubDir), false, 'UTF-8')]
 #include "operations.h"
 /** [protected ('user includes **/')] 
 

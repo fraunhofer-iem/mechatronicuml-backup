@@ -37,10 +37,10 @@
 [comment only generate, if CIC is a root-CIC/]
 [if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
 	[comment generate software parts/]
-	 [generateANSIC(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/')/]
+	 [generateANSIC(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', true)/]
 	
 	[comment generate mini version for middleware/]
-	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/Middleware/')/]
+	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', true)/]
 
 	[generateCMakeFiles(cic, cic.name+'/')/]
 [/if]
@@ -52,36 +52,36 @@
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generateANSIC( CIs : OrderedSet(ComponentInstance), path : String )]
+[template public generateANSIC( CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean )]
 
 [comment create files for every component type/]
-[generateTypeFiles(CIs, path)/]
+[generateTypeFiles(CIs, path, useSubDir)/]
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-[generateContinuousPortFiles(CIs, path)/]
+[generateContinuousPortFiles(CIs, path, useSubDir)/]
 [/if]
 [comment generate file for OS variable/]
-[generateOSFileDummy(path, 'C99')/]
+[generateOSFileDummy(path, 'C99', useSubDir)/]
 
 [comment create message file/]
-[generateProtobufMessageFile(CIs, path)/]
+[generateProtobufMessageFile(CIs, path, useSubDir)/]
 
 [comment create header for using protobuf/]
-[generateProtobufNewHeader(CIs,path)/]
+[generateProtobufNewHeader(CIs,path, useSubDir)/]
 
 [comment craeate files for RTSCs/]
-[generateRTSCFiles(CIs, path)/]
+[generateRTSCFiles(CIs, path, useSubDir)/]
 
 [comment create makefile for gcc/]
-[generateMakeFile(CIs, path)/]
+[generateMakeFile(CIs, path, useSubDir)/]
 
 
 [comment create Operation files/]
-[generateOperationFiles(CIs, path)/]
+[generateOperationFiles(CIs, path, useSubDir)/]
 
 [comment create main file/]
-[generateANSICMainFile(CIs, path)/]
+[generateANSICMainFile(CIs, path, useSubDir)/]
 
-[generateCustomTypes(CIs, path)/]
+[generateCustomTypes(CIs, path, useSubDir)/]
 
 
 [/template]
@@ -93,11 +93,11 @@
  * (if modelElementCategory is 'components'
  * @param modelElementCategory
  */]
-[template public generateTypeFiles(CIs : OrderedSet(ComponentInstance), path : String)]
+[template public generateTypeFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 [for (component : Component | CIs.componentType->asOrderedSet()) ? (component.oclIsKindOf(AtomicComponent))]
 [if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
-[generate_ComponentHeader(component, path)/]
-[generate_ComponentClass(component, path)/]
+[generate_ComponentHeader(component, path, useSubDir)/]
+[generate_ComponentClass(component, path, useSubDir)/]
 [/if]
 [/for]
 [/template]
@@ -108,13 +108,13 @@
  * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
  * @param modelElementCategory
  */]
-[template public generateRTSCFiles(CIs : OrderedSet(ComponentInstance), path: String) ]
+[template public generateRTSCFiles(CIs : OrderedSet(ComponentInstance), path: String, useSubDir: Boolean) ]
 
 	[for (comp : Component | CIs.componentType->asOrderedSet()) ? (oclIsKindOf(AtomicComponent))]
 	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
-		[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
-		[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+		[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path, useSubDir)/]
+		[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path, useSubDir)/]
 	[/let]
 	[/if]
 	[/for]

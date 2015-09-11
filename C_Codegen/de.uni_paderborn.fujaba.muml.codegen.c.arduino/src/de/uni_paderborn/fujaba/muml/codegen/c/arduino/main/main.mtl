@@ -38,10 +38,10 @@
 [comment only generate, if CIC is a root-CIC/]
 [if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
 	[comment generate software parts/]
-	[generateArduino(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/')/]
+	[generateArduino(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', false)/]
 	
 	[comment generate mini version for middleware/]
-	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/Middleware/')/]
+	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', false)/]
 [/if]
 
 [/template]
@@ -52,34 +52,34 @@
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generateArduino(CIs : OrderedSet(ComponentInstance), path : String)]
+[template public generateArduino(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
 
 [comment generate file for OS variable/]
-[generateOSFileDummy(path, 'ARDUINO')/]
+[generateOSFileDummy(path, 'ARDUINO', useSubDir)/]
 [comment create files for every component type/]
-[generateTypeFiles(CIs, path)/]
+[generateTypeFiles(CIs, path, useSubDir)/]
 
-[generateContinuousPortFiles(CIs, path)/]
+[generateContinuousPortFiles(CIs, path, useSubDir)/]
 
 
 [comment create message file/]
-[generateProtobufMessageFile(CIs, path)/]
+[generateProtobufMessageFile(CIs, path, useSubDir)/]
 [comment create header for using protobuf/]
-[generateProtobufNewHeader(CIs,path)/]
+[generateProtobufNewHeader(CIs,path, useSubDir)/]
 
 [comment craeate files for RTSCs/]
-[generateRTSCFiles(CIs,path)/]
+[generateRTSCFiles(CIs,path, useSubDir)/]
 
 [comment create makefile/]
 [generateMakeFileForArduino(CIs,path)/]
 
 [comment create Operation files/]
-[generateOperationFiles(CIs,path)/]
+[generateOperationFiles(CIs,path, useSubDir)/]
 
 [comment generate main file/]
 [generateArduinoMainFile(CIs, path)/]
 
-[generateCustomTypes(CIs, path)/]
+[generateCustomTypes(CIs, path, useSubDir)/]
 
 
 

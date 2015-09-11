@@ -31,26 +31,25 @@
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generateANSICMainFile(CIs : OrderedSet(ComponentInstance), path : String)]
+[template public generateANSICMainFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
 [comment create 'main.c'/]
 [file(path+'main.c',false,'UTF-8')]
 //general includes
-#include "Middleware/MiddlewareCore.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include "lib/Debug.h"
+#include "[if (useSubDir)]Middleware/[/if]MiddlewareCore.h"
+
+#include "[if (useSubDir)]lib/[/if]Debug.h"
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-#include "continuousComponents/ContImplementations.h"
+#include "[if (useSubDir)]continuousComponents/[/if]ContImplementations.h"
 [/if]
 //including all files for used Components
 		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
-#include "[comp.getFileName(true, false)/]"
+#include "[comp.getFileName(true, useSubDir)/]"
 		[/if]
 		[/for]
 		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
-#include "[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getFileName(true, false)/]"
+#include "[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getFileName(true, useSubDir)/]"
 		[/if]
 		[/for]
 
