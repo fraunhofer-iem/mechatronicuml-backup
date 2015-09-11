@@ -27,6 +27,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::operations]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::ContinuousPorts]
 [import de::uni_paderborn::fujaba::muml::codegen::c::main::main]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::customTypes]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::nxtOSEK::files::make_nxtOSEK]
 [import de::uni_paderborn::fujaba::muml::codegen::c::nxtOSEK::files::OIL]
@@ -83,6 +84,6 @@
 [comment generate main file/]
 [generateNXTOSEKMainFile(CIs, path)/]
 
-
+[generateCustomTypes(CIs, path)/]
 
 [/template]
