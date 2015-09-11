@@ -22,8 +22,12 @@
   <categories xmi:id="_5GPkHByEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
   <categories xmi:id="_5GQLIByEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_-baR8ByEEeSKP_lLzmbIVg" name="testSync" behavioralElement="_AHpxUByFEeSKP_lLzmbIVg">
-      <variables xmi:id="_XVVY4ByFEeSKP_lLzmbIVg" name="var1" dataType="_5GPkFhyEEeSKP_lLzmbIVg"/>
-      <variables xmi:id="_YmuIQByFEeSKP_lLzmbIVg" name="var2" dataType="_5GPkFhyEEeSKP_lLzmbIVg"/>
+      <variables xmi:id="_XVVY4ByFEeSKP_lLzmbIVg" name="var1" dataType="_5GPkFhyEEeSKP_lLzmbIVg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_EJutsFiJEeWjIvmbZGR-Sw" value="1"/>
+      </variables>
+      <variables xmi:id="_YmuIQByFEeSKP_lLzmbIVg" name="var2" dataType="_5GPkFhyEEeSKP_lLzmbIVg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_FEV70FiJEeWjIvmbZGR-Sw" value="2"/>
+      </variables>
       <states xmi:id="_-baR8RyEEeSKP_lLzmbIVg" name="init" initial="true">
         <embeddedRegions xmi:id="_EM-A4ByFEeSKP_lLzmbIVg" priority="1">
           <embeddedStatechart xmi:id="_ENAdIByFEeSKP_lLzmbIVg" name="Region 1">
@@ -55,10 +59,10 @@
                 <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_ca6yohyFEeSKP_lLzmbIVg" value="2"/>
               </guard>
               <action xmi:id="_ccOaMByFEeSKP_lLzmbIVg" name="set var2">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_gDvTcByFEeSKP_lLzmbIVg">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_gDvTcRyFEeSKP_lLzmbIVg" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_gDvTchyFEeSKP_lLzmbIVg" value="1"/>
-                    <lhs_typedNamedElementExpression xmi:id="_gDvTcxyFEeSKP_lLzmbIVg" typedNamedElement="_YmuIQByFEeSKP_lLzmbIVg"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_mD11AFiEEeWjIvmbZGR-Sw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_mD11AViEEeWjIvmbZGR-Sw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_mD11AliEEeWjIvmbZGR-Sw" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_mD11A1iEEeWjIvmbZGR-Sw" typedNamedElement="_YmuIQByFEeSKP_lLzmbIVg"/>
                   </expressions>
                 </expressions>
               </action>
