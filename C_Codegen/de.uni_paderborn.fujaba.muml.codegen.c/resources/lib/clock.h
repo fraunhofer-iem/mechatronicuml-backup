@@ -20,7 +20,7 @@
 #ifdef NXTOSEK
 #include "ecrobot_interface.h"
 #include <time.h>
-typedef clock_t Clock;
+typedef long Clock;
 #define Clock_getTime(aClock) (  (systick_get_ms() - (aClock)) )
 
 #define Clock_reset(aClock) ((aClock) = systick_get_ms())
@@ -28,17 +28,18 @@ typedef clock_t Clock;
 
 #ifdef C99
 #include <time.h>
-typedef clock_t Clock;
+typedef long Clock;
 #define Clock_getTime(aClock) ( (CLOCKS_PER_SEC == 1000) ? (clock() - (aClock)) : ((clock() - (aClock)) * 1000 / CLOCKS_PER_SEC) )
 
 #define Clock_reset(aClock) ((aClock) = clock())
 #endif /* C99 */
 
 #ifdef ARDUINO
+#include "Arduino.h"
 typedef long Clock;
-#define Clock_getTime(aClock) ( (CLOCKS_PER_SEC == 1000) ? (clock() - (aClock)) : ((clock() - (aClock)) * 1000 / CLOCKS_PER_SEC) )
+#define Clock_getTime(aClock) (  (millis() - (aClock)) )
 
-#define Clock_reset(aClock) ((aClock) = clock())
+#define Clock_reset(aClock) ((aClock) = millis())
 #endif /* C99 */
 
 
