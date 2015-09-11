@@ -254,7 +254,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		// add one main state on toplevel of subrole statechart
 		var mainState = new State();
 			
-		mainState.name := "subrole Main";
+		mainState.name := "subrole_Main";
 		mainState.initial := true;
 		
 		// add embedded regions for every used schema
