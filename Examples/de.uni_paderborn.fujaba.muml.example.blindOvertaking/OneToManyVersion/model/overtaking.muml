@@ -77,7 +77,7 @@
                 </oneToManyCommunicationSchema>
               </events>
             </transitions>
-            <transitions xmi:id="_uSst0EnTEeWrj50P7Divew" priority="1" target="_YbeQgCngEeOLOOFBfu_IMg" source="_e7PREEnSEeWrj50P7Divew">
+            <transitions xmi:id="_uSst0EnTEeWrj50P7Divew" priority="1" target="_YbeQgCngEeOLOOFBfu_IMg" source="_e7PREEnSEeWrj50P7Divew" urgent="false">
               <clockConstraints xmi:id="_FOG5oEnUEeWrj50P7Divew" clock="_HMl0sITDEeKO9r0VL65xcg" operator="LESS">
                 <bound xmi:id="_GJtmQEnUEeWrj50P7Divew">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_GftrcEnUEeWrj50P7Divew" value="4"/>
