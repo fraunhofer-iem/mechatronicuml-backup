@@ -20,17 +20,19 @@ public class CreationConstraintContributor
 							opposite, oppositeClass);
 			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 					.createQuery(expression);
-			de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
-
-				@Override
-				public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
-					return !eClass.isSuperTypeOf(myClass)
-							|| (object != null && Boolean.TRUE.equals(query.evaluate(object)));
+			if (expression != null) {
+				de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
+	
+					@Override
+					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
+						return !eClass.isSuperTypeOf(myClass)
+								|| (object != null && Boolean.TRUE.equals(query.evaluate(object)));
+					}
+	
+				};
+				if (filter != null) {
+					addConstraintFilter(opposite, filter);
 				}
-
-			};
-			if (filter != null) {
-				addConstraintFilter(opposite, filter);
 			}
 		}
 
