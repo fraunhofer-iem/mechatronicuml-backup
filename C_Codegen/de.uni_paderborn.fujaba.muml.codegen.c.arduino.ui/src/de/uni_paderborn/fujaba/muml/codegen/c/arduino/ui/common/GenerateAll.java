@@ -173,7 +173,7 @@ public class GenerateAll {
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.worked(1);
 		try {	
-			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
+			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.arduino.Activator.PLUGIN_ID).getEntry("resources"));
 			File sourceFolder = new File(resources.toURI());
 			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
 
@@ -183,7 +183,7 @@ public class GenerateAll {
 		monitor.worked(1);
 		
 		 //run protobuf-message-gen
-		String command = "java -jar " + target + File.separator + "messages" + File.separator + "protoc-1.0M4.jar -I=" + target + File.separator + "messages" + " --c_out=" + target + File.separator + "messages" + File.separator + " Messages.proto"; 
+		String command = "java -jar " + target + File.separator + "protoc-1.0M4.jar -I=" + target + " --c_out=" + target + File.separator + " Messages.proto"; 
 		
 		String output = executeCommand(command);
 		System.out.println(output);
