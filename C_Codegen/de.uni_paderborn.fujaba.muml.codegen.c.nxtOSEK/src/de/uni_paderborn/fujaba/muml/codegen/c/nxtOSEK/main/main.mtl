@@ -57,7 +57,7 @@
 [template public generateNXTOSEK(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
 
 [comment generate file for OS variable/]
-[generateOSFileDummy(path, 'NXTOSEK')/]
+[generateOSFileDummy(path, 'NXTOSEK', useSubDir)/]
 [comment create files for every component type/]
 [generateTypeFiles(CIs, path, useSubDir)/]
 
