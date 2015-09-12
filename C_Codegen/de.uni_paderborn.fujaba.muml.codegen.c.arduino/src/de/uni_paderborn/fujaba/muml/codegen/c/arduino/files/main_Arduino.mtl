@@ -31,14 +31,14 @@
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generateArduinoMainFile(CIs : OrderedSet(ComponentInstance), path : String)]
+[template public generateArduinoMainFile(CIs : OrderedSet(ComponentInstance),inoName:String, path : String)]
 [comment create 'main.c'/]
-[file(path+'main.ino',false,'UTF-8')]
+[file(path+inoName+'.ino',false,'UTF-8')]
 //general includes
-#include "Middleware/MiddlewareCore.h"
-#include "lib/Debug.h"
+#include "MiddlewareCore.h"
+#include "Debug.h"
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-#include "continuousComponents/ContImplementations.h"
+#include "ContImplementations.h"
 [/if]
 //including all files for used Components
 		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
@@ -58,7 +58,7 @@
 
 Middleware* mw;
 
-int setup(){
+void setup(){
 
 //initialize continuous components
 initializeContinuousImplementations();
@@ -90,7 +90,7 @@ printDebugInformation("Initialization done...start execution.\n");
 #endif
 }
 
-int loop(){
+void loop(){
 
 	[comment execution of model/]
 	[for (ci : ComponentInstance | CIs)? (ci.oclIsKindOf(AtomicComponentInstance))]

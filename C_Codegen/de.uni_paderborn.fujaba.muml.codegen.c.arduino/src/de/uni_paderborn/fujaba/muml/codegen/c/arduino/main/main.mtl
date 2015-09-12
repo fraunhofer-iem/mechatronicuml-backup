@@ -38,7 +38,7 @@
 [comment only generate, if CIC is a root-CIC/]
 [if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
 	[comment generate software parts/]
-	[generateArduino(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', false)/]
+	[generateArduino(cic.eAllContents(ComponentInstance)->asOrderedSet(),cic.name, cic.name+'/', false)/]
 	
 	[comment generate mini version for middleware/]
 	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', false)/]
@@ -52,7 +52,7 @@
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generateArduino(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
+[template public generateArduino(CIs : OrderedSet(ComponentInstance),inoName: String, path : String, useSubDir : Boolean)]
 
 [comment generate file for OS variable/]
 [generateOSFileDummy(path, 'ARDUINO', useSubDir)/]
@@ -77,7 +77,7 @@
 [generateOperationFiles(CIs,path, useSubDir)/]
 
 [comment generate main file/]
-[generateArduinoMainFile(CIs, path)/]
+[generateArduinoMainFile(CIs, inoName, path)/]
 
 [generateCustomTypes(CIs, path, useSubDir)/]
 
