@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_hh7pMOQxEeO5YYImi9Q4Mg" type="Real-Time Statechart" name="rearProtocolStateMachine.realtimestatechart_diagram" measurementUnit="Pixel">
-  <children xmi:type="notation:Shape" xmi:id="_b1DJcOQyEeO5YYImi9Q4Mg" type="2007" fontName="Segoe UI" fillColor="15138559" lineColor="0">
+  <children xmi:type="notation:Shape" xmi:id="_b1DJcOQyEeO5YYImi9Q4Mg" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_b1DJcuQyEeO5YYImi9Q4Mg" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_b1DJc-QyEeO5YYImi9Q4Mg" type="5062"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_b1DJdOQyEeO5YYImi9Q4Mg" type="7030">
-      <children xmi:type="notation:Shape" xmi:id="_b1M6cOQyEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="16706270" lineColor="0">
+      <children xmi:type="notation:Shape" xmi:id="_b1M6cOQyEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="12560536" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_b1M6cuQyEeO5YYImi9Q4Mg" type="5060"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_b1M6c-QyEeO5YYImi9Q4Mg" type="7031">
-          <children xmi:type="notation:Shape" xmi:id="_RcQmcPF0EeOlh5RNj-DICA" type="3033" fontName="Segoe UI" fillColor="16706270" lineColor="0">
+          <children xmi:type="notation:Shape" xmi:id="_RcQmcPF0EeOlh5RNj-DICA" type="3033" fontName="Segoe UI" fillColor="12560536" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_RcRNgPF0EeOlh5RNj-DICA" type="5050"/>
             <element xmi:type="realtimestatechart:EntryEvent" href="../overtaking.muml#_OYl88KzGEeKcdYkvlDMjkw"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RcQmcfF0EeOlh5RNj-DICA"/>
@@ -83,7 +83,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_b1NhheQyEeO5YYImi9Q4Mg"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_b1NhhuQyEeO5YYImi9Q4Mg" type="7034">
-          <children xmi:type="notation:Shape" xmi:id="_RcXUIPF0EeOlh5RNj-DICA" type="3036" fontName="Segoe UI" fillColor="16706270" lineColor="0">
+          <children xmi:type="notation:Shape" xmi:id="_RcXUIPF0EeOlh5RNj-DICA" type="3036" fontName="Segoe UI" fillColor="12560536" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_RcXUIvF0EeOlh5RNj-DICA" type="5053"/>
             <element xmi:type="realtimestatechart:ClockConstraint" href="../overtaking.muml#_5I8xECqVEeO22YgZcbz7_A"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RcXUIfF0EeOlh5RNj-DICA"/>
@@ -98,7 +98,7 @@
         <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_p05XYITBEeKO9r0VL65xcg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b1M6ceQyEeO5YYImi9Q4Mg" x="548" y="14" width="496" height="300"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_b1NhieQyEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="16706270" lineColor="0">
+      <children xmi:type="notation:Shape" xmi:id="_b1NhieQyEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="12560536" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_b1Nhi-QyEeO5YYImi9Q4Mg" type="5060"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_b1NhjOQyEeO5YYImi9Q4Mg" type="7031">
           <styles xmi:type="notation:SortingStyle" xmi:id="_b1NhjeQyEeO5YYImi9Q4Mg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>

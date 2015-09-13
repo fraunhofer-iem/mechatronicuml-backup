@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_hhXBcOQxEeO5YYImi9Q4Mg" type="Real-Time Statechart" name="frontProtocolStateMachine.realtimestatechart_diagram" measurementUnit="Pixel">
-  <children xmi:type="notation:Shape" xmi:id="_4qe5IOQxEeO5YYImi9Q4Mg" type="2007" fontName="Segoe UI" fillColor="8454143" lineColor="0">
+  <children xmi:type="notation:Shape" xmi:id="_4qe5IOQxEeO5YYImi9Q4Mg" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_4qe5IuQxEeO5YYImi9Q4Mg" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_4qe5I-QxEeO5YYImi9Q4Mg" type="5062"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_4qe5JOQxEeO5YYImi9Q4Mg" type="7030">
-      <children xmi:type="notation:Shape" xmi:id="_4qqfUOQxEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="13420443" lineColor="0">
+      <children xmi:type="notation:Shape" xmi:id="_4qqfUOQxEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="12560536" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_4qrGYOQxEeO5YYImi9Q4Mg" type="5060"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_4qrGYeQxEeO5YYImi9Q4Mg" type="7031">
           <styles xmi:type="notation:SortingStyle" xmi:id="_4qrGYuQxEeO5YYImi9Q4Mg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
@@ -84,7 +84,7 @@
         <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_oILsAITDEeKO9r0VL65xcg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qqfUeQxEeO5YYImi9Q4Mg" x="533" y="43" width="376" height="241"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_4qrGbeQxEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="13420443" lineColor="0">
+      <children xmi:type="notation:Shape" xmi:id="_4qrGbeQxEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="12560536" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_4qrGb-QxEeO5YYImi9Q4Mg" type="5060"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_4qrtcOQxEeO5YYImi9Q4Mg" type="7031">
           <styles xmi:type="notation:SortingStyle" xmi:id="_4qrtceQxEeO5YYImi9Q4Mg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>

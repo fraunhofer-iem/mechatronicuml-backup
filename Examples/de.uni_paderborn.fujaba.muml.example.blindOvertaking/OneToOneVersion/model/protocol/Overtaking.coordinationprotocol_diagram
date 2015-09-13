@@ -69,7 +69,7 @@
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../overtaking.muml#_GPaQMITCEeKO9r0VL65xcg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RnBcY7qgEeSQfL2uV5TAjw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RnBcY7qgEeSQfL2uV5TAjw" x="15" y="15"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_RnBcYbqgEeSQfL2uV5TAjw"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../overtaking.muml#_FN-BUITCEeKO9r0VL65xcg"/>
