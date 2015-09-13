@@ -292,6 +292,26 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_VFDDRWmGEeOlIqc8khLIew"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_VFDDRmmGEeOlIqc8khLIew" type="7033">
+          <children xmi:type="notation:Shape" xmi:id="_Kqg9YFo6EeWOcM8VFD0TTw" type="3037" fontName="Segoe UI" fillColor="13420443" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Kqg9Ylo6EeWOcM8VFD0TTw" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../../../coordinatingBebots.muml#_qWrN0GmGEeOlIqc8khLIew"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kqg9YVo6EeWOcM8VFD0TTw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_Kqg9Y1o6EeWOcM8VFD0TTw" type="3037" fontName="Segoe UI" fillColor="13420443" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Kqg9ZVo6EeWOcM8VFD0TTw" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../../../coordinatingBebots.muml#_7lNWYGmGEeOlIqc8khLIew"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kqg9ZFo6EeWOcM8VFD0TTw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_Kqg9Zlo6EeWOcM8VFD0TTw" type="3037" fontName="Segoe UI" fillColor="13420443" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Kqg9aFo6EeWOcM8VFD0TTw" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../../../coordinatingBebots.muml#_9SCEkGmGEeOlIqc8khLIew"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kqg9Z1o6EeWOcM8VFD0TTw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_Kqg9aVo6EeWOcM8VFD0TTw" type="3037" fontName="Segoe UI" fillColor="13420443" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Kqg9a1o6EeWOcM8VFD0TTw" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../../../coordinatingBebots.muml#_-vs8cGmGEeOlIqc8khLIew"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kqg9alo6EeWOcM8VFD0TTw"/>
+          </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_VFDDR2mGEeOlIqc8khLIew"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_VFDDSGmGEeOlIqc8khLIew"/>
         </children>
@@ -300,11 +320,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_VFDDS2mGEeOlIqc8khLIew"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.muml#_U9V4wWmGEeOlIqc8khLIew"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VFCcMWmGEeOlIqc8khLIew" x="2" y="10" width="733" height="1150"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VFCcMWmGEeOlIqc8khLIew" x="2" y="10" width="733" height="1195"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_U9V4wGmGEeOlIqc8khLIew"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VEx9gWmGEeOlIqc8khLIew" x="36" y="36" width="781" height="1240"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VEx9gWmGEeOlIqc8khLIew" x="36" y="36" width="781" height="1285"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_U9V4w2mGEeOlIqc8khLIew"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_U9V4wGmGEeOlIqc8khLIew"/>
