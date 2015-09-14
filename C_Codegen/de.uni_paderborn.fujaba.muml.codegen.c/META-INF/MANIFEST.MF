@@ -24,7 +24,15 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: de.uni_paderborn.fujaba.muml.codegen.c,
- de.uni_paderborn.fujaba.muml.codegen.c.helper,
- de.uni_paderborn.fujaba.muml.codegen.c.main
+Export-Package: de.uni_paderborn.fujaba.muml.codegen.c;uses:="org.osgi.framework,org.eclipse.core.runtime",
+ de.uni_paderborn.fujaba.muml.codegen.c.actionlanguage,
+ de.uni_paderborn.fujaba.muml.codegen.c.files,
+ de.uni_paderborn.fujaba.muml.codegen.c.helper;uses:="org.eclipse.emf.ecore,de.uni_paderborn.fujaba.muml.valuetype,de.uni_paderborn.fujaba.muml.common.naming",
+ de.uni_paderborn.fujaba.muml.codegen.c.main;
+  uses:="org.eclipse.emf.ecore,
+   org.eclipse.emf.common.util,
+   org.eclipse.acceleo.engine.service,
+   org.eclipse.emf.ecore.resource,
+   org.eclipse.acceleo.engine.generation.strategy",
+ de.uni_paderborn.fujaba.muml.codegen.c.queries
 
