@@ -79,7 +79,7 @@ class Mtctl2English {
 		if (positive)
 			'''it can possibly happen that «expr(expr.expr, true)»'''
 		else
-			'''it cannot possibly happen that «expr(expr.expr, true)»'''
+			'''it invariantly holds that «expr(expr.expr, false)»'''
 	}
 	
 	def dispatch expr(EGExpr expr, boolean positive) {
@@ -91,9 +91,10 @@ class Mtctl2English {
 	
 	def dispatch expr(LeadsToExpr expr, boolean positive) {
 		if (positive)
-			'''whenever «expr(expr.leftOpd, true)», then eventually «expr(expr.rightOpd, true)»'''
+			'''whenever «expr(expr.leftOpd, true)», then eventually «expr(expr.rightOpd, true)» as well''' //  AG (a imply AF b)
 		else
-			'''it can happen that «expr(expr.leftOpd, true)» and afterwards possibly always «expr(expr.rightOpd, false)»''' //(EF (a and EG not b))
+			'''it can possibly happen that when «expr(expr.leftOpd, true)» it might always hold that «expr(expr.rightOpd, false)»''' // not(AG (a imply AF b)) == (EF (a and EG not b))
+			// '''it can happen that «expr(expr.leftOpd, true)» and afterwards possibly always «expr(expr.rightOpd, false)»''' // not(AG (a imply AF b)) == (EF (a and EG not b))
 	}
 	
 	def dispatch expr(DeadlockExpr expr, boolean positive) {
@@ -151,23 +152,23 @@ class Mtctl2English {
 	
 	def dispatch expr(StateActiveExpr expr, boolean positive) {
 		if (positive)
-			'''«expr(expr.state, true)» is active'''
+			'''the state «expr(expr.state, true)» is active'''
 		else
-			'''«expr(expr.state, true)» is not active'''
+			'''the state «expr(expr.state, true)» is not active'''
 	}
 	
 	def dispatch expr(SubstateOfExpr expr, boolean positive) {
 		if (positive)
-			'''«expr(expr.state, true)» is a substate of «expr(expr.superstate, true)»'''
+			'''the state «expr(expr.state, true)» is a substate of «expr(expr.superstate, true)»'''
 		else
-			'''«expr(expr.state, true)» is not a substate of «expr(expr.superstate, true)»'''
+			'''the state «expr(expr.state, true)» is not a substate of «expr(expr.superstate, true)»'''
 	}
 	
 	def dispatch expr(TransitionFiringExpr expr, boolean positive) {
 		if (positive)
-			'''«expr(expr.transition, true)» is firing'''
+			'''the transition «expr(expr.transition, true)» is firing'''
 		else
-			'''«expr(expr.transition, true)» is not firing'''
+			'''the transition «expr(expr.transition, true)» is not firing'''
 	}
 	
 	def dispatch expr(TrueExpr expr, boolean positive) {
@@ -186,9 +187,9 @@ class Mtctl2English {
 	
 	def dispatch expr(StateInStatechartExpr expr, boolean positive) {
 		if (positive)
-			'''«expr(expr.state, true)» is in statechart «expr(expr.statechart, true)»'''
+			'''the state «expr(expr.state, true)» is in statechart «expr(expr.statechart, true)»'''
 		else
-			'''«expr(expr.state, true)» is not in statechart «expr(expr.statechart, true)»'''
+			'''the state «expr(expr.state, true)» is not in statechart «expr(expr.statechart, true)»'''
 	}
 	
 	def boundVariable(BoundVariable expr, boolean singular) {
@@ -221,7 +222,7 @@ class Mtctl2English {
 	
 	def dispatch expr(ImplyExpr expr, boolean positive) {
 		if (positive)
-			'''if «expr(expr.leftOpd, true)» then «expr(expr.rightOpd, true)»'''
+			'''if «expr(expr.leftOpd, true)» then «expr(expr.rightOpd, true)» as well'''
 		else
 			'''«expr(expr.leftOpd, true)» and «expr(expr.rightOpd, false)»'''
 	}
