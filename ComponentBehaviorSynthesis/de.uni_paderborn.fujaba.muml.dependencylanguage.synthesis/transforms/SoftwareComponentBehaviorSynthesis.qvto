@@ -7,23 +7,23 @@ modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 transformation SoftwareComponentBehaviorSynthesis(inout input:modelinstance);
 
 configuration property namesOfComponentsToSynthesize : OrderedSet(String);
-configuration property componentsToSynthesize: OrderedSet(AtomicComponent);
+configuration property componentsToSynthesize: OrderedSet(StaticAtomicComponent);
 
 main() {
 	log('huhu'); 
 
 	assert fatal (componentsToSynthesize->notEmpty() or namesOfComponentsToSynthesize->notEmpty()) with log('At least a name of component to synthesize must be specified using the property: namesOfComponentsToSynthesize');
 	namesOfComponentsToSynthesize->forEach(name){
-		if(input.objectsOfType(AtomicComponent)->notEmpty()) then {
-			if (input.objectsOfType(AtomicComponent)->exists(c : AtomicComponent | c.name.equalsIgnoreCase(name))){
-				componentsToSynthesize += input.objectsOfType(AtomicComponent)->any(c : AtomicComponent | c.name.equalsIgnoreCase(name)).oclAsType(AtomicComponent);
+		if(input.objectsOfType(StaticAtomicComponent)->notEmpty()) then {
+			if (input.objectsOfType(StaticAtomicComponent)->exists(c : StaticAtomicComponent | c.name.equalsIgnoreCase(name))){
+				componentsToSynthesize += input.objectsOfType(StaticAtomicComponent)->any(c : StaticAtomicComponent | c.name.equalsIgnoreCase(name)).oclAsType(StaticAtomicComponent);
 			}
 			else{
 				assert fatal (false) with log('There is no component with the name: '.concat(name));
 			}endif;
 		}endif;
 	};
-	assert fatal (componentsToSynthesize->notEmpty()) with log('There is no atomic component.');
+	assert fatal (componentsToSynthesize->notEmpty()) with log('There is no atomic component (Error-Code: NoComp2).');
 	
 	componentsToSynthesize->forEach(comp){
 		var copyRTSC : CopyRTSCsIntoComponentRTSC = new CopyRTSCsIntoComponentRTSC(input);

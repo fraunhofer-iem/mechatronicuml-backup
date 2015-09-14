@@ -27,7 +27,7 @@ main() {
 			assert fatal (false) with log('There is no component with the name: '.concat(nameOfComponentToSynthesize));
 		}endif;
 	}endif;
-	assert fatal (componentToSynthesize->notEmpty()) with log('There is no atomic component.');
+	assert fatal (componentToSynthesize->notEmpty()) with log('There is no atomic component (Error-Code: NoComp1).');
 	
 	// Add inner behavior to the RTSCs which will be copied
 	componentToSynthesize.extension[SynthesizableBehavior]->forOne(synBeh){
