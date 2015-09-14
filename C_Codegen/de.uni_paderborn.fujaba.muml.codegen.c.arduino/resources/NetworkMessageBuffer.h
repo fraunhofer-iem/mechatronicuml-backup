@@ -7,7 +7,9 @@
  */
 #ifndef NETWORKMESSAGEBUFFER_H_
 #define NETWORKMESSAGEBUFFER_H_
-
+#ifdef __cplusplus
+  extern "C" {
+#endif
 #include "MiddlewareTypes.h"
 #include "standardTypes.h"
 #include "customTypes.h"
@@ -108,5 +110,7 @@ MiddlewareMessage* NetworkMessageBuffer_dequeue(NetworkMessageBuffer* buf);
  * @param buf The NetworkMessageBuffer which shall be destroyed
  */
 void NetworkMessageBuffer_destroy(NetworkMessageBuffer* buf);
-
+#ifdef __cplusplus
+  }
+#endif
 #endif /* NETWORKMESSAGEBUFFER_H_ */

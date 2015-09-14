@@ -8,7 +8,9 @@
  */
 #ifndef PORT_H_
 #define PORT_H_
-
+#ifdef __cplusplus
+  extern "C" {
+#endif
 #include "Debug.h"
 #include "MessageBuffer.h"
 #include "standardTypes.h"
@@ -104,5 +106,8 @@ MiddlewareMessage* Port_receiveMessage(Port * port, MessageID msgID);
  * @param port The Port which shall be destroyed
  */
 void Port_destroy(Port * port);
+#ifdef __cplusplus
+  }
+#endif
 
 #endif /* PORT_H_ */

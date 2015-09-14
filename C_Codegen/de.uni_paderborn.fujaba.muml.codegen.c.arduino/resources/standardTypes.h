@@ -8,6 +8,7 @@
 #define TYPES_H_
 
 
+//define NULL
 #define NULL 0
 //typedef unsigned short ushort_t;
 

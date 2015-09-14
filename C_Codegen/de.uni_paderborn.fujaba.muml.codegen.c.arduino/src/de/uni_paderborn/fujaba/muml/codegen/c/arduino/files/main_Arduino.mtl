@@ -59,7 +59,7 @@
 Middleware* mw;
 
 void setup(){
-
+  Serial.begin(9600);
 //initialize continuous components
 initializeContinuousImplementations();
 

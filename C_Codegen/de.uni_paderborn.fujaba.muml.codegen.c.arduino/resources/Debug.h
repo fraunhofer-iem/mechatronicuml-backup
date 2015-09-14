@@ -6,8 +6,12 @@
  */
 #ifndef DEBUG_H_
 #define DEBUG_H_
-#import "Arduino.h"
+#ifdef __cplusplus
+  extern "C" {
+#endif
 
 void printDebugInformation(char * debugInformation);
-
+#ifdef __cplusplus
+  }
+#endif
 #endif /* DEBUG_H_ */

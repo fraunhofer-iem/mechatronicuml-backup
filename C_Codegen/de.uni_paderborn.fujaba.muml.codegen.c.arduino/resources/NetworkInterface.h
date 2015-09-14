@@ -11,7 +11,9 @@
 #define MW_NETWORKINTERFACE_H_
 #include "MiddlewareTypes.h"
 
-
+#ifdef __cplusplus
+  extern "C" {
+#endif
 /**
  * 
  * @brief An Interface for Network/Interfaces/Devices
@@ -51,4 +53,8 @@ void NetworkInterface_init(NetworkInterface* ni, bool_t (*init)(void), bool_t (*
  * @return 0, if the NetworkInterface is successfully destroyed, otherwise 0
  */
 bool_t NetworkInterface_destroy(NetworkInterface* ni);
+
+#ifdef __cplusplus
+  }
+#endif
 #endif /* MW_NETWORKINTERFACE_H_ */

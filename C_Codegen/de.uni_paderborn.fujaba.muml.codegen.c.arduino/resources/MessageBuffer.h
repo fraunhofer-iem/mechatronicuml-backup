@@ -6,7 +6,9 @@
  */
 #ifndef MESSAGEBUFFER_H_
 #define MESSAGEBUFFER_H_
-
+#ifdef __cplusplus
+  extern "C" {
+#endif
 
 #include "MiddlewareTypes.h"
 #include "standardTypes.h"
@@ -128,5 +130,7 @@ MiddlewareMessage* MessageBuffer_dequeue(MessageBuffer* buf);
   * @param buf The MessageBuffer which shall be destroyed
   */
 void MessageBuffer_destroy(MessageBuffer* buf);
-
+#ifdef __cplusplus
+  }
+#endif
 #endif /* MESSAGEBUFFER_H_ */
