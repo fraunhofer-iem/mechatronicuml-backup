@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EReference;
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introdused.
+ * The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introduced.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartFactory
  * @model kind="package"

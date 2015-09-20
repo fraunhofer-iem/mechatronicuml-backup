@@ -21,7 +21,7 @@ import org.storydriven.core.CorePackage;
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * This package provides the modelelements to allocate a ComponentInstanceConfiguration to a HarwarePlatformInstanceConfiguration.
+ * This package provides the model elements to allocate a ComponentInstanceConfiguration to a HarwarePlatformInstanceConfiguration.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationFactory
  * @model kind="package"

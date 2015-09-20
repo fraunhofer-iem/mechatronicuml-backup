@@ -666,7 +666,7 @@ public interface PropertiesPackage extends EPackage {
 	int SCHEDULING__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
 
 	/**
-	 * The feature id for the '<em><b>Deadline</b></em>' reference.
+	 * The feature id for the '<em><b>Deadline</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -675,7 +675,7 @@ public interface PropertiesPackage extends EPackage {
 	int SCHEDULING__DEADLINE = CorePackage.EXTENSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Period</b></em>' reference.
+	 * The feature id for the '<em><b>Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -684,7 +684,7 @@ public interface PropertiesPackage extends EPackage {
 	int SCHEDULING__PERIOD = CorePackage.EXTENSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Priority</b></em>' reference.
+	 * The feature id for the '<em><b>Priority</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -956,10 +956,10 @@ public interface PropertiesPackage extends EPackage {
 	EClass getScheduling();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Deadline</em>'.
+	 * @return the meta object for the containment reference '<em>Deadline</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline()
 	 * @see #getScheduling()
 	 * @generated
@@ -967,10 +967,10 @@ public interface PropertiesPackage extends EPackage {
 	EReference getScheduling_Deadline();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Period</em>'.
+	 * @return the meta object for the containment reference '<em>Period</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod()
 	 * @see #getScheduling()
 	 * @generated
@@ -978,10 +978,10 @@ public interface PropertiesPackage extends EPackage {
 	EReference getScheduling_Period();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Priority</em>'.
+	 * @return the meta object for the containment reference '<em>Priority</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority()
 	 * @see #getScheduling()
 	 * @generated
@@ -1074,7 +1074,7 @@ public interface PropertiesPackage extends EPackage {
 		EClass SCHEDULING = eINSTANCE.getScheduling();
 
 		/**
-		 * The meta object literal for the '<em><b>Deadline</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Deadline</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1082,7 +1082,7 @@ public interface PropertiesPackage extends EPackage {
 		EReference SCHEDULING__DEADLINE = eINSTANCE.getScheduling_Deadline();
 
 		/**
-		 * The meta object literal for the '<em><b>Period</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Period</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1090,7 +1090,7 @@ public interface PropertiesPackage extends EPackage {
 		EReference SCHEDULING__PERIOD = eINSTANCE.getScheduling_Period();
 
 		/**
-		 * The meta object literal for the '<em><b>Priority</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Priority</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
