@@ -31,6 +31,7 @@
     <requiredBundles>org.eclipse.jface</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.psm</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.psm.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
   </plugin>
   <tabs xmi:id="_Rl8bMc1gEeSIgPDefa6ZBw" id="property.tab.psm" name="PSM" afterTab=""/>
   <packages>
@@ -79,15 +80,15 @@
     </classes>
     <classes>
       <genClass href="psm.genmodel#//psm/properties/Scheduling"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="psm.genmodel#//psm/properties/Scheduling/deadline"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
         <genFeature href="psm.genmodel#//psm/properties/Scheduling/period"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" reconcile="false" initializeOCLExpression="">
         <genFeature href="psm.genmodel#//psm/properties/Scheduling/priority"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
