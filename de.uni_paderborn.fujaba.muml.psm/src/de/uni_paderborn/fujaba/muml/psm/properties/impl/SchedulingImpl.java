@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -34,7 +35,7 @@ import org.storydriven.core.impl.ExtensionImpl;
  */
 public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	/**
-	 * The cached value of the '{@link #getDeadline() <em>Deadline</em>}' reference.
+	 * The cached value of the '{@link #getDeadline() <em>Deadline</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDeadline()
@@ -44,7 +45,7 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	protected TimeValue deadline;
 
 	/**
-	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' reference.
+	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPeriod()
@@ -54,7 +55,7 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	protected TimeValue period;
 
 	/**
-	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' reference.
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPriority()
@@ -88,14 +89,6 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * @generated
 	 */
 	public TimeValue getDeadline() {
-		if (deadline != null && deadline.eIsProxy()) {
-			InternalEObject oldDeadline = (InternalEObject)deadline;
-			deadline = (TimeValue)eResolveProxy(oldDeadline);
-			if (deadline != oldDeadline) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.SCHEDULING__DEADLINE, oldDeadline, deadline));
-			}
-		}
 		return deadline;
 	}
 
@@ -104,8 +97,14 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeValue basicGetDeadline() {
-		return deadline;
+	public NotificationChain basicSetDeadline(TimeValue newDeadline, NotificationChain msgs) {
+		TimeValue oldDeadline = deadline;
+		deadline = newDeadline;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__DEADLINE, oldDeadline, newDeadline);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -114,10 +113,17 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * @generated
 	 */
 	public void setDeadline(TimeValue newDeadline) {
-		TimeValue oldDeadline = deadline;
-		deadline = newDeadline;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__DEADLINE, oldDeadline, deadline));
+		if (newDeadline != deadline) {
+			NotificationChain msgs = null;
+			if (deadline != null)
+				msgs = ((InternalEObject)deadline).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.SCHEDULING__DEADLINE, null, msgs);
+			if (newDeadline != null)
+				msgs = ((InternalEObject)newDeadline).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.SCHEDULING__DEADLINE, null, msgs);
+			msgs = basicSetDeadline(newDeadline, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__DEADLINE, newDeadline, newDeadline));
 	}
 
 	/**
@@ -126,14 +132,6 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * @generated
 	 */
 	public TimeValue getPeriod() {
-		if (period != null && period.eIsProxy()) {
-			InternalEObject oldPeriod = (InternalEObject)period;
-			period = (TimeValue)eResolveProxy(oldPeriod);
-			if (period != oldPeriod) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.SCHEDULING__PERIOD, oldPeriod, period));
-			}
-		}
 		return period;
 	}
 
@@ -142,8 +140,14 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeValue basicGetPeriod() {
-		return period;
+	public NotificationChain basicSetPeriod(TimeValue newPeriod, NotificationChain msgs) {
+		TimeValue oldPeriod = period;
+		period = newPeriod;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__PERIOD, oldPeriod, newPeriod);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -152,10 +156,17 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * @generated
 	 */
 	public void setPeriod(TimeValue newPeriod) {
-		TimeValue oldPeriod = period;
-		period = newPeriod;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__PERIOD, oldPeriod, period));
+		if (newPeriod != period) {
+			NotificationChain msgs = null;
+			if (period != null)
+				msgs = ((InternalEObject)period).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.SCHEDULING__PERIOD, null, msgs);
+			if (newPeriod != null)
+				msgs = ((InternalEObject)newPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.SCHEDULING__PERIOD, null, msgs);
+			msgs = basicSetPeriod(newPeriod, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__PERIOD, newPeriod, newPeriod));
 	}
 
 	/**
@@ -164,14 +175,6 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * @generated
 	 */
 	public NaturalNumber getPriority() {
-		if (priority != null && priority.eIsProxy()) {
-			InternalEObject oldPriority = (InternalEObject)priority;
-			priority = (NaturalNumber)eResolveProxy(oldPriority);
-			if (priority != oldPriority) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.SCHEDULING__PRIORITY, oldPriority, priority));
-			}
-		}
 		return priority;
 	}
 
@@ -180,8 +183,14 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber basicGetPriority() {
-		return priority;
+	public NotificationChain basicSetPriority(NaturalNumber newPriority, NotificationChain msgs) {
+		NaturalNumber oldPriority = priority;
+		priority = newPriority;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__PRIORITY, oldPriority, newPriority);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -190,10 +199,35 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	 * @generated
 	 */
 	public void setPriority(NaturalNumber newPriority) {
-		NaturalNumber oldPriority = priority;
-		priority = newPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__PRIORITY, oldPriority, priority));
+		if (newPriority != priority) {
+			NotificationChain msgs = null;
+			if (priority != null)
+				msgs = ((InternalEObject)priority).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.SCHEDULING__PRIORITY, null, msgs);
+			if (newPriority != null)
+				msgs = ((InternalEObject)newPriority).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.SCHEDULING__PRIORITY, null, msgs);
+			msgs = basicSetPriority(newPriority, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.SCHEDULING__PRIORITY, newPriority, newPriority));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PropertiesPackage.SCHEDULING__DEADLINE:
+				return basicSetDeadline(null, msgs);
+			case PropertiesPackage.SCHEDULING__PERIOD:
+				return basicSetPeriod(null, msgs);
+			case PropertiesPackage.SCHEDULING__PRIORITY:
+				return basicSetPriority(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -205,14 +239,11 @@ public class SchedulingImpl extends ExtensionImpl implements Scheduling {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PropertiesPackage.SCHEDULING__DEADLINE:
-				if (resolve) return getDeadline();
-				return basicGetDeadline();
+				return getDeadline();
 			case PropertiesPackage.SCHEDULING__PERIOD:
-				if (resolve) return getPeriod();
-				return basicGetPeriod();
+				return getPeriod();
 			case PropertiesPackage.SCHEDULING__PRIORITY:
-				if (resolve) return getPriority();
-				return basicGetPriority();
+				return getPriority();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

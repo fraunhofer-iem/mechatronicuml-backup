@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class is a extension of a real-time statechart, which has aditional plattformspecific parameters.
+ * This class is a extension of a real-time statechart, which has additional plattformspecific parameters.
  * <!-- end-model-doc -->
  *
  * <p>

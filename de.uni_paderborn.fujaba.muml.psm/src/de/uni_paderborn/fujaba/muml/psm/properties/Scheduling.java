@@ -27,78 +27,78 @@ import org.storydriven.core.Extension;
  */
 public interface Scheduling extends Extension {
 	/**
-	 * Returns the value of the '<em><b>Deadline</b></em>' reference.
+	 * Returns the value of the '<em><b>Deadline</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deadline</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deadline</em>' reference.
+	 * @return the value of the '<em>Deadline</em>' containment reference.
 	 * @see #setDeadline(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling_Deadline()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	TimeValue getDeadline();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deadline</em>' reference.
+	 * @param value the new value of the '<em>Deadline</em>' containment reference.
 	 * @see #getDeadline()
 	 * @generated
 	 */
 	void setDeadline(TimeValue value);
 
 	/**
-	 * Returns the value of the '<em><b>Period</b></em>' reference.
+	 * Returns the value of the '<em><b>Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Period</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Period</em>' reference.
+	 * @return the value of the '<em>Period</em>' containment reference.
 	 * @see #setPeriod(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling_Period()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	TimeValue getPeriod();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period</em>' reference.
+	 * @param value the new value of the '<em>Period</em>' containment reference.
 	 * @see #getPeriod()
 	 * @generated
 	 */
 	void setPeriod(TimeValue value);
 
 	/**
-	 * Returns the value of the '<em><b>Priority</b></em>' reference.
+	 * Returns the value of the '<em><b>Priority</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Priority</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Priority</em>' reference.
+	 * @return the value of the '<em>Priority</em>' containment reference.
 	 * @see #setPriority(NaturalNumber)
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling_Priority()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	NaturalNumber getPriority();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Priority</em>' reference.
+	 * @param value the new value of the '<em>Priority</em>' containment reference.
 	 * @see #getPriority()
 	 * @generated
 	 */
