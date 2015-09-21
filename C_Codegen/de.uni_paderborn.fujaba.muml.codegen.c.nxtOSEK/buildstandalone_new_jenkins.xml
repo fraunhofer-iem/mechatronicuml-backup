@@ -2,7 +2,7 @@
 <project basedir="." default="compile" name="de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK">
 
 	<property name="ECLIPSE_HOME"  value="/data/jenkins/jobs/Eclipse Target Platform/lastSuccessful/archive/targetPlatform" />
-	<property name="ECLIPSE_WORKSPACE" value="../" />
+	<property name="ECLIPSE_WORKSPACE" value=".." />
 
 	<property name="SOURCE_FOLDER" value="${basedir}/src/" />
 	<property name="OUTPUT_FOLDER" value="${basedir}/bin/" />
@@ -20,7 +20,7 @@
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml/bin" />
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.modelinstance/bin" />
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.actionlanguage/bin" />
-		<fileset dir="${ECLIPSE_HOME}/plugins">
+		<fileset dir="${ECLIPSE_HOME}/plugins/">
 			<include name="*.jar" />
 		</fileset>
 	</path>
