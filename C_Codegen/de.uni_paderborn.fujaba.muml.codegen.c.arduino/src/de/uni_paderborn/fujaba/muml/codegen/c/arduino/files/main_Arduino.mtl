@@ -60,8 +60,10 @@ Middleware* mw;
 
 void setup(){
   Serial.begin(9600);
+[if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
 //initialize continuous components
 initializeContinuousImplementations();
+[/if]
 
 //create and  initialize middleware object
  Middleware_create();
