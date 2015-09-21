@@ -168,7 +168,7 @@ public class GenerateAll {
 
 		monitor.subTask("generating "+cic.getName()+"...");
 		de.uni_paderborn.fujaba.muml.codegen.c.arduino.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.arduino.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.arduino.c", "de.uni_paderborn.fujaba.muml.codegen.c.arduino.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.worked(1);
