@@ -5,22 +5,10 @@
       <body startPosition="32" endPosition="76" value="&#xA;The documentation of the module main.&#xA;&#xA;"/>
     </documentation>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//component"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//constraint"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//instance"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//protocol"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/one_to_n_schemata"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//types"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//connector"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//valuetype"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//pattern"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
@@ -31,23 +19,23 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//types"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//component"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//instance"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/one_to_n_schemata"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/make.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechart.emtl#/0"/>
@@ -73,33 +61,33 @@
                 <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Component)">
                   <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduinoMainFile/CIs"/>
                   <body xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateArduinoMainFile/%/%.1/%.1/%/select/collect/temp1">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                   </body>
                   <iterator xsi:type="ocl.ecore:Variable" name="temp1">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                   </iterator>
                 </source>
                 <body xsi:type="ocl.ecore:OperationCallExp">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                   <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateArduinoMainFile/%/%.1/%.1/%/select/c">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                   </source>
                   <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                    <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/CONTINUOUS_COMPONENT"/>
+                    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                    <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/CONTINUOUS_COMPONENT"/>
                   </argument>
                   <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
                 </body>
                 <iterator xsi:type="ocl.ecore:Variable" name="c">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                 </iterator>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/size"/>
@@ -118,7 +106,7 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.3/comp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
               </argument>
               <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
@@ -133,30 +121,30 @@
               <source xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.3/comp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/SOFTWARE_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.3/comp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/HYBRID_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/HYBRID_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </argument>
@@ -164,20 +152,20 @@
             </ifExpr>
           </body>
           <loopVariable name="comp">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Component)">
             <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Component)">
               <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduinoMainFile/CIs"/>
               <body xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateArduinoMainFile/%/%.3/%.1/collect/temp2">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
               </body>
               <iterator xsi:type="ocl.ecore:Variable" name="temp2">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
               </iterator>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asSet"/>
@@ -185,10 +173,10 @@
           <guard xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.3/comp">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
             </source>
             <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponent">
-              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/AtomicComponent"/>
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
           </guard>
@@ -200,23 +188,23 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName.3"/>
               <argument xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/RealtimeStatechart"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Behavior"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior"/>
                   <source xsi:type="ocl.ecore:OperationCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/AtomicComponent"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.4/comp">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                     </source>
                     <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponent">
-                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/AtomicComponent"/>
+                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
                     </argument>
                     <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/BehavioralElement/behavior"/>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//BehavioralElement/behavior"/>
                 </source>
                 <argument xsi:type="ocl.ecore:TypeExp" eType="/12/RealtimeStatechart">
-                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/RealtimeStatechart"/>
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
               </argument>
@@ -233,30 +221,30 @@
               <source xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.4/comp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/SOFTWARE_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.4/comp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/HYBRID_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/HYBRID_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </argument>
@@ -264,20 +252,20 @@
             </ifExpr>
           </body>
           <loopVariable name="comp">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Component)">
             <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Component)">
               <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduinoMainFile/CIs"/>
               <body xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateArduinoMainFile/%/%.4/%.1/collect/temp3">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
               </body>
               <iterator xsi:type="ocl.ecore:Variable" name="temp3">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
               </iterator>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asSet"/>
@@ -285,10 +273,10 @@
           <guard xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/generateArduinoMainFile/%/%.4/comp">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
             </source>
             <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponent">
-              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/AtomicComponent"/>
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
           </guard>
@@ -303,12 +291,12 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/CIC.emtl#/0/generateInstanceCreation"/>
               <argument xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.8/ci">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                 </source>
                 <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponentInstance">
-                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
               </argument>
@@ -322,38 +310,38 @@
               <source xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.8/ci">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/SOFTWARE_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.8/ci">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/HYBRID_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/HYBRID_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </argument>
@@ -361,16 +349,16 @@
             </ifExpr>
           </body>
           <loopVariable name="ci">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduinoMainFile/CIs"/>
           <guard xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.8/ci">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
             </source>
             <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponentInstance">
-              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
           </guard>
@@ -385,7 +373,7 @@
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                   <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.1"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="partInstance" referredVariable="/0/generateArduinoMainFile/%/%.10/partInstance">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                   </argument>
                 </body>
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="->getterOf_"/>
@@ -393,16 +381,16 @@
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                   <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.14"/>
                   <argument xsi:type="ocl.ecore:OperationCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Port"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateArduinoMainFile/%/%.10/%/port">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance/portType"/>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
                     </source>
                     <argument xsi:type="ocl.ecore:TypeExp" eType="/12/HybridPort">
-                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
                     </argument>
                     <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                   </argument>
@@ -412,15 +400,15 @@
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                   <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReadMethod"/>
                   <argument xsi:type="mtl:QueryInvocation">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                     <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
                     <argument xsi:type="ocl.ecore:OperationCallExp">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateArduinoMainFile/%/%.10/%/port">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
                       </source>
                       <argument xsi:type="ocl.ecore:TypeExp" eType="/12/HybridPortInstance">
-                        <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+                        <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
                       </argument>
                       <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                     </argument>
@@ -430,20 +418,20 @@
                 <ifExpr xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                   <source xsi:type="ocl.ecore:OperationCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Port"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateArduinoMainFile/%/%.10/%/port">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance/portType"/>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
                     </source>
                     <argument xsi:type="ocl.ecore:TypeExp" eType="/12/HybridPort">
-                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
                     </argument>
                     <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/DirectedTypedPort/inPort"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//DirectedTypedPort/inPort"/>
                 </ifExpr>
                 <else>
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;mw->"/>
@@ -451,7 +439,7 @@
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                     <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.1"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="partInstance" referredVariable="/0/generateArduinoMainFile/%/%.10/partInstance">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                     </argument>
                   </body>
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="->setterOf_"/>
@@ -459,16 +447,16 @@
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                     <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.14"/>
                     <argument xsi:type="ocl.ecore:OperationCallExp">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
                       <source xsi:type="ocl.ecore:PropertyCallExp">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Port"/>
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateArduinoMainFile/%/%.10/%/port">
-                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
                         </source>
-                        <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance/portType"/>
+                        <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
                       </source>
                       <argument xsi:type="ocl.ecore:TypeExp" eType="/12/HybridPort">
-                        <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+                        <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
                       </argument>
                       <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                     </argument>
@@ -478,15 +466,15 @@
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                     <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getWriteMethod"/>
                     <argument xsi:type="mtl:QueryInvocation">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                       <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
                       <argument xsi:type="ocl.ecore:OperationCallExp">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateArduinoMainFile/%/%.10/%/port">
-                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
                         </source>
                         <argument xsi:type="ocl.ecore:TypeExp" eType="/12/HybridPortInstance">
-                          <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+                          <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
                         </argument>
                         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                       </argument>
@@ -498,35 +486,35 @@
               <ifExpr xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateArduinoMainFile/%/%.10/%/port">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
                 </source>
                 <argument xsi:type="ocl.ecore:TypeExp" eType="/12/HybridPortInstance">
-                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
               </ifExpr>
             </body>
             <loopVariable name="port">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
             </loopVariable>
             <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(PortInstance)">
               <source xsi:type="ocl.ecore:VariableExp" name="partInstance" referredVariable="/0/generateArduinoMainFile/%/%.10/partInstance">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/portInstances"/>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/portInstances"/>
             </iterSet>
           </body>
           <loopVariable name="partInstance">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduinoMainFile/CIs"/>
           <guard xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:VariableExp" name="partInstance" referredVariable="/0/generateArduinoMainFile/%/%.10/partInstance">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
             </source>
             <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponentInstance">
-              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
           </guard>
@@ -539,11 +527,11 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getProcessMethodName"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.12/ci">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
               </argument>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(mw->"/>
@@ -551,7 +539,7 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.1"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.12/ci">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
               </argument>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
@@ -560,38 +548,38 @@
               <source xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.12/ci">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/SOFTWARE_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.12/ci">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/HYBRID_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/HYBRID_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </argument>
@@ -599,16 +587,16 @@
             </ifExpr>
           </body>
           <loopVariable name="ci">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduinoMainFile/CIs"/>
           <guard xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateArduinoMainFile/%/%.12/ci">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
             </source>
             <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponentInstance">
-              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
           </guard>
@@ -659,33 +647,33 @@
               <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Component)">
                 <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/includes/CIs"/>
                 <body xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/includes/%.1/%.1/%/select/collect/temp4">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                 </body>
                 <iterator xsi:type="ocl.ecore:Variable" name="temp4">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                 </iterator>
               </source>
               <body xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/includes/%.1/%.1/%/select/c">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
                 </source>
                 <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/CONTINUOUS_COMPONENT"/>
+                  <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/CONTINUOUS_COMPONENT"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
               </body>
               <iterator xsi:type="ocl.ecore:Variable" name="c">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
               </iterator>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/size"/>
@@ -704,7 +692,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/includes/%.3/comp">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
             </argument>
             <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
@@ -719,30 +707,30 @@
             <source xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/includes/%.3/comp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
               </source>
               <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/SOFTWARE_COMPONENT"/>
               </argument>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
             </source>
             <argument xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/includes/%.3/comp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
               </source>
               <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/HYBRID_COMPONENT"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/HYBRID_COMPONENT"/>
               </argument>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
             </argument>
@@ -750,28 +738,28 @@
           </ifExpr>
         </body>
         <loopVariable name="comp">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Component)">
           <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/includes/CIs"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
             <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/includes/%.3/collect/temp5">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
             </source>
-            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
           </body>
           <iterator xsi:type="ocl.ecore:Variable" name="temp5">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
           </iterator>
         </iterSet>
         <guard xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/includes/%.3/comp">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
           </source>
           <argument xsi:type="ocl.ecore:TypeExp" eType="/12/AtomicComponent">
-            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/AtomicComponent"/>
+            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
           </argument>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
         </guard>
@@ -786,7 +774,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.2"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="cInst" referredVariable="/0/generateComponentVariables/%/cInst">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
             </argument>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" * "/>
@@ -794,7 +782,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.1"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="cInst" referredVariable="/0/generateComponentVariables/%/cInst">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
             </argument>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
@@ -803,38 +791,38 @@
             <source xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="cInst" referredVariable="/0/generateComponentVariables/%/cInst">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
               </source>
               <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/SOFTWARE_COMPONENT"/>
               </argument>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
             </source>
             <argument xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="cInst" referredVariable="/0/generateComponentVariables/%/cInst">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component/componentKind"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
               </source>
               <argument xsi:type="ocl.ecore:EnumLiteralExp">
-                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind"/>
-                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentKind/HYBRID_COMPONENT"/>
+                <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/HYBRID_COMPONENT"/>
               </argument>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
             </argument>
@@ -842,7 +830,7 @@
           </ifExpr>
         </body>
         <loopVariable name="cInst">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateComponentVariables/CIs"/>
       </body>
@@ -921,7 +909,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cpi">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="getReadMethod">
@@ -933,7 +921,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cpi">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="getName">
@@ -945,7 +933,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="port">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
         </eParameters>
       </eOperations>
       <eOperations name="getFileName">
@@ -957,7 +945,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </eParameters>
         <eParameters name="header">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
@@ -975,7 +963,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/RealtimeStatechart"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </eParameters>
         <eParameters name="header">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
@@ -993,7 +981,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cInst">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="getVariableName">
@@ -1005,7 +993,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cInst">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="getProcessMethodName">
@@ -1017,7 +1005,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </eParameters>
       </eOperations>
       <eOperations name="getContinuousPortInstance">
@@ -1027,9 +1015,9 @@
         <eAnnotations source="MTL">
           <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
         <eParameters name="hpi">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="generateInstanceCreation">
@@ -1041,7 +1029,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aci">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -1073,12 +1061,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_Component_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_RealtimeStatechart_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/RealtimeStatechart"/>
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="expressions_Expression_Class">
@@ -1088,82 +1076,82 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="connector_MessageBuffer_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//connector/MessageBuffer"/>
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//MessageBuffer"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
+        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_ContinuousPortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_Port_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Port"/>
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_Operation_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_Parameter_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Parameter"/>
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_Attribute_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/Attribute"/>
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//Attribute"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_ComponentPart_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentPart"/>
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//ComponentPart"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_Variable_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Variable"/>
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Region_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/Region"/>
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageTypeRepository_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageTypeRepository"/>
+        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageTypeRepository"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_SynchronizationChannel_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/SynchronizationChannel"/>
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//SynchronizationChannel"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_State_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/State"/>
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_HybridPort_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_PortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Boolean_Class">
@@ -1173,22 +1161,22 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="connector_Connector_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//connector/Connector"/>
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//Connector"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Clock_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/Clock"/>
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Clock"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_DoEvent_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/DoEvent"/>
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//DoEvent"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="connector_ConnectorInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//connector/ConnectorInstance"/>
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance"/>
       </eAnnotations>
       <eOperations name="getContinuousPortInstance">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -1197,30 +1185,30 @@
         <eAnnotations source="MTL">
           <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance.1"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
         <eParameters name="hpi">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
         </eParameters>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_StructureDataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/StructureDataType"/>
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//StructureDataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_ArrayDataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/ArrayDataType"/>
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_PrimitiveDataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/PrimitiveDataType"/>
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_DataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/DataType"/>
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="common_ComparingOperator_Class">
@@ -1230,32 +1218,32 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_DiscretePort_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/DiscretePort"/>
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//DiscretePort"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_AtomicComponent_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/AtomicComponent"/>
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_DiscretePortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_HybridPortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstanceConfiguration_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstanceConfiguration"/>
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_AtomicComponentInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="modelinstance_ModelElementCategory_Class">
@@ -1265,7 +1253,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="valuetype_TimeValue_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//valuetype/TimeValue"/>
+        <references href="http://www.fujaba.de/muml/valuetype/0.4.0#//TimeValue"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="collections_Set(Operation)_Class">
@@ -1279,16 +1267,16 @@
   </ocl.ecore:Variable>
   <ecore:EPackage name="collections">
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(ComponentInstance)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Component)" instanceClassName="java.util.List">
-      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Component)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(PortInstance)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
     </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
@@ -1301,33 +1289,33 @@
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ecore:EPackage name="types">
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="AtomicComponent">
-      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/AtomicComponent"/>
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="RealtimeStatechart">
-      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/RealtimeStatechart"/>
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="AtomicComponentInstance">
-      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/AtomicComponentInstance"/>
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="HybridPortInstance">
-      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/HybridPortInstance"/>
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="HybridPort">
-      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
     </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="i">
@@ -1335,16 +1323,16 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="i">
@@ -1352,16 +1340,16 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="i">
@@ -1369,43 +1357,43 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -1416,45 +1404,19 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
-  <ocl.ecore:Variable name="i">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
-  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
-  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="i">
@@ -1469,17 +1431,43 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="i">
