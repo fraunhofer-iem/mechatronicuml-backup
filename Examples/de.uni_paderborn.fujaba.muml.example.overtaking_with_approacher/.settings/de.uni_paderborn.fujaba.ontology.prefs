@@ -1,0 +1,2 @@
+LOADED_ONT=platform\:/resource/de.uni_paderborn.fujaba.muml.example.overtaking_with_approacher/ontology/lego_devices.owl;platform\:/resource/de.uni_paderborn.fujaba.muml.example.overtaking_with_approacher/ontology/units.owl;platform\:/resource/de.uni_paderborn.fujaba.muml.example.overtaking_with_approacher/ontology/muml_elements.owl;
+eclipse.preferences.version=1

@@ -62,7 +62,7 @@
             <layoutConstraint xmi:type="notation:Location" xmi:id="_os9VcMJwEeSFFPWsf1QKow" y="5"/>
           </children>
           <element xmi:type="component:PortPart" href="../fraunhoferDemo.fujaba#_HzhkQJ8QEeSDApXOK6N3KA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_os9VbsJwEeSFFPWsf1QKow" x="216" y="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_os9VbsJwEeSFFPWsf1QKow" x="178" y="36"/>
         </children>
         <element xmi:type="component:ComponentPart" href="../fraunhoferDemo.fujaba#_9cr_EJRVEeSZM-zEIRk3lw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_osuE18JwEeSFFPWsf1QKow" x="88" y="155" height="72"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r13960)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.0/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_FB0TQJJ7EeSSMde45fnrcg">
+<!--muml metamodel version 0.3.2 (r15221)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:ontology="http://www.fujaba.de/muml/ontology/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_FB0TQJJ7EeSSMde45fnrcg">
   <categories xmi:id="_FB0TQZJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQpJ7EeSSMde45fnrcg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQ5J7EeSSMde45fnrcg" name="BOOLEAN" primitiveType="BOOLEAN"/>
@@ -2407,9 +2407,7 @@
         </properties>
         <properties xmi:id="_2AVExaMHEeSwy6Dvtdi1ng" comment="a buffer overflow never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_2AVExqMHEeSwy6Dvtdi1ng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_2AVEx6MHEeSwy6Dvtdi1ng">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_2AVEyKMHEeSwy6Dvtdi1ng"/>
-            </expr>
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_2AVEx6MHEeSwy6Dvtdi1ng"/>
           </expression>
         </properties>
         <properties xmi:id="_2AVEyaMHEeSwy6Dvtdi1ng" comment="there is no transition that can never be fired">
@@ -2522,9 +2520,7 @@
         </properties>
         <properties xmi:id="_Z2UQpaMIEeSwy6Dvtdi1ng" comment="a buffer overflow never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_Z2UQpqMIEeSwy6Dvtdi1ng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_Z2UQp6MIEeSwy6Dvtdi1ng">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_Z2UQqKMIEeSwy6Dvtdi1ng"/>
-            </expr>
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_Z2UQp6MIEeSwy6Dvtdi1ng"/>
           </expression>
         </properties>
         <properties xmi:id="_Z2UQqaMIEeSwy6Dvtdi1ng" comment="there is no transition that can never be fired">
@@ -2634,9 +2630,7 @@
         </properties>
         <properties xmi:id="_Qi_EFaMIEeSwy6Dvtdi1ng" comment="a buffer overflow never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_Qi_EFqMIEeSwy6Dvtdi1ng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_Qi_EF6MIEeSwy6Dvtdi1ng">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_Qi_EGKMIEeSwy6Dvtdi1ng"/>
-            </expr>
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_Qi_EF6MIEeSwy6Dvtdi1ng"/>
           </expression>
         </properties>
         <properties xmi:id="_Qi_EGaMIEeSwy6Dvtdi1ng" comment="there is no transition that can never be fired">
@@ -2749,9 +2743,7 @@
         </properties>
         <properties xmi:id="_dSMgRaU6EeSoZY50X-ACng" comment="a buffer overflow never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_dSMgRqU6EeSoZY50X-ACng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_dSMgR6U6EeSoZY50X-ACng">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_dSMgSKU6EeSoZY50X-ACng"/>
-            </expr>
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_dSMgR6U6EeSoZY50X-ACng"/>
           </expression>
         </properties>
         <properties xmi:id="_dSMgSaU6EeSoZY50X-ACng" comment="there is no transition that can never be fired">
@@ -2861,9 +2853,7 @@
         </properties>
         <properties xmi:id="_F-yEJaU6EeSoZY50X-ACng" comment="a buffer overflow never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_F-yEJqU6EeSoZY50X-ACng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_F-yEJ6U6EeSoZY50X-ACng">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_F-yEKKU6EeSoZY50X-ACng"/>
-            </expr>
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_F-yEJ6U6EeSoZY50X-ACng"/>
           </expression>
         </properties>
         <properties xmi:id="_F-yEKaU6EeSoZY50X-ACng" comment="there is no transition that can never be fired">
@@ -2976,9 +2966,7 @@
         </properties>
         <properties xmi:id="_8mbTxKrCEeScJ-0YDJS4Tg" comment="a buffer overflow never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_8mbTxarCEeScJ-0YDJS4Tg">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_8mbTxqrCEeScJ-0YDJS4Tg">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_8mbTx6rCEeScJ-0YDJS4Tg"/>
-            </expr>
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_8mbTxqrCEeScJ-0YDJS4Tg"/>
           </expression>
         </properties>
         <properties xmi:id="_8mbTyKrCEeScJ-0YDJS4Tg" comment="there is no transition that can never be fired">
@@ -3088,9 +3076,7 @@
         </properties>
         <properties xmi:id="_oSEvlaMIEeSwy6Dvtdi1ng" comment="a buffer overflow never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_oSEvlqMIEeSwy6Dvtdi1ng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_oSEvl6MIEeSwy6Dvtdi1ng">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_oSEvmKMIEeSwy6Dvtdi1ng"/>
-            </expr>
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_oSEvl6MIEeSwy6Dvtdi1ng"/>
           </expression>
         </properties>
         <properties xmi:id="_oSEvmaMIEeSwy6Dvtdi1ng" comment="there is no transition that can never be fired">
@@ -3372,19 +3358,23 @@
   </categories>
   <categories xmi:id="_FB0TTZJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_bDZ3QJOQEeSZM-zEIRk3lw" name="overtakeeDriver" behavior="_wXdqwJOQEeSZM-zEIRk3lw">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_igDKMGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
       <ports xsi:type="component:HybridPort" xmi:id="_AoaKoJRKEeSZM-zEIRk3lw" name="velocityL" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_xHxokGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_DYsg8JRKEeSZM-zEIRk3lw" value="0"/>
         <samplingInterval xmi:id="_hV7JsJRKEeSZM-zEIRk3lw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_jbiyYJRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_E5QUwJRKEeSZM-zEIRk3lw" name="velocityR" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_u4zPkGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GQnwUJRKEeSZM-zEIRk3lw" value="0"/>
         <samplingInterval xmi:id="_kL21AJRKEeSZM-zEIRk3lw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_lKavAJRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_DWz7gJRTEeSZM-zEIRk3lw" name="velocityGetterP" behavior="_wefKoZRSEeSZM-zEIRk3lw" receiverMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA" refinedRole="_P1MlFJQiEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_nDNzYGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
         <cardinality xmi:id="_DWz7gZRTEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_LWz-ULtrEeS7McA2IAFCNw"/>
           <upperBound xmi:id="_LW0lYLtrEeS7McA2IAFCNw"/>
@@ -3394,35 +3384,42 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_oLm7UJ8PEeSDApXOK6N3KA" name="lineOvertakee" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_tlWqsGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_sjh90J8PEeSDApXOK6N3KA">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_uugnoJ8PEeSDApXOK6N3KA" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_0DK_wKuzEeSOh7ww5c64Rw" name="distanceOvertakee" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_q8UL4GEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_2cfAgKuzEeSOh7ww5c64Rw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_22RZgKuzEeSOh7ww5c64Rw" value="50"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_BQCDAJOUEeSZM-zEIRk3lw" name="overtakerDriver" behavior="_2hgyMJOQEeSZM-zEIRk3lw">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_lfWXcGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
       <ports xsi:type="component:HybridPort" xmi:id="_SA7VoJRKEeSZM-zEIRk3lw" name="velocityR" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_xn754GEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_TW1YoJRKEeSZM-zEIRk3lw" value="0"/>
         <samplingInterval xmi:id="_lzT7AJRKEeSZM-zEIRk3lw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_mazY0JRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_Ut7HYJRKEeSZM-zEIRk3lw" name="velocityL" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_zdnpIGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_V2Aw0JRKEeSZM-zEIRk3lw" value="0"/>
         <samplingInterval xmi:id="_nDaQ8JRKEeSZM-zEIRk3lw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_nqUf8JRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_yJ8ggJRKEeSZM-zEIRk3lw" name="distance" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_qhD90GEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_1Le-4JRKEeSZM-zEIRk3lw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_11CSMJRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_bKPb0JRQEeSZM-zEIRk3lw" name="initiatorP" behavior="_NGOHcZRQEeSZM-zEIRk3lw" senderMessageTypes="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw" receiverMessageTypes="_sp11IJQiEeSZM-zEIRk3lw" refinedRole="_hBCUEZQkEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_njyUYGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_bKZM0JRQEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_rkSu4MJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_rkSu4cJwEeSFFPWsf1QKow"/>
@@ -3432,25 +3429,30 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_-uUTQJ8PEeSDApXOK6N3KA" name="line" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_vKqmMGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_AkH-UJ8QEeSDApXOK6N3KA">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_BAOrgJ8QEeSDApXOK6N3KA" value="50"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_EGtqUJOWEeSZM-zEIRk3lw" name="approacherDriver" behavior="_3ctPIJOQEeSZM-zEIRk3lw">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_ViGX8GD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
       <ports xsi:type="component:HybridPort" xmi:id="_bjdb0JRKEeSZM-zEIRk3lw" name="velocityL" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_aIRR0GD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_dAFx4JRKEeSZM-zEIRk3lw" value="0"/>
         <samplingInterval xmi:id="_oPlJIJRKEeSZM-zEIRk3lw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_o28EEJRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_dwFrcJRKEeSZM-zEIRk3lw" name="velocityR" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_eSa-EGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fLMXgJRKEeSZM-zEIRk3lw" value="0"/>
         <samplingInterval xmi:id="_pY4TgJRKEeSZM-zEIRk3lw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_p62_MJRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_uk1BsJRPEeSZM-zEIRk3lw" name="limiterP" behavior="_hfMBIZRPEeSZM-zEIRk3lw" receiverMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw" refinedRole="_nWrgIJQnEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_kl5uUGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
         <cardinality xmi:id="_uk1BsZRPEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_9tlLIMJSEeSlwNyNCkfQFQ"/>
           <upperBound xmi:id="_9tnAUMJSEeSlwNyNCkfQFQ"/>
@@ -3460,18 +3462,22 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_XX3b4J8QEeSDApXOK6N3KA" name="lineApproacher" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_h7MbkGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_YyUAoJ8QEeSDApXOK6N3KA">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_ZN5wcJ8QEeSDApXOK6N3KA" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_JDPyMKuyEeSOh7ww5c64Rw" name="distance" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_f6DqQGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_MEc5YKuyEeSOh7ww5c64Rw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_EgyaAKu6EeS17_7FUkLEVQ" value="50"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_1f2csJOXEeSZM-zEIRk3lw" name="overtakeeCommunicator" behavior="_c5l4oJOXEeSZM-zEIRk3lw">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_W88TYGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_-B_QEJRLEeSZM-zEIRk3lw" name="overtakeeP" behavior="_SYqqwJRLEeSZM-zEIRk3lw" senderMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" receiverMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" refinedRole="_V7ls8JKgEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_dyf18GEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_-B_QEZRLEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_-B_QEpRLEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_-B_QE5RLEeSZM-zEIRk3lw"/>
@@ -3481,23 +3487,27 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_wCE4QJROEeSZM-zEIRk3lw" name="vehicleOvertakeeP" behavior="_jo3f4ZROEeSZM-zEIRk3lw" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_aeThUGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_wCE4QZROEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_0wl10JROEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_0wl10ZROEeSZM-zEIRk3lw"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_qJ-foJRSEeSZM-zEIRk3lw" name="velocitySetterP" behavior="_tcHl0ZRSEeSZM-zEIRk3lw" senderMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA" refinedRole="_P1MlEJQiEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_cOjW8GEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_qJ-foZRSEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_5VuIsLtwEeSNn-5VJKJ8hg"/>
           <upperBound xmi:id="_5Vv94LtwEeSNn-5VJKJ8hg"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_whV3MJ8PEeSDApXOK6N3KA" name="colorOvertakee" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_feSCUGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_yH7agJ8PEeSDApXOK6N3KA">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_yq_rUJ8PEeSDApXOK6N3KA" value="50"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_qw9moJ9UEeSDApXOK6N3KA" name="informOvertakee" behavior="_KYBekZ6SEeSNj-oH_1Kb-Q" senderMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q" refinedRole="_Oc_zEZ6WEeSB5YpXOU2UeA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_YyopsGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_qxAp8J9UEeSDApXOK6N3KA">
           <lowerBound xmi:id="_weOYcMJTEeSlwNyNCkfQFQ"/>
           <upperBound xmi:id="_weQNoMJTEeSlwNyNCkfQFQ"/>
@@ -3505,7 +3515,9 @@
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_5PGVoJOXEeSZM-zEIRk3lw" name="overtakerCommunicator" behavior="_d_KZkJOXEeSZM-zEIRk3lw">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_C3nHYGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_L5yGUJRMEeSZM-zEIRk3lw" name="overtakerP" behavior="_VSTxYJRLEeSZM-zEIRk3lw" senderMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" receiverMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" refinedRole="_V7mUApKgEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_GiSpYGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_L5yGUZRMEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_L5yGUpRMEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_L5yGU5RMEeSZM-zEIRk3lw"/>
@@ -3515,12 +3527,14 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_pbVNwJROEeSZM-zEIRk3lw" name="vehicleOvertakerP" behavior="_mpVnQZROEeSZM-zEIRk3lw" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_KCYsAGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_pbVNwZROEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_x7Gf8MJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_x7Gf8cJwEeSFFPWsf1QKow"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_qBYPMJRQEeSZM-zEIRk3lw" name="executorP" behavior="_PrSsQZRQEeSZM-zEIRk3lw" senderMessageTypes="_sp11IJQiEeSZM-zEIRk3lw" receiverMessageTypes="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw" refinedRole="_hBCUFZQkEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_I7DQgGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_qBYPMZRQEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_qtcrAJRQEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_qtcrAZRQEeSZM-zEIRk3lw"/>
@@ -3530,6 +3544,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_2RHRIJ6FEeSNj-oH_1Kb-Q" name="requestorP" behavior="_JTy34J6GEeSNj-oH_1Kb-Q" senderMessageTypes="_jMgl4JKfEeSSMde45fnrcg" receiverMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" refinedRole="_DCAo4JOSEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_HyRqkGEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_2RNXwJ6FEeSNj-oH_1Kb-Q">
           <lowerBound xmi:id="_wyQokMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_wyRPoMJwEeSFFPWsf1QKow"/>
@@ -3539,13 +3554,16 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_CHWroJ8QEeSDApXOK6N3KA" name="color" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_EmBJ8GEBEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_F0FcEJ8QEeSDApXOK6N3KA">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_GiUbEJ8QEeSDApXOK6N3KA" value="50"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_LUR84JOZEeSZM-zEIRk3lw" name="sectionControl" behavior="_TSZNgJOaEeSZM-zEIRk3lw">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_0_v_sGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_tKp0oJRNEeSZM-zEIRk3lw" name="sectionApproacherP" behavior="_l443MJRNEeSZM-zEIRk3lw" receiverMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgv0k5KjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_5fF40GEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
         <cardinality xmi:id="_tKp0oZRNEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_m-CVcMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_m-C8gMJwEeSFFPWsf1QKow"/>
@@ -3555,6 +3573,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_tjyGUJRNEeSZM-zEIRk3lw" name="sectionOvertakerP" behavior="_kOcuoZRNEeSZM-zEIRk3lw" receiverMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgv0k5KjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_31-l8GEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
         <cardinality xmi:id="_tjyGUZRNEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_95awsJ_BEeSYU6UyOlfnUQ"/>
           <upperBound xmi:id="_95awsZ_BEeSYU6UyOlfnUQ"/>
@@ -3564,6 +3583,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_uCcYQJRNEeSZM-zEIRk3lw" name="sectionOvertakeeP" behavior="_hyozgJRNEeSZM-zEIRk3lw" receiverMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgv0k5KjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_86LfoGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
         <cardinality xmi:id="_uCcYQZRNEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_2RFNoJRNEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_2RFNoZRNEeSZM-zEIRk3lw"/>
@@ -3573,6 +3593,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_oEiLwJ6HEeSNj-oH_1Kb-Q" name="controllerP" behavior="_u9LwgJ6FEeSNj-oH_1Kb-Q" senderMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" receiverMessageTypes="_jMgl4JKfEeSSMde45fnrcg" refinedRole="_DCETQZOSEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_-P-N4GEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_oElPEJ6HEeSNj-oH_1Kb-Q">
           <lowerBound xmi:id="_nwUuAMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_nwVVEMJwEeSFFPWsf1QKow"/>
@@ -3583,15 +3604,24 @@
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_65UR8JQqEeSZM-zEIRk3lw" name="Motor" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_u9MGEJRJEeSZM-zEIRk3lw" name="velocity" dataType="_FB0TRpJ7EeSSMde45fnrcg"/>
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_87j1IGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="__C3f4GD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ServoMotor"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_u9MGEJRJEeSZM-zEIRk3lw" name="velocity" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_AkEz8GEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousReceiverPort"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_Vibi8JRJEeSZM-zEIRk3lw" name="Distance" componentKind="continuous component">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_O8RBgGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_QFAyQGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#UltrasonicSensor"/>
       <ports xsi:type="component:ContinuousPort" xmi:id="_o26EUJRJEeSZM-zEIRk3lw" name="distance" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_UECzoGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_spzHIJRJEeSZM-zEIRk3lw" value="150"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_dUMqkJRTEeSZM-zEIRk3lw" name="OvertakeeVehicle" componentKind="hybrid component">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_b9KaEGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridStructuredComponent"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_x1cEkJRUEeSZM-zEIRk3lw" connectors="_z1a_UJRUEeSZM-zEIRk3lw" name="overtakeePDel" senderMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" receiverMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" refinedRole="_V7ls8JKgEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_1EjVQGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_x1cEkZRUEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_FcpNAKu0EeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_FcpNAau0EeSOh7ww5c64Rw"/>
@@ -3601,73 +3631,117 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_PX75IJRVEeSZM-zEIRk3lw" connectors="_VMJ6gJRVEeSZM-zEIRk3lw" name="vehicleOvertakeePDel" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_8figIGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_PX75IZRVEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_M7WPIJ8PEeSDApXOK6N3KA"/>
           <upperBound xmi:id="_M7WPIZ8PEeSDApXOK6N3KA"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_zd2eQJ9UEeSDApXOK6N3KA" connectors="_4DsoAJ9UEeSDApXOK6N3KA" name="informOvertakeePDel" senderMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q" refinedRole="_Oc_zEZ6WEeSB5YpXOU2UeA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_5n3IYGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_zd2eQZ9UEeSDApXOK6N3KA">
           <lowerBound xmi:id="_Ed5s0Ku0EeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_Ed5s0au0EeSOh7ww5c64Rw"/>
         </cardinality>
       </ports>
       <embeddedComponentParts xmi:id="_lG7nEJRTEeSZM-zEIRk3lw" name="driver" componentType="_bDZ3QJOQEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_e0E80GECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
         <cardinality xmi:id="_lG7nEZRTEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_-OSI4KuzEeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_-OSI4auzEeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_oYNxoJRTEeSZM-zEIRk3lw" connectors="_8OTyUJRTEeSZM-zEIRk3lw" portType="_AoaKoJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_oYXioJRTEeSZM-zEIRk3lw" connectors="__peRoJRTEeSZM-zEIRk3lw" portType="_E5QUwJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_oYXioZRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_DWz7gJRTEeSZM-zEIRk3lw" coordinationProtocolPart="_CV9QoJ_GEeSYU6UyOlfnUQ"/>
-        <portParts xmi:id="_0B8QIJ8PEeSDApXOK6N3KA" connectors="_3rIkYJ8PEeSDApXOK6N3KA" portType="_oLm7UJ8PEeSDApXOK6N3KA"/>
-        <portParts xmi:id="_4YvR0KuzEeSOh7ww5c64Rw" connectors="_C6bu8Ku0EeSOh7ww5c64Rw" portType="_0DK_wKuzEeSOh7ww5c64Rw"/>
+        <portParts xmi:id="_oYNxoJRTEeSZM-zEIRk3lw" connectors="_8OTyUJRTEeSZM-zEIRk3lw" portType="_AoaKoJRKEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_MirMkGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_oYXioJRTEeSZM-zEIRk3lw" connectors="__peRoJRTEeSZM-zEIRk3lw" portType="_E5QUwJRKEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_Nw1o0GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_oYXioZRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_DWz7gJRTEeSZM-zEIRk3lw" coordinationProtocolPart="_CV9QoJ_GEeSYU6UyOlfnUQ">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_BdGmUGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_0B8QIJ8PEeSDApXOK6N3KA" connectors="_3rIkYJ8PEeSDApXOK6N3KA" portType="_oLm7UJ8PEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_J56akGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_4YvR0KuzEeSOh7ww5c64Rw" connectors="_C6bu8Ku0EeSOh7ww5c64Rw" portType="_0DK_wKuzEeSOh7ww5c64Rw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_HCzqkGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_y4rfsJRTEeSZM-zEIRk3lw" name="communicator" componentType="_1f2csJOXEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_haygYGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
         <cardinality xmi:id="_y4rfsZRTEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_G5QU8Ku0EeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_G5QU8au0EeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_0okI8JRTEeSZM-zEIRk3lw" connectors="_z1a_UJRUEeSZM-zEIRk3lw" portType="_-B_QEJRLEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_0okI8ZRTEeSZM-zEIRk3lw" connectors="_VMJ6gJRVEeSZM-zEIRk3lw" portType="_wCE4QJROEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_0okI8pRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_qJ-foJRSEeSZM-zEIRk3lw" coordinationProtocolPart="_CV9QoJ_GEeSYU6UyOlfnUQ"/>
-        <portParts xmi:id="_0CLgsJ8PEeSDApXOK6N3KA" connectors="_5K01gJ8PEeSDApXOK6N3KA" portType="_whV3MJ8PEeSDApXOK6N3KA"/>
-        <portParts xmi:id="_w_j2459UEeSDApXOK6N3KA" connectors="_4DsoAJ9UEeSDApXOK6N3KA" portType="_qw9moJ9UEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_0okI8JRTEeSZM-zEIRk3lw" connectors="_z1a_UJRUEeSZM-zEIRk3lw" portType="_-B_QEJRLEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_2sAbQGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_0okI8ZRTEeSZM-zEIRk3lw" connectors="_VMJ6gJRVEeSZM-zEIRk3lw" portType="_wCE4QJROEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_7HzRIGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_0okI8pRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_qJ-foJRSEeSZM-zEIRk3lw" coordinationProtocolPart="_CV9QoJ_GEeSYU6UyOlfnUQ">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="__rSDYGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_0CLgsJ8PEeSDApXOK6N3KA" connectors="_5K01gJ8PEeSDApXOK6N3KA" portType="_whV3MJ8PEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_EuMjoGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_w_j2459UEeSDApXOK6N3KA" connectors="_4DsoAJ9UEeSDApXOK6N3KA" portType="_qw9moJ9UEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_4Tk2AGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_2nodsJRTEeSZM-zEIRk3lw" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_pQyzUGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_rKvXgGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ServoMotor"/>
         <cardinality xmi:id="_2nodsZRTEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_2nodspRTEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_2nods5RTEeSZM-zEIRk3lw"/>
         </cardinality>
-        <portParts xmi:id="_49IVcJRTEeSZM-zEIRk3lw" connectors="__peRoJRTEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_49IVcJRTEeSZM-zEIRk3lw" connectors="__peRoJRTEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_TucPsGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_3UI-YJRTEeSZM-zEIRk3lw" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_moD2gGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_nizngGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ServoMotor"/>
         <cardinality xmi:id="_3UI-YZRTEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_JcC2sJ8PEeSDApXOK6N3KA"/>
           <upperBound xmi:id="_JcC2sZ8PEeSDApXOK6N3KA"/>
         </cardinality>
-        <portParts xmi:id="_6om_0JRTEeSZM-zEIRk3lw" connectors="_8OTyUJRTEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_6om_0JRTEeSZM-zEIRk3lw" connectors="_8OTyUJRTEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_SlecgGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_cfbBAJ8PEeSDApXOK6N3KA" name="line" componentType="_o9fgsJ8OEeSDApXOK6N3KA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_j6tfcGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_lLfx4GECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#LightSensor"/>
         <cardinality xmi:id="_cfbBAZ8PEeSDApXOK6N3KA">
           <lowerBound xmi:id="_2y-0YJ8PEeSDApXOK6N3KA"/>
           <upperBound xmi:id="_2y-0YZ8PEeSDApXOK6N3KA"/>
         </cardinality>
-        <portParts xmi:id="_fXZTsJ8PEeSDApXOK6N3KA" connectors="_3rIkYJ8PEeSDApXOK6N3KA" portType="_rJ6U8J8OEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_fXZTsJ8PEeSDApXOK6N3KA" connectors="_3rIkYJ8PEeSDApXOK6N3KA" portType="_rJ6U8J8OEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_Pd8q4GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_dXM9kJ8PEeSDApXOK6N3KA" name="color" componentType="_7rgfAJ8OEeSDApXOK6N3KA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_xRyOQGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_y5WpAGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ColorSensor"/>
         <cardinality xmi:id="_dXM9kZ8PEeSDApXOK6N3KA">
           <lowerBound xmi:id="_D6zm0Ku0EeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_D6zm0au0EeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_hHbt8J8PEeSDApXOK6N3KA" connectors="_5K01gJ8PEeSDApXOK6N3KA" portType="_9nH3IJ8OEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_hHbt8J8PEeSDApXOK6N3KA" connectors="_5K01gJ8PEeSDApXOK6N3KA" portType="_9nH3IJ8OEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_YyuB4GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_AhkaIKu0EeSOh7ww5c64Rw" name="distance" componentType="_Vibi8JRJEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_sr5BMGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_uk80kGECEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#UltrasonicSensor"/>
         <cardinality xmi:id="_AhkaIau0EeSOh7ww5c64Rw">
           <lowerBound xmi:id="_CI_D4Ku0EeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_CI_D4au0EeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_B-GpkKu0EeSOh7ww5c64Rw" connectors="_C6bu8Ku0EeSOh7ww5c64Rw" portType="_o26EUJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_B-GpkKu0EeSOh7ww5c64Rw" connectors="_C6bu8Ku0EeSOh7ww5c64Rw" portType="_o26EUJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_VYEf8GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_8OTyUJRTEeSZM-zEIRk3lw" connectorEndpoints="_oYNxoJRTEeSZM-zEIRk3lw _6om_0JRTEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="__peRoJRTEeSZM-zEIRk3lw" connectorEndpoints="_49IVcJRTEeSZM-zEIRk3lw _oYXioJRTEeSZM-zEIRk3lw"/>
@@ -3681,7 +3755,9 @@
       <coordinationProtocolParts xmi:id="_CV9QoJ_GEeSYU6UyOlfnUQ" coordinationProtocol="_P1DbIJQiEeSZM-zEIRk3lw" portParts="_oYXioZRTEeSZM-zEIRk3lw _0okI8pRTEeSZM-zEIRk3lw"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_345mYJRVEeSZM-zEIRk3lw" name="OvertakerVehicle" componentKind="hybrid component">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_cyMIIGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridStructuredComponent"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_cKwO4JRWEeSZM-zEIRk3lw" connectors="_JWCeIJ6HEeSNj-oH_1Kb-Q" name="overtakerPDel" senderMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" receiverMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" refinedRole="_V7mUApKgEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_Rf77UGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_cKwO4ZRWEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_-VIXsMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_-VIXscJwEeSFFPWsf1QKow"/>
@@ -3691,12 +3767,14 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_cpARIJRWEeSZM-zEIRk3lw" connectors="_PjjJQJ6HEeSNj-oH_1Kb-Q" name="vehiclePDel" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_X4HlYGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_cpARIZRWEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_NV_u0MJxEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_NV_u0cJxEeSFFPWsf1QKow"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_QqEscJ6HEeSNj-oH_1Kb-Q" connectors="_c5TCYJ6HEeSNj-oH_1Kb-Q" name="requestorPDel" senderMessageTypes="_jMgl4JKfEeSSMde45fnrcg" receiverMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" refinedRole="_DCAo4JOSEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_Tmq-UGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
         <cardinality xmi:id="_QqEscZ6HEeSNj-oH_1Kb-Q">
           <lowerBound xmi:id="_cBTqcJ6HEeSNj-oH_1Kb-Q"/>
           <upperBound xmi:id="_cBTqcZ6HEeSNj-oH_1Kb-Q"/>
@@ -3706,61 +3784,103 @@
         </receiverMessageBuffer>
       </ports>
       <embeddedComponentParts xmi:id="_7qtEEJRVEeSZM-zEIRk3lw" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_ji5m8GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_vUGkIGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ServoMotor"/>
         <cardinality xmi:id="_7qtEEZRVEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_58ZaoJ6GEeSNj-oH_1Kb-Q"/>
           <upperBound xmi:id="_58ZaoZ6GEeSNj-oH_1Kb-Q"/>
         </cardinality>
-        <portParts xmi:id="_Bhf4UJRWEeSZM-zEIRk3lw" connectors="_NaKvcJRWEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_Bhf4UJRWEeSZM-zEIRk3lw" connectors="_NaKvcJRWEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_1M7_wGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_8iLeoJRVEeSZM-zEIRk3lw" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_k00h0GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_tSeqoGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ServoMotor"/>
         <cardinality xmi:id="_8iLeoZRVEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_8in4QMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_8in4QcJwEeSFFPWsf1QKow"/>
         </cardinality>
-        <portParts xmi:id="_DHTYgJRWEeSZM-zEIRk3lw" connectors="_OF9ecJRWEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_DHTYgJRWEeSZM-zEIRk3lw" connectors="_OF9ecJRWEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_4LxvcGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_9cr_EJRVEeSZM-zEIRk3lw" name="driver" componentType="_BQCDAJOUEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_eqqssGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
         <cardinality xmi:id="_9cr_EZRVEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_B6mpkMJxEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_B6mpkcJxEeSFFPWsf1QKow"/>
         </cardinality>
-        <portParts xmi:id="_FgW6kJRWEeSZM-zEIRk3lw" connectors="_NaKvcJRWEeSZM-zEIRk3lw" portType="_SA7VoJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_FgW6kZRWEeSZM-zEIRk3lw" connectors="_OF9ecJRWEeSZM-zEIRk3lw" portType="_Ut7HYJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_FgW6kpRWEeSZM-zEIRk3lw" connectors="_SiO1cJRWEeSZM-zEIRk3lw" portType="_yJ8ggJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_FgW6k5RWEeSZM-zEIRk3lw" connectors="_GdSIUJ6HEeSNj-oH_1Kb-Q" portType="_bKPb0JRQEeSZM-zEIRk3lw" coordinationProtocolPart="_SmWNoJ8QEeSDApXOK6N3KA"/>
-        <portParts xmi:id="_HzhkQJ8QEeSDApXOK6N3KA" connectors="_M3i3wJ8QEeSDApXOK6N3KA" portType="_-uUTQJ8PEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_FgW6kJRWEeSZM-zEIRk3lw" connectors="_NaKvcJRWEeSZM-zEIRk3lw" portType="_SA7VoJRKEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_MlQxEGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_FgW6kZRWEeSZM-zEIRk3lw" connectors="_OF9ecJRWEeSZM-zEIRk3lw" portType="_Ut7HYJRKEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_KBi3IGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_FgW6kpRWEeSZM-zEIRk3lw" connectors="_SiO1cJRWEeSZM-zEIRk3lw" portType="_yJ8ggJRKEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_HPIZ4GEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_FgW6k5RWEeSZM-zEIRk3lw" connectors="_GdSIUJ6HEeSNj-oH_1Kb-Q" portType="_bKPb0JRQEeSZM-zEIRk3lw" coordinationProtocolPart="_SmWNoJ8QEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_OD4rMGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_HzhkQJ8QEeSDApXOK6N3KA" connectors="_M3i3wJ8QEeSDApXOK6N3KA" portType="_-uUTQJ8PEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_F33sAGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_JoEW0JRWEeSZM-zEIRk3lw" name="distance" componentType="_Vibi8JRJEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_ltwU8GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_ryVGgGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#UltrasonicSensor"/>
         <cardinality xmi:id="_JoEW0ZRWEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_A-iC4MJxEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_A-ip8MJxEeSFFPWsf1QKow"/>
         </cardinality>
-        <portParts xmi:id="_PVl6UJRWEeSZM-zEIRk3lw" connectors="_SiO1cJRWEeSZM-zEIRk3lw" portType="_o26EUJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_PVl6UJRWEeSZM-zEIRk3lw" connectors="_SiO1cJRWEeSZM-zEIRk3lw" portType="_o26EUJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_7E54sGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_8GCAoJ6GEeSNj-oH_1Kb-Q" name="communicator" componentType="_5PGVoJOXEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_gKdrgGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
         <cardinality xmi:id="_8GCAoZ6GEeSNj-oH_1Kb-Q">
           <lowerBound xmi:id="_56NrkMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_56OSoMJwEeSFFPWsf1QKow"/>
         </cardinality>
-        <portParts xmi:id="_-lRDMJ6GEeSNj-oH_1Kb-Q" connectors="_JWCeIJ6HEeSNj-oH_1Kb-Q" portType="_L5yGUJRMEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_-lRDMZ6GEeSNj-oH_1Kb-Q" connectors="_PjjJQJ6HEeSNj-oH_1Kb-Q" portType="_pbVNwJROEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_-lRDMp6GEeSNj-oH_1Kb-Q" connectors="_GdSIUJ6HEeSNj-oH_1Kb-Q" portType="_qBYPMJRQEeSZM-zEIRk3lw" coordinationProtocolPart="_SmWNoJ8QEeSDApXOK6N3KA"/>
-        <portParts xmi:id="_-lRDM56GEeSNj-oH_1Kb-Q" connectors="_c5TCYJ6HEeSNj-oH_1Kb-Q" portType="_2RHRIJ6FEeSNj-oH_1Kb-Q"/>
-        <portParts xmi:id="_Hzw00J8QEeSDApXOK6N3KA" connectors="_RavWIJ8QEeSDApXOK6N3KA" portType="_CHWroJ8QEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_-lRDMJ6GEeSNj-oH_1Kb-Q" connectors="_JWCeIJ6HEeSNj-oH_1Kb-Q" portType="_L5yGUJRMEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_QU-kEGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_-lRDMZ6GEeSNj-oH_1Kb-Q" connectors="_PjjJQJ6HEeSNj-oH_1Kb-Q" portType="_pbVNwJROEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_U5wW0GEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_-lRDMp6GEeSNj-oH_1Kb-Q" connectors="_GdSIUJ6HEeSNj-oH_1Kb-Q" portType="_qBYPMJRQEeSZM-zEIRk3lw" coordinationProtocolPart="_SmWNoJ8QEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_PJx8QGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_-lRDM56GEeSNj-oH_1Kb-Q" connectors="_c5TCYJ6HEeSNj-oH_1Kb-Q" portType="_2RHRIJ6FEeSNj-oH_1Kb-Q">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_SiDfoGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_Hzw00J8QEeSDApXOK6N3KA" connectors="_RavWIJ8QEeSDApXOK6N3KA" portType="_CHWroJ8QEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_Dd9OUGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_JFErsJ8QEeSDApXOK6N3KA" name="line" componentType="_o9fgsJ8OEeSDApXOK6N3KA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_muvQ0GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_qZPMoGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#LightSensor"/>
         <cardinality xmi:id="_JFErsZ8QEeSDApXOK6N3KA">
           <lowerBound xmi:id="_7RuREMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_7RuREcJwEeSFFPWsf1QKow"/>
         </cardinality>
-        <portParts xmi:id="_K0fa4J8QEeSDApXOK6N3KA" connectors="_M3i3wJ8QEeSDApXOK6N3KA" portType="_rJ6U8J8OEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_K0fa4J8QEeSDApXOK6N3KA" connectors="_M3i3wJ8QEeSDApXOK6N3KA" portType="_rJ6U8J8OEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_-TxBYGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_OmVU0J8QEeSDApXOK6N3KA" name="color" componentType="_7rgfAJ8OEeSDApXOK6N3KA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_nvJk8GEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_o7ZVoGEDEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ColorSensor"/>
         <cardinality xmi:id="_OmVU0Z8QEeSDApXOK6N3KA">
           <lowerBound xmi:id="_-vmGIMJwEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_-vmtMMJwEeSFFPWsf1QKow"/>
         </cardinality>
-        <portParts xmi:id="_QectAJ8QEeSDApXOK6N3KA" connectors="_RavWIJ8QEeSDApXOK6N3KA" portType="_9nH3IJ8OEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_QectAJ8QEeSDApXOK6N3KA" connectors="_RavWIJ8QEeSDApXOK6N3KA" portType="_9nH3IJ8OEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_A1APEGEEEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_NaKvcJRWEeSZM-zEIRk3lw" connectorEndpoints="_FgW6kJRWEeSZM-zEIRk3lw _Bhf4UJRWEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_OF9ecJRWEeSZM-zEIRk3lw" connectorEndpoints="_FgW6kZRWEeSZM-zEIRk3lw _DHTYgJRWEeSZM-zEIRk3lw"/>
@@ -3774,13 +3894,16 @@
       <coordinationProtocolParts xmi:id="_SmWNoJ8QEeSDApXOK6N3KA" coordinationProtocol="_hBCUEJQkEeSZM-zEIRk3lw" portParts="_FgW6k5RWEeSZM-zEIRk3lw _-lRDMp6GEeSNj-oH_1Kb-Q"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_uRWn4JRWEeSZM-zEIRk3lw" name="ApproacherVehicle" componentKind="hybrid component">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_pcKSoGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridStructuredComponent"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_HFO7wJRYEeSZM-zEIRk3lw" connectors="_Z8818J6bEeSB5YpXOU2UeA" name="vehicleApproacherPDel" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_tmaQEGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_HFO7wZRYEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_MJRu8MJvEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_MJRu8cJvEeSFFPWsf1QKow"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_23pVkJ6ZEeSB5YpXOU2UeA" connectors="_anp_0J6bEeSB5YpXOU2UeA" name="informApproacherPDel" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q" refinedRole="_OdJkE56WEeSB5YpXOU2UeA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_pHKdkGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
         <cardinality xmi:id="_23pVkZ6ZEeSB5YpXOU2UeA">
           <lowerBound xmi:id="_TOBkEMJvEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_TOBkEcJvEeSFFPWsf1QKow"/>
@@ -3790,60 +3913,100 @@
         </receiverMessageBuffer>
       </ports>
       <embeddedComponentParts xmi:id="_x87hwJRWEeSZM-zEIRk3lw" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_1_t50GD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_-OU6AGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ServoMotor"/>
         <cardinality xmi:id="_x87hwZRWEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_T__zoKuyEeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_T__zoauyEeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_6ezcMJRWEeSZM-zEIRk3lw" connectors="_Dj5YcJRXEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_6ezcMJRWEeSZM-zEIRk3lw" connectors="_Dj5YcJRXEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_NXTrUGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_yW6vEJRWEeSZM-zEIRk3lw" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_4STAcGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_BPj2YGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ServoMotor"/>
         <cardinality xmi:id="_yW6vEZRWEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_9iwHMJ6PEeSNj-oH_1Kb-Q"/>
           <upperBound xmi:id="_9iwHMZ6PEeSNj-oH_1Kb-Q"/>
         </cardinality>
-        <portParts xmi:id="_5HDmIJRWEeSZM-zEIRk3lw" connectors="_C9rtAJRXEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_5HDmIJRWEeSZM-zEIRk3lw" connectors="_C9rtAJRXEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_RJmRMGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_yyzZ0JRWEeSZM-zEIRk3lw" name="driver" componentType="_EGtqUJOWEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_wWQW8GD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
         <cardinality xmi:id="_yyzZ0ZRWEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_Sa9vgKuyEeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_Sa9vgauyEeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_8ygkMJRWEeSZM-zEIRk3lw" connectors="_C9rtAJRXEeSZM-zEIRk3lw" portType="_bjdb0JRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_8ygkMZRWEeSZM-zEIRk3lw" connectors="_Dj5YcJRXEeSZM-zEIRk3lw" portType="_dwFrcJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_8ygkMpRWEeSZM-zEIRk3lw" connectors="_WY9x0J6bEeSB5YpXOU2UeA" portType="_uk1BsJRPEeSZM-zEIRk3lw" coordinationProtocolPart="_6rhycJ8_EeSDApXOK6N3KA"/>
-        <portParts xmi:id="_dv5U8J8QEeSDApXOK6N3KA" connectors="_l4GLIJ8QEeSDApXOK6N3KA" portType="_XX3b4J8QEeSDApXOK6N3KA"/>
-        <portParts xmi:id="_WaKI8KuyEeSOh7ww5c64Rw" connectors="_XrVc8KuyEeSOh7ww5c64Rw" portType="_JDPyMKuyEeSOh7ww5c64Rw"/>
+        <portParts xmi:id="_8ygkMJRWEeSZM-zEIRk3lw" connectors="_C9rtAJRXEeSZM-zEIRk3lw" portType="_bjdb0JRKEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_hMXxQGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_8ygkMZRWEeSZM-zEIRk3lw" connectors="_Dj5YcJRXEeSZM-zEIRk3lw" portType="_dwFrcJRKEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_i2zSwGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_8ygkMpRWEeSZM-zEIRk3lw" connectors="_WY9x0J6bEeSB5YpXOU2UeA" portType="_uk1BsJRPEeSZM-zEIRk3lw" coordinationProtocolPart="_6rhycJ8_EeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_k4tgIGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_dv5U8J8QEeSDApXOK6N3KA" connectors="_l4GLIJ8QEeSDApXOK6N3KA" portType="_XX3b4J8QEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_fhlqcGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_WaKI8KuyEeSOh7ww5c64Rw" connectors="_XrVc8KuyEeSOh7ww5c64Rw" portType="_JDPyMKuyEeSOh7ww5c64Rw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_eS1YUGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_MPkx4J6ZEeSB5YpXOU2UeA" name="communicator" componentType="_ZJhDUJ6aEeSB5YpXOU2UeA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_zEBkwGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
         <cardinality xmi:id="_MPkx4Z6ZEeSB5YpXOU2UeA">
           <lowerBound xmi:id="_LJGEUMJvEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_LJGEUcJvEeSFFPWsf1QKow"/>
         </cardinality>
-        <portParts xmi:id="_UYMz8J6bEeSB5YpXOU2UeA" connectors="_anp_0J6bEeSB5YpXOU2UeA" portType="_ioqeUJ6aEeSB5YpXOU2UeA"/>
-        <portParts xmi:id="_UYMz8Z6bEeSB5YpXOU2UeA" connectors="_WY9x0J6bEeSB5YpXOU2UeA" portType="_zVXsMJ6aEeSB5YpXOU2UeA" coordinationProtocolPart="_6rhycJ8_EeSDApXOK6N3KA"/>
-        <portParts xmi:id="_UYMz8p6bEeSB5YpXOU2UeA" connectors="_Z8818J6bEeSB5YpXOU2UeA" portType="__agSAJ6aEeSB5YpXOU2UeA"/>
-        <portParts xmi:id="_dwCe4J8QEeSDApXOK6N3KA" connectors="_iP6jgJ8QEeSDApXOK6N3KA" portType="_amAy4J8QEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_UYMz8J6bEeSB5YpXOU2UeA" connectors="_anp_0J6bEeSB5YpXOU2UeA" portType="_ioqeUJ6aEeSB5YpXOU2UeA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_nJ4RgGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
+        </portParts>
+        <portParts xmi:id="_UYMz8Z6bEeSB5YpXOU2UeA" connectors="_WY9x0J6bEeSB5YpXOU2UeA" portType="_zVXsMJ6aEeSB5YpXOU2UeA" coordinationProtocolPart="_6rhycJ8_EeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_q3QiMGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_UYMz8p6bEeSB5YpXOU2UeA" connectors="_Z8818J6bEeSB5YpXOU2UeA" portType="__agSAJ6aEeSB5YpXOU2UeA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_sKBxoGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
+        </portParts>
+        <portParts xmi:id="_dwCe4J8QEeSDApXOK6N3KA" connectors="_iP6jgJ8QEeSDApXOK6N3KA" portType="_amAy4J8QEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_anfvAGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_fhUPQJ8QEeSDApXOK6N3KA" name="color" componentType="_7rgfAJ8OEeSDApXOK6N3KA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_8X91UGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_IRr1UGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ColorSensor"/>
         <cardinality xmi:id="_fhUPQZ8QEeSDApXOK6N3KA">
           <lowerBound xmi:id="_UPqAQKuyEeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_UPqAQauyEeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_g_y_cJ8QEeSDApXOK6N3KA" connectors="_iP6jgJ8QEeSDApXOK6N3KA" portType="_9nH3IJ8OEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_g_y_cJ8QEeSDApXOK6N3KA" connectors="_iP6jgJ8QEeSDApXOK6N3KA" portType="_9nH3IJ8OEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_YTjWcGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_i0ZwoJ8QEeSDApXOK6N3KA" name="line" componentType="_o9fgsJ8OEeSDApXOK6N3KA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_5iMiEGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_DZ18oGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#LightSensor"/>
         <cardinality xmi:id="_i0ZwoZ8QEeSDApXOK6N3KA">
           <lowerBound xmi:id="_2n-wwKuxEeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_2n-wwauxEeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_kN5TIJ8QEeSDApXOK6N3KA" connectors="_l4GLIJ8QEeSDApXOK6N3KA" portType="_rJ6U8J8OEeSDApXOK6N3KA"/>
+        <portParts xmi:id="_kN5TIJ8QEeSDApXOK6N3KA" connectors="_l4GLIJ8QEeSDApXOK6N3KA" portType="_rJ6U8J8OEeSDApXOK6N3KA">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_TGuFMGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="__q90MKuxEeSOh7ww5c64Rw" name="distance" componentType="_Vibi8JRJEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_6zVZ0GD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_FbqDYGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#UltrasonicSensor"/>
         <cardinality xmi:id="__rG-IKuxEeSOh7ww5c64Rw">
           <lowerBound xmi:id="_TqonoKuyEeSOh7ww5c64Rw"/>
           <upperBound xmi:id="_TqonoauyEeSOh7ww5c64Rw"/>
         </cardinality>
-        <portParts xmi:id="_AccUcKuyEeSOh7ww5c64Rw" connectors="_XrVc8KuyEeSOh7ww5c64Rw" portType="_o26EUJRJEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_AccUcKuyEeSOh7ww5c64Rw" connectors="_XrVc8KuyEeSOh7ww5c64Rw" portType="_o26EUJRJEeSZM-zEIRk3lw">
+          <extension xsi:type="ontology:OntologyExtension" xmi:id="_VvKHEGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+        </portParts>
       </embeddedComponentParts>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_C9rtAJRXEeSZM-zEIRk3lw" connectorEndpoints="_8ygkMJRWEeSZM-zEIRk3lw _5HDmIJRWEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_Dj5YcJRXEeSZM-zEIRk3lw" connectorEndpoints="_8ygkMZRWEeSZM-zEIRk3lw _6ezcMJRWEeSZM-zEIRk3lw"/>
@@ -3856,7 +4019,9 @@
       <coordinationProtocolParts xmi:id="_6rhycJ8_EeSDApXOK6N3KA" coordinationProtocol="_nWhvIJQnEeSZM-zEIRk3lw" portParts="_8ygkMpRWEeSZM-zEIRk3lw _UYMz8Z6bEeSB5YpXOU2UeA"/>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_ZJhDUJ6aEeSB5YpXOU2UeA" name="approacherCommunicator" behavior="_bwVxkJOXEeSZM-zEIRk3lw">
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_fN0WsGD7EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#SoftwareAtomicComponent"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_ioqeUJ6aEeSB5YpXOU2UeA" name="informApproacherP" behavior="_QziJcZ6SEeSNj-oH_1Kb-Q" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q" refinedRole="_OdJkE56WEeSB5YpXOU2UeA">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_7soOwGD9EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteReceiverPort"/>
         <cardinality xmi:id="_io0PUJ6aEeSB5YpXOU2UeA">
           <lowerBound xmi:id="_7Mp1wMJuEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_7Mqc0MJuEeSFFPWsf1QKow"/>
@@ -3866,559 +4031,67 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_zVXsMJ6aEeSB5YpXOU2UeA" name="limitDrivingP" behavior="_ZcNpMZRPEeSZM-zEIRk3lw" senderMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw" refinedRole="_nWrgJJQnEeSZM-zEIRk3lw">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_BJT54GD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="_zVg2IJ6aEeSB5YpXOU2UeA">
           <lowerBound xmi:id="_ApJ24LttEeSNn-5VJKJ8hg"/>
           <upperBound xmi:id="_ApLsELttEeSNn-5VJKJ8hg"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="__agSAJ6aEeSB5YpXOU2UeA" name="vehicleApproacherP" behavior="_a3_gIZROEeSZM-zEIRk3lw" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_Gmy2QGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#DiscreteSenderPort"/>
         <cardinality xmi:id="__agSAZ6aEeSB5YpXOU2UeA">
           <lowerBound xmi:id="_9QTIgMJuEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_9QTIgcJuEeSFFPWsf1QKow"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_amAy4J8QEeSDApXOK6N3KA" name="colorApproacher" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_JZ-vkGD-EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#HybridReceiverPort"/>
         <samplingInterval xmi:id="_b00IUJ8QEeSDApXOK6N3KA">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_cS810J8QEeSDApXOK6N3KA" value="50"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_o9fgsJ8OEeSDApXOK6N3KA" name="Line" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_rJ6U8J8OEeSDApXOK6N3KA" name="lineLight" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT"/>
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_FRgMYGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_GRj7MGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#LightSensor"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_rJ6U8J8OEeSDApXOK6N3KA" name="lineLight" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_MEoGAGEAEeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_7rgfAJ8OEeSDApXOK6N3KA" name="Color" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_9nH3IJ8OEeSDApXOK6N3KA" name="color" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT"/>
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_ysqYMGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousAtomicComponent"/>
+      <extension xsi:type="ontology:OntologyExtension" xmi:id="_18rXcGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/LegoDevices#ColorSensor"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_9nH3IJ8OEeSDApXOK6N3KA" name="color" dataType="_FB0TRpJ7EeSSMde45fnrcg" kind="OUT">
+        <extension xsi:type="ontology:OntologyExtension" xmi:id="_33PmsGD_EeWoN4mMzKi84w" ontologyReference="http://www.semanticweb.org/userpc/ontologies/2015/5/MumlElements#ContinuousSenderPort"/>
+      </ports>
     </modelElements>
   </categories>
-  <categories xmi:id="_s8IWoKe4EeSK_8TqY1SjtQ" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource">
-    <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_s8IWoae4EeSK_8TqY1SjtQ">
-      <resources xsi:type="hwresource:Device" xmi:id="_7Y-6YKe7EeSK_8TqY1SjtQ" name="Motor" deviceKind="ACTUATOR">
-        <communicationResources  xmi:id="__UAMMKfAEeSK_8TqY1SjtQ" name="motohw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="__UAMMafAEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_EOQfsKfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_EOQfsafBEeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-      </resources>
-      <resources xsi:type="hwresource:Device" xmi:id="_-b7G8Ke7EeSK_8TqY1SjtQ" name="Line">
-        <communicationResources xmi:id="_Ew-yQKfBEeSK_8TqY1SjtQ" name="linehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_Ew-yQafBEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_GGudMKfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_GGudMafBEeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-      </resources>
-      <resources xsi:type="hwresource:Device" xmi:id="_A7FRAKe8EeSK_8TqY1SjtQ" name="Distance">
-        <communicationResources xmi:id="_GrYpcKfBEeSK_8TqY1SjtQ" name="distancehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_GrYpcafBEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_GrYpcqfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_GrYpc6fBEeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-      </resources>
-      <resources xsi:type="hwresource:Device" xmi:id="_DG8roKe8EeSK_8TqY1SjtQ" name="Color">
-        <communicationResources xmi:id="_Ibf8MKfBEeSK_8TqY1SjtQ" name="colorhw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_Ibf8MafBEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_KXThkKfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_KXThkafBEeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-      </resources>
-      <resources xsi:type="hwresource:StructuredResource" xmi:id="_HcLmgKe8EeSK_8TqY1SjtQ" name="BrickResource">
-        <communicationResources  xmi:id="_rE-D4Ke8EeSK_8TqY1SjtQ" name="virtualBluetoothPort" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_rFHN0Ke8EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_s0I7cKe8EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_s0I7cae8EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources xmi:id="_0L8PcKe8EeSK_8TqY1SjtQ" name="usbPort" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_0L8Pcae8EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_2KiqIKe8EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_2KiqIae8EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources xmi:id="_5Z_osKe8EeSK_8TqY1SjtQ" name="outputPortA" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_5Z_osae8EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_6tLH0Ke8EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_6tLH0ae8EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources  xmi:id="_7KrjMKe8EeSK_8TqY1SjtQ" name="outputPortB" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_7KrjMae8EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_7KrjMqe8EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_7KrjM6e8EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources  xmi:id="_8mjrUKe8EeSK_8TqY1SjtQ" name="outputPortC" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_8mjrUae8EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_96cVEKe8EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_96cVEae8EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources  xmi:id="_BRGu4Ke9EeSK_8TqY1SjtQ" name="inputPort1" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_BRGu4ae9EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_B5XBsKe9EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_B5XBsae9EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources xmi:id="_DVN7sKe9EeSK_8TqY1SjtQ" name="inputPort2" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_DVN7sae9EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_DVN7sqe9EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_DVN7s6e9EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources  xmi:id="_EZ32oKe9EeSK_8TqY1SjtQ" name="inputPort3" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_EZ32oae9EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_FI9xQKe9EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_FI9xQae9EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources  xmi:id="_FatBgKe9EeSK_8TqY1SjtQ" name="inputPort4" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_FatBgae9EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_GR_O0Ke9EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_GR_O0ae9EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </communicationResources>
-        <communicationResources  xmi:id="_iy6psKhiEeSJj6cnB4p9sw" name="VirtualWifiPort" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_izEasKhiEeSJj6cnB4p9sw">
-            <lowerBound xmi:id="_ojBnIKhiEeSJj6cnB4p9sw"/>
-            <upperBound xmi:id="_ojBnIahiEeSJj6cnB4p9sw"/>
-          </cardinality>
-        </communicationResources>
-        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_OAr1UKe8EeSK_8TqY1SjtQ" name="Processor" family="Atmel AT91SAM7">
-          <nbCores xmi:id="_OAr1Uae8EeSK_8TqY1SjtQ"/>
-        </embeddedAtomicResources>
-        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_Q59vkKe8EeSK_8TqY1SjtQ" name="RAMmemory" isVolatile="true"/>
-        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_Whzh0Ke8EeSK_8TqY1SjtQ" name="FLAHmemory" memoryAccess="READ_ONLY" memoryType="FLASH"/>
-      </resources>
-      <protocols xmi:id="_2dtakKe4EeSK_8TqY1SjtQ" name="ProtocolRepository">
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_DUdqkKe5EeSK_8TqY1SjtQ" name="CableProtocol">
-                  <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
-                </communicationProtocols>
-        
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_PDLUcKe5EeSK_8TqY1SjtQ" name="i2cProtocol" >
-       <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
-                </communicationProtocols>
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_VKiUQKe5EeSK_8TqY1SjtQ" name="BluetoothProtocol">
-         <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
-                </communicationProtocols>
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_bd694Ke5EeSK_8TqY1SjtQ" name="WifiProtocol">
-         <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
-                </communicationProtocols>
-      </protocols>
-    </modelElements>
-    <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_X9Nd8Ke-EeSK_8TqY1SjtQ">
-      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_cDsyMKe-EeSK_8TqY1SjtQ" name="BrickInstance" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-        <hwports xmi:id="_dSpRkKe-EeSK_8TqY1SjtQ" name="outputPortB"/>
-        <hwports xmi:id="_dSpRlKe-EeSK_8TqY1SjtQ" name="inputPort4" />
-        <hwports xmi:id="_dSpRmKe-EeSK_8TqY1SjtQ" name="inputPort1" />
-        <hwports  xmi:id="_dSpRnKe-EeSK_8TqY1SjtQ" name="inputPort3" />
-        <hwports  xmi:id="_dSpRoKe-EeSK_8TqY1SjtQ" name="usbPort" />
-        <hwports xmi:id="_dSpRpKe-EeSK_8TqY1SjtQ" name="inputPort2">        
-        </hwports>
-        <hwports  xmi:id="_dSpRqKe-EeSK_8TqY1SjtQ" name="outputPortC" >
-        </hwports>
-        <hwports xmi:id="_dSpRrKe-EeSK_8TqY1SjtQ" name="outputPortA" >
-        </hwports>
-        <hwports  xmi:id="_dSpRsKe-EeSK_8TqY1SjtQ" name="virtualBluetoothPort" >
-        </hwports>
-        <hwports xmi:id="_t84AsKhiEeSJj6cnB4p9sw" name="VirtualWifiPort">
-        </hwports>
-        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_dSfgkKe-EeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-          <frequency xmi:id="_dSfgkae-EeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
-        </embeddedAtomicResourceInstances>
-        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_dSfgkqe-EeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-          <memorySize xmi:id="_dSfgk6e-EeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
-        </embeddedAtomicResourceInstances>
-        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_dSfglKe-EeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-          <memorySize xmi:id="_dSfglae-EeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
-        </embeddedAtomicResourceInstances>
-      </resourceInstances>
-      <resourceInstances xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_IluhIKe_EeSK_8TqY1SjtQ" name="MotorInstance" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-        <hwports xmi:id="_Kn_B4KfBEeSK_8TqY1SjtQ" name="motohw-port" >
-        </hwports>
-      </resourceInstances>
-      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_u2QnYKfAEeSK_8TqY1SjtQ" name="ColorInstance" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-        <hwports  xmi:id="_Kn_B6KfBEeSK_8TqY1SjtQ" name="colorhw-port" >
-        </hwports>
-      </resourceInstances>
-      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_x6raoKfAEeSK_8TqY1SjtQ" name="DistanceInstance" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-        <hwports  xmi:id="_KoIy5KfBEeSK_8TqY1SjtQ" name="distancehw-port">
-        </hwports>
-      </resourceInstances>
-      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_06QxMKfAEeSK_8TqY1SjtQ" name="LineInstance" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-        <hwports  xmi:id="_KoIy7KfBEeSK_8TqY1SjtQ" name="linehw-port">
-        </hwports>
-      </resourceInstances>
-    </modelElements>
-  </categories>
-  <categories xmi:id="_UnNrIKfBEeSK_8TqY1SjtQ" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
-    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_UnNrIafBEeSK_8TqY1SjtQ" name="Vehicle">
-      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_ZxYp8KfBEeSK_8TqY1SjtQ" name="R1" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_ZxYp8afBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_yugaMMJtEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_yuhoUMJtEeSFFPWsf1QKow"/>
-        </cardinality>
-        <hwPortParts xmi:id="_a4whsKfBEeSK_8TqY1SjtQ" hwport="_dSpRkKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whsafBEeSK_8TqY1SjtQ" connectors="_mTanIKfBEeSK_8TqY1SjtQ" hwport="_dSpRlKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whsqfBEeSK_8TqY1SjtQ" connectors="_yKlpcKfBEeSK_8TqY1SjtQ" hwport="_dSpRmKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whs6fBEeSK_8TqY1SjtQ" connectors="_Z5IbQKfCEeSK_8TqY1SjtQ" hwport="_dSpRnKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whtKfBEeSK_8TqY1SjtQ" hwport="_dSpRoKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whtafBEeSK_8TqY1SjtQ" connectors="_8wdb8KfBEeSK_8TqY1SjtQ" hwport="_dSpRpKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whtqfBEeSK_8TqY1SjtQ" hwport="_dSpRqKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4wht6fBEeSK_8TqY1SjtQ" hwport="_dSpRrKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whuKfBEeSK_8TqY1SjtQ" hwport="_dSpRsKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_w-OR0KhiEeSJj6cnB4p9sw" hwport="_t84AsKhiEeSJj6cnB4p9sw"/>
-      </embeddedPlatformParts>
-      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_dqZi4KfBEeSK_8TqY1SjtQ" name="R2" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_dqZi4afBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_qVPCIMJtEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_qVPCIcJtEeSFFPWsf1QKow"/>
-        </cardinality>
-        <hwPortParts xmi:id="_eFHwAKfBEeSK_8TqY1SjtQ" hwport="_dSpRkKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwAafBEeSK_8TqY1SjtQ" connectors="_mTanIKfBEeSK_8TqY1SjtQ" hwport="_dSpRlKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwAqfBEeSK_8TqY1SjtQ" connectors="_Y5SH0KfCEeSK_8TqY1SjtQ" hwport="_dSpRmKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwA6fBEeSK_8TqY1SjtQ" hwport="_dSpRnKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwBKfBEeSK_8TqY1SjtQ" hwport="_dSpRoKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwBafBEeSK_8TqY1SjtQ" hwport="_dSpRpKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwBqfBEeSK_8TqY1SjtQ" hwport="_dSpRqKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwB6fBEeSK_8TqY1SjtQ" hwport="_dSpRrKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwCKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" hwport="_dSpRsKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_w-0uwKhiEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" hwport="_t84AsKhiEeSJj6cnB4p9sw"/>
-      </embeddedPlatformParts>
-      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_rvOIgKfBEeSK_8TqY1SjtQ" name="Motor" resourceType="_IluhIKe_EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_rvOIgafBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_agJYwMJtEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_agJ_0MJtEeSFFPWsf1QKow"/>
-        </cardinality>
-        <hwPortParts xmi:id="_ueX2YKfBEeSK_8TqY1SjtQ" connectors="_yKlpcKfBEeSK_8TqY1SjtQ" hwport="_Kn_B4KfBEeSK_8TqY1SjtQ"/>
-      </embeddedPlatformParts>
-      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_2jFTsKfBEeSK_8TqY1SjtQ" name="Line" resourceType="_06QxMKfAEeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_2jFTsafBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_UK9YUMJtEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_UK9_YMJtEeSFFPWsf1QKow"/>
-        </cardinality>
-        <hwPortParts xmi:id="_3mt68KfBEeSK_8TqY1SjtQ" connectors="_8wdb8KfBEeSK_8TqY1SjtQ" hwport="_KoIy7KfBEeSK_8TqY1SjtQ"/>
-      </embeddedPlatformParts>
-      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_OcAQoKfCEeSK_8TqY1SjtQ" name="Color" resourceType="_u2QnYKfAEeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_OcAQoafCEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_Xdh8UMJtEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_XdijYMJtEeSFFPWsf1QKow"/>
-        </cardinality>
-        <hwPortParts xmi:id="_RXr-oKfCEeSK_8TqY1SjtQ" connectors="_Z5IbQKfCEeSK_8TqY1SjtQ" hwport="_Kn_B6KfBEeSK_8TqY1SjtQ"/>
-      </embeddedPlatformParts>
-      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_R1mCoKfCEeSK_8TqY1SjtQ" name="Distance" resourceType="_x6raoKfAEeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_R1mCoafCEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_tMfjIMJtEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_tMfjIcJtEeSFFPWsf1QKow"/>
-        </cardinality>
-        <hwPortParts xmi:id="_SUng8KfCEeSK_8TqY1SjtQ" connectors="_Y5SH0KfCEeSK_8TqY1SjtQ" hwport="_KoIy5KfBEeSK_8TqY1SjtQ"/>
-      </embeddedPlatformParts>
-      <networkConnectors xmi:id="_mTanIKfBEeSK_8TqY1SjtQ"  connectorEndpoints="_eFHwAafBEeSK_8TqY1SjtQ _a4whsafBEeSK_8TqY1SjtQ"/>
-      <networkConnectors xmi:id="_yKlpcKfBEeSK_8TqY1SjtQ"  connectorEndpoints="_a4whsqfBEeSK_8TqY1SjtQ _ueX2YKfBEeSK_8TqY1SjtQ"/>
-      <networkConnectors xmi:id="_8wdb8KfBEeSK_8TqY1SjtQ"  connectorEndpoints="_a4whtafBEeSK_8TqY1SjtQ _3mt68KfBEeSK_8TqY1SjtQ"/>
-      <networkConnectors xmi:id="_Y5SH0KfCEeSK_8TqY1SjtQ"  connectorEndpoints="_eFHwAqfBEeSK_8TqY1SjtQ _SUng8KfCEeSK_8TqY1SjtQ"/>
-      <networkConnectors xmi:id="_Z5IbQKfCEeSK_8TqY1SjtQ"  connectorEndpoints="_a4whs6fBEeSK_8TqY1SjtQ _RXr-oKfCEeSK_8TqY1SjtQ"/>
-      <networkConnectors xmi:id="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpoints="_eFHwCKfBEeSK_8TqY1SjtQ __1O0gKfBEeSK_8TqY1SjtQ"/>
-      <networkConnectors xmi:id="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpoints="_w-0uwKhiEeSJj6cnB4p9sw _UUrCAKhjEeSJj6cnB4p9sw"/>
-      <delegationPorts xmi:id="__1O0gKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" name="D1-virtualBluetooth" >
-      </delegationPorts>
-      <delegationPorts xmi:id="_UUrCAKhjEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" >
-      </delegationPorts>
-    </modelElements>
-    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_-b5NkKfCEeSK_8TqY1SjtQ">
-      <hwplatformInstances xmi:id="_4sMNoKhjEeSJj6cnB4p9sw" name="Overtakee" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_4sMNoahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_4sMNqahjEeSJj6cnB4p9sw _WXCsYLabEeSvg7rqv6dToQ" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <delegationPorts xmi:id="_4sMNoqhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw _sOdocLaXEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
-        <delegationPorts xmi:id="_neFF0LabEeSvg7rqv6dToQ" name="D1-virtualWifi.02" connectorInstances="_3Ar4ELabEeSvg7rqv6dToQ _9CcmMLabEeSvg7rqv6dToQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
-        <embeddedHPIC xmi:id="_4sMNo6hjEeSJj6cnB4p9sw">
-          <networkConnectorInstances  xmi:id="_4sMNpKhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNy6hjEeSJj6cnB4p9sw _4sMNtKhjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_4sMNpahjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzKhjEeSJj6cnB4p9sw _4sMNw6hjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances  xmi:id="_4sMNpqhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNyKhjEeSJj6cnB4p9sw _4sMNrKhjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_4sMNp6hjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNtahjEeSJj6cnB4p9sw _4sMNv6hjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances  xmi:id="_4sMNqKhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzahjEeSJj6cnB4p9sw _4sMNwahjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances  xmi:id="_4sMNqahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _4sMNrqhjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances  xmi:id="_4sMNqqhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _4sMNtqhjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances  xmi:id="_3Ar4ELabEeSvg7rqv6dToQ" connectorEndpointInstances="_i8ns0LabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNq6hjEeSJj6cnB4p9sw" name="overtakeeLine" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNrKhjEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_4sMNpqhjEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_4sMNrahjEeSJj6cnB4p9sw" name="overtakeeR2" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNrqhjEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_4sMNqahjEeSJj6cnB4p9sw" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNr6hjEeSJj6cnB4p9sw" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNsKhjEeSJj6cnB4p9sw" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNsahjEeSJj6cnB4p9sw" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNsqhjEeSJj6cnB4p9sw" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNs6hjEeSJj6cnB4p9sw" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtKhjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_4sMNpKhjEeSJj6cnB4p9sw" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtahjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_4sMNp6hjEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtqhjEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNt6hjEeSJj6cnB4p9sw" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_i8ns0LabEeSvg7rqv6dToQ" name="VirtualWifiPort2" connectorInstances="_3Ar4ELabEeSvg7rqv6dToQ" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_4sMNuKhjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_4sMNuahjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_4sMNuqhjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_4sMNu6hjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_4sMNvKhjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_4sMNvahjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNvqhjEeSJj6cnB4p9sw" name="overtakeeDistance" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNv6hjEeSJj6cnB4p9sw" name="distancehw-port" connectorInstances="_4sMNp6hjEeSJj6cnB4p9sw" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNwKhjEeSJj6cnB4p9sw" name="overtakeeColor" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNwahjEeSJj6cnB4p9sw" name="colorhw-port" connectorInstances="_4sMNqKhjEeSJj6cnB4p9sw" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_4sMNwqhjEeSJj6cnB4p9sw" name="overtakeeMotor" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNw6hjEeSJj6cnB4p9sw" name="motohw-port" connectorInstances="_4sMNpahjEeSJj6cnB4p9sw" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_4sMNxKhjEeSJj6cnB4p9sw" name="overtakeeR1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNxahjEeSJj6cnB4p9sw" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNxqhjEeSJj6cnB4p9sw" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNx6hjEeSJj6cnB4p9sw" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNyKhjEeSJj6cnB4p9sw" name="inputPort2" connectorInstances="_4sMNpqhjEeSJj6cnB4p9sw" type="_a4whtafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNyahjEeSJj6cnB4p9sw" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNyqhjEeSJj6cnB4p9sw" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNy6hjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_4sMNpKhjEeSJj6cnB4p9sw" type="_a4whsafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNzKhjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_4sMNpahjEeSJj6cnB4p9sw" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNzahjEeSJj6cnB4p9sw" name="inputPort3" connectorInstances="_4sMNqKhjEeSJj6cnB4p9sw" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNzqhjEeSJj6cnB4p9sw" name="VirtualWifiPort" type="_w-OR0KhiEeSJj6cnB4p9sw"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_4sMNz6hjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_4sMN0KhjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_4sMN0ahjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_4sMN0qhjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_4sMN06hjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_4sMN1KhjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-        </embeddedHPIC>
-      </hwplatformInstances>
-      <hwplatformInstances xmi:id="_-PAV8KhjEeSJj6cnB4p9sw" name="Overtaker" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_-PAV8ahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_-PAV-ahjEeSJj6cnB4p9sw _WXCsYLabEeSvg7rqv6dToQ" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <delegationPorts xmi:id="_-PAV8qhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_-PAV-qhjEeSJj6cnB4p9sw _EdRV0LaYEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
-        <embeddedHPIC xmi:id="_-PAV86hjEeSJj6cnB4p9sw">
-          <networkConnectorInstances xmi:id="_-PAV9KhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWAahjEeSJj6cnB4p9sw _-PAWF6hjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_-PAV9ahjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_6hjEeSJj6cnB4p9sw _-PAWDahjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_-PAV9qhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_ahjEeSJj6cnB4p9sw _-PAWE6hjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances  xmi:id="_-PAV96hjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWGKhjEeSJj6cnB4p9sw _-PAWEahjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_-PAV-KhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWBKhjEeSJj6cnB4p9sw _-PAWD6hjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_-PAV-ahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8ahjEeSJj6cnB4p9sw _-PAWFahjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_-PAV-qhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw _-PAWFqhjEeSJj6cnB4p9sw"/>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-PAV-6hjEeSJj6cnB4p9sw" name="overtakerR1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_KhjEeSJj6cnB4p9sw" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_ahjEeSJj6cnB4p9sw" name="inputPort2" connectorInstances="_-PAV9qhjEeSJj6cnB4p9sw" type="_a4whtafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_qhjEeSJj6cnB4p9sw" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_6hjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_-PAV9ahjEeSJj6cnB4p9sw" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWAKhjEeSJj6cnB4p9sw" name="VirtualWifiPort" type="_w-OR0KhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWAahjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_-PAV9KhjEeSJj6cnB4p9sw" type="_a4whsafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWAqhjEeSJj6cnB4p9sw" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWA6hjEeSJj6cnB4p9sw" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWBKhjEeSJj6cnB4p9sw" name="inputPort3" connectorInstances="_-PAV-KhjEeSJj6cnB4p9sw" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWBahjEeSJj6cnB4p9sw" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-PAWBqhjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_-PAWB6hjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-PAWCKhjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_-PAWCahjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_-PAWCqhjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_-PAWC6hjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_-PAWDKhjEeSJj6cnB4p9sw" name="overtakerMotor" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWDahjEeSJj6cnB4p9sw" name="motohw-port" connectorInstances="_-PAV9ahjEeSJj6cnB4p9sw" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-PAWDqhjEeSJj6cnB4p9sw" name="overtakerColor" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWD6hjEeSJj6cnB4p9sw" name="colorhw-port" connectorInstances="_-PAV-KhjEeSJj6cnB4p9sw" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-PAWEKhjEeSJj6cnB4p9sw" name="overtakerDistance" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWEahjEeSJj6cnB4p9sw" name="distancehw-port" connectorInstances="_-PAV96hjEeSJj6cnB4p9sw" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-PAWEqhjEeSJj6cnB4p9sw" name="overtakerLine" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWE6hjEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_-PAV9qhjEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-PAWFKhjEeSJj6cnB4p9sw" name="overtakerR2" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWFahjEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_-PAV-ahjEeSJj6cnB4p9sw" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWFqhjEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_-PAV-qhjEeSJj6cnB4p9sw" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWF6hjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_-PAV9KhjEeSJj6cnB4p9sw" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWGKhjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_-PAV96hjEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWGahjEeSJj6cnB4p9sw" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWGqhjEeSJj6cnB4p9sw" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWG6hjEeSJj6cnB4p9sw" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWHKhjEeSJj6cnB4p9sw" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWHahjEeSJj6cnB4p9sw" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWHqhjEeSJj6cnB4p9sw" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-PAWH6hjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_-PAWIKhjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-PAWIahjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_-PAWIqhjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_-PAWI6hjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_-PAWJKhjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-        </embeddedHPIC>
-      </hwplatformInstances>
-      <hwplatformInstances xmi:id="_EDe2AKhkEeSJj6cnB4p9sw" name="Approacher" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_EDe2AahkEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_EDe2CahkEeSJj6cnB4p9sw" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <delegationPorts xmi:id="_EDe2AqhkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_EDe2CqhkEeSJj6cnB4p9sw _HvUVYLaYEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
-        <delegationPorts xmi:id="_pr6PULabEeSvg7rqv6dToQ" name="D1-virtualWifi.02" connectorInstances="_6BgkwLabEeSvg7rqv6dToQ _9CcmMLabEeSvg7rqv6dToQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
-        <embeddedHPIC xmi:id="_EDe2A6hkEeSJj6cnB4p9sw">
-          <networkConnectorInstances xmi:id="_EDe2BKhkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FKhkEeSJj6cnB4p9sw _EDe2LahkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_EDe2BahkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2F6hkEeSJj6cnB4p9sw _EDe2EKhkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_EDe2BqhkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FqhkEeSJj6cnB4p9sw _EDe2DKhkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_EDe2B6hkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2LqhkEeSJj6cnB4p9sw _EDe2EqhkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_EDe2CKhkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2GKhkEeSJj6cnB4p9sw _EDe2DqhkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_EDe2CahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2AahkEeSJj6cnB4p9sw _EDe2JahkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_EDe2CqhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_EDe2AqhkEeSJj6cnB4p9sw _EDe2J6hkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_6BgkwLabEeSvg7rqv6dToQ" connectorEndpointInstances="_sT1T0LabEeSvg7rqv6dToQ _pr6PULabEeSvg7rqv6dToQ"/>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2C6hkEeSJj6cnB4p9sw" name="approacherLine" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2DKhkEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_EDe2BqhkEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2DahkEeSJj6cnB4p9sw" name="approacherColor" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2DqhkEeSJj6cnB4p9sw" name="colorhw-port" connectorInstances="_EDe2CKhkEeSJj6cnB4p9sw" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_EDe2D6hkEeSJj6cnB4p9sw" name="approacherMotor" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2EKhkEeSJj6cnB4p9sw" name="motohw-port" connectorInstances="_EDe2BahkEeSJj6cnB4p9sw" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2EahkEeSJj6cnB4p9sw" name="approacherDistance" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2EqhkEeSJj6cnB4p9sw" name="distancehw-port" connectorInstances="_EDe2B6hkEeSJj6cnB4p9sw" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_EDe2E6hkEeSJj6cnB4p9sw" name="approacherR1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2FKhkEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_EDe2BKhkEeSJj6cnB4p9sw" type="_a4whsafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2FahkEeSJj6cnB4p9sw" name="VirtualWifiPort" type="_w-OR0KhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2FqhkEeSJj6cnB4p9sw" name="inputPort2" connectorInstances="_EDe2BqhkEeSJj6cnB4p9sw" type="_a4whtafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2F6hkEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_EDe2BahkEeSJj6cnB4p9sw" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2GKhkEeSJj6cnB4p9sw" name="inputPort3" connectorInstances="_EDe2CKhkEeSJj6cnB4p9sw" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2GahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2GqhkEeSJj6cnB4p9sw" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2G6hkEeSJj6cnB4p9sw" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2HKhkEeSJj6cnB4p9sw" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2HahkEeSJj6cnB4p9sw" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_EDe2HqhkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_EDe2H6hkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_EDe2IKhkEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_EDe2IahkEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_EDe2IqhkEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_EDe2I6hkEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_EDe2JKhkEeSJj6cnB4p9sw" name="approacherR2" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2JahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_EDe2CahkEeSJj6cnB4p9sw" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2JqhkEeSJj6cnB4p9sw" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2J6hkEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_EDe2CqhkEeSJj6cnB4p9sw" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2KKhkEeSJj6cnB4p9sw" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2KahkEeSJj6cnB4p9sw" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2KqhkEeSJj6cnB4p9sw" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2K6hkEeSJj6cnB4p9sw" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LKhkEeSJj6cnB4p9sw" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LahkEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_EDe2BKhkEeSJj6cnB4p9sw" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LqhkEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_EDe2B6hkEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_sT1T0LabEeSvg7rqv6dToQ" name="VirtualWifiPort2" connectorInstances="_6BgkwLabEeSvg7rqv6dToQ" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_EDe2L6hkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_EDe2MKhkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_EDe2MahkEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_EDe2MqhkEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_EDe2M6hkEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_EDe2NKhkEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-        </embeddedHPIC>
-      </hwplatformInstances>
-      <hwplatformInstances xmi:id="_HiiW0KhkEeSJj6cnB4p9sw" name="SectionControlInstance" hwplatformType="_rPkGIKfDEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_HiiW0ahkEeSJj6cnB4p9sw" name="D1-virtualWifi.01" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw _sOdocLaXEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
-        <delegationPorts xmi:id="_HiiW0qhkEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_kUf7wKhjEeSJj6cnB4p9sw"/>
-        <delegationPorts xmi:id="__NF1oLaXEeSavI5T7sJhVQ" name="D1-virtualWifi.02" connectorInstances="_EdRV0LaYEeSavI5T7sJhVQ _jZ2iwLaYEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
-        <delegationPorts xmi:id="__dlIsLaXEeSavI5T7sJhVQ" name="D1-virtualWifi.03" connectorInstances="_HvUVYLaYEeSavI5T7sJhVQ _hvTFcLaYEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
-        <embeddedHPIC xmi:id="_HiiW06hkEeSJj6cnB4p9sw">
-          <networkConnectorInstances xmi:id="_HiiW1KhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0ahkEeSJj6cnB4p9sw _HiiW16hkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_HiiW1ahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0qhkEeSJj6cnB4p9sw _HiiW2ahkEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_1dGiQLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_1wFvsLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_18InoLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
-          <networkConnectorInstances xmi:id="_hvTFcLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_b8L3ULaYEeSavI5T7sJhVQ __dlIsLaXEeSavI5T7sJhVQ"/>
-          <networkConnectorInstances xmi:id="_jZ2iwLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_cM_TcLaYEeSavI5T7sJhVQ __NF1oLaXEeSavI5T7sJhVQ"/>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_HiiW1qhkEeSJj6cnB4p9sw" name="sectionControlBrick" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW16hkEeSJj6cnB4p9sw" name="VirtualWifiPort1" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2ahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_0unaiKfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_b8L3ULaYEeSavI5T7sJhVQ" name="VirtualWifiPort3" connectorInstances="_hvTFcLaYEeSavI5T7sJhVQ" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_cM_TcLaYEeSavI5T7sJhVQ" name="VirtualWifiPort2" connectorInstances="_jZ2iwLaYEeSavI5T7sJhVQ" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_HiiW4ahkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_HiiW4qhkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_HiiW46hkEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_HiiW5KhkEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_HiiW5ahkEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_HiiW5qhkEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-        </embeddedHPIC>
-      </hwplatformInstances>
-      <networkConnectorInstances xmi:id="_sOdocLaXEeSavI5T7sJhVQ"  type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _HiiW0ahkEeSJj6cnB4p9sw"/>
-      <networkConnectorInstances xmi:id="_EdRV0LaYEeSavI5T7sJhVQ"  type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw __NF1oLaXEeSavI5T7sJhVQ"/>
-      <networkConnectorInstances xmi:id="_HvUVYLaYEeSavI5T7sJhVQ"  type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="__dlIsLaXEeSavI5T7sJhVQ _EDe2AqhkEeSJj6cnB4p9sw"/>
-      <networkConnectorInstances xmi:id="_WXCsYLabEeSvg7rqv6dToQ"  type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _-PAV8ahjEeSJj6cnB4p9sw"/>
-      <networkConnectorInstances xmi:id="_9CcmMLabEeSvg7rqv6dToQ" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_pr6PULabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
-    </modelElements>
-    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_rPkGIKfDEeSK_8TqY1SjtQ" name="SectionControl">
-      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_wMFqgKfDEeSK_8TqY1SjtQ" name="Brick" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_wMFqgafDEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_whkzIMJuEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_whkzIcJuEeSFFPWsf1QKow"/>
-        </cardinality>
-        <hwPortParts xmi:id="_0unagKfDEeSK_8TqY1SjtQ" hwport="_dSpRkKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unagafDEeSK_8TqY1SjtQ" hwport="_dSpRlKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unagqfDEeSK_8TqY1SjtQ" hwport="_dSpRmKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unag6fDEeSK_8TqY1SjtQ" hwport="_dSpRnKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unahKfDEeSK_8TqY1SjtQ" hwport="_dSpRoKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unahafDEeSK_8TqY1SjtQ" hwport="_dSpRpKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unahqfDEeSK_8TqY1SjtQ" hwport="_dSpRqKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unah6fDEeSK_8TqY1SjtQ" hwport="_dSpRrKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unaiKfDEeSK_8TqY1SjtQ" connectors="_pKpLUKhjEeSJj6cnB4p9sw" hwport="_dSpRsKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_ztc4MKhiEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" hwport="_t84AsKhiEeSJj6cnB4p9sw"/>
-      </embeddedPlatformParts>
-      <networkConnectors xmi:id="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpoints="_ztc4MKhiEeSJj6cnB4p9sw _eYQm0KhjEeSJj6cnB4p9sw"/>
-      <networkConnectors xmi:id="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpoints="_0unaiKfDEeSK_8TqY1SjtQ _kUf7wKhjEeSJj6cnB4p9sw"/>
-      <delegationPorts xmi:id="_eYQm0KhjEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" >
-      </delegationPorts>
-      <delegationPorts xmi:id="_kUf7wKhjEeSJj6cnB4p9sw" connectors="_pKpLUKhjEeSJj6cnB4p9sw" name="D1-virtualBluetooth" >
-      </delegationPorts>
-    </modelElements>
-  </categories>
+  <categories xmi:id="_s8IWoKe4EeSK_8TqY1SjtQ" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource"/>
+  <categories xmi:id="_UnNrIKfBEeSK_8TqY1SjtQ" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform"/>
   <categories xmi:id="_ZpEDICPlEeSlOpyqq3LJMw" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation">
     <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_cRv8oCPlEeSlOpyqq3LJMw">
-      <allocations xmi:id="_cRv8oSPlEeSlOpyqq3LJMw" componentInstance="_ycVar5_HEeSYU6UyOlfnUQ" resourceInstance="_EDe2JKhkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_pnxq0KumEeS8h7ja3qSVLA" componentInstance="_ycVaqp_HEeSYU6UyOlfnUQ" resourceInstance="_EDe2JKhkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_-gm64KumEeS8h7ja3qSVLA" componentInstance="_ycVapZ_HEeSYU6UyOlfnUQ" resourceInstance="_EDe2E6hkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_AVvQgKunEeS8h7ja3qSVLA" componentInstance="_ycVasZ_HEeSYU6UyOlfnUQ" resourceInstance="_EDe2E6hkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_MUfhgKunEeS8h7ja3qSVLA" componentInstance="_ycVao5_HEeSYU6UyOlfnUQ" resourceInstance="_EDe2E6hkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_PBZMoKunEeS8h7ja3qSVLA" componentInstance="_ycVaoZ_HEeSYU6UyOlfnUQ" resourceInstance="_EDe2E6hkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_QceqkKunEeS8h7ja3qSVLA" componentInstance="_zfogMp_GEeSYU6UyOlfnUQ" resourceInstance="_4sMNrahjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_VF-lQKunEeS8h7ja3qSVLA" componentInstance="_zfogJp_GEeSYU6UyOlfnUQ" resourceInstance="_4sMNrahjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_Wq2RUKunEeS8h7ja3qSVLA" componentInstance="_zfogIZ_GEeSYU6UyOlfnUQ" resourceInstance="_4sMNxKhjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_ZCBkEKunEeS8h7ja3qSVLA" componentInstance="_zfogMJ_GEeSYU6UyOlfnUQ" resourceInstance="_4sMNxKhjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_biXZ4KunEeS8h7ja3qSVLA" componentInstance="_zfogLJ_GEeSYU6UyOlfnUQ" resourceInstance="_4sMNxKhjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_emqRUKunEeS8h7ja3qSVLA" componentInstance="_zfogLp_GEeSYU6UyOlfnUQ" resourceInstance="_4sMNxKhjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_gu0QoKunEeS8h7ja3qSVLA" componentInstance="_VOUd1Z_GEeSYU6UyOlfnUQ" resourceInstance="_-PAWFKhjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_iWqYMKunEeS8h7ja3qSVLA" componentInstance="_VOUdzZ_GEeSYU6UyOlfnUQ" resourceInstance="_-PAWFKhjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_kWdFsKunEeS8h7ja3qSVLA" componentInstance="_VOUdy5_GEeSYU6UyOlfnUQ" resourceInstance="_-PAV-6hjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_nCLFEKunEeS8h7ja3qSVLA" componentInstance="_VOUd05_GEeSYU6UyOlfnUQ" resourceInstance="_-PAV-6hjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_pRVEQKunEeS8h7ja3qSVLA" componentInstance="_VOUdw5_GEeSYU6UyOlfnUQ" resourceInstance="_-PAV-6hjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_q1xSgKunEeS8h7ja3qSVLA" componentInstance="_VOUdwZ_GEeSYU6UyOlfnUQ" resourceInstance="_-PAV-6hjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_tqF0QKunEeS8h7ja3qSVLA" componentInstance="_apaYAJ_HEeSYU6UyOlfnUQ" resourceInstance="_HiiW1qhkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_duuaYKvAEeS17_7FUkLEVQ" componentInstance="_c2WJQauyEeSOh7ww5c64Rw" resourceInstance="_EDe2E6hkEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_x6fJEKvAEeS17_7FUkLEVQ" componentInstance="_JdH_4au0EeSOh7ww5c64Rw" resourceInstance="_4sMNxKhjEeSJj6cnB4p9sw"/>
-      <allocations xmi:id="_xHUcsLRFEeSNPJMyNnWx-A" componentInstance="_VOUdxZ_GEeSYU6UyOlfnUQ" resourceInstance="_-PAV-6hjEeSJj6cnB4p9sw"/>
+      <allocations xmi:id="_cRv8oSPlEeSlOpyqq3LJMw" componentInstance="_ycVar5_HEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_pnxq0KumEeS8h7ja3qSVLA" componentInstance="_ycVaqp_HEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_-gm64KumEeS8h7ja3qSVLA" componentInstance="_ycVapZ_HEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_AVvQgKunEeS8h7ja3qSVLA" componentInstance="_ycVasZ_HEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_MUfhgKunEeS8h7ja3qSVLA" componentInstance="_ycVao5_HEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_PBZMoKunEeS8h7ja3qSVLA" componentInstance="_ycVaoZ_HEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_QceqkKunEeS8h7ja3qSVLA" componentInstance="_zfogMp_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_VF-lQKunEeS8h7ja3qSVLA" componentInstance="_zfogJp_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_Wq2RUKunEeS8h7ja3qSVLA" componentInstance="_zfogIZ_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_ZCBkEKunEeS8h7ja3qSVLA" componentInstance="_zfogMJ_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_biXZ4KunEeS8h7ja3qSVLA" componentInstance="_zfogLJ_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_emqRUKunEeS8h7ja3qSVLA" componentInstance="_zfogLp_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_gu0QoKunEeS8h7ja3qSVLA" componentInstance="_VOUd1Z_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_iWqYMKunEeS8h7ja3qSVLA" componentInstance="_VOUdzZ_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_kWdFsKunEeS8h7ja3qSVLA" componentInstance="_VOUdy5_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_nCLFEKunEeS8h7ja3qSVLA" componentInstance="_VOUd05_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_pRVEQKunEeS8h7ja3qSVLA" componentInstance="_VOUdw5_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_q1xSgKunEeS8h7ja3qSVLA" componentInstance="_VOUdwZ_GEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_tqF0QKunEeS8h7ja3qSVLA" componentInstance="_apaYAJ_HEeSYU6UyOlfnUQ"/>
+      <allocations xmi:id="_duuaYKvAEeS17_7FUkLEVQ" componentInstance="_c2WJQauyEeSOh7ww5c64Rw"/>
+      <allocations xmi:id="_x6fJEKvAEeS17_7FUkLEVQ" componentInstance="_JdH_4au0EeSOh7ww5c64Rw"/>
+      <allocations xmi:id="_xHUcsLRFEeSNPJMyNnWx-A" componentInstance="_VOUdxZ_GEeSYU6UyOlfnUQ"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
