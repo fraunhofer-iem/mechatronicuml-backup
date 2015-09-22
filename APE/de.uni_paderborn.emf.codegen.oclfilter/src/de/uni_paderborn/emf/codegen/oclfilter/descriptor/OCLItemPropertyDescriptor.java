@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -21,6 +22,8 @@ import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
+import org.eclipse.ocl.expressions.ExpressionsFactory;
+import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
 
 /**
@@ -177,6 +180,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 			if (!filterOcl.isEmpty()) {
 				try {
 					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), filterOcl);
+					filterQuery.getEvaluationEnvironment().add("context", object);
 					for (Object choice : new ArrayList<Object>(choices)) {
 						if (!Boolean.TRUE.equals(filterQuery.evaluate(choice))) {
 							choices.remove(choice);
@@ -235,16 +239,24 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * @throws ParserException
 	 *             If the OCL expression contains errors.
 	 */
-	protected Query<org.eclipse.emf.ecore.EClassifier, ?, ?> createQuery(EClassifier context, String ocl) throws ParserException {
-		Helper helper = OCL_ECORE.createOCLHelper();
+	protected Query<org.eclipse.emf.ecore.EClassifier, ?, ?> createQuery(EClassifier context, String oclText) throws ParserException {
+		OCL ocl = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
+		Helper helper = ocl.createOCLHelper();
 		helper.setAttributeContext(context, feature);
 		ParsingOptions.setOption(helper.getEnvironment(),
 			    ParsingOptions.implicitRootClass(helper.getEnvironment()),
 			    EcorePackage.Literals.EOBJECT);
-		OCLExpression oclExpression = helper.createQuery(ocl);
+		OCLExpression oclExpression = helper.createQuery(oclText);
+		Variable<EClassifier, EParameter> contextVar = ExpressionsFactory.eINSTANCE.createVariable();
+		contextVar.setName("context");
+		contextVar.setType(feature.getEType());
+
+		// add it to the global OCL environment
+		ocl.getEnvironment().addElement( contextVar.getName(), contextVar, true);
 		if (oclExpression != null) {
 			return OCL_ECORE.createQuery(oclExpression);
 		}
+		
 		return null;
 	}
 
