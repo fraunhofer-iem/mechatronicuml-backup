@@ -33,17 +33,13 @@
   </rm:searchPath>
 
 <rm:searchPath name="eclipse_mars">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-  	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="http://download.eclipse.org/releases/mars?importType=binary" />
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="MUMLCore">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/MUMLCore/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
@@ -51,9 +47,7 @@
 
 
 <rm:searchPath name="ModelMigration">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
@@ -62,126 +56,98 @@
  
  
 <rm:searchPath name="APE">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
   
 <rm:searchPath name="PlatformIndependentModeling">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
  </rm:searchPath>
  
 <rm:searchPath name="Uppaal">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/Uppaal/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="UppaalAdapter">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/UppaalAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="PlatformModeling">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="true">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/PlatformModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="ModelicaAdapter">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="file:///data/jenkins/jobs/ModelicaAdapter/lastSuccessful/archive/targetPlatform/">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+ 	<rm:uri format="file:///data/jenkins/jobs/ModelicaAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="SimulinkAdapter">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/SimulinkAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
   
 <rm:searchPath name="UDBM">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>  
 
 <rm:searchPath name="C_Codegen">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/C_Codegen/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="VerificationCore">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/VerificationCore/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="StoryDiagram">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/StoryDiagram/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="ReconfigurationModeling">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/ReconfigurationModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="Examples">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/Examples/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="ComponentBehaviorSynthesis">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/ComponentBehaviorSynthesis/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
@@ -189,9 +155,7 @@
    
 
 <rm:searchPath name="Graphviz">
-   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/Graphviz/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
   </rm:provider>
@@ -199,27 +163,21 @@
 
 
 <rm:searchPath name="PlatformSpecificModeling">
-   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-        <rm:property key="buckminster.source" value="false"/>
-         <rm:property key="buckminster.mutable" value="false"/>
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/PlatformSpecificModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
   </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="Utilities_External">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/Utilities_External/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="Ontology">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
       <rm:uri format="file:///data/jenkins/jobs/OntologyModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
