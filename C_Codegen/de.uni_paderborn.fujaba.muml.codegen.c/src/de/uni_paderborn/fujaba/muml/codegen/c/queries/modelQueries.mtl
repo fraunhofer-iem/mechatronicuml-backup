@@ -288,11 +288,12 @@ receiverMessages->union(senderMessages)->asOrderedSet()
  /]
 
 [query public getAllStructTypes (CIs : OrderedSet(ComponentInstance)) : Set(StructureDataType) = 
-let atomicComp : Set(AtomicComponent) = CIs.componentType->asSet()->selectByKind(AtomicComponent) in 
-let RTSCs : Set(RealtimeStatechart) =	atomicComp.behavior.oclAsType(RealtimeStatechart)->asSet() in
-RTSCs.allAvailableVariables.dataType->asSet()->select(oclIsKindOf(StructureDataType))->asOrderedSet()
-/]
+CIs->getAllAtomicComponents().behavior.oclAsType(RealtimeStatechart)->asSet().allAvailableVariables.dataType->asSet()->select(oclIsKindOf(StructureDataType))->asOrderedSet() /]
 
+
+[query public getAllAtomicComponents(CIs : OrderedSet(ComponentInstance)) : OrderedSet(AtomicComponent) = 
+ CIs->selectByKind(AtomicComponent)
+ /]
 
 
 [**

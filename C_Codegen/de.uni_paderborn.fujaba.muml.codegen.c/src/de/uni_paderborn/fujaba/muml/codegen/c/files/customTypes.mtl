@@ -24,6 +24,7 @@
 	
 	[generateCustomTypeFile(getAllStructTypes(CIs), path, useSubDir)/]
 
+
 [/template]
 
 
@@ -36,7 +37,7 @@
   extern "C" {
 #endif
 	#include "standardTypes.h"
-	[if (sTypes->size()>0)]
+	[if (not sTypes->oclIsUndefined() and sTypes->size()>0)]
 			[for (structType : StructureDataType | sTypes)]
 			typedef struct [structType.getName()/] [structType.getName()/];
 		[/for]
