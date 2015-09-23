@@ -13,9 +13,11 @@ import java.util.Map.Entry;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.jface.dialogs.IDialogPage;
+import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
+import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ComboBoxCellEditor;
 import org.eclipse.jface.viewers.EditingSupport;
 import org.eclipse.jface.viewers.TableViewer;
@@ -59,8 +61,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 	/**
 	 * Constructor for PlatformTypeSelectPage.
 	 */
-	public PlatformTypePage(Collection<EObject> availableHWPlatforms,
-			boolean startPage) {
+	public PlatformTypePage(Collection<EObject> availableHWPlatforms, boolean startPage) {
 		super("Page1");
 		this.startPage = startPage;
 		this.availableHWPlatforms = availableHWPlatforms;
@@ -75,9 +76,8 @@ public class PlatformTypePage extends WizardPage implements Listener {
 	public void createControl(Composite parent) {
 		if (availableHWPlatforms == null) {
 			initContent();
-		}
-		else{
-			selectedPlatform=(HWPlatform) availableHWPlatforms.toArray()[0];
+		} else {
+			selectedPlatform = (HWPlatform) availableHWPlatforms.toArray()[0];
 		}
 		// create the composite to hold the widgets
 		final Composite composite = new Composite(parent, SWT.NULL);
@@ -85,9 +85,9 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		// create the desired layout for this wizard page
 		GridLayout gl = new GridLayout();
 		gl.numColumns = 2;
-//		gl.wrap = true;
-//		gl.pack = true;
-//		gl.justify = true;
+		// gl.wrap = true;
+		// gl.pack = true;
+		// gl.justify = true;
 		// gl.numColumns = ncol;
 		composite.setLayout(gl);
 
@@ -98,33 +98,28 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		// gd.horizontalAlignment = GridData.BEGINNING;
 		// The HWPlatform to initialize
 		GridData gridData = new GridData();
-		gridData.horizontalAlignment=GridData.FILL;
-		gridData.widthHint=300;
-		gridData.heightHint=300;
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.widthHint = 300;
+		gridData.heightHint = 300;
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.grabExcessVerticalSpace = true;
-		
-		FillLayout filllayout=new FillLayout();
-		filllayout.type=SWT.FILL;
-		
+
+		FillLayout filllayout = new FillLayout();
+		filllayout.type = SWT.FILL;
+
 		Group group1 = new Group(composite, SWT.NONE);
 		group1.setText("Platform Type:");
 		group1.setLayoutData(gridData);
 		group1.setLayout(filllayout);
-		
-//		Label label1 = new Label(goup1, SWT.PUSH);
-//		label1.setText("Platform Type:");
-		
 
-	//	label1.setLayoutData(gridData);
 
-		final List list = new List(group1, SWT.BORDER | SWT.SINGLE
-				| SWT.V_SCROLL);
+		final List list = new List(group1, SWT.BORDER | SWT.SINGLE | SWT.V_SCROLL);
 		list.setLayoutData(gridData);
 		for (Object item : availableHWPlatforms) {
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.Literals.HW_PLATFORM
 					.isSuperTypeOf(((EObject) item).eClass())) {
 				list.add(((HWPlatform) item).getName());
+			
 			}
 		}
 		Rectangle clientArea = composite.getClientArea();
@@ -139,33 +134,37 @@ public class PlatformTypePage extends WizardPage implements Listener {
 			}
 		});
 		list.pack();
-		
+
 		Group group2 = new Group(composite, SWT.NONE);
 		group2.setText("Instances:");
 		group2.setLayoutData(gridData);
-		group2.setLayout(filllayout);
-		
-		viewer = new TableViewer(group2, SWT.MULTI | SWT.H_SCROLL
-				| SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
-		createColumns(composite, viewer);
+		// group2.setLayout(filllayout);
+		TableColumnLayout tableColumnLayout = new TableColumnLayout();
+		group2.setLayout(tableColumnLayout);
+
+		viewer = new TableViewer(group2, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
+		createColumns(composite, viewer, tableColumnLayout);
 		viewer.setContentProvider(new ArrayContentProvider());
 		final Table table = viewer.getTable();
-	//	table.setLayoutData(gridData);
+
+		// table.setLayoutData(gridData);
 		table.setLinesVisible(true);
 		table.setHeaderVisible(true);
 		// table.setBounds(clientArea.x + 120, clientArea.y + 120, 200, 400);
 		table.pack();
-		
+
 		setControl(composite);
 		// addListeners();
+		//set an initial Selection
+		list.select(0);
+		list.showSelection();
+		list.notifyListeners(SWT.Selection, null);
 	}
 
-	private java.util.List<PlatformPart> getEmbeddedPlatformPart(
-			HWPlatform platform) {
+	private java.util.List<PlatformPart> getEmbeddedPlatformPart(HWPlatform platform) {
 		currentCardinality = new HashMap<PlatformPart, Integer>();
 		for (PlatformPart part : platform.getEmbeddedPlatformParts()) {
-			currentCardinality.put(part, (int) part.getCardinality()
-					.getLowerBound().getValue());
+			currentCardinality.put(part, (int) part.getCardinality().getLowerBound().getValue());
 		}
 		return platform.getEmbeddedPlatformParts();
 	}
@@ -179,7 +178,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		}
 		Dictionary<String, Integer> config = model.getConfiguration();
 		for (Entry<PlatformPart, Integer> entry : currentCardinality.entrySet()) {
-			
+
 			config.put(entry.getKey().getName(), entry.getValue());
 		}
 
@@ -187,33 +186,33 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 	private void initContent() {
 		PlatformInstanceWizard wizard = (PlatformInstanceWizard) getWizard();
-		HWPlatformInstanceConfiguration instanceConfiguration = wizard
-				.getModel().getSelectedHWPlatformInstanceConfiguration();
+		HWPlatformInstanceConfiguration instanceConfiguration = wizard.getModel()
+				.getSelectedHWPlatformInstanceConfiguration();
 		HWPlatform hwPlatform = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformFactory.eINSTANCE
 				.createHWPlatform();
-		availableHWPlatforms = ItemPropertyDescriptor
-				.getReachableObjectsOfType(instanceConfiguration,
-						hwPlatform.eClass());
+		availableHWPlatforms = ItemPropertyDescriptor.getReachableObjectsOfType(instanceConfiguration,
+				hwPlatform.eClass());
 	}
 
 	// create the columns for the table
-	private void createColumns(final Composite parent, final TableViewer viewer) {
+	private void createColumns(final Composite parent, final TableViewer viewer, TableColumnLayout tableColumnLayout) {
 		String[] titles = { "Platform Part:", "Multiplicity:", };
 		int[] bounds = { 200, 50 };
 
 		// first column is for the platform part's name
-		TableViewerColumn col = createTableViewerColumn(titles[0], bounds[0], 0);
-		col.setLabelProvider(new ColumnLabelProvider() {
+		TableViewerColumn col1 = createTableViewerColumn(titles[0], bounds[0], 0);
+		col1.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
 				PlatformPart p = (PlatformPart) element;
 				return p.getName();
 			}
 		});
+		tableColumnLayout.setColumnData(col1.getColumn(), new ColumnWeightData(70, 200, true));
 
 		// second column is for the mulitpliciy
-		col = createTableViewerColumn(titles[1], bounds[1], 1);
-		col.setLabelProvider(new ColumnLabelProvider() {
+		TableViewerColumn	col2 = createTableViewerColumn(titles[1], bounds[1], 1);
+		col2.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
 				PlatformPart p = (PlatformPart) element;
@@ -221,20 +220,19 @@ public class PlatformTypePage extends WizardPage implements Listener {
 			}
 
 		});
-		col.setEditingSupport(new EditingSupport(viewer) {
+		tableColumnLayout.setColumnData(col2.getColumn(), new ColumnWeightData(30, 80, true));
+		col2.setEditingSupport(new EditingSupport(viewer) {
 
 			@Override
 			protected void setValue(Object element, Object value) {
 				// TODO Auto-generated method stub
 				PlatformPart p = (PlatformPart) element;
 				int positionInList = (Integer) value;
-				currentCardinality.put(p, (int) (p.getCardinality()
-						.getLowerBound().getValue() + positionInList));
+				currentCardinality.put(p, (int) (p.getCardinality().getLowerBound().getValue() + positionInList));
 				if (p instanceof HWPlatformPart
-						&& (p.getCardinality()
-								.getLowerBound().getValue() + positionInList) >= 1) {
-					followUpPlatforms.add(((HWPlatformPart)p).getHwplatformType());
-				//	getNextPage();
+						&& (p.getCardinality().getLowerBound().getValue() + positionInList) >= 1) {
+					followUpPlatforms.add(((HWPlatformPart) p).getHwplatformType());
+					// getNextPage();
 					getWizard().getContainer().updateButtons();
 				}
 				viewer.update(element, null);
@@ -255,14 +253,12 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				if (p.getCardinality().getUpperBound().isInfinity()) {
 					range = 1;
 				} else {
-					range = (int) ((int) p.getCardinality().getUpperBound()
-							.getValue() - p.getCardinality().getLowerBound()
-							.getValue()) + 1;
+					range = (int) ((int) p.getCardinality().getUpperBound().getValue()
+							- p.getCardinality().getLowerBound().getValue()) + 1;
 				}
 				cardinality = new String[range];
 				for (int i = 0; i < range; i++) {
-					cardinality[i] = Integer.toString((int) (p.getCardinality()
-							.getLowerBound().getValue() + i));
+					cardinality[i] = Integer.toString((int) (p.getCardinality().getLowerBound().getValue() + i));
 				}
 
 				return new ComboBoxCellEditor(viewer.getTable(), cardinality);
@@ -277,15 +273,15 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 	}
 
-	private TableViewerColumn createTableViewerColumn(String title, int bound,
-			final int colNumber) {
-		final TableViewerColumn viewerColumn = new TableViewerColumn(viewer,
-				SWT.NONE);
+	private TableViewerColumn createTableViewerColumn(String title, int bound, final int colNumber) {
+		final TableViewerColumn viewerColumn = new TableViewerColumn(viewer, SWT.NONE);
+
 		final TableColumn column = viewerColumn.getColumn();
 		column.setText(title);
 		column.setWidth(bound);
 		column.setResizable(true);
 		column.setMoveable(true);
+
 		return viewerColumn;
 	}
 
@@ -297,9 +293,6 @@ public class PlatformTypePage extends WizardPage implements Listener {
 	protected boolean neddFurtherPage() {
 		return !followUpPlatforms.isEmpty();
 	}
-	
-	
-	
 
 	public Collection<EObject> getFollowUpPlatforms() {
 		Collection<EObject> platforms = new ArrayList<EObject>();
@@ -308,6 +301,4 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		return platforms;
 	}
 
-	
-	
 }
