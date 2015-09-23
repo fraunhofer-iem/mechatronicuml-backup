@@ -82,6 +82,8 @@ int main(){
 			[/if]
 		[/for]
 [/for]
+//initialize continuous parts
+initializeContinuousImplementations();
 #ifdef DEBUG
 printDebugInformation("Initialization done...start execution.\n");
 #endif
