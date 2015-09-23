@@ -21,6 +21,7 @@
  * generates all files for (user defined) custom types, like structs
  */]
 [template public generateCustomTypes(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
+	
 	[generateCustomTypeFile(getAllStructTypes(CIs), path, useSubDir)/]
 
 [/template]
@@ -35,6 +36,7 @@
   extern "C" {
 #endif
 	#include "standardTypes.h"
+	[if (sTypes->size()>0)]
 			[for (structType : StructureDataType | sTypes)]
 			typedef struct [structType.getName()/] [structType.getName()/];
 		[/for]
@@ -49,6 +51,7 @@
 				[/for]
 			};
 		[/for]
+[/if]
 #ifdef __cplusplus
   }
 #endif

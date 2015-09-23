@@ -42,7 +42,7 @@
 [generateMiddlewareCoreHeader(CIs, path, useSubDir)/]
 [generateMiddlewareCoreClass(CIs, path, useSubDir)/]
 
-[generateGlobalIdentifierFiles(CIs, path)/]
+[generateGlobalIdentifierFiles(CIs, path, useSubDir)/]
 
 [comment generate dummy files, which needed for compatibility/]
 [file(path+getFileName4MWInternalLogic(true, useSubDir),false,'UTF-8')]
@@ -398,8 +398,8 @@ switch (portID) {
 [/file]
 [/template]
 
-[template public generateGlobalIdentifierFiles(CIs : OrderedSet(ComponentInstance), path : String)]
-[file(path+'/GlobalIdentifier.h', false, 'UTF-8')]
+[template public generateGlobalIdentifierFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
+[file(path+getFileName4GI(useSubDir), false, 'UTF-8')]
 /**
  * @file 
  * @author generated

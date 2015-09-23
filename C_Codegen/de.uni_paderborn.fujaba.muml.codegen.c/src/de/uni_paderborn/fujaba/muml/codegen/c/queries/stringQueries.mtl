@@ -289,6 +289,15 @@ endif
 
 /]
 
+
+[query public getFileName4GI(useSubDir : Boolean) : String = 
+
+	if useSubDir then 'Middleware/' else '' endif + 
+		'/GlobalIdentifier.h'
+
+
+/]
+
 [query public getFileName4MWInternalLogic( header : Boolean, useSubDir : Boolean) : String = 
 
 	if useSubDir then 'Middleware/' else '' endif + 
