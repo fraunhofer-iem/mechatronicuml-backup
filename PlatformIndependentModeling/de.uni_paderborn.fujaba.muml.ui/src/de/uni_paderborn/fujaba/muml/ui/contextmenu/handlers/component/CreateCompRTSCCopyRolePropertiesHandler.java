@@ -27,8 +27,7 @@ public class CreateCompRTSCCopyRolePropertiesHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// TODO Auto-generated method stub
-		IWorkbenchWindow window = HandlerUtil
-				.getActiveWorkbenchWindowChecked(event);
+		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		EditingDomain editingDomain = null;
 
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
@@ -36,8 +35,7 @@ public class CreateCompRTSCCopyRolePropertiesHandler extends AbstractHandler {
 		List<AtomicComponent> objects = new ArrayList<AtomicComponent>();
 
 		org.eclipse.emf.ecore.resource.Resource ecoreResource = null;
-		for (Object selectedElement : ((IStructuredSelection) selection)
-				.toArray()) {
+		for (Object selectedElement : ((IStructuredSelection) selection).toArray()) {
 			EObject object = null;
 			if (selectedElement instanceof IAdaptable) {
 				IAdaptable adaptable = (IAdaptable) selectedElement;
@@ -46,9 +44,7 @@ public class CreateCompRTSCCopyRolePropertiesHandler extends AbstractHandler {
 			if (selectedElement instanceof EObject) {
 				object = (EObject) selectedElement;
 			}
-			if (object != null
-					&& ComponentPackage.Literals.ATOMIC_COMPONENT
-							.isSuperTypeOf(object.eClass())
+			if (object != null && ComponentPackage.Literals.ATOMIC_COMPONENT.isSuperTypeOf(object.eClass())
 					&& ((AtomicComponent) object).getComponentKind() == ComponentKind.SOFTWARE_COMPONENT) {
 				if (ecoreResource == null) {
 					ecoreResource = object.eResource();
@@ -60,20 +56,14 @@ public class CreateCompRTSCCopyRolePropertiesHandler extends AbstractHandler {
 		}
 
 		if (!objects.isEmpty() && editingDomain == null) {
-			editingDomain = AdapterFactoryEditingDomain
-					.getEditingDomainFor(objects.get(0));
+			editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(objects.get(0));
 			for (AtomicComponent component : objects) {
 				AtomicComponent atomicComponent = (AtomicComponent) component;
-				for (Port port : atomicComponent.getPorts()) {
-					if (ComponentPackage.Literals.DISCRETE_PORT
-							.isSuperTypeOf(port.eClass())) {
-						CopyRolePropertiesToPortHandler
-								.copyRolePropertiesToPort((DiscretePort) port,
-										window.getShell(), editingDomain);
-					}
-				}
+				CopyRolePropertiesToPortHandler.copyRolePropertiesToPort(atomicComponent, window.getShell(),
+						editingDomain);
 
 			}
+
 		}
 
 		return null;

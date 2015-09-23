@@ -11,13 +11,24 @@ modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0")
 
 transformation CopyRolePropertiesToPort(in input : ComponentPackage, out output : RTSCPackage);
 configuration property replacePortRTSC : Boolean;
-configuration property createComponentRTSC : Boolean;
 	
 
 main() {
 
 	-- parse input parameters
 	var thePort : DiscretePort := input.rootObjects()[DiscretePort] -> any(true);
+	var component : AtomicComponent := input.rootObjects()[AtomicComponent] -> any(true);
+
+	-- create component RTSC if it does not exists yet
+	if(component.behavior.oclIsUndefined()) then{
+			component.behavior:=component.map createComponentRTSC();
+		
+	}endif;
+	
+	
+	
+	if(not thePort.oclIsUndefined()) then{
+	
 	if(replacePortRTSC)then {
 		var	statechart :RealtimeStatechart := thePort.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart);
 		var region : Region := statechart.parentRegion;
@@ -28,6 +39,7 @@ main() {
 
 	-- copy the role properties
 	copyRolePropertiesToPort(thePort);
+	}endif; 
 }
 
 -- copies all relevant role properties to the port
@@ -107,16 +119,17 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort){
 	} endif;
 }
 
+
+mapping AtomicComponent::createComponentRTSC():RealtimeStatechart  @output when {self.behavior.oclIsUndefined()}{
+	name := self.name;
+	states += new State(true, false);
+		result.states -> first().name :=  self.name + '_main';
+
+}
+
 -- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
 helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout component : AtomicComponent){
 	
-	-- create component RTSC if it does not exists yet
-	if (component.behavior.oclIsUndefined()) then{
-		var behavior := new RealtimeStatechart(component.name);
-		component.behavior := behavior;
-		component.behavior.oclAsType(RealtimeStatechart).states -> first().name :=  component.name + '_main';
-	} endif;
-
 	-- hook into component RTSC
 	var componentRTSC: RealtimeStatechart := component.behavior.oclAsType(RealtimeStatechart);
 	componentRTSC.states -> forEach(state){
