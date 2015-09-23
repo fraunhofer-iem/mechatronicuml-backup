@@ -15,14 +15,16 @@
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
+   
+   
+   <includes
+         id="de.uni_paderborn.fujaba.muml.pm.sdk.feature"
+         version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.muml.pm.feature"
          version="0.0.0"/>
 
-   <includes
-         id="de.uni_paderborn.fujaba.muml.pm.sdk.feature"
-         version="0.0.0"/>
 
    <requires>
       <import plugin="org.junit" version="4.11.0" match="greaterOrEqual"/>
