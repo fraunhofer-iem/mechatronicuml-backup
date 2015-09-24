@@ -20,7 +20,7 @@ void initializeContinuousImplementations(){
 
 	if (Root_cicSysSystemC2Voltage_Reference != value){
 	/** Start of user code write_voltage_oflEDComponent_C2 **/ 
-		if (value = 1){
+		if (value == 1){
 			digitalWrite(LEDPIN, HIGH);
 		}
 		else{
