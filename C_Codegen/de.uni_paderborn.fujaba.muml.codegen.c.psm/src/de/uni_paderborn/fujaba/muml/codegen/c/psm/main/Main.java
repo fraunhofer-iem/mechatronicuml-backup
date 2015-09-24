@@ -406,17 +406,17 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE);
         }
-        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage.class)) {
-            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage.eINSTANCE);
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.eINSTANCE);
         }
-        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.class)) {
-            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.eINSTANCE);
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.eINSTANCE);
         }
-        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.class)) {
-            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.eINSTANCE);
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.eINSTANCE);
         }
-        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage.class)) {
-            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage.eINSTANCE);
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instancePackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instancePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instancePackage.eINSTANCE);
         }
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage.eINSTANCE);
