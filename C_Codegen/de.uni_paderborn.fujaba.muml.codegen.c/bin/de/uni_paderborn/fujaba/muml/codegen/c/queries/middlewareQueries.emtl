@@ -5,10 +5,10 @@
       <body startPosition="32" endPosition="80" value="&#xA;The documentation of the module generate.&#xA;&#xA;"/>
     </documentation>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//connector"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
@@ -19,23 +19,23 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//types"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//component"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//instance"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/one_to_n_schemata"/>
     </input>
     <imports href="stringQueries.emtl#/0"/>
     <imports href="../actionlanguage/expression.emtl#/0"/>
@@ -47,7 +47,7 @@
         </parametersDocumentation>
       </documentation>
       <parameter name="pi">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -64,11 +64,11 @@
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <definition href="stringQueries.emtl#/0/getName.5"/>
                 <argument xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="pi" referredVariable="/0/getIdentifierVariableName/pi">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/componentInstance"/>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance/componentInstance"/>
                 </argument>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpperCase"/>
@@ -80,15 +80,15 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <definition href="stringQueries.emtl#/0/getName.2"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="pi" referredVariable="/0/getIdentifierVariableName/pi">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/componentInstance"/>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance/componentInstance"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance/componentType"/>
               </argument>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpperCase"/>
@@ -100,7 +100,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="stringQueries.emtl#/0/getName.15"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="pi" referredVariable="/0/getIdentifierVariableName/pi">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
             </argument>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpperCase"/>
@@ -116,7 +116,7 @@
         </parametersDocumentation>
       </documentation>
       <parameter name="msgT">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -129,7 +129,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="stringQueries.emtl#/0/getVariableName.6"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="msgT" referredVariable="/0/getIdentifierVariableName.1/msgT">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
             </argument>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpperCase"/>
@@ -145,7 +145,7 @@
         </parametersDocumentation>
       </documentation>
       <parameter name="msgT">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -153,7 +153,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <definition href="stringQueries.emtl#/0/getVariableName.6"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="msgT" referredVariable="/0/getTypeName/msgT">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
           </argument>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_Message">
@@ -164,7 +164,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getStructName" visibility="Public">
       <parameter name="msgType">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -174,18 +174,18 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="stringQueries.emtl#/0/getName.7"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="msgType" referredVariable="/0/getStructName/msgType">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
             </argument>
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="stringQueries.emtl#/0/getName.10"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageTypeRepository"/>
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageTypeRepository"/>
               <source xsi:type="ocl.ecore:VariableExp" name="msgType" referredVariable="/0/getStructName/msgType">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType/repository"/>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType/repository"/>
             </argument>
           </argument>
         </source>
@@ -206,7 +206,7 @@
         </parametersDocumentation>
       </documentation>
       <parameter name="msgT">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -214,7 +214,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <definition href="stringQueries.emtl#/0/getVariableName.6"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="msgT" referredVariable="/0/getUnmarshallingMethodName/msgT">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
           </argument>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_read_delimited_from">
@@ -231,7 +231,7 @@
         </parametersDocumentation>
       </documentation>
       <parameter name="msgT">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -239,7 +239,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <definition href="stringQueries.emtl#/0/getVariableName.6"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="msgT" referredVariable="/0/getMarshallingMethodName/msgT">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
           </argument>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_write_delimited_to">
@@ -250,13 +250,13 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getMethodName" visibility="Public">
       <parameter name="op">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
       </parameter>
       <expression xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <definition href="stringQueries.emtl#/0/getName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="op" referredVariable="/0/getMethodName/op">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
         </argument>
       </expression>
       <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -296,7 +296,7 @@
         <eAnnotations source="MTL" references="/0/getIdentifierVariableName"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="pi">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="getIdentifierVariableName">
@@ -306,7 +306,7 @@
         <eAnnotations source="MTL" references="/0/getIdentifierVariableName.1"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="msgT">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
         </eParameters>
       </eOperations>
       <eOperations name="getTypeName">
@@ -316,7 +316,7 @@
         <eAnnotations source="MTL" references="/0/getTypeName"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="msgT">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
         </eParameters>
       </eOperations>
       <eOperations name="getStructName">
@@ -326,7 +326,7 @@
         <eAnnotations source="MTL" references="/0/getStructName"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="msgType">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
         </eParameters>
       </eOperations>
       <eOperations name="getUnmarshallingMethodName">
@@ -336,7 +336,7 @@
         <eAnnotations source="MTL" references="/0/getUnmarshallingMethodName"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="msgT">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
         </eParameters>
       </eOperations>
       <eOperations name="getMarshallingMethodName">
@@ -346,7 +346,7 @@
         <eAnnotations source="MTL" references="/0/getMarshallingMethodName"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="msgT">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
         </eParameters>
       </eOperations>
       <eOperations name="getMethodName">
@@ -356,7 +356,7 @@
         <eAnnotations source="MTL" references="/0/getMethodName"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="op">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
         </eParameters>
       </eOperations>
       <eOperations name="getName">
@@ -368,7 +368,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="op">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
         </eParameters>
       </eOperations>
       <eOperations name="getName">
@@ -380,7 +380,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
         </eParameters>
       </eOperations>
       <eOperations name="getName">
@@ -392,7 +392,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cInst">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="getName">
@@ -404,7 +404,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="msgType">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
         </eParameters>
       </eOperations>
       <eOperations name="getName">
@@ -416,7 +416,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rep">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageTypeRepository"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageTypeRepository"/>
         </eParameters>
       </eOperations>
       <eOperations name="getName">
@@ -428,7 +428,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="portInst">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
         </eParameters>
       </eOperations>
       <eOperations name="getVariableName">
@@ -440,7 +440,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="msgType">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
         </eParameters>
       </eOperations>
     </eClassifiers>
@@ -466,97 +466,97 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_DiscretePortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_Operation_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_RealtimeStatechart_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/RealtimeStatechart"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="connector_MessageBuffer_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/connector/0.4.0#//MessageBuffer"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//connector/MessageBuffer"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_ContinuousPortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ContinuousPortInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/ComponentInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_Component_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Component"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_Port_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/Port"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_Parameter_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Parameter"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_Attribute_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/types/0.4.0#//Attribute"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/Attribute"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_ComponentPart_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/component/0.4.0#//ComponentPart"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/ComponentPart"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_Variable_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Variable"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Region_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/Region"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageTypeRepository_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageTypeRepository"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageTypeRepository"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_SynchronizationChannel_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//SynchronizationChannel"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/SynchronizationChannel"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_State_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/State"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_HybridPort_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/HybridPort"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="instance_PortInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/PortInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Boolean_Class">
@@ -566,42 +566,42 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="connector_Connector_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/connector/0.4.0#//Connector"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//connector/Connector"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Clock_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Clock"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/Clock"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_DoEvent_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//DoEvent"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//realtimestatechart/DoEvent"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="connector_ConnectorInstance_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//connector/ConnectorInstance"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_StructureDataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/types/0.4.0#//StructureDataType"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/StructureDataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_ArrayDataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/ArrayDataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_PrimitiveDataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/PrimitiveDataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="types_DataType_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//types/DataType"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="common_ComparingOperator_Class">
@@ -611,7 +611,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="component_DiscretePort_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/component/0.4.0#//DiscretePort"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//component/DiscretePort"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="common_LogicalExpression_Class">
@@ -711,7 +711,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_ParameterBinding_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//ParameterBinding"/>
+        <references href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/ParameterBinding"/>
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>
@@ -719,64 +719,64 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//instance/DiscretePortInstance"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/pattern/0.3.18#//behavior/Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
