@@ -102,7 +102,7 @@
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
 						[variable.initializeExpression.generateExpression('')/]
 					[else]
-				[comment	TODO WTF?	[variable.dataType/] /]
+				[comment	TODO WTF?	[variable.dataType/]
 				[if (not variable.dataType.oclIsKindOf(ArrayDataType))]
 						[getDefaultValue(variable, 'stateChart->')/];
 				[/if]
