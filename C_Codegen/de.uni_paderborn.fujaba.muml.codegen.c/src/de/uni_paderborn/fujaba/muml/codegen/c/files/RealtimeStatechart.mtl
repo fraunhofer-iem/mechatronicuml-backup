@@ -102,8 +102,8 @@
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
 						[variable.initializeExpression.generateExpression('')/]
 					[else]
-				[comment	TODO WTF?	[variable.dataType/]
-				[if (not variable.dataType.oclIsKindOf(ArrayDataType))]
+				[comment @TODO array data types are currently not initilized]
+				[if (variable.dataType.oclIsKindOf(PrimitiveDataType))]
 						[getDefaultValue(variable, 'stateChart->')/];
 				[/if]
 					[/if]	
