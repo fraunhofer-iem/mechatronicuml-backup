@@ -20,7 +20,7 @@
 
 
 #ifdef ARDUINO
-
+unsigned long millis(void);
 typedef long Clock;
 #define Clock_getTime(aClock) (  (millis() - (aClock)) )
 
