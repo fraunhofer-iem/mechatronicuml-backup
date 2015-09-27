@@ -12,8 +12,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand
-		extends EditElementCommand {
+public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -28,8 +27,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand
 	/**
 	 * @generated
 	 */
-	public DiscreteInteractionEndpointReceiverMessageBufferCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public DiscreteInteractionEndpointReceiverMessageBufferCreateCommand(CreateRelationshipRequest request,
+			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -46,8 +45,7 @@ public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand
 				&& false == source instanceof de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer) {
+		if (target != null && false == target instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -59,16 +57,13 @@ public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canCreateDiscreteInteractionEndpointReceiverMessageBuffer_4003(
-						getSource(), getTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canCreateDiscreteInteractionEndpointReceiverMessageBuffer_4003(getSource(),
+						getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(
-							getSource(), getTarget(), sourceView, targetView);
+					.getLinkConstraints().getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(getSource(),
+							getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -77,11 +72,9 @@ public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

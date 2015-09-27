@@ -85,19 +85,16 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MessageBufferItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -109,8 +106,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -148,20 +144,17 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferSizeLabel());
+					.setLabel(getPrimaryShape().getFigureMessageBufferSizeLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferOverFlowAvoidanceStrategyLabel());
+					.setLabel(getPrimaryShape().getFigureMessageBufferOverFlowAvoidanceStrategyLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferNameLabel());
+					.setLabel(getPrimaryShape().getFigureMessageBufferNameLabel());
 			return true;
 		}
 		return false;
@@ -217,10 +210,10 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -346,8 +339,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
@@ -360,13 +352,10 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			fFigureMessageBufferNameLabel = new WrappingLabel();
 
 			fFigureMessageBufferNameLabel.setText("");
-			fFigureMessageBufferNameLabel
-					.setForegroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_FORE);
-			fFigureMessageBufferNameLabel
-					.setBackgroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_BACK);
+			fFigureMessageBufferNameLabel.setForegroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_FORE);
+			fFigureMessageBufferNameLabel.setBackgroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_BACK);
 
-			fFigureMessageBufferNameLabel
-					.setFont(FFIGUREMESSAGEBUFFERNAMELABEL_FONT);
+			fFigureMessageBufferNameLabel.setFont(FFIGUREMESSAGEBUFFERNAMELABEL_FONT);
 
 			GridData constraintFFigureMessageBufferNameLabel = new GridData();
 			constraintFFigureMessageBufferNameLabel.verticalAlignment = GridData.CENTER;
@@ -376,8 +365,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			constraintFFigureMessageBufferNameLabel.verticalSpan = 1;
 			constraintFFigureMessageBufferNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureMessageBufferNameLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMessageBufferNameLabel,
-					constraintFFigureMessageBufferNameLabel);
+			this.add(fFigureMessageBufferNameLabel, constraintFFigureMessageBufferNameLabel);
 
 			fFigureMessageBufferSizeLabel = new WrappingLabel();
 
@@ -391,8 +379,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			constraintFFigureMessageBufferSizeLabel.verticalSpan = 1;
 			constraintFFigureMessageBufferSizeLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureMessageBufferSizeLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMessageBufferSizeLabel,
-					constraintFFigureMessageBufferSizeLabel);
+			this.add(fFigureMessageBufferSizeLabel, constraintFFigureMessageBufferSizeLabel);
 
 			fFigureMessageBufferOverFlowAvoidanceStrategyLabel = new WrappingLabel();
 
@@ -421,8 +408,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			constraintMessageTypesStaticLabel0.verticalSpan = 1;
 			constraintMessageTypesStaticLabel0.grabExcessHorizontalSpace = true;
 			constraintMessageTypesStaticLabel0.grabExcessVerticalSpace = false;
-			this.add(messageTypesStaticLabel0,
-					constraintMessageTypesStaticLabel0);
+			this.add(messageTypesStaticLabel0, constraintMessageTypesStaticLabel0);
 
 		}
 
@@ -457,20 +443,17 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color FFIGUREMESSAGEBUFFERNAMELABEL_FORE = new Color(null,
-			255, 0, 0);
+	static final Color FFIGUREMESSAGEBUFFERNAMELABEL_FORE = new Color(null, 255, 0, 0);
 
 	/**
 	 * @generated
 	 */
-	static final Color FFIGUREMESSAGEBUFFERNAMELABEL_BACK = new Color(null, 0,
-			255, 0);
+	static final Color FFIGUREMESSAGEBUFFERNAMELABEL_BACK = new Color(null, 0, 255, 0);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREMESSAGEBUFFERNAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGUREMESSAGEBUFFERNAMELABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

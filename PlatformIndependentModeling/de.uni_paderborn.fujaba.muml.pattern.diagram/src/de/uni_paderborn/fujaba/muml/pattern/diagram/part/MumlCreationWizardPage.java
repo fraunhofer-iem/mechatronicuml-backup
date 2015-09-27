@@ -21,8 +21,7 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public MumlCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public MumlCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -64,8 +63,7 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		setFileName(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil
-				.getUniqueFileName(getContainerFullPath(), getFileName(),
-						getExtension()));
+				.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -77,11 +75,10 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS
-					.bind(de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.MumlCreationWizardPageExtensionError,
-							extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.MumlCreationWizardPageExtensionError,
+					extension));
 			return false;
 		}
 		return true;

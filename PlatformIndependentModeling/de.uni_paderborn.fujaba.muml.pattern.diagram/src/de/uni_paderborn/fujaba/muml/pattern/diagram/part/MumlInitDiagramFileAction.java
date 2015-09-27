@@ -24,8 +24,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
  * @generated
  */
 public class MumlInitDiagramFileAction
-		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+		extends de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	/**
 	 * @generated
@@ -41,27 +40,22 @@ public class MumlInitDiagramFileAction
 			//			org.eclipse.swt.widgets.Shell shell = org.eclipse.ui.handlers.HandlerUtil.getActiveWorkbenchWindow(event).getShell();
 			ISelection selection = HandlerUtil.getCurrentSelection(event);
 			IResource selectedResource = null;
-			if (selection instanceof IStructuredSelection
-					&& !selection.isEmpty()) {
-				Object object = ((IStructuredSelection) selection)
-						.getFirstElement();
+			if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
+				Object object = ((IStructuredSelection) selection).getFirstElement();
 				if (object instanceof IResource) {
 					selectedResource = (IResource) object;
 				} else if (object instanceof IAdaptable) {
-					selectedResource = (IResource) ((IAdaptable) object)
-							.getAdapter(IResource.class);
+					selectedResource = (IResource) ((IAdaptable) object).getAdapter(IResource.class);
 				}
 			}
 			if (selectedResource instanceof IContainer) {
 				// Get a unique filename for the new file
 				IPath filePath = selectedResource.getFullPath();
 				String fileName = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil
-						.getUniqueFileName(filePath, "ModelElementCategory",
-								"modelelementcategory");
+						.getUniqueFileName(filePath, "ModelElementCategory", "modelelementcategory");
 				// Create the new file
 				ResourceSet resourceSet = new ResourceSetImpl();
-				URI uri = URI.createPlatformResourceURI(
-						filePath.append(fileName).toString(), true);
+				URI uri = URI.createPlatformResourceURI(filePath.append(fileName).toString(), true);
 				Resource resource = resourceSet.createResource(uri);
 				EObject model = de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory.eINSTANCE
 						.createModelElementCategory();
@@ -69,9 +63,8 @@ public class MumlInitDiagramFileAction
 				try {
 					resource.save(Collections.emptyMap());
 				} catch (IOException e) {
-					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
-							.getInstance().logError(
-									"Could not create child element", e);
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
+							.logError("Could not create child element", e);
 				}
 			}
 			return null;
@@ -83,18 +76,16 @@ public class MumlInitDiagramFileAction
 	 */
 	@Override
 	public void setCharset(IFile diagramFile) {
-		de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil
-				.setCharset(diagramFile);
+		de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil.setCharset(diagramFile);
 	}
 
 	/**
 	 * @generated
 	 */
 	@Override
-	public String getUniqueFilename(String hint, String extension,
-			IPath filePath) {
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil
-				.getUniqueFileName(filePath, hint, extension);
+	public String getUniqueFilename(String hint, String extension, IPath filePath) {
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil.getUniqueFileName(filePath, hint,
+				extension);
 	}
 
 	/**

@@ -34,8 +34,8 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
+					.getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -45,51 +45,63 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ModelElementCategory_1000 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
+	public static final IElementType ModelElementCategory_1000 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationPattern_2001 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
+	public static final IElementType CoordinationPattern_2001 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationPattern_3003 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"); //$NON-NLS-1$
+	public static final IElementType CoordinationPattern_3003 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Role_3002 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"); //$NON-NLS-1$
+	public static final IElementType Role_3002 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageBuffer_3004 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.MessageBuffer_3004"); //$NON-NLS-1$
+	public static final IElementType MessageBuffer_3004 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.MessageBuffer_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageType_3005 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.MessageType_3005"); //$NON-NLS-1$
+	public static final IElementType MessageType_3005 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.MessageType_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Parameter_3006 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.Parameter_3006"); //$NON-NLS-1$
+	public static final IElementType Parameter_3006 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.Parameter_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConnectorQualityOfServiceAssumptions_3007 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.ConnectorQualityOfServiceAssumptions_3007"); //$NON-NLS-1$
+	public static final IElementType ConnectorQualityOfServiceAssumptions_3007 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.ConnectorQualityOfServiceAssumptions_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AbstractCoordinationSpecificationRoles_4002 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"); //$NON-NLS-1$
+	public static final IElementType AbstractCoordinationSpecificationRoles_4002 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RoleConnector_4001 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"); //$NON-NLS-1$
+	public static final IElementType RoleConnector_4001 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType DiscreteInteractionEndpointReceiverMessageBuffer_4003 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4003"); //$NON-NLS-1$
+	public static final IElementType DiscreteInteractionEndpointReceiverMessageBuffer_4003 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RoleConnectorConnectorQualityOfServiceAssumptions_4004 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4004"); //$NON-NLS-1$
+	public static final IElementType RoleConnectorConnectorQualityOfServiceAssumptions_4004 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -129,63 +141,42 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ModelElementCategory_1000,
-					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-							.getModelElementCategory());
+			elements.put(ModelElementCategory_1000,
+					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
-			elements.put(
-					CoordinationPattern_2001,
-					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-							.getCoordinationPattern());
+			elements.put(CoordinationPattern_2001,
+					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPattern());
 
-			elements.put(
-					CoordinationPattern_3003,
-					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-							.getCoordinationPattern());
+			elements.put(CoordinationPattern_3003,
+					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPattern());
 
-			elements.put(
-					Role_3002,
-					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getRole());
+			elements.put(Role_3002, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRole());
 
-			elements.put(
-					MessageBuffer_3004,
-					de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-							.getMessageBuffer());
+			elements.put(MessageBuffer_3004,
+					de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getMessageBuffer());
 
-			elements.put(
-					MessageType_3005,
-					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
-							.getMessageType());
+			elements.put(MessageType_3005,
+					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getMessageType());
 
-			elements.put(
-					Parameter_3006,
-					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-							.getParameter());
+			elements.put(Parameter_3006,
+					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getParameter());
 
-			elements.put(
-					ConnectorQualityOfServiceAssumptions_3007,
+			elements.put(ConnectorQualityOfServiceAssumptions_3007,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getConnectorQualityOfServiceAssumptions());
 
-			elements.put(
-					AbstractCoordinationSpecificationRoles_4002,
+			elements.put(AbstractCoordinationSpecificationRoles_4002,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getAbstractCoordinationSpecification_Roles());
 
-			elements.put(
-					RoleConnector_4001,
-					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getRoleConnector());
+			elements.put(RoleConnector_4001,
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRoleConnector());
 
-			elements.put(
-					DiscreteInteractionEndpointReceiverMessageBuffer_4003,
+			elements.put(DiscreteInteractionEndpointReceiverMessageBuffer_4003,
 					de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 							.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
 
-			elements.put(
-					RoleConnectorConnectorQualityOfServiceAssumptions_4004,
+			elements.put(RoleConnectorConnectorQualityOfServiceAssumptions_4004,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getRoleConnector_ConnectorQualityOfServiceAssumptions());
 		}
@@ -213,13 +204,10 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(MessageType_3005);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3006);
 			KNOWN_ELEMENT_TYPES.add(ConnectorQualityOfServiceAssumptions_3007);
-			KNOWN_ELEMENT_TYPES
-					.add(AbstractCoordinationSpecificationRoles_4002);
+			KNOWN_ELEMENT_TYPES.add(AbstractCoordinationSpecificationRoles_4002);
 			KNOWN_ELEMENT_TYPES.add(RoleConnector_4001);
-			KNOWN_ELEMENT_TYPES
-					.add(DiscreteInteractionEndpointReceiverMessageBuffer_4003);
-			KNOWN_ELEMENT_TYPES
-					.add(RoleConnectorConnectorQualityOfServiceAssumptions_4004);
+			KNOWN_ELEMENT_TYPES.add(DiscreteInteractionEndpointReceiverMessageBuffer_4003);
+			KNOWN_ELEMENT_TYPES.add(RoleConnectorConnectorQualityOfServiceAssumptions_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -260,33 +248,33 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
 					.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
-					.getElementType(visualID);
+			return de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
 					.getElement(elementTypeAdapter);
 		}

@@ -33,8 +33,7 @@ public class MumlVisualIDRegistry {
 				return -1;
 			}
 		}
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view.getType());
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -59,12 +58,9 @@ public class MumlVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
-				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
-						.getInstance().logError(
-								"Unable to parse view type as a visualID number: "
-										+ type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -84,8 +80,7 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-				.getModelElementCategory()
+		if (de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory()
 				.isSuperTypeOf(domainElement.eClass())
 				&& isDiagram((de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
@@ -120,41 +115,38 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-					.getCoordinationPattern().isSuperTypeOf(
-							domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPattern()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-					.getCoordinationPattern().isSuperTypeOf(
-							domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPattern()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-					.getRole().isSuperTypeOf(domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRole()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getMessageBuffer().isSuperTypeOf(domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getMessageBuffer()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID;
 			}
 			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-					.getConnectorQualityOfServiceAssumptions().isSuperTypeOf(
-							domainElement.eClass())) {
+					.getConnectorQualityOfServiceAssumptions().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
-					.getMessageType().isSuperTypeOf(domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getMessageType()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-					.getParameter().isSuperTypeOf(domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getParameter()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
 			}
 			break;
@@ -278,8 +270,8 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-				.getRoleConnector().isSuperTypeOf(domainElement.eClass())) {
+		if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRoleConnector()
+				.isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -291,16 +283,14 @@ public class MumlVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.modelinstance.ModelElementCategory element) {
+	private static boolean isDiagram(de.uni_paderborn.fujaba.modelinstance.ModelElementCategory element) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -347,55 +337,58 @@ public class MumlVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
-			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view);
+			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
-			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getModelID(view);
+			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getNodeVisualID(containerView,
+					domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.isSemanticLeafVisualID(visualID);

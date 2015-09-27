@@ -13,8 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand
-		extends EditElementCommand {
+public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -68,7 +67,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions && newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -76,16 +76,12 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(
-						getNewSource(), getOldTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(getNewSource(),
+						getOldTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(
-							getNewSource(), getOldTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(getNewSource(),
+							getOldTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -95,7 +91,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions && newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -103,16 +100,12 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(
-						getOldSource(), getNewTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(getOldSource(),
+						getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(
-							getOldSource(), getNewTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView, errorMessage);
+					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(getOldSource(),
+							getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -121,11 +114,9 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

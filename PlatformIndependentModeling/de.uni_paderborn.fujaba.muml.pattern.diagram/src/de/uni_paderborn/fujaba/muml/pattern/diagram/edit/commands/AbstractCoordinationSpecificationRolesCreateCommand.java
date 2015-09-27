@@ -12,8 +12,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class AbstractCoordinationSpecificationRolesCreateCommand extends
-		EditElementCommand {
+public class AbstractCoordinationSpecificationRolesCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -28,8 +27,8 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends
 	/**
 	 * @generated
 	 */
-	public AbstractCoordinationSpecificationRolesCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public AbstractCoordinationSpecificationRolesCreateCommand(CreateRelationshipRequest request, EObject source,
+			EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -46,8 +45,7 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends
 				&& false == source instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.protocol.Role) {
+		if (target != null && false == target instanceof de.uni_paderborn.fujaba.muml.protocol.Role) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -59,16 +57,13 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canCreateAbstractCoordinationSpecificationRoles_4002(
-						getSource(), getTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canCreateAbstractCoordinationSpecificationRoles_4002(getSource(), getTarget(),
+						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorAbstractCoordinationSpecificationRoles_4002(
-							getSource(), getTarget(), sourceView, targetView);
+					.getLinkConstraints().getErrorAbstractCoordinationSpecificationRoles_4002(getSource(), getTarget(),
+							sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -77,11 +72,9 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

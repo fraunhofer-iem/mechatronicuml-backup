@@ -8,8 +8,7 @@ import org.eclipse.ui.IWorkbench;
  * @generated
  */
 public class MumlCreationWizard
-		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+		extends de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -36,8 +35,8 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getItemProvidersAdapterFactory();
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
+				.getItemProvidersAdapterFactory();
 	}
 
 }

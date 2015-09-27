@@ -13,8 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand
-		extends EditElementCommand {
+public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -68,7 +67,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -76,16 +76,12 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistDiscreteInteractionEndpointReceiverMessageBuffer_4003(
-						getNewSource(), getOldTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistDiscreteInteractionEndpointReceiverMessageBuffer_4003(getNewSource(),
+						getOldTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(
-							getNewSource(), getOldTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints().getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(getNewSource(),
+							getOldTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -95,7 +91,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -103,16 +100,12 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistDiscreteInteractionEndpointReceiverMessageBuffer_4003(
-						getOldSource(), getNewTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistDiscreteInteractionEndpointReceiverMessageBuffer_4003(getOldSource(),
+						getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(
-							getOldSource(), getNewTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView, errorMessage);
+					.getLinkConstraints().getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(getOldSource(),
+							getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -121,11 +114,9 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

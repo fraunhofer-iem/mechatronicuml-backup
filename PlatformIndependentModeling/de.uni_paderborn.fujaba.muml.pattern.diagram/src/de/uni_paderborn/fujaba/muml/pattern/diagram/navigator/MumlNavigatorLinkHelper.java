@@ -34,16 +34,14 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
 			if (nextEObject == diagram) {
-				return new FileEditorInput(
-						WorkspaceSynchronizer.getFile(diagramResource));
+				return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 			}
 			if (nextEObject instanceof Diagram) {
 				break;
 			}
 		}
 		URI uri = EcoreUtil.getURI(diagram);
-		String editorName = uri.lastSegment() + '#'
-				+ diagram.eResource().getContents().indexOf(diagram);
+		String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 		IEditorInput editorInput = new URIEditorInput(uri, editorName);
 		return editorInput;
 	}
@@ -53,8 +51,7 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
 		IDiagramDocument document = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getDocumentProvider()
-				.getDiagramDocument(anInput);
+				.getInstance().getDocumentProvider().getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
 		}
@@ -74,12 +71,12 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 	/**
 	 * @generated
 	 */
-	public void activateEditor(IWorkbenchPage aPage,
-			IStructuredSelection aSelection) {
+	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection.getFirstElement() instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem) {
+		if (false == aSelection
+				.getFirstElement() instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem) {
 			return;
 		}
 
@@ -89,9 +86,11 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) {
 			navigatorView = ((de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) abstractNavigatorItem)
 					.getView();
-		} else if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) {
+		} else
+			if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup navigatorGroup = (de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup.getParent() instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) {
+			if (navigatorGroup
+					.getParent() instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) {
 				navigatorView = ((de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) navigatorGroup
 						.getParent()).getView();
 			}
@@ -107,17 +106,13 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		aPage.bringToTop(editor);
 		if (editor instanceof DiagramEditor) {
 			DiagramEditor diagramEditor = (DiagramEditor) editor;
-			ResourceSet diagramEditorResourceSet = diagramEditor
-					.getEditingDomain().getResourceSet();
-			EObject selectedView = diagramEditorResourceSet.getEObject(
-					EcoreUtil.getURI(navigatorView), true);
+			ResourceSet diagramEditorResourceSet = diagramEditor.getEditingDomain().getResourceSet();
+			EObject selectedView = diagramEditorResourceSet.getEObject(EcoreUtil.getURI(navigatorView), true);
 			if (selectedView == null) {
 				return;
 			}
-			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor
-					.getAdapter(GraphicalViewer.class);
-			EditPart selectedEditPart = (EditPart) graphicalViewer
-					.getEditPartRegistry().get(selectedView);
+			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor.getAdapter(GraphicalViewer.class);
+			EditPart selectedEditPart = (EditPart) graphicalViewer.getEditPartRegistry().get(selectedView);
 			if (selectedEditPart != null) {
 				graphicalViewer.select(selectedEditPart);
 			}

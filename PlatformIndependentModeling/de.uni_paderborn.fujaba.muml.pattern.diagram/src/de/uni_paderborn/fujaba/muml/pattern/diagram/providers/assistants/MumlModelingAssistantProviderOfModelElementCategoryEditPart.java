@@ -10,8 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
  * @generated
  */
 public class MumlModelingAssistantProviderOfModelElementCategoryEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
 	 * @generated

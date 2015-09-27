@@ -15,8 +15,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends ConnectionNodeEditPart
+		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -58,8 +58,7 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.RoleConnectorConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy());
 	}
 
@@ -86,8 +85,7 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends
 	/**
 	 * @generated
 	 */
-	public class RoleConnectorQoSAConnectorConnectionFigure extends
-			PolylineConnectionEx {
+	public class RoleConnectorQoSAConnectorConnectionFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

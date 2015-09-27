@@ -12,8 +12,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider
-		implements ILabelProvider {
+public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -32,8 +31,7 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider
 		// END: Added for MUML #912
 
 		if (element instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) {
-			return ((de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) element)
-					.getGroupName();
+			return ((de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -45,8 +43,7 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
-						.getImage(etype);
+				: de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.getImage(etype);
 	}
 
 	/**
@@ -78,15 +75,13 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view);
+			int vid = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view);
 			IElementType etype = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
 					.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

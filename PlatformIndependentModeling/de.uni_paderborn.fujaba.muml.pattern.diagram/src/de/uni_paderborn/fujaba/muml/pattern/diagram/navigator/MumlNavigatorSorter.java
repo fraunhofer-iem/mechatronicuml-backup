@@ -18,8 +18,7 @@ public class MumlNavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem item = (de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) element;
-			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getVisualID(item.getView());
+			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

@@ -16,8 +16,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class AbstractCoordinationSpecificationRolesEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class AbstractCoordinationSpecificationRolesEditPart extends ConnectionNodeEditPart
+		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -59,8 +59,7 @@ public class AbstractCoordinationSpecificationRolesEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.AbstractCoordinationSpecificationRolesItemSemanticEditPolicy());
 	}
 

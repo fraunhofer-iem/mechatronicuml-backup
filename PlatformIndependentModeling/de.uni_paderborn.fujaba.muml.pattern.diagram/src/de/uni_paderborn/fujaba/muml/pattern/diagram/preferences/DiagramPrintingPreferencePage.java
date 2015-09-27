@@ -11,7 +11,7 @@ public class DiagramPrintingPreferencePage extends PrintingPreferencePage {
 	 * @generated
 	 */
 	public DiagramPrintingPreferencePage() {
-		setPreferenceStore(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getPreferenceStore());
+		setPreferenceStore(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
+				.getPreferenceStore());
 	}
 }

@@ -17,8 +17,7 @@ import org.storydriven.core.CorePackage;
 /**
  * @generated
  */
-public class CoordinationPatternParserProvider extends AbstractProvider
-		implements IParserProvider {
+public class CoordinationPatternParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -30,8 +29,7 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	 */
 	private IParser getCoordinationPatternName_5003Parser() {
 		if (coordinationPatternName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser(
 					features);
 			coordinationPatternName_5003Parser = parser;
@@ -49,8 +47,7 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	 */
 	private IParser getRoleName_5002Parser() {
 		if (roleName_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser(
 					features);
 			roleName_5002Parser = parser;
@@ -89,8 +86,7 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	 */
 	private IParser getMessageTypeName_5005Parser() {
 		if (messageTypeName_5005Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser(
 					features);
 			messageTypeName_5005Parser = parser;
@@ -159,10 +155,8 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
@@ -171,13 +165,11 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view));
+			return getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -188,8 +180,7 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
-					.getElement(hint) == null) {
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

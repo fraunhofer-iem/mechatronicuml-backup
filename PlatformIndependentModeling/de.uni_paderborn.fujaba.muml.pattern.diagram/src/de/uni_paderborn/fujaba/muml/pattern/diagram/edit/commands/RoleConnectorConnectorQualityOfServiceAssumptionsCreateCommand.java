@@ -12,8 +12,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand
-		extends EditElementCommand {
+public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -28,8 +27,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand
 	/**
 	 * @generated
 	 */
-	public RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(CreateRelationshipRequest request,
+			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -42,8 +41,7 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector) {
+		if (source != null && false == source instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector) {
 			return false;
 		}
 		if (target != null
@@ -59,16 +57,13 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4004(
-						getSource(), getTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4004(getSource(),
+						getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(
-							getSource(), getTarget(), sourceView, targetView);
+					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(getSource(),
+							getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -77,11 +72,9 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

@@ -18,80 +18,63 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view)) {
+			switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel2EditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel2EditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart(
@@ -110,8 +93,7 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart(
@@ -137,10 +119,8 @@ public class MumlEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }
