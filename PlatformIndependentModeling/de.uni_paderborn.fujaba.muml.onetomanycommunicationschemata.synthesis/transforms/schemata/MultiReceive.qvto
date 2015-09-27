@@ -120,8 +120,6 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Su
 		
 		target := self.map Schema2SubroleIntermediateState(context,2);
 		
-		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
-		
 		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.cloneAction();
 }	
 
