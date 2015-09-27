@@ -1,11 +1,9 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
@@ -22,13 +20,22 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
 public class RoleEditPolicy extends PortBaseEditPolicy {
 
+
 	@Override
 	public void handleNotificationEvent(Notification notification) {
+	
+	
 		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
 			refreshArrow();
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES) {
+			org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure figure =
+					((BorderedNodeFigure) ((GraphicalEditPart) this.getHost())
+					.getFigure());
 			refreshPortType();
+			if(figure != null) {
+				this.determineSide(figure.getLocation().x);
+			}
 		}
 		if (notification.getEventType() == Notification.SET
 				&& notification.getFeature() instanceof EAttribute) {
@@ -66,7 +73,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 
 				CustomPortFigure.PortType myPortType = this.getPortType(myRole);
 				if (myPortType == CustomPortFigure.PortType.OUT_PORT) {
-					if (otherX > newX) {
+					if (otherX >= newX) {
 						this.sideChanged(PositionConstants.EAST);
 						otherPolicy.sideChanged(PositionConstants.WEST);
 					} else {
@@ -75,7 +82,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 					}
 				} else if (myPortType == CustomPortFigure.PortType.IN_PORT) {
 
-					if (otherX > newX) {
+					if (otherX >= newX) {
 						this.sideChanged(PositionConstants.EAST);
 						otherPolicy.sideChanged(PositionConstants.WEST);
 					} else {
