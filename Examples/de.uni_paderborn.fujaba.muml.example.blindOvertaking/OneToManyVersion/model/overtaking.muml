@@ -41,7 +41,7 @@
             <transitions xmi:id="_zBQzgIpXEeK8UOyix3Z7KQ" priority="2" target="_ZOLusYS_EeKO9r0VL65xcg" source="_oZZpwITBEeKO9r0VL65xcg" urgent="false">
               <clockConstraints xmi:id="_27oP8IpaEeK8UOyix3Z7KQ" clock="_HMl0sITDEeKO9r0VL65xcg" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_37ubAIpaEeK8UOyix3Z7KQ" unit="SECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_urj1sLq4EeS_yNxpQx27dg" value="4"/>
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_iGv-0GUxEeWr-aAr0IJs1A" value="6"/>
                 </bound>
               </clockConstraints>
             </transitions>
@@ -113,7 +113,7 @@
               <entryEvent xmi:id="_HCstcKzGEeKcdYkvlDMjkw" clockResets="_HMl0sITDEeKO9r0VL65xcg"/>
               <invariants xmi:id="_u4NMEIpaEeK8UOyix3Z7KQ" clock="_HMl0sITDEeKO9r0VL65xcg">
                 <bound xmi:id="_xrdW0IpaEeK8UOyix3Z7KQ" unit="SECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_vrgPwLq4EeS_yNxpQx27dg" value="4"/>
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_glckIGUxEeWr-aAr0IJs1A" value="6"/>
                 </bound>
               </invariants>
             </states>
@@ -213,98 +213,86 @@
   <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_GPaQMITCEeKO9r0VL65xcg" name="Overtaking">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_mlQtwOVxEeOKtovAzVvTtg">
-        <properties xmi:id="_7TviADR5EeWyRqqcU0-Qbw" comment="the following are default properties">
-          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_7TviATR5EeWyRqqcU0-Qbw">
-            <expr xsi:type="BooleanLogic:ImplyExpr" xmi:id="_7TviAjR5EeWyRqqcU0-Qbw">
-              <leftOpd xsi:type="Predicates:StateActiveExpr" xmi:id="_7TviAzR5EeWyRqqcU0-Qbw">
-                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviBDR5EeWyRqqcU0-Qbw" elem="_p05XYITBEeKO9r0VL65xcg"/>
-              </leftOpd>
-              <rightOpd xsi:type="Predicates:StateActiveExpr" xmi:id="_7TviBTR5EeWyRqqcU0-Qbw">
-                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviBjR5EeWyRqqcU0-Qbw" elem="_oILsAITDEeKO9r0VL65xcg"/>
-              </rightOpd>
+        <properties xmi:id="_yz8uoFruEeWX7_CQYFCHcQ" comment="a deadlock never occurs">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_yz8uoVruEeWX7_CQYFCHcQ">
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_yz8uolruEeWX7_CQYFCHcQ">
+              <opd xsi:type="Predicates:DeadlockExpr" xmi:id="_yz8uo1ruEeWX7_CQYFCHcQ"/>
             </expr>
           </expression>
         </properties>
-        <properties xmi:id="_7TviBzR5EeWyRqqcU0-Qbw" comment="a deadlock never occurs">
-          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_7TviCDR5EeWyRqqcU0-Qbw">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_7TviCTR5EeWyRqqcU0-Qbw">
-              <opd xsi:type="Predicates:DeadlockExpr" xmi:id="_7TviCjR5EeWyRqqcU0-Qbw"/>
+        <properties xmi:id="_yz8upFruEeWX7_CQYFCHcQ" comment="a connector overflow never occurs">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_yz8upVruEeWX7_CQYFCHcQ">
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_yz8uplruEeWX7_CQYFCHcQ">
+              <opd xsi:type="Predicates:ConnectorOverflowExpr" xmi:id="_yz8up1ruEeWX7_CQYFCHcQ"/>
             </expr>
           </expression>
         </properties>
-        <properties xmi:id="_7TviCzR5EeWyRqqcU0-Qbw" comment="a connector overflow never occurs">
-          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_7TviDDR5EeWyRqqcU0-Qbw">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_7TviDTR5EeWyRqqcU0-Qbw">
-              <opd xsi:type="Predicates:ConnectorOverflowExpr" xmi:id="_7TviDjR5EeWyRqqcU0-Qbw"/>
-            </expr>
-          </expression>
-        </properties>
-        <properties xmi:id="_7TviDzR5EeWyRqqcU0-Qbw" comment="there is no transition that can never be fired">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_7TviEDR5EeWyRqqcU0-Qbw">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_7TviETR5EeWyRqqcU0-Qbw">
-              <expr xsi:type="Predicates:TransitionFiringExpr" xmi:id="_7TviEjR5EeWyRqqcU0-Qbw">
-                <transition xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviEzR5EeWyRqqcU0-Qbw" elem="_7TviFDR5EeWyRqqcU0-Qbw"/>
+        <properties xmi:id="_yz8uqFruEeWX7_CQYFCHcQ" comment="there is no transition that can never be fired">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_yz8uqVruEeWX7_CQYFCHcQ">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_yz8uqlruEeWX7_CQYFCHcQ">
+              <expr xsi:type="Predicates:TransitionFiringExpr" xmi:id="_yz8uq1ruEeWX7_CQYFCHcQ">
+                <transition xsi:type="Comparables:MumlElemExpr" xmi:id="_yz8urFruEeWX7_CQYFCHcQ" elem="_yz8urVruEeWX7_CQYFCHcQ"/>
               </expr>
             </formula>
-            <var xmi:id="_7TviFDR5EeWyRqqcU0-Qbw" name="t">
-              <set xsi:type="Sets:TransitionSetExpr" xmi:id="_7TviFTR5EeWyRqqcU0-Qbw"/>
+            <var xmi:id="_yz8urVruEeWX7_CQYFCHcQ" name="t">
+              <set xsi:type="Sets:TransitionSetExpr" xmi:id="_yz8urlruEeWX7_CQYFCHcQ"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_7TviFjR5EeWyRqqcU0-Qbw" comment="there is no state that can never be active">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_7TviFzR5EeWyRqqcU0-Qbw">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_7TviGDR5EeWyRqqcU0-Qbw">
-              <expr xsi:type="Predicates:StateActiveExpr" xmi:id="_7TviGTR5EeWyRqqcU0-Qbw">
-                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviGjR5EeWyRqqcU0-Qbw" elem="_7TviGzR5EeWyRqqcU0-Qbw"/>
+        <properties xmi:id="_yz8ur1ruEeWX7_CQYFCHcQ" comment="there is no state that can never be active">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_yz8usFruEeWX7_CQYFCHcQ">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_yz8usVruEeWX7_CQYFCHcQ">
+              <expr xsi:type="Predicates:StateActiveExpr" xmi:id="_yz8uslruEeWX7_CQYFCHcQ">
+                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_yz8us1ruEeWX7_CQYFCHcQ" elem="_yz8utFruEeWX7_CQYFCHcQ"/>
               </expr>
             </formula>
-            <var xmi:id="_7TviGzR5EeWyRqqcU0-Qbw" name="s">
-              <set xsi:type="Sets:StateSetExpr" xmi:id="_7TviHDR5EeWyRqqcU0-Qbw"/>
+            <var xmi:id="_yz8utFruEeWX7_CQYFCHcQ" name="s">
+              <set xsi:type="Sets:StateSetExpr" xmi:id="_yz8utVruEeWX7_CQYFCHcQ"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_7TviHTR5EeWyRqqcU0-Qbw" comment="there is no message type that cannot possibly arrive in a buffer">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_7TviHjR5EeWyRqqcU0-Qbw">
-            <formula xsi:type="Quantifiers:ExistenceQuantExpr" xmi:id="_7TviHzR5EeWyRqqcU0-Qbw">
-              <formula xsi:type="Quantifiers:EFExpr" xmi:id="_7TviIDR5EeWyRqqcU0-Qbw">
-                <expr xsi:type="Predicates:MessageInBufferExpr" xmi:id="_7TviITR5EeWyRqqcU0-Qbw">
-                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviIjR5EeWyRqqcU0-Qbw" elem="_7TviJDR5EeWyRqqcU0-Qbw"/>
-                  <message xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviIzR5EeWyRqqcU0-Qbw" elem="_7TviJjR5EeWyRqqcU0-Qbw"/>
+        <properties xmi:id="_yz8utlruEeWX7_CQYFCHcQ" comment="there is no message type that cannot possibly arrive in a buffer">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_yz8ut1ruEeWX7_CQYFCHcQ">
+            <formula xsi:type="Quantifiers:ExistenceQuantExpr" xmi:id="_yz8uuFruEeWX7_CQYFCHcQ">
+              <formula xsi:type="Quantifiers:EFExpr" xmi:id="_yz8uuVruEeWX7_CQYFCHcQ">
+                <expr xsi:type="Predicates:MessageInBufferExpr" xmi:id="_yz8uulruEeWX7_CQYFCHcQ">
+                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_yz8uu1ruEeWX7_CQYFCHcQ" elem="_yz8uvVruEeWX7_CQYFCHcQ"/>
+                  <message xsi:type="Comparables:MumlElemExpr" xmi:id="_yz8uvFruEeWX7_CQYFCHcQ" elem="_yz8uv1ruEeWX7_CQYFCHcQ"/>
                 </expr>
               </formula>
-              <var xmi:id="_7TviJDR5EeWyRqqcU0-Qbw" name="b">
-                <set xsi:type="Sets:BufferSetExpr" xmi:id="_7TviJTR5EeWyRqqcU0-Qbw"/>
+              <var xmi:id="_yz8uvVruEeWX7_CQYFCHcQ" name="b">
+                <set xsi:type="Sets:BufferSetExpr" xmi:id="_yz8uvlruEeWX7_CQYFCHcQ"/>
               </var>
             </formula>
-            <var xmi:id="_7TviJjR5EeWyRqqcU0-Qbw" name="m">
-              <set xsi:type="Sets:MessageSetExpr" xmi:id="_7TviJzR5EeWyRqqcU0-Qbw"/>
+            <var xmi:id="_yz8uv1ruEeWX7_CQYFCHcQ" name="m">
+              <set xsi:type="Sets:MessageSetExpr" xmi:id="_yz8uwFruEeWX7_CQYFCHcQ"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_7TviKDR5EeWyRqqcU0-Qbw" comment="there is no message type that cannot possibly be in transit">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_7TviKTR5EeWyRqqcU0-Qbw">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_7TviKjR5EeWyRqqcU0-Qbw">
-              <expr xsi:type="Predicates:MessageInTransitExpr" xmi:id="_7TviKzR5EeWyRqqcU0-Qbw">
-                <message xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviLDR5EeWyRqqcU0-Qbw" elem="_7TviLTR5EeWyRqqcU0-Qbw"/>
+        <properties xmi:id="_yz8uwVruEeWX7_CQYFCHcQ" comment="there is no message type that cannot possibly be in transit">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_yz8uwlruEeWX7_CQYFCHcQ">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_yz8uw1ruEeWX7_CQYFCHcQ">
+              <expr xsi:type="Predicates:MessageInTransitExpr" xmi:id="_yz8uxFruEeWX7_CQYFCHcQ">
+                <message xsi:type="Comparables:MumlElemExpr" xmi:id="_yz8uxVruEeWX7_CQYFCHcQ" elem="_yz8uxlruEeWX7_CQYFCHcQ"/>
               </expr>
             </formula>
-            <var xmi:id="_7TviLTR5EeWyRqqcU0-Qbw" name="m">
-              <set xsi:type="Sets:MessageSetExpr" xmi:id="_7TviLjR5EeWyRqqcU0-Qbw"/>
+            <var xmi:id="_yz8uxlruEeWX7_CQYFCHcQ" name="m">
+              <set xsi:type="Sets:MessageSetExpr" xmi:id="_yz8ux1ruEeWX7_CQYFCHcQ"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_7TviLzR5EeWyRqqcU0-Qbw" comment="there is no buffer that is always empty">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_7TviMDR5EeWyRqqcU0-Qbw">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_7TviMTR5EeWyRqqcU0-Qbw">
-              <expr xsi:type="Predicates:ComparisonExpr" xmi:id="_7TviMjR5EeWyRqqcU0-Qbw" op=">=">
-                <lhs xsi:type="Comparables:BufferMsgCountExpr" xmi:id="_7TviMzR5EeWyRqqcU0-Qbw">
-                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_7TviNDR5EeWyRqqcU0-Qbw" elem="_7TviNjR5EeWyRqqcU0-Qbw"/>
+        <properties xmi:id="_yz8uyFruEeWX7_CQYFCHcQ" comment="there is no buffer that is always empty">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_yz8uyVruEeWX7_CQYFCHcQ">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_yz8uylruEeWX7_CQYFCHcQ">
+              <expr xsi:type="Predicates:ComparisonExpr" xmi:id="_yz8uy1ruEeWX7_CQYFCHcQ" op=">=">
+                <lhs xsi:type="Comparables:BufferMsgCountExpr" xmi:id="_yz8uzFruEeWX7_CQYFCHcQ">
+                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_yz8uzVruEeWX7_CQYFCHcQ" elem="_yz8uz1ruEeWX7_CQYFCHcQ"/>
                 </lhs>
-                <rhs xsi:type="Comparables:ConstExpr" xmi:id="_7TviNTR5EeWyRqqcU0-Qbw" val="1"/>
+                <rhs xsi:type="Comparables:ConstExpr" xmi:id="_yz8uzlruEeWX7_CQYFCHcQ" val="1"/>
               </expr>
             </formula>
-            <var xmi:id="_7TviNjR5EeWyRqqcU0-Qbw" name="b">
-              <set xsi:type="Sets:BufferSetExpr" xmi:id="_7TviNzR5EeWyRqqcU0-Qbw"/>
+            <var xmi:id="_yz8uz1ruEeWX7_CQYFCHcQ" name="b">
+              <set xsi:type="Sets:BufferSetExpr" xmi:id="_yz8u0FruEeWX7_CQYFCHcQ"/>
             </var>
           </expression>
         </properties>

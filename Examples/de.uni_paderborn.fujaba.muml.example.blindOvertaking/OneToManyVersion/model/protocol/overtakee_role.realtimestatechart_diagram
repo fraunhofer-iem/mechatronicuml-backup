@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_hhXBcOQxEeO5YYImi9Q4Mg" type="Real-Time Statechart" name="frontProtocolStateMachine.realtimestatechart_diagram" measurementUnit="Pixel">
-  <children xmi:type="notation:Shape" xmi:id="_4qe5IOQxEeO5YYImi9Q4Mg" type="2007" fontName="Segoe UI" fillColor="8454143" lineColor="0">
+  <children xmi:type="notation:Shape" xmi:id="_4qe5IOQxEeO5YYImi9Q4Mg" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_4qe5IuQxEeO5YYImi9Q4Mg" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_4qe5I-QxEeO5YYImi9Q4Mg" type="5062"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_4qe5JOQxEeO5YYImi9Q4Mg" type="7030">
@@ -82,7 +82,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_4qrGbOQxEeO5YYImi9Q4Mg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_oILsAITDEeKO9r0VL65xcg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qqfUeQxEeO5YYImi9Q4Mg" x="533" y="43" width="376" height="241"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qqfUeQxEeO5YYImi9Q4Mg" x="533" y="43" width="376" height="271"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_4qrGbeQxEeO5YYImi9Q4Mg" type="3032" fontName="Segoe UI" fillColor="13420443" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_4qrGb-QxEeO5YYImi9Q4Mg" type="5060"/>
@@ -163,18 +163,18 @@
         </children>
         <children xmi:type="notation:Shape" xmi:id="_4wy8gOQxEeO5YYImi9Q4Mg" type="3040" fontName="Segoe UI" lineColor="0">
           <element xmi:type="realtimestatechart:EntryPoint" href="../overtaking.muml#_f8CwQBuNEeOKLqh4ZoOwDw"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_4wzjkOQxEeO5YYImi9Q4Mg" x="403" y="138"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_4wzjkOQxEeO5YYImi9Q4Mg" x="403" y="158"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_4wzjkeQxEeO5YYImi9Q4Mg" type="3041" fontName="Segoe UI" lineColor="0">
           <element xmi:type="realtimestatechart:ExitPoint" href="../overtaking.muml#_-FBfQDpIEeO6g-KU3zBcDg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_4wzjk-QxEeO5YYImi9Q4Mg" x="343" y="213"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_fU-PsKwwEeKPNaIATZRLqw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qrGbuQxEeO5YYImi9Q4Mg" x="14" y="5" width="415" height="289"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qrGbuQxEeO5YYImi9Q4Mg" x="14" y="5" width="415" height="309"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_liNIQITDEeKO9r0VL65xcg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qe5IeQxEeO5YYImi9Q4Mg" x="12" y="12" width="934" height="394"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qe5IeQxEeO5YYImi9Q4Mg" x="12" y="12" width="934" height="439"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_hhXBceQxEeO5YYImi9Q4Mg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_liNIQITDEeKO9r0VL65xcg"/>
@@ -188,8 +188,8 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_4xF3ceQxEeO5YYImi9Q4Mg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_tkWZwITDEeKO9r0VL65xcg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4xF3cuQxEeO5YYImi9Q4Mg" points="[83, 97, 48, 56]$[-65, -74, -100, -115]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bCa6oLqyEeS_yNxpQx27dg" id="(0.0,0.6350710900473934)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NqkTQLqzEeS_yNxpQx27dg" id="(0.9927710843373494,0.643598615916955)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bCa6oLqyEeS_yNxpQx27dg" id="(0.0425531914893617,0.966789667896679)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NqkTQLqzEeS_yNxpQx27dg" id="(0.9783132530120482,0.9546925566343042)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_4xbOoOQxEeO5YYImi9Q4Mg" type="4003" source="_4qqfUOQxEeO5YYImi9Q4Mg" target="_4wy8gOQxEeO5YYImi9Q4Mg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_4xb1sOQxEeO5YYImi9Q4Mg" type="6005">
@@ -212,7 +212,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_4xxM4eQxEeO5YYImi9Q4Mg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_uzFjgKwwEeKPNaIATZRLqw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4xxM4uQxEeO5YYImi9Q4Mg" points="[12, -2, -157, 32]$[164, -33, -5, 1]"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BHHHMOQyEeO5YYImi9Q4Mg" id="(0.0026595744680851063,0.8174273858921162)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BHHHMOQyEeO5YYImi9Q4Mg" id="(0.010638297872340425,0.6715867158671587)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_4yGkEOQxEeO5YYImi9Q4Mg" type="4003" source="_4q4hwOQxEeO5YYImi9Q4Mg" target="_4q4hz-QxEeO5YYImi9Q4Mg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_4yGkE-QxEeO5YYImi9Q4Mg" type="6005">
@@ -235,6 +235,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_4yciUeQxEeO5YYImi9Q4Mg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_q_DKsBuNEeOKLqh4ZoOwDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4yciUuQxEeO5YYImi9Q4Mg" points="[7, 10, -95, -136]$[67, 97, -35, -49]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NiR1MGUxEeWr-aAr0IJs1A" id="(0.9926470588235294,0.2743362831858407)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_4ywrYOQxEeO5YYImi9Q4Mg" type="4003" source="_4rlsYOQxEeO5YYImi9Q4Mg" target="_4wzjkeQxEeO5YYImi9Q4Mg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_4ywrY-QxEeO5YYImi9Q4Mg" type="6005">
