@@ -1277,7 +1277,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_FORBIDDEN__EEXPRESSION = "-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\r\n" +
+	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_FORBIDDEN__EEXPRESSION = "-- Using selector expression requires to define a data type for the channel. \r\n" +
 		"not syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())";
 
 	/**
@@ -1510,7 +1510,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- it is only possible to define schemata before the subrole or the coordinator behavior was set!\r\n" +
+	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- Communication schemata may only be used if the RTSC of the multi-role/port does not distinguish between coordinator and subrole RTSC.\r\n" +
 		"self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and  self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() ";
 
 	/**
@@ -1540,7 +1540,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_WHEN_STATECHART_IS_ROLE_OR_PORT_STATECHART__EEXPRESSION = "-- it is only possible to define schemata if the realtime-statechart is the behavior of a Port or Role\r\n" +
+	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_WHEN_STATECHART_IS_ROLE_OR_PORT_STATECHART__EEXPRESSION = "-- It is only possible to define communication schemata if the Realtime Statechart is the behavior of a Port or Role.\r\n" +
 		"self.usesOneToManyCommunicationSchemata implies (\r\n" +
 		"not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint))\r\n" +
 		"\r\n" +
@@ -1573,7 +1573,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__COMPONENT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- The component behavior realtime-statechart must contain exaxtly one State and no Transitions.\r\n" +
+	protected static final String REALTIME_STATECHART__COMPONENT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- The component behavior Real-Time Statechart must contain at the top-level exactly one State and no Transitions.\r\n" +
 		"\r\n" +
 		"let behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n" +
 		"(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(component::Component)) implies ( self.states->size() = 1 and self.transitions->size() = 0)";

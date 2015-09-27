@@ -29,7 +29,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getSynchronization()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SelectorExpressionNecessary SelectorExpressionForbidden'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SelectorExpressionNecessary='-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\r\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()' SelectorExpressionForbidden='-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\r\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SelectorExpressionNecessary='-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\r\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()' SelectorExpressionForbidden='-- Using selector expression requires to define a data type for the channel. \r\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())'"
  * @generated
  */
 public interface Synchronization extends ExtendableElement {
