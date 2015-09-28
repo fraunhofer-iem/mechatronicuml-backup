@@ -188,7 +188,7 @@ public class ConnectorValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "-- Receiver message types need receiver message buffer\r\n" +
+	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "-- All receiver message types must be assigned to one receiver message buffer.\r\n" +
 		"self.receiverMessageTypes->notEmpty() \r\n" +
 		"implies \r\n" +
 		"self.receiverMessageBuffer->notEmpty()";
@@ -220,7 +220,7 @@ public class ConnectorValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer\r\n" +
+	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer.\r\n" +
 		"self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))";
 
 	/**
@@ -250,7 +250,7 @@ public class ConnectorValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_INTERACTION_ENDPOINT__SET_EITHER_SUB_ROLE_AND_COORDINATOR_BEHAVIOR_OR_NONE__EEXPRESSION = "-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n" +
+	protected static final String DISCRETE_INTERACTION_ENDPOINT__SET_EITHER_SUB_ROLE_AND_COORDINATOR_BEHAVIOR_OR_NONE__EEXPRESSION = "-- Set either the subroleBehavior and the coordinatorBehavior or none of them.\r\n" +
 		"(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())";
 
 	/**

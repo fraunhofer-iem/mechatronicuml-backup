@@ -546,7 +546,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION = "-- As soon as a One-To-Many Communication Schema is used, all message events of the RoleOrPortRTSC must use a One-To-Many Communication Schema \r\n" +
+	protected static final String TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION = "-- If a One-To-Many Communication Schema is used at a transition, the behavioral element must be a multi-role/port and all other messages of the RTSC must use a One-To-Many Communication Schema  as well. Moreover, the RTSC may not distinguish between coordinator and subrole region.\r\n" +
 		"let result : Boolean = (\r\n" +
 		"let selfStatechart : RealtimeStatechart = self.statechart in \r\n" +
 		"let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =if selfStatechart.oclIsUndefined() then Set{} else selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) endif in \r\n" +

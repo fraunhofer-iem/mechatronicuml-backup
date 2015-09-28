@@ -816,9 +816,9 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		  (discreteInteractionEndpointEClass, 
 		   source, 
 		   new String[] {
-			 "ReceivingInteractionEndpointRequiresMessageBuffer", "-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
-			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
-			 "SetEitherSubRoleAndCoordinatorBehaviorOrNone", "-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())"
+			 "ReceivingInteractionEndpointRequiresMessageBuffer", "-- All receiver message types must be assigned to one receiver message buffer.\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
+			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer.\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
+			 "SetEitherSubRoleAndCoordinatorBehaviorOrNone", "-- Set either the subroleBehavior and the coordinatorBehavior or none of them.\r\n(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())"
 		   });	
 		addAnnotation
 		  (getDiscreteInteractionEndpoint_Multi(), 

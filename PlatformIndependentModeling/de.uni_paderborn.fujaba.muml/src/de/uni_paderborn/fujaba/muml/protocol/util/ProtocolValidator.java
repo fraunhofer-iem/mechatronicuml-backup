@@ -429,7 +429,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_COORDINATOR_BEHAVIOR__EEXPRESSION = "-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole\r\n" +
+	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_COORDINATOR_BEHAVIOR__EEXPRESSION = "-- The coordinatorBehavior and subroleBehavior should be set if this is a multirole and its RTSC does not use one-to-many communication schemata.\r\n" +
 		"(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\n" +
 		"and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
 
