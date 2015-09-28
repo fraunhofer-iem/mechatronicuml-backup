@@ -1,17 +1,15 @@
+
 package org.eclipse.emf.ecore.properties.ecore.editor;
 
 /**
  * @generated
  */
-public class EDataTypeEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class EDataTypeEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public EDataTypeEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public EDataTypeEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,35 +21,29 @@ public class EDataTypeEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorSerializable_DefaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
 			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorSerializable_DefaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
@@ -108,29 +100,23 @@ public class EDataTypeEditor
 	 * @generated
 	 */
 	public EDataTypeEditor(String tab) {
-		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory(),
+		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getEDataType());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new EDataTypeEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.default", "tab.default", "tab.documentation"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"tab.default", "tab.default", "tab.default",
+					"tab.default", "tab.documentation"}).contains(tab);
 		}
 	}
 

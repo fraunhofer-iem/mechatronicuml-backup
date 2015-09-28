@@ -2,8 +2,6 @@ package de.uni_paderborn.emf.codegen.oclfilter.descriptor;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -39,44 +37,15 @@ import org.eclipse.ocl.options.ParsingOptions;
  * To use this:
  * <ol>
  * <li> Create an annotation with source <code>http://www.muml.org/emf/OCLFilter</code> in your .ecore file under your property.</li>
- * 
- * <li> Add a details entry with key <code>choices</code>.
- *     <ul>
- * 	   <li>The value will be parsed as OCL.</li>
- *     <li><code>self</code> refers to the object that values should be generated for.</li>
- *     <li>It should return a single or multiple possible feature values for this object and this feature.</li>
- *     <li>Make sure that values you return conform to the feature type!</li>
- *     </ul>
- * </li>
- *
+
  * <li> Add a details entry with key <code>filter</code>.
  *     <ul>
- *     <li>The value will be parsed as OCL and evaluated once for every possible choice generated before.</li>
- *     <li><code>self</code> refers to the value being filtered.</li>
- *     <li>It should return <code>true</code>, in order to mark the value as valid for this feature. Every other return value,
- *       including OclInvalid, marks the value as invalid and it will not appear in the list of choices.</li>
- *     </ul>
- * </li>
- * 
- * <li> Add a details entry with key <code>allowEmpty</code> and value <code>true</code> or <code>false</code>.
- *      When the value is set to <code>true</code>, the behavior of the <code>choices</code> key (see above) is changed in the following way:
- *      <ul>
- *      <li>In case the <code>choices</code> key generates an empty list of choices, a collection of all values conforming to the feature type will be generated.</li>
- *      <li>In case the <code>choices</code> key generates one or more choices, these choices will be used as normal.</li>
- *      </ul>
- *      <p>Note: Default value is <code>true</code>, in case this details entry is not specified or an invalid value was specified.</p>
+ *     <li>The value will be parsed as OCL.</li>
+ *     <li><code>self</code> refers to the element for which the reference is being filtered.</li>
+ *     </li>
  * </li>
  * 
  * </ol>
- * 
- * <p>Of course you can use either <code>choices</code> or <code>filter</code> independently.</p>
- * 
- * <p>If you don't use choices, but <code>filter</code> then a collection of all values conforming to the feature type will be
- * generated and filtered using <code>filter</code>.</p>
- * 
- * <p>If you don't use filter, but <code>choices</code>, all generated choices are directly used.</p>
- * 
- * <p>If you don't use any, a collection of all values conforming to the feature type will be generated.</p>
  * 
  * @author Ingo Budde
  *
@@ -92,21 +61,12 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * The key for the details entry to reference a feature by name.
 	 */
 	public static String FEATURE_KEY = "feature";
-	
-	/**
-	 * The key for the details entry to use for choices.
-	 */
-	public static String CHOICES_KEY = "choices";
+
 
 	/**
 	 * The key for the details entry to use for filters.
 	 */
 	public static String FILTER_KEY = "filter";
-
-	/**
-	 * The key for the details entry to use for the allowEmpty switch.
-	 */
-	public static String ALLOW_EMPTY_KEY = "allowEmpty";
 
 	/**
 	 * Default constructor, calls super constructor.
@@ -135,66 +95,30 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 		if (object instanceof EObject && feature != null) {
 			EObject element = (EObject) object;
 			
-			// (1) Generate choices using the "choices" key:
-			Collection<?> choices = null;
-			String choicesOcl = findDetailValue(element.eClass(), CHOICES_KEY);
-			if (!choicesOcl.isEmpty()) {
-				Object result = null;
-				try {
-					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> choicesQuery = createQuery(element.eClass(), choicesOcl);
-					result = choicesQuery.evaluate(object);
-				} catch (ParserException e) {
-					e.printStackTrace();
-				}
-
-				if (result instanceof Collection) {
-					choices = (Collection<?>) result;
-				} else {
-					choices = new ArrayList<Object>(Collections.singletonList(result));		
-				}
-
-				// Filter out oclInvalid
-				Object invalid = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE).getEnvironment().getOCLStandardLibrary().getInvalid();
-				Iterator<?> it = choices.iterator();
-				while (it.hasNext()) {
-					Object choice = it.next();
-					if (choice == invalid) {
-						it.remove();
-					}
-				}
-
-				try {
-					checkResult(choices);
-				} catch (RuntimeException e) {
-					e.printStackTrace();
-					choices = Collections.emptyList();
-				}
-
-				// At this point choices is never null.
-			}
-			
-			// Generate all choices of correct type
-			if (choices == null || (choices.isEmpty() && "true".equalsIgnoreCase(findDetailValue(element.eClass(), ALLOW_EMPTY_KEY)))) {
-				choices = super.getChoiceOfValues(object);
-			}
-
-			// (2) Filter generated choices using the "filter" key:
 			String filterOcl = findDetailValue(element.eClass(), FILTER_KEY);
 			if (!filterOcl.isEmpty()) {
 				try {
 					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), filterOcl);
 					filterQuery.getEvaluationEnvironment().add("context", object);
-					for (Object choice : new ArrayList<Object>(choices)) {
-						if (!Boolean.TRUE.equals(filterQuery.evaluate(choice))) {
-							choices.remove(choice);
+					Object choice = filterQuery.evaluate(object);
+					Collection<Object> choices = new ArrayList<Object>();
+					choices.add(null);
+					if (choice instanceof Collection) {
+						for (Object o : (Collection<?>) choice) {
+							if (o != null) {
+								choices.add(o);
+							}
 						}
+					} else if (choice != null) {
+						choices.add(choice);
 					}
+					checkResult(choices);
+					return choices;
+					
 				} catch (ParserException e) {
 					e.printStackTrace();
 				}
 			}
-
-			return choices;
 		}
 	
 		return super.getChoiceOfValues(object);
@@ -230,6 +154,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 		return null;
 	}
 
+
 	/**
 	 * Parse OCL expression and create Query.
 	 * 
@@ -242,7 +167,6 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * @throws ParserException
 	 *             If the OCL expression contains errors.
 	 */
-	@SuppressWarnings("unchecked")
 	protected Query<org.eclipse.emf.ecore.EClassifier, ?, ?> createQuery(EClassifier context, String oclText) throws ParserException {
 		OCL ocl = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
 	
@@ -252,19 +176,6 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 			    ParsingOptions.implicitRootClass(helper.getEnvironment()),
 			    EcorePackage.Literals.EOBJECT);
 
-
-		Variable<EClassifier, EParameter> contextVar = ExpressionsFactory.eINSTANCE.createVariable();
-		contextVar.setName("context");
-		contextVar.setType(feature.getEContainingClass());
-		Environment<EPackage, EClassifier, EOperation, EStructuralFeature, EEnumLiteral, EParameter, EObject, CallOperationAction, SendSignalAction, Constraint, EClass, EObject> environment;
-		
-		environment = ocl.getEnvironment();
-		environment.addElement( contextVar.getName(), contextVar, true);
-		
-		environment = (Environment<EPackage, EClassifier, EOperation, EStructuralFeature, EEnumLiteral, EParameter, EObject, CallOperationAction, SendSignalAction, Constraint, EClass, EObject>) helper.getEnvironment();
-		environment.addElement( contextVar.getName(), contextVar, true);
-
-		
 		OCLExpression oclExpression = helper.createQuery(oclText);
 		if (oclExpression != null) {
 			return ocl.createQuery(oclExpression);

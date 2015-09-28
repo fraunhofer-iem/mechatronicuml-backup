@@ -1,3 +1,4 @@
+
 package org.eclipse.emf.ecore.properties.ecore.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class EStructuralFeatureEditor
 	/**
 	 * @generated
 	 */
-	public EStructuralFeatureEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public EStructuralFeatureEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +23,7 @@ public abstract class EStructuralFeatureEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
 
@@ -34,43 +33,33 @@ public abstract class EStructuralFeatureEditor
 
 			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorLowerBound_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorUpperBound_DefaultTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorChangeable_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorVolatile_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorTransient_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorUnsettable_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorDerived_DefaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
@@ -83,49 +72,38 @@ public abstract class EStructuralFeatureEditor
 
 			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorLowerBound_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorUpperBound_DefaultTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorChangeable_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorVolatile_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorTransient_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorUnsettable_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorDerived_DefaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
@@ -184,32 +162,27 @@ public abstract class EStructuralFeatureEditor
 
 			{
 				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression(
-								"self.oclIsKindOf(ecore::EAttribute)", feature,
-								getEClass());
+						.createOCLExpression("self.oclIsKindOf(ecore::EAttribute)", feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								boolean visibleBefore = editor.isVisible();
-								editor.updateVisibility(true);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
 
-								// Set default value, if we are hiding the editor and it was not hidden before.
-								if (!editor.isVisible() && visibleBefore) {
-									editor.setDefaultValue();
-								}
-							}
-						});
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};

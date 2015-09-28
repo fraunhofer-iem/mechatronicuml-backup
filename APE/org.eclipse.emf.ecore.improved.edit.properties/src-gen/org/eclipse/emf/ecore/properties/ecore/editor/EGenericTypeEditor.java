@@ -1,17 +1,15 @@
+
 package org.eclipse.emf.ecore.properties.ecore.editor;
 
 /**
  * @generated
  */
-public class EGenericTypeEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class EGenericTypeEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public EGenericTypeEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public EGenericTypeEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,19 +21,15 @@ public class EGenericTypeEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(),
-					false);
+			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(),
-					false);
+			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(),
-					false);
+			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(),
-					false);
+			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -81,28 +75,22 @@ public class EGenericTypeEditor
 	 * @generated
 	 */
 	public EGenericTypeEditor(String tab) {
-		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory(),
+		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getEGenericType());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new EGenericTypeEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"tab.default", "tab.default"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"tab.default", "tab.default"}).contains(tab);
 		}
 	}
 

@@ -1,3 +1,4 @@
+
 package org.eclipse.emf.ecore.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,11 +17,9 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory());
+		factories.add(new org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory());
 
 	}
 

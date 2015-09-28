@@ -1,17 +1,15 @@
+
 package org.eclipse.emf.ecore.properties.ecore.editor;
 
 /**
  * @generated
  */
-public class EAttributeEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class EAttributeEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public EAttributeEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public EAttributeEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +21,7 @@ public class EAttributeEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
 
@@ -34,16 +31,13 @@ public class EAttributeEditor
 
 			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorLowerBound_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorUpperBound_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEditorChangeable_DefaultTab_Editor(), false);
@@ -52,19 +46,16 @@ public class EAttributeEditor
 
 			addPropertyEditor(createEditorTransient_DefaultTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEditorUnsettable_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEditorDerived_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorID_DefaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
@@ -77,16 +68,13 @@ public class EAttributeEditor
 
 			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorLowerBound_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorUpperBound_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEditorChangeable_DefaultTab_Editor(), false);
@@ -95,25 +83,21 @@ public class EAttributeEditor
 
 			addPropertyEditor(createEditorTransient_DefaultTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEditorUnsettable_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEditorDerived_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorID_DefaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
@@ -185,32 +169,27 @@ public class EAttributeEditor
 
 			{
 				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression(
-								"self.oclIsKindOf(ecore::EAttribute)", feature,
-								getEClass());
+						.createOCLExpression("self.oclIsKindOf(ecore::EAttribute)", feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								boolean visibleBefore = editor.isVisible();
-								editor.updateVisibility(true);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
 
-								// Set default value, if we are hiding the editor and it was not hidden before.
-								if (!editor.isVisible() && visibleBefore) {
-									editor.setDefaultValue();
-								}
-							}
-						});
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -349,32 +328,24 @@ public class EAttributeEditor
 	 * @generated
 	 */
 	public EAttributeEditor(String tab) {
-		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory(),
+		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getEAttribute());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new EAttributeEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.default", "tab.default", "tab.default",
-							"tab.default", "tab.default", "tab.default",
-							"tab.default", "tab.default", "tab.default",
-							"tab.default", "tab.default", "tab.documentation"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"tab.default", "tab.default", "tab.default",
+					"tab.default", "tab.default", "tab.default", "tab.default", "tab.default", "tab.default",
+					"tab.default", "tab.default", "tab.default", "tab.default", "tab.documentation"}).contains(tab);
 		}
 	}
 

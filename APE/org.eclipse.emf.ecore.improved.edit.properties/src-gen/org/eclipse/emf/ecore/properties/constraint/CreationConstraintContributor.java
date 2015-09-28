@@ -1,3 +1,4 @@
+
 package org.eclipse.emf.ecore.properties.constraint;
 
 public class CreationConstraintContributor

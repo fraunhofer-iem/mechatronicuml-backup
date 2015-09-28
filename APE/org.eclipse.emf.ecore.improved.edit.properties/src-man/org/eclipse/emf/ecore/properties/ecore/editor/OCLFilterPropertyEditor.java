@@ -4,6 +4,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -11,6 +12,8 @@ import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 
 public class OCLFilterPropertyEditor extends CustomOCLPropertyEditor {
+	
+	private boolean preventModification = false;
 
 	public OCLFilterPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
@@ -25,7 +28,7 @@ public class OCLFilterPropertyEditor extends CustomOCLPropertyEditor {
 	
 	protected String getFilter(Object value) {
 		String val = "";
-		EModelElement modelElement = getModelElement();
+		EModelElement modelElement = getReference();
 		if (element != null) {
 			EAnnotation annotation = modelElement.getEAnnotation("http://www.muml.org/emf/OCLFilter");
 			if (annotation != null) {
@@ -34,26 +37,38 @@ public class OCLFilterPropertyEditor extends CustomOCLPropertyEditor {
 		}
 		return val;
 	}
+	@Override
+	protected void inputChanged(Object oldObject) {
+		preventModification = true;
+		super.inputChanged(oldObject);
+		preventModification = false;
+	}
 
 	protected void updateText() {
 		String text = "";
+		EReference reference = getReference();
 		EAnnotation annotation = getAnnotation();
 		if (annotation != null && annotation.getDetails().get("filter") != null) {
 			text = annotation.getDetails().get("filter");
+		} else if (reference != null) {
+			if (reference.getEType().getEPackage() != reference.getEContainingClass().getEPackage()) {
+				text = reference.getEType().getEPackage().getName() + "::";
+			}
+			text += reference.getEType().getName() + "::allInstances()";
 		}
 		updateText(text);
 	}
 
-	protected EModelElement getModelElement() {
+	protected EReference getReference() {
 		EObject object = element;
-		while ((object instanceof EAnnotation) && object != null) { // forbid annotations
+		while (!(object instanceof EReference) && object != null) {
 			object = object.eContainer();
 		}
-		return (EModelElement) object;
+		return (EReference) object;
 	}
 
 	protected EAnnotation getAnnotation() {
-		EModelElement modelElement = getModelElement();
+		EReference modelElement = getReference();
 		if (modelElement != null) {
 			EAnnotation annotation = modelElement.getEAnnotation("http://www.muml.org/emf/OCLFilter");
 			return annotation;
@@ -78,6 +93,9 @@ public class OCLFilterPropertyEditor extends CustomOCLPropertyEditor {
 
 	@Override
 	protected void doSetValue(final Object newObject) {
+		if (preventModification) {
+			return;
+		}
 		if (newObject == null) {
 			setDefaultValue();
 			return;

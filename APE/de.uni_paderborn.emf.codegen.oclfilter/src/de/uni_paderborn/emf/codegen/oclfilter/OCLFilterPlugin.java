@@ -168,7 +168,7 @@ public class OCLFilterPlugin extends AbstractUIPlugin {
 	public static boolean containsAnnotation(EModelElement modelElement) {
 		EAnnotation annotation = modelElement.getEAnnotation(OCLItemPropertyDescriptor.FILTER_ANNOTATION);
 		if (annotation != null) {
-			return annotation.getDetails().containsKey(OCLItemPropertyDescriptor.CHOICES_KEY) || annotation.getDetails().containsKey(OCLItemPropertyDescriptor.FILTER_KEY);
+			return annotation.getDetails().containsKey(OCLItemPropertyDescriptor.FILTER_KEY);
 		}
 		return false;
 	}

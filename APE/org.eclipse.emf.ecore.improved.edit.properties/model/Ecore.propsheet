@@ -160,19 +160,6 @@
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterAllowEmptyPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterCustomChoicesPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not eAnnotations->select(source = 'http://www.muml.org/emf/OCLFilter').details->select(key = 'choices')->isEmpty()"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterChoicesPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterPropertyEditor"/>
       </orderedElements>
     </classes>

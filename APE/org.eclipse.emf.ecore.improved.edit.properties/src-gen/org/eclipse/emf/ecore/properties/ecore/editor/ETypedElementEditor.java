@@ -1,3 +1,4 @@
+
 package org.eclipse.emf.ecore.properties.ecore.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class ETypedElementEditor
 	/**
 	 * @generated
 	 */
-	public ETypedElementEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ETypedElementEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,35 +23,28 @@ public abstract class ETypedElementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorOrdered_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorUnique_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorLowerBound_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorUpperBound_DefaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
@@ -60,34 +53,27 @@ public abstract class ETypedElementEditor
 
 			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorOrdered_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorUnique_DefaultTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorLowerBound_DefaultTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
 					createEditorUpperBound_DefaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 

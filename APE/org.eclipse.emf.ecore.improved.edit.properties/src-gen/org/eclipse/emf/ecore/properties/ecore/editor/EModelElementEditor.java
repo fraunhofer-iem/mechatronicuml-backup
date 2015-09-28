@@ -1,3 +1,4 @@
+
 package org.eclipse.emf.ecore.properties.ecore.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class EModelElementEditor
 	/**
 	 * @generated
 	 */
-	public EModelElementEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public EModelElementEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,15 +23,13 @@ public abstract class EModelElementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 

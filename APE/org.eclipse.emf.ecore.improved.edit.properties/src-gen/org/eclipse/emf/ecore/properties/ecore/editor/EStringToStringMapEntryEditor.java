@@ -1,3 +1,4 @@
+
 package org.eclipse.emf.ecore.properties.ecore.editor;
 
 /**
@@ -10,8 +11,7 @@ public class EStringToStringMapEntryEditor
 	/**
 	 * @generated
 	 */
-	public EStringToStringMapEntryEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public EStringToStringMapEntryEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -74,28 +74,25 @@ public class EStringToStringMapEntryEditor
 								"not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								boolean visibleBefore = editor.isVisible();
-								editor.updateVisibility(true);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
 
-								// Set default value, if we are hiding the editor and it was not hidden before.
-								if (!editor.isVisible() && visibleBefore) {
-									editor.setDefaultValue();
-								}
-							}
-						});
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -123,28 +120,25 @@ public class EStringToStringMapEntryEditor
 								"eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								boolean visibleBefore = editor.isVisible();
-								editor.updateVisibility(true);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
 
-								// Set default value, if we are hiding the editor and it was not hidden before.
-								if (!editor.isVisible() && visibleBefore) {
-									editor.setDefaultValue();
-								}
-							}
-						});
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -166,29 +160,23 @@ public class EStringToStringMapEntryEditor
 	 * @generated
 	 */
 	public EStringToStringMapEntryEditor(String tab) {
-		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory(),
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEStringToStringMapEntry());
+		this(tab, org.eclipse.emf.ecore.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getEStringToStringMapEntry());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new EStringToStringMapEntryEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.default"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"tab.default", "tab.default", "tab.default"})
+					.contains(tab);
 		}
 	}
 
