@@ -88,7 +88,11 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	 * @return The semantic element.
 	 */
 	protected EObject getSemanticElement() {
-		return (EObject) getHost().getAdapter(EObject.class);
+		EObject element = (EObject) getHost().getAdapter(EObject.class);
+		if (element instanceof View) { // should not be necessary, but just in case (prevented an exception, already).
+			element = ((View) element).getElement();
+		}
+		return element;
 	}
 	
 	/**
