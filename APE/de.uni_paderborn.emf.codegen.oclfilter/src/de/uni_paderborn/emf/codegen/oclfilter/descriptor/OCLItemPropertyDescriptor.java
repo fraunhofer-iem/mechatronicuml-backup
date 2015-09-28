@@ -45,6 +45,8 @@ import org.eclipse.ocl.options.ParsingOptions;
  *     </li>
  * </li>
  * 
+ * Then generate model and edit code!
+ * 
  * </ol>
  * 
  * @author Ingo Budde
