@@ -1,13 +1,17 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wizard;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
@@ -35,7 +39,7 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 	// the workbench instance
 	private IWorkbench workbench;
-
+	private HashMap<EObject, IWizardPage> pageForHWPlatform;
 
 	private TransactionalEditingDomain editingDomain;
 
@@ -54,6 +58,7 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		model.setPlatformInstanceToConfigure(platformInstanceToConfigure);
 		this.editingDomain = editingDomain;
 		this.setForcePreviousAndNextButtons(true);
+		this.pageForHWPlatform = new HashMap<EObject, IWizardPage>();
 	}
 
 	@Override
@@ -66,12 +71,24 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 	public IWizardPage getNextPage(IWizardPage page) {
 		// TODO Auto-generated method stub
 		if (page instanceof PlatformTypePage && ((PlatformTypePage) page).neddFurtherPage()) {
-			IWizardPage nextPage = new PlatformTypePage(((PlatformTypePage) page).getFollowUpPlatforms(), false);
-			addPage(nextPage);
-			// nextPage.setVisible(true);
+			Collection<EObject> additionalPlatforms = new ArrayList<EObject>();
+			additionalPlatforms.addAll(((PlatformTypePage) page).getFollowUpPlatforms());
+			additionalPlatforms.removeAll(pageForHWPlatform.keySet());
+			for (EObject p : additionalPlatforms) {
+				IWizardPage nextPage = new PlatformTypePage(Collections.singletonList(p), false);
+				pageForHWPlatform.put(p, nextPage);
+				addPage(nextPage);
+			}
+			Collection<EObject> superfluousPlatforms = new ArrayList<EObject>();
+			superfluousPlatforms.addAll(pageForHWPlatform.keySet());
+			superfluousPlatforms.removeAll(((PlatformTypePage) page).getFollowUpPlatforms());
+			pageForHWPlatform.keySet().removeAll(superfluousPlatforms);
+			return (IWizardPage) pageForHWPlatform.values().toArray()[0];
 
 		}
+
 		return super.getNextPage(page);
+
 	}
 
 	public IPath getModelPath() {
@@ -143,7 +160,7 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 				input1 = new BasicModelExtent(Collections.singletonList(hwplatform));
 			}
 
-			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { input1 ,output });
+			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { input1, output });
 			// Load QVTO script
 			TransformationExecutor transformationExecutor = Activator.getDefault().getTransformationExecutor();
 
