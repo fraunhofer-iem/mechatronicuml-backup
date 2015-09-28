@@ -26,15 +26,6 @@
    
     
    
-   <extension
-         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
-      <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.providers.CustomPatternEditPartProvider">
-         <Priority
-               name="Low">
-         </Priority>
-      </editpartProvider>
-   </extension>
 
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
