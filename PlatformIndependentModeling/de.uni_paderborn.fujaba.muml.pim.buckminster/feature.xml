@@ -15,13 +15,13 @@
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
-
+   
    <includes
-         id="de.uni_paderborn.fujaba.muml.pim.feature"
+         id="de.uni_paderborn.fujaba.muml.pim.sdk.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.pim.sdk.feature"
+         id="de.uni_paderborn.fujaba.muml.pim.feature"
          version="0.0.0"/>
 
    <requires>
