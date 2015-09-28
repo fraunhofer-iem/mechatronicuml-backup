@@ -112,14 +112,13 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		group1.setLayoutData(gridData);
 		group1.setLayout(filllayout);
 
-
 		final List list = new List(group1, SWT.BORDER | SWT.SINGLE | SWT.V_SCROLL);
 		list.setLayoutData(gridData);
 		for (Object item : availableHWPlatforms) {
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.Literals.HW_PLATFORM
 					.isSuperTypeOf(((EObject) item).eClass())) {
 				list.add(((HWPlatform) item).getName());
-			
+
 			}
 		}
 		Rectangle clientArea = composite.getClientArea();
@@ -147,6 +146,22 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		viewer.setContentProvider(new ArrayContentProvider());
 		final Table table = viewer.getTable();
 
+		table.addListener(SWT.Selection, new Listener() {
+
+			public void handleEvent(Event event) {
+				for (EObject p : availableHWPlatforms) {
+					if (p instanceof HWPlatformPart && currentCardinality.containsKey(p)
+							&& currentCardinality.get(p) >= 1) {
+						followUpPlatforms.add(((HWPlatformPart) p).getHwplatformType());
+						// getNextPage();
+						getWizard().getContainer().updateButtons();
+					}
+				}
+				System.out.println("ww");
+
+			}
+		});
+
 		// table.setLayoutData(gridData);
 		table.setLinesVisible(true);
 		table.setHeaderVisible(true);
@@ -155,16 +170,17 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 		setControl(composite);
 		// addListeners();
-		//set an initial Selection
+		// set an initial Selection
 		list.select(0);
 		list.showSelection();
 		list.notifyListeners(SWT.Selection, null);
+		table.notifyListeners(SWT.Selection, null);
 	}
 
 	private java.util.List<PlatformPart> getEmbeddedPlatformPart(HWPlatform platform) {
 		currentCardinality = new HashMap<PlatformPart, Integer>();
 		for (PlatformPart part : platform.getEmbeddedPlatformParts()) {
-			currentCardinality.put(part, (int) part.getCardinality().getLowerBound().getValue());
+			currentCardinality.put(part, (int) part.getCardinality().getUpperBound().getValue());
 		}
 		return platform.getEmbeddedPlatformParts();
 	}
@@ -211,7 +227,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		tableColumnLayout.setColumnData(col1.getColumn(), new ColumnWeightData(70, 200, true));
 
 		// second column is for the mulitpliciy
-		TableViewerColumn	col2 = createTableViewerColumn(titles[1], bounds[1], 1);
+		TableViewerColumn col2 = createTableViewerColumn(titles[1], bounds[1], 1);
 		col2.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
@@ -229,13 +245,9 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				PlatformPart p = (PlatformPart) element;
 				int positionInList = (Integer) value;
 				currentCardinality.put(p, (int) (p.getCardinality().getLowerBound().getValue() + positionInList));
-				if (p instanceof HWPlatformPart
-						&& (p.getCardinality().getLowerBound().getValue() + positionInList) >= 1) {
-					followUpPlatforms.add(((HWPlatformPart) p).getHwplatformType());
-					// getNextPage();
-					getWizard().getContainer().updateButtons();
-				}
+
 				viewer.update(element, null);
+			//	viewer.getTable().notifyListeners(SWT.Selection, null);
 			}
 
 			@Override
@@ -257,8 +269,8 @@ public class PlatformTypePage extends WizardPage implements Listener {
 							- p.getCardinality().getLowerBound().getValue()) + 1;
 				}
 				cardinality = new String[range];
-				for (int i = 0; i < range; i++) {
-					cardinality[i] = Integer.toString((int) (p.getCardinality().getLowerBound().getValue() + i));
+				for (int i = range - 1; i >= 0; i--) {
+					cardinality[i] = Integer.toString((int) (p.getCardinality().getLowerBound().getValue() + (i)));
 				}
 
 				return new ComboBoxCellEditor(viewer.getTable(), cardinality);
@@ -269,8 +281,10 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				// TODO Auto-generated method stub
 				return true;
 			}
+
 		});
 
+		// viewer.getTable().notifyListeners(SWT.Selection, null);
 	}
 
 	private TableViewerColumn createTableViewerColumn(String title, int bound, final int colNumber) {
