@@ -183,7 +183,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 */
 	protected void checkResult(Collection<?> choices) {
 		for (Object object : choices) {
-			if (!feature.getEType().isInstance(object)) {
+			if (object != null && !feature.getEType().isInstance(object)) {
 				throw new RuntimeException("[OCL Choices] Invalid choice returned for " + feature.getEContainingClass().getName() + "." + feature.getName() + " : " + feature.getEType().getName() + ". Element was: " + object.toString());
 			}
 		}
