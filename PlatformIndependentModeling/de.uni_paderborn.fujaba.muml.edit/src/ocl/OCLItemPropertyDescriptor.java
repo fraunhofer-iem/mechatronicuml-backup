@@ -91,7 +91,6 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 			if (!filterOcl.isEmpty()) {
 				try {
 					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), filterOcl);
-					filterQuery.getEvaluationEnvironment().add("context", object);
 					Object choice = filterQuery.evaluate(object);
 					Collection<Object> choices = new ArrayList<Object>();
 					choices.add(null);

@@ -251,8 +251,9 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_VZMIDswbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZMID8wbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZMID8wbEeSjx7OWZCcdLw" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/events"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then&#xD;&#xA;&#x9;not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in &#xD;&#xA;&#x9;&#x9;if(parent.oclIsInvalid()) &#xD;&#xA;&#x9;&#x9;&#x9;then self.statechart &#xD;&#xA;&#x9;&#x9;else parent &#xD;&#xA;&#x9;&#x9; endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) &#xD;&#xA;else &#xD;&#xA;&#x9; &#x9;true &#xD;&#xA;endif"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZMIEMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
@@ -1067,7 +1068,7 @@
     </classes>
     <classes xmi:id="_VZYVQMwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZYVQcwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZYVQcwbEeSjx7OWZCcdLw" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZYVQswbEeSjx7OWZCcdLw"/>
