@@ -10,18 +10,25 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
+import org.eclipse.ocl.ecore.CallOperationAction;
+import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
+import org.eclipse.ocl.ecore.SendSignalAction;
 import org.eclipse.ocl.expressions.ExpressionsFactory;
 import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
@@ -102,11 +109,6 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	public static String ALLOW_EMPTY_KEY = "allowEmpty";
 
 	/**
-	 * OCL Environment to use; is created once, statically.
-	 */
-	public static org.eclipse.ocl.ecore.OCL OCL_ECORE = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
-
-	/**
 	 * Default constructor, calls super constructor.
 	 */
 	public OCLItemPropertyDescriptor(AdapterFactory adapterFactory,ResourceLocator resourceLocator,String displayName,String description,EStructuralFeature feature,boolean isSettable,Object staticImage,String category,String[] filterFlags) {
@@ -152,10 +154,11 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 				}
 
 				// Filter out oclInvalid
+				Object invalid = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE).getEnvironment().getOCLStandardLibrary().getInvalid();
 				Iterator<?> it = choices.iterator();
 				while (it.hasNext()) {
 					Object choice = it.next();
-					if (choice == OCL_ECORE.getEnvironment().getOCLStandardLibrary().getInvalid()) {
+					if (choice == invalid) {
 						it.remove();
 					}
 				}
@@ -239,22 +242,32 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * @throws ParserException
 	 *             If the OCL expression contains errors.
 	 */
+	@SuppressWarnings("unchecked")
 	protected Query<org.eclipse.emf.ecore.EClassifier, ?, ?> createQuery(EClassifier context, String oclText) throws ParserException {
 		OCL ocl = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
+	
 		Helper helper = ocl.createOCLHelper();
 		helper.setAttributeContext(context, feature);
 		ParsingOptions.setOption(helper.getEnvironment(),
 			    ParsingOptions.implicitRootClass(helper.getEnvironment()),
 			    EcorePackage.Literals.EOBJECT);
-		OCLExpression oclExpression = helper.createQuery(oclText);
+
+
 		Variable<EClassifier, EParameter> contextVar = ExpressionsFactory.eINSTANCE.createVariable();
 		contextVar.setName("context");
-		contextVar.setType(feature.getEType());
+		contextVar.setType(feature.getEContainingClass());
+		Environment<EPackage, EClassifier, EOperation, EStructuralFeature, EEnumLiteral, EParameter, EObject, CallOperationAction, SendSignalAction, Constraint, EClass, EObject> environment;
+		
+		environment = ocl.getEnvironment();
+		environment.addElement( contextVar.getName(), contextVar, true);
+		
+		environment = (Environment<EPackage, EClassifier, EOperation, EStructuralFeature, EEnumLiteral, EParameter, EObject, CallOperationAction, SendSignalAction, Constraint, EClass, EObject>) helper.getEnvironment();
+		environment.addElement( contextVar.getName(), contextVar, true);
 
-		// add it to the global OCL environment
-		ocl.getEnvironment().addElement( contextVar.getName(), contextVar, true);
+		
+		OCLExpression oclExpression = helper.createQuery(oclText);
 		if (oclExpression != null) {
-			return OCL_ECORE.createQuery(oclExpression);
+			return ocl.createQuery(oclExpression);
 		}
 		
 		return null;
