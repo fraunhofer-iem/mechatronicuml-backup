@@ -69,11 +69,11 @@ public class MessageItemProvider
 	 * This adds a property descriptor for the Instance Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addInstanceOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Message_instanceOf_feature"),
@@ -84,34 +84,7 @@ public class MessageItemProvider
 				 true,
 				 null,
 				 null,
-				 null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				Message message = (Message) object;
-				
-				// Derive messageEvent and transition
-				AsynchronousMessageEvent messageEvent = null;
-				Transition transition = null;
-				if (message.eContainer() instanceof AsynchronousMessageEvent) {
-					messageEvent = (AsynchronousMessageEvent) message.eContainer();
-					if (messageEvent.eContainer() instanceof Transition) {
-						transition = (Transition) messageEvent.eContainer();
-					}
-				}
-				
-				// Get correct message types
-				if (messageEvent != null && transition != null) {
-					if (messageEvent.getKind() == EventKind.TRIGGER && !transition.getReceiverMessageTypes().isEmpty()) {
-						return transition.getReceiverMessageTypes();
-					} else if (messageEvent.getKind() == EventKind.RAISE && !transition.getSenderMessageTypes().isEmpty()) {
-						return transition.getSenderMessageTypes();
-					}
-				}
-
-				// None found; show all
-				return super.getChoiceOfValues(object);
-			}
-		});
+				 null));
 	}
 
 	/**
@@ -238,4 +211,19 @@ public class MessageItemProvider
 		return MumlEditPlugin.INSTANCE;
 	}
 
+	/**
+	 * This enables OCL property filtering.
+	 * @generated OCL
+	 */
+	protected org.eclipse.emf.edit.provider.ItemPropertyDescriptor createItemPropertyDescriptor(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.common.util.ResourceLocator resourceLocator,String displayName,String description,org.eclipse.emf.ecore.EStructuralFeature feature,boolean isSettable,Object staticImage,String category,String[] filterFlags) {
+	    return new ocl.OCLItemPropertyDescriptor(adapterFactory,resourceLocator,displayName,description,feature,isSettable,false,false,staticImage,category,filterFlags);
+	}
+	
+	/**
+	 * This enables OCL property filtering.
+	 * @generated OCL
+	 */
+	protected org.eclipse.emf.edit.provider.ItemPropertyDescriptor createItemPropertyDescriptor(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.common.util.ResourceLocator resourceLocator, String displayName, String description, org.eclipse.emf.ecore.EStructuralFeature feature, boolean isSettable, boolean multiLine, boolean sortChoices, Object staticImage,String category, String[] filterFlags) {
+		return new ocl.OCLItemPropertyDescriptor(adapterFactory, resourceLocator, displayName,description,feature,isSettable,multiLine,sortChoices, staticImage, category,filterFlags);
+	}
 }

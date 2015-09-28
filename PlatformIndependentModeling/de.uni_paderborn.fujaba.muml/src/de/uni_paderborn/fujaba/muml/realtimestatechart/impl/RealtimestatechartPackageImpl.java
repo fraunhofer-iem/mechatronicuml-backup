@@ -1791,6 +1791,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createNullAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -2090,6 +2092,22 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "OneOutgoingTransition", "-- Exit point must have exactly one outgoing transition\nself.outgoingTransitions->size() = 1",
 			 "AtMostOneConnectingRegionWithSynchronizations", "-- There must be at most one region with synchronizing transitions that connect (directly or indirectly) to the exit point\r\n\r\nlet exitTransitions : Collection(Transition) = \r\n\r\nself.incomingTransitions->union(\r\n   self.incomingTransitions->closure(t | \r\n\tif t.source.oclIsKindOf(ExitPoint)\r\n\tthen t.source.incomingTransitions\r\n\telse Sequence{}\r\n\tendif\r\n   )\r\n)\r\n\r\nin exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.synchronization.oclIsUndefined()) and (not t2.synchronization.oclIsUndefined())) implies (t1.statechart = t2.statechart))",
 			 "AtMostOneConnectingRegionWithTriggerMessageEvents", "-- There must be at most one region with transitions that have a trigger message event and connect (directly or indirectly) to the exit point\r\n\r\nlet exitTransitions : Collection(Transition) = \r\n\r\nself.incomingTransitions->union(\r\n   self.incomingTransitions->closure(t | \r\n\tif t.source.oclIsKindOf(ExitPoint)\r\n\tthen t.source.incomingTransitions\r\n\telse Sequence{}\r\n\tendif\r\n   )\r\n)\r\n\r\nin exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.triggerMessageEvent.oclIsUndefined()) and (not t2.triggerMessageEvent.oclIsUndefined())) implies (t1.statechart = t2.statechart))"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getMessage_InstanceOf(), 
+		   source, 
+		   new String[] {
+			 "filter", "msgtype::MessageType::allInstances()->select(x |\r\nif( self.oclAsType(ecore::EObject).eContainer().oclIsTypeOf(realtimestatechart::AsynchronousMessageEvent)  and self.oclAsType(ecore::EObject).eContainer().eContainer().oclIsTypeOf(realtimestatechart::Transition)) then \r\n\tlet messageEvent : realtimestatechart::AsynchronousMessageEvent = self.oclAsType(ecore::EObject).eContainer().oclAsType(realtimestatechart::AsynchronousMessageEvent)  in \r\n\tlet transition : realtimestatechart::Transition = messageEvent.oclAsType(ecore::EObject).eContainer().oclAsType(realtimestatechart::Transition) in \r\n\t\r\n\tif(messageEvent.kind = realtimestatechart::EventKind::TRIGGER) then\r\n\t\ttransition.receiverMessageTypes->includes(x)\r\n\telse\r\n\t\ttransition.senderMessageTypes->includes(x)\r\n\tendif\r\nelse\r\n\ttrue\r\nendif\r\n\r\n\r\n)"
 		   });
 	}
 
