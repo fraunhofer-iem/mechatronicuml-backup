@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
@@ -20,6 +21,21 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
 public class RoleEditPolicy extends PortBaseEditPolicy {
 
+	
+	@Override
+	public void activate() {
+		super.activate();
+
+		
+		Display.getCurrent().asyncExec(new Runnable() {
+
+			@Override
+			public void run() {
+				refreshSide();			
+			}
+
+		});
+	}
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
@@ -29,13 +45,8 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 			refreshArrow();
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES) {
-			org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure figure =
-					((BorderedNodeFigure) ((GraphicalEditPart) this.getHost())
-					.getFigure());
 			refreshPortType();
-			if(figure != null) {
-				this.determineSide(figure.getLocation().x);
-			}
+			refreshSide();
 		}
 		if (notification.getEventType() == Notification.SET
 				&& notification.getFeature() instanceof EAttribute) {
@@ -161,4 +172,13 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 		return (Role) getSemanticElement();
 	}
 
+	
+	private void refreshSide() {
+		org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure figure =
+				((BorderedNodeFigure) ((GraphicalEditPart) getHost())
+				.getFigure());
+		if (figure != null) {
+			determineSide(figure.getLocation().x);
+		}
+	}
 }
