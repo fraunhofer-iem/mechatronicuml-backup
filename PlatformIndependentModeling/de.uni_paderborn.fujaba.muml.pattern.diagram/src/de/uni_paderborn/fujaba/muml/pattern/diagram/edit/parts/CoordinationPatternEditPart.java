@@ -85,10 +85,6 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CoordinationPatternItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
-		installEditPolicy("CustomPatternUpdateEditPolicy", //$NON-NLS-1$
-				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CustomCoordinationPatternUpdateEditPolicy());
-
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
