@@ -833,12 +833,12 @@ endif
 [query public getTypeNameForProtoBuf(type : DataType) : String = 
 	if (type = PrimitiveTypes::BOOLEAN or type.name = 'boolean') then 'bool' else
 	if (type = PrimitiveTypes::DOUBLE or type.name = 'double') then 'double' else
-	if (type = PrimitiveTypes::INT8 or type.name = 'int8') then 'int8' else
-	if (type = PrimitiveTypes::INT16 or type.name = 'int16') then 'int16' else
+	if (type = PrimitiveTypes::INT8 or type.name = 'int8') then 'int32' else
+	if (type = PrimitiveTypes::INT16 or type.name = 'int16') then 'int32' else
 	if (type = PrimitiveTypes::INT32 or type.name = 'int32') then 'int32' else
 	if (type = PrimitiveTypes::INT64 or type.name = 'int64') then 'int64' else
-	if (type = PrimitiveTypes::UINT8 or type.name = 'uint8') then 'uint8' else
-	if (type = PrimitiveTypes::UINT16 or type.name = 'uint16') then 'uint16' else
+	if (type = PrimitiveTypes::UINT8 or type.name = 'uint8') then 'uint32' else
+	if (type = PrimitiveTypes::UINT16 or type.name = 'uint16') then 'uint32' else
 	if (type = PrimitiveTypes::UINT32 or type.name = 'uint32') then 'uint32' else
 	if (type = PrimitiveTypes::UINT64 or type.name = 'uint64') then 'uint64' else
 	if (type = PrimitiveTypes::VOID or type.name = 'void') then 'void' else
