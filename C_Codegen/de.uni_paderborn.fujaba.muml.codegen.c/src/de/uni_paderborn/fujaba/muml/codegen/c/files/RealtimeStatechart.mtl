@@ -323,8 +323,7 @@
 #ifdef DEBUG
 printDebugInformation("[component.getQualifiedName()/] received message of type[msg.instanceOf.getTypeName()/]");
 #endif
-//printf("received message of type %d",mwMsg->_msgID );
-				fflush(stdout);		
+	
 	[/let]
 	[/if]
 
