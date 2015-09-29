@@ -222,10 +222,10 @@
                 <message xmi:id="_OgImRmZ-EeWMif2ccgn7Yw" instanceOf="_iSJokByBEeSKP_lLzmbIVg"/>
               </events>
               <action xmi:id="_o6GjoGZ-EeWMif2ccgn7Yw" name="setLED">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_3bn24GZ_EeWMif2ccgn7Yw">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_3bn24WZ_EeWMif2ccgn7Yw" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_3bn24mZ_EeWMif2ccgn7Yw" messageType="_iSJokByBEeSKP_lLzmbIVg" parameter="_jE5UIByBEeSKP_lLzmbIVg"/>
-                    <lhs_typedNamedElementExpression xmi:id="_3bn242Z_EeWMif2ccgn7Yw" typedNamedElement="__E-xwGZ7EeWMif2ccgn7Yw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_ZIvKYGaDEeWMif2ccgn7Yw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ZIvKYWaDEeWMif2ccgn7Yw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_ZIvKYmaDEeWMif2ccgn7Yw" messageType="_iSJokByBEeSKP_lLzmbIVg" parameter="_jE5UIByBEeSKP_lLzmbIVg"/>
+                    <lhs_typedNamedElementExpression xmi:id="_ZIvKY2aDEeWMif2ccgn7Yw" typedNamedElement="__E-xwGZ7EeWMif2ccgn7Yw"/>
                   </expressions>
                 </expressions>
               </action>
