@@ -368,7 +368,9 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 		// Always have null at the front, see MECHATRONICUML #1327.
 		choices.remove(null);
-		choices.add(0, null);
+		if (false == feature.getEType() instanceof EEnum) {
+			choices.add(0, null);
+		}
 
 		// Disabled because of #1327:
 //		// Make sure optional <=> choices.contains(null) is equivalent
