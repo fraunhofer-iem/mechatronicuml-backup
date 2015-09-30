@@ -183,13 +183,38 @@ public class GenerateAll {
 		monitor.worked(1);
 		
 		 //run protobuf-message-gen
-		String command = "java -jar " + target + File.separator + "protoc-1.0M4.jar Messages.proto"; 
+	//	ProcessBuilder pb = new ProcessBuilder("java", "-jar", target + File.separator + "protoc-1.0M4.jar", target + File.separator +"Messages.proto");
 		
-		String output = executeCommand(command);
-		System.out.println(output);
+		ProcessBuilder pb = new ProcessBuilder("java", "-jar", "protoc-1.0M4.jar", "Messages.proto");
+		pb.directory(new File( target + File.separator));
+		
+		//String command = "java -jar " + target + File.separator + "protoc-1.0M4.jar Messages.proto"; 
+		pb.redirectErrorStream(true);
+		Process p = pb.start();
+		//String output = executeCommand(command);
+		//System.out.println(output);
+		InputStream in = p.getInputStream();
+		InputStreamReader ins = new InputStreamReader(in);
+		BufferedReader br = new BufferedReader(ins);
+
+		String line;
+
+		while ((line = br.readLine()) != null) {
+		    System.err.println(line);
+		    
+		}
+
+		p.waitFor();
+		p.destroy();
 		
 		}
 		catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
