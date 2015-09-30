@@ -12,14 +12,15 @@ public class CharSubstitutionLibrary {
 		Pattern pattern = Pattern.compile("[a-zA-Z_]([a-zA-Z0-9_]*)(.*)");
 		Matcher matcher = pattern.matcher(string);
 
-		while(matcher.find() && matcher.group(2)!= null && !matcher.group(2).isEmpty()){
+		while (matcher.find() && matcher.group(2) != null && !matcher.group(2).isEmpty()) {
 			String s = matcher.group(2);
 			char firstChar = s.charAt(0);
 			String replace = String.valueOf(Integer.toHexString(firstChar));
-			substituted = string.replaceAll(String.valueOf(firstChar), replace);
-			//System.out.println("replaced " + String.valueOf(firstChar) + " with " + replace);
+			substituted = substituted.replace(String.valueOf(firstChar), replace);
+			// System.out.println("replaced " + String.valueOf(firstChar) + "
+			// with " + replace);
 		}
-		
+
 		return substituted;
 
 	}
