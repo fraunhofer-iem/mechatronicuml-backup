@@ -1,5 +1,6 @@
 import transforms.lib.MUML2MUML;
 import transforms.lib.ExternalizedStrings;
+import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.CharSubstitutionUnit;
 
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
@@ -17,9 +18,7 @@ main() {
 }
 
 helper substituteUnsupportedStrings(inout theNamedElement : NamedElement){
-	getUnsupportedStrings()->forEach(uS){	
-		theNamedElement.name := theNamedElement.name.substituteAll(uS, substituteString);
-	}
+	theNamedElement.name := substituteUnsupportedCharsByUTF(theNamedElement.name);
 }
 
 helper addPrefix(inout theNamedElement : NamedElement){

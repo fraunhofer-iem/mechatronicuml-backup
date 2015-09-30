@@ -37,6 +37,14 @@
              name="ProgressLib">
        </library>
     </unit>
+    <unit
+          name="CharSubstitutionUnit"
+          namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
+       <library
+             class="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox.CharSubstitutionLibrary"
+             name="CharSubstitutionLibrary">
+       </library>
+    </unit>
    </extension>
    <extension
        point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
