@@ -184,7 +184,13 @@ public class NavigationFeaturePropertyEditor extends
 		eClasses = getCreationEClasses();
 
 		selectedClass = null;
-		if (!eClasses.isEmpty()) {
+		if (value instanceof EObject) {
+			EClass valueEClass = ((EObject) value).eClass();
+			if (eClasses.contains(valueEClass)) {
+				selectedClass = valueEClass;
+			}
+		}
+		if (!eClasses.isEmpty() && selectedClass == null) {
 			selectedClass = eClasses.get(0);
 		}
 		if (manyValue != null) {
