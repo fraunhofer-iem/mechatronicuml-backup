@@ -3,17 +3,6 @@ library ExternalizedStrings;
 //NameNormalization
 property mumlPrefix = "muml_";
 
-helper getUnsupportedStrings() : OrderedSet(String){
-	var unsupportedCharacters : OrderedSet(String);
-	unsupportedCharacters += mumlPrefix;
-	unsupportedCharacters += "-";
-	
-	return unsupportedCharacters;
-}
-
-property substituteString = "_"; // The String unsupported Strings are replaced with
-
-
 //Protocol2CIC
 property coordinationProtocol2CICSuffix = "CIC";
 property role2PortSuffix = "Port";
