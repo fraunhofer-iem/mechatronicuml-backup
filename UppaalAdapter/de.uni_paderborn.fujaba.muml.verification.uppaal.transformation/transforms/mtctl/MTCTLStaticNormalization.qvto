@@ -137,12 +137,12 @@ query ComparisonExpr::evaluateStaticComparison() : Boolean {
 	if (l_value.oclIsUndefined() or r_value.oclIsUndefined()) return null endif;
 	
 	//Normalize time units
-	if (self.lhs.getStaticTimeUnit() != null) {
+/*	if (self.lhs.getStaticTimeUnit() != null) {
 		assert(self.rhs.getStaticTimeUnit() != null) with log ("Time unit not set");
 		var smallestTimeUnit := OrderedSet {self.lhs.getStaticTimeUnit(), self.rhs.getStaticTimeUnit()}->sortedBy(u | getTimeUnits()->indexOf(u.repr()))->last();
 		l_value := getUpscaleFactor(self.lhs.getStaticTimeUnit(), smallestTimeUnit) * l_value.oclAsType(Integer);
 		r_value := getUpscaleFactor(self.rhs.getStaticTimeUnit(), smallestTimeUnit) * r_value.oclAsType(Integer);
-	};
+	};*/
 	
 	//Return compared value
 	switch {

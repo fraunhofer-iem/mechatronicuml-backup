@@ -24,11 +24,16 @@ transformation VerifiableCIC2UPPAAL(in verifiable_cic : muml, in options : verif
 
 main() {
 	reportProgress("Normalizations");
+	// Normalize time units used in the model (to one common time unit)
+	var scaleClockValuesNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var scaleClockValuesNormalization : RTSCScaleTimeValuesNormalization = new RTSCScaleTimeValuesNormalization(verifiable_cic, scaleClockValuesNormalizedModel);
+	var retcode := scaleClockValuesNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Scale-Time-Values normalization failed: ' + retcode.raisedException().repr());
 	
 	//add muml prefix to all named elements and substitute unsupported substrings of the named elements' names
 	var prefixedModel : muml = muml.createEmptyModel().oclAsType(muml);
-	var nameNormalization : NameNormalization = new NameNormalization(verifiable_cic, prefixedModel);
-	var retcode := nameNormalization.transform();
+	var nameNormalization : NameNormalization = new NameNormalization(scaleClockValuesNormalizedModel, prefixedModel);
+	retcode := nameNormalization.transform();
 	assert fatal (retcode.succeeded()) with log('NamePrefix normalization failed: ' + retcode.raisedException().repr());
 
 	// Normalize transitions with deadlines by adding an intermediate state
@@ -61,15 +66,10 @@ main() {
 	retcode := entryExitNormalization.transform();
 	assert fatal (retcode.succeeded()) with log('Entry-Exit-Event normalization failed: ' + retcode.raisedException().repr());
 
-	// Normalize time units used in the model (to one common time unit)
-	var scaleClockValuesNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
-	var scaleClockValuesNormalization : RTSCScaleTimeValuesNormalization = new RTSCScaleTimeValuesNormalization(entryExitNormalizedModel, scaleClockValuesNormalizedModel);
-	retcode := scaleClockValuesNormalization.transform();
-	assert fatal (retcode.succeeded()) with log('Scale-Time-Values normalization failed: ' + retcode.raisedException().repr());
 	
 	// Ensure that all transitions synchronizing over the same channel are either all urgent or all non-urgent.
 	var urgencyNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
-	var urgencyNormalization : RTSCUrgencyNormalization = new RTSCUrgencyNormalization(scaleClockValuesNormalizedModel,urgencyNormalizedModel);
+	var urgencyNormalization : RTSCUrgencyNormalization = new RTSCUrgencyNormalization(entryExitNormalizedModel,urgencyNormalizedModel);
 	retcode := urgencyNormalization.transform();
 	assert fatal (retcode.succeeded()) with log('Urgency normalization failed: ' + retcode.raisedException().repr());
 	
