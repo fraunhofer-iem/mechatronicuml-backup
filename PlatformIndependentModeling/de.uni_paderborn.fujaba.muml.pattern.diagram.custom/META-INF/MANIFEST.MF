@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.ui,
  de.uni_paderborn.fujaba.muml,
  org.eclipse.emf.common.ui,
  org.eclipse.swt,
- org.eclipse.jface
+ org.eclipse.jface,
+ de.uni_paderborn.fujaba.modelcopy.qvto.library;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
