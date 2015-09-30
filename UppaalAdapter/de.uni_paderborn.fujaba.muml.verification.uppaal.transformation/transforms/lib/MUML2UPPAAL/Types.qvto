@@ -87,7 +87,7 @@ modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
 				case (self.primitiveType = PrimitiveTypes::BOOLEAN) BOOL;
 				case (self.primitiveType = PrimitiveTypes::INT16) MUMLSHORT;
 				case (self.primitiveType = PrimitiveTypes::INT8) MUMLBYTE;
-				else assert fatal (false) with log("Illegal enum value");
+				else assert fatal (false) with log(self.primitiveType.toString()+" is not supported");
 			}
 			
 		}
