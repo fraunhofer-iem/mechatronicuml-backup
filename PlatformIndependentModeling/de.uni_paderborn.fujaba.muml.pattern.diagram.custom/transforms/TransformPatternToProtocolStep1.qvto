@@ -1,4 +1,5 @@
 import PatternProtocolTransformationLibrary;
+
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -16,6 +17,11 @@ modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
 // @author sthiele2
 transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
+
+
+
+
+
 property bindings : Set(ParameterBinding);
 property theRootNode : RootNode;
 main()
@@ -26,15 +32,18 @@ main()
 	// Debug:
 	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
 	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
-	
-	// not debug:
+	//bindings := thePattern.legalConfigurations->at(1).parameterBindings;
+	// not debug:	
 	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
 	bindings := input.rootObjects()[ParameterBinding];
+	
+	
 	
 	// check whether the input is correct: 
 	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
 	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
-    assert fatal (bindings != null and bindings->size() = thePattern.patternParameters->size()) with log ("Parameter Bindings are null!");
+    assert fatal (if(thePattern.patternParameters->size() > 0) then (bindings != null and bindings->size() = thePattern.patternParameters->size()) else true endif) with log ("Parameter Bindings are null!");
+    assert fatal (if( bindings->size() >0) then bindings->size() = thePattern.patternParameters->size()  else true endif);
     
     // start transformation
 	createProtocol(thePattern);
@@ -49,21 +58,25 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 {	
 	result.name := self.name;
 	result.comment := self.comment;
-	result.annotation := self.annotation.map EAnnotation2EAnnotation();		
+	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
 	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
 
 	self.roles->forEach(role)
 	{
 		// the role was already mapped in RoleConnector2RoleConnector
-		var newRole : Role := role.map Role2Role();
+		var newRole : Role := role.map transform().oclAsType(Role);
 		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
 		//set behavorial element?? --> should be already considered when setting behavior of the role!
-		newRole.coordinationProtocol := result;
+		
+		//newRole.coordinationProtocol := result;
+		
 		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
 		result.roles+= newRole;
 	};
-	result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
-	result.roleConnector.coordinationProtocol := result;
+	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
+	
+	//result.roleConnector.coordinationProtocol := result;
+	
 	result.adaptedFromPattern := self;
 } 
 
@@ -76,12 +89,12 @@ mapping muml::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart
 	_comment := self.comment;
 }
 
-mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2Expression, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall, actionLanguage::TimeValueExpression ::TimeValueExpression2TimeValueExpression;
- 
-mapping  actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2Expression() : core::expressions::Expression
-{
-	init{
-		if(self.typedNamedElement.oclIsKindOf(Parameter)){
+mapping actionlanguage::TypedNamedElementExpression :: transform() : EObject {
+	
+	init {
+		
+		
+		if(self.typedNamedElement.oclIsKindOf(Parameter)) {
 			var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
 			var rtsc : RealtimeStatechart := getHighestParentStatechart(self);
 			var myExp : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
@@ -89,36 +102,45 @@ mapping  actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpressi
 			if(rtsc = null or rtsc.oclIsInvalid()){
 				// in case the rtsc is invalid means that the TypedNamedElementExpression referencing the Parameter is not contained in a rtsc but in a ConnectorQualityOfServiceAssumptions
 				// therefore, just replace the TypedNamedElementExpression by the bounded expression defined in the ParameterBinding
-				result:= myExp.map Expression2Expression();
+				result:= myExp.copyParameterExpression()
 			}
-			else
-				result := self.map TypedNamedElementExpression2TypedNamedElementExpression();						
+			else {
+				
+			result := self.map create();	
+			var resultingExpression : TypedNamedElementExpression := result.oclAsType(TypedNamedElementExpression);		
+			var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+			assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+			var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
+			var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
+			if(not mappedrtsc.variables->includes(mappedVariable)){
+				mappedrtsc.variables+=mappedVariable;
+				mappedVariable.initializeExpression := boundedExpression.copyParameterExpression();
+			};
+			resultingExpression.typedNamedElement := mappedVariable;
+			};
 		}
-		else
-			result := self.map TypedNamedElementExpression2TypedNamedElementExpression();
-	}
-}
-mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2TypedNamedElementExpression() : actionlanguage::TypedNamedElementExpression
-{	
-	result.annotation := self.annotation.map EAnnotation2EAnnotation();
-	result.comment := self.comment;
-	result.extension := self.extension.map Extension2Extension();
-	if(self.typedNamedElement.oclIsKindOf(Parameter)){
-		var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
-		var rtsc : RealtimeStatechart := getHighestParentStatechart(self);			
-		var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
-		assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
-		var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
-		var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
-		if(not mappedrtsc.variables->includes(mappedVariable)){
-			mappedrtsc.variables+=mappedVariable;
-			mappedVariable.initializeExpression := boundedExpression.map Expression2Expression();
+		else {
+			result := self.map create();
+			
+		
+			var resultingExpression : TypedNamedElementExpression := result.oclAsType(TypedNamedElementExpression);
+			resultingExpression._annotation := self._annotation.map transform().oclAsType(EAnnotation);
+			resultingExpression._extension := self._extension.map transform().oclAsType(core::Extension);
+			resultingExpression.typedNamedElement := self.typedNamedElement.map transform().oclAsType(TypedNamedElement);
+			
+			var element := self.oclAsType(EObject);
+			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+			};
 		};
-		result.typedNamedElement := mappedVariable;
+		
+		
+	
 	}
-	else
-		result.typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement();				
+
+	
 }
+
 
 
 query getHighestParentStatechart(in expr : TypedNamedElementExpression) : RealtimeStatechart
@@ -149,3 +171,11 @@ query getBoundExpressionToGivenParameter(in parameter : Parameter) : core::expre
 	} endif;
 	return null;
 }		
+
+helper core::expressions::Expression :: copyParameterExpression() : core::expressions::Expression {
+	if(self.oclIsKindOf(core::expressions::common::LiteralExpression)) {
+		return self.clone().oclAsType(core::expressions::common::LiteralExpression);
+	}
+	else
+		assert fatal (false) with log ("ParameterBinding may only define a LiteralExpression!");
+}

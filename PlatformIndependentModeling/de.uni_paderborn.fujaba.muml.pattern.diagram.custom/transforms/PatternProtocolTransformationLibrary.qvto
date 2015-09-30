@@ -1,5 +1,5 @@
 library PatternProtocolTransformationLibrary;
-import MUML2MUML;
+import ModelcopyLibrary;
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -27,51 +27,46 @@ query getPatternCategory(theRootNode : RootNode) : ModelElementCategory {
 }
 
 
-
-mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::protocol::RoleConnector{
-    	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
-    //	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint(); // --> maybe this has to be deleted
-    //	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
-    	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
-   		 }
-
-
-
-mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
-    	_name := self._name;
-    	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
-    //	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
-    	_operations := self._operations.map Operation2Operation();
-    	_variables := self._variables.map Variable2Variable();
-    	_parentRegion := self._parentRegion.map Region2Region();
-    	_transitions := self._transitions.map Transition2Transition();
-    	_states := self._states.map State2State();
-    	_clocks := self._clocks.map Clock2Clock();
-   		 }
-	
+mapping DiscreteInteractionEndpoint :: transform() : EObject {
+	init {
+		result := self.map create();
+	}
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f).map transform());
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	}
+}
 
 
-mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
-    	_comment := self._comment;
-    	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
-    	connectors += self.connectors.map Connector2Connector();     				
-    	_behavior := self._behavior.map Behavior2Behavior();
-    	self._senderMessageTypes->forEach(messagetype){
-    		_senderMessageTypes += messagetype;
-    	};
-    	self._receiverMessageTypes->forEach(messagetype){
-    		_receiverMessageTypes+=messagetype;
-    	};
-    	_coordinatorBehavior := self._coordinatorBehavior.map Behavior2Behavior();
-    	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
-    	_cardinality := self._cardinality.map Cardinality2Cardinality();
-    	_receiverMessageBuffer := self._receiverMessageBuffer.map MessageBuffer2MessageBuffer();
-    	//_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
-   		 }
+
+mapping DataType :: transform() : EObject {
+	init{
+		if(not self.oclIsKindOf(DiscreteInteractionEndpoint) and not self.oclIsKindOf(Component) and not self.oclIsKindOf(ComponentPart)){
+			result :=  self;	
+		}
+		else {
+			if(self.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) {
+				result := self.oclAsType(muml::connector::DiscreteInteractionEndpoint).map transform();
+			}
+			else if(self.oclIsKindOf(muml::component::Component)){
+				result := self.oclAsType(muml::component::Component).map transform();
+			}
+			else if(self.oclIsKindOf(muml::component::ComponentPart)){
+				result := self.oclAsType(muml::component::ComponentPart).map transform();
+			}
+			else assert fatal (false) with log ("Error: transformation for DataType not yet created");
+		}
+			
+		
+	}
+}
+
+mapping MessageType :: transform() : EObject {
+	init {
+		result := self;
+	}
+}
 

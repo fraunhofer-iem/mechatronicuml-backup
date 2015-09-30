@@ -1,4 +1,3 @@
-
 import PatternProtocolTransformationLibrary;
 
 
@@ -57,20 +56,20 @@ mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2Coordination
 {
 	result.name := self.name;
 	result.comment := self.comment;
-	result.annotation := self.annotation.map EAnnotation2EAnnotation();		
+	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
 	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
 	result.patternParameters := variablesToParameter.map Variable2Parameter();
 	self.roles->forEach(role)
 	{
 		// the role was already mapped in RoleConnector2RoleConnector
-		var newRole : Role := role.map Role2Role();
+		var newRole : Role := role.map transform().oclAsType(Role);
 		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
 		//set behavorial element?? --> should be already considered when setting behavior of the role!
 		newRole.coordinationProtocol := result;
 		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
 		result.roles+= newRole;
 	};
-	result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
 	result.roleConnector.coordinationProtocol := result;		
 }
 
@@ -79,26 +78,26 @@ mapping Variable::Variable2Parameter(): Parameter
 		_name := self._name;
 		_comment := self._comment;
 		_dataType := self.dataType;
-		annotation := self.annotation.map EAnnotation2EAnnotation();
-		extension := self.extension.map Extension2Extension();
+		annotation := self.annotation.map transform().oclAsType(EAnnotation);
+		extension := self.extension.map transform().oclAsType(core::Extension);
 }
 mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	_annotation := self._annotation.map transform().oclAsType(EAnnotation);
+    	_extension := self._extension.map transform().oclAsType(core::Extension);
     //	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
-    	_operations := self._operations.map Operation2Operation();
-    	// only transform variables that are not converted into patterns
-    	_variables := (self._variables-(variablesToParameter)).map Variable2Variable();
-    	_parentRegion := self._parentRegion.map Region2Region();
-    	_transitions := self._transitions.map Transition2Transition();
-    	_states := self._states.map State2State();
-    	_clocks := self._clocks.map Clock2Clock();
+    	_operations := self._operations.map transform().oclAsType(Operation);
+    	// only transform variables that are not converted into parameter
+    	_variables := (self._variables-(variablesToParameter)).map transform().oclAsType(Variable);
+    	_parentRegion := self._parentRegion.map transform().oclAsType(Region);
+    	_transitions := self._transitions.map transform().oclAsType(Transition);
+    	_states := self._states.map transform().oclAsType(State);
+    	_clocks := self._clocks.map transform().oclAsType(Clock);
    		 }
 mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2TypedNamedElementExpression() :actionlanguage::TypedNamedElementExpression {    
-    	result.annotation := self._annotation.map EAnnotation2EAnnotation();
-    	result.extension := self._extension.map Extension2Extension();
+    	result.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+    	result.extension := self._extension.map transform().oclAsType(core::Extension);
     	result.comment := self._comment;
     	if(self._typedNamedElement.oclIsTypeOf(Variable) and  variablesToParameter->includes(self._typedNamedElement.oclAsType(Variable)))  	
     	{    		
@@ -107,6 +106,6 @@ mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpressio
     	}
    		else 
    		{   		 	
-    		result.typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
+    		result.typedNamedElement := self._typedNamedElement.map transform().oclAsType(TypedNamedElement);
    		}   		
 }

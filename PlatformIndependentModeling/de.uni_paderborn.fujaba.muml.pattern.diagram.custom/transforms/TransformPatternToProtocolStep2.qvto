@@ -1,6 +1,5 @@
-import MUML2MUML;
+import PatternProtocolTransformationLibrary;
 
-modeltype mtctl uses mtctl('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
@@ -30,12 +29,8 @@ main()
 	
 	assert fatal (theRootNode != null) with log ("RootNode is null!");
 	
-	thePattern.verificationConstraintRepositories->forEach(rep)
-	{
-		var propRep : PropertyRepository = rep.oclAsType(PropertyRepository);
-		theProtocol.verificationConstraintRepositories += propRep.map PropertyRepository2PropertyRepository();
-	};
-	
+	theProtocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);
+		
   
 }
 
