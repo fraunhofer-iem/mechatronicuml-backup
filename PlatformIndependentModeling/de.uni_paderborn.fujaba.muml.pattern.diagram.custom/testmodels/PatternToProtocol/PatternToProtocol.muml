@@ -95,6 +95,11 @@
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
       <descriptionAspects xmi:id="_-5LfoGdmEeWJc7rlIredIQ" overview="asd" context="asd" problem="asd" solution="asd" structure="asd" behavior="asd" examples="asd" consequences="asd" combineability="asd" variants="asd" alternatives="asd"/>
+      <legalConfigurations xmi:id="_clDZAGdvEeWYidVd-9L3EQ" name="legalConfig1">
+        <parameterBindings xmi:id="_eYiv4GdvEeWYidVd-9L3EQ" parameter="_7WFzYGdmEeWJc7rlIredIQ">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_fxQPQGdvEeWYidVd-9L3EQ" value="1000"/>
+        </parameterBindings>
+      </legalConfigurations>
       <patternParameters xmi:id="_7WFzYGdmEeWJc7rlIredIQ" name="parameter1" dataType="_hNXtJmddEeW2PYMF5P3p8Q"/>
     </modelElements>
   </categories>
