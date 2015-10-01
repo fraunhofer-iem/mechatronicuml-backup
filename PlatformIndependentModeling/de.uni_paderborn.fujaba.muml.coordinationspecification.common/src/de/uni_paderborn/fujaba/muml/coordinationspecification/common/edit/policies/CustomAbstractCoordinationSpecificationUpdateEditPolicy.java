@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies;
+package de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies;
 
 import java.util.Iterator;
 import java.util.List;
@@ -9,37 +9,37 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
 
 /**
  * This policy is responsible for the correct refreshment of the
- * CoordinationProtocol when MessageBuffers are added or removed
+ * AbstractCoordinationSpecification when MessageBuffers are added or removed
  * 
  * @author sthiele2
  */
-public class CustomCoordinationProtocolUpdateEditPolicy extends
+public class CustomAbstractCoordinationSpecificationUpdateEditPolicy extends
 		NotifyingGraphicalEditPolicy {
 
 	
 
 	@Override
 	protected void addListeners() {
-		CoordinationProtocol protocol = (CoordinationProtocol) getSemanticElement();
-		RoleConnector connector = protocol.getRoleConnector();
+		AbstractCoordinationSpecification acs = (AbstractCoordinationSpecification) getSemanticElement();
+		RoleConnector connector = acs.getRoleConnector();
 		if (connector != null) {
 			this.addNotificationListener(connector);
 		}
 
-		addNotificationListener(protocol);
-		for (Role role : protocol.getRoles()) {
+		addNotificationListener(acs);
+		for (Role role : acs.getRoles()) {
 			if (role != null)
 				addNotificationListener(role);
 		}
-		ConnectorQualityOfServiceAssumptions quosa = protocol
+		ConnectorQualityOfServiceAssumptions quosa = acs
 				.getGmfConnectorQualityOfServiceAssumptions();
 		if (quosa != null) {
 			addNotificationListener(quosa);

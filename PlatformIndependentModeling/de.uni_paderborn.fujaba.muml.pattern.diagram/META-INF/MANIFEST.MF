@@ -52,6 +52,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- org.eclipse.emf.ecore.editor
+ org.eclipse.emf.ecore.editor,
+ de.uni_paderborn.fujaba.muml.coordinationspecification.common;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

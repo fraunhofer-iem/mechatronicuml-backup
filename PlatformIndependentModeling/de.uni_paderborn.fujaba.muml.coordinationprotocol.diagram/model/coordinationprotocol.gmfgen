@@ -14,6 +14,7 @@
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE" editPolicyQualifiedClassName=""/>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy"/>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomAbstractCoordinationSpecificationUpdateEditPolicy&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
