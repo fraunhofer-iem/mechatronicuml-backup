@@ -21,12 +21,21 @@ transformation TransformPatternToProtocolStep2(inout input : ModelInstancePackag
 
 main()
 { 
-	
 	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);		
+	
+	// not debug
 	var theProtocol : CoordinationProtocol := input.rootObjects()[CoordinationProtocol] -> any(true);
 	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
-	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
 	
+	
+	// deubug
+	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
+	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
+	//var theProtocol : CoordinationProtocol := protocolCategory.modelElements->at(1).oclAsType(CoordinationProtocol);
+	
+	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!" + theProtocol.name);
+	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
 	assert fatal (theRootNode != null) with log ("RootNode is null!");
 	
 	theProtocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);

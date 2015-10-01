@@ -33,6 +33,7 @@ main()
 	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
 	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
 	//bindings := thePattern.legalConfigurations->at(1).parameterBindings;
+	
 	// not debug:	
 	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
 	bindings := input.rootObjects()[ParameterBinding];
