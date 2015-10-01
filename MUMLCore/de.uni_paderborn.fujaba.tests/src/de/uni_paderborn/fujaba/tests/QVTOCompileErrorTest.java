@@ -11,6 +11,8 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
 
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
+
 /**
  * A Junit test that checks all qvto files for compilation errors.
  * 
@@ -22,6 +24,8 @@ import org.osgi.framework.Bundle;
  *
  */
 public abstract class QVTOCompileErrorTest {
+	final ProblemCollector problems = new ProblemCollector();
+
 
 	/**
 	 * Tests all .qvto files in the current working directory (which should be
@@ -38,6 +42,7 @@ public abstract class QVTOCompileErrorTest {
 				}
 			}
 		}
+		problems.fail();
 	}
 
 	/**
@@ -91,7 +96,8 @@ public abstract class QVTOCompileErrorTest {
 			// If this is a library, we get an error; do not fail
 			// then.
 			if (!diagnostic.getMessage().contains("No transformation found in unit")) {
-				org.junit.Assert.fail(diagnostic.toString());
+				//org.junit.Assert.fail(diagnostic.toString());
+				problems.add(diagnostic.toString());
 			}
 		}
 	}
