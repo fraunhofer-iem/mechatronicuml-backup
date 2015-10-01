@@ -70,8 +70,9 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 		//set behavorial element?? --> should be already considered when setting behavior of the role!
 		
 		//newRole.coordinationProtocol := result;
-		
+
 		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		newRole.subroleBehavior := role.subroleBehavior.map transform().oclAsType(Behavior);
 		result.roles+= newRole;
 	};
 	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);

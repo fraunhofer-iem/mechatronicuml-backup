@@ -25,15 +25,20 @@ property theRootNode : RootNode;
 
 main()
 { 	
+	
 	// fetch input
-		// not debug:
+	
 	theRootNode  := input.rootObjects()[RootNode] -> any(true);
-	variablesToParameter := input.rootObjects()[Variable];	
-	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);	
-		// debug:
-	//theRootNode  := input.rootObjects()[RootNode] -> any(true);
-	//variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(4).variables;
-	//theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
+		
+		
+	// not debug:
+	//variablesToParameter := input.rootObjects()[Variable];	
+	//theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
+	
+		
+	// debug:	
+	variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
+	theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
 	
 		
 	// check input
@@ -58,7 +63,7 @@ mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2Coordination
 	result.comment := self.comment;
 	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
 	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
-	result.patternParameters := variablesToParameter.map Variable2Parameter();
+	result.patternParameters := variablesToParameter.map transform().oclAsType(Parameter);
 	self.roles->forEach(role)
 	{
 		// the role was already mapped in RoleConnector2RoleConnector
@@ -67,6 +72,7 @@ mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2Coordination
 		//set behavorial element?? --> should be already considered when setting behavior of the role!
 		newRole.coordinationProtocol := result;
 		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+
 		result.roles+= newRole;
 	};
 	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
@@ -81,31 +87,39 @@ mapping Variable::Variable2Parameter(): Parameter
 		annotation := self.annotation.map transform().oclAsType(EAnnotation);
 		extension := self.extension.map transform().oclAsType(core::Extension);
 }
-mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
-    	_name := self._name;
-    	_comment := self._comment;
-    	_annotation := self._annotation.map transform().oclAsType(EAnnotation);
-    	_extension := self._extension.map transform().oclAsType(core::Extension);
-    //	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
-    	_operations := self._operations.map transform().oclAsType(Operation);
-    	// only transform variables that are not converted into parameter
-    	_variables := (self._variables-(variablesToParameter)).map transform().oclAsType(Variable);
-    	_parentRegion := self._parentRegion.map transform().oclAsType(Region);
-    	_transitions := self._transitions.map transform().oclAsType(Transition);
-    	_states := self._states.map transform().oclAsType(State);
-    	_clocks := self._clocks.map transform().oclAsType(Clock);
-   		 }
-mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2TypedNamedElementExpression() :actionlanguage::TypedNamedElementExpression {    
-    	result.annotation := self._annotation.map transform().oclAsType(EAnnotation);
-    	result.extension := self._extension.map transform().oclAsType(core::Extension);
-    	result.comment := self._comment;
-    	if(self._typedNamedElement.oclIsTypeOf(Variable) and  variablesToParameter->includes(self._typedNamedElement.oclAsType(Variable)))  	
-    	{    		
-    		var parameter : Parameter := self._typedNamedElement.oclAsType(Variable).map Variable2Parameter();
-    		result.typedNamedElement := parameter;	    		
+mapping muml::realtimestatechart::RealtimeStatechart :: transform() : EObject{
+    	init {
+    		result := self.map create();
     	}
-   		else 
-   		{   		 	
-    		result.typedNamedElement := self._typedNamedElement.map transform().oclAsType(TypedNamedElement);
-   		}   		
+    	var element := self.oclAsType(EObject);
+			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+			};
+			
+    	var resultingRTSC : RealtimeStatechart := result.oclAsType(muml::realtimestatechart::RealtimeStatechart);
+    	
+    	resultingRTSC._name := self._name;
+    	resultingRTSC._comment := self._comment;
+    	resultingRTSC._annotation := self._annotation.map transform().oclAsType(EAnnotation);
+    	resultingRTSC._extension := self._extension.map transform().oclAsType(core::Extension);
+   
+    	resultingRTSC._operations := self._operations.map transform().oclAsType(Operation);
+    	// only transform variables that are not converted into parameter
+    	resultingRTSC._variables := (self._variables-(variablesToParameter)).map transform().oclAsType(Variable);
+    	resultingRTSC._parentRegion := self._parentRegion.map transform().oclAsType(Region);
+    	resultingRTSC._transitions := self._transitions.map transform().oclAsType(Transition);
+    	resultingRTSC._states := self._states.map transform().oclAsType(State);
+    	resultingRTSC._clocks := self._clocks.map transform().oclAsType(Clock);
+   		 }
+   		 
+mapping Variable :: transform() : EObject {
+		init{
+			if(variablesToParameter->includes(self)) {
+				result := self.map Variable2Parameter();
+			}
+			else {
+				result := self.map create();
+			}
+			
+		}	
 }
