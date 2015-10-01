@@ -32,13 +32,13 @@ main()
 		
 		
 	// not debug:
-	//variablesToParameter := input.rootObjects()[Variable];	
-	//theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
+	variablesToParameter := input.rootObjects()[Variable];	
+	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
 	
 		
 	// debug:	
-	variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
-	theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
+	//variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
+	//theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
 	
 		
 	// check input
