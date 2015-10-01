@@ -10,7 +10,7 @@ import de.uni_paderborn.fujaba.muml.hardware.tests.packages.HardwarePluginXmlPac
 @RunWith(Suite.class)
 @SuiteClasses({ HardwareMetamodelTest.class, HardwareGenmodelTest.class,
 		HardwarePluginXmlPackageTest.class, HardwareValidateMetamodelsTest.class,
-		HardwareDiagramPluginXmlTest.class, HardwareGMFMapTest.class })
+		HardwareDiagramPluginXmlTest.class, HardwareGMFMapTest.class, PMQVTOCompileTest.class })
 public class MumlHardwareTestSuite {
 	// empty
 }
