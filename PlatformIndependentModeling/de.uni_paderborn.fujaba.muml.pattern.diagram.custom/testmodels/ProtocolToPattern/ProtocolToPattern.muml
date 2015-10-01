@@ -78,4 +78,5 @@
   </categories>
   <categories xmi:id="_iIwXYGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
   <categories xmi:id="_iIwXYWddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
+  <categories xmi:id="_V4IpcGg9EeWWh7EZAnFEGw" name="pattern" key="de.uni_paderborn.fujaba.muml.pattern.category"/>
 </modelinstance:RootNode>
