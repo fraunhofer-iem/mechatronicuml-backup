@@ -32,7 +32,8 @@ public class DefaultCategoriesInitializer implements IModelInitializer {
 		map.put("de.uni_paderborn.fujaba.muml.realtimestatechart.category", "realtimestatechart");
 		map.put("de.uni_paderborn.fujaba.muml.messagetype.category", "msgtype");
 		map.put("de.uni_paderborn.fujaba.muml.instance.category", "instance");
-
+		map.put("de.uni_paderborn.fujaba.muml.pattern.category", "pattern");
+		
 		for (String key : map.keySet()) {
 			boolean found = false;
 			for (ModelElementCategory category : rootNode.getCategories()) {
