@@ -1,12 +1,9 @@
 library MUML2MUMLContext;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype expr uses 'http://www.storydriven.org/core/expressions/0.3.1';
 modeltype constraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
 modeltype actionlanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 modeltype core uses 'http://www.storydriven.org/core/0.3.1';
-modeltype Predicates uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates';
-modeltype Comparables uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables';
 modeltype pattern uses 'http://www.fujaba.de/muml/pattern/0.3.18';
 modeltype realtimestatechart uses 'http://www.fujaba.de/muml/realtimestatechart/0.4.0';
 modeltype connector uses 'http://www.fujaba.de/muml/connector/0.4.0';
@@ -15,13 +12,9 @@ modeltype one_to_n_schemata uses 'http://www.fujaba.de/muml/one_to_n_schemata/0.
 modeltype types uses 'http://www.fujaba.de/muml/types/0.4.0';
 modeltype component uses 'http://www.fujaba.de/muml/component/0.4.0';
 modeltype behavior uses 'http://www.fujaba.de/muml/behavior/0.4.0';
-modeltype Quantifiers uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers';
 modeltype valueType uses 'http://www.fujaba.de/muml/valuetype/0.4.0';
-modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
 modeltype msgtype uses 'http://www.fujaba.de/muml/msgtype/0.4.0';
 modeltype protocol uses 'http://www.fujaba.de/muml/protocol/0.4.0';
-modeltype Sets uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets';
-modeltype BooleanLogic uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic';
 modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
 modeltype sdcec uses 'http://www.storydriven.org/core/expressions/common/0.3.1';
 modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
@@ -118,7 +111,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			ecore::ETypedElement::ETypedElement2ETypedElement;
 	      	
 	mapping ecore::EObject :: EObject2EObject(context : OclAny) : ecore::EObject disjuncts
-			mtctl::Expression::Expression2Expression, ecore::EObject::normalEObject2EObject;
+			 ecore::EObject::normalEObject2EObject;
 	 	 			
 	 mapping ecore::EObject :: normalEObject2EObject(context : OclAny) : ecore::EObject{
 	 }
@@ -208,26 +201,8 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_eBounds := self._eBounds.map EGenericType2EGenericType(context);
 	   		 }
 	   		 
-	mapping verificationExtension::CommittedExtension :: CommittedExtension2CommittedExtension(context : OclAny) : verificationExtension::CommittedExtension{
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	   		 }
-	   		 
-	mapping verificationExtension::ClockBindingsExtension :: ClockBindingsExtension2ClockBindingsExtension(context : OclAny) : verificationExtension::ClockBindingsExtension{
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_clockBindings := self._clockBindings.map ClockBinding2ClockBinding(context);
-	   		 }
-	   		 
-	mapping verificationExtension::ClockBinding :: ClockBinding2ClockBinding(context : OclAny) : verificationExtension::ClockBinding{
-	    	_value := self._value;
-	    	_clock := self._clock.map Clock2Clock(context);
-	   		 }
-	   		 
-	mapping verificationExtension::ElementToVerifyExtension :: ElementToVerifyExtension2ElementToVerifyExtension(context : OclAny) : verificationExtension::ElementToVerifyExtension{
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	   		 }
+
+
 	   		 
 	mapping core::expressions::Expression :: Expression2Expression(context : OclAny) : core::expressions::Expression disjuncts
 			actionlanguage::TimeValueExpression::TimeValueExpression2TimeValueExpression,
@@ -259,9 +234,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_extension := self._extension.map Extension2Extension(context);
 	   		 }
 	   		 
-	mapping muml::constraint::VerificationConstraintRepository :: VerificationConstraintRepository2VerificationConstraintRepository(context : OclAny) : muml::constraint::VerificationConstraintRepository disjuncts
-			mtctl::PropertyRepository::PropertyRepository2PropertyRepository;
-	      	
+
 	mapping muml::constraint::VerifiableElement :: VerifiableElement2VerifiableElement(context : OclAny) : muml::constraint::VerifiableElement disjuncts
 			muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification,
 			muml::component::AtomicComponent::AtomicComponent2AtomicComponent,
@@ -453,7 +426,6 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			core::expressions::Expression::Expression2Expression,
 			muml::connector::ConnectorInstance::ConnectorInstance2ConnectorInstance,
 			muml::realtimestatechart::Region::Region2Region,
-			mtctl::Property::Property2Property,
 			muml::component::Component::Component2Component,
 			muml::connector::ConnectorEndpoint::ConnectorEndpoint2ConnectorEndpoint,
 			muml::protocol::ConnectorQualityOfServiceAssumptions::ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions,
@@ -465,7 +437,6 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	mapping core::ExtendableElement :: ExtendableElement2ExtendableElement(context : OclAny) : core::ExtendableElement disjuncts
 			muml::realtimestatechart::Synchronization::Synchronization2Synchronization,
 			muml::realtimestatechart::ClockConstraint::ClockConstraint2ClockConstraint,
-			muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository2VerificationConstraintRepository,
 			muml::behavior::ParameterBinding::ParameterBinding2ParameterBinding,
 			muml::constraint::VerifiableElement::VerifiableElement2VerifiableElement,
 			muml::valuetype::TimeValue::TimeValue2TimeValue,
@@ -474,10 +445,11 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			core::NamedElement::NamedElement2NamedElement,
 			core::CommentableElement::CommentableElement2CommentableElement;
 	      	
-	mapping core::Extension :: Extension2Extension(context : OclAny) : core::Extension disjuncts
-			verificationExtension::ClockBindingsExtension::ClockBindingsExtension2ClockBindingsExtension,
-			verificationExtension::CommittedExtension::CommittedExtension2CommittedExtension,
-			verificationExtension::ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
+	mapping core::Extension :: Extension2Extension(context : OclAny) : core::Extension {
+			init {
+				result := null;
+			}
+	}
 	      	
 	mapping core::NamedElement :: NamedElement2NamedElement(context : OclAny) : core::NamedElement disjuncts
 			muml::realtimestatechart::Clock::Clock2Clock,
@@ -505,111 +477,12 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository,
 			muml::behavior::OperationRepository::OperationRepository2OperationRepository;
 	      	
-	mapping mtctl::Predicates::DeadlockExpr :: DeadlockExpr2DeadlockExpr(context : OclAny) : mtctl::Predicates::DeadlockExpr{
-	   		 }
-	   		 
-	mapping mtctl::Predicates::ConnectorOverflowExpr :: ConnectorOverflowExpr2BufferOverflowExpr(context : OclAny) : mtctl::Predicates::ConnectorOverflowExpr{
-	   		 }
-	   		 
-	mapping mtctl::Predicates::ComparisonExpr :: ComparisonExpr2ComparisonExpr(context : OclAny) : mtctl::Predicates::ComparisonExpr{
-	    	_op := self._op;
-	    	_lhs := self._lhs.map MapExpr2MapExpr(context);
-	    	_rhs := self._rhs.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Predicates::MessageInBufferExpr :: MessageInBufferExpr2MessageInBufferExpr(context : OclAny) : mtctl::Predicates::MessageInBufferExpr{
-	    	_buffer := self._buffer.map MapExpr2MapExpr(context);
-	    	_message := self._message.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Predicates::MessageInTransitExpr :: MessageInTransitExpr2MessageInTransitExpr(context : OclAny) : mtctl::Predicates::MessageInTransitExpr{
-	    	_message := self._message.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Predicates::StateActiveExpr :: StateActiveExpr2StateActiveExpr(context : OclAny) : mtctl::Predicates::StateActiveExpr{
-	    	_state := self._state.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Predicates::SubstateOfExpr :: SubstateOfExpr2SubstateOfExpr(context : OclAny) : mtctl::Predicates::SubstateOfExpr{
-	    	_superstate := self._superstate.map MapExpr2MapExpr(context);
-	    	_state := self._state.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Predicates::TransitionFiringExpr :: TransitionFiringExpr2TransitionFiringExpr(context : OclAny) : mtctl::Predicates::TransitionFiringExpr{
-	    	_transition := self._transition.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Predicates::PredicateExpr :: PredicateExpr2PredicateExpr(context : OclAny) : mtctl::Predicates::PredicateExpr disjuncts
-			mtctl::Predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
-			mtctl::Predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
-			mtctl::Predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr, mtctl::Predicates::PredicateExpr::normalPredicateExpr2PredicateExpr;
-	 	 			
-	 mapping mtctl::Predicates::PredicateExpr :: normalPredicateExpr2PredicateExpr(context : OclAny) : mtctl::Predicates::PredicateExpr{
-	 }
-	 	 			
-	mapping mtctl::Predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr(context : OclAny) : mtctl::Predicates::DynamicPredicateExpr disjuncts
-			mtctl::Predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2BufferOverflowExpr,
-			mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
-			mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
-			mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
-			mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
-			mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
-	      	
-	mapping mtctl::Predicates::StaticPredicateExpr :: StaticPredicateExpr2StaticPredicateExpr(context : OclAny) : mtctl::Predicates::StaticPredicateExpr disjuncts
-			mtctl::Predicates::TrueExpr::TrueExpr2TrueExpr,
-			mtctl::Predicates::FalseExpr::FalseExpr2FalseExpr,
-			mtctl::Predicates::StateInStatechartExpr::StateInStatechartExpr2StateInStatechartExpr,
-			mtctl::Predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr;
-	      	
-	mapping mtctl::Predicates::TrueExpr :: TrueExpr2TrueExpr(context : OclAny) : mtctl::Predicates::TrueExpr{
-	   		 }
-	   		 
-	mapping mtctl::Predicates::FalseExpr :: FalseExpr2FalseExpr(context : OclAny) : mtctl::Predicates::FalseExpr{
-	   		 }
-	   		 
-	mapping mtctl::Predicates::StateInStatechartExpr :: StateInStatechartExpr2StateInStatechartExpr(context : OclAny) : mtctl::Predicates::StateInStatechartExpr{
-	    	_state := self._state.map MapExpr2MapExpr(context);
-	    	_statechart := self._statechart.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Comparables::BufferMsgCountExpr :: BufferMsgCountExpr2BufferMsgCountExpr(context : OclAny) : mtctl::Comparables::BufferMsgCountExpr{
-	    	_buffer := self._buffer.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Comparables::ConstExpr :: ConstExpr2ConstExpr(context : OclAny) : mtctl::Comparables::ConstExpr{
-	    	_val := self._val;
-	    	_timeUnit := self._timeUnit;
-	   		 }
-	   		 
-	mapping mtctl::Comparables::MapExpr :: MapExpr2MapExpr(context : OclAny) : mtctl::Comparables::MapExpr disjuncts
-			mtctl::Comparables::TransitionMap::TransitionMap2TransitionMap,
-			mtctl::Comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
-			mtctl::Comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
-			mtctl::Comparables::ConstExpr::ConstExpr2ConstExpr;
-	      	
-	mapping mtctl::Comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr(context : OclAny) : mtctl::Comparables::MumlElemExpr{
-	    	_elem := self._elem.map EObject2EObject(context);
-	    	_instance := self._instance.map EObject2EObject(context);
-	   		 }
-	   		 
-	mapping mtctl::Comparables::TransitionMap :: TransitionMap2TransitionMap(context : OclAny) : mtctl::Comparables::TransitionMap disjuncts
-			mtctl::Comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
-			mtctl::Comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr;
-	      	
-	mapping mtctl::Comparables::SourceStateExpr :: SourceStateExpr2SourceStateExpr(context : OclAny) : mtctl::Comparables::SourceStateExpr{
-	    	_transition := self._transition.map MapExpr2MapExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Comparables::TargetStateExpr :: TargetStateExpr2TargetStateExpr(context : OclAny) : mtctl::Comparables::TargetStateExpr{
-	    	_transition := self._transition.map MapExpr2MapExpr(context);
-	   		 }
 	   		 
 	mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPattern(context : OclAny) : muml::pattern::CoordinationPattern{
 	    	_name := self._name;
 	    	_comment := self._comment;
 	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
 	    	_extension := self._extension.map Extension2Extension(context);
-	    	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository(context);
 	    	_roles := self._roles.map Role2Role(context);
 	    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector(context);
 	    	_adaptedFromPattern := self._adaptedFromPattern.map CoordinationPattern2CoordinationPattern(context);
@@ -1117,7 +990,6 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_extension := self._extension.map Extension2Extension(context);
 	    	_ports := self._ports.map Port2Port(context);
 	    	_behavior := self._behavior.map Behavior2Behavior(context);
-	    	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository(context);
 	   		 }
 	   		 
 	mapping muml::component::StaticComponent :: StaticComponent2StaticComponent(context : OclAny) : muml::component::StaticComponent disjuncts
@@ -1179,53 +1051,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_extension := self._extension.map Extension2Extension(context);
 	    	_operations := self._operations.map Operation2Operation(context);
 	   		 }
-	   		 
-	mapping mtctl::Quantifiers::AFExpr :: AFExpr2AFExpr(context : OclAny) : mtctl::Quantifiers::AFExpr{
-	    	_expr := self._expr.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::Quantifiers::AGExpr :: AGExpr2AGExpr(context : OclAny) : mtctl::Quantifiers::AGExpr{
-	    	_expr := self._expr.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::Quantifiers::EFExpr :: EFExpr2EFExpr(context : OclAny) : mtctl::Quantifiers::EFExpr{
-	    	_expr := self._expr.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::Quantifiers::EGExpr :: EGExpr2EGExpr(context : OclAny) : mtctl::Quantifiers::EGExpr{
-	    	_expr := self._expr.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::Quantifiers::ExistenceQuantExpr :: ExistenceQuantExpr2ExistenceQuantExpr(context : OclAny) : mtctl::Quantifiers::ExistenceQuantExpr{
-	    	_formula := self._formula.map Expression2Expression(context);
-	    	_var := self._var.map BoundVariable2BoundVariable(context);
-	   		 }
-	   		 
-	mapping mtctl::Quantifiers::QuantifierExpr :: QuantifierExpr2QuantifierExpr(context : OclAny) : mtctl::Quantifiers::QuantifierExpr disjuncts
-			mtctl::Quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
-			mtctl::Quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr;
-	      	
-	mapping mtctl::Quantifiers::BoundVariable :: BoundVariable2BoundVariable(context : OclAny) : mtctl::Quantifiers::BoundVariable{
-	    	_name := self._name;
-	    	_set := self._set.map SetExpr2SetExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Quantifiers::TemporalQuantifierExpr :: TemporalQuantifierExpr2TemporalQuantifierExpr(context : OclAny) : mtctl::Quantifiers::TemporalQuantifierExpr disjuncts
-			mtctl::Quantifiers::EGExpr::EGExpr2EGExpr,
-			mtctl::Quantifiers::EFExpr::EFExpr2EFExpr,
-			mtctl::Quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
-			mtctl::Quantifiers::AGExpr::AGExpr2AGExpr,
-			mtctl::Quantifiers::AFExpr::AFExpr2AFExpr;
-	      	
-	mapping mtctl::Quantifiers::UniversalQuantExpr :: UniversalQuantExpr2UniversalQuantExpr(context : OclAny) : mtctl::Quantifiers::UniversalQuantExpr{
-	    	_formula := self._formula.map Expression2Expression(context);
-	    	_var := self._var.map BoundVariable2BoundVariable(context);
-	   		 }
-	   		 
-	mapping mtctl::Quantifiers::LeadsToExpr :: LeadsToExpr2LeadsToExpr(context : OclAny) : mtctl::Quantifiers::LeadsToExpr{
-	    	_leftOpd := self._leftOpd.map Expression2Expression(context);
-	    	_rightOpd := self._rightOpd.map Expression2Expression(context);
-	   		 }
+	
 	   		 
 	mapping muml::valuetype::Cardinality :: Cardinality2Cardinality(context : OclAny) : muml::valuetype::Cardinality{
 	    	_lowerBound := self._lowerBound.map NaturalNumber2NaturalNumber(context);
@@ -1248,32 +1074,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_lowerBound := self._lowerBound;
 	    	_upperBound := self._upperBound;
 	   		 }
-	   		 
-	mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository(context : OclAny) : mtctl::PropertyRepository{
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_properties := self._properties.map Property2Property(context);
-	   		 }
-	   		 
-	mapping mtctl::Property :: Property2Property(context : OclAny) : mtctl::Property{
-	    	_comment := self._comment;
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_expression := self._expression.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::Expression :: Expression2Expression(context : OclAny) : mtctl::Expression disjuncts
-			mtctl::BooleanLogic::NotExpr::NotExpr2NotExpr,
-			mtctl::BooleanLogic::AndExpr::AndExpr2AndExpr,
-			mtctl::Quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
-			mtctl::Sets::SetExpr::SetExpr2SetExpr,
-			mtctl::Comparables::MapExpr::MapExpr2MapExpr,
-			mtctl::BooleanLogic::OrExpr::OrExpr2OrExpr,
-			mtctl::Quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
-			mtctl::BooleanLogic::ImplyExpr::ImplyExpr2ImplyExpr,
-			mtctl::Quantifiers::BoundVariable::BoundVariable2BoundVariable,
-			mtctl::Predicates::PredicateExpr::PredicateExpr2PredicateExpr;
-	      	
+	 
 	mapping muml::msgtype::MessageType :: MessageType2MessageType(context : OclAny) : muml::msgtype::MessageType{
 	    	_name := self._name;
 	    	_comment := self._comment;
@@ -1300,7 +1101,6 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_comment := self._comment;
 	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
 	    	_extension := self._extension.map Extension2Extension(context);
-	    	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository(context);
 	    	_roles := self._roles.map Role2Role(context);
 	    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector(context);
 	    	_adaptedFromPattern := self._adaptedFromPattern.map CoordinationPattern2CoordinationPattern(context);
@@ -1339,63 +1139,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_minMessageDelay := self._minMessageDelay.map TimeValue2TimeValue(context);
 	    	_maxMessageDelay := self._maxMessageDelay.map TimeValue2TimeValue(context);
 	   		 }
-	   		 
-	mapping mtctl::Sets::SetExpr :: SetExpr2SetExpr(context : OclAny) : mtctl::Sets::SetExpr disjuncts
-			mtctl::Sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
-			mtctl::Sets::StateSetExpr::StateSetExpr2StateSetExpr,
-			mtctl::Sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
-			mtctl::Sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
-			mtctl::Sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
-			mtctl::Sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
-			mtctl::Sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
-			mtctl::Sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr;
-	      	
-	mapping mtctl::Sets::ClockSetExpr :: ClockSetExpr2ClockSetExpr(context : OclAny) : mtctl::Sets::ClockSetExpr{
-	   		 }
-	   		 
-	mapping mtctl::Sets::IntervalSetExpr :: IntervalSetExpr2IntervalSetExpr(context : OclAny) : mtctl::Sets::IntervalSetExpr{
-	    	_lowerVal := self._lowerVal;
-	    	_upperVal := self._upperVal;
-	   		 }
-	   		 
-	mapping mtctl::Sets::MessageSetExpr :: MessageSetExpr2MessageSetExpr(context : OclAny) : mtctl::Sets::MessageSetExpr{
-	   		 }
-	   		 
-	mapping mtctl::Sets::StateSetExpr :: StateSetExpr2StateSetExpr(context : OclAny) : mtctl::Sets::StateSetExpr{
-	   		 }
-	   		 
-	mapping mtctl::Sets::TransitionSetExpr :: TransitionSetExpr2TransitionSetExpr(context : OclAny) : mtctl::Sets::TransitionSetExpr{
-	   		 }
-	   		 
-	mapping mtctl::Sets::BufferSetExpr :: BufferSetExpr2BufferSetExpr(context : OclAny) : mtctl::Sets::BufferSetExpr{
-	   		 }
-	   		 
-	mapping mtctl::Sets::InstanceSetExpr :: InstanceSetExpr2InstanceSetExpr(context : OclAny) : mtctl::Sets::InstanceSetExpr{
-	    	_type := self._type.map MumlElemExpr2MumlElemExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::Sets::SubinstanceSetExpr :: SubinstanceSetExpr2SubinstanceSetExpr(context : OclAny) : mtctl::Sets::SubinstanceSetExpr{
-	    	_type := self._type.map MumlElemExpr2MumlElemExpr(context);
-	   		 }
-	   		 
-	mapping mtctl::BooleanLogic::AndExpr :: AndExpr2AndExpr(context : OclAny) : mtctl::BooleanLogic::AndExpr{
-	    	_leftOpd := self._leftOpd.map Expression2Expression(context);
-	    	_rightOpd := self._rightOpd.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::BooleanLogic::ImplyExpr :: ImplyExpr2ImplyExpr(context : OclAny) : mtctl::BooleanLogic::ImplyExpr{
-	    	_leftOpd := self._leftOpd.map Expression2Expression(context);
-	    	_rightOpd := self._rightOpd.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::BooleanLogic::NotExpr :: NotExpr2NotExpr(context : OclAny) : mtctl::BooleanLogic::NotExpr{
-	    	_opd := self._opd.map Expression2Expression(context);
-	   		 }
-	   		 
-	mapping mtctl::BooleanLogic::OrExpr :: OrExpr2OrExpr(context : OclAny) : mtctl::BooleanLogic::OrExpr{
-	    	_leftOpd := self._leftOpd.map Expression2Expression(context);
-	    	_rightOpd := self._rightOpd.map Expression2Expression(context);
-	   		 }
+	  
 	   		 
 	mapping core::expressions::common::UnaryExpression :: UnaryExpression2UnaryExpression(context : OclAny) : core::expressions::common::UnaryExpression{
 	    	_comment := self._comment;
@@ -1478,7 +1222,6 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_comment := self._comment;
 	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
 	    	_extension := self._extension.map Extension2Extension(context);
-	    	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository(context);
 	    	_componentInstances := self._componentInstances.map ComponentInstance2ComponentInstance(context);
 	    	_portConnectorInstances := self._portConnectorInstances.map PortConnectorInstance2PortConnectorInstance(context);
 	    	_parentStructuredComponentInstance := self._parentStructuredComponentInstance.map StructuredComponentInstance2StructuredComponentInstance(context);
