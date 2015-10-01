@@ -4,6 +4,8 @@ import transforms.lib.MUML2UPPAAL.Types;
 import transforms.lib.MUML2UPPAAL.Enums;
 import transforms.lib.MUML2UPPAAL.Decls;
 
+import transforms.lib.RTSCUtil;
+
 import transforms.lib.MUML2UPPAAL.Async.Variables;
 
 library Expressions;
@@ -43,7 +45,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	
 	abstract mapping TypedNamedElement :: TypedNamedElement2Variable() : uppaal_declarations::Variable {
 				
-		name := self.name.addSuffixNumber();
+		name := self.name.addSuffixNumberUnderline();
 		
 		
 		-- traverse type structure of the typed element, add an index as long as we face an array data type 
@@ -717,7 +719,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	
 	mapping NondeterministicChoiceExpression :: Choice2AuxVariable() : uppaal_declarations::Variable {
 		
-		name := nondeterministicChoiceAuxVariableNamePrefix.addSuffixNumber();
+		name := nondeterministicChoiceAuxVariableNamePrefix.addSuffixNumberUnderline();
 				
 	}	
 				

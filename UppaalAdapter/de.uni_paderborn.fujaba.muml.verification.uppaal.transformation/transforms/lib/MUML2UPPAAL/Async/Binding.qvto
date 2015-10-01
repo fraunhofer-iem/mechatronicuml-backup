@@ -26,7 +26,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping ParameterBinding :: ParameterBinding2ArrayInitializerExpressionBindingVariable(componentInstanceID : Variable, portOrRoleInstanceID : Variable,  subPortOrRoleInstanceID : Variable) : Variable when { self.parameter.dataType.oclIsKindOf(muml::types::ArrayDataType) and self.value.oclIsKindOf(muml_actionLanguage::ArrayInitializeExpression) } {
 		
-		name := self.parameter.name.addSuffixNumber();
+		name := self.parameter.name.addSuffixNumberUnderline();
 		
 		var t : muml::types::DataType = self.parameter.dataType;
 			
@@ -58,7 +58,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping ParameterBinding :: ParameterBinding2ArrayInitializeFunction(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) : Function {
 		
-		name := 'initializeArray'.addSuffixNumber();
+		name := 'initializeArray'.addSuffixNumberUnderline();
 		
 		returnType := object TypeReference {
 			referredType := VOID;
@@ -95,7 +95,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 				};
 				
 				iterVars += object Variable {
-					name := "i".addSuffixNumber();
+					name := "i".addSuffixNumberUnderline();
 				};
 				
 				t := t.oclAsType(muml::types::ArrayDataType).type;

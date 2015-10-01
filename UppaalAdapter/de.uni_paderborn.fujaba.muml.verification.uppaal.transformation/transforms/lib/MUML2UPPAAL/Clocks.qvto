@@ -4,6 +4,7 @@ import transforms.lib.MUML2UPPAAL.Types;
 import transforms.lib.MUML2UPPAAL.IDs;
 import transforms.lib.MUML2UPPAAL.Util;
 import transforms.lib.MUML2UPPAAL.Expressions;
+import transforms.lib.RTSCUtil;
 
 library Clocks;
 
@@ -82,7 +83,7 @@ modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/u
 					
 	mapping Clock :: Clock2Variable() : uppaal_declarations::Variable {
 		
-		name := self.name.addSuffixNumber();
+		name := self.name.addSuffixNumberUnderline();
 		
 		index += object TypeIndex {
 			

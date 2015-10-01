@@ -895,7 +895,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	}
 	
 	mapping Transition :: Transition2IntermediateLocation() : Location when {self.shouldCreateIntermediateLocation()} {
-		name := intermediateLocationName.addSuffixNumber();
+		name := intermediateLocationName.addSuffixNumberUnderline();
 		locationTimeKind := LocationKind::COMMITED;
 		color := ColorKind::WHITE;
 	}

@@ -293,3 +293,13 @@ query EntryPoint :: getActivatedState() : State {
 query ExitPoint :: getActivatedState() : State {
 	return null;
 }
+
+// a helper that guarantees unique names by adding a suffix
+
+helper String :: addSuffixNumberUnderline() : String {
+	return self + "_".addSuffixNumber();
+}
+
+
+
+

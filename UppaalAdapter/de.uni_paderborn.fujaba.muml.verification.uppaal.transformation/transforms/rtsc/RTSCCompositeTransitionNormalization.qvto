@@ -344,13 +344,13 @@ mapping Transition :: Transition2TransitionParam(sourceVertex : Vertex, targetVe
 property auxEntryNamePrefix : String = 'ENTRY';
 
 mapping State :: CompositeState2DefaultEntry(highLevelTransition : Transition) : EntryPoint when {self.isCompositeState()} {	
-	name := self.name + '_' + auxEntryNamePrefix.addSuffixNumber();
+	name := self.name + '_' + auxEntryNamePrefix.addSuffixNumberUnderline();
 	state := self.map State2State();
 }
 
 property auxExitNamePrefix : String = 'EXIT';
 
 mapping State :: CompositeState2AuxExit(highLevelTransition : Transition) : ExitPoint when {self.isCompositeState()} {	
-	name := self.name + '_' + auxExitNamePrefix.addSuffixNumber();
+	name := self.name + '_' + auxExitNamePrefix.addSuffixNumberUnderline();
 	state := self.map State2State();
 }

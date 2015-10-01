@@ -236,7 +236,7 @@ mapping RelativeDeadline :: RelativeDeadline2TimeGuard(rtsc : RealtimeStatechart
 property relativeDeadlineClockNamePrefix : String = 'RELATIVE';
 
 mapping RealtimeStatechart :: RTSC2RelativeDeadlineClock() : Clock when {self.getTransitions()->exists(not relativeDeadline.oclIsUndefined())} {
-	name := relativeDeadlineClockNamePrefix.addSuffixNumber();
+	name := relativeDeadlineClockNamePrefix.addSuffixNumberUnderline();
 }
 
 
@@ -294,7 +294,7 @@ mapping Transition :: Transition2InitialTransition() : Transition when {self.has
 
 mapping Transition :: Transition2IntermediateState() : State when {self.hasDeadline()} {
 	
-	name := intermediateStateNamePrefix.addSuffixNumber();
+	name := intermediateStateNamePrefix.addSuffixNumberUnderline();
 	invariants += self.absoluteDeadlines->map AbsoluteDeadline2Invariant();
 	invariants += self.relativeDeadline.map RelativeDeadline2Invariant(self.getStatechart());
 }

@@ -113,7 +113,7 @@ mapping State :: State2State() : State {
 					then{
 						self.incomingTransitions->forEach(transition){
 							-- create entry point for each incoming transition
-							var entryPoint : EntryPoint := object EntryPoint{name:= "doEntry".addSuffixNumber();};
+							var entryPoint : EntryPoint := object EntryPoint{name:= "doEntry".addSuffixNumberUnderline();};
 							connectionPoints += entryPoint;
 							
 							-- redirect the transition to entry point
@@ -158,7 +158,7 @@ mapping State :: State2State() : State {
 						then{
 							self.outgoingTransitions->forEach(transition){
 								-- create exit point for each outgoing transition
-								var exitPoint : ExitPoint := object ExitPoint{name:= "doExit".addSuffixNumber();};
+								var exitPoint : ExitPoint := object ExitPoint{name:= "doExit".addSuffixNumberUnderline();};
 								connectionPoints += exitPoint;
 							
 								-- redirect the transition to entry point
@@ -346,13 +346,13 @@ mapping State :: createDoneState(): State{
 
 
 mapping State :: createExitPoint() : ExitPoint{
-	name := "doExit".addSuffixNumber();
+	name := "doExit".addSuffixNumberUnderline();
 }
 
 
 
 mapping State :: createDoClock() : Clock {
-	name := "doClock".addSuffixNumber();
+	name := "doClock".addSuffixNumberUnderline();
 }
 
 mapping createTransition(sourceState:Vertex, targetState:Vertex, pri : Integer):Transition{

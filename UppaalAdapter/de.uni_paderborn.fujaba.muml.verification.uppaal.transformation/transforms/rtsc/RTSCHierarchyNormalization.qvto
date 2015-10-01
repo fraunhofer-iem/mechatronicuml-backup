@@ -278,7 +278,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	
 	mapping JoinTreeInnerNode :: createTriggerVariable() : Variable {
 	
-		name := triggerVariablePrefix.addSuffixNumber();
+		name := triggerVariablePrefix.addSuffixNumberUnderline();
 				
 		dataType := getPrimitiveDataTypeInt();
 		
@@ -544,7 +544,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	property EMPTY : String = '';
 	
 	query getUniqueSuffixNumber() : String {
-		return EMPTY.addSuffixNumber();	
+		return EMPTY.addSuffixNumberUnderline();	
 	}
 	
 	query String :: appendUniqueSuffixNumber() : String {
@@ -923,7 +923,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 								
 	mapping RealtimeStatechart :: RTSC2EmbeddedRTSC() : RealtimeStatechart {
 	
-		name := self.name.addSuffixNumber();
+		name := self.name.addSuffixNumberUnderline();
 		
 		
 		-- map reference to behavioral element
@@ -1297,7 +1297,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 							
 	mapping EntryPoint :: createEnterSyncChannel() : SynchronizationChannel {		
 		
-		name := ('enter_' + self.state.name + '_in_' + self.state.parentStatechart.name + '_via_' + self.name).addSuffixNumber();
+		name := ('enter_' + self.state.name + '_in_' + self.state.parentStatechart.name + '_via_' + self.name).addSuffixNumberUnderline();
 		
 		var subRoleOrPort := self.getSubRoleOrPort();
 		if(not subRoleOrPort.oclIsUndefined())
@@ -1320,7 +1320,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	
 	mapping EntryPoint :: createANDEnterSyncChannel(region : Region) : SynchronizationChannel when {self.state.embeddedRegions->size() > 1} {
 			
-		name := ('enter_' + region.name + '_in_' + self.state.name + '_via_' + self.name).addSuffixNumber();
+		name := ('enter_' + region.name + '_in_' + self.state.name + '_via_' + self.name).addSuffixNumberUnderline();
 		
 		var subRoleOrPort := self.getSubRoleOrPort();
 		if(not subRoleOrPort.oclIsUndefined())
@@ -1344,7 +1344,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 				
 	mapping State :: createExitSyncChannel() : SynchronizationChannel when {not self.simple} {
 		
-		name := ('exit_' + self.name).addSuffixNumber();
+		name := ('exit_' + self.name).addSuffixNumberUnderline();
 		
 		var subRoleOrPort := self.getSubRoleOrPort();
 		if(not subRoleOrPort.oclIsUndefined())
@@ -1367,7 +1367,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	
 	mapping State :: createANDExitSyncChannel(region : Region) : SynchronizationChannel when {self.embeddedRegions->size() > 1} {
 		
-		name := ('exit_' + region.name).addSuffixNumber();
+		name := ('exit_' + region.name).addSuffixNumberUnderline();
 		
 		var subRoleOrPort := self.getSubRoleOrPort();
 		if(not subRoleOrPort.oclIsUndefined())

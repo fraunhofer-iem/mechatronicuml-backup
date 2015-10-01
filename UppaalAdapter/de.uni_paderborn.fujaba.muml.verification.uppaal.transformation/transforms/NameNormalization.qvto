@@ -1,5 +1,6 @@
 import transforms.lib.MUML2MUML;
 import transforms.lib.ExternalizedStrings;
+import transforms.lib.RTSCUtil;
 import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.CharSubstitutionUnit;
 
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
@@ -26,6 +27,6 @@ helper addPrefix(inout theNamedElement : NamedElement){
 }
 
 helper addSuffix(inout theNamedElement : NamedElement) {
-	theNamedElement.name := theNamedElement.name.addSuffixNumber();
+	theNamedElement.name := theNamedElement.name.addSuffixNumberUnderline();
 }
 
