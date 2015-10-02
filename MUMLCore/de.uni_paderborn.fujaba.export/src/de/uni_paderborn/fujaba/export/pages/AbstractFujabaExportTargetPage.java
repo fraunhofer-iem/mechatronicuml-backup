@@ -225,7 +225,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
         treeViewer.setContentProvider(new WorkbenchContentProvider());
         treeViewer.setLabelProvider(labelProvider);
         treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
-        treeViewer.expandAll();
+    
+       // treeViewer.expandAll();
         treeViewer.getTree().addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent event) {
