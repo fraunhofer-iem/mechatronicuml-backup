@@ -22,6 +22,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.part.PageSite;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
@@ -63,33 +64,36 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 	@Override
 	public void addPages() {
-		platformTypePage = new PlatformTypePage(null, true);
+		platformTypePage = new PlatformTypePage();
 		addPage(platformTypePage);
 	}
 
-	@Override
-	public IWizardPage getNextPage(IWizardPage page) {
-		// TODO Auto-generated method stub
-		if (page instanceof PlatformTypePage && ((PlatformTypePage) page).neddFurtherPage()) {
-			Collection<EObject> additionalPlatforms = new ArrayList<EObject>();
-			additionalPlatforms.addAll(((PlatformTypePage) page).getFollowUpPlatforms());
-			additionalPlatforms.removeAll(pageForHWPlatform.keySet());
-			for (EObject p : additionalPlatforms) {
-				IWizardPage nextPage = new PlatformTypePage(Collections.singletonList(p), false);
-				pageForHWPlatform.put(p, nextPage);
-				addPage(nextPage);
-			}
-			Collection<EObject> superfluousPlatforms = new ArrayList<EObject>();
-			superfluousPlatforms.addAll(pageForHWPlatform.keySet());
-			superfluousPlatforms.removeAll(((PlatformTypePage) page).getFollowUpPlatforms());
-			pageForHWPlatform.keySet().removeAll(superfluousPlatforms);
-			return (IWizardPage) pageForHWPlatform.values().toArray()[0];
-
-		}
-
-		return super.getNextPage(page);
-
-	}
+	// @Override
+	// public IWizardPage getNextPage(IWizardPage page) {
+	// // TODO Auto-generated method stub
+	// if (page instanceof PlatformTypePage && ((PlatformTypePage)
+	// page).neddFurtherPage()) {
+	// Collection<EObject> additionalPlatforms = new ArrayList<EObject>();
+	// additionalPlatforms.addAll(((PlatformTypePage)
+	// page).getFollowUpPlatforms());
+	// additionalPlatforms.removeAll(pageForHWPlatform.keySet());
+	// for (EObject p : additionalPlatforms) {
+	// IWizardPage nextPage = new PlatformTypePage(Collections.singletonList(p),
+	// false);
+	// pageForHWPlatform.put(p, nextPage);
+	// addPage(nextPage);
+	// }
+	// Collection<EObject> superfluousPlatforms = new ArrayList<EObject>();
+	// superfluousPlatforms.addAll(pageForHWPlatform.keySet());
+	// superfluousPlatforms.removeAll(((PlatformTypePage)
+	// page).getFollowUpPlatforms());
+	// pageForHWPlatform.keySet().removeAll(superfluousPlatforms);
+	//
+	// }
+	//
+	// return super.getNextPage(page);
+	//
+	// }
 
 	public IPath getModelPath() {
 		@SuppressWarnings("rawtypes")
