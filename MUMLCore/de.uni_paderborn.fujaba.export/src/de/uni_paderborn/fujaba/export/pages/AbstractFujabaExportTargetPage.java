@@ -189,12 +189,12 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 					if (firstElement instanceof IContainer) {
 						IContainer container = (IContainer) firstElement;
 
-						String uniqueName = "<unnamed>";
+						String uniqueName = "unnamed";
 						for (int i = 1; ; i++) {
 							if (container.findMember(uniqueName) == null) {
 								break;
 							}
-							uniqueName = "<unnamed" + i + ">";
+							uniqueName = "unnamed" + i;
 						}
 						try {
 							IFolder folder = container.getFolder(new Path(uniqueName));
