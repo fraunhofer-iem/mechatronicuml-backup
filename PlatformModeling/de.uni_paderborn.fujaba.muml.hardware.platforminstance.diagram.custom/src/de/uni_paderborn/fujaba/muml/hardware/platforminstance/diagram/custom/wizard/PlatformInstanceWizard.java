@@ -1,8 +1,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wizard;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -22,7 +20,6 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.part.PageSite;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
@@ -58,7 +55,6 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		model.setSelectedHWPlatformInstanceConfiguration(selectedElement);
 		model.setPlatformInstanceToConfigure(platformInstanceToConfigure);
 		this.editingDomain = editingDomain;
-		this.setForcePreviousAndNextButtons(true);
 		this.pageForHWPlatform = new HashMap<EObject, IWizardPage>();
 	}
 
