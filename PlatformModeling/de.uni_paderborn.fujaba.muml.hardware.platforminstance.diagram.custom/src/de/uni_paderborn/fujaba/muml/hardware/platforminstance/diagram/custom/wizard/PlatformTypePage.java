@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
+import javax.swing.DefaultCellEditor;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.jface.dialogs.IDialogPage;
@@ -157,10 +159,11 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		setControl(composite);
 
 		// set an initial Selection
-		list.select(0);
-		list.showSelection();
-		list.notifyListeners(SWT.Selection, null);
-		// getWizard().getContainer().updateButtons();
+		if (list.getItemCount() > 0) {
+			list.select(0);
+			list.showSelection();
+			list.notifyListeners(SWT.Selection, null);
+		}
 	}
 
 	private java.util.List<PlatformPart> getEmbeddedPlatformPart(HWPlatform platform) {
@@ -223,10 +226,11 @@ public class PlatformTypePage extends WizardPage implements Listener {
 			@Override
 			public String getText(Object element) {
 				PlatformPart p = (PlatformPart) element;
-				if (currentCardinality.containsKey(p)) {
-					return currentCardinality.get(p).toString();
+				if (!currentCardinality.containsKey(p)) {
+					currentCardinality.put(p, (int) p.getCardinality().getUpperBound().getValue());
 				}
-				return p.getCardinality().getUpperBound().toString();
+				return currentCardinality.get(p).toString();
+
 			}
 
 		});
@@ -248,7 +252,6 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 			@Override
 			protected CellEditor getCellEditor(Object element) {
-				// TODO Auto-generated method stub
 				PlatformPart p = (PlatformPart) element;
 				int range = 0;
 				String[] cardinality = null;
@@ -262,19 +265,17 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				for (int i = range - 1; i >= 0; i--) {
 					cardinality[i] = Integer.toString((int) (p.getCardinality().getLowerBound().getValue() + (i)));
 				}
-
-				return new ComboBoxCellEditor(viewer.getTree(), cardinality);
+				
+				return new ComboBoxCellEditor(viewer.getTree(), cardinality, SWT.READ_ONLY);
 			}
 
 			@Override
 			protected boolean canEdit(Object element) {
-				// TODO Auto-generated method stub
 				return true;
 			}
 
 		});
 
-		// viewer.getTable().notifyListeners(SWT.Selection, null);
 	}
 
 	private TreeViewerColumn createTreeViewerColumn(String title, int bound, final int colNumber) {
@@ -347,4 +348,5 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		}
 
 	}
+
 }
