@@ -27,7 +27,6 @@
 [template public generateProtobufMessageFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
 [file (path+getFileName4ProtoFile(useSubDir), false, 'UTF-8')]
 //File: messages.proto
-[comment @TODO determine values for these constants/]
 //@max_string_length=16
 //@max_repeated_length=100
 //@max_bytes_length=16
@@ -70,7 +69,7 @@ message MiddlewareMessage{
  */]
 [template public generateProtobufNewHeader(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
-[comment @TODO protobuf files/]
+[comment protobuf files/]
 [file (path+getFileName4MessageTypes(useSubDir), false, 'UTF-8')]
 /**
  * @file 

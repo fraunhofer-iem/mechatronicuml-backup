@@ -169,7 +169,6 @@ bool_t Middleware_destroy(void);
  * @param id The MessageID of the Message which shall be send
  * @param msg The Message to send
  * @return True
- * @todo  always returns true
  */
 bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg);
 
@@ -178,7 +177,6 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg);
  * @details Dequeues alls Messages out of Middleware::incoming and delivers them to the correct #MessageBuffer%s
  * @note This Function will be called periodically
  * @return True
- * @todo  always returns true
  */
 bool_t MW_deliverReceivedMessages(void);
 
@@ -187,7 +185,6 @@ bool_t MW_deliverReceivedMessages(void);
  * @details Calls the receive Function for each NetworkInterface, which is contained in the struct Middleware
  *          and enques them in Middleware::incoming
  * @return False
- * @todo  Always returns false
  */
 bool_t MW_NIreceiveMessages(void);
 
@@ -195,7 +192,6 @@ bool_t MW_NIreceiveMessages(void);
  * @brief All outgoing Messages are sent via a corresponding NetworkInterface
  * @details Takes all Messages from Middleware::outgoing, and selects for each the corresponding NetworkInterace, and sends the Message via send Function of the NetworkInterface
  * @return False
- * @todo  Always returns false
  */
 bool_t MW_NIsendMessages(void);
 
@@ -303,7 +299,6 @@ bool_t Middleware_destroy(void){
 
 /*
  * sends a message.
- * TODO: add decision, if targetC <-- what does it mean? :(
  */
 bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	MiddlewareMessage* nwMsg = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));

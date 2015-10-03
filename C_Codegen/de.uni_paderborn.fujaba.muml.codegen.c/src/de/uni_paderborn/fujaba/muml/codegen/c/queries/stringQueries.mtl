@@ -405,7 +405,7 @@ endif
 [**
  * @param syncChannel
 */]
-[comment TODO paramter/]
+[comment TODO selectors/]
 [query public getClassName(syncChannel : SynchronizationChannel) : String = 
 	'SyncChannel'
 /]

@@ -249,7 +249,6 @@ struct [getClassName(rtsc)/] {
  * @param state One of the States of the Enum: [getClassName(rtsc, true)/]
  * 
  * @return True, If the Realtime-StateChart is in the specific State, otherwise False
- * @todo  Why is this int and not bool, like everywhere else
  */	
 	bool_t [getIsInStateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc, [getClassName(rtsc, true)/] state);
 [/template]
@@ -259,7 +258,6 @@ struct [getClassName(rtsc)/] {
  * 
  * @param rtsc The specific Realtime-StateChart: [rtsc.getClassName()/]
  * @return Always True
- * @todo  always true is returned
  */
 	bool_t [getTerminateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
 [/template]

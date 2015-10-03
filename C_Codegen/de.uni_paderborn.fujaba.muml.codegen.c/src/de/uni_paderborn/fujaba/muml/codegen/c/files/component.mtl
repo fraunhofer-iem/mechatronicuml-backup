@@ -192,7 +192,7 @@
 			[for (connector : Connector | component.oclAsType(StructuredComponent).connectors)]		
 			[if ((connector.connectorEndpoints->at(1).oclIsTypeOf(DiscretePort)) and (connector.connectorEndpoints->at(2).oclIsTypeOf(DiscretePort)))]				
 			[comment connectors/]
-			[comment @TODO Continous Ports/]
+
 				[/if]
 			[/for]
 			[/if]
@@ -220,7 +220,6 @@
 				(
 					[for (cpart : ComponentPart | component.oclAsType(StructuredComponent).embeddedComponentParts) separator (' || ')]
 						[if cpart.multiPart]
-						[comment @TODO multiparts/]
 						[getTerminateMethodName(cpart)/](component->[cpart.getVariableName()/])
 						[else]
 						[getTerminateMethodName(cpart)/](component->[getVariableName(cpart)/])
@@ -244,7 +243,6 @@
 		
 
 	[if component.oclIsKindOf(StructuredComponent)]
-	[comment @TODO Nachrichtentransfer/]
 		[for (cpart : ComponentPart | component.oclAsType(StructuredComponent).embeddedComponentParts)]
 			[if cpart.multiPart]
 			//execute all parts of multipart [cpart.name/]

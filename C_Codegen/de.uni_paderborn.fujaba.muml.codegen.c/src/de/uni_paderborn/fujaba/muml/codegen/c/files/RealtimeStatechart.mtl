@@ -57,7 +57,6 @@
 		[exit(component, rtsc)/]		
 			
 		[isInState(component, rtsc)/]
-		[isTerminated(component, rtsc)/]
 
 	[/file]
 [/template]
@@ -102,7 +101,7 @@
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
 						[variable.initializeExpression.generateExpression('')/]
 					[else]
-				[comment TODO array data types are currently not initilized/]
+				[comment @TODO array data types are currently not initilized/]
 				[if (variable.dataType.oclIsKindOf(PrimitiveDataType))]
 						[getDefaultValue(variable, 'stateChart->')/];
 				[/if]
@@ -139,11 +138,10 @@
 				[for (clock : Clock | rtsc.clocks->collect(oclAsType(Clock)))]
 					Clock_reset(stateChart->[getVariableName(clock)/]);
 				[/for]
-			
-				[comment TODO Member variables for the clocks of after transitions. /]	
+		
 
 			
-				[comment TODO Member variables for the clocks of do actions. /]
+				[comment reset member variables for the clocks of do actions. /]
 				[for (state : State | rtsc.states) ? (not state.doEvent.oclIsUndefined())]					
 					Clock_reset(stateChart->[getClockVariableName(state)/]);
 				[/for]
@@ -652,12 +650,7 @@ if (0){
 } 
 [/template]
 
-[template private isTerminated (component : Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
-	bool_t [getTerminateMethodName(rtsc)/]([getSuperClassName(rtsc)/]* stateChart) {
-		//TODO
-	return true;
-} 
-[/template]
+
 [template private getOperationMethodCall (opCall : OperationCall) post(cdtbeautifier())]
 [opCall.operation.getMethodName()/]([for (pBinding:ParameterBinding | opCall.parameterBinding) separator (',')][pBinding.getValue()/][/for])
 [/template]
