@@ -60,4 +60,8 @@
          id="de.uni_paderborn.fujaba.modelcopy.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.ocl.pivot.beo477283.feature"
+         version="0.0.0"/>
+
 </feature>
