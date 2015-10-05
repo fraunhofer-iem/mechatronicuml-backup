@@ -2,7 +2,7 @@
 <feature
       id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.ocl.pivot.beo477283.feature"
       label="Beo477283"
-      version="1.0.1.qualifier"
+      version="1.0.2.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
 
    <description>
@@ -142,7 +142,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="org.eclipse.ocl.pivot"
          download-size="0"
          install-size="0"
-         version="1.0.2.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>
