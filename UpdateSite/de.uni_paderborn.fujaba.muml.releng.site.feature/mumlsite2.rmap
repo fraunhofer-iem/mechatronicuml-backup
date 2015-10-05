@@ -3,6 +3,8 @@
   <rm:locator searchPathRef="default" failOnError="false"/>
   <rm:locator pattern="^de\.upb\.swt\.qvt(\..+)?" searchPathRef="tgg" failOnError="false"/>
   <rm:locator pattern="^com\.tools\.logging(\..+)?" searchPathRef="tgg" failOnError="false"/>
+  <rm:locator pattern="^com\.tools\.logging(\..+)?" searchPathRef="tgg" failOnError="false"/>
+  <rm:locator pattern="^org\.eclipse\.ocl\.pivot$" searchPathRef="ocl-patched" failOnError="false"/>
   <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
 
   <rm:searchPath name="default">
@@ -25,6 +27,13 @@
   <rm:searchPath name="tgg">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
       <rm:uri format="https://svn-serv.cs.upb.de/updatesites/trunk/de.upb.swt.qvt.tgg-updatesite/3.7">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  
+   <rm:searchPath name="ocl-patched">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="true">
+       	<rm:uri format="file:///data/jenkins/jobs/Utilities_External/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
