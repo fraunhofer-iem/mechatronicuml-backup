@@ -77,8 +77,6 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="org.eclipse.emf.ecore.improved.feature"
          version="0.0.0"/>
 
-
-
    <includes
          id="de.uni_paderborn.fujaba.core.feature"
          version="0.0.0"/>
@@ -158,15 +156,14 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="de.uni_paderborn.fujaba.muml.psm.feature"
          version="0.0.0"/>
+
    <includes
          id="de.uni_paderborn.fujaba.muml.psm.sdk.feature"
          version="0.0.0"/>
-   
 
    <includes
          id="de.uni_paderborn.fujaba.properties.migrator.feature"
          version="0.0.0"/>
-
 
    <includes
          id="de.uni_paderborn.fujaba.ecore.migration.feature"
@@ -230,6 +227,10 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
 
    <includes
          id="de.uni_paderborn.fujaba.modelcopy.source.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.ocl.pivot.beo477283.feature"
          version="0.0.0"/>
 
 </feature>
