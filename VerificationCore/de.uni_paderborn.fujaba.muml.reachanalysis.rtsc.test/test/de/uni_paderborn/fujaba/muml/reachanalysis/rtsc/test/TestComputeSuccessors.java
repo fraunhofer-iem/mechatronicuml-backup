@@ -85,6 +85,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		syncChannel.setName("sync");
 
 		rtsc1 = rtscFactory.createRealtimeStatechart();
+		rtsc1.setName("rtsc1");
 
 		state1 = rtscFactory.createState();
 		state1.setParentStatechart(rtsc1);
@@ -102,6 +103,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		transition1.setUrgent(false);
 
 		rtsc2 = rtscFactory.createRealtimeStatechart();
+		rtsc2.setName("rtsc2");
 
 		state3 = rtscFactory.createState();
 		state3.setParentStatechart(rtsc2);
@@ -799,6 +801,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 	public void urgentTauTransitionFalseGuard() {
 		state5 = rtscFactory.createState();
 		state5.setParentStatechart(rtsc1);
+		state5.setName("state5");
 
 		transition3 = rtscFactory.createTransition();
 		rtsc1.getTransitions().add(transition3);
@@ -866,6 +869,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 	public void urgentTauTransitionAlwaysFalseGuard() {
 		state5 = rtscFactory.createState();
 		state5.setParentStatechart(rtsc1);
+		state5.setName("state5");
 
 		transition3 = rtscFactory.createTransition();
 		rtsc1.getTransitions().add(transition3);
@@ -899,7 +903,8 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 
 		Federation testFed = (Federation) zone1.getFederation().clone();
 		testFed.up();
-
+		
+		boolean state5entered = false;
 		boolean delayed = false;
 		for (ReachabilityGraphState zone : successors) {
 			if (zone.getIncomingTransitions().get(0) instanceof DelayTransition) {
@@ -909,12 +914,13 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 			} else {
 				for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
 						.getLocations()) {
-					if (location.getInstanceOf().equals(rtsc1))
-						assertTrue(location.getActiveVertex().equals(state5));
+					if (location.getInstanceOf().equals(rtsc1) && location.getActiveVertex().equals(state5))
+						state5entered = true;
 				}
 			}
 
 		}
+		assertTrue(state5entered);
 		assertTrue(delayed);
 	}
 
