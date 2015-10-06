@@ -1,0 +1,7305 @@
+Library {
+  Name			  "LinkLayer"
+  Version		  7.4
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Tue Mar  5 16:08:38 2013"
+  Creator		  "dread"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "dread"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Apr  4 14:33:46 2013"
+  RTWModifiedTimeStamp	  286986796
+  ModelVersionFormat	  "1.%<AutoIncrement:322>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.6.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.6.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.6.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.6.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.6.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.6.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.6.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 200, 85, 1080, 715 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      DigitalClock
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      UniformRandomNumber
+      Minimum		      "-1"
+      Maximum		      "1"
+      Seed		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Width
+      OutDataTypeMode	      "Choose intrinsic data type"
+      DataType		      "double"
+    }
+  }
+  System {
+    Name		    "LinkLayer"
+    Location		    [133, 152, 1011, 650]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    649
+    Block {
+      BlockType		      SubSystem
+      Name		      "Link Layer"
+      SID		      1
+      Ports		      [7, 5]
+      Position		      [35, 36, 310, 444]
+      LibraryVersion	      "*1.125"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      SystemSampleTime	      "0.1"
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "DelayMin|DelayMax|MessageLossProbability|BufferOverflowPossible"
+      MaskStyleString	      "edit,edit,edit,checkbox"
+      MaskTunableValueString  "off,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVariables	      "DelayMin=@1;DelayMax=@2;MessageLossProbability=@3;BufferOverflowPossible=@4;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "2|100|0|on"
+      MaskTabNameString	      "QoS,QoS,QoS,QoS"
+      System {
+	Name			"Link Layer"
+	Location		[4, 50, 1276, 773]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "port_in"
+	  SID			  4
+	  Position		  [65, 143, 95, 157]
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "net_address"
+	  SID			  5
+	  Position		  [290, 283, 320, 297]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "receiver_net_address"
+	  SID			  567
+	  Position		  [290, 323, 320, 337]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_queue_in"
+	  SID			  563
+	  Position		  [770, 643, 800, 657]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_queue_in"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_param_queue_in"
+	  SID			  564
+	  Position		  [765, 683, 795, 697]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_param_queue_in"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_queue_out"
+	  SID			  565
+	  Position		  [55, 608, 85, 622]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_queue_out"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_param_queue_out"
+	  SID			  566
+	  Position		  [55, 673, 85, 687]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_param_queue_out"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  10
+	  Ports			  [6, 1]
+	  Position		  [830, 26, 835, 274]
+	  ShowName		  off
+	  Inputs		  "6"
+	  DisplayOption		  "bar"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  NonVirtualBus		  on
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  SID			  11
+	  Ports			  [1, 6]
+	  Position		  [150, 29, 155, 271]
+	  ShowName		  off
+	  OutputSignals		  "from,to,msg,param,pkgid,time"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<from>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<to>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<msg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<param>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<pkgid>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "<time>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DataLinkLayer"
+	  SID			  26
+	  Ports			  [10, 10]
+	  Position		  [495, 34, 640, 426]
+	  LibraryVersion	  "1.762"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    10
+	    Name		    "datalinklayer"
+	    PropagatedSignals	    "queue_sending_ratio, queue_received_ratio, queue_ack_ratio"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "DataLinkLayer"
+	    Location		    [4, 50, 1276, 773]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_from_in"
+	      SID		      29
+	      Position		      [305, 233, 335, 247]
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_to_in"
+	      SID		      30
+	      Position		      [305, 273, 335, 287]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_msg_in"
+	      SID		      31
+	      Position		      [305, 313, 335, 327]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_param_in"
+	      SID		      32
+	      Position		      [305, 353, 335, 367]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_pkgid_in"
+	      SID		      33
+	      Position		      [305, 393, 335, 407]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint32"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint32"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_time_in"
+	      SID		      34
+	      Position		      [305, 433, 335, 447]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_from_in"
+	      SID		      35
+	      Position		      [305, 73, 335, 87]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_to_in"
+	      SID		      36
+	      Position		      [305, 113, 335, 127]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_msg_in"
+	      SID		      37
+	      Position		      [305, 153, 335, 167]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_param_in"
+	      SID		      38
+	      Position		      [305, 193, 335, 207]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      SID		      121
+	      Ports		      [3, 1]
+	      Position		      [680, 429, 685, 541]
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      DigitalClock
+	      Name		      "Digital Clock"
+	      SID		      180
+	      Position		      [285, 468, 350, 492]
+	      SampleTime	      "0.001"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Embedded\nMATLAB Function"
+	      SID		      40
+	      Ports		      [12, 12]
+	      Position		      [405, 47, 595, 553]
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      MaskType		      "Stateflow"
+	      MaskDescription	      "Embedded MATLAB block"
+	      MaskDisplay	      "disp('ackHandler');"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskPortRotate	      "default"
+	      MaskIconUnits	      "autoscale"
+	      Port {
+		PortNumber		10
+		Name			"queue_sending_ratio"
+		PropagatedSignals	"queue_sending_ratio"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"queue_received_ratio"
+		PropagatedSignals	"queue_received_ratio"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"queue_ack_ratio"
+		PropagatedSignals	"queue_ack_ratio"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      System {
+		Name			"Embedded\nMATLAB Function"
+		Location		[257, 457, 812, 717]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	108
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_from_in"
+		  SID			  73
+		  Position		  [20, 101, 40, 119]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_to_in"
+		  SID			  74
+		  Position		  [20, 136, 40, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_msg_in"
+		  SID			  75
+		  Position		  [20, 171, 40, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_param_in"
+		  SID			  76
+		  Position		  [20, 206, 40, 224]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_from_in"
+		  SID			  77
+		  Position		  [20, 246, 40, 264]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_to_in"
+		  SID			  78
+		  Position		  [20, 281, 40, 299]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_msg_in"
+		  SID			  79
+		  Position		  [20, 316, 40, 334]
+		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_param_in"
+		  SID			  80
+		  Position		  [20, 351, 40, 369]
+		  Port			  "8"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_pkgid_in"
+		  SID			  81
+		  Position		  [20, 386, 40, 404]
+		  Port			  "9"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_time_in"
+		  SID			  82
+		  Position		  [20, 426, 40, 444]
+		  Port			  "10"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "currentTime"
+		  SID			  83
+		  Position		  [20, 461, 40, 479]
+		  Port			  "11"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "random"
+		  SID			  108
+		  Position		  [20, 496, 40, 514]
+		  Port			  "12"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  SID			  101
+		  Ports			  [1, 1]
+		  Position		  [270, 530, 320, 570]
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  " SFunction "
+		  SID			  100
+		  Tag			  "Stateflow S-Function LinkLayer 6"
+		  Ports			  [12, 13]
+		  Position		  [180, 120, 230, 440]
+		  FunctionName		  "sf_sfun"
+		  Parameters		  "BufferOverflowPossible,DelayMax,DelayMin,MessageLossProbability"
+		  PortCounts		  "[12 13]"
+		  EnableBusSupport	  off
+		  Port {
+		    PortNumber		    2
+		    Name		    "from"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "to"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "msg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    5
+		    Name		    "param"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    6
+		    Name		    "pkgid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    7
+		    Name		    "recv_from_out"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    8
+		    Name		    "recv_msg_out"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    9
+		    Name		    "recv_param_out"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    10
+		    Name		    "time"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    11
+		    Name		    "queue_sending_ratio"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    12
+		    Name		    "queue_received_ratio"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    13
+		    Name		    "queue_ack_ratio"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  SID			  103
+		  Position		  [460, 541, 480, 559]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "from"
+		  SID			  87
+		  Position		  [460, 101, 480, 119]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "to"
+		  SID			  88
+		  Position		  [460, 136, 480, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "msg"
+		  SID			  89
+		  Position		  [460, 171, 480, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "param"
+		  SID			  90
+		  Position		  [460, 206, 480, 224]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "pkgid"
+		  SID			  91
+		  Position		  [460, 246, 480, 264]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "recv_from_out"
+		  SID			  92
+		  Position		  [460, 281, 480, 299]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "recv_msg_out"
+		  SID			  93
+		  Position		  [460, 316, 480, 334]
+		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "recv_param_out"
+		  SID			  94
+		  Position		  [460, 351, 480, 369]
+		  Port			  "8"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "time"
+		  SID			  95
+		  Position		  [460, 386, 480, 404]
+		  Port			  "9"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "queue_sending_ratio"
+		  SID			  26
+		  Position		  [460, 426, 480, 444]
+		  Port			  "10"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "queue_received_ratio"
+		  SID			  27
+		  Position		  [460, 461, 480, 479]
+		  Port			  "11"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "queue_ack_ratio"
+		  SID			  28
+		  Position		  [460, 496, 480, 514]
+		  Port			  "12"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "snd_from_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "snd_to_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "snd_msg_in"
+		  SrcPort		  1
+		  Points		  [120, 0]
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "snd_param_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "recv_from_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "recv_to_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  6
+		}
+		Line {
+		  SrcBlock		  "recv_msg_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  7
+		}
+		Line {
+		  SrcBlock		  "recv_param_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  8
+		}
+		Line {
+		  SrcBlock		  "recv_pkgid_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  9
+		}
+		Line {
+		  SrcBlock		  "recv_time_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  10
+		}
+		Line {
+		  SrcBlock		  "currentTime"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  11
+		}
+		Line {
+		  SrcBlock		  "random"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  12
+		}
+		Line {
+		  Name			  "from"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "from"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "to"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  3
+		  DstBlock		  "to"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "msg"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  4
+		  DstBlock		  "msg"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "param"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  5
+		  DstBlock		  "param"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "pkgid"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  6
+		  DstBlock		  "pkgid"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "recv_from_out"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  7
+		  DstBlock		  "recv_from_out"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "recv_msg_out"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  8
+		  DstBlock		  "recv_msg_out"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "recv_param_out"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  9
+		  DstBlock		  "recv_param_out"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "time"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  10
+		  DstBlock		  "time"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "queue_sending_ratio"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  11
+		  DstBlock		  "queue_sending_ratio"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "queue_received_ratio"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  12
+		  DstBlock		  "queue_received_ratio"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "queue_ack_ratio"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  13
+		  DstBlock		  "queue_ack_ratio"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      UniformRandomNumber
+	      Name		      "Uniform Random\nNumber"
+	      SID		      647
+	      Position		      [305, 504, 335, 536]
+	      Minimum		      "0"
+	      Maximum		      "100"
+	      SampleTime	      "0.001"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_from_out"
+	      SID		      41
+	      Position		      [655, 73, 685, 87]
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_to_out"
+	      SID		      42
+	      Position		      [655, 113, 685, 127]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_msg_out"
+	      SID		      43
+	      Position		      [655, 153, 685, 167]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_param_out"
+	      SID		      44
+	      Position		      [655, 193, 685, 207]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_pkgid_out"
+	      SID		      45
+	      Position		      [655, 233, 685, 247]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint32"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint32"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_time_out"
+	      SID		      46
+	      Position		      [655, 393, 685, 407]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "recv_from_out"
+	      SID		      47
+	      Position		      [655, 273, 685, 287]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "recv_msg_out"
+	      SID		      48
+	      Position		      [655, 313, 685, 327]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "recv_param_out"
+	      SID		      49
+	      Position		      [655, 353, 685, 367]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "debug"
+	      SID		      122
+	      Position		      [760, 478, 790, 492]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      9
+	      DstBlock		      "snd_time_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "recv_time_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      10
+	    }
+	    Line {
+	      SrcBlock		      "recv_pkgid_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "recv_param_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "recv_msg_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "recv_to_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "recv_from_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      8
+	      DstBlock		      "recv_param_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      7
+	      DstBlock		      "recv_msg_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      6
+	      DstBlock		      "recv_from_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "snd_to_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "snd_from_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "snd_param_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "snd_msg_in"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      5
+	      DstBlock		      "snd_pkgid_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      4
+	      DstBlock		      "snd_param_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      3
+	      DstBlock		      "snd_msg_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      2
+	      DstBlock		      "snd_to_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      1
+	      DstBlock		      "snd_from_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "debug"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "queue_sending_ratio"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 1, 0]
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      10
+	      Points		      [65, 0]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "queue_received_ratio"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 2, 0]
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      11
+	      Points		      [0, 5]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "queue_ack_ratio"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 1, 0]
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      12
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Digital Clock"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      11
+	    }
+	    Line {
+	      SrcBlock		      "Uniform Random\nNumber"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      12
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Receive Packet"
+	  SID			  50
+	  Ports			  [6, 3]
+	  Position		  [900, 506, 1085, 754]
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Embedded MATLAB block"
+	  MaskDisplay		  "disp('receivePacket');"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  Port {
+	    PortNumber		    1
+	    Name		    "event_queue_in"
+	    PropagatedSignals	    "eventQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "event_param_queue_in"
+	    PropagatedSignals	    "eventParamQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Receive Packet"
+	    Location		    [257, 457, 812, 717]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    73
+	    Block {
+	      BlockType		      Inport
+	      Name		      "packetFrom"
+	      SID		      51
+	      Position		      [20, 101, 40, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "packetMsg"
+	      SID		      52
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "packetParam"
+	      SID		      53
+	      Position		      [20, 171, 40, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventQueueIn"
+	      SID		      54
+	      Position		      [20, 206, 40, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventParamQueueIn"
+	      SID		      55
+	      Position		      [20, 246, 40, 264]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "queueSize"
+	      SID		      73
+	      Position		      [20, 281, 40, 299]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      67
+	      Ports		      [1, 1]
+	      Position		      [270, 280, 320, 320]
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      " SFunction "
+	      SID		      66
+	      Tag		      "Stateflow S-Function LinkLayer 1"
+	      Ports		      [6, 4]
+	      Position		      [180, 114, 230, 281]
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[6 4]"
+	      EnableBusSupport	      off
+	      Port {
+		PortNumber		2
+		Name			"eventQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"eventParamQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"bufferOverflow"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      69
+	      Position		      [460, 291, 480, 309]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventQueue"
+	      SID		      59
+	      Position		      [460, 101, 480, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventParamQueue"
+	      SID		      60
+	      Position		      [460, 136, 480, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "bufferOverflow"
+	      SID		      61
+	      Position		      [460, 171, 480, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "packetFrom"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "packetMsg"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "packetParam"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "eventQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "eventParamQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "queueSize"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "eventQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "eventQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "eventParamQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "eventParamQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "bufferOverflow"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      4
+	      DstBlock		      "bufferOverflow"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Send Packet"
+	  SID			  62
+	  Ports			  [4, 4]
+	  Position		  [150, 514, 310, 781]
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Embedded MATLAB block"
+	  MaskDisplay		  "disp('sendPacket');"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  Port {
+	    PortNumber		    3
+	    Name		    "event_queue_out"
+	    PropagatedSignals	    "eventQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "event_param_queue_out"
+	    PropagatedSignals	    "eventParamQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Send Packet"
+	    Location		    [257, 457, 812, 717]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    82
+	    Block {
+	      BlockType		      Inport
+	      Name		      "busSizeSignal"
+	      SID		      77
+	      Position		      [20, 101, 40, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventQueueIn"
+	      SID		      63
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventParamQueueIn"
+	      SID		      64
+	      Position		      [20, 171, 40, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "queueSize"
+	      SID		      82
+	      Position		      [20, 206, 40, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      79
+	      Ports		      [1, 1]
+	      Position		      [270, 245, 320, 285]
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      " SFunction "
+	      SID		      78
+	      Tag		      "Stateflow S-Function LinkLayer 3"
+	      Ports		      [4, 5]
+	      Position		      [180, 104, 230, 246]
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[4 5]"
+	      EnableBusSupport	      off
+	      Port {
+		PortNumber		2
+		Name			"packetMsg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"packetParam"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"eventQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"eventParamQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      81
+	      Position		      [460, 256, 480, 274]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "packetMsg"
+	      SID		      69
+	      Position		      [460, 101, 480, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "packetParam"
+	      SID		      70
+	      Position		      [460, 136, 480, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventQueue"
+	      SID		      71
+	      Position		      [460, 171, 480, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventParamQueue"
+	      SID		      72
+	      Position		      [460, 206, 480, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "busSizeSignal"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "eventQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "eventParamQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "queueSize"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "packetMsg"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "packetMsg"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "packetParam"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "packetParam"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "eventQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      4
+	      DstBlock		      "eventQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "eventParamQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      5
+	      DstBlock		      "eventParamQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  554
+	  Position		  [1155, 700, 1175, 720]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  SID			  649
+	  Position		  [680, 400, 700, 420]
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  SID			  559
+	  Position		  [410, 663, 445, 697]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay2"
+	  SID			  560
+	  Position		  [410, 728, 445, 762]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay3"
+	  SID			  561
+	  Position		  [1165, 533, 1200, 567]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay4"
+	  SID			  562
+	  Position		  [1170, 613, 1205, 647]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Width
+	  Name			  "Width"
+	  SID			  569
+	  Position		  [55, 730, 85, 760]
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "port_out"
+	  SID			  19
+	  Position		  [960, 143, 990, 157]
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_queue_in"
+	  SID			  555
+	  Position		  [1245, 543, 1275, 557]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_param_queue_in"
+	  SID			  556
+	  Position		  [1245, 623, 1275, 637]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_queue_out"
+	  SID			  557
+	  Position		  [495, 673, 525, 687]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_param_queue_out"
+	  SID			  558
+	  Position		  [495, 738, 525, 752]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  Name			  "event_param_queue_in"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Receive Packet"
+	  SrcPort		  2
+	  DstBlock		  "Unit Delay4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "event_queue_in"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Receive Packet"
+	  SrcPort		  1
+	  DstBlock		  "Unit Delay3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "event_param_queue_out"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  4
+	  DstBlock		  "Unit Delay2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "event_queue_out"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  3
+	  DstBlock		  "Unit Delay1"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_queue_out"
+	  SrcPort		  1
+	  DstBlock		  "Send Packet"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "net_address"
+	  SrcPort		  1
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  1
+	  Points		  [55, 0; 0, -180]
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  9
+	  Points		  [65, 0; 0, 240]
+	  DstBlock		  "Receive Packet"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  8
+	  Points		  [115, 0; 0, 240]
+	  DstBlock		  "Receive Packet"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  7
+	  Points		  [140, 0; 0, 240]
+	  DstBlock		  "Receive Packet"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<msg>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  3
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "<pkgid>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  5
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "<time>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  6
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [0, 70; -80, 0]
+	    DstBlock		    "Send Packet"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "DataLinkLayer"
+	    DstPort		    6
+	  }
+	}
+	Line {
+	  SrcBlock		  "port_in"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "port_out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<to>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  2
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<from>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  2
+	  Points		  [80, 0; 0, -205]
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  10
+	}
+	Line {
+	  Name			  "<param>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  4
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  4
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_queue_in"
+	  SrcPort		  1
+	  DstBlock		  "Receive Packet"
+	  DstPort		  4
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_param_queue_in"
+	  SrcPort		  1
+	  DstBlock		  "Receive Packet"
+	  DstPort		  5
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_param_queue_out"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Send Packet"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 40; -65, 0]
+	    DstBlock		    "Width"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  2
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  4
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  5
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  6
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Receive Packet"
+	  SrcPort		  3
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  DstBlock		  "write_event_queue_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay2"
+	  SrcPort		  1
+	  DstBlock		  "write_event_param_queue_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay3"
+	  SrcPort		  1
+	  DstBlock		  "write_event_queue_in"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay4"
+	  SrcPort		  1
+	  DstBlock		  "write_event_param_queue_in"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Width"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  Branch {
+	    Points		    [10, 0; 0, 50; 750, 0]
+	    DstBlock		    "Receive Packet"
+	    DstPort		    6
+	  }
+	  Branch {
+	    DstBlock		    "Send Packet"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  Name			  "datalinklayer"
+	  Labels		  [0, 0]
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  10
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Link Layer UDP"
+      SID		      570
+      Ports		      [7, 5]
+      Position		      [440, 41, 715, 449]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      SystemSampleTime	      "0.1"
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "DelayMin|DelayMax|MessageLossProbability"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVariables	      "DelayMin=@1;DelayMax=@2;MessageLossProbability=@3;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "2|100|0"
+      MaskTabNameString	      "QoS,QoS,QoS"
+      System {
+	Name			"Link Layer UDP"
+	Location		[0, 50, 1280, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "port_in"
+	  SID			  572
+	  Position		  [50, 133, 80, 147]
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "net_address"
+	  SID			  573
+	  Position		  [360, 273, 390, 287]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "receiver_net_address"
+	  SID			  629
+	  Position		  [360, 313, 390, 327]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_queue_in"
+	  SID			  630
+	  Position		  [770, 643, 800, 657]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_queue_in"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_param_queue_in"
+	  SID			  631
+	  Position		  [770, 683, 800, 697]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_param_queue_in"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_queue_out"
+	  SID			  632
+	  Position		  [50, 608, 80, 622]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_queue_out"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "read_event_param_queue_out"
+	  SID			  633
+	  Position		  [55, 673, 85, 687]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "event_param_queue_out"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  575
+	  Ports			  [6, 1]
+	  Position		  [830, 17, 835, 263]
+	  ShowName		  off
+	  Inputs		  "6"
+	  DisplayOption		  "bar"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  SID			  582
+	  Ports			  [1, 6]
+	  Position		  [160, 23, 165, 257]
+	  ShowName		  off
+	  OutputSignals		  "from,to,msg,param,pkgid,time"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<from>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<to>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<msg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<param>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<pkgid>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "<time>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DataLinkLayer"
+	  SID			  587
+	  Ports			  [10, 10]
+	  Position		  [465, 25, 615, 415]
+	  LibraryVersion	  "1.762"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    10
+	    Name		    "datalinklayer"
+	    PropagatedSignals	    "queue_sending_ratio, queue_received_ratio, queue_ack_ratio"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "DataLinkLayer"
+	    Location		    [4, 50, 1276, 773]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_from_in"
+	      SID		      588
+	      Position		      [300, 218, 330, 232]
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_to_in"
+	      SID		      589
+	      Position		      [300, 258, 330, 272]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_msg_in"
+	      SID		      590
+	      Position		      [300, 298, 330, 312]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_param_in"
+	      SID		      591
+	      Position		      [300, 338, 330, 352]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_pkgid_in"
+	      SID		      592
+	      Position		      [300, 378, 330, 392]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint32"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint32"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "recv_time_in"
+	      SID		      593
+	      Position		      [300, 418, 330, 432]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_from_in"
+	      SID		      594
+	      Position		      [300, 58, 330, 72]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_to_in"
+	      SID		      595
+	      Position		      [300, 98, 330, 112]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_msg_in"
+	      SID		      596
+	      Position		      [300, 138, 330, 152]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "snd_param_in"
+	      SID		      597
+	      Position		      [300, 178, 330, 192]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      SID		      598
+	      Ports		      [2, 1]
+	      Position		      [690, 449, 695, 536]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      DigitalClock
+	      Name		      "Digital Clock"
+	      SID		      599
+	      Position		      [280, 453, 345, 477]
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "PacketHandler"
+	      SID		      600
+	      Ports		      [12, 11]
+	      Position		      [410, 48, 595, 522]
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      MaskType		      "Stateflow"
+	      MaskDescription	      "Embedded MATLAB block"
+	      MaskDisplay	      "disp('packetHandler');"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskPortRotate	      "default"
+	      MaskIconUnits	      "autoscale"
+	      Port {
+		PortNumber		10
+		Name			"queue_sending_ratio"
+		PropagatedSignals	"queue_sending_ratio"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"queue_received_ratio"
+		PropagatedSignals	"queue_received_ratio"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      System {
+		Name			"PacketHandler"
+		Location		[257, 457, 812, 717]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	115
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_from_in"
+		  SID			  73
+		  Position		  [20, 101, 40, 119]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_to_in"
+		  SID			  74
+		  Position		  [20, 136, 40, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_msg_in"
+		  SID			  75
+		  Position		  [20, 171, 40, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "snd_param_in"
+		  SID			  76
+		  Position		  [20, 206, 40, 224]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_from_in"
+		  SID			  77
+		  Position		  [20, 246, 40, 264]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_to_in"
+		  SID			  78
+		  Position		  [20, 281, 40, 299]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_msg_in"
+		  SID			  79
+		  Position		  [20, 316, 40, 334]
+		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_param_in"
+		  SID			  80
+		  Position		  [20, 351, 40, 369]
+		  Port			  "8"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_pkgid_in"
+		  SID			  81
+		  Position		  [20, 386, 40, 404]
+		  Port			  "9"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "recv_time_in"
+		  SID			  82
+		  Position		  [20, 426, 40, 444]
+		  Port			  "10"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "currentTime"
+		  SID			  83
+		  Position		  [20, 461, 40, 479]
+		  Port			  "11"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "random"
+		  SID			  115
+		  Position		  [20, 496, 40, 514]
+		  Port			  "12"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  SID			  109
+		  Ports			  [1, 1]
+		  Position		  [270, 495, 320, 535]
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  " SFunction "
+		  SID			  108
+		  Tag			  "Stateflow S-Function LinkLayer 4"
+		  Ports			  [12, 12]
+		  Position		  [180, 122, 230, 423]
+		  FunctionName		  "sf_sfun"
+		  Parameters		  "DelayMax,DelayMin,MessageLossProbability"
+		  PortCounts		  "[12 12]"
+		  EnableBusSupport	  off
+		  Port {
+		    PortNumber		    2
+		    Name		    "from"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "to"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "msg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    5
+		    Name		    "param"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    6
+		    Name		    "pkgid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    7
+		    Name		    "recv_from_out"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    8
+		    Name		    "recv_msg_out"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    9
+		    Name		    "recv_param_out"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    10
+		    Name		    "time"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    11
+		    Name		    "queue_sending_ratio"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    12
+		    Name		    "queue_received_ratio"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  SID			  111
+		  Position		  [460, 506, 480, 524]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "from"
+		  SID			  87
+		  Position		  [460, 101, 480, 119]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "to"
+		  SID			  88
+		  Position		  [460, 136, 480, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "msg"
+		  SID			  89
+		  Position		  [460, 171, 480, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "param"
+		  SID			  90
+		  Position		  [460, 206, 480, 224]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "pkgid"
+		  SID			  91
+		  Position		  [460, 246, 480, 264]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "recv_from_out"
+		  SID			  92
+		  Position		  [460, 281, 480, 299]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "recv_msg_out"
+		  SID			  93
+		  Position		  [460, 316, 480, 334]
+		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "recv_param_out"
+		  SID			  94
+		  Position		  [460, 351, 480, 369]
+		  Port			  "8"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "time"
+		  SID			  95
+		  Position		  [460, 386, 480, 404]
+		  Port			  "9"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "queue_sending_ratio"
+		  SID			  26
+		  Position		  [460, 426, 480, 444]
+		  Port			  "10"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "queue_received_ratio"
+		  SID			  27
+		  Position		  [460, 461, 480, 479]
+		  Port			  "11"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "snd_from_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "snd_to_in"
+		  SrcPort		  1
+		  Points		  [120, 0]
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "snd_msg_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "snd_param_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "recv_from_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "recv_to_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  6
+		}
+		Line {
+		  SrcBlock		  "recv_msg_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  7
+		}
+		Line {
+		  SrcBlock		  "recv_param_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  8
+		}
+		Line {
+		  SrcBlock		  "recv_pkgid_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  9
+		}
+		Line {
+		  SrcBlock		  "recv_time_in"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  10
+		}
+		Line {
+		  SrcBlock		  "currentTime"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  11
+		}
+		Line {
+		  SrcBlock		  "random"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  12
+		}
+		Line {
+		  Name			  "from"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "from"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "to"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  3
+		  DstBlock		  "to"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "msg"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  4
+		  DstBlock		  "msg"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "param"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  5
+		  DstBlock		  "param"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "pkgid"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  6
+		  DstBlock		  "pkgid"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "recv_from_out"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  7
+		  DstBlock		  "recv_from_out"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "recv_msg_out"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  8
+		  DstBlock		  "recv_msg_out"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "recv_param_out"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  9
+		  DstBlock		  "recv_param_out"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "time"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  10
+		  DstBlock		  "time"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "queue_sending_ratio"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  11
+		  DstBlock		  "queue_sending_ratio"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "queue_received_ratio"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  12
+		  DstBlock		  "queue_received_ratio"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      UniformRandomNumber
+	      Name		      "Uniform Random\nNumber"
+	      SID		      648
+	      Position		      [300, 489, 330, 521]
+	      Minimum		      "0"
+	      Maximum		      "100"
+	      SampleTime	      "0.001"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_from_out"
+	      SID		      601
+	      Position		      [655, 53, 685, 67]
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_to_out"
+	      SID		      602
+	      Position		      [655, 98, 685, 112]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_msg_out"
+	      SID		      603
+	      Position		      [655, 143, 685, 157]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_param_out"
+	      SID		      604
+	      Position		      [655, 188, 685, 202]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_pkgid_out"
+	      SID		      605
+	      Position		      [655, 233, 685, 247]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint32"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint32"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "snd_time_out"
+	      SID		      606
+	      Position		      [655, 413, 685, 427]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "recv_from_out"
+	      SID		      607
+	      Position		      [655, 278, 685, 292]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint8"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "recv_msg_out"
+	      SID		      608
+	      Position		      [655, 323, 685, 337]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	      DataType		      "uint16"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "uint16"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "recv_param_out"
+	      SID		      609
+	      Position		      [655, 368, 685, 382]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "debug"
+	      SID		      610
+	      Position		      [760, 483, 790, 497]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      9
+	      DstBlock		      "snd_time_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "recv_time_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      10
+	    }
+	    Line {
+	      SrcBlock		      "recv_pkgid_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "recv_param_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "recv_msg_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "recv_to_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "recv_from_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      8
+	      DstBlock		      "recv_param_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      7
+	      DstBlock		      "recv_msg_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      6
+	      DstBlock		      "recv_from_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "snd_to_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "snd_from_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "snd_param_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "snd_msg_in"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      5
+	      DstBlock		      "snd_pkgid_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      4
+	      DstBlock		      "snd_param_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      3
+	      DstBlock		      "snd_msg_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      2
+	      DstBlock		      "snd_to_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      1
+	      DstBlock		      "snd_from_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "debug"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "queue_sending_ratio"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 2, 0]
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      10
+	      Points		      [0, 5]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "queue_received_ratio"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 2, 0]
+	      SrcBlock		      "PacketHandler"
+	      SrcPort		      11
+	      Points		      [0, 5]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Digital Clock"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      11
+	    }
+	    Line {
+	      SrcBlock		      "Uniform Random\nNumber"
+	      SrcPort		      1
+	      DstBlock		      "PacketHandler"
+	      DstPort		      12
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Receive Packet"
+	  SID			  613
+	  Ports			  [6, 3]
+	  Position		  [900, 506, 1085, 754]
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Embedded MATLAB block"
+	  MaskDisplay		  "disp('receivePacket');"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  Port {
+	    PortNumber		    1
+	    Name		    "event_queue_in"
+	    PropagatedSignals	    "eventQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "event_param_queue_in"
+	    PropagatedSignals	    "eventParamQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Receive Packet"
+	    Location		    [257, 457, 812, 717]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    78
+	    Block {
+	      BlockType		      Inport
+	      Name		      "packetFrom"
+	      SID		      51
+	      Position		      [20, 101, 40, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "packetMsg"
+	      SID		      52
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "packetParam"
+	      SID		      53
+	      Position		      [20, 171, 40, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventQueueIn"
+	      SID		      54
+	      Position		      [20, 206, 40, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventParamQueueIn"
+	      SID		      55
+	      Position		      [20, 246, 40, 264]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "queueSize"
+	      SID		      78
+	      Position		      [20, 281, 40, 299]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      75
+	      Ports		      [1, 1]
+	      Position		      [270, 245, 320, 285]
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      " SFunction "
+	      SID		      74
+	      Tag		      "Stateflow S-Function LinkLayer 7"
+	      Ports		      [6, 4]
+	      Position		      [180, 102, 230, 243]
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[6 4]"
+	      EnableBusSupport	      off
+	      Port {
+		PortNumber		2
+		Name			"eventQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"eventParamQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"bufferOverflow"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      77
+	      Position		      [460, 256, 480, 274]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventQueue"
+	      SID		      59
+	      Position		      [460, 101, 480, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventParamQueue"
+	      SID		      60
+	      Position		      [460, 136, 480, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "bufferOverflow"
+	      SID		      61
+	      Position		      [460, 171, 480, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "packetFrom"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "packetMsg"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "packetParam"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "eventQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "eventParamQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "queueSize"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "eventQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "eventQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "eventParamQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "eventParamQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "bufferOverflow"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      4
+	      DstBlock		      "bufferOverflow"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Send Packet"
+	  SID			  614
+	  Ports			  [4, 4]
+	  Position		  [150, 514, 310, 781]
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Embedded MATLAB block"
+	  MaskDisplay		  "disp('sendPacket');"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  Port {
+	    PortNumber		    3
+	    Name		    "event_queue_out"
+	    PropagatedSignals	    "eventQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "event_param_queue_out"
+	    PropagatedSignals	    "eventParamQueue"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Send Packet"
+	    Location		    [257, 457, 812, 717]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    90
+	    Block {
+	      BlockType		      Inport
+	      Name		      "busSizeSignal"
+	      SID		      77
+	      Position		      [20, 101, 40, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventQueueIn"
+	      SID		      63
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eventParamQueueIn"
+	      SID		      64
+	      Position		      [20, 171, 40, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "queueSize"
+	      SID		      90
+	      Position		      [20, 206, 40, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      87
+	      Ports		      [1, 1]
+	      Position		      [270, 245, 320, 285]
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      " SFunction "
+	      SID		      86
+	      Tag		      "Stateflow S-Function LinkLayer 8"
+	      Ports		      [4, 5]
+	      Position		      [180, 104, 230, 246]
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[4 5]"
+	      EnableBusSupport	      off
+	      Port {
+		PortNumber		2
+		Name			"packetMsg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"packetParam"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"eventQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"eventParamQueue"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      89
+	      Position		      [460, 256, 480, 274]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "packetMsg"
+	      SID		      69
+	      Position		      [460, 101, 480, 119]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "packetParam"
+	      SID		      70
+	      Position		      [460, 136, 480, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventQueue"
+	      SID		      71
+	      Position		      [460, 171, 480, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "eventParamQueue"
+	      SID		      72
+	      Position		      [460, 206, 480, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "busSizeSignal"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "eventQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "eventParamQueueIn"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "queueSize"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "packetMsg"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "packetMsg"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "packetParam"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "packetParam"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "eventQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      4
+	      DstBlock		      "eventQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "eventParamQueue"
+	      Labels		      [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      5
+	      DstBlock		      "eventParamQueue"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  624
+	  Position		  [1180, 700, 1200, 720]
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  SID			  625
+	  Position		  [415, 663, 450, 697]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay2"
+	  SID			  626
+	  Position		  [415, 728, 450, 762]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay3"
+	  SID			  620
+	  Position		  [1165, 533, 1200, 567]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay4"
+	  SID			  621
+	  Position		  [1170, 613, 1205, 647]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Width
+	  Name			  "Width"
+	  SID			  634
+	  Position		  [115, 795, 145, 825]
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "port_out"
+	  SID			  616
+	  Position		  [960, 133, 990, 147]
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_queue_in"
+	  SID			  622
+	  Position		  [1245, 543, 1275, 557]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_param_queue_in"
+	  SID			  623
+	  Position		  [1245, 623, 1275, 637]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_queue_out"
+	  SID			  627
+	  Position		  [500, 673, 530, 687]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "write_event_param_queue_out"
+	  SID			  628
+	  Position		  [500, 738, 530, 752]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "net_address"
+	  SrcPort		  1
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  1
+	  Points		  [55, 0; 0, -190]
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  9
+	  Points		  [90, 0; 0, 250]
+	  DstBlock		  "Receive Packet"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  8
+	  Points		  [140, 0; 0, 250]
+	  DstBlock		  "Receive Packet"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  7
+	  Points		  [165, 0; 0, 250]
+	  DstBlock		  "Receive Packet"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<msg>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  3
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "<pkgid>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  5
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "<time>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  6
+	  Points		  [45, 0]
+	  Branch {
+	    Points		    [0, 160; -80, 0]
+	    DstBlock		    "Send Packet"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "DataLinkLayer"
+	    DstPort		    6
+	  }
+	}
+	Line {
+	  SrcBlock		  "port_in"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "port_out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<to>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  2
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<from>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  2
+	  Points		  [80, 0; 0, -215]
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  10
+	}
+	Line {
+	  Name			  "<param>"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  4
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  4
+	}
+	Line {
+	  Labels		  [1, 0]
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  2
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  4
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  5
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "DataLinkLayer"
+	  SrcPort		  6
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "event_param_queue_in"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Receive Packet"
+	  SrcPort		  2
+	  DstBlock		  "Unit Delay4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "event_queue_in"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Receive Packet"
+	  SrcPort		  1
+	  DstBlock		  "Unit Delay3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay3"
+	  SrcPort		  1
+	  DstBlock		  "write_event_queue_in"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay4"
+	  SrcPort		  1
+	  DstBlock		  "write_event_param_queue_in"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Receive Packet"
+	  SrcPort		  3
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "event_param_queue_out"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  4
+	  DstBlock		  "Unit Delay2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "event_queue_out"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Send Packet"
+	  SrcPort		  3
+	  DstBlock		  "Unit Delay1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  DstBlock		  "write_event_queue_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay2"
+	  SrcPort		  1
+	  DstBlock		  "write_event_param_queue_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "DataLinkLayer"
+	  DstPort		  8
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_queue_in"
+	  SrcPort		  1
+	  DstBlock		  "Receive Packet"
+	  DstPort		  4
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_param_queue_in"
+	  SrcPort		  1
+	  DstBlock		  "Receive Packet"
+	  DstPort		  5
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_queue_out"
+	  SrcPort		  1
+	  DstBlock		  "Send Packet"
+	  DstPort		  2
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "read_event_param_queue_out"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Send Packet"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Width"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Width"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  Branch {
+	    Points		    [0, -5; -15, 0]
+	    DstBlock		    "Send Packet"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    [0, 5; 735, 0]
+	    DstBlock		    "Receive Packet"
+	    DstPort		    6
+	  }
+	}
+      }
+    }
+  }
+}
+# Finite State Machines
+#
+#    Stateflow Version 7.1 (R2009a) dated Jul 17 2009, 00:39:27
+#
+#
+
+
+Stateflow {
+  machine {
+    id			    1
+    name		    "LinkLayer"
+    created		    "20-Feb-2012 11:00:46"
+    isLibrary		    1
+    firstTarget		    120
+    sfVersion		    71014000.00001
+  }
+  chart {
+    id			    2
+    name		    "Link Layer/Receive Packet"
+    windowPosition	    [522.6 64.997 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 2560 1024 1.25]
+    treeNode		    [0 3 0 0]
+    firstTransition	    5
+    firstJunction	    4
+    viewObj		    2
+    machine		    1
+    ssIdHighWaterMark	    17
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    6
+    updateMethod	    DISCRETE
+    sampleTime		    "0.001"
+    chartFileNumber	    1
+    disableImplicitCasting  1
+    eml {
+      name		      "receivePacket"
+    }
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 0]
+    superState		    SUBCHART
+    subviewer		    2
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [eventQueue, eventParamQueue, bufferOverflow] = receivePacket(packetFrom, packetMsg, pac"
+      "ketParam, eventQueueIn, eventParamQueueIn, queueSize)\n%#eml\n% This function receives packets and adds them to "
+      "the event queue.\n% A packet consists of a source, a message and an optional parameter for \n% the message. Sour"
+      "ce and message are contained at position 1 and 2 in the \n% eventQueue. Because of the different data type the p"
+      "arameter has his own \n% queue eventParamQueue.\n\n%Constants\nSOURCE = 2;\nMESSAGE = 1;\nBUS_SIZE = numel(packe"
+      "tFrom);\nQUEUE_SIZE = queueSize;\n\n%Init\neventQueue = eventQueueIn;\neventParamQueue = eventParamQueueIn;\nbuf"
+      "ferOverflow = false;\n\n%New incoming packet\nfor i = 1:BUS_SIZE\n    if packetFrom(i) ~= 0 \n        bufferOver"
+      "flow = true;\n        %Add it to the incoming event Queue\n        for j = 1:QUEUE_SIZE\n            %Search for"
+      " an empty place\n            if eventQueue(j,SOURCE) == 0\n                eventQueue(j,SOURCE)    = packetFrom("
+      "i);\n                eventQueue(j,MESSAGE)   = packetMsg(i);\n                eventParamQueue(j)      = packetPa"
+      "ram(i);\n                bufferOverflow = false;\n                break;\n            end\n        end        \n"
+      "    else\n        break;\n    end\nend"
+      editorLayout	      "100 M4x1[1280 49 1280 777]"
+      breakpoints	      "100 M[45]"
+    }
+  }
+  junction {
+    id			    4
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    linkNode		    [2 0 0]
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    5
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    linkNode		    [2 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    6
+    ssIdNumber		    7
+    name		    "packetFrom"
+    linkNode		    [2 0 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    7
+    ssIdNumber		    9
+    name		    "packetMsg"
+    linkNode		    [2 6 8]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    8
+    ssIdNumber		    10
+    name		    "packetParam"
+    linkNode		    [2 7 9]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    9
+    ssIdNumber		    4
+    name		    "eventQueueIn"
+    linkNode		    [2 8 10]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    10
+    ssIdNumber		    6
+    name		    "eventParamQueueIn"
+    linkNode		    [2 9 11]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    11
+    ssIdNumber		    11
+    name		    "eventQueue"
+    linkNode		    [2 10 12]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    12
+    ssIdNumber		    12
+    name		    "eventParamQueue"
+    linkNode		    [2 11 13]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    13
+    ssIdNumber		    13
+    name		    "bufferOverflow"
+    linkNode		    [2 12 14]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    14
+    ssIdNumber		    16
+    name		    "queueSize"
+    linkNode		    [2 13 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  instance {
+    id			    15
+    name		    "Link Layer/Receive Packet"
+    machine		    1
+    chart		    2
+  }
+  chart {
+    id			    16
+    name		    "Link Layer/Send Packet"
+    windowPosition	    [522.6 64.997 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 2560 1024 1.25]
+    treeNode		    [0 17 0 0]
+    firstTransition	    19
+    firstJunction	    18
+    viewObj		    16
+    machine		    1
+    ssIdHighWaterMark	    15
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    20
+    updateMethod	    DISCRETE
+    sampleTime		    "0.001"
+    chartFileNumber	    3
+    disableImplicitCasting  1
+    eml {
+      name		      "sendPacket"
+    }
+  }
+  state {
+    id			    17
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    16
+    treeNode		    [16 0 0 0]
+    superState		    SUBCHART
+    subviewer		    16
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [packetMsg, packetParam, eventQueue, eventParamQueue] = sendPacket(busSizeSignal, eventQ"
+      "ueueIn, eventParamQueueIn, queueSize)\n%#eml\n\n% This function creates packets from the event queue. A packet c"
+      "onsists\n% of a destination, a message and an optional parameter for the message.\n% Destination and message are"
+      " contained at position 1 and 2 in the \n% eventQueue. Because of the different data type the parameter has his o"
+      "wn \n% queue eventParamQueue.\n\n%Constants\nDESTINATION = 2;\nMESSAGE = 1;\nQUEUE_SIZE = queueSize;\n\nbusSize "
+      "= numel(busSizeSignal);\n\n%Init\neventQueue = eventQueueIn;\neventParamQueue = eventParamQueueIn;\npacketMsg = "
+      "zeros(1,busSize,'uint16');\npacketParam = zeros(1,busSize,'double');\n\n%There is an event in the queue\nfor i ="
+      " 1:busSize   \n    if eventQueue(1,DESTINATION) ~= 0 || eventQueue(1,MESSAGE) ~= 0\n        %Create packet from "
+      "the firs entry in the queue\n        packetMsg(i)   = uint16(eventQueue(1,MESSAGE));\n        packetParam(i) = e"
+      "ventParamQueue(1);\n        %Remove the event from the queue\n        for j=1:QUEUE_SIZE - 1\n            eventQ"
+      "ueue(j,DESTINATION)   = eventQueue(j+1,DESTINATION);\n            eventQueue(j,MESSAGE)       = eventQueue(j+1,M"
+      "ESSAGE);\n            eventParamQueue(j)          = eventParamQueue(j+1);\n        end\n        %Set last elemen"
+      "t to zero\n        eventQueue(QUEUE_SIZE,DESTINATION)  = 0;\n        eventQueue(QUEUE_SIZE,MESSAGE)      = 0;\n "
+      "       eventParamQueue(QUEUE_SIZE)    = 0;\n    else\n        break;\n    end\nend"
+      editorLayout	      "100 M4x1[10 5 1280 777]"
+    }
+  }
+  junction {
+    id			    18
+    position		    [23.5747 49.5747 7]
+    chart		    16
+    linkNode		    [16 0 0]
+    subviewer		    16
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    19
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      18
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    16
+    linkNode		    [16 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    16
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    20
+    ssIdNumber		    14
+    name		    "busSizeSignal"
+    linkNode		    [16 0 21]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    21
+    ssIdNumber		    6
+    name		    "packetMsg"
+    linkNode		    [16 20 22]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    22
+    ssIdNumber		    7
+    name		    "packetParam"
+    linkNode		    [16 21 23]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    23
+    ssIdNumber		    8
+    name		    "eventQueue"
+    linkNode		    [16 22 24]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    24
+    ssIdNumber		    9
+    name		    "eventParamQueue"
+    linkNode		    [16 23 25]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    25
+    ssIdNumber		    10
+    name		    "eventQueueIn"
+    linkNode		    [16 24 26]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    26
+    ssIdNumber		    11
+    name		    "eventParamQueueIn"
+    linkNode		    [16 25 27]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    27
+    ssIdNumber		    15
+    name		    "queueSize"
+    linkNode		    [16 26 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  instance {
+    id			    28
+    name		    "Link Layer/Send Packet"
+    machine		    1
+    chart		    16
+  }
+  chart {
+    id			    29
+    name		    "Link Layer UDP/DataLinkLayer/PacketHandler"
+    windowPosition	    [270.3 170.834 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 800 1.25]
+    treeNode		    [0 30 0 0]
+    firstTransition	    32
+    firstJunction	    31
+    viewObj		    29
+    machine		    1
+    ssIdHighWaterMark	    33
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    33
+    updateMethod	    DISCRETE
+    sampleTime		    "-1"
+    chartFileNumber	    4
+    disableImplicitCasting  1
+    eml {
+      name		      "packetHandler"
+    }
+  }
+  state {
+    id			    30
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    29
+    treeNode		    [29 0 0 0]
+    superState		    SUBCHART
+    subviewer		    29
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [from, to, msg, param, pkgid, recv_from_out, recv_msg_out, recv_param_out, time, queue_s"
+      "ending_ratio, queue_received_ratio] = packetHandler(snd_from_in, snd_to_in, snd_msg_in, snd_param_in, recv_from_"
+      "in, recv_to_in, recv_msg_in, recv_param_in, recv_pkgid_in, recv_time_in, currentTime, DelayMin, DelayMax, Messag"
+      "eLossProbability, random)\n%#eml\neml.extrinsic('warning', 'disp', 'fprintf');\n\n%Constants\nBUS_SIZE =  1;%num"
+      "el(snd_from_in);\nQUEUE_SIZE_SENDING = 10 * BUS_SIZE;\nQUEUE_SIZE_RECEIVED = 10 *BUS_SIZE;\nSAMPLE_TIME = 0.001;"
+      "\nPHYSICAL_DELAY = 2;\n\n%Constraints\nif DelayMin < 2\n    DelayMin = uint32(2);\nend\n\n%Time to delay each ou"
+      "tgoing packet\nassert(DelayMin >= PHYSICAL_DELAY);\ndelay_time =  double(DelayMin - PHYSICAL_DELAY) * SAMPLE_TIM"
+      "E;\n\n%Init\nfrom    = zeros(1,BUS_SIZE,'uint8');\nto      = zeros(1,BUS_SIZE,'uint8');\nmsg     = zeros(1,BUS_S"
+      "IZE,'uint16');\nparam   = zeros(1,BUS_SIZE,'double');\npkgid   = zeros(1,BUS_SIZE,'uint32');\ntime    = zeros(1,"
+      "BUS_SIZE,'double');\n \nrecv_from_out    = zeros(1,BUS_SIZE,'uint8');\nrecv_msg_out     = zeros(1,BUS_SIZE,'uint"
+      "16');\nrecv_param_out   = zeros(1,BUS_SIZE,'double');\n\n\nrecv_in = bus(recv_from_in, recv_to_in, recv_msg_in, "
+      "recv_param_in, recv_pkgid_in, recv_time_in, BUS_SIZE);\n\n\n\n%Persistent variables\npersistent sendingQueue rec"
+      "eivedQueue lastPkgid\n\nif isempty(lastPkgid)\n    lastPkgid = uint32(0);\nend\n\nif isempty(sendingQueue)\n    "
+      "sendingQueue = repmat(packet(0,0,0,0,0,0), 1, QUEUE_SIZE_SENDING);\nend\n\n\nif isempty(receivedQueue)\n    rece"
+      "ivedQueue = repmat(packet(0, 0, 0, 0, 0, 0), 1, QUEUE_SIZE_RECEIVED);\nend\n\n%compute stats\nqueue_sending_rati"
+      "o = queueNumElements(sendingQueue)/QUEUE_SIZE_SENDING;\nqueue_received_ratio = queueNumElements(receivedQueue)/Q"
+      "UEUE_SIZE_RECEIVED;\n\n%Step 1: Check for a new outgoing packet\nfor i = 1:BUS_SIZE    \n    if snd_msg_in(i) ~="
+      " 0\n        lastPkgid = lastPkgid +1;\n        outgoing = packet(snd_from_in, snd_to_in(i), snd_msg_in(i), snd_p"
+      "aram_in(i), lastPkgid, currentTime);\n\n        %Add packet so the outgoing queue\n        sendingQueue = enqueu"
+      "e(sendingQueue, outgoing); \n    end\nend\n    \n%Step 2: Check for a new incoming packet\nfor i = 1:length(recv"
+      "_in)\n    incoming = packet(recv_in(i).from, recv_in(i).to, recv_in(i).msg, recv_in(i).param, recv_in(i).pkgid, "
+      "recv_in(i).time);\n    if incoming.from ~= 0 && incoming.to == snd_from_in && ~dropPacket(incoming, MessageLossP"
+      "robability, random)\n        \n        %Check if max_delay is valid\n        if incoming.time + (double(DelayMax"
+      ") * SAMPLE_TIME) < currentTime\n            %Exceeded max delay. Drop packet.\n            continue;\n        en"
+      "d\n\n        %save packet\n        receivedQueue = enqueue(receivedQueue, incoming); \n    end\nend\n\n%Step 3: "
+      "Forward incoming packet\nfor i = 1:BUS_SIZE\n    if receivedQueue(1).from ~= 0\n        recv_from_out(i)    = re"
+      "ceivedQueue(1).from;\n        recv_msg_out(i)     = receivedQueue(1).msg;\n        recv_param_out(i)   = receive"
+      "dQueue(1).param;\n        receivedQueue = dequeue(receivedQueue,1);\n    else\n        break;\n    end\nend\n\n\n"
+      "%Step 4: Send outgoing packet\nfor i = 1:BUS_SIZE\n    if sendingQueue(1).to ~= 0  && minDelayExpired(sendingQue"
+      "ue(1), currentTime, delay_time) %Respect minimum delay\n        from(i)    = sendingQueue(1).from;\n        to(i"
+      ")      = sendingQueue(1).to;\n        msg(i)     = sendingQueue(1).msg;\n        param(i)   = sendingQueue(1).pa"
+      "ram;\n        pkgid(i)   = sendingQueue(1).pkgid;\n        time(i)    = sendingQueue(1).time;\n\n        %remove"
+      " packet from sending queue\n        sendingQueue = dequeue(sendingQueue, 1);    \n    else\n        break;\n    "
+      "end\nend\n\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%                   "
+      "       H E L P E R\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\nfunction p = "
+      "packet(from, to, msg, param, pkgid, time)\n%#eml\n%Defines a packet\np = struct('from', uint8(from),'to', uint8("
+      "to),'msg', uint16(msg),'param', double(param),'pkgid', uint32(pkgid), 'time', double(time));\n\nfunction bus = b"
+      "us(from, to, msg, param, pkgid, time, size) %emp\n%Create an empty bus\nbus = repmat(packet(0,0,0,0,0,0), 1, siz"
+      "e);\nfor i=1:size\n    bus(i) = packet(from(i), to(i), msg(i), param(i), pkgid(i), time(i));\nend\n\n\nfunction "
+      "queue = enqueue(queue, packet)\n%#eml\neml.extrinsic('warning', 'sprintf');\nfor i = 1:length(queue)\n    if que"
+      "ue(i).to == 0\n        queue(i) = packet;\n        return;\n    end\nend\nwarning('DataLinkLayer:enqueue', 'Data"
+      "LinkLayer Buffer overflow. Dropping packet  %3u: %u->%u :%3u (%.1f) @%.2f', packet.pkgid, packet.from, packet.to"
+      ", packet.msg, packet.param, packet.time);\n\nfunction queue = dequeue(queue, index)\n%#eml\nassert(index <= leng"
+      "th(queue))\nfor i=index:length(queue)-1;\n    queue(i) = queue(i+1);\nend\nqueue(length(queue)) = packet(0,0,0,0"
+      ",0,0);\n\nfunction num = queueNumElements(queue)\n%#eml\nnum = 0;\nfor i = 1:length(queue)\n    if queue(i).to ~"
+      "= uint8(0)\n        num = num+1;\n    end\nend    \n\nfunction packetString = toString(packet) %#eml\neml.extrin"
+      "sic('sprintf');\npacketString = sprintf('%3u: %u->%u :%3u (%.2f) @%.3f', packet.pkgid, packet.from, packet.to, p"
+      "acket.msg, packet.param, packet.time);\n\n%Wheter the packet is ready to fire or not.\nfunction expired = minDel"
+      "ayExpired(packet, current_time, delay_time) %eml\neml.extrinsic('warning');\nexpired = (packet.time + delay_time"
+      ") <= current_time;\n\n%Drop message with a given probability\nfunction drop = dropPacket(p, probability, random)"
+      " %eml\ndrop = random < probability;"
+      editorLayout	      "100 M4x1[1280 5 1288 781]"
+    }
+  }
+  junction {
+    id			    31
+    position		    [23.5747 49.5747 7]
+    chart		    29
+    linkNode		    [29 0 0]
+    subviewer		    29
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    32
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      31
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    29
+    linkNode		    [29 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    29
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    33
+    ssIdNumber		    4
+    name		    "snd_from_in"
+    linkNode		    [29 0 34]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    34
+    ssIdNumber		    5
+    name		    "snd_to_in"
+    linkNode		    [29 33 35]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    35
+    ssIdNumber		    6
+    name		    "snd_msg_in"
+    linkNode		    [29 34 36]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    36
+    ssIdNumber		    7
+    name		    "snd_param_in"
+    linkNode		    [29 35 37]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    37
+    ssIdNumber		    8
+    name		    "from"
+    linkNode		    [29 36 38]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    38
+    ssIdNumber		    9
+    name		    "to"
+    linkNode		    [29 37 39]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    39
+    ssIdNumber		    10
+    name		    "msg"
+    linkNode		    [29 38 40]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    40
+    ssIdNumber		    11
+    name		    "param"
+    linkNode		    [29 39 41]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    41
+    ssIdNumber		    12
+    name		    "pkgid"
+    linkNode		    [29 40 42]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    42
+    ssIdNumber		    13
+    name		    "recv_from_in"
+    linkNode		    [29 41 43]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    43
+    ssIdNumber		    14
+    name		    "recv_to_in"
+    linkNode		    [29 42 44]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    44
+    ssIdNumber		    15
+    name		    "recv_msg_in"
+    linkNode		    [29 43 45]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    45
+    ssIdNumber		    16
+    name		    "recv_param_in"
+    linkNode		    [29 44 46]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    46
+    ssIdNumber		    17
+    name		    "recv_pkgid_in"
+    linkNode		    [29 45 47]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    47
+    ssIdNumber		    18
+    name		    "recv_from_out"
+    linkNode		    [29 46 48]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    48
+    ssIdNumber		    20
+    name		    "recv_msg_out"
+    linkNode		    [29 47 49]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    49
+    ssIdNumber		    21
+    name		    "recv_param_out"
+    linkNode		    [29 48 50]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    50
+    ssIdNumber		    22
+    name		    "recv_time_in"
+    linkNode		    [29 49 51]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    51
+    ssIdNumber		    23
+    name		    "time"
+    linkNode		    [29 50 52]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    52
+    ssIdNumber		    24
+    name		    "currentTime"
+    linkNode		    [29 51 53]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    53
+    ssIdNumber		    27
+    name		    "queue_sending_ratio"
+    linkNode		    [29 52 54]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    54
+    ssIdNumber		    28
+    name		    "queue_received_ratio"
+    linkNode		    [29 53 55]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    55
+    ssIdNumber		    30
+    name		    "DelayMin"
+    linkNode		    [29 54 56]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 1
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    56
+    ssIdNumber		    31
+    name		    "DelayMax"
+    linkNode		    [29 55 57]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    57
+    ssIdNumber		    32
+    name		    "MessageLossProbability"
+    linkNode		    [29 56 58]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 2
+    isNonTunable	    1
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    58
+    ssIdNumber		    33
+    name		    "random"
+    linkNode		    [29 57 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  instance {
+    id			    59
+    name		    "Link Layer UDP/DataLinkLayer/PacketHandler"
+    machine		    1
+    chart		    29
+  }
+  chart {
+    id			    60
+    name		    "Link Layer/DataLinkLayer/Embedded\nMATLAB Function"
+    windowPosition	    [510.6 77.797 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 2560 1024 1.25]
+    treeNode		    [0 61 0 0]
+    firstTransition	    63
+    firstJunction	    62
+    viewObj		    60
+    machine		    1
+    toolbarMode		    LIBRARY_TOOLBAR
+    ssIdHighWaterMark	    34
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    64
+    updateMethod	    DISCRETE
+    sampleTime		    "0.001"
+    chartFileNumber	    6
+    disableImplicitCasting  1
+    eml {
+      name		      "ackHandler"
+    }
+  }
+  state {
+    id			    61
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    60
+    treeNode		    [60 0 0 0]
+    superState		    SUBCHART
+    subviewer		    60
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [from, to, msg, param, pkgid, recv_from_out, recv_msg_out, recv_param_out, time, queue_s"
+      "ending_ratio, queue_received_ratio, queue_ack_ratio] = ackHandler(snd_from_in, snd_to_in, snd_msg_in, snd_param_"
+      "in, recv_from_in, recv_to_in, recv_msg_in, recv_param_in, recv_pkgid_in, recv_time_in, currentTime, DelayMin, De"
+      "layMax, BufferOverflowPossible, MessageLossProbability, random)\n%#eml\neml.extrinsic('warning', 'disp', 'fprint"
+      "f', 'error');\n\n%Constants\nSAMPLE_TIME = 0.001;\nBUS_SIZE =  numel(snd_msg_in);\nMSG_ACK         = 255;\nQUEUE"
+      "_SIZE_SENDING = 10 * BUS_SIZE;\nQUEUE_SIZE_ACK  = 10* BUS_SIZE;\nQUEUE_SIZE_RECEIVED = 10 *BUS_SIZE;\nQUEUE_SIZE"
+      "_INORDER = 10* BUS_SIZE;\n\nPHYSICAL_DELAY = 2;\n\n%Constraints\nif DelayMin < PHYSICAL_DELAY\n    DelayMin = ui"
+      "nt32(PHYSICAL_DELAY);\nend\n\nDELAY_MIN_TIME = double(DelayMin) * SAMPLE_TIME;\nDELAY_MAX_TIME = double(DelayMax"
+      ") * SAMPLE_TIME;\n\n\n%Time to wait for an ACK\nTIMEOUT_ACK = DELAY_MIN_TIME * 4.0;\n\n%Time to delay each outgo"
+      "ing packet\nassert(DelayMin >= PHYSICAL_DELAY);\ndelay_time =  double(DelayMin - PHYSICAL_DELAY) * SAMPLE_TIME;\n"
+      "\n\n\n%Init\nfrom    = zeros(1,BUS_SIZE,'uint8');\nto      = zeros(1,BUS_SIZE,'uint8');\nmsg     = zeros(1,BUS_S"
+      "IZE,'uint16');\nparam   = zeros(1,BUS_SIZE,'double');\npkgid   = zeros(1,BUS_SIZE,'uint32');\ntime    = zeros(1,"
+      "BUS_SIZE,'double');\n \nrecv_from_out    = zeros(1,BUS_SIZE,'uint8');\nrecv_msg_out     = zeros(1,BUS_SIZE,'uint"
+      "16');\nrecv_param_out   = zeros(1,BUS_SIZE,'double');\n\n\nrecv_in = bus(recv_from_in, recv_to_in, recv_msg_in, "
+      "recv_param_in, recv_pkgid_in, recv_time_in, BUS_SIZE);\n\n\n\n%Persistent variables\npersistent sendingQueue ack"
+      "Queue receivedQueue lastPkgid expectPkgid expectTime inOrderQueue\n\nif isempty(lastPkgid)\n    lastPkgid = uint"
+      "32(0);\nend\n\n%The next packet id that we are expecting\nif isempty(expectPkgid)\n    expectPkgid = uint32(1);\n"
+      "end\n\n%The time we detected a packet loss\nif isempty(expectTime)\n    expectTime = currentTime;\nend\n\n\nif i"
+      "sempty(sendingQueue)\n    sendingQueue = repmat(packet(0,0,0,0,0,0), 1, QUEUE_SIZE_SENDING);\nend\n\nif isempty("
+      "ackQueue)\n    ackQueue = repmat(packet(0,0,0,0,0,0), 1, QUEUE_SIZE_ACK);\nend\n\nif isempty(receivedQueue)\n   "
+      " receivedQueue = repmat(packet(0, 0, 0, 0, 0, 0), 1, QUEUE_SIZE_RECEIVED);\nend\n\n%Queue to ensure packets are "
+      "received in order\nif isempty(inOrderQueue)\n    inOrderQueue = repmat(packet(0, 0, 0, 0, 0, 0), 1, QUEUE_SIZE_I"
+      "NORDER);\nend\n\n%compute stats\nqueue_sending_ratio = queueNumElements(sendingQueue)/QUEUE_SIZE_SENDING;\nqueue"
+      "_ack_ratio = queueNumElements(ackQueue)/QUEUE_SIZE_ACK;\nqueue_received_ratio = queueNumElements(receivedQueue)/"
+      "QUEUE_SIZE_RECEIVED;\n\n%Step 1: Check for a new outgoing packet\nfor i = 1:BUS_SIZE    \n    if snd_msg_in(i) ~"
+      "= 0\n        lastPkgid = lastPkgid +1;\n        outgoing = packet(snd_from_in, snd_to_in, snd_msg_in(i), snd_par"
+      "am_in(i), lastPkgid, currentTime);\n\n        %Add packet so the outgoing queue\n        sendingQueue = enqueue("
+      "sendingQueue, outgoing, BufferOverflowPossible); \n    end\nend\n    \n%Step 2: Check for a new incoming packet\n"
+      "for i = 1:length(recv_in)\n    incoming = packet(recv_in(i).from, recv_in(i).to, recv_in(i).msg, recv_in(i).para"
+      "m, recv_in(i).pkgid, recv_in(i).time);\n    if incoming.from ~= 0 && incoming.to == snd_from_in && ~dropPacket(i"
+      "ncoming, MessageLossProbability, random)\n        \n        %Check if message is in delay range\n        if inco"
+      "ming.time + DELAY_MAX_TIME < currentTime\n            %Exceeded max delay. Drop packet.\n            continue;\n"
+      "        end\n        \n        if incoming.msg == MSG_ACK\n            %Remove packet from ackQueue\n           "
+      " for j=1:length(ackQueue)\n                if ackQueue(j).pkgid == uint32(incoming.param)\n                    a"
+      "ckQueue = dequeue(ackQueue,j);\n                end\n            end\n        else\n            %Send ACK\n     "
+      "       ackPacket = packet(incoming.to, incoming.from, MSG_ACK, double(incoming.pkgid),incoming.pkgid, currentTim"
+      "e);\n            sendingQueue = enqueue(sendingQueue, ackPacket, BufferOverflowPossible);\n\n           %Drop al"
+      "l packets we've already received\n           if incoming.pkgid < expectPkgid\n               warning('LinkLayer:"
+      "incomingPacket', 'Dropping late packet %s', toString(incoming));               \n           %Accept the packet w"
+      "e are waiting for\n           elseif incoming.pkgid == expectPkgid\n               receivedQueue = enqueue(recei"
+      "vedQueue, incoming, BufferOverflowPossible);\n               expectPkgid = expectPkgid + 1;               \n    "
+      "       %Packet loss detected! Save the packet for later processing. \n           else %incoming.pkgid > expected"
+      "Pkgid       \n               % We are not yet waiting for a packet. Set the timeout.\n               if queueNum"
+      "Elements(inOrderQueue) == 0 \n                   expectTime = currentTime;\n                   warning('LinkLaye"
+      "r:incomingPacket', 'Packet loss detected. Waiting for %u', expectPkgid);\n               end\n               inO"
+      "rderQueue = enqueue(inOrderQueue, incoming, BufferOverflowPossible);               \n           end\n           "
+      "\n        end\n    end\nend\n\n%Step 3: Check if we can process packets from the inorder queue\nif queueNumEleme"
+      "nts(inOrderQueue) > 0\n    \n    %Did we reach a timeout?\n    if expectTime + DELAY_MAX_TIME < currentTime\n   "
+      "     warning('LinkLayer:incomingPacket', 'Timeout reached waiting for %u. Dropping packet. Processing queue.', e"
+      "xpectPkgid);\n        expectPkgid = expectPkgid + 1;    \n        expectTime = currentTime;\n    end\n    \n   %"
+      "Check if we have the expectPkgid in the queue\n   foundNext = true;\n   while foundNext == true\n       foundNex"
+      "t = false;\n       for j = 1:length(inOrderQueue)\n           if inOrderQueue(j).pkgid == expectPkgid\n         "
+      "      %Forward enqueued packet to the received queue\n               receivedQueue = enqueue(receivedQueue, inOr"
+      "derQueue(j), BufferOverflowPossible);                               \n               inOrderQueue = dequeue(inOr"
+      "derQueue, j);\n               expectPkgid = expectPkgid + 1;\n               foundNext = true;\n           elsei"
+      "f inOrderQueue(j).pkgid == 0               \n               break;\n           end       \n       end\n   end\ne"
+      "nd\n\n%Step 4: Forward incoming packet\nfor i = 1:BUS_SIZE\n    if receivedQueue(1).from ~= 0\n        recv_from"
+      "_out(i)    = receivedQueue(1).from;\n        recv_msg_out(i)     = receivedQueue(1).msg;\n        recv_param_out"
+      "(i)   = receivedQueue(1).param;\n        receivedQueue = dequeue(receivedQueue,1);\n    else\n        break;\n  "
+      "  end\nend\n\n%Step 5: ACK timeout reached? Send packet again\nfor i = 1:length(ackQueue)\n    if ackQueue(i).to"
+      " ~= 0\n        if ackQueue(i).acktime + TIMEOUT_ACK <= currentTime\n            \n            %Update counter\n "
+      "           ackQueue(i).acktime = ackQueue(i).acktime + TIMEOUT_ACK;\n            \n            %Send again\n    "
+      "        if ackQueue(i).acktime + DELAY_MIN_TIME  <= ackQueue(i).time + DELAY_MAX_TIME \n                sendingQ"
+      "ueue = enqueue(sendingQueue, ackQueue(i), BufferOverflowPossible);\n            else\n                warning('L"
+      "inkLayer:outgoingPacket', 'Timeout reached sending packet %s. Dropping packet.', toString(ackQueue(i)));\n      "
+      "      end\n            \n            %Remove packet from ackQueue\n            ackQueue = dequeue(ackQueue, i);\n"
+      "        end\n    end\nend\n\n\n%Step 6: Send outgoing packet\nfor i = 1:BUS_SIZE\n    if sendingQueue(1).to ~= 0"
+      " && minDelayExpired(sendingQueue(1), currentTime, delay_time) %Respect minimum delay\n        from(i)    = sendi"
+      "ngQueue(1).from;\n        to(i)      = sendingQueue(1).to;\n        msg(i)     = sendingQueue(1).msg;\n        p"
+      "aram(i)   = sendingQueue(1).param;\n        pkgid(i)   = sendingQueue(1).pkgid;\n        time(i)    = sendingQue"
+      "ue(1).time;\n\n        %Add it to the ack queue\n        if sendingQueue(1).msg ~= MSG_ACK\n            ackQueue"
+      " = enqueue(ackQueue, sendingQueue(1), BufferOverflowPossible);\n        end\n\n        %remove packet from sendi"
+      "ng queue\n        sendingQueue = dequeue(sendingQueue, 1);    \n    else\n        break;\n    end\nend\n\n\n%%%%"
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%                          H E L P E R"
+      "\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\nfunction p = packet(from, to, m"
+      "sg, param, pkgid, time)\n%#eml\n%Defines a packet\np = struct('from', uint8(from),'to', uint8(to),'msg', uint16("
+      "msg),'param', double(param),'pkgid', uint32(pkgid), 'time', double(time), 'acktime', double(time));\n\nfunction "
+      "bus = bus(from, to, msg, param, pkgid, time, size) %emp\n%Create an empty bus\nbus = repmat(packet(0,0,0,0,0,0),"
+      " 1, size);\nfor i=1:size\n    bus(i) = packet(from(i), to(i), msg(i), param(i), pkgid(i), time(i));\nend\n\n\nfu"
+      "nction queue = enqueue(queue, packet, overflow_allowed)\n%#eml\neml.extrinsic('error');\nfor i = 1:length(queue)"
+      "\n    if queue(i).to == 0\n        queue(i) = packet;\n        return;\n    end\nend\nif overflow_allowed == fal"
+      "se\n    error('LinkLayer:DataLinkLayer', 'LinkLayer Buffer overflow. Dropping packet  %s', toString(packet));\ne"
+      "nd\n\nfunction queue = dequeue(queue, index)\n%#eml\nassert(index <= length(queue))\nfor i=index:length(queue)-1"
+      ";\n    queue(i) = queue(i+1);\nend\nqueue(length(queue)) = packet(0,0,0,0,0,0);\n\nfunction num = queueNumElemen"
+      "ts(queue)\n%#eml\nnum = 0;\nfor i = 1:length(queue)\n    if queue(i).to ~= uint8(0)\n        num = num+1;\n    e"
+      "nd\nend    \n\nfunction packetString = toString(packet) %#eml\neml.extrinsic('sprintf');\npacketString = sprintf"
+      "('%3u: %u->%u :%3u (%.2f) @%.4f', packet.pkgid, packet.from, packet.to, packet.msg, packet.param, packet.time);\n"
+      "\n%Wheter the packet is ready to fire or not.\nfunction expired = minDelayExpired(packet, current_time, delay_ti"
+      "me) %eml\neml.extrinsic('warning');\nexpired = (packet.time + delay_time) <= current_time;\n\n%Drop message with"
+      " a given probability\nfunction drop = dropPacket(p, probability, random) %eml\ndrop = random < probability;"
+      editorLayout	      "100 M4x1[1280 5 1288 781]"
+    }
+  }
+  junction {
+    id			    62
+    position		    [23.5747 49.5747 7]
+    chart		    60
+    linkNode		    [60 0 0]
+    subviewer		    60
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    63
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      62
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    60
+    linkNode		    [60 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    60
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    64
+    ssIdNumber		    4
+    name		    "snd_from_in"
+    linkNode		    [60 0 65]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    65
+    ssIdNumber		    5
+    name		    "snd_to_in"
+    linkNode		    [60 64 66]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    66
+    ssIdNumber		    6
+    name		    "snd_msg_in"
+    linkNode		    [60 65 67]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    67
+    ssIdNumber		    7
+    name		    "snd_param_in"
+    linkNode		    [60 66 68]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    68
+    ssIdNumber		    8
+    name		    "from"
+    linkNode		    [60 67 69]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    69
+    ssIdNumber		    9
+    name		    "to"
+    linkNode		    [60 68 70]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    70
+    ssIdNumber		    10
+    name		    "msg"
+    linkNode		    [60 69 71]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    71
+    ssIdNumber		    11
+    name		    "param"
+    linkNode		    [60 70 72]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    72
+    ssIdNumber		    12
+    name		    "pkgid"
+    linkNode		    [60 71 73]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    73
+    ssIdNumber		    13
+    name		    "recv_from_in"
+    linkNode		    [60 72 74]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    74
+    ssIdNumber		    14
+    name		    "recv_to_in"
+    linkNode		    [60 73 75]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    75
+    ssIdNumber		    15
+    name		    "recv_msg_in"
+    linkNode		    [60 74 76]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    76
+    ssIdNumber		    16
+    name		    "recv_param_in"
+    linkNode		    [60 75 77]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    77
+    ssIdNumber		    17
+    name		    "recv_pkgid_in"
+    linkNode		    [60 76 78]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    78
+    ssIdNumber		    18
+    name		    "recv_from_out"
+    linkNode		    [60 77 79]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    79
+    ssIdNumber		    20
+    name		    "recv_msg_out"
+    linkNode		    [60 78 80]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    80
+    ssIdNumber		    21
+    name		    "recv_param_out"
+    linkNode		    [60 79 81]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    81
+    ssIdNumber		    22
+    name		    "recv_time_in"
+    linkNode		    [60 80 82]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    82
+    ssIdNumber		    23
+    name		    "time"
+    linkNode		    [60 81 83]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    83
+    ssIdNumber		    24
+    name		    "currentTime"
+    linkNode		    [60 82 84]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    84
+    ssIdNumber		    27
+    name		    "queue_sending_ratio"
+    linkNode		    [60 83 85]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    85
+    ssIdNumber		    28
+    name		    "queue_received_ratio"
+    linkNode		    [60 84 86]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    86
+    ssIdNumber		    29
+    name		    "queue_ack_ratio"
+    linkNode		    [60 85 87]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    87
+    ssIdNumber		    30
+    name		    "DelayMin"
+    linkNode		    [60 86 88]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 2
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    88
+    ssIdNumber		    31
+    name		    "DelayMax"
+    linkNode		    [60 87 89]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 1
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    89
+    ssIdNumber		    32
+    name		    "BufferOverflowPossible"
+    linkNode		    [60 88 90]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    90
+    ssIdNumber		    33
+    name		    "MessageLossProbability"
+    linkNode		    [60 89 91]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 3
+    isNonTunable	    1
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    91
+    ssIdNumber		    34
+    name		    "random"
+    linkNode		    [60 90 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  instance {
+    id			    92
+    name		    "Link Layer/DataLinkLayer/Embedded\nMATLAB Function"
+    machine		    1
+    chart		    60
+  }
+  chart {
+    id			    93
+    name		    "Link Layer UDP/Receive Packet"
+    windowPosition	    [276.3 160.834 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 800 1.25]
+    treeNode		    [0 94 0 0]
+    firstTransition	    96
+    firstJunction	    95
+    viewObj		    93
+    machine		    1
+    ssIdHighWaterMark	    15
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    97
+    updateMethod	    DISCRETE
+    sampleTime		    "-1"
+    chartFileNumber	    7
+    disableImplicitCasting  1
+    eml {
+      name		      "receivePacket"
+    }
+  }
+  state {
+    id			    94
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    93
+    treeNode		    [93 0 0 0]
+    superState		    SUBCHART
+    subviewer		    93
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [eventQueue, eventParamQueue, bufferOverflow] = receivePacket(packetFrom, packetMsg, pac"
+      "ketParam, eventQueueIn, eventParamQueueIn, queueSize)\n%#eml\n% This function receives packets and adds them to "
+      "the event queue.\n% A packet consists of a source, a message and an optional parameter for \n% the message. Sour"
+      "ce and message are contained at position 1 and 2 in the \n% eventQueue. Because of the different data type the p"
+      "arameter has his own \n% queue eventParamQueue.\neml.extrinsic('fprintf');\n%Constants\nSOURCE = 2;\nMESSAGE = 1"
+      ";\nBUS_SIZE = numel(packetFrom);\nQUEUE_SIZE = queueSize;\n\n%Init\neventQueue = eventQueueIn;\neventParamQueue "
+      "= eventParamQueueIn;\nbufferOverflow = false;\n\n%New incoming packet\nfor i = 1:BUS_SIZE\n    if packetFrom(i) "
+      "~= 0 \n        bufferOverflow = true;\n        %Add it to the incoming event Queue\n        for j = 1:QUEUE_SIZE"
+      "\n            %Search for an empty place\n            if eventQueue(j,SOURCE) == 0\n                eventQueue(j"
+      ",SOURCE)    = packetFrom(i);\n                eventQueue(j,MESSAGE)   = packetMsg(i);\n                eventPara"
+      "mQueue(j)      = packetParam(i);\n                bufferOverflow = false;\n                break;\n            e"
+      "nd\n        end\n    else\n        break;\n    end\nend"
+      editorLayout	      "100 M4x1[1460 312 1288 781]"
+      breakpoints	      "100 M[45]"
+    }
+  }
+  junction {
+    id			    95
+    position		    [23.5747 49.5747 7]
+    chart		    93
+    linkNode		    [93 0 0]
+    subviewer		    93
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    96
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      95
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    93
+    linkNode		    [93 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    93
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    97
+    ssIdNumber		    7
+    name		    "packetFrom"
+    linkNode		    [93 0 98]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    98
+    ssIdNumber		    9
+    name		    "packetMsg"
+    linkNode		    [93 97 99]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    99
+    ssIdNumber		    10
+    name		    "packetParam"
+    linkNode		    [93 98 100]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    100
+    ssIdNumber		    4
+    name		    "eventQueueIn"
+    linkNode		    [93 99 101]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    101
+    ssIdNumber		    6
+    name		    "eventParamQueueIn"
+    linkNode		    [93 100 102]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    102
+    ssIdNumber		    15
+    name		    "queueSize"
+    linkNode		    [93 101 103]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  data {
+    id			    103
+    ssIdNumber		    11
+    name		    "eventQueue"
+    linkNode		    [93 102 104]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    104
+    ssIdNumber		    12
+    name		    "eventParamQueue"
+    linkNode		    [93 103 105]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    105
+    ssIdNumber		    13
+    name		    "bufferOverflow"
+    linkNode		    [93 104 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  instance {
+    id			    106
+    name		    "Link Layer UDP/Receive Packet"
+    machine		    1
+    chart		    93
+  }
+  chart {
+    id			    107
+    name		    "Link Layer UDP/Send Packet"
+    windowPosition	    [276.3 160.834 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 800 1.25]
+    treeNode		    [0 108 0 0]
+    firstTransition	    110
+    firstJunction	    109
+    viewObj		    107
+    machine		    1
+    ssIdHighWaterMark	    14
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    111
+    updateMethod	    DISCRETE
+    sampleTime		    "-1"
+    chartFileNumber	    8
+    disableImplicitCasting  1
+    eml {
+      name		      "sendPacket"
+    }
+  }
+  state {
+    id			    108
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    107
+    treeNode		    [107 0 0 0]
+    superState		    SUBCHART
+    subviewer		    107
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [packetMsg, packetParam, eventQueue, eventParamQueue] = sendPacket(busSizeSignal, eventQ"
+      "ueueIn, eventParamQueueIn, queueSize)\n%#eml\n% This function creates packets from the event queue. A packet con"
+      "sists\n% of a destination, a message and an optional parameter for the message.\n% Destination and message are c"
+      "ontained at position 1 and 2 in the \n% eventQueue. Because of the different data type the parameter has his own"
+      " \n% queue eventParamQueue.\n\n%Constants\nDESTINATION = 2;\nMESSAGE = 1;\nQUEUE_SIZE = queueSize;\n\nbusSize = "
+      "numel(busSizeSignal);\n\n%Init\neventQueue = eventQueueIn;\neventParamQueue = eventParamQueueIn;\npacketMsg = ze"
+      "ros(1,busSize,'uint16');\npacketParam = zeros(1,busSize,'double');\n\n%There is an event in the queue\nfor i = 1"
+      ":busSize   \n    if eventQueue(1,DESTINATION) ~= 0 || eventQueue(1,MESSAGE) ~= 0\n        %Create packet from th"
+      "e firs entry in the queue\n        packetMsg(i)   = uint16(eventQueue(1,MESSAGE));\n        packetParam(i) = eve"
+      "ntParamQueue(1);\n        %Remove the event from the queue\n        for j=1:QUEUE_SIZE - 1\n            eventQue"
+      "ue(j,DESTINATION)   = eventQueue(j+1,DESTINATION);\n            eventQueue(j,MESSAGE)       = eventQueue(j+1,MES"
+      "SAGE);\n            eventParamQueue(j)          = eventParamQueue(j+1);\n        end\n        %Set last element "
+      "to zero\n        eventQueue(QUEUE_SIZE,DESTINATION)  = 0;\n        eventQueue(QUEUE_SIZE,MESSAGE)      = 0;\n   "
+      "     eventParamQueue(QUEUE_SIZE)    = 0;\n    else\n        break;\n    end\nend"
+      editorLayout	      "100 M4x1[10 5 1280 777]"
+    }
+  }
+  junction {
+    id			    109
+    position		    [23.5747 49.5747 7]
+    chart		    107
+    linkNode		    [107 0 0]
+    subviewer		    107
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    110
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      109
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    107
+    linkNode		    [107 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    107
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    111
+    ssIdNumber		    14
+    name		    "busSizeSignal"
+    linkNode		    [107 0 112]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    112
+    ssIdNumber		    6
+    name		    "packetMsg"
+    linkNode		    [107 111 113]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    113
+    ssIdNumber		    7
+    name		    "packetParam"
+    linkNode		    [107 112 114]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    114
+    ssIdNumber		    8
+    name		    "eventQueue"
+    linkNode		    [107 113 115]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    115
+    ssIdNumber		    9
+    name		    "eventParamQueue"
+    linkNode		    [107 114 116]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    116
+    ssIdNumber		    10
+    name		    "eventQueueIn"
+    linkNode		    [107 115 117]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    117
+    ssIdNumber		    11
+    name		    "eventParamQueueIn"
+    linkNode		    [107 116 118]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    118
+    ssIdNumber		    13
+    name		    "queueSize"
+    linkNode		    [107 117 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT32_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint32"
+  }
+  instance {
+    id			    119
+    name		    "Link Layer UDP/Send Packet"
+    machine		    1
+    chart		    107
+  }
+  target {
+    id			    120
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 0]
+  }
+}
