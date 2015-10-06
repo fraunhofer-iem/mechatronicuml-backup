@@ -30,7 +30,7 @@
 	[createOutputDelegationPortDecl(ev, rtsc)/]
 	[for (pb : ParameterBinding | ev.message.parameterBinding)]
 	[pb.getType()/] [pb.getRaiseMessageEventPBVariableName(ev)/];
-	[pb.getExpressionTypeName()/] [pb.getExpressionTypeInstanceName(ev)/](y=[pb.getRaiseMessageEventPBVariableName(ev)/]);
+	[pb.getExpressionTypeName()/] [pb.getExpressionTypeInstanceName(ev)/](y=pre([pb.getRaiseMessageEventPBVariableName(ev)/]));
 	[/for]
 [/for]
 	// end raise message event declarations
