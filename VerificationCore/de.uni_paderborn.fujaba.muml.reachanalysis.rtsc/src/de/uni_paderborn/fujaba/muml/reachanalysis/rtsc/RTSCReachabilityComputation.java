@@ -114,8 +114,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 		while (rtscIter.hasNext())
 			if (!rtscIter.next().getHighestParentStatechart().equals(rootRtsc))
-				throw new UnsupportedOperationException(
-						"All realtimestatecharts should have the same root statechart");
+				throw new UnsupportedOperationException("All realtimestatecharts should have the same root statechart");
 
 		parentRtscMapping = collectParentRtscs(null, rootRtsc);
 
@@ -148,21 +147,18 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 * @return new {@link ReachabilityGraphState} with delayed
 	 *         {@link Federation} null if source state is reached by delay
 	 */
-	protected ReachabilityGraphState delay(
-			ReachabilityGraphState state,
-			Collection<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants,
-			boolean urgent, Collection<Federation> federations) {
+	protected ReachabilityGraphState delay(ReachabilityGraphState state,
+			Collection<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants, boolean urgent,
+			Collection<Federation> federations) {
 
 		// check if state is a TimedState, otherwise no delay is possible
 		if (!(state instanceof ZoneGraphState)) {
-			throw new UnsupportedOperationException(
-					"Delay not possible for untimed states.");
+			throw new UnsupportedOperationException("Delay not possible for untimed states.");
 		}
 
 		// only perform delay if state has not been reached by a delay
 		boolean reachedByDelay = false;
-		Iterator<ReachabilityGraphTransition> iter = state
-				.getIncomingTransitions().iterator();
+		Iterator<ReachabilityGraphTransition> iter = state.getIncomingTransitions().iterator();
 		while (iter.hasNext()) {
 			ReachabilityGraphTransition nextTrans = iter.next();
 			if (nextTrans instanceof DelayTransition) {
@@ -175,8 +171,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 		if (!reachedByDelay) {
 			// create delay transition and copy the state
-			ReachabilityGraphTransition newTrans = rtscFactory
-					.createDelayTransition();
+			ReachabilityGraphTransition newTrans = rtscFactory.createDelayTransition();
 			newTrans.setSource(state);
 			result = copyState(state, newTrans);
 
@@ -191,18 +186,15 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			if (urgent) {
 				// in case of outgoing urgent transitions delay until clock
 				// constraints are true
-				Federation upTriggerFed = (Federation) ((ZoneGraphState) state)
-						.getFederation().clone();
+				Federation upTriggerFed = (Federation) ((ZoneGraphState) state).getFederation().clone();
 				upTriggerFed.up();
-				Federation downTriggerFed = (Federation) ((ZoneGraphState) state)
-						.getFederation().clone();
+				Federation downTriggerFed = (Federation) ((ZoneGraphState) state).getFederation().clone();
 				downTriggerFed.down();
 
 				HashSet<UDBMClock> clocks = new HashSet<UDBMClock>();
 				clocks.addAll(clockMapping.values());
 				Iterator<Federation> fedIterator = federations.iterator();
-				Federation orFederation = (Federation) fedIterator.next()
-						.clone();
+				Federation orFederation = (Federation) fedIterator.next().clone();
 
 				while (fedIterator.hasNext()) {
 					orFederation.or(fedIterator.next());
@@ -219,18 +211,15 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			}
 
 			// normalize federation
-			if (((ZoneGraphState) result).getFederation() != null
-					&& !clockMaxValues.isEmpty())
-				((ZoneGraphState) result).getFederation().normalize(
-						clockMaxValues);
+			if (((ZoneGraphState) result).getFederation() != null && !clockMaxValues.isEmpty())
+				((ZoneGraphState) result).getFederation().normalize(clockMaxValues);
 		}
 
 		return result;
 	}
 
 	@Override
-	protected HashSet<ReachabilityGraphState> computeSuccessors(
-			ReachabilityGraphState state) {
+	protected HashSet<ReachabilityGraphState> computeSuccessors(ReachabilityGraphState state) {
 
 		EList<ClockConstraint> enabledUrgentClockConstraints = new BasicEList<ClockConstraint>();
 		boolean urgentFound = false;
@@ -256,25 +245,20 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		for (Transition transition : staticTransitions) {
 			// find location containing transition
 			RealtimeStatechartInstance firstLocation = null;
-			for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state)
-					.getLocations())
-				if (curLocation.getInstanceOf().equals(
-						transition.getStatechart())) {
+			for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state).getLocations())
+				if (curLocation.getInstanceOf().equals(transition.getStatechart())) {
 					firstLocation = curLocation;
 					break;
 				}
 
 			if (transition.getGuard() != null) {
 				// check guard
-				DataType boolType = TypesFactory.eINSTANCE
-						.createPrimitiveDataType();
-				((PrimitiveDataType) boolType)
-						.setPrimitiveType(PrimitiveTypes.BOOLEAN);
+				DataType boolType = TypesFactory.eINSTANCE.createPrimitiveDataType();
+				((PrimitiveDataType) boolType).setPrimitiveType(PrimitiveTypes.BOOLEAN);
 				// evaluate guard
 				Object result = null;
 				try {
-					result = alInterpreter.evaluateExpression(
-							firstLocation.getAllAvailableVariableBindings(),
+					result = alInterpreter.evaluateExpression(firstLocation.getAllAvailableVariableBindings(),
 							transition.getGuard());
 				} catch (UnsupportedModellingElementException e1) {
 					e1.printStackTrace();
@@ -286,8 +270,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				boolean boolResult = false;
 				if (!(result instanceof Boolean)) {
 					try {
-						boolResult = (Boolean) alInterpreter.castTo(boolType,
-								result);
+						boolResult = (Boolean) alInterpreter.castTo(boolType, result);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -308,17 +291,12 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				EList<VariableBinding> variableBindings = null;
 				if (transition.getSynchronization().getSelectorExpression() != null) {
 					// get variable bindings
-					for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state)
-							.getLocations())
-						if (curLocation.getInstanceOf().equals(
-								transition.getStatechart()))
-							variableBindings = curLocation
-									.getAllAvailableVariableBindings();
+					for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state).getLocations())
+						if (curLocation.getInstanceOf().equals(transition.getStatechart()))
+							variableBindings = curLocation.getAllAvailableVariableBindings();
 					try {
-						firstSelectorValue = alInterpreter.evaluateExpression(
-								variableBindings, transition
-										.getSynchronization()
-										.getSelectorExpression());
+						firstSelectorValue = alInterpreter.evaluateExpression(variableBindings,
+								transition.getSynchronization().getSelectorExpression());
 					} catch (UnsupportedModellingElementException e) {
 						e.printStackTrace();
 					} catch (VariableNotInitializedException e) {
@@ -329,8 +307,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 					// test whether firstSelectorValue is of correct type
 					try {
-						alInterpreter.castTo(transition.getSynchronization()
-								.getSyncChannel().getSelectorType(),
+						alInterpreter.castTo(transition.getSynchronization().getSyncChannel().getSelectorType(),
 								firstSelectorValue);
 					} catch (IncompatibleTypeException e) {
 						e.printStackTrace();
@@ -344,32 +321,25 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				for (Transition secondTransition : staticTransitions) {
 					// two transitions cannot synchronize if they are part of
 					// the same statechart
-					if (transition.getStatechart().equals(
-							secondTransition.getStatechart()))
+					if (transition.getStatechart().equals(secondTransition.getStatechart()))
 						continue;
 
 					// find location containing transition
 					RealtimeStatechartInstance secondLocation = null;
-					for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state)
-							.getLocations())
-						if (curLocation.getInstanceOf().equals(
-								secondTransition.getStatechart())) {
+					for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state).getLocations())
+						if (curLocation.getInstanceOf().equals(secondTransition.getStatechart())) {
 							secondLocation = curLocation;
 							break;
 						}
 
 					if (secondTransition.getGuard() != null) {
 						// check guard
-						DataType boolType = TypesFactory.eINSTANCE
-								.createPrimitiveDataType();
-						((PrimitiveDataType) boolType)
-								.setPrimitiveType(PrimitiveTypes.BOOLEAN);
+						DataType boolType = TypesFactory.eINSTANCE.createPrimitiveDataType();
+						((PrimitiveDataType) boolType).setPrimitiveType(PrimitiveTypes.BOOLEAN);
 						// evaluate guard
 						Object result = null;
 						try {
-							result = alInterpreter.evaluateExpression(
-									secondLocation
-											.getAllAvailableVariableBindings(),
+							result = alInterpreter.evaluateExpression(secondLocation.getAllAvailableVariableBindings(),
 									secondTransition.getGuard());
 						} catch (UnsupportedModellingElementException e1) {
 							e1.printStackTrace();
@@ -380,8 +350,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 						}
 						boolean boolResult = false;
 						try {
-							boolResult = (Boolean) alInterpreter.castTo(
-									boolType, result);
+							boolResult = (Boolean) alInterpreter.castTo(boolType, result);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -390,60 +359,42 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 							continue;
 					}
 
-					if (transition.getSynchronization() != null
-							&& secondTransition.getSynchronization() != null
+					if (transition.getSynchronization() != null && secondTransition.getSynchronization() != null
 							&& !secondTransition.equals(transition)
-							&& !transition.getStatechart().equals(
-									secondTransition.getStatechart())
+							&& !transition.getStatechart().equals(secondTransition.getStatechart())
 							&& !checkedTransitions.contains(secondTransition)) {
 
-						SynchronizationKind firstSyncKind = transition
-								.getSynchronization().getKind();
-						SynchronizationKind secondSyncKind = secondTransition
-								.getSynchronization().getKind();
+						SynchronizationKind firstSyncKind = transition.getSynchronization().getKind();
+						SynchronizationKind secondSyncKind = secondTransition.getSynchronization().getKind();
 
 						// compare sync channels and whether it is one send and
 						// one
 						// receive
-						if (transition
-								.getSynchronization()
-								.getSyncChannel()
-								.equals(secondTransition.getSynchronization()
-										.getSyncChannel())
-								&& ((firstSyncKind == SynchronizationKind.RECEIVE && secondSyncKind == SynchronizationKind.SEND) || (firstSyncKind == SynchronizationKind.SEND && secondSyncKind == SynchronizationKind.RECEIVE))) {
+						if (transition.getSynchronization().getSyncChannel()
+								.equals(secondTransition.getSynchronization().getSyncChannel())
+								&& ((firstSyncKind == SynchronizationKind.RECEIVE
+										&& secondSyncKind == SynchronizationKind.SEND)
+										|| (firstSyncKind == SynchronizationKind.SEND
+												&& secondSyncKind == SynchronizationKind.RECEIVE))) {
 
-							if (transition.getSynchronization()
-									.getSyncChannel().getSelectorType() != null
-									&& (transition.getSynchronization()
-											.getSelectorExpression() == null || secondTransition
-											.getSynchronization()
-											.getSelectorExpression() == null))
-								throw new IllegalArgumentException(
-										"Synchronizations for channel "
-												+ transition
-														.getSynchronization()
-														.getSyncChannel()
-												+ " need selector expressions.");
+							if (transition.getSynchronization().getSyncChannel().getSelectorType() != null
+									&& (transition.getSynchronization().getSelectorExpression() == null
+											|| secondTransition.getSynchronization().getSelectorExpression() == null))
+								throw new IllegalArgumentException("Synchronizations for channel "
+										+ transition.getSynchronization().getSyncChannel()
+										+ " need selector expressions.");
 							// evaluate selector expression
 							Object secondSelectorValue = null;
-							if (transition.getSynchronization()
-									.getSelectorExpression() != null) {
+							if (transition.getSynchronization().getSelectorExpression() != null) {
 								// get variable bindings
-								for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state)
-										.getLocations())
-									if (curLocation.getInstanceOf().equals(
-											transition.getStatechart())) {
-										variableBindings = curLocation
-												.getAllAvailableVariableBindings();
+								for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state).getLocations())
+									if (curLocation.getInstanceOf().equals(transition.getStatechart())) {
+										variableBindings = curLocation.getAllAvailableVariableBindings();
 										break;
 									}
 								try {
-									secondSelectorValue = alInterpreter
-											.evaluateExpression(
-													variableBindings,
-													secondTransition
-															.getSynchronization()
-															.getSelectorExpression());
+									secondSelectorValue = alInterpreter.evaluateExpression(variableBindings,
+											secondTransition.getSynchronization().getSelectorExpression());
 								} catch (UnsupportedModellingElementException e) {
 									e.printStackTrace();
 								} catch (VariableNotInitializedException e) {
@@ -457,10 +408,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 								// type
 								try {
 									alInterpreter.castTo(
-											secondTransition
-													.getSynchronization()
-													.getSyncChannel()
-													.getSelectorType(),
+											secondTransition.getSynchronization().getSyncChannel().getSelectorType(),
 											secondSelectorValue);
 								} catch (IncompatibleTypeException e) {
 									e.printStackTrace();
@@ -469,20 +417,16 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 								}
 							}
 							// check selector values for equality
-							if (transition.getSynchronization()
-									.getSyncChannel().getSelectorType() != null
-									&& !firstSelectorValue
-											.equals(secondSelectorValue))
+							if (transition.getSynchronization().getSyncChannel().getSelectorType() != null
+									&& !firstSelectorValue.equals(secondSelectorValue))
 								continue;
 							// transition found
-							addTransitionSet((ZoneGraphState) state,
-									transition, secondTransition,
-									firstLocation, secondLocation);
+							addTransitionSet((ZoneGraphState) state, transition, secondTransition, firstLocation,
+									secondLocation);
 
 							// transitionSet is urgent, if both transitions
 							// are urgent
-							if (transition.isUrgent()
-									&& secondTransition.isUrgent()) {
+							if (transition.isUrgent() && secondTransition.isUrgent()) {
 
 								urgentFound = true;
 
@@ -492,32 +436,22 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 								// case
 								HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> cConSet = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
 
-								DataType intType = TypesFactory.eINSTANCE
-										.createPrimitiveDataType();
-								((PrimitiveDataType) intType)
-										.setPrimitiveType(PrimitiveTypes.INT32);
+								DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
+								((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
-								for (ClockConstraint cCon : transition
-										.getClockConstraints()) {
-									UDBMClock clockForCC = clockMapping
-											.get(cCon.getClock());
+								for (ClockConstraint cCon : transition.getClockConstraints()) {
+									UDBMClock clockForCC = clockMapping.get(cCon.getClock());
 
 									Object value;
 									try {
-										value = alInterpreter
-												.evaluateExpression(
-														firstLocation
-																.getAllAvailableVariableBindings(),
-														cCon.getBound()
-																.getValue());
-										int intValue = (Integer) alInterpreter
-												.castTo(intType, value);
+										value = alInterpreter.evaluateExpression(
+												firstLocation.getAllAvailableVariableBindings(),
+												cCon.getBound().getValue());
+										int intValue = (Integer) alInterpreter.castTo(intType, value);
 
 										if (clockForCC != null) {
-											SimpleClockConstraint constraint = new SimpleClockConstraint(
-													clockForCC,
-													getRelationalOperatorForComparingOperator(cCon
-															.getOperator()),
+											SimpleClockConstraint constraint = new SimpleClockConstraint(clockForCC,
+													getRelationalOperatorForComparingOperator(cCon.getOperator()),
 													intValue);
 											cConSet.add(constraint);
 
@@ -532,27 +466,19 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 								}
 
-								for (ClockConstraint cCon : secondTransition
-										.getClockConstraints()) {
-									UDBMClock clockForCC = clockMapping
-											.get(cCon.getClock());
+								for (ClockConstraint cCon : secondTransition.getClockConstraints()) {
+									UDBMClock clockForCC = clockMapping.get(cCon.getClock());
 
 									Object value;
 									try {
-										value = alInterpreter
-												.evaluateExpression(
-														secondLocation
-																.getAllAvailableVariableBindings(),
-														cCon.getBound()
-																.getValue());
-										int intValue = (Integer) alInterpreter
-												.castTo(intType, value);
+										value = alInterpreter.evaluateExpression(
+												secondLocation.getAllAvailableVariableBindings(),
+												cCon.getBound().getValue());
+										int intValue = (Integer) alInterpreter.castTo(intType, value);
 
 										if (clockForCC != null) {
-											SimpleClockConstraint constraint = new SimpleClockConstraint(
-													clockForCC,
-													getRelationalOperatorForComparingOperator(cCon
-															.getOperator()),
+											SimpleClockConstraint constraint = new SimpleClockConstraint(clockForCC,
+													getRelationalOperatorForComparingOperator(cCon.getOperator()),
 													intValue);
 											cConSet.add(constraint);
 										}
@@ -571,17 +497,13 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 								if (!clocks.isEmpty()) {
 									if (!cConSet.isEmpty()) {
-										Federation transitionSetFederation = fedFactory
-												.createFederation(clocks,
-														cConSet);
-										urgentFederations
-												.add(transitionSetFederation);
+										Federation transitionSetFederation = fedFactory.createFederation(clocks,
+												cConSet);
+										urgentFederations.add(transitionSetFederation);
 									} else {
-										Federation transitionSetFederation = fedFactory
-												.createZeroFederation(clocks);
+										Federation transitionSetFederation = fedFactory.createZeroFederation(clocks);
 										transitionSetFederation.up();
-										urgentFederations
-												.add(transitionSetFederation);
+										urgentFederations.add(transitionSetFederation);
 									}
 								}
 							}
@@ -595,38 +517,28 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			{
 				// add tau transition to a new set, only including this
 				// transition
-				addTransitionSet((ZoneGraphState) state, transition, null,
-						firstLocation, null);
+				addTransitionSet((ZoneGraphState) state, transition, null, firstLocation, null);
 				if (transition.isUrgent()) {
 
-					DataType intType = TypesFactory.eINSTANCE
-							.createPrimitiveDataType();
-					((PrimitiveDataType) intType)
-							.setPrimitiveType(PrimitiveTypes.INT32);
+					DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
+					((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 					// if outgoing urgent tau transition was found, get its
 					// clock constraints for performing the delay in this case
 					HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> cConSet = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
 
-					for (ClockConstraint cCon : transition
-							.getClockConstraints()) {
-						UDBMClock clockForCC = clockMapping
-								.get(cCon.getClock());
+					for (ClockConstraint cCon : transition.getClockConstraints()) {
+						UDBMClock clockForCC = clockMapping.get(cCon.getClock());
 
 						Object value;
 						try {
-							value = alInterpreter.evaluateExpression(
-									firstLocation
-											.getAllAvailableVariableBindings(),
+							value = alInterpreter.evaluateExpression(firstLocation.getAllAvailableVariableBindings(),
 									cCon.getBound().getValue());
-							int intValue = (Integer) alInterpreter.castTo(
-									intType, value);
+							int intValue = (Integer) alInterpreter.castTo(intType, value);
 
 							if (clockForCC != null) {
-								SimpleClockConstraint constraint = new SimpleClockConstraint(
-										clockForCC,
-										getRelationalOperatorForComparingOperator(cCon
-												.getOperator()), intValue);
+								SimpleClockConstraint constraint = new SimpleClockConstraint(clockForCC,
+										getRelationalOperatorForComparingOperator(cCon.getOperator()), intValue);
 								cConSet.add(constraint);
 							}
 						} catch (UnsupportedModellingElementException e) {
@@ -643,12 +555,10 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 					if (!clocks.isEmpty()) {
 						if (!cConSet.isEmpty()) {
-							Federation tauFederation = fedFactory
-									.createFederation(clocks, cConSet);
+							Federation tauFederation = fedFactory.createFederation(clocks, cConSet);
 							urgentFederations.add(tauFederation);
 						} else {
-							Federation tauFederation = fedFactory
-									.createZeroFederation(clocks);
+							Federation tauFederation = fedFactory.createZeroFederation(clocks);
 							tauFederation.up();
 							urgentFederations.add(tauFederation);
 						}
@@ -685,11 +595,9 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					// add clock constraints to set for computing federation
 					// representing time intervals where nonurgent transitions
 					// can fire
-					enabledUrgentClockConstraints.addAll(firstTransition
-							.getClockConstraints());
+					enabledUrgentClockConstraints.addAll(firstTransition.getClockConstraints());
 					if (secondTransition != null)
-						enabledUrgentClockConstraints.addAll(secondTransition
-								.getClockConstraints());
+						enabledUrgentClockConstraints.addAll(secondTransition.getClockConstraints());
 					break;
 				}
 
@@ -699,20 +607,16 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 		// if there exit enabled urgent transitions, compute Federation
 		// representing time intervals where non urgent transitions can fire
+		
 		Federation nonUrgentFed = null;
-		if (urgentEnabled) {
-			if (!highClockConstraints(enabledUrgentClockConstraints).isEmpty())
-				nonUrgentFed = (Federation) ((ZoneGraphState) state)
-						.getFederation().clone();
-			for (ClockConstraint curClockConstraint : highClockConstraints(enabledUrgentClockConstraints)) {
-				for (ClockConstraint negated : negate(curClockConstraint))
-					applyClockConstraint(state, negated, nonUrgentFed);
+		if(!urgentFederations.isEmpty()){
+			nonUrgentFed = (Federation) ((ZoneGraphState)state).getFederation().clone();
+			for(Federation uFed : urgentFederations){
+				nonUrgentFed.subtract(uFed);
 			}
-
 		}
 
-		return fireTransitions(urgentEnabled, nonUrgentFed, urgentFound,
-				((ZoneGraphState) state), urgentFederations);
+		return fireTransitions(urgentEnabled, nonUrgentFed, urgentFound, ((ZoneGraphState) state), urgentFederations);
 
 	}
 
@@ -735,10 +639,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 *            urgent transitions can fire
 	 * @return
 	 */
-	protected HashSet<ReachabilityGraphState> fireTransitions(
-			boolean urgentEnabled, Federation nonUrgentFed,
-			boolean urgentFound, ZoneGraphState state,
-			HashSet<Federation> urgentFederations) {
+	protected HashSet<ReachabilityGraphState> fireTransitions(boolean urgentEnabled, Federation nonUrgentFed,
+			boolean urgentFound, ZoneGraphState state, HashSet<Federation> urgentFederations) {
 		// fire all enabled transitions with respect to prioritized urgent
 		// transitions
 
@@ -757,14 +659,11 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			// if there are enabled urgent transitions and current transition is
 			// nonurgent, there is still the possibility that this transition
 			// can fire in some time intervals. So check this.
-			if (urgentEnabled && !curTransIsUrgent && nonUrgentFed != null
-					&& !nonUrgentFed.isEmpty()) {
+			if (urgentEnabled && !curTransIsUrgent && nonUrgentFed != null && !nonUrgentFed.isEmpty()) {
 				Federation checkFederation = (Federation) nonUrgentFed.clone();
 				for (Transition curTransition : firedTransitions)
-					for (ClockConstraint curClockConstraint : curTransition
-							.getClockConstraints())
-						applyClockConstraint(state, curClockConstraint,
-								checkFederation);
+					for (ClockConstraint curClockConstraint : curTransition.getClockConstraints())
+						applyClockConstraint(state, curClockConstraint, checkFederation);
 				if (!checkFederation.isEmpty()) {
 					curNonUrgentIsEnabled = true;
 					allTriggerFeds.put(firedTransitions, checkFederation);
@@ -774,8 +673,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			// nonurgent transitions
 			// if there are no enabled urgent transitions fire non-urgent
 			// transitions
-			if ((urgentEnabled && (curNonUrgentIsEnabled || curTransIsUrgent))
-					|| !urgentEnabled) {
+			if ((urgentEnabled && (curNonUrgentIsEnabled || curTransIsUrgent)) || !urgentEnabled) {
 				ZoneGraphState newZone = (ZoneGraphState) copyState(state, null);
 
 				// change locations(s) according to taken transition(s)
@@ -784,27 +682,21 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					RealtimeStatechartInstance newLocation = null;
 					// change active state and remove embedded locations
 					// according to taken transition
-					for (RealtimeStatechartInstance location : newZone
-							.getLocations()) {
-						if (((RealtimeStatechartInstance) location)
-								.getInstanceOf().equals(
-										transition.getStatechart())) {
+					for (RealtimeStatechartInstance location : newZone.getLocations()) {
+						if (((RealtimeStatechartInstance) location).getInstanceOf()
+								.equals(transition.getStatechart())) {
 							newLocation = location;
 							// change active state
-							location.setActiveVertex((State) transition
-									.getTarget());
+							location.setActiveVertex((State) transition.getTarget());
 							// also remove locations corresponding embedded
 							// rtscs
-							toRemove.addAll(location
-									.getSubRealtimeStatechartInstances());
+							toRemove.addAll(location.getSubRealtimeStatechartInstances());
 							break;
 						}
 					}
 					if (newLocation == null)
-						throw new IllegalArgumentException("Statechart "
-								+ transition.getStatechart().toString()
-								+ " of " + transition.toString()
-								+ " has no corresponding RTSCInstance in zone");
+						throw new IllegalArgumentException("Statechart " + transition.getStatechart().toString()
+								+ " of " + transition.toString() + " has no corresponding RTSCInstance in zone");
 
 					newZone.getLocations().removeAll(toRemove);
 
@@ -812,10 +704,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					HashSet<RealtimeStatechartInstance> newEmbeddedLocations = new HashSet<RealtimeStatechartInstance>();
 
 					if (transition.getTarget() instanceof State) {
-						newEmbeddedLocations
-								.addAll(createLocationsForEmbeddedRtscs(null,
-										((State) transition.getTarget()),
-										newLocation));
+						newEmbeddedLocations.addAll(
+								createLocationsForEmbeddedRtscs(null, ((State) transition.getTarget()), newLocation));
 					}
 					// create variable bindings
 					initializeVariables(newEmbeddedLocations);
@@ -828,22 +718,16 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					adjustRealtimeStatechartReferences(newZone);
 
 					// apply actions of transitions to variable bindings
-					if (transition.getAction() != null
-							&& transition.getAction().getExpressions() != null
-							&& !transition.getAction().getExpressions()
-									.isEmpty() && newLocation != null)
-						for (Expression curExp : transition.getAction()
-								.getExpressions()) {
+					if (transition.getAction() != null && transition.getAction().getExpressions() != null
+							&& !transition.getAction().getExpressions().isEmpty() && newLocation != null)
+						for (Expression curExp : transition.getAction().getExpressions()) {
 							// The expression that is not instance of
 							// TextualExpression should be implementation of
 							// Expression in ActionLanguage
 							if (!(curExp instanceof TextualExpression))
 								try {
-									alInterpreter
-											.evaluateExpression(
-													newLocation
-															.getAllAvailableVariableBindings(),
-													curExp);
+									alInterpreter.evaluateExpression(newLocation.getAllAvailableVariableBindings(),
+											curExp);
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
@@ -851,20 +735,15 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 					// apply exit actions to variable bindings
 					if (((State) transition.getSource()).getExitEvent() != null
-							&& ((State) transition.getSource()).getExitEvent()
-									.getAction() != null)
-						for (Expression curExpression : ((State) transition
-								.getSource()).getExitEvent().getAction()
+							&& ((State) transition.getSource()).getExitEvent().getAction() != null)
+						for (Expression curExpression : ((State) transition.getSource()).getExitEvent().getAction()
 								.getExpressions()) {
 							// The expression that is not a TextualExpression
 							// should be implementation in ActionLanguage
 							if (!(curExpression instanceof TextualExpression))
 								try {
-									alInterpreter
-											.evaluateExpression(
-													newLocation
-															.getAllAvailableVariableBindings(),
-													curExpression);
+									alInterpreter.evaluateExpression(newLocation.getAllAvailableVariableBindings(),
+											curExpression);
 								} catch (UnsupportedModellingElementException e) {
 
 									e.printStackTrace();
@@ -880,20 +759,15 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 					// apply entry actions to variable bindings
 					if (((State) transition.getTarget()).getEntryEvent() != null
-							&& ((State) transition.getTarget()).getEntryEvent()
-									.getAction() != null)
-						for (Expression curExpression : ((State) transition
-								.getTarget()).getEntryEvent().getAction()
+							&& ((State) transition.getTarget()).getEntryEvent().getAction() != null)
+						for (Expression curExpression : ((State) transition.getTarget()).getEntryEvent().getAction()
 								.getExpressions()) {
 							// The expression that is not a TextualExpression
 							// should be implementation in ActionLanguage
 							if (!(curExpression instanceof TextualExpression))
 								try {
-									alInterpreter
-											.evaluateExpression(
-													newLocation
-															.getAllAvailableVariableBindings(),
-													curExpression);
+									alInterpreter.evaluateExpression(newLocation.getAllAvailableVariableBindings(),
+											curExpression);
 								} catch (UnsupportedModellingElementException e) {
 									e.printStackTrace();
 								} catch (VariableNotInitializedException e) {
@@ -909,8 +783,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					// collect DifferenceClockConstraints for diagonalNormalize
 					for (ClockConstraint cc : transition.getClockConstraints()) {
 						if (cc instanceof DifferenceClockConstraint) {
-							diffClockConstraints
-									.add((DifferenceClockConstraint) cc);
+							diffClockConstraints.add((DifferenceClockConstraint) cc);
 						}
 					}
 
@@ -925,20 +798,16 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					}
 					// get resets from exit events
 					if (((State) transition.getSource()).getExitEvent() != null
-							&& ((State) transition.getSource()).getExitEvent()
-									.getClockResets() != null)
-						for (Clock reset : ((State) transition.getSource())
-								.getExitEvent().getClockResets()) {
+							&& ((State) transition.getSource()).getExitEvent().getClockResets() != null)
+						for (Clock reset : ((State) transition.getSource()).getExitEvent().getClockResets()) {
 							UDBMClock resetCLock = clockMapping.get(reset);
 							resets.add(resetCLock);
 						}
 
 					// get resets from entry events
 					if (((State) transition.getTarget()).getEntryEvent() != null
-							&& ((State) transition.getTarget()).getEntryEvent()
-									.getClockResets() != null)
-						for (Clock reset : ((State) transition.getTarget())
-								.getEntryEvent().getClockResets()) {
+							&& ((State) transition.getTarget()).getEntryEvent().getClockResets() != null)
+						for (Clock reset : ((State) transition.getTarget()).getEntryEvent().getClockResets()) {
 							UDBMClock resetCLock = clockMapping.get(reset);
 							resets.add(resetCLock);
 						}
@@ -949,10 +818,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					newZone.getFederation().applyResets(resets);
 					normalizeZone(newZone);
 				}
-				ZoneGraphTransition zoneTransition = RtscFactory.eINSTANCE
-						.createZoneGraphTransition();
-				zoneTransition.getFiredRTSCTransitions().addAll(
-						firedTransitions);
+				ZoneGraphTransition zoneTransition = RtscFactory.eINSTANCE.createZoneGraphTransition();
+				zoneTransition.getFiredRTSCTransitions().addAll(firedTransitions);
 
 				zoneTransition.setSource(state);
 				zoneTransition.setTarget(newZone);
@@ -964,34 +831,27 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		// }
 
 		// Delay Transition
-		if ((((ZoneGraphState) state).getIncomingTransitions().size() == 0 || !(((ZoneGraphState) state)
-				.getIncomingTransitions().get(0) instanceof DelayTransition))
+		if ((((ZoneGraphState) state).getIncomingTransitions().size() == 0
+				|| !(((ZoneGraphState) state).getIncomingTransitions().get(0) instanceof DelayTransition))
 				&& !urgentEnabled) {
 			DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-			((PrimitiveDataType) intType)
-					.setPrimitiveType(PrimitiveTypes.INT32);
+			((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 			// compute invariants of old locations
 			HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) state)
-					.getLocations()) {
-				for (ClockConstraint cCon : ((State) rtscInstance
-						.getActiveVertex()).getInvariants()) {
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) state).getLocations()) {
+				for (ClockConstraint cCon : ((State) rtscInstance.getActiveVertex()).getInvariants()) {
 					UDBMClock clockForCC = clockMapping.get(cCon.getClock());
 
 					Object value;
 					try {
-						value = alInterpreter.evaluateExpression(
-								rtscInstance.getAllAvailableVariableBindings(),
+						value = alInterpreter.evaluateExpression(rtscInstance.getAllAvailableVariableBindings(),
 								cCon.getBound().getValue());
-						int intValue = (Integer) alInterpreter.castTo(intType,
-								value);
+						int intValue = (Integer) alInterpreter.castTo(intType, value);
 
 						if (clockForCC != null) {
-							SimpleClockConstraint constraint = new SimpleClockConstraint(
-									clockForCC,
-									getRelationalOperatorForComparingOperator(cCon
-											.getOperator()), intValue);
+							SimpleClockConstraint constraint = new SimpleClockConstraint(clockForCC,
+									getRelationalOperatorForComparingOperator(cCon.getOperator()), intValue);
 							invariants.add(constraint);
 						}
 					} catch (UnsupportedModellingElementException e) {
@@ -1007,15 +867,12 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			}
 			if (((ZoneGraphState) state).getFederation() != null) {
 				// apply invariants of old locations
-				ZoneGraphState delayState = (ZoneGraphState) delay(state,
-						invariants, urgentFound, urgentFederations);
+				ZoneGraphState delayState = (ZoneGraphState) delay(state, invariants, urgentFound, urgentFederations);
 
 				// only add delay transition if state wasn't reached by delay
 				if (delayState != null) {
-					if (!delayState.getFederation().equals(
-							((ZoneGraphState) state).getFederation())) {
-						DelayTransition delayTransition = rtscFactory
-								.createDelayTransition();
+					if (!delayState.getFederation().equals(((ZoneGraphState) state).getFederation())) {
+						DelayTransition delayTransition = rtscFactory.createDelayTransition();
 						delayTransition.setSource(state);
 						delayTransition.setTarget(delayState);
 						followingZones.add(delayState);
@@ -1027,10 +884,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		return followingZones;
 	}
 
-	private void addTransitionSet(ZoneGraphState sourceState,
-			Transition transition, Transition secondTransition,
-			RealtimeStatechartInstance firstLocation,
-			RealtimeStatechartInstance secondLocation) {
+	private void addTransitionSet(ZoneGraphState sourceState, Transition transition, Transition secondTransition,
+			RealtimeStatechartInstance firstLocation, RealtimeStatechartInstance secondLocation) {
 
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
 		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
@@ -1043,15 +898,13 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		}
 
 		if (((ZoneGraphState) sourceState).getFederation() != null) {
-			Federation triggerFed = (Federation) ((ZoneGraphState) sourceState)
-					.getFederation().clone();
+			Federation triggerFed = (Federation) ((ZoneGraphState) sourceState).getFederation().clone();
 			// Federation checkFed = (Federation) ((ZoneGraphState) sourceState)
 			// .getFederation().clone();
 			// if(reachabilityGraph.getStartState() == sourceState)
 			// triggerFed.up();
 			// apply all time guards
-			for (ClockConstraint clockConstraint : transition
-					.getClockConstraints()) {
+			for (ClockConstraint clockConstraint : transition.getClockConstraints()) {
 
 				// if there is a clock constraint like c < 0 we do not
 				// add a transition set for the corresponding transition because
@@ -1059,14 +912,10 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 				Object value;
 				try {
-					value = alInterpreter.evaluateExpression(
-							firstLocation.getAllAvailableVariableBindings(),
+					value = alInterpreter.evaluateExpression(firstLocation.getAllAvailableVariableBindings(),
 							clockConstraint.getBound().getValue());
-					int intValue = (Integer) alInterpreter.castTo(intType,
-							value);
-					if (intValue == 0
-							&& clockConstraint.getOperator().equals(
-									ComparingOperator.LESS))
+					int intValue = (Integer) alInterpreter.castTo(intType, value);
+					if (intValue == 0 && clockConstraint.getOperator().equals(ComparingOperator.LESS))
 						return;
 				} catch (UnsupportedModellingElementException e) {
 					e.printStackTrace();
@@ -1079,8 +928,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				applyClockConstraint(sourceState, clockConstraint, triggerFed);
 			}
 			if (secondTransition != null)
-				for (ClockConstraint clockConstraint : secondTransition
-						.getClockConstraints()) {
+				for (ClockConstraint clockConstraint : secondTransition.getClockConstraints()) {
 
 					// if there is a clock constraint like c < 0 we do not
 					// add a transition set for the corresponding transition
@@ -1088,14 +936,10 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					// the constraint can never be true
 					Object value;
 					try {
-						value = alInterpreter.evaluateExpression(secondLocation
-								.getAllAvailableVariableBindings(),
+						value = alInterpreter.evaluateExpression(secondLocation.getAllAvailableVariableBindings(),
 								clockConstraint.getBound().getValue());
-						int intValue = (Integer) alInterpreter.castTo(intType,
-								value);
-						if (intValue == 0
-								&& clockConstraint.getOperator().equals(
-										ComparingOperator.LESS))
+						int intValue = (Integer) alInterpreter.castTo(intType, value);
+						if (intValue == 0 && clockConstraint.getOperator().equals(ComparingOperator.LESS))
 							return;
 					} catch (UnsupportedModellingElementException e) {
 						e.printStackTrace();
@@ -1105,8 +949,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 						e.printStackTrace();
 					}
 
-					applyClockConstraint(sourceState, clockConstraint,
-							triggerFed);
+					applyClockConstraint(sourceState, clockConstraint, triggerFed);
 				}
 
 			// checkFed.and(triggerFed);
@@ -1138,8 +981,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			if (state.isInitial()) {
 				initialStates.add(state);
 				// create RealtimeStatechartInstance and set references
-				RealtimeStatechartInstance rootInstance = runtimeFactory
-						.createRealtimeStatechartInstance();
+				RealtimeStatechartInstance rootInstance = runtimeFactory.createRealtimeStatechartInstance();
 				rootInstance.setInstanceOf(rootRtsc);
 				rootInstance.setActiveVertex((State) state);
 
@@ -1147,8 +989,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 				// create RealtimeStatechartInstances for embedded rtscs
 				if (!((State) state).getEmbeddedRegions().isEmpty()) {
-					startLocations.addAll(createLocationsForEmbeddedRtscs(null,
-							state, rootInstance));
+					startLocations.addAll(createLocationsForEmbeddedRtscs(null, state, rootInstance));
 				}
 
 			}
@@ -1173,18 +1014,14 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		// evaluate entry actions of initial states
 		for (RealtimeStatechartInstance curRtscInstance : startLocations) {
 			if (((State) curRtscInstance.getActiveVertex()).getEntryEvent() != null
-					&& ((State) curRtscInstance.getActiveVertex())
-							.getEntryEvent().getAction() != null)
-				for (Expression curExp : ((State) curRtscInstance
-						.getActiveVertex()).getEntryEvent().getAction()
+					&& ((State) curRtscInstance.getActiveVertex()).getEntryEvent().getAction() != null)
+				for (Expression curExp : ((State) curRtscInstance.getActiveVertex()).getEntryEvent().getAction()
 						.getExpressions()) {
 					// the expression that is not instance of textual expression
 					// should be implementation in action language
 					if (!(curExp instanceof TextualExpression)) {
 						try {
-							alInterpreter.evaluateExpression(
-									curRtscInstance.getVariableBindings(),
-									curExp);
+							alInterpreter.evaluateExpression(curRtscInstance.getVariableBindings(), curExp);
 						} catch (UnsupportedModellingElementException e) {
 
 							e.printStackTrace();
@@ -1217,15 +1054,11 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		}
 		for (RealtimeStatechartInstance curRtscInstance : state.getLocations()) {
 			if (curRtscInstance.getInstanceOf().isEmbedded()) {
-				RealtimeStatechart parentRtsc = parentRtscMapping
-						.get(curRtscInstance.getInstanceOf());
-				for (RealtimeStatechartInstance rtscInstance2 : state
-						.getLocations())
+				RealtimeStatechart parentRtsc = parentRtscMapping.get(curRtscInstance.getInstanceOf());
+				for (RealtimeStatechartInstance rtscInstance2 : state.getLocations())
 					if (rtscInstance2.getInstanceOf().equals(parentRtsc)) {
-						rtscInstance2.getSubRealtimeStatechartInstances().add(
-								curRtscInstance);
-						curRtscInstance
-								.setParentRealtimeStatechartInstance(rtscInstance2);
+						rtscInstance2.getSubRealtimeStatechartInstances().add(curRtscInstance);
+						curRtscInstance.setParentRealtimeStatechartInstance(rtscInstance2);
 					}
 			}
 		}
@@ -1244,25 +1077,21 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 * @return
 	 */
 	protected HashSet<RealtimeStatechartInstance> createLocationsForEmbeddedRtscs(
-			HashSet<RealtimeStatechartInstance> locations, State state,
-			RealtimeStatechartInstance parentRtscInstance) {
+			HashSet<RealtimeStatechartInstance> locations, State state, RealtimeStatechartInstance parentRtscInstance) {
 		if (locations == null)
 			locations = new HashSet<RealtimeStatechartInstance>();
 
 		// create location
 		for (Region curRegion : state.getEmbeddedRegions()) {
 			if (curRegion.getParentState().getParentStatechart() != null) {
-				RealtimeStatechartInstance location = runtimeFactory
-						.createRealtimeStatechartInstance();
+				RealtimeStatechartInstance location = runtimeFactory.createRealtimeStatechartInstance();
 				location.setInstanceOf(curRegion.getEmbeddedStatechart());
 				location.setParentRealtimeStatechartInstance(parentRtscInstance);
 				locations.add(location);
-				for (State initial : curRegion.getEmbeddedStatechart()
-						.getStates())
+				for (State initial : curRegion.getEmbeddedStatechart().getStates())
 					if (initial.isInitial()) {
 						location.setActiveVertex(initial);
-						locations = createLocationsForEmbeddedRtscs(locations,
-								initial, location);
+						locations = createLocationsForEmbeddedRtscs(locations, initial, location);
 						break;
 					}
 
@@ -1282,8 +1111,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 *         {@link RealtimeStatechart}s
 	 */
 	protected HashMap<RealtimeStatechart, RealtimeStatechart> collectParentRtscs(
-			HashMap<RealtimeStatechart, RealtimeStatechart> parentMapping,
-			RealtimeStatechart parent) {
+			HashMap<RealtimeStatechart, RealtimeStatechart> parentMapping, RealtimeStatechart parent) {
 		if (parentMapping == null)
 			parentMapping = new HashMap<RealtimeStatechart, RealtimeStatechart>();
 
@@ -1291,14 +1119,11 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			parentMapping.put(parent, null);
 
 		for (State curState : parent.getStates()) {
-			if (curState.getEmbeddedRegions() != null
-					&& !curState.getEmbeddedRegions().isEmpty())
+			if (curState.getEmbeddedRegions() != null && !curState.getEmbeddedRegions().isEmpty())
 				for (Region curRegion : curState.getEmbeddedRegions())
 					if (curRegion.getEmbeddedStatechart() != null) {
-						parentMapping.put(curRegion.getEmbeddedStatechart(),
-								parent);
-						parentMapping = collectParentRtscs(parentMapping,
-								curRegion.getEmbeddedStatechart());
+						parentMapping.put(curRegion.getEmbeddedStatechart(), parent);
+						parentMapping = collectParentRtscs(parentMapping, curRegion.getEmbeddedStatechart());
 					}
 		}
 		return parentMapping;
@@ -1314,8 +1139,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 *            start the search for clocks from.
 	 * @return
 	 */
-	protected HashSet<Clock> collectClocksFromStatecharts(
-			HashSet<Clock> collectedClocks, HashSet<RealtimeStatechart> curRtscs) {
+	protected HashSet<Clock> collectClocksFromStatecharts(HashSet<Clock> collectedClocks,
+			HashSet<RealtimeStatechart> curRtscs) {
 		if (collectedClocks == null)
 			collectedClocks = new HashSet<Clock>();
 
@@ -1328,19 +1153,16 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					collectedClocks.addAll(rtsc.getClocks());
 			}
 			for (State state : rtsc.getStates()) {
-				if (state.getEmbeddedRegions() != null
-						&& !state.getEmbeddedRegions().isEmpty())
+				if (state.getEmbeddedRegions() != null && !state.getEmbeddedRegions().isEmpty())
 					for (Region region : state.getEmbeddedRegions()) {
 						if (region.getEmbeddedStatechart() != null)
-							embeddedStatecharts.add(region
-									.getEmbeddedStatechart());
+							embeddedStatecharts.add(region.getEmbeddedStatechart());
 					}
 			}
 
 		}
 		if (!embeddedStatecharts.isEmpty())
-			collectedClocks = collectClocksFromStatecharts(collectedClocks,
-					embeddedStatecharts);
+			collectedClocks = collectClocksFromStatecharts(collectedClocks, embeddedStatecharts);
 
 		return collectedClocks;
 	}
@@ -1355,8 +1177,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 * @return {@link HashMap} mapping {@link Clock} to corresponding
 	 *         {@link UDBMClock}
 	 */
-	protected HashMap<Clock, UDBMClock> translateClocksToUDBMClocks(
-			RealtimeStatechart rtsc) {
+	protected HashMap<Clock, UDBMClock> translateClocksToUDBMClocks(RealtimeStatechart rtsc) {
 
 		HashMap<Clock, UDBMClock> clocksMapping = new HashMap<Clock, UDBMClock>();
 		HashSet<RealtimeStatechart> root = new HashSet<RealtimeStatechart>();
@@ -1364,8 +1185,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		// create unique id for udbm clocks
 		int clockcounter = 0;
 		for (Clock clock : collectClocksFromStatecharts(null, root)) {
-			UDBMClock fedClock = new UDBMClock(clock.getName() + "id"
-					+ clockcounter, clock.getName());
+			UDBMClock fedClock = new UDBMClock(clock.getName() + "id" + clockcounter, clock.getName());
 			clockcounter++;
 			clocksMapping.put(clock, fedClock);
 
@@ -1382,8 +1202,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 *            VariableBindings in terms of constant variables
 	 * @return A map from UDBMClock to the maximum value
 	 */
-	protected HashMap<UDBMClock, Integer> collectClockMaxValues(
-			EList<VariableBinding> constantVariableBindings) {
+	protected HashMap<UDBMClock, Integer> collectClockMaxValues(EList<VariableBinding> constantVariableBindings) {
 
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
 		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
@@ -1402,17 +1221,14 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			for (Transition curTransition : curRtsc.getTransitions()) {
 
 				// ClockConstraints
-				for (ClockConstraint curCConstraint : curTransition
-						.getClockConstraints()) {
+				for (ClockConstraint curCConstraint : curTransition.getClockConstraints()) {
 					// translate clock
-					UDBMClock curUDBMClock = clockMapping.get(curCConstraint
-							.getClock());
+					UDBMClock curUDBMClock = clockMapping.get(curCConstraint.getClock());
 
 					Object expValue = null;
 					try {
-						expValue = alInterpreter.evaluateExpression(
-								constantVariableBindings, curCConstraint
-										.getBound().getValue());
+						expValue = alInterpreter.evaluateExpression(constantVariableBindings,
+								curCConstraint.getBound().getValue());
 					} catch (UnsupportedModellingElementException e) {
 						e.printStackTrace();
 					} catch (VariableNotInitializedException e) {
@@ -1426,8 +1242,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					int expValueAsInt = -1;
 					if (expValue != null) {
 						try {
-							expValueAsInt = (Integer) alInterpreter.castTo(
-									intType, expValue);
+							expValueAsInt = (Integer) alInterpreter.castTo(intType, expValue);
 						} catch (IncompatibleTypeException e) {
 							// should not happen since clocks can only be
 							// compared with integers
@@ -1436,25 +1251,21 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 							e.printStackTrace();
 						}
 					}
-					if (expValueAsInt != -1
-							&& clockMaxValues.get(curUDBMClock) < expValueAsInt)
+					if (expValueAsInt != -1 && clockMaxValues.get(curUDBMClock) < expValueAsInt)
 
 						clockMaxValues.put(curUDBMClock, expValueAsInt);
 
 				}
 
 				// Deadlines
-				for (AbsoluteDeadline curDeadline : curTransition
-						.getAbsoluteDeadlines()) {
+				for (AbsoluteDeadline curDeadline : curTransition.getAbsoluteDeadlines()) {
 					// translate clock
-					UDBMClock curUDBMClock = clockMapping.get(curDeadline
-							.getClock());
+					UDBMClock curUDBMClock = clockMapping.get(curDeadline.getClock());
 
 					Object expValue = null;
 					try {
-						expValue = alInterpreter.evaluateExpression(
-								constantVariableBindings, curDeadline
-										.getUpperBound().getValue());
+						expValue = alInterpreter.evaluateExpression(constantVariableBindings,
+								curDeadline.getUpperBound().getValue());
 					} catch (UnsupportedModellingElementException e) {
 						e.printStackTrace();
 					} catch (VariableNotInitializedException e) {
@@ -1467,8 +1278,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					int expValueAsInt = -1;
 					if (expValue != null) {
 						try {
-							expValueAsInt = (Integer) alInterpreter.castTo(
-									intType, expValue);
+							expValueAsInt = (Integer) alInterpreter.castTo(intType, expValue);
 						} catch (IncompatibleTypeException e) {
 							// should not happen since clocks can only be
 							// compared with integers
@@ -1477,8 +1287,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 							e.printStackTrace();
 						}
 					}
-					if (expValueAsInt != -1
-							&& clockMaxValues.get(curUDBMClock) < expValueAsInt)
+					if (expValueAsInt != -1 && clockMaxValues.get(curUDBMClock) < expValueAsInt)
 
 						clockMaxValues.put(curUDBMClock, expValueAsInt);
 
@@ -1489,14 +1298,12 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			for (State curState : curRtsc.getStates()) {
 				for (ClockConstraint curCConstraint : curState.getInvariants()) {
 					// translate clock
-					UDBMClock curUDBMClock = clockMapping.get(curCConstraint
-							.getClock());
+					UDBMClock curUDBMClock = clockMapping.get(curCConstraint.getClock());
 
 					Object expValue = null;
 					try {
-						expValue = alInterpreter.evaluateExpression(
-								constantVariableBindings, curCConstraint
-										.getBound().getValue());
+						expValue = alInterpreter.evaluateExpression(constantVariableBindings,
+								curCConstraint.getBound().getValue());
 					} catch (UnsupportedModellingElementException e) {
 						e.printStackTrace();
 					} catch (VariableNotInitializedException e) {
@@ -1510,8 +1317,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					int expValueAsInt = -1;
 					if (expValue != null) {
 						try {
-							expValueAsInt = (Integer) alInterpreter.castTo(
-									intType, expValue);
+							expValueAsInt = (Integer) alInterpreter.castTo(intType, expValue);
 						} catch (IncompatibleTypeException e) {
 							// should not happen since clocks can only be
 							// compared with integers
@@ -1520,8 +1326,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 							e.printStackTrace();
 						}
 					}
-					if (expValueAsInt != -1
-							&& clockMaxValues.get(curUDBMClock) < expValueAsInt)
+					if (expValueAsInt != -1 && clockMaxValues.get(curUDBMClock) < expValueAsInt)
 						clockMaxValues.put(curUDBMClock, expValueAsInt);
 				}
 
@@ -1540,8 +1345,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					Object initValue = null;
 
 					try {
-						initValue = alInterpreter.evaluateExpression(null,
-								curVariable.getInitializeExpression());
+						initValue = alInterpreter.evaluateExpression(null, curVariable.getInitializeExpression());
 					} catch (Exception e) {
 						// init expression could not be evaluated => continue
 						continue;
@@ -1549,8 +1353,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 					if (initValue != null) {
 						try {
-							initValue = alInterpreter.castTo(
-									curVariable.getDataType(), initValue);
+							initValue = alInterpreter.castTo(curVariable.getDataType(), initValue);
 						} catch (IncompatibleTypeException e) {
 							// wrong data type of init value
 							e.printStackTrace();
@@ -1562,8 +1365,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 						}
 					}
 
-					VariableBinding varBinding = runtimeFactory
-							.createVariableBinding();
+					VariableBinding varBinding = runtimeFactory.createVariableBinding();
 					varBinding.setVariable(curVariable);
 					varBinding.setValue(initValue);
 
@@ -1582,17 +1384,14 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		PriorityQueue<Long> stateHashQueue = new PriorityQueue<Long>();
 		PriorityQueue<Long> attributeHashQueue = new PriorityQueue<Long>();
 
-		for (RealtimeStatechartInstance rtscInst : ((ZoneGraphState) state)
-				.getLocations()) {
+		for (RealtimeStatechartInstance rtscInst : ((ZoneGraphState) state).getLocations()) {
 			long rtscHash = (long) rtscInst.getInstanceOf().hashCode();
 
 			for (VariableBinding varBinding : rtscInst.getVariableBindings()) {
 				if (varBinding.getValue() != null)
-					attributeHashQueue.add((long) varBinding.getValue()
-							.hashCode());
+					attributeHashQueue.add((long) varBinding.getValue().hashCode());
 
-				attributeHashQueue.add((long) varBinding.getVariable()
-						.hashCode());
+				attributeHashQueue.add((long) varBinding.getVariable().hashCode());
 
 			}
 
@@ -1603,8 +1402,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 			rtscHash = rtscHash * 31 + attributeHash;
 
-			rtscHash = rtscHash * 31
-					+ (long) rtscInst.getActiveVertex().hashCode();
+			rtscHash = rtscHash * 31 + (long) rtscInst.getActiveVertex().hashCode();
 
 			stateHashQueue.add(rtscHash);
 		}
@@ -1616,8 +1414,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		}
 
 		if (((ZoneGraphState) state).getFederation() != null)
-			hash = hash * 53
-					+ ((ZoneGraphState) state).getFederation().getFullHash();
+			hash = hash * 53 + ((ZoneGraphState) state).getFederation().getFullHash();
 		state.setHash(hash);
 
 	}
@@ -1627,14 +1424,11 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 * initialize expression
 	 * 
 	 */
-	protected void initializeVariables(
-			HashSet<RealtimeStatechartInstance> rtscInstances) {
+	protected void initializeVariables(HashSet<RealtimeStatechartInstance> rtscInstances) {
 		for (RealtimeStatechartInstance curRtscInstance : rtscInstances) {
 			BasicEList<VariableBinding> variableBindings = new BasicEList<VariableBinding>();
-			for (Variable curVariable : curRtscInstance.getInstanceOf()
-					.getVariables()) {
-				VariableBinding varBinding = runtimeFactory
-						.createVariableBinding();
+			for (Variable curVariable : curRtscInstance.getInstanceOf().getVariables()) {
+				VariableBinding varBinding = runtimeFactory.createVariableBinding();
 				varBinding.setVariable(curVariable);
 				variableBindings.add(varBinding);
 
@@ -1645,8 +1439,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 						// evaluate initializeExpression
 						// if initializeExpression is e.g. an Assignment this
 						// sets the value of varBinding and returns null
-						value = alInterpreter.evaluateExpression(
-								variableBindings,
+						value = alInterpreter.evaluateExpression(variableBindings,
 								curVariable.getInitializeExpression());
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -1666,28 +1459,23 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	}
 
 	@Override
-	public ReachabilityGraphState copyState(ReachabilityGraphState state,
-			ReachabilityGraphTransition trans) {
+	public ReachabilityGraphState copyState(ReachabilityGraphState state, ReachabilityGraphTransition trans) {
 
 		ZoneGraphState newZone = (ZoneGraphState) EcoreUtil.copy(state);
 
 		if (((ZoneGraphState) state).getFederation() != null) {
-			Federation newFederation = (Federation) ((ZoneGraphState) state)
-					.getFederation().clone();
+			Federation newFederation = (Federation) ((ZoneGraphState) state).getFederation().clone();
 			newZone.setFederation(newFederation);
 		}
 		// add copies of locations
 		newZone.getLocations().clear();
-		for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state)
-				.getLocations()) {
+		for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state).getLocations()) {
 			// copy location
-			RealtimeStatechartInstance copyOfLocation = EcoreUtil
-					.copy(curLocation);
+			RealtimeStatechartInstance copyOfLocation = EcoreUtil.copy(curLocation);
 			// copy variable bindings
 			EList<VariableBinding> copyOfVarBindings = new BasicEList<VariableBinding>();
 
-			for (VariableBinding curVarBinding : curLocation
-					.getVariableBindings())
+			for (VariableBinding curVarBinding : curLocation.getVariableBindings())
 				copyOfVarBindings.add(EcoreUtil.copy(curVarBinding));
 
 			copyOfLocation.getVariableBindings().clear();
@@ -1703,24 +1491,19 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	}
 
 	@Override
-	protected boolean isIsomorphic(ReachabilityGraphState state1,
-			ReachabilityGraphState state2) {
+	protected boolean isIsomorphic(ReachabilityGraphState state1, ReachabilityGraphState state2) {
 		boolean locationInBoth;
 
 		// if # of locations are unequal, states cannot be isomorphic
-		if (((ZoneGraphState) state1).getLocations().size() != ((ZoneGraphState) state2)
-				.getLocations().size())
+		if (((ZoneGraphState) state1).getLocations().size() != ((ZoneGraphState) state2).getLocations().size())
 			return false;
 
 		// check equality of locations
-		for (RealtimeStatechartInstance location1 : ((ZoneGraphState) state1)
-				.getLocations()) {
+		for (RealtimeStatechartInstance location1 : ((ZoneGraphState) state1).getLocations()) {
 			locationInBoth = false;
-			for (RealtimeStatechartInstance location2 : ((ZoneGraphState) state2)
-					.getLocations()) {
+			for (RealtimeStatechartInstance location2 : ((ZoneGraphState) state2).getLocations()) {
 				if (location1.getInstanceOf().equals(location2.getInstanceOf())
-						&& location1.getActiveVertex().equals(
-								location2.getActiveVertex())) {
+						&& location1.getActiveVertex().equals(location2.getActiveVertex())) {
 					locationInBoth = true;
 					break;
 				}
@@ -1731,46 +1514,37 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		}
 
 		// check if federations are isomorphic
-		if (((ZoneGraphState) state1).getFederation() == null
-				&& ((ZoneGraphState) state2).getFederation() == null)
+		if (((ZoneGraphState) state1).getFederation() == null && ((ZoneGraphState) state2).getFederation() == null)
 
 			return true;
 		else {
-			boolean iso = ((ZoneGraphState) state1).getFederation().equals(
-					((ZoneGraphState) state2).getFederation());
+			boolean iso = ((ZoneGraphState) state1).getFederation().equals(((ZoneGraphState) state2).getFederation());
 
 			return iso;
 		}
 	}
 
-	protected void applyClockConstraint(ReachabilityGraphState state,
-			ClockConstraint cc, Federation fed) {
+	protected void applyClockConstraint(ReachabilityGraphState state, ClockConstraint cc, Federation fed) {
 		UDBMClock clockForCC = clockMapping.get(cc.getClock());
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
 		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
-		((ZoneGraphState) state).getLocations().get(0)
-				.getAllAvailableVariableBindings();
+		((ZoneGraphState) state).getLocations().get(0).getAllAvailableVariableBindings();
 
 		BasicEList<VariableBinding> allVariableBindingsOfState = new BasicEList<VariableBinding>();
 
-		for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state)
-				.getLocations())
-			allVariableBindingsOfState.addAll(curLocation
-					.getAllAvailableVariableBindings());
+		for (RealtimeStatechartInstance curLocation : ((ZoneGraphState) state).getLocations())
+			allVariableBindingsOfState.addAll(curLocation.getAllAvailableVariableBindings());
 
 		if (clockForCC != null) {
 
 			try {
-				Object boundValue = alInterpreter.evaluateExpression(
-						allVariableBindingsOfState, cc.getBound().getValue());
-				int boundValueAsInt = (Integer) alInterpreter.castTo(intType,
-						boundValue);
+				Object boundValue = alInterpreter.evaluateExpression(allVariableBindingsOfState,
+						cc.getBound().getValue());
+				int boundValueAsInt = (Integer) alInterpreter.castTo(intType, boundValue);
 
-				SimpleClockConstraint constraint = new SimpleClockConstraint(
-						clockForCC,
-						getRelationalOperatorForComparingOperator(cc
-								.getOperator()), boundValueAsInt);
+				SimpleClockConstraint constraint = new SimpleClockConstraint(clockForCC,
+						getRelationalOperatorForComparingOperator(cc.getOperator()), boundValueAsInt);
 				fed.and(constraint);
 			} catch (UnsupportedModellingElementException e) {
 				e.printStackTrace();
@@ -1784,8 +1558,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 	}
 
-	private RelationalOperator getRelationalOperatorForComparingOperator(
-			ComparingOperator operator) {
+
+	private RelationalOperator getRelationalOperatorForComparingOperator(ComparingOperator operator) {
 		switch (operator) {
 		case LESS:
 			return RelationalOperator.LessOperator;
@@ -1808,8 +1582,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	private HashSet<Transition> createTransitionSet(ZoneGraphState state) {
 		HashSet<Transition> staticTransitions = new HashSet<Transition>();
 		for (RealtimeStatechartInstance location : state.getLocations()) {
-			for (Transition transition : location.getActiveVertex()
-					.getOutgoingTransitions()) {
+			for (Transition transition : location.getActiveVertex().getOutgoingTransitions()) {
 				if (staticTransitions.contains(transition))
 					System.out.println("Hash Collision?");
 				staticTransitions.add(transition);
@@ -1823,8 +1596,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			if (diffClockConstraints.isEmpty())
 				zone.getFederation().normalize(clockMaxValues);
 			else
-				zone.getFederation().diagonalNormalize(clockMaxValues,
-						diffClockConstraints);
+				zone.getFederation().diagonalNormalize(clockMaxValues, diffClockConstraints);
 		}
 	}
 
@@ -1899,8 +1671,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		return null;
 	}
 
-	protected EList<ClockConstraint> highClockConstraints(
-			EList<ClockConstraint> original) {
+	protected EList<ClockConstraint> highClockConstraints(EList<ClockConstraint> original) {
 		RealtimestatechartFactory rtscFactory = RealtimestatechartFactory.eINSTANCE;
 		BasicEList<ClockConstraint> highCConstraints = new BasicEList<ClockConstraint>();
 		for (ClockConstraint cConstraint : original) {
@@ -1913,8 +1684,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				highCConstraints.add(EcoreUtil.copy(cConstraint));
 				break;
 			case ComparingOperator.EQUAL_VALUE:
-				ClockConstraint newCConstraint = rtscFactory
-						.createClockConstraint();
+				ClockConstraint newCConstraint = rtscFactory.createClockConstraint();
 				newCConstraint.setBound(EcoreUtil.copy(cConstraint.getBound()));
 				newCConstraint.setClock(cConstraint.getClock());
 				newCConstraint.setOperator(ComparingOperator.LESS_OR_EQUAL);
@@ -1938,26 +1708,19 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		TimeUnit smallestTimeUnit = TimeUnit.DAYS;
 		for (RealtimeStatechart curRtsc : parentRtscMapping.keySet()) {
 			for (Transition curTransition : curRtsc.getTransitions()) {
-				for (AbsoluteDeadline curDeadline : curTransition
-						.getAbsoluteDeadlines()) {
+				for (AbsoluteDeadline curDeadline : curTransition.getAbsoluteDeadlines()) {
 
 					if (curDeadline.getLowerBound().getUnit() != null
-							&& curDeadline.getLowerBound().getUnit()
-									.compareTo(smallestTimeUnit) < 0)
-						smallestTimeUnit = curDeadline.getLowerBound()
-								.getUnit();
+							&& curDeadline.getLowerBound().getUnit().compareTo(smallestTimeUnit) < 0)
+						smallestTimeUnit = curDeadline.getLowerBound().getUnit();
 					if (curDeadline.getUpperBound().getUnit() != null
-							&& curDeadline.getUpperBound().getUnit()
-									.compareTo(smallestTimeUnit) < 0)
-						smallestTimeUnit = curDeadline.getUpperBound()
-								.getUnit();
+							&& curDeadline.getUpperBound().getUnit().compareTo(smallestTimeUnit) < 0)
+						smallestTimeUnit = curDeadline.getUpperBound().getUnit();
 
 				}
-				for (ClockConstraint curCConstraint : curTransition
-						.getClockConstraints()) {
+				for (ClockConstraint curCConstraint : curTransition.getClockConstraints()) {
 					if (curCConstraint.getBound().getUnit() != null
-							&& curCConstraint.getBound().getUnit()
-									.compareTo(smallestTimeUnit) < 0) {
+							&& curCConstraint.getBound().getUnit().compareTo(smallestTimeUnit) < 0) {
 						smallestTimeUnit = curCConstraint.getBound().getUnit();
 					}
 				}
@@ -1965,8 +1728,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			for (State curState : curRtsc.getStates()) {
 				for (ClockConstraint curInvariant : curState.getInvariants()) {
 					if (curInvariant.getBound().getUnit() != null
-							&& curInvariant.getBound().getUnit()
-									.compareTo(smallestTimeUnit) < 0)
+							&& curInvariant.getBound().getUnit().compareTo(smallestTimeUnit) < 0)
 						smallestTimeUnit = curInvariant.getBound().getUnit();
 				}
 			}
@@ -1986,53 +1748,40 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		// TODO add multiply expressions
 		for (RealtimeStatechart curRtsc : parentRtscMapping.keySet()) {
 			for (Transition curTransition : curRtsc.getTransitions()) {
-				for (AbsoluteDeadline curDeadline : curTransition
-						.getAbsoluteDeadlines()) {
+				for (AbsoluteDeadline curDeadline : curTransition.getAbsoluteDeadlines()) {
 
 					if (curDeadline.getLowerBound().getUnit() != null
-							&& curDeadline.getLowerBound().getUnit()
-									.compareTo(smallestTimeUnit) != 0) {
-						TimeUnit oldTimeUnit = curDeadline.getLowerBound()
-								.getUnit();
-						Expression oldExpression = curDeadline.getLowerBound()
-								.getValue();
+							&& curDeadline.getLowerBound().getUnit().compareTo(smallestTimeUnit) != 0) {
+						TimeUnit oldTimeUnit = curDeadline.getLowerBound().getUnit();
+						Expression oldExpression = curDeadline.getLowerBound().getValue();
 
-						Expression convertedExpression = getBoundTransformArithmeticExpression(
-								oldExpression, oldTimeUnit, smallestTimeUnit);
+						Expression convertedExpression = getBoundTransformArithmeticExpression(oldExpression,
+								oldTimeUnit, smallestTimeUnit);
 						// smallestTimeUnit.convert(oldValue, oldTimeUnit);
 
-						curDeadline.getLowerBound().setValue(
-								convertedExpression);
+						curDeadline.getLowerBound().setValue(convertedExpression);
 						curDeadline.getLowerBound().setUnit(smallestTimeUnit);
 					}
 
 					if (curDeadline.getUpperBound().getUnit() != null
-							&& curDeadline.getUpperBound().getUnit()
-									.compareTo(smallestTimeUnit) != 0) {
-						TimeUnit oldTimeUnit = curDeadline.getUpperBound()
-								.getUnit();
-						Expression oldExpression = curDeadline.getUpperBound()
-								.getValue();
-						Expression convertedExpression = getBoundTransformArithmeticExpression(
-								oldExpression, oldTimeUnit, smallestTimeUnit);
+							&& curDeadline.getUpperBound().getUnit().compareTo(smallestTimeUnit) != 0) {
+						TimeUnit oldTimeUnit = curDeadline.getUpperBound().getUnit();
+						Expression oldExpression = curDeadline.getUpperBound().getValue();
+						Expression convertedExpression = getBoundTransformArithmeticExpression(oldExpression,
+								oldTimeUnit, smallestTimeUnit);
 
-						curDeadline.getUpperBound().setValue(
-								convertedExpression);
+						curDeadline.getUpperBound().setValue(convertedExpression);
 						curDeadline.getUpperBound().setUnit(smallestTimeUnit);
 					}
 
 				}
-				for (ClockConstraint curCConstraint : curTransition
-						.getClockConstraints()) {
+				for (ClockConstraint curCConstraint : curTransition.getClockConstraints()) {
 					if (curCConstraint.getBound().getUnit() != null
-							&& curCConstraint.getBound().getUnit()
-									.compareTo(smallestTimeUnit) != 0) {
-						TimeUnit oldTimeUnit = curCConstraint.getBound()
-								.getUnit();
-						Expression oldExpression = curCConstraint.getBound()
-								.getValue();
-						Expression convertedExpression = getBoundTransformArithmeticExpression(
-								oldExpression, oldTimeUnit, smallestTimeUnit);
+							&& curCConstraint.getBound().getUnit().compareTo(smallestTimeUnit) != 0) {
+						TimeUnit oldTimeUnit = curCConstraint.getBound().getUnit();
+						Expression oldExpression = curCConstraint.getBound().getValue();
+						Expression convertedExpression = getBoundTransformArithmeticExpression(oldExpression,
+								oldTimeUnit, smallestTimeUnit);
 
 						curCConstraint.getBound().setValue(convertedExpression);
 						curCConstraint.getBound().setUnit(smallestTimeUnit);
@@ -2043,14 +1792,11 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				for (ClockConstraint curInvariant : curState.getInvariants()) {
 
 					if (curInvariant.getBound().getUnit() != null
-							&& curInvariant.getBound().getUnit()
-									.compareTo(smallestTimeUnit) != 0) {
-						TimeUnit oldTimeUnit = curInvariant.getBound()
-								.getUnit();
-						Expression oldExpression = curInvariant.getBound()
-								.getValue();
-						Expression convertedExpression = getBoundTransformArithmeticExpression(
-								oldExpression, oldTimeUnit, smallestTimeUnit);
+							&& curInvariant.getBound().getUnit().compareTo(smallestTimeUnit) != 0) {
+						TimeUnit oldTimeUnit = curInvariant.getBound().getUnit();
+						Expression oldExpression = curInvariant.getBound().getValue();
+						Expression convertedExpression = getBoundTransformArithmeticExpression(oldExpression,
+								oldTimeUnit, smallestTimeUnit);
 
 						curInvariant.getBound().setValue(convertedExpression);
 						curInvariant.getBound().setUnit(smallestTimeUnit);
@@ -2060,8 +1806,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		}
 	}
 
-	protected Expression getBoundTransformArithmeticExpression(
-			Expression boundValueExpression, TimeUnit boundTimeUnit,
+	protected Expression getBoundTransformArithmeticExpression(Expression boundValueExpression, TimeUnit boundTimeUnit,
 			TimeUnit smallestTimeUnit) {
 
 		if (boundTimeUnit == null)
@@ -2076,87 +1821,69 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 		 */
 
 		if (boundTimeUnit == TimeUnit.DAYS) {
-			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			factor.setValue("24");
 
-			ArithmeticExpression toHours = CommonExpressionsFactory.eINSTANCE
-					.createArithmeticExpression();
+			ArithmeticExpression toHours = CommonExpressionsFactory.eINSTANCE.createArithmeticExpression();
 			toHours.setLeftExpression(boundValueExpression);
 			toHours.setRightExpression(factor);
 			toHours.setOperator(ArithmeticOperator.TIMES);
-			return getBoundTransformArithmeticExpression(factor,
-					TimeUnit.HOURS, smallestTimeUnit);
+			return getBoundTransformArithmeticExpression(factor, TimeUnit.HOURS, smallestTimeUnit);
 		}
 
 		if (boundTimeUnit == TimeUnit.HOURS) {
-			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			factor.setValue("60");
 
-			ArithmeticExpression toMinutes = CommonExpressionsFactory.eINSTANCE
-					.createArithmeticExpression();
+			ArithmeticExpression toMinutes = CommonExpressionsFactory.eINSTANCE.createArithmeticExpression();
 			toMinutes.setLeftExpression(boundValueExpression);
 			toMinutes.setRightExpression(factor);
 			toMinutes.setOperator(ArithmeticOperator.TIMES);
-			return getBoundTransformArithmeticExpression(factor,
-					TimeUnit.MINUTES, smallestTimeUnit);
+			return getBoundTransformArithmeticExpression(factor, TimeUnit.MINUTES, smallestTimeUnit);
 		}
 
 		if (boundTimeUnit == TimeUnit.MINUTES) {
-			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			factor.setValue("60");
 
-			ArithmeticExpression toSeconds = CommonExpressionsFactory.eINSTANCE
-					.createArithmeticExpression();
+			ArithmeticExpression toSeconds = CommonExpressionsFactory.eINSTANCE.createArithmeticExpression();
 			toSeconds.setLeftExpression(boundValueExpression);
 			toSeconds.setRightExpression(factor);
 			toSeconds.setOperator(ArithmeticOperator.TIMES);
-			return getBoundTransformArithmeticExpression(factor,
-					TimeUnit.SECONDS, smallestTimeUnit);
+			return getBoundTransformArithmeticExpression(factor, TimeUnit.SECONDS, smallestTimeUnit);
 		}
 
 		if (boundTimeUnit == TimeUnit.SECONDS) {
-			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			factor.setValue("1000");
 
-			ArithmeticExpression toMilliseconds = CommonExpressionsFactory.eINSTANCE
-					.createArithmeticExpression();
+			ArithmeticExpression toMilliseconds = CommonExpressionsFactory.eINSTANCE.createArithmeticExpression();
 			toMilliseconds.setLeftExpression(boundValueExpression);
 			toMilliseconds.setRightExpression(factor);
 			toMilliseconds.setOperator(ArithmeticOperator.TIMES);
-			return getBoundTransformArithmeticExpression(factor,
-					TimeUnit.MILLISECONDS, smallestTimeUnit);
+			return getBoundTransformArithmeticExpression(factor, TimeUnit.MILLISECONDS, smallestTimeUnit);
 		}
 
 		if (boundTimeUnit == TimeUnit.MILLISECONDS) {
-			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			factor.setValue("1000");
 
-			ArithmeticExpression toMicroseconds = CommonExpressionsFactory.eINSTANCE
-					.createArithmeticExpression();
+			ArithmeticExpression toMicroseconds = CommonExpressionsFactory.eINSTANCE.createArithmeticExpression();
 			toMicroseconds.setLeftExpression(boundValueExpression);
 			toMicroseconds.setRightExpression(factor);
 			toMicroseconds.setOperator(ArithmeticOperator.TIMES);
-			return getBoundTransformArithmeticExpression(factor,
-					TimeUnit.MICROSECONDS, smallestTimeUnit);
+			return getBoundTransformArithmeticExpression(factor, TimeUnit.MICROSECONDS, smallestTimeUnit);
 		}
 
 		if (boundTimeUnit == TimeUnit.MICROSECONDS) {
-			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression factor = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			factor.setValue("1000");
 
-			ArithmeticExpression toNanoseconds = CommonExpressionsFactory.eINSTANCE
-					.createArithmeticExpression();
+			ArithmeticExpression toNanoseconds = CommonExpressionsFactory.eINSTANCE.createArithmeticExpression();
 			toNanoseconds.setLeftExpression(boundValueExpression);
 			toNanoseconds.setRightExpression(factor);
 			toNanoseconds.setOperator(ArithmeticOperator.TIMES);
-			return getBoundTransformArithmeticExpression(factor,
-					TimeUnit.MICROSECONDS, smallestTimeUnit);
+			return getBoundTransformArithmeticExpression(factor, TimeUnit.MICROSECONDS, smallestTimeUnit);
 		}
 
 		return null;

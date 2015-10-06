@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.ui,
  de.uni_paderborn.fujaba.muml.realtimestatechart.diagram;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.actionlanguage.interpreter;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.udbm;bundle-version="0.3.0",
- de.uni_paderborn.fujaba.udbm.java;bundle-version="0.1.0"
+ de.uni_paderborn.fujaba.udbm.java;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc,

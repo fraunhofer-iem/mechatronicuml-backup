@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -36,9 +37,10 @@ import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
 import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.udbm.ClockZone;
 import de.uni_paderborn.fujaba.udbm.Federation;
 
-public class TestComputeSuccessors extends AbstractRTSCTest{
+public class TestComputeSuccessors extends AbstractRTSCTest {
 
 	private RealtimestatechartFactory rtscFactory;
 
@@ -66,14 +68,11 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 	@Before
 	public void setUp() {
 
-		EOperation.Internal.InvocationDelegate.Factory.Registry.INSTANCE.put(
-				"http://www.eclipse.org/emf/2002/Ecore/OCL",
-				new OCLInvocationDelegateFactory.Global());
+		EOperation.Internal.InvocationDelegate.Factory.Registry.INSTANCE
+				.put("http://www.eclipse.org/emf/2002/Ecore/OCL", new OCLInvocationDelegateFactory.Global());
 		EStructuralFeature.Internal.SettingDelegate.Factory.Registry.INSTANCE
-				.put("http://www.eclipse.org/emf/2002/Ecore/OCL",
-						new OCLSettingDelegateFactory.Global());
-		EValidator.ValidationDelegate.Registry.INSTANCE.put(
-				"http://www.eclipse.org/emf/2002/Ecore/OCL",
+				.put("http://www.eclipse.org/emf/2002/Ecore/OCL", new OCLSettingDelegateFactory.Global());
+		EValidator.ValidationDelegate.Registry.INSTANCE.put("http://www.eclipse.org/emf/2002/Ecore/OCL",
 				new OCLValidationDelegateFactory.Global());
 
 		rtscFactory = RealtimestatechartFactory.eINSTANCE;
@@ -147,8 +146,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("5");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -172,11 +170,9 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		boolean rtsc1Fired = false;
 		for (ReachabilityGraphState successor : successors) {
 
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
 
-				if (rtscInstance.getInstanceOf().equals(rtsc1)
-						&& rtscInstance.getActiveVertex().equals(state2)) {
+				if (rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2)) {
 					rtsc1Fired = true;
 				}
 
@@ -206,12 +202,9 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		successors = reachComputation.computeSuccessors(zone1);
 
 		for (ReachabilityGraphState successor : successors) {
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
-				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActiveVertex().equals(state2))
-						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActiveVertex().equals(state4))
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
+				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2))
+						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -240,12 +233,9 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		successors = reachComputation.computeSuccessors(zone1);
 
 		for (ReachabilityGraphState successor : successors) {
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
-				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActiveVertex().equals(state2))
-						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActiveVertex().equals(state4))
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
+				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2))
+						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -257,21 +247,17 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		rtsc1.getClocks().clear();
 		rtsc2.getClocks().clear();
 		// set up literal expression
-		LiteralExpression litExp1 = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression litExp1 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		litExp1.setValue("1");
 
-		LiteralExpression litExp2 = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression litExp2 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		litExp2.setValue("1");
 
-		LiteralExpression litExp3 = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression litExp3 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		litExp3.setValue("2");
 
 		// set data type for selector
-		PrimitiveDataType dataType = TypesFactory.eINSTANCE
-				.createPrimitiveDataType();
+		PrimitiveDataType dataType = TypesFactory.eINSTANCE.createPrimitiveDataType();
 		dataType.setPrimitiveType(PrimitiveTypes.INT32);
 		syncChannel.setSelectorType(dataType);
 
@@ -295,12 +281,9 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		successors = reachComputation.computeSuccessors(zone1);
 
 		for (ReachabilityGraphState successor : successors) {
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
-				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActiveVertex().equals(state2))
-						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActiveVertex().equals(state4))
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
+				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2))
+						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -310,12 +293,9 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		successors = reachComputation.computeSuccessors(zone1);
 
 		for (ReachabilityGraphState successor : successors) {
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
-				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActiveVertex().equals(state2))
-						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActiveVertex().equals(state3))
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
+				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2))
+						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state3))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -331,16 +311,13 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		for (ReachabilityGraphState successor : successors) {
 			boolean rtsc1Fired = false;
 			boolean rtsc2Fired = false;
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
 
 				if (!rtsc1Fired && !rtsc2Fired) {
-					if (rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActiveVertex().equals(state2)) {
+					if (rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2)) {
 						rtsc1Fired = true;
 					}
-					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-							.getActiveVertex().equals(state4))) {
+					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4))) {
 						rtsc2Fired = true;
 					}
 					continue;
@@ -371,16 +348,13 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		for (ReachabilityGraphState successor : successors) {
 			boolean rtsc1Fired = false;
 			boolean rtsc2Fired = false;
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
 
 				if (!rtsc1Fired && !rtsc2Fired) {
-					if (rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActiveVertex().equals(state2)) {
+					if (rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2)) {
 						rtsc1Fired = true;
 					}
-					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-							.getActiveVertex().equals(state4))) {
+					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4))) {
 						rtsc2Fired = true;
 					}
 					continue;
@@ -419,8 +393,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 		tnn1 = valueTypeFactory.createTimeValue();
 		tnn1.setValue(value);
@@ -438,14 +411,11 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		// following zones should exists because synchronization can fire
 		for (ReachabilityGraphState successor : successors) {
 			assertFalse(((ZoneGraphState) successor).getFederation().isEmpty());
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
-				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActiveVertex().equals(state2))
-						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActiveVertex().equals(state4))
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
+				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2))
+						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root)
-						&& rtscInstance.getActiveVertex().equals(parentState)
+								&& rtscInstance.getActiveVertex().equals(parentState)
 						|| successor.getIncomingTransitions().get(0) instanceof DelayTransition);
 			}
 		}
@@ -471,8 +441,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -488,8 +457,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c2.setName("c2");
 		c2.setStatechart(rtsc2);
 
-		LiteralExpression value2 = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value2 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value2.setValue("10");
 
 		tnn2 = valueTypeFactory.createTimeValue();
@@ -519,8 +487,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -540,16 +507,13 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		for (ReachabilityGraphState successor : successors) {
 			boolean rtsc1Fired = false;
 			boolean rtsc2Fired = false;
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
 
 				if (!rtsc1Fired && !rtsc2Fired) {
-					if (rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActiveVertex().equals(state2)) {
+					if (rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance.getActiveVertex().equals(state2)) {
 						rtsc1Fired = true;
 					}
-					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-							.getActiveVertex().equals(state4))) {
+					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4))) {
 						rtsc2Fired = true;
 					}
 					continue;
@@ -577,8 +541,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -594,8 +557,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c2.setName("c2");
 		c2.setStatechart(rtsc2);
 
-		LiteralExpression value2 = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value2 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value2.setValue("10");
 
 		tnn2 = valueTypeFactory.createTimeValue();
@@ -616,11 +578,10 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		// be true
 		for (ReachabilityGraphState successor : successors) {
 
-			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
-					.getLocations()) {
+			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor).getLocations()) {
 
-				assertFalse((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-						.getActiveVertex().equals(state4)));
+				assertFalse(
+						(rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance.getActiveVertex().equals(state4)));
 
 			}
 		}
@@ -643,8 +604,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -663,8 +623,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		successors = reachComputation.computeSuccessors(zone1);
 
 		for (ReachabilityGraphState zone : successors) {
-			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
-					.getLocations()) {
+			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone).getLocations()) {
 				if (location.getInstanceOf().equals(rtsc1))
 					assertTrue(location.getActiveVertex().equals(state2));
 			}
@@ -686,8 +645,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -720,8 +678,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		successors = reachComputation.computeSuccessors(zone1);
 
 		for (ReachabilityGraphState zone : successors) {
-			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
-					.getLocations()) {
+			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone).getLocations()) {
 				if (location.getInstanceOf().equals(rtsc1))
 					assertTrue(location.getActiveVertex().equals(state2));
 				if (location.getInstanceOf().equals(rtsc2))
@@ -746,8 +703,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -781,16 +737,12 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		boolean state2Entered = false;
 		boolean state4Entered = false;
 		for (ReachabilityGraphState zone : successors) {
-			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
-					.getLocations()) {
-				if (location.getInstanceOf().equals(rtsc1)
-						&& location.getActiveVertex().equals(state2))
+			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone).getLocations()) {
+				if (location.getInstanceOf().equals(rtsc1) && location.getActiveVertex().equals(state2))
 					state2Entered = true;
-				if (location.getInstanceOf().equals(rtsc1)
-						&& location.getActiveVertex().equals(state5))
+				if (location.getInstanceOf().equals(rtsc1) && location.getActiveVertex().equals(state5))
 					state5Entered = true;
-				if (location.getInstanceOf().equals(rtsc2)
-						&& location.getActiveVertex().equals(state4))
+				if (location.getInstanceOf().equals(rtsc2) && location.getActiveVertex().equals(state4))
 					state4Entered = true;
 			}
 		}
@@ -813,8 +765,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("5");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -825,8 +776,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		cCon1.setClock(c1);
 		cCon1.setOperator(ComparingOperator.EQUAL);
 
-		LiteralExpression value2 = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value2 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value2.setValue("6");
 
 		tnn2 = valueTypeFactory.createTimeValue();
@@ -849,10 +799,8 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		for (ReachabilityGraphState zone : successors) {
 			if (zone.getIncomingTransitions().get(0) instanceof DelayTransition) {
 				delayed = true;
-				Federation testFed = (Federation) ((ZoneGraphState) zone)
-						.getFederation().clone();
-				reachComputation.applyClockConstraint(zone, cCon1,
-						((ZoneGraphState) zone).getFederation());
+				Federation testFed = (Federation) ((ZoneGraphState) zone).getFederation().clone();
+				reachComputation.applyClockConstraint(zone, cCon1, ((ZoneGraphState) zone).getFederation());
 				assertFalse(((ZoneGraphState) zone).getFederation().isEmpty());
 				reachComputation.applyClockConstraint(zone, cCon2, testFed);
 				assertTrue(testFed.isEmpty());
@@ -881,8 +829,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		c1.setName("c1");
 		c1.setStatechart(rtsc1);
 
-		LiteralExpression value = CommonExpressionsFactory.eINSTANCE
-				.createLiteralExpression();
+		LiteralExpression value = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 		value.setValue("0");
 
 		tnn1 = valueTypeFactory.createTimeValue();
@@ -903,17 +850,15 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 
 		Federation testFed = (Federation) zone1.getFederation().clone();
 		testFed.up();
-		
+
 		boolean state5entered = false;
 		boolean delayed = false;
 		for (ReachabilityGraphState zone : successors) {
 			if (zone.getIncomingTransitions().get(0) instanceof DelayTransition) {
 				delayed = true;
-				assertTrue(((ZoneGraphState) zone).getFederation().equals(
-						testFed));
+				assertTrue(((ZoneGraphState) zone).getFederation().equals(testFed));
 			} else {
-				for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
-						.getLocations()) {
+				for (RealtimeStatechartInstance location : ((ZoneGraphState) zone).getLocations()) {
 					if (location.getInstanceOf().equals(rtsc1) && location.getActiveVertex().equals(state5))
 						state5entered = true;
 				}
@@ -922,6 +867,69 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		}
 		assertTrue(state5entered);
 		assertTrue(delayed);
+	}
+
+	// test whether non-urgent transitions can fire in all time intervals urgent
+	// transitions are not enabled in
+	@Test
+	public void testNonUrgentFiring() {
+		state5 = rtscFactory.createState();
+		state5.setParentStatechart(rtsc1);
+		state5.setName("state5");
+
+		transition3 = rtscFactory.createTransition();
+		rtsc1.getTransitions().add(transition3);
+		transition3.setSource(state1);
+		transition3.setTarget(state5);
+		transition3.setUrgent(false);
+
+		c1 = rtscFactory.createClock();
+		c1.setName("c1");
+		c1.setStatechart(rtsc1);
+
+		LiteralExpression value1 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
+		value1.setValue("50");
+
+		tnn1 = valueTypeFactory.createTimeValue();
+		tnn1.setValue(value1);
+
+		cCon1 = rtscFactory.createClockConstraint();
+		cCon1.setBound(tnn1);
+		cCon1.setClock(c1);
+		cCon1.setOperator(ComparingOperator.GREATER_OR_EQUAL);
+
+		LiteralExpression value2 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
+		value2.setValue("100");
+
+		tnn2 = valueTypeFactory.createTimeValue();
+		tnn2.setValue(value2);
+
+		cCon2 = rtscFactory.createClockConstraint();
+		cCon2.setBound(tnn2);
+		cCon2.setClock(c1);
+		cCon2.setOperator(ComparingOperator.LESS_OR_EQUAL);
+
+		transition1.getClockConstraints().add(cCon1);
+		transition1.getClockConstraints().add(cCon2);
+		transition1.setUrgent(true);
+
+		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
+		reachComputation.createInitialState();
+		zone1 = (ZoneGraphState) reachComputation.createInitialState();
+
+		// delay
+		zone1.getFederation().up();
+
+		successors = reachComputation.computeSuccessors(zone1);
+
+		for (ReachabilityGraphState zone : successors) {
+			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone).getLocations()) {
+				if (location.getInstanceOf().equals(rtsc1) && location.getActiveVertex().equals(state5)) {
+					Set<? extends ClockZone> zones = ((ZoneGraphState) zone).getFederation().getClockZone();
+					assertTrue(zones.size() == 2);
+				}
+			}
+		}
 	}
 
 	// TODO add test cases for selector expressions and guards
