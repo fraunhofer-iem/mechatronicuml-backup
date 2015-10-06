@@ -49,9 +49,9 @@ public class PropertiesWizardDialog extends WizardDialog implements CommandStack
 
 	public void openWithUndo(EditingDomain editingDomain, Notifier notifier) {
 		commands.clear();
+		this.editingDomain = editingDomain;
 		if(editingDomain!=null)
 		{
-			this.editingDomain = editingDomain;
 			editingDomain.getCommandStack().addCommandStackListener(this);
 			setBlockOnOpen(false);
 			open();
