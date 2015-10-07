@@ -31,11 +31,11 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/async/helper/queries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/type.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/rtsc.emtl#/0"/>
+    <imports href="helper/queries.emtl#/0"/>
+    <imports href="../util/query/annotation.emtl#/0"/>
+    <imports href="../util/query/naming.emtl#/0"/>
+    <imports href="../util/query/type.emtl#/0"/>
+    <imports href="../util/query/rtsc.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Query" name="getTypeParameterBindings" type="/3/OrderedSet(ParameterBinding)">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
         <body startPosition="857" endPosition="1028" value="&#xA;Returns an OrderedSet of parameter bindings of type typeName&#xA;@param ev the AsynchronousMessageEvent&#xA;@param typeName the type of the returned parameter bindings&#xA;&#xA;"/>
@@ -248,7 +248,7 @@
         </source>
         <argument xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName.2"/>
+          <definition href="../util/query/naming.emtl#/0/getName.2"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -296,7 +296,7 @@
         </source>
         <argument xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName.2"/>
+          <definition href="../util/query/naming.emtl#/0/getName.2"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
             <source xsi:type="ocl.ecore:VariableExp" name="pb" referredVariable="/0/getRaiseMessageEventPBVariableName/pb">
@@ -345,7 +345,7 @@
                       </source>
                       <argument xsi:type="mtl:QueryInvocation">
                         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                        <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+                        <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
                         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createAsyncMessageEventDeclAnnotation/rtsc">
                           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                         </argument>
@@ -369,7 +369,7 @@
                   </source>
                   <argument xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+                    <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createAsyncMessageEventDeclAnnotation/rtsc">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                     </argument>
@@ -393,7 +393,7 @@
               </source>
               <argument xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+                <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createAsyncMessageEventDeclAnnotation/rtsc">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                 </argument>
@@ -417,7 +417,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+            <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createAsyncMessageEventDeclAnnotation/rtsc">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             </argument>
@@ -508,7 +508,7 @@
                       </source>
                       <argument xsi:type="mtl:QueryInvocation">
                         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                        <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+                        <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
                         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createDelegationPortDeclAnnotation/rtsc">
                           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                         </argument>
@@ -532,7 +532,7 @@
                   </source>
                   <argument xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+                    <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createDelegationPortDeclAnnotation/rtsc">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                     </argument>
@@ -556,7 +556,7 @@
               </source>
               <argument xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+                <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createDelegationPortDeclAnnotation/rtsc">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                 </argument>
@@ -580,7 +580,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+            <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createDelegationPortDeclAnnotation/rtsc">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             </argument>
@@ -661,7 +661,7 @@
       </parameter>
       <expression xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/async/helper/queries.emtl#/0/getOutputDelegationPortName"/>
+        <definition href="helper/queries.emtl#/0/getOutputDelegationPortName"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
           <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -701,7 +701,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+            <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createRaiseMessageEventOutputDelegationPortConnectAnnotation/rtsc">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             </argument>
@@ -948,7 +948,7 @@
           <argument xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Transition)">
             <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Transition)">
               <source xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(RealtimeStatechart)">
-                <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/rtsc.emtl#/0/allSubstatecharts"/>
+                <definition href="../util/query/rtsc.emtl#/0/allSubstatecharts"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getAllRaiseMessageEvents/rtsc">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                 </argument>
@@ -981,7 +981,7 @@
       </parameter>
       <expression xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getMailboxName"/>
+        <definition href="../util/query/naming.emtl#/0/getMailboxName"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
           <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -1022,7 +1022,7 @@
           <argument xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Transition)">
             <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Transition)">
               <source xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(RealtimeStatechart)">
-                <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/rtsc.emtl#/0/allSubstatecharts"/>
+                <definition href="../util/query/rtsc.emtl#/0/allSubstatecharts"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getAllTriggerMessageEvents/rtsc">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                 </argument>
@@ -1130,7 +1130,7 @@
       </parameter>
       <expression xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/async/helper/queries.emtl#/0/getInputDelegationPortName"/>
+        <definition href="helper/queries.emtl#/0/getInputDelegationPortName"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
           <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -1200,7 +1200,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+            <definition href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createInputDelegationPortConnectAnnotation/rtsc">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             </argument>
@@ -1245,7 +1245,7 @@
       </parameter>
       <expression xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/type.emtl#/0/getType"/>
+        <definition href="../util/query/type.emtl#/0/getType"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
           <source xsi:type="ocl.ecore:VariableExp" name="param" referredVariable="/0/getType/param">
@@ -1312,7 +1312,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName.2"/>
+            <definition href="../util/query/naming.emtl#/0/getName.2"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
               <source xsi:type="ocl.ecore:VariableExp" name="pb" referredVariable="/0/getExpressionTypeInstanceName/pb">
@@ -1601,7 +1601,7 @@
       </parameter>
       <expression xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/rtsc.emtl#/0/getParentPortStatechart"/>
+        <definition href="../util/query/rtsc.emtl#/0/getParentPortStatechart"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           <source xsi:type="mtl:QueryInvocation" definition="/0/getTransition">
@@ -1655,7 +1655,7 @@
             </source>
             <argument xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName"/>
+              <definition href="../util/query/naming.emtl#/0/getName"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="transition" referredVariable="/0/getRelativelyQualifiedName/transition">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
               </argument>
@@ -1663,7 +1663,7 @@
           </thenExpression>
           <elseExpression xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName"/>
+            <definition href="../util/query/naming.emtl#/0/getName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="transition" referredVariable="/0/getRelativelyQualifiedName/transition">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
             </argument>
@@ -1673,7 +1673,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <initExpression xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getRelativelyQualifiedName"/>
+            <definition href="../util/query/naming.emtl#/0/getRelativelyQualifiedName"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
               <source xsi:type="ocl.ecore:VariableExp" name="transition" referredVariable="/0/getRelativelyQualifiedName/transition">
@@ -1711,7 +1711,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getFullyQualifiedName"/>
+            <definition href="../util/query/naming.emtl#/0/getFullyQualifiedName"/>
             <argument xsi:type="mtl:QueryInvocation" definition="/0/getParentPortStatechart">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="ev" referredVariable="/0/getRaiseMessageEventPBVariableFullyQualifiedName/ev">
@@ -1757,7 +1757,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getFullyQualifiedName"/>
+            <definition href="../util/query/naming.emtl#/0/getFullyQualifiedName"/>
             <argument xsi:type="mtl:QueryInvocation" definition="/0/getParentPortStatechart">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="ev" referredVariable="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/ev">
@@ -1771,7 +1771,7 @@
         </source>
         <argument xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getTriggerMessageEventParameterVariableName"/>
+          <definition href="../util/query/naming.emtl#/0/getTriggerMessageEventParameterVariableName"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="param" referredVariable="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/param">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
           </argument>
@@ -2223,7 +2223,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/async/helper/queries.emtl#/0/getOutputDelegationPortName"/>
+          <references href="helper/queries.emtl#/0/getOutputDelegationPortName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="messageType">
@@ -2235,7 +2235,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/async/helper/queries.emtl#/0/getInputDelegationPortName"/>
+          <references href="helper/queries.emtl#/0/getInputDelegationPortName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="messageType">
@@ -2247,7 +2247,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/annotation.emtl#/0/getAnnotationDetail"/>
+          <references href="../util/query/annotation.emtl#/0/getAnnotationDetail"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="element">
@@ -2265,7 +2265,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getRelativelyQualifiedName"/>
+          <references href="../util/query/naming.emtl#/0/getRelativelyQualifiedName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2280,7 +2280,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getFullyQualifiedName"/>
+          <references href="../util/query/naming.emtl#/0/getFullyQualifiedName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2292,7 +2292,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName"/>
+          <references href="../util/query/naming.emtl#/0/getName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="transition">
@@ -2304,7 +2304,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getMailboxName"/>
+          <references href="../util/query/naming.emtl#/0/getMailboxName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="messageType">
@@ -2316,7 +2316,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getTriggerMessageEventParameterVariableName"/>
+          <references href="../util/query/naming.emtl#/0/getTriggerMessageEventParameterVariableName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="param">
@@ -2331,7 +2331,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/naming.emtl#/0/getName.2"/>
+          <references href="../util/query/naming.emtl#/0/getName.2"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="namedElement">
@@ -2343,7 +2343,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/type.emtl#/0/getType"/>
+          <references href="../util/query/type.emtl#/0/getType"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="type">
@@ -2355,9 +2355,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/rtsc.emtl#/0/allSubstatecharts"/>
+          <references href="../util/query/rtsc.emtl#/0/allSubstatecharts"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/rtsc.emtl#/3/OrderedSet(RealtimeStatechart)"/>
+        <eType xsi:type="ocl.ecore:OrderedSetType" href="../util/query/rtsc.emtl#/3/OrderedSet(RealtimeStatechart)"/>
         <eParameters name="rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </eParameters>
@@ -2367,7 +2367,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.modelica.m2t/bin/de/uni_paderborn/fujaba/modelica/m2t/rtsc/util/query/rtsc.emtl#/0/getParentPortStatechart"/>
+          <references href="../util/query/rtsc.emtl#/0/getParentPortStatechart"/>
         </eAnnotations>
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         <eParameters name="rtsc">

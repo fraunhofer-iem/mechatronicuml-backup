@@ -1,0 +1,83 @@
+[module naming('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::queries]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
+
+[**
+ * Returns the name of the atomic component instance's behavior variable.
+*/]
+[query public getBehaviorVariableName(n : OclAny) : String =
+	'behavior'
+/]
+
+[**
+ * Returns the name of a component instance.
+ * @param componentInstance the ComponentInstance
+*/]
+[query public getName(componentInstance : ComponentInstance) : String =
+	if componentInstance.oclIsKindOf(StructuredComponentInstance) then
+		componentInstance.oclAsType(NamedElement).getName() +
+		if componentInstance.componentPart.oclIsUndefined() then
+			''
+		else
+			'_' + componentInstance.componentPart.getName()
+		endif
+	else
+		componentInstance.oclAsType(NamedElement).getName()
+	endif.toLowerFirst()
+/]
+
+[**
+ * Returns the name of the input port.
+ * @param portInstance the PortInstance
+ * @param messageType the MessageType
+*/]
+[query public getInputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getName() + '_' + messageType.getInputDelegationPortName()
+/]
+
+[**
+ * Returns the name of the output port.
+ * @param portInstance the PortInstance
+ * @param messageType the MessageType
+*/]
+[query public getOutputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getName() + '_' + messageType.getOutputDelegationPortName()
+/]
+
+[**
+ * Returns the fully qualified name of the input port.
+ * @param portInstance the PortInstance
+ * @param messageType the MessageType
+ * @param ref the structured component instance
+*/]
+[query public getFullyQualifiedInputPortName(portInstance : PortInstance, messageType : MessageType, ref : StructuredComponentInstance) : String =
+	if portInstance.componentInstance = ref then 
+		''
+	else
+		portInstance.componentInstance.getName() + '.'
+	endif + portInstance.getInputPortName(messageType)
+/]
+
+[**
+ * Returns the fully qualified name of the output port.
+ * @param portInstance the PortInstance
+ * @param messageType the MessageType
+ * @param ref the structured component instance
+*/]
+[query public getFullyQualifiedOutputPortName(portInstance : PortInstance, messageType : MessageType, ref : StructuredComponentInstance) : String =
+	if portInstance.componentInstance = ref then
+		''
+	else
+		portInstance.componentInstance.getName() + '.'
+	endif + portInstance.getOutputPortName(messageType)
+/]
