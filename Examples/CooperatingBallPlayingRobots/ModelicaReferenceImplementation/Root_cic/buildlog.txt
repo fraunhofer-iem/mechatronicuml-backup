@@ -1,0 +1,549 @@
+ 
+Compiling and linking the model (Visual C++). 
+ 
+Setting environment for using Microsoft Visual Studio 2010 x86 tools.
+dsmodel.c
+dsmodel.c(4675) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4675) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4694) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4694) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4713) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4713) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4732) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4732) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4744) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4744) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4757) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4757) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4782) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4782) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4786) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4786) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4795) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4796) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4809) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4809) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4822) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4822) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4839) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(4840) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4840) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4860) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4860) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4879) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(4880) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4880) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4895) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4896) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4909) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4909) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4922) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4922) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4939) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(4940) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4940) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4960) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4960) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4979) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(4980) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(4980) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5300) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5300) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5319) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5319) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5338) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5338) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5357) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5357) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5369) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5369) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5382) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5382) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5407) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5407) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5411) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5411) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5420) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5421) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5434) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5434) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5447) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5447) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5464) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(5465) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5465) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5485) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5485) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5504) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(5505) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5505) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5520) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5521) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5534) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5534) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5547) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5547) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5564) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(5565) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5565) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5585) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5585) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5604) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(5605) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(5605) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6355) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(6358) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(6638) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6638) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6657) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6657) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6676) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6676) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6695) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6695) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6707) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6707) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6720) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6720) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6745) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6745) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6749) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6749) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6758) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6759) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6772) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6772) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6785) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6785) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6802) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(6803) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6803) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6823) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6823) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6842) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(6843) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6843) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6858) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6859) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6872) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6872) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6885) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6885) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6902) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(6903) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6903) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6923) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6923) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6942) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(6943) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6943) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(6981) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(6984) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7142) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7142) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7154) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7154) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7167) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7167) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7192) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7192) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7196) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7196) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7205) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7206) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7219) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7219) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7232) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7232) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7249) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7250) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7250) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7270) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7270) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7289) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7290) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7290) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7305) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7306) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7319) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7319) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7332) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7332) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7349) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7350) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7350) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7370) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7370) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7389) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7390) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7390) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7532) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7535) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7815) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7815) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7834) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7834) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7853) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7853) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7872) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7872) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7884) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7884) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7897) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7897) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7922) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7922) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7926) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7926) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7935) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7936) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7949) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7949) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7962) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7962) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7979) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(7980) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(7980) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8000) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8000) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8019) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8020) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8020) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8035) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8036) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8049) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8049) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8062) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8062) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8079) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8080) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8080) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8100) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8100) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8119) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8120) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8120) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8158) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8161) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8319) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8319) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8331) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8331) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8344) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8344) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8369) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8369) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8373) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8373) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8382) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8383) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8396) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8396) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8409) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8409) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8426) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8427) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8427) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8447) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8447) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8466) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8467) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8467) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8482) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8483) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8496) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8496) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8509) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8509) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8526) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8527) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8527) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8547) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8547) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8566) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8567) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8567) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(8845) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(8848) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(9118) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9118) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9137) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9137) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9156) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9156) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9175) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9175) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9187) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9187) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9200) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9200) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9225) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9225) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9229) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9229) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9238) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9239) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9252) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9252) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9265) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9265) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9282) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(9283) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9283) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9303) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9303) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9322) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(9323) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9323) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9338) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9339) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9352) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9352) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9365) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9365) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9382) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(9383) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9383) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9403) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9403) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9422) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(9423) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9423) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9605) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9605) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9617) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9617) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9717) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(9720) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(9990) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(9990) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10009) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10009) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10028) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10028) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10047) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10047) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10059) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10059) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10072) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10072) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10097) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10097) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10101) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10101) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10110) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10111) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10124) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10124) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10137) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10137) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10154) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(10155) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10155) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10175) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10175) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10194) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(10195) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10195) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10210) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10211) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10224) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10224) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10237) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10237) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10254) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(10255) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10255) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10275) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10275) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10294) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(10295) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10295) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10492) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10492) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10504) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10504) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10585) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10585) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10651) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10651) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10812) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10812) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10812) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10813) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10817) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10817) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10817) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10818) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10822) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10822) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10822) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10823) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10827) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10827) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10827) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10828) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10832) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10832) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10832) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10833) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10837) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10837) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10837) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10838) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10842) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10842) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10842) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10843) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10847) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10847) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10847) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10847) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10852) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10852) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10852) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10852) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10857) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10857) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10857) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10857) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10862) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10862) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10862) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10863) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10867) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10867) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10867) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10868) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10872) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10872) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10872) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10873) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10877) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10877) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10877) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10878) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10882) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10882) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10882) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10883) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10887) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10887) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10887) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10888) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10892) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10892) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10892) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10893) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10897) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10897) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10897) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10898) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10902) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10902) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10902) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10903) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10907) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10907) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10907) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10908) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(10945) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(10948) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(11218) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11218) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11237) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11237) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11256) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11256) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11275) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11275) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11287) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11287) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11300) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11300) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11325) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11325) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11329) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11329) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11338) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11339) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11352) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11352) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11365) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11365) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11381) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(11382) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11382) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11402) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11402) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11421) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(11422) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11422) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11437) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11438) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11451) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11451) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11464) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11464) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11480) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(11481) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11481) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11501) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11501) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11520) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(11521) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11521) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11689) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(11689) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12184) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(12187) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(12457) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12457) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12476) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12476) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12495) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12495) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12514) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12514) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12526) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12526) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12539) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12539) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12564) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12564) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12568) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12568) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12577) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12578) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12591) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12591) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12604) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12604) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12621) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(12622) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12622) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12642) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12642) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12661) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(12662) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12662) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12677) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12678) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12691) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12691) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12704) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12704) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12721) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(12722) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12722) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12742) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12742) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12761) : warning C4133: 'Funktion': Inkompatible Typen - von 'Integer *' zu 'Real *'
+dsmodel.c(12762) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12762) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12914) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+dsmodel.c(12914) : warning C4244: 'Funktion': Konvertierung von 'double' in 'int', m”glicher Datenverlust
+   Bibliothek "dymosim.lib" und Objekt "dymosim.exp" werden erstellt.
+ 
+Successful generation of Dymosim. 
+ 

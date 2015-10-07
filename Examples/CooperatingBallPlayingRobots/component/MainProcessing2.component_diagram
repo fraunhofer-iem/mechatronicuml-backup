@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_QtsT0GwtEeWrT_TGhbgDWg" type="Component" name="MainProcessing2.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_QtxMUGwtEeWrT_TGhbgDWg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_QtxzYGwtEeWrT_TGhbgDWg" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../demonstrator.muml#_S4NmMJe6EeKVX6r_GEFobQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QtxMUWwtEeWrT_TGhbgDWg" x="120" y="24" width="553" height="313"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_QtsT0WwtEeWrT_TGhbgDWg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../demonstrator.muml#_rwtbsJe4EeKIIefjcfllxA"/>
+</notation:Diagram>

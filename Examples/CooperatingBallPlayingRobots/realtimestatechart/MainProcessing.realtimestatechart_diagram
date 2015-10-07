@@ -79,7 +79,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_gmvDomt-EeWj9v6WhQr11w"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../demonstrator.fujaba#_5oizcJvEEeKe1dmyo6HznA"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmuckWt-EeWj9v6WhQr11w" x="680" y="201"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmuckWt-EeWj9v6WhQr11w" x="756" y="189"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_gmvDo2t-EeWj9v6WhQr11w" type="3032" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_gmvDpWt-EeWj9v6WhQr11w" type="5060"/>
@@ -146,7 +146,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_glcqOGt-EeWj9v6WhQr11w"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../demonstrator.fujaba#_ObmBEZvEEeKe1dmyo6HznA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glcDIWt-EeWj9v6WhQr11w" width="1479" height="918"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glcDIWt-EeWj9v6WhQr11w" x="-72" y="60" width="1479" height="918"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../demonstrator.fujaba#_ObmBEJvEEeKe1dmyo6HznA"/>
