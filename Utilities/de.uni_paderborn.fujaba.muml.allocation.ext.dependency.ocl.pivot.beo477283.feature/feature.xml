@@ -135,7 +135,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <requires>
-      <import feature="org.eclipse.ocl.unified.core" version="1.0.1.qualifier" patch="true"/>
+      <import feature="org.eclipse.ocl.unified.core" version="1.0.1.v20150908-1239" patch="true"/>
    </requires>
 
    <plugin
