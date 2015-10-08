@@ -33,7 +33,7 @@
   </rm:searchPath>
 
 <rm:searchPath name="eclipse_mars">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="http://download.eclipse.org/releases/mars?importType=binary" />
     </rm:provider>
 </rm:searchPath>
