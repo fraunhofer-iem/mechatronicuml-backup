@@ -722,20 +722,20 @@
   <categories xmi:id="_rIvYIJ0bEeKe1dmyo6HznA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_sSeAUJ0bEeKe1dmyo6HznA" name="TurnTransmission_Partner_BAT_Info">
       <messageTypes xmi:id="_uofcgJ0bEeKe1dmyo6HznA" name="turn">
-        <parameters xmi:id="_ve3q4J0bEeKe1dmyo6HznA" name="posX" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_2j4lwJ0bEeKe1dmyo6HznA" name="posY" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_5J1UUJ0bEeKe1dmyo6HznA" name="posZ" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_8obiIJ0bEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="__h9UAJ0bEeKe1dmyo6HznA" name="velocity" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_ve3q4J0bEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_2j4lwJ0bEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_5J1UUJ0bEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_8obiIJ0bEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="__h9UAJ0bEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ENX6QJ0cEeKe1dmyo6HznA" name="EventListener_Slave_BAT_Info">
       <messageTypes xmi:id="_HP9hgJ0cEeKe1dmyo6HznA" name="transferBATInfo">
-        <parameters xmi:id="_rGJhsJ0cEeKe1dmyo6HznA" name="posX" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_usG7wJ0cEeKe1dmyo6HznA" name="posY" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_wc5j8J0cEeKe1dmyo6HznA" name="posZ" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_yiySYJ0cEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_1bGjUJ0cEeKe1dmyo6HznA" name="velocity" dataType="_fLFNZJe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_rGJhsJ0cEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_usG7wJ0cEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_wc5j8J0cEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_yiySYJ0cEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_1bGjUJ0cEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ovrtoJ3tEeKiuKmEjvlIFQ" name="TurnTransmission">
