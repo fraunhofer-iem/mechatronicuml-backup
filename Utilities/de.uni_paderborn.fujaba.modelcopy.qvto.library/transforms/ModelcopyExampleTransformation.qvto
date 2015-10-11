@@ -10,9 +10,9 @@ main() {
 }
 
 
-mapping EClass::transform() : EObject inherits OclAny::transform {
+mapping EClass::transform() : EObject {
 	init {
-		result := self.map create();
+		result := self.map ModelcopyLibrary::transform();
 	}
 	
 	-- Here you can do your custom, transformation specific work.
