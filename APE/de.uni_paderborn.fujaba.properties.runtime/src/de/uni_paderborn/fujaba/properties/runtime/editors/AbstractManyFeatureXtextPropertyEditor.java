@@ -25,7 +25,6 @@ import com.google.inject.Injector;
  */
 public abstract class AbstractManyFeatureXtextPropertyEditor extends AbstractXtextPropertyEditor {
 
-	private int saving = 0;
 	private int updating = 0;
 	private EStructuralFeature rootListFeature;
 	private EFactory rootFactory;
@@ -82,20 +81,10 @@ public abstract class AbstractManyFeatureXtextPropertyEditor extends AbstractXte
 
 	@Override
 	protected void save(String text) {
-		saving++;
-		try {
-			if (text == null || text.isEmpty())
-				setList(null);
-			else
-				setList(toList(parse(text)));
-		} finally {
-			saving--;
-		}
-	}
-
-	@Override
-	protected boolean isSaving() {
-		return saving > 0;
+		if (text == null || text.isEmpty())
+			setList(null);
+		else
+			setList(toList(parse(text)));
 	}
 
 	@Override

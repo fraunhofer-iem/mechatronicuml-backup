@@ -219,13 +219,7 @@ public abstract class AbstractXtextPropertyEditor extends
 	 * @param text the string that should be parsed
 	 */
 	protected abstract void save(String text);
-	
-	/**
-	 * Checks if the editor's text is currently saved.
-	 * @return true if the editor's text is saved.
-	 */
-	protected abstract boolean isSaving();
-	
+		
 	/**
 	 * Updates the editor's text with the serialized
 	 * model's text.
@@ -266,15 +260,19 @@ public abstract class AbstractXtextPropertyEditor extends
 	@Override
 	public void refresh() {
 		super.refresh();
-		if (!isSaving()) {
+		if (!hasFocus()) {
 			updateText();
-		};
+		}
 	}
 	
+	private boolean hasFocus() {
+		return embeddedXtextEditor != null && embeddedXtextEditor.getViewer().getTextWidget().isFocusControl();
+	}
+
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		if (!isSaving()) {
+		if (!hasFocus()) {
 			updateText();
 		}
 	}

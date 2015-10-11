@@ -17,7 +17,6 @@ import com.google.inject.Injector;
 public abstract class AbstractSingleFeatureXtextPropertyEditor extends
 		AbstractXtextPropertyEditor {
 	
-	private int saving = 0;
 	private int updating = 0;
 
 	public AbstractSingleFeatureXtextPropertyEditor(
@@ -66,22 +65,12 @@ public abstract class AbstractSingleFeatureXtextPropertyEditor extends
 	
 	@Override
 	protected void save(String text) {
-		saving++;
-		try {
-			if (text == null || text.isEmpty()) {
-				setSingleValue(null);
-			} else {
-				EObject model = parse(text);
-				setSingleValue(model);
-			}
-		} finally {
-			saving--;
+		if (text == null || text.isEmpty()) {
+			setSingleValue(null);
+		} else {
+			EObject model = parse(text);
+			setSingleValue(model);
 		}
-	}
-
-	@Override
-	protected boolean isSaving() {
-		return saving > 0;
 	}
 
 	@Override
