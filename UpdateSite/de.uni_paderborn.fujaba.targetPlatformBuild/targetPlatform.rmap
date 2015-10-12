@@ -17,13 +17,13 @@
             <rm:uri format="http://download.eclipse.org/technology/epp/packages/mars" />
         </rm:provider>
     </rm:searchPath>
-    <rm:searchPath name="luna-releases">
+    <rm:searchPath name="mars-releases">
         <rm:provider componentTypes="osgi.bundle,eclipse.feature"
             readerType="p2" source="false" mutable="false">
             <rm:uri format="http://download.eclipse.org/releases/mars" />
         </rm:provider>
     </rm:searchPath>
-    <rm:searchPath name="luna-updates">
+    <rm:searchPath name="mars-updates">
         <rm:provider componentTypes="osgi.bundle,eclipse.feature"
             readerType="p2" source="false" mutable="false">
             <rm:uri format="http://download.eclipse.org/eclipse/updates/4.5" />
@@ -39,7 +39,7 @@
 
     <rm:locator searchPathRef="local" failOnError="false" />
     <rm:locator searchPathRef="epp" failOnError="false" />
-    <rm:locator searchPathRef="luna-releases" failOnError="false" />
-    <rm:locator searchPathRef="luna-updates" failOnError="false" />
+    <rm:locator searchPathRef="mars-releases" failOnError="false" />
+    <rm:locator searchPathRef="mars-updates" failOnError="false" />
      <rm:locator searchPathRef="emf-compare" failOnError="true" />
 </rm:rmap>
