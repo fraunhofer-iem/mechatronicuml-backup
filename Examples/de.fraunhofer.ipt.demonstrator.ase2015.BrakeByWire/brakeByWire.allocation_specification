@@ -88,7 +88,7 @@ brakeByWireAllocationSpecification {
 			let ecuNames : Set(String) = self.sensorActuatorMapping(componentName)
 			in
 			if ecuNames->isEmpty() then
-				self.getAllHWInstances()->collect(name)
+				self.getAllHWInstances()->collect(name)->asSet()
 			else
 				ecuNames
 			endif
