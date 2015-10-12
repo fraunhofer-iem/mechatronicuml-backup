@@ -78,7 +78,7 @@
 
 	[/if]
 	[if (component.ports.eAllContents(HybridPort)->size() > 0)]
-		#include "[if (useSubDir)]continuousComponents/[/if]ContImplementations.h"	
+		#include "[if (useSubDir)]../[/if][getFileName4ContinuousImpl(false, useSubDir)/]"	
 	[/if]
 
 	[if (component.oclIsKindOf(AtomicComponent))]

@@ -18,7 +18,7 @@
 
 RTSC = [for (comp : Component | CIs.componentType->asSet())][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 COMP = [for (comp : Component | CIs.componentType->asSet())][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
-LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]ContImplementations.o[/if] port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o
+LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]contImplementations.o[/if] port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o
 MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 CC = gcc
 CFLAGS = -c
@@ -37,8 +37,8 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType
 	$(CC) $(CFLAGS) [comp.getFileName(false,useSubDir)/]
 [/for]
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-ContImplementations.o: [if (useSubDir)]continuousComponents/[/if]ContImplementations.c
-	$(CC) $(CFLAGS) [if (useSubDir)]continuousComponents/[/if]ContImplementations.c
+contImplementations.o: [if (useSubDir)]continuousComponents/[/if][getFileName4ContinuousImpl(false, useSubDir)/]
+	$(CC) $(CFLAGS) [if (useSubDir)]continuousComponents/[/if][getFileName4ContinuousImpl(false, useSubDir)/]
 [/if]
 port.o: [if (useSubDir)]lib/[/if]port.c
 	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]port.c
