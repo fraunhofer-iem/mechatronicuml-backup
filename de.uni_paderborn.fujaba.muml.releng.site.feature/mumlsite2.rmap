@@ -3,7 +3,6 @@
   <rm:locator searchPathRef="default" failOnError="false"/>
   <rm:locator pattern="^de\.upb\.swt\.qvt(\..+)?" searchPathRef="tgg" failOnError="false"/>
   <rm:locator pattern="^com\.tools\.logging(\..+)?" searchPathRef="tgg" failOnError="false"/>
-  <rm:locator pattern="^com\.tools\.logging(\..+)?" searchPathRef="tgg" failOnError="false"/>
   <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
 
   <rm:searchPath name="default">
