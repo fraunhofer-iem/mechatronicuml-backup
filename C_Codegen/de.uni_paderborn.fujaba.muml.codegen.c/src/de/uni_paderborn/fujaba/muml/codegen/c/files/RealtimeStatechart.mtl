@@ -607,7 +607,7 @@ if (0){
 	[exitAction(component, rtsc, state)/]
 	[for (innerReg : Region | state.getInnerRegions())]
 		[getExitMethodName(innerReg)/](stateChart);
-		stateChart->[getVariableName(innerReg)/] = INACTIVE;
+		stateChart->[getVariableName(innerReg)/] = [rtsc.getQualifiedName().toUpperCase()/]_INACTIVE;
 	[/for]
 
 [/template]
