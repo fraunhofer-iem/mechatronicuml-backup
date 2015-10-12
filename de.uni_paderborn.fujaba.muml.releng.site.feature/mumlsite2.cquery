@@ -3,6 +3,6 @@
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
-    <cq:advisorNode namePattern="^org\.eclipse\.ocl\.pivot$" versionOverride="1.0.1.qualifier"/>
+    <cq:advisorNode namePattern="^org\.eclipse\.ocl\.pivot$" versionOverride="1.0.1.201510121028"/>
     <cq:advisorNode namePattern=".*" useMaterialization="false" useTargetPlatform="false"/>
 </cq:componentQuery>
