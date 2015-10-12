@@ -77,7 +77,7 @@
 		#include "[if (useSubDir)]../messages/[/if]Messages.h"
 
 	[/if]
-	[if (component.ports.eAllContents(HybridPort)->size() > 0)]
+	[if (component.eAllContents(HybridPort)->size() > 0)]
 		#include "[if (useSubDir)]../[/if][getFileName4ContinuousImpl(false, useSubDir)/]"	
 	[/if]
 
