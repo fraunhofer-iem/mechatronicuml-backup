@@ -465,7 +465,7 @@ printDebugInformation("[getVariableName(targetRTSC)/] switched state to [getName
 				}
 			}
 			else
-		[else]
+		[elseif ((partnerTransition.synchronization.kind = SynchronizationKind::RECEIVE) and (transition.synchronization.kind = SynchronizationKind::SEND))]
 			if ((stateChart->[partnerTransition.statechart.getExecutionVerifierName()/]) &&(stateChart->[getVariableName(partnerTransition.statechart)/] == [partnerTransition.source.oclAsType(State).getName()/])){
 				if ([transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), partnerTransition)/] && [transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), transition)/]){
 					[transition(component, transition)/]
