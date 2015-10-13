@@ -48,7 +48,6 @@
 	
 			[destroy(component)/]
 		
-			[isTerminated(component)/]
 			
 			[processStep(component)/]
 		
