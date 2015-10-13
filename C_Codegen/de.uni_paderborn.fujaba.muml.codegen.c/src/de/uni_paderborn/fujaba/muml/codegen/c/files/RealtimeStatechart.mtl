@@ -72,48 +72,48 @@
 [template private initialize (rtsc : RealtimeStatechart) post(cdtbeautifier())]
 	
 	[for (region: Region | rtsc.eAllContents(Region))]
-		 		[let firstState : State = region.embeddedStatechart.getInitalState()]
+		 [let firstState : State = region.embeddedStatechart.getInitalState()]
 			[if not (region.embeddedStatechart.oclIsUndefined())]
 				void [getInitializeMethodName(region)/]([getSuperClassName(rtsc)/]* stateChart) {
-				[comment Member variables for the clocks of each region. /]
-				[for (clock : Clock | region.embeddedStatechart.clocks->collect(oclAsType(Clock)))]
-					Clock_reset(stateChart->[getVariableName(clock)/]);
-				[/for]
+					[comment Member variables for the clocks of each region. /]
+					[for (clock : Clock | region.embeddedStatechart.clocks->collect(oclAsType(Clock)))]
+						Clock_reset(stateChart->[getVariableName(clock)/]);
+					[/for]
 
 			
-				[for (state : State | region.embeddedStatechart.states) ? (not state.doEvent.oclIsUndefined())]					
-					Clock_reset(stateChart->[getClockVariableName(state)/]);
-				[/for]
-				[comment Member variables for the variables of each region. /]	
-				[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]				
-					[if (variable.dataType.oclIsKindOf(StructureDataType))]
-						[variable.initializeExpression.generateExpression('')/]
-					[else]
-				[comment @TODO array data types are currently not initilized/]
-				[if (variable.dataType.oclIsKindOf(PrimitiveDataType))]
-						[getDefaultValue(variable, 'stateChart->')/];
-				[/if]
-					[/if]	
-				[/for]
-			[if rtsc.oclIsKindOf(ParameterizedRealtimeStatechart)]
-				[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable))]	
-			[getDefaultValue(variable,'stateChart->')/];			
-	[/for]
-			[/if]
+					[for (state : State | region.embeddedStatechart.states) ? (not state.doEvent.oclIsUndefined())]					
+						Clock_reset(stateChart->[getClockVariableName(state)/]);
+					[/for]
+					[comment Member variables for the variables of each region. /]	
+					[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]				
+						[if (variable.dataType.oclIsKindOf(StructureDataType))]
+							[variable.initializeExpression.generateExpression('')/]
+						[/if]
+
+						[comment @TODO array data types are currently not initilized/]
+						[if (variable.dataType.oclIsKindOf(PrimitiveDataType))]
+							stateChart->[variable.getVariableName()/] = [getDefaultValue(variable, 'stateChart->')/];
+						[/if]	
+					[/for]
+					[if rtsc.oclIsKindOf(ParameterizedRealtimeStatechart)]
+						[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable))]	
+								[getDefaultValue(variable,'stateChart->')/];			
+						[/for]
+					[/if]
 			
 			[else]
-				static void [getInitializeMethodName(region)/]([getSuperClassName(rtsc)/]* stateChart) {
+					static void [getInitializeMethodName(region)/]([getSuperClassName(rtsc)/]* stateChart) {
 			[/if]
-				stateChart->[getVariableName(region)/] = [getName(firstState)/];
-
-				[entryActions(rtsc, firstState)/]
-
-				[for (innerRegion : Region | firstState.embeddedRegions)]
-					[getInitializeMethodName(innerRegion)/](stateChart);
-				[/for]
-			stateChart->[region.embeddedStatechart.getExecutionVerifierName()/] = true;
-
-			}
+					stateChart->[getVariableName(region)/] = [getName(firstState)/];
+	
+					[entryActions(rtsc, firstState)/]
+	
+					[for (innerRegion : Region | firstState.embeddedRegions)]
+						[getInitializeMethodName(innerRegion)/](stateChart);
+					[/for]
+				stateChart->[region.embeddedStatechart.getExecutionVerifierName()/] = true;
+	
+				}
  		[/let]
 	[/for]
 
@@ -355,8 +355,8 @@ printDebugInformation("[component.getQualifiedName()/] received message of type[
 				//send Message
 				MW_sendMessage(MW_getTargetPortIDforIdentifier(stateChart->parentComponent->[getVariableName(getPortForRegion(transition.statechart.parentRegion))/]->ID),[msg.instanceOf.getIdentifierVariableName()/],[if msg.instanceOf.parameters->size() > 0] msg[else]NULL[/if]);
 				#ifdef DEBUG
-printDebugInformation("[component.getQualifiedName()/] sent message of type [msg.instanceOf.getIdentifierVariableName()/]");
-#endif		
+				printDebugInformation("[component.getQualifiedName()/] sent message of type [msg.instanceOf.getIdentifierVariableName()/]");
+				#endif		
 [/for]
 
 		[else]

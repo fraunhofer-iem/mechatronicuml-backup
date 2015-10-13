@@ -419,6 +419,15 @@
 if ([generateExpression(expression.ifCondition, fqname) /]){
 	[generateExpression(expression.ifBlock, fqname) /]
 }
+[if expression.elseIfBlocks->size() > 0/]
+[for (elseifExp : Expression | expression.elseIfBlocks)]
+else if ([expression.elseIfConditions->at(i).generateExpression(fqname)/]){
+[generateExpression(expression.elseIfBlocks->at(i), fqname)/]
+}
+[/for]
+[if/]
+
+
 [if not expression.elseBlock.oclIsUndefined()]
 else {
 	[generateExpression(expression.elseBlock, fqname) /]

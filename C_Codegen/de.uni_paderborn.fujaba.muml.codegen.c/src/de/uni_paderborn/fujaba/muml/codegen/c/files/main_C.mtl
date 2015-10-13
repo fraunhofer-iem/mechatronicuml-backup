@@ -39,8 +39,8 @@
 
 #include "[if (useSubDir)]lib/[/if]Debug.h"
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-#include "[if (useSubDir)]continuousComponents/[/if]ContImplementations.h"
-[/if]
+		#include "[getFileName4ContinuousImpl(true, useSubDir)/]"	
+	[/if]
 //including all files for used Components
 		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
