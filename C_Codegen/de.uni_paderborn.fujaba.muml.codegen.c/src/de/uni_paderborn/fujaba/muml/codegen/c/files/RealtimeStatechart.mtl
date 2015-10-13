@@ -27,29 +27,17 @@
 [template public generate_RTSC(component : Component, rtsc : RealtimeStatechart, path : String, useSubDir: Boolean) post(cdtbeautifier())]
 	[file (path+getFileName(rtsc, false, useSubDir), false, 'UTF-8')]
 
-		////////////////////////////////////////////////////////////////////////////////
-		// Includes
-		////////////////////////////////////////////////////////////////////////////////
+
 		[includes(rtsc, component, useSubDir)/]
 
 
-		////////////////////////////////////////////////////////////////////////////////
-		// Initialization
-		////////////////////////////////////////////////////////////////////////////////
+
 		[initialize(rtsc)/]
 
-		////////////////////////////////////////////////////////////////////////////////
-		// Construction and destruction
-		////////////////////////////////////////////////////////////////////////////////
 		[constructor(component, rtsc)/]
 
 		[destroy(component, rtsc)/]
-	
-		////////////////////////////////////////////////////////////////////////////////
-		// Processing the statechart
-		////////////////////////////////////////////////////////////////////////////////
-	
-		[comment verifySyncChannel(component, rtsc)/]
+
 
 		
 		[process(component, rtsc)/]
@@ -420,7 +408,7 @@ printDebugInformation("[getVariableName(targetRTSC)/] switched state to [getName
 		[transition(component, t)/]		
 		[/for]
 	[elseif (target.oclIsTypeOf(ExitPoint))]
-		[exitAction(component, rtsc, targetParentState)/]
+		[exitActionRecursive(component, rtsc, target.oclAsType(ExitPoint).state)/]
 		[transition(component, target.outgoingTransitions->first())/]
 	[/if]
 
@@ -607,7 +595,7 @@ if (0){
 	[exitAction(component, rtsc, state)/]
 	[for (innerReg : Region | state.getInnerRegions())]
 		[getExitMethodName(innerReg)/](stateChart);
-		stateChart->[getVariableName(innerReg)/] = [rtsc.getQualifiedName().toUpperCase()/]_INACTIVE;
+		stateChart->[getVariableName(innerReg)/] = [getStateInactiveString(rtsc)/]
 	[/for]
 
 [/template]
@@ -629,6 +617,7 @@ if (0){
 				[/for]
 				default: break;
 			}
+			stateChart->[getVariableName(region)/] = [getStateInactiveString(rtsc)/]
 		}
 	[/for]
 [/template]

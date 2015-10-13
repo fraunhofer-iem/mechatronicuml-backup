@@ -49,7 +49,6 @@
 	[exit(rtsc)/]
 			
 	[isInState(rtsc)/]
-	[isTerminated(rtsc)/]
 
 
 #ifdef __cplusplus
@@ -252,14 +251,6 @@ struct [getClassName(rtsc)/] {
  */	
 	bool_t [getIsInStateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc, [getClassName(rtsc, true)/] state);
 [/template]
-[template private isTerminated (rtsc : RealtimeStatechart) post(trim())]
-/**
- * @brief Checks if the execution of the Realtime-StateChart: [rtsc.getName()/]  is terminated
- * 
- * @param rtsc The specific Realtime-StateChart: [rtsc.getClassName()/]
- * @return Always True
- */
-	bool_t [getTerminateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
-[/template]
+
 
 
