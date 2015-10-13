@@ -78,7 +78,7 @@
 
 	[/if]
 	[if (component.eAllContents(HybridPort)->size() > 0)]
-		#include "[if (useSubDir)]../[/if][getFileName4ContinuousImpl(false, useSubDir)/]"	
+		#include "[if (useSubDir)]../[/if][getFileName4ContinuousImpl(true, useSubDir)/]"	
 	[/if]
 
 	[if (component.oclIsKindOf(AtomicComponent))]
