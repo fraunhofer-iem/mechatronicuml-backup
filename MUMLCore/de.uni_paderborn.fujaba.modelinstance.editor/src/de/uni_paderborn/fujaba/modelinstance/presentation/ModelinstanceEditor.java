@@ -717,7 +717,10 @@ public class ModelinstanceEditor
 									  setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 								  }
 								  if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-									  propertySheetPage.refresh();
+									  // Added guard for MUML #1156
+									  if (propertySheetPage.getCurrentTab() != null) {
+										  propertySheetPage.refresh();
+									  }
 								  }
 							  }
 						  });
