@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 
@@ -28,21 +29,25 @@ public class CustomAbstractCoordinationSpecificationUpdateEditPolicy extends
 
 	@Override
 	protected void addListeners() {
-		AbstractCoordinationSpecification acs = (AbstractCoordinationSpecification) getSemanticElement();
-		RoleConnector connector = acs.getRoleConnector();
-		if (connector != null) {
-			this.addNotificationListener(connector);
-		}
-
-		addNotificationListener(acs);
-		for (Role role : acs.getRoles()) {
-			if (role != null)
-				addNotificationListener(role);
-		}
-		ConnectorQualityOfServiceAssumptions quosa = acs
-				.getGmfConnectorQualityOfServiceAssumptions();
-		if (quosa != null) {
-			addNotificationListener(quosa);
+		EObject semanticElement = getSemanticElement();
+		if (semanticElement instanceof AbstractCoordinationSpecification) {
+			AbstractCoordinationSpecification acs = (AbstractCoordinationSpecification) getSemanticElement();
+			
+			RoleConnector connector = acs.getRoleConnector();
+			if (connector != null) {
+				this.addNotificationListener(connector);
+			}
+	
+			addNotificationListener(acs);
+			for (Role role : acs.getRoles()) {
+				if (role != null)
+					addNotificationListener(role);
+			}
+			ConnectorQualityOfServiceAssumptions quosa = acs
+					.getGmfConnectorQualityOfServiceAssumptions();
+			if (quosa != null) {
+				addNotificationListener(quosa);
+			}
 		}
 	}
 
