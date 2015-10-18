@@ -26,9 +26,11 @@ public abstract class AbstractRTSCLabelParser {
 			}
 			if (var.getDataType() != null) {
 				sbVariables.append(var.getDataType().getName());
+				sbVariables.append(' ');
 			}
-			sbVariables.append(" ");
-			sbVariables.append(var.getName());
+			if (var.getName() != null) {
+				sbVariables.append(var.getName());
+			}
 			if (var.getInitializeExpression() != null) {
 				sbVariables.append(":=");
 				sbVariables.append(ParserUtilities.serializeExpression(
@@ -44,8 +46,8 @@ public abstract class AbstractRTSCLabelParser {
 			}
 			if (op.getReturnType() != null) {
 				sbOperations.append(op.getReturnType().getName());
+				sbOperations.append(' ');
 			}
-			sbOperations.append(" ");
 			sbOperations.append(op.getName());
 			sbOperations.append("(");
 			EList<Parameter> parameterList = op.getParameters();
@@ -56,6 +58,7 @@ public abstract class AbstractRTSCLabelParser {
 				}
 				if (par.getDataType() != null) {
 					sbParameter.append(par.getDataType().getName());
+					sbParameter.append(' ');
 				}
 				sbParameter.append(par.getName());
 			}
@@ -74,18 +77,18 @@ public abstract class AbstractRTSCLabelParser {
 
 		StringBuilder sbFinalString = new StringBuilder();
 		if (sbVariables.length() != 0) {
-			sbFinalString.append("variable:");
+			sbFinalString.append("variable: ");
 			sbFinalString.append(sbVariables.toString());
 			sbFinalString.append(";\n");
 		}
 		if (sbOperations.length() != 0) {
-			sbFinalString.append("operation:");
+			sbFinalString.append("operation: ");
 			sbFinalString.append(sbOperations.toString());
 			sbFinalString.append(";\n");
 		}
 
 		if (sbClocks.length() != 0) {
-			sbFinalString.append("clock:");
+			sbFinalString.append("clock: ");
 			sbFinalString.append(sbClocks.toString());
 			sbFinalString.append(";\n");
 		}
