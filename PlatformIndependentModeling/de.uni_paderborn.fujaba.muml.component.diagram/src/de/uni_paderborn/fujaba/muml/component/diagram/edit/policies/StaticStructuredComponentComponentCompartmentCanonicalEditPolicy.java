@@ -39,8 +39,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
-		extends CanonicalEditPolicy {
+public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
@@ -60,8 +59,7 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	public StaticStructuredComponentComponentCompartmentCanonicalEditPolicy(
-			boolean canonicalNodes) {
+	public StaticStructuredComponentComponentCompartmentCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
 
@@ -105,12 +103,10 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-							.getStructuredComponent_EmbeddedComponentParts());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-							.getStructuredComponent_CoordinationProtocolParts());
+			myFeaturesToSynchronize.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getStructuredComponent_EmbeddedComponentParts());
+			myFeaturesToSynchronize.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getStructuredComponent_CoordinationProtocolParts());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -144,17 +140,15 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] {
-								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID });
+				List<Integer> visualIDs = Arrays.asList(new Integer[] {
+						de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(childElement,
+							visualID));
 					continue;
 				}
 			}
@@ -171,18 +165,15 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view);
+		int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID
 				|| visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID;
 	}
@@ -211,8 +202,7 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
 		for (Iterator<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor next = descriptorsIterator
-					.next();
+			de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor next = descriptorsIterator.next();
 			String hint = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
@@ -220,8 +210,7 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -245,11 +234,9 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 		for (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor next : childDescriptors) {
 			String hint = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -258,10 +245,10 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -270,8 +257,8 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

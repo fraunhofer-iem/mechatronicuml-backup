@@ -24,8 +24,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class MumlSheetLabelProvider extends BaseLabelProvider implements
-		ILabelProvider {
+public class MumlSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -53,8 +52,7 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes
-						.getImage(etype);
+				: de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.getImage(etype);
 	}
 
 	/**
@@ -86,15 +84,13 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view);
+			int vid = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.getVisualID(view);
 			IElementType etype = de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes
 					.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

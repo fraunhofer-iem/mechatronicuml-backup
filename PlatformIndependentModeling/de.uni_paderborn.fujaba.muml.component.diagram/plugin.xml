@@ -422,9 +422,9 @@ Contributors:
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
          <context elements="ModelElementCategory_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfAtomicComponentEditPart">
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfStaticAtomicComponentEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart" id="StaticAtomicComponent_2006"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart" id="StaticAtomicComponent_2006"/>
          <context elements="StaticAtomicComponent_2006"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfStaticStructuredComponentEditPart">
@@ -498,7 +498,7 @@ Contributors:
                name="%metatype.name.StaticAtomicComponent_2006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StaticAtomicComponent"
-               edithelper="de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.AtomicComponentEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.StaticAtomicComponentEditHelper">
             <param name="semanticHint" value="2006"/>
          </metamodelType>
       </metamodel>

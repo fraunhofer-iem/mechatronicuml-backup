@@ -24,8 +24,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortPartCoordinationProtocolPartCreateCommand extends
-		EditElementCommand {
+public class PortPartCoordinationProtocolPartCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -40,8 +39,8 @@ public class PortPartCoordinationProtocolPartCreateCommand extends
 	/**
 	 * @generated
 	 */
-	public PortPartCoordinationProtocolPartCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public PortPartCoordinationProtocolPartCreateCommand(CreateRelationshipRequest request, EObject source,
+			EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -54,8 +53,7 @@ public class PortPartCoordinationProtocolPartCreateCommand extends
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.component.PortPart) {
+		if (source != null && false == source instanceof de.uni_paderborn.fujaba.muml.component.PortPart) {
 			return false;
 		}
 		if (target != null
@@ -72,15 +70,12 @@ public class PortPartCoordinationProtocolPartCreateCommand extends
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canCreatePortPartCoordinationProtocolPart_4004(getSource(),
-						getTarget(), sourceView, targetView)) {
+				.canCreatePortPartCoordinationProtocolPart_4004(getSource(), getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorPortPartCoordinationProtocolPart_4004(getSource(),
-							getTarget(), sourceView, targetView);
+					.getErrorPortPartCoordinationProtocolPart_4004(getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -89,11 +84,9 @@ public class PortPartCoordinationProtocolPartCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

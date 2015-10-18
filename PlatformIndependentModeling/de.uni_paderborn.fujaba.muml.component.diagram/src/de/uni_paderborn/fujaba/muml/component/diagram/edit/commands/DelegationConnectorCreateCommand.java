@@ -48,8 +48,7 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public DelegationConnectorCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target) {
+	public DelegationConnectorCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		de.uni_paderborn.fujaba.muml.component.StructuredComponent container = null;
 		this.source = source;
@@ -73,12 +72,10 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+		if (source != null && false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+		if (target != null && false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -93,16 +90,13 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateDelegationConnector_4002(
-						getContainer(), getSource(), getTarget(), sourceView,
-						targetView)) {
+				.getLinkConstraints()
+				.canCreateDelegationConnector_4002(getContainer(), getSource(), getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorDelegationConnector_4002(
-							getContainer(), getSource(), getTarget(),
-							sourceView, targetView);
+					.getLinkConstraints()
+					.getErrorDelegationConnector_4002(getContainer(), getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -111,11 +105,9 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		de.uni_paderborn.fujaba.muml.component.DelegationConnector newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
@@ -132,23 +124,15 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.component.DelegationConnector newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+	protected void doConfigure(de.uni_paderborn.fujaba.muml.component.DelegationConnector newElement,
+			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE,
-				getSource());
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET,
-				getTarget());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
@@ -187,13 +171,12 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.component.StructuredComponent deduceContainer(
-			EObject source, EObject target) {
+	private static de.uni_paderborn.fujaba.muml.component.StructuredComponent deduceContainer(EObject source,
+			EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element
-				.eContainer()) {
+		for (EObject element = source; element != null; element = element.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
 				return (de.uni_paderborn.fujaba.muml.component.StructuredComponent) element;
 			}
@@ -206,13 +189,11 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.component.StructuredComponent deduceContainerUsingViews(
-			View sourceView, View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
+	private static de.uni_paderborn.fujaba.muml.component.StructuredComponent deduceContainerUsingViews(View sourceView,
+			View targetView) {
+		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
 			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
-				return (de.uni_paderborn.fujaba.muml.component.StructuredComponent) view
-						.getElement();
+				return (de.uni_paderborn.fujaba.muml.component.StructuredComponent) view.getElement();
 			}
 		}
 		return null;

@@ -25,8 +25,7 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 /**
  * @generated
  */
-public class MumlPropertySection extends DefaultPropertySection implements
-		IPropertySourceProvider {
+public class MumlPropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
 	 * Modify/unwrap selection.
@@ -46,15 +45,11 @@ public class MumlPropertySection extends DefaultPropertySection implements
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
 			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-							true);
+					.getInstance().getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, true);
 			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-							false);
+					.getInstance().getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, false);
 
 			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
@@ -73,8 +68,7 @@ public class MumlPropertySection extends DefaultPropertySection implements
 		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
 			return (AdapterFactoryEditingDomain) getEditingDomain();
 		}
-		return (AdapterFactoryEditingDomain) TransactionUtil
-				.getEditingDomain(object);
+		return (AdapterFactoryEditingDomain) TransactionUtil.getEditingDomain(object);
 	}
 
 }

@@ -105,34 +105,26 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ComponentPartItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ComponentPartCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -150,8 +142,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -187,16 +178,14 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart) {
-			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart) {
+			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			getBorderedFigure().getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
@@ -208,12 +197,11 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
+			getBorderedFigure().getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) childEditPart)
 							.getFigure());
 			return true;
@@ -258,10 +246,10 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -356,7 +344,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -396,8 +384,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			aux10.setFill(false);
 			aux10.setOutline(false);
-			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
+			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
 					getMapMode().DPtoLP(0)));
 
 			this.add(aux10);
@@ -411,18 +398,16 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureInnerRectContainer.setFill(false);
 			fFigureInnerRectContainer.setOutline(false);
-			fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(8), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(3)));
+			fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(3)));
 
 			this.add(fFigureInnerRectContainer);
 			fFigureInnerRectContainer.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentFigure1 = new RectangleFigure();
 
-			componentFigure1.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
+			componentFigure1.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			fFigureInnerRectContainer.add(componentFigure1);
 			componentFigure1.setLayoutManager(new StackLayout());
@@ -437,15 +422,13 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			GridLayout layoutFFigureComponentIconRectangle = new GridLayout();
 			layoutFFigureComponentIconRectangle.numColumns = 1;
 			layoutFFigureComponentIconRectangle.makeColumnsEqualWidth = false;
-			fFigureComponentIconRectangle
-					.setLayoutManager(layoutFFigureComponentIconRectangle);
+			fFigureComponentIconRectangle.setLayoutManager(layoutFFigureComponentIconRectangle);
 
 			RectangleFigure componentIconFigure3 = new RectangleFigure();
 
 			componentIconFigure3.setFill(false);
 			componentIconFigure3.setOutline(false);
-			componentIconFigure3.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(20), getMapMode().DPtoLP(20)));
+			componentIconFigure3.setPreferredSize(new Dimension(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
 
 			GridData constraintComponentIconFigure3 = new GridData();
 			constraintComponentIconFigure3.verticalAlignment = GridData.BEGINNING;
@@ -455,8 +438,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure3.verticalSpan = 1;
 			constraintComponentIconFigure3.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure3.grabExcessVerticalSpace = false;
-			fFigureComponentIconRectangle.add(componentIconFigure3,
-					constraintComponentIconFigure3);
+			fFigureComponentIconRectangle.add(componentIconFigure3, constraintComponentIconFigure3);
 
 			componentIconFigure3.setLayoutManager(new StackLayout());
 
@@ -470,9 +452,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure b15 = new RectangleFigure();
 
-			componentIconOuter4.add(b15, new Rectangle(getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(16),
-					getMapMode().DPtoLP(20)));
+			componentIconOuter4.add(b15, new Rectangle(getMapMode().DPtoLP(4), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(16), getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner14 = new RectangleFigure();
 
@@ -484,9 +465,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure c15 = new RectangleFigure();
 
-			componentIconInner14.add(c15, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+			componentIconInner14.add(c15, new Rectangle(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner24 = new RectangleFigure();
 
@@ -498,9 +478,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure d15 = new RectangleFigure();
 
-			componentIconInner24.add(d15, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+			componentIconInner24.add(d15, new Rectangle(getMapMode().DPtoLP(0), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(6)));
 
 			// Process FigureRef details
 
@@ -516,8 +495,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			GridLayout layoutComponentNameRectangle2 = new GridLayout();
 			layoutComponentNameRectangle2.numColumns = 1;
 			layoutComponentNameRectangle2.makeColumnsEqualWidth = false;
-			componentNameRectangle2
-					.setLayoutManager(layoutComponentNameRectangle2);
+			componentNameRectangle2.setLayoutManager(layoutComponentNameRectangle2);
 
 			fFigureComponentNameFigure = new WrappingLabel();
 
@@ -533,8 +511,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureComponentNameFigure.verticalSpan = 1;
 			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;
-			componentNameRectangle2.add(fFigureComponentNameFigure,
-					constraintFFigureComponentNameFigure);
+			componentNameRectangle2.add(fFigureComponentNameFigure, constraintFFigureComponentNameFigure);
 
 			// Process FigureRef details
 
@@ -568,8 +545,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECOMPONENTNAMEFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGURECOMPONENTNAMEFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

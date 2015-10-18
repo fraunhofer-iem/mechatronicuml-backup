@@ -15,7 +15,5 @@ package de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers;
 /**
  * @generated
  */
-public class PortPartEditHelper
-		extends
-		de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper {
+public class PortPartEditHelper extends de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper {
 }

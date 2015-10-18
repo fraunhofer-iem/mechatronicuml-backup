@@ -25,8 +25,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortPartCoordinationProtocolPartReorientCommand extends
-		EditElementCommand {
+public class PortPartCoordinationProtocolPartReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -51,8 +50,7 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public PortPartCoordinationProtocolPartReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public PortPartCoordinationProtocolPartReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -80,7 +78,8 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart && newEnd instanceof de.uni_paderborn.fujaba.muml.component.PortPart)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.component.PortPart)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -88,16 +87,12 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistPortPartCoordinationProtocolPart_4004(getNewSource(),
-						getOldTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistPortPartCoordinationProtocolPart_4004(getNewSource(), getOldTarget(),
+						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorPortPartCoordinationProtocolPart_4004(
-							getNewSource(), getOldTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints().getErrorPortPartCoordinationProtocolPart_4004(getNewSource(), getOldTarget(),
+							sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -107,7 +102,8 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart && newEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -115,16 +111,12 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistPortPartCoordinationProtocolPart_4004(getOldSource(),
-						getNewTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canExistPortPartCoordinationProtocolPart_4004(getOldSource(), getNewTarget(),
+						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorPortPartCoordinationProtocolPart_4004(
-							getOldSource(), getNewTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView, errorMessage);
+					.getLinkConstraints().getErrorPortPartCoordinationProtocolPart_4004(getOldSource(), getNewTarget(),
+							sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -133,11 +125,9 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

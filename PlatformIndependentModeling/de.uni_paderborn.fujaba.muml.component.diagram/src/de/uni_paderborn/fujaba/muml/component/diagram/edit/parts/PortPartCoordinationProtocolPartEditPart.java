@@ -28,8 +28,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortPartCoordinationProtocolPartEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class PortPartCoordinationProtocolPartEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -71,8 +70,7 @@ public class PortPartCoordinationProtocolPartEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.PortPartCoordinationProtocolPartItemSemanticEditPolicy());
 	}
 
@@ -125,6 +123,18 @@ public class PortPartCoordinationProtocolPartEditPart extends
 			fFigureRolePatternLabel.setText("");
 
 			this.add(fFigureRolePatternLabel);
+
+			PolylineConnectionEx rolePatternFigure0 = new PolylineConnectionEx();
+
+			rolePatternFigure0.setLineStyle(Graphics.LINE_DASH);
+
+			this.add(rolePatternFigure0);
+
+			WrappingLabel rolePatternLabel1 = new WrappingLabel();
+
+			rolePatternLabel1.setText("");
+
+			rolePatternFigure0.add(rolePatternLabel1);
 
 		}
 

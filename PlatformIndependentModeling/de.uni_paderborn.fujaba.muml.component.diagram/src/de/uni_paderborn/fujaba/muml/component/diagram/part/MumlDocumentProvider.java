@@ -71,27 +71,20 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * @generated
  */
-public class MumlDocumentProvider extends AbstractDocumentProvider implements
-		IDiagramDocumentProvider {
+public class MumlDocumentProvider extends AbstractDocumentProvider implements IDiagramDocumentProvider {
 
 	/**
 	 * @generated
 	 */
-	protected ElementInfo createElementInfo(Object element)
-			throws CoreException {
-		if (false == element instanceof IFileEditorInput
-				&& false == element instanceof URIEditorInput) {
-			throw new CoreException(
-					new Status(
-							IStatus.ERROR,
-							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-							0,
-							NLS.bind(
-									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
-									new Object[] {
-											element,
-											"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
-							null));
+	protected ElementInfo createElementInfo(Object element) throws CoreException {
+		if (false == element instanceof IFileEditorInput && false == element instanceof URIEditorInput) {
+			throw new CoreException(new Status(IStatus.ERROR,
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+					NLS.bind(
+							de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+							new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
+									"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
+					null));
 		}
 		IEditorInput editorInput = (IEditorInput) element;
 		IDiagramDocument document = (IDiagramDocument) createDocument(editorInput);
@@ -106,27 +99,21 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 * @generated
 	 */
 	protected IDocument createDocument(Object element) throws CoreException {
-		if (false == element instanceof IFileEditorInput
-				&& false == element instanceof URIEditorInput) {
-			throw new CoreException(
-					new Status(
-							IStatus.ERROR,
-							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-							0,
-							NLS.bind(
-									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
-									new Object[] {
-											element,
-											"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
-							null));
+		if (false == element instanceof IFileEditorInput && false == element instanceof URIEditorInput) {
+			throw new CoreException(new Status(IStatus.ERROR,
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+					NLS.bind(
+							de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+							new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
+									"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
+					null));
 		}
 		IDocument document = createEmptyDocument();
 
 		// Begin added to reuse the EditingDomain if the input element is of type FileEditorInputProxy (see muml bug #252)
 		if (element instanceof FileEditorInputProxy) {
 			FileEditorInputProxy proxy = (FileEditorInputProxy) element;
-			((DiagramDocument) document).setEditingDomain(proxy
-					.getEditingDomain());
+			((DiagramDocument) document).setEditingDomain(proxy.getEditingDomain());
 		}
 		// End added
 
@@ -153,8 +140,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	private long computeModificationStamp(ResourceSetInfo info) {
 		int result = 0;
-		for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-				.hasNext();) {
+		for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 			Resource nextResource = it.next();
 			IFile file = WorkspaceSynchronizer.getFile(nextResource);
 			if (file != null) {
@@ -181,15 +167,12 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 * @generated
 	 */
 	private TransactionalEditingDomain createEditingDomain() {
-		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory
-				.getInstance().createEditingDomain();
-		editingDomain
-				.setID("de.uni_paderborn.fujaba.muml.component.diagram.EditingDomain"); //$NON-NLS-1$
+		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory.getInstance().createEditingDomain();
+		editingDomain.setID("de.uni_paderborn.fujaba.muml.component.diagram.EditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))
-				.and(NotificationFilter.createFeatureFilter(ResourceSet.class,
-						ResourceSet.RESOURCE_SET__RESOURCES));
+				.and(NotificationFilter.createFeatureFilter(ResourceSet.class, ResourceSet.RESOURCE_SET__RESOURCES));
 		editingDomain.getResourceSet().eAdapters().add(new Adapter() {
 
 			private Notifier myTarger;
@@ -223,29 +206,24 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	/**
 	 * @generated
 	 */
-	protected void setDocumentContent(IDocument document, IEditorInput element)
-			throws CoreException {
+	protected void setDocumentContent(IDocument document, IEditorInput element) throws CoreException {
 		IDiagramDocument diagramDocument = (IDiagramDocument) document;
 		TransactionalEditingDomain domain = diagramDocument.getEditingDomain();
 		if (element instanceof IFileEditorInput) {
 			IStorage storage = ((IFileEditorInput) element).getStorage();
-			Diagram diagram = DiagramIOUtil.load(domain, storage, true,
-					getProgressMonitor());
+			Diagram diagram = DiagramIOUtil.load(domain, storage, true, getProgressMonitor());
 			document.setContent(diagram);
 		} else if (element instanceof URIEditorInput) {
 			URI uri = ((URIEditorInput) element).getURI();
 			Resource resource = null;
 			try {
-				resource = domain.getResourceSet().getResource(
-						uri.trimFragment(), false);
+				resource = domain.getResourceSet().getResource(uri.trimFragment(), false);
 				if (resource == null) {
-					resource = domain.getResourceSet().createResource(
-							uri.trimFragment());
+					resource = domain.getResourceSet().createResource(uri.trimFragment());
 				}
 				if (!resource.isLoaded()) {
 					try {
-						Map options = new HashMap(
-								GMFResourceFactory.getDefaultLoadOptions());
+						Map options = new HashMap(GMFResourceFactory.getDefaultLoadOptions());
 						// @see 171060 
 						// options.put(org.eclipse.emf.ecore.xmi.XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 						resource.load(options);
@@ -261,8 +239,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 						return;
 					}
 				} else {
-					for (Iterator it = resource.getContents().iterator(); it
-							.hasNext();) {
+					for (Iterator it = resource.getContents().iterator(); it.hasNext();) {
 						Object rootElement = it.next();
 						if (rootElement instanceof Diagram) {
 							document.setContent((Diagram) rootElement);
@@ -278,29 +255,22 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 					thrownExcp = (CoreException) e;
 				} else {
 					String msg = e.getLocalizedMessage();
-					thrownExcp = new CoreException(
-							new Status(
-									IStatus.ERROR,
-									de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-									0,
-									msg != null ? msg
-											: de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_DiagramLoadingError,
-									e));
+					thrownExcp = new CoreException(new Status(IStatus.ERROR,
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+							msg != null ? msg
+									: de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_DiagramLoadingError,
+							e));
 				}
 				throw thrownExcp;
 			}
 		} else {
-			throw new CoreException(
-					new Status(
-							IStatus.ERROR,
-							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-							0,
-							NLS.bind(
-									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
-									new Object[] {
-											element,
-											"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
-							null));
+			throw new CoreException(new Status(IStatus.ERROR,
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+					NLS.bind(
+							de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+							new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
+									"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
+					null));
 		}
 	}
 
@@ -324,8 +294,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			Resource diagramResource = document.getDiagram().eResource();
 			if (diagramResource != null) {
 				IFile file = WorkspaceSynchronizer.getFile(diagramResource);
-				return file == null || file.getLocation() == null
-						|| !file.getLocation().toFile().exists();
+				return file == null || file.getLocation() == null || !file.getLocation().toFile().exists();
 			}
 		}
 		return super.isDeleted(element);
@@ -352,13 +321,11 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	/**
 	 * @generated
 	 */
-	protected void doValidateState(Object element, Object computationContext)
-			throws CoreException {
+	protected void doValidateState(Object element, Object computationContext) throws CoreException {
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
 			LinkedList<IFile> files2Validate = new LinkedList<IFile>();
-			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null && file.isReadOnly()) {
@@ -366,8 +333,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				}
 			}
 			ResourcesPlugin.getWorkspace().validateEdit(
-					(IFile[]) files2Validate.toArray(new IFile[files2Validate
-							.size()]), computationContext);
+					(IFile[]) files2Validate.toArray(new IFile[files2Validate.size()]), computationContext);
 		}
 
 		super.doValidateState(element, computationContext);
@@ -383,8 +349,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				try {
 					updateCache(element);
 				} catch (CoreException ex) {
-					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
-							.getInstance()
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
 							.logError(
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_isModifiable,
 									ex);
@@ -401,8 +366,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	public boolean isModifiable(Object element) {
 		if (!isStateValidated(element)) {
-			if (element instanceof IFileEditorInput
-					|| element instanceof URIEditorInput) {
+			if (element instanceof IFileEditorInput || element instanceof URIEditorInput) {
 				return true;
 			}
 		}
@@ -412,8 +376,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				try {
 					updateCache(element);
 				} catch (CoreException ex) {
-					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
-							.getInstance()
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
 							.logError(
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_isModifiable,
 									ex);
@@ -431,8 +394,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	protected void updateCache(Object element) throws CoreException {
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
-			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null && file.isReadOnly()) {
@@ -476,18 +438,14 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
 			LinkedList<ISchedulingRule> rules = new LinkedList<ISchedulingRule>();
-			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null) {
-					rules.add(ResourcesPlugin.getWorkspace().getRuleFactory()
-							.modifyRule(file));
+					rules.add(ResourcesPlugin.getWorkspace().getRuleFactory().modifyRule(file));
 				}
 			}
-			return new MultiRule(
-					(ISchedulingRule[]) rules.toArray(new ISchedulingRule[rules
-							.size()]));
+			return new MultiRule((ISchedulingRule[]) rules.toArray(new ISchedulingRule[rules.size()]));
 		}
 		return null;
 	}
@@ -499,17 +457,14 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
 			LinkedList<ISchedulingRule> rules = new LinkedList<ISchedulingRule>();
-			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null) {
 					rules.add(computeSchedulingRule(file));
 				}
 			}
-			return new MultiRule(
-					(ISchedulingRule[]) rules.toArray(new ISchedulingRule[rules
-							.size()]));
+			return new MultiRule((ISchedulingRule[]) rules.toArray(new ISchedulingRule[rules.size()]));
 		}
 		return null;
 	}
@@ -521,18 +476,14 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
 			LinkedList<ISchedulingRule> rules = new LinkedList<ISchedulingRule>();
-			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null) {
-					rules.add(ResourcesPlugin.getWorkspace().getRuleFactory()
-							.refreshRule(file));
+					rules.add(ResourcesPlugin.getWorkspace().getRuleFactory().refreshRule(file));
 				}
 			}
-			return new MultiRule(
-					(ISchedulingRule[]) rules.toArray(new ISchedulingRule[rules
-							.size()]));
+			return new MultiRule((ISchedulingRule[]) rules.toArray(new ISchedulingRule[rules.size()]));
 		}
 		return null;
 	}
@@ -544,19 +495,15 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
 			LinkedList<ISchedulingRule> files = new LinkedList<ISchedulingRule>();
-			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null) {
 					files.add(file);
 				}
 			}
-			return ResourcesPlugin
-					.getWorkspace()
-					.getRuleFactory()
-					.validateEditRule(
-							(IFile[]) files.toArray(new IFile[files.size()]));
+			return ResourcesPlugin.getWorkspace().getRuleFactory()
+					.validateEditRule((IFile[]) files.toArray(new IFile[files.size()]));
 		}
 		return null;
 	}
@@ -566,8 +513,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	private ISchedulingRule computeSchedulingRule(IResource toCreateOrModify) {
 		if (toCreateOrModify.exists())
-			return ResourcesPlugin.getWorkspace().getRuleFactory()
-					.modifyRule(toCreateOrModify);
+			return ResourcesPlugin.getWorkspace().getRuleFactory().modifyRule(toCreateOrModify);
 
 		IResource parent = toCreateOrModify;
 		do {
@@ -581,19 +527,16 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			parent = toCreateOrModify.getParent();
 		} while (parent != null && !parent.exists());
 
-		return ResourcesPlugin.getWorkspace().getRuleFactory()
-				.createRule(toCreateOrModify);
+		return ResourcesPlugin.getWorkspace().getRuleFactory().createRule(toCreateOrModify);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected void doSynchronize(Object element, IProgressMonitor monitor)
-			throws CoreException {
+	protected void doSynchronize(Object element, IProgressMonitor monitor) throws CoreException {
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
-			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = it.next();
 				handleElementChanged(info, nextResource, monitor);
 			}
@@ -605,18 +548,16 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	/**
 	 * @generated
 	 */
-	protected void doSaveDocument(IProgressMonitor monitor, Object element,
-			IDocument document, boolean overwrite) throws CoreException {
+	protected void doSaveDocument(IProgressMonitor monitor, Object element, IDocument document, boolean overwrite)
+			throws CoreException {
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
 			if (!overwrite && !info.isSynchronized()) {
-				throw new CoreException(
-						new Status(
-								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-								IResourceStatus.OUT_OF_SYNC_LOCAL,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_UnsynchronizedFileSaveError,
-								null));
+				throw new CoreException(new Status(IStatus.ERROR,
+						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
+						IResourceStatus.OUT_OF_SYNC_LOCAL,
+						de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_UnsynchronizedFileSaveError,
+						null));
 			}
 			info.stopResourceListening();
 			fireElementStateChanging(element);
@@ -624,27 +565,20 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				monitor.beginTask(
 						de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_SaveDiagramTask,
 						info.getResourceSet().getResources().size() + 1); //"Saving diagram"
-				for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it
-						.hasNext();) {
+				for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 					Resource nextResource = it.next();
-					monitor.setTaskName(NLS
-							.bind(de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_SaveNextResourceTask,
-									nextResource.getURI()));
-					if (nextResource.isLoaded()
-							&& !info.getEditingDomain()
-									.isReadOnly(nextResource)) {
+					monitor.setTaskName(NLS.bind(
+							de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_SaveNextResourceTask,
+							nextResource.getURI()));
+					if (nextResource.isLoaded() && !info.getEditingDomain().isReadOnly(nextResource)) {
 						try {
-							nextResource
-									.save(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramEditorUtil
-											.getSaveOptions());
+							nextResource.save(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramEditorUtil
+									.getSaveOptions());
 						} catch (IOException e) {
 							fireElementStateChangeFailed(element);
-							throw new CoreException(
-									new Status(
-											IStatus.ERROR,
-											de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-											EditorStatusCodes.RESOURCE_FAILURE,
-											e.getLocalizedMessage(), null));
+							throw new CoreException(new Status(IStatus.ERROR,
+									de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
+									EditorStatusCodes.RESOURCE_FAILURE, e.getLocalizedMessage(), null));
 						}
 					}
 					monitor.worked(1);
@@ -663,68 +597,55 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			if (element instanceof IFileEditorInput) {
 				IFile newFile = ((IFileEditorInput) element).getFile();
 				affectedFiles = Collections.singletonList(newFile);
-				newResoruceURI = URI.createPlatformResourceURI(newFile
-						.getFullPath().toString(), true);
+				newResoruceURI = URI.createPlatformResourceURI(newFile.getFullPath().toString(), true);
 			} else if (element instanceof URIEditorInput) {
 				newResoruceURI = ((URIEditorInput) element).getURI();
 			} else {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(
-						new Status(
-								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-								0,
-								NLS.bind(
-										de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
-										new Object[] {
-												element,
-												"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
-								null));
+				throw new CoreException(new Status(IStatus.ERROR,
+						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+						NLS.bind(
+								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+								new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
+										"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
+						null));
 			}
 			if (false == document instanceof IDiagramDocument) {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(
-						new Status(
-								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-								0,
-								"Incorrect document used: " + document + " instead of org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument", null)); //$NON-NLS-1$ //$NON-NLS-2$
+				throw new CoreException(new Status(IStatus.ERROR,
+						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+						"Incorrect document used: " + document //$NON-NLS-1$
+								+ " instead of org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument", //$NON-NLS-1$
+						null));
 			}
 			IDiagramDocument diagramDocument = (IDiagramDocument) document;
-			final Resource newResource = diagramDocument.getEditingDomain()
-					.getResourceSet().createResource(newResoruceURI);
-			final Diagram diagramCopy = (Diagram) EcoreUtil
-					.copy(diagramDocument.getDiagram());
+			final Resource newResource = diagramDocument.getEditingDomain().getResourceSet()
+					.createResource(newResoruceURI);
+			final Diagram diagramCopy = (Diagram) EcoreUtil.copy(diagramDocument.getDiagram());
 			try {
-				new AbstractTransactionalCommand(
-						diagramDocument.getEditingDomain(),
+				new AbstractTransactionalCommand(diagramDocument.getEditingDomain(),
 						NLS.bind(
 								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_SaveAsOperation,
-								diagramCopy.getName()), affectedFiles) {
-					protected CommandResult doExecuteWithResult(
-							IProgressMonitor monitor, IAdaptable info)
+								diagramCopy.getName()),
+						affectedFiles) {
+					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 							throws ExecutionException {
 						newResource.getContents().add(diagramCopy);
 						return CommandResult.newOKCommandResult();
 					}
 				}.execute(monitor, null);
-				newResource
-						.save(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramEditorUtil
-								.getSaveOptions());
+				newResource.save(
+						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramEditorUtil.getSaveOptions());
 			} catch (ExecutionException e) {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(
-						new Status(
-								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-								0, e.getLocalizedMessage(), null));
+				throw new CoreException(new Status(IStatus.ERROR,
+						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+						e.getLocalizedMessage(), null));
 			} catch (IOException e) {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(
-						new Status(
-								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-								0, e.getLocalizedMessage(), null));
+				throw new CoreException(new Status(IStatus.ERROR,
+						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+						e.getLocalizedMessage(), null));
 			}
 			newResource.unload();
 		}
@@ -733,18 +654,15 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	/**
 	 * @generated
 	 */
-	protected void handleElementChanged(ResourceSetInfo info,
-			Resource changedResource, IProgressMonitor monitor) {
+	protected void handleElementChanged(ResourceSetInfo info, Resource changedResource, IProgressMonitor monitor) {
 		IFile file = WorkspaceSynchronizer.getFile(changedResource);
 		if (file != null) {
 			try {
 				file.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 			} catch (CoreException ex) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
-						.getInstance()
-						.logError(
-								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_handleElementContentChanged,
-								ex);
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.getInstance().logError(
+						de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_handleElementContentChanged,
+						ex);
 				// Error message to log was initially taken from org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.internal.l10n.EditorMessages.FileDocumentProvider_handleElementContentChanged
 			}
 		}
@@ -770,14 +688,9 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	protected void handleElementMoved(IEditorInput input, URI uri) {
 		if (input instanceof IFileEditorInput) {
-			IFile newFile = ResourcesPlugin
-					.getWorkspace()
-					.getRoot()
-					.getFile(
-							new Path(URI.decode(uri.path()))
-									.removeFirstSegments(1));
-			fireElementMoved(input, newFile == null ? null
-					: new FileEditorInput(newFile));
+			IFile newFile = ResourcesPlugin.getWorkspace().getRoot()
+					.getFile(new Path(URI.decode(uri.path())).removeFirstSegments(1));
+			fireElementMoved(input, newFile == null ? null : new FileEditorInput(newFile));
 			return;
 		}
 		// TODO: append suffix to the URI! (use diagram as a parameter)
@@ -787,8 +700,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	/**
 	 * @generated
 	 */
-	public IEditorInput createInputWithEditingDomain(IEditorInput editorInput,
-			TransactionalEditingDomain domain) {
+	public IEditorInput createInputWithEditingDomain(IEditorInput editorInput, TransactionalEditingDomain domain) {
 		return editorInput;
 	}
 
@@ -863,8 +775,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		/**
 		 * @generated
 		 */
-		public ResourceSetInfo(IDiagramDocument document,
-				IEditorInput editorInput) {
+		public ResourceSetInfo(IDiagramDocument document, IEditorInput editorInput) {
 			super(document);
 			myDocument = document;
 			myEditorInput = editorInput;
@@ -905,8 +816,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		 * @generated
 		 */
 		public Iterator<Resource> getLoadedResourcesIterator() {
-			return new ArrayList<Resource>(getResourceSet().getResources())
-					.iterator();
+			return new ArrayList<Resource>(getResourceSet().getResources()).iterator();
 		}
 
 		/**
@@ -922,8 +832,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		public void dispose() {
 			stopResourceListening();
 			getResourceSet().eAdapters().remove(myResourceSetListener);
-			for (Iterator<Resource> it = getLoadedResourcesIterator(); it
-					.hasNext();) {
+			for (Iterator<Resource> it = getLoadedResourcesIterator(); it.hasNext();) {
 				Resource resource = it.next();
 				resource.unload();
 			}
@@ -963,8 +872,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		 * @generated
 		 */
 		public final void startResourceListening() {
-			mySynchronizer = new WorkspaceSynchronizer(getEditingDomain(),
-					new SynchronizerDelegate());
+			mySynchronizer = new WorkspaceSynchronizer(getEditingDomain(), new SynchronizerDelegate());
 		}
 
 		/**
@@ -1012,8 +920,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		/**
 		 * @generated
 		 */
-		private class SynchronizerDelegate implements
-				WorkspaceSynchronizer.Delegate {
+		private class SynchronizerDelegate implements WorkspaceSynchronizer.Delegate {
 
 			/**
 			 * @generated
@@ -1033,8 +940,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				}
 				Display.getDefault().asyncExec(new Runnable() {
 					public void run() {
-						handleElementChanged(ResourceSetInfo.this, resource,
-								null);
+						handleElementChanged(ResourceSetInfo.this, resource, null);
 					}
 				});
 				return true;
@@ -1052,8 +958,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				}
 				Display.getDefault().asyncExec(new Runnable() {
 					public void run() {
-						fireElementDeleted(ResourceSetInfo.this
-								.getEditorInput());
+						fireElementDeleted(ResourceSetInfo.this.getEditorInput());
 					}
 				});
 				return true;
@@ -1062,8 +967,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			/**
 			 * @generated
 			 */
-			public boolean handleResourceMoved(Resource resource,
-					final URI newURI) {
+			public boolean handleResourceMoved(Resource resource, final URI newURI) {
 				synchronized (ResourceSetInfo.this) {
 					if (ResourceSetInfo.this.fCanBeSaved) {
 						ResourceSetInfo.this.setUnSynchronized(resource);
@@ -1073,9 +977,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				if (myDocument.getDiagram().eResource() == resource) {
 					Display.getDefault().asyncExec(new Runnable() {
 						public void run() {
-							handleElementMoved(
-									ResourceSetInfo.this.getEditorInput(),
-									newURI);
+							handleElementMoved(ResourceSetInfo.this.getEditorInput(), newURI);
 						}
 					});
 				} else {
@@ -1108,12 +1010,9 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		 */
 		public ResourceSetModificationListener(ResourceSetInfo info) {
 			myInfo = info;
-			myModifiedFilter = NotificationFilter
-					.createEventTypeFilter(Notification.SET)
-					.or(NotificationFilter
-							.createEventTypeFilter(Notification.UNSET))
-					.and(NotificationFilter.createFeatureFilter(Resource.class,
-							Resource.RESOURCE__IS_MODIFIED));
+			myModifiedFilter = NotificationFilter.createEventTypeFilter(Notification.SET)
+					.or(NotificationFilter.createEventTypeFilter(Notification.UNSET))
+					.and(NotificationFilter.createFeatureFilter(Resource.class, Resource.RESOURCE__IS_MODIFIED));
 		}
 
 		/**
@@ -1123,15 +1022,13 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			if (notification.getNotifier() instanceof ResourceSet) {
 				super.notifyChanged(notification);
 			}
-			if (!notification.isTouch()
-					&& myModifiedFilter.matches(notification)) {
+			if (!notification.isTouch() && myModifiedFilter.matches(notification)) {
 				if (notification.getNotifier() instanceof Resource) {
 					Resource resource = (Resource) notification.getNotifier();
 					if (resource.isLoaded()) {
 						boolean modified = false;
-						for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = myInfo
-								.getLoadedResourcesIterator(); it.hasNext()
-								&& !modified;) {
+						for (Iterator /*<org.eclipse.emf.ecore.resource.Resource>*/ it = myInfo
+								.getLoadedResourcesIterator(); it.hasNext() && !modified;) {
 							Resource nextResource = (Resource) it.next();
 							if (nextResource.isLoaded()) {
 								modified = nextResource.isModified();
@@ -1148,8 +1045,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 							}
 						}
 						if (dirtyStateChanged) {
-							fireElementDirtyStateChanged(
-									myInfo.getEditorInput(), modified);
+							fireElementDirtyStateChanged(myInfo.getEditorInput(), modified);
 
 							if (!modified) {
 								myInfo.setModificationStamp(computeModificationStamp(myInfo));
