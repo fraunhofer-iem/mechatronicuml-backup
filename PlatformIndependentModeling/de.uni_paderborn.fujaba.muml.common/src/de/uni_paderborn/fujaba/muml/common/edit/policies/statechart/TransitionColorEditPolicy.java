@@ -12,6 +12,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -20,7 +21,9 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 public class TransitionColorEditPolicy extends NotifyingGraphicalEditPolicy implements ISelectionChangedListener {
 
-	protected static final Color COLOR_COMPATIBLE_TRANSITION = new Color(null, 0, 100, 0);
+	protected boolean flashing;
+	
+	protected static final Color COLOR_COMPATIBLE_TRANSITION = new Color(null, 0, 150, 0);
 
 	protected PolylineConnectionEx polyline;
 	
@@ -128,14 +131,42 @@ public class TransitionColorEditPolicy extends NotifyingGraphicalEditPolicy impl
 				}
 			}
 		}
-		
-		if (getHostFigure() instanceof PolylineConnectionEx) {
-			PolylineConnectionEx polyline = (PolylineConnectionEx)getHostFigure();
-			polyline.setLineWidth(selected ? 3 : defaultLineWidth);
-			polyline.setForegroundColor(!selected && compatible ? COLOR_COMPATIBLE_TRANSITION : defaultColor);
-		}		
-	}
+		polyline.setLineWidth(selected || compatible ? 3 : defaultLineWidth);
+		polyline.setForegroundColor(compatible && !selected ? COLOR_COMPATIBLE_TRANSITION : defaultColor);
 
+		setFlashing(compatible && !selected);
+	}
+	
+	private void setFlashing(boolean flashing) {
+		if (this.flashing != flashing) {
+			this.flashing = flashing;
+			
+			if (flashing) {
+				Display.getCurrent().asyncExec(new Runnable() {
+					private int times = 0;
+
+					@Override
+					public void run() {
+						if (!TransitionColorEditPolicy.this.flashing) {
+							times = 0;
+							return;
+						}
+
+						if (times < 5) {
+							Display.getCurrent().timerExec(200, this);
+							polyline.setForegroundColor((times % 2) == 0 ? COLOR_COMPATIBLE_TRANSITION : defaultColor);
+							times++;
+
+						} else {
+							times = 0;
+							setFlashing(false);
+						}
+					}
+				});
+			}
+		}
+	}
+	
 	protected boolean isCompatible(Transition a, Transition b) {
 		if (a.getSynchronization() != null && b.getSynchronization() != null) {
 			return a.getSynchronization().getKind() != b.getSynchronization().getKind() && a.getSynchronization().getSyncChannel() == b.getSynchronization().getSyncChannel();
