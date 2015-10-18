@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 public class MumlValidator extends EObjectValidator {
 	
+	public static final int MAXIMUM_LINE_LENGTH = 80;
+	
 	public static final String META_TAG = "@";
 	
 	protected void reportConstraintDelegateViolation(EClass eClass,
@@ -43,6 +45,36 @@ public class MumlValidator extends EObjectValidator {
 			}
 			message = builder.toString();
 		}
+		
+		// MUML #1322: If message text gets too long, add manual line break.
+		StringBuffer buffer = new StringBuffer();
+		int lastSpace = -1;
+		int l = 0;
+		int newlines = 0;
+		for (int p = 0; p < message.length(); p++) {
+			char c = message.charAt(p);
+			if (l > MAXIMUM_LINE_LENGTH) {
+				if (lastSpace == -1) {
+					buffer.append('\n');
+				} else {
+					buffer.insert(lastSpace + 1, '\n');
+				}
+				lastSpace = -1;
+				newlines++;
+				l = 0;
+			}
+			if (c == ' ') {
+				lastSpace = p + newlines;
+			} else if (c == '\n') {
+				l = 0;
+				lastSpace = -1;
+			} else {
+				l++;
+			}
+			
+			buffer.append(c);
+		}
+		message = buffer.toString();
 		
 		for (String metainfo : metainfos) {
 			if (metainfo.toLowerCase().equals("warning")) {
