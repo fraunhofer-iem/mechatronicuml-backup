@@ -61,12 +61,8 @@
 [query public getTypedNamedElementName(typedNamedElement : TypedNamedElement) : String =
 	if typedNamedElement.eContainer().oclIsKindOf(LocalVariableDeclarationStatement) then
 		getUniqueLocalVariableName(typedNamedElement.eContainer().oclAsType(LocalVariableDeclarationStatement))
-	else if typedNamedElement.oclIsKindOf(Parameter) then
-		typedNamedElement.name
-	
-		else
+	else
 		'stateChart->'+typedNamedElement.name
-	endif
 	endif
 /]
 

@@ -22,22 +22,6 @@
 	if (mb.bufferSize.toString() = '*') then '20' else mb.bufferSize endif
 /]
 
-[query public getStateInactiveString(rtsc : RealtimeStatechart) : String = 
-rtsc.getRootRTSC().getQualifiedName().toUpperCase() + '_INACTIVE;'
-
- /]
-
-[query public getRootRTSC(rtsc : RealtimeStatechart) : RealtimeStatechart = 
-if (rtsc.embedded) then 
-	getRootRTSC(rtsc.parentRegion.parentState.parentStatechart)
-else
-	rtsc
-endif
-
- /]
-
-
-
 
 
 [**

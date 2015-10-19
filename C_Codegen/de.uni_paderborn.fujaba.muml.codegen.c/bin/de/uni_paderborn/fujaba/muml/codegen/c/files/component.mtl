@@ -36,6 +36,8 @@
 		[constructor(component)/]
 
 		[destroy(component)/]
+	
+		[isTerminated(component)/]
 		
 		[processStep(component)/]
 	

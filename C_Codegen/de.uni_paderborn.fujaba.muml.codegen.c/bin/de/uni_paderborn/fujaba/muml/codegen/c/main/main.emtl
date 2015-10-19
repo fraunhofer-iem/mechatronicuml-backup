@@ -37,20 +37,20 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="../files/RealtimeStatechart.emtl#/0"/>
-    <imports href="../files/RealtimeStatechartHeader.emtl#/0"/>
-    <imports href="../queries/stringQueries.emtl#/0"/>
-    <imports href="../queries/modelQueries.emtl#/0"/>
-    <imports href="../files/componentHeader.emtl#/0"/>
-    <imports href="../files/component.emtl#/0"/>
-    <imports href="../files/Message.emtl#/0"/>
-    <imports href="../files/operations.emtl#/0"/>
-    <imports href="../files/ContinuousPorts.emtl#/0"/>
-    <imports href="../files/make.emtl#/0"/>
-    <imports href="../files/CMake.emtl#/0"/>
-    <imports href="../files/main_C.emtl#/0"/>
-    <imports href="../files/customTypes.emtl#/0"/>
-    <imports href="../files/LocalMiddleware.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechart.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechartHeader.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/componentHeader.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/component.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/operations.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/ContinuousPorts.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/make.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/CMake.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/main_C.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/customTypes.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/LocalMiddleware.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generate" visibility="Public" main="true">
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9; "/>
@@ -88,7 +88,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
         <body xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../files/LocalMiddleware.emtl#/0/generateLocalMiddleware"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/LocalMiddleware.emtl#/0/generateLocalMiddleware"/>
           <argument xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(ComponentInstance)">
             <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Sequence(ComponentInstance)" referredOperation="/1/ecore_EObject_Class/eAllContents">
               <source xsi:type="ocl.ecore:VariableExp" name="cic" referredVariable="/0/generate/cic">
@@ -120,7 +120,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;&#x9;"/>
         <body xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../files/CMake.emtl#/0/generateCMakeFiles"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/CMake.emtl#/0/generateCMakeFiles"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="cic" referredVariable="/0/generate/cic">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration"/>
           </argument>
@@ -174,7 +174,7 @@
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../files/ContinuousPorts.emtl#/0/generateContinuousPortFiles"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/ContinuousPorts.emtl#/0/generateContinuousPortFiles"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateANSIC/CIs"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -231,7 +231,7 @@
       </body>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/LocalMiddleware.emtl#/0/generateOSFileDummy"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/LocalMiddleware.emtl#/0/generateOSFileDummy"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
@@ -245,7 +245,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/Message.emtl#/0/generateProtobufMessageFile"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/0/generateProtobufMessageFile"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateANSIC/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -257,7 +257,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/Message.emtl#/0/generateProtobufNewHeader"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/0/generateProtobufNewHeader"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateANSIC/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -280,7 +280,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/make.emtl#/0/generateMakeFile"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/make.emtl#/0/generateMakeFile"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateANSIC/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -292,7 +292,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/operations.emtl#/0/generateOperationFiles"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/operations.emtl#/0/generateOperationFiles"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateANSIC/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -304,7 +304,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/main_C.emtl#/0/generateANSICMainFile"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/main_C.emtl#/0/generateANSICMainFile"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateANSIC/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -316,7 +316,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/customTypes.emtl#/0/generateCustomTypes"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/customTypes.emtl#/0/generateCustomTypes"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateANSIC/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateANSIC/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -345,7 +345,7 @@
         <body xsi:type="mtl:IfBlock">
           <body xsi:type="mtl:TemplateInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../files/componentHeader.emtl#/0/generate_ComponentHeader"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/componentHeader.emtl#/0/generate_ComponentHeader"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="component" referredVariable="/0/generateTypeFiles/%/component">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
             </argument>
@@ -359,7 +359,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
           <body xsi:type="mtl:TemplateInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../files/component.emtl#/0/generate_ComponentClass"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/component.emtl#/0/generate_ComponentClass"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="component" referredVariable="/0/generateTypeFiles/%/component">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
             </argument>
@@ -474,7 +474,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;"/>
                   <body xsi:type="mtl:TemplateInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../files/RealtimeStatechartHeader.emtl#/0/generate_RTSCHeader"/>
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechartHeader.emtl#/0/generate_RTSCHeader"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="aComp" referredVariable="/0/generateRTSCFiles/%.1/%/%/aComp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
                     </argument>
@@ -502,7 +502,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;"/>
                   <body xsi:type="mtl:TemplateInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../files/RealtimeStatechart.emtl#/0/generate_RTSC"/>
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechart.emtl#/0/generate_RTSC"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="aComp" referredVariable="/0/generateRTSCFiles/%.1/%/%/aComp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
                     </argument>
@@ -731,7 +731,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/RealtimeStatechart.emtl#/0/generate_RTSC"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechart.emtl#/0/generate_RTSC"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
@@ -752,7 +752,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/RealtimeStatechartHeader.emtl#/0/generate_RTSCHeader"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechartHeader.emtl#/0/generate_RTSCHeader"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="comp">
@@ -773,7 +773,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/componentHeader.emtl#/0/generate_ComponentHeader"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/componentHeader.emtl#/0/generate_ComponentHeader"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
@@ -791,7 +791,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/component.emtl#/0/generate_ComponentClass"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/component.emtl#/0/generate_ComponentClass"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
@@ -809,11 +809,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/Message.emtl#/0/generateProtobufMessageFile"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/0/generateProtobufMessageFile"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/Message.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -827,11 +827,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/Message.emtl#/0/generateProtobufNewHeader"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/0/generateProtobufNewHeader"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/Message.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -845,11 +845,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/operations.emtl#/0/generateOperationFiles"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/operations.emtl#/0/generateOperationFiles"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/operations.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/operations.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -863,11 +863,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/ContinuousPorts.emtl#/0/generateContinuousPortFiles"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/ContinuousPorts.emtl#/0/generateContinuousPortFiles"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/ContinuousPorts.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/ContinuousPorts.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -881,11 +881,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/make.emtl#/0/generateMakeFile"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/make.emtl#/0/generateMakeFile"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/make.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/make.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -899,7 +899,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/CMake.emtl#/0/generateCMakeFiles"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/CMake.emtl#/0/generateCMakeFiles"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cic">
@@ -914,11 +914,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/main_C.emtl#/0/generateANSICMainFile"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/main_C.emtl#/0/generateANSICMainFile"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/main_C.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/main_C.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -932,11 +932,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/customTypes.emtl#/0/generateCustomTypes"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/customTypes.emtl#/0/generateCustomTypes"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/customTypes.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/customTypes.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -950,11 +950,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/LocalMiddleware.emtl#/0/generateLocalMiddleware"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/LocalMiddleware.emtl#/0/generateLocalMiddleware"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/LocalMiddleware.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/LocalMiddleware.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -968,7 +968,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/LocalMiddleware.emtl#/0/generateOSFileDummy"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/LocalMiddleware.emtl#/0/generateOSFileDummy"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="path">
@@ -1192,7 +1192,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="collections_Set(Operation)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="../files/operations.emtl#/3/Set(Operation)"/>
+        <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/operations.emtl#/3/Set(Operation)"/>
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>
