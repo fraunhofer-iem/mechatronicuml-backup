@@ -4,7 +4,7 @@
    <extension
          point="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ScopeProvider">
       <provider
-            class="de.uni_paderborn.fujaba.muml.allocation.language.ui.AllocationSpecificationLanguageExecutableExtensionFactory:de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext.CSDLanguageScopeProvider">
+            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext.CSDLanguageScopeProvider">
       </provider>
    </extension>
 
