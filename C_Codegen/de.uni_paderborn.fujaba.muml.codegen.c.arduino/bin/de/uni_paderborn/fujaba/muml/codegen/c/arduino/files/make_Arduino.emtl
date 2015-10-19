@@ -38,7 +38,7 @@
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateMakeFileForArduino" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="# Targets&#xA;TARGET = nxtOSEKImpl&#xA;TARGET_SOURCES := \&#xA;&#x9;&#x9;Middleware/MiddlewareCore.c\&#xA;&#x9;&#x9;Middleware/MiddlewareInternalLogic.c\&#xA;&#x9;&#x9;Middleware/NetworkInterfaceImplementation.c\&#xA;&#x9;&#x9;continuousComponents/ContImplementations.c\&#xA;&#x9;&#x9;lib/port.c\&#xA;&#x9;&#x9;lib/MessageBuffer.c\&#xA;&#x9;&#x9;lib/NetworkMessageBuffer.c\&#xA;&#x9;&#x9;lib/NetworkInterface.c\&#xA;&#x9;&#x9;messages/Messages.c\&#xA;&#x9;&#x9;operations/operations.c\&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="# Targets&#xA;TARGET = nxtOSEKImpl&#xA;TARGET_SOURCES := \&#xA;&#x9;&#x9;Middleware/MiddlewareCore.c\&#xA;&#x9;&#x9;Middleware/MiddlewareInternalLogic.c\&#xA;&#x9;&#x9;Middleware/NetworkInterfaceImplementation.c\&#xA;&#x9;&#x9;continuousComponents/contImplementations.c\&#xA;&#x9;&#x9;lib/port.c\&#xA;&#x9;&#x9;lib/MessageBuffer.c\&#xA;&#x9;&#x9;lib/NetworkMessageBuffer.c\&#xA;&#x9;&#x9;lib/NetworkInterface.c\&#xA;&#x9;&#x9;messages/Messages.c\&#xA;&#x9;&#x9;operations/operations.c\&#xA;"/>
         <body xsi:type="mtl:ForBlock">
           <body xsi:type="mtl:IfBlock">
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;RTSCs/"/>

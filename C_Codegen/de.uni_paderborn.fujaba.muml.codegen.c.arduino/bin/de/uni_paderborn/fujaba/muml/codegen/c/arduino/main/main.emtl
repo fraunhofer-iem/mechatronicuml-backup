@@ -37,8 +37,8 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="../files/main_Arduino.emtl#/0"/>
-    <imports href="../files/make_Arduino.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/main_Arduino.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/make_Arduino.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechart.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechartHeader.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
@@ -224,7 +224,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/make_Arduino.emtl#/0/generateMakeFileForArduino"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/make_Arduino.emtl#/0/generateMakeFileForArduino"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduino/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateArduino/path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -245,7 +245,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/main_Arduino.emtl#/0/generateArduinoMainFile"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/main_Arduino.emtl#/0/generateArduinoMainFile"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateArduino/CIs"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="inoName" referredVariable="/0/generateArduino/inoName">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -351,11 +351,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/main_Arduino.emtl#/0/generateArduinoMainFile"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/main_Arduino.emtl#/0/generateArduinoMainFile"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/main_Arduino.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/main_Arduino.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="inoName">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -369,11 +369,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../files/make_Arduino.emtl#/0/generateMakeFileForArduino"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/make_Arduino.emtl#/0/generateMakeFileForArduino"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="../files/make_Arduino.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c.arduino/bin/de/uni_paderborn/fujaba/muml/codegen/c/arduino/files/make_Arduino.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
         <eParameters name="path">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>

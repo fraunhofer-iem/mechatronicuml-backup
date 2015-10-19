@@ -52,7 +52,7 @@
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="//general includes&#xA;#include &quot;MiddlewareCore.h&quot;&#xA;#include &quot;Debug.h&quot;&#xA;"/>
         <body xsi:type="mtl:IfBlock">
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;ContImplementations.h&quot;&#xA;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;contImplementations.h&quot;&#xA;"/>
           <ifExpr xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:OperationCallExp">
