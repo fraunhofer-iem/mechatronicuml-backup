@@ -7,11 +7,13 @@
 package de.uni_paderborn.fujaba.muml.connector.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -25,6 +27,8 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
@@ -114,16 +118,66 @@ public class DiscreteInteractionEndpointItemProvider
 				 null,
 				 null));
 	}
+	
+	private class MessageTypeItemPropertyDescriptor extends ItemPropertyDescriptor {
+		public MessageTypeItemPropertyDescriptor(
+			AdapterFactory adapterFactory,
+			ResourceLocator resourceLocator,
+			String displayName,
+			String description,
+			EStructuralFeature feature, 
+			boolean isSettable,
+			boolean multiLine,
+			boolean sortChoices,
+			Object staticImage,
+			String category,
+			String [] filterFlags)
+		{  
+			super(adapterFactory, resourceLocator, displayName, description, feature, isSettable, multiLine, sortChoices, staticImage, category, filterFlags);
+		}
+	
+		@Override
+		public Collection<?> getChoiceOfValues(Object object) {
+			List<Object> values = new ArrayList<Object>();
+			List<MessageTypeRepository> repositories = new ArrayList<MessageTypeRepository>();
+			for (Object value : super.getChoiceOfValues(object)) {
+				if (value instanceof MessageType) {
+					MessageType messageType = (MessageType) value;
+					MessageTypeRepository repository = messageType.getRepository();
+					if (repository != null && !repositories.contains(repository)) {
+						repositories.add(repository);
+						values.add(repository);
+					}
+				}
+				values.add(value);
+			}
+			return values;
+		}
+		  
+		@Override
+		public void setPropertyValue(Object object, Object values) {
+			List<MessageType> messageTypes = new ArrayList<MessageType>();
+			for (Object value : (List<?>) values) {
+				if (value instanceof MessageType) {
+					messageTypes.add((MessageType) value);
+				} else if (value instanceof MessageTypeRepository) {
+					MessageTypeRepository repository = (MessageTypeRepository) value;
+					messageTypes.addAll(repository.getMessageTypes());
+				}
+			}
+			super.setPropertyValue(object, messageTypes);
+		}
+	}
 
 	/**
 	 * This adds a property descriptor for the Sender Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSenderMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new MessageTypeItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_senderMessageTypes_feature"),
@@ -141,11 +195,11 @@ public class DiscreteInteractionEndpointItemProvider
 	 * This adds a property descriptor for the Receiver Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addReceiverMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new MessageTypeItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_receiverMessageTypes_feature"),
