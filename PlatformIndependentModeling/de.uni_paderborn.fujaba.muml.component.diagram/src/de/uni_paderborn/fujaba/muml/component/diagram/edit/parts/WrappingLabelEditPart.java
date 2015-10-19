@@ -147,6 +147,10 @@ public class WrappingLabelEditPart extends LabelEditPart implements ITextAwareEd
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlTextSelectionEditPolicy());
+
+		installEditPolicy(EditPolicyRoles.TETHER_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy());
+
 	}
 
 	/**
@@ -429,8 +433,8 @@ public class WrappingLabelEditPart extends LabelEditPart implements ITextAwareEd
 							Character initialChar = (Character) theRequest.getExtendedData()
 									.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
-						} else
-							if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+						} else if ((theRequest instanceof DirectEditRequest)
+								&& (getEditText().equals(getLabelText()))) {
 							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {

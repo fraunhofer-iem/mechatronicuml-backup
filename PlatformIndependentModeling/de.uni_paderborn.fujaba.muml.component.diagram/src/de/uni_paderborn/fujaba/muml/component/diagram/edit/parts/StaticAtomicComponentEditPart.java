@@ -115,6 +115,9 @@ public class StaticAtomicComponentEditPart extends AbstractBorderedShapeEditPart
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticAtomicComponentCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
+		installEditPolicy(EditPolicyRoles.OPEN_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
+
 		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy());
 
