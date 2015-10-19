@@ -26,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.provider.DiscreteInteractionEndpointItemProvider.MessageTypeItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
@@ -103,11 +104,11 @@ public class DiscretePortItemProvider
 	 * This adds a property descriptor for the Sender Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSenderMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new MessageTypeItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_senderMessageTypes_feature"),
@@ -125,11 +126,11 @@ public class DiscretePortItemProvider
 	 * This adds a property descriptor for the Receiver Message Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addReceiverMessageTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new MessageTypeItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_receiverMessageTypes_feature"),

@@ -119,7 +119,7 @@ public class DiscreteInteractionEndpointItemProvider
 				 null));
 	}
 	
-	private class MessageTypeItemPropertyDescriptor extends ItemPropertyDescriptor {
+	public static class MessageTypeItemPropertyDescriptor extends ItemPropertyDescriptor {
 		public MessageTypeItemPropertyDescriptor(
 			AdapterFactory adapterFactory,
 			ResourceLocator resourceLocator,
