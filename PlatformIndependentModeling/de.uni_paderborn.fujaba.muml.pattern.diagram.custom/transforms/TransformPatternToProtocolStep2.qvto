@@ -17,31 +17,28 @@ modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype ExpressionPackage uses core::expressions("http://www.storydriven.org/core/0.3.1");
 // @author sthiele2
 
-transformation TransformPatternToProtocolStep2(inout input : ModelInstancePackage);
+transformation TransformPatternToProtocolStep2(in pattern : MumlPackage, inout protocol : MumlPackage);
 
 
 main()
-{ 
-	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);		
-	
+{ 		
 	// not debug
-	var theProtocol : CoordinationProtocol := input.rootObjects()[CoordinationProtocol] -> any(true);
-	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	var theProtocol : CoordinationProtocol := protocol.rootObjects()[CoordinationProtocol] -> any(true);
+	var thePattern : CoordinationPattern := pattern.rootObjects()[CoordinationPattern] -> any(true);
 	
 	
-	// deubug
+	// deubug	
+	//theRootNode := input.rootObjects()[RootNode]->any(true);	
 	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
 	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
 	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
 	//var theProtocol : CoordinationProtocol := protocolCategory.modelElements->at(1).oclAsType(CoordinationProtocol);
+	//assert fatal (theRootNode != null) with log ("RootNode is null!");
 	
-	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!" + theProtocol.name);
-	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
-	assert fatal (theRootNode != null) with log ("RootNode is null!");
+	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!");
+	assert fatal (thePattern != null) with log ("CoordinationPattern is null!");
 	
-	theProtocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);
-		
-  
+	theProtocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);  
 }
 
 
