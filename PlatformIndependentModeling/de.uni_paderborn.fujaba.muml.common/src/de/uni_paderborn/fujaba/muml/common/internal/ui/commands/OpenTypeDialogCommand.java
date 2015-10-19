@@ -105,6 +105,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			RootNode rootNode = (RootNode) rootContainer;
 			typeCategory = getTypeCategory(rootNode);
 			if (typeCategory == null) {
+				// XXX will be Deactivated see MUML #1008
 				new TypeCategoryInitializer().initialize(rootNode);
 			}
 			typeCategory = getTypeCategory(rootNode);

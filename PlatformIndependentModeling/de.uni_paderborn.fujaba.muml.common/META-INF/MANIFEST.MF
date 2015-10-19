@@ -14,7 +14,8 @@ Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
  org.eclipse.emf.ecore,
  org.eclipse.swt,
  org.eclipse.draw2d,
- org.eclipse.gmf.runtime.diagram.ui
+ org.eclipse.gmf.runtime.diagram.ui,
+ de.uni_paderborn.fujaba.muml.types;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.common,

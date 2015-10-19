@@ -85,14 +85,17 @@
           </child>
       </category>
   </extension>
-   
+  
+  
+  <!-- will be deactivated, see MUML #1008 -->
   <extension
        point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
       <initializer
           initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
       </initializer>
   </extension>
- 
+  
+  
   <extension
        point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
       <initializer

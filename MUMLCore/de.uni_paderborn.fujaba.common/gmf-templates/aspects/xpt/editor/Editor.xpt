@@ -45,4 +45,11 @@ public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 		);
 		// End added
 	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void setInput(org.eclipse.ui.IEditorInput input) {
+		super.setInput(input);
+		// getEditingDomain().getResourceSet().getResource(de.uni_paderborn.fujaba.muml.types.PredefinedTypesResourceFactory.PREDEFINED_TYPES_URI, true);
+	}
 «ENDAROUND»
