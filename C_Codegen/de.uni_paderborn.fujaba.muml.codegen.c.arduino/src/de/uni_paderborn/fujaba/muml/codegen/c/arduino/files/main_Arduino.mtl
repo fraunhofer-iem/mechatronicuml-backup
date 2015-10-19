@@ -38,7 +38,7 @@
 #include "MiddlewareCore.h"
 #include "Debug.h"
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-#include "ContImplementations.h"
+#include "contImplementations.h"
 [/if]
 //including all files for used Components
 		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
