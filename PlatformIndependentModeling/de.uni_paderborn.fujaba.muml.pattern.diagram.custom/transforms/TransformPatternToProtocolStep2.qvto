@@ -1,4 +1,5 @@
 import PatternProtocolTransformationLibrary;
+import PatternToProtocolCommon;
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');

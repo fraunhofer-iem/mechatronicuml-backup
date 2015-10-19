@@ -1,5 +1,6 @@
-import PatternProtocolTransformationLibrary;
-
+import ModelcopyLibrary;
+import PatternProtocolCommon;
+import PatternToProtocolCommon;
 
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
@@ -16,9 +17,11 @@ modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
-// @author sthiele2
-transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
 
+// @author sthiele2
+transformation TransformPatternToProtocolNewModel(in input : ModelInstancePackage, out output : ModelInstancePackage);
+
+property rootOfNewModel: RootNode;
 
 main()
 { 
@@ -26,39 +29,48 @@ main()
 	theRootNode := input.rootObjects()[RootNode] -> any(true);
 	
 	// Debug:
-	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
-	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
-	//bindings := thePattern.legalConfigurations->at(1).parameterBindings;
+	var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+	var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
+	bindings := thePattern.legalConfigurations->at(1).parameterBindings;
 	
 	// not debug:	
-	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
-	bindings := input.rootObjects()[ParameterBinding];
-	
-	
+//var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+//	bindings := input.rootObjects()[ParameterBinding];	
 	
 	// check whether the input is correct: 
 	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
 	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
     assert fatal (if(thePattern.patternParameters->size() > 0) then (bindings != null and bindings->size() = thePattern.patternParameters->size()) else true endif) with log ("Parameter Bindings are null!");
     assert fatal (if( bindings->size() >0) then bindings->size() = thePattern.patternParameters->size()  else true endif);
-    
+
+	rootOfNewModel := new RootNode();
+	
+	theRootNode.categories->forEach(cat) {
+	 	if(cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.types.category') or cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.messagetype.category') ) {
+	 		rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
+	 	}
+	 	else {
+	 		var category : ModelElementCategory := cat.map create().oclAsType(ModelElementCategory);
+	 		category.name := cat.name;
+	 		category.key := cat.key;
+	 		rootOfNewModel.categories += category;
+	 	};
+	 	
+	 };	
+	 
     // start transformation
-	createProtocol(thePattern);
-}
-helper createProtocol(pattern : CoordinationPattern)
-{
-	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
-	var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
-	protocolCategory.modelElements +=newProtocol;
+	var protocol : CoordinationProtocol := thePattern.map CoordinationPattern2CoordinationProtocol();
+	var protocolCategory : ModelElementCategory := getProtocolCategory(rootOfNewModel);
+	protocolCategory.modelElements += protocol;
 }
 
 
-mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol
+mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol @output
 {	
-	result.name := self.name;
+	result.name := self.name + "_intermediate";
 	result.comment := self.comment;
 	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
-	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
+	
 
 	self.roles->forEach(role)
 	{
@@ -67,16 +79,24 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
 		//set behavorial element?? --> should be already considered when setting behavior of the role!
 		
-		//newRole.coordinationProtocol := result;
-
-		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
-		newRole.subroleBehavior := role.subroleBehavior.map transform().oclAsType(Behavior);
+		newRole.coordinationProtocol := result;
+		
+		var rtscCategory : ModelElementCategory := getRealtimeStatechartCategory(rootOfNewModel);
+		rtscCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		
 		result.roles+= newRole;
 	};
 	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
 	
 	//result.roleConnector.coordinationProtocol := result;
 	
-	result.adaptedFromPattern := self;
 } 
+
+mapping muml::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart) : muml::behavior::Variable
+{
+	_constant := true;
+	_name := self.name;
+	_dataType:= self.dataType.oclAsType(muml::types::DataType).map transform().oclAsType(muml::types::DataType);
+	_comment := self.comment;
+}
 

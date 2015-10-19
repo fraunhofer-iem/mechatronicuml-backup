@@ -1,5 +1,4 @@
-library PatternProtocolTransformationLibrary;
-import ModelcopyLibrary;
+library PatternProtocolCommon;
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -15,7 +14,6 @@ modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
-
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
 }
@@ -26,47 +24,10 @@ query getPatternCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.pattern.category') -> any(true);
 }
 
-
-mapping DiscreteInteractionEndpoint :: transform() : EObject {
-	init {
-		result := self.map create();
-	}
-	var element := self.oclAsType(EObject);
-	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f).map transform());
-	};
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f));
-	}
+query getMsgTypeCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
 }
 
-
-
-mapping DataType :: transform() : EObject {
-	init{
-		if(not self.oclIsKindOf(DiscreteInteractionEndpoint) and not self.oclIsKindOf(Component) and not self.oclIsKindOf(ComponentPart)){
-			result :=  self;	
-		}
-		else {
-			if(self.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) {
-				result := self.oclAsType(muml::connector::DiscreteInteractionEndpoint).map transform();
-			}
-			else if(self.oclIsKindOf(muml::component::Component)){
-				result := self.oclAsType(muml::component::Component).map transform();
-			}
-			else if(self.oclIsKindOf(muml::component::ComponentPart)){
-				result := self.oclAsType(muml::component::ComponentPart).map transform();
-			}
-			else assert fatal (false) with log ("Error: transformation for DataType not yet created");
-		}
-			
-		
-	}
+query getTypesCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
 }
-
-mapping MessageType :: transform() : EObject {
-	init {
-		result := self;
-	}
-}
-

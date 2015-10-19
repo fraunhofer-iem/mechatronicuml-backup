@@ -1,5 +1,5 @@
-import PatternProtocolTransformationLibrary;
-
+import PatternProtocolSameRootTransformationLibrary;
+import PatternProtocolCommon;
 
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
