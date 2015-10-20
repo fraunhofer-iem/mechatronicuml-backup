@@ -36,8 +36,8 @@
     </input>
     <imports href="expression.emtl#/0"/>
     <imports href="variable_queries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/queries/stringQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/queries/modelQueries.emtl#/0"/>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="createVariableDeclarations" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// attribute declarations&#xA;"/>
       <body xsi:type="mtl:ForBlock">

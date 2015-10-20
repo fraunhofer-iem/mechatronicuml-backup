@@ -38,7 +38,7 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
     <imports href="stringQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/actionlanguage/expression.emtl#/0"/>
+    <imports href="../actionlanguage/expression.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Query" name="getIdentifierVariableName" visibility="Public">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
         <body startPosition="758" endPosition="953" value="&#xA;returns the IdentifierName (C-Macro definition) for a given DiscretePortInstance&#xA;@param pi a DiscretePortInstance&#xA;@return the IdentifierVarialbeName for the given DiscretePortInstance&#xA;&#xA;"/>

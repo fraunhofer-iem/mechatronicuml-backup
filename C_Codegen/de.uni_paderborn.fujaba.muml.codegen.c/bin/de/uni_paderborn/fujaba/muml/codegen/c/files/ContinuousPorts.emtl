@@ -37,8 +37,8 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/queries/stringQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/queries/modelQueries.emtl#/0"/>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateContinuousPortFiles" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
       <body xsi:type="mtl:TemplateInvocation" definition="/0/generateContinuousPortHeaderFile">

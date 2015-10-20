@@ -37,7 +37,7 @@
     <imports href="expression_queries.emtl#/0"/>
     <imports href="variable_queries.emtl#/0"/>
     <imports href="operation_queries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/stringQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">

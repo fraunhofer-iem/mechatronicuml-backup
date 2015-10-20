@@ -52,9 +52,9 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/psm/0.4.0/#//apiexpressions"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/psm/0.4.0/#//codegen"/>
     </input>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/queries/stringQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/queries/modelQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/actionlanguage/expression.emtl#/0"/>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
+    <imports href="../actionlanguage/expression.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generate_RTSCHeader" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
