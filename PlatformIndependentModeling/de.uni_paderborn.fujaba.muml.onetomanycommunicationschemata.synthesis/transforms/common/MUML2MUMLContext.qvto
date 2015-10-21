@@ -763,7 +763,6 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory(context : OclAny) : modelinstance::ModelElementCategory{
 	    	_key := self._key;
 	    	_name := self._name;
-	    	_usedCategories := self._usedCategories.map ModelElementCategory2ModelElementCategory(context);
 	   		 }
 	   		 
     	
