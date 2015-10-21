@@ -37,7 +37,7 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
     <imports href="../queries/modelQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateContinuousPortFiles" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
@@ -124,7 +124,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;void "/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getWriteMethod"/>
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getWriteMethod"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortHeaderFile/%.1/%.3/%/%/cpi">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                   </argument>
@@ -132,7 +132,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                     <source xsi:type="ocl.ecore:OperationCallExp">
@@ -175,7 +175,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
                   <body xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
                     <argument xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                       <source xsi:type="ocl.ecore:OperationCallExp">
@@ -198,7 +198,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
                   <body xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../queries/stringQueries.emtl#/0/getReadMethod"/>
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReadMethod"/>
                     <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortHeaderFile/%.1/%.3/%/%/cpi">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                     </argument>
@@ -273,7 +273,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
             <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             </argument>
@@ -298,20 +298,14 @@
     <ownedModuleElement xsi:type="mtl:Template" name="generateContinuousPortClassFile" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;contImplementations.h&quot;&#xA;#include &quot;"/>
-        <body xsi:type="mtl:IfBlock">
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="../"/>
-          <ifExpr xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateContinuousPortClassFile/useSubDir">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          </ifExpr>
-        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;"/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
           <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           </argument>
-          <argument xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateContinuousPortClassFile/useSubDir">
+          <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="false">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           </argument>
         </body>
@@ -336,14 +330,14 @@
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
               <body xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+                <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
                 <argument xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                   <source xsi:type="ocl.ecore:OperationCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//ContinuousPort"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
-                      <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                      <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                       </source>
                       <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
@@ -359,22 +353,22 @@
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
               <body xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="../queries/stringQueries.emtl#/0/getReferenceVariableName"/>
-                <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReferenceVariableName"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                 </argument>
               </body>
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = "/>
               <body xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="../queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+                <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
                 <argument xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                   <source xsi:type="ocl.ecore:OperationCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//ContinuousPort"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
-                      <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                      <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                       </source>
                       <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
@@ -392,22 +386,22 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;void "/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getWriteMethod"/>
-                  <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getWriteMethod"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                   </argument>
                 </body>
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                     <source xsi:type="ocl.ecore:OperationCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//ContinuousPort"/>
                       <source xsi:type="ocl.ecore:PropertyCallExp">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
-                        <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                        <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                         </source>
                         <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
@@ -423,8 +417,8 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" value){&#xA;&#xA;&#x9;if ("/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getReferenceVariableName"/>
-                  <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReferenceVariableName"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                   </argument>
                 </body>
@@ -435,8 +429,8 @@
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                     <source xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                      <definition href="../queries/stringQueries.emtl#/0/getWriteMethod"/>
-                      <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                      <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getWriteMethod"/>
+                      <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                       </argument>
                     </source>
@@ -448,8 +442,8 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;&#x9;"/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getReferenceVariableName"/>
-                  <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReferenceVariableName"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                   </argument>
                 </body>
@@ -460,7 +454,7 @@
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//ContinuousPort"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
-                      <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                      <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                       </source>
                       <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
@@ -476,14 +470,14 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
                   <body xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
                     <argument xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                       <source xsi:type="ocl.ecore:OperationCallExp">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//ContinuousPort"/>
                         <source xsi:type="ocl.ecore:PropertyCallExp">
                           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
-                          <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                          <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                           </source>
                           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
@@ -499,8 +493,8 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
                   <body xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../queries/stringQueries.emtl#/0/getReadMethod"/>
-                    <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReadMethod"/>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                     </argument>
                   </body>
@@ -511,8 +505,8 @@
                       <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                       <source xsi:type="mtl:QueryInvocation">
                         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                        <definition href="../queries/stringQueries.emtl#/0/getReadMethod"/>
-                        <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReadMethod"/>
+                        <argument xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                         </argument>
                       </source>
@@ -524,14 +518,14 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;&#x9;&#xA;&#x9;//default return&#xA;&#x9;return "/>
                   <body xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
                     <argument xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                       <source xsi:type="ocl.ecore:OperationCallExp">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//ContinuousPort"/>
                         <source xsi:type="ocl.ecore:PropertyCallExp">
                           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
-                          <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
+                          <source xsi:type="ocl.ecore:VariableExp" name="cpi" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
                             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                           </source>
                           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
@@ -551,7 +545,7 @@
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
                 <initExpression xsi:type="ocl.ecore:OperationCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/%/port">
+                  <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/%/port">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
                   </source>
                   <argument xsi:type="ocl.ecore:TypeExp" eType="/28/ContinuousPortInstance">
@@ -565,14 +559,14 @@
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
             </loopVariable>
             <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(PortInstance)">
-              <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/ci">
+              <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/ci">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
               </source>
               <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/portInstances"/>
             </iterSet>
             <guard xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/55">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/54">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
               </source>
               <argument xsi:type="ocl.ecore:TypeExp" eType="/28/ContinuousPortInstance">
@@ -592,7 +586,7 @@
               <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateContinuousPortClassFile/%.1/%.8/ci">
+                <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateContinuousPortClassFile/%.1/%.7/ci">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
                 </source>
                 <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
@@ -613,7 +607,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
             <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="false">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             </argument>
@@ -720,7 +714,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getWriteMethod"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getWriteMethod"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cpi">
@@ -732,7 +726,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getReadMethod"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReadMethod"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cpi">
@@ -744,7 +738,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName4ContinuousImpl"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="header">
@@ -759,7 +753,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="type">
@@ -771,7 +765,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getReferenceVariableName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReferenceVariableName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="cpi">
@@ -783,7 +777,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="type">
@@ -1094,7 +1088,6 @@
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
   <ocl.ecore:Variable name="self" eType="/3/OrderedSet(ComponentInstance)"/>
@@ -1690,7 +1683,7 @@
     </eAnnotations>
     <eAnnotations source="positions.103" references="/0/generateContinuousPortClassFile">
       <details key="start" value="2388"/>
-      <details key="end" value="3974"/>
+      <details key="end" value="3913"/>
       <details key="line" value="67"/>
     </eAnnotations>
     <eAnnotations source="positions.104" references="/0/generateContinuousPortClassFile/%">
@@ -1700,605 +1693,590 @@
     </eAnnotations>
     <eAnnotations source="positions.105" references="/0/generateContinuousPortClassFile/%.1">
       <details key="start" value="2512"/>
-      <details key="end" value="3962"/>
+      <details key="end" value="3901"/>
       <details key="line" value="69"/>
     </eAnnotations>
     <eAnnotations source="positions.106" references="/0/generateContinuousPortClassFile/%.1/%">
       <details key="start" value="2586"/>
-      <details key="end" value="2629"/>
+      <details key="end" value="2596"/>
       <details key="line" value="70"/>
     </eAnnotations>
     <eAnnotations source="positions.107" references="/0/generateContinuousPortClassFile/%.1/%.1">
-      <details key="start" value="2629"/>
-      <details key="end" value="2653"/>
-      <details key="line" value="71"/>
+      <details key="start" value="2597"/>
+      <details key="end" value="2636"/>
+      <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.108" references="/0/generateContinuousPortClassFile/%.1/%.1/%">
-      <details key="start" value="2645"/>
-      <details key="end" value="2648"/>
-      <details key="line" value="71"/>
+      <details key="start" value="2624"/>
+      <details key="end" value="2628"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.109" references="/0/generateContinuousPortClassFile/%.1/%.1/useSubDir">
-      <details key="start" value="2633"/>
-      <details key="end" value="2644"/>
+    <eAnnotations source="positions.109" references="/0/generateContinuousPortClassFile/%.1/%.1/%.1">
+      <details key="start" value="2630"/>
+      <details key="end" value="2635"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.110" references="/0/generateContinuousPortClassFile/%.1/%.2">
-      <details key="start" value="2654"/>
-      <details key="end" value="2697"/>
-      <details key="line" value="0"/>
+      <details key="start" value="2638"/>
+      <details key="end" value="2646"/>
+      <details key="line" value="70"/>
     </eAnnotations>
-    <eAnnotations source="positions.111" references="/0/generateContinuousPortClassFile/%.1/%.2/%">
-      <details key="start" value="2681"/>
-      <details key="end" value="2685"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.112" references="/0/generateContinuousPortClassFile/%.1/%.2/useSubDir">
-      <details key="start" value="2687"/>
+    <eAnnotations source="positions.111" references="/0/generateContinuousPortClassFile/%.1/%.3">
+      <details key="start" value="2646"/>
       <details key="end" value="2696"/>
-      <details key="line" value="0"/>
+      <details key="line" value="72"/>
     </eAnnotations>
-    <eAnnotations source="positions.113" references="/0/generateContinuousPortClassFile/%.1/%.3">
-      <details key="start" value="2699"/>
-      <details key="end" value="2707"/>
-      <details key="line" value="71"/>
-    </eAnnotations>
-    <eAnnotations source="positions.114" references="/0/generateContinuousPortClassFile/%.1/%.4">
-      <details key="start" value="2707"/>
-      <details key="end" value="2757"/>
+    <eAnnotations source="positions.112" references="/0/generateContinuousPortClassFile/%.1/%.3/%">
+      <details key="start" value="2679"/>
+      <details key="end" value="2684"/>
       <details key="line" value="73"/>
     </eAnnotations>
-    <eAnnotations source="positions.115" references="/0/generateContinuousPortClassFile/%.1/%.4/%">
-      <details key="start" value="2740"/>
-      <details key="end" value="2745"/>
+    <eAnnotations source="positions.113" references="/0/generateContinuousPortClassFile/%.1/%.3/%.1">
+      <details key="start" value="2658"/>
+      <details key="end" value="2677"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generateContinuousPortClassFile/%.1/%.4">
+      <details key="start" value="2696"/>
+      <details key="end" value="2750"/>
       <details key="line" value="74"/>
     </eAnnotations>
-    <eAnnotations source="positions.116" references="/0/generateContinuousPortClassFile/%.1/%.4/%.1">
-      <details key="start" value="2719"/>
-      <details key="end" value="2738"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.115" references="/0/generateContinuousPortClassFile/%.1/%.5">
+      <details key="start" value="2750"/>
+      <details key="end" value="2819"/>
+      <details key="line" value="78"/>
     </eAnnotations>
-    <eAnnotations source="positions.117" references="/0/generateContinuousPortClassFile/%.1/%.5">
-      <details key="start" value="2757"/>
-      <details key="end" value="2811"/>
-      <details key="line" value="75"/>
-    </eAnnotations>
-    <eAnnotations source="positions.118" references="/0/generateContinuousPortClassFile/%.1/%.6">
-      <details key="start" value="2811"/>
-      <details key="end" value="2880"/>
+    <eAnnotations source="positions.116" references="/0/generateContinuousPortClassFile/%.1/%.5/%">
+      <details key="start" value="2802"/>
+      <details key="end" value="2807"/>
       <details key="line" value="79"/>
     </eAnnotations>
-    <eAnnotations source="positions.119" references="/0/generateContinuousPortClassFile/%.1/%.6/%">
-      <details key="start" value="2863"/>
-      <details key="end" value="2868"/>
+    <eAnnotations source="positions.117" references="/0/generateContinuousPortClassFile/%.1/%.5/%.1">
+      <details key="start" value="2762"/>
+      <details key="end" value="2800"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generateContinuousPortClassFile/%.1/%.6">
+      <details key="start" value="2819"/>
+      <details key="end" value="2826"/>
       <details key="line" value="80"/>
     </eAnnotations>
-    <eAnnotations source="positions.120" references="/0/generateContinuousPortClassFile/%.1/%.6/%.1">
-      <details key="start" value="2823"/>
-      <details key="end" value="2861"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.119" references="/0/generateContinuousPortClassFile/%.1/%.7">
+      <details key="start" value="2826"/>
+      <details key="end" value="3893"/>
+      <details key="line" value="83"/>
     </eAnnotations>
-    <eAnnotations source="positions.121" references="/0/generateContinuousPortClassFile/%.1/%.7">
-      <details key="start" value="2880"/>
-      <details key="end" value="2887"/>
-      <details key="line" value="81"/>
-    </eAnnotations>
-    <eAnnotations source="positions.122" references="/0/generateContinuousPortClassFile/%.1/%.8">
-      <details key="start" value="2887"/>
-      <details key="end" value="3954"/>
+    <eAnnotations source="positions.120" references="/0/generateContinuousPortClassFile/%.1/%.7/%">
+      <details key="start" value="2935"/>
+      <details key="end" value="3885"/>
       <details key="line" value="84"/>
     </eAnnotations>
-    <eAnnotations source="positions.123" references="/0/generateContinuousPortClassFile/%.1/%.8/%">
-      <details key="start" value="2996"/>
-      <details key="end" value="3946"/>
+    <eAnnotations source="positions.121" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%">
+      <details key="start" value="3023"/>
+      <details key="end" value="3878"/>
       <details key="line" value="85"/>
     </eAnnotations>
-    <eAnnotations source="positions.124" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%">
-      <details key="start" value="3084"/>
-      <details key="end" value="3939"/>
+    <eAnnotations source="positions.122" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%">
+      <details key="start" value="3099"/>
+      <details key="end" value="3100"/>
       <details key="line" value="86"/>
     </eAnnotations>
-    <eAnnotations source="positions.125" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%">
-      <details key="start" value="3160"/>
-      <details key="end" value="3161"/>
-      <details key="line" value="87"/>
-    </eAnnotations>
-    <eAnnotations source="positions.126" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.1">
-      <details key="start" value="3162"/>
-      <details key="end" value="3223"/>
+    <eAnnotations source="positions.123" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.1">
+      <details key="start" value="3101"/>
+      <details key="end" value="3162"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.127" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.1/%">
-      <details key="start" value="3162"/>
-      <details key="end" value="3209"/>
+    <eAnnotations source="positions.124" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.1/%">
+      <details key="start" value="3101"/>
+      <details key="end" value="3148"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.128" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.1/%/%">
-      <details key="start" value="3162"/>
-      <details key="end" value="3200"/>
+    <eAnnotations source="positions.125" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.1/%/%">
+      <details key="start" value="3101"/>
+      <details key="end" value="3139"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.129" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.1/%/%/%">
-      <details key="start" value="3162"/>
-      <details key="end" value="3174"/>
+    <eAnnotations source="positions.126" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.1/%/%/%">
+      <details key="start" value="3101"/>
+      <details key="end" value="3113"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.130" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.1/%/%/%/cpi">
-      <details key="start" value="3162"/>
+    <eAnnotations source="positions.127" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.1/%/%/%/cpi">
+      <details key="start" value="3101"/>
+      <details key="end" value="3104"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.1/%/%/%.1">
+      <details key="start" value="3124"/>
+      <details key="end" value="3138"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.2">
+      <details key="start" value="3164"/>
       <details key="end" value="3165"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.3">
+      <details key="start" value="3166"/>
+      <details key="end" value="3196"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.131" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.1/%/%/%.1">
-      <details key="start" value="3185"/>
-      <details key="end" value="3199"/>
+    <eAnnotations source="positions.131" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.3/cpi">
+      <details key="start" value="3166"/>
+      <details key="end" value="3169"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.132" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.2">
+    <eAnnotations source="positions.132" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.4">
+      <details key="start" value="3198"/>
+      <details key="end" value="3201"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.5">
+      <details key="start" value="3202"/>
+      <details key="end" value="3267"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.5/%">
+      <details key="start" value="3202"/>
+      <details key="end" value="3249"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.5/%/%">
+      <details key="start" value="3202"/>
+      <details key="end" value="3240"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.5/%/%/%">
+      <details key="start" value="3202"/>
+      <details key="end" value="3214"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.5/%/%/%/cpi">
+      <details key="start" value="3202"/>
+      <details key="end" value="3205"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.5/%/%/%.1">
       <details key="start" value="3225"/>
-      <details key="end" value="3226"/>
+      <details key="end" value="3239"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.6">
+      <details key="start" value="3269"/>
+      <details key="end" value="3271"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7">
+      <details key="start" value="3272"/>
+      <details key="end" value="3870"/>
       <details key="line" value="87"/>
     </eAnnotations>
-    <eAnnotations source="positions.133" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.3">
-      <details key="start" value="3227"/>
-      <details key="end" value="3257"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.134" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.3/cpi">
-      <details key="start" value="3227"/>
-      <details key="end" value="3230"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.135" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.4">
-      <details key="start" value="3259"/>
-      <details key="end" value="3262"/>
-      <details key="line" value="87"/>
-    </eAnnotations>
-    <eAnnotations source="positions.136" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.5">
-      <details key="start" value="3263"/>
-      <details key="end" value="3328"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.137" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.5/%">
-      <details key="start" value="3263"/>
-      <details key="end" value="3310"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.138" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.5/%/%">
-      <details key="start" value="3263"/>
-      <details key="end" value="3301"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.139" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.5/%/%/%">
-      <details key="start" value="3263"/>
-      <details key="end" value="3275"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.140" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.5/%/%/%/cpi">
-      <details key="start" value="3263"/>
-      <details key="end" value="3266"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.141" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.5/%/%/%.1">
-      <details key="start" value="3286"/>
-      <details key="end" value="3300"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.142" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.6">
-      <details key="start" value="3330"/>
-      <details key="end" value="3332"/>
-      <details key="line" value="87"/>
-    </eAnnotations>
-    <eAnnotations source="positions.143" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7">
-      <details key="start" value="3333"/>
-      <details key="end" value="3931"/>
+    <eAnnotations source="positions.141" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%">
+      <details key="start" value="3325"/>
+      <details key="end" value="3331"/>
       <details key="line" value="88"/>
     </eAnnotations>
-    <eAnnotations source="positions.144" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%">
-      <details key="start" value="3386"/>
-      <details key="end" value="3392"/>
-      <details key="line" value="89"/>
-    </eAnnotations>
-    <eAnnotations source="positions.145" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.1">
-      <details key="start" value="3393"/>
-      <details key="end" value="3413"/>
+    <eAnnotations source="positions.142" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.1">
+      <details key="start" value="3332"/>
+      <details key="end" value="3352"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.146" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.1/cpi">
-      <details key="start" value="3393"/>
-      <details key="end" value="3396"/>
+    <eAnnotations source="positions.143" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.1/cpi">
+      <details key="start" value="3332"/>
+      <details key="end" value="3335"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.147" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.2">
-      <details key="start" value="3415"/>
-      <details key="end" value="3416"/>
-      <details key="line" value="89"/>
+    <eAnnotations source="positions.144" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.2">
+      <details key="start" value="3354"/>
+      <details key="end" value="3355"/>
+      <details key="line" value="88"/>
     </eAnnotations>
-    <eAnnotations source="positions.148" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.3">
-      <details key="start" value="3417"/>
-      <details key="end" value="3478"/>
+    <eAnnotations source="positions.145" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.3">
+      <details key="start" value="3356"/>
+      <details key="end" value="3417"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.149" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.3/%">
-      <details key="start" value="3417"/>
-      <details key="end" value="3464"/>
+    <eAnnotations source="positions.146" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.3/%">
+      <details key="start" value="3356"/>
+      <details key="end" value="3403"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.150" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.3/%/%">
-      <details key="start" value="3417"/>
-      <details key="end" value="3455"/>
+    <eAnnotations source="positions.147" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.3/%/%">
+      <details key="start" value="3356"/>
+      <details key="end" value="3394"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.151" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.3/%/%/%">
-      <details key="start" value="3417"/>
-      <details key="end" value="3429"/>
+    <eAnnotations source="positions.148" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.3/%/%/%">
+      <details key="start" value="3356"/>
+      <details key="end" value="3368"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.152" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.3/%/%/%/cpi">
-      <details key="start" value="3417"/>
-      <details key="end" value="3420"/>
+    <eAnnotations source="positions.149" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.3/%/%/%/cpi">
+      <details key="start" value="3356"/>
+      <details key="end" value="3359"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.153" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.3/%/%/%.1">
-      <details key="start" value="3440"/>
-      <details key="end" value="3454"/>
+    <eAnnotations source="positions.150" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.3/%/%/%.1">
+      <details key="start" value="3379"/>
+      <details key="end" value="3393"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.154" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.4">
-      <details key="start" value="3480"/>
-      <details key="end" value="3495"/>
-      <details key="line" value="89"/>
+    <eAnnotations source="positions.151" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.4">
+      <details key="start" value="3419"/>
+      <details key="end" value="3434"/>
+      <details key="line" value="88"/>
     </eAnnotations>
-    <eAnnotations source="positions.155" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.5">
+    <eAnnotations source="positions.152" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.5">
+      <details key="start" value="3435"/>
+      <details key="end" value="3465"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.5/cpi">
+      <details key="start" value="3435"/>
+      <details key="end" value="3438"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.6">
+      <details key="start" value="3467"/>
+      <details key="end" value="3484"/>
+      <details key="line" value="90"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.7">
+      <details key="start" value="3484"/>
+      <details key="end" value="3544"/>
+      <details key="line" value="91"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.7/%">
+      <details key="start" value="3525"/>
+      <details key="end" value="3532"/>
+      <details key="line" value="91"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.7/%.1">
       <details key="start" value="3496"/>
-      <details key="end" value="3526"/>
+      <details key="end" value="3523"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.156" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.5/cpi">
+    <eAnnotations source="positions.158" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.7/%.1/%">
+      <details key="start" value="3496"/>
+      <details key="end" value="3516"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.7/%.1/%/cpi">
       <details key="start" value="3496"/>
       <details key="end" value="3499"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.157" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.6">
-      <details key="start" value="3528"/>
-      <details key="end" value="3545"/>
-      <details key="line" value="91"/>
-    </eAnnotations>
-    <eAnnotations source="positions.158" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.7">
-      <details key="start" value="3545"/>
-      <details key="end" value="3605"/>
-      <details key="line" value="92"/>
-    </eAnnotations>
-    <eAnnotations source="positions.159" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.7/%">
-      <details key="start" value="3586"/>
-      <details key="end" value="3593"/>
-      <details key="line" value="92"/>
-    </eAnnotations>
-    <eAnnotations source="positions.160" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.7/%.1">
-      <details key="start" value="3557"/>
-      <details key="end" value="3584"/>
+    <eAnnotations source="positions.160" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.7/%.1/%.1">
+      <details key="start" value="3517"/>
+      <details key="end" value="3523"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.161" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.7/%.1/%">
-      <details key="start" value="3557"/>
-      <details key="end" value="3577"/>
+    <eAnnotations source="positions.161" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.8">
+      <details key="start" value="3544"/>
+      <details key="end" value="3549"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.9">
+      <details key="start" value="3550"/>
+      <details key="end" value="3580"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.162" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.7/%.1/%/cpi">
-      <details key="start" value="3557"/>
-      <details key="end" value="3560"/>
+    <eAnnotations source="positions.163" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.9/cpi">
+      <details key="start" value="3550"/>
+      <details key="end" value="3553"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.163" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.7/%.1/%.1">
-      <details key="start" value="3578"/>
-      <details key="end" value="3584"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.164" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.8">
-      <details key="start" value="3605"/>
-      <details key="end" value="3610"/>
+    <eAnnotations source="positions.164" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.10">
+      <details key="start" value="3582"/>
+      <details key="end" value="3598"/>
       <details key="line" value="94"/>
     </eAnnotations>
-    <eAnnotations source="positions.165" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.9">
-      <details key="start" value="3611"/>
-      <details key="end" value="3641"/>
+    <eAnnotations source="positions.165" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.11">
+      <details key="start" value="3276"/>
+      <details key="end" value="3323"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.166" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.9/cpi">
-      <details key="start" value="3611"/>
-      <details key="end" value="3614"/>
+    <eAnnotations source="positions.166" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.11/%">
+      <details key="start" value="3277"/>
+      <details key="end" value="3315"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.167" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.10">
-      <details key="start" value="3643"/>
-      <details key="end" value="3659"/>
-      <details key="line" value="95"/>
-    </eAnnotations>
-    <eAnnotations source="positions.168" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.11">
-      <details key="start" value="3337"/>
-      <details key="end" value="3384"/>
+    <eAnnotations source="positions.167" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.11/%/%">
+      <details key="start" value="3277"/>
+      <details key="end" value="3289"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.169" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.11/%">
-      <details key="start" value="3338"/>
-      <details key="end" value="3376"/>
+    <eAnnotations source="positions.168" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.11/%/%/cpi">
+      <details key="start" value="3277"/>
+      <details key="end" value="3280"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.170" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.11/%/%">
-      <details key="start" value="3338"/>
-      <details key="end" value="3350"/>
+    <eAnnotations source="positions.169" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.11/%/%.1">
+      <details key="start" value="3300"/>
+      <details key="end" value="3314"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.171" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.11/%/%/cpi">
-      <details key="start" value="3338"/>
-      <details key="end" value="3341"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.170" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12">
+      <details key="start" value="3599"/>
+      <details key="end" value="3865"/>
+      <details key="line" value="98"/>
     </eAnnotations>
-    <eAnnotations source="positions.172" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.11/%/%.1">
-      <details key="start" value="3361"/>
-      <details key="end" value="3375"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.173" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12">
-      <details key="start" value="3660"/>
-      <details key="end" value="3926"/>
+    <eAnnotations source="positions.171" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%">
+      <details key="start" value="3606"/>
+      <details key="end" value="3607"/>
       <details key="line" value="99"/>
     </eAnnotations>
-    <eAnnotations source="positions.174" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%">
-      <details key="start" value="3667"/>
-      <details key="end" value="3668"/>
-      <details key="line" value="100"/>
-    </eAnnotations>
-    <eAnnotations source="positions.175" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.1">
-      <details key="start" value="3669"/>
-      <details key="end" value="3730"/>
+    <eAnnotations source="positions.172" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.1">
+      <details key="start" value="3608"/>
+      <details key="end" value="3669"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.176" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.1/%">
-      <details key="start" value="3669"/>
-      <details key="end" value="3716"/>
+    <eAnnotations source="positions.173" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.1/%">
+      <details key="start" value="3608"/>
+      <details key="end" value="3655"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.177" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.1/%/%">
-      <details key="start" value="3669"/>
-      <details key="end" value="3707"/>
+    <eAnnotations source="positions.174" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.1/%/%">
+      <details key="start" value="3608"/>
+      <details key="end" value="3646"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.178" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.1/%/%/%">
-      <details key="start" value="3669"/>
-      <details key="end" value="3681"/>
+    <eAnnotations source="positions.175" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.1/%/%/%">
+      <details key="start" value="3608"/>
+      <details key="end" value="3620"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.179" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.1/%/%/%/cpi">
-      <details key="start" value="3669"/>
+    <eAnnotations source="positions.176" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.1/%/%/%/cpi">
+      <details key="start" value="3608"/>
+      <details key="end" value="3611"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.1/%/%/%.1">
+      <details key="start" value="3631"/>
+      <details key="end" value="3645"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.2">
+      <details key="start" value="3671"/>
       <details key="end" value="3672"/>
+      <details key="line" value="99"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.3">
+      <details key="start" value="3673"/>
+      <details key="end" value="3691"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.180" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.1/%/%/%.1">
-      <details key="start" value="3692"/>
-      <details key="end" value="3706"/>
+    <eAnnotations source="positions.180" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.3/cpi">
+      <details key="start" value="3687"/>
+      <details key="end" value="3690"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.181" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.2">
-      <details key="start" value="3732"/>
-      <details key="end" value="3733"/>
+    <eAnnotations source="positions.181" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.4">
+      <details key="start" value="3693"/>
+      <details key="end" value="3702"/>
+      <details key="line" value="99"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.5">
+      <details key="start" value="3702"/>
+      <details key="end" value="3760"/>
       <details key="line" value="100"/>
     </eAnnotations>
-    <eAnnotations source="positions.182" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.3">
-      <details key="start" value="3734"/>
-      <details key="end" value="3752"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.183" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.3/cpi">
-      <details key="start" value="3748"/>
-      <details key="end" value="3751"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.184" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.4">
-      <details key="start" value="3754"/>
-      <details key="end" value="3763"/>
-      <details key="line" value="100"/>
-    </eAnnotations>
-    <eAnnotations source="positions.185" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.5">
-      <details key="start" value="3763"/>
-      <details key="end" value="3821"/>
+    <eAnnotations source="positions.183" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.5/%">
+      <details key="start" value="3742"/>
+      <details key="end" value="3748"/>
       <details key="line" value="101"/>
     </eAnnotations>
-    <eAnnotations source="positions.186" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.5/%">
-      <details key="start" value="3803"/>
-      <details key="end" value="3809"/>
+    <eAnnotations source="positions.184" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.5/%.1">
+      <details key="start" value="3714"/>
+      <details key="end" value="3740"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.5/%.1/%">
+      <details key="start" value="3714"/>
+      <details key="end" value="3733"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.5/%.1/%/cpi">
+      <details key="start" value="3714"/>
+      <details key="end" value="3717"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.5/%.1/%.1">
+      <details key="start" value="3734"/>
+      <details key="end" value="3740"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.6">
+      <details key="start" value="3760"/>
+      <details key="end" value="3792"/>
       <details key="line" value="102"/>
     </eAnnotations>
-    <eAnnotations source="positions.187" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.5/%.1">
-      <details key="start" value="3775"/>
-      <details key="end" value="3801"/>
+    <eAnnotations source="positions.189" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.7">
+      <details key="start" value="3793"/>
+      <details key="end" value="3858"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.188" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.5/%.1/%">
-      <details key="start" value="3775"/>
-      <details key="end" value="3794"/>
+    <eAnnotations source="positions.190" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.7/%">
+      <details key="start" value="3793"/>
+      <details key="end" value="3840"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.189" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.5/%.1/%/cpi">
-      <details key="start" value="3775"/>
-      <details key="end" value="3778"/>
+    <eAnnotations source="positions.191" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.7/%/%">
+      <details key="start" value="3793"/>
+      <details key="end" value="3831"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.190" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.5/%.1/%.1">
-      <details key="start" value="3795"/>
-      <details key="end" value="3801"/>
+    <eAnnotations source="positions.192" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.7/%/%/%">
+      <details key="start" value="3793"/>
+      <details key="end" value="3805"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.191" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.6">
-      <details key="start" value="3821"/>
-      <details key="end" value="3853"/>
-      <details key="line" value="103"/>
-    </eAnnotations>
-    <eAnnotations source="positions.192" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.7">
-      <details key="start" value="3854"/>
-      <details key="end" value="3919"/>
+    <eAnnotations source="positions.193" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.7/%/%/%/cpi">
+      <details key="start" value="3793"/>
+      <details key="end" value="3796"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.193" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.7/%">
-      <details key="start" value="3854"/>
-      <details key="end" value="3901"/>
+    <eAnnotations source="positions.194" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.7/%/%/%.1">
+      <details key="start" value="3816"/>
+      <details key="end" value="3830"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.194" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.7/%/%">
-      <details key="start" value="3854"/>
-      <details key="end" value="3892"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.195" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/%.7/%.12/%.8">
+      <details key="start" value="3860"/>
+      <details key="end" value="3864"/>
+      <details key="line" value="105"/>
     </eAnnotations>
-    <eAnnotations source="positions.195" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.7/%/%/%">
-      <details key="start" value="3854"/>
-      <details key="end" value="3866"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.196" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.7/%/%/%/cpi">
-      <details key="start" value="3854"/>
-      <details key="end" value="3857"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.197" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.7/%/%/%.1">
-      <details key="start" value="3877"/>
-      <details key="end" value="3891"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.198" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/%.7/%.12/%.8">
-      <details key="start" value="3921"/>
-      <details key="end" value="3925"/>
-      <details key="line" value="106"/>
-    </eAnnotations>
-    <eAnnotations source="positions.199" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi">
-      <details key="start" value="3089"/>
-      <details key="end" value="3158"/>
-      <details key="line" value="86"/>
-    </eAnnotations>
-    <eAnnotations source="positions.200" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi/%">
-      <details key="start" value="3121"/>
-      <details key="end" value="3159"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.201" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi/%/port">
-      <details key="start" value="3121"/>
-      <details key="end" value="3125"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.202" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%/cpi/%/%">
-      <details key="start" value="3136"/>
-      <details key="end" value="3158"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.203" references="/0/generateContinuousPortClassFile/%.1/%.8/%/port">
-      <details key="start" value="3002"/>
-      <details key="end" value="3021"/>
+    <eAnnotations source="positions.196" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi">
+      <details key="start" value="3028"/>
+      <details key="end" value="3097"/>
       <details key="line" value="85"/>
     </eAnnotations>
-    <eAnnotations source="positions.204" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%.1">
-      <details key="start" value="3024"/>
-      <details key="end" value="3040"/>
+    <eAnnotations source="positions.197" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi/%">
+      <details key="start" value="3060"/>
+      <details key="end" value="3098"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.205" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%.1/ci">
-      <details key="start" value="3024"/>
-      <details key="end" value="3026"/>
+    <eAnnotations source="positions.198" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi/%/port">
+      <details key="start" value="3060"/>
+      <details key="end" value="3064"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.206" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%.2">
-      <details key="start" value="3045"/>
-      <details key="end" value="3080"/>
+    <eAnnotations source="positions.199" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%/cpi/%/%">
+      <details key="start" value="3075"/>
+      <details key="end" value="3097"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.207" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%.2/self">
+    <eAnnotations source="positions.200" references="/0/generateContinuousPortClassFile/%.1/%.7/%/port">
+      <details key="start" value="2941"/>
+      <details key="end" value="2960"/>
+      <details key="line" value="84"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%.1">
+      <details key="start" value="2963"/>
+      <details key="end" value="2979"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%.1/ci">
+      <details key="start" value="2963"/>
+      <details key="end" value="2965"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%.2">
+      <details key="start" value="2984"/>
+      <details key="end" value="3019"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%.2/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.208" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%.2/%">
-      <details key="start" value="3057"/>
-      <details key="end" value="3079"/>
+    <eAnnotations source="positions.205" references="/0/generateContinuousPortClassFile/%.1/%.7/%/%.2/%">
+      <details key="start" value="2996"/>
+      <details key="end" value="3018"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.209" references="/0/generateContinuousPortClassFile/%.1/%.8/%.1">
-      <details key="start" value="3947"/>
-      <details key="end" value="3948"/>
-      <details key="line" value="111"/>
+    <eAnnotations source="positions.206" references="/0/generateContinuousPortClassFile/%.1/%.7/%.1">
+      <details key="start" value="3886"/>
+      <details key="end" value="3887"/>
+      <details key="line" value="110"/>
     </eAnnotations>
-    <eAnnotations source="positions.210" references="/0/generateContinuousPortClassFile/%.1/%.8/ci">
-      <details key="start" value="2893"/>
-      <details key="end" value="2914"/>
-      <details key="line" value="84"/>
+    <eAnnotations source="positions.207" references="/0/generateContinuousPortClassFile/%.1/%.7/ci">
+      <details key="start" value="2832"/>
+      <details key="end" value="2853"/>
+      <details key="line" value="83"/>
     </eAnnotations>
-    <eAnnotations source="positions.211" references="/0/generateContinuousPortClassFile/%.1/%.8/CIs">
-      <details key="start" value="2917"/>
-      <details key="end" value="2920"/>
+    <eAnnotations source="positions.208" references="/0/generateContinuousPortClassFile/%.1/%.7/CIs">
+      <details key="start" value="2856"/>
+      <details key="end" value="2859"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.212" references="/0/generateContinuousPortClassFile/%.1/%.8/%.2">
-      <details key="start" value="2925"/>
-      <details key="end" value="2993"/>
+    <eAnnotations source="positions.209" references="/0/generateContinuousPortClassFile/%.1/%.7/%.2">
+      <details key="start" value="2864"/>
+      <details key="end" value="2932"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.213" references="/0/generateContinuousPortClassFile/%.1/%.8/%.2/%">
-      <details key="start" value="2925"/>
-      <details key="end" value="2955"/>
+    <eAnnotations source="positions.210" references="/0/generateContinuousPortClassFile/%.1/%.7/%.2/%">
+      <details key="start" value="2864"/>
+      <details key="end" value="2894"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.214" references="/0/generateContinuousPortClassFile/%.1/%.8/%.2/%/%">
-      <details key="start" value="2925"/>
-      <details key="end" value="2941"/>
+    <eAnnotations source="positions.211" references="/0/generateContinuousPortClassFile/%.1/%.7/%.2/%/%">
+      <details key="start" value="2864"/>
+      <details key="end" value="2880"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.215" references="/0/generateContinuousPortClassFile/%.1/%.8/%.2/%/%/ci">
-      <details key="start" value="2925"/>
-      <details key="end" value="2927"/>
+    <eAnnotations source="positions.212" references="/0/generateContinuousPortClassFile/%.1/%.7/%.2/%/%/ci">
+      <details key="start" value="2864"/>
+      <details key="end" value="2866"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.216" references="/0/generateContinuousPortClassFile/%.1/%.8/%.2/%.1">
-      <details key="start" value="2958"/>
-      <details key="end" value="2993"/>
+    <eAnnotations source="positions.213" references="/0/generateContinuousPortClassFile/%.1/%.7/%.2/%.1">
+      <details key="start" value="2897"/>
+      <details key="end" value="2932"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.217" references="/0/generateContinuousPortClassFile/%.1/%.9">
+    <eAnnotations source="positions.214" references="/0/generateContinuousPortClassFile/%.1/%.8">
       <details key="start" value="2519"/>
       <details key="end" value="2568"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.218" references="/0/generateContinuousPortClassFile/%.1/%.9/path">
+    <eAnnotations source="positions.215" references="/0/generateContinuousPortClassFile/%.1/%.8/path">
       <details key="start" value="2519"/>
       <details key="end" value="2523"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.219" references="/0/generateContinuousPortClassFile/%.1/%.9/%">
+    <eAnnotations source="positions.216" references="/0/generateContinuousPortClassFile/%.1/%.8/%">
       <details key="start" value="2524"/>
       <details key="end" value="2568"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.220" references="/0/generateContinuousPortClassFile/%.1/%.9/%/%">
+    <eAnnotations source="positions.217" references="/0/generateContinuousPortClassFile/%.1/%.8/%/%">
       <details key="start" value="2551"/>
       <details key="end" value="2556"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.221" references="/0/generateContinuousPortClassFile/%.1/%.9/%/useSubDir">
+    <eAnnotations source="positions.218" references="/0/generateContinuousPortClassFile/%.1/%.8/%/useSubDir">
       <details key="start" value="2558"/>
       <details key="end" value="2567"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.222" references="/0/generateContinuousPortClassFile/%.1/%.10">
+    <eAnnotations source="positions.219" references="/0/generateContinuousPortClassFile/%.1/%.9">
       <details key="start" value="2576"/>
       <details key="end" value="2583"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.223" references="/0/generateContinuousPortClassFile/CIs">
+    <eAnnotations source="positions.220" references="/0/generateContinuousPortClassFile/CIs">
       <details key="start" value="2437"/>
       <details key="end" value="2472"/>
       <details key="line" value="67"/>
     </eAnnotations>
-    <eAnnotations source="positions.224" references="/0/generateContinuousPortClassFile/path">
+    <eAnnotations source="positions.221" references="/0/generateContinuousPortClassFile/path">
       <details key="start" value="2474"/>
       <details key="end" value="2487"/>
       <details key="line" value="67"/>
     </eAnnotations>
-    <eAnnotations source="positions.225" references="/0/generateContinuousPortClassFile/useSubDir">
+    <eAnnotations source="positions.222" references="/0/generateContinuousPortClassFile/useSubDir">
       <details key="start" value="2489"/>
       <details key="end" value="2508"/>
       <details key="line" value="67"/>

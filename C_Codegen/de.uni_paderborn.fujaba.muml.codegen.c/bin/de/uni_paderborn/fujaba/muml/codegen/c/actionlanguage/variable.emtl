@@ -34,9 +34,9 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="expression.emtl#/0"/>
-    <imports href="variable_queries.emtl#/0"/>
-    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
     <imports href="../queries/modelQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="createVariableDeclarations" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// attribute declarations&#xA;"/>
@@ -45,7 +45,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;inner "/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
               <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
@@ -66,7 +66,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(start="/>
             <body xsi:type="mtl:TemplateInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="expression.emtl#/0/generateExpression.46"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression.emtl#/0/generateExpression.46"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
@@ -113,7 +113,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;outer "/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
@@ -158,9 +158,9 @@
       <init>
         <variable name="lVarDecls" eType="/6/Set(LocalVariableDeclarationStatement)">
           <initExpression xsi:type="mtl:QueryInvocation" eType="/6/Set(LocalVariableDeclarationStatement)">
-            <definition href="variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
             <argument xsi:type="mtl:QueryInvocation" eType="/6/Set(LocalVariableDeclarationStatement)">
-              <definition href="variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createLocalVariableDeclarations/rtsc">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
               </argument>
@@ -173,7 +173,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -189,7 +189,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="variable_queries.emtl#/0/getTypedNamedElementName"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getTypedNamedElementName"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
             <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/createLocalVariableDeclarations/%.1/lVarDecl">
@@ -261,7 +261,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="expression.emtl#/0/generateExpression.46"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression.emtl#/0/generateExpression.46"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
@@ -276,7 +276,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="variable_queries.emtl#/0/getTypedNamedElementName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getTypedNamedElementName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="typedNamedElement">
@@ -288,9 +288,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
         <eParameters name="rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </eParameters>
@@ -300,11 +300,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
         <eParameters name="lVarDecls">
-          <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+          <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
         </eParameters>
       </eOperations>
       <eOperations name="getTypeName">
@@ -312,7 +312,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="type">
@@ -457,7 +457,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="collections_Set(LocalVariableDeclarationStatement)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="connector_MessageBuffer_Class">

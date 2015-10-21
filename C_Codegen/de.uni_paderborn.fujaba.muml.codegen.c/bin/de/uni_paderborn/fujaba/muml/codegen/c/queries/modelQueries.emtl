@@ -3594,97 +3594,158 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getAllStructTypes" visibility="Public" type="/3/Set(StructureDataType)">
       <parameter name="CIs" eType="/3/OrderedSet(ComponentInstance)"/>
-      <expression xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(DataType)">
-        <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Set(DataType)">
-          <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(DataType)">
-            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Bag(DataType)">
-              <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Bag(Variable)">
-                <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(RealtimeStatechart)">
-                  <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(RealtimeStatechart)">
-                    <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Behavior)">
-                      <source xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(AtomicComponent)" definition="/0/getAllAtomicComponents">
-                        <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/getAllStructTypes/CIs"/>
-                      </source>
-                      <body xsi:type="ocl.ecore:PropertyCallExp">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior"/>
-                        <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/collect/temp35">
+      <expression xsi:type="ocl.ecore:LetExp" eType="/3/OrderedSet(DataType)">
+        <in xsi:type="ocl.ecore:LetExp" eType="/3/OrderedSet(DataType)">
+          <in xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(DataType)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Set(DataType)">
+              <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(DataType)">
+                <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(DataType)">
+                  <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Variable)">
+                    <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(RealtimeStatechart)">
+                      <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Behavior)">
+                        <source xsi:type="ocl.ecore:VariableExp" name="atomics" eType="/3/OrderedSet(AtomicComponent)" referredVariable="/0/getAllStructTypes/%/%/atomics"/>
+                        <body xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/collect/temp35">
+                            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//BehavioralElement/behavior"/>
+                        </body>
+                        <iterator xsi:type="ocl.ecore:Variable" name="temp35">
                           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
+                        </iterator>
+                      </source>
+                      <body xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="temp3" referredVariable="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/temp36">
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior"/>
                         </source>
-                        <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//BehavioralElement/behavior"/>
+                        <argument xsi:type="ocl.ecore:TypeExp" eType="/5/RealtimeStatechart">
+                          <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                       </body>
-                      <iterator xsi:type="ocl.ecore:Variable" name="temp35">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
+                      <iterator xsi:type="ocl.ecore:Variable" name="temp36">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior"/>
                       </iterator>
                     </source>
-                    <body xsi:type="ocl.ecore:OperationCallExp">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
-                      <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/temp36">
-                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Variable)">
+                      <source xsi:type="ocl.ecore:VariableExp" name="temp4" referredVariable="/0/getAllStructTypes/%/%/%/select/%/collect/collect/temp37">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                       </source>
-                      <argument xsi:type="ocl.ecore:TypeExp" eType="/5/RealtimeStatechart">
-                        <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
-                      </argument>
-                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/allAvailableVariables"/>
                     </body>
-                    <iterator xsi:type="ocl.ecore:Variable" name="temp36">
-                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior"/>
+                    <iterator xsi:type="ocl.ecore:Variable" name="temp37">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
                     </iterator>
                   </source>
-                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asSet"/>
+                  <body xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="temp5" referredVariable="/0/getAllStructTypes/%/%/%/select/%/collect/temp38">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+                  </body>
+                  <iterator xsi:type="ocl.ecore:Variable" name="temp38">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                  </iterator>
                 </source>
-                <body xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Variable)">
-                  <source xsi:type="ocl.ecore:VariableExp" name="temp3" referredVariable="/0/getAllStructTypes/%/select/%/collect/collect/temp37">
-                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/allAvailableVariables"/>
-                </body>
-                <iterator xsi:type="ocl.ecore:Variable" name="temp37">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
-                </iterator>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asSet"/>
               </source>
-              <body xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="temp4" referredVariable="/0/getAllStructTypes/%/select/%/collect/temp38">
-                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp6" referredVariable="/0/getAllStructTypes/%/%/%/select/temp39">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/5/StructureDataType">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//StructureDataType"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
               </body>
-              <iterator xsi:type="ocl.ecore:Variable" name="temp38">
-                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp39">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
               </iterator>
             </source>
-            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Bag(T)_Class/asSet"/>
-          </source>
-          <body xsi:type="ocl.ecore:OperationCallExp">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-            <source xsi:type="ocl.ecore:VariableExp" name="temp5" referredVariable="/0/getAllStructTypes/%/select/temp39">
-              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
-            </source>
-            <argument xsi:type="ocl.ecore:TypeExp" eType="/5/StructureDataType">
-              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//StructureDataType"/>
-            </argument>
-            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
-          </body>
-          <iterator xsi:type="ocl.ecore:Variable" name="temp39">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
-          </iterator>
-        </source>
-        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+          </in>
+          <variable xsi:type="ocl.ecore:Variable" name="atomics" eType="/3/OrderedSet(AtomicComponent)">
+            <initExpression xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(AtomicComponent)">
+              <source xsi:type="ocl.ecore:VariableExp" name="comps" eType="/3/OrderedSet(AtomicComponent)" referredVariable="/0/getAllStructTypes/%/comps"/>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllStructTypes/%/%/atomics/select/temp40">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//Component/componentKind"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind"/>
+                    <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/component/0.4.0#//ComponentKind/CONTINUOUS_COMPONENT"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp40">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
+              </iterator>
+            </initExpression>
+          </variable>
+        </in>
+        <variable xsi:type="ocl.ecore:Variable" name="comps" eType="/3/OrderedSet(AtomicComponent)">
+          <initExpression xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(AtomicComponent)" definition="/0/getAllAtomicComponentTypes">
+            <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/getAllStructTypes/CIs"/>
+          </initExpression>
+        </variable>
       </expression>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Query" name="getAllAtomicComponents" visibility="Public" type="/3/OrderedSet(AtomicComponent)">
+    <ownedModuleElement xsi:type="mtl:Query" name="getAllAtomicComponentTypes" visibility="Public" type="/3/OrderedSet(AtomicComponent)">
       <parameter name="CIs" eType="/3/OrderedSet(ComponentInstance)"/>
       <expression xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(AtomicComponent)">
-        <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/getAllAtomicComponents/CIs"/>
-        <argument xsi:type="ocl.ecore:TypeExp" eType="/5/AtomicComponent">
-          <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
-        </argument>
-        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/selectByKind"/>
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(AtomicComponent)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Component)">
+            <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(AtomicComponentInstance)">
+              <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/getAllAtomicComponentTypes/CIs"/>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/5/AtomicComponentInstance">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/selectByKind"/>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllAtomicComponentTypes/%/collect/collect/temp41">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp41">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+            </iterator>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/getAllAtomicComponentTypes/%/collect/temp42">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/5/AtomicComponent">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp42">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+          </iterator>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet"/>
       </expression>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getAllDiscretePortInstances" visibility="Public" type="/3/Set(DiscretePortInstance)">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="14654" endPosition="14841" value="&#xA;computes an (ordered) set of all DiscretePortInstances of a given codegen-model (the complete system)&#xA;@param codegen the codegen-model&#xA;@return Set of all DiscretePortInstances&#xA;&#xA;"/>
+        <body startPosition="14895" endPosition="15082" value="&#xA;computes an (ordered) set of all DiscretePortInstances of a given codegen-model (the complete system)&#xA;@param codegen the codegen-model&#xA;@return Set of all DiscretePortInstances&#xA;&#xA;"/>
         <parametersDocumentation name="codegen">
           <body value=" the codegen-model&#xA;@return Set of all DiscretePortInstances"/>
         </parametersDocumentation>
@@ -3695,12 +3756,12 @@
           <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(PortInstance)">
             <source xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/getAllDiscretePortInstances/CIs"/>
             <body xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(PortInstance)">
-              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllDiscretePortInstances/%.1/%/collect/temp40">
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllDiscretePortInstances/%.1/%/collect/temp43">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
               </source>
               <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/portInstances"/>
             </body>
-            <iterator xsi:type="ocl.ecore:Variable" name="temp40">
+            <iterator xsi:type="ocl.ecore:Variable" name="temp43">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
             </iterator>
           </source>
@@ -4031,11 +4092,11 @@
         <eAnnotations source="MTL" references="/0/getAllStructTypes"/>
         <eParameters name="CIs" eType="/3/OrderedSet(ComponentInstance)"/>
       </eOperations>
-      <eOperations name="getAllAtomicComponents" eType="/3/OrderedSet(AtomicComponent)">
+      <eOperations name="getAllAtomicComponentTypes" eType="/3/OrderedSet(AtomicComponent)">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/getAllAtomicComponents"/>
+        <eAnnotations source="MTL" references="/0/getAllAtomicComponentTypes"/>
         <eParameters name="CIs" eType="/3/OrderedSet(ComponentInstance)"/>
       </eOperations>
       <eOperations name="getAllDiscretePortInstances" eType="/3/Set(DiscretePortInstance)">
@@ -4287,16 +4348,13 @@
     <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(RealtimeStatechart)" instanceClassName="java.util.List">
       <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(RealtimeStatechart)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Variable)" instanceClassName="java.util.LinkedHashSet">
       <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(Variable)" instanceClassName="org.eclipse.ocl.util.Bag">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Variable)" instanceClassName="java.util.List">
       <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(DataType)" instanceClassName="org.eclipse.ocl.util.Bag">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(DataType)" instanceClassName="java.util.List">
       <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(DataType)" instanceClassName="java.util.Set">
@@ -4304,6 +4362,15 @@
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(DataType)" instanceClassName="java.util.LinkedHashSet">
       <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(AtomicComponentInstance)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Component)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(AtomicComponent)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//AtomicComponent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(DiscretePortInstance)" instanceClassName="java.util.LinkedHashSet">
       <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
@@ -10154,7 +10221,7 @@
     </eAnnotations>
     <eAnnotations source="positions.1110" references="/0/getAllStructTypes">
       <details key="start" value="14225"/>
-      <details key="end" value="14499"/>
+      <details key="end" value="14671"/>
       <details key="line" value="290"/>
     </eAnnotations>
     <eAnnotations source="positions.1111" references="/0/getAllStructTypes/CIs">
@@ -10164,262 +10231,372 @@
     </eAnnotations>
     <eAnnotations source="positions.1112" references="/0/getAllStructTypes/%">
       <details key="start" value="14323"/>
-      <details key="end" value="14496"/>
+      <details key="end" value="14665"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1113" references="/0/getAllStructTypes/%/select">
-      <details key="start" value="14323"/>
-      <details key="end" value="14480"/>
+    <eAnnotations source="positions.1113" references="/0/getAllStructTypes/%/%">
+      <details key="start" value="14402"/>
+      <details key="end" value="14665"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1114" references="/0/getAllStructTypes/%/select/%">
-      <details key="start" value="14323"/>
-      <details key="end" value="14440"/>
+    <eAnnotations source="positions.1114" references="/0/getAllStructTypes/%/%/%">
+      <details key="start" value="14523"/>
+      <details key="end" value="14665"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1115" references="/0/getAllStructTypes/%/select/%/collect">
-      <details key="start" value="14323"/>
-      <details key="end" value="14431"/>
+    <eAnnotations source="positions.1115" references="/0/getAllStructTypes/%/%/%/select">
+      <details key="start" value="14523"/>
+      <details key="end" value="14649"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1116" references="/0/getAllStructTypes/%/select/%/collect/collect">
-      <details key="start" value="14323"/>
-      <details key="end" value="14422"/>
+    <eAnnotations source="positions.1116" references="/0/getAllStructTypes/%/%/%/select/%">
+      <details key="start" value="14523"/>
+      <details key="end" value="14609"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1117" references="/0/getAllStructTypes/%/select/%/collect/collect/%">
-      <details key="start" value="14323"/>
-      <details key="end" value="14400"/>
+    <eAnnotations source="positions.1117" references="/0/getAllStructTypes/%/%/%/select/%/collect">
+      <details key="start" value="14523"/>
+      <details key="end" value="14600"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1118" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect">
-      <details key="start" value="14323"/>
-      <details key="end" value="14391"/>
+    <eAnnotations source="positions.1118" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect">
+      <details key="start" value="14523"/>
+      <details key="end" value="14591"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1119" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/collect">
-      <details key="start" value="14323"/>
-      <details key="end" value="14361"/>
+    <eAnnotations source="positions.1119" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect">
+      <details key="start" value="14523"/>
+      <details key="end" value="14569"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1120" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/collect/%">
-      <details key="start" value="14323"/>
-      <details key="end" value="14352"/>
+    <eAnnotations source="positions.1120" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/collect">
+      <details key="start" value="14523"/>
+      <details key="end" value="14539"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1121" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/collect/%/CIs">
-      <details key="start" value="14323"/>
-      <details key="end" value="14326"/>
+    <eAnnotations source="positions.1121" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/collect/atomics">
+      <details key="start" value="14523"/>
+      <details key="end" value="14530"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1122" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/collect/%.1">
-      <details key="start" value="14353"/>
-      <details key="end" value="14361"/>
+    <eAnnotations source="positions.1122" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/collect/%">
+      <details key="start" value="14531"/>
+      <details key="end" value="14539"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1123" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/collect/%.1/temp1">
+    <eAnnotations source="positions.1123" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/collect/%/temp2">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1124" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/collect/temp35">
+    <eAnnotations source="positions.1124" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/collect/temp35">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1125" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/%">
+    <eAnnotations source="positions.1125" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/%">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1126" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/%/temp2">
+    <eAnnotations source="positions.1126" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/%/temp3">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1127" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/%/%">
-      <details key="start" value="14372"/>
-      <details key="end" value="14390"/>
+    <eAnnotations source="positions.1127" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/%/%">
+      <details key="start" value="14550"/>
+      <details key="end" value="14568"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1128" references="/0/getAllStructTypes/%/select/%/collect/collect/%/collect/temp36">
+    <eAnnotations source="positions.1128" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/collect/temp36">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1129" references="/0/getAllStructTypes/%/select/%/collect/collect/%.1">
-      <details key="start" value="14401"/>
-      <details key="end" value="14422"/>
+    <eAnnotations source="positions.1129" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/%">
+      <details key="start" value="14570"/>
+      <details key="end" value="14591"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1130" references="/0/getAllStructTypes/%/select/%/collect/collect/%.1/temp3">
+    <eAnnotations source="positions.1130" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/%/temp4">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1131" references="/0/getAllStructTypes/%/select/%/collect/collect/temp37">
+    <eAnnotations source="positions.1131" references="/0/getAllStructTypes/%/%/%/select/%/collect/collect/temp37">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1132" references="/0/getAllStructTypes/%/select/%/collect/%">
-      <details key="start" value="14423"/>
-      <details key="end" value="14431"/>
+    <eAnnotations source="positions.1132" references="/0/getAllStructTypes/%/%/%/select/%/collect/%">
+      <details key="start" value="14592"/>
+      <details key="end" value="14600"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1133" references="/0/getAllStructTypes/%/select/%/collect/%/temp4">
+    <eAnnotations source="positions.1133" references="/0/getAllStructTypes/%/%/%/select/%/collect/%/temp5">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1134" references="/0/getAllStructTypes/%/select/%/collect/temp38">
+    <eAnnotations source="positions.1134" references="/0/getAllStructTypes/%/%/%/select/%/collect/temp38">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1135" references="/0/getAllStructTypes/%/select/%.1">
-      <details key="start" value="14449"/>
-      <details key="end" value="14479"/>
+    <eAnnotations source="positions.1135" references="/0/getAllStructTypes/%/%/%/select/%.1">
+      <details key="start" value="14618"/>
+      <details key="end" value="14648"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1136" references="/0/getAllStructTypes/%/select/%.1/temp5">
+    <eAnnotations source="positions.1136" references="/0/getAllStructTypes/%/%/%/select/%.1/temp6">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1137" references="/0/getAllStructTypes/%/select/%.1/%">
-      <details key="start" value="14461"/>
+    <eAnnotations source="positions.1137" references="/0/getAllStructTypes/%/%/%/select/%.1/%">
+      <details key="start" value="14630"/>
+      <details key="end" value="14647"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1138" references="/0/getAllStructTypes/%/%/%/select/temp39">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1139" references="/0/getAllStructTypes/%/%/atomics">
+      <details key="start" value="14406"/>
+      <details key="end" value="14518"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1140" references="/0/getAllStructTypes/%/%/atomics/select">
+      <details key="start" value="14446"/>
+      <details key="end" value="14518"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1141" references="/0/getAllStructTypes/%/%/atomics/select/comps">
+      <details key="start" value="14446"/>
+      <details key="end" value="14451"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1142" references="/0/getAllStructTypes/%/%/atomics/select/%">
+      <details key="start" value="14460"/>
+      <details key="end" value="14517"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1143" references="/0/getAllStructTypes/%/%/atomics/select/%/%">
+      <details key="start" value="14464"/>
+      <details key="end" value="14517"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1144" references="/0/getAllStructTypes/%/%/atomics/select/%/%/%">
+      <details key="start" value="14465"/>
       <details key="end" value="14478"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1138" references="/0/getAllStructTypes/%/select/temp39">
+    <eAnnotations source="positions.1145" references="/0/getAllStructTypes/%/%/atomics/select/%/%/%/temp1">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1139" references="/0/getAllAtomicComponents">
-      <details key="start" value="14502"/>
-      <details key="end" value="14648"/>
-      <details key="line" value="294"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1140" references="/0/getAllAtomicComponents/CIs">
-      <details key="start" value="14539"/>
-      <details key="end" value="14574"/>
-      <details key="line" value="294"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1141" references="/0/getAllAtomicComponents/%">
-      <details key="start" value="14610"/>
-      <details key="end" value="14644"/>
+    <eAnnotations source="positions.1146" references="/0/getAllStructTypes/%/%/atomics/select/%/%/%.1">
+      <details key="start" value="14481"/>
+      <details key="end" value="14516"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1142" references="/0/getAllAtomicComponents/%/CIs">
-      <details key="start" value="14610"/>
-      <details key="end" value="14613"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1143" references="/0/getAllAtomicComponents/%/%">
-      <details key="start" value="14628"/>
-      <details key="end" value="14643"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1144" references="/0/getAllDiscretePortInstances">
-      <details key="start" value="14844"/>
-      <details key="end" value="15031"/>
-      <details key="line" value="304"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1145" references="/0/getAllDiscretePortInstances/%">
-      <details key="start" value="14651"/>
-      <details key="end" value="14843"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1146" references="/0/getAllDiscretePortInstances/%/codegen">
+    <eAnnotations source="positions.1147" references="/0/getAllStructTypes/%/%/atomics/select/temp40">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1147" references="/0/getAllDiscretePortInstances/CIs">
-      <details key="start" value="14887"/>
-      <details key="end" value="14922"/>
-      <details key="line" value="304"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1148" references="/0/getAllDiscretePortInstances/%.1">
-      <details key="start" value="14955"/>
-      <details key="end" value="15028"/>
+    <eAnnotations source="positions.1148" references="/0/getAllStructTypes/%/comps">
+      <details key="start" value="14327"/>
+      <details key="end" value="14398"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1149" references="/0/getAllDiscretePortInstances/%.1/%">
-      <details key="start" value="14955"/>
-      <details key="end" value="14998"/>
+    <eAnnotations source="positions.1149" references="/0/getAllStructTypes/%/comps/%">
+      <details key="start" value="14365"/>
+      <details key="end" value="14398"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1150" references="/0/getAllDiscretePortInstances/%.1/%/collect">
-      <details key="start" value="14955"/>
-      <details key="end" value="14982"/>
+    <eAnnotations source="positions.1150" references="/0/getAllStructTypes/%/comps/%/CIs">
+      <details key="start" value="14365"/>
+      <details key="end" value="14368"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1151" references="/0/getAllDiscretePortInstances/%.1/%/collect/CIs">
-      <details key="start" value="14955"/>
-      <details key="end" value="14958"/>
+    <eAnnotations source="positions.1151" references="/0/getAllAtomicComponentTypes">
+      <details key="start" value="14674"/>
+      <details key="end" value="14889"/>
+      <details key="line" value="299"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1152" references="/0/getAllAtomicComponentTypes/CIs">
+      <details key="start" value="14715"/>
+      <details key="end" value="14750"/>
+      <details key="line" value="299"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1153" references="/0/getAllAtomicComponentTypes/%">
+      <details key="start" value="14786"/>
+      <details key="end" value="14885"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1152" references="/0/getAllDiscretePortInstances/%.1/%/collect/%">
-      <details key="start" value="14968"/>
-      <details key="end" value="14981"/>
+    <eAnnotations source="positions.1154" references="/0/getAllAtomicComponentTypes/%/collect">
+      <details key="start" value="14786"/>
+      <details key="end" value="14869"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1153" references="/0/getAllDiscretePortInstances/%.1/%/collect/%/temp1">
+    <eAnnotations source="positions.1155" references="/0/getAllAtomicComponentTypes/%/collect/collect">
+      <details key="start" value="14786"/>
+      <details key="end" value="14842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1156" references="/0/getAllAtomicComponentTypes/%/collect/collect/%">
+      <details key="start" value="14786"/>
+      <details key="end" value="14828"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1157" references="/0/getAllAtomicComponentTypes/%/collect/collect/%/CIs">
+      <details key="start" value="14786"/>
+      <details key="end" value="14789"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1158" references="/0/getAllAtomicComponentTypes/%/collect/collect/%/%">
+      <details key="start" value="14804"/>
+      <details key="end" value="14827"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1159" references="/0/getAllAtomicComponentTypes/%/collect/collect/%.1">
+      <details key="start" value="14829"/>
+      <details key="end" value="14842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1160" references="/0/getAllAtomicComponentTypes/%/collect/collect/%.1/temp1">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1154" references="/0/getAllDiscretePortInstances/%.1/%/collect/temp40">
+    <eAnnotations source="positions.1161" references="/0/getAllAtomicComponentTypes/%/collect/collect/temp41">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1155" references="/0/getAllDiscretePortInstances/%.1/%.1">
-      <details key="start" value="15007"/>
-      <details key="end" value="15027"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1156" references="/0/getTimeUnitFactor">
-      <details key="start" value="15033"/>
-      <details key="end" value="15250"/>
-      <details key="line" value="307"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1157" references="/0/getTimeUnitFactor/timeValue">
-      <details key="start" value="15065"/>
-      <details key="end" value="15086"/>
-      <details key="line" value="307"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1158" references="/0/getTimeUnitFactor/%">
-      <details key="start" value="15098"/>
-      <details key="end" value="15247"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1159" references="/0/getTimeUnitFactor/%/self">
+    <eAnnotations source="positions.1162" references="/0/getAllAtomicComponentTypes/%/collect/%">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1160" references="/0/getTimeUnitFactor/%/%">
-      <details key="start" value="15105"/>
+    <eAnnotations source="positions.1163" references="/0/getAllAtomicComponentTypes/%/collect/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1164" references="/0/getAllAtomicComponentTypes/%/collect/%/%">
+      <details key="start" value="14853"/>
+      <details key="end" value="14868"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1165" references="/0/getAllAtomicComponentTypes/%/collect/temp42">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1166" references="/0/getAllDiscretePortInstances">
+      <details key="start" value="15085"/>
+      <details key="end" value="15272"/>
+      <details key="line" value="309"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1167" references="/0/getAllDiscretePortInstances/%">
+      <details key="start" value="14892"/>
+      <details key="end" value="15084"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1168" references="/0/getAllDiscretePortInstances/%/codegen">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1169" references="/0/getAllDiscretePortInstances/CIs">
+      <details key="start" value="15128"/>
       <details key="end" value="15163"/>
+      <details key="line" value="309"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1170" references="/0/getAllDiscretePortInstances/%.1">
+      <details key="start" value="15196"/>
+      <details key="end" value="15269"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1161" references="/0/getTimeUnitFactor/%/%.1">
-      <details key="start" value="15165"/>
-      <details key="end" value="15226"/>
+    <eAnnotations source="positions.1171" references="/0/getAllDiscretePortInstances/%.1/%">
+      <details key="start" value="15196"/>
+      <details key="end" value="15239"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1162" references="/0/getTimeUnitFactor/%/%.2">
-      <details key="start" value="15227"/>
-      <details key="end" value="15246"/>
+    <eAnnotations source="positions.1172" references="/0/getAllDiscretePortInstances/%.1/%/collect">
+      <details key="start" value="15196"/>
+      <details key="end" value="15223"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.1163" references="/0/getTimeUnitFactor/%/%.2/%/timeValue">
-      <details key="start" value="15236"/>
-      <details key="end" value="15245"/>
+    <eAnnotations source="positions.1173" references="/0/getAllDiscretePortInstances/%.1/%/collect/CIs">
+      <details key="start" value="15196"/>
+      <details key="end" value="15199"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1174" references="/0/getAllDiscretePortInstances/%.1/%/collect/%">
+      <details key="start" value="15209"/>
+      <details key="end" value="15222"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1175" references="/0/getAllDiscretePortInstances/%.1/%/collect/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1176" references="/0/getAllDiscretePortInstances/%.1/%/collect/temp43">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1177" references="/0/getAllDiscretePortInstances/%.1/%.1">
+      <details key="start" value="15248"/>
+      <details key="end" value="15268"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1178" references="/0/getTimeUnitFactor">
+      <details key="start" value="15274"/>
+      <details key="end" value="15491"/>
+      <details key="line" value="312"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1179" references="/0/getTimeUnitFactor/timeValue">
+      <details key="start" value="15306"/>
+      <details key="end" value="15327"/>
+      <details key="line" value="312"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1180" references="/0/getTimeUnitFactor/%">
+      <details key="start" value="15339"/>
+      <details key="end" value="15488"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1181" references="/0/getTimeUnitFactor/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1182" references="/0/getTimeUnitFactor/%/%">
+      <details key="start" value="15346"/>
+      <details key="end" value="15404"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1183" references="/0/getTimeUnitFactor/%/%.1">
+      <details key="start" value="15406"/>
+      <details key="end" value="15467"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1184" references="/0/getTimeUnitFactor/%/%.2">
+      <details key="start" value="15468"/>
+      <details key="end" value="15487"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1185" references="/0/getTimeUnitFactor/%/%.2/%/timeValue">
+      <details key="start" value="15477"/>
+      <details key="end" value="15486"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

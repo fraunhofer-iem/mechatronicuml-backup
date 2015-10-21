@@ -52,16 +52,16 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/psm/0.4.0/#//apiexpressions"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/psm/0.4.0/#//codegen"/>
     </input>
-    <imports href="../queries/stringQueries.emtl#/0"/>
-    <imports href="../queries/modelQueries.emtl#/0"/>
-    <imports href="../actionlanguage/expression.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generate_RTSCHeader" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @file &#xA; * @author generated&#xA; * @brief Specification of Realtime-StateChart: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/generate_RTSCHeader/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -69,7 +69,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details This files contains the description of the Realtime-StateChart: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/generate_RTSCHeader/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -77,7 +77,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" and its behavior which is executed&#xA; */&#xA;#ifndef "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/generate_RTSCHeader/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -85,7 +85,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;#define "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/generate_RTSCHeader/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -161,7 +161,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;&#xA;#ifdef __cplusplus&#xA;  }&#xA;#endif&#xA;#endif /* "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/generate_RTSCHeader/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -174,7 +174,7 @@
           </source>
           <argument xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getFileName.3"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName.3"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/generate_RTSCHeader/rtsc">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             </argument>
@@ -267,7 +267,7 @@
       </body>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getFileName"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/includes/comp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </argument>
@@ -367,7 +367,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/** &#xA; * @brief This enum represents the States of the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -377,7 +377,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getQualifiedName"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getQualifiedName"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -410,7 +410,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;}"/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.5"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.5"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -421,7 +421,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * &#xA;&#x9; * @brief Description of the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -429,7 +429,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9; * @details This struct represents the  Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -437,7 +437,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" and its States&#xA;&#x9; */&#xA;struct "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -446,7 +446,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/variables/comp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </argument>
@@ -454,7 +454,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" * parentComponent;/**&lt; A pointer to the parent ComponentInstance of Type: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/variables/comp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </argument>
@@ -462,7 +462,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" , which has this Realtime-StateChart as its behavior */&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;"/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.5"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.5"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -473,7 +473,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getVariableName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -481,7 +481,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";/**&lt; The current State of the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -492,7 +492,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;"/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getClassName.5"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.5"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -503,7 +503,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getVariableName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.4"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             <source xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/variables/%.27/region">
@@ -515,7 +515,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";/**&lt; Represents the state of region: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.9"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.9"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/variables/%.27/region">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
           </argument>
@@ -536,7 +536,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;bool_t "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getExecutionVerifierName"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getExecutionVerifierName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -544,7 +544,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";/**&lt; Execution Verifier of RTSC: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/variables/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -554,7 +554,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;bool_t "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getExecutionVerifierName"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getExecutionVerifierName"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             <source xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/variables/%.33/region">
@@ -566,7 +566,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";/**&lt; Execution Verifier of RTSC: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.9"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.9"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/variables/%.33/region">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
           </argument>
@@ -589,7 +589,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;Clock "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getVariableName.5"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.5"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="clock" referredVariable="/0/variables/%.35/clock">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Clock"/>
           </argument>
@@ -597,7 +597,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";/**&lt; The Clock: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.16"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.16"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="clock" referredVariable="/0/variables/%.35/clock">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Clock"/>
           </argument>
@@ -621,7 +621,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;Clock "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getClockVariableName.1"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClockVariableName.1"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="state" referredVariable="/0/variables/%.38/state">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
           </argument>
@@ -629,7 +629,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";/**&lt; Clock for doEvent for state "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.12"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.12"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="state" referredVariable="/0/variables/%.38/state">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
           </argument>
@@ -669,7 +669,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;"/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
               <source xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/variables/%.41/var">
@@ -681,7 +681,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/variables/%.41/var">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
             </argument>
@@ -788,7 +788,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="; /**&lt; The Realtime-StateChart Variable: "/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getName.6"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.6"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/variables/%.41/var">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
             </argument>
@@ -824,7 +824,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;"/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/variables/%.41/var">
@@ -836,7 +836,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/variables/%.41/var">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
               </argument>
@@ -844,7 +844,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="; /**&lt; The Realtime-StateChart Variable: "/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="../queries/stringQueries.emtl#/0/getName.6"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.6"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/variables/%.41/var">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
               </argument>
@@ -882,7 +882,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;"/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
               <source xsi:type="ocl.ecore:VariableExp" name="hPort" referredVariable="/0/variables/%.43/%/hPort">
@@ -894,7 +894,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="../queries/stringQueries.emtl#/0/getVariableName.9"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.9"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="hPort" referredVariable="/0/variables/%.43/%/hPort">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
             </argument>
@@ -943,7 +943,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="apiOp" referredVariable="/0/variables/%.45/%/%/%/%/apiOp">
@@ -955,7 +955,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" (*"/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getMethodName"/>
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getMethodName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="apiOp" referredVariable="/0/variables/%.45/%/%/%/%/apiOp">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
                   </argument>
@@ -964,7 +964,7 @@
                 <body xsi:type="mtl:ForBlock">
                   <body xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
                     <argument xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/variables/%.45/%/%/%/%/%.5/p">
@@ -989,7 +989,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="); /**&lt; A Function Pointer to the API-Call: "/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="../queries/stringQueries.emtl#/0/getName"/>
+                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="apiOp" referredVariable="/0/variables/%.45/%/%/%/%/apiOp">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
                   </argument>
@@ -1078,7 +1078,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="getStateNames">
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.12"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.12"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="state" referredVariable="/0/getStateNames/state">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
         </argument>
@@ -1086,7 +1086,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" /**&lt; Represents the State: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.12"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.12"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="state" referredVariable="/0/getStateNames/state">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
         </argument>
@@ -1094,7 +1094,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           <source xsi:type="ocl.ecore:VariableExp" name="state" referredVariable="/0/getStateNames/state">
@@ -1177,7 +1177,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @brief Creates an Instance of the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/constructor/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1185,7 +1185,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details Allocates Memory for the struct "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/constructor/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1193,7 +1193,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * &#xA; * @param parentComponent An Instance of the Component: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="component" referredVariable="/0/constructor/component">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </argument>
@@ -1201,7 +1201,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" which behavior is described via this Realtime-StateChart&#xA; * @return A Pointer to the new created "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/constructor/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1209,7 +1209,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; */&#xA;&#x9;"/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/constructor/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1217,7 +1217,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="* "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getCreateMethodName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getCreateMethodName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/constructor/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1225,7 +1225,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="component" referredVariable="/0/constructor/component">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
         </argument>
@@ -1254,7 +1254,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @brief Initializes an Instance of the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1262,7 +1262,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details All struct members of the struct "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1270,7 +1270,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" are initialized,&#xA; *&#x9;&#x9;&#x9;and all Regions of the Realtime-StateChart are initialized, too.&#xA; * &#xA; * @param rtsc The specific "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1278,7 +1278,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" to be initialized&#xA; */&#xA;&#x9;void "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getInitializeMethodName.3"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getInitializeMethodName.3"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1286,7 +1286,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1296,7 +1296,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @brief Initializes the Region: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.9"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.9"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/initialize/%.11/region">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
           </argument>
@@ -1304,7 +1304,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of the Realtime-StateChart: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1312,7 +1312,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details The Member "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1320,7 +1320,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="::"/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getVariableName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.4"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
             <source xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/initialize/%.11/region">
@@ -1332,7 +1332,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" is initialized&#xA; * &#xA; * @param stateChart The specific "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1340,7 +1340,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" whose Region shall be initialized&#xA; */&#xA;&#xA;&#x9;void "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getInitializeMethodName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getInitializeMethodName.4"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/initialize/%.11/region">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
           </argument>
@@ -1348,7 +1348,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getSuperClassName"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getSuperClassName"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/initialize/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1380,7 +1380,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @brief Destroys the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/destroy/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1388,7 +1388,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details Frees the Memory for the struct "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/destroy/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1396,7 +1396,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * &#xA; * @param rtsc The specific "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/destroy/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1404,7 +1404,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" to be destroyed&#xA; */&#x9;&#xA;&#x9;void "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getDestroyMethodName.3"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getDestroyMethodName.3"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/destroy/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1412,7 +1412,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/destroy/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1432,7 +1432,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @brief Executes the next Step of the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/process/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1440,7 +1440,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * &#xA; * @param rtsc The specific "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/process/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1448,7 +1448,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" to be executed&#xA; */&#x9;&#xA;&#x9;void "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getProcessMethodName.2"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getProcessMethodName.2"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/process/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1456,7 +1456,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/process/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1485,7 +1485,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of the Realtime-StateChart: "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/exit/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1501,7 +1501,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" is left.&#xA; * &#x9;&#x9;&#x9;The correct State is set and all Exit-Events are executed.&#xA; *&#xA; * @param rtsc The specific "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/exit/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1517,7 +1517,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" shall be exit&#xA; */&#xA;&#x9;void "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getExitMethodName"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getExitMethodName"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="region" referredVariable="/0/exit/%/region">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
           </argument>
@@ -1525,7 +1525,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/exit/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1535,7 +1535,7 @@
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
         </loopVariable>
         <iterSet xsi:type="mtl:QueryInvocation" eType="/36/Set(Region)">
-          <definition href="../queries/modelQueries.emtl#/0/getAllRegions"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllRegions"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/exit/rtsc">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
           </argument>
@@ -1555,7 +1555,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @brief Returns wether the Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getName.8"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isInState/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1563,7 +1563,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" is in a specific State&#xA; * &#xA; * @param rtsc The specific Realtime-StateChart: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isInState/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1571,7 +1571,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @param state One of the States of the Enum: "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.5"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.5"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isInState/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1582,7 +1582,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * &#xA; * @return True, If the Realtime-StateChart is in the specific State, otherwise False&#xA; */&#x9;&#xA;&#x9;bool_t "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getIsInStateMethodName"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getIsInStateMethodName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isInState/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1590,7 +1590,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isInState/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1598,7 +1598,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="* rtsc, "/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../queries/stringQueries.emtl#/0/getClassName.5"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.5"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isInState/rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </argument>
@@ -1782,7 +1782,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getExecutionVerifierName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getExecutionVerifierName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -1794,7 +1794,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getMethodName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getMethodName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="op">
@@ -1806,7 +1806,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="op">
@@ -1818,7 +1818,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getName.6"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.6"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="var">
@@ -1830,7 +1830,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getName.8"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.8"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -1842,7 +1842,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getName.9"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.9"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="region">
@@ -1854,7 +1854,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getName.12"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.12"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="state">
@@ -1866,7 +1866,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getExitMethodName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getExitMethodName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="region">
@@ -1878,7 +1878,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getFileName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
@@ -1896,7 +1896,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getFileName.3"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getFileName.3"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -1914,7 +1914,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getClassName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="component">
@@ -1926,7 +1926,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getClassName.4"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -1938,7 +1938,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getClassName.5"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClassName.5"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -1953,7 +1953,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getSuperClassName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getSuperClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -1965,7 +1965,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getName.16"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getName.16"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="clock">
@@ -1977,7 +1977,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="var">
@@ -1989,7 +1989,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getVariableName.4"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2001,7 +2001,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getVariableName.5"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.5"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="clock">
@@ -2013,7 +2013,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getVariableName.9"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.9"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="port">
@@ -2025,7 +2025,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getHeaderDefine.1"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2037,7 +2037,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getInitializeMethodName.3"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getInitializeMethodName.3"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2049,7 +2049,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getInitializeMethodName.4"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getInitializeMethodName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="region">
@@ -2061,7 +2061,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getDestroyMethodName.3"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getDestroyMethodName.3"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2073,7 +2073,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getProcessMethodName.2"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getProcessMethodName.2"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2085,7 +2085,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getIsInStateMethodName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getIsInStateMethodName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2097,7 +2097,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getClockVariableName.1"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getClockVariableName.1"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="state">
@@ -2109,7 +2109,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getCreateMethodName.4"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getCreateMethodName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="rtsc">
@@ -2121,7 +2121,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="type">
@@ -2133,7 +2133,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/stringQueries.emtl#/0/getQualifiedName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getQualifiedName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="mumlObject">
@@ -2145,9 +2145,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../queries/modelQueries.emtl#/0/getAllRegions"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllRegions"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SetType" href="../queries/modelQueries.emtl#/3/Set(Region)"/>
+        <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/3/Set(Region)"/>
         <eParameters name="rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </eParameters>
@@ -2350,7 +2350,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="collections_OrderedSet(ComponentInstance)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="../queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
+        <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="valuetype_TimeValue_Class">

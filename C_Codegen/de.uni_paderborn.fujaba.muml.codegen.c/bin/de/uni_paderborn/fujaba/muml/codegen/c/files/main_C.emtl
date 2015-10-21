@@ -41,13 +41,13 @@
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechart.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechartHeader.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/componentHeader.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/component.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
+    <imports href="componentHeader.emtl#/0"/>
+    <imports href="component.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/Message.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/operations.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/ContinuousPorts.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/CIC.emtl#/0"/>
+    <imports href="ContinuousPorts.emtl#/0"/>
+    <imports href="CIC.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateANSICMainFile" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="//general includes&#xA;#include &quot;"/>
@@ -314,7 +314,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;"/>
             <body xsi:type="mtl:TemplateInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/CIC.emtl#/0/generateInstanceCreation"/>
+              <definition href="CIC.emtl#/0/generateInstanceCreation"/>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateANSICMainFile/%/%.12/ci">
@@ -426,7 +426,7 @@
                   <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getReadMethod"/>
                   <argument xsi:type="mtl:QueryInvocation">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
-                    <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
+                    <definition href="../queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
                     <argument xsi:type="ocl.ecore:OperationCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateANSICMainFile/%/%.14/%/port">
@@ -492,7 +492,7 @@
                     <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getWriteMethod"/>
                     <argument xsi:type="mtl:QueryInvocation">
                       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
-                      <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
+                      <definition href="../queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
                       <argument xsi:type="ocl.ecore:OperationCallExp">
                         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateANSICMainFile/%/%.14/%/port">
@@ -1047,7 +1047,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
+          <references href="../queries/modelQueries.emtl#/0/getContinuousPortInstance"/>
         </eAnnotations>
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
         <eParameters name="hpi">
@@ -1059,7 +1059,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/CIC.emtl#/0/generateInstanceCreation"/>
+          <references href="CIC.emtl#/0/generateInstanceCreation"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aci">
@@ -1217,7 +1217,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getContinuousPortInstance.1"/>
+          <references href="../queries/modelQueries.emtl#/0/getContinuousPortInstance.1"/>
         </eAnnotations>
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
         <eParameters name="hpi">

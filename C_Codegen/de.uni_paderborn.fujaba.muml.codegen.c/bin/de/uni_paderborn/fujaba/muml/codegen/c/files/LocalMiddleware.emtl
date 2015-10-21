@@ -38,7 +38,7 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/middlewareQueries.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression.emtl#/0"/>
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/files/RealtimeStatechart.emtl#/0"/>
@@ -602,7 +602,7 @@
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
           </loopVariable>
           <iterSet xsi:type="mtl:QueryInvocation" eType="/3/Set(MessageType)">
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllUsedMessages"/>
+            <definition href="../queries/modelQueries.emtl#/0/getAllUsedMessages"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateMiddlewareCoreClass/CIs"/>
           </iterSet>
           <guard xsi:type="ocl.ecore:OperationCallExp">
@@ -662,7 +662,7 @@
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
           </loopVariable>
           <iterSet xsi:type="mtl:QueryInvocation" eType="/3/Set(DiscretePortInstance)">
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
+            <definition href="../queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateMiddlewareCoreClass/CIs"/>
           </iterSet>
           <guard xsi:type="ocl.ecore:OperationCallExp">
@@ -725,7 +725,7 @@
             <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/middlewareQueries.emtl#/0/getIdentifierVariableName"/>
             <argument xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
-              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getTargetPortInstance"/>
+              <definition href="../queries/modelQueries.emtl#/0/getTargetPortInstance"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="port" referredVariable="/0/generateMiddlewareCoreClass/%/%.8/port">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
               </argument>
@@ -736,7 +736,7 @@
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
           </loopVariable>
           <iterSet xsi:type="mtl:QueryInvocation" eType="/3/Set(DiscretePortInstance)">
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
+            <definition href="../queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateMiddlewareCoreClass/CIs"/>
           </iterSet>
           <guard xsi:type="ocl.ecore:OperationCallExp">
@@ -818,7 +818,7 @@
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
           </loopVariable>
           <iterSet xsi:type="mtl:QueryInvocation" eType="/3/Set(MessageType)">
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllUsedMessages"/>
+            <definition href="../queries/modelQueries.emtl#/0/getAllUsedMessages"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateGlobalIdentifierFiles/CIs"/>
           </iterSet>
         </body>
@@ -850,7 +850,7 @@
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
           </loopVariable>
           <iterSet xsi:type="mtl:QueryInvocation" eType="/3/Set(DiscretePortInstance)">
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
+            <definition href="../queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="CIs" eType="/3/OrderedSet(ComponentInstance)" referredVariable="/0/generateGlobalIdentifierFiles/CIs"/>
           </iterSet>
         </body>
@@ -1202,7 +1202,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getTargetPortInstance"/>
+          <references href="../queries/modelQueries.emtl#/0/getTargetPortInstance"/>
         </eAnnotations>
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
         <eParameters name="dpi">
@@ -1214,11 +1214,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllUsedMessages"/>
+          <references href="../queries/modelQueries.emtl#/0/getAllUsedMessages"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/3/Set(MessageType)"/>
+        <eType xsi:type="ocl.ecore:SetType" href="../queries/modelQueries.emtl#/3/Set(MessageType)"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="../queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
       </eOperations>
       <eOperations name="getAllDiscretePortInstances">
@@ -1226,11 +1226,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
+          <references href="../queries/modelQueries.emtl#/0/getAllDiscretePortInstances"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/3/Set(DiscretePortInstance)"/>
+        <eType xsi:type="ocl.ecore:SetType" href="../queries/modelQueries.emtl#/3/Set(DiscretePortInstance)"/>
         <eParameters name="CIs">
-          <eType xsi:type="ocl.ecore:OrderedSetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
+          <eType xsi:type="ocl.ecore:OrderedSetType" href="../queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
         </eParameters>
       </eOperations>
       <eOperations name="getIdentifierVariableName">
@@ -1412,7 +1412,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/modelQueries.emtl#/0/getTargetPortInstance.1"/>
+          <references href="../queries/modelQueries.emtl#/0/getTargetPortInstance.1"/>
         </eAnnotations>
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//DiscretePortInstance"/>
         <eParameters name="dpi">
