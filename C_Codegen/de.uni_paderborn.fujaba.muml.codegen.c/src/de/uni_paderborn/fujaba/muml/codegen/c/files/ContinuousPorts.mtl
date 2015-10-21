@@ -67,8 +67,7 @@ void initializeContinuousImplementations();
 [template public generateContinuousPortClassFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
 
 [file (path+getFileName4ContinuousImpl(false, useSubDir),false, 'UTF-8')]
-#include "contImplementations.h"
-#include "[if (useSubDir)]../[/if][getFileName4ContinuousImpl(true, useSubDir)/]"	
+#include "[getFileName4ContinuousImpl(true, false)/]"	
 
 /** [protected ('user includes **/')]
 
