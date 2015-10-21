@@ -35,8 +35,8 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
     <imports href="expression.emtl#/0"/>
-    <imports href="operation_queries.emtl#/0"/>
-    <imports href="variable_queries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/operation_queries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateOperations" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
@@ -237,6 +237,11 @@
         <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TypeCastExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_WhileLoop_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//WhileLoop"/>
@@ -264,7 +269,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="collections_Set(LocalVariableDeclarationStatement)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>

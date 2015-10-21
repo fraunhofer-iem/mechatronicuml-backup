@@ -40,7 +40,7 @@
     <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:IfBlock">
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicalExpression"/>
@@ -66,7 +66,7 @@
         </ifExpr>
         <else>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
-          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression/expression">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicalExpression"/>
@@ -115,7 +115,7 @@
       </guard>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.1/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicalExpression"/>
@@ -162,7 +162,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:LetBlock">
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.48">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -187,7 +187,7 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.48">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -234,7 +234,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.3/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparisonExpression"/>
@@ -270,7 +270,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:LetBlock">
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.48">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.49">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -295,7 +295,7 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.48">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.49">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -342,7 +342,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.5/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticExpression"/>
@@ -378,7 +378,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:IfBlock">
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.6/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticExpression"/>
@@ -416,7 +416,7 @@
         </ifExpr>
         <else>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
-          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.6/expression">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticExpression"/>
@@ -477,7 +477,7 @@
       </guard>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.7/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticExpression"/>
@@ -536,7 +536,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.8/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticExpression"/>
@@ -573,7 +573,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:LetBlock">
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.49">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.50">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -598,7 +598,7 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.49">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.50">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -645,7 +645,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.10/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryExpression"/>
@@ -680,7 +680,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.11/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryExpression"/>
@@ -715,7 +715,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.12/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryExpression"/>
@@ -752,7 +752,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:LetBlock">
         <body xsi:type="mtl:IfBlock">
-          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.50">
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.51">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -806,7 +806,7 @@
                 <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
               </argument>
             </body>
-            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.50">
+            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.51">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -855,7 +855,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.14/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypedNamedElementExpression"/>
@@ -890,7 +890,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.15/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypedNamedElementExpression"/>
@@ -925,7 +925,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.16/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypedNamedElementExpression"/>
@@ -960,7 +960,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.17/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypedNamedElementExpression"/>
@@ -995,7 +995,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1081,7 +1081,7 @@
       <body xsi:type="mtl:ForBlock">
         <body xsi:type="mtl:IfBlock">
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="."/>
-          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="index" referredVariable="/0/generateIndices/%/index">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1108,7 +1108,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </body>
-            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="index" referredVariable="/0/generateIndices/%/index">
                 <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1211,7 +1211,7 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  =  "/>
-            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateArrayInitializer/%/%/%/expression">
                 <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1288,7 +1288,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.22/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LiteralExpression"/>
@@ -1323,7 +1323,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.23/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LiteralExpression"/>
@@ -1358,7 +1358,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.24/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LiteralExpression"/>
@@ -1393,7 +1393,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.25/expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LiteralExpression"/>
@@ -1455,7 +1455,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.27/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
@@ -1490,7 +1490,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.28/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
@@ -1525,7 +1525,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.29/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
@@ -1560,7 +1560,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.30/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
@@ -1622,7 +1622,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypedNamedElementExpression"/>
@@ -1636,7 +1636,7 @@
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = "/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1685,7 +1685,7 @@
       </guard>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypedNamedElementExpression"/>
@@ -1730,7 +1730,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:ForBlock">
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.34/%/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1771,7 +1771,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="if ("/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1785,7 +1785,7 @@
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="){&#xA;&#x9;"/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Block"/>
@@ -1820,7 +1820,7 @@
       </body>
       <body xsi:type="mtl:ForBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="else if ("/>
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1840,7 +1840,7 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="){&#xA;"/>
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Block"/>
@@ -1878,7 +1878,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="else {&#xA;&#x9;"/>
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Block"/>
@@ -1928,7 +1928,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Assignment"/>
@@ -1942,7 +1942,7 @@
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;while ("/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -1956,7 +1956,7 @@
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") {&#xA;&#x9;"/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Block"/>
@@ -1970,7 +1970,7 @@
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Assignment"/>
@@ -2033,7 +2033,7 @@
             </argument>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = "/>
-          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -2130,7 +2130,7 @@
             </argument>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = "/>
-          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -2170,7 +2170,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.39/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
@@ -2205,7 +2205,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.40/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
@@ -2240,7 +2240,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.41/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
@@ -2275,7 +2275,7 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.42/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
@@ -2310,37 +2310,86 @@
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="while ("/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.43/expression">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression/dataType"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") "/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
           <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.43/expression">
-            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//WhileLoop"/>
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
           </source>
-          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Loop/loopTest"/>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression/enclosedExpression"/>
         </argument>
         <argument xsi:type="ocl.ecore:VariableExp" name="fqname" referredVariable="/0/generateExpression.43/fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="21276" endPosition="21501" value=" Generates a TypeCast&#xA;@param expression the expression&#xA;@param parop the parent operator&#xA;@param usePre use pre construct for rhs variables (and for guards)&#xA;@param fqname a fully qualified name or the empty string&#xA;&#xA;"/>
+        <parametersDocumentation name="expression">
+          <body value=" the expression"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="parop">
+          <body value=" the parent operator"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="usePre">
+          <body value=" use pre construct for rhs variables (and for guards)"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="fqname">
+          <body value=" a fully qualified name or the empty string"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="expression">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
+      </parameter>
+      <parameter name="fqname">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="while ("/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.44/expression">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//WhileLoop"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Loop/loopTest"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:VariableExp" name="fqname" referredVariable="/0/generateExpression.44/fqname">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="){&#xA;&#x9;"/>
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Block"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.43/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.44/expression">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//WhileLoop"/>
           </source>
           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//Loop/block"/>
         </argument>
-        <argument xsi:type="ocl.ecore:VariableExp" name="fqname" referredVariable="/0/generateExpression.43/fqname">
+        <argument xsi:type="ocl.ecore:VariableExp" name="fqname" referredVariable="/0/generateExpression.44/fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;}&#xA;"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="21276" endPosition="21472" value="&#xA;Generates an while loop.&#xA;@param expression the expression&#xA;@param usePre use pre construct for rhs variables (and for guards)&#xA;@param fqname a fully qualified name or the empty string&#xA;&#xA;"/>
+        <body startPosition="21710" endPosition="21906" value="&#xA;Generates an while loop.&#xA;@param expression the expression&#xA;@param usePre use pre construct for rhs variables (and for guards)&#xA;@param fqname a fully qualified name or the empty string&#xA;&#xA;"/>
         <parametersDocumentation name="expression">
           <body value=" the expression"/>
         </parametersDocumentation>
@@ -2363,7 +2412,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.44/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.45/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/TextualExpression"/>
           </source>
           <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//expressions/TextualExpression/expressionText"/>
@@ -2383,7 +2432,7 @@
         <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getMethodName"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.45/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.46/expression">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
           </source>
           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall/operation"/>
@@ -2393,7 +2442,7 @@
       <body xsi:type="mtl:ForBlock">
         <body xsi:type="mtl:QueryInvocation" definition="/0/getValue">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <argument xsi:type="ocl.ecore:VariableExp" name="pBinding" referredVariable="/0/generateExpression.45/%.2/pBinding">
+          <argument xsi:type="ocl.ecore:VariableExp" name="pBinding" referredVariable="/0/generateExpression.46/%.2/pBinding">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//ParameterBinding"/>
           </argument>
         </body>
@@ -2401,7 +2450,7 @@
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//ParameterBinding"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/44/OrderedSet(ParameterBinding)">
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.45/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.46/expression">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
           </source>
           <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall/parameterBinding"/>
@@ -2412,7 +2461,7 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="21873" endPosition="22074" value="&#xA;Generates an OperationCall&#xA;@param expression the OperationCall&#xA;@param usePre use pre construct for rhs variables (and for guards)&#xA;@param fqname a fully qualified name or the empty string&#xA;&#xA;"/>
+        <body startPosition="22307" endPosition="22508" value="&#xA;Generates an OperationCall&#xA;@param expression the OperationCall&#xA;@param usePre use pre construct for rhs variables (and for guards)&#xA;@param fqname a fully qualified name or the empty string&#xA;&#xA;"/>
         <parametersDocumentation name="expression">
           <body value=" the OperationCall"/>
         </parametersDocumentation>
@@ -2436,7 +2485,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.46/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.47/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
@@ -2456,7 +2505,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.47/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.48/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
@@ -2479,7 +2528,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.48/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.49/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
@@ -2502,7 +2551,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.49/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.50/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
@@ -2525,7 +2574,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.50/expression">
+          <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.51/expression">
             <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
@@ -2546,7 +2595,7 @@
       <parameter name="binding">
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//ParameterBinding"/>
       </parameter>
-      <expression xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+      <expression xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -2636,7 +2685,7 @@
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
           </condition>
-          <thenExpression xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+          <thenExpression xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -2659,7 +2708,7 @@
               </argument>
             </argument>
           </thenExpression>
-          <elseExpression xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.46">
+          <elseExpression xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -3348,7 +3397,7 @@
         <eAnnotations source="MTL" references="/0/generateExpression.43"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//WhileLoop"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
         </eParameters>
         <eParameters name="fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3361,7 +3410,7 @@
         <eAnnotations source="MTL" references="/0/generateExpression.44"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
-          <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/TextualExpression"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//WhileLoop"/>
         </eParameters>
         <eParameters name="fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3374,7 +3423,7 @@
         <eAnnotations source="MTL" references="/0/generateExpression.45"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
-          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
+          <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/TextualExpression"/>
         </eParameters>
         <eParameters name="fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3387,7 +3436,7 @@
         <eAnnotations source="MTL" references="/0/generateExpression.46"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
-          <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
         </eParameters>
         <eParameters name="fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3401,9 +3450,6 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
-        </eParameters>
-        <eParameters name="parop">
-          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
         </eParameters>
         <eParameters name="fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3419,7 +3465,7 @@
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
         </eParameters>
         <eParameters name="parop">
-          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
         </eParameters>
         <eParameters name="fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3435,7 +3481,7 @@
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
         </eParameters>
         <eParameters name="parop">
-          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
         </eParameters>
         <eParameters name="fqname">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3446,6 +3492,22 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL" references="/0/generateExpression.50"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="expression">
+          <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+        </eParameters>
+        <eParameters name="parop">
+          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+        </eParameters>
+        <eParameters name="fqname">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateExpression">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateExpression.51"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
           <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
@@ -3761,6 +3823,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_OperationCall_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TypeCastExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_WhileLoop_Class">
@@ -4869,6 +4936,24 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//OperationCall"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TypeCastExpression"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -8891,654 +8976,739 @@
       <details key="line" value="523"/>
     </eAnnotations>
     <eAnnotations source="positions.769" references="/0/generateExpression.43">
-      <details key="start" value="21475"/>
-      <details key="end" value="21723"/>
+      <details key="start" value="21504"/>
+      <details key="end" value="21705"/>
       <details key="line" value="533"/>
     </eAnnotations>
     <eAnnotations source="positions.770" references="/0/generateExpression.43/%">
-      <details key="start" value="21596"/>
-      <details key="end" value="21603"/>
-      <details key="line" value="535"/>
+      <details key="start" value="21592"/>
+      <details key="end" value="21593"/>
+      <details key="line" value="534"/>
     </eAnnotations>
     <eAnnotations source="positions.771" references="/0/generateExpression.43/%.1">
-      <details key="start" value="21604"/>
-      <details key="end" value="21652"/>
+      <details key="start" value="21594"/>
+      <details key="end" value="21627"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.772" references="/0/generateExpression.43/%.1/%">
-      <details key="start" value="21623"/>
-      <details key="end" value="21642"/>
+      <details key="start" value="21594"/>
+      <details key="end" value="21613"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.773" references="/0/generateExpression.43/%.1/%/expression">
-      <details key="start" value="21623"/>
-      <details key="end" value="21633"/>
+      <details key="start" value="21594"/>
+      <details key="end" value="21604"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.774" references="/0/generateExpression.43/%.1/fqname">
-      <details key="start" value="21645"/>
-      <details key="end" value="21651"/>
+    <eAnnotations source="positions.774" references="/0/generateExpression.43/%.2">
+      <details key="start" value="21629"/>
+      <details key="end" value="21631"/>
+      <details key="line" value="534"/>
+    </eAnnotations>
+    <eAnnotations source="positions.775" references="/0/generateExpression.43/%.3">
+      <details key="start" value="21632"/>
+      <details key="end" value="21690"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.775" references="/0/generateExpression.43/%.2">
-      <details key="start" value="21655"/>
-      <details key="end" value="21659"/>
-      <details key="line" value="535"/>
-    </eAnnotations>
-    <eAnnotations source="positions.776" references="/0/generateExpression.43/%.3">
-      <details key="start" value="21660"/>
-      <details key="end" value="21705"/>
+    <eAnnotations source="positions.776" references="/0/generateExpression.43/%.3/%">
+      <details key="start" value="21651"/>
+      <details key="end" value="21680"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.777" references="/0/generateExpression.43/%.3/%">
-      <details key="start" value="21679"/>
-      <details key="end" value="21695"/>
+    <eAnnotations source="positions.777" references="/0/generateExpression.43/%.3/%/expression">
+      <details key="start" value="21651"/>
+      <details key="end" value="21661"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.778" references="/0/generateExpression.43/%.3/%/expression">
-      <details key="start" value="21679"/>
+    <eAnnotations source="positions.778" references="/0/generateExpression.43/%.3/fqname">
+      <details key="start" value="21683"/>
       <details key="end" value="21689"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.779" references="/0/generateExpression.43/%.3/fqname">
-      <details key="start" value="21698"/>
-      <details key="end" value="21704"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.780" references="/0/generateExpression.43/%.4">
-      <details key="start" value="21708"/>
-      <details key="end" value="21711"/>
-      <details key="line" value="537"/>
-    </eAnnotations>
-    <eAnnotations source="positions.781" references="/0/generateExpression.43/%.5">
+    <eAnnotations source="positions.779" references="/0/generateExpression.43/%.4">
       <details key="start" value="21273"/>
-      <details key="end" value="21474"/>
+      <details key="end" value="21503"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.782" references="/0/generateExpression.43/%.5/expression">
+    <eAnnotations source="positions.780" references="/0/generateExpression.43/%.4/expression">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.783" references="/0/generateExpression.43/%.5/usePre">
+    <eAnnotations source="positions.781" references="/0/generateExpression.43/%.4/parop">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.784" references="/0/generateExpression.43/%.5/fqname">
+    <eAnnotations source="positions.782" references="/0/generateExpression.43/%.4/usePre">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.785" references="/0/generateExpression.43/expression">
-      <details key="start" value="21511"/>
-      <details key="end" value="21533"/>
+    <eAnnotations source="positions.783" references="/0/generateExpression.43/%.4/fqname">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.784" references="/0/generateExpression.43/expression">
+      <details key="start" value="21540"/>
+      <details key="end" value="21571"/>
       <details key="line" value="533"/>
     </eAnnotations>
-    <eAnnotations source="positions.786" references="/0/generateExpression.43/fqname">
-      <details key="start" value="21536"/>
-      <details key="end" value="21551"/>
+    <eAnnotations source="positions.785" references="/0/generateExpression.43/fqname">
+      <details key="start" value="21574"/>
+      <details key="end" value="21589"/>
       <details key="line" value="533"/>
     </eAnnotations>
-    <eAnnotations source="positions.787" references="/0/generateExpression.44">
-      <details key="start" value="21725"/>
-      <details key="end" value="21864"/>
-      <details key="line" value="541"/>
+    <eAnnotations source="positions.786" references="/0/generateExpression.44">
+      <details key="start" value="21909"/>
+      <details key="end" value="22157"/>
+      <details key="line" value="543"/>
     </eAnnotations>
-    <eAnnotations source="positions.788" references="/0/generateExpression.44/%">
-      <details key="start" value="21813"/>
-      <details key="end" value="21849"/>
+    <eAnnotations source="positions.787" references="/0/generateExpression.44/%">
+      <details key="start" value="22030"/>
+      <details key="end" value="22037"/>
+      <details key="line" value="545"/>
+    </eAnnotations>
+    <eAnnotations source="positions.788" references="/0/generateExpression.44/%.1">
+      <details key="start" value="22038"/>
+      <details key="end" value="22086"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.789" references="/0/generateExpression.44/%/%">
-      <details key="start" value="21813"/>
-      <details key="end" value="21838"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.790" references="/0/generateExpression.44/%/%/expression">
-      <details key="start" value="21813"/>
-      <details key="end" value="21823"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.791" references="/0/generateExpression.44/expression">
-      <details key="start" value="21761"/>
-      <details key="end" value="21791"/>
-      <details key="line" value="541"/>
-    </eAnnotations>
-    <eAnnotations source="positions.792" references="/0/generateExpression.44/fqname">
-      <details key="start" value="21794"/>
-      <details key="end" value="21809"/>
-      <details key="line" value="541"/>
-    </eAnnotations>
-    <eAnnotations source="positions.793" references="/0/generateExpression.45">
-      <details key="start" value="22077"/>
-      <details key="end" value="22319"/>
-      <details key="line" value="555"/>
-    </eAnnotations>
-    <eAnnotations source="positions.794" references="/0/generateExpression.45/%">
-      <details key="start" value="22161"/>
-      <details key="end" value="22197"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.795" references="/0/generateExpression.45/%/%">
-      <details key="start" value="22161"/>
-      <details key="end" value="22181"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.796" references="/0/generateExpression.45/%/%/expression">
-      <details key="start" value="22161"/>
-      <details key="end" value="22171"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.797" references="/0/generateExpression.45/%.1">
-      <details key="start" value="22199"/>
-      <details key="end" value="22200"/>
-      <details key="line" value="556"/>
-    </eAnnotations>
-    <eAnnotations source="positions.798" references="/0/generateExpression.45/%.2">
-      <details key="start" value="22200"/>
-      <details key="end" value="22307"/>
-      <details key="line" value="556"/>
-    </eAnnotations>
-    <eAnnotations source="positions.799" references="/0/generateExpression.45/%.2/%">
-      <details key="start" value="22280"/>
-      <details key="end" value="22299"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.800" references="/0/generateExpression.45/%.2/%/pBinding">
-      <details key="start" value="22280"/>
-      <details key="end" value="22288"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.801" references="/0/generateExpression.45/%.2/pBinding">
-      <details key="start" value="22206"/>
-      <details key="end" value="22231"/>
-      <details key="line" value="556"/>
-    </eAnnotations>
-    <eAnnotations source="positions.802" references="/0/generateExpression.45/%.2/%.1">
-      <details key="start" value="22234"/>
-      <details key="end" value="22261"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.803" references="/0/generateExpression.45/%.2/%.1/expression">
-      <details key="start" value="22234"/>
-      <details key="end" value="22244"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.804" references="/0/generateExpression.45/%.2/%.2">
-      <details key="start" value="22274"/>
-      <details key="end" value="22277"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.805" references="/0/generateExpression.45/%.3">
-      <details key="start" value="22307"/>
-      <details key="end" value="22308"/>
-      <details key="line" value="556"/>
-    </eAnnotations>
-    <eAnnotations source="positions.806" references="/0/generateExpression.45/%.4">
-      <details key="start" value="21870"/>
+    <eAnnotations source="positions.789" references="/0/generateExpression.44/%.1/%">
+      <details key="start" value="22057"/>
       <details key="end" value="22076"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.807" references="/0/generateExpression.45/%.4/expression">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.790" references="/0/generateExpression.44/%.1/%/expression">
+      <details key="start" value="22057"/>
+      <details key="end" value="22067"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.808" references="/0/generateExpression.45/%.4/usePre">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.791" references="/0/generateExpression.44/%.1/fqname">
+      <details key="start" value="22079"/>
+      <details key="end" value="22085"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.809" references="/0/generateExpression.45/%.4/fqname">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.792" references="/0/generateExpression.44/%.2">
+      <details key="start" value="22089"/>
+      <details key="end" value="22093"/>
+      <details key="line" value="545"/>
     </eAnnotations>
-    <eAnnotations source="positions.810" references="/0/generateExpression.45/expression">
-      <details key="start" value="22113"/>
+    <eAnnotations source="positions.793" references="/0/generateExpression.44/%.3">
+      <details key="start" value="22094"/>
       <details key="end" value="22139"/>
-      <details key="line" value="555"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.811" references="/0/generateExpression.45/fqname">
+    <eAnnotations source="positions.794" references="/0/generateExpression.44/%.3/%">
+      <details key="start" value="22113"/>
+      <details key="end" value="22129"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.795" references="/0/generateExpression.44/%.3/%/expression">
+      <details key="start" value="22113"/>
+      <details key="end" value="22123"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.796" references="/0/generateExpression.44/%.3/fqname">
+      <details key="start" value="22132"/>
+      <details key="end" value="22138"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.797" references="/0/generateExpression.44/%.4">
       <details key="start" value="22142"/>
-      <details key="end" value="22157"/>
-      <details key="line" value="555"/>
+      <details key="end" value="22145"/>
+      <details key="line" value="547"/>
     </eAnnotations>
-    <eAnnotations source="positions.812" references="/0/generateExpression.46">
-      <details key="start" value="22321"/>
-      <details key="end" value="22470"/>
-      <details key="line" value="558"/>
+    <eAnnotations source="positions.798" references="/0/generateExpression.44/%.5">
+      <details key="start" value="21707"/>
+      <details key="end" value="21908"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.813" references="/0/generateExpression.46/%">
-      <details key="start" value="22401"/>
-      <details key="end" value="22430"/>
-      <details key="line" value="559"/>
+    <eAnnotations source="positions.799" references="/0/generateExpression.44/%.5/expression">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.800" references="/0/generateExpression.44/%.5/usePre">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.801" references="/0/generateExpression.44/%.5/fqname">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.802" references="/0/generateExpression.44/expression">
+      <details key="start" value="21945"/>
+      <details key="end" value="21967"/>
+      <details key="line" value="543"/>
+    </eAnnotations>
+    <eAnnotations source="positions.803" references="/0/generateExpression.44/fqname">
+      <details key="start" value="21970"/>
+      <details key="end" value="21985"/>
+      <details key="line" value="543"/>
+    </eAnnotations>
+    <eAnnotations source="positions.804" references="/0/generateExpression.45">
+      <details key="start" value="22159"/>
+      <details key="end" value="22298"/>
+      <details key="line" value="551"/>
+    </eAnnotations>
+    <eAnnotations source="positions.805" references="/0/generateExpression.45/%">
+      <details key="start" value="22247"/>
+      <details key="end" value="22283"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.806" references="/0/generateExpression.45/%/%">
+      <details key="start" value="22247"/>
+      <details key="end" value="22272"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.807" references="/0/generateExpression.45/%/%/expression">
+      <details key="start" value="22247"/>
+      <details key="end" value="22257"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.808" references="/0/generateExpression.45/expression">
+      <details key="start" value="22195"/>
+      <details key="end" value="22225"/>
+      <details key="line" value="551"/>
+    </eAnnotations>
+    <eAnnotations source="positions.809" references="/0/generateExpression.45/fqname">
+      <details key="start" value="22228"/>
+      <details key="end" value="22243"/>
+      <details key="line" value="551"/>
+    </eAnnotations>
+    <eAnnotations source="positions.810" references="/0/generateExpression.46">
+      <details key="start" value="22511"/>
+      <details key="end" value="22753"/>
+      <details key="line" value="565"/>
+    </eAnnotations>
+    <eAnnotations source="positions.811" references="/0/generateExpression.46/%">
+      <details key="start" value="22595"/>
+      <details key="end" value="22631"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.812" references="/0/generateExpression.46/%/%">
+      <details key="start" value="22595"/>
+      <details key="end" value="22615"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.813" references="/0/generateExpression.46/%/%/expression">
+      <details key="start" value="22595"/>
+      <details key="end" value="22605"/>
+      <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.814" references="/0/generateExpression.46/%.1">
-      <details key="start" value="22431"/>
-      <details key="end" value="22455"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.815" references="/0/generateExpression.46/%.1/%">
-      <details key="start" value="22431"/>
-      <details key="end" value="22450"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.816" references="/0/generateExpression.46/%.1/%/expression">
-      <details key="start" value="22431"/>
-      <details key="end" value="22441"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.817" references="/0/generateExpression.46/expression">
-      <details key="start" value="22357"/>
-      <details key="end" value="22380"/>
-      <details key="line" value="558"/>
-    </eAnnotations>
-    <eAnnotations source="positions.818" references="/0/generateExpression.46/fqname">
-      <details key="start" value="22383"/>
-      <details key="end" value="22398"/>
-      <details key="line" value="558"/>
-    </eAnnotations>
-    <eAnnotations source="positions.819" references="/0/generateExpression.47">
-      <details key="start" value="22472"/>
-      <details key="end" value="22655"/>
-      <details key="line" value="562"/>
-    </eAnnotations>
-    <eAnnotations source="positions.820" references="/0/generateExpression.47/%">
-      <details key="start" value="22575"/>
-      <details key="end" value="22616"/>
-      <details key="line" value="563"/>
-    </eAnnotations>
-    <eAnnotations source="positions.821" references="/0/generateExpression.47/%.1">
-      <details key="start" value="22617"/>
-      <details key="end" value="22641"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.822" references="/0/generateExpression.47/%.1/%">
-      <details key="start" value="22617"/>
-      <details key="end" value="22636"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.823" references="/0/generateExpression.47/%.1/%/expression">
-      <details key="start" value="22617"/>
-      <details key="end" value="22627"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.824" references="/0/generateExpression.47/expression">
-      <details key="start" value="22508"/>
-      <details key="end" value="22531"/>
-      <details key="line" value="562"/>
-    </eAnnotations>
-    <eAnnotations source="positions.825" references="/0/generateExpression.47/parop">
-      <details key="start" value="22533"/>
-      <details key="end" value="22554"/>
-      <details key="line" value="562"/>
-    </eAnnotations>
-    <eAnnotations source="positions.826" references="/0/generateExpression.47/fqname">
-      <details key="start" value="22557"/>
-      <details key="end" value="22572"/>
-      <details key="line" value="562"/>
-    </eAnnotations>
-    <eAnnotations source="positions.827" references="/0/generateExpression.48">
-      <details key="start" value="22657"/>
-      <details key="end" value="22844"/>
+      <details key="start" value="22633"/>
+      <details key="end" value="22634"/>
       <details key="line" value="566"/>
     </eAnnotations>
-    <eAnnotations source="positions.828" references="/0/generateExpression.48/%">
-      <details key="start" value="22764"/>
-      <details key="end" value="22805"/>
-      <details key="line" value="567"/>
-    </eAnnotations>
-    <eAnnotations source="positions.829" references="/0/generateExpression.48/%.1">
-      <details key="start" value="22806"/>
-      <details key="end" value="22830"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.830" references="/0/generateExpression.48/%.1/%">
-      <details key="start" value="22806"/>
-      <details key="end" value="22825"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.831" references="/0/generateExpression.48/%.1/%/expression">
-      <details key="start" value="22806"/>
-      <details key="end" value="22816"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.832" references="/0/generateExpression.48/expression">
-      <details key="start" value="22693"/>
-      <details key="end" value="22716"/>
+    <eAnnotations source="positions.815" references="/0/generateExpression.46/%.2">
+      <details key="start" value="22634"/>
+      <details key="end" value="22741"/>
       <details key="line" value="566"/>
     </eAnnotations>
-    <eAnnotations source="positions.833" references="/0/generateExpression.48/parop">
-      <details key="start" value="22718"/>
-      <details key="end" value="22743"/>
+    <eAnnotations source="positions.816" references="/0/generateExpression.46/%.2/%">
+      <details key="start" value="22714"/>
+      <details key="end" value="22733"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.817" references="/0/generateExpression.46/%.2/%/pBinding">
+      <details key="start" value="22714"/>
+      <details key="end" value="22722"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.818" references="/0/generateExpression.46/%.2/pBinding">
+      <details key="start" value="22640"/>
+      <details key="end" value="22665"/>
       <details key="line" value="566"/>
     </eAnnotations>
-    <eAnnotations source="positions.834" references="/0/generateExpression.48/fqname">
-      <details key="start" value="22746"/>
-      <details key="end" value="22761"/>
+    <eAnnotations source="positions.819" references="/0/generateExpression.46/%.2/%.1">
+      <details key="start" value="22668"/>
+      <details key="end" value="22695"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.820" references="/0/generateExpression.46/%.2/%.1/expression">
+      <details key="start" value="22668"/>
+      <details key="end" value="22678"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.821" references="/0/generateExpression.46/%.2/%.2">
+      <details key="start" value="22708"/>
+      <details key="end" value="22711"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.822" references="/0/generateExpression.46/%.3">
+      <details key="start" value="22741"/>
+      <details key="end" value="22742"/>
       <details key="line" value="566"/>
     </eAnnotations>
-    <eAnnotations source="positions.835" references="/0/generateExpression.49">
-      <details key="start" value="22846"/>
-      <details key="end" value="23036"/>
-      <details key="line" value="570"/>
-    </eAnnotations>
-    <eAnnotations source="positions.836" references="/0/generateExpression.49/%">
-      <details key="start" value="22954"/>
-      <details key="end" value="22997"/>
-      <details key="line" value="571"/>
-    </eAnnotations>
-    <eAnnotations source="positions.837" references="/0/generateExpression.49/%.1">
-      <details key="start" value="22998"/>
-      <details key="end" value="23022"/>
+    <eAnnotations source="positions.823" references="/0/generateExpression.46/%.4">
+      <details key="start" value="22304"/>
+      <details key="end" value="22510"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.838" references="/0/generateExpression.49/%.1/%">
-      <details key="start" value="22998"/>
-      <details key="end" value="23017"/>
+    <eAnnotations source="positions.824" references="/0/generateExpression.46/%.4/expression">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.839" references="/0/generateExpression.49/%.1/%/expression">
-      <details key="start" value="22998"/>
-      <details key="end" value="23008"/>
+    <eAnnotations source="positions.825" references="/0/generateExpression.46/%.4/usePre">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.840" references="/0/generateExpression.49/expression">
-      <details key="start" value="22882"/>
-      <details key="end" value="22905"/>
-      <details key="line" value="570"/>
-    </eAnnotations>
-    <eAnnotations source="positions.841" references="/0/generateExpression.49/parop">
-      <details key="start" value="22907"/>
-      <details key="end" value="22933"/>
-      <details key="line" value="570"/>
-    </eAnnotations>
-    <eAnnotations source="positions.842" references="/0/generateExpression.49/fqname">
-      <details key="start" value="22936"/>
-      <details key="end" value="22951"/>
-      <details key="line" value="570"/>
-    </eAnnotations>
-    <eAnnotations source="positions.843" references="/0/generateExpression.50">
-      <details key="start" value="23038"/>
-      <details key="end" value="23223"/>
-      <details key="line" value="574"/>
-    </eAnnotations>
-    <eAnnotations source="positions.844" references="/0/generateExpression.50/%">
-      <details key="start" value="23141"/>
-      <details key="end" value="23184"/>
-      <details key="line" value="575"/>
-    </eAnnotations>
-    <eAnnotations source="positions.845" references="/0/generateExpression.50/%.1">
-      <details key="start" value="23185"/>
-      <details key="end" value="23209"/>
+    <eAnnotations source="positions.826" references="/0/generateExpression.46/%.4/fqname">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.846" references="/0/generateExpression.50/%.1/%">
-      <details key="start" value="23185"/>
-      <details key="end" value="23204"/>
+    <eAnnotations source="positions.827" references="/0/generateExpression.46/expression">
+      <details key="start" value="22547"/>
+      <details key="end" value="22573"/>
+      <details key="line" value="565"/>
+    </eAnnotations>
+    <eAnnotations source="positions.828" references="/0/generateExpression.46/fqname">
+      <details key="start" value="22576"/>
+      <details key="end" value="22591"/>
+      <details key="line" value="565"/>
+    </eAnnotations>
+    <eAnnotations source="positions.829" references="/0/generateExpression.47">
+      <details key="start" value="22755"/>
+      <details key="end" value="22904"/>
+      <details key="line" value="568"/>
+    </eAnnotations>
+    <eAnnotations source="positions.830" references="/0/generateExpression.47/%">
+      <details key="start" value="22835"/>
+      <details key="end" value="22864"/>
+      <details key="line" value="569"/>
+    </eAnnotations>
+    <eAnnotations source="positions.831" references="/0/generateExpression.47/%.1">
+      <details key="start" value="22865"/>
+      <details key="end" value="22889"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.847" references="/0/generateExpression.50/%.1/%/expression">
-      <details key="start" value="23185"/>
+    <eAnnotations source="positions.832" references="/0/generateExpression.47/%.1/%">
+      <details key="start" value="22865"/>
+      <details key="end" value="22884"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.833" references="/0/generateExpression.47/%.1/%/expression">
+      <details key="start" value="22865"/>
+      <details key="end" value="22875"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.834" references="/0/generateExpression.47/expression">
+      <details key="start" value="22791"/>
+      <details key="end" value="22814"/>
+      <details key="line" value="568"/>
+    </eAnnotations>
+    <eAnnotations source="positions.835" references="/0/generateExpression.47/fqname">
+      <details key="start" value="22817"/>
+      <details key="end" value="22832"/>
+      <details key="line" value="568"/>
+    </eAnnotations>
+    <eAnnotations source="positions.836" references="/0/generateExpression.48">
+      <details key="start" value="22906"/>
+      <details key="end" value="23089"/>
+      <details key="line" value="572"/>
+    </eAnnotations>
+    <eAnnotations source="positions.837" references="/0/generateExpression.48/%">
+      <details key="start" value="23009"/>
+      <details key="end" value="23050"/>
+      <details key="line" value="573"/>
+    </eAnnotations>
+    <eAnnotations source="positions.838" references="/0/generateExpression.48/%.1">
+      <details key="start" value="23051"/>
+      <details key="end" value="23075"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.839" references="/0/generateExpression.48/%.1/%">
+      <details key="start" value="23051"/>
+      <details key="end" value="23070"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.840" references="/0/generateExpression.48/%.1/%/expression">
+      <details key="start" value="23051"/>
+      <details key="end" value="23061"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.841" references="/0/generateExpression.48/expression">
+      <details key="start" value="22942"/>
+      <details key="end" value="22965"/>
+      <details key="line" value="572"/>
+    </eAnnotations>
+    <eAnnotations source="positions.842" references="/0/generateExpression.48/parop">
+      <details key="start" value="22967"/>
+      <details key="end" value="22988"/>
+      <details key="line" value="572"/>
+    </eAnnotations>
+    <eAnnotations source="positions.843" references="/0/generateExpression.48/fqname">
+      <details key="start" value="22991"/>
+      <details key="end" value="23006"/>
+      <details key="line" value="572"/>
+    </eAnnotations>
+    <eAnnotations source="positions.844" references="/0/generateExpression.49">
+      <details key="start" value="23091"/>
+      <details key="end" value="23278"/>
+      <details key="line" value="576"/>
+    </eAnnotations>
+    <eAnnotations source="positions.845" references="/0/generateExpression.49/%">
+      <details key="start" value="23198"/>
+      <details key="end" value="23239"/>
+      <details key="line" value="577"/>
+    </eAnnotations>
+    <eAnnotations source="positions.846" references="/0/generateExpression.49/%.1">
+      <details key="start" value="23240"/>
+      <details key="end" value="23264"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.847" references="/0/generateExpression.49/%.1/%">
+      <details key="start" value="23240"/>
+      <details key="end" value="23259"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.848" references="/0/generateExpression.49/%.1/%/expression">
+      <details key="start" value="23240"/>
+      <details key="end" value="23250"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.849" references="/0/generateExpression.49/expression">
+      <details key="start" value="23127"/>
+      <details key="end" value="23150"/>
+      <details key="line" value="576"/>
+    </eAnnotations>
+    <eAnnotations source="positions.850" references="/0/generateExpression.49/parop">
+      <details key="start" value="23152"/>
+      <details key="end" value="23177"/>
+      <details key="line" value="576"/>
+    </eAnnotations>
+    <eAnnotations source="positions.851" references="/0/generateExpression.49/fqname">
+      <details key="start" value="23180"/>
       <details key="end" value="23195"/>
+      <details key="line" value="576"/>
+    </eAnnotations>
+    <eAnnotations source="positions.852" references="/0/generateExpression.50">
+      <details key="start" value="23280"/>
+      <details key="end" value="23470"/>
+      <details key="line" value="580"/>
+    </eAnnotations>
+    <eAnnotations source="positions.853" references="/0/generateExpression.50/%">
+      <details key="start" value="23388"/>
+      <details key="end" value="23431"/>
+      <details key="line" value="581"/>
+    </eAnnotations>
+    <eAnnotations source="positions.854" references="/0/generateExpression.50/%.1">
+      <details key="start" value="23432"/>
+      <details key="end" value="23456"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.848" references="/0/generateExpression.50/expression">
-      <details key="start" value="23074"/>
-      <details key="end" value="23097"/>
-      <details key="line" value="574"/>
-    </eAnnotations>
-    <eAnnotations source="positions.849" references="/0/generateExpression.50/parop">
-      <details key="start" value="23099"/>
-      <details key="end" value="23120"/>
-      <details key="line" value="574"/>
-    </eAnnotations>
-    <eAnnotations source="positions.850" references="/0/generateExpression.50/fqname">
-      <details key="start" value="23123"/>
-      <details key="end" value="23138"/>
-      <details key="line" value="574"/>
-    </eAnnotations>
-    <eAnnotations source="positions.851" references="/0/getValue">
-      <details key="start" value="23225"/>
-      <details key="end" value="23327"/>
-      <details key="line" value="578"/>
-    </eAnnotations>
-    <eAnnotations source="positions.852" references="/0/getValue/binding">
-      <details key="start" value="23248"/>
-      <details key="end" value="23274"/>
-      <details key="line" value="578"/>
-    </eAnnotations>
-    <eAnnotations source="positions.853" references="/0/getValue/%">
-      <details key="start" value="23288"/>
-      <details key="end" value="23324"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.854" references="/0/getValue/%/%">
-      <details key="start" value="23288"/>
-      <details key="end" value="23301"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.855" references="/0/getValue/%/%/binding">
-      <details key="start" value="23288"/>
-      <details key="end" value="23295"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.856" references="/0/getValue/%/%.1">
-      <details key="start" value="23321"/>
-      <details key="end" value="23323"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.857" references="/0/getDefaultValue">
-      <details key="start" value="23329"/>
-      <details key="end" value="23769"/>
-      <details key="line" value="582"/>
-    </eAnnotations>
-    <eAnnotations source="positions.858" references="/0/getDefaultValue/var">
-      <details key="start" value="23359"/>
-      <details key="end" value="23373"/>
-      <details key="line" value="582"/>
-    </eAnnotations>
-    <eAnnotations source="positions.859" references="/0/getDefaultValue/fqname">
-      <details key="start" value="23375"/>
-      <details key="end" value="23390"/>
-      <details key="line" value="582"/>
-    </eAnnotations>
-    <eAnnotations source="positions.860" references="/0/getDefaultValue/%">
-      <details key="start" value="23405"/>
-      <details key="end" value="23766"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.861" references="/0/getDefaultValue/%/%">
-      <details key="start" value="23408"/>
+    <eAnnotations source="positions.855" references="/0/generateExpression.50/%.1/%">
+      <details key="start" value="23432"/>
       <details key="end" value="23451"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.862" references="/0/getDefaultValue/%/%/%">
-      <details key="start" value="23409"/>
-      <details key="end" value="23433"/>
+    <eAnnotations source="positions.856" references="/0/generateExpression.50/%.1/%/expression">
+      <details key="start" value="23432"/>
+      <details key="end" value="23442"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.863" references="/0/getDefaultValue/%/%/%/var">
-      <details key="start" value="23409"/>
-      <details key="end" value="23412"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.857" references="/0/generateExpression.50/expression">
+      <details key="start" value="23316"/>
+      <details key="end" value="23339"/>
+      <details key="line" value="580"/>
     </eAnnotations>
-    <eAnnotations source="positions.864" references="/0/getDefaultValue/%/%.1">
-      <details key="start" value="23459"/>
-      <details key="end" value="23526"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.858" references="/0/generateExpression.50/parop">
+      <details key="start" value="23341"/>
+      <details key="end" value="23367"/>
+      <details key="line" value="580"/>
     </eAnnotations>
-    <eAnnotations source="positions.865" references="/0/getDefaultValue/%/%.1/%">
-      <details key="start" value="23459"/>
-      <details key="end" value="23522"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.859" references="/0/generateExpression.50/fqname">
+      <details key="start" value="23370"/>
+      <details key="end" value="23385"/>
+      <details key="line" value="580"/>
     </eAnnotations>
-    <eAnnotations source="positions.866" references="/0/getDefaultValue/%/%.1/%/%">
-      <details key="start" value="23459"/>
-      <details key="end" value="23492"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.860" references="/0/generateExpression.51">
+      <details key="start" value="23472"/>
+      <details key="end" value="23657"/>
+      <details key="line" value="584"/>
     </eAnnotations>
-    <eAnnotations source="positions.867" references="/0/getDefaultValue/%/%.1/%/%/%">
-      <details key="start" value="23459"/>
-      <details key="end" value="23487"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.861" references="/0/generateExpression.51/%">
+      <details key="start" value="23575"/>
+      <details key="end" value="23618"/>
+      <details key="line" value="585"/>
     </eAnnotations>
-    <eAnnotations source="positions.868" references="/0/getDefaultValue/%/%.1/%/%/%/fqname">
-      <details key="start" value="23459"/>
-      <details key="end" value="23465"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.869" references="/0/getDefaultValue/%/%.1/%/%/%/%">
-      <details key="start" value="23466"/>
-      <details key="end" value="23487"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.870" references="/0/getDefaultValue/%/%.1/%/%/%/%/var">
-      <details key="start" value="23466"/>
-      <details key="end" value="23469"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.871" references="/0/getDefaultValue/%/%.1/%/%/%.1">
-      <details key="start" value="23489"/>
-      <details key="end" value="23492"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.872" references="/0/getDefaultValue/%/%.1/%/%.1">
-      <details key="start" value="23493"/>
-      <details key="end" value="23522"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.873" references="/0/getDefaultValue/%/%.1/%/%.1/%">
-      <details key="start" value="23509"/>
-      <details key="end" value="23521"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.874" references="/0/getDefaultValue/%/%.1/%/%.1/%/var">
-      <details key="start" value="23509"/>
-      <details key="end" value="23512"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.875" references="/0/getDefaultValue/%/%.1/%.1">
-      <details key="start" value="23523"/>
-      <details key="end" value="23526"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.876" references="/0/getDefaultValue/%/%.2">
-      <details key="start" value="23535"/>
-      <details key="end" value="23759"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.877" references="/0/getDefaultValue/%/%.2/%">
-      <details key="start" value="23538"/>
-      <details key="end" value="23583"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.878" references="/0/getDefaultValue/%/%.2/%/%">
-      <details key="start" value="23539"/>
-      <details key="end" value="23551"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.879" references="/0/getDefaultValue/%/%.2/%/%/var">
-      <details key="start" value="23539"/>
-      <details key="end" value="23542"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.880" references="/0/getDefaultValue/%/%.2/%/%.1">
-      <details key="start" value="23564"/>
-      <details key="end" value="23581"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.881" references="/0/getDefaultValue/%/%.2/%.1">
-      <details key="start" value="23592"/>
-      <details key="end" value="23666"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.882" references="/0/getDefaultValue/%/%.2/%.1/%">
-      <details key="start" value="23611"/>
-      <details key="end" value="23635"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.883" references="/0/getDefaultValue/%/%.2/%.1/%/var">
-      <details key="start" value="23611"/>
-      <details key="end" value="23614"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.884" references="/0/getDefaultValue/%/%.2/%.1/%.1">
-      <details key="start" value="23637"/>
-      <details key="end" value="23665"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.885" references="/0/getDefaultValue/%/%.2/%.1/%.1/fqname">
-      <details key="start" value="23637"/>
+    <eAnnotations source="positions.862" references="/0/generateExpression.51/%.1">
+      <details key="start" value="23619"/>
       <details key="end" value="23643"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.886" references="/0/getDefaultValue/%/%.2/%.1/%.1/%">
-      <details key="start" value="23644"/>
-      <details key="end" value="23665"/>
+    <eAnnotations source="positions.863" references="/0/generateExpression.51/%.1/%">
+      <details key="start" value="23619"/>
+      <details key="end" value="23638"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.887" references="/0/getDefaultValue/%/%.2/%.1/%.1/%/var">
-      <details key="start" value="23644"/>
-      <details key="end" value="23647"/>
+    <eAnnotations source="positions.864" references="/0/generateExpression.51/%.1/%/expression">
+      <details key="start" value="23619"/>
+      <details key="end" value="23629"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.888" references="/0/getDefaultValue/%/%.2/%.2">
-      <details key="start" value="23678"/>
-      <details key="end" value="23752"/>
+    <eAnnotations source="positions.865" references="/0/generateExpression.51/expression">
+      <details key="start" value="23508"/>
+      <details key="end" value="23531"/>
+      <details key="line" value="584"/>
+    </eAnnotations>
+    <eAnnotations source="positions.866" references="/0/generateExpression.51/parop">
+      <details key="start" value="23533"/>
+      <details key="end" value="23554"/>
+      <details key="line" value="584"/>
+    </eAnnotations>
+    <eAnnotations source="positions.867" references="/0/generateExpression.51/fqname">
+      <details key="start" value="23557"/>
+      <details key="end" value="23572"/>
+      <details key="line" value="584"/>
+    </eAnnotations>
+    <eAnnotations source="positions.868" references="/0/getValue">
+      <details key="start" value="23659"/>
+      <details key="end" value="23761"/>
+      <details key="line" value="588"/>
+    </eAnnotations>
+    <eAnnotations source="positions.869" references="/0/getValue/binding">
+      <details key="start" value="23682"/>
+      <details key="end" value="23708"/>
+      <details key="line" value="588"/>
+    </eAnnotations>
+    <eAnnotations source="positions.870" references="/0/getValue/%">
+      <details key="start" value="23722"/>
+      <details key="end" value="23758"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.889" references="/0/getDefaultValue/%/%.2/%.2/%">
-      <details key="start" value="23697"/>
-      <details key="end" value="23721"/>
+    <eAnnotations source="positions.871" references="/0/getValue/%/%">
+      <details key="start" value="23722"/>
+      <details key="end" value="23735"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.890" references="/0/getDefaultValue/%/%.2/%.2/%/var">
-      <details key="start" value="23697"/>
-      <details key="end" value="23700"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.891" references="/0/getDefaultValue/%/%.2/%.2/%.1">
-      <details key="start" value="23723"/>
-      <details key="end" value="23751"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.892" references="/0/getDefaultValue/%/%.2/%.2/%.1/fqname">
-      <details key="start" value="23723"/>
+    <eAnnotations source="positions.872" references="/0/getValue/%/%/binding">
+      <details key="start" value="23722"/>
       <details key="end" value="23729"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.893" references="/0/getDefaultValue/%/%.2/%.2/%.1/%">
-      <details key="start" value="23730"/>
-      <details key="end" value="23751"/>
+    <eAnnotations source="positions.873" references="/0/getValue/%/%.1">
+      <details key="start" value="23755"/>
+      <details key="end" value="23757"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.894" references="/0/getDefaultValue/%/%.2/%.2/%.1/%/var">
-      <details key="start" value="23730"/>
-      <details key="end" value="23733"/>
+    <eAnnotations source="positions.874" references="/0/getDefaultValue">
+      <details key="start" value="23763"/>
+      <details key="end" value="24203"/>
+      <details key="line" value="592"/>
+    </eAnnotations>
+    <eAnnotations source="positions.875" references="/0/getDefaultValue/var">
+      <details key="start" value="23793"/>
+      <details key="end" value="23807"/>
+      <details key="line" value="592"/>
+    </eAnnotations>
+    <eAnnotations source="positions.876" references="/0/getDefaultValue/fqname">
+      <details key="start" value="23809"/>
+      <details key="end" value="23824"/>
+      <details key="line" value="592"/>
+    </eAnnotations>
+    <eAnnotations source="positions.877" references="/0/getDefaultValue/%">
+      <details key="start" value="23839"/>
+      <details key="end" value="24200"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.895" references="/0/generateStrutInit">
-      <details key="start" value="23771"/>
-      <details key="end" value="23872"/>
-      <details key="line" value="595"/>
+    <eAnnotations source="positions.878" references="/0/getDefaultValue/%/%">
+      <details key="start" value="23842"/>
+      <details key="end" value="23885"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.896" references="/0/generateStrutInit/%">
-      <details key="start" value="23840"/>
-      <details key="end" value="23860"/>
-      <details key="line" value="596"/>
+    <eAnnotations source="positions.879" references="/0/getDefaultValue/%/%/%">
+      <details key="start" value="23843"/>
+      <details key="end" value="23867"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.897" references="/0/generateStrutInit/var">
-      <details key="start" value="23806"/>
-      <details key="end" value="23820"/>
-      <details key="line" value="595"/>
+    <eAnnotations source="positions.880" references="/0/getDefaultValue/%/%/%/var">
+      <details key="start" value="23843"/>
+      <details key="end" value="23846"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.898" references="/0/generateStrutInit/fqName">
-      <details key="start" value="23822"/>
-      <details key="end" value="23837"/>
-      <details key="line" value="595"/>
+    <eAnnotations source="positions.881" references="/0/getDefaultValue/%/%.1">
+      <details key="start" value="23893"/>
+      <details key="end" value="23960"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.882" references="/0/getDefaultValue/%/%.1/%">
+      <details key="start" value="23893"/>
+      <details key="end" value="23956"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.883" references="/0/getDefaultValue/%/%.1/%/%">
+      <details key="start" value="23893"/>
+      <details key="end" value="23926"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.884" references="/0/getDefaultValue/%/%.1/%/%/%">
+      <details key="start" value="23893"/>
+      <details key="end" value="23921"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.885" references="/0/getDefaultValue/%/%.1/%/%/%/fqname">
+      <details key="start" value="23893"/>
+      <details key="end" value="23899"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.886" references="/0/getDefaultValue/%/%.1/%/%/%/%">
+      <details key="start" value="23900"/>
+      <details key="end" value="23921"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.887" references="/0/getDefaultValue/%/%.1/%/%/%/%/var">
+      <details key="start" value="23900"/>
+      <details key="end" value="23903"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.888" references="/0/getDefaultValue/%/%.1/%/%/%.1">
+      <details key="start" value="23923"/>
+      <details key="end" value="23926"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.889" references="/0/getDefaultValue/%/%.1/%/%.1">
+      <details key="start" value="23927"/>
+      <details key="end" value="23956"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.890" references="/0/getDefaultValue/%/%.1/%/%.1/%">
+      <details key="start" value="23943"/>
+      <details key="end" value="23955"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.891" references="/0/getDefaultValue/%/%.1/%/%.1/%/var">
+      <details key="start" value="23943"/>
+      <details key="end" value="23946"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.892" references="/0/getDefaultValue/%/%.1/%.1">
+      <details key="start" value="23957"/>
+      <details key="end" value="23960"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.893" references="/0/getDefaultValue/%/%.2">
+      <details key="start" value="23969"/>
+      <details key="end" value="24193"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.894" references="/0/getDefaultValue/%/%.2/%">
+      <details key="start" value="23972"/>
+      <details key="end" value="24017"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.895" references="/0/getDefaultValue/%/%.2/%/%">
+      <details key="start" value="23973"/>
+      <details key="end" value="23985"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.896" references="/0/getDefaultValue/%/%.2/%/%/var">
+      <details key="start" value="23973"/>
+      <details key="end" value="23976"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.897" references="/0/getDefaultValue/%/%.2/%/%.1">
+      <details key="start" value="23998"/>
+      <details key="end" value="24015"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.898" references="/0/getDefaultValue/%/%.2/%.1">
+      <details key="start" value="24026"/>
+      <details key="end" value="24100"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.899" references="/0/getDefaultValue/%/%.2/%.1/%">
+      <details key="start" value="24045"/>
+      <details key="end" value="24069"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.900" references="/0/getDefaultValue/%/%.2/%.1/%/var">
+      <details key="start" value="24045"/>
+      <details key="end" value="24048"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.901" references="/0/getDefaultValue/%/%.2/%.1/%.1">
+      <details key="start" value="24071"/>
+      <details key="end" value="24099"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.902" references="/0/getDefaultValue/%/%.2/%.1/%.1/fqname">
+      <details key="start" value="24071"/>
+      <details key="end" value="24077"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.903" references="/0/getDefaultValue/%/%.2/%.1/%.1/%">
+      <details key="start" value="24078"/>
+      <details key="end" value="24099"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.904" references="/0/getDefaultValue/%/%.2/%.1/%.1/%/var">
+      <details key="start" value="24078"/>
+      <details key="end" value="24081"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.905" references="/0/getDefaultValue/%/%.2/%.2">
+      <details key="start" value="24112"/>
+      <details key="end" value="24186"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.906" references="/0/getDefaultValue/%/%.2/%.2/%">
+      <details key="start" value="24131"/>
+      <details key="end" value="24155"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.907" references="/0/getDefaultValue/%/%.2/%.2/%/var">
+      <details key="start" value="24131"/>
+      <details key="end" value="24134"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.908" references="/0/getDefaultValue/%/%.2/%.2/%.1">
+      <details key="start" value="24157"/>
+      <details key="end" value="24185"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.909" references="/0/getDefaultValue/%/%.2/%.2/%.1/fqname">
+      <details key="start" value="24157"/>
+      <details key="end" value="24163"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.910" references="/0/getDefaultValue/%/%.2/%.2/%.1/%">
+      <details key="start" value="24164"/>
+      <details key="end" value="24185"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.911" references="/0/getDefaultValue/%/%.2/%.2/%.1/%/var">
+      <details key="start" value="24164"/>
+      <details key="end" value="24167"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.912" references="/0/generateStrutInit">
+      <details key="start" value="24205"/>
+      <details key="end" value="24306"/>
+      <details key="line" value="605"/>
+    </eAnnotations>
+    <eAnnotations source="positions.913" references="/0/generateStrutInit/%">
+      <details key="start" value="24274"/>
+      <details key="end" value="24294"/>
+      <details key="line" value="606"/>
+    </eAnnotations>
+    <eAnnotations source="positions.914" references="/0/generateStrutInit/var">
+      <details key="start" value="24240"/>
+      <details key="end" value="24254"/>
+      <details key="line" value="605"/>
+    </eAnnotations>
+    <eAnnotations source="positions.915" references="/0/generateStrutInit/fqName">
+      <details key="start" value="24256"/>
+      <details key="end" value="24271"/>
+      <details key="line" value="605"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

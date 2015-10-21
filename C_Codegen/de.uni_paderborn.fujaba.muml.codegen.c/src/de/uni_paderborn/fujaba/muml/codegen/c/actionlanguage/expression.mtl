@@ -524,6 +524,16 @@ unsupported simple return statement
 [generateExpression(expression,  fqname) /]
 [/template]
 
+[** Generates a TypeCast
+ * @param expression the expression
+ * @param parop the parent operator
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : TypeCastExpression , fqname : String)]
+([expression.dataType.getTypeName()/]) [generateExpression(expression.enclosedExpression,  fqname) /]
+[/template]
+
 [**
  * Generates an while loop.
  * @param expression the expression
