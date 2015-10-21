@@ -162,6 +162,7 @@ public class DiscreteInteractionEndpointItemProvider
 					messageTypes.add((MessageType) value);
 				} else if (value instanceof MessageTypeRepository) {
 					MessageTypeRepository repository = (MessageTypeRepository) value;
+					messageTypes.removeAll(repository.getMessageTypes());
 					messageTypes.addAll(repository.getMessageTypes());
 				}
 			}
