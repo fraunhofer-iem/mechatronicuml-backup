@@ -159,7 +159,9 @@ public class DiscreteInteractionEndpointItemProvider
 			List<MessageType> messageTypes = new ArrayList<MessageType>();
 			for (Object value : (List<?>) values) {
 				if (value instanceof MessageType) {
-					messageTypes.add((MessageType) value);
+					if (!messageTypes.contains(value)) {
+						messageTypes.add((MessageType) value);
+					}
 				} else if (value instanceof MessageTypeRepository) {
 					MessageTypeRepository repository = (MessageTypeRepository) value;
 					messageTypes.removeAll(repository.getMessageTypes());
