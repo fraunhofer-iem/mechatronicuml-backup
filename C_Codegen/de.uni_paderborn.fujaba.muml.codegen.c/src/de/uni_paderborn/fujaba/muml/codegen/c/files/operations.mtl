@@ -14,6 +14,7 @@
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::operation_queries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 [**
  * The documentation of the template generateOperationFile.
@@ -88,7 +89,7 @@
 [else]
 	[operation.returnType.getTypeName()/] ret;
 	[generateExpression(operation.implementations->at(1),'')/]
-	return ret;
+	return [operation.getOperationOutputVariableName()/];
 [/if]
 
 }
