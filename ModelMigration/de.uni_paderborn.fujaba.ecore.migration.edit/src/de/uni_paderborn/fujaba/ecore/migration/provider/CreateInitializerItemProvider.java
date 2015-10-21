@@ -43,7 +43,7 @@ public class CreateInitializerItemProvider extends CreateClassItemProvider {
 				Iterator<EClass> iterator = targetClasses.iterator();
 				while (iterator.hasNext()) {
 					EClass targetClass = iterator.next();
-					if (!referenceType.isSuperTypeOf(targetClass)) {
+					if (targetClass == null || !referenceType.isSuperTypeOf(targetClass)) {
 						iterator.remove();
 					}
 				}
