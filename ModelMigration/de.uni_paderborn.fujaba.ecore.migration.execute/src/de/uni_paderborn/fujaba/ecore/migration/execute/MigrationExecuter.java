@@ -531,8 +531,13 @@ public class MigrationExecuter {
 							if (isBidirectional && targetValues.contains(copyValue)) {
 								// Move implemented by remove & add.
 								// TODO: Will this reorder the opposite side again, or does EMF recognize it as a move?
+								int oldIndex = targetValues.indexOf(copyValue);
 								targetValues.remove(copyValue);
-								targetValues.add(index, copyValue);
+								if (oldIndex < index) {
+									targetValues.add(index - 1, copyValue);
+								} else {
+									targetValues.add(index, copyValue);
+								}
 							} else {
 								targetValues.add(index, copyValue);
 								++index;
