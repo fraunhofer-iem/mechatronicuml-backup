@@ -26,12 +26,20 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/StructuredResourceInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/AtomicResourceInstance"/>
   </mappings>
@@ -49,6 +57,10 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance"/>
   </mappings>
   <mappings>
@@ -60,12 +72,20 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/MemoryResourceInstance/throughput"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/MemoryResourceInstance/throughput"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/MemoryResourceInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ComputingResourceInstance/frequency"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ComputingResourceInstance/frequency"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ComputingResourceInstance"/>
   </mappings>
@@ -74,9 +94,12 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/resourceType"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance/resourceType"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.hwports->select(c|not c.oclIsKindOf(CommuncationResource))">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance"/>
   </mappings>
@@ -105,6 +128,10 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationResource/parentResource"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/HWPort/parentResource"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
   </mappings>
   <mappings>
@@ -112,6 +139,10 @@
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationProtocolRepository/communicationProtocols"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationProtocolRepository"/>
   </mappings>
@@ -125,9 +156,6 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/ResourceRepository/protocols"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/ResourceRepository/protocols"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/ResourceRepository/communicationMedia"/>
-    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/ResourceRepository"/>
   </mappings>
   <mappings>
@@ -136,12 +164,20 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/StructuredResource/embeddedAtomicResources"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/StructuredResource/embeddedAtomicResources"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/StructuredResource"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/AtomicResource/parentStructuredResource"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/AtomicResource/parentStructuredResource"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/AtomicResource"/>
   </mappings>
@@ -167,6 +203,10 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Processor/nbPipelineStages"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Processor/nbPipelineStages"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Processor"/>
   </mappings>
   <mappings>
@@ -191,14 +231,19 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Cache/usedByProcessor"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Cache/usedByProcessor"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Cache"/>
   </mappings>
   <mappings>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Resource/hwports"/>
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.hwports">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Resource/communicationResources"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Resource/communicationResources"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Resource"/>
   </mappings>
@@ -208,14 +253,34 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/DelegationHWPortInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkBridgeInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BridgeInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/BusInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BusInstance"/>
   </mappings>
   <mappings>
@@ -224,6 +289,10 @@
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/HWPortInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPortInstance"/>
   </mappings>
   <mappings>
@@ -233,10 +302,6 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
-    </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
     </featureInitializers>
@@ -244,7 +309,10 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.networkingHardwareInstances->select(c| not ( c.oclIsKindOf(LinkInstance) or c.oclIsKindOf(BusConnectorInstance) or c.oclIsKindOf(DelegationInstance)))">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.networkingHardwareInstances->select(c| ( c.oclIsKindOf(LinkInstance) or c.oclIsKindOf(BusConnectorInstance) or c.oclIsKindOf(DelegationInstance)))">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkConnectorInstances"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"/>
@@ -267,6 +335,10 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstance/parentHPIC"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance/parentHPIC"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance"/>
   </mappings>
   <mappings>
@@ -278,15 +350,9 @@
     <sourceClass href="hardware-1.0.ecore#//hwplatform/BridgePart"/>
   </mappings>
   <mappings>
-    <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/NetworkConnector/protocol"/>
-    </featureInitializers>
-    <sourceClass href="hardware-1.0.ecore#//hwplatform/BusConnector"/>
-  </mappings>
-  <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatform/HWPortPart"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/hwport"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/communicationResource"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
@@ -301,9 +367,6 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/parentPlatformPart"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/parentResourcePart"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/hwport"/>
-    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPortPart"/>
   </mappings>
   <mappings>
@@ -312,6 +375,10 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/ResourcePart/resourceType"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/ResourcePart/resourceType"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/ResourcePart"/>
   </mappings>
   <mappings>
@@ -319,6 +386,10 @@
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatformPart/hwplatformType"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatformPart/hwplatformType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPlatformPart"/>
   </mappings>
@@ -344,15 +415,18 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatform/embeddedPlatformParts"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/networkingHardware"/>
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
-    </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/delegationPorts"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatform/delegationPorts"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.networkingHardwareParts->select(c| not ( c.oclIsKindOf(LinkPart) or c.oclIsKindOf(BusConnector) or c.oclIsKindOf(Delegation)))">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/networkingHardware"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.networkingHardwareParts->select(c|  ( c.oclIsKindOf(LinkPart) or c.oclIsKindOf(BusConnector) or c.oclIsKindOf(Delegation)))">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/networkConnectors"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPlatform"/>
   </mappings>
@@ -362,6 +436,10 @@
       <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/LinkProtocol/linkProtocol"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/LinkProtocol/linkProtocol"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/LinkProtocol"/>
   </mappings>
   <mappings>
@@ -369,6 +447,10 @@
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/BusProtocol/busProtocol"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/BusProtocol/busProtocol"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/BusProtocol"/>
   </mappings>
@@ -389,8 +471,19 @@
       <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/isNetworkingProtocol"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/CommunicationProtocol/isNetworkingProtocol"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+    <featureInitializers xsi:type="migration:CreateInitializer">
+      <targetClass href="hardware-1.1.ecore#//hwvaluetype/DataRate"/>
+      <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="1.0">
+        <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataRate/value"/>
+      </featureInitializers>
+      <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="DataRateUnit::Kbs">
+        <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataRate/unit"/>
+      </featureInitializers>
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/bandwidth"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationProtocol"/>
   </mappings>
@@ -399,6 +492,10 @@
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Device/deviceKind"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Device/deviceType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Device"/>
   </mappings>
@@ -415,6 +512,10 @@
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/MemoryResource/memoryType"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/MemoryResource/memoryType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/MemoryResource"/>
   </mappings>
@@ -473,42 +574,130 @@
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/NetworkingHardwareInstance"/>
   </mappings>
   <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/ComputingResource"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresource/ProgrammableLogicDevice"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/ProgrammableLogicDevice"/>
   </mappings>
   <mappings>
-    <targetClass href="hardware-1.1.ecore#//hwplatform/Bus"/>
-    <sourceClass href="hardware-1.0.ecore#//hwresource/Bus"/>
-  </mappings>
-  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/DeviceInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/StorageMemoryInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/StorageMemoryInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ProcessingMemoryInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProcessingMemoryInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/CacheInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/CacheInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ProgrammableLogicDeviceInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProgrammableLogicDeviceInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/SensorInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/SensorInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ActuatorInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ActuatorInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/Delegation"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/LinkPart"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/BusConnector"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/Bus"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint/connectors"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint/connectors"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/BusPart"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/DelegationInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BusConnectorInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/LinkInstance"/>
   </mappings>
   <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
 </migration:Migrator>
