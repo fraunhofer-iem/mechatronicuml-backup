@@ -23,14 +23,14 @@
 [template public generateCustomTypes(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
 	
 	[generateCustomTypeFile(getAllStructTypes(CIs), path, useSubDir)/]
-
-
 [/template]
 
 
 
 [template private generateCustomTypeFile(sTypes : Set(StructureDataType), path : String, useSubDir : Boolean)]
 	[file (path+getFileName4CustomTypes(true, useSubDir), false, 'UTF-8')]
+
+
 #ifndef CUSTOM_TYPES_H_
 #define CUSTOM_TYPES_H_
 #ifdef __cplusplus

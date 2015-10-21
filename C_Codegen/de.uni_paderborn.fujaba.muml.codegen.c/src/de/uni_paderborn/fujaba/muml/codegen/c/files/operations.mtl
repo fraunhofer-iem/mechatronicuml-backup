@@ -87,7 +87,7 @@
 	[/if]
 /**[/protected]**/
 [else]
-	[operation.returnType.getTypeName()/] ret;
+	[operation.returnType.getTypeName()/] [operation.getOperationOutputVariableName()/];
 	[generateExpression(operation.implementations->at(1),'')/]
 	return [operation.getOperationOutputVariableName()/];
 [/if]

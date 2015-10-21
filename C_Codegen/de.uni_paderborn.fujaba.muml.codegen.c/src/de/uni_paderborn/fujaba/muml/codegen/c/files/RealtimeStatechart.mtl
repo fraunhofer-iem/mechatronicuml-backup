@@ -85,7 +85,7 @@
 						Clock_reset(stateChart->[getClockVariableName(state)/]);
 					[/for]
 					[comment Member variables for the variables of each region. /]	
-					[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]				
+					[for (variable : Variable | region.embeddedStatechart.variables)]			
 						[if (variable.dataType.oclIsKindOf(StructureDataType))]
 							[variable.initializeExpression.generateExpression('')/]
 						[/if]
@@ -137,10 +137,7 @@
 				[comment Member variables for the variables of each region. /]	
 				[for (variable : Variable | rtsc.variables->collect(oclAsType(Variable)))]
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
-						[comment currently not supported/]
-						[comment]
-						[getDefaultValue(variable,'')/];
-						[/comment]
+						[variable.initializeExpression.generateExpression('')/]
 					[elseif (variable.dataType.oclIsKindOf(ArrayDataType))]
 					[generateArrayInitializer(variable)/]
 						[else]
