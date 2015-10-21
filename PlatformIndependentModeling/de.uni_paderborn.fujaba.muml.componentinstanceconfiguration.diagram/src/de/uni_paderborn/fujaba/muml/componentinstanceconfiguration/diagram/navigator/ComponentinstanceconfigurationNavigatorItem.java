@@ -21,8 +21,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ComponentinstanceconfigurationNavigatorItem
-		extends
+public class ComponentinstanceconfigurationNavigatorItem extends
 		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem {
 
 	/**
@@ -30,24 +29,21 @@ public class ComponentinstanceconfigurationNavigatorItem
 	 */
 	static {
 		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem
-								&& (adapterType == View.class || adapterType == EObject.class)) {
-							return ((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) adaptableObject)
-									.getView();
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem
+						&& (adapterType == View.class || adapterType == EObject.class)) {
+					return ((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) adaptableObject)
+							.getView();
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem.class);
 	}
 
 	/**
@@ -63,8 +59,7 @@ public class ComponentinstanceconfigurationNavigatorItem
 	/**
 	 * @generated
 	 */
-	public ComponentinstanceconfigurationNavigatorItem(View view,
-			Object parent, boolean isLeaf) {
+	public ComponentinstanceconfigurationNavigatorItem(View view, Object parent, boolean isLeaf) {
 		super(parent);
 		myView = view;
 		myLeaf = isLeaf;
@@ -89,8 +84,7 @@ public class ComponentinstanceconfigurationNavigatorItem
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
-			return EcoreUtil
-					.getURI(getView())
+			return EcoreUtil.getURI(getView())
 					.equals(EcoreUtil
 							.getURI(((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) obj)
 									.getView()));

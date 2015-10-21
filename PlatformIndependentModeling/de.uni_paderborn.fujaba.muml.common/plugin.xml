@@ -39,6 +39,21 @@
 						</or>
 					</visibleWhen>
 	      </command>
+	      
+	       <command
+	            commandId="de.uni_paderborn.fujaba.muml.common.commands.UseSharedTypesCommand"
+	            icon="icons/TypeDialog.gif"
+	            id="de.uni_paderborn.fujaba.muml.common.commands.UseSharedTypesCommand"
+	            label="Use Shared Predefined Types"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<or>
+							<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						</or>
+					</visibleWhen>
+	      </command>
+	      
+	      
 	      <command
 	      		commandId="org.eclipse.ui.file.export" id="export"
 	      		style="push" label="Export...">
@@ -69,6 +84,19 @@
            name="Open Type Dialog">
      </command>
 
+  </extension>	
+  
+  
+  <extension
+        point="org.eclipse.ui.commands">
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.UseSharedTypesCommand"
+           description="Use Shared Types"
+           id="de.uni_paderborn.fujaba.muml.common.commands.UseSharedTypesCommand"
+           name="Open Type Dialog">
+     </command>
+
   </extension>
   
   
@@ -86,15 +114,12 @@
       </category>
   </extension>
   
-  
-  <!-- will be deactivated, see MUML #1008 -->
   <extension
        point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
       <initializer
           initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
       </initializer>
   </extension>
-  
   
   <extension
        point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
@@ -135,6 +160,12 @@
          <initializer
                initializer="de.uni_paderborn.fujaba.muml.common.elementinitializer.ClockConstraintElementInitializer"
                qualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint"/>
+   </extension>
+   <extension
+         point="de.uni_paderborn.fujaba.common.editingdomain.editingDomainInitializer">
+      <initializer
+            ref="de.uni_paderborn.fujaba.muml.common.editingdomain.PIMEditingDomainInitializer">
+      </initializer>
    </extension>
   
 

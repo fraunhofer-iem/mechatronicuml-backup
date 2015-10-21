@@ -54,6 +54,8 @@ Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport,
  org.storydriven.core.edit.properties;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport
+ de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.common.editingdomain,
+ de.uni_paderborn.fujaba.common.editingdomain;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

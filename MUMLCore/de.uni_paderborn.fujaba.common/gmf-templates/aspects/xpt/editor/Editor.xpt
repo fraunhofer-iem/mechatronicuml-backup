@@ -50,6 +50,9 @@ public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 	@Override
 	public void setInput(org.eclipse.ui.IEditorInput input) {
 		super.setInput(input);
-		// getEditingDomain().getResourceSet().getResource(de.uni_paderborn.fujaba.muml.types.PredefinedTypesResourceFactory.PREDEFINED_TYPES_URI, true);
+		for (de.uni_paderborn.fujaba.common.editingdomain.initialize.IEditingDomainInitializer init : de.uni_paderborn.fujaba.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
 	}
+
 «ENDAROUND»

@@ -24,8 +24,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolInstancePortInstancesCreateCommand extends
-		EditElementCommand {
+public class CoordinationProtocolInstancePortInstancesCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -40,8 +39,8 @@ public class CoordinationProtocolInstancePortInstancesCreateCommand extends
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolInstancePortInstancesCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public CoordinationProtocolInstancePortInstancesCreateCommand(CreateRelationshipRequest request, EObject source,
+			EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -58,8 +57,7 @@ public class CoordinationProtocolInstancePortInstancesCreateCommand extends
 				&& false == source instanceof de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.instance.PortInstance) {
+		if (target != null && false == target instanceof de.uni_paderborn.fujaba.muml.instance.PortInstance) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -71,16 +69,13 @@ public class CoordinationProtocolInstancePortInstancesCreateCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canCreateCoordinationProtocolInstancePortInstances_4003(
-						getSource(), getTarget(), sourceView, targetView)) {
+				.getLinkConstraints().canCreateCoordinationProtocolInstancePortInstances_4003(getSource(), getTarget(),
+						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorCoordinationProtocolInstancePortInstances_4003(
-							getSource(), getTarget(), sourceView, targetView);
+					.getLinkConstraints().getErrorCoordinationProtocolInstancePortInstances_4003(getSource(),
+							getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -89,11 +84,9 @@ public class CoordinationProtocolInstancePortInstancesCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

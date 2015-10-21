@@ -59,12 +59,9 @@ public class MumlVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
 				de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-						.getInstance().logError(
-								"Unable to parse view type as a visualID number: "
-										+ type);
+						.getInstance().logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -84,8 +81,7 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-				.getModelElementCategory()
+		if (de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory()
 				.isSuperTypeOf(domainElement.eClass())
 				&& isDiagram((de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
@@ -120,21 +116,20 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-					.getOperationRepository().isSuperTypeOf(
-							domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getOperationRepository()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-					.getOperation().isSuperTypeOf(domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getOperation()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-					.getParameter().isSuperTypeOf(domainElement.eClass())) {
+			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getParameter()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
 			}
 			break;
@@ -224,16 +219,14 @@ public class MumlVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.modelinstance.ModelElementCategory element) {
+	private static boolean isDiagram(de.uni_paderborn.fujaba.modelinstance.ModelElementCategory element) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -276,55 +269,58 @@ public class MumlVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
-			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view);
+			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
-			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getModelID(view);
+			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
 					.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
 			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
 					.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
 					.isSemanticLeafVisualID(visualID);

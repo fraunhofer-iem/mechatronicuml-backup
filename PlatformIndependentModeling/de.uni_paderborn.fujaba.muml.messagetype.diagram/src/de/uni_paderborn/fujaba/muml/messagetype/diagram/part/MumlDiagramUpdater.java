@@ -19,8 +19,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> getSemanticChildren(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
@@ -42,14 +41,13 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory modelElement = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getModelElements().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getModelElements().iterator(); it.hasNext();) {
 			ExtendableElement childElement = (ExtendableElement) it.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+				result.add(new de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -72,15 +70,14 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository modelElement = (de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getMessageTypes().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getMessageTypes().iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.msgtype.MessageType childElement = (de.uni_paderborn.fujaba.muml.msgtype.MessageType) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+				result.add(new de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -103,15 +100,14 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.msgtype.MessageType modelElement = (de.uni_paderborn.fujaba.muml.msgtype.MessageType) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getParameters().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getParameters().iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.behavior.Parameter childElement = (de.uni_paderborn.fujaba.muml.behavior.Parameter) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+				result.add(new de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -124,8 +120,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getContainedLinks(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
@@ -143,8 +138,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getIncomingLinks(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getMessageTypeRepository_2008IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
@@ -160,8 +154,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getMessageTypeRepository_2008OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
@@ -257,36 +250,40 @@ public class MumlDiagramUpdater {
 	 */
 	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> getSemanticChildren(
 				View view) {
 			return MumlDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getContainedLinks(
 				View view) {
 			return MumlDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getIncomingLinks(
 				View view) {
 			return MumlDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
 				View view) {
 			return MumlDiagramUpdater.getOutgoingLinks(view);

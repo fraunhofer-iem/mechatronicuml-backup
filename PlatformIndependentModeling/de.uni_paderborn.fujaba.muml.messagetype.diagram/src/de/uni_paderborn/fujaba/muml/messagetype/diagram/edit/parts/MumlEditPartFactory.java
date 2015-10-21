@@ -18,8 +18,7 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view)) {
+			switch (de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 
 			case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart(
@@ -34,20 +33,16 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.WrappingLabelEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.WrappingLabelEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart(
@@ -72,9 +67,7 @@ public class MumlEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 }

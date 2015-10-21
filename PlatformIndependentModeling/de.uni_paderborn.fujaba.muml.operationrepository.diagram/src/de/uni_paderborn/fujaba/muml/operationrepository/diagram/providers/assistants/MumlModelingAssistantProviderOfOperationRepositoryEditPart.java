@@ -10,8 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
  * @generated
  */
 public class MumlModelingAssistantProviderOfOperationRepositoryEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
 	 * @generated

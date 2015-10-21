@@ -34,8 +34,7 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationNameEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationNameEditPart(
@@ -46,8 +45,7 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.WrappingLabel2EditPart(
@@ -76,10 +74,8 @@ public class MumlEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

@@ -1,7 +1,16 @@
 package de.uni_paderborn.fujaba.common.editingdomain;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+
+import de.uni_paderborn.fujaba.common.editingdomain.initialize.IEditingDomainInitializer;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -10,9 +19,13 @@ public class EditingDomainPlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.common.editingdomain"; //$NON-NLS-1$
+	
+	public static final String EXTENSION_POINT_EDITING_DOMAIN_INITIALIZER = PLUGIN_ID  + ".editingDomainInitializer";
 
 	// The shared instance
 	private static EditingDomainPlugin plugin;
+	
+	private static List<IEditingDomainInitializer> editingDomainInitializers = null;
 	
 	/**
 	 * The constructor
@@ -45,6 +58,24 @@ public class EditingDomainPlugin extends AbstractUIPlugin {
 	 */
 	public static EditingDomainPlugin getDefault() {
 		return plugin;
+	}
+	
+	public static List<IEditingDomainInitializer> getEditingDomainInitializers() {
+		if (editingDomainInitializers == null) {
+			editingDomainInitializers = new ArrayList<IEditingDomainInitializer>();
+			
+			for (IConfigurationElement element : Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_EDITING_DOMAIN_INITIALIZER)) {
+				try {
+					Object object = element.createExecutableExtension("ref");
+					if (object instanceof IEditingDomainInitializer) {
+						editingDomainInitializers.add((IEditingDomainInitializer) object);
+					}
+				} catch (CoreException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return editingDomainInitializers;
 	}
 
 }

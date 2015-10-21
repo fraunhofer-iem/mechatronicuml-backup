@@ -15,8 +15,7 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.prov
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfComponentInstanceConfigurationEditPart
-		extends
+public class MumlModelingAssistantProviderOfComponentInstanceConfigurationEditPart extends
 		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlModelingAssistantProvider {
 
 }

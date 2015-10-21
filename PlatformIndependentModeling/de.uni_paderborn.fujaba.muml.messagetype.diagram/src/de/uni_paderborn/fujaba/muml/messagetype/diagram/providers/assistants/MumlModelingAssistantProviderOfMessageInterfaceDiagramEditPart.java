@@ -22,8 +22,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
  * @generated
  */
 public class MumlModelingAssistantProviderOfMessageInterfaceDiagramEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -31,7 +30,8 @@ public class MumlModelingAssistantProviderOfMessageInterfaceDiagramEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008);
+		types.add(
+				de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008);
 		return types;
 	}
 

@@ -17,8 +17,7 @@ import org.storydriven.core.CorePackage;
 /**
  * @generated
  */
-public class MumlParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class MumlParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -30,8 +29,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	private IParser getOperationRepositoryName_5003Parser() {
 		if (operationRepositoryName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.MessageFormatParser(
 					features);
 			operationRepositoryName_5003Parser = parser;
@@ -49,8 +47,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	private IParser getOperationName_5002Parser() {
 		if (operationName_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.MessageFormatParser(
 					features);
 			operationName_5002Parser = parser;
@@ -93,10 +90,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

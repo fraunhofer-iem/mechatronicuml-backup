@@ -19,16 +19,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 /**
  * @generated
  */
-public class DelegationConnectorInstanceItemSemanticEditPolicy
-		extends
+public class DelegationConnectorInstanceItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DelegationConnectorInstanceItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationConnectorInstance_4002);
+		super(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationConnectorInstance_4002);
 	}
 
 	/**

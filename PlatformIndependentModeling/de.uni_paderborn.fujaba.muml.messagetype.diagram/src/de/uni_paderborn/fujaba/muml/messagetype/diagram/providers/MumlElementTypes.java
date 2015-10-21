@@ -34,8 +34,8 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
+					.getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -45,20 +45,24 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ModelElementCategory_1000 = getElementType("de.uni_paderborn.fujaba.muml.messagetype.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
+	public static final IElementType ModelElementCategory_1000 = getElementType(
+			"de.uni_paderborn.fujaba.muml.messagetype.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageTypeRepository_2008 = getElementType("de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageTypeRepository_2008"); //$NON-NLS-1$
+	public static final IElementType MessageTypeRepository_2008 = getElementType(
+			"de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageTypeRepository_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageType_3007 = getElementType("de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageType_3007"); //$NON-NLS-1$
+	public static final IElementType MessageType_3007 = getElementType(
+			"de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageType_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Parameter_3009 = getElementType("de.uni_paderborn.fujaba.muml.messagetype.diagram.Parameter_3009"); //$NON-NLS-1$
+	public static final IElementType Parameter_3009 = getElementType(
+			"de.uni_paderborn.fujaba.muml.messagetype.diagram.Parameter_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -98,25 +102,17 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ModelElementCategory_1000,
-					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-							.getModelElementCategory());
+			elements.put(ModelElementCategory_1000,
+					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
-			elements.put(
-					MessageTypeRepository_2008,
-					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
-							.getMessageTypeRepository());
+			elements.put(MessageTypeRepository_2008,
+					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getMessageTypeRepository());
 
-			elements.put(
-					MessageType_3007,
-					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
-							.getMessageType());
+			elements.put(MessageType_3007,
+					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getMessageType());
 
-			elements.put(
-					Parameter_3009,
-					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-							.getParameter());
+			elements.put(Parameter_3009,
+					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getParameter());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -162,33 +158,33 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
 			return de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes
 					.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes
-					.getElementType(visualID);
+			return de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes
 					.getElement(elementTypeAdapter);
 		}

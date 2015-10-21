@@ -10,32 +10,28 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 public class MumlNavigatorItem
-		extends
-		de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem {
+		extends de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem {
 
 	/**
 	 * @generated
 	 */
 	static {
 		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem
-								&& (adapterType == View.class || adapterType == EObject.class)) {
-							return ((de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem) adaptableObject)
-									.getView();
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem
+						&& (adapterType == View.class || adapterType == EObject.class)) {
+					return ((de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem) adaptableObject)
+							.getView();
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem.class);
 	}
 
 	/**
@@ -76,8 +72,7 @@ public class MumlNavigatorItem
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem) {
-			return EcoreUtil
-					.getURI(getView())
+			return EcoreUtil.getURI(getView())
 					.equals(EcoreUtil
 							.getURI(((de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorItem) obj)
 									.getView()));

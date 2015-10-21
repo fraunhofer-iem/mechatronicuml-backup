@@ -18,8 +18,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class ComponentinstanceconfigurationNavigatorGroup
-		extends
+public class ComponentinstanceconfigurationNavigatorGroup extends
 		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem {
 
 	/**
@@ -40,8 +39,7 @@ public class ComponentinstanceconfigurationNavigatorGroup
 	/**
 	 * @generated
 	 */
-	ComponentinstanceconfigurationNavigatorGroup(String groupName, String icon,
-			Object parent) {
+	ComponentinstanceconfigurationNavigatorGroup(String groupName, String icon, Object parent) {
 		super(parent);
 		myGroupName = groupName;
 		myIcon = icon;

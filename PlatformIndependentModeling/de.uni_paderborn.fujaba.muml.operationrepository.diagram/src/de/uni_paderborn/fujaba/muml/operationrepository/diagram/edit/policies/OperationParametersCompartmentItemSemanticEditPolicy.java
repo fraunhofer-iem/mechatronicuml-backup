@@ -19,15 +19,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
  * @generated
  */
 public class OperationParametersCompartmentItemSemanticEditPolicy
-		extends
-		de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public OperationParametersCompartmentItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes.Operation_3001);
+		super(de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes.Operation_3001);
 	}
 
 	/**
@@ -36,8 +34,9 @@ public class OperationParametersCompartmentItemSemanticEditPolicy
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.commands.ParameterCreateCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.commands.ParameterCreateCommand(
+							req));
 		}
 		return super.getCreateCommand(req);
 	}

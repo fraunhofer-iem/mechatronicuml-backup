@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Shared Editingdomain Registry
-Bundle-SymbolicName: de.uni_paderborn.fujaba.common.editingdomain
+Bundle-SymbolicName: de.uni_paderborn.fujaba.common.editingdomain;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.common.editingdomain.EditingDomainPlugin
 Require-Bundle: org.eclipse.ui,
@@ -18,4 +18,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.8.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.common.editingdomain.registry
+Export-Package: de.uni_paderborn.fujaba.common.editingdomain,
+ de.uni_paderborn.fujaba.common.editingdomain.initialize,
+ de.uni_paderborn.fujaba.common.editingdomain.registry

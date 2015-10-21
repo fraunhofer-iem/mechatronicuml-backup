@@ -28,8 +28,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolInstancePortInstancesEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class CoordinationProtocolInstancePortInstancesEditPart extends ConnectionNodeEditPart
+		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -71,8 +71,7 @@ public class CoordinationProtocolInstancePortInstancesEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.CoordinationProtocolInstancePortInstancesItemSemanticEditPolicy());
 	}
 

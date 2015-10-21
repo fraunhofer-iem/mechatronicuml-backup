@@ -6,7 +6,6 @@ import java.util.Collections;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -18,23 +17,14 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.wizard.WizardDialog;
-import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.eclipse.ui.internal.IWorkbenchHelpContextIds;
-import org.eclipse.ui.internal.WorkbenchPlugin;
-import org.eclipse.ui.internal.dialogs.ImportExportWizard;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 import de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer;
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertiesWizard;
@@ -105,7 +95,6 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			RootNode rootNode = (RootNode) rootContainer;
 			typeCategory = getTypeCategory(rootNode);
 			if (typeCategory == null) {
-				// XXX will be Deactivated see MUML #1008
 				new TypeCategoryInitializer().initialize(rootNode);
 			}
 			typeCategory = getTypeCategory(rootNode);

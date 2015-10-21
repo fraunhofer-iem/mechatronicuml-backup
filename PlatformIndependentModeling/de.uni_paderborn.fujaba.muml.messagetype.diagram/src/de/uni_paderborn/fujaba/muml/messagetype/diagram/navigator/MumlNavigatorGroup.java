@@ -7,8 +7,7 @@ import java.util.LinkedList;
  * @generated
  */
 public class MumlNavigatorGroup
-		extends
-		de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem {
+		extends de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem {
 
 	/**
 	 * @generated

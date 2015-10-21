@@ -17,34 +17,28 @@ public class MumlDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class,
-				IPropertySource.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem) {
-							de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem domainNavigatorItem = (de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem) adaptableObject;
-							EObject eObject = domainNavigatorItem.getEObject();
-							if (adapterType == EObject.class) {
-								return eObject;
-							}
-							if (adapterType == IPropertySource.class) {
-								return domainNavigatorItem
-										.getPropertySourceProvider()
-										.getPropertySource(eObject);
-							}
-						}
-
-						return null;
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem) {
+					de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem domainNavigatorItem = (de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem) adaptableObject;
+					EObject eObject = domainNavigatorItem.getEObject();
+					if (adapterType == EObject.class) {
+						return eObject;
 					}
-
-					public Class[] getAdapterList() {
-						return supportedTypes;
+					if (adapterType == IPropertySource.class) {
+						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
-				},
-				de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem.class);
+				}
+
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem.class);
 	}
 
 	/**
@@ -65,8 +59,7 @@ public class MumlDomainNavigatorItem extends PlatformObject {
 	/**
 	 * @generated
 	 */
-	public MumlDomainNavigatorItem(EObject eObject, Object parent,
-			IPropertySourceProvider propertySourceProvider) {
+	public MumlDomainNavigatorItem(EObject eObject, Object parent, IPropertySourceProvider propertySourceProvider) {
 		myParent = parent;
 		myEObject = eObject;
 		myPropertySourceProvider = propertySourceProvider;
@@ -98,8 +91,7 @@ public class MumlDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem) {
-			return EcoreUtil
-					.getURI(getEObject())
+			return EcoreUtil.getURI(getEObject())
 					.equals(EcoreUtil
 							.getURI(((de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem) obj)
 									.getEObject()));

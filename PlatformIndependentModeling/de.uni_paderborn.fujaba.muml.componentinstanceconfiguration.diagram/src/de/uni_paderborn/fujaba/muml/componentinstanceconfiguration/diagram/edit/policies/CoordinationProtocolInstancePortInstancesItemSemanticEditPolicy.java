@@ -19,16 +19,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 /**
  * @generated
  */
-public class CoordinationProtocolInstancePortInstancesItemSemanticEditPolicy
-		extends
+public class CoordinationProtocolInstancePortInstancesItemSemanticEditPolicy extends
 		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CoordinationProtocolInstancePortInstancesItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstancePortInstances_4003);
+		super(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstancePortInstances_4003);
 	}
 
 	/**

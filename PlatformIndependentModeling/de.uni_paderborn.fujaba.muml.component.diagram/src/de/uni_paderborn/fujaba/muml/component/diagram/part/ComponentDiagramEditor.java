@@ -22,6 +22,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.KeyHandler;
 import org.eclipse.gef.KeyStroke;
@@ -49,6 +51,8 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ShowInContext;
+
+import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 
 /**
  * @generated
@@ -258,6 +262,18 @@ public class ComponentDiagramEditor extends DiagramDocumentEditor implements IGo
 		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0),
 				getActionRegistry().getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
 		// End added
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+	public void setInput(IEditorInput input) {
+		super.setInput(input);
+		for (de.uni_paderborn.fujaba.common.editingdomain.initialize.IEditingDomainInitializer init : de.uni_paderborn.fujaba.common.editingdomain.EditingDomainPlugin
+				.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
 	}
 
 	/**

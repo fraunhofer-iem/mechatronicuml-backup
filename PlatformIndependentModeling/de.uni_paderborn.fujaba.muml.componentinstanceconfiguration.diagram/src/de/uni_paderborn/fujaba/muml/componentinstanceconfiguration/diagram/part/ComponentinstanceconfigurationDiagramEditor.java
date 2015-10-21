@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.KeyHandler;
@@ -56,11 +57,12 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
 
+import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
+
 /**
  * @generated
  */
-public class ComponentinstanceconfigurationDiagramEditor extends
-		DiagramDocumentEditor implements IGotoMarker {
+public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
 	 * @generated
@@ -129,8 +131,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	 * @generated
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 					.getInstance().getDocumentProvider();
 		}
@@ -141,8 +142,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	 * @generated
 	 */
 	public TransactionalEditingDomain getEditingDomain() {
-		IDocument document = getEditorInput() != null ? getDocumentProvider()
-				.getDocument(getEditorInput()) : null;
+		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
 			return ((IDiagramDocument) document).getEditingDomain();
 		}
@@ -153,10 +153,10 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	 * @generated
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			setDocumentProvider(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().getDocumentProvider());
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+			setDocumentProvider(
+					de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+							.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -190,8 +190,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
-				.getFile() : null;
+		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input).getFile() : null;
 		if (original != null) {
 			dialog.setOriginalFile(original);
 		}
@@ -202,9 +201,9 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS
-					.bind(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SavingDeletedFile,
-							original.getName());
+			String message = NLS.bind(
+					de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SavingDeletedFile,
+					original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -225,37 +224,30 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 		IFile file = workspaceRoot.getFile(filePath);
 		final IEditorInput newInput = new FileEditorInput(file);
 		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
-				.getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage()
+		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
+		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog
-						.openWarning(
-								shell,
-								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorTitle,
-								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell,
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorTitle,
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
 		boolean success = false;
 		try {
 			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor,
-					newInput,
+			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput,
 					getDocumentProvider().getDocument(getEditorInput()), true);
 			success = true;
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog
-						.openError(
-								shell,
-								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorTitle,
-								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorMessage,
-								x.getStatus());
+				ErrorDialog.openError(shell,
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorTitle,
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorMessage,
+						x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -304,18 +296,27 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.DiagramEditorContextMenuProvider provider = new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.DiagramEditorContextMenuProvider(
 				this, getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
-		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
-				provider, getDiagramGraphicalViewer());
+		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
 		// Begin added to bind delete keyboard shortcut to "Delete From Model" action, not Delete From Diagram (default)
 		KeyHandler keyHandler = getDiagramGraphicalViewer().getKeyHandler();
-		keyHandler.put(
-				KeyStroke.getPressed(SWT.DEL, 127, 0),
-				getActionRegistry().getAction(
-						ActionIds.ACTION_DELETE_FROM_MODEL));
-		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
-				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
+		keyHandler.put(KeyStroke.getPressed(SWT.DEL, 127, 0),
+				getActionRegistry().getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
+		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0),
+				getActionRegistry().getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
 		// End added
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+	public void setInput(IEditorInput input) {
+		super.setInput(input);
+		for (de.uni_paderborn.fujaba.common.editingdomain.initialize.IEditingDomainInitializer init : de.uni_paderborn.fujaba.common.editingdomain.EditingDomainPlugin
+				.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
 	}
 
 	/**
@@ -323,8 +324,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	 */
 	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart().getDiagramView());
 		super.doSave(progressMonitor);
 	}
 

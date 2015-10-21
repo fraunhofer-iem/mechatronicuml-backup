@@ -17,8 +17,7 @@ public class ElementInitializers {
 				.getInstance().getElementInitializers();
 		if (cached == null) {
 			de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().setElementInitializers(
-							cached = new ElementInitializers());
+					.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

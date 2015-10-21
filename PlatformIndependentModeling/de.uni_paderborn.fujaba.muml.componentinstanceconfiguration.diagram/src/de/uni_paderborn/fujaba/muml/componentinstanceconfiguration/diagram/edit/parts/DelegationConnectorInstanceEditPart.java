@@ -32,8 +32,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class DelegationConnectorInstanceEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class DelegationConnectorInstanceEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -75,8 +74,7 @@ public class DelegationConnectorInstanceEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.DelegationConnectorInstanceItemSemanticEditPolicy());
 	}
 
@@ -114,16 +112,13 @@ public class DelegationConnectorInstanceEditPart extends ConnectionNodeEditPart
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
 			Display.getCurrent().asyncExec(new Runnable() {
 				@Override
 				public void run() {

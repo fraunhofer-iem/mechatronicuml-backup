@@ -22,8 +22,7 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 /**
  * @generated
  */
-public class ComponentinstanceconfigurationDomainNavigatorLabelProvider
-		implements ICommonLabelProvider {
+public class ComponentinstanceconfigurationDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
 	 * @generated
@@ -43,8 +42,8 @@ public class ComponentinstanceconfigurationDomainNavigatorLabelProvider
 	 */
 	public Image getImage(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) element)
+			return myAdapterFactoryLabelProvider.getImage(
+					((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) element)
 							.getEObject());
 		}
 		return null;
@@ -55,8 +54,8 @@ public class ComponentinstanceconfigurationDomainNavigatorLabelProvider
 	 */
 	public String getText(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) element)
+			return myAdapterFactoryLabelProvider.getText(
+					((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) element)
 							.getEObject());
 		}
 		return null;

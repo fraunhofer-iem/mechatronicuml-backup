@@ -6,9 +6,6 @@ import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 
 public class TypeCategoryInitializer implements IModelInitializer {
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
@@ -44,13 +41,14 @@ public class TypeCategoryInitializer implements IModelInitializer {
 			((RootNode) element).getCategories().add(typesCategory);
 		}
 
-		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
-			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
-					.createPrimitiveDataType();
-			primitiveDataType.setPrimitiveType(type);
-			primitiveDataType.setName(type.getName().toLowerCase());
-			typesCategory.getModelElements().add(primitiveDataType);
-		}
+		// Deactivated, because of Shared Primitive Types; see MUML #1008
+//		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
+//			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
+//					.createPrimitiveDataType();
+//			primitiveDataType.setPrimitiveType(type);
+//			primitiveDataType.setName(type.getName().toLowerCase());
+//			typesCategory.getModelElements().add(primitiveDataType);
+//		}
 	}
 
 }

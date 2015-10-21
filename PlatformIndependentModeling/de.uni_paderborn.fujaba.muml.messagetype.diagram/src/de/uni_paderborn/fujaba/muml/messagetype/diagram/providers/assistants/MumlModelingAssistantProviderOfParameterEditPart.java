@@ -16,7 +16,6 @@ package de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.assistants;
  * @generated
  */
 public class MumlModelingAssistantProviderOfParameterEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider {
 
 }

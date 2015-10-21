@@ -11,8 +11,7 @@ public class MumlEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public MumlEditPartProvider() {
-		super(
-				new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MumlEditPartFactory(),
+		super(new de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MumlEditPartFactory(),
 				de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE,
 				de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID);
 	}

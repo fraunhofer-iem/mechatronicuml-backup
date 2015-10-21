@@ -24,8 +24,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class AssemblyConnectorInstanceReorientCommand extends
-		EditElementCommand {
+public class AssemblyConnectorInstanceReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -45,8 +44,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public AssemblyConnectorInstanceReorientCommand(
-			ReorientRelationshipRequest request) {
+	public AssemblyConnectorInstanceReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
 		oldEnd = request.getOldRelationshipEnd();
@@ -73,7 +71,8 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -81,7 +80,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
 		  return false;
 		}
-		 */
+		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)) {
@@ -94,15 +93,12 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistAssemblyConnectorInstance_4001(
-						container, getLink(), getNewSource(), target,
-						sourceView, targetView)) {
+				.getLinkConstraints().canExistAssemblyConnectorInstance_4001(container, getLink(), getNewSource(),
+						target, sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorAssemblyConnectorInstance_4001(container,
-							getNewSource(), target, sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getErrorAssemblyConnectorInstance_4001(container, getNewSource(), target, sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -112,7 +108,8 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -120,7 +117,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
 		  return false;
 		}
-		 */
+		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)) {
@@ -133,15 +130,12 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistAssemblyConnectorInstance_4001(
-						container, getLink(), source, getNewTarget(),
-						sourceView, targetView)) {
+				.getLinkConstraints().canExistAssemblyConnectorInstance_4001(container, getLink(), source,
+						getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorAssemblyConnectorInstance_4001(container, source,
-							getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getErrorAssemblyConnectorInstance_4001(container, source, getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -150,11 +144,9 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

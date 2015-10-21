@@ -22,8 +22,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
  * @generated
  */
 public class MumlModelingAssistantProviderOfMessageTypeRepositoryEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
