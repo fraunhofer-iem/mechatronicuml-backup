@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.RootNode#getCategories <em>Categories</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage#getRootNode()
  * @model

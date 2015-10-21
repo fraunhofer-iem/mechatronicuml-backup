@@ -113,22 +113,13 @@ public interface ModelinstancePackage extends EPackage {
 	int MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Used Categories</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT_CATEGORY__USED_CATEGORIES = 1;
-
-	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_CATEGORY__KEY = 2;
+	int MODEL_ELEMENT_CATEGORY__KEY = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -137,7 +128,7 @@ public interface ModelinstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_CATEGORY__NAME = 3;
+	int MODEL_ELEMENT_CATEGORY__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Model Element Category</em>' class.
@@ -146,7 +137,7 @@ public interface ModelinstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_CATEGORY_FEATURE_COUNT = 4;
+	int MODEL_ELEMENT_CATEGORY_FEATURE_COUNT = 3;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelinstance.RootNode <em>Root Node</em>}'.
@@ -189,17 +180,6 @@ public interface ModelinstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModelElementCategory_ModelElements();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory#getUsedCategories <em>Used Categories</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Used Categories</em>'.
-	 * @see de.uni_paderborn.fujaba.modelinstance.ModelElementCategory#getUsedCategories()
-	 * @see #getModelElementCategory()
-	 * @generated
-	 */
-	EReference getModelElementCategory_UsedCategories();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory#getKey <em>Key</em>}'.
@@ -280,14 +260,6 @@ public interface ModelinstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS = eINSTANCE.getModelElementCategory_ModelElements();
-
-		/**
-		 * The meta object literal for the '<em><b>Used Categories</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_ELEMENT_CATEGORY__USED_CATEGORIES = eINSTANCE.getModelElementCategory_UsedCategories();
 
 		/**
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.

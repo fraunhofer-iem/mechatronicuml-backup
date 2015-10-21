@@ -67,7 +67,6 @@ public class ModelElementCategoryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addModelElementsPropertyDescriptor(object);
-			addUsedCategoriesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -87,28 +86,6 @@ public class ModelElementCategoryItemProvider
 				 getString("_UI_ModelElementCategory_modelElements_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_modelElements_feature", "_UI_ModelElementCategory_type"),
 				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Used Categories feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUsedCategoriesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelElementCategory_usedCategories_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_usedCategories_feature", "_UI_ModelElementCategory_type"),
-				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES,
 				 true,
 				 false,
 				 false,
@@ -152,7 +129,6 @@ public class ModelElementCategoryItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS);
-			childrenFeatures.add(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES);
 		}
 		return childrenFeatures;
 	}
@@ -212,7 +188,6 @@ public class ModelElementCategoryItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS:
-			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -259,11 +234,6 @@ public class ModelElementCategoryItemProvider
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES,
-				 ModelinstanceFactory.eINSTANCE.createModelElementCategory()));
 	}
 
 	/**

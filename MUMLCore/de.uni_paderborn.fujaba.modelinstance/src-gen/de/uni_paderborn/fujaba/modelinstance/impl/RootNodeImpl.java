@@ -28,10 +28,10 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.RootNodeImpl#getCategories <em>Categories</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

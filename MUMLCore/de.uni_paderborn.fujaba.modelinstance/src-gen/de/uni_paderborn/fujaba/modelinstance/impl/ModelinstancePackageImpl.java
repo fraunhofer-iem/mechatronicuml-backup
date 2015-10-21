@@ -157,17 +157,8 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelElementCategory_UsedCategories() {
-		return (EReference)modelElementCategoryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getModelElementCategory_Key() {
-		return (EAttribute)modelElementCategoryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)modelElementCategoryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -176,7 +167,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * @generated
 	 */
 	public EAttribute getModelElementCategory_Name() {
-		return (EAttribute)modelElementCategoryEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)modelElementCategoryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -212,7 +203,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 
 		modelElementCategoryEClass = createEClass(MODEL_ELEMENT_CATEGORY);
 		createEReference(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS);
-		createEReference(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__USED_CATEGORIES);
 		createEAttribute(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__KEY);
 		createEAttribute(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__NAME);
 	}
@@ -255,7 +245,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 
 		initEClass(modelElementCategoryEClass, ModelElementCategory.class, "ModelElementCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelElementCategory_ModelElements(), theCorePackage.getExtendableElement(), null, "modelElements", null, 0, -1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelElementCategory_UsedCategories(), this.getModelElementCategory(), null, "usedCategories", null, 0, -1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelElementCategory_Key(), ecorePackage.getEString(), "key", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelElementCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
