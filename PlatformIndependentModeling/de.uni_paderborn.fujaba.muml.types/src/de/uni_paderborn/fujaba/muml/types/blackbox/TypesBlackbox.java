@@ -1,5 +1,11 @@
 package de.uni_paderborn.fujaba.muml.types.blackbox;
 
+import java.io.IOException;
+import java.util.Collections;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+
 import de.uni_paderborn.fujaba.muml.types.PredefinedTypesResourceFactory;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 
@@ -33,5 +39,17 @@ public class TypesBlackbox {
 	}
 	public static PrimitiveDataType getUint64() {
 		return (PrimitiveDataType) PredefinedTypesResourceFactory.getResource().getEObject("uint64");
+	}
+	
+	public static PrimitiveDataType getTypeByName(String name) {
+
+		Resource resource = PredefinedTypesResourceFactory.getResource();		
+		for(EObject obj : resource.getContents()) {
+			PrimitiveDataType type = (PrimitiveDataType)obj;
+			if(type.getName().equals(name)){
+				return type;
+			}
+		}
+		return null;
 	}
 }
