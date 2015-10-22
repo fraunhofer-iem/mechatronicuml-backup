@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+   		<unit name="ModelcopyBlackbox" namespace="de.uni_paderborn.fujaba.modelcopy.qvto._library">
+    		<library name="ModelcopyBlackboxLib" class="de.uni_paderborn.fujaba.muml.types.blackbox.TypesBlackbox">
+    			<metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>
+    		</library>
+		</unit>
+	</extension>
+</plugin>
