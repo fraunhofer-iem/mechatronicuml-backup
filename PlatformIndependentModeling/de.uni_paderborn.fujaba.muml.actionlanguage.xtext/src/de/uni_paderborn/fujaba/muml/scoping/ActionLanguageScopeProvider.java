@@ -47,6 +47,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.types.Attribute;
 import de.uni_paderborn.fujaba.muml.types.DataType;
+import de.uni_paderborn.fujaba.muml.types.PredefinedTypesResourceFactory;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
@@ -299,13 +300,18 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 				.getModelElementCategory(rootNode, TYPES_CATEGORY_KEY);
 		
 		//fill lists
-		for (EObject type : modelElementCategory.getModelElements()) {
+		List<EObject> types = new ArrayList<EObject>();
+		types.addAll(modelElementCategory.getModelElements());
+		types.addAll(PredefinedTypesResourceFactory.getResource().getContents());
+		
+		for (EObject type : types) {
 			typeList.add((DataType) type);
 					
 			if(type instanceof StructureDataType){
 				attributeList.addAll(((StructureDataType)type).getAttributes());
 			}
 		}
+
 	}
 	
 	private List<Parameter> getScopeForOperation(Operation operation) {
