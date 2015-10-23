@@ -1,0 +1,22 @@
+import de.uni_paderborn.fujaba.muml.types._library.TypesBlackbox;
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+library PredefinedTypesLibrary;
+
+property INT8 : PrimitiveDataType = getInt8();
+property INT16 : PrimitiveDataType = getInt16();
+property INT32 : PrimitiveDataType = getInt32();
+property INT64 : PrimitiveDataType = getInt64();
+
+
+property UINT8 : PrimitiveDataType = getUint8();
+property UINT16 : PrimitiveDataType = getUint16();
+property UINT32 : PrimitiveDataType = getUint32();
+property UINT64 : PrimitiveDataType = getUint64();
+
+property DOUBLE : PrimitiveDataType = getDouble();
+property BOOLEAN : PrimitiveDataType = getBoolean();
+property VOID : PrimitiveDataType = getVoid();
+
+
+
+

@@ -7,5 +7,18 @@
     			<metamodel nsURI="http://www.fujaba.de/muml/types/0.4.0"/>
     		</library>
 		</unit>
-	</extension>
+	</extension>	
+<extension
+       point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer">
+    <sourceContainer
+          path="transforms/">
+ </sourceContainer>
+ </extension>
+ <extension
+       point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+    <library
+          file="transforms/PredefinedTypesLibrary.qvto"
+          id="PredefinedTypesLibrary">
+    </library>
+ </extension>
 </plugin>

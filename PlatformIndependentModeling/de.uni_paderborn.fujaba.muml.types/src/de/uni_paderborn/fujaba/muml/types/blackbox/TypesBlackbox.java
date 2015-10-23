@@ -22,6 +22,9 @@ public class TypesBlackbox {
 	public static PrimitiveDataType getDouble() {
 		return getTypeByName("double");
 	}
+	public static PrimitiveDataType getBoolean() {
+		return getTypeByName("boolean");
+	}
 	public static PrimitiveDataType getUint8() {
 		return getTypeByName("uint8");
 	}
