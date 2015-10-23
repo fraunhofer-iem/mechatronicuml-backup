@@ -1,4 +1,6 @@
 import SchemaSpecificMUML2MUML;
+import PredefinedTypesLibrary;
+
 library AllSchemataMappings;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
@@ -50,9 +52,13 @@ mapping Transition::Schema2BooleanVariable(varName : String): Variable
 
 query getBooleanPrimitiveDataType(theRootNode : RootNode) : PrimitiveDataType {
 	var types2 : ModelElementCategory := theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	if(types2.oclIsUndefined()) {
+		return BOOLEAN;
+	};
+	
 	var data : PrimitiveDataType := types2.oclAsType(ModelElementCategory).modelElements
 	->select(element | element.oclIsTypeOf(muml::types::PrimitiveDataType) and (element.oclAsType(muml::types::PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN))
-	->any(true).oclAsType(muml::types::PrimitiveDataType);
+	->any(true).oclAsType(muml::types::PrimitiveDataType);	
 	return data;
 	}
 
