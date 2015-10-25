@@ -70,7 +70,7 @@ mapping DirectedTypedPort::mapCreateStateChartVariable():Variable{
 mapping ContinuousPort::mapContinuousPort2APICallParameter():APICallParameter{
 	name := prop_execApiName;
 				if(self.inPort)then{
-					returnType:=  getPrimitiveDataType("VOID");
+					returnType:=  getPrimitiveDataType("void");
 					parameters:=object Parameter{
 						name:=self.name;
 						dataType:=self.dataType;
@@ -88,7 +88,7 @@ mapping DirectedTypedPort::mapDirectedTypedPort2SamplingTimeParameter():TimePara
 				initializeExpression:= object core::expressions::common::LiteralExpression{
 					value:="20";
 				};
-				dataType:=getPrimitiveDataType("INT32");
+				dataType:=getPrimitiveDataType("int32");
 	
 }
 
@@ -212,7 +212,7 @@ mapping  ContinuousPort::createStatechartContinuousPort(
 				initializeExpression:= object core::expressions::common::LiteralExpression{
 					value:="20";
 				};
-				dataType:=getPrimitiveDataType("INT32");
+				dataType:=getPrimitiveDataType("int32");
 			};
 	//	result.parameters += initApiParam;
 	//	result.parameters += execApiParam;
