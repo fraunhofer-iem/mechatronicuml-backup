@@ -1,4 +1,6 @@
 library CommonLibrary;
+import de.uni_paderborn.fujaba.muml.types._library.TypesBlackBox;
+
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
@@ -47,5 +49,21 @@ query PortInstance::getGenPortInstance():GenPortInstance{
 }
 
 query getPrimitiveDataType(_name:String):PrimitiveDataType {
-	return PrimitiveDataType.allInstances()->select(type|type.name.equalsIgnoreCase(_name))->any(true);
+	var theRootNode:RootNode :=RootNode.allInstances()->any(true);
+	var type:PrimitiveDataType := null;
+	if(not theRootNode.oclIsUndefined()) then{
+		var typescat : ModelElementCategory := theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	if ( not typescat.oclIsUndefined()) then{
+		type := PrimitiveDataType := typescat.modelElements
+	->select(element | element.oclIsTypeOf(muml::types::PrimitiveDataType) and (element.oclAsType(muml::types::PrimitiveDataType).primitiveType.name.equalsIgnoreCase(_name)))
+	->any(true).oclAsType(muml::types::PrimitiveDataType);
+	}endif;
+	}endif;
+	
+	if(type.oclIsUndefined()) then{
+		type:=TypesBlackBox.getTypeByName(_name);
+	}endif;
+	
+	return type;
+	
 }
