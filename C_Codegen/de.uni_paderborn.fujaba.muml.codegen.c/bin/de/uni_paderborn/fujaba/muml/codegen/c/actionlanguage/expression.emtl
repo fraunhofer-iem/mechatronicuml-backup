@@ -34,10 +34,10 @@
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
     </input>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/operation_queries.emtl#/0"/>
-    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0"/>
+    <imports href="expression_queries.emtl#/0"/>
+    <imports href="variable_queries.emtl#/0"/>
+    <imports href="operation_queries.emtl#/0"/>
+    <imports href="../queries/stringQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="mtl:TemplateInvocation" definition="/0/generateExpression.47">
@@ -181,7 +181,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getLogicOperator"/>
+          <definition href="expression_queries.emtl#/0/getLogicOperator"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="op" referredVariable="/0/generateExpression.2/%/op">
             <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
           </argument>
@@ -289,7 +289,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getComparingOperator"/>
+          <definition href="expression_queries.emtl#/0/getComparingOperator"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="op" referredVariable="/0/generateExpression.4/%/op">
             <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
           </argument>
@@ -592,7 +592,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getArithmeticOperator"/>
+          <definition href="expression_queries.emtl#/0/getArithmeticOperator"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="op" referredVariable="/0/generateExpression.9/%/op">
             <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
           </argument>
@@ -770,7 +770,7 @@
           </body>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getUnaryOperator"/>
+            <definition href="expression_queries.emtl#/0/getUnaryOperator"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="op" referredVariable="/0/generateExpression.13/%/op">
               <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
             </argument>
@@ -801,7 +801,7 @@
           <else>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getUnaryOperator"/>
+              <definition href="expression_queries.emtl#/0/getUnaryOperator"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="op" referredVariable="/0/generateExpression.13/%/op">
                 <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
               </argument>
@@ -1037,7 +1037,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getFullyQualifiedName"/>
+        <definition href="variable_queries.emtl#/0/getFullyQualifiedName"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
           <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.20/expression">
@@ -1189,7 +1189,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;stateChart->"/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
+              <definition href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/generateArrayInitializer/var">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
               </argument>
@@ -1597,7 +1597,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getTriggerMessageEventParameterVariableFullyQualifiedName"/>
+        <definition href="expression_queries.emtl#/0/getTriggerMessageEventParameterVariableFullyQualifiedName"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.31/expression">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
         </argument>
@@ -1700,7 +1700,7 @@
       </body>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getIncrementDecremetOperator"/>
+        <definition href="expression_queries.emtl#/0/getIncrementDecremetOperator"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
           <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.33/expression">
@@ -2005,10 +2005,10 @@
         <else>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/operation_queries.emtl#/0/getOperationOutputVariableName"/>
+            <definition href="operation_queries.emtl#/0/getOperationOutputVariableName"/>
             <argument xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
-              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/operation_queries.emtl#/0/getContainingOperation"/>
+              <definition href="operation_queries.emtl#/0/getContainingOperation"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.37/expression">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//ReturnStatement"/>
               </argument>
@@ -2083,7 +2083,7 @@
         <else>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+            <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -2099,7 +2099,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getFullyQualifiedName"/>
+            <definition href="variable_queries.emtl#/0/getFullyQualifiedName"/>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
               <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.38/expression">
@@ -2295,7 +2295,7 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+        <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
           <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.43/expression">
@@ -2411,7 +2411,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="generateExpression" visibility="Public">
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getMethodName"/>
+        <definition href="../queries/stringQueries.emtl#/0/getMethodName"/>
         <argument xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
           <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/generateExpression.46/expression">
@@ -2625,7 +2625,7 @@
                 </source>
                 <argument xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
+                  <definition href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/getDefaultValue/var">
                     <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
                   </argument>
@@ -2637,7 +2637,7 @@
             </source>
             <argument xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+              <definition href="../queries/stringQueries.emtl#/0/getDefaultValue.3"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/getDefaultValue/var">
@@ -2683,7 +2683,7 @@
               </source>
               <argument xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
+                <definition href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/getDefaultValue/var">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
                 </argument>
@@ -2706,7 +2706,7 @@
               </source>
               <argument xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
+                <definition href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="var" referredVariable="/0/getDefaultValue/var">
                   <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
                 </argument>
@@ -3542,7 +3542,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getComparingOperator"/>
+          <references href="expression_queries.emtl#/0/getComparingOperator"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="comparingOperator">
@@ -3554,7 +3554,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getLogicOperator"/>
+          <references href="expression_queries.emtl#/0/getLogicOperator"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="logicOperator">
@@ -3566,7 +3566,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getArithmeticOperator"/>
+          <references href="expression_queries.emtl#/0/getArithmeticOperator"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arithmeticOperator">
@@ -3578,7 +3578,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getUnaryOperator"/>
+          <references href="expression_queries.emtl#/0/getUnaryOperator"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="unaryOperator">
@@ -3590,7 +3590,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getIncrementDecremetOperator"/>
+          <references href="expression_queries.emtl#/0/getIncrementDecremetOperator"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="incdecOp">
@@ -3602,7 +3602,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/expression_queries.emtl#/0/getTriggerMessageEventParameterVariableFullyQualifiedName"/>
+          <references href="expression_queries.emtl#/0/getTriggerMessageEventParameterVariableFullyQualifiedName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
@@ -3614,7 +3614,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/0/getFullyQualifiedName"/>
+          <references href="variable_queries.emtl#/0/getFullyQualifiedName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="typedNamedElement">
@@ -3629,7 +3629,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/operation_queries.emtl#/0/getOperationOutputVariableName"/>
+          <references href="operation_queries.emtl#/0/getOperationOutputVariableName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="operation">
@@ -3641,7 +3641,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/operation_queries.emtl#/0/getContainingOperation"/>
+          <references href="operation_queries.emtl#/0/getContainingOperation"/>
         </eAnnotations>
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
         <eParameters name="expression">
@@ -3653,7 +3653,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getMethodName"/>
+          <references href="../queries/stringQueries.emtl#/0/getMethodName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="op">
@@ -3665,7 +3665,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getVariableName.2"/>
+          <references href="../queries/stringQueries.emtl#/0/getVariableName.2"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="var">
@@ -3677,7 +3677,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+          <references href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="type">
@@ -3689,7 +3689,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+          <references href="../queries/stringQueries.emtl#/0/getDefaultValue.3"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="type">
@@ -3869,7 +3869,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="collections_Set(LocalVariableDeclarationStatement)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="platform:/resource/de.uni_paderborn.fujaba.muml.codegen.c/bin/de/uni_paderborn/fujaba/muml/codegen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <references href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="behavior_Operation_Class">
