@@ -18,6 +18,7 @@ import org.storydriven.core.expressions.common.LogicalExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
@@ -324,9 +325,11 @@ public class TestSimpleExpressions {
 		}
 
 		// add else if block with true condition
-		ifStatement.getElseIfConditions().add(boolExp2);
-		ifStatement.getElseIfBlocks().add(block);
-
+		ElseIfStatement elseifStatement = alFactory.createElseIfStatement();
+		elseifStatement.setElseIfBlock(block);
+		elseifStatement.setElseIfCondition(boolExp2);
+		ifStatement.getElseIfStatements().add(elseifStatement);
+		
 		// evaluate if statement
 		actionLanguageInterpreter.evaluateExpression(varBindings, ifStatement);
 
@@ -336,10 +339,11 @@ public class TestSimpleExpressions {
 		}
 
 		// add false elseifcondition and else block
-		ifStatement.getElseIfBlocks().clear();
-		ifStatement.getElseIfBlocks().add(block2);
-		ifStatement.getElseIfConditions().clear();
-		ifStatement.getElseIfConditions().add(boolExp3);
+		ifStatement.getElseIfStatements().clear();
+		elseifStatement = alFactory.createElseIfStatement();
+		elseifStatement.setElseIfBlock(block2);
+		elseifStatement.setElseIfCondition(boolExp3);
+		ifStatement.getElseIfStatements().add(elseifStatement);
 		ifStatement.setElseBlock(block);
 		litExp.setValue("3");
 
