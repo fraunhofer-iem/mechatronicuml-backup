@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
@@ -26,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
@@ -51,6 +53,7 @@ import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.runnable.RunnablePackage;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -213,6 +216,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass elseIfStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assignOperatorEEnum = null;
 
 	/**
@@ -287,6 +297,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
+		RunnablePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theActionlanguagePackage.createPackageContents();
@@ -479,7 +490,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIfStatement_ElseIfConditions() {
+	public EReference getIfStatement_ElseBlock() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -488,17 +499,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIfStatement_ElseIfBlocks() {
+	public EReference getIfStatement_ElseIfStatements() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getIfStatement_ElseBlock() {
-		return (EReference)ifStatementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -821,6 +823,33 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getElseIfStatement() {
+		return elseIfStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getElseIfStatement_ElseIfCondition() {
+		return (EReference)elseIfStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getElseIfStatement_ElseIfBlock() {
+		return (EReference)elseIfStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -895,9 +924,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		ifStatementEClass = createEClass(IF_STATEMENT);
 		createEReference(ifStatementEClass, IF_STATEMENT__IF_CONDITION);
 		createEReference(ifStatementEClass, IF_STATEMENT__IF_BLOCK);
-		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_IF_CONDITIONS);
-		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_IF_BLOCKS);
 		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_BLOCK);
+		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_IF_STATEMENTS);
 
 		operationCallEClass = createEClass(OPERATION_CALL);
 		createEReference(operationCallEClass, OPERATION_CALL__OPERATION);
@@ -948,6 +976,10 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		attributeAccessorExpressionEClass = createEClass(ATTRIBUTE_ACCESSOR_EXPRESSION);
 		createEReference(attributeAccessorExpressionEClass, ATTRIBUTE_ACCESSOR_EXPRESSION__ATTRIBUTE);
 
+		elseIfStatementEClass = createEClass(ELSE_IF_STATEMENT);
+		createEReference(elseIfStatementEClass, ELSE_IF_STATEMENT__ELSE_IF_CONDITION);
+		createEReference(elseIfStatementEClass, ELSE_IF_STATEMENT__ELSE_IF_BLOCK);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
@@ -983,6 +1015,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1010,6 +1043,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		elementAccessorExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		arrayIndexExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
 		attributeAccessorExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
+		elseIfStatementEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1036,9 +1070,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIfStatement_IfCondition(), theExpressionsPackage.getExpression(), null, "ifCondition", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIfStatement_IfBlock(), this.getBlock(), null, "ifBlock", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIfStatement_ElseIfConditions(), theExpressionsPackage.getExpression(), null, "elseIfConditions", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIfStatement_ElseIfBlocks(), this.getBlock(), null, "elseIfBlocks", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIfStatement_ElseBlock(), this.getBlock(), null, "elseBlock", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_ElseIfStatements(), this.getElseIfStatement(), null, "elseIfStatements", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationCallEClass, OperationCall.class, "OperationCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationCall_Operation(), theBehaviorPackage.getOperation(), null, "operation", null, 1, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1088,6 +1121,10 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		initEClass(attributeAccessorExpressionEClass, AttributeAccessorExpression.class, "AttributeAccessorExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttributeAccessorExpression_Attribute(), theTypesPackage.getAttribute(), null, "attribute", null, 1, 1, AttributeAccessorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(elseIfStatementEClass, ElseIfStatement.class, "ElseIfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getElseIfStatement_ElseIfCondition(), theExpressionsPackage.getExpression(), null, "elseIfCondition", null, 1, 1, ElseIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getElseIfStatement_ElseIfBlock(), this.getBlock(), null, "elseIfBlock", null, 1, 1, ElseIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

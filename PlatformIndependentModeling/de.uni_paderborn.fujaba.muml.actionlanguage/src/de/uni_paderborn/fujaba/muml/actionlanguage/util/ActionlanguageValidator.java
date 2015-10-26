@@ -150,6 +150,8 @@ public class ActionlanguageValidator extends EObjectValidator {
 				return validateArrayIndexExpression((ArrayIndexExpression)value, diagnostics, context);
 			case ActionlanguagePackage.ATTRIBUTE_ACCESSOR_EXPRESSION:
 				return validateAttributeAccessorExpression((AttributeAccessorExpression)value, diagnostics, context);
+			case ActionlanguagePackage.ELSE_IF_STATEMENT:
+				return validateElseIfStatement((ElseIfStatement)value, diagnostics, context);
 			case ActionlanguagePackage.ASSIGN_OPERATOR:
 				return validateAssignOperator((AssignOperator)value, diagnostics, context);
 			case ActionlanguagePackage.INCREMENT_DECREMENT_OPERATOR:
@@ -438,6 +440,15 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 */
 	public boolean validateAttributeAccessorExpression(AttributeAccessorExpression attributeAccessorExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(attributeAccessorExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateElseIfStatement(ElseIfStatement elseIfStatement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(elseIfStatement, diagnostics, context);
 	}
 
 	/**

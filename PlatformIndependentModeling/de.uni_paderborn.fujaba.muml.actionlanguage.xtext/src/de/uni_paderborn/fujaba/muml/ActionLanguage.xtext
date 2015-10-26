@@ -61,10 +61,12 @@ DoWhileLoop returns actionlanguage::DoWhileLoop:
 IfStatement returns actionlanguage::IfStatement:
 	'if' '(' ifCondition=Expression ')'
 		ifBlock=Block
-	('elseif' '(' elseIfConditions+=Expression ')'
-		elseIfBlocks+=Block
-	)*
+	(elseIfStatements+=ElseIfStatement)*
 	('else' elseBlock=Block)?
+;
+ElseIfStatement returns actionlanguage::ElseIfStatement:
+	'elseif' '(' elseIfCondition=Expression ')'
+		elseIfBlock=Block
 ;
 
 ReturnStatement returns actionlanguage::ReturnStatement:

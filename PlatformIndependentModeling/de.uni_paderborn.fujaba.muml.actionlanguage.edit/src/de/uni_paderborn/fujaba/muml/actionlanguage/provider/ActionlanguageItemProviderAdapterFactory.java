@@ -512,6 +512,29 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElseIfStatementItemProvider elseIfStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createElseIfStatementAdapter() {
+		if (elseIfStatementItemProvider == null) {
+			elseIfStatementItemProvider = new ElseIfStatementItemProvider(this);
+		}
+
+		return elseIfStatementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -629,6 +652,7 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 		if (typeCastExpressionItemProvider != null) typeCastExpressionItemProvider.dispose();
 		if (arrayIndexExpressionItemProvider != null) arrayIndexExpressionItemProvider.dispose();
 		if (attributeAccessorExpressionItemProvider != null) attributeAccessorExpressionItemProvider.dispose();
+		if (elseIfStatementItemProvider != null) elseIfStatementItemProvider.dispose();
 	}
 
 }

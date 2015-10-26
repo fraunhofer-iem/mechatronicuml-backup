@@ -26,9 +26,8 @@ import org.storydriven.core.expressions.Expression;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getIfCondition <em>If Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getIfBlock <em>If Block</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfConditions <em>Else If Conditions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfBlocks <em>Else If Blocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseBlock <em>Else Block</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfStatements <em>Else If Statements</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement()
@@ -95,44 +94,6 @@ public interface IfStatement extends Expression {
 	void setIfBlock(Block value);
 
 	/**
-	 * Returns the value of the '<em><b>Else If Conditions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Else If Conditions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * ElseIf condition of the if statement.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Else If Conditions</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_ElseIfConditions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Expression> getElseIfConditions();
-
-	/**
-	 * Returns the value of the '<em><b>Else If Blocks</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.actionlanguage.Block}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Else If Blocks</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Block which is executed if the corresponding elseif condition evaluates to true.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Else If Blocks</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_ElseIfBlocks()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Block> getElseIfBlocks();
-
-	/**
 	 * Returns the value of the '<em><b>Else Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -160,5 +121,21 @@ public interface IfStatement extends Expression {
 	 * @generated
 	 */
 	void setElseBlock(Block value);
+
+	/**
+	 * Returns the value of the '<em><b>Else If Statements</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Else If Statements</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Else If Statements</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_ElseIfStatements()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ElseIfStatement> getElseIfStatements();
 
 } // IfStatement

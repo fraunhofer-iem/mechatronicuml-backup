@@ -289,26 +289,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cIfBlockAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cIfBlockBlockParserRuleCall_4_0 = (RuleCall)cIfBlockAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cElseifKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cElseIfConditionsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cElseIfConditionsExpressionParserRuleCall_5_2_0 = (RuleCall)cElseIfConditionsAssignment_5_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
-		private final Assignment cElseIfBlocksAssignment_5_4 = (Assignment)cGroup_5.eContents().get(4);
-		private final RuleCall cElseIfBlocksBlockParserRuleCall_5_4_0 = (RuleCall)cElseIfBlocksAssignment_5_4.eContents().get(0);
+		private final Assignment cElseIfStatementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cElseIfStatementsElseIfStatementParserRuleCall_5_0 = (RuleCall)cElseIfStatementsAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cElseKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cElseBlockAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cElseBlockBlockParserRuleCall_6_1_0 = (RuleCall)cElseBlockAssignment_6_1.eContents().get(0);
 		
 		//IfStatement returns actionlanguage::IfStatement:
-		//	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
-		//	("else" elseBlock=Block)?;
+		//	"if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
-		//("else" elseBlock=Block)?
+		//"if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?
 		public Group getGroup() { return cGroup; }
 
 		//"if"
@@ -332,29 +324,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Block
 		public RuleCall getIfBlockBlockParserRuleCall_4_0() { return cIfBlockBlockParserRuleCall_4_0; }
 
-		//("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
-		public Group getGroup_5() { return cGroup_5; }
+		//elseIfStatements+=ElseIfStatement*
+		public Assignment getElseIfStatementsAssignment_5() { return cElseIfStatementsAssignment_5; }
 
-		//"elseif"
-		public Keyword getElseifKeyword_5_0() { return cElseifKeyword_5_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_5_1() { return cLeftParenthesisKeyword_5_1; }
-
-		//elseIfConditions+=Expression
-		public Assignment getElseIfConditionsAssignment_5_2() { return cElseIfConditionsAssignment_5_2; }
-
-		//Expression
-		public RuleCall getElseIfConditionsExpressionParserRuleCall_5_2_0() { return cElseIfConditionsExpressionParserRuleCall_5_2_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_5_3() { return cRightParenthesisKeyword_5_3; }
-
-		//elseIfBlocks+=Block
-		public Assignment getElseIfBlocksAssignment_5_4() { return cElseIfBlocksAssignment_5_4; }
-
-		//Block
-		public RuleCall getElseIfBlocksBlockParserRuleCall_5_4_0() { return cElseIfBlocksBlockParserRuleCall_5_4_0; }
+		//ElseIfStatement
+		public RuleCall getElseIfStatementsElseIfStatementParserRuleCall_5_0() { return cElseIfStatementsElseIfStatementParserRuleCall_5_0; }
 
 		//("else" elseBlock=Block)?
 		public Group getGroup_6() { return cGroup_6; }
@@ -367,6 +341,46 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Block
 		public RuleCall getElseBlockBlockParserRuleCall_6_1_0() { return cElseBlockBlockParserRuleCall_6_1_0; }
+	}
+
+	public class ElseIfStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElseIfStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cElseifKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cElseIfConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cElseIfConditionExpressionParserRuleCall_2_0 = (RuleCall)cElseIfConditionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cElseIfBlockAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cElseIfBlockBlockParserRuleCall_4_0 = (RuleCall)cElseIfBlockAssignment_4.eContents().get(0);
+		
+		//ElseIfStatement returns actionlanguage::ElseIfStatement:
+		//	"elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block
+		public Group getGroup() { return cGroup; }
+
+		//"elseif"
+		public Keyword getElseifKeyword_0() { return cElseifKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//elseIfCondition=Expression
+		public Assignment getElseIfConditionAssignment_2() { return cElseIfConditionAssignment_2; }
+
+		//Expression
+		public RuleCall getElseIfConditionExpressionParserRuleCall_2_0() { return cElseIfConditionExpressionParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+
+		//elseIfBlock=Block
+		public Assignment getElseIfBlockAssignment_4() { return cElseIfBlockAssignment_4; }
+
+		//Block
+		public RuleCall getElseIfBlockBlockParserRuleCall_4_0() { return cElseIfBlockBlockParserRuleCall_4_0; }
 	}
 
 	public class ReturnStatementElements extends AbstractParserRuleElementFinder {
@@ -2092,6 +2106,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final WhileLoopElements pWhileLoop;
 	private final DoWhileLoopElements pDoWhileLoop;
 	private final IfStatementElements pIfStatement;
+	private final ElseIfStatementElements pElseIfStatement;
 	private final ReturnStatementElements pReturnStatement;
 	private final OperationCallStatementElements pOperationCallStatement;
 	private final ExpressionStartRuleElements pExpressionStartRule;
@@ -2161,6 +2176,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pWhileLoop = new WhileLoopElements();
 		this.pDoWhileLoop = new DoWhileLoopElements();
 		this.pIfStatement = new IfStatementElements();
+		this.pElseIfStatement = new ElseIfStatementElements();
 		this.pReturnStatement = new ReturnStatementElements();
 		this.pOperationCallStatement = new OperationCallStatementElements();
 		this.pExpressionStartRule = new ExpressionStartRuleElements();
@@ -2308,14 +2324,23 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IfStatement returns actionlanguage::IfStatement:
-	//	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
-	//	("else" elseBlock=Block)?;
+	//	"if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?;
 	public IfStatementElements getIfStatementAccess() {
 		return pIfStatement;
 	}
 	
 	public ParserRule getIfStatementRule() {
 		return getIfStatementAccess().getRule();
+	}
+
+	//ElseIfStatement returns actionlanguage::ElseIfStatement:
+	//	"elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block;
+	public ElseIfStatementElements getElseIfStatementAccess() {
+		return pElseIfStatement;
+	}
+	
+	public ParserRule getElseIfStatementRule() {
+		return getElseIfStatementAccess().getRule();
 	}
 
 	//ReturnStatement returns actionlanguage::ReturnStatement:

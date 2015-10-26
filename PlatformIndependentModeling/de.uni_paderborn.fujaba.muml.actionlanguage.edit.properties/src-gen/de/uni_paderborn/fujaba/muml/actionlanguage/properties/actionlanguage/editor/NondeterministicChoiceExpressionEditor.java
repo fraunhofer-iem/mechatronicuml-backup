@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor;
 
 /**
@@ -11,8 +12,7 @@ public class NondeterministicChoiceExpressionEditor
 	 * @generated
 	 */
 	public NondeterministicChoiceExpressionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -51,7 +51,8 @@ public class NondeterministicChoiceExpressionEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The range defines the lower bound and the upper bound of the interval from which\nvalues will be chosen nondeterministically. Every value in this interval will be\nchosen with the same probability.");
+			editor.setTooltipMessage(
+					"The range defines the lower bound and the upper bound of the interval from which\nvalues will be chosen nondeterministically. Every value in this interval will be\nchosen with the same probability.");
 
 			this.editorRange_GeneralTab = editor;
 		}
@@ -66,7 +67,8 @@ public class NondeterministicChoiceExpressionEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The base type for the interval defined by the range. We only allow for integer types.");
+			editor.setTooltipMessage(
+					"The base type for the interval defined by the range. We only allow for integer types.");
 
 			this.editorDataType_GeneralTab = editor;
 		}
@@ -81,10 +83,8 @@ public class NondeterministicChoiceExpressionEditor
 	 * @generated
 	 */
 	public NondeterministicChoiceExpressionEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab,
+				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 						.getNondeterministicChoiceExpression());
 	}
@@ -92,20 +92,16 @@ public class NondeterministicChoiceExpressionEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new NondeterministicChoiceExpressionEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

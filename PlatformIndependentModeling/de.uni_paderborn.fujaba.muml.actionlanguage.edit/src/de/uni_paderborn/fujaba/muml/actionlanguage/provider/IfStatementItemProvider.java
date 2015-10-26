@@ -62,9 +62,8 @@ public class IfStatementItemProvider
 
 			addIfConditionPropertyDescriptor(object);
 			addIfBlockPropertyDescriptor(object);
-			addElseIfConditionsPropertyDescriptor(object);
-			addElseIfBlocksPropertyDescriptor(object);
 			addElseBlockPropertyDescriptor(object);
+			addElseIfStatementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,50 +113,6 @@ public class IfStatementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Else If Conditions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addElseIfConditionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IfStatement_elseIfConditions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_elseIfConditions_feature", "_UI_IfStatement_type"),
-				 ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Else If Blocks feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addElseIfBlocksPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IfStatement_elseIfBlocks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_elseIfBlocks_feature", "_UI_IfStatement_type"),
-				 ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Else Block feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,6 +135,28 @@ public class IfStatementItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Else If Statements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addElseIfStatementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IfStatement_elseIfStatements_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_elseIfStatements_feature", "_UI_IfStatement_type"),
+				 ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_STATEMENTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -193,8 +170,6 @@ public class IfStatementItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION);
 			childrenFeatures.add(ActionlanguagePackage.Literals.IF_STATEMENT__IF_BLOCK);
-			childrenFeatures.add(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS);
-			childrenFeatures.add(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS);
 			childrenFeatures.add(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK);
 		}
 		return childrenFeatures;
@@ -252,8 +227,6 @@ public class IfStatementItemProvider
 		switch (notification.getFeatureID(IfStatement.class)) {
 			case ActionlanguagePackage.IF_STATEMENT__IF_CONDITION:
 			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
 			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -404,136 +377,6 @@ public class IfStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createAssignment()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createArrayInitializeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createAttributeAccessorExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
-				 ActionlanguageFactory.eINSTANCE.createBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
 				 ActionlanguageFactory.eINSTANCE.createBlock()));
 	}
@@ -552,8 +395,6 @@ public class IfStatementItemProvider
 		boolean qualify =
 			childFeature == ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION ||
 			childFeature == ActionlanguagePackage.Literals.IF_STATEMENT__IF_BLOCK ||
-			childFeature == ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS ||
-			childFeature == ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS ||
 			childFeature == ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK;
 
 		if (qualify) {

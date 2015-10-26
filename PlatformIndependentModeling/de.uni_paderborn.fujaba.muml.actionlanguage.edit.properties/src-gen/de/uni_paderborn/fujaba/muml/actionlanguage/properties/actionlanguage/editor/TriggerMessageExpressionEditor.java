@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor;
 
 /**
@@ -10,8 +11,7 @@ public class TriggerMessageExpressionEditor
 	/**
 	 * @generated
 	 */
-	public TriggerMessageExpressionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public TriggerMessageExpressionEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +23,7 @@ public class TriggerMessageExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorParameter_GeneralTab_Editor(), false);
 
@@ -32,8 +31,7 @@ public class TriggerMessageExpressionEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorParameter_GeneralTab_Editor(), false);
 
@@ -79,10 +77,8 @@ public class TriggerMessageExpressionEditor
 	 * @generated
 	 */
 	public TriggerMessageExpressionEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab,
+				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 						.getTriggerMessageExpression());
 	}
@@ -90,20 +86,16 @@ public class TriggerMessageExpressionEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new TriggerMessageExpressionEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

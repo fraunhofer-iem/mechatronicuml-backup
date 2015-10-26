@@ -174,6 +174,10 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 				return createAttributeAccessorExpressionAdapter();
 			}
 			@Override
+			public Adapter caseElseIfStatement(ElseIfStatement object) {
+				return createElseIfStatementAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -496,6 +500,20 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAttributeAccessorExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement <em>Else If Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement
+	 * @generated
+	 */
+	public Adapter createElseIfStatementAdapter() {
 		return null;
 	}
 

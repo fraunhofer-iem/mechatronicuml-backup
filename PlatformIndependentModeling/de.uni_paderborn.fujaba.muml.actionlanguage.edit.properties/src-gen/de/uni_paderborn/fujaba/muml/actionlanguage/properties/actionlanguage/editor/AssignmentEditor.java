@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor;
 
 /**
  * @generated
  */
-public class AssignmentEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class AssignmentEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public AssignmentEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public AssignmentEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,37 +21,25 @@ public class AssignmentEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorRhs_assignExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRhs_assignExpression_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorIncrementDecrementOperator_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorIncrementDecrementOperator_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorRhs_assignExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRhs_assignExpression_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorIncrementDecrementOperator_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorIncrementDecrementOperator_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -71,7 +57,8 @@ public class AssignmentEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("An assignment is used to assign a value to a variable. A simple assignment is one made using the \\emph{<ASSIGN>} Operator \\emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. ");
+			editor.setTooltipMessage(
+					"An assignment is used to assign a value to a variable. A simple assignment is one made using the \\emph{<ASSIGN>} Operator \\emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. ");
 
 			this.editorAssignOperator_GeneralTab = editor;
 		}
@@ -86,7 +73,8 @@ public class AssignmentEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The right-hand-side expression evaluates to a value which is assigned to the left-hand-side variable.");
+			editor.setTooltipMessage(
+					"The right-hand-side expression evaluates to a value which is assigned to the left-hand-side variable.");
 
 			this.editorRhs_assignExpression_GeneralTab = editor;
 		}
@@ -116,7 +104,8 @@ public class AssignmentEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage(" The left-hand-side of an assignment must be a single variable and must not be another expression.");
+			editor.setTooltipMessage(
+					" The left-hand-side of an assignment must be a single variable and must not be another expression.");
 
 			this.editorLhs_typedNamedElementExpression_GeneralTab = editor;
 		}
@@ -131,32 +120,24 @@ public class AssignmentEditor
 	 * @generated
 	 */
 	public AssignmentEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-						.getAssignment());
+		this(tab,
+				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE.getAssignment());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new AssignmentEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

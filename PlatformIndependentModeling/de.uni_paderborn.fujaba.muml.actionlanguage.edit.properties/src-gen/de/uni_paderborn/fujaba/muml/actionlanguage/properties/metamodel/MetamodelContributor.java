@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.actionlanguage.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,11 +17,10 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageItemProviderAdapterFactory());
 
 	}
 

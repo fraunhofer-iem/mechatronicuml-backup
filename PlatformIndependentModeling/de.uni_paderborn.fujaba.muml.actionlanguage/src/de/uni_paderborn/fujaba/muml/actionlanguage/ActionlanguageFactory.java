@@ -197,6 +197,15 @@ public interface ActionlanguageFactory extends EFactory {
 	AttributeAccessorExpression createAttributeAccessorExpression();
 
 	/**
+	 * Returns a new object of class '<em>Else If Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Else If Statement</em>'.
+	 * @generated
+	 */
+	ElseIfStatement createElseIfStatement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

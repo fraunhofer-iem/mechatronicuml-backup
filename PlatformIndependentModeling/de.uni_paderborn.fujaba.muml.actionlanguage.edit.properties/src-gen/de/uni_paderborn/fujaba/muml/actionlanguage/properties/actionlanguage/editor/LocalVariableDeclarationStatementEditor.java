@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor;
 
 /**
@@ -11,8 +12,7 @@ public class LocalVariableDeclarationStatementEditor
 	 * @generated
 	 */
 	public LocalVariableDeclarationStatementEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -47,7 +47,8 @@ public class LocalVariableDeclarationStatementEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The variable that is declared and optionally initialized by this declaration \nstatement.");
+			editor.setTooltipMessage(
+					"The variable that is declared and optionally initialized by this declaration \nstatement.");
 
 			this.editorVariable_GeneralTab = editor;
 		}
@@ -62,10 +63,8 @@ public class LocalVariableDeclarationStatementEditor
 	 * @generated
 	 */
 	public LocalVariableDeclarationStatementEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab,
+				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 						.getLocalVariableDeclarationStatement());
 	}
@@ -73,20 +72,15 @@ public class LocalVariableDeclarationStatementEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new LocalVariableDeclarationStatementEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general"}).contains(
-					tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general"}).contains(tab);
 		}
 	}
 

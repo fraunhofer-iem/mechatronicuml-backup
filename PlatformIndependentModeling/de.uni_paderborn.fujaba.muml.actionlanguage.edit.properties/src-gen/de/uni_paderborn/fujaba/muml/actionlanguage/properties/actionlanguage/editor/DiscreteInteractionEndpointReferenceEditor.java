@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor;
 
 /**
@@ -11,8 +12,7 @@ public class DiscreteInteractionEndpointReferenceEditor
 	 * @generated
 	 */
 	public DiscreteInteractionEndpointReferenceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -23,9 +23,7 @@ public class DiscreteInteractionEndpointReferenceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorTypedNamedElementExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorTypedNamedElementExpression_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
 
@@ -33,9 +31,7 @@ public class DiscreteInteractionEndpointReferenceEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(
-					createEditorTypedNamedElementExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorTypedNamedElementExpression_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
 
@@ -55,7 +51,8 @@ public class DiscreteInteractionEndpointReferenceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("Allows to reference a variable containing a sub-role instance of sub-port instance.\nThis field is optional. ");
+			editor.setTooltipMessage(
+					"Allows to reference a variable containing a sub-role instance of sub-port instance.\nThis field is optional. ");
 
 			this.editorTypedNamedElementExpression_GeneralTab = editor;
 		}
@@ -70,7 +67,8 @@ public class DiscreteInteractionEndpointReferenceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("Defines the relative position of the sub-role instance or sub-port instance.\nIn particular, it enables to select the first or last sub-role instance (sub-port instance) of a \nmulti-role instance (multi-port instance) using keyword first and last, to select itself\nin case of a sub-role instance (sub-port instance) using keyword self, or the next\nor previous sub-role given a reference either by self or a variable using keywords\nnext and prev.");
+			editor.setTooltipMessage(
+					"Defines the relative position of the sub-role instance or sub-port instance.\nIn particular, it enables to select the first or last sub-role instance (sub-port instance) of a \nmulti-role instance (multi-port instance) using keyword first and last, to select itself\nin case of a sub-role instance (sub-port instance) using keyword self, or the next\nor previous sub-role given a reference either by self or a variable using keywords\nnext and prev.");
 
 			this.editorPosition_GeneralTab = editor;
 		}
@@ -85,10 +83,8 @@ public class DiscreteInteractionEndpointReferenceEditor
 	 * @generated
 	 */
 	public DiscreteInteractionEndpointReferenceEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab,
+				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 						.getDiscreteInteractionEndpointReference());
 	}
@@ -96,20 +92,16 @@ public class DiscreteInteractionEndpointReferenceEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new DiscreteInteractionEndpointReferenceEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

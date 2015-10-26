@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.actionlanguage.properties.constraint;
 
 public class CreationConstraintContributor

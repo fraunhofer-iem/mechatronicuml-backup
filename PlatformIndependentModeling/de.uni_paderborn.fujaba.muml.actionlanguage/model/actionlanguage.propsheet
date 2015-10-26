@@ -98,22 +98,17 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VaDquswbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VaDqu8wbEeSjx7OWZCcdLw">
-        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseIfConditions"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VaDqvMwbEeSjx7OWZCcdLw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VaDqvcwbEeSjx7OWZCcdLw">
-        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseIfBlocks"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VaDqvswbEeSjx7OWZCcdLw"/>
-      </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VaDqv8wbEeSjx7OWZCcdLw">
         <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseBlock"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VaDqwMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VaDqwcwbEeSjx7OWZCcdLw" title="Lists" properties="_VaDqu8wbEeSjx7OWZCcdLw _VaDqvcwbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VaDqwcwbEeSjx7OWZCcdLw" title="Lists"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseIfStatements"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes xmi:id="_VaERwMwbEeSjx7OWZCcdLw">
       <genClass href="actionlanguage.genmodel#//actionlanguage/OperationCall"/>
@@ -253,6 +248,19 @@
         <genFeature href="actionlanguage.genmodel#//actionlanguage/AttributeAccessorExpression/attribute"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VaGG88wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ElseIfStatement"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ElseIfStatement/elseIfCondition"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ElseIfStatement/elseIfBlock"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
     </classes>
   </packages>

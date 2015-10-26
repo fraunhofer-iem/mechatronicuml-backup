@@ -127,6 +127,11 @@
              type="http://www.fujaba.de/muml/actionlanguage/0.4.0#AttributeAccessorExpression">
        </propertyEditor>
     
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.ElseIfStatementEditor$Factory"
+             type="http://www.fujaba.de/muml/actionlanguage/0.4.0#ElseIfStatement">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 

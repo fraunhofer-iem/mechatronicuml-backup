@@ -48,9 +48,8 @@
     <genClasses ecoreClass="actionlanguage.ecore#//IfStatement">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/ifCondition"/>
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/ifBlock"/>
-      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/elseIfConditions"/>
-      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/elseIfBlocks"/>
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/elseBlock"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/elseIfStatements"/>
     </genClasses>
     <genClasses ecoreClass="actionlanguage.ecore#//OperationCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//OperationCall/operation"/>
@@ -99,6 +98,10 @@
     </genClasses>
     <genClasses ecoreClass="actionlanguage.ecore#//AttributeAccessorExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//AttributeAccessorExpression/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="actionlanguage.ecore#//ElseIfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ElseIfStatement/elseIfCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ElseIfStatement/elseIfBlock"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

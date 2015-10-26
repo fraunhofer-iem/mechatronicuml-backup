@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
 
 /**
@@ -1620,31 +1621,22 @@ public interface ActionlanguagePackage extends EPackage {
 	int IF_STATEMENT__IF_BLOCK = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Else If Conditions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_STATEMENT__ELSE_IF_CONDITIONS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Else If Blocks</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_STATEMENT__ELSE_IF_BLOCKS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Else Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT__ELSE_BLOCK = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 4;
+	int IF_STATEMENT__ELSE_BLOCK = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Else If Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__ELSE_IF_STATEMENTS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>If Statement</em>' class.
@@ -1653,7 +1645,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 5;
+	int IF_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -5189,6 +5181,250 @@ public interface ActionlanguagePackage extends EPackage {
 	int ATTRIBUTE_ACCESSOR_EXPRESSION_OPERATION_COUNT = ELEMENT_ACCESSOR_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.ElseIfStatementImpl <em>Else If Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ElseIfStatementImpl
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getElseIfStatement()
+	 * @generated
+	 */
+	int ELSE_IF_STATEMENT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Else If Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT__ELSE_IF_CONDITION = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Else If Block</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT__ELSE_IF_BLOCK = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Else If Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Else If Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_IF_STATEMENT_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5196,7 +5432,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 21;
+	int ASSIGN_OPERATOR = 22;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -5206,7 +5442,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 22;
+	int INCREMENT_DECREMENT_OPERATOR = 23;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind <em>Position Selector Kind</em>}' enum.
@@ -5216,7 +5452,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getPositionSelectorKind()
 	 * @generated
 	 */
-	int POSITION_SELECTOR_KIND = 23;
+	int POSITION_SELECTOR_KIND = 24;
 
 
 	/**
@@ -5411,28 +5647,6 @@ public interface ActionlanguagePackage extends EPackage {
 	EReference getIfStatement_IfBlock();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfConditions <em>Else If Conditions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Else If Conditions</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfConditions()
-	 * @see #getIfStatement()
-	 * @generated
-	 */
-	EReference getIfStatement_ElseIfConditions();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfBlocks <em>Else If Blocks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Else If Blocks</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfBlocks()
-	 * @see #getIfStatement()
-	 * @generated
-	 */
-	EReference getIfStatement_ElseIfBlocks();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseBlock <em>Else Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5442,6 +5656,17 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIfStatement_ElseBlock();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfStatements <em>Else If Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Else If Statements</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement#getElseIfStatements()
+	 * @see #getIfStatement()
+	 * @generated
+	 */
+	EReference getIfStatement_ElseIfStatements();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall <em>Operation Call</em>}'.
@@ -5815,6 +6040,38 @@ public interface ActionlanguagePackage extends EPackage {
 	EReference getAttributeAccessorExpression_Attribute();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement <em>Else If Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Else If Statement</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement
+	 * @generated
+	 */
+	EClass getElseIfStatement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement#getElseIfCondition <em>Else If Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else If Condition</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement#getElseIfCondition()
+	 * @see #getElseIfStatement()
+	 * @generated
+	 */
+	EReference getElseIfStatement_ElseIfCondition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement#getElseIfBlock <em>Else If Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else If Block</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement#getElseIfBlock()
+	 * @see #getElseIfStatement()
+	 * @generated
+	 */
+	EReference getElseIfStatement_ElseIfBlock();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6026,28 +6283,20 @@ public interface ActionlanguagePackage extends EPackage {
 		EReference IF_STATEMENT__IF_BLOCK = eINSTANCE.getIfStatement_IfBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Else If Conditions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IF_STATEMENT__ELSE_IF_CONDITIONS = eINSTANCE.getIfStatement_ElseIfConditions();
-
-		/**
-		 * The meta object literal for the '<em><b>Else If Blocks</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IF_STATEMENT__ELSE_IF_BLOCKS = eINSTANCE.getIfStatement_ElseIfBlocks();
-
-		/**
 		 * The meta object literal for the '<em><b>Else Block</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference IF_STATEMENT__ELSE_BLOCK = eINSTANCE.getIfStatement_ElseBlock();
+
+		/**
+		 * The meta object literal for the '<em><b>Else If Statements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_STATEMENT__ELSE_IF_STATEMENTS = eINSTANCE.getIfStatement_ElseIfStatements();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.
@@ -6356,6 +6605,32 @@ public interface ActionlanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTRIBUTE_ACCESSOR_EXPRESSION__ATTRIBUTE = eINSTANCE.getAttributeAccessorExpression_Attribute();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.ElseIfStatementImpl <em>Else If Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ElseIfStatementImpl
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getElseIfStatement()
+		 * @generated
+		 */
+		EClass ELSE_IF_STATEMENT = eINSTANCE.getElseIfStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Else If Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELSE_IF_STATEMENT__ELSE_IF_CONDITION = eINSTANCE.getElseIfStatement_ElseIfCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Else If Block</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELSE_IF_STATEMENT__ELSE_IF_BLOCK = eINSTANCE.getElseIfStatement_ElseIfBlock();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.

@@ -15,12 +15,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 
 
@@ -34,9 +36,8 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getIfCondition <em>If Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getIfBlock <em>If Block</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getElseIfConditions <em>Else If Conditions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getElseIfBlocks <em>Else If Blocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getElseBlock <em>Else Block</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.IfStatementImpl#getElseIfStatements <em>Else If Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,26 +64,6 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	protected Block ifBlock;
 
 	/**
-	 * The cached value of the '{@link #getElseIfConditions() <em>Else If Conditions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElseIfConditions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Expression> elseIfConditions;
-
-	/**
-	 * The cached value of the '{@link #getElseIfBlocks() <em>Else If Blocks</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElseIfBlocks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Block> elseIfBlocks;
-
-	/**
 	 * The cached value of the '{@link #getElseBlock() <em>Else Block</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,6 +72,16 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	 * @ordered
 	 */
 	protected Block elseBlock;
+
+	/**
+	 * The cached value of the '{@link #getElseIfStatements() <em>Else If Statements</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getElseIfStatements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ElseIfStatement> elseIfStatements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,30 +193,6 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Expression> getElseIfConditions() {
-		if (elseIfConditions == null) {
-			elseIfConditions = new EObjectContainmentEList<Expression>(Expression.class, this, ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS);
-		}
-		return elseIfConditions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Block> getElseIfBlocks() {
-		if (elseIfBlocks == null) {
-			elseIfBlocks = new EObjectContainmentEList<Block>(Block.class, this, ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS);
-		}
-		return elseIfBlocks;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Block getElseBlock() {
 		return elseBlock;
 	}
@@ -269,6 +236,18 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ElseIfStatement> getElseIfStatements() {
+		if (elseIfStatements == null) {
+			elseIfStatements = new EObjectContainmentEList<ElseIfStatement>(ElseIfStatement.class, this, ActionlanguagePackage.IF_STATEMENT__ELSE_IF_STATEMENTS);
+		}
+		return elseIfStatements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -276,12 +255,10 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 				return basicSetIfCondition(null, msgs);
 			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				return basicSetIfBlock(null, msgs);
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
-				return ((InternalEList<?>)getElseIfConditions()).basicRemove(otherEnd, msgs);
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
-				return ((InternalEList<?>)getElseIfBlocks()).basicRemove(otherEnd, msgs);
 			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				return basicSetElseBlock(null, msgs);
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_STATEMENTS:
+				return ((InternalEList<?>)getElseIfStatements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -298,12 +275,10 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 				return getIfCondition();
 			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				return getIfBlock();
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
-				return getElseIfConditions();
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
-				return getElseIfBlocks();
 			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				return getElseBlock();
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_STATEMENTS:
+				return getElseIfStatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,16 +298,12 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				setIfBlock((Block)newValue);
 				return;
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
-				getElseIfConditions().clear();
-				getElseIfConditions().addAll((Collection<? extends Expression>)newValue);
-				return;
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
-				getElseIfBlocks().clear();
-				getElseIfBlocks().addAll((Collection<? extends Block>)newValue);
-				return;
 			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				setElseBlock((Block)newValue);
+				return;
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_STATEMENTS:
+				getElseIfStatements().clear();
+				getElseIfStatements().addAll((Collection<? extends ElseIfStatement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -352,14 +323,11 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				setIfBlock((Block)null);
 				return;
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
-				getElseIfConditions().clear();
-				return;
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
-				getElseIfBlocks().clear();
-				return;
 			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				setElseBlock((Block)null);
+				return;
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_STATEMENTS:
+				getElseIfStatements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -377,12 +345,10 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 				return ifCondition != null;
 			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				return ifBlock != null;
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
-				return elseIfConditions != null && !elseIfConditions.isEmpty();
-			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
-				return elseIfBlocks != null && !elseIfBlocks.isEmpty();
 			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				return elseBlock != null;
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_STATEMENTS:
+				return elseIfStatements != null && !elseIfStatements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
