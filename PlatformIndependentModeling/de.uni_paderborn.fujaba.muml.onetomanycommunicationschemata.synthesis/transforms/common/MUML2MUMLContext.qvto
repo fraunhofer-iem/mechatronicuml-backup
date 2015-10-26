@@ -202,7 +202,10 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	   		 }
 	   		 
 
-
+    mapping ElseIfStatement::ElseIfStatement2ElseIfStatement(context : OclAny): ElseIfStatement {
+    		elseIfBlock := self.elseIfBlock.map Block2Block(context);
+    		elseIfCondition := self.elseIfCondition.map Expression2Expression(context);    		
+    }
 	   		 
 	mapping core::expressions::Expression :: Expression2Expression(context : OclAny) : core::expressions::Expression disjuncts
 			actionlanguage::TimeValueExpression::TimeValueExpression2TimeValueExpression,
@@ -223,7 +226,8 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression,
 			actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement,
 			actionlanguage::TypeCastExpression::TypeCastExpression2TypeCastExpression,
-			actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement;
+			actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement
+			;
 	      	
 	mapping core::expressions::TextualExpression :: TextualExpression2TextualExpression(context : OclAny) : core::expressions::TextualExpression{
 	    	_comment := self._comment;
@@ -300,8 +304,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_extension := self._extension.map Extension2Extension(context);
 	    	_ifCondition := self._ifCondition.map Expression2Expression(context);
 	    	_ifBlock := self._ifBlock.map Block2Block(context);
-	    	_elseIfConditions := self._elseIfConditions.map Expression2Expression(context);
-	    	_elseIfBlocks := self._elseIfBlocks.map Block2Block(context);
+	    	_elseIfStatements := self._elseIfStatements.map ElseIfStatement2ElseIfStatement(context);	   
 	    	_elseBlock := self._elseBlock.map Block2Block(context);
 	   		 }
 	   		 

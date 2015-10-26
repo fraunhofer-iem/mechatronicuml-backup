@@ -54,11 +54,13 @@ query getBooleanPrimitiveDataType(theRootNode : RootNode) : PrimitiveDataType {
 	var types2 : ModelElementCategory := theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
 	if(types2.oclIsUndefined()) {
 		return BOOLEAN;
-	};
-	
+	};	
 	var data : PrimitiveDataType := types2.oclAsType(ModelElementCategory).modelElements
 	->select(element | element.oclIsTypeOf(muml::types::PrimitiveDataType) and (element.oclAsType(muml::types::PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN))
 	->any(true).oclAsType(muml::types::PrimitiveDataType);	
+	if(data.oclIsUndefined()) {
+		return BOOLEAN;
+	};
 	return data;
 	}
 
