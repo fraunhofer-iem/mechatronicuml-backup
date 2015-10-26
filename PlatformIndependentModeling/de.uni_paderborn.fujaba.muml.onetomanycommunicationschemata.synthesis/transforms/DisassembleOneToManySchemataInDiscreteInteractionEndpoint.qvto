@@ -83,6 +83,18 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		internalClocks := allRTSCs.clocks;
 		internalVariables := allRTSCs.variables;
 		internalSynchronizations := allRTSCs.states.channels;
+		
+		// add dummy condition for LoadBalancing and Iterate!
+		allRTSCs.transitions->forEach(t| 
+			not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()
+			and (t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) or 
+				t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate))){
+					var lit : LiteralExpression := new LiteralExpression();
+					lit.value := "true";
+					t.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.condition := lit;									
+				};
+		
+		
 		-- check whether every unicast defines a condition!
 		assert fatal (self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and
 		 t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()
@@ -98,6 +110,9 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		operations += self.operations.map Operation2Operation();
 		// the proper transformation
 		states += self.map Rtsc2InitialState();
+		
+		
+		
 		
 		// if the one-to-many-coordination-schema defined a condition, we need a boolean variable that checks whether the schema eexecution works or not.
 		
