@@ -19,6 +19,7 @@ import org.storydriven.core.expressions.common.UnaryOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
@@ -670,21 +671,19 @@ public class ActionLanguageInterpreter {
 
 		// if if-condition was not evaluated to true evaluate elseIf-conditions
 		// and corresponding blocks
-		if (!blockExecuted && ifStatement.getElseIfConditions() != null
-				&& !ifStatement.getElseIfConditions().isEmpty()) {
-			Iterator<Block> elseIfIterator = ifStatement.getElseIfBlocks()
-					.iterator();
-			for (Expression elseIfCondition : ifStatement.getElseIfConditions()) {
+		if (!blockExecuted && ifStatement.getElseIfStatements() != null
+				&& !ifStatement.getElseIfStatements().isEmpty()) {
+			for (ElseIfStatement elseIfStatement : ifStatement.getElseIfStatements()) {
 				if ((Boolean) castTo(
 						boolType,
 						evaluate(variableBindings, parAndLocVarBindings,
-								elseIfCondition))) {
+								elseIfStatement.getElseIfCondition()))) {
 					evaluate(variableBindings, parAndLocVarBindings,
-							elseIfIterator.next());
+							elseIfStatement.getElseIfBlock());
 					blockExecuted = true;
 					break;
 				}
-				elseIfIterator.next();
+				
 			}
 		}
 
