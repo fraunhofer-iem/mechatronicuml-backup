@@ -162,27 +162,19 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 		// get the protocol category and get the number of protocols within this
 		// category
-		CoordinationProtocol newProtocol = PatternToProtocolTransformation.transformPatternToProtocolStep1(thePattern,rootNode, bindings,editingDomain);
+		CoordinationProtocol newProtocol = PatternToProtocolTransformation.transformPatternToProtocol(thePattern,rootNode, bindings,editingDomain);
 		if (newProtocol == null)
-			return;
+			return;		
 
+//		// check whether there are mtclt constraints
+//		if (thePattern.getVerificationConstraintRepositories().size() > 0) {
+//			// create input for the second transformation step.
+//			PatternToProtocolTransformation.TransformPatternToProtocolStep2(thePattern, newProtocol, rootNode, editingDomain);
+//		}
 		// save the resource, e.g. the modified modelinstance, such that the
-		// changes caused by the transformation are not lost.
+				// changes caused by the transformation are not lost.
 		final Resource resource = newProtocol.eResource();
-		try {
-			resource.save(Collections.emptyMap());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		// check whether there are mtclt constraints
-		if (thePattern.getVerificationConstraintRepositories().size() > 1) {
-			// create input for the second transformation step.
-			PatternToProtocolTransformation.TransformPatternToProtocolStep2(thePattern, newProtocol, rootNode, editingDomain);
-		}
-		// save the resource, e.g. the modified modelinstance, such that the
-		// changes caused by the transformation are not lost.
-
+			
 		try {
 			resource.save(Collections.emptyMap());
 		} catch (IOException e) {

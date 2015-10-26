@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -30,6 +31,7 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.swt.widgets.Shell;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
@@ -86,38 +88,25 @@ public class PatternToProtocolTransformation {
 		{
 			input[i+2] = variables[i];
 		}
-		ModelElementCategory patternCategory = null;
-		for (ModelElementCategory cat : rootNode.getCategories()) {
-			if (cat.getKey().contains("pattern")) {
-				patternCategory = cat;
-				break;
-			}
-		}
-		int nrOfPatternsBeforeTranslation = patternCategory.getModelElements().size();
+
+		ModelExtent outputExtent =  new BasicModelExtent();
 		
-		final List<ModelExtent> modelExtents = Arrays
-				.asList(new ModelExtent[] { new BasicModelExtent(Arrays
-						.asList(input)) });
 		
 		final TransformationExecutor transformationExecutor = Activator.getInstance().getTransformationExecutor(Activator.TRANSFORM_PROTOCOL_TO_PATTERN,false);
-		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents);
+		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
+				transformationExecutor,new BasicModelExtent(Arrays
+						.asList(input)), outputExtent);
 
 		if (command.canExecute())
 			editingDomain.getCommandStack().execute(command);
-		int nrOfPatternsAfterTranslation = patternCategory.getModelElements().size();
-		
-		if(nrOfPatternsAfterTranslation > nrOfPatternsBeforeTranslation)
-		{
-			return (CoordinationPattern)patternCategory.getModelElements().get(nrOfPatternsAfterTranslation-1);
-		}
-		else
-			return null;
+
+		CoordinationPattern pattern = (CoordinationPattern)outputExtent.getContents().get(0);
+		return pattern;
 		
 	}
 
-	public static CoordinationProtocol transformPatternToProtocolStep1 (CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
-	{
+	public static CoordinationProtocol transformPatternToProtocol(CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain) {
+		
 		// create the input for the transformation. It consists of the rootNode, the 
 		// selectedPattern and the ParameterBindings
 		EObject[] input = new EObject[bindings.size()+2];
@@ -128,26 +117,55 @@ public class PatternToProtocolTransformation {
 			input[i+2] = bindings.get(i);
 		}
 		// get the protocol category and get the number of protocols within this
-				// category
-		ModelElementCategory protocolCategory = null;
-		for (ModelElementCategory cat : rootNode.getCategories()) {
-			if (cat.getKey().contains("protocol")) {
-				protocolCategory = cat;
-				break;
-			}
-		}
-		int nrOfProtocolsBeforeTranslation = protocolCategory.getModelElements().size();
+		// category			
 		
-		
-		final List<ModelExtent> modelExtents = Arrays
-				.asList(new ModelExtent[] { new BasicModelExtent(Arrays
-						.asList(input)) });
-
+		ModelExtent outputExtent =  new BasicModelExtent();
+	
 		// Load QVTO script PatternToProtocol
 		final TransformationExecutor transformationExecutor = Activator
 				.getInstance().getTransformationExecutor(
 						Activator.TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1, false);
 
+		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
+				transformationExecutor, new BasicModelExtent(Arrays
+						.asList(input)),outputExtent);
+
+		if (command.canExecute())
+			editingDomain.getCommandStack().execute(command);
+
+		// check whether a new protocol was added to the protocol category. If
+		// not, do not create any diagrams
+		CoordinationProtocol newProtocol = (CoordinationProtocol)outputExtent.getContents().get(0);
+				
+		return newProtocol;		
+	}	
+	
+
+	public static CoordinationProtocol transformPatternToProtocolVerification(CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain) {
+		
+		// create the input for the transformation. It consists of the rootNode, the 
+		// selectedPattern and the ParameterBindings
+		EObject[] input = new EObject[bindings.size()+2];
+		input[0]= rootNode;
+		input[1]=selectedPattern;	
+		for(int i=0; i< bindings.size();i++)
+		{
+			input[i+2] = bindings.get(i);
+		}
+		// get the protocol category and get the number of protocols within this
+		// category			
+		
+		ModelExtent outputExtent =  new BasicModelExtent();
+	
+		// Load QVTO script PatternToProtocol
+		final TransformationExecutor transformationExecutor = Activator
+				.getInstance().getTransformationExecutor(
+						Activator.TRANSFORM_PATTERN_TO_PROTOCOL_VERIFICATION, false);
+
+		List<ModelExtent> modelExtents = new ArrayList<ModelExtent>();
+		modelExtents.add(new BasicModelExtent(Arrays
+						.asList(input)));
+		modelExtents.add(outputExtent);
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);
 
@@ -156,44 +174,45 @@ public class PatternToProtocolTransformation {
 
 		// check whether a new protocol was added to the protocol category. If
 		// not, do not create any diagrams
-		int nrOfProtocolsAfterTranslation = protocolCategory.getModelElements()
-				.size();
-		if (!(nrOfProtocolsBeforeTranslation < nrOfProtocolsAfterTranslation))
-			return null;
-
-		CoordinationProtocol newProtocol = (CoordinationProtocol) protocolCategory
-				.getModelElements().get(nrOfProtocolsAfterTranslation - 1);
-		return newProtocol;
-		
-	}
+		CoordinationProtocol newProtocol = null;
+		RootNode root = (RootNode) outputExtent.getContents().get(0);		
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.createResource(URI.createURI("dummy:/dummy_protocol.muml"));
+		resource.getContents().add(root);
+		for(ModelElementCategory cat : root.getCategories()) {
+			if(cat.getKey().contains("protocol")) {
+				newProtocol = (CoordinationProtocol) cat.getModelElements().get(0);
+			}
+		}
+		return newProtocol;		
+	}	
 	
 	
-	
-	public static void TransformPatternToProtocolStep2(CoordinationPattern selectedPattern, CoordinationProtocol createdProtocol, RootNode rootNode, EditingDomain editingDomain)
-	{
-		EObject[] input = new EObject[3];
-		input[0] = selectedPattern;
-		input[1] = createdProtocol;
-		input[2] = rootNode;
-		// second step of the transformation: copy all constraint
-		// repositories
-		final List<ModelExtent> modelExtents2 = Arrays
-				.asList(new ModelExtent[] { new BasicModelExtent(Arrays
-						.asList(input)) });
-
-		// Load QVTO script PatternToProtocol
-		final TransformationExecutor transformationExecutor2 = Activator
-				.getInstance().getTransformationExecutor(
-						Activator.TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2,
-						false);
-
-		ExecuteQvtoTransformationCommand command2 = new ExecuteQvtoTransformationCommand(
-				transformationExecutor2, modelExtents2);
-
-		if (command2.canExecute())
-			editingDomain.getCommandStack().execute(command2);
-	}
-	
+//	public static void TransformPatternToProtocolStep2(CoordinationPattern selectedPattern, CoordinationProtocol createdProtocol, RootNode rootNode, EditingDomain editingDomain)
+//	{
+//		EObject[] input = new EObject[3];
+//		input[0] = selectedPattern;
+//		input[1] = createdProtocol;
+//		
+//		// second step of the transformation: copy all constraint
+//		// repositories
+//		final List<ModelExtent> modelExtents2 = Arrays
+//				.asList(new ModelExtent[] { new BasicModelExtent(Arrays
+//						.asList(selectedPattern)) , new BasicModelExtent(Arrays.asList(createdProtocol))});
+//
+//		// Load QVTO script PatternToProtocol
+//		final TransformationExecutor transformationExecutor2 = Activator
+//				.getInstance().getTransformationExecutor(
+//						Activator.TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2,
+//						false);
+//
+//		ExecuteQvtoTransformationCommand command2 = new ExecuteQvtoTransformationCommand(
+//				transformationExecutor2, modelExtents2);
+//
+//		if (command2.canExecute())
+//			editingDomain.getCommandStack().execute(command2);
+//	}
+//	
 	
 	public static void createDiagrams(Shell shell, AbstractCoordinationSpecification newCoordinationSpecification )
 	{

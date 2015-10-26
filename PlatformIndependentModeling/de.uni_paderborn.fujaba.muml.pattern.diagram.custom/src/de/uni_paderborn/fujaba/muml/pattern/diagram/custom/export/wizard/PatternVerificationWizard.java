@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 public class PatternVerificationWizard extends AbstractFujabaExportWizard {
@@ -85,11 +86,11 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 	}
 
 	public void startUppaalModelChecking() {
-		protocolFromSelectedPattern = PatternToProtocolTransformation
-				.transformPatternToProtocolStep1(selectedPattern,
+		protocolFromSelectedPattern = PatternToProtocolTransformation				
+				.transformPatternToProtocolVerification(selectedPattern,
 						(RootNode) selectedPattern.eContainer().eContainer(),
 						p2.getBindings(), editingDomain);		
-		PatternToProtocolTransformation.TransformPatternToProtocolStep2(selectedPattern, protocolFromSelectedPattern, (RootNode)protocolFromSelectedPattern.eContainer().eContainer(), editingDomain);
+		//PatternToProtocolTransformation.TransformPatternToProtocolStep2(selectedPattern, protocolFromSelectedPattern, (RootNode)protocolFromSelectedPattern.eContainer().eContainer(), editingDomain);
 	}
 
 }

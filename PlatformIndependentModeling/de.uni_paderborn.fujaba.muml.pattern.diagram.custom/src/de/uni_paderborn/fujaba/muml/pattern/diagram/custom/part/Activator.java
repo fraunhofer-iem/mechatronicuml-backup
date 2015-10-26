@@ -17,7 +17,9 @@ public class Activator extends AbstractUIPlugin {
 	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto";
 	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep2.qvto";
 	public static final String TRANSFORM_PROTOCOL_TO_PATTERN="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformProtocolToPattern.qvto";
-	
+
+	public static final String TRANSFORM_PATTERN_TO_PROTOCOL_VERIFICATION="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolNewModel.qvto";
+
 	private static Activator instance;
 
 	private Map<String, TransformationExecutor> transformationExecutors = new HashMap<String, TransformationExecutor>();
@@ -34,6 +36,8 @@ public class Activator extends AbstractUIPlugin {
 		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2);
 		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1);
 		getTransformationExecutor(CREATE_ROLE_RTSC);
+		getTransformationExecutor(TRANSFORM_PROTOCOL_TO_PATTERN);
+		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOL_VERIFICATION);
 	}
 
 	public TransformationExecutor getTransformationExecutor(
