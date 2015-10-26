@@ -13,7 +13,6 @@
 package de.uni_paderborn.fujaba.muml.actionlanguage;
 
 import org.storydriven.core.CommentableElement;
-
 import org.storydriven.core.expressions.Expression;
 
 /**

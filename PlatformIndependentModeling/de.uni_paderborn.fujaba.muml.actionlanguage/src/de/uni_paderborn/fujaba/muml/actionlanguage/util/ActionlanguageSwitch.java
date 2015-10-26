@@ -15,11 +15,15 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
@@ -28,7 +32,9 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpress
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TimeValueExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.WhileLoop;
 

@@ -53,7 +53,6 @@ import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.runnable.RunnablePackage;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -297,7 +296,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
-		RunnablePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theActionlanguagePackage.createPackageContents();

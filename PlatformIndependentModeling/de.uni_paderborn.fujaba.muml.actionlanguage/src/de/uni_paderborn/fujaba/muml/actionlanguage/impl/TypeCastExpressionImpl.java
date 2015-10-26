@@ -12,22 +12,17 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

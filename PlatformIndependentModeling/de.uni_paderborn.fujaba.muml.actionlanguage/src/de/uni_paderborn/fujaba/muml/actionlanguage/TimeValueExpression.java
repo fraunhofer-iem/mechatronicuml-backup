@@ -12,9 +12,9 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage;
 
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

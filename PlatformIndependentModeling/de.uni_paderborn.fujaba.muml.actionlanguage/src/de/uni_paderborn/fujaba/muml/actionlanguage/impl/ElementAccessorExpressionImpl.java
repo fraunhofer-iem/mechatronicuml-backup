@@ -12,12 +12,11 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.storydriven.core.expressions.impl.ExpressionImpl;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.storydriven.core.expressions.impl.ExpressionImpl;
 
 /**
  * <!-- begin-user-doc -->
