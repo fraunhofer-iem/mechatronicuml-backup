@@ -1,6 +1,7 @@
 import ModelcopyLibrary;
 import transforms.lib.common.PatternProtocolCommon;
 import transforms.lib.patternToprotocol.PatternToProtocolCommon;
+import de.uni_paderborn.fujaba.muml.types._library.TypesBlackbox;
 
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
@@ -25,29 +26,37 @@ property rootOfNewModel: RootNode;
 
 main()
 { 
+	var debug : Boolean := true;
 	// get the input parameters. There is exactly one root and exactly one coordination pattern	
-	theRootNode := input.rootObjects()[RootNode] -> any(true);
+	theRootNode := input.rootObjects()[RootNode] -> any(true);	
+	var thePattern : CoordinationPattern;
 	
-	// Debug:
-	var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
-	var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
-	bindings := thePattern.legalConfigurations->at(1).parameterBindings;
-	
-	// not debug:	
-//var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
-//	bindings := input.rootObjects()[ParameterBinding];	
+	if( not debug){
+		// not debug:	
+		thePattern := input.rootObjects()[CoordinationPattern] -> any(true);
+		bindings := input.rootObjects()[ParameterBinding];			
+	}
+	else {
+		// Debug:
+		var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+		thePattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
+		bindings := thePattern.legalConfigurations->at(1).parameterBindings;
+		
+	};
+
 	
 	// check whether the input is correct: 
 	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
-	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  
     assert fatal (if(thePattern.patternParameters->size() > 0) then (bindings != null and bindings->size() = thePattern.patternParameters->size()) else true endif) with log ("Parameter Bindings are null!");
     assert fatal (if( bindings->size() >0) then bindings->size() = thePattern.patternParameters->size()  else true endif);
 
+	
 	rootOfNewModel := new RootNode();
 	
 	theRootNode.categories->forEach(cat) {
-	 	if(cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.types.category') or cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.messagetype.category') ) {
-	 		rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
+	 if(cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.types.category') or cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.messagetype.category') ) {
+	 	rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
 	 	}
 	 	else {
 	 		var category : ModelElementCategory := cat.map create().oclAsType(ModelElementCategory);
@@ -62,6 +71,7 @@ main()
 	var protocol : CoordinationProtocol := thePattern.map CoordinationPattern2CoordinationProtocol();
 	var protocolCategory : ModelElementCategory := getProtocolCategory(rootOfNewModel);
 	protocolCategory.modelElements += protocol;
+	protocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);  
 }
 
 
@@ -88,7 +98,7 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 	};
 	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
 	
-	//result.roleConnector.coordinationProtocol := result;
+
 	
 } 
 
@@ -99,4 +109,18 @@ mapping muml::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart
 	_dataType:= self.dataType.oclAsType(muml::types::DataType).map transform().oclAsType(muml::types::DataType);
 	_comment := self.comment;
 }
+
+mapping RealtimeStatechart::create():EObject{
+	init{
+		result:=new RealtimeStatechart().oclAsType(EObject);
+		}
+	}
+	
+mapping MessageTypeRepository::create():EObject{
+init{
+	result:=new MessageTypeRepository().oclAsType(EObject);
+	}
+}
+
+
 

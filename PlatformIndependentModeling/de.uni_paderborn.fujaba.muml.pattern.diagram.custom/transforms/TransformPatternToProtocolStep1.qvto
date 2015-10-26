@@ -18,7 +18,7 @@ modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
 // @author sthiele2
-transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
+transformation TransformPatternToProtocolStep1(in input : ModelInstancePackage, out output : ModelInstancePackage);
 
 
 main()
@@ -49,8 +49,9 @@ main()
 helper createProtocol(pattern : CoordinationPattern)
 {
 	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
-	var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
-	protocolCategory.modelElements +=newProtocol;
+	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
+	//protocolCategory.modelElements +=newProtocol;
+	newProtocol.verificationConstraintRepositories += pattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);  
 }
 
 
@@ -59,7 +60,7 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 	result.name := self.name;
 	result.comment := self.comment;
 	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
-	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
+	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
 
 	self.roles->forEach(role)
 	{
@@ -70,7 +71,7 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 		
 		//newRole.coordinationProtocol := result;
 
-		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		//statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
 		newRole.subroleBehavior := role.subroleBehavior.map transform().oclAsType(Behavior);
 		result.roles+= newRole;
 	};
@@ -81,3 +82,8 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 	result.adaptedFromPattern := self;
 } 
 
+mapping RealtimeStatechart::create():EObject{
+	init{
+		result:=new RealtimeStatechart().oclAsType(EObject);
+		}
+	}

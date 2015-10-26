@@ -17,7 +17,7 @@ modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
 // @author sthiele2
-transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
+transformation TransformProtocolToPattern(in  input : ModelInstancePackage, out output : ModelInstancePackage);
 
 property variablesToParameter : Set(Variable);
 property theProtocol : CoordinationProtocol;
@@ -32,13 +32,13 @@ main()
 		
 		
 	// not debug:
-	variablesToParameter := input.rootObjects()[Variable];	
-	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
+	//variablesToParameter := input.rootObjects()[Variable];	
+	//theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
 	
 		
 	// debug:	
-	//variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
-	//theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
+	variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
+	theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
 	
 		
 	// check input
@@ -53,8 +53,8 @@ main()
 helper createPatternFromProtocol()
 {
 	var newPattern : CoordinationPattern :=theProtocol.map CoordinationProtocol2CoordinationPattern();	
-	var patternCategory : ModelElementCategory := getPatternCategory(theRootNode);	
-	patternCategory.modelElements +=newPattern;
+	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode);	
+	//patternCategory.modelElements +=newPattern;
 }
 
 mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : muml::pattern::CoordinationPattern
@@ -62,7 +62,7 @@ mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2Coordination
 	result.name := self.name;
 	result.comment := self.comment;
 	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
-	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
+	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
 	result.patternParameters := variablesToParameter.map transform().oclAsType(Parameter);
 	self.roles->forEach(role)
 	{
@@ -71,7 +71,7 @@ mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2Coordination
 		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
 		//set behavorial element?? --> should be already considered when setting behavior of the role!
 		newRole.coordinationProtocol := result;
-		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		//statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
 
 		result.roles+= newRole;
 	};
@@ -123,3 +123,10 @@ mapping Variable :: transform() : EObject {
 			
 		}	
 }
+
+mapping RealtimeStatechart::create():EObject{
+	init{
+		result:=new RealtimeStatechart().oclAsType(EObject);
+		}
+	}
+

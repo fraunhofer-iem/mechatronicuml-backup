@@ -1,5 +1,7 @@
 import transforms.lib.common.PatternProtocolSameRootTransformationLibrary;
+import transforms.lib.common.PatternProtocolCommon;
 import transforms.lib.patternToprotocol.PatternToProtocolCommon;
+
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -24,19 +26,19 @@ main()
 { 		
 	// not debug
 	var theProtocol : CoordinationProtocol := protocol.rootObjects()[CoordinationProtocol] -> any(true);
-	var thePattern : CoordinationPattern := pattern.rootObjects()[CoordinationPattern] -> any(true);
-	
+	var thePattern : CoordinationPattern := pattern.rootObjects()[CoordinationPattern] -> any(true);	
 	
 	// deubug	
-	//theRootNode := input.rootObjects()[RootNode]->any(true);	
-	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+	//var theRootNode1 : modelinstance::RootNode:= pattern.rootObjects()[RootNode]->any(true);	
+	//var theRootNode2 : RootNode:= protocol.rootObjects()[RootNode]->any(true);		
+	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode1); 
 	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
-	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
+	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode2);
 	//var theProtocol : CoordinationProtocol := protocolCategory.modelElements->at(1).oclAsType(CoordinationProtocol);
-	//assert fatal (theRootNode != null) with log ("RootNode is null!");
-	
-	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!");
-	assert fatal (thePattern != null) with log ("CoordinationPattern is null!");
+	//assert fatal (theRootNode1 != null) with log ("RootNode is null!");
+	//assert fatal (theRootNode2 != null) with log ("RootNode is null!");
+	//assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!");
+	//assert fatal (thePattern != null) with log ("CoordinationPattern is null!");
 	
 	theProtocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);  
 }
