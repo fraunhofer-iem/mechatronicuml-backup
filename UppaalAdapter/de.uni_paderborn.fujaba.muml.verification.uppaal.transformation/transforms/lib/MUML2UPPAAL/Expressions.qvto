@@ -669,7 +669,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	// TODO support elseif
 	mapping muml_actionLanguage::IfStatement :: createIfExpression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : uppaal_expressions::ConditionExpression {
 				
-		assert fatal (self.elseIfConditions->isEmpty()) with log("Mapping an else-if-statement is currently unsupported.");
+		assert fatal (self.elseIfStatements->isEmpty()) with log("Mapping an else-if-statement is currently unsupported.");
 								
 		ifExpression := self.ifCondition.map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		
@@ -946,7 +946,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		
 		// TODO support elseif
 		
-		assert fatal (self.elseIfConditions->isEmpty()) with log("Mapping an else-if-statement is currently unsupported.");
+		assert fatal (self.elseIfStatements->isEmpty()) with log("Mapping an else-if-statement is currently unsupported.");
 				
 		ifExpression := self.ifCondition.map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		thenStatement := self.ifBlock.map Block2Block(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
