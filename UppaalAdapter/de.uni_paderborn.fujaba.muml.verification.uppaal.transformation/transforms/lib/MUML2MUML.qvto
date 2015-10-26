@@ -87,11 +87,18 @@ mapping actionlanguage::IfStatement :: IfStatement2IfStatement() : actionlanguag
     	_extension := self._extension.map Extension2Extension();
     	_ifCondition := self._ifCondition.map Expression2Expression();
     	_ifBlock := self._ifBlock.map Block2Block();
-    	_elseIfConditions := self._elseIfConditions.map Expression2Expression();
-    	_elseIfBlocks := self._elseIfBlocks.map Block2Block();
+    	_elseIfStatements := self._elseIfStatements.map ElseIfStatement2ElseIfStatement();	
     	_elseBlock := self._elseBlock.map Block2Block();
    		 }
-   		 
+
+ mapping ElseIfStatement::ElseIfStatement2ElseIfStatement(): ElseIfStatement { 
+ 		_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();    	
+    	_elseIfBlock := self.elseIfBlock.map Block2Block();    	
+    	_elseIfCondition := self.elseIfCondition.map Expression2Expression();       	 		
+    }
+ 
 mapping actionlanguage::OperationCall :: OperationCall2OperationCall() : actionlanguage::OperationCall{
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
