@@ -30,8 +30,8 @@
 ']'=64
 'const'=66
 'do'=57
-'else'=61
-'elseif'=60
+'else'=60
+'elseif'=61
 'enum:'=48
 'execCommand:'=46
 'first'=35
