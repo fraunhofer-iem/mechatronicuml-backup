@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 
 public class EmbedAsPartsHandler extends AbstractHandler {
-	public static String COMMAND_ID_OF_COMPONENT_DIAGRAM_EMBEDASPART_HANDER = "de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts.editorcmd";
+	public static final String COMMAND_ID_OF_COMPONENT_DIAGRAM_EMBEDASPART_HANDER = "de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts.editorcmd";
 
 	public EmbedAsPartsHandler() {
 	}

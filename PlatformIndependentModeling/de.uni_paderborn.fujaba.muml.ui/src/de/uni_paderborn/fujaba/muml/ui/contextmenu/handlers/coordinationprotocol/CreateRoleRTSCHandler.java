@@ -39,15 +39,13 @@ import de.uni_paderborn.fujaba.muml.ui.Activator;
 
 public class CreateRoleRTSCHandler extends AbstractHandler {
 
-	public CreateRoleRTSCHandler() {
-	}
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil
 				.getActiveWorkbenchWindowChecked(event);
 
-		EditingDomain editingDomain = null;
+		EditingDomain editingDomain;
 		// get and process current selection
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 
@@ -177,7 +175,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 			String scheme = uri.scheme();
 			if ("platform".equals(scheme) && uri.segmentCount() > 1 //$NON-NLS-1$
 					&& "resource".equals(uri.segment(0))) { //$NON-NLS-1$
-				StringBuffer platformResourcePath = new StringBuffer();
+				StringBuilder platformResourcePath = new StringBuilder();
 				for (int j = 1, size = uri.segmentCount(); j < size; ++j) {
 					platformResourcePath.append('/');
 					platformResourcePath.append(uri.segment(j));

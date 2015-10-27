@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
@@ -37,13 +36,14 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 	private static String disassembleComponentTransformation = "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/DissassembleOneToManySchematasInComponentBehavior.qvto";
 	private static String disassemblePortOrRoleTransformation = "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/DisassembleOneToManySchemataInDiscreteInteractionEndpoint.qvto";
 	
+	private static Map<String, TransformationExecutor> transformationExecutors = new HashMap<String, TransformationExecutor>();
+
 	// janas transformation
 	// private static String dissambleTransformation=
 	// "/de.uni_paderborn.fujaba.muml.onetomanyprotocols.synthesis/transforms/SynthesisApproach.qvto";
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		// TODO Auto-generated method stub
 		IWorkbenchWindow window = HandlerUtil
 				.getActiveWorkbenchWindowChecked(event);
 
@@ -131,7 +131,6 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 
 	}
 
-	private static Map<String, TransformationExecutor> transformationExecutors = new HashMap<String, TransformationExecutor>();
 
 	private static TransformationExecutor getTransformationExecutor(
 			String transformationPath, boolean reload) {

@@ -8,7 +8,6 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.viewers.ISelection;
@@ -19,14 +18,11 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.component.Port;
 
 public class CreateCompRTSCCopyRolePropertiesHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		// TODO Auto-generated method stub
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		EditingDomain editingDomain = null;
 

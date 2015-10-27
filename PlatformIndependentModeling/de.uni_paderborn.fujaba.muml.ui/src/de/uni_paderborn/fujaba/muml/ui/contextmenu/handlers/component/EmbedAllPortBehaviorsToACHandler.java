@@ -36,7 +36,7 @@ public class EmbedAllPortBehaviorsToACHandler extends AbstractHandler {
 		IWorkbenchWindow window = HandlerUtil
 				.getActiveWorkbenchWindowChecked(event);
 
-		EditingDomain editingDomain = null;
+		EditingDomain editingDomain;
 
 		// get and process current selection
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
