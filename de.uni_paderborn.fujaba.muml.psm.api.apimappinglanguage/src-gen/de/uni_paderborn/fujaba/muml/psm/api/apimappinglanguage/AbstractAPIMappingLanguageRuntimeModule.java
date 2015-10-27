@@ -6,7 +6,6 @@ package de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage;
 import java.util.Properties;
 
 import org.eclipse.xtext.Constants;
-import org.eclipse.xtext.service.DefaultRuntimeModule;
 
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
@@ -14,8 +13,8 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.APIMappingLanguageRuntimeModule}
  */
- @SuppressWarnings("all")
-public abstract class AbstractAPIMappingLanguageRuntimeModule extends DefaultRuntimeModule {
+@SuppressWarnings("all")
+public abstract class AbstractAPIMappingLanguageRuntimeModule extends org.eclipse.xtext.service.DefaultRuntimeModule {
 
 	protected Properties properties = null;
 

@@ -549,10 +549,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:33:7: ( 'elseif' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:33:9: 'elseif'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:33:7: ( 'else' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:33:9: 'else'
             {
-            match("elseif"); 
+            match("else"); 
 
 
             }
@@ -570,10 +570,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:34:7: ( 'else' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:34:9: 'else'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:34:7: ( 'elseif' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:34:9: 'elseif'
             {
-            match("else"); 
+            match("elseif"); 
 
 
             }
@@ -1191,10 +1191,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_MINORMAXKEYWORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3749:22: ( ( 'maxMsgDelay' | 'minMsgDelay' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3749:24: ( 'maxMsgDelay' | 'minMsgDelay' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3788:22: ( ( 'maxMessageDelay' | 'minMessageDelay' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3788:24: ( 'maxMessageDelay' | 'minMessageDelay' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3749:24: ( 'maxMsgDelay' | 'minMsgDelay' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3788:24: ( 'maxMessageDelay' | 'minMessageDelay' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1222,17 +1222,17 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3749:25: 'maxMsgDelay'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3788:25: 'maxMessageDelay'
                     {
-                    match("maxMsgDelay"); 
+                    match("maxMessageDelay"); 
 
 
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3749:39: 'minMsgDelay'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3788:43: 'minMessageDelay'
                     {
-                    match("minMsgDelay"); 
+                    match("minMessageDelay"); 
 
 
                     }
@@ -1256,8 +1256,8 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3751:13: ( RULE_INT '.' RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3751:15: RULE_INT '.' RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3790:13: ( RULE_INT '.' RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3790:15: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -1278,10 +1278,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3753:14: ( ( 'true' | 'false' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3753:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3792:14: ( ( 'true' | 'false' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3792:16: ( 'true' | 'false' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3753:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3792:16: ( 'true' | 'false' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1299,7 +1299,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3753:17: 'true'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3792:17: 'true'
                     {
                     match("true"); 
 
@@ -1307,7 +1307,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3753:24: 'false'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3792:24: 'false'
                     {
                     match("false"); 
 
@@ -1333,10 +1333,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3755:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3755:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3794:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3794:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3755:11: ( '^' )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3794:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1345,7 +1345,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3755:11: '^'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3794:11: '^'
                     {
                     match('^'); 
 
@@ -1363,7 +1363,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3755:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3794:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -1412,10 +1412,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3757:10: ( ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3757:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3796:10: ( ( '0' .. '9' )+ )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3796:12: ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3757:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3796:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -1429,7 +1429,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3757:13: '0' .. '9'
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3796:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1461,10 +1461,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1482,10 +1482,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1501,7 +1501,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:21: '\\\\' .
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1509,7 +1509,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1534,10 +1534,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1553,7 +1553,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:54: '\\\\' .
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1561,7 +1561,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3759:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3798:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1604,12 +1604,12 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3761:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3761:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3800:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3800:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3761:24: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3800:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1634,7 +1634,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3761:52: .
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3800:52: .
             	    {
             	    matchAny(); 
 
@@ -1664,12 +1664,12 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1682,7 +1682,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1702,7 +1702,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:40: ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1711,9 +1711,9 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:41: ( '\\r' )? '\\n'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:41: ( '\\r' )?
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1722,7 +1722,7 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3763:41: '\\r'
+                            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3802:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1754,10 +1754,10 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3765:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3765:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3804:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3804:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3765:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3804:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1811,8 +1811,8 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3767:16: ( . )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3767:18: .
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3806:16: ( . )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3806:18: .
             {
             matchAny(); 
 
@@ -2280,17 +2280,17 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\1\56\4\uffff\4\56\1\uffff\1\75\1\54\1\56\1\uffff\1\56\1\uffff\3\56\2\uffff\1\56\1\116\1\120\1\56\1\127\1\132\3\54\1\uffff\1\141\1\uffff\3\56\1\147\1\56\1\54\1\uffff\2\54\2\uffff\1\56\5\uffff\2\56\1\160\5\56\4\uffff\2\56\1\uffff\3\56\1\uffff\1\56\1\174\1\56\2\uffff\1\56\5\uffff\3\56\17\uffff\4\56\1\uffff\1\147\1\uffff\1\56\2\uffff\3\56\1\uffff\7\56\1\u0091\3\56\1\uffff\3\56\1\u0098\14\56\1\u00a6\2\56\1\u00a9\1\uffff\5\56\1\u00af\1\uffff\1\u00b0\1\u00b1\1\u00b2\2\56\1\u00b5\5\56\1\uffff\1\56\1\uffff\1\56\2\uffff\1\u00bd\1\u00b5\1\u00be\1\56\1\u00c0\4\uffff\2\56\1\uffff\1\56\1\u00c4\3\56\1\u00c8\1\56\2\uffff\1\u00ca\1\uffff\3\56\1\uffff\3\56\1\uffff\1\56\1\uffff\15\56\1\uffff\14\56\2\u00eb\1\56\1\uffff\1\56\2\uffff\1\56\1\uffff\4\56\1\uffff";
+        "\1\uffff\1\56\4\uffff\4\56\1\uffff\1\75\1\54\1\56\1\uffff\1\56\1\uffff\3\56\2\uffff\1\56\1\116\1\120\1\56\1\127\1\132\3\54\1\uffff\1\141\1\uffff\3\56\1\147\1\56\1\54\1\uffff\2\54\2\uffff\1\56\5\uffff\2\56\1\160\5\56\4\uffff\2\56\1\uffff\3\56\1\uffff\1\56\1\174\1\56\2\uffff\1\56\5\uffff\3\56\17\uffff\4\56\1\uffff\1\147\1\uffff\1\56\2\uffff\3\56\1\uffff\7\56\1\u0091\3\56\1\uffff\3\56\1\u0098\14\56\1\u00a6\2\56\1\u00a9\1\uffff\5\56\1\u00af\1\uffff\1\u00b0\1\u00b1\1\u00b2\2\56\1\u00b5\5\56\1\uffff\1\56\1\uffff\1\56\2\uffff\1\u00bd\1\u00b5\1\u00be\1\56\1\u00c0\4\uffff\2\56\1\uffff\1\56\1\u00c4\3\56\1\u00c8\1\56\2\uffff\1\u00ca\1\uffff\3\56\1\uffff\3\56\1\uffff\1\56\1\uffff\15\56\1\uffff\17\56\1\uffff\1\56\1\uffff\3\56\1\uffff\6\56\2\u00f8\1\56\1\uffff\1\56\1\uffff";
     static final String DFA14_eofS =
-        "\u00f3\uffff";
+        "\u00fb\uffff";
     static final String DFA14_minS =
-        "\1\0\1\141\4\uffff\1\146\1\157\1\154\1\120\1\uffff\1\73\1\75\1\157\1\uffff\1\141\1\uffff\1\150\1\157\1\145\2\uffff\1\157\2\75\1\145\1\55\1\53\1\174\1\46\1\75\1\uffff\1\52\1\uffff\1\145\2\141\1\56\1\162\1\101\1\uffff\2\0\2\uffff\1\160\5\uffff\1\160\1\151\1\60\1\162\1\145\1\165\1\163\1\111\4\uffff\1\162\1\145\1\uffff\2\162\1\154\1\uffff\1\151\1\60\1\164\2\uffff\1\156\5\uffff\1\154\1\164\1\170\17\uffff\1\154\1\163\1\170\1\156\1\uffff\1\56\1\uffff\1\165\2\uffff\1\160\1\157\1\164\1\uffff\1\164\1\143\1\155\1\145\1\137\1\164\1\166\1\60\2\163\1\154\1\uffff\1\165\1\163\1\154\1\60\1\164\1\146\1\164\2\115\1\145\1\151\1\162\1\103\1\111\1\103\1\72\1\60\1\103\1\72\1\60\1\uffff\1\164\2\145\1\162\1\164\1\60\1\uffff\3\60\2\163\1\60\1\156\1\164\1\157\1\156\1\157\1\uffff\1\146\1\uffff\1\141\2\uffff\3\60\1\156\1\60\4\uffff\2\147\1\uffff\1\147\1\60\1\155\1\163\1\155\1\60\1\154\2\uffff\1\60\1\uffff\2\104\1\122\1\uffff\1\155\1\164\1\155\1\uffff\1\154\1\uffff\3\145\3\141\1\72\2\154\1\160\3\156\1\uffff\2\141\1\157\1\144\1\143\1\144\2\171\1\163\1\72\1\145\1\72\2\60\1\151\1\uffff\1\72\2\uffff\1\164\1\uffff\1\157\1\162\1\171\1\72\1\uffff";
+        "\1\0\1\141\4\uffff\1\146\1\157\1\154\1\120\1\uffff\1\73\1\75\1\157\1\uffff\1\141\1\uffff\1\150\1\157\1\145\2\uffff\1\157\2\75\1\145\1\55\1\53\1\174\1\46\1\75\1\uffff\1\52\1\uffff\1\145\2\141\1\56\1\162\1\101\1\uffff\2\0\2\uffff\1\160\5\uffff\1\160\1\151\1\60\1\162\1\145\1\165\1\163\1\111\4\uffff\1\162\1\145\1\uffff\2\162\1\154\1\uffff\1\151\1\60\1\164\2\uffff\1\156\5\uffff\1\154\1\164\1\170\17\uffff\1\154\1\163\1\170\1\156\1\uffff\1\56\1\uffff\1\165\2\uffff\1\160\1\157\1\164\1\uffff\1\164\1\143\1\155\1\145\1\137\1\164\1\166\1\60\2\163\1\154\1\uffff\1\165\1\163\1\154\1\60\1\164\1\146\1\164\2\115\1\145\1\151\1\162\1\103\1\111\1\103\1\72\1\60\1\103\1\72\1\60\1\uffff\1\164\2\145\1\162\1\164\1\60\1\uffff\3\60\2\145\1\60\1\156\1\164\1\157\1\156\1\157\1\uffff\1\146\1\uffff\1\141\2\uffff\3\60\1\156\1\60\4\uffff\2\163\1\uffff\1\147\1\60\1\155\1\163\1\155\1\60\1\154\2\uffff\1\60\1\uffff\2\163\1\122\1\uffff\1\155\1\164\1\155\1\uffff\1\154\1\uffff\2\141\1\145\3\141\1\72\2\147\1\160\3\156\1\uffff\2\145\1\157\1\144\1\143\1\144\2\104\1\163\1\72\1\145\1\72\2\145\1\151\1\uffff\1\72\1\uffff\2\154\1\164\1\uffff\2\141\1\157\2\171\1\162\2\60\1\171\1\uffff\1\72\1\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\141\4\uffff\1\156\1\157\1\170\1\120\1\uffff\1\73\1\75\1\162\1\uffff\1\157\1\uffff\1\150\1\157\1\145\2\uffff\1\157\1\76\1\75\1\165\1\76\1\75\1\174\1\46\1\75\1\uffff\1\57\1\uffff\1\145\1\141\1\151\1\71\1\162\1\172\1\uffff\2\uffff\2\uffff\1\160\5\uffff\1\160\1\151\1\172\1\162\1\145\1\165\1\163\1\111\4\uffff\1\162\1\145\1\uffff\2\162\1\154\1\uffff\1\151\1\172\1\164\2\uffff\1\156\5\uffff\1\154\1\164\1\170\17\uffff\1\154\1\163\1\170\1\156\1\uffff\1\71\1\uffff\1\165\2\uffff\1\160\1\157\1\164\1\uffff\1\164\1\143\1\155\1\145\1\137\1\164\1\166\1\172\2\163\1\154\1\uffff\1\165\1\163\1\154\1\172\1\164\1\146\1\164\2\115\1\145\1\151\1\162\1\103\1\111\1\103\1\72\1\172\1\103\1\72\1\172\1\uffff\1\164\2\145\1\162\1\164\1\172\1\uffff\3\172\2\163\1\172\1\156\1\164\1\157\1\156\1\157\1\uffff\1\146\1\uffff\1\141\2\uffff\3\172\1\156\1\172\4\uffff\2\147\1\uffff\1\147\1\172\1\155\1\163\1\155\1\172\1\154\2\uffff\1\172\1\uffff\2\104\1\122\1\uffff\1\155\1\164\1\155\1\uffff\1\154\1\uffff\3\145\3\141\1\72\2\154\1\160\3\156\1\uffff\2\141\1\157\1\144\1\143\1\144\2\171\1\163\1\72\1\145\1\72\2\172\1\151\1\uffff\1\72\2\uffff\1\164\1\uffff\1\157\1\162\1\171\1\72\1\uffff";
+        "\1\uffff\1\141\4\uffff\1\156\1\157\1\170\1\120\1\uffff\1\73\1\75\1\162\1\uffff\1\157\1\uffff\1\150\1\157\1\145\2\uffff\1\157\1\76\1\75\1\165\1\76\1\75\1\174\1\46\1\75\1\uffff\1\57\1\uffff\1\145\1\141\1\151\1\71\1\162\1\172\1\uffff\2\uffff\2\uffff\1\160\5\uffff\1\160\1\151\1\172\1\162\1\145\1\165\1\163\1\111\4\uffff\1\162\1\145\1\uffff\2\162\1\154\1\uffff\1\151\1\172\1\164\2\uffff\1\156\5\uffff\1\154\1\164\1\170\17\uffff\1\154\1\163\1\170\1\156\1\uffff\1\71\1\uffff\1\165\2\uffff\1\160\1\157\1\164\1\uffff\1\164\1\143\1\155\1\145\1\137\1\164\1\166\1\172\2\163\1\154\1\uffff\1\165\1\163\1\154\1\172\1\164\1\146\1\164\2\115\1\145\1\151\1\162\1\103\1\111\1\103\1\72\1\172\1\103\1\72\1\172\1\uffff\1\164\2\145\1\162\1\164\1\172\1\uffff\3\172\2\145\1\172\1\156\1\164\1\157\1\156\1\157\1\uffff\1\146\1\uffff\1\141\2\uffff\3\172\1\156\1\172\4\uffff\2\163\1\uffff\1\147\1\172\1\155\1\163\1\155\1\172\1\154\2\uffff\1\172\1\uffff\2\163\1\122\1\uffff\1\155\1\164\1\155\1\uffff\1\154\1\uffff\2\141\1\145\3\141\1\72\2\147\1\160\3\156\1\uffff\2\145\1\157\1\144\1\143\1\144\2\104\1\163\1\72\1\145\1\72\2\145\1\151\1\uffff\1\72\1\uffff\2\154\1\164\1\uffff\2\141\1\157\2\171\1\162\2\172\1\171\1\uffff\1\72\1\uffff";
     static final String DFA14_acceptS =
-        "\2\uffff\1\2\1\3\1\4\1\5\4\uffff\1\14\3\uffff\1\20\1\uffff\1\22\3\uffff\1\32\1\33\11\uffff\1\55\1\uffff\1\57\6\uffff\1\71\2\uffff\1\76\1\77\1\uffff\1\71\1\2\1\3\1\4\1\5\10\uffff\1\14\1\25\1\15\1\16\2\uffff\1\20\3\uffff\1\22\3\uffff\1\32\1\33\1\uffff\1\50\1\51\1\35\1\52\1\36\3\uffff\1\40\1\42\1\44\1\54\1\41\1\43\1\53\1\45\1\46\1\47\1\55\1\74\1\75\1\56\1\57\4\uffff\1\72\1\uffff\1\67\1\uffff\1\73\1\76\3\uffff\1\26\13\uffff\1\24\24\uffff\1\21\6\uffff\1\60\13\uffff\1\12\1\uffff\1\30\1\uffff\1\17\1\64\5\uffff\1\37\1\65\1\61\1\63\2\uffff\1\70\7\uffff\1\62\1\23\1\uffff\1\34\3\uffff\1\6\3\uffff\1\27\1\uffff\1\31\15\uffff\1\13\17\uffff\1\11\1\uffff\1\10\1\66\1\uffff\1\7\4\uffff\1\1";
+        "\2\uffff\1\2\1\3\1\4\1\5\4\uffff\1\14\3\uffff\1\20\1\uffff\1\22\3\uffff\1\32\1\33\11\uffff\1\55\1\uffff\1\57\6\uffff\1\71\2\uffff\1\76\1\77\1\uffff\1\71\1\2\1\3\1\4\1\5\10\uffff\1\14\1\25\1\15\1\16\2\uffff\1\20\3\uffff\1\22\3\uffff\1\32\1\33\1\uffff\1\50\1\51\1\35\1\52\1\36\3\uffff\1\40\1\42\1\44\1\54\1\41\1\43\1\53\1\45\1\46\1\47\1\55\1\74\1\75\1\56\1\57\4\uffff\1\72\1\uffff\1\67\1\uffff\1\73\1\76\3\uffff\1\26\13\uffff\1\24\24\uffff\1\21\6\uffff\1\60\13\uffff\1\12\1\uffff\1\27\1\uffff\1\17\1\64\5\uffff\1\37\1\65\1\61\1\63\2\uffff\1\70\7\uffff\1\62\1\23\1\uffff\1\34\3\uffff\1\6\3\uffff\1\30\1\uffff\1\31\15\uffff\1\13\17\uffff\1\11\1\uffff\1\10\3\uffff\1\7\11\uffff\1\66\1\uffff\1\1";
     static final String DFA14_specialS =
-        "\1\2\50\uffff\1\1\1\0\u00c8\uffff}>";
+        "\1\1\50\uffff\1\2\1\0\u00d0\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\54\2\53\2\54\1\53\22\54\1\53\1\54\1\51\1\5\1\54\1\41\1\35\1\52\1\12\1\13\1\37\1\33\1\3\1\32\1\16\1\40\12\45\1\14\1\20\1\27\1\36\1\30\2\54\1\11\13\50\1\1\2\50\1\7\12\50\1\24\1\54\1\25\1\47\1\50\1\54\2\50\1\26\1\22\1\10\1\17\2\50\1\6\2\50\1\43\1\44\1\31\1\50\1\15\1\50\1\23\1\42\1\46\2\50\1\21\3\50\1\2\1\34\1\4\uff82\54",
             "\1\55",
@@ -2521,19 +2521,27 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
             "\1\u00e8",
             "\1\u00e9",
             "\1\u00ea",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00eb",
             "\1\u00ec",
-            "",
             "\1\u00ed",
-            "",
             "",
             "\1\u00ee",
             "",
             "\1\u00ef",
             "\1\u00f0",
             "\1\u00f1",
+            "",
             "\1\u00f2",
+            "\1\u00f3",
+            "\1\u00f4",
+            "\1\u00f5",
+            "\1\u00f6",
+            "\1\u00f7",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00f9",
+            "",
+            "\1\u00fa",
             ""
     };
 
@@ -2584,16 +2592,6 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA14_41 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_41>='\u0000' && LA14_41<='\uFFFF')) ) {s = 107;}
-
-                        else s = 44;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -2684,6 +2682,16 @@ public class InternalAPIMappingLanguageLexer extends Lexer {
                         else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 43;}
 
                         else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||LA14_0=='!'||LA14_0=='$'||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 44;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA14_41 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_41>='\u0000' && LA14_41<='\uFFFF')) ) {s = 107;}
+
+                        else s = 44;
 
                         if ( s>=0 ) return s;
                         break;
