@@ -37,12 +37,8 @@ import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts
 
 public class InitHWPlatformInstanceHandler extends AbstractHandler {
 
-	public InitHWPlatformInstanceHandler() {
-	}
-
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
-		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		EditingDomain editingDomain = null;
 
 		ISelection selection = HandlerUtil.getCurrentSelection(event);

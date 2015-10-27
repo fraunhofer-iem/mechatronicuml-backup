@@ -24,31 +24,20 @@ public class CustomHWPlatform2EditPart extends HWPlatform2EditPart {
 
 	public CustomHWPlatform2EditPart(View view) {
 		super(view);
-		// TODO Auto-generated constructor stub
 	}
-
-	
 
 	@Override
 	protected IFigure createNodeShape() {
-		// TODO Auto-generated method stub
-		return primaryShape = new CustomHWPlatformFigure();
+		primaryShape = new CustomHWPlatformFigure();
+		return primaryShape;
 
 	}
-	
-	public class CustomHWPlatformFigure extends HWPlatform{
-		
+
+	public class CustomHWPlatformFigure extends HWPlatform {
+
 		@Override
 		protected void fillShape(Graphics graphics) {
-//			Color bgColor = graphics.getBackgroundColor();
-//			Color fgColor = graphics.getForegroundColor();
-//			// Set the graphics color
-//			graphics.setForegroundColor(ColorConstants.buttonLightest);
-//			graphics.setBackgroundColor(ColorConstants.buttonDarker);
-//			// Restore the original colors
-//			graphics.fillGradient(getBounds(), true);
-//			graphics.setBackgroundColor(bgColor);
-//			graphics.setForegroundColor(fgColor);
+
 			Color bgColor = graphics.getBackgroundColor();
 			Color fgColor = graphics.getForegroundColor();
 			// Set the graphics color

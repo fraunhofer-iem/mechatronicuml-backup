@@ -86,17 +86,13 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		// create the desired layout for this wizard page
 		GridLayout gl = new GridLayout();
 		gl.numColumns = 2;
-		// gl.wrap = true;
-		// gl.pack = true;
-		// gl.justify = true;
-		// gl.numColumns = ncol;
+
 		composite.setLayout(gl);
 
 		// create the widgets. If the appearance of the widget is different from
 		// the default,
 		// create a GridData for it to set the alignment and define how much
 		// space it will occupy
-		// gd.horizontalAlignment = GridData.BEGINNING;
 		// The HWPlatform to initialize
 		GridData gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
@@ -151,9 +147,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		viewer.getTree().setHeaderVisible(true);
 		viewer.getTree().setLinesVisible(true);
 
-		TableLayout layout = new TableLayout();
-		createColumns(composite, viewer);
-		// TreeViewerColumn col1 = new TreeViewerColumn(viewer, SWT.LEFT);
+		createColumns(viewer);
 		viewer.setContentProvider(new HWPlatformContentProvider());
 
 		setControl(composite);
@@ -198,12 +192,12 @@ public class PlatformTypePage extends WizardPage implements Listener {
 	}
 
 	// create the columns for the table
-	private void createColumns(final Composite parent, final TreeViewer viewer) {
+	private void createColumns(final TreeViewer viewer) {
 		String[] titles = { "Platform Part:", "Multiplicity:", };
 		int[] bounds = { 200, 50 };
 
 		// first column is for the platform part's name
-		TreeViewerColumn col1 = createTreeViewerColumn(titles[0], bounds[0], 0);
+		TreeViewerColumn col1 = createTreeViewerColumn(titles[0], bounds[0]);
 		col1.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
@@ -221,7 +215,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		});
 
 		// second column is for the multiplicity
-		TreeViewerColumn col2 = createTreeViewerColumn(titles[1], bounds[1], 1);
+		TreeViewerColumn col2 = createTreeViewerColumn(titles[1], bounds[1]);
 		col2.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
@@ -253,8 +247,8 @@ public class PlatformTypePage extends WizardPage implements Listener {
 			@Override
 			protected CellEditor getCellEditor(Object element) {
 				PlatformPart p = (PlatformPart) element;
-				int range = 0;
-				String[] cardinality = null;
+				int range;
+				String[] cardinality;
 				if (p.getCardinality().getUpperBound().isInfinity()) {
 					range = 1;
 				} else {
@@ -265,7 +259,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				for (int i = range - 1; i >= 0; i--) {
 					cardinality[i] = Integer.toString((int) (p.getCardinality().getLowerBound().getValue() + (i)));
 				}
-				
+
 				return new ComboBoxCellEditor(viewer.getTree(), cardinality, SWT.READ_ONLY);
 			}
 
@@ -278,7 +272,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 	}
 
-	private TreeViewerColumn createTreeViewerColumn(String title, int bound, final int colNumber) {
+	private TreeViewerColumn createTreeViewerColumn(String title, int bound) {
 		final TreeViewerColumn viewerColumn = new TreeViewerColumn(viewer, SWT.NONE);
 
 		final TreeColumn column = viewerColumn.getColumn();
@@ -313,17 +307,17 @@ public class PlatformTypePage extends WizardPage implements Listener {
 			}
 			if (inputElement instanceof HWPlatform)
 				return ((HWPlatform) inputElement).getEmbeddedPlatformParts().toArray();
-			return null;
+			return new Object[0];
 		}
 
 		public Object[] getChildren(Object parentElement) {
 			if (parentElement instanceof ResourcePart) {
-				return null;
+				return new Object[0];
 			}
 			if (parentElement instanceof HWPlatformPart) {
 				return ((HWPlatformPart) parentElement).getHwplatformType().getEmbeddedPlatformParts().toArray();
 			}
-			return null;
+			return new Object[0];
 		}
 
 		public Object getParent(Object element) {

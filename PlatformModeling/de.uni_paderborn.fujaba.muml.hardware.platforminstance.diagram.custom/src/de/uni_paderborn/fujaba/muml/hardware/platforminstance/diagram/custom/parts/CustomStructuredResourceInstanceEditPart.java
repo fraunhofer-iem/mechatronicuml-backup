@@ -30,14 +30,10 @@ public class CustomStructuredResourceInstanceEditPart extends
 		 primaryShape = new CustomResourceFigure();
 		 ((CustomResourceFigure) primaryShape).getFigureResourceNameFigure().setTextUnderline(true);
 		 ((CustomResourceFigure) primaryShape).getFigureResourceKindFigure().setTextUnderline(true);
-		// ((CustomResourceFigure) primaryShape).getFigureIconFigure().setIcon(ResourceType.STRUCTURED);
 		return primaryShape;
 	} 
 	
-	@Override
-	public void activate() {
-		super.activate();
-		}
+
 	
 	public class CustomStructuredResourceFigure extends CustomResourceFigure{
 		@Override

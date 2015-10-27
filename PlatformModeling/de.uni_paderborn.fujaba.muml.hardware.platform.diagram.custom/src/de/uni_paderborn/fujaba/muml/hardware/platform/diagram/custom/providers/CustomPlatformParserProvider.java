@@ -20,7 +20,8 @@ public class CustomPlatformParserProvider extends HardwareParserProvider {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
 			return new CustomHWPlatformPartPartCardinalityExpressionLabelParser5028();
 					
-		
+		default:
+			break;
 		
 		} 
 		return super.getParser(visualID);

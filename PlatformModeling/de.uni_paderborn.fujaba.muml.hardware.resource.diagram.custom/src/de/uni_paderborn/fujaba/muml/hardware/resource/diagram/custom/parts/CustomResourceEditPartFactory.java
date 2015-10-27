@@ -29,11 +29,10 @@ public class CustomResourceEditPartFactory extends HardwareEditPartFactory {
 
 			case ProcessorEditPart.VISUAL_ID:
 				return new CustomProcessorEditPart(view);
-			
-		
-				
-//			case LinkEditPart.VISUAL_ID:
-//				return new CustomLinkEditPart(view);
+
+			default:
+				break;
+
 
 			}
 

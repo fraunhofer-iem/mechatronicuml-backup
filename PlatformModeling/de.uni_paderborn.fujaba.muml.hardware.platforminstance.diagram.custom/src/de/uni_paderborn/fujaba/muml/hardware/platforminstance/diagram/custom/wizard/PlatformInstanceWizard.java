@@ -36,8 +36,6 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 	private WizardModel model;
 
 	// the workbench instance
-	private IWorkbench workbench;
-	private HashMap<EObject, IWizardPage> pageForHWPlatform;
 
 	private TransactionalEditingDomain editingDomain;
 
@@ -55,7 +53,6 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		model.setSelectedHWPlatformInstanceConfiguration(selectedElement);
 		model.setPlatformInstanceToConfigure(platformInstanceToConfigure);
 		this.editingDomain = editingDomain;
-		this.pageForHWPlatform = new HashMap<EObject, IWizardPage>();
 	}
 
 	@Override
@@ -63,33 +60,6 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		platformTypePage = new PlatformTypePage();
 		addPage(platformTypePage);
 	}
-
-	// @Override
-	// public IWizardPage getNextPage(IWizardPage page) {
-	// // TODO Auto-generated method stub
-	// if (page instanceof PlatformTypePage && ((PlatformTypePage)
-	// page).neddFurtherPage()) {
-	// Collection<EObject> additionalPlatforms = new ArrayList<EObject>();
-	// additionalPlatforms.addAll(((PlatformTypePage)
-	// page).getFollowUpPlatforms());
-	// additionalPlatforms.removeAll(pageForHWPlatform.keySet());
-	// for (EObject p : additionalPlatforms) {
-	// IWizardPage nextPage = new PlatformTypePage(Collections.singletonList(p),
-	// false);
-	// pageForHWPlatform.put(p, nextPage);
-	// addPage(nextPage);
-	// }
-	// Collection<EObject> superfluousPlatforms = new ArrayList<EObject>();
-	// superfluousPlatforms.addAll(pageForHWPlatform.keySet());
-	// superfluousPlatforms.removeAll(((PlatformTypePage)
-	// page).getFollowUpPlatforms());
-	// pageForHWPlatform.keySet().removeAll(superfluousPlatforms);
-	//
-	// }
-	//
-	// return super.getNextPage(page);
-	//
-	// }
 
 	public IPath getModelPath() {
 		@SuppressWarnings("rawtypes")
@@ -110,17 +80,8 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		return null;
 	}
 
-	/*
-	 * public Resource getModelResource() { URI modelURI =
-	 * URI.createPlatformResourceURI(getModelPath() .toOSString(), true); return
-	 * editingDomain.getResourceSet().getResource(modelURI, true);
-	 * 
-	 * }
-	 */
-
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.selection = selection;
-		this.workbench = workbench;
 	}
 
 	@Override
@@ -131,8 +92,6 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 				((PlatformTypePage) page).saveDataToModel();
 			}
 		}
-
-		// platformTypePage.saveDataToModel();
 
 		executeTransformation();
 
@@ -175,10 +134,6 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 			ExecuteQvtoTransformationCommand cmd = new ExecuteQvtoTransformationCommand(transformationExecutor,
 					modelExtents, context);
 
-			/*
-			 * CreateInstancesCommand command = new CreateInstancesCommand( ,
-			 * model.getSelectedHWPlatform(), model.getConfiguration());
-			 */
 			editingDomain.getCommandStack().execute(cmd);
 		}
 	}

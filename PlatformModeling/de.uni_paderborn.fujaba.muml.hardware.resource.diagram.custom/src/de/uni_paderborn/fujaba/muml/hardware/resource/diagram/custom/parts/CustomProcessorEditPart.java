@@ -28,7 +28,6 @@ public class CustomProcessorEditPart extends ProcessorEditPart {
 	 */
 	@Override
 	protected void handleNotificationEvent(Notification event) {
-	//	boolean update = false;
 
 		if (event.getFeature() == de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 				.getProcessor_OwnedCache()) {

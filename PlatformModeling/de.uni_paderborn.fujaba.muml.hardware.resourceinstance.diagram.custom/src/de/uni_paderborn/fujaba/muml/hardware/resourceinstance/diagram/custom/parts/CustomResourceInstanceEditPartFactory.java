@@ -19,8 +19,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Hardw
  * @author adann
  * 
  */
-public class CustomResourceInstanceEditPartFactory extends
-		HardwareEditPartFactory {
+public class CustomResourceInstanceEditPartFactory extends HardwareEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
@@ -36,19 +35,20 @@ public class CustomResourceInstanceEditPartFactory extends
 
 			case ActuatorInstanceEditPart.VISUAL_ID:
 				return new CustomActuatorInstanceEditPart(view);
-				
+
 			case ProcessorInstanceEditPart.VISUAL_ID:
 				return new CustomProcessorInstanceEditPart(view);
-				
+
 			case ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 				return new CustomPLDInstanceEditPart(view);
-				
+
 			case ProcessingMemoryInstanceEditPart.VISUAL_ID:
 				return new CustomProcessingMemoryInstanceEditPart(view);
-			
+
 			case StorageMemoryInstanceEditPart.VISUAL_ID:
 				return new CustomStorageMemoryInstanceEditPart(view);
-
+			default:
+				break;
 			}
 
 		}

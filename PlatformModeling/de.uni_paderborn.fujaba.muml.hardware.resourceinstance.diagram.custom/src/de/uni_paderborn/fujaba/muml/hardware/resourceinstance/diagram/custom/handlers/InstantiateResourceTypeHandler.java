@@ -24,7 +24,6 @@ public class InstantiateResourceTypeHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		// TODO Auto-generated method stub
 		EditingDomain editingDomain = null;
 
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
@@ -32,8 +31,7 @@ public class InstantiateResourceTypeHandler extends AbstractHandler {
 		List<Resource> objects = new ArrayList<Resource>();
 
 		org.eclipse.emf.ecore.resource.Resource ecoreResource = null;
-		for (Object selectedElement : ((IStructuredSelection) selection)
-				.toArray()) {
+		for (Object selectedElement : ((IStructuredSelection) selection).toArray()) {
 			EObject object = null;
 			if (selectedElement instanceof IAdaptable) {
 				IAdaptable adaptable = (IAdaptable) selectedElement;
@@ -42,9 +40,7 @@ public class InstantiateResourceTypeHandler extends AbstractHandler {
 			if (selectedElement instanceof EObject) {
 				object = (EObject) selectedElement;
 			}
-			if (object != null
-					&& HwresourcePackage.Literals.RESOURCE.isSuperTypeOf(object
-							.eClass())) {
+			if (object != null && HwresourcePackage.Literals.RESOURCE.isSuperTypeOf(object.eClass())) {
 				if (ecoreResource == null) {
 					ecoreResource = object.eResource();
 				} else if (ecoreResource != object.eResource()) {
@@ -55,21 +51,18 @@ public class InstantiateResourceTypeHandler extends AbstractHandler {
 		}
 
 		if (!objects.isEmpty() && editingDomain == null) {
-			editingDomain = AdapterFactoryEditingDomain
-					.getEditingDomainFor(objects.get(0));
-			instantiateResources(objects, null, editingDomain);
+			editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(objects.get(0));
+			instantiateResources(objects, editingDomain);
 		}
 
 		return null;
 	}
 
-	private void instantiateResources(final List<Resource> resources,
-			final Shell shell, final EditingDomain editingDomain) {
+	private void instantiateResources(final List<Resource> resources, final EditingDomain editingDomain) {
 		EObject container = resources.get(0);
 		while (!(container instanceof RootNode)) {
 			container = container.eContainer();
 		}
-		Activator
-				.createInstance(editingDomain, resources, (RootNode) container);
+		Activator.createInstance(editingDomain, resources, (RootNode) container);
 	}
 }

@@ -24,35 +24,26 @@ public class CustomBusEditPart extends BusEditPart {
 
 	@Override
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 50) {
+		return new DefaultSizeNodeFigure(130, 50) {
 			public PointList getPolygonPoints() {
 				PointList points = new PointList(11);
 				Rectangle anchRect = getHandleBounds();
 				points.addPoint(anchRect.x, anchRect.y + (anchRect.height / 2));
 				points.addPoint(anchRect.x + (anchRect.width / 6), anchRect.y);
-				points.addPoint(anchRect.x + (anchRect.width / 6), anchRect.y
-						+ (anchRect.height / 3));
-				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)),
-						anchRect.y + (anchRect.height / 3));
-				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)),
-						anchRect.y);
-				points.addPoint(anchRect.x + anchRect.width, anchRect.y
-						+ (anchRect.height / 2));
-				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)),
-						anchRect.y + anchRect.height);
-				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)),
-						anchRect.y + (anchRect.height * (2 / 3)));
-				points.addPoint(anchRect.x + (anchRect.width / 6), anchRect.y
-						+ (anchRect.height * (2 / 3)));
-				points.addPoint(anchRect.x + (anchRect.width / 6), anchRect.y
-						+ anchRect.height);
+				points.addPoint(anchRect.x + (anchRect.width / 6), anchRect.y + (anchRect.height / 3));
+				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)), anchRect.y + (anchRect.height / 3));
+				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)), anchRect.y);
+				points.addPoint(anchRect.x + anchRect.width, anchRect.y + (anchRect.height / 2));
+				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)), anchRect.y + anchRect.height);
+				points.addPoint(anchRect.x + (anchRect.width * (5 / 6)), anchRect.y + (anchRect.height * (2 / 3)));
+				points.addPoint(anchRect.x + (anchRect.width / 6), anchRect.y + (anchRect.height * (2 / 3)));
+				points.addPoint(anchRect.x + (anchRect.width / 6), anchRect.y + anchRect.height);
 				points.addPoint(anchRect.x, anchRect.y + (anchRect.height / 2));
 
 				return points;
 			}
 		};
 
-		return result;
 	}
 
 }

@@ -47,7 +47,6 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		super.start(context);
 		instance = this;
 
 		// Create transformation executor
@@ -55,52 +54,41 @@ public class Activator extends AbstractUIPlugin {
 
 	}
 
-	public TransformationExecutor getTransformationExecutor(
-			String transformationPath) {
+	public TransformationExecutor getTransformationExecutor(String transformationPath) {
 		return getTransformationExecutor(transformationPath, false);
 	}
 
-	public TransformationExecutor getTransformationExecutor(
-			String transformationPath, boolean reload) {
-		TransformationExecutor transformationExecutor = transformationExecutors
-				.get(transformationPath);
+	public TransformationExecutor getTransformationExecutor(String transformationPath, boolean reload) {
+		TransformationExecutor transformationExecutor = transformationExecutors.get(transformationPath);
 
 		if (reload) {
 			transformationExecutor = null;
 		}
 		if (transformationExecutor == null) {
-			URI transformationURI = URI.createPlatformPluginURI(
-					transformationPath, true);
+			URI transformationURI = URI.createPlatformPluginURI(transformationPath, true);
 
 			// create executor and execution context
-			transformationExecutor = new TransformationExecutor(
-					transformationURI);
+			transformationExecutor = new TransformationExecutor(transformationURI);
 			transformationExecutor.loadTransformation();
 
-			transformationExecutors.put(transformationPath,
-					transformationExecutor);
+			transformationExecutors.put(transformationPath, transformationExecutor);
 		}
 		return transformationExecutor;
 	}
 
-	public static void updateHWPortParts(EditingDomain editingDomain,
-			PlatformPart platformPart) {
-		ModelExtent inputExtent = new BasicModelExtent(
-				Arrays.asList(new EObject[] { platformPart }));
+	public static void updateHWPortParts(EditingDomain editingDomain, PlatformPart platformPart) {
+		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { platformPart }));
 
-		List<ModelExtent> modelExtents = Arrays
-				.asList(new ModelExtent[] { inputExtent });
+		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
 		TransformationExecutor transformationExecutor = Activator.getInstance()
-				.getTransformationExecutor(
-						Activator.UPDATE_HWPORTPART_TRANSFORMATION, false);
-		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents);
+				.getTransformationExecutor(Activator.UPDATE_HWPORTPART_TRANSFORMATION, false);
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(transformationExecutor,
+				modelExtents);
 		editingDomain.getCommandStack().execute(command);
 
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
-			//	editingDomain.getCommandStack().undo();
-					command.undo();
-					}
+			command.undo();
+		}
 	}
 
 	/*

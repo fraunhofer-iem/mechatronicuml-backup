@@ -8,6 +8,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.par
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.parsers.CustomProcessorInstanceExpressionLabelParser5028;
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.parsers.CustomStorageMemoryExpressionLabelParser5030;
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareParserProvider;
+
 /**
  * Our custom ParserProvider, which uses the customized LabelParsers.
  * 
@@ -19,23 +20,23 @@ public class CustomResourceInstanceParserProvider extends HardwareParserProvider
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel23EditPart.VISUAL_ID:
 			return new CustomStorageMemoryExpressionLabelParser5030();
-			
+
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel19EditPart.VISUAL_ID:
 			return new CustomProcessingMemoryExpressionLabelParser5032();
-			
+
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
 			return new CustomCacheExpressionLabelParser5026();
-			
+
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID:
 			return new CustomPLDExpressionLabelParser5027();
-		
+
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel15EditPart.VISUAL_ID:
 			return new CustomProcessorInstanceExpressionLabelParser5028();
-		
-		
+		default:
+			break;
+
 		}
 		return super.getParser(visualID);
 	}
-
 
 }
