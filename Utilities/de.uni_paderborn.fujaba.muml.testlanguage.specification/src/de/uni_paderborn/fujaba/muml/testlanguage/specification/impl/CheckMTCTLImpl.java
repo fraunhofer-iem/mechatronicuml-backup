@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
@@ -190,32 +192,42 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 					"Model does not contain a CoordinationProtocol.");
 		}
 
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getLoadOptions().put(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		Resource resource = resourceSet.createResource(URI.createURI("dummy:/dummy.mtctl"));
+		resource.load(new ByteArrayInputStream(properties.getBytes(StandardCharsets.UTF_8)), resourceSet.getLoadOptions());
+		MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
+		
 		// Parse the PropertyRepository we have in the context of the protocol.
-		PropertyRepository propertyRepository = (PropertyRepository) new Object() {
-
-			@Inject
-			private XtextResourceSet resourceSet;
-
-			public EObject parse(CoordinationProtocol protocol,
-					String properties) throws Exception {
-				// Source: http://davehofmann.de/blog/?p=101
-				Injector injector = Guice
-						.createInjector(new MtctlRuntimeModule());
-				injector.injectMembers(this);
-				this.resourceSet.addLoadOption(
-						XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-
-				// Parse the given properties and return it.
-				MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
-				Resource resource = resourceSet.createResource(URI
-						.createURI("dummy:/dummy.mtctl"));
-				resource.load(
-						new ByteArrayInputStream(properties
-								.getBytes(StandardCharsets.UTF_8)), resourceSet
-								.getLoadOptions());
-				return resource.getContents().get(0);
-			}
-		}.parse(protocol, this.getProperties());
+		PropertyRepository propertyRepository = (PropertyRepository) resource.getContents().get(0);
+		
+		
+//		new Object() {
+//
+//			@Inject
+//			private XtextResourceSet resourceSet;
+//
+//			public EObject parse(CoordinationProtocol protocol,
+//					String properties) throws Exception {
+//				// Source: http://davehofmann.de/blog/?p=101
+//				Injector injector = Guice
+//						.createInjector(new MtctlRuntimeModule());
+//				
+//				injector.injectMembers(this);
+//				this.resourceSet.addLoadOption(
+//						XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+//
+//				// Parse the given properties and return it.
+//				MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
+//				Resource resource = resourceSet.createResource(URI
+//						.createURI("dummy:/dummy.mtctl"));
+//				resource.load(
+//						new ByteArrayInputStream(properties
+//								.getBytes(StandardCharsets.UTF_8)), resourceSet
+//								.getLoadOptions());
+//				return resource.getContents().get(0);
+//			}
+//		}.parse(protocol, this.getProperties());
 
 		// Replace all existing PropertyRepositories by the one we just created.
 		protocol.getVerificationConstraintRepositories().clear();
