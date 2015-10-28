@@ -125,7 +125,7 @@
       <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
-    <constraints ocl="not self.parentResource.oclIsUndefined() and false"/>
+    <constraints ocl="not self.parentResource.oclIsUndefined()"/>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
   </mappings>
   <mappings>
@@ -232,7 +232,6 @@
     <sourceClass href="hardware-1.0.ecore#//hwresource/Cache"/>
   </mappings>
   <mappings>
-    <targetClass href="hardware-1.1.ecore#//hwresource/Resource"/>
     <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.hwports->select(c | c.oclIsTypeOf(CommunicationResource))">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Resource/communicationResources"/>
     </featureInitializers>
@@ -672,10 +671,7 @@
       <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/HWPort/communicationResource"/>
-    </featureInitializers>
-    <constraints ocl="not self.parentResourceInstance.oclIsUndefined() and false"/>
+    <constraints ocl="not self.parentResourceInstance.oclIsUndefined()"/>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
   </mappings>
   <mappings>
