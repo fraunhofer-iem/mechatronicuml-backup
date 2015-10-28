@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_CWIPQMDBEeS7le8XRznCjg" type="Real-Time Statechart" name="Navigation_Provider.realtimestatechart_diagram" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_CWIPQcDBEeS7le8XRznCjg"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../bebots_Incorrect.muml#_aMjV0V6UEeOU6dzb6wKMjg"/>
-</notation:Diagram>
