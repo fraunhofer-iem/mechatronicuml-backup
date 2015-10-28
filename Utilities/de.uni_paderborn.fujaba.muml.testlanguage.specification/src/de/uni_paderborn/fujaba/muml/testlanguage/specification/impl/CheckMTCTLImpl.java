@@ -194,9 +194,9 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getLoadOptions().put(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
 		Resource resource = resourceSet.createResource(URI.createURI("dummy:/dummy.mtctl"));
 		resource.load(new ByteArrayInputStream(properties.getBytes(StandardCharsets.UTF_8)), resourceSet.getLoadOptions());
-		MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
 		
 		// Parse the PropertyRepository we have in the context of the protocol.
 		PropertyRepository propertyRepository = (PropertyRepository) resource.getContents().get(0);
