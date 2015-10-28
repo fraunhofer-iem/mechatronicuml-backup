@@ -30,6 +30,10 @@
       <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/StructuredResourceInstance"/>
   </mappings>
   <mappings>
@@ -132,6 +136,7 @@
       <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
+    <constraints ocl="not self.parentResource.oclIsUndefined()"/>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
   </mappings>
   <mappings>
@@ -351,10 +356,6 @@
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatform/HWPortPart"/>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/hwport"/>
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/communicationResource"/>
-    </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/queuingTime"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/queuingTime"/>
@@ -698,6 +699,18 @@
       <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/LinkInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/HWPort"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/HWPort/communicationResource"/>
+    </featureInitializers>
+    <constraints ocl="not self.parentResourceInstance.oclIsUndefined()"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
   </mappings>
   <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
 </migration:Migrator>
