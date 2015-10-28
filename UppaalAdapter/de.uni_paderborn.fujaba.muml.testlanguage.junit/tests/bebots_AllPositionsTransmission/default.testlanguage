@@ -2,7 +2,7 @@
 <de.uni_paderborn.fujaba.muml.testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://de/uni_paderborn/fujaba/muml/testlanguage" xmlns:de.uni_paderborn.fujaba.muml.testlanguage.specification="http://de/uni_paderborn/fujaba/muml/testlanguage/specification">
   <nodes label="Load Model" specificationClassName="LoadModel">
     <outputs name="model" targets="//@nodes.1/@inputs[name='muml']"/>
-    <specification xsi:type="de.uni_paderborn.fujaba.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/muml_testlanguage.junit/tests/bebots_AllPositionsTransmission/bebots-correct.muml">
+    <specification xsi:type="de.uni_paderborn.fujaba.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_AllPositionsTransmission/bebots-correct.muml">
       <portSpecifications name="model" optional="true" type="OUT"/>
     </specification>
   </nodes>
