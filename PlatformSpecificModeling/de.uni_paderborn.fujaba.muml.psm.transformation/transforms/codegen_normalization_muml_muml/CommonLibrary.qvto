@@ -1,5 +1,4 @@
 import de.uni_paderborn.fujaba.muml.types._library.TypesBlackbox;
-	
 
 library CommonLibrary;
 
@@ -51,6 +50,6 @@ query PortInstance::getGenPortInstance():GenPortInstance{
 }
 
 query getPrimitiveDataType(_name:String):PrimitiveDataType {	
-	return TypesBlackBox.getTypeByName(_name);
+	return getTypeByName(_name);
 	
 }

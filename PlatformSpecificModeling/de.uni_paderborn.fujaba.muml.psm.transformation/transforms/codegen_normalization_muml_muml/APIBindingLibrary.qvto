@@ -25,6 +25,7 @@ property initApiName : String = "InitApi";
 property execApiName : String = "ExecApi";
 property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
 
+//TODO: fix the mess
 
 /**
 * Creates the ParameterBinding for a ParametriableDiscreteSinglePortInstance
@@ -167,9 +168,7 @@ return object Core::expressions::TextualExpression {
 
 query Actionlanguage::WhileLoop::createMumlValidExpression() : Core::expressions::Expression {
 return object Actionlanguage::WhileLoop {
-					expressions := self
-							.expressions
-							->createMumlValidExpression();
+
 					block  := self
 							
 							.block
@@ -186,9 +185,6 @@ return object Actionlanguage::WhileLoop {
 
 query Actionlanguage::DoWhileLoop::createMumlValidExpression() : Core::expressions::Expression {
 return object Actionlanguage::DoWhileLoop {
-					expressions := self
-							.expressions
-							->createMumlValidExpression();
 					block  := self	.block
 							.createMumlValidExpression()
 							.oclAsType(Actionlanguage::Block)
@@ -201,10 +197,7 @@ return object Actionlanguage::DoWhileLoop {
 
 query Actionlanguage::ForLoop::createMumlValidExpression() : Core::expressions::Expression {
 return object Actionlanguage::ForLoop {
-					expressions := self
-							
-							.expressions
-							->createMumlValidExpression();
+
 					block  := self
 							
 							.block
@@ -270,16 +263,8 @@ query Actionlanguage::IfStatement::createMumlValidExpression() : Core::expressio
 							.createMumlValidExpression()
 							.oclAsType(Actionlanguage::Block)
 							;
-					elseIfConditions := self
-						
-							.elseIfConditions
-							->createMumlValidExpression()
-							;
-					elseIfBlocks := self
-							
-							.elseIfBlocks
-							->createMumlValidExpression()
-							.oclAsType(Actionlanguage::Block);
+			//		elseIfStatements:=
+
 					elseBlock := self
 						
 							.elseBlock
