@@ -7,13 +7,17 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
 
 @RunWith(Suite.class)
 @SuiteClasses({ RunTestCases.class })
 public class TestLanguageTestSuite {
 
 	@BeforeClass
-	public static void init() {
+	public static void init() {	
+		
+		MtctlStandaloneSetup.doSetup();
+
 		// Set path to the UPPAAL verifyta tool.
 		IPreferenceStore preferenceStore = VerificationPreferencesPlugin
 				.getDefault().getPreferenceStore();
