@@ -16,4 +16,6 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.testlanguage;bundle-version="0.1.0"
  de.uni_paderborn.fujaba.muml.testlanguage.custom;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.testlanguage.edit;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.testlanguage.editor;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.testlanguage.specification.edit;bundle-version="1.0.0"
+ de.uni_paderborn.fujaba.muml.testlanguage.specification.edit;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.5.0"
