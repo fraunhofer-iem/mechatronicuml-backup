@@ -16,6 +16,7 @@ import org.storydriven.core.expressions.common.UnaryExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
@@ -31,6 +32,27 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
 
+/**
+ * For a given {@link Expression} with embedded
+ * {@link NondeterministicChoiceExpression}s, this class generates a set of
+ * {@link Expression}s. In the result set,
+ * {@link NondeterministicChoiceExpression}s are substituted by concrete values.
+ * Thus, the result set consists of all possible outcomes of these
+ * substitutions.
+ */
+
+// Basic Algorithm
+// Add the root Expression to tmpSubstitutedExpressions
+// While tmpSubstitutedExpression is not empty
+// tmpRootExpression = tmpSubstitutedExpression.pop()
+// walk through tmpRootExpression until a NondeterministicChoiceExpression is
+// found (depth first)
+// for every possible substitution of the NondeterministicChoiceExpression copy
+// the rootExpression and substitute
+// add the resulting Expression to tmpSubstitutedExpressions
+
+// TODO still has a lot of code whose logic could be expressed via
+
 public class NondeterminismHandler {
 
 	private boolean nonDeterminismFound = false;
@@ -45,7 +67,6 @@ public class NondeterminismHandler {
 	private boolean checkForCalls = false;
 	private HashSet<Variable> allNDVariables;
 
-
 	public NondeterminismHandler() {
 
 	}
@@ -54,10 +75,9 @@ public class NondeterminismHandler {
 		this.globalVariables = globalVariables;
 	}
 
-	public void startEvaluation(Expression expression)
-			throws UnsupportedModellingElementException {
+	public void startEvaluation(Expression expression) throws UnsupportedModellingElementException {
 
-		//init
+		// init
 		tmpRootExpression = expression;
 		if (tmpSubstitutedExpressions == null)
 			tmpSubstitutedExpressions = new BasicEList<Expression>();
@@ -69,30 +89,25 @@ public class NondeterminismHandler {
 		if (checkForAssignments) {
 			if (assignmentsToNDVariables == null)
 				assignmentsToNDVariables = new HashSet<Assignment>();
-		//	assignmentsToNDVariables.clear();
 		}
-		if(checkForCalls){
-			if(callsOfNDVariables==null)
+		if (checkForCalls) {
+			if (callsOfNDVariables == null)
 				callsOfNDVariables = new HashSet<TypedNamedElementExpression>();
-		//	callsOfNDVariables.clear();
 		}
 
-		
 		evaluate(tmpRootExpression);
 
 		while (!tmpSubstitutedExpressions.isEmpty()) {
 			tmpRootExpression = tmpSubstitutedExpressions.get(0);
 			if (!evaluate(tmpSubstitutedExpressions.get(0))) {
-				completelySubstitutedExpressions.add(tmpSubstitutedExpressions
-						.get(0));
+				completelySubstitutedExpressions.add(tmpSubstitutedExpressions.get(0));
 				tmpSubstitutedExpressions.remove(0);
 			} else
 				tmpSubstitutedExpressions.remove(0);
 		}
 	}
 
-	private boolean evaluate(Expression expression)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(Expression expression) throws UnsupportedModellingElementException {
 		if (expression instanceof UnaryExpression)
 			return evaluate((UnaryExpression) expression);
 		else if (expression instanceof Block)
@@ -126,10 +141,8 @@ public class NondeterminismHandler {
 		else if (expression instanceof NondeterministicChoiceExpression)
 			return evaluate((NondeterministicChoiceExpression) expression);
 		else
-			throw new UnsupportedModellingElementException(
-					"NonDeterminismSubstitution does not yet support "
-							+ expression.toString()
-							+ "evaluation may be corrupted");
+			throw new UnsupportedModellingElementException("NonDeterminismSubstitution does not yet support "
+					+ expression.toString() + "evaluation may be corrupted");
 		/*
 		 * 
 		 * throw new UnsupportedModellingElementException("Expressions of type "
@@ -138,18 +151,14 @@ public class NondeterminismHandler {
 
 	}
 
-	private boolean evaluate(UnaryExpression expression)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(UnaryExpression expression) throws UnsupportedModellingElementException {
 		if (expression.getEnclosedExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) expression
-							.getEnclosedExpression()))
-				callsOfNDVariables.add((TypedNamedElementExpression) expression
-						.getEnclosedExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) expression.getEnclosedExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) expression.getEnclosedExpression());
 
-			if (checkGlobalVariableReference((TypedNamedElementExpression) expression
-					.getEnclosedExpression())) {
+			if (checkGlobalVariableReference((TypedNamedElementExpression) expression.getEnclosedExpression())) {
 				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) expression
 						.getEnclosedExpression();
 
@@ -184,56 +193,40 @@ public class NondeterminismHandler {
 
 	}
 
-	private boolean evaluate(Block block)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(Block block) throws UnsupportedModellingElementException {
 		EList<Expression> expressions = block.getExpressions();
 
 		// HashSet<Assignment> toRemove = new HashSet<Assignment>();
 		// TODO can assignments be contained by other expressions as block?
 		for (Expression curExpression : expressions) {
-			if (checkForAssignments
-					&& (curExpression instanceof Assignment)
-					&& (checkNondeterminismVariableReference(((Assignment) curExpression)
-							.getLhs_typedNamedElementExpression()))) {
+			if (checkForAssignments && (curExpression instanceof Assignment) && (checkNondeterminismVariableReference(
+					((Assignment) curExpression).getLhs_typedNamedElementExpression()))) {
 				assignmentsToNDVariables.add(((Assignment) curExpression));
-				// toRemove.add(((Assignment) curExpression));
+
 			} else if (evaluate(curExpression)) {
-				// TODO do not delete
-				// for (Assignment curAssignment : toRemove)
-				// EcoreUtil.delete(curAssignment, true);
 				return true;
 			}
 		}
-		// TODO do not delete but return
-		// for (Assignment curAssignment : toRemove)
-		// EcoreUtil.delete(curAssignment, true);
-		// toRemove.clear();
 		return false;
 
 	}
 
-	private boolean evaluate(Assignment assignment)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(Assignment assignment) throws UnsupportedModellingElementException {
 
 		if (assignment.getRhs_assignExpression() instanceof TypedNamedElementExpression) {
 
 			// check if nondeterministic variable is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) assignment
-							.getRhs_assignExpression()))
-				callsOfNDVariables.add((TypedNamedElementExpression) assignment
-						.getRhs_assignExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) assignment.getRhs_assignExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) assignment.getRhs_assignExpression());
 			// if tneExpression references global variable
-			if (checkGlobalVariableReference((TypedNamedElementExpression) (TypedNamedElementExpression) assignment
-					.getRhs_assignExpression())) {
+			if (checkGlobalVariableReference(
+					(TypedNamedElementExpression) (TypedNamedElementExpression) assignment.getRhs_assignExpression())) {
 				// variable is nondeterministic
-				if (assignment.getLhs_typedNamedElementExpression()
-						.getTypedNamedElement() instanceof Variable) {
+				if (assignment.getLhs_typedNamedElementExpression().getTypedNamedElement() instanceof Variable) {
 					if (variablesAssignedByND == null)
 						variablesAssignedByND = new HashSet<Variable>();
-					Variable var = (Variable) assignment
-							.getLhs_typedNamedElementExpression()
-							.getTypedNamedElement();
+					Variable var = (Variable) assignment.getLhs_typedNamedElementExpression().getTypedNamedElement();
 					variablesAssignedByND.add(var);
 				}
 
@@ -256,13 +249,10 @@ public class NondeterminismHandler {
 					.getRhs_assignExpression();
 			// rhs contains nondeterminism -> add variable to
 			// variablesAssignedByND
-			if (assignment.getLhs_typedNamedElementExpression()
-					.getTypedNamedElement() instanceof Variable) {
+			if (assignment.getLhs_typedNamedElementExpression().getTypedNamedElement() instanceof Variable) {
 				if (variablesAssignedByND == null)
 					variablesAssignedByND = new HashSet<Variable>();
-				Variable var = (Variable) assignment
-						.getLhs_typedNamedElementExpression()
-						.getTypedNamedElement();
+				Variable var = (Variable) assignment.getLhs_typedNamedElementExpression().getTypedNamedElement();
 				variablesAssignedByND.add(var);
 			}
 
@@ -281,13 +271,10 @@ public class NondeterminismHandler {
 		// and return true
 		if (evaluate(assignment.getRhs_assignExpression())) {
 			// rhs contains nondeterminism
-			if (assignment.getLhs_typedNamedElementExpression()
-					.getTypedNamedElement() instanceof Variable) {
+			if (assignment.getLhs_typedNamedElementExpression().getTypedNamedElement() instanceof Variable) {
 				if (variablesAssignedByND == null)
 					variablesAssignedByND = new HashSet<Variable>();
-				Variable var = (Variable) assignment
-						.getLhs_typedNamedElementExpression()
-						.getTypedNamedElement();
+				Variable var = (Variable) assignment.getLhs_typedNamedElementExpression().getTypedNamedElement();
 				variablesAssignedByND.add(var);
 				// if(assignmentsToNDVariables == null)
 				// assignmentsToNDVariables = new HashSet<Expression>();
@@ -301,20 +288,15 @@ public class NondeterminismHandler {
 
 	}
 
-	private boolean evaluate(ComparisonExpression compExpression)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(ComparisonExpression compExpression) throws UnsupportedModellingElementException {
 		if (compExpression.getLeftExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) compExpression
-							.getLeftExpression()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) compExpression
-								.getLeftExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) compExpression.getLeftExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) compExpression.getLeftExpression());
 
 			// if tneExpression references global variable
-			if (checkGlobalVariableReference((TypedNamedElementExpression) compExpression
-					.getLeftExpression())) {
+			if (checkGlobalVariableReference((TypedNamedElementExpression) compExpression.getLeftExpression())) {
 				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) compExpression
 						.getLeftExpression();
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
@@ -331,12 +313,9 @@ public class NondeterminismHandler {
 
 		if (compExpression.getRightExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) compExpression
-							.getRightExpression()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) compExpression
-								.getRightExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) compExpression.getRightExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) compExpression.getRightExpression());
 
 			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) compExpression
 					.getRightExpression();
@@ -395,20 +374,15 @@ public class NondeterminismHandler {
 			return false;
 	}
 
-	private boolean evaluate(ArithmeticExpression arithExpression)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(ArithmeticExpression arithExpression) throws UnsupportedModellingElementException {
 		if (arithExpression.getLeftExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) arithExpression
-							.getLeftExpression()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) arithExpression
-								.getLeftExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) arithExpression.getLeftExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) arithExpression.getLeftExpression());
 
 			// if tneExpression references global variable -> substitute
-			if (checkGlobalVariableReference((TypedNamedElementExpression) arithExpression
-					.getLeftExpression())) {
+			if (checkGlobalVariableReference((TypedNamedElementExpression) arithExpression.getLeftExpression())) {
 				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) arithExpression
 						.getLeftExpression();
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
@@ -425,12 +399,9 @@ public class NondeterminismHandler {
 
 		if (arithExpression.getRightExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) arithExpression
-							.getRightExpression()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) arithExpression
-								.getRightExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) arithExpression.getRightExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) arithExpression.getRightExpression());
 
 			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) arithExpression
 					.getRightExpression();
@@ -488,20 +459,15 @@ public class NondeterminismHandler {
 			return false;
 	}
 
-	private boolean evaluate(LogicalExpression logExpression)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(LogicalExpression logExpression) throws UnsupportedModellingElementException {
 		if (logExpression.getLeftExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) logExpression
-							.getLeftExpression()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) logExpression
-								.getLeftExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) logExpression.getLeftExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) logExpression.getLeftExpression());
 
 			// if tneExpression references global variable
-			if (checkGlobalVariableReference((TypedNamedElementExpression) logExpression
-					.getLeftExpression())) {
+			if (checkGlobalVariableReference((TypedNamedElementExpression) logExpression.getLeftExpression())) {
 				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) logExpression
 						.getLeftExpression();
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
@@ -518,12 +484,9 @@ public class NondeterminismHandler {
 
 		if (logExpression.getRightExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) logExpression
-							.getRightExpression()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) logExpression
-								.getRightExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) logExpression.getRightExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) logExpression.getRightExpression());
 
 			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) logExpression
 					.getRightExpression();
@@ -581,18 +544,14 @@ public class NondeterminismHandler {
 			return false;
 	}
 
-	private boolean evaluate(WhileLoop whileLoop)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(WhileLoop whileLoop) throws UnsupportedModellingElementException {
 		if (whileLoop.getLoopTest() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
 			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) whileLoop
-							.getLoopTest()))
-				callsOfNDVariables.add((TypedNamedElementExpression) whileLoop
-						.getLoopTest());
+					&& checkNondeterminismVariableReference((TypedNamedElementExpression) whileLoop.getLoopTest()))
+				callsOfNDVariables.add((TypedNamedElementExpression) whileLoop.getLoopTest());
 
-			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) whileLoop
-					.getLoopTest();
+			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) whileLoop.getLoopTest();
 			// if tneExpression references global variable
 			if (checkGlobalVariableReference(tneExpression)) {
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
@@ -609,8 +568,7 @@ public class NondeterminismHandler {
 		}
 
 		if (whileLoop.getLoopTest() instanceof NondeterministicChoiceExpression) {
-			NondeterministicChoiceExpression nondetExp = (NondeterministicChoiceExpression) whileLoop
-					.getLoopTest();
+			NondeterministicChoiceExpression nondetExp = (NondeterministicChoiceExpression) whileLoop.getLoopTest();
 
 			HashSet<LiteralExpression> litExpressions = createLiteralExpressions(nondetExp);
 			// add substitutions
@@ -628,19 +586,14 @@ public class NondeterminismHandler {
 
 	}
 
-	private boolean evaluate(DoWhileLoop doWhileLoop)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(DoWhileLoop doWhileLoop) throws UnsupportedModellingElementException {
 		if (doWhileLoop.getLoopTest() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
 			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) doWhileLoop
-							.getLoopTest()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) doWhileLoop
-								.getLoopTest());
+					&& checkNondeterminismVariableReference((TypedNamedElementExpression) doWhileLoop.getLoopTest()))
+				callsOfNDVariables.add((TypedNamedElementExpression) doWhileLoop.getLoopTest());
 
-			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) doWhileLoop
-					.getLoopTest();
+			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) doWhileLoop.getLoopTest();
 			// if tneExpression references global variable
 			if (checkGlobalVariableReference(tneExpression)) {
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
@@ -656,8 +609,7 @@ public class NondeterminismHandler {
 		}
 
 		if (doWhileLoop.getLoopTest() instanceof NondeterministicChoiceExpression) {
-			NondeterministicChoiceExpression nondetExp = (NondeterministicChoiceExpression) doWhileLoop
-					.getLoopTest();
+			NondeterministicChoiceExpression nondetExp = (NondeterministicChoiceExpression) doWhileLoop.getLoopTest();
 
 			HashSet<LiteralExpression> litExpressions = createLiteralExpressions(nondetExp);
 			// add substitutions
@@ -673,18 +625,14 @@ public class NondeterminismHandler {
 		return evaluate(doWhileLoop.getBlock());
 	}
 
-	private boolean evaluate(ForLoop forLoop)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(ForLoop forLoop) throws UnsupportedModellingElementException {
 		if (forLoop.getLoopTest() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
 			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) forLoop
-							.getLoopTest()))
-				callsOfNDVariables.add((TypedNamedElementExpression) forLoop
-						.getLoopTest());
+					&& checkNondeterminismVariableReference((TypedNamedElementExpression) forLoop.getLoopTest()))
+				callsOfNDVariables.add((TypedNamedElementExpression) forLoop.getLoopTest());
 
-			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) forLoop
-					.getLoopTest();
+			TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) forLoop.getLoopTest();
 			// if tneExpression references global variable
 			if (checkGlobalVariableReference(tneExpression)) {
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
@@ -700,8 +648,7 @@ public class NondeterminismHandler {
 		}
 
 		if (forLoop.getLoopTest() instanceof NondeterministicChoiceExpression) {
-			NondeterministicChoiceExpression nondetExp = (NondeterministicChoiceExpression) forLoop
-					.getLoopTest();
+			NondeterministicChoiceExpression nondetExp = (NondeterministicChoiceExpression) forLoop.getLoopTest();
 
 			HashSet<LiteralExpression> litExpressions = createLiteralExpressions(nondetExp);
 			// add substitutions
@@ -719,74 +666,16 @@ public class NondeterminismHandler {
 
 	}
 
-	private boolean evaluate(IfStatement ifStatement)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(IfStatement ifStatement) throws UnsupportedModellingElementException {
 		if (evaluate(ifStatement.getElseBlock()))
 			// nondeterminism in elseBlock -> stop recursion
 			return true;
 
-		for (Block curBlock : ifStatement.getElseIfBlocks())
-			if (evaluate(curBlock))
-				// nondeterminism in on of the elseIfBlocks -> stop recursion
+		for (ElseIfStatement elseIfStatement : ifStatement.getElseIfStatements())
+			if (evaluate(elseIfStatement))
+				// nondeterminism in on of the elseIfStatements -> stop
+				// recursion
 				return true;
-
-		for (Expression curExpression : ifStatement.getElseIfConditions()) {
-
-			if (curExpression instanceof TypedNamedElementExpression) {
-				// check if nondeterministic variables is called
-				if (checkForCalls
-						&& checkNondeterminismVariableReference((TypedNamedElementExpression) curExpression))
-					callsOfNDVariables
-							.add((TypedNamedElementExpression) curExpression);
-
-				// if tneExpression references global variable
-				if (checkGlobalVariableReference((TypedNamedElementExpression) curExpression)) {
-					TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) curExpression;
-					int indexOfTneExpression = ifStatement
-							.getElseIfConditions().indexOf(curExpression);
-					HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
-					// add substitutions
-					for (LiteralExpression curLitExpression : litExpressions) {
-						ifStatement.getElseIfConditions().remove(
-								indexOfTneExpression);
-						ifStatement.getElseIfConditions().add(
-								indexOfTneExpression, curLitExpression);
-						addSubstitutedExpression();
-					}
-					ifStatement.getElseIfConditions().remove(
-							indexOfTneExpression);
-					ifStatement.getElseIfConditions().add(indexOfTneExpression,
-							tneExpression);
-					// non determinism found -> stop recursion
-					return true;
-
-				}
-			}
-
-			if (curExpression instanceof NondeterministicChoiceExpression) {
-				NondeterministicChoiceExpression nondetExpression = (NondeterministicChoiceExpression) curExpression;
-				int indexOfNondetExpression = ifStatement.getElseIfConditions()
-						.indexOf(curExpression);
-				// if tneExpression references global variable
-				if (evaluate(nondetExpression)) {
-					HashSet<LiteralExpression> litExpressions = createLiteralExpressions(nondetExpression);
-					// add substitutions
-					for (LiteralExpression curLitExpression : litExpressions) {
-						ifStatement.getElseIfConditions().remove(
-								indexOfNondetExpression);
-						ifStatement.getElseIfConditions().add(
-								indexOfNondetExpression, curLitExpression);
-						addSubstitutedExpression();
-					}
-					ifStatement.getElseIfConditions().remove(
-							indexOfNondetExpression);
-					ifStatement.getElseIfConditions().add(
-							indexOfNondetExpression, nondetExpression);
-					// non determinism found -> stop recursion
-					return true;
-				}
-			}
-		}
 
 		if (evaluate(ifStatement.getIfBlock()))
 			// nondeterminism in if block -> stop recursion
@@ -795,16 +684,11 @@ public class NondeterminismHandler {
 		if (ifStatement.getIfCondition() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
 			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) ifStatement
-							.getIfCondition()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) ifStatement
-								.getIfCondition());
+					&& checkNondeterminismVariableReference((TypedNamedElementExpression) ifStatement.getIfCondition()))
+				callsOfNDVariables.add((TypedNamedElementExpression) ifStatement.getIfCondition());
 			// if tneExpression references global variable
-			if (checkGlobalVariableReference((TypedNamedElementExpression) ifStatement
-					.getIfCondition())) {
-				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) ifStatement
-						.getIfCondition();
+			if (checkGlobalVariableReference((TypedNamedElementExpression) ifStatement.getIfCondition())) {
+				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) ifStatement.getIfCondition();
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
 				// add substitutions
 				for (LiteralExpression curLitExpression : litExpressions) {
@@ -833,19 +717,73 @@ public class NondeterminismHandler {
 		return false;
 	}
 
-	private boolean evaluate(ReturnStatement returnStatement)
-			throws UnsupportedModellingElementException {
+	private boolean evaluate(ElseIfStatement elseIfStatement) throws UnsupportedModellingElementException {
+		// check the block
+		if (evaluate(elseIfStatement.getElseIfBlock()))
+			// nondeterminism in the elseIfBlocks -> stop recursion
+			return true;
+
+		// check the condition
+		Expression curExpression = elseIfStatement.getElseIfCondition();
+
+		if (curExpression instanceof TypedNamedElementExpression) {
+			// check if nondeterministic variables is called
+			if (checkForCalls && checkNondeterminismVariableReference((TypedNamedElementExpression) curExpression))
+				callsOfNDVariables.add((TypedNamedElementExpression) curExpression);
+
+			// if tneExpression references global variable
+			if (checkGlobalVariableReference((TypedNamedElementExpression) curExpression)) {
+				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) curExpression;
+				// int indexOfTneExpression = ifStatement
+				// .getElseIfConditions().indexOf(curExpression);
+				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
+				// add substitutions
+				for (LiteralExpression curLitExpression : litExpressions) {
+					elseIfStatement.setElseIfCondition(curLitExpression);
+					addSubstitutedExpression();
+				}
+				elseIfStatement.setElseIfCondition(tneExpression);
+				// TODO Refactor:
+				// something like:
+				// tneExpression.eContainer().eSet(tneExpression.eContainingFeature(),
+				// copiedAndSubstitutedTneExpression);
+				// in evaluate(TypedNamedElementExpression)
+				// This procedure can be applied to a lot of code here
+
+				// non determinism found -> stop recursion
+				return true;
+
+			}
+		}
+
+		if (curExpression instanceof NondeterministicChoiceExpression) {
+			NondeterministicChoiceExpression nondetExpression = (NondeterministicChoiceExpression) curExpression;
+
+			// if tneExpression references global variable
+			if (evaluate(nondetExpression)) {
+				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(nondetExpression);
+				// add substitutions
+				for (LiteralExpression curLitExpression : litExpressions) {
+					elseIfStatement.setElseIfCondition(curLitExpression);
+					addSubstitutedExpression();
+				}
+				elseIfStatement.setElseIfCondition(nondetExpression);
+				// non determinism found -> stop recursion
+				return true;
+			}
+		}
+		// }
+		return false;
+	}
+
+	private boolean evaluate(ReturnStatement returnStatement) throws UnsupportedModellingElementException {
 		if (returnStatement.getExpression() instanceof TypedNamedElementExpression) {
 			// check if nondeterministic variables is called
-			if (checkForCalls
-					&& checkNondeterminismVariableReference((TypedNamedElementExpression) returnStatement
-							.getExpression()))
-				callsOfNDVariables
-						.add((TypedNamedElementExpression) returnStatement
-								.getExpression());
+			if (checkForCalls && checkNondeterminismVariableReference(
+					(TypedNamedElementExpression) returnStatement.getExpression()))
+				callsOfNDVariables.add((TypedNamedElementExpression) returnStatement.getExpression());
 
-			if (checkGlobalVariableReference((TypedNamedElementExpression) returnStatement
-					.getExpression())) {
+			if (checkGlobalVariableReference((TypedNamedElementExpression) returnStatement.getExpression())) {
 				TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) returnStatement
 						.getExpression();
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
@@ -882,16 +820,11 @@ public class NondeterminismHandler {
 			if (curParBinding.getValue() instanceof TypedNamedElementExpression) {
 				// check if nondeterministic variables is called
 				if (checkForCalls
-						&& checkNondeterminismVariableReference((TypedNamedElementExpression) curParBinding
-								.getValue()))
-					callsOfNDVariables
-							.add((TypedNamedElementExpression) curParBinding
-									.getValue());
+						&& checkNondeterminismVariableReference((TypedNamedElementExpression) curParBinding.getValue()))
+					callsOfNDVariables.add((TypedNamedElementExpression) curParBinding.getValue());
 
-				if (checkGlobalVariableReference((TypedNamedElementExpression) curParBinding
-						.getValue())) {
-					TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) curParBinding
-							.getValue();
+				if (checkGlobalVariableReference((TypedNamedElementExpression) curParBinding.getValue())) {
+					TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) curParBinding.getValue();
 					HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
 					// add substitutions
 					for (LiteralExpression curLitExpression : litExpressions) {
@@ -922,49 +855,43 @@ public class NondeterminismHandler {
 		return false;
 	}
 
-	private boolean evaluate(
-			LocalVariableDeclarationStatement locVarDecStatement) {
+	private boolean evaluate(LocalVariableDeclarationStatement locVarDecStatement) {
 
 		if (locVarDecStatement.getVariable().getInitializeExpression() != null) {
 			if (locVarDecStatement.getVariable().getInitializeExpression() instanceof TypedNamedElementExpression) {
 				// check if nondeterministic variables is called
-				if (checkForCalls
-						&& checkNondeterminismVariableReference((TypedNamedElementExpression) locVarDecStatement
-								.getVariable().getInitializeExpression()))
-					callsOfNDVariables
-							.add((TypedNamedElementExpression) locVarDecStatement
-									.getVariable().getInitializeExpression());
+				if (checkForCalls && checkNondeterminismVariableReference(
+						(TypedNamedElementExpression) locVarDecStatement.getVariable().getInitializeExpression()))
+					callsOfNDVariables.add(
+							(TypedNamedElementExpression) locVarDecStatement.getVariable().getInitializeExpression());
 
-				if (checkGlobalVariableReference((TypedNamedElementExpression) locVarDecStatement
-						.getVariable().getInitializeExpression())) {
+				if (checkGlobalVariableReference(
+						(TypedNamedElementExpression) locVarDecStatement.getVariable().getInitializeExpression())) {
 					TypedNamedElementExpression tneExpression = (TypedNamedElementExpression) locVarDecStatement
 							.getVariable().getInitializeExpression();
 					HashSet<LiteralExpression> litExpressions = createLiteralExpressions(tneExpression);
 					// add substitutions
 					for (LiteralExpression curLitExpression : litExpressions) {
-						locVarDecStatement.getVariable()
-								.setInitializeExpression(curLitExpression);
+						locVarDecStatement.getVariable().setInitializeExpression(curLitExpression);
 						addSubstitutedExpression();
 					}
-					locVarDecStatement.getVariable().setInitializeExpression(
-							tneExpression);
+					locVarDecStatement.getVariable().setInitializeExpression(tneExpression);
 					// non determinism found -> stop recursion
 					return true;
 
 				}
 			}
-			if (locVarDecStatement.getVariable().getInitializeExpression() instanceof NondeterministicChoiceExpression) {
+			if (locVarDecStatement.getVariable()
+					.getInitializeExpression() instanceof NondeterministicChoiceExpression) {
 				NondeterministicChoiceExpression nondetExp = (NondeterministicChoiceExpression) locVarDecStatement
 						.getVariable().getInitializeExpression();
 				HashSet<LiteralExpression> litExpressions = createLiteralExpressions(nondetExp);
 				// add substitutions
 				for (LiteralExpression curLitExpression : litExpressions) {
-					locVarDecStatement.getVariable().setInitializeExpression(
-							curLitExpression);
+					locVarDecStatement.getVariable().setInitializeExpression(curLitExpression);
 					addSubstitutedExpression();
 				}
-				locVarDecStatement.getVariable().setInitializeExpression(
-						nondetExp);
+				locVarDecStatement.getVariable().setInitializeExpression(nondetExp);
 				// non determinism found -> stop recursion
 				return true;
 			}
@@ -981,12 +908,10 @@ public class NondeterminismHandler {
 	 */
 	private boolean evaluate(TypedNamedElementExpression tneExpression) {
 		// check if nondeterministic variables is called
-		if (checkForCalls
-				&& checkNondeterminismVariableReference(tneExpression))
+		if (checkForCalls && checkNondeterminismVariableReference(tneExpression))
 			callsOfNDVariables.add(tneExpression);
 		if (checkGlobalVariableReference(tneExpression)) {
-			tmpSubstitutedExpressions
-					.addAll(createLiteralExpressions(tneExpression));
+			tmpSubstitutedExpressions.addAll(createLiteralExpressions(tneExpression));
 			nonDeterminismFound = true;
 		}
 		return false;
@@ -1001,8 +926,7 @@ public class NondeterminismHandler {
 	 */
 	private boolean evaluate(NondeterministicChoiceExpression nondetExpression) {
 
-		tmpSubstitutedExpressions
-				.addAll(createLiteralExpressions(nondetExpression));
+		tmpSubstitutedExpressions.addAll(createLiteralExpressions(nondetExpression));
 		nonDeterminismFound = true;
 		return true;
 	}
@@ -1015,8 +939,7 @@ public class NondeterminismHandler {
 	 * @return
 	 */
 
-	private boolean checkGlobalVariableReference(
-			TypedNamedElementExpression expression) {
+	private boolean checkGlobalVariableReference(TypedNamedElementExpression expression) {
 		TypedNamedElement tne = expression.getTypedNamedElement();
 		if (!(tne instanceof Variable))
 			return false;
@@ -1029,8 +952,7 @@ public class NondeterminismHandler {
 		return false;
 	}
 
-	private boolean checkNondeterminismVariableReference(
-			TypedNamedElementExpression expression) {
+	private boolean checkNondeterminismVariableReference(TypedNamedElementExpression expression) {
 		TypedNamedElement tne = expression.getTypedNamedElement();
 		if (tne instanceof Variable) {
 			Variable var = (Variable) tne;
@@ -1041,20 +963,16 @@ public class NondeterminismHandler {
 
 	}
 
-	private HashSet<LiteralExpression> createLiteralExpressions(
-			TypedNamedElementExpression expression) {
+	private HashSet<LiteralExpression> createLiteralExpressions(TypedNamedElementExpression expression) {
 		// typed named element should be of type variable, because this is the
 		// only case createLiteralExpression is called
 		Variable variable = (Variable) expression.getTypedNamedElement();
 		HashSet<LiteralExpression> litExpressions = new HashSet<LiteralExpression>();
-		if (((PrimitiveDataType) variable.getDataType()).getPrimitiveType()
-				.equals(PrimitiveTypes.BOOLEAN)) {
-			LiteralExpression litExp = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+		if (((PrimitiveDataType) variable.getDataType()).getPrimitiveType().equals(PrimitiveTypes.BOOLEAN)) {
+			LiteralExpression litExp = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			litExp.setValue("true");
 			litExpressions.add(litExp);
-			LiteralExpression litExp2 = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+			LiteralExpression litExp2 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			litExp2.setValue("false");
 			litExpressions.add(litExp2);
 
@@ -1062,15 +980,12 @@ public class NondeterminismHandler {
 		return litExpressions;
 	}
 
-	private HashSet<LiteralExpression> createLiteralExpressions(
-			NondeterministicChoiceExpression expression) {
+	private HashSet<LiteralExpression> createLiteralExpressions(NondeterministicChoiceExpression expression) {
 		HashSet<LiteralExpression> litExpressions = new HashSet<LiteralExpression>();
 
 		// TODO only works for discrete types
-		for (long i = expression.getRange().getLowerBound(); i <= expression
-				.getRange().getUpperBound(); i++) {
-			LiteralExpression litExp = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
+		for (long i = expression.getRange().getLowerBound(); i <= expression.getRange().getUpperBound(); i++) {
+			LiteralExpression litExp = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			litExp.setValue("" + i);
 			litExpressions.add(litExp);
 		}

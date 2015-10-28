@@ -1922,8 +1922,7 @@ public class TestAutomataGeneration {
 		HashSet<Variable> nondetVariables = nondetHandler
 				.getVariablesAssignedByNonDeterminism();
 		// map these variables to variables of refined rtsc
-		for (Variable abstractVariable : nondetHandler
-				.getVariablesAssignedByNonDeterminism()) {
+		for (Variable abstractVariable : nondetVariables) {
 			for (Variable refinedVariable : testRtscCopy.getVariables()) {
 				if (abstractVariable.getName()
 						.equals(refinedVariable.getName()))
