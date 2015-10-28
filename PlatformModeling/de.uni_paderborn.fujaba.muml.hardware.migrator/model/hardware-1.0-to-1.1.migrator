@@ -98,7 +98,7 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/resourceType"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance/resourceType"/>
     </featureInitializers>
-    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.hwports->select(c|not c.oclIsKindOf(CommuncationResource))">
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.hwports->select(c|not c.oclIsKindOf(hwresource::CommunicationResource))">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
@@ -106,17 +106,6 @@
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance"/>
-  </mappings>
-  <mappings>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/HWPort/communicationResource"/>
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/HWPort/parentResource"/>
-    </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/HWPort/parentResourceInstance"/>
-      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/HWPort/parentResourceInstance"/>
-    </featureInitializers>
-    <sourceClass href="hardware-1.0.ecore#//hwresource/HWPort"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresource/CommunicationResource"/>
@@ -136,7 +125,7 @@
       <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
-    <constraints ocl="not self.parentResource.oclIsUndefined()"/>
+    <constraints ocl="not self.parentResource.oclIsUndefined() and false"/>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
   </mappings>
   <mappings>
@@ -243,7 +232,8 @@
     <sourceClass href="hardware-1.0.ecore#//hwresource/Cache"/>
   </mappings>
   <mappings>
-    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.hwports">
+    <targetClass href="hardware-1.1.ecore#//hwresource/Resource"/>
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.hwports->select(c | c.oclIsTypeOf(CommunicationResource))">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Resource/communicationResources"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
@@ -432,30 +422,6 @@
     <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPlatform"/>
   </mappings>
   <mappings>
-    <targetClass href="hardware-1.1.ecore#//hwresource/LinkProtocol"/>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/LinkProtocol/linkProtocol"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/LinkProtocol/linkProtocol"/>
-    </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-    </featureInitializers>
-    <sourceClass href="hardware-1.0.ecore#//hwresource/LinkProtocol"/>
-  </mappings>
-  <mappings>
-    <targetClass href="hardware-1.1.ecore#//hwresource/BusProtocol"/>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/BusProtocol/busProtocol"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/BusProtocol/busProtocol"/>
-    </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-    </featureInitializers>
-    <sourceClass href="hardware-1.0.ecore#//hwresource/BusProtocol"/>
-  </mappings>
-  <mappings>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/isTimeTriggered"/>
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/CommunicationProtocol/isTimeTriggered"/>
@@ -477,7 +443,7 @@
       <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="1.0">
         <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataRate/value"/>
       </featureInitializers>
-      <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="DataRateUnit::Kbs">
+      <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="hwvaluetype::DataRateUnit::Kbs">
         <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataRate/unit"/>
       </featureInitializers>
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/bandwidth"/>
@@ -709,8 +675,32 @@
     <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/HWPort/communicationResource"/>
     </featureInitializers>
-    <constraints ocl="not self.parentResourceInstance.oclIsUndefined()"/>
+    <constraints ocl="not self.parentResourceInstance.oclIsUndefined() and false"/>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/BusProtocol"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/BusProtocol/busProtocol"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/BusProtocol/busProtocol"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/BusProtocol"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/LinkProtocol"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/LinkProtocol/linkProtocol"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/LinkProtocol/linkProtocol"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/LinkProtocol"/>
   </mappings>
   <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
 </migration:Migrator>
