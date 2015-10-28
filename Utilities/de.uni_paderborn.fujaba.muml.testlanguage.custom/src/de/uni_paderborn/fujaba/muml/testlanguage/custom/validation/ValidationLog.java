@@ -82,6 +82,7 @@ public class ValidationLog {
 
 	private static void println(String message) {
 		getPrintStream().println(message);
+		getPrintStream().flush();
 	}
 
 	private static void println() {
@@ -92,6 +93,7 @@ public class ValidationLog {
 	@SuppressWarnings("unused")
 	private static void print(String message) {
 		getPrintStream().print(message);
+		getPrintStream().flush();
 	}
 
 	private static PrintStream getPrintStream() {
