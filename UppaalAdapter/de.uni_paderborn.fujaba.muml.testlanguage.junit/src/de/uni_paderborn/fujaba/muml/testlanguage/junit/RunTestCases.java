@@ -35,18 +35,10 @@ public class RunTestCases {
 	public static Collection<Object[]> getTestCases() {
 		cases = new LinkedList<Object[]>();
 
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/compareModels/compareModels.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/simpleMTCTL/simpleMTCTL.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/syntacticCheck/syntacticCheck.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/modelValidation/modelValidation.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/noDeadlocks.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/noBufferOverflows.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/invariantsAndMessages.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/urgentTransitions.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/transitionPriorities.testlanguage");
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_AllPositionsTransmission/default.testlanguage");
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_Delegation/default.testlanguage");
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_Navigation/default.testlanguage");
+ 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars/default.testlanguage");
 // 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars/default.testlanguage");
 //		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_Allow/default.testlanguage");
 // 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_ChangeSection/default.testlanguage");
