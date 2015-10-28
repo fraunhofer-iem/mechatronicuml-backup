@@ -39,17 +39,30 @@ public class RunTestCases {
 //		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/simpleMTCTL/simpleMTCTL.testlanguage");
 //		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/syntacticCheck/syntacticCheck.testlanguage");
 //		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/modelValidation/modelValidation.testlanguage");
-		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/noDeadlocks.testlanguage");
-		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/noBufferOverflows.testlanguage");
-		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/invariantsAndMessages.testlanguage");
-		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/urgentTransitions.testlanguage");
-		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/transitionPriorities.testlanguage");
+//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/noDeadlocks.testlanguage");
+//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/noBufferOverflows.testlanguage");
+//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/invariantsAndMessages.testlanguage");
+//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/urgentTransitions.testlanguage");
+//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/einparkhilfe/transitionPriorities.testlanguage");
+ 		addCase("platform:/plugin/muml_testlanguage.junit/tests/bebots_AllPositionsTransmission/default.testlanguage");
+ 		addCase("platform:/plugin/muml_testlanguage.junit/tests/bebots_Delegation/default.testlanguage");
+ 		addCase("platform:/plugin/muml_testlanguage.junit/tests/bebots_Navigation/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars/default.testlanguage");
+//		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_Allow/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_ChangeSection/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_Delegate/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_Inform/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_LimitVelocity/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_Overtake/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/overtaking-cars-w-contraflow_VModeControl/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/railcab_EnterSection/default.testlanguage");
+// 		addCase("platform:/plugin/muml_testlanguage.junit/tests/railcab_NextSectionFree/default.testlanguage");
 
 		return cases;
 	}
 
 	private static void addCase(String path) {
-		System.out.println("ADD CASE: " + path);
+		System.out.println("ADD" + path);
 		URI uri = URI.createURI(path);
 		cases.add(new Object[] { path, uri.segment(uri.segmentCount() - 1) });
 	}

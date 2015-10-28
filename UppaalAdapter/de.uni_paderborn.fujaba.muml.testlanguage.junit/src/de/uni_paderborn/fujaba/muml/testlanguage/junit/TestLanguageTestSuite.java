@@ -18,7 +18,7 @@ public class TestLanguageTestSuite {
 		IPreferenceStore preferenceStore = VerificationPreferencesPlugin
 				.getDefault().getPreferenceStore();
 		preferenceStore.setValue(VerificationPreferencesPlugin.VERIFYTA_KEY,
-				"F:\\Bachelor\\uppaal-4.0.14\\bin-Win32\\verifyta.exe");
+				"/data/jenkins/uppaal64-4.1.19/bin-Linux/verifyta");
 	}
 
 }
