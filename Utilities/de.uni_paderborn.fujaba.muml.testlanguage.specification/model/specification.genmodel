@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.testlanguage.specification/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml.testlanguage.specification" templateDirectory=""
+    redirection="" modelName="Specification" modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" commentFormatting="true" booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    interfaceNamePattern="" classNamePattern="" operationReflection="true" importOrganizing="true"
+    decoration="Manual">
+  <foreignModel>specification.ecore</foreignModel>
+  <genPackages prefix="Specification" basePackage="de.uni_paderborn.fujaba.muml.testlanguage"
+      disposableProviderFactory="true" ecorePackage="specification.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="specification.ecore#//PortType">
+      <genEnumLiterals ecoreEnumLiteral="specification.ecore#//PortType/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="specification.ecore#//PortType/OUT"/>
+      <genEnumLiterals ecoreEnumLiteral="specification.ecore#//PortType/INOUT"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="specification.ecore#//ExecutionException"/>
+    <genDataTypes ecoreDataType="specification.ecore#//DefaultException"/>
+    <genClasses ecoreClass="specification.ecore#//NodeSpecification">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Internal"
+          ecoreFeature="ecore:EReference specification.ecore#//NodeSpecification/portSpecifications"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Preset Properties"
+          ecoreFeature="ecore:EAttribute specification.ecore#//NodeSpecification/label"/>
+      <genOperations ecoreOperation="specification.ecore#//NodeSpecification/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//NodeSpecification/execute">
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/execute/outputs"/>
+      </genOperations>
+      <genOperations ecoreOperation="specification.ecore#//NodeSpecification/notifyChanged">
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/notifyChanged/notification"/>
+      </genOperations>
+      <genOperations ecoreOperation="specification.ecore#//NodeSpecification/addPortSpecification">
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/addPortSpecification/type"/>
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/addPortSpecification/name"/>
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/addPortSpecification/optional"/>
+      </genOperations>
+      <genOperations ecoreOperation="specification.ecore#//NodeSpecification/addPortSpecification.1">
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/addPortSpecification.1/type"/>
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/addPortSpecification.1/name"/>
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/addPortSpecification.1/optional"/>
+        <genParameters ecoreParameter="specification.ecore#//NodeSpecification/addPortSpecification.1/dataType"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//PortSpecification">
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Internal"
+          ecoreFeature="ecore:EAttribute specification.ecore#//PortSpecification/name"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Internal"
+          ecoreFeature="ecore:EAttribute specification.ecore#//PortSpecification/optional"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Internal"
+          ecoreFeature="ecore:EAttribute specification.ecore#//PortSpecification/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//PortSpecification/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//Default">
+      <genOperations ecoreOperation="specification.ecore#//Default/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//Default/execute">
+        <genParameters ecoreParameter="specification.ecore#//Default/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//Default/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//LoadModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//LoadModel/uri"/>
+      <genOperations ecoreOperation="specification.ecore#//LoadModel/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//LoadModel/execute">
+        <genParameters ecoreParameter="specification.ecore#//LoadModel/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//LoadModel/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//CompareModels">
+      <genOperations ecoreOperation="specification.ecore#//CompareModels/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//CompareModels/execute">
+        <genParameters ecoreParameter="specification.ecore#//CompareModels/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//CompareModels/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//ValidateModel">
+      <genOperations ecoreOperation="specification.ecore#//ValidateModel/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//ValidateModel/execute">
+        <genParameters ecoreParameter="specification.ecore#//ValidateModel/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//ValidateModel/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//SaveModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//SaveModel/uri"/>
+      <genOperations ecoreOperation="specification.ecore#//SaveModel/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//SaveModel/execute">
+        <genParameters ecoreParameter="specification.ecore#//SaveModel/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//SaveModel/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//Transformation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Transformation/uri"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Internal"
+          propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Transformation/parameterOrder"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Internal"
+          ecoreFeature="ecore:EAttribute specification.ecore#//Transformation/configProperties"/>
+      <genOperations ecoreOperation="specification.ecore#//Transformation/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//Transformation/execute">
+        <genParameters ecoreParameter="specification.ecore#//Transformation/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//Transformation/execute/outputs"/>
+      </genOperations>
+      <genOperations ecoreOperation="specification.ecore#//Transformation/notifyChanged">
+        <genParameters ecoreParameter="specification.ecore#//Transformation/notifyChanged/notification"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//ExecuteUPPAAL">
+      <genOperations ecoreOperation="specification.ecore#//ExecuteUPPAAL/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//ExecuteUPPAAL/execute">
+        <genParameters ecoreParameter="specification.ecore#//ExecuteUPPAAL/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//ExecuteUPPAAL/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//PrimitiveString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//PrimitiveString/value"/>
+      <genOperations ecoreOperation="specification.ecore#//PrimitiveString/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//PrimitiveString/execute">
+        <genParameters ecoreParameter="specification.ecore#//PrimitiveString/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//PrimitiveString/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//AssertBool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//AssertBool/assertion"/>
+      <genOperations ecoreOperation="specification.ecore#//AssertBool/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//AssertBool/execute">
+        <genParameters ecoreParameter="specification.ecore#//AssertBool/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//AssertBool/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//AssertDiagnosticTrace">
+      <genOperations ecoreOperation="specification.ecore#//AssertDiagnosticTrace/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//AssertDiagnosticTrace/execute">
+        <genParameters ecoreParameter="specification.ecore#//AssertDiagnosticTrace/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//AssertDiagnosticTrace/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//AssertResult">
+      <genOperations ecoreOperation="specification.ecore#//AssertResult/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//AssertResult/execute">
+        <genParameters ecoreParameter="specification.ecore#//AssertResult/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//AssertResult/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//CheckMTCTL">
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute specification.ecore#//CheckMTCTL/properties"/>
+      <genOperations ecoreOperation="specification.ecore#//CheckMTCTL/initialize"/>
+      <genOperations ecoreOperation="specification.ecore#//CheckMTCTL/execute">
+        <genParameters ecoreParameter="specification.ecore#//CheckMTCTL/execute/inputs"/>
+        <genParameters ecoreParameter="specification.ecore#//CheckMTCTL/execute/outputs"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

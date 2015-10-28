@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//tests/bebot_correct.testlanguage=UTF-8
+encoding//tests/bebot_correct.testlanguage_diagram=UTF-8
+encoding//tests/bebots_incorrect.testlanguage=UTF-8
+encoding//tests/bebots_incorrect.testlanguage_diagram=UTF-8
+encoding//tests/overtaking-cars-w-contraflow_correct.testlanguage=UTF-8
+encoding//tests/overtaking-cars-w-contraflow_correct.testlanguage_diagram=UTF-8
+encoding//tests/overtaking-cars-w-contraflow_incorrect.testlanguage=UTF-8
+encoding//tests/overtaking-cars-w-contraflow_incorrect.testlanguage_diagram=UTF-8
+encoding//tests/overtaking-cars_correct.testlanguage=UTF-8
+encoding//tests/overtaking-cars_correct.testlanguage_diagram=UTF-8
+encoding//tests/overtaking-cars_incorrect.testlanguage=UTF-8
+encoding//tests/overtaking-cars_incorrect.testlanguage_diagram=UTF-8
+encoding//tests/railcab_correct.testlanguage=UTF-8
+encoding//tests/railcab_correct.testlanguage_diagram=UTF-8
+encoding//tests/railcab_incorrect.testlanguage=UTF-8
+encoding//tests/railcab_incorrect.testlanguage_diagram=UTF-8

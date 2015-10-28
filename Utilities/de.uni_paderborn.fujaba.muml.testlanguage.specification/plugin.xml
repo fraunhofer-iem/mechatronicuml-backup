@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+--><plugin>
+<extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated specification -->
+      <package class="de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationPackage" genModel="model/specification.genmodel" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <!-- @generated specification -->
+      <package class="de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationPackage" genModel="model/specification.genmodel" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
+   </extension>
+
+</plugin>

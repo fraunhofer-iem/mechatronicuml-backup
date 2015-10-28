@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" dynamicTemplates="true" templateDirectory="/de.uni_paderborn.fujaba.muml.testlanguage/gmfTemplates/">
+  <diagram visualID="1000" editPartClassName="TestCaseEditPart" itemSemanticEditPolicyClassName="TestCaseItemSemanticEditPolicy" canonicalEditPolicyClassName="TestCaseCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true" validationDecoratorProviderPriority="Medium" liveValidationUIFeedback="true">
+    <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType xsi:type="gmfgen:MetamodelType" displayName="Test Case" editHelperClassName="TestCaseEditHelper"/>
+    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <domainDiagramElement href="testlanguage.genmodel#//testlanguage/TestCase"/>
+    <childNodes visualID="3001" editPartClassName="InputEditPart" itemSemanticEditPolicyClassName="InputItemSemanticEditPolicy" notationViewFactoryClassName="InputViewFactory" canonicalEditPolicyClassName="InputCanonicalEditPolicy" graphicalNodeEditPolicyClassName="InputGraphicalNodeEditPolicy" createCommandClassName="InputCreateCommand" containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="InputEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="InputFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InputFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInputLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InputFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;layoutThis.horizontalSpacing = 0;&#xA;&#x9;layoutThis.verticalSpacing = 0;&#xA;&#x9;layoutThis.marginWidth = 5;&#xA;&#x9;layoutThis.marginHeight = 0;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;this.setLineWidth(0);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInputLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInputLabelFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureInputLabelFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureInputLabelFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureInputLabelFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureInputLabelFigure.horizontalIndent = 0;&#xA;constraintFFigureInputLabelFigure.horizontalSpan = 1;&#xA;constraintFFigureInputLabelFigure.verticalSpan = 1;&#xA;constraintFFigureInputLabelFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureInputLabelFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureInputLabelFigure, constraintFFigureInputLabelFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInputLabelFigure() {&#xA;&#x9;&#x9;return fFigureInputLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:ResizeConstraints"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="testlanguage.genmodel#//testlanguage/Input"/>
+        <containmentMetaFeature href="testlanguage.genmodel#//testlanguage/Node/inputs"/>
+        <childMetaFeature href="testlanguage.genmodel#//testlanguage/Node/inputs"/>
+      </modelFacet>
+      <labels visualID="5001" editPartClassName="InputNameEditPart" itemSemanticEditPolicyClassName="InputNameItemSemanticEditPolicy" notationViewFactoryClassName="InputNameViewFactory" readOnly="true">
+        <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureInputLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="" editorPattern="" editPattern="">
+          <metaFeatures href="testlanguage.genmodel#//testlanguage/Port/name"/>
+          <editableMetaFeatures href="testlanguage.genmodel#//testlanguage/Port/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3002" editPartClassName="OutputEditPart" itemSemanticEditPolicyClassName="OutputItemSemanticEditPolicy" notationViewFactoryClassName="OutputViewFactory" canonicalEditPolicyClassName="OutputCanonicalEditPolicy" graphicalNodeEditPolicyClassName="OutputGraphicalNodeEditPolicy" createCommandClassName="OutputCreateCommand" containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="OutputEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="OutputFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class OutputFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureOutputLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public OutputFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;layoutThis.horizontalSpacing = 0;&#xA;&#x9;layoutThis.verticalSpacing = 0;&#xA;&#x9;layoutThis.marginWidth = 5;&#xA;&#x9;layoutThis.marginHeight = 0;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;this.setLineWidth(0);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureOutputLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureOutputLabelFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureOutputLabelFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureOutputLabelFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureOutputLabelFigure.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureOutputLabelFigure.horizontalIndent = 0;&#xA;constraintFFigureOutputLabelFigure.horizontalSpan = 1;&#xA;constraintFFigureOutputLabelFigure.verticalSpan = 1;&#xA;constraintFFigureOutputLabelFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureOutputLabelFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureOutputLabelFigure, constraintFFigureOutputLabelFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureOutputLabelFigure() {&#xA;&#x9;&#x9;return fFigureOutputLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:ResizeConstraints"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="testlanguage.genmodel#//testlanguage/Output"/>
+        <containmentMetaFeature href="testlanguage.genmodel#//testlanguage/Node/outputs"/>
+        <childMetaFeature href="testlanguage.genmodel#//testlanguage/Node/outputs"/>
+      </modelFacet>
+      <labels visualID="5002" editPartClassName="OutputNameEditPart" itemSemanticEditPolicyClassName="OutputNameItemSemanticEditPolicy" notationViewFactoryClassName="OutputNameViewFactory" readOnly="true">
+        <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureOutputLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="testlanguage.genmodel#//testlanguage/Port/name"/>
+          <editableMetaFeatures href="testlanguage.genmodel#//testlanguage/Port/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <topLevelNodes visualID="2001" editPartClassName="NodeEditPart" itemSemanticEditPolicyClassName="NodeItemSemanticEditPolicy" notationViewFactoryClassName="NodeViewFactory" canonicalEditPolicyClassName="NodeCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="NodeGraphicalNodeEditPolicy" createCommandClassName="NodeCreateCommand">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="NodeEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="NodeFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class NodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureNodeCompartmentFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureNodeLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public NodeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;layoutThis.horizontalSpacing = 0;&#xA;&#x9;layoutThis.verticalSpacing = 0;&#xA;&#x9;layoutThis.marginWidth = 0;&#xA;&#x9;layoutThis.marginHeight = 0;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure fig0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fig0.setOutline(false);&#xA;fig0.setFill(false);&#xA;fig0.setOpaque(false);&#xA;&#xA;fig0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFig0 = new org.eclipse.draw2d.GridData();&#xA;constraintFig0.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFig0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFig0.horizontalIndent = 0;&#xA;constraintFig0.horizontalSpan = 1;&#xA;constraintFig0.verticalSpan = 1;&#xA;constraintFig0.grabExcessHorizontalSpace = true;&#xA;constraintFig0.grabExcessVerticalSpace = false;&#xA;this.add(fig0, constraintFig0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutFig0 = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutFig0.setStretchMinorAxis(false);&#xA;&#x9;layoutFig0.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutFig0.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutFig0.setMajorSpacing(5);&#xA;&#x9;layoutFig0.setMinorSpacing(5);&#xA;&#x9;layoutFig0.setHorizontal(true);&#xA;&#xA;&#x9;fig0.setLayoutManager(layoutFig0);&#xA;&#xA;&#xA;&#xA;fFigureNodeLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureNodeLabelFigure.setText(&quot;&quot;);&#xA;&#xA;fig0.add(fFigureNodeLabelFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureNodeCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureNodeCompartmentFigure.setFill(false);&#xA;fFigureNodeCompartmentFigure.setOutline(false);&#xA;fFigureNodeCompartmentFigure.setLineWidth(0);&#xA;&#xA;fFigureNodeCompartmentFigure.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureNodeCompartmentFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureNodeCompartmentFigure.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureNodeCompartmentFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureNodeCompartmentFigure.horizontalIndent = 0;&#xA;constraintFFigureNodeCompartmentFigure.horizontalSpan = 1;&#xA;constraintFFigureNodeCompartmentFigure.verticalSpan = 1;&#xA;constraintFFigureNodeCompartmentFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureNodeCompartmentFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureNodeCompartmentFigure, constraintFFigureNodeCompartmentFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureNodeCompartmentFigure() {&#xA;&#x9;&#x9;return fFigureNodeCompartmentFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureNodeLabelFigure() {&#xA;&#x9;&#x9;return fFigureNodeLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" resizeHandles="24"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="testlanguage.genmodel#//testlanguage/Node"/>
+        <containmentMetaFeature href="testlanguage.genmodel#//testlanguage/TestCase/nodes"/>
+        <childMetaFeature href="testlanguage.genmodel#//testlanguage/TestCase/nodes"/>
+      </modelFacet>
+      <labels visualID="5003" editPartClassName="NodeLabelEditPart" itemSemanticEditPolicyClassName="NodeLabelItemSemanticEditPolicy" notationViewFactoryClassName="NodeLabelViewFactory" readOnly="true">
+        <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureNodeLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="" editorPattern="" editPattern="">
+          <metaFeatures href="testlanguage.genmodel#//testlanguage/Node/label"/>
+          <editableMetaFeatures href="testlanguage.genmodel#//testlanguage/Node/label"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <links visualID="4001" editPartClassName="OutputTargetsEditPart" itemSemanticEditPolicyClassName="OutputTargetsItemSemanticEditPolicy" notationViewFactoryClassName="OutputTargetsViewFactory" createCommandClassName="OutputTargetsCreateCommand" reorientCommandClassName="OutputTargetsReorientCommand">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:SpecializationType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="OutputTargetsFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class OutputTargetsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public OutputTargetsFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature href="testlanguage.genmodel#//testlanguage/Output/targets"/>
+      </modelFacet>
+    </links>
+    <compartments visualID="7001" editPartClassName="NodeNodeFigureCompartmentEditPart" itemSemanticEditPolicyClassName="NodeNodeFigureCompartmentItemSemanticEditPolicy" notationViewFactoryClassName="NodeNodeFigureCompartmentViewFactory" canonicalEditPolicyClassName="NodeNodeFigureCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1" title="NodeFigureCompartment" canCollapse="false" hideIfEmpty="false" needsTitle="false" node="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureNodeCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+      </viewmap>
+    </compartments>
+    <palette>
+      <groups title="General">
+        <entries xsi:type="gmfgen:ToolEntry" title="Connection" description="Create new Connection" genLinks="//@diagram/@links.0"/>
+      </groups>
+      <groups title="Nodes">
+        <entries xsi:type="gmfgen:ToolEntry" title="Node" description="Create new Node" genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.0 //@diagram/@childNodes.1"/>
+      </groups>
+    </palette>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.general" name="Testlanguage Diagram">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.appearance" name="Appearance" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.connections" name="Connections" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.printing" name="Printing" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    </preferencePages>
+  </diagram>
+  <plugin name="TestLanguage Diagram Editor" provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany" printingEnabled="true">
+    <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
+    <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+  </plugin>
+  <editor/>
+  <navigator>
+    <childReferences child="//@diagram"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.0"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.1"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
+    <childReferences parent="//@diagram" child="//@diagram/@links.0" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.1" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+  </navigator>
+  <diagramUpdater/>
+  <propertySheet>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
+      <filter xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
+  </propertySheet>
+  <domainGenModel href="testlanguage.genmodel#/"/>
+  <labelParsers extensibleViaService="true">
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+  </labelParsers>
+  <contextMenus context="//@diagram">
+    <items xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
+</gmfgen:GenEditorGenerator>

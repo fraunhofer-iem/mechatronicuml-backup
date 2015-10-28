@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Custom
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.testlanguage.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: de.uni_paderborn.fujaba.muml.testlanguage;bundle-version="0.1.0",
+ org.eclipse.emf.validation;bundle-version="1.7.0",
+ org.eclipse.ui;bundle-version="3.105.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction,
+ org.eclipse.gmf.runtime.notation;bundle-version="1.8.0",
+ org.eclipse.emf.validation.ui,
+ org.eclipse.swt
+Import-Package: org.eclipse.core.runtime
+Export-Package: de.uni_paderborn.fujaba.muml.testlanguage.custom.validation

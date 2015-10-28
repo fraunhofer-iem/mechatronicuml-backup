@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="specification" nsURI="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"
+    nsPrefix="de.uni_paderborn.fujaba.muml.testlanguage.specification">
+  <eClassifiers xsi:type="ecore:EClass" name="NodeSpecification" abstract="true">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value=""/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="notifyChanged" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return false;"/>
+      </eAnnotations>
+      <eParameters name="notification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eOperations name="addPortSpecification" lowerBound="1" eType="#//PortSpecification">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return this.addPortSpecification(type, name, optional, null);"/>
+      </eAnnotations>
+      <eParameters name="type" eType="#//PortType"/>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="addPortSpecification" lowerBound="1" eType="#//PortSpecification">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="PortSpecification spec = SpecificationFactory.eINSTANCE.createPortSpecification();&#xD;&#xA;spec.setType(type);&#xD;&#xA;spec.setName(name);&#xD;&#xA;spec.setOptional(optional);&#xD;&#xA;spec.setDataType(dataType);&#xD;&#xA;this.getPortSpecifications().add(spec);&#xD;&#xA;return spec;"/>
+      </eAnnotations>
+      <eParameters name="type" eType="#//PortType"/>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="dataType" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portSpecifications" upperBound="-1"
+        eType="#//PortSpecification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PortType"
+        defaultValueLiteral="IN"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PortType">
+    <eLiterals name="IN"/>
+    <eLiterals name="OUT" value="1"/>
+    <eLiterals name="INOUT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ExecutionException" instanceClassName="de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DefaultException" instanceClassName="java.lang.Exception"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Default" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="this.setLabel(&quot;Default&quot;);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="throw new ExecutionException(&quot;Default node should not be executed.&quot;);"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadModel" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="this.setLabel(&quot;Load Model&quot;); &#xD;&#xA;this.addPortSpecification(PortType.OUT, &quot;model&quot;, true);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Setup the URI.&#xD;&#xA;&#x9;&#x9;URI realURI = URIConversion.convert(URI.createURI(this.getUri()));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Load the model.&#xD;&#xA;&#x9;&#x9;ResourceSet resSet = new ResourceSetImpl();&#xD;&#xA;&#x9;&#x9;Resource resource = resSet.getResource(realURI.trimFragment(), true);&#xD;&#xA;&#x9;&#x9;EObject result = null;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;if (realURI.hasFragment()) {&#xD;&#xA;&#x9;&#x9;&#x9;result = resource.getEObject(realURI.fragment());&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;result = resource.getContents().get(0);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Put the loaded model onto the output.&#xD;&#xA;&#x9;&#x9;outputs.put(&quot;model&quot;, result);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return;"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompareModels" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Compare Models&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;model_1&quot;, false, org.eclipse.emf.common.notify.Notifier.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;model_2&quot;, false, org.eclipse.emf.common.notify.Notifier.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.OUT, &quot;bool&quot;, false);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Local variable to carry the result.&#xD;&#xA;&#x9;&#x9;boolean result = false;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Check if the given models are actually the same model.&#xD;&#xA;&#x9;&#x9;if (inputs.get(&quot;model_1&quot;) == inputs.get(&quot;model_2&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;result = true;&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;// Setup the matching engine.&#xD;&#xA;&#x9;&#x9;&#x9;IMatchEngine.Factory factory = new MatchEngineFactoryImpl(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;UseIdentifiers.NEVER);&#xD;&#xA;&#x9;&#x9;&#x9;IMatchEngine.Factory.Registry matchEngineRegistry = new MatchEngineFactoryRegistryImpl();&#xD;&#xA;&#x9;&#x9;&#x9;matchEngineRegistry.add(factory);&#xD;&#xA;&#x9;&#x9;&#x9;IComparisonScope scope = new DefaultComparisonScope(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(Notifier) inputs.get(&quot;model_1&quot;), (Notifier) inputs.get(&quot;model_2&quot;), null);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;// Avoid order checking for unordered containments.&#xD;&#xA;&#x9;&#x9;&#x9;IDiffProcessor diffProcessor = new DiffBuilder();&#xD;&#xA;&#x9;&#x9;&#x9;IDiffEngine diffEngine = new DefaultDiffEngine(diffProcessor) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;@Override&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;protected FeatureFilter createFeatureFilter() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return new FeatureFilter() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;@Override&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;public boolean checkForOrderingChanges(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;EStructuralFeature feature) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return feature.isMany() &amp;&amp; feature.isOrdered();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;};&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;};&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;Comparison comparison = EMFCompare.builder()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.setMatchEngineFactoryRegistry(matchEngineRegistry)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.setDiffEngine(diffEngine).build().compare(scope);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;OutputStream stream = new OutputStream() {&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;private StringBuilder builder = new StringBuilder();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;@Override&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;public void write(int b) throws IOException {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;builder.append((char) b);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;@Override&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;public String toString() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return builder.toString();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;};&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;EMFComparePrettyPrinter.printDifferences(comparison,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;new PrintStream(stream));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;if (comparison.getDifferences().isEmpty()) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;result = true;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Wrap the result up and put it on the output port.&#xD;&#xA;&#x9;&#x9;outputs.put(&quot;bool&quot;, new Boolean(result));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return;"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValidateModel" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Validate Model&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;model&quot;, false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;org.eclipse.emf.ecore.EObject.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.OUT, &quot;bool&quot;, false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.lang.Boolean.class);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// TODO Maybe also get a BatchValidator, see ValidateAction.&#xD;&#xA;&#x9;&#x9;// Validate using a Diagnostic instance.&#xD;&#xA;&#x9;&#x9;Diagnostic diagnostic = Diagnostician.INSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.validate((EObject) inputs.get(&quot;model&quot;));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;boolean result = true;&#xD;&#xA;&#x9;&#x9;if (diagnostic.getSeverity() == Diagnostic.ERROR) {&#xD;&#xA;&#x9;&#x9;&#x9;result = false;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Wrap the result up and put it on the output port.&#xD;&#xA;&#x9;&#x9;outputs.put(&quot;bool&quot;, new Boolean(result));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return;"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SaveModel" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Save Model&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;model&quot;, false, org.eclipse.emf.ecore.EObject.class);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Create the URI.&#xD;&#xA;&#x9;&#x9;URI realURI = URIConversion.convert(URI.createURI(this.getUri()));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Only write to resource links.&#xD;&#xA;&#x9;&#x9;if (!realURI.isPlatformResource()) {&#xD;&#xA;&#x9;&#x9;&#x9;return;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Create a XMIResourceFactory for the extension.&#xD;&#xA;&#x9;&#x9;if (realURI.fileExtension() != null) {&#xD;&#xA;&#x9;&#x9;&#x9;Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;&#xD;&#xA;&#x9;&#x9;&#x9;Map&lt;String, Object> m = reg.getExtensionToFactoryMap();&#xD;&#xA;&#x9;&#x9;&#x9;m.put(realURI.fileExtension(), new XMIResourceFactoryImpl());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Create a resource set.&#xD;&#xA;&#x9;&#x9;ResourceSet resSet = new ResourceSetImpl();&#xD;&#xA;&#x9;&#x9;Resource resource = resSet.createResource(realURI.trimFragment());&#xD;&#xA;&#x9;&#x9;resource.getContents().add((EObject) inputs.get(&quot;model&quot;));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Save the model.&#xD;&#xA;&#x9;&#x9;resource.save(Collections.EMPTY_MAP);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return;"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transformation" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="this.setLabel(&quot;Transformation&quot;);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;URI realURI = URIConversion.convert(URI.createURI(this.getUri()));&#xD;&#xA;&#x9;&#x9;TransformationExecutor executor = new TransformationExecutor(realURI);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;ExecutionContextImpl context;&#xD;&#xA;&#x9;&#x9;IStatus status;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;status = BasicDiagnostic.toIStatus(executor.loadTransformation());&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;if (!status.isOK()) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(status.getMessage());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;context = new ExecutionContextImpl();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Set extents, i.e. the model parameters.&#xD;&#xA;&#x9;&#x9;BasicModelExtent[] extents = new BasicModelExtent[this&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.getParameterOrder().size()];&#xD;&#xA;&#x9;&#x9;int i = 0;&#xD;&#xA;&#x9;&#x9;for (PortSpecification port : this.getParameterOrder()) {&#xD;&#xA;&#x9;&#x9;&#x9;BasicModelExtent extent = new BasicModelExtent();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;if (port.getType() == PortType.IN) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;extent.add((EObject) inputs.get(port.getName()));&#xD;&#xA;&#x9;&#x9;&#x9;} else if (port.getType() == PortType.INOUT) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Copy the EObject to avoid side effects.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Copier copier = new Copier();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;EObject result = copier.copy((EObject) inputs.get(port.getName()));&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;copier.copyReferences();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;extent.add(result);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;extents[i] = extent;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;i++;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Set configuration properties. They arrive in an EObject wrapper&#xD;&#xA;&#x9;&#x9;// as a string, they are parsed by QVTo.&#xD;&#xA;&#x9;&#x9;for (String property : this.getConfigProperties()) {&#xD;&#xA;&#x9;&#x9;&#x9;if (inputs.containsKey(property)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;context.setConfigProperty(property,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(String) inputs.get(property));&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Execute the transformation.&#xD;&#xA;&#x9;&#x9;OutputStreamWriter outStream = new OutputStreamWriter(System.out);&#xD;&#xA;&#x9;&#x9;Log log = new WriterLog(outStream);&#xD;&#xA;&#x9;&#x9;context.setLog(log);&#xD;&#xA;&#x9;&#x9;ExecutionDiagnostic diagnostic = executor.execute(context, extents);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Check if everything went fine.&#xD;&#xA;&#x9;&#x9;if (diagnostic.getSeverity() == Diagnostic.ERROR) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(&quot;Transformation failed: &quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ diagnostic.getMessage());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Get the output.&#xD;&#xA;&#x9;&#x9;i = 0;&#xD;&#xA;&#x9;&#x9;for (PortSpecification port : this.getParameterOrder()) {&#xD;&#xA;&#x9;&#x9;&#x9;// System.out.println(i + &quot; &quot; + port.getName() + &quot; (&quot;&#xD;&#xA;&#x9;&#x9;&#x9;// + port.getType() + &quot;): &quot;&#xD;&#xA;&#x9;&#x9;&#x9;// + extents[i].getContents().get(0));&#xD;&#xA;&#x9;&#x9;&#x9;if (port.getType() == PortType.OUT&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;|| port.getType() == PortType.INOUT) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;outputs.put(port.getName(), extents[i].getContents().get(0));&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;i++;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return;"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="notifyChanged" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;Notification n = (Notification) notification;&#xD;&#xA;&#x9;&#x9;&#x9;EAttribute attr = (EAttribute) n.getFeature();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;if (n.getEventType() == Notification.SET &amp;&amp; attr.getName() == &quot;uri&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.getPortSpecifications().clear();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.getParameterOrder().clear();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.getConfigProperties().clear();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Load transformation Ecore in order to get the port count&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// required. (http://www.eclipse.org/forums/index.php/t/478345/)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;URI realURI = URI.createURI(this.uri);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;ResourceSet resSet = new ResourceSetImpl();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Resource resource = resSet.getResource(realURI.trimFragment(),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;EObject result = null;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (realURI.hasFragment()) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;result = resource.getEObject(realURI.fragment());&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;OperationalTransformation trans = (OperationalTransformation) (result != null ? result&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: resource.getContents().get(0));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;EList&lt;ModelParameter> params = trans.getModelParameter();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;for (ModelParameter param : params) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;PortType type = PortType.IN;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (param.getKind() == DirectionKind.OUT) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;type = PortType.OUT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} else if (param.getKind() == DirectionKind.INOUT) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;type = PortType.INOUT;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;PortSpecification spec = this.addPortSpecification(type,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.getName(), false, org.eclipse.emf.ecore.EObject.class);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.getParameterOrder().add(spec);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Add configuration properties.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.getConfigProperties().clear();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;EList&lt;EStructuralFeature> props = trans.getConfigProperty();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;for (EStructuralFeature feature : props) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.addPortSpecification(PortType.IN, feature.getName(),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true, java.lang.String.class);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.getConfigProperties().add(feature.getName());&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Return true to signal that the ports changed and need to&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// be rebuilt.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return true;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;} catch (Exception e) {&#xD;&#xA;&#x9;&#x9;&#x9;e.printStackTrace();&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return false;"/>
+      </eAnnotations>
+      <eParameters name="notification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterOrder" upperBound="-1"
+        eType="#//PortSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configProperties" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecuteUPPAAL" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Check UPPAAL&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;nta&quot;, false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;de.uni_paderborn.uppaal.NTA.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;property_repository&quot;, false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;de.uni_paderborn.uppaal.requirements.PropertyRepository.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PortType.IN,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&quot;options&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;true,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.OUT, &quot;trace_repository&quot;, false);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Check if we have custom options or use the default ones.&#xD;&#xA;&#x9;&#x9;CoordinationProtocolOptions options;&#xD;&#xA;&#x9;&#x9;if (inputs.containsKey(&quot;options&quot;) &amp;&amp; inputs.get(&quot;options&quot;) != null) {&#xD;&#xA;&#x9;&#x9;&#x9;options = (CoordinationProtocolOptions) inputs.get(&quot;options&quot;);&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;options = OptionsFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.createCoordinationProtocolOptions();&#xD;&#xA;&#x9;&#x9;&#x9;options.setTraceOptions(TraceOptions.NONE);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Start the job that serialized and then verifies the NTA.&#xD;&#xA;&#x9;&#x9;VerifyTAJob job = new VerifyTAJob((NTA) inputs.get(&quot;nta&quot;),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(PropertyRepository) inputs.get(&quot;property_repository&quot;), options);&#xD;&#xA;&#x9;&#x9;IStatus status = job.execute(new NullProgressMonitor());&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Throw an exception if something went wrong.&#xD;&#xA;&#x9;&#x9;if (!status.isOK()) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(status.getMessage());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Put the traces on the output port and return.&#xD;&#xA;&#x9;&#x9;outputs.put(&quot;trace_repository&quot;, job.getTraceRepository());&#xD;&#xA;&#x9;&#x9;return;"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveString" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="this.setLabel(&quot;Primitive String&quot;);&#xD;&#xA;this.addPortSpecification(PortType.OUT, &quot;string&quot;, false);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Put the wrapped string onto the output.&#xD;&#xA;&#x9;&#x9;outputs.put(&quot;string&quot;, this.getValue());&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return;"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertBool" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Assert Bool&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;bool&quot;, false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.lang.Boolean.class);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Get the boolean value.&#xD;&#xA;&#x9;&#x9;boolean bool = ((Boolean) inputs.get(&quot;bool&quot;)).booleanValue();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Throw an exception if it does not match the assertion.&#xD;&#xA;&#x9;&#x9;if (bool != this.assertion) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(&quot;Expected &quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ Boolean.toString(this.assertion) + &quot;, but got &quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ Boolean.toString(bool));&#xD;&#xA;&#x9;&#x9;}"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assertion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertDiagnosticTrace" eSuperTypes="#//AssertBool">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Assert DiagnosticTrace&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PortType.IN,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&quot;trace_repository&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;de.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository.class);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Get the repository.&#xD;&#xA;&#x9;&#x9;TraceRepository repo = (TraceRepository) inputs.get(&quot;trace_repository&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Make sure we know if we want all the properties to verify or not.&#xD;&#xA;&#x9;&#x9;Result expected;&#xD;&#xA;&#x9;&#x9;String alpha, beta;&#xD;&#xA;&#x9;&#x9;if (this.assertion) {&#xD;&#xA;&#x9;&#x9;&#x9;expected = Result.SUCCESS;&#xD;&#xA;&#x9;&#x9;&#x9;alpha = &quot;SUCCESS&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;beta = &quot;FAILURE&quot;;&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;expected = Result.FAILURE;&#xD;&#xA;&#x9;&#x9;&#x9;alpha = &quot;FAILURE&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;beta = &quot;SUCCESS&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Check each property.&#xD;&#xA;&#x9;&#x9;String error = &quot;&quot;;&#xD;&#xA;&#x9;&#x9;for (Trace item : repo.getTraces()) {&#xD;&#xA;&#x9;&#x9;&#x9;if (!item.getResult().equals(expected)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;error += &quot;[Property &quot; + item.getProperty() + &quot; at line &quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;+ item.getLine() + &quot;] &quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Throw an exception if errors occurred.&#xD;&#xA;&#x9;&#x9;if (!error.equals(&quot;&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(&quot;Expected &quot; + alpha + &quot;, but got &quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ beta + &quot; on &quot; + error);&#xD;&#xA;&#x9;&#x9;}"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertResult" eSuperTypes="#//AssertBool">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Assert Result&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PortType.IN,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&quot;property_result_repository&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository.class);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Get the repository of the results.&#xD;&#xA;&#x9;&#x9;PropertyResultRepository repo = (PropertyResultRepository) inputs&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.get(&quot;property_result_repository&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Make sure we know if we want all the properties to verify or not.&#xD;&#xA;&#x9;&#x9;String alpha, beta;&#xD;&#xA;&#x9;&#x9;if (this.assertion) {&#xD;&#xA;&#x9;&#x9;&#x9;alpha = &quot;FULFILLED&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;beta = &quot;NOT FULFILLED&quot;;&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;alpha = &quot;NOT FULFILLED&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;beta = &quot;FULFILLED&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Check each property.&#xD;&#xA;&#x9;&#x9;String error = &quot;&quot;;&#xD;&#xA;&#x9;&#x9;for (PropertyResult result : repo.getResults()) {&#xD;&#xA;&#x9;&#x9;&#x9;if (result.isFulfilled() != this.assertion) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;error += &quot;[Comment &quot; + result.getProperty().getComment() + &quot;] &quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Throw an exception if errors occurred.&#xD;&#xA;&#x9;&#x9;if (!error.equals(&quot;&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(&quot;Expected &quot; + alpha + &quot;, but got &quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ beta + &quot; on &quot; + error);&#xD;&#xA;&#x9;&#x9;}"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckMTCTL" eSuperTypes="#//NodeSpecification">
+    <eOperations name="initialize" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;this.setLabel(&quot;Check MTCTL&quot;);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.IN, &quot;muml&quot;, false,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;de.uni_paderborn.fujaba.modelinstance.RootNode.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PortType.IN,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&quot;options&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;true,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);&#xD;&#xA;&#x9;&#x9;this.addPortSpecification(PortType.OUT, &quot;results&quot;, false);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="execute" lowerBound="1" eExceptions="#//ExecutionException #//DefaultException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;&#x9;// Do we even have properties to verify?&#xD;&#xA;&#x9;&#x9;if (&quot;&quot;.equals(this.getProperties())) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(&quot;No properties to verify.&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Copy the MUML model so we do not destroy it.&#xD;&#xA;&#x9;&#x9;Copier copier = new Copier();&#xD;&#xA;&#x9;&#x9;RootNode muml = (RootNode) copier.copy((RootNode) inputs.get(&quot;muml&quot;));&#xD;&#xA;&#x9;&#x9;copier.copyReferences();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Get the CoordinationProtocol category.&#xD;&#xA;&#x9;&#x9;ModelElementCategory category = null;&#xD;&#xA;&#x9;&#x9;for (ModelElementCategory cur : muml.getCategories()) {&#xD;&#xA;&#x9;&#x9;&#x9;if (cur.getKey().equals(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;de.uni_paderborn.fujaba.muml.protocol.category&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;category = cur;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;if (category == null) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;Model does not contain a CoordinationProtocol category.&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Look for a CoordinationProtocol that asks for a verification,&#xD;&#xA;&#x9;&#x9;// otherwise just choose any.&#xD;&#xA;&#x9;&#x9;CoordinationProtocol protocol = null;&#xD;&#xA;&#x9;&#x9;for (ExtendableElement cur : category.getModelElements()) {&#xD;&#xA;&#x9;&#x9;&#x9;protocol = (CoordinationProtocol) cur;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;if (protocol&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.getElementToVerifyExtension()) != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;if (protocol == null) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;Model does not contain a CoordinationProtocol.&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Parse the PropertyRepository we have in the context of the protocol.&#xD;&#xA;&#x9;&#x9;PropertyRepository propertyRepository = (PropertyRepository) new Object() {&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;@Inject&#xD;&#xA;&#x9;&#x9;&#x9;private XtextResourceSet resourceSet;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;public EObject parse(CoordinationProtocol protocol,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;String properties) throws Exception {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Source: http://davehofmann.de/blog/?p=101&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Injector injector = Guice&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.createInjector(new MtctlRuntimeModule());&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;injector.injectMembers(this);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.resourceSet.addLoadOption(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Parse the given properties and return it.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;MtctlScopeProvider.getInstance().setScopeForEObject(protocol);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Resource resource = resourceSet.createResource(URI&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.createURI(&quot;dummy:/dummy.mtctl&quot;));&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;resource.load(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;new ByteArrayInputStream(properties&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.getBytes(StandardCharsets.UTF_8)), resourceSet&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.getLoadOptions());&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return resource.getContents().get(0);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}.parse(protocol, this.getProperties());&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Replace all existing PropertyRepositories by the one we just created.&#xD;&#xA;&#x9;&#x9;protocol.getVerificationConstraintRepositories().clear();&#xD;&#xA;&#x9;&#x9;protocol.getVerificationConstraintRepositories()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.add(propertyRepository);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Verify for results (= apply the transformation by the MTCTL people).&#xD;&#xA;&#x9;&#x9;URI realURI = URI&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.createURI(&quot;platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Results.qvto&quot;);&#xD;&#xA;&#x9;&#x9;TransformationExecutor executor = new TransformationExecutor(realURI);&#xD;&#xA;&#x9;&#x9;ExecutionContextImpl context;&#xD;&#xA;&#x9;&#x9;IStatus status;&#xD;&#xA;&#x9;&#x9;status = BasicDiagnostic.toIStatus(executor.loadTransformation());&#xD;&#xA;&#x9;&#x9;if (!status.isOK()) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(status.getMessage());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;context = new ExecutionContextImpl();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Check if we have custom options or use the default ones.&#xD;&#xA;&#x9;&#x9;CoordinationProtocolOptions options;&#xD;&#xA;&#x9;&#x9;if (inputs.containsKey(&quot;options&quot;) &amp;&amp; inputs.get(&quot;options&quot;) != null) {&#xD;&#xA;&#x9;&#x9;&#x9;options = (CoordinationProtocolOptions) inputs.get(&quot;options&quot;);&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;options = OptionsFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.createCoordinationProtocolOptions();&#xD;&#xA;&#x9;&#x9;&#x9;options.setTraceOptions(TraceOptions.NONE);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Create the extents.&#xD;&#xA;&#x9;&#x9;BasicModelExtent mumlExtent = new BasicModelExtent();&#xD;&#xA;&#x9;&#x9;mumlExtent.add(muml);&#xD;&#xA;&#x9;&#x9;BasicModelExtent optionsExtent = new BasicModelExtent();&#xD;&#xA;&#x9;&#x9;optionsExtent.add(options);&#xD;&#xA;&#x9;&#x9;BasicModelExtent resultExtent = new BasicModelExtent();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Execute the transformation.&#xD;&#xA;&#x9;&#x9;OutputStreamWriter outStream = new OutputStreamWriter(System.out);&#xD;&#xA;&#x9;&#x9;Log log = new WriterLog(outStream);&#xD;&#xA;&#x9;&#x9;context.setLog(log);&#xD;&#xA;&#x9;&#x9;executor.execute(context, mumlExtent, optionsExtent, resultExtent);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Get the output.&#xD;&#xA;&#x9;&#x9;outputs.put(&quot;results&quot;, resultExtent.getContents().get(0));"/>
+      </eAnnotations>
+      <eParameters name="inputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="outputs" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="properties" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

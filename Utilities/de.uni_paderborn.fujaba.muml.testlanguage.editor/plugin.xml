@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated testlanguage -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageModelWizardID"
+            name="%_UI_TestLanguageModelWizard_label"
+            class="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TestLanguageModelFile.gif">
+         <description>%_UI_TestLanguageModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated testlanguage -->
+      <editor
+            id="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageEditorID"
+            name="%_UI_TestLanguageEditor_label"
+            icon="icons/full/obj16/TestLanguageModelFile.gif"
+            extensions="testlanguage"
+            class="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageEditor"
+            contributorClass="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.testlanguage/model/testlanguage.genmodel
+gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.muml.testlanguage/model/testlanguage.ecore
+gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.testlanguage/model/testlanguage.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.testlanguage/model/testlanguage.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.testlanguage/model/testlanguage.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.testlanguage/model/testlanguage.gmftool

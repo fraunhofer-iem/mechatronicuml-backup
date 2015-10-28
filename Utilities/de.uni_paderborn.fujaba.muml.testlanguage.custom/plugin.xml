@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints"
+            mandatory="true"
+            name="TestLanguage Topological Constraints">
+      </category>
+      <constraintProvider
+            cache="true"
+            mode="Batch">
+         <package
+               namespaceUri="http://de/uni_paderborn/fujaba/muml/testlanguage">
+         </package>
+         <constraints
+               categories="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints">
+            <constraint
+                  class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.NodeExecutionConstraint"
+                  id="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.NodeExecutionConstraint"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Node Execution"
+                  severity="ERROR"
+                  statusCode="2">
+               <message>
+                  {1}
+               </message>
+               <description>
+                  Executes the Node.
+               </description>
+               <target
+                     class="Node">
+               </target>
+            </constraint>
+            <constraint
+                  class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.InputPortConstraint"
+                  id="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.OptionalInputs"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="OptionalInputs"
+                  severity="ERROR"
+                  statusCode="3">
+               <message>
+                  {1}
+               </message>
+               <description>
+                  Checks if all non-optional input ports have a proper connection.
+               </description>
+               <target
+                     class="Input">
+               </target>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="true"
+            id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
+         <selector
+               class="de.uni_paderborn.fujaba.muml.testlanguage.custom.ClientSelector">
+         </selector>
+      </clientContext>
+      <binding
+            context="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
+         <category
+               ref="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints">
+         </category>
+      </binding>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.traversal">
+      <traversalStrategy
+            class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.TestLanguageTopologicalTraversalStrategy"
+            namespaceUri="http://de/uni_paderborn/fujaba/muml/testlanguage">
+      </traversalStrategy>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.validationListeners">
+      <listener
+            class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.MarkerListener">
+         <clientContext
+               id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
+         </clientContext>
+      </listener>
+   </extension>
+
+</plugin>
