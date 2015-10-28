@@ -578,13 +578,15 @@ public class MigrationExecuter {
 				}
 			}
 
-			for (EObject source : uncopied) {
-				for (EReference reference : source.eClass().getEAllReferences()) {
-					if (isCrossReference(reference) && isValidFeature(reference)) {
-						migrateFeature(source, reference);
-					}
-				}
-			}
+			// The "uncopied" collection is filled with source values for that there are no mappings.
+			// The following code would migrate without a mapping, which is not what we want, so disabled now.
+//			for (EObject source : uncopied) {
+//				for (EReference reference : source.eClass().getEAllReferences()) {
+//					if (isCrossReference(reference) && isValidFeature(reference)) {
+//						migrateFeature(source, reference);
+//					}
+//				}
+//			}
 		}
 		
 
