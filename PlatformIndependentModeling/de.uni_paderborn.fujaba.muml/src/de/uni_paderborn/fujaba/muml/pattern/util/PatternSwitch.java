@@ -96,9 +96,9 @@ public class PatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS: {
-				PlainTextualDescriptionAspects plainTextualDescriptionAspects = (PlainTextualDescriptionAspects)theEObject;
-				T result = casePlainTextualDescriptionAspects(plainTextualDescriptionAspects);
+			case PatternPackage.DESCRIPTION_ASPECTS: {
+				DescriptionAspects descriptionAspects = (DescriptionAspects)theEObject;
+				T result = caseDescriptionAspects(descriptionAspects);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,17 +131,17 @@ public class PatternSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plain Textual Description Aspects</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Description Aspects</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plain Textual Description Aspects</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Description Aspects</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlainTextualDescriptionAspects(PlainTextualDescriptionAspects object) {
+	public T caseDescriptionAspects(DescriptionAspects object) {
 		return null;
 	}
 

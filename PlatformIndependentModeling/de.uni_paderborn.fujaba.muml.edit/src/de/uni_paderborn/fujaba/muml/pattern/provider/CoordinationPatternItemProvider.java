@@ -277,7 +277,7 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS,
-				 PatternFactory.eINSTANCE.createPlainTextualDescriptionAspects()));
+				 PatternFactory.eINSTANCE.createDescriptionAspects()));
 
 		newChildDescriptors.add
 			(createChildParameter

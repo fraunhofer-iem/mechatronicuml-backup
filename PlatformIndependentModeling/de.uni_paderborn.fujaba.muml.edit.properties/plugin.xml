@@ -31,6 +31,11 @@
              id="property.tab.constraint"
              afterTab="property.tab.comment"
              label="Constraint"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.descriptionAspects"
+             afterTab="property.tab.constraint"
+             label="Description_Aspects"/>
           
       </propertyTabs>
   </extension>
@@ -45,6 +50,15 @@
             filter="de.uni_paderborn.fujaba.muml.properties.tabs.ConstraintTabElementFilter"
             id="property.tab.constraint"
             tab="property.tab.constraint">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Description_AspectsTabElementFilter"
+            id="property.tab.descriptionAspects"
+            tab="property.tab.descriptionAspects">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
@@ -359,13 +373,13 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.pattern.editor.PlainTextualDescriptionAspectsEditor$Factory"
-             type="http://www.fujaba.de/muml/pattern/0.3.18#PlainTextualDescriptionAspects">
+             factory="de.uni_paderborn.fujaba.muml.properties.pattern.editor.LegalConfigurationEditor$Factory"
+             type="http://www.fujaba.de/muml/pattern/0.3.18#LegalConfiguration">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.pattern.editor.LegalConfigurationEditor$Factory"
-             type="http://www.fujaba.de/muml/pattern/0.3.18#LegalConfiguration">
+             factory="de.uni_paderborn.fujaba.muml.properties.pattern.editor.DescriptionAspectsEditor$Factory"
+             type="http://www.fujaba.de/muml/pattern/0.3.18#DescriptionAspects">
        </propertyEditor>
     
        <propertyEditor

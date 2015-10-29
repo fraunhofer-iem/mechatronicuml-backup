@@ -15,6 +15,7 @@ package de.uni_paderborn.fujaba.muml.pattern.impl;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
 import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects;
@@ -64,7 +65,7 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	 * @generated
 	 * @ordered
 	 */
-	protected PlainTextualDescriptionAspects descriptionAspects;
+	protected DescriptionAspects descriptionAspects;
 
 	/**
 	 * The cached value of the '{@link #getLegalConfigurations() <em>Legal Configurations</em>}' containment reference list.
@@ -130,7 +131,7 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlainTextualDescriptionAspects getDescriptionAspects() {
+	public DescriptionAspects getDescriptionAspects() {
 		return descriptionAspects;
 	}
 
@@ -139,8 +140,8 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDescriptionAspects(PlainTextualDescriptionAspects newDescriptionAspects, NotificationChain msgs) {
-		PlainTextualDescriptionAspects oldDescriptionAspects = descriptionAspects;
+	public NotificationChain basicSetDescriptionAspects(DescriptionAspects newDescriptionAspects, NotificationChain msgs) {
+		DescriptionAspects oldDescriptionAspects = descriptionAspects;
 		descriptionAspects = newDescriptionAspects;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS, oldDescriptionAspects, newDescriptionAspects);
@@ -154,7 +155,7 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDescriptionAspects(PlainTextualDescriptionAspects newDescriptionAspects) {
+	public void setDescriptionAspects(DescriptionAspects newDescriptionAspects) {
 		if (newDescriptionAspects != descriptionAspects) {
 			NotificationChain msgs = null;
 			if (descriptionAspects != null)
@@ -281,7 +282,7 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-				setDescriptionAspects((PlainTextualDescriptionAspects)newValue);
+				setDescriptionAspects((DescriptionAspects)newValue);
 				return;
 			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
 				getLegalConfigurations().clear();
@@ -312,7 +313,7 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-				setDescriptionAspects((PlainTextualDescriptionAspects)null);
+				setDescriptionAspects((DescriptionAspects)null);
 				return;
 			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
 				getLegalConfigurations().clear();

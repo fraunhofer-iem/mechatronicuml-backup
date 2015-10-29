@@ -91,8 +91,8 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 				return createCoordinationPatternAdapter();
 			}
 			@Override
-			public Adapter casePlainTextualDescriptionAspects(PlainTextualDescriptionAspects object) {
-				return createPlainTextualDescriptionAspectsAdapter();
+			public Adapter caseDescriptionAspects(DescriptionAspects object) {
+				return createDescriptionAspectsAdapter();
 			}
 			@Override
 			public Adapter caseLegalConfiguration(LegalConfiguration object) {
@@ -153,16 +153,16 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects <em>Plain Textual Description Aspects</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects <em>Description Aspects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects
 	 * @generated
 	 */
-	public Adapter createPlainTextualDescriptionAspectsAdapter() {
+	public Adapter createDescriptionAspectsAdapter() {
 		return null;
 	}
 

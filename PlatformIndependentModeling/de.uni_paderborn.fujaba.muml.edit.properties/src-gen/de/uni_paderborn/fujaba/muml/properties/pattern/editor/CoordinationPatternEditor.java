@@ -35,6 +35,8 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			addPropertyEditor(createEditorAdaptedFromPattern_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorDescriptionAspects_Description_AspectsTab_Editor(), false);
+
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
@@ -44,13 +46,17 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorAlternativePatterns_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorDescriptionAspects_GeneralTab_Editor(), false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorLegalConfigurations_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorLegalConfigurations_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createEditorPatternParameters_GeneralTab_Editor(), false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorPatternParameters_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+
+			addPropertyEditor(createEditorDescriptionAspects_Description_AspectsTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -69,11 +75,11 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorAlternativePatterns_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorDescriptionAspects_GeneralTab_Editor(), false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorLegalConfigurations_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorLegalConfigurations_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createEditorPatternParameters_GeneralTab_Editor(), false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorPatternParameters_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -121,9 +127,9 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 		return this.editorAlternativePatterns_GeneralTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDescriptionAspects_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDescriptionAspects_GeneralTab_Editor() {
-		if (this.editorDescriptionAspects_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDescriptionAspects_Description_AspectsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDescriptionAspects_Description_AspectsTab_Editor() {
+		if (this.editorDescriptionAspects_Description_AspectsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getCoordinationPattern_DescriptionAspects();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -131,9 +137,9 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
-			this.editorDescriptionAspects_GeneralTab = editor;
+			this.editorDescriptionAspects_Description_AspectsTab = editor;
 		}
-		return this.editorDescriptionAspects_GeneralTab;
+		return this.editorDescriptionAspects_Description_AspectsTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLegalConfigurations_GeneralTab;
@@ -277,9 +283,9 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.documentation", "property.tab.extensions", "property.tab.general",
-					"property.tab.general"}).contains(tab);
+					"property.tab.descriptionAspects", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.documentation", "property.tab.extensions",
+					"property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -15,8 +15,8 @@ package de.uni_paderborn.fujaba.muml.pattern.provider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 
+import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects;
 
 import java.util.Collection;
 import java.util.List;
@@ -38,12 +38,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PlainTextualDescriptionAspectsItemProvider 
+public class DescriptionAspectsItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -57,7 +57,7 @@ public class PlainTextualDescriptionAspectsItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlainTextualDescriptionAspectsItemProvider(AdapterFactory adapterFactory) {
+	public DescriptionAspectsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -83,6 +83,7 @@ public class PlainTextualDescriptionAspectsItemProvider
 			addCombineabilityPropertyDescriptor(object);
 			addVariantsPropertyDescriptor(object);
 			addAlternativesPropertyDescriptor(object);
+			addVerification_propertiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -98,9 +99,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_overview_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_overview_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__OVERVIEW,
+				 getString("_UI_DescriptionAspects_overview_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_overview_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__OVERVIEW,
 				 true,
 				 false,
 				 false,
@@ -120,9 +121,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_context_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_context_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONTEXT,
+				 getString("_UI_DescriptionAspects_context_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_context_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__CONTEXT,
 				 true,
 				 false,
 				 false,
@@ -142,9 +143,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_problem_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_problem_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__PROBLEM,
+				 getString("_UI_DescriptionAspects_problem_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_problem_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__PROBLEM,
 				 true,
 				 false,
 				 false,
@@ -164,9 +165,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_solution_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_solution_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__SOLUTION,
+				 getString("_UI_DescriptionAspects_solution_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_solution_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__SOLUTION,
 				 true,
 				 false,
 				 false,
@@ -186,9 +187,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_structure_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_structure_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__STRUCTURE,
+				 getString("_UI_DescriptionAspects_structure_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_structure_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__STRUCTURE,
 				 true,
 				 false,
 				 false,
@@ -208,9 +209,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_behavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_behavior_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__BEHAVIOR,
+				 getString("_UI_DescriptionAspects_behavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_behavior_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__BEHAVIOR,
 				 true,
 				 false,
 				 false,
@@ -230,9 +231,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_examples_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_examples_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__EXAMPLES,
+				 getString("_UI_DescriptionAspects_examples_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_examples_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__EXAMPLES,
 				 true,
 				 false,
 				 false,
@@ -252,9 +253,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_consequences_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_consequences_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONSEQUENCES,
+				 getString("_UI_DescriptionAspects_consequences_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_consequences_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__CONSEQUENCES,
 				 true,
 				 false,
 				 false,
@@ -274,9 +275,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_combineability_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_combineability_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__COMBINEABILITY,
+				 getString("_UI_DescriptionAspects_combineability_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_combineability_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__COMBINEABILITY,
 				 true,
 				 false,
 				 false,
@@ -296,9 +297,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_variants_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_variants_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__VARIANTS,
+				 getString("_UI_DescriptionAspects_variants_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_variants_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__VARIANTS,
 				 true,
 				 false,
 				 false,
@@ -318,9 +319,9 @@ public class PlainTextualDescriptionAspectsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainTextualDescriptionAspects_alternatives_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainTextualDescriptionAspects_alternatives_feature", "_UI_PlainTextualDescriptionAspects_type"),
-				 PatternPackage.Literals.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__ALTERNATIVES,
+				 getString("_UI_DescriptionAspects_alternatives_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_alternatives_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__ALTERNATIVES,
 				 true,
 				 false,
 				 false,
@@ -330,14 +331,36 @@ public class PlainTextualDescriptionAspectsItemProvider
 	}
 
 	/**
-	 * This returns PlainTextualDescriptionAspects.gif.
+	 * This adds a property descriptor for the Verification properties feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVerification_propertiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DescriptionAspects_verification_properties_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_verification_properties_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns DescriptionAspects.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PlainTextualDescriptionAspects"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DescriptionAspects"));
 	}
 
 	/**
@@ -348,10 +371,10 @@ public class PlainTextualDescriptionAspectsItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PlainTextualDescriptionAspects)object).getOverview();
+		String label = ((DescriptionAspects)object).getOverview();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PlainTextualDescriptionAspects_type") :
-			getString("_UI_PlainTextualDescriptionAspects_type") + " " + label;
+			getString("_UI_DescriptionAspects_type") :
+			getString("_UI_DescriptionAspects_type") + " " + label;
 	}
 	
 
@@ -366,18 +389,19 @@ public class PlainTextualDescriptionAspectsItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PlainTextualDescriptionAspects.class)) {
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__OVERVIEW:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONTEXT:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__PROBLEM:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__SOLUTION:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__STRUCTURE:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__BEHAVIOR:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__EXAMPLES:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONSEQUENCES:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__COMBINEABILITY:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__VARIANTS:
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__ALTERNATIVES:
+		switch (notification.getFeatureID(DescriptionAspects.class)) {
+			case PatternPackage.DESCRIPTION_ASPECTS__OVERVIEW:
+			case PatternPackage.DESCRIPTION_ASPECTS__CONTEXT:
+			case PatternPackage.DESCRIPTION_ASPECTS__PROBLEM:
+			case PatternPackage.DESCRIPTION_ASPECTS__SOLUTION:
+			case PatternPackage.DESCRIPTION_ASPECTS__STRUCTURE:
+			case PatternPackage.DESCRIPTION_ASPECTS__BEHAVIOR:
+			case PatternPackage.DESCRIPTION_ASPECTS__EXAMPLES:
+			case PatternPackage.DESCRIPTION_ASPECTS__CONSEQUENCES:
+			case PatternPackage.DESCRIPTION_ASPECTS__COMBINEABILITY:
+			case PatternPackage.DESCRIPTION_ASPECTS__VARIANTS:
+			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
+			case PatternPackage.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

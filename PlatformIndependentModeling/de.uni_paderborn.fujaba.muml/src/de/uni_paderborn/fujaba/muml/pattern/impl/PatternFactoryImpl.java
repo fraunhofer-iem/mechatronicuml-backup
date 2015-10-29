@@ -67,7 +67,7 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case PatternPackage.COORDINATION_PATTERN: return createCoordinationPattern();
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS: return createPlainTextualDescriptionAspects();
+			case PatternPackage.DESCRIPTION_ASPECTS: return createDescriptionAspects();
 			case PatternPackage.LEGAL_CONFIGURATION: return createLegalConfiguration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -89,9 +89,9 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlainTextualDescriptionAspects createPlainTextualDescriptionAspects() {
-		PlainTextualDescriptionAspectsImpl plainTextualDescriptionAspects = new PlainTextualDescriptionAspectsImpl();
-		return plainTextualDescriptionAspects;
+	public DescriptionAspects createDescriptionAspects() {
+		DescriptionAspectsImpl descriptionAspects = new DescriptionAspectsImpl();
+		return descriptionAspects;
 	}
 
 	/**

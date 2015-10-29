@@ -594,18 +594,19 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPattern/alternativePatterns"/>
       </genClasses>
-      <genClasses ecoreClass="muml.ecore#//pattern/PlainTextualDescriptionAspects">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/overview"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/context"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/problem"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/solution"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/structure"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/behavior"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/examples"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/consequences"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/combineability"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/variants"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/PlainTextualDescriptionAspects/alternatives"/>
+      <genClasses ecoreClass="muml.ecore#//pattern/DescriptionAspects">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/overview"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/context"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/problem"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/solution"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/structure"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/behavior"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/examples"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/consequences"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/combineability"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/variants"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/alternatives"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//pattern/DescriptionAspects/verification_properties"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//pattern/LegalConfiguration">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//pattern/LegalConfiguration/parameterBindings"/>

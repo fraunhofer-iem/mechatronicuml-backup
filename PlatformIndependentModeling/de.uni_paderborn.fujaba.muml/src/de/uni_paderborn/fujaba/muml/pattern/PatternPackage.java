@@ -414,14 +414,14 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN_OPERATION_COUNT = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl <em>Plain Textual Description Aspects</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.DescriptionAspectsImpl <em>Description Aspects</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl
-	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.DescriptionAspectsImpl
+	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getDescriptionAspects()
 	 * @generated
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS = 1;
+	int DESCRIPTION_ASPECTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Overview</b></em>' attribute.
@@ -430,7 +430,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__OVERVIEW = 0;
+	int DESCRIPTION_ASPECTS__OVERVIEW = 0;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -439,7 +439,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONTEXT = 1;
+	int DESCRIPTION_ASPECTS__CONTEXT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Problem</b></em>' attribute.
@@ -448,7 +448,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__PROBLEM = 2;
+	int DESCRIPTION_ASPECTS__PROBLEM = 2;
 
 	/**
 	 * The feature id for the '<em><b>Solution</b></em>' attribute.
@@ -457,7 +457,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__SOLUTION = 3;
+	int DESCRIPTION_ASPECTS__SOLUTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Structure</b></em>' attribute.
@@ -466,7 +466,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__STRUCTURE = 4;
+	int DESCRIPTION_ASPECTS__STRUCTURE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' attribute.
@@ -475,7 +475,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__BEHAVIOR = 5;
+	int DESCRIPTION_ASPECTS__BEHAVIOR = 5;
 
 	/**
 	 * The feature id for the '<em><b>Examples</b></em>' attribute.
@@ -484,7 +484,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__EXAMPLES = 6;
+	int DESCRIPTION_ASPECTS__EXAMPLES = 6;
 
 	/**
 	 * The feature id for the '<em><b>Consequences</b></em>' attribute.
@@ -493,7 +493,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONSEQUENCES = 7;
+	int DESCRIPTION_ASPECTS__CONSEQUENCES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Combineability</b></em>' attribute.
@@ -502,7 +502,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__COMBINEABILITY = 8;
+	int DESCRIPTION_ASPECTS__COMBINEABILITY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Variants</b></em>' attribute.
@@ -511,7 +511,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__VARIANTS = 9;
+	int DESCRIPTION_ASPECTS__VARIANTS = 9;
 
 	/**
 	 * The feature id for the '<em><b>Alternatives</b></em>' attribute.
@@ -520,25 +520,34 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__ALTERNATIVES = 10;
+	int DESCRIPTION_ASPECTS__ALTERNATIVES = 10;
 
 	/**
-	 * The number of structural features of the '<em>Plain Textual Description Aspects</em>' class.
+	 * The feature id for the '<em><b>Verification properties</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS_FEATURE_COUNT = 11;
+	int DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES = 11;
 
 	/**
-	 * The number of operations of the '<em>Plain Textual Description Aspects</em>' class.
+	 * The number of structural features of the '<em>Description Aspects</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS_OPERATION_COUNT = 0;
+	int DESCRIPTION_ASPECTS_FEATURE_COUNT = 12;
+
+	/**
+	 * The number of operations of the '<em>Description Aspects</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_ASPECTS_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.LegalConfigurationImpl <em>Legal Configuration</em>}' class.
@@ -860,135 +869,146 @@ public interface PatternPackage extends EPackage {
 	EReference getCoordinationPattern_AlternativePatterns();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects <em>Plain Textual Description Aspects</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects <em>Description Aspects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plain Textual Description Aspects</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects
+	 * @return the meta object for class '<em>Description Aspects</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects
 	 * @generated
 	 */
-	EClass getPlainTextualDescriptionAspects();
+	EClass getDescriptionAspects();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getOverview <em>Overview</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getOverview <em>Overview</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Overview</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getOverview()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getOverview()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Overview();
+	EAttribute getDescriptionAspects_Overview();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getContext <em>Context</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Context</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getContext()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getContext()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Context();
+	EAttribute getDescriptionAspects_Context();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getProblem <em>Problem</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getProblem <em>Problem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Problem</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getProblem()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getProblem()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Problem();
+	EAttribute getDescriptionAspects_Problem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getSolution <em>Solution</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getSolution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Solution</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getSolution()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getSolution()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Solution();
+	EAttribute getDescriptionAspects_Solution();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getStructure <em>Structure</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getStructure <em>Structure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Structure</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getStructure()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getStructure()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Structure();
+	EAttribute getDescriptionAspects_Structure();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getBehavior <em>Behavior</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getBehavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getBehavior()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getBehavior()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Behavior();
+	EAttribute getDescriptionAspects_Behavior();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getExamples <em>Examples</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getExamples <em>Examples</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Examples</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getExamples()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getExamples()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Examples();
+	EAttribute getDescriptionAspects_Examples();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getConsequences <em>Consequences</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getConsequences <em>Consequences</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Consequences</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getConsequences()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getConsequences()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Consequences();
+	EAttribute getDescriptionAspects_Consequences();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getCombineability <em>Combineability</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getCombineability <em>Combineability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Combineability</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getCombineability()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getCombineability()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Combineability();
+	EAttribute getDescriptionAspects_Combineability();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getVariants <em>Variants</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getVariants <em>Variants</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Variants</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getVariants()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getVariants()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Variants();
+	EAttribute getDescriptionAspects_Variants();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getAlternatives <em>Alternatives</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getAlternatives <em>Alternatives</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Alternatives</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getAlternatives()
-	 * @see #getPlainTextualDescriptionAspects()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getAlternatives()
+	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	EAttribute getPlainTextualDescriptionAspects_Alternatives();
+	EAttribute getDescriptionAspects_Alternatives();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getVerification_properties <em>Verification properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Verification properties</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects#getVerification_properties()
+	 * @see #getDescriptionAspects()
+	 * @generated
+	 */
+	EAttribute getDescriptionAspects_Verification_properties();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration <em>Legal Configuration</em>}'.
@@ -1096,14 +1116,14 @@ public interface PatternPackage extends EPackage {
 		EReference COORDINATION_PATTERN__ALTERNATIVE_PATTERNS = eINSTANCE.getCoordinationPattern_AlternativePatterns();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl <em>Plain Textual Description Aspects</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.DescriptionAspectsImpl <em>Description Aspects</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl
-		 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getPlainTextualDescriptionAspects()
+		 * @see de.uni_paderborn.fujaba.muml.pattern.impl.DescriptionAspectsImpl
+		 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getDescriptionAspects()
 		 * @generated
 		 */
-		EClass PLAIN_TEXTUAL_DESCRIPTION_ASPECTS = eINSTANCE.getPlainTextualDescriptionAspects();
+		EClass DESCRIPTION_ASPECTS = eINSTANCE.getDescriptionAspects();
 
 		/**
 		 * The meta object literal for the '<em><b>Overview</b></em>' attribute feature.
@@ -1111,7 +1131,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__OVERVIEW = eINSTANCE.getPlainTextualDescriptionAspects_Overview();
+		EAttribute DESCRIPTION_ASPECTS__OVERVIEW = eINSTANCE.getDescriptionAspects_Overview();
 
 		/**
 		 * The meta object literal for the '<em><b>Context</b></em>' attribute feature.
@@ -1119,7 +1139,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONTEXT = eINSTANCE.getPlainTextualDescriptionAspects_Context();
+		EAttribute DESCRIPTION_ASPECTS__CONTEXT = eINSTANCE.getDescriptionAspects_Context();
 
 		/**
 		 * The meta object literal for the '<em><b>Problem</b></em>' attribute feature.
@@ -1127,7 +1147,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__PROBLEM = eINSTANCE.getPlainTextualDescriptionAspects_Problem();
+		EAttribute DESCRIPTION_ASPECTS__PROBLEM = eINSTANCE.getDescriptionAspects_Problem();
 
 		/**
 		 * The meta object literal for the '<em><b>Solution</b></em>' attribute feature.
@@ -1135,7 +1155,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__SOLUTION = eINSTANCE.getPlainTextualDescriptionAspects_Solution();
+		EAttribute DESCRIPTION_ASPECTS__SOLUTION = eINSTANCE.getDescriptionAspects_Solution();
 
 		/**
 		 * The meta object literal for the '<em><b>Structure</b></em>' attribute feature.
@@ -1143,7 +1163,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__STRUCTURE = eINSTANCE.getPlainTextualDescriptionAspects_Structure();
+		EAttribute DESCRIPTION_ASPECTS__STRUCTURE = eINSTANCE.getDescriptionAspects_Structure();
 
 		/**
 		 * The meta object literal for the '<em><b>Behavior</b></em>' attribute feature.
@@ -1151,7 +1171,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__BEHAVIOR = eINSTANCE.getPlainTextualDescriptionAspects_Behavior();
+		EAttribute DESCRIPTION_ASPECTS__BEHAVIOR = eINSTANCE.getDescriptionAspects_Behavior();
 
 		/**
 		 * The meta object literal for the '<em><b>Examples</b></em>' attribute feature.
@@ -1159,7 +1179,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__EXAMPLES = eINSTANCE.getPlainTextualDescriptionAspects_Examples();
+		EAttribute DESCRIPTION_ASPECTS__EXAMPLES = eINSTANCE.getDescriptionAspects_Examples();
 
 		/**
 		 * The meta object literal for the '<em><b>Consequences</b></em>' attribute feature.
@@ -1167,7 +1187,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONSEQUENCES = eINSTANCE.getPlainTextualDescriptionAspects_Consequences();
+		EAttribute DESCRIPTION_ASPECTS__CONSEQUENCES = eINSTANCE.getDescriptionAspects_Consequences();
 
 		/**
 		 * The meta object literal for the '<em><b>Combineability</b></em>' attribute feature.
@@ -1175,7 +1195,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__COMBINEABILITY = eINSTANCE.getPlainTextualDescriptionAspects_Combineability();
+		EAttribute DESCRIPTION_ASPECTS__COMBINEABILITY = eINSTANCE.getDescriptionAspects_Combineability();
 
 		/**
 		 * The meta object literal for the '<em><b>Variants</b></em>' attribute feature.
@@ -1183,7 +1203,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__VARIANTS = eINSTANCE.getPlainTextualDescriptionAspects_Variants();
+		EAttribute DESCRIPTION_ASPECTS__VARIANTS = eINSTANCE.getDescriptionAspects_Variants();
 
 		/**
 		 * The meta object literal for the '<em><b>Alternatives</b></em>' attribute feature.
@@ -1191,7 +1211,15 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__ALTERNATIVES = eINSTANCE.getPlainTextualDescriptionAspects_Alternatives();
+		EAttribute DESCRIPTION_ASPECTS__ALTERNATIVES = eINSTANCE.getDescriptionAspects_Alternatives();
+
+		/**
+		 * The meta object literal for the '<em><b>Verification properties</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES = eINSTANCE.getDescriptionAspects_Verification_properties();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.LegalConfigurationImpl <em>Legal Configuration</em>}' class.

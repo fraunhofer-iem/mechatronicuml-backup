@@ -337,9 +337,9 @@ public class ComponentValidator extends MumlValidator {
 	 */
 	protected static final String DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION = "-- Discrete Port must have the same message types as its refined role\r\n" +
 		"not self.refinedRole.oclIsUndefined() implies\r\n" +
-		"\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n" +
+		"\t(self.senderMessageTypes->asSet() = self.refinedRole.senderMessageTypes->asSet() \r\n" +
 		"\t and\r\n" +
-		"\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n" +
+		"\t self.receiverMessageTypes->asSet() = self.refinedRole.receiverMessageTypes->asSet() \r\n" +
 		"\t)";
 
 	/**

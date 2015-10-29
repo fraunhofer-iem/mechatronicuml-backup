@@ -109,8 +109,8 @@ public class PatternValidator extends EObjectValidator {
 		switch (classifierID) {
 			case PatternPackage.COORDINATION_PATTERN:
 				return validateCoordinationPattern((CoordinationPattern)value, diagnostics, context);
-			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS:
-				return validatePlainTextualDescriptionAspects((PlainTextualDescriptionAspects)value, diagnostics, context);
+			case PatternPackage.DESCRIPTION_ASPECTS:
+				return validateDescriptionAspects((DescriptionAspects)value, diagnostics, context);
 			case PatternPackage.LEGAL_CONFIGURATION:
 				return validateLegalConfiguration((LegalConfiguration)value, diagnostics, context);
 			default:
@@ -173,8 +173,8 @@ public class PatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlainTextualDescriptionAspects(PlainTextualDescriptionAspects plainTextualDescriptionAspects, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(plainTextualDescriptionAspects, diagnostics, context);
+	public boolean validateDescriptionAspects(DescriptionAspects descriptionAspects, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(descriptionAspects, diagnostics, context);
 	}
 
 	/**

@@ -40,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.msgtype.impl.MsgtypePackageImpl;
 
 import de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
 import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
@@ -94,7 +95,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass plainTextualDescriptionAspectsEClass = null;
+	private EClass descriptionAspectsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,8 +271,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPlainTextualDescriptionAspects() {
-		return plainTextualDescriptionAspectsEClass;
+	public EClass getDescriptionAspects() {
+		return descriptionAspectsEClass;
 	}
 
 	/**
@@ -279,8 +280,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Overview() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDescriptionAspects_Overview() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -288,8 +289,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Context() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDescriptionAspects_Context() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -297,8 +298,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Problem() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(2);
+	public EAttribute getDescriptionAspects_Problem() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -306,8 +307,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Solution() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(3);
+	public EAttribute getDescriptionAspects_Solution() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -315,8 +316,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Structure() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(4);
+	public EAttribute getDescriptionAspects_Structure() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -324,8 +325,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Behavior() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(5);
+	public EAttribute getDescriptionAspects_Behavior() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -333,8 +334,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Examples() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(6);
+	public EAttribute getDescriptionAspects_Examples() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -342,8 +343,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Consequences() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(7);
+	public EAttribute getDescriptionAspects_Consequences() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -351,8 +352,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Combineability() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(8);
+	public EAttribute getDescriptionAspects_Combineability() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -360,8 +361,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Variants() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(9);
+	public EAttribute getDescriptionAspects_Variants() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -369,8 +370,17 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlainTextualDescriptionAspects_Alternatives() {
-		return (EAttribute)plainTextualDescriptionAspectsEClass.getEStructuralFeatures().get(10);
+	public EAttribute getDescriptionAspects_Alternatives() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDescriptionAspects_Verification_properties() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -435,18 +445,19 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__COMBINEABLE_PATTERNS);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ALTERNATIVE_PATTERNS);
 
-		plainTextualDescriptionAspectsEClass = createEClass(PLAIN_TEXTUAL_DESCRIPTION_ASPECTS);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__OVERVIEW);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONTEXT);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__PROBLEM);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__SOLUTION);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__STRUCTURE);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__BEHAVIOR);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__EXAMPLES);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__CONSEQUENCES);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__COMBINEABILITY);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__VARIANTS);
-		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__ALTERNATIVES);
+		descriptionAspectsEClass = createEClass(DESCRIPTION_ASPECTS);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__OVERVIEW);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__CONTEXT);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__PROBLEM);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__SOLUTION);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__STRUCTURE);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__BEHAVIOR);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__EXAMPLES);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__CONSEQUENCES);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__COMBINEABILITY);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__VARIANTS);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__ALTERNATIVES);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES);
 
 		legalConfigurationEClass = createEClass(LEGAL_CONFIGURATION);
 		createEReference(legalConfigurationEClass, LEGAL_CONFIGURATION__PARAMETER_BINDINGS);
@@ -492,24 +503,25 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(coordinationPatternEClass, CoordinationPattern.class, "CoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCoordinationPattern_DescriptionAspects(), this.getPlainTextualDescriptionAspects(), null, "descriptionAspects", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_DescriptionAspects(), this.getDescriptionAspects(), null, "descriptionAspects", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_LegalConfigurations(), this.getLegalConfiguration(), this.getLegalConfiguration_CoordinationPattern(), "legalConfigurations", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_PatternParameters(), theBehaviorPackage.getParameter(), null, "patternParameters", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_CombineablePatterns(), this.getCoordinationPattern(), null, "combineablePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_AlternativePatterns(), this.getCoordinationPattern(), null, "alternativePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(plainTextualDescriptionAspectsEClass, PlainTextualDescriptionAspects.class, "PlainTextualDescriptionAspects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlainTextualDescriptionAspects_Overview(), ecorePackage.getEString(), "overview", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Context(), ecorePackage.getEString(), "context", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Problem(), ecorePackage.getEString(), "problem", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Solution(), ecorePackage.getEString(), "solution", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Structure(), ecorePackage.getEString(), "structure", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Behavior(), ecorePackage.getEString(), "behavior", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Examples(), ecorePackage.getEString(), "examples", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Consequences(), ecorePackage.getEString(), "consequences", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Combineability(), ecorePackage.getEString(), "combineability", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Variants(), ecorePackage.getEString(), "variants", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainTextualDescriptionAspects_Alternatives(), ecorePackage.getEString(), "alternatives", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(descriptionAspectsEClass, DescriptionAspects.class, "DescriptionAspects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDescriptionAspects_Overview(), ecorePackage.getEString(), "overview", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Context(), ecorePackage.getEString(), "context", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Problem(), ecorePackage.getEString(), "problem", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Solution(), ecorePackage.getEString(), "solution", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Structure(), ecorePackage.getEString(), "structure", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Behavior(), ecorePackage.getEString(), "behavior", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Examples(), ecorePackage.getEString(), "examples", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Consequences(), ecorePackage.getEString(), "consequences", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Combineability(), ecorePackage.getEString(), "combineability", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Variants(), ecorePackage.getEString(), "variants", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Alternatives(), ecorePackage.getEString(), "alternatives", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Verification_properties(), ecorePackage.getEString(), "verification_properties", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(legalConfigurationEClass, LegalConfiguration.class, "LegalConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLegalConfiguration_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, LegalConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

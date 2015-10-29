@@ -52,12 +52,12 @@ public interface CoordinationPattern extends AbstractCoordinationSpecification {
 	 * \todosd{document!}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Description Aspects</em>' containment reference.
-	 * @see #setDescriptionAspects(PlainTextualDescriptionAspects)
+	 * @see #setDescriptionAspects(DescriptionAspects)
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_DescriptionAspects()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	PlainTextualDescriptionAspects getDescriptionAspects();
+	DescriptionAspects getDescriptionAspects();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getDescriptionAspects <em>Description Aspects</em>}' containment reference.
@@ -67,7 +67,7 @@ public interface CoordinationPattern extends AbstractCoordinationSpecification {
 	 * @see #getDescriptionAspects()
 	 * @generated
 	 */
-	void setDescriptionAspects(PlainTextualDescriptionAspects value);
+	void setDescriptionAspects(DescriptionAspects value);
 
 	/**
 	 * Returns the value of the '<em><b>Legal Configurations</b></em>' containment reference list.

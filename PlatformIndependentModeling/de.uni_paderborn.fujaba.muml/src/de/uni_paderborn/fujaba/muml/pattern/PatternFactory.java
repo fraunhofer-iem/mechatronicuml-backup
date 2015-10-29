@@ -41,13 +41,13 @@ public interface PatternFactory extends EFactory {
 	CoordinationPattern createCoordinationPattern();
 
 	/**
-	 * Returns a new object of class '<em>Plain Textual Description Aspects</em>'.
+	 * Returns a new object of class '<em>Description Aspects</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Plain Textual Description Aspects</em>'.
+	 * @return a new object of class '<em>Description Aspects</em>'.
 	 * @generated
 	 */
-	PlainTextualDescriptionAspects createPlainTextualDescriptionAspects();
+	DescriptionAspects createDescriptionAspects();
 
 	/**
 	 * Returns a new object of class '<em>Legal Configuration</em>'.

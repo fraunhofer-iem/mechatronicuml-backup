@@ -29,6 +29,8 @@ public class ParameterBindingEditor extends de.uni_paderborn.fujaba.properties.r
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorParameter_GeneralTab_Editor(), false);

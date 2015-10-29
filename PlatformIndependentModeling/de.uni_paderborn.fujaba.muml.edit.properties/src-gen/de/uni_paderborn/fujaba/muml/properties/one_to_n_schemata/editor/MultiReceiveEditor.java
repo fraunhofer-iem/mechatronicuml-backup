@@ -29,6 +29,8 @@ public class MultiReceiveEditor extends de.uni_paderborn.fujaba.properties.runti
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorCondition_GeneralTab_Editor(), false);
