@@ -35,6 +35,7 @@ public class BuildTest {
 			}
 		});
 		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		workspace.save(true, progressMonitor);
 		// IProject project =
 		// root.getProject("de.uni_paderborn.fujaba.muml.codegen.c");
 		// project.create(progressMonitor);
