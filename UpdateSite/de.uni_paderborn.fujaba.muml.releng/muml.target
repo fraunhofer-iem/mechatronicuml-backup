@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.8"?><target name="muml" sequenceNumber="4">
 <locations>
-<location path="C:\data\Software\eclipse-modeling-kepler-SR2-win32_muml" type="Directory"/>
+<location path="/data/jenkins/custom_config/eclipse" type="Directory"/>
 </locations>
 <environment>
 <os>win32</os>
