@@ -1,22 +1,37 @@
 import de.uni_paderborn.fujaba.muml.types._library.TypesBlackbox;
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+
 library PredefinedTypesLibrary;
 
-property INT8 : PrimitiveDataType = getInt8();
-property INT16 : PrimitiveDataType = getInt16();
-property INT32 : PrimitiveDataType = getInt32();
-property INT64 : PrimitiveDataType = getInt64();
+property INT8 : PrimitiveDataType = getPrimitiveTypeByName("int8");
+property INT16 : PrimitiveDataType = getPrimitiveTypeByName("int16");
+property INT32 : PrimitiveDataType = getPrimitiveTypeByName("int32");
+property INT64 : PrimitiveDataType = getPrimitiveTypeByName("int64");
 
 
-property UINT8 : PrimitiveDataType = getUint8();
-property UINT16 : PrimitiveDataType = getUint16();
-property UINT32 : PrimitiveDataType = getUint32();
-property UINT64 : PrimitiveDataType = getUint64();
+property UINT8 : PrimitiveDataType = getPrimitiveTypeByName("uint8");
+property UINT16 : PrimitiveDataType = getPrimitiveTypeByName("uint16");
+property UINT32 : PrimitiveDataType = getPrimitiveTypeByName("uint32");
+property UINT64 : PrimitiveDataType = getPrimitiveTypeByName("uint64");
 
-property DOUBLE : PrimitiveDataType = getDouble();
-property BOOLEAN : PrimitiveDataType = getBoolean();
-property VOID : PrimitiveDataType = getVoid();
+property DOUBLE : PrimitiveDataType = getPrimitiveTypeByName("double");
+property BOOLEAN : PrimitiveDataType = getPrimitiveTypeByName("boolean");
+property VOID : PrimitiveDataType = getPrimitiveTypeByName("void");
 
 
-
+helper getPrimitiveTypeByName(_name:String):PrimitiveDataType{
+	var modelelementcategories : Set(ModelElementCategory) := ModelElementCategory.allInstances();
+	var typeCategory : ModelElementCategory := modelelementcategories->select(cat|cat.key.equalsIgnoreCase('de.uni_paderborn.fujaba.muml.types.category')) ->any(true);
+	if(typeCategory.oclIsUndefined()) {
+		return getTypeByName(_name);
+	};	
+	var dataType : PrimitiveDataType := typeCategory.oclAsType(ModelElementCategory).modelElements
+	->select(element | element.oclIsTypeOf(muml::types::PrimitiveDataType) and (element.oclAsType(muml::types::PrimitiveDataType).name.equalsIgnoreCase(_name)))
+	->any(true).oclAsType(muml::types::PrimitiveDataType);	
+	if(dataType.oclIsUndefined()) {
+		return getTypeByName(_name);
+	};
+	return dataType;	
+}
 
