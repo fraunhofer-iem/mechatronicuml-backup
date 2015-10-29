@@ -33,10 +33,10 @@
 <stringAttribute key="product" value="org.eclipse.platform.ide"/>
 <booleanAttribute key="run_in_ui_thread" value="false"/>
 <booleanAttribute key="show_selected_only" value="false"/>
-<stringAttribute key="templateConfig" value=""/>
+<stringAttribute key="templateConfig" value="${workspace_loc}/build.test/"/>
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
-<booleanAttribute key="useDefaultConfig" value="true"/>
+<booleanAttribute key="useDefaultConfig" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="false"/>
 <booleanAttribute key="useProduct" value="true"/>
 </launchConfiguration>
