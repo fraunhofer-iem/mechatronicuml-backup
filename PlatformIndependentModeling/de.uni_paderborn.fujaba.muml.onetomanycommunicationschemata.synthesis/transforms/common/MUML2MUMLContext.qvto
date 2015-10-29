@@ -496,7 +496,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_alternativePatterns := self._alternativePatterns.map CoordinationPattern2CoordinationPattern(context);
 	   		 }
 	   		 
-	mapping muml::pattern::PlainTextualDescriptionAspects :: PlainTextualDescriptionAspects2PlainTextualDescriptionAspects(outerCountext : OclAny) : muml::pattern::PlainTextualDescriptionAspects{
+	mapping muml::pattern::DescriptionAspects :: PlainTextualDescriptionAspects2PlainTextualDescriptionAspects(outerCountext : OclAny) : muml::pattern::DescriptionAspects{
 	    	_overview := self._overview;
 	    	_context := self._context;
 	    	_problem := self._problem;
@@ -508,6 +508,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_combineability := self._combineability;
 	    	_variants := self._variants;
 	    	_alternatives := self._alternatives;
+	    	verification_properties := self.verification_properties;
 	   		 }
 	   		 
 	mapping muml::pattern::LegalConfiguration :: LegalConfiguration2LegalConfiguration(context : OclAny) : muml::pattern::LegalConfiguration{
