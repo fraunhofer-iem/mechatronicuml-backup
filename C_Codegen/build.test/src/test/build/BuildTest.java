@@ -2,6 +2,7 @@ package test.build;
 
 import static org.junit.Assert.fail;
 
+import org.eclipse.core.internal.resources.WorkspaceRoot;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -28,7 +29,9 @@ public class BuildTest {
 			@Override
 			public boolean visit(IResource resource) throws CoreException {
 				System.out.println(resource.getName());
-				return false;
+				if(resource instanceof WorkspaceRoot)
+				return true;
+			return false;
 			}
 		});
 		// IProject project =
