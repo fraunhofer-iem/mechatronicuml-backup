@@ -36,7 +36,7 @@
 <stringAttribute key="templateConfig" value="${workspace_loc}/build.test/config.ini"/>
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
-<booleanAttribute key="useDefaultConfig" value="false"/>
+<booleanAttribute key="useDefaultConfig" value="true"/>
 <booleanAttribute key="useDefaultConfigArea" value="false"/>
 <booleanAttribute key="useProduct" value="true"/>
 </launchConfiguration>
