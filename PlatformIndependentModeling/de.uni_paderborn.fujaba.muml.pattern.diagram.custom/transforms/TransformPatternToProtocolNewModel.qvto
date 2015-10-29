@@ -1,4 +1,3 @@
-import ModelcopyLibrary;
 import transforms.lib.common.PatternProtocolCommon;
 import transforms.lib.patternToprotocol.PatternToProtocolCommon;
 import de.uni_paderborn.fujaba.muml.types._library.TypesBlackbox;
@@ -121,6 +120,19 @@ init{
 	result:=new MessageTypeRepository().oclAsType(EObject);
 	}
 }
+
+
+mapping PrimitiveDataType::transform(): EObject {
+	init{
+		if(self.eContainer().oclIsKindOf(ModelElementCategory)){
+			result := self.map create().oclAsType(PrimitiveDataType);
+		}	
+		else {
+			result := self;
+		}
+	}		
+}
+
 
 
 
