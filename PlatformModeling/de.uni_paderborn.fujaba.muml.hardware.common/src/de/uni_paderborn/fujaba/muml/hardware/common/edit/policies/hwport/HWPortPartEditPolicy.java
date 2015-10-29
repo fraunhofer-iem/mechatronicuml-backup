@@ -56,11 +56,10 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 
 		HWPortPart hwPortPart = null;
 
-		if (element != null) {
-			if (HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element
-					.eClass())) {
-				hwPortPart = (HWPortPart) element;
-			}
+		if (element != null && HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element.eClass())) {
+
+			hwPortPart = (HWPortPart) element;
+
 		}
 		if (hwPortPart == null) {
 			return false;
@@ -73,11 +72,10 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		EObject element = getSemanticElement();
 		CommunicationKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind.BUS;
 		HWPortPart hwPortPart = null;
-		if (element != null) {
-			if (HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element
-					.eClass())) {
-				hwPortPart = (HWPortPart) element;
-			}
+		if (element != null && HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element.eClass())) {
+
+			hwPortPart = (HWPortPart) element;
+
 		}
 
 		if (hwPortPart != null) {

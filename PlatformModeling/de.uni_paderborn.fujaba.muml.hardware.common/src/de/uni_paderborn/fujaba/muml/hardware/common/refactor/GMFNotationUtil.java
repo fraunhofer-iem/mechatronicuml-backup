@@ -29,14 +29,16 @@ import org.eclipse.gmf.runtime.notation.impl.ViewImpl;
  */
 public class GMFNotationUtil {
 
+	private GMFNotationUtil() {
+	}
+
 	@SuppressWarnings("unchecked")
-	public static <T extends NamedStyle> T getNamedStyle(View view,
-			Class<T> type, String name) {
+	public static <T extends NamedStyle> T getNamedStyle(View view, Class<T> type, String name) {
 		EList<Style> styles = view.getStyles();
 		for (Style style : styles) {
-			if (type.isAssignableFrom(style.getClass())) {
-				if (name.equals(((NamedStyle) style).getName()))
-					return (T) style;
+			if (type.isAssignableFrom(style.getClass()) && name.equals(((NamedStyle) style).getName())) {
+
+				return (T) style;
 			}
 		}
 		return null;

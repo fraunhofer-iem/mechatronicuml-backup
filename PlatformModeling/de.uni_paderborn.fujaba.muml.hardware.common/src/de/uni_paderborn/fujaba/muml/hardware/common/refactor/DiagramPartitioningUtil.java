@@ -43,6 +43,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+
 /**
  * 
  * @author andreas muelder - Initial contribution and API
@@ -106,10 +107,10 @@ public class DiagramPartitioningUtil {
 			TreeIterator<EObject> eAllContents = diagram.eAllContents();
 			while (eAllContents.hasNext()) {
 				EObject next = eAllContents.next();
-				if (next instanceof View) {
-					if (EcoreUtil.equals(((View) next).getElement(), element)) {
-						return ((View) next).getDiagram();
-					}
+				if (next instanceof View && EcoreUtil.equals(((View) next).getElement(), element)) {
+
+					return ((View) next).getDiagram();
+
 				}
 			}
 		}
@@ -155,12 +156,14 @@ public class DiagramPartitioningUtil {
 		try {
 			IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
 			final IWorkbenchPage wbPage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-			//if (diagramToOpen.getElement() instanceof ComponentInstanceConfiguration) {
-		//		return wbPage.openEditor(new FileEditorInput(file), desc.getId());
-		//	} else if (diagramToOpen.getElement() instanceof State) {
-				return wbPage.openEditor(new DiagramEditorInput(diagramToOpen), desc.getId());
-				
-		//	}
+			// if (diagramToOpen.getElement() instanceof
+			// ComponentInstanceConfiguration) {
+			// return wbPage.openEditor(new FileEditorInput(file),
+			// desc.getId());
+			// } else if (diagramToOpen.getElement() instanceof State) {
+			return wbPage.openEditor(new DiagramEditorInput(diagramToOpen), desc.getId());
+
+			// }
 		} catch (PartInitException e) {
 			e.printStackTrace();
 		}

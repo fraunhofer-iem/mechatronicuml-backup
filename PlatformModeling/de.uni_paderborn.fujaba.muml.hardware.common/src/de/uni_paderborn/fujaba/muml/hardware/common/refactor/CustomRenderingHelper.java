@@ -12,8 +12,11 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Shell;
 
 public class CustomRenderingHelper {
-	public static org.eclipse.swt.graphics.Image renderToSWTImage(
-			Diagram diagram) {
+	private CustomRenderingHelper() {
+
+	}
+
+	public static org.eclipse.swt.graphics.Image renderToSWTImage(Diagram diagram) {
 		if (null == diagram) {
 			throw new NullPointerException("Argument 'diagram' is null"); //$NON-NLS-1$
 		}
@@ -21,18 +24,15 @@ public class CustomRenderingHelper {
 		Shell shell = new Shell();
 		try {
 
-			DiagramEditPart diagramEP = OffscreenEditPartFactory.getInstance()
-					.createDiagramEditPart(diagram, shell);
+			DiagramEditPart diagramEP = OffscreenEditPartFactory.getInstance().createDiagramEditPart(diagram, shell);
 
-			DiagramImageGenerator imageGenerator = new DiagramImageGenerator(
-					diagramEP);
+			DiagramImageGenerator imageGenerator = new DiagramImageGenerator(diagramEP);
 
 			// Image image = imageGenerator.createSWTImageDescriptorForDiagram()
 			// .createImage();
 			List<EditPart> editParts = new ArrayList<EditPart>();
 			editParts.add(diagramEP.getPrimaryChildEditPart());
-			Image image = imageGenerator.createSWTImageDescriptorForParts(
-					editParts).createImage();
+			Image image = imageGenerator.createSWTImageDescriptorForParts(editParts).createImage();
 			return image;
 		} finally {
 			shell.dispose();

@@ -41,60 +41,48 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
  * @author andreas muelder - Initial contribution and API
  * 
  */
-public class AutoSizeContainerCommand extends AbstractTransactionalCommand  {
+public class AutoSizeContainerCommand extends AbstractTransactionalCommand {
 
 	IGraphicalEditPart host;
-	
-	public AutoSizeContainerCommand(TransactionalEditingDomain domain, String label,
-			List affectedFiles,IGraphicalEditPart host) {
+
+	public AutoSizeContainerCommand(TransactionalEditingDomain domain, String label, List affectedFiles,
+			IGraphicalEditPart host) {
 		super(domain, label, affectedFiles);
-		this.host=host;
-		// TODO Auto-generated constructor stub
+		this.host = host;
 	}
 
 	// Space between the border of the container and the moved figure
-	public static int V_SPACEING = 25;
-	public static int H_SPACEING = 25;
+	public int V_SPACEING = 25;
+	public int H_SPACEING = 25;
 
 	protected IGraphicalEditPart getParentEditPart(EditPart part) {
-		part = part.getParent();
-		while (!(part instanceof ShapeNodeEditPart)) {
-			part = part.getParent();
-			if (part == null)
+		EditPart parentPart = part.getParent();
+		while (!(parentPart instanceof ShapeNodeEditPart)) {
+			parentPart = parentPart.getParent();
+			if (parentPart == null)
 				return null;
 		}
-		return (IGraphicalEditPart) part;
+		return (IGraphicalEditPart) parentPart;
 	}
 
-	private Rectangle calculateFeedbackBounds(Rectangle feedbackBounds,
-			 IFigure containerFigure) {
+	private Rectangle calculateFeedbackBounds(Rectangle feedbackBounds, IFigure containerFigure) {
 		Dimension preferredSize = containerFigure.getPreferredSize().getCopy();
 		ResizableCompartmentEditPart compartmentEditPart = (ResizableCompartmentEditPart) host;
-		if(host instanceof ListCompartmentEditPart){
-			H_SPACEING=0;
-			V_SPACEING=50;
-		}
-		else{
-			H_SPACEING=25;
+		if (host instanceof ListCompartmentEditPart) {
+			H_SPACEING = 0;
+			V_SPACEING = 50;
+		} else {
+			H_SPACEING = 25;
 		}
 
 		Rectangle result = feedbackBounds.getCopy();
-		// containerFigure.translateToAbsolute(feedbackBounds);
-		List<IGraphicalEditPart> childEditParts = compartmentEditPart
-				.getChildren();
+		List<IGraphicalEditPart> childEditParts = compartmentEditPart.getChildren();
 		for (IGraphicalEditPart chidEditPart : childEditParts) {
 			if (chidEditPart != host) {
-				Rectangle bound = new Rectangle(chidEditPart.getFigure()
-						.getBounds());
+				Rectangle bound = new Rectangle(chidEditPart.getFigure().getBounds());
 				chidEditPart.getFigure().translateToAbsolute(bound);
 				bound.expand(H_SPACEING, V_SPACEING);
 				chidEditPart.getFigure().translateToAbsolute(preferredSize);
-				// chidEditPart.getFigure().translateToAbsolute(bound);
-				/*
-				 * AutoEnlargeContainerRequest request = new
-				 * AutoEnlargeContainerRequest(chidEditPart); Command
-				 * cmd=chidEditPart.getCommand(request); cmd.execute();
-				 */
 				result.union(bound);
 
 			}
@@ -108,26 +96,22 @@ public class AutoSizeContainerCommand extends AbstractTransactionalCommand  {
 	}
 
 	@Override
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
 		IGraphicalEditPart parent = getParentEditPart(host);
 		Rectangle feedbackBounds = parent.getFigure().getBounds().getCopy();
 		parent.getFigure().getParent().translateToAbsolute(feedbackBounds);
-		feedbackBounds = calculateFeedbackBounds(feedbackBounds, 
-				parent.getFigure());
+		feedbackBounds = calculateFeedbackBounds(feedbackBounds, parent.getFigure());
 		parent.getFigure().translateToRelative(feedbackBounds);
 		SetBoundsCommand cmd = new SetBoundsCommand(getEditingDomain(),
-				DiagramUIMessages.SetLocationCommand_Label_Resize,
-				new EObjectAdapter(parent.getNotationView()), feedbackBounds);
-		
-		IStatus status=cmd.execute(monitor, info);
-	        cleanup();
-		return status.getSeverity()==IStatus.OK ? CommandResult.newOKCommandResult() : CommandResult.newErrorCommandResult("Resize went Wrong!");
-	
+				DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter(parent.getNotationView()),
+				feedbackBounds);
+
+		IStatus status = cmd.execute(monitor, info);
+		cleanup();
+		return status.getSeverity() == IStatus.OK ? CommandResult.newOKCommandResult()
+				: CommandResult.newErrorCommandResult("Resize went Wrong!");
+
 	}
 
-
-	
 }

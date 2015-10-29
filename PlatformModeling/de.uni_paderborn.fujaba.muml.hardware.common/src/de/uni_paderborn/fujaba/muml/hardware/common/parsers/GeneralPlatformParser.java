@@ -8,30 +8,32 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSizeUnit;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.FrequencyUnit;
 
 /**
- *  This class contains text-parser methods which are used by several text-parses of the platform editors.
+ * This class contains text-parser methods which are used by several text-parses
+ * of the platform editors.
+ * 
  * @author adann
  *
  */
 public class GeneralPlatformParser {
 
-	public static Integer getLowerBound(String cardinality)
-			throws NumberFormatException {
+	private GeneralPlatformParser() {
+
+	}
+
+	public static Integer getLowerBound(String cardinality) throws NumberFormatException {
 		String lowerBound;
 		if (Pattern.matches("[0-9]+\\.\\.[0-9]+", cardinality)) {
-			lowerBound = GeneralPlatformParser.substringBefore(
-					cardinality.trim(), ".");
+			lowerBound = GeneralPlatformParser.substringBefore(cardinality.trim(), ".");
 			return Integer.parseInt(lowerBound);
 		} else {
 			throw new NumberFormatException();
 		}
 	}
 
-	public static Integer getUpperBound(String cardinality)
-			throws NumberFormatException {
+	public static Integer getUpperBound(String cardinality) throws NumberFormatException {
 		String upperBound;
 		if (Pattern.matches("[0-9]+\\.\\.[0-9]+", cardinality)) {
-			upperBound = GeneralPlatformParser.substringAfter(
-					cardinality.trim(), "..");
+			upperBound = GeneralPlatformParser.substringAfter(cardinality.trim(), "..");
 			return Integer.parseInt(upperBound);
 		} else {
 			throw new NumberFormatException();
@@ -57,8 +59,7 @@ public class GeneralPlatformParser {
 	public static Double getValue(String string) {
 		String value;
 		if (Pattern.matches("[0-9]+\\.?[0-9]*.*[a-zA-Z]+", string)) {
-			Matcher matcher = Pattern.compile("[0-9]+\\.?[0-9]*").matcher(
-					string);
+			Matcher matcher = Pattern.compile("[0-9]+\\.?[0-9]*").matcher(string);
 			matcher.find();
 			matcher.group();
 			value = string.substring(matcher.start(), matcher.end());
@@ -73,17 +74,16 @@ public class GeneralPlatformParser {
 	public static DataSizeUnit getUnitDataSize(String string) {
 		String unitAsString = GeneralPlatformParser.getUnit(string);
 		DataSizeUnit unit = DataSizeUnit.BIT;
-		if (unitAsString.equalsIgnoreCase("bit")) {
+		if (("bit").equalsIgnoreCase(unitAsString)) {
 			unit = DataSizeUnit.BIT;
-		} 
-		if (unitAsString.equalsIgnoreCase("byte")) {
-			unit = DataSizeUnit.BYTE;
 		}
-		else if (unitAsString.equalsIgnoreCase("kb")) {
+		if (("byte").equalsIgnoreCase(unitAsString)) {
+			unit = DataSizeUnit.BYTE;
+		} else if (("kb").equalsIgnoreCase(unitAsString)) {
 			unit = DataSizeUnit.KBYTE;
-		} else if (unitAsString.equalsIgnoreCase("mb")) {
+		} else if (("mb").equalsIgnoreCase(unitAsString)) {
 			unit = DataSizeUnit.MBYTE;
-		} else if (unitAsString.equalsIgnoreCase("gb")) {
+		} else if (("gb").equalsIgnoreCase(unitAsString)) {
 			unit = DataSizeUnit.GBYTE;
 		}
 		return unit;
@@ -92,33 +92,29 @@ public class GeneralPlatformParser {
 	public static DataRateUnit getUnitDataRate(String string) {
 		String unitAsString = GeneralPlatformParser.getUnit(string);
 		DataRateUnit unit = DataRateUnit.BS;
-				
-			if(unitAsString.equalsIgnoreCase("bs")){
-				unit=DataRateUnit.BS;
-			}
-			else if(unitAsString.equalsIgnoreCase("kbs")){
-				unit=DataRateUnit.KBS;
-			}
-			else if(unitAsString.equalsIgnoreCase("mbs")){
-				unit=DataRateUnit.MBS;
-			}
-			return unit;
+
+		if (("bs").equalsIgnoreCase(unitAsString)) {
+			unit = DataRateUnit.BS;
+		} else if (("kbs").equalsIgnoreCase(unitAsString)) {
+			unit = DataRateUnit.KBS;
+		} else if (("mbs").equalsIgnoreCase(unitAsString)) {
+			unit = DataRateUnit.MBS;
+		}
+		return unit;
 	}
-	
+
 	public static FrequencyUnit getUnitFrequency(String string) {
 		String unitAsString = GeneralPlatformParser.getUnit(string);
 		FrequencyUnit unit = FrequencyUnit.HZ;
-				
-			if(unitAsString.equalsIgnoreCase("hz")){
-				unit=FrequencyUnit.HZ;
-			}
-			else if(unitAsString.equalsIgnoreCase("mhz")){
-				unit=FrequencyUnit.MHZ;
-			}
-			else if(unitAsString.equalsIgnoreCase("ghz")){
-				unit=FrequencyUnit.GHZ;
-			}
-			return unit;
+
+		if (("hz").equalsIgnoreCase(unitAsString)) {
+			unit = FrequencyUnit.HZ;
+		} else if (("mhz").equalsIgnoreCase(unitAsString)) {
+			unit = FrequencyUnit.MHZ;
+		} else if (("ghz").equalsIgnoreCase(unitAsString)) {
+			unit = FrequencyUnit.GHZ;
+		}
+		return unit;
 	}
 
 	/**

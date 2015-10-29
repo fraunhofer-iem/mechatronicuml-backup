@@ -33,6 +33,8 @@ public class ProcessorEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 			addPropertyEditor(createEditorFamily_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorNbCores_GeneralTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -46,6 +48,8 @@ public class ProcessorEditor extends de.uni_paderborn.fujaba.properties.runtime.
 			addPropertyEditor(createEditorArchitecture_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorFamily_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorNbCores_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -102,6 +106,21 @@ public class ProcessorEditor extends de.uni_paderborn.fujaba.properties.runtime.
 			this.editorFamily_GeneralTab = editor;
 		}
 		return this.editorFamily_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNbCores_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNbCores_GeneralTab_Editor() {
+		if (this.editorNbCores_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getProcessor_NbCores();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+					adapterFactory, feature, 2);
+
+			editor.setTooltipMessage("The number of cores of this Processor.");
+
+			this.editorNbCores_GeneralTab = editor;
+		}
+		return this.editorNbCores_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentStructuredResource_GeneralTab;
@@ -183,8 +202,8 @@ public class ProcessorEditor extends de.uni_paderborn.fujaba.properties.runtime.
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.extensions"})
-					.contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.extensions"}).contains(tab);
 		}
 	}
 

@@ -195,6 +195,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_RlcE5M1gEeSIgPDefa6ZBw"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Processor/nbCores"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor" digits="2"/>
+      </orderedElements>
     </classes>
     <classes xmi:id="_RlcE5c1gEeSIgPDefa6ZBw" superClasses="_RlV-Rs1gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwresource/AtomicResource"/>

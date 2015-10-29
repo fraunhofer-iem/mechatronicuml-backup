@@ -33,8 +33,7 @@ import org.eclipse.xtext.EcoreUtil2;
  * @author andreas muelder - Initial contribution and API
  * 
  */
-public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
-		extends InteractiveDecorator {
+public abstract class AbstractHierarchicalElementDecorator<T extends EObject> extends InteractiveDecorator {
 
 	public AbstractHierarchicalElementDecorator(IDecoratorTarget decoratorTarget) {
 		super(decoratorTarget);
@@ -47,11 +46,9 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 	protected abstract EObject getEmbeddedElement(T element);
 
 	protected Diagram getTooltipDiagramToRenderElement(T element) {
-		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget()
-				.getAdapter(IGraphicalEditPart.class);
-		BooleanValueStyle style = GMFNotationUtil
-				.getBooleanValueStyle(adapter.getNotationView(),
-						DiagramPartitioningUtil.INLINE_STYLE);
+		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget().getAdapter(IGraphicalEditPart.class);
+		BooleanValueStyle style = GMFNotationUtil.getBooleanValueStyle(adapter.getNotationView(),
+				DiagramPartitioningUtil.INLINE_STYLE);
 		if (style != null && !style.isBooleanValue()) {
 			return getDiagramForSemanticElement(element);
 		}
@@ -59,14 +56,12 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 	}
 
 	private Diagram getDiagramForSemanticElement(T element) {
-		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget()
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget().getAdapter(IGraphicalEditPart.class);
 		View view = adapter.getNotationView();
-		Collection<Diagram> diagrams = EcoreUtil2.getObjectsByType(view
-				.eResource().getContents(), NotationPackage.Literals.DIAGRAM);
+		Collection<Diagram> diagrams = EcoreUtil2.getObjectsByType(view.eResource().getContents(),
+				NotationPackage.Literals.DIAGRAM);
 		for (Diagram diagram : diagrams) {
-			if (EcoreUtil.equals(diagram.getElement(),
-					getEmbeddedElement(element))) {
+			if (EcoreUtil.equals(diagram.getElement(), getEmbeddedElement(element))) {
 				return diagram;
 			}
 		}
@@ -75,24 +70,13 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 
 	@Override
 	public boolean shouldDecorate(EObject element) {
-		// if(getTClass().isInstance(element)){
-		// IGraphicalEditPart adapter = (IGraphicalEditPart)
-		// getDecoratorTarget()
-		// .getAdapter(IGraphicalEditPart.class);
-		// BooleanValueStyle style = GMFNotationUtil
-		// .getBooleanValueStyle(adapter.getNotationView(),
-		// DiagramPartitioningUtil.INLINE_STYLE);
-		// return style == null ? false : !style.isBooleanValue();
-		// }
-		// return false;
 		return true;
 
 	}
 
 	@Override
 	public Image getDecorationImage(EObject element) {
-		return (getTClass().isInstance(element)) ? getDecorationImageElement((T) element)
-				: null;
+		return (getTClass().isInstance(element)) ? getDecorationImageElement((T) element) : null;
 	}
 
 	@Override
@@ -111,8 +95,7 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 	protected Image renderImage(Diagram diagram) {
 		Assert.isNotNull(diagram);
 		Image renderImage = CustomRenderingHelper.renderToSWTImage(diagram);
-		Image resize = resize(renderImage,
-				(int) (0.7071 * renderImage.getBounds().width),
+		Image resize = resize(renderImage, (int) (0.7071 * renderImage.getBounds().width),
 				(int) (0.7071 * renderImage.getBounds().height));
 		return resize;
 	}
@@ -124,20 +107,13 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 
 	@Override
 	protected void mousePressed(Decoration decoration, EObject semanticElement) {
-		// Diagram diagramToOpen = getDiagramForSemanticElement((T)
-		// semanticElement);
-		// DiagramPartitioningUtil.openEditor(diagramToOpen);
-		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget()
-				.getAdapter(IGraphicalEditPart.class);
-		BooleanValueStyle style = GMFNotationUtil
-				.getBooleanValueStyle(adapter.getNotationView(),
-						DiagramPartitioningUtil.INLINE_STYLE);
+
+		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget().getAdapter(IGraphicalEditPart.class);
+		BooleanValueStyle style = GMFNotationUtil.getBooleanValueStyle(adapter.getNotationView(),
+				DiagramPartitioningUtil.INLINE_STYLE);
 		if (style == null || style.isBooleanValue()) {
 			getExtractClass().execute();
-		} else {
-
 		}
-
 	}
 
 	protected abstract AbstractExtractSubdiagramRefactoring<T> getExtractClass();

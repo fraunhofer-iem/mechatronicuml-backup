@@ -33,8 +33,7 @@ import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
  * @author andreas muelder - Initial contribution and API
  * 
  */
-public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject>
-		extends AbstractRefactoring<View> {
+public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject> extends AbstractRefactoring<View> {
 
 	private Diagram subdiagram;
 
@@ -51,8 +50,7 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject>
 	@Override
 	public boolean isExecutable() {
 		T element = (T) getContextObject().getElement();
-		BooleanValueStyle inlineStyle = DiagramPartitioningUtil
-				.getInlineStyle(getContextObject());
+		BooleanValueStyle inlineStyle = DiagramPartitioningUtil.getInlineStyle(getContextObject());
 		System.out.println("Exe:" + super.isExecutable());
 		System.out.println("Hier:" + elementIsHierachical(element));
 		return super.isExecutable() && elementIsHierachical(element)
@@ -68,8 +66,7 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject>
 
 	@Override
 	protected boolean internalDoUndo() {
-		boolean close = DiagramPartitioningUtil
-				.closeSubdiagramEditors((T) subdiagram.getElement());
+		boolean close = DiagramPartitioningUtil.closeSubdiagramEditors((T) subdiagram.getElement());
 		if (!close)
 			return false;
 		// Since the canonical edit policy creates edges for the semantic
@@ -86,8 +83,7 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject>
 	 */
 	@SuppressWarnings("unchecked")
 	protected void setNotationStyle() {
-		BooleanValueStyle inlineStyle = DiagramPartitioningUtil
-				.getInlineStyle(getContextObject());
+		BooleanValueStyle inlineStyle = DiagramPartitioningUtil.getInlineStyle(getContextObject());
 		if (inlineStyle == null) {
 			inlineStyle = DiagramPartitioningUtil.createInlineStyle();
 			getContextObject().getStyles().add(inlineStyle);
@@ -105,34 +101,29 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject>
 	protected Diagram createSubdiagram() {
 		View contextView = getContextObject();
 		T contextElement = (T) contextView.getElement();
-		Map<String, IDiagramInformation> diagramInformationMap = FujabaNewwizardPlugin
-				.getDefault().getDiagramInformationMap();
-		IDiagramInformation information = diagramInformationMap
-				.get(getEditorID());
-		Diagram subdiagram = ViewService.createDiagram(
-				getElementToExtract(contextElement), information.getModelId(),
+		Map<String, IDiagramInformation> diagramInformationMap = FujabaNewwizardPlugin.getDefault()
+				.getDiagramInformationMap();
+		IDiagramInformation information = diagramInformationMap.get(getEditorID());
+		Diagram newSubdiagram = ViewService.createDiagram(getElementToExtract(contextElement), information.getModelId(),
 				getEditorPreferenceHINT());
 		View figureCompartment = null;
 		for (Integer viewID : getCompartmentViewIDs()) {
-			figureCompartment = ViewUtil.getChildBySemanticHint(contextView,
-					String.valueOf(viewID));
+			figureCompartment = ViewUtil.getChildBySemanticHint(contextView, String.valueOf(viewID));
 			if (figureCompartment != null) {
 				break;
 			}
 		}
 
-		getResource().getContents().add(subdiagram);
+		getResource().getContents().add(newSubdiagram);
 
 		while (figureCompartment.getChildren().size() > 0) {
 
-			subdiagram.insertChild((View) figureCompartment.getChildren()
-					.get(0));
+			newSubdiagram.insertChild((View) figureCompartment.getChildren().get(0));
 		}
-		// subdiagram.insertChild((View) figureCompartment);
 		figureCompartment.setVisible(false);
 		contextView.removeChild(figureCompartment);
 
-		return subdiagram;
+		return newSubdiagram;
 
 	}
 

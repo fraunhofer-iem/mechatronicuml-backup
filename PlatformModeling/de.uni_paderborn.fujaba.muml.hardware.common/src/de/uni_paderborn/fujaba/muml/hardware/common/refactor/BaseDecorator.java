@@ -29,14 +29,6 @@ public abstract class BaseDecorator extends AbstractDecorator {
 
 	private EObject semanticElement;
 
-	public BaseDecorator(IDecoratorTarget decoratorTarget) {
-		super(decoratorTarget);
-		gep = (IGraphicalEditPart) getDecoratorTarget().getAdapter(
-				IGraphicalEditPart.class);
-		semanticElement = gep.resolveSemanticElement();
-
-	}
-
 	private NotificationListener notificationListener = new NotificationListener() {
 
 		public void notifyChanged(Notification notification) {
@@ -44,26 +36,29 @@ public abstract class BaseDecorator extends AbstractDecorator {
 		}
 	};
 
+	public BaseDecorator(IDecoratorTarget decoratorTarget) {
+		super(decoratorTarget);
+		gep = (IGraphicalEditPart) getDecoratorTarget().getAdapter(IGraphicalEditPart.class);
+		semanticElement = gep.resolveSemanticElement();
+
+	}
+
 	public void activate() {
-		DiagramEventBroker.getInstance(gep.getEditingDomain())
-				.addNotificationListener(semanticElement, notificationListener);
-		DiagramEventBroker.getInstance(gep.getEditingDomain())
-				.addNotificationListener(gep.getNotationView(),
-						notificationListener);
+		DiagramEventBroker.getInstance(gep.getEditingDomain()).addNotificationListener(semanticElement,
+				notificationListener);
+		DiagramEventBroker.getInstance(gep.getEditingDomain()).addNotificationListener(gep.getNotationView(),
+				notificationListener);
 	}
 
 	public void deactivate() {
 		removeDecoration();
-		IGraphicalEditPart gep = (IGraphicalEditPart) getDecoratorTarget()
-				.getAdapter(IGraphicalEditPart.class);
-		assert gep != null;
+		IGraphicalEditPart gepDec = (IGraphicalEditPart) getDecoratorTarget().getAdapter(IGraphicalEditPart.class);
+		assert gepDec != null;
 
-		DiagramEventBroker.getInstance(gep.getEditingDomain())
-				.removeNotificationListener(semanticElement,
-						notificationListener);
-		DiagramEventBroker.getInstance(gep.getEditingDomain())
-				.removeNotificationListener(gep.getNotationView(),
-						notificationListener);
+		DiagramEventBroker.getInstance(gepDec.getEditingDomain()).removeNotificationListener(semanticElement,
+				notificationListener);
+		DiagramEventBroker.getInstance(gepDec.getEditingDomain()).removeNotificationListener(gepDec.getNotationView(),
+				notificationListener);
 	}
 
 }
