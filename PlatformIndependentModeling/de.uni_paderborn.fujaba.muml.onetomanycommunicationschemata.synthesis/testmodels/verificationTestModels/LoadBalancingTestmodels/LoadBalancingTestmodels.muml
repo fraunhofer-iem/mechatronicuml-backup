@@ -24,8 +24,9 @@
           <message xmi:id="_0cpV0HvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
         </events>
       </transitions>
-      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" initial="true"/>
-      <states xmi:id="_dTNxkHveEeWJtcJpbyRDKg" name="state2" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg"/>
+      <transitions xmi:id="_OeCSgH7-EeWVlPbN-IV2YA" priority="1" target="_XgFVUXveEeWJtcJpbyRDKg" source="_dTNxkHveEeWJtcJpbyRDKg"/>
+      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" incomingTransitions="_OeCSgH7-EeWVlPbN-IV2YA" initial="true"/>
+      <states xmi:id="_dTNxkHveEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_OeCSgH7-EeWVlPbN-IV2YA" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg"/>
     </modelElements>
   </categories>
   <categories xmi:id="_N8D303vSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">

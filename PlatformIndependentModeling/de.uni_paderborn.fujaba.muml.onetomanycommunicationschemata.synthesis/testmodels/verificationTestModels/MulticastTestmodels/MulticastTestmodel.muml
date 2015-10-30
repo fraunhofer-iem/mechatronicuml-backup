@@ -20,16 +20,17 @@
           <message xmi:id="_0cpV0HvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
         </events>
       </transitions>
-      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" initial="true"/>
-      <states xmi:id="_dTNxkHveEeWJtcJpbyRDKg" name="state2" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg"/>
+      <transitions xmi:id="_qj7_gH75EeWQAISb8pKNiQ" priority="1" target="_XgFVUXveEeWJtcJpbyRDKg" source="_dTNxkHveEeWJtcJpbyRDKg"/>
+      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" incomingTransitions="_qj7_gH75EeWQAISb8pKNiQ" initial="true"/>
+      <states xmi:id="_dTNxkHveEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_qj7_gH75EeWQAISb8pKNiQ" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg"/>
     </modelElements>
   </categories>
   <categories xmi:id="_N8D303vSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_SavCkHvSEeWJtcJpbyRDKg" name="C1">
       <roles xmi:id="_Sa9sEHvSEeWJtcJpbyRDKg" connectors="_SbIrMHvSEeWJtcJpbyRDKg" behavior="_YwviYHvSEeWJtcJpbyRDKg" name="role1" senderMessageTypes="_WdIhAHvSEeWJtcJpbyRDKg">
         <cardinality xmi:id="_SbEZwHvSEeWJtcJpbyRDKg">
-          <lowerBound xmi:id="_ZL79sHvfEeWJtcJpbyRDKg"/>
-          <upperBound xmi:id="_ZMCEUHvfEeWJtcJpbyRDKg" value="2"/>
+          <lowerBound xmi:id="_8WTYcH76EeWQAISb8pKNiQ"/>
+          <upperBound xmi:id="_8WYQ8H76EeWQAISb8pKNiQ" value="2"/>
         </cardinality>
       </roles>
       <roles xmi:id="_SbFn4XvSEeWJtcJpbyRDKg" connectors="_SbIrMHvSEeWJtcJpbyRDKg" behavior="_XgFVUHveEeWJtcJpbyRDKg" name="role2" receiverMessageTypes="_WdIhAHvSEeWJtcJpbyRDKg">

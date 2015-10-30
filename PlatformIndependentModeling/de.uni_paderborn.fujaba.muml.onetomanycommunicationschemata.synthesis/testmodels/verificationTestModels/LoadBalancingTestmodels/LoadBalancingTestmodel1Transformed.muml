@@ -9,8 +9,9 @@
           <message xmi:id="_0cpV0HvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
         </events>
       </transitions>
-      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" initial="true"/>
-      <states xmi:id="_dTNxkHveEeWJtcJpbyRDKg" name="state2" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg"/>
+      <transitions xmi:id="_Q_WOIH79EeWVlPbN-IV2YA" priority="1" target="_XgFVUXveEeWJtcJpbyRDKg" source="_dTNxkHveEeWJtcJpbyRDKg"/>
+      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" incomingTransitions="_Q_WOIH79EeWVlPbN-IV2YA" initial="true"/>
+      <states xmi:id="_dTNxkHveEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_Q_WOIH79EeWVlPbN-IV2YA" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_fx1IEHvpEeWn56WNjktYQQ" name="rtscRole1Impl" behavioralElement="_Sa9sEHvSEeWJtcJpbyRDKg">
       <variables xmi:id="_fx1IEXvpEeWn56WNjktYQQ" name="loadBalancingPossible_1">
