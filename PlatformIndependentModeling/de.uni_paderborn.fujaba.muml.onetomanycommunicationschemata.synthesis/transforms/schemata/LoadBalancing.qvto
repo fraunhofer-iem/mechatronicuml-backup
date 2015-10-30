@@ -66,7 +66,7 @@ mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, r
 	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
 		urgent := false;		
 	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
-	synchronization := self. createSynchronization( loadBalancingCheckDone,SynchronizationKind::SEND);
+	synchronization := self. createSynchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 }
 
 // @author: sthiele2
