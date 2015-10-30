@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://de/uni_paderborn/fujaba/muml/testlanguage" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Ryc2IH7pEeWWGpkdzjYFAQ" type="TestLanguage" name="railcab_Convoy.testlanguage_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_S9nowH7pEeWWGpkdzjYFAQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_S9noxX7pEeWWGpkdzjYFAQ" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_S9noxn7pEeWWGpkdzjYFAQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_S9o24H7pEeWWGpkdzjYFAQ" type="3002" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_S9pd8H7pEeWWGpkdzjYFAQ" type="5002"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="railcab_Convoy.testlanguage#//@nodes.0/@outputs[name='model']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S9o24X7pEeWWGpkdzjYFAQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_S9nox37pEeWWGpkdzjYFAQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_S9noyH7pEeWWGpkdzjYFAQ"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_S9nowX7pEeWWGpkdzjYFAQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_S9nown7pEeWWGpkdzjYFAQ" fontName="Sans Serif"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_S9now37pEeWWGpkdzjYFAQ"/>
+    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S9noxH7pEeWWGpkdzjYFAQ" x="71" y="267"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Tcf9IH7pEeWWGpkdzjYFAQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Tcf9JX7pEeWWGpkdzjYFAQ" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Tcf9Jn7pEeWWGpkdzjYFAQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_TchLQH7pEeWWGpkdzjYFAQ" type="3001" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_TchLQn7pEeWWGpkdzjYFAQ" type="5001"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.1/@inputs[name='muml']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TchLQX7pEeWWGpkdzjYFAQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_TchyUH7pEeWWGpkdzjYFAQ" type="3001" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_TchyUn7pEeWWGpkdzjYFAQ" type="5001"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.1/@inputs[name='options']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TchyUX7pEeWWGpkdzjYFAQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_TchyU37pEeWWGpkdzjYFAQ" type="3002" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_TchyVX7pEeWWGpkdzjYFAQ" type="5002"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="railcab_Convoy.testlanguage#//@nodes.1/@outputs[name='results']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TchyVH7pEeWWGpkdzjYFAQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Tcf9J37pEeWWGpkdzjYFAQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Tcf9KH7pEeWWGpkdzjYFAQ"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Tcf9IX7pEeWWGpkdzjYFAQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Tcf9In7pEeWWGpkdzjYFAQ" fontName="Sans Serif"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_Tcf9I37pEeWWGpkdzjYFAQ"/>
+    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tcf9JH7pEeWWGpkdzjYFAQ" x="331" y="260"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_T5y9IH7pEeWWGpkdzjYFAQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_T5y9JX7pEeWWGpkdzjYFAQ" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_T5y9Jn7pEeWWGpkdzjYFAQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_T50LQH7pEeWWGpkdzjYFAQ" type="3001" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_T50LQn7pEeWWGpkdzjYFAQ" type="5001"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.2/@inputs[name='property_result_repository']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T50LQX7pEeWWGpkdzjYFAQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_T5y9J37pEeWWGpkdzjYFAQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_T5y9KH7pEeWWGpkdzjYFAQ"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_T5y9IX7pEeWWGpkdzjYFAQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_T5y9In7pEeWWGpkdzjYFAQ" fontName="Sans Serif"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_T5y9I37pEeWWGpkdzjYFAQ"/>
+    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T5y9JH7pEeWWGpkdzjYFAQ" x="621" y="282"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_RyddMH7pEeWWGpkdzjYFAQ"/>
+  <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:TestCase" href="railcab_Convoy.testlanguage#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_UU3vkH7pEeWWGpkdzjYFAQ" type="4001" source="_S9o24H7pEeWWGpkdzjYFAQ" target="_TchLQH7pEeWWGpkdzjYFAQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_UU3vkX7pEeWWGpkdzjYFAQ" fontName="Sans Serif"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UU3vkn7pEeWWGpkdzjYFAQ" points="[50, 0, -185, 7]$[210, -7, -25, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UU49sH7pEeWWGpkdzjYFAQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UU49sX7pEeWWGpkdzjYFAQ"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_UzPtoH7pEeWWGpkdzjYFAQ" type="4001" source="_TchyU37pEeWWGpkdzjYFAQ" target="_T50LQH7pEeWWGpkdzjYFAQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_UzPtoX7pEeWWGpkdzjYFAQ" fontName="Sans Serif"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UzPton7pEeWWGpkdzjYFAQ" points="[25, 0, -281, -12]$[215, 12, -91, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UzQ7wH7pEeWWGpkdzjYFAQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UzQ7wX7pEeWWGpkdzjYFAQ"/>
+  </edges>
+</notation:Diagram>

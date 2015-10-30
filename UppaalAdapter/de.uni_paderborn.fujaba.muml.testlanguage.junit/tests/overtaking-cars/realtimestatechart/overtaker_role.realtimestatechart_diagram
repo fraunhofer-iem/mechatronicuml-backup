@@ -272,17 +272,4 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ulQV4PF0EeOlh5RNj-DICA" id="(0.875,0.35106382978723405)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vAQ24PF0EeOlh5RNj-DICA" id="(0.04065040650406504,0.26262626262626265)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_omwqECxYEeW4k_sqcOtbiQ" type="4003" source="_b1NhieQyEeO5YYImi9Q4Mg" target="_b1NhieQyEeO5YYImi9Q4Mg" lineColor="0">
-    <children xmi:type="notation:DecorationNode" xmi:id="_omxRICxYEeW4k_sqcOtbiQ" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_omxRISxYEeW4k_sqcOtbiQ" y="-20"/>
-    </children>
-    <children xmi:type="notation:DecorationNode" xmi:id="_omxRIixYEeW4k_sqcOtbiQ" type="6006">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_omxRIyxYEeW4k_sqcOtbiQ" x="-10" y="20"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_omwqESxYEeW4k_sqcOtbiQ" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../overtaking-correct.muml#_omrxkCxYEeW4k_sqcOtbiQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_omwqEixYEeW4k_sqcOtbiQ" points="[-9, 1, 68, 16]$[-9, 30, 68, 45]$[-69, 30, 8, 45]$[-69, 1, 8, 16]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_om_TkCxYEeW4k_sqcOtbiQ" id="(0.6701298701298701,0.9967948717948718)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_om_TkSxYEeW4k_sqcOtbiQ" id="(0.4701298701298701,0.9487179487179487)"/>
-  </edges>
 </notation:Diagram>

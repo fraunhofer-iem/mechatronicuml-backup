@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://de/uni_paderborn/fujaba/muml/testlanguage" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_t7tZkH5qEeWAI8J3RbRFpw" type="TestLanguage" name="overtaking-cars-w-contraflow_LimitVelocity.testlanguage_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_vVhFIH5qEeWAI8J3RbRFpw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vVhFJX5qEeWAI8J3RbRFpw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vVhFJn5qEeWAI8J3RbRFpw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_vViTQH5qEeWAI8J3RbRFpw" type="3002" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_vVi6UH5qEeWAI8J3RbRFpw" type="5002"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.0/@outputs[name='model']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vViTQX5qEeWAI8J3RbRFpw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vVhFJ35qEeWAI8J3RbRFpw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vVhFKH5qEeWAI8J3RbRFpw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_vVhFIX5qEeWAI8J3RbRFpw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_vVhFIn5qEeWAI8J3RbRFpw" fontName="Sans Serif"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_vVhFI35qEeWAI8J3RbRFpw"/>
+    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vVhFJH5qEeWAI8J3RbRFpw" x="51" y="231"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_v2nAAH5qEeWAI8J3RbRFpw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_v2nABX5qEeWAI8J3RbRFpw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_v2nnEH5qEeWAI8J3RbRFpw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_v2oOIH5qEeWAI8J3RbRFpw" type="3001" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_v2oOIn5qEeWAI8J3RbRFpw" type="5001"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.1/@inputs[name='muml']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v2oOIX5qEeWAI8J3RbRFpw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_v2oOI35qEeWAI8J3RbRFpw" type="3001" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_v2oOJX5qEeWAI8J3RbRFpw" type="5001"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.1/@inputs[name='options']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v2oOJH5qEeWAI8J3RbRFpw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_v2o1MH5qEeWAI8J3RbRFpw" type="3002" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_v2o1Mn5qEeWAI8J3RbRFpw" type="5002"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.1/@outputs[name='results']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v2o1MX5qEeWAI8J3RbRFpw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_v2nnEX5qEeWAI8J3RbRFpw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_v2nnEn5qEeWAI8J3RbRFpw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_v2nAAX5qEeWAI8J3RbRFpw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_v2nAAn5qEeWAI8J3RbRFpw" fontName="Sans Serif"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_v2nAA35qEeWAI8J3RbRFpw"/>
+    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v2nABH5qEeWAI8J3RbRFpw" x="333" y="229"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_wNDKEH5qEeWAI8J3RbRFpw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wNDKFX5qEeWAI8J3RbRFpw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_wNDKFn5qEeWAI8J3RbRFpw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_wNEYMH5qEeWAI8J3RbRFpw" type="3001" fontName="Sans Serif">
+        <children xmi:type="notation:DecorationNode" xmi:id="_wNEYMn5qEeWAI8J3RbRFpw" type="5001"/>
+        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.2/@inputs[name='property_result_repository']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wNEYMX5qEeWAI8J3RbRFpw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wNDKF35qEeWAI8J3RbRFpw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wNDKGH5qEeWAI8J3RbRFpw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_wNDKEX5qEeWAI8J3RbRFpw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wNDKEn5qEeWAI8J3RbRFpw" fontName="Sans Serif"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_wNDKE35qEeWAI8J3RbRFpw"/>
+    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#//@nodes.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wNDKFH5qEeWAI8J3RbRFpw" x="628" y="243"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_t7tZkX5qEeWAI8J3RbRFpw"/>
+  <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:TestCase" href="overtaking-cars-w-contraflow_LimitVelocity.testlanguage#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_wtjPEH5qEeWAI8J3RbRFpw" type="4001" source="_vViTQH5qEeWAI8J3RbRFpw" target="_v2oOIH5qEeWAI8J3RbRFpw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_wtjPEX5qEeWAI8J3RbRFpw" fontName="Sans Serif"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wtjPEn5qEeWAI8J3RbRFpw" points="[50, 0, -207, 2]$[232, -2, -25, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wtkdMH5qEeWAI8J3RbRFpw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wtkdMX5qEeWAI8J3RbRFpw"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_xNlaAH5qEeWAI8J3RbRFpw" type="4001" source="_v2o1MH5qEeWAI8J3RbRFpw" target="_wNEYMH5qEeWAI8J3RbRFpw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_xNlaAX5qEeWAI8J3RbRFpw" fontName="Sans Serif"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xNlaAn5qEeWAI8J3RbRFpw" points="[25, 0, -286, -4]$[220, 4, -91, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xNmoIH5qEeWAI8J3RbRFpw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xNmoIX5qEeWAI8J3RbRFpw"/>
+  </edges>
+</notation:Diagram>
