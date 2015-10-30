@@ -132,7 +132,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 				break;
 			}
 		}
-		setVisible(visibility, relayout, false);
+		setVisible(visibility, relayout, force);
 	}
 
 	public void setVisible(boolean visible) {
