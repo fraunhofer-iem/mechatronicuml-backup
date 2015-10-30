@@ -357,6 +357,9 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/parentPlatformPart"/>
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/parentResourcePart"/>
     </featureInitializers>
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.parentResourcePart.oclAsType(ResourcePart).resourceType.oclAsType(hwresourceinstance::ResourceInstance).hwports.oclAsType(hwresource::CommunicationResource)->select(c|c.protocol = self.protocol)->any(true)">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/hwport"/>
+    </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPortPart"/>
   </mappings>
   <mappings>
