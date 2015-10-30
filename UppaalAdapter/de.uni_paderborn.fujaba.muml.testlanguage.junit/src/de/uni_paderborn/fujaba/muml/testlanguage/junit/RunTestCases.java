@@ -46,7 +46,7 @@ public class RunTestCases {
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_LimitVelocity/overtaking-cars-w-contraflow_LimitVelocity.testlanguage");
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Overtake/overtaking-cars-w-contraflow_Overtake.testlanguage");
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_VModeControl/overtaking-cars-w-contraflow_VModeControl.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_Convoy/railcab_Convoy.testlanguage");
+ 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_Convoy/railcab_Convoy.testlanguage");
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_EnterSection/railcab_EnterSection.testlanguage");
  		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_NextSectionFree/railcab_NextSectionFree.testlanguage");
 
