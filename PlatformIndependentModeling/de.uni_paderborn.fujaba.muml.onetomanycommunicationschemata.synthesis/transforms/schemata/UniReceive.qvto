@@ -197,7 +197,7 @@ mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, re
 mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region:RealtimeStatechart) : Transition{
 		priority := 1;
 		
-		source := self.map SingleReceive2StateExitPoint(context,region);
+		source := self.map SingleReceive2StateExitPoint();
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
@@ -215,7 +215,9 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		
 		source := self.map RegionState(context,  "Requested", false);	
 		
-		target := self.map SingleReceive2StateExitPoint(context,region);
+		target := self.map SingleReceive2StateExitPoint();
+		
+		self.map SingleReceive2StateExitPoint().state := self.map Transition2StateSubrole(region,self.source, true);	
 		
 		if(not self.guard.oclIsUndefined() and not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
 		{
@@ -248,10 +250,8 @@ mapping Transition :: TransferSchemaGuardAndLocalConditions(context : OclAny) : 
 		operator := LogicOperator::AND;	
 }
 	
-mapping Transition :: SingleReceive2StateExitPoint(context : OclAny, region:RealtimeStatechart) : ExitPoint {
-		result.name := self.source.name + "_Requested_ExitPoint";
-		
-		result.state := self.map Transition2StateSubrole(region,self.source, true);	
+mapping Transition :: SingleReceive2StateExitPoint() : ExitPoint {
+		result.name := self.source.name + "_Requested_ExitPoint";		
 		}
 		
 
