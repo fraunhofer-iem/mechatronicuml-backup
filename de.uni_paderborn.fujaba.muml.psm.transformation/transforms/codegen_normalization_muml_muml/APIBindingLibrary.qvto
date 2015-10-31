@@ -263,7 +263,7 @@ query Actionlanguage::IfStatement::createMumlValidExpression() : Core::expressio
 							.createMumlValidExpression()
 							.oclAsType(Actionlanguage::Block)
 							;
-			//		elseIfStatements:=
+					elseIfStatements:=self.elseIfStatements->createMumlValidExpression();
 
 					elseBlock := self
 						
@@ -274,6 +274,13 @@ query Actionlanguage::IfStatement::createMumlValidExpression() : Core::expressio
 				};
 }
 
+
+query Actionlanguage::ElseIfStatement::createMumlValidExpression():Actionlanguage::ElseIfStatement{
+	return object Actionlanguage::ElseIfStatement{
+		elseIfCondition:=self.elseIfCondition.createMumlValidExpression();
+		elseIfBlock:=self.elseIfBlock.createMumlValidExpression().oclAsType(Actionlanguage::Block);
+	};
+}
 
 query Actionlanguage::ReturnStatement::createMumlValidExpression() : Core::expressions::Expression {
 return object Actionlanguage::ReturnStatement {
