@@ -1213,10 +1213,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:63:7: ( 'elseif' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:63:9: 'elseif'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:63:7: ( 'else' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:63:9: 'else'
             {
-            match("elseif"); 
+            match("else"); 
 
 
             }
@@ -1234,10 +1234,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:64:7: ( 'else' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:64:9: 'else'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:64:7: ( 'elseif' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:64:9: 'elseif'
             {
-            match("else"); 
+            match("elseif"); 
 
 
             }
@@ -2047,8 +2047,8 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6913:13: ( RULE_INT '.' RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6913:15: RULE_INT '.' RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6952:13: ( RULE_INT '.' RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6952:15: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -2069,10 +2069,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6915:14: ( ( 'true' | 'false' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6915:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6954:14: ( ( 'true' | 'false' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6954:16: ( 'true' | 'false' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6915:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6954:16: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2090,7 +2090,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6915:17: 'true'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6954:17: 'true'
                     {
                     match("true"); 
 
@@ -2098,7 +2098,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6915:24: 'false'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6954:24: 'false'
                     {
                     match("false"); 
 
@@ -2124,10 +2124,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )? )? )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )? )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )? )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )? )?
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:11: ( '^' )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -2136,7 +2136,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:11: '^'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:11: '^'
                     {
                     match('^'); 
 
@@ -2154,7 +2154,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:40: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )? )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:40: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )? )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2163,9 +2163,9 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:41: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )?
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:41: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )?
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:41: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:41: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+
                     int cnt3=0;
                     loop3:
                     do {
@@ -2203,7 +2203,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                         cnt3++;
                     } while (true);
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:75: ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )?
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:75: ( '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+ )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2212,10 +2212,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:76: '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+
+                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:76: '(' ( '0' .. '9' )+ ')-->' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+
                             {
                             match('('); 
-                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:80: ( '0' .. '9' )+
+                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:80: ( '0' .. '9' )+
                             int cnt4=0;
                             loop4:
                             do {
@@ -2229,7 +2229,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
                                 switch (alt4) {
                             	case 1 :
-                            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:81: '0' .. '9'
+                            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:81: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -2247,7 +2247,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
                             match(")-->"); 
 
-                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6917:99: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+
+                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6956:99: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )+
                             int cnt5=0;
                             loop5:
                             do {
@@ -2313,10 +2313,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_MINORMAXKEYWORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6919:22: ( ( 'maxMsgDelay' | 'minMsgDelay' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6919:24: ( 'maxMsgDelay' | 'minMsgDelay' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6958:22: ( ( 'maxMessageDelay' | 'minMessageDelay' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6958:24: ( 'maxMessageDelay' | 'minMessageDelay' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6919:24: ( 'maxMsgDelay' | 'minMsgDelay' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6958:24: ( 'maxMessageDelay' | 'minMessageDelay' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2344,17 +2344,17 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6919:25: 'maxMsgDelay'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6958:25: 'maxMessageDelay'
                     {
-                    match("maxMsgDelay"); 
+                    match("maxMessageDelay"); 
 
 
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6919:39: 'minMsgDelay'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6958:43: 'minMessageDelay'
                     {
-                    match("minMsgDelay"); 
+                    match("minMessageDelay"); 
 
 
                     }
@@ -2378,10 +2378,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6921:10: ( ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6921:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6960:10: ( ( '0' .. '9' )+ )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6960:12: ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6921:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6960:12: ( '0' .. '9' )+
             int cnt9=0;
             loop9:
             do {
@@ -2395,7 +2395,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6921:13: '0' .. '9'
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6960:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2427,10 +2427,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2448,10 +2448,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -2467,7 +2467,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:21: '\\\\' .
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2475,7 +2475,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2500,10 +2500,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2519,7 +2519,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:54: '\\\\' .
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2527,7 +2527,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6923:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6962:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2570,12 +2570,12 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6925:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6925:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6964:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6964:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6925:24: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6964:24: ( options {greedy=false; } : . )*
             loop13:
             do {
                 int alt13=2;
@@ -2600,7 +2600,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6925:52: .
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6964:52: .
             	    {
             	    matchAny(); 
 
@@ -2630,12 +2630,12 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -2648,7 +2648,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2668,7 +2668,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:40: ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:40: ( ( '\\r' )? '\\n' )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2677,9 +2677,9 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:41: ( '\\r' )? '\\n'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:41: ( '\\r' )?
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:41: ( '\\r' )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -2688,7 +2688,7 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6927:41: '\\r'
+                            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6966:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2720,10 +2720,10 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6929:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6929:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6968:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6968:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6929:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6968:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt17=0;
             loop17:
             do {
@@ -2777,8 +2777,8 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6931:16: ( . )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6931:18: .
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6970:16: ( . )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6970:18: .
             {
             matchAny(); 
 
@@ -3519,17 +3519,17 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
 
     protected DFA18 dfa18 = new DFA18(this);
     static final String DFA18_eotS =
-        "\2\uffff\1\67\1\uffff\2\70\2\uffff\3\70\2\uffff\6\70\1\uffff\2\70\1\uffff\1\140\1\70\1\145\1\70\1\60\1\153\1\154\1\60\1\160\1\162\1\60\1\70\1\171\2\60\1\uffff\1\177\1\uffff\1\70\1\u0082\1\60\1\uffff\2\60\3\uffff\5\70\3\uffff\3\70\2\uffff\1\70\1\u0093\1\u0094\4\70\1\u0099\1\70\2\uffff\1\u009b\6\70\1\u00a3\4\70\1\u00a9\2\70\1\uffff\4\70\3\uffff\1\70\4\uffff\1\70\1\u00b5\2\70\12\uffff\3\70\12\uffff\1\70\2\uffff\1\u0082\2\uffff\13\70\3\uffff\1\u00c8\3\70\1\uffff\1\70\1\uffff\1\70\1\uffff\5\70\1\uffff\1\70\1\u00d6\3\70\1\uffff\1\u00db\12\70\1\uffff\1\u00e6\13\70\1\u00f2\1\u00f3\4\70\1\uffff\4\70\1\u00fd\2\uffff\2\70\1\u0101\3\70\1\uffff\4\70\1\uffff\2\70\1\u010b\4\70\1\u0111\1\70\1\u0113\1\uffff\1\u0114\2\70\1\u0117\1\u0118\6\70\3\uffff\1\u011f\1\u0120\1\70\1\u0122\1\u010b\2\70\2\uffff\3\70\1\uffff\11\70\1\uffff\1\u0133\1\70\1\u0135\1\70\1\u0137\1\uffff\1\70\2\uffff\2\70\2\uffff\1\70\1\uffff\1\70\1\uffff\2\70\2\uffff\1\70\2\uffff\1\70\2\uffff\1\u0141\1\70\1\u0143\2\70\1\u0146\1\uffff\1\u0147\1\uffff\3\70\1\uffff\1\70\1\uffff\1\70\1\uffff\6\70\1\u0155\1\uffff\1\u0156\1\uffff\1\70\1\uffff\1\u0158\1\70\4\uffff\6\70\1\uffff\3\70\3\uffff\1\70\3\uffff\5\70\1\u016b\1\uffff\1\70\3\uffff\4\70\1\u0174\1\uffff\1\70\3\uffff\2\70\1\u0179\1\70\1\uffff\1\u017b\4\uffff\1\u017d\4\uffff\1\u0181\2\uffff";
+        "\2\uffff\1\67\1\uffff\2\70\2\uffff\3\70\2\uffff\6\70\1\uffff\2\70\1\uffff\1\140\1\70\1\145\1\70\1\60\1\153\1\154\1\60\1\160\1\162\1\60\1\70\1\171\2\60\1\uffff\1\177\1\uffff\1\70\1\u0082\1\60\1\uffff\2\60\3\uffff\5\70\3\uffff\3\70\2\uffff\1\70\1\u0093\1\u0094\4\70\1\u0099\1\70\2\uffff\1\u009b\6\70\1\u00a3\4\70\1\u00a9\2\70\1\uffff\4\70\3\uffff\1\70\4\uffff\1\70\1\u00b5\2\70\12\uffff\3\70\12\uffff\1\70\2\uffff\1\u0082\2\uffff\13\70\3\uffff\1\u00c8\3\70\1\uffff\1\70\1\uffff\1\70\1\uffff\5\70\1\uffff\1\70\1\u00d6\3\70\1\uffff\1\u00db\12\70\1\uffff\1\u00e6\13\70\1\u00f2\1\u00f3\4\70\1\uffff\4\70\1\u00fd\2\uffff\2\70\1\u0101\3\70\1\uffff\4\70\1\uffff\2\70\1\u010b\4\70\1\u0111\1\70\1\u0113\1\uffff\1\u0114\2\70\1\u0117\1\u0118\6\70\3\uffff\1\u011f\1\u0120\1\70\1\u0122\1\u010b\2\70\2\uffff\3\70\1\uffff\11\70\1\uffff\1\u0133\1\70\1\u0135\1\70\1\u0137\1\uffff\1\70\2\uffff\2\70\2\uffff\1\70\1\uffff\1\70\1\uffff\2\70\2\uffff\1\70\2\uffff\1\70\2\uffff\1\u0141\1\70\1\u0143\2\70\1\u0146\1\uffff\1\u0147\1\uffff\3\70\1\uffff\1\70\1\uffff\1\70\1\uffff\6\70\1\u0155\1\uffff\1\u0156\1\uffff\1\70\1\uffff\1\u0158\1\70\4\uffff\6\70\1\uffff\3\70\3\uffff\1\70\3\uffff\5\70\1\u016b\1\uffff\1\70\3\uffff\4\70\1\u0174\1\uffff\1\70\3\uffff\2\70\1\u0179\1\70\1\uffff\1\u017b\1\uffff\2\70\1\uffff\1\u017f\2\uffff\2\70\2\uffff\2\70\1\u0187\2\70\4\uffff";
     static final String DFA18_eofS =
-        "\u0182\uffff";
+        "\u018a\uffff";
     static final String DFA18_minS =
-        "\1\0\1\uffff\1\60\1\uffff\1\150\1\163\2\uffff\1\146\1\141\1\145\2\uffff\1\146\1\154\1\145\1\156\1\145\1\141\1\uffff\1\151\1\154\1\uffff\1\73\1\116\1\55\1\145\1\163\2\60\4\75\1\141\1\53\1\174\1\46\1\uffff\1\52\1\uffff\1\162\1\56\1\101\1\uffff\2\0\3\uffff\1\156\1\141\1\156\1\157\1\154\3\uffff\1\164\1\145\1\151\2\uffff\1\40\2\50\2\162\1\154\1\165\1\50\1\164\2\uffff\1\50\1\164\1\40\1\141\2\163\1\154\1\50\1\163\1\144\1\163\1\162\1\50\1\156\1\170\1\uffff\1\141\2\155\1\157\3\uffff\1\106\4\uffff\1\154\1\50\1\164\1\170\12\uffff\1\156\1\141\1\163\12\uffff\1\145\2\uffff\1\56\2\uffff\1\143\1\164\1\151\1\143\1\162\1\144\1\146\1\150\1\156\1\154\1\156\3\uffff\1\50\2\163\1\156\1\uffff\1\167\1\uffff\1\157\1\141\1\142\2\145\2\141\1\uffff\1\151\1\50\1\145\1\165\1\147\1\uffff\1\50\1\115\1\156\2\145\1\142\1\163\1\143\1\124\1\111\1\154\1\uffff\1\50\1\164\1\147\1\166\1\164\1\166\1\150\1\145\1\143\1\145\1\164\1\151\2\50\1\40\1\145\1\147\1\151\1\uffff\1\164\1\145\1\144\1\145\1\40\2\uffff\1\154\1\162\1\50\1\142\1\171\1\147\1\uffff\1\164\1\162\1\145\1\163\1\uffff\2\163\1\50\1\163\1\151\1\164\1\153\1\50\1\116\1\50\1\uffff\1\50\1\145\1\151\2\50\1\162\1\40\1\164\1\40\1\145\1\156\3\uffff\2\50\1\144\2\50\1\40\1\145\1\150\1\uffff\1\145\1\151\1\146\1\uffff\1\154\1\145\1\156\1\40\1\156\1\40\2\147\1\151\1\uffff\1\50\1\156\1\50\1\155\1\50\1\uffff\1\111\2\uffff\1\162\1\156\2\uffff\1\157\1\uffff\1\154\1\uffff\1\162\1\147\2\uffff\1\40\2\uffff\1\156\2\uffff\1\50\1\156\1\50\1\145\1\144\1\50\1\uffff\1\50\1\143\2\104\1\164\1\uffff\1\141\1\uffff\1\151\1\uffff\1\124\1\40\1\147\1\156\1\171\1\40\1\50\1\uffff\1\50\1\uffff\1\147\1\uffff\1\50\1\40\2\uffff\1\141\1\uffff\2\145\1\151\1\164\1\156\1\105\1\uffff\1\40\1\151\1\40\3\uffff\1\40\2\uffff\1\162\2\154\1\157\1\151\1\147\1\50\1\uffff\1\172\1\154\1\uffff\1\151\2\141\1\156\1\157\1\50\1\uffff\1\145\2\uffff\1\141\2\171\1\50\1\156\1\uffff\1\50\1\142\3\uffff\1\50\1\uffff\1\154\1\uffff\1\145\1\163\2\uffff";
+        "\1\0\1\uffff\1\60\1\uffff\1\150\1\163\2\uffff\1\146\1\141\1\145\2\uffff\1\146\1\154\1\145\1\156\1\145\1\141\1\uffff\1\151\1\154\1\uffff\1\73\1\116\1\55\1\145\1\163\2\60\4\75\1\141\1\53\1\174\1\46\1\uffff\1\52\1\uffff\1\162\1\56\1\101\1\uffff\2\0\3\uffff\1\156\1\141\1\156\1\157\1\154\3\uffff\1\164\1\145\1\151\2\uffff\1\40\2\50\2\162\1\154\1\165\1\50\1\164\2\uffff\1\50\1\164\1\40\1\141\2\163\1\154\1\50\1\163\1\144\1\163\1\162\1\50\1\156\1\170\1\uffff\1\141\2\155\1\157\3\uffff\1\106\4\uffff\1\154\1\50\1\164\1\170\12\uffff\1\156\1\141\1\163\12\uffff\1\145\2\uffff\1\56\2\uffff\1\143\1\164\1\151\1\143\1\162\1\144\1\146\1\150\1\156\1\154\1\156\3\uffff\1\50\2\163\1\156\1\uffff\1\167\1\uffff\1\157\1\141\1\142\2\145\2\141\1\uffff\1\151\1\50\1\145\1\165\1\147\1\uffff\1\50\1\115\1\156\2\145\1\142\1\163\1\143\1\124\1\111\1\154\1\uffff\1\50\1\164\1\147\1\166\1\164\1\166\1\150\1\145\1\143\1\145\1\164\1\151\2\50\1\40\1\145\1\147\1\151\1\uffff\1\164\1\145\1\144\1\145\1\40\2\uffff\1\154\1\162\1\50\1\142\1\171\1\147\1\uffff\1\164\1\162\2\145\1\uffff\1\145\1\163\1\50\1\163\1\151\1\164\1\153\1\50\1\116\1\50\1\uffff\1\50\1\145\1\151\2\50\1\162\1\40\1\164\1\40\1\145\1\156\3\uffff\2\50\1\144\2\50\1\40\1\145\1\150\1\uffff\1\145\1\151\1\146\1\uffff\1\154\1\145\1\156\1\40\1\156\1\40\2\163\1\151\1\uffff\1\50\1\156\1\50\1\155\1\50\1\uffff\1\111\2\uffff\1\162\1\156\2\uffff\1\157\1\uffff\1\154\1\uffff\1\162\1\147\2\uffff\1\40\2\uffff\1\156\2\uffff\1\50\1\156\1\50\1\145\1\144\1\50\1\uffff\1\50\1\143\2\163\1\164\1\uffff\1\141\1\uffff\1\151\1\uffff\1\124\1\40\1\147\1\156\1\171\1\40\1\50\1\uffff\1\50\1\uffff\1\147\1\uffff\1\50\1\40\2\uffff\1\141\1\uffff\2\141\1\151\1\164\1\156\1\105\1\uffff\1\40\1\151\1\40\3\uffff\1\40\2\uffff\1\162\2\147\1\157\1\151\1\147\1\50\1\uffff\1\172\1\154\1\uffff\1\151\2\145\1\156\1\157\1\50\1\uffff\1\145\2\uffff\1\141\2\104\1\50\1\156\1\uffff\1\50\1\142\2\145\1\uffff\1\50\1\uffff\3\154\1\uffff\1\145\2\141\1\163\2\171\4\uffff";
     static final String DFA18_maxS =
-        "\1\uffff\1\uffff\1\172\1\uffff\1\151\1\163\2\uffff\1\162\1\157\1\171\2\uffff\1\163\1\156\1\157\1\163\1\145\1\163\1\uffff\1\162\1\157\1\uffff\1\73\1\116\1\76\1\165\1\163\2\172\1\75\1\76\2\75\1\157\1\75\1\174\1\46\1\uffff\1\57\1\uffff\1\162\1\71\1\172\1\uffff\2\uffff\3\uffff\1\156\1\162\1\156\1\157\1\156\3\uffff\1\164\2\151\2\uffff\1\40\2\172\2\162\1\154\1\165\1\172\1\164\2\uffff\1\172\1\164\1\40\1\164\2\163\1\154\1\172\1\163\1\144\1\164\1\162\1\172\1\156\1\170\1\uffff\1\165\1\155\1\156\1\157\3\uffff\1\111\4\uffff\1\154\1\172\1\164\1\170\12\uffff\1\156\1\141\1\163\12\uffff\1\145\2\uffff\1\71\2\uffff\1\143\1\164\1\151\1\143\1\162\1\144\1\146\1\150\1\156\1\154\1\156\3\uffff\1\172\2\163\1\156\1\uffff\1\167\1\uffff\1\157\1\151\1\142\2\145\2\141\1\uffff\1\151\1\172\1\145\1\165\1\147\1\uffff\1\172\1\115\1\156\2\145\1\142\1\163\1\143\1\124\1\111\1\154\1\uffff\1\172\1\164\1\147\1\166\1\164\1\166\1\150\1\145\1\143\1\145\1\164\1\151\2\172\1\40\1\145\1\147\1\151\1\uffff\1\164\1\145\1\144\1\145\1\172\2\uffff\1\154\1\162\1\172\1\142\1\171\1\147\1\uffff\1\164\1\162\1\145\1\163\1\uffff\2\163\1\172\1\163\1\151\1\165\1\153\1\172\1\116\1\172\1\uffff\1\172\1\145\1\151\2\172\1\162\1\40\1\164\1\40\1\145\1\156\3\uffff\2\172\1\144\2\172\1\40\1\145\1\166\1\uffff\1\145\1\151\1\146\1\uffff\1\154\1\145\1\156\1\40\1\156\1\40\2\147\1\151\1\uffff\1\172\1\156\1\172\1\155\1\172\1\uffff\1\111\2\uffff\1\162\1\156\2\uffff\1\157\1\uffff\1\154\1\uffff\1\162\1\147\2\uffff\1\40\2\uffff\1\156\2\uffff\1\172\1\156\1\172\1\145\1\144\1\172\1\uffff\1\172\1\166\2\104\1\164\1\uffff\1\141\1\uffff\1\151\1\uffff\1\124\1\40\1\147\1\156\1\171\1\40\1\172\1\uffff\1\172\1\uffff\1\147\1\uffff\1\172\1\40\2\uffff\1\141\1\uffff\2\145\1\151\1\164\1\156\1\105\1\uffff\1\40\1\151\1\40\3\uffff\1\40\2\uffff\1\162\2\154\1\157\1\151\1\147\1\172\1\uffff\1\172\1\163\1\uffff\1\151\2\141\1\156\1\157\1\172\1\uffff\1\145\2\uffff\1\141\2\171\1\172\1\156\1\uffff\1\172\1\142\3\uffff\1\172\1\uffff\1\154\1\uffff\1\145\1\163\2\uffff";
+        "\1\uffff\1\uffff\1\172\1\uffff\1\151\1\163\2\uffff\1\162\1\157\1\171\2\uffff\1\163\1\156\1\157\1\163\1\145\1\163\1\uffff\1\162\1\157\1\uffff\1\73\1\116\1\76\1\165\1\163\2\172\1\75\1\76\2\75\1\157\1\75\1\174\1\46\1\uffff\1\57\1\uffff\1\162\1\71\1\172\1\uffff\2\uffff\3\uffff\1\156\1\162\1\156\1\157\1\156\3\uffff\1\164\2\151\2\uffff\1\40\2\172\2\162\1\154\1\165\1\172\1\164\2\uffff\1\172\1\164\1\40\1\164\2\163\1\154\1\172\1\163\1\144\1\164\1\162\1\172\1\156\1\170\1\uffff\1\165\1\155\1\156\1\157\3\uffff\1\111\4\uffff\1\154\1\172\1\164\1\170\12\uffff\1\156\1\141\1\163\12\uffff\1\145\2\uffff\1\71\2\uffff\1\143\1\164\1\151\1\143\1\162\1\144\1\146\1\150\1\156\1\154\1\156\3\uffff\1\172\2\163\1\156\1\uffff\1\167\1\uffff\1\157\1\151\1\142\2\145\2\141\1\uffff\1\151\1\172\1\145\1\165\1\147\1\uffff\1\172\1\115\1\156\2\145\1\142\1\163\1\143\1\124\1\111\1\154\1\uffff\1\172\1\164\1\147\1\166\1\164\1\166\1\150\1\145\1\143\1\145\1\164\1\151\2\172\1\40\1\145\1\147\1\151\1\uffff\1\164\1\145\1\144\1\145\1\172\2\uffff\1\154\1\162\1\172\1\142\1\171\1\147\1\uffff\1\164\1\162\2\145\1\uffff\1\145\1\163\1\172\1\163\1\151\1\165\1\153\1\172\1\116\1\172\1\uffff\1\172\1\145\1\151\2\172\1\162\1\40\1\164\1\40\1\145\1\156\3\uffff\2\172\1\144\2\172\1\40\1\145\1\166\1\uffff\1\145\1\151\1\146\1\uffff\1\154\1\145\1\156\1\40\1\156\1\40\2\163\1\151\1\uffff\1\172\1\156\1\172\1\155\1\172\1\uffff\1\111\2\uffff\1\162\1\156\2\uffff\1\157\1\uffff\1\154\1\uffff\1\162\1\147\2\uffff\1\40\2\uffff\1\156\2\uffff\1\172\1\156\1\172\1\145\1\144\1\172\1\uffff\1\172\1\166\2\163\1\164\1\uffff\1\141\1\uffff\1\151\1\uffff\1\124\1\40\1\147\1\156\1\171\1\40\1\172\1\uffff\1\172\1\uffff\1\147\1\uffff\1\172\1\40\2\uffff\1\141\1\uffff\2\141\1\151\1\164\1\156\1\105\1\uffff\1\40\1\151\1\40\3\uffff\1\40\2\uffff\1\162\2\147\1\157\1\151\1\147\1\172\1\uffff\1\172\1\163\1\uffff\1\151\2\145\1\156\1\157\1\172\1\uffff\1\145\2\uffff\1\141\2\104\1\172\1\156\1\uffff\1\172\1\142\2\145\1\uffff\1\172\1\uffff\3\154\1\uffff\1\145\2\141\1\163\2\171\4\uffff";
     static final String DFA18_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\2\uffff\1\6\1\7\3\uffff\1\15\1\16\6\uffff\1\33\2\uffff\1\36\17\uffff\1\124\1\uffff\1\126\3\uffff\1\137\2\uffff\1\145\1\146\1\1\5\uffff\1\55\1\137\1\3\3\uffff\1\6\1\7\11\uffff\1\15\1\16\17\uffff\1\33\4\uffff\1\36\1\64\1\37\1\uffff\1\74\1\116\1\120\1\50\4\uffff\1\53\1\57\1\60\1\70\1\77\1\100\1\72\1\101\1\73\1\76\3\uffff\1\115\1\117\1\123\1\121\1\122\1\124\1\143\1\144\1\125\1\126\1\uffff\1\141\1\135\1\uffff\1\142\1\145\13\uffff\1\10\1\14\1\75\4\uffff\1\13\1\uffff\1\17\7\uffff\1\63\5\uffff\1\54\13\uffff\1\52\22\uffff\1\61\5\uffff\1\111\1\112\6\uffff\1\24\4\uffff\1\56\12\uffff\1\127\13\uffff\1\130\1\4\1\40\10\uffff\1\32\3\uffff\1\66\11\uffff\1\136\5\uffff\1\45\1\uffff\1\51\1\134\2\uffff\1\132\1\133\1\uffff\1\43\1\uffff\1\102\2\uffff\1\62\1\5\1\uffff\1\131\1\12\1\uffff\1\26\1\30\6\uffff\1\23\5\uffff\1\41\1\uffff\1\71\1\uffff\1\47\7\uffff\1\11\1\uffff\1\20\1\uffff\1\65\2\uffff\1\22\1\67\1\uffff\1\31\6\uffff\1\106\3\uffff\1\104\1\114\1\44\1\uffff\1\21\1\42\7\uffff\1\110\2\uffff\1\107\6\uffff\1\46\1\uffff\1\103\1\105\5\uffff\1\113\2\uffff\2\137\1\34\1\uffff\1\2\1\uffff\1\35\2\uffff\1\27\1\25";
+        "\1\uffff\1\1\1\uffff\1\3\2\uffff\1\6\1\7\3\uffff\1\15\1\16\6\uffff\1\33\2\uffff\1\36\17\uffff\1\124\1\uffff\1\126\3\uffff\1\137\2\uffff\1\145\1\146\1\1\5\uffff\1\55\1\137\1\3\3\uffff\1\6\1\7\11\uffff\1\15\1\16\17\uffff\1\33\4\uffff\1\36\1\64\1\37\1\uffff\1\74\1\116\1\120\1\50\4\uffff\1\53\1\57\1\60\1\70\1\77\1\100\1\72\1\101\1\73\1\76\3\uffff\1\115\1\117\1\123\1\121\1\122\1\124\1\143\1\144\1\125\1\126\1\uffff\1\141\1\135\1\uffff\1\142\1\145\13\uffff\1\10\1\14\1\75\4\uffff\1\13\1\uffff\1\17\7\uffff\1\63\5\uffff\1\54\13\uffff\1\52\22\uffff\1\61\5\uffff\1\111\1\112\6\uffff\1\24\4\uffff\1\56\12\uffff\1\127\13\uffff\1\130\1\4\1\40\10\uffff\1\32\3\uffff\1\65\11\uffff\1\136\5\uffff\1\45\1\uffff\1\51\1\134\2\uffff\1\132\1\133\1\uffff\1\43\1\uffff\1\102\2\uffff\1\62\1\5\1\uffff\1\131\1\12\1\uffff\1\26\1\30\6\uffff\1\23\5\uffff\1\41\1\uffff\1\71\1\uffff\1\47\7\uffff\1\11\1\uffff\1\20\1\uffff\1\66\2\uffff\1\22\1\67\1\uffff\1\31\6\uffff\1\106\3\uffff\1\104\1\114\1\44\1\uffff\1\21\1\42\7\uffff\1\110\2\uffff\1\107\6\uffff\1\46\1\uffff\1\103\1\105\5\uffff\1\113\4\uffff\1\34\1\uffff\1\2\3\uffff\1\35\6\uffff\1\27\1\25\2\137";
     static final String DFA18_specialS =
-        "\1\2\54\uffff\1\0\1\1\u0153\uffff}>";
+        "\1\1\54\uffff\1\0\1\2\u015b\uffff}>";
     static final String[] DFA18_transitionS = {
             "\11\60\2\57\2\60\1\57\22\60\1\57\1\60\1\55\2\60\1\50\1\45\1\56\1\26\1\27\1\46\1\43\1\3\1\31\1\23\1\47\12\52\1\36\1\1\1\37\1\41\1\40\2\60\3\54\1\35\4\54\1\30\21\54\1\6\1\60\1\7\1\53\1\54\1\60\1\20\1\12\1\25\1\17\1\16\1\11\1\54\1\34\1\15\2\54\1\42\1\22\1\32\1\10\1\51\1\54\1\21\1\2\1\24\1\5\1\54\1\4\3\54\1\13\1\44\1\14\67\60\1\33\uff4a\60",
             "",
@@ -3906,15 +3906,23 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
             "",
             "\1\70\7\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32\70",
             "\1\u017c",
-            "",
-            "",
+            "\1\u017d",
+            "\1\u017e",
             "",
             "\1\70\7\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32\70",
             "",
-            "\1\u017e",
-            "",
-            "\1\u017f",
             "\1\u0180",
+            "\1\u0181",
+            "\1\u0182",
+            "",
+            "\1\u0183",
+            "\1\u0184",
+            "\1\u0185",
+            "\1\u0186",
+            "\1\u0188",
+            "\1\u0189",
+            "",
+            "",
             "",
             ""
     };
@@ -3966,16 +3974,6 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA18_46 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA18_46>='\u0000' && LA18_46<='\uFFFF')) ) {s = 133;}
-
-                        else s = 48;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA18_0 = input.LA(1);
 
                         s = -1;
@@ -4074,6 +4072,16 @@ public class InternalDependencyModelLanguageLexer extends Lexer {
                         else if ( ((LA18_0>='\t' && LA18_0<='\n')||LA18_0=='\r'||LA18_0==' ') ) {s = 47;}
 
                         else if ( ((LA18_0>='\u0000' && LA18_0<='\b')||(LA18_0>='\u000B' && LA18_0<='\f')||(LA18_0>='\u000E' && LA18_0<='\u001F')||LA18_0=='!'||(LA18_0>='#' && LA18_0<='$')||(LA18_0>='?' && LA18_0<='@')||LA18_0=='\\'||LA18_0=='`'||(LA18_0>='~' && LA18_0<='\u00B4')||(LA18_0>='\u00B6' && LA18_0<='\uFFFF')) ) {s = 48;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA18_46 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA18_46>='\u0000' && LA18_46<='\uFFFF')) ) {s = 133;}
+
+                        else s = 48;
 
                         if ( s>=0 ) return s;
                         break;
