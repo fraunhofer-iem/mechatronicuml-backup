@@ -3,8 +3,6 @@
 	<name>de.uni_paderborn.fujaba.muml.psm.transformation</name>
 	<comment></comment>
 	<projects>
-		<project>de.uni_paderborn.fujaba.modelcopy.qvto.library</project>
-		<project>de.uni_paderborn.fujaba.muml.ui</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
