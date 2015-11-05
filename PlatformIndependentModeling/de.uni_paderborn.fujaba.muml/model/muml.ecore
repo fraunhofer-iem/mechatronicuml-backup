@@ -1988,6 +1988,11 @@
           <details key="documentation" value="The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="securityDomain" eType="#//securitydomain/SecurityDomain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The security domain that is assigned to this particular message type. &#xD;&#xA;Each message type can have no or one assigned security domain. "/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -2640,6 +2645,20 @@
           <details key="documentation" value="A variable may have a value when it is initialized. The value is defined by an expression."/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="securitydomain" nsURI="http://www.fujaba.de/muml/securitydomain/0.4.0"
+      nsPrefix="securitydomain">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package describes the security domains that can be defined for message types in Realtime Statecharts.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="SecurityDomain" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//securitydomain/SecurityDomainRepository"
+          eOpposite="#//securitydomain/SecurityDomainRepository/securityDomains"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SecurityDomainRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="securityDomains" upperBound="-1"
+          eType="#//securitydomain/SecurityDomain" eOpposite="#//securitydomain/SecurityDomain/repository"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
