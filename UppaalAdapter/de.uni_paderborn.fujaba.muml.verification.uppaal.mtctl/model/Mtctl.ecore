@@ -17,6 +17,8 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Common superclass of all elements of the language (except Property and PropertyRepository)"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTemplateParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eSubpackages name="Quantifiers" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"
       nsPrefix="Quantifiers">

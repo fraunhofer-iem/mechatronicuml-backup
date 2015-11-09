@@ -16,7 +16,9 @@
     <genClasses ecoreClass="Mtctl.ecore#//Property">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Property/expression"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Mtctl.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="Mtctl.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Expression/isTemplateParameter"/>
+    </genClasses>
     <nestedGenPackages prefix="Quantifiers" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
         disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Quantifiers">
       <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/AFExpr">
