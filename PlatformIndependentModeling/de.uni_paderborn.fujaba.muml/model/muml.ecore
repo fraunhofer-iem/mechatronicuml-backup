@@ -1988,7 +1988,8 @@
           <details key="documentation" value="The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="securityDomain" eType="#//securitydomain/SecurityDomain">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="securityDomain" ordered="false"
+          eType="#//securitydomain/SecurityDomain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The security domain that is assigned to this particular message type. &#xD;&#xA;Each message type can have no or one assigned security domain. "/>
         </eAnnotations>
@@ -2657,8 +2658,9 @@
           eOpposite="#//securitydomain/SecurityDomainRepository/securityDomains"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SecurityDomainRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="securityDomains" upperBound="-1"
-          eType="#//securitydomain/SecurityDomain" eOpposite="#//securitydomain/SecurityDomain/repository"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="securityDomains" ordered="false"
+          upperBound="-1" eType="#//securitydomain/SecurityDomain" containment="true"
+          eOpposite="#//securitydomain/SecurityDomain/repository"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

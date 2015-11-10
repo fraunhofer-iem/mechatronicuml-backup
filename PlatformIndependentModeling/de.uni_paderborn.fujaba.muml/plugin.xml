@@ -93,6 +93,14 @@
             genModel="model/muml.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated muml -->
+      <package
+            uri="http://www.fujaba.de/muml/securitydomain/0.4.0"
+            class="de.uni_paderborn.fujaba.muml.securitydomain.SecuritydomainPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
 null
 null
 null
