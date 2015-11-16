@@ -82,7 +82,7 @@ String genEditorIndexSuffix(Property this) :
 		"_" + clazz.properties.select(p | p.genFeature == genFeature).indexOf(this).toString();
 
 String genField(Property this) :
-	'editor' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.id.toString().replaceAll('\.', '_') + 'Tab' + genEditorIndexSuffix();	
+	'editor' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.id.toString().replaceAll('\\.', '_') + 'Tab' + genEditorIndexSuffix();	
 
 Class getHighestContainer(Class this, Property property) :
 	if properties.select(p | p.genFeature == property.genFeature).isEmpty then
