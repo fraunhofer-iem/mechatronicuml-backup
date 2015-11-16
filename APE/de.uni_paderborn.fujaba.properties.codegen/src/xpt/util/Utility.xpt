@@ -2,8 +2,8 @@
 «EXTENSION Metamodel»
 
 «DEFINE TabElementFilter FOR properties::PropertyTab»
-public class «name.toString().toFirstUpper()»TabElementFilter extends de.uni_paderborn.fujaba.properties.runtime.filter.ElementFilter {
-	public «name.toString().toFirstUpper()»TabElementFilter() {
+public class «id.toString().replaceAll('\.', '_').toFirstUpper()»TabElementFilter extends de.uni_paderborn.fujaba.properties.runtime.filter.ElementFilter {
+	public «id.toString().replaceAll('\.', '_').toFirstUpper()»TabElementFilter() {
 		super("«id»");
 	}
 }
