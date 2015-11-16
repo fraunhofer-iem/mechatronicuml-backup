@@ -82,7 +82,7 @@ UNUSED:
         «FOREACH tabs AS tab-»
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="«genPluginId().toString()».tabs.«tab.id.toString().replaceAll('.', '_').toFirstUpper()»TabElementFilter"
+            filter="«genPluginId().toString()».tabs.«tab.id.toString().replaceAll('\\.', '_').toFirstUpper()»TabElementFilter"
             id="«tab.id»"
             tab="«tab.id»">
              <input
