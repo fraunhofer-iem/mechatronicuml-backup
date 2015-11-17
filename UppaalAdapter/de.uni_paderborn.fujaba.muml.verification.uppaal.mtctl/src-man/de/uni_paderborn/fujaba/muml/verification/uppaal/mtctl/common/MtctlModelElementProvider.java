@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
@@ -80,8 +81,8 @@ public class MtctlModelElementProvider {
 	
 	private void init() {
 		//Delegate to the specific methods for the type of root for initialization
-		if (root instanceof CoordinationProtocol)
-			initForCoordinationProtocol((CoordinationProtocol) root);
+		if (root instanceof AbstractCoordinationSpecification)
+			initForCoordinationProtocol((AbstractCoordinationSpecification) root);
 		else if (root instanceof AtomicComponent)
 			initForAtomicComponent((AtomicComponent) root);
 		else if (root instanceof ComponentInstanceConfiguration)
@@ -95,7 +96,7 @@ public class MtctlModelElementProvider {
 	 * Collects everything that can be referenced from mtctl in a CoordinationProtocol.
 	 * @param object
 	 */
-	private void initForCoordinationProtocol(CoordinationProtocol object) {
+	private void initForCoordinationProtocol(AbstractCoordinationSpecification object) {
 		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
 		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
 		
