@@ -151,7 +151,6 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationPattern
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS);
-			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_VARIANTS);
 		}
 		return childrenFeatures;
 	}
@@ -208,7 +207,6 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationPattern
 
 		switch (notification.getFeatureID(CoordinationPattern.class)) {
 			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -230,11 +228,6 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationPattern
 			(createChildParameter
 				(PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS,
 				 PatternFactory.eINSTANCE.createDescriptionAspects()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_VARIANTS,
-				 PatternFactory.eINSTANCE.createCoordinationPatternVariant()));
 	}
 
 }

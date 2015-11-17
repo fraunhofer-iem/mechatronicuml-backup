@@ -605,10 +605,10 @@
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//pattern/VerifiedConfiguration">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//pattern/VerifiedConfiguration/parameterBindings"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//pattern/VerifiedConfiguration/coordinationPattern"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//pattern/VerifiedConfiguration/coordinationPattern"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//pattern/CoordinationPatternVariant">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPatternVariant/originalPattern"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPatternVariant/originalPattern"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//pattern/CoordinationPattern">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -616,7 +616,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPattern/alternativePatterns"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPattern/descriptionAspects"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPattern/patternVariants"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPattern/patternVariants"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

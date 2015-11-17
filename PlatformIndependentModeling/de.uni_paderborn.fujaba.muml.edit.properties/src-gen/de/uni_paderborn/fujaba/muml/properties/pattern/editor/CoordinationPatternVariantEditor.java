@@ -41,6 +41,8 @@ public class CoordinationPatternVariantEditor
 
 			addPropertyEditor(createEditorPatternParameters_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorOriginalPattern_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -57,6 +59,8 @@ public class CoordinationPatternVariantEditor
 
 			addPropertyEditor(createEditorPatternParameters_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorOriginalPattern_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -71,6 +75,19 @@ public class CoordinationPatternVariantEditor
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOriginalPattern_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOriginalPattern_property_tab_generalTab_Editor() {
+		if (this.editorOriginalPattern_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
+					.getCoordinationPatternVariant_OriginalPattern();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorOriginalPattern_property_tab_generalTab = editor;
+		}
+		return this.editorOriginalPattern_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerifiedConfigurations_property_tab_generalTab;
@@ -214,8 +231,8 @@ public class CoordinationPatternVariantEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.documentation", "property.tab.extensions",
-					"property.tab.general", "property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.documentation",
+					"property.tab.extensions", "property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -69,6 +69,7 @@ public class VerifiedConfigurationItemProvider extends NamedElementItemProvider 
 
 			addCommentPropertyDescriptor(object);
 			addParameterBindingsPropertyDescriptor(object);
+			addCoordinationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +111,28 @@ public class VerifiedConfigurationItemProvider extends NamedElementItemProvider 
 				 getString("_UI_PropertyDescriptor_description", "_UI_VerifiedConfiguration_parameterBindings_feature", "_UI_VerifiedConfiguration_type"),
 				 PatternPackage.Literals.VERIFIED_CONFIGURATION__PARAMETER_BINDINGS,
 				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Coordination Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordinationPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VerifiedConfiguration_coordinationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VerifiedConfiguration_coordinationPattern_feature", "_UI_VerifiedConfiguration_type"),
+				 PatternPackage.Literals.VERIFIED_CONFIGURATION__COORDINATION_PATTERN,
+				 false,
 				 false,
 				 false,
 				 null,
