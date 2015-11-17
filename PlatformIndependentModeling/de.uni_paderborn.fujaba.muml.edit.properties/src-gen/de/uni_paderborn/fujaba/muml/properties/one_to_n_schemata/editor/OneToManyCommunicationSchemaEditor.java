@@ -23,19 +23,19 @@ public abstract class OneToManyCommunicationSchemaEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCondition_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCondition_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -45,9 +45,9 @@ public abstract class OneToManyCommunicationSchemaEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCondition_GeneralTab_Editor() {
-		if (this.editorCondition_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCondition_property_tab_generalTab_Editor() {
+		if (this.editorCondition_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 					.getOneToManyCommunicationSchema_Condition();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
@@ -55,14 +55,14 @@ public abstract class OneToManyCommunicationSchemaEditor
 
 			editor.setTooltipMessage("A subrole only sends or receives a message if it satisfies this condition.");
 
-			this.editorCondition_GeneralTab = editor;
+			this.editorCondition_property_tab_generalTab = editor;
 		}
-		return this.editorCondition_GeneralTab;
+		return this.editorCondition_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_GeneralTab_Editor() {
-		if (this.editorAction_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_generalTab_Editor() {
+		if (this.editorAction_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 					.getOneToManyCommunicationSchema_Action();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -71,9 +71,9 @@ public abstract class OneToManyCommunicationSchemaEditor
 			editor.setTooltipMessage(
 					"The action a subrole performs when sending or receiving a message with communication schema.");
 
-			this.editorAction_GeneralTab = editor;
+			this.editorAction_property_tab_generalTab = editor;
 		}
-		return this.editorAction_GeneralTab;
+		return this.editorAction_property_tab_generalTab;
 	}
 
 }

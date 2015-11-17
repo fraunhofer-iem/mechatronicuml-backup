@@ -43,7 +43,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CoordinationPatternItemProvider extends AbstractCoordinationSpecificationItemProvider {
+public class CoordinationPatternItemProvider extends AbstractCoordinationPatternItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,11 +65,9 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDescriptionAspectsPropertyDescriptor(object);
-			addLegalConfigurationsPropertyDescriptor(object);
-			addPatternParametersPropertyDescriptor(object);
 			addCombineablePatternsPropertyDescriptor(object);
 			addAlternativePatternsPropertyDescriptor(object);
+			addDescriptionAspectsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,50 +86,6 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 				 getString("_UI_CoordinationPattern_descriptionAspects_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_descriptionAspects_feature", "_UI_CoordinationPattern_type"),
 				 PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Legal Configurations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLegalConfigurationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CoordinationPattern_legalConfigurations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_legalConfigurations_feature", "_UI_CoordinationPattern_type"),
-				 PatternPackage.Literals.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Pattern Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPatternParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CoordinationPattern_patternParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_patternParameters_feature", "_UI_CoordinationPattern_type"),
-				 PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_PARAMETERS,
 				 true,
 				 false,
 				 false,
@@ -197,8 +151,7 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS);
-			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS);
-			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_PARAMETERS);
+			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_VARIANTS);
 		}
 		return childrenFeatures;
 	}
@@ -255,8 +208,7 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 
 		switch (notification.getFeatureID(CoordinationPattern.class)) {
 			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -281,24 +233,8 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternPackage.Literals.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS,
-				 PatternFactory.eINSTANCE.createLegalConfiguration()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_PARAMETERS,
-				 BehaviorFactory.eINSTANCE.createParameter()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
+				(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_VARIANTS,
+				 PatternFactory.eINSTANCE.createCoordinationPatternVariant()));
 	}
 
 }

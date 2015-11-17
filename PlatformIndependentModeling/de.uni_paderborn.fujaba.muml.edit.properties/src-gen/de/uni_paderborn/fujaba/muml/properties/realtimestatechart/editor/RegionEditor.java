@@ -21,39 +21,39 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorPriority_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentState_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParentState_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorPriority_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentState_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParentState_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentState_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentState_GeneralTab_Editor() {
-		if (this.editorParentState_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentState_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentState_property_tab_generalTab_Editor() {
+		if (this.editorParentState_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRegion_ParentState();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -61,14 +61,14 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 			editor.setTooltipMessage("The state this region is embedded.");
 
-			this.editorParentState_GeneralTab = editor;
+			this.editorParentState_property_tab_generalTab = editor;
 		}
-		return this.editorParentState_GeneralTab;
+		return this.editorParentState_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
-		if (this.editorComment_DocumentationTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
+		if (this.editorComment_property_tab_documentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -77,27 +77,27 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 			editor.setTooltipMessage(
 					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
-			this.editorComment_DocumentationTab = editor;
+			this.editorComment_property_tab_documentationTab = editor;
 		}
-		return this.editorComment_DocumentationTab;
+		return this.editorComment_property_tab_documentationTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPriority_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPriority_GeneralTab_Editor() {
-		if (this.editorPriority_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPriority_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPriority_property_tab_generalTab_Editor() {
+		if (this.editorPriority_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getPrioritizedElement_Priority();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -105,9 +105,9 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 			editor.setTooltipMessage("The integer value that represents the priority.");
 
-			this.editorPriority_GeneralTab = editor;
+			this.editorPriority_property_tab_generalTab = editor;
 		}
-		return this.editorPriority_GeneralTab;
+		return this.editorPriority_property_tab_generalTab;
 	}
 
 	//

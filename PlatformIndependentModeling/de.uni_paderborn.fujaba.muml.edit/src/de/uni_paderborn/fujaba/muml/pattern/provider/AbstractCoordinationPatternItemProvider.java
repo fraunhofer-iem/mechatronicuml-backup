@@ -17,9 +17,11 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 
-import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
+
+import de.uni_paderborn.fujaba.muml.protocol.provider.AbstractCoordinationSpecificationItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -33,27 +35,22 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.core.CorePackage;
-
-import org.storydriven.core.provider.NamedElementItemProvider;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LegalConfigurationItemProvider extends NamedElementItemProvider {
+public class AbstractCoordinationPatternItemProvider extends AbstractCoordinationSpecificationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LegalConfigurationItemProvider(AdapterFactory adapterFactory) {
+	public AbstractCoordinationPatternItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -68,49 +65,26 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
-			addParameterBindingsPropertyDescriptor(object);
-			addCoordinationPatternPropertyDescriptor(object);
+			addVerifiedConfigurationsPropertyDescriptor(object);
+			addPatternParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Verified Configurations feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addVerifiedConfigurationsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parameter Bindings feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParameterBindingsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LegalConfiguration_parameterBindings_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LegalConfiguration_parameterBindings_feature", "_UI_LegalConfiguration_type"),
-				 PatternPackage.Literals.LEGAL_CONFIGURATION__PARAMETER_BINDINGS,
+				 getString("_UI_AbstractCoordinationPattern_verifiedConfigurations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractCoordinationPattern_verifiedConfigurations_feature", "_UI_AbstractCoordinationPattern_type"),
+				 PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN__VERIFIED_CONFIGURATIONS,
 				 true,
 				 false,
 				 false,
@@ -120,20 +94,20 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Coordination Pattern feature.
+	 * This adds a property descriptor for the Pattern Parameters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCoordinationPatternPropertyDescriptor(Object object) {
+	protected void addPatternParametersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LegalConfiguration_coordinationPattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LegalConfiguration_coordinationPattern_feature", "_UI_LegalConfiguration_type"),
-				 PatternPackage.Literals.LEGAL_CONFIGURATION__COORDINATION_PATTERN,
-				 false,
+				 getString("_UI_AbstractCoordinationPattern_patternParameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractCoordinationPattern_patternParameters_feature", "_UI_AbstractCoordinationPattern_type"),
+				 PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN__PATTERN_PARAMETERS,
+				 true,
 				 false,
 				 false,
 				 null,
@@ -153,7 +127,8 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PatternPackage.Literals.LEGAL_CONFIGURATION__PARAMETER_BINDINGS);
+			childrenFeatures.add(PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN__VERIFIED_CONFIGURATIONS);
+			childrenFeatures.add(PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN__PATTERN_PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -172,17 +147,6 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns LegalConfiguration.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/LegalConfiguration"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -190,10 +154,10 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LegalConfiguration)object).getName();
+		String label = ((AbstractCoordinationPattern)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_LegalConfiguration_type") :
-			getString("_UI_LegalConfiguration_type") + " " + label;
+			getString("_UI_AbstractCoordinationPattern_type") :
+			getString("_UI_AbstractCoordinationPattern_type") + " " + label;
 	}
 	
 
@@ -208,11 +172,9 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(LegalConfiguration.class)) {
-			case PatternPackage.LEGAL_CONFIGURATION__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case PatternPackage.LEGAL_CONFIGURATION__PARAMETER_BINDINGS:
+		switch (notification.getFeatureID(AbstractCoordinationPattern.class)) {
+			case PatternPackage.ABSTRACT_COORDINATION_PATTERN__VERIFIED_CONFIGURATIONS:
+			case PatternPackage.ABSTRACT_COORDINATION_PATTERN__PATTERN_PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -232,8 +194,13 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternPackage.Literals.LEGAL_CONFIGURATION__PARAMETER_BINDINGS,
-				 BehaviorFactory.eINSTANCE.createParameterBinding()));
+				(PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN__VERIFIED_CONFIGURATIONS,
+				 PatternFactory.eINSTANCE.createVerifiedConfiguration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN__PATTERN_PARAMETERS,
+				 BehaviorFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

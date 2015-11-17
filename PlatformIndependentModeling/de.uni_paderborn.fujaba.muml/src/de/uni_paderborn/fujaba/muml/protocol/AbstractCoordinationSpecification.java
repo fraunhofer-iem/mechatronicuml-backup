@@ -8,6 +8,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 
 /**
@@ -131,7 +132,7 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 
 	/**
 	 * Returns the value of the '<em><b>Adapted From Pattern</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -142,6 +143,6 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * @model
 	 * @generated
 	 */
-	EList<CoordinationPattern> getAdaptedFromPattern();
+	EList<AbstractCoordinationPattern> getAdaptedFromPattern();
 
 } // AbstractCoordinationSpecification

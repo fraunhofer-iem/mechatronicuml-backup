@@ -21,31 +21,31 @@ public class ExitEventEditor extends de.uni_paderborn.fujaba.properties.runtime.
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorClockResets_GeneralTab_Editor(), false);
+					createEditorClockResets_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorClockResets_GeneralTab_Editor(), false);
+					createEditorClockResets_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -55,9 +55,9 @@ public class ExitEventEditor extends de.uni_paderborn.fujaba.properties.runtime.
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClockResets_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClockResets_GeneralTab_Editor() {
-		if (this.editorClockResets_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClockResets_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClockResets_property_tab_generalTab_Editor() {
+		if (this.editorClockResets_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEntryOrExitEvent_ClockResets();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -65,14 +65,14 @@ public class ExitEventEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 			editor.setTooltipMessage("The clock resets of this action");
 
-			this.editorClockResets_GeneralTab = editor;
+			this.editorClockResets_property_tab_generalTab = editor;
 		}
-		return this.editorClockResets_GeneralTab;
+		return this.editorClockResets_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_GeneralTab_Editor() {
-		if (this.editorAction_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_generalTab_Editor() {
+		if (this.editorAction_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEntryOrExitEvent_Action();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -80,14 +80,14 @@ public class ExitEventEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 			editor.setTooltipMessage("Each entry or exit event can have one or more actions.");
 
-			this.editorAction_GeneralTab = editor;
+			this.editorAction_property_tab_generalTab = editor;
 		}
-		return this.editorAction_GeneralTab;
+		return this.editorAction_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_GeneralTab_Editor() {
-		if (this.editorKind_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_property_tab_generalTab_Editor() {
+		if (this.editorKind_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEvent_Kind();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -96,9 +96,9 @@ public class ExitEventEditor extends de.uni_paderborn.fujaba.properties.runtime.
 			editor.setTooltipMessage(
 					"Decides the kind: Is this a raise event or a trigger event?\n\nA event may either be a trigger event or a raise event. A trigger event triggers \nsome action within the statechart, a raise event is generated by the statechart \nand will be processed by another statechart.");
 
-			this.editorKind_GeneralTab = editor;
+			this.editorKind_property_tab_generalTab = editor;
 		}
-		return this.editorKind_GeneralTab;
+		return this.editorKind_property_tab_generalTab;
 	}
 
 	//

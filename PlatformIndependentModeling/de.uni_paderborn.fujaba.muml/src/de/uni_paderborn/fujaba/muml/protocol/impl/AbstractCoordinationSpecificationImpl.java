@@ -23,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
@@ -139,7 +140,7 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CoordinationPattern> adaptedFromPattern;
+	protected EList<AbstractCoordinationPattern> adaptedFromPattern;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -309,9 +310,9 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CoordinationPattern> getAdaptedFromPattern() {
+	public EList<AbstractCoordinationPattern> getAdaptedFromPattern() {
 		if (adaptedFromPattern == null) {
-			adaptedFromPattern = new EObjectResolvingEList<CoordinationPattern>(CoordinationPattern.class, this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN);
+			adaptedFromPattern = new EObjectResolvingEList<AbstractCoordinationPattern>(AbstractCoordinationPattern.class, this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN);
 		}
 		return adaptedFromPattern;
 	}
@@ -412,7 +413,7 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN:
 				getAdaptedFromPattern().clear();
-				getAdaptedFromPattern().addAll((Collection<? extends CoordinationPattern>)newValue);
+				getAdaptedFromPattern().addAll((Collection<? extends AbstractCoordinationPattern>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

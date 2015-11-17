@@ -23,67 +23,67 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorFirst_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFirst_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLast_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLast_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSubInteractionEndpointInstances_GeneralTab_Editor(), false);
+					createEditorSubInteractionEndpointInstances_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorFirst_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFirst_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLast_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLast_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSubInteractionEndpointInstances_GeneralTab_Editor(), false);
+					createEditorSubInteractionEndpointInstances_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubInteractionEndpointInstances_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubInteractionEndpointInstances_GeneralTab_Editor() {
-		if (this.editorSubInteractionEndpointInstances_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubInteractionEndpointInstances_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubInteractionEndpointInstances_property_tab_generalTab_Editor() {
+		if (this.editorSubInteractionEndpointInstances_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -92,14 +92,14 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 			editor.setTooltipMessage(
 					"These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are\nrepresented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding \nDiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality.");
 
-			this.editorSubInteractionEndpointInstances_GeneralTab = editor;
+			this.editorSubInteractionEndpointInstances_property_tab_generalTab = editor;
 		}
-		return this.editorSubInteractionEndpointInstances_GeneralTab;
+		return this.editorSubInteractionEndpointInstances_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFirst_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFirst_GeneralTab_Editor() {
-		if (this.editorFirst_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFirst_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFirst_property_tab_generalTab_Editor() {
+		if (this.editorFirst_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteMultiInteractionEndpointInstance_First();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -108,14 +108,14 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 			editor.setTooltipMessage(
 					"Refers to the first single instance of the corresponding multi discrete interaction endpoint.");
 
-			this.editorFirst_GeneralTab = editor;
+			this.editorFirst_property_tab_generalTab = editor;
 		}
-		return this.editorFirst_GeneralTab;
+		return this.editorFirst_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLast_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLast_GeneralTab_Editor() {
-		if (this.editorLast_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLast_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLast_property_tab_generalTab_Editor() {
+		if (this.editorLast_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteMultiInteractionEndpointInstance_Last();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -124,14 +124,14 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 			editor.setTooltipMessage(
 					"Refers to the last single instance of the corresponding multi discrete interaction endpoint.");
 
-			this.editorLast_GeneralTab = editor;
+			this.editorLast_property_tab_generalTab = editor;
 		}
-		return this.editorLast_GeneralTab;
+		return this.editorLast_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorInstances_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectorInstances_GeneralTab_Editor() {
-		if (this.editorConnectorInstances_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorInstances_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectorInstances_property_tab_generalTab_Editor() {
+		if (this.editorConnectorInstances_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getConnectorEndpointInstance_ConnectorInstances();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -139,14 +139,14 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 
 			editor.setTooltipMessage("The connector instances attached to this endpoint instance.");
 
-			this.editorConnectorInstances_GeneralTab = editor;
+			this.editorConnectorInstances_property_tab_generalTab = editor;
 		}
-		return this.editorConnectorInstances_GeneralTab;
+		return this.editorConnectorInstances_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_GeneralTab_Editor() {
-		if (this.editorType_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_property_tab_generalTab_Editor() {
+		if (this.editorType_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getConnectorEndpointInstance_Type();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -154,14 +154,14 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 
 			editor.setTooltipMessage("The connector endpoint that represents the type of this instance.");
 
-			this.editorType_GeneralTab = editor;
+			this.editorType_property_tab_generalTab = editor;
 		}
-		return this.editorType_GeneralTab;
+		return this.editorType_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
-		if (this.editorComment_DocumentationTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
+		if (this.editorComment_property_tab_documentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -170,27 +170,27 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 			editor.setTooltipMessage(
 					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
-			this.editorComment_DocumentationTab = editor;
+			this.editorComment_property_tab_documentationTab = editor;
 		}
-		return this.editorComment_DocumentationTab;
+		return this.editorComment_property_tab_documentationTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
-		if (this.editorName_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getNamedElement_Name();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -210,9 +210,9 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-			this.editorName_GeneralTab = editor;
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorName_GeneralTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
 }

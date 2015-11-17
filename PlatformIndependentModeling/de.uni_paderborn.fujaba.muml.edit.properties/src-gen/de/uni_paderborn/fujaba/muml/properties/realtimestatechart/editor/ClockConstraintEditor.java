@@ -21,39 +21,39 @@ public class ClockConstraintEditor extends de.uni_paderborn.fujaba.properties.ru
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorClock_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorOperator_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOperator_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorClock_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorOperator_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOperator_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBound_GeneralTab_Editor() {
-		if (this.editorBound_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBound_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBound_property_tab_generalTab_Editor() {
+		if (this.editorBound_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getClockConstraint_Bound();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -61,14 +61,14 @@ public class ClockConstraintEditor extends de.uni_paderborn.fujaba.properties.ru
 
 			editor.setTooltipMessage("The bound of a deadline (upper or lower) is a natural number.");
 
-			this.editorBound_GeneralTab = editor;
+			this.editorBound_property_tab_generalTab = editor;
 		}
-		return this.editorBound_GeneralTab;
+		return this.editorBound_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClock_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClock_GeneralTab_Editor() {
-		if (this.editorClock_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClock_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClock_property_tab_generalTab_Editor() {
+		if (this.editorClock_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getClockConstraint_Clock();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -76,14 +76,14 @@ public class ClockConstraintEditor extends de.uni_paderborn.fujaba.properties.ru
 
 			editor.setTooltipMessage("The clock references in this clock constraint.");
 
-			this.editorClock_GeneralTab = editor;
+			this.editorClock_property_tab_generalTab = editor;
 		}
-		return this.editorClock_GeneralTab;
+		return this.editorClock_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperator_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperator_GeneralTab_Editor() {
-		if (this.editorOperator_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperator_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperator_property_tab_generalTab_Editor() {
+		if (this.editorOperator_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getClockConstraint_Operator();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -91,22 +91,22 @@ public class ClockConstraintEditor extends de.uni_paderborn.fujaba.properties.ru
 
 			editor.setTooltipMessage("The operator that is used in this clock constraint.");
 
-			this.editorOperator_GeneralTab = editor;
+			this.editorOperator_property_tab_generalTab = editor;
 		}
-		return this.editorOperator_GeneralTab;
+		return this.editorOperator_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	//

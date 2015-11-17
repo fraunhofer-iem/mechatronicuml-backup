@@ -21,19 +21,19 @@ public class RelativeDeadlineEditor extends de.uni_paderborn.fujaba.properties.r
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -43,9 +43,9 @@ public class RelativeDeadlineEditor extends de.uni_paderborn.fujaba.properties.r
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_GeneralTab_Editor() {
-		if (this.editorUpperBound_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_property_tab_generalTab_Editor() {
+		if (this.editorUpperBound_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDeadline_UpperBound();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -53,14 +53,14 @@ public class RelativeDeadlineEditor extends de.uni_paderborn.fujaba.properties.r
 
 			editor.setTooltipMessage("The upper bound of a deadline is a natural number.");
 
-			this.editorUpperBound_GeneralTab = editor;
+			this.editorUpperBound_property_tab_generalTab = editor;
 		}
-		return this.editorUpperBound_GeneralTab;
+		return this.editorUpperBound_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_GeneralTab_Editor() {
-		if (this.editorLowerBound_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_property_tab_generalTab_Editor() {
+		if (this.editorLowerBound_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDeadline_LowerBound();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -68,9 +68,9 @@ public class RelativeDeadlineEditor extends de.uni_paderborn.fujaba.properties.r
 
 			editor.setTooltipMessage("The lower bound of a deadline is a natural number.");
 
-			this.editorLowerBound_GeneralTab = editor;
+			this.editorLowerBound_property_tab_generalTab = editor;
 		}
-		return this.editorLowerBound_GeneralTab;
+		return this.editorLowerBound_property_tab_generalTab;
 	}
 
 	//

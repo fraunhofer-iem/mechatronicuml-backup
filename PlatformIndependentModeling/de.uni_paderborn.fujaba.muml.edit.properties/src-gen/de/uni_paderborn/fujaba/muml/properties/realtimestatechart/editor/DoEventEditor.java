@@ -21,23 +21,23 @@ public class DoEventEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPeriod_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPeriod_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPeriod_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPeriod_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -47,9 +47,9 @@ public class DoEventEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_GeneralTab_Editor() {
-		if (this.editorAction_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_generalTab_Editor() {
+		if (this.editorAction_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDoEvent_Action();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -57,14 +57,14 @@ public class DoEventEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 			editor.setTooltipMessage("Each entry or exit action has one or more actions.");
 
-			this.editorAction_GeneralTab = editor;
+			this.editorAction_property_tab_generalTab = editor;
 		}
-		return this.editorAction_GeneralTab;
+		return this.editorAction_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPeriod_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPeriod_GeneralTab_Editor() {
-		if (this.editorPeriod_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPeriod_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPeriod_property_tab_generalTab_Editor() {
+		if (this.editorPeriod_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDoEvent_Period();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -72,14 +72,14 @@ public class DoEventEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 			editor.setTooltipMessage("the lower bound of the period");
 
-			this.editorPeriod_GeneralTab = editor;
+			this.editorPeriod_property_tab_generalTab = editor;
 		}
-		return this.editorPeriod_GeneralTab;
+		return this.editorPeriod_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_GeneralTab_Editor() {
-		if (this.editorKind_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_property_tab_generalTab_Editor() {
+		if (this.editorKind_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEvent_Kind();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -88,9 +88,9 @@ public class DoEventEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 			editor.setTooltipMessage(
 					"Decides the kind: Is this a raise event or a trigger event?\n\nA event may either be a trigger event or a raise event. A trigger event triggers \nsome action within the statechart, a raise event is generated by the statechart \nand will be processed by another statechart.");
 
-			this.editorKind_GeneralTab = editor;
+			this.editorKind_property_tab_generalTab = editor;
 		}
-		return this.editorKind_GeneralTab;
+		return this.editorKind_property_tab_generalTab;
 	}
 
 	//

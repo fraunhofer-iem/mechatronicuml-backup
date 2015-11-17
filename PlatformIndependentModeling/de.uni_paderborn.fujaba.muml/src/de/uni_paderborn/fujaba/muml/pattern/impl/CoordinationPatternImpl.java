@@ -15,6 +15,7 @@ package de.uni_paderborn.fujaba.muml.pattern.impl;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant;
 import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
 import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -47,46 +49,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getDescriptionAspects <em>Description Aspects</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getLegalConfigurations <em>Legal Configurations</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getPatternParameters <em>Pattern Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getCombineablePatterns <em>Combineable Patterns</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getAlternativePatterns <em>Alternative Patterns</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getDescriptionAspects <em>Description Aspects</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getPatternVariants <em>Pattern Variants</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CoordinationPatternImpl extends AbstractCoordinationSpecificationImpl implements CoordinationPattern {
-	/**
-	 * The cached value of the '{@link #getDescriptionAspects() <em>Description Aspects</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescriptionAspects()
-	 * @generated
-	 * @ordered
-	 */
-	protected DescriptionAspects descriptionAspects;
-
-	/**
-	 * The cached value of the '{@link #getLegalConfigurations() <em>Legal Configurations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLegalConfigurations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<LegalConfiguration> legalConfigurations;
-
-	/**
-	 * The cached value of the '{@link #getPatternParameters() <em>Pattern Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPatternParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> patternParameters;
-
+public class CoordinationPatternImpl extends AbstractCoordinationPatternImpl implements CoordinationPattern {
 	/**
 	 * The cached value of the '{@link #getCombineablePatterns() <em>Combineable Patterns</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -106,6 +77,26 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	 * @ordered
 	 */
 	protected EList<CoordinationPattern> alternativePatterns;
+
+	/**
+	 * The cached value of the '{@link #getDescriptionAspects() <em>Description Aspects</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescriptionAspects()
+	 * @generated
+	 * @ordered
+	 */
+	protected DescriptionAspects descriptionAspects;
+
+	/**
+	 * The cached value of the '{@link #getPatternVariants() <em>Pattern Variants</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatternVariants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CoordinationPatternVariant> patternVariants;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,23 +165,11 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LegalConfiguration> getLegalConfigurations() {
-		if (legalConfigurations == null) {
-			legalConfigurations = new EObjectContainmentWithInverseEList<LegalConfiguration>(LegalConfiguration.class, this, PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS, PatternPackage.LEGAL_CONFIGURATION__COORDINATION_PATTERN);
+	public EList<CoordinationPatternVariant> getPatternVariants() {
+		if (patternVariants == null) {
+			patternVariants = new EObjectWithInverseResolvingEList<CoordinationPatternVariant>(CoordinationPatternVariant.class, this, PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS, PatternPackage.COORDINATION_PATTERN_VARIANT__ORIGINAL_PATTERN);
 		}
-		return legalConfigurations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Parameter> getPatternParameters() {
-		if (patternParameters == null) {
-			patternParameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS);
-		}
-		return patternParameters;
+		return patternVariants;
 	}
 
 	/**
@@ -226,8 +205,8 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLegalConfigurations()).basicAdd(otherEnd, msgs);
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPatternVariants()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -242,10 +221,8 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 		switch (featureID) {
 			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
 				return basicSetDescriptionAspects(null, msgs);
-			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
-				return ((InternalEList<?>)getLegalConfigurations()).basicRemove(otherEnd, msgs);
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
-				return ((InternalEList<?>)getPatternParameters()).basicRemove(otherEnd, msgs);
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
+				return ((InternalEList<?>)getPatternVariants()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -258,16 +235,14 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-				return getDescriptionAspects();
-			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
-				return getLegalConfigurations();
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
-				return getPatternParameters();
 			case PatternPackage.COORDINATION_PATTERN__COMBINEABLE_PATTERNS:
 				return getCombineablePatterns();
 			case PatternPackage.COORDINATION_PATTERN__ALTERNATIVE_PATTERNS:
 				return getAlternativePatterns();
+			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
+				return getDescriptionAspects();
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
+				return getPatternVariants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,17 +256,6 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-				setDescriptionAspects((DescriptionAspects)newValue);
-				return;
-			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
-				getLegalConfigurations().clear();
-				getLegalConfigurations().addAll((Collection<? extends LegalConfiguration>)newValue);
-				return;
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
-				getPatternParameters().clear();
-				getPatternParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
 			case PatternPackage.COORDINATION_PATTERN__COMBINEABLE_PATTERNS:
 				getCombineablePatterns().clear();
 				getCombineablePatterns().addAll((Collection<? extends CoordinationPattern>)newValue);
@@ -299,6 +263,13 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 			case PatternPackage.COORDINATION_PATTERN__ALTERNATIVE_PATTERNS:
 				getAlternativePatterns().clear();
 				getAlternativePatterns().addAll((Collection<? extends CoordinationPattern>)newValue);
+				return;
+			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
+				setDescriptionAspects((DescriptionAspects)newValue);
+				return;
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
+				getPatternVariants().clear();
+				getPatternVariants().addAll((Collection<? extends CoordinationPatternVariant>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -312,20 +283,17 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-				setDescriptionAspects((DescriptionAspects)null);
-				return;
-			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
-				getLegalConfigurations().clear();
-				return;
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
-				getPatternParameters().clear();
-				return;
 			case PatternPackage.COORDINATION_PATTERN__COMBINEABLE_PATTERNS:
 				getCombineablePatterns().clear();
 				return;
 			case PatternPackage.COORDINATION_PATTERN__ALTERNATIVE_PATTERNS:
 				getAlternativePatterns().clear();
+				return;
+			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
+				setDescriptionAspects((DescriptionAspects)null);
+				return;
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
+				getPatternVariants().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -339,16 +307,14 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
-				return descriptionAspects != null;
-			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
-				return legalConfigurations != null && !legalConfigurations.isEmpty();
-			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
-				return patternParameters != null && !patternParameters.isEmpty();
 			case PatternPackage.COORDINATION_PATTERN__COMBINEABLE_PATTERNS:
 				return combineablePatterns != null && !combineablePatterns.isEmpty();
 			case PatternPackage.COORDINATION_PATTERN__ALTERNATIVE_PATTERNS:
 				return alternativePatterns != null && !alternativePatterns.isEmpty();
+			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
+				return descriptionAspects != null;
+			case PatternPackage.COORDINATION_PATTERN__PATTERN_VARIANTS:
+				return patternVariants != null && !patternVariants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

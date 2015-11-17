@@ -38,14 +38,17 @@ import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 
 import de.uni_paderborn.fujaba.muml.msgtype.impl.MsgtypePackageImpl;
 
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant;
 import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
 import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects;
 
+import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
 import de.uni_paderborn.fujaba.muml.pattern.util.PatternValidator;
 
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
@@ -88,6 +91,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass abstractCoordinationPatternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass coordinationPatternEClass = null;
 
 	/**
@@ -102,7 +112,14 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass legalConfigurationEClass = null;
+	private EClass verifiedConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass coordinationPatternVariantEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -217,6 +234,33 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAbstractCoordinationPattern() {
+		return abstractCoordinationPatternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbstractCoordinationPattern_VerifiedConfigurations() {
+		return (EReference)abstractCoordinationPatternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbstractCoordinationPattern_PatternParameters() {
+		return (EReference)abstractCoordinationPatternEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCoordinationPattern() {
 		return coordinationPatternEClass;
 	}
@@ -227,24 +271,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * @generated
 	 */
 	public EReference getCoordinationPattern_DescriptionAspects() {
-		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCoordinationPattern_LegalConfigurations() {
-		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCoordinationPattern_PatternParameters() {
 		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -253,7 +279,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCoordinationPattern_CombineablePatterns() {
+	public EReference getCoordinationPattern_PatternVariants() {
 		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -262,8 +288,17 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCoordinationPattern_CombineablePatterns() {
+		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCoordinationPattern_AlternativePatterns() {
-		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(4);
+		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -388,8 +423,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLegalConfiguration() {
-		return legalConfigurationEClass;
+	public EClass getVerifiedConfiguration() {
+		return verifiedConfigurationEClass;
 	}
 
 	/**
@@ -397,8 +432,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLegalConfiguration_ParameterBindings() {
-		return (EReference)legalConfigurationEClass.getEStructuralFeatures().get(0);
+	public EReference getVerifiedConfiguration_ParameterBindings() {
+		return (EReference)verifiedConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -406,8 +441,26 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLegalConfiguration_CoordinationPattern() {
-		return (EReference)legalConfigurationEClass.getEStructuralFeatures().get(1);
+	public EReference getVerifiedConfiguration_CoordinationPattern() {
+		return (EReference)verifiedConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCoordinationPatternVariant() {
+		return coordinationPatternVariantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCoordinationPatternVariant_OriginalPattern() {
+		return (EReference)coordinationPatternVariantEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -438,12 +491,9 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		coordinationPatternEClass = createEClass(COORDINATION_PATTERN);
-		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__DESCRIPTION_ASPECTS);
-		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__LEGAL_CONFIGURATIONS);
-		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__PATTERN_PARAMETERS);
-		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__COMBINEABLE_PATTERNS);
-		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ALTERNATIVE_PATTERNS);
+		abstractCoordinationPatternEClass = createEClass(ABSTRACT_COORDINATION_PATTERN);
+		createEReference(abstractCoordinationPatternEClass, ABSTRACT_COORDINATION_PATTERN__VERIFIED_CONFIGURATIONS);
+		createEReference(abstractCoordinationPatternEClass, ABSTRACT_COORDINATION_PATTERN__PATTERN_PARAMETERS);
 
 		descriptionAspectsEClass = createEClass(DESCRIPTION_ASPECTS);
 		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__OVERVIEW);
@@ -459,9 +509,18 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__ALTERNATIVES);
 		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES);
 
-		legalConfigurationEClass = createEClass(LEGAL_CONFIGURATION);
-		createEReference(legalConfigurationEClass, LEGAL_CONFIGURATION__PARAMETER_BINDINGS);
-		createEReference(legalConfigurationEClass, LEGAL_CONFIGURATION__COORDINATION_PATTERN);
+		verifiedConfigurationEClass = createEClass(VERIFIED_CONFIGURATION);
+		createEReference(verifiedConfigurationEClass, VERIFIED_CONFIGURATION__PARAMETER_BINDINGS);
+		createEReference(verifiedConfigurationEClass, VERIFIED_CONFIGURATION__COORDINATION_PATTERN);
+
+		coordinationPatternVariantEClass = createEClass(COORDINATION_PATTERN_VARIANT);
+		createEReference(coordinationPatternVariantEClass, COORDINATION_PATTERN_VARIANT__ORIGINAL_PATTERN);
+
+		coordinationPatternEClass = createEClass(COORDINATION_PATTERN);
+		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__COMBINEABLE_PATTERNS);
+		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ALTERNATIVE_PATTERNS);
+		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__DESCRIPTION_ASPECTS);
+		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__PATTERN_VARIANTS);
 	}
 
 	/**
@@ -497,17 +556,16 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		coordinationPatternEClass.getESuperTypes().add(theProtocolPackage.getAbstractCoordinationSpecification());
-		legalConfigurationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		legalConfigurationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		abstractCoordinationPatternEClass.getESuperTypes().add(theProtocolPackage.getAbstractCoordinationSpecification());
+		verifiedConfigurationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		verifiedConfigurationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		coordinationPatternVariantEClass.getESuperTypes().add(this.getAbstractCoordinationPattern());
+		coordinationPatternEClass.getESuperTypes().add(this.getAbstractCoordinationPattern());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(coordinationPatternEClass, CoordinationPattern.class, "CoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCoordinationPattern_DescriptionAspects(), this.getDescriptionAspects(), null, "descriptionAspects", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationPattern_LegalConfigurations(), this.getLegalConfiguration(), this.getLegalConfiguration_CoordinationPattern(), "legalConfigurations", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationPattern_PatternParameters(), theBehaviorPackage.getParameter(), null, "patternParameters", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationPattern_CombineablePatterns(), this.getCoordinationPattern(), null, "combineablePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationPattern_AlternativePatterns(), this.getCoordinationPattern(), null, "alternativePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(abstractCoordinationPatternEClass, AbstractCoordinationPattern.class, "AbstractCoordinationPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractCoordinationPattern_VerifiedConfigurations(), this.getVerifiedConfiguration(), this.getVerifiedConfiguration_CoordinationPattern(), "verifiedConfigurations", null, 0, -1, AbstractCoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCoordinationPattern_PatternParameters(), theBehaviorPackage.getParameter(), null, "patternParameters", null, 0, -1, AbstractCoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(descriptionAspectsEClass, DescriptionAspects.class, "DescriptionAspects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDescriptionAspects_Overview(), ecorePackage.getEString(), "overview", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -523,9 +581,18 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEAttribute(getDescriptionAspects_Alternatives(), ecorePackage.getEString(), "alternatives", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDescriptionAspects_Verification_properties(), ecorePackage.getEString(), "verification_properties", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(legalConfigurationEClass, LegalConfiguration.class, "LegalConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLegalConfiguration_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, LegalConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLegalConfiguration_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_LegalConfigurations(), "coordinationPattern", null, 1, 1, LegalConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(verifiedConfigurationEClass, VerifiedConfiguration.class, "VerifiedConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVerifiedConfiguration_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, VerifiedConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVerifiedConfiguration_CoordinationPattern(), this.getAbstractCoordinationPattern(), this.getAbstractCoordinationPattern_VerifiedConfigurations(), "coordinationPattern", null, 1, 1, VerifiedConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(coordinationPatternVariantEClass, CoordinationPatternVariant.class, "CoordinationPatternVariant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCoordinationPatternVariant_OriginalPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_PatternVariants(), "originalPattern", null, 1, 1, CoordinationPatternVariant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(coordinationPatternEClass, CoordinationPattern.class, "CoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCoordinationPattern_CombineablePatterns(), this.getCoordinationPattern(), null, "combineablePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_AlternativePatterns(), this.getCoordinationPattern(), null, "alternativePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_DescriptionAspects(), this.getDescriptionAspects(), null, "descriptionAspects", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_PatternVariants(), this.getCoordinationPatternVariant(), this.getCoordinationPatternVariant_OriginalPattern(), "patternVariants", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -551,8 +618,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (coordinationPatternEClass, 
+		  (abstractCoordinationPatternEClass, 
 		   source, 
+		   new String[] {
+			 "constraints", "UniquePatternNames PatternWithParametersNeedsVerifiedConfigurationWarning"
+		   });
+		addAnnotation
+		  (abstractCoordinationPatternEClass, 
+		   new boolean[] { true },
+		   "http://www.eclipse.org/emf/2002/Ecore",
 		   new String[] {
 			 "constraints", "UniquePatternNames"
 		   });
@@ -567,9 +641,10 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
-		  (coordinationPatternEClass, 
+		  (abstractCoordinationPatternEClass, 
 		   source, 
 		   new String[] {
+			 "PatternWithParametersNeedsVerifiedConfigurationWarning", "-- @warning\r\n--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\nself.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0",
 			 "UniquePatternNames", "-- A name of a CoordinationPattern must be unique.\r\nCoordinationPattern.allInstances()->isUnique(name)"
 		   });
 	}

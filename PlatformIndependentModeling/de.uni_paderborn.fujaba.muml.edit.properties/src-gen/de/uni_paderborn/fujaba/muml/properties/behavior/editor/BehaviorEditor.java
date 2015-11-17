@@ -21,33 +21,33 @@ public abstract class BehaviorEditor extends de.uni_paderborn.fujaba.properties.
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorBehavioralElement_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBehavioralElement_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorOperations_GeneralTab_Editor(), false);
+					createEditorOperations_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorVariables_GeneralTab_Editor(), false);
+					createEditorVariables_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorBehavioralElement_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBehavioralElement_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorOperations_GeneralTab_Editor(), false);
+					createEditorOperations_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorVariables_GeneralTab_Editor(), false);
+					createEditorVariables_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -57,9 +57,9 @@ public abstract class BehaviorEditor extends de.uni_paderborn.fujaba.properties.
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavioralElement_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavioralElement_GeneralTab_Editor() {
-		if (this.editorBehavioralElement_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavioralElement_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavioralElement_property_tab_generalTab_Editor() {
+		if (this.editorBehavioralElement_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_BehavioralElement();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -67,14 +67,14 @@ public abstract class BehaviorEditor extends de.uni_paderborn.fujaba.properties.
 
 			editor.setTooltipMessage("The behavioral element this statechart belongs to.");
 
-			this.editorBehavioralElement_GeneralTab = editor;
+			this.editorBehavioralElement_property_tab_generalTab = editor;
 		}
-		return this.editorBehavioralElement_GeneralTab;
+		return this.editorBehavioralElement_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperations_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperations_GeneralTab_Editor() {
-		if (this.editorOperations_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperations_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperations_property_tab_generalTab_Editor() {
+		if (this.editorOperations_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_Operations();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -83,14 +83,14 @@ public abstract class BehaviorEditor extends de.uni_paderborn.fujaba.properties.
 			editor.setTooltipMessage(
 					"A behavior may define a set of operations as signatures of helper functions. These operations\nmay be called by the behavior specification and may access the variables of\nthe behavior specification. The operations are contained in the behavior.");
 
-			this.editorOperations_GeneralTab = editor;
+			this.editorOperations_property_tab_generalTab = editor;
 		}
-		return this.editorOperations_GeneralTab;
+		return this.editorOperations_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariables_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariables_GeneralTab_Editor() {
-		if (this.editorVariables_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariables_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariables_property_tab_generalTab_Editor() {
+		if (this.editorVariables_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_Variables();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -99,9 +99,9 @@ public abstract class BehaviorEditor extends de.uni_paderborn.fujaba.properties.
 			editor.setTooltipMessage(
 					"A behavior may define a set of variables in order to store data. The variables\nmay be accessed by various elements, e.g., operations and the behavior specification itself.\nThe variables are contained in the behavior.");
 
-			this.editorVariables_GeneralTab = editor;
+			this.editorVariables_property_tab_generalTab = editor;
 		}
-		return this.editorVariables_GeneralTab;
+		return this.editorVariables_property_tab_generalTab;
 	}
 
 }

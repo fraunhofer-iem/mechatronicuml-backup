@@ -128,26 +128,49 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LegalConfigurationItemProvider legalConfigurationItemProvider;
+	protected VerifiedConfigurationItemProvider verifiedConfigurationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLegalConfigurationAdapter() {
-		if (legalConfigurationItemProvider == null) {
-			legalConfigurationItemProvider = new LegalConfigurationItemProvider(this);
+	public Adapter createVerifiedConfigurationAdapter() {
+		if (verifiedConfigurationItemProvider == null) {
+			verifiedConfigurationItemProvider = new VerifiedConfigurationItemProvider(this);
 		}
 
-		return legalConfigurationItemProvider;
+		return verifiedConfigurationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CoordinationPatternVariantItemProvider coordinationPatternVariantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCoordinationPatternVariantAdapter() {
+		if (coordinationPatternVariantItemProvider == null) {
+			coordinationPatternVariantItemProvider = new CoordinationPatternVariantItemProvider(this);
+		}
+
+		return coordinationPatternVariantItemProvider;
 	}
 
 	/**
@@ -249,9 +272,10 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (coordinationPatternItemProvider != null) coordinationPatternItemProvider.dispose();
 		if (descriptionAspectsItemProvider != null) descriptionAspectsItemProvider.dispose();
-		if (legalConfigurationItemProvider != null) legalConfigurationItemProvider.dispose();
+		if (verifiedConfigurationItemProvider != null) verifiedConfigurationItemProvider.dispose();
+		if (coordinationPatternVariantItemProvider != null) coordinationPatternVariantItemProvider.dispose();
+		if (coordinationPatternItemProvider != null) coordinationPatternItemProvider.dispose();
 	}
 
 }

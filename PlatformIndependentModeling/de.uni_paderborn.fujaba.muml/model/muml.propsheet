@@ -21,7 +21,7 @@
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <tabs xmi:id="_VZJEsMwbEeSjx7OWZCcdLw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
-  <tabs id="property.tab.descriptionAspects" name="Description_Aspects" afterTab="property.tab.constraint"/>
+  <tabs id="property.tab.descriptionAspects" name="Description Aspects" afterTab="property.tab.constraint"/>
   <packages xmi:id="_VZJEscwbEeSjx7OWZCcdLw">
     <genPackage href="muml.genmodel#//muml/valuetype"/>
     <classes xmi:id="_VZJEsswbEeSjx7OWZCcdLw">
@@ -1176,7 +1176,7 @@
   </packages>
   <packages xmi:id="_VZZjaMwbEeSjx7OWZCcdLw">
     <genPackage href="muml.genmodel#//muml/pattern"/>
-    <classes xmi:id="_VZZjacwbEeSjx7OWZCcdLw" superClasses="_VZSOp8wbEeSjx7OWZCcdLw">
+    <classes xmi:id="_VZZjacwbEeSjx7OWZCcdLw" superClasses="//@packages.10/@classes.2">
       <genClass href="muml.genmodel#//muml/pattern/CoordinationPattern"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZZjaswbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/pattern/CoordinationPattern/combineablePatterns"/>
@@ -1192,95 +1192,96 @@
         <genFeature href="muml.genmodel#//muml/pattern/CoordinationPattern/descriptionAspects"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="muml.genmodel#//muml/pattern/CoordinationPattern/legalConfigurations"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="muml.genmodel#//muml/pattern/CoordinationPattern/patternParameters"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="_VZZjaswbEeSjx7OWZCcdLw _VZZjbMwbEeSjx7OWZCcdLw //@packages.10/@classes.0/@orderedElements.3 //@packages.10/@classes.0/@orderedElements.4"/>
-    </classes>
-    <classes xmi:id="_VZaxgcwbEeSjx7OWZCcdLw">
-      <genClass href="muml.genmodel#//muml/pattern/LegalConfiguration"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="muml.genmodel#//muml/pattern/LegalConfiguration/coordinationPattern"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="muml.genmodel#//muml/pattern/LegalConfiguration/parameterBindings"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="_VZZjaswbEeSjx7OWZCcdLw _VZZjbMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/pattern/DescriptionAspects"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/overview"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/context"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/problem"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/solution"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/structure"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/behavior"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/examples"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/consequences"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/combineability"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/variants"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/alternatives"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/pattern/DescriptionAspects/verification_properties"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
+    </classes>
+    <classes superClasses="_VZSOp8wbEeSjx7OWZCcdLw">
+      <genClass href="muml.genmodel#//muml/pattern/AbstractCoordinationPattern"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/pattern/AbstractCoordinationPattern/verifiedConfigurations"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/pattern/AbstractCoordinationPattern/patternParameters"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/pattern/VerifiedConfiguration"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/pattern/VerifiedConfiguration/parameterBindings"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes superClasses="//@packages.10/@classes.2">
+      <genClass href="muml.genmodel#//muml/pattern/CoordinationPatternVariant"/>
     </classes>
   </packages>
   <packages>

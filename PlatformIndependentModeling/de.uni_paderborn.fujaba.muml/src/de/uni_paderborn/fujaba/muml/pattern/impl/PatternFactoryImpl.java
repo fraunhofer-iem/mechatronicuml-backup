@@ -66,9 +66,10 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PatternPackage.COORDINATION_PATTERN: return createCoordinationPattern();
 			case PatternPackage.DESCRIPTION_ASPECTS: return createDescriptionAspects();
-			case PatternPackage.LEGAL_CONFIGURATION: return createLegalConfiguration();
+			case PatternPackage.VERIFIED_CONFIGURATION: return createVerifiedConfiguration();
+			case PatternPackage.COORDINATION_PATTERN_VARIANT: return createCoordinationPatternVariant();
+			case PatternPackage.COORDINATION_PATTERN: return createCoordinationPattern();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -99,9 +100,19 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LegalConfiguration createLegalConfiguration() {
-		LegalConfigurationImpl legalConfiguration = new LegalConfigurationImpl();
-		return legalConfiguration;
+	public VerifiedConfiguration createVerifiedConfiguration() {
+		VerifiedConfigurationImpl verifiedConfiguration = new VerifiedConfigurationImpl();
+		return verifiedConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoordinationPatternVariant createCoordinationPatternVariant() {
+		CoordinationPatternVariantImpl coordinationPatternVariant = new CoordinationPatternVariantImpl();
+		return coordinationPatternVariant;
 	}
 
 	/**

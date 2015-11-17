@@ -85,14 +85,14 @@ public class PatternSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PatternPackage.COORDINATION_PATTERN: {
-				CoordinationPattern coordinationPattern = (CoordinationPattern)theEObject;
-				T result = caseCoordinationPattern(coordinationPattern);
-				if (result == null) result = caseAbstractCoordinationSpecification(coordinationPattern);
-				if (result == null) result = caseNamedElement(coordinationPattern);
-				if (result == null) result = caseCommentableElement(coordinationPattern);
-				if (result == null) result = caseVerifiableElement(coordinationPattern);
-				if (result == null) result = caseExtendableElement(coordinationPattern);
+			case PatternPackage.ABSTRACT_COORDINATION_PATTERN: {
+				AbstractCoordinationPattern abstractCoordinationPattern = (AbstractCoordinationPattern)theEObject;
+				T result = caseAbstractCoordinationPattern(abstractCoordinationPattern);
+				if (result == null) result = caseAbstractCoordinationSpecification(abstractCoordinationPattern);
+				if (result == null) result = caseNamedElement(abstractCoordinationPattern);
+				if (result == null) result = caseCommentableElement(abstractCoordinationPattern);
+				if (result == null) result = caseVerifiableElement(abstractCoordinationPattern);
+				if (result == null) result = caseExtendableElement(abstractCoordinationPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,17 +102,56 @@ public class PatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PatternPackage.LEGAL_CONFIGURATION: {
-				LegalConfiguration legalConfiguration = (LegalConfiguration)theEObject;
-				T result = caseLegalConfiguration(legalConfiguration);
-				if (result == null) result = caseNamedElement(legalConfiguration);
-				if (result == null) result = caseCommentableElement(legalConfiguration);
-				if (result == null) result = caseExtendableElement(legalConfiguration);
+			case PatternPackage.VERIFIED_CONFIGURATION: {
+				VerifiedConfiguration verifiedConfiguration = (VerifiedConfiguration)theEObject;
+				T result = caseVerifiedConfiguration(verifiedConfiguration);
+				if (result == null) result = caseNamedElement(verifiedConfiguration);
+				if (result == null) result = caseCommentableElement(verifiedConfiguration);
+				if (result == null) result = caseExtendableElement(verifiedConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PatternPackage.COORDINATION_PATTERN_VARIANT: {
+				CoordinationPatternVariant coordinationPatternVariant = (CoordinationPatternVariant)theEObject;
+				T result = caseCoordinationPatternVariant(coordinationPatternVariant);
+				if (result == null) result = caseAbstractCoordinationPattern(coordinationPatternVariant);
+				if (result == null) result = caseAbstractCoordinationSpecification(coordinationPatternVariant);
+				if (result == null) result = caseNamedElement(coordinationPatternVariant);
+				if (result == null) result = caseCommentableElement(coordinationPatternVariant);
+				if (result == null) result = caseVerifiableElement(coordinationPatternVariant);
+				if (result == null) result = caseExtendableElement(coordinationPatternVariant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PatternPackage.COORDINATION_PATTERN: {
+				CoordinationPattern coordinationPattern = (CoordinationPattern)theEObject;
+				T result = caseCoordinationPattern(coordinationPattern);
+				if (result == null) result = caseAbstractCoordinationPattern(coordinationPattern);
+				if (result == null) result = caseAbstractCoordinationSpecification(coordinationPattern);
+				if (result == null) result = caseNamedElement(coordinationPattern);
+				if (result == null) result = caseCommentableElement(coordinationPattern);
+				if (result == null) result = caseVerifiableElement(coordinationPattern);
+				if (result == null) result = caseExtendableElement(coordinationPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Coordination Pattern</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractCoordinationPattern(AbstractCoordinationPattern object) {
+		return null;
 	}
 
 	/**
@@ -146,17 +185,32 @@ public class PatternSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Legal Configuration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Verified Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Legal Configuration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Verified Configuration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLegalConfiguration(LegalConfiguration object) {
+	public T caseVerifiedConfiguration(VerifiedConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Pattern Variant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Pattern Variant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoordinationPatternVariant(CoordinationPatternVariant object) {
 		return null;
 	}
 

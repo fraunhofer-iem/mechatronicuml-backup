@@ -21,27 +21,27 @@ public class NaturalNumberEditor extends de.uni_paderborn.fujaba.properties.runt
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorValue_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorInfinity_GeneralTab_Editor(), false);
+					createEditorInfinity_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorValue_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorInfinity_GeneralTab_Editor(), false);
+					createEditorInfinity_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -51,9 +51,9 @@ public class NaturalNumberEditor extends de.uni_paderborn.fujaba.properties.runt
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_GeneralTab_Editor() {
-		if (this.editorValue_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_property_tab_generalTab_Editor() {
+		if (this.editorValue_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 					.getNaturalNumber_Value();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -61,14 +61,14 @@ public class NaturalNumberEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			editor.setTooltipMessage("The value of this natural number.");
 
-			this.editorValue_GeneralTab = editor;
+			this.editorValue_property_tab_generalTab = editor;
 		}
-		return this.editorValue_GeneralTab;
+		return this.editorValue_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInfinity_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInfinity_GeneralTab_Editor() {
-		if (this.editorInfinity_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInfinity_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInfinity_property_tab_generalTab_Editor() {
+		if (this.editorInfinity_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 					.getNaturalNumber_Infinity();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
@@ -76,9 +76,9 @@ public class NaturalNumberEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			editor.setTooltipMessage("Determins whether this natural number represents infinity.");
 
-			this.editorInfinity_GeneralTab = editor;
+			this.editorInfinity_property_tab_generalTab = editor;
 		}
-		return this.editorInfinity_GeneralTab;
+		return this.editorInfinity_property_tab_generalTab;
 	}
 
 	//

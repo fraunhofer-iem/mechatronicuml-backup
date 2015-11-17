@@ -107,15 +107,98 @@ public class PatternValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case PatternPackage.COORDINATION_PATTERN:
-				return validateCoordinationPattern((CoordinationPattern)value, diagnostics, context);
+			case PatternPackage.ABSTRACT_COORDINATION_PATTERN:
+				return validateAbstractCoordinationPattern((AbstractCoordinationPattern)value, diagnostics, context);
 			case PatternPackage.DESCRIPTION_ASPECTS:
 				return validateDescriptionAspects((DescriptionAspects)value, diagnostics, context);
-			case PatternPackage.LEGAL_CONFIGURATION:
-				return validateLegalConfiguration((LegalConfiguration)value, diagnostics, context);
+			case PatternPackage.VERIFIED_CONFIGURATION:
+				return validateVerifiedConfiguration((VerifiedConfiguration)value, diagnostics, context);
+			case PatternPackage.COORDINATION_PATTERN_VARIANT:
+				return validateCoordinationPatternVariant((CoordinationPatternVariant)value, diagnostics, context);
+			case PatternPackage.COORDINATION_PATTERN:
+				return validateCoordinationPattern((CoordinationPattern)value, diagnostics, context);
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractCoordinationPattern(AbstractCoordinationPattern abstractCoordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(abstractCoordinationPattern, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_UniqueRoleNames(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(abstractCoordinationPattern, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the UniquePatternNames constraint of '<em>Abstract Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractCoordinationPattern_UniquePatternNames(AbstractCoordinationPattern abstractCoordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "UniquePatternNames", getObjectLabel(abstractCoordinationPattern, context) },
+						 new Object[] { abstractCoordinationPattern },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Validates the PatternWithParametersNeedsVerifiedConfigurationWarning constraint of '<em>Abstract Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(AbstractCoordinationPattern abstractCoordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "PatternWithParametersNeedsVerifiedConfigurationWarning", getObjectLabel(abstractCoordinationPattern, context) },
+						 new Object[] { abstractCoordinationPattern },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -136,36 +219,9 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_UniqueRoleNames(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(coordinationPattern, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCoordinationPattern_UniquePatternNames(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(coordinationPattern, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * Validates the UniquePatternNames constraint of '<em>Coordination Pattern</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCoordinationPattern_UniquePatternNames(CoordinationPattern coordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "UniquePatternNames", getObjectLabel(coordinationPattern, context) },
-						 new Object[] { coordinationPattern },
-						 context));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -182,8 +238,31 @@ public class PatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLegalConfiguration(LegalConfiguration legalConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(legalConfiguration, diagnostics, context);
+	public boolean validateVerifiedConfiguration(VerifiedConfiguration verifiedConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(verifiedConfiguration, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCoordinationPatternVariant(CoordinationPatternVariant coordinationPatternVariant, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(coordinationPatternVariant, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_UniqueRoleNames(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(coordinationPatternVariant, diagnostics, context);
+		return result;
 	}
 
 	/**

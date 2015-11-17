@@ -21,85 +21,81 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorVerificationConstraintRepositories_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVerificationConstraintRepositories_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAdaptedFromPattern_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAdaptedFromPattern_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorDescriptionAspects_Description_AspectsTab_Editor(), false);
+			addPropertyEditor(createEditorVerifiedConfigurations_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorPatternParameters_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorDescriptionAspects_property_tab_descriptionAspectsTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorCombineablePatterns_GeneralTab_Editor(), false);
+					createEditorCombineablePatterns_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorAlternativePatterns_GeneralTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorLegalConfigurations_GeneralTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorPatternParameters_GeneralTab_Editor(), false);
+					createEditorAlternativePatterns_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
-			addPropertyEditor(createEditorDescriptionAspects_Description_AspectsTab_Editor(), false);
+			addPropertyEditor(createEditorDescriptionAspects_property_tab_descriptionAspectsTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorVerificationConstraintRepositories_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVerificationConstraintRepositories_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAdaptedFromPattern_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAdaptedFromPattern_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorVerifiedConfigurations_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorPatternParameters_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorCombineablePatterns_GeneralTab_Editor(), false);
+					createEditorCombineablePatterns_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorAlternativePatterns_GeneralTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorLegalConfigurations_GeneralTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorPatternParameters_GeneralTab_Editor(), false);
+					createEditorAlternativePatterns_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCombineablePatterns_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCombineablePatterns_GeneralTab_Editor() {
-		if (this.editorCombineablePatterns_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCombineablePatterns_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCombineablePatterns_property_tab_generalTab_Editor() {
+		if (this.editorCombineablePatterns_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getCoordinationPattern_CombineablePatterns();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -107,14 +103,14 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
-			this.editorCombineablePatterns_GeneralTab = editor;
+			this.editorCombineablePatterns_property_tab_generalTab = editor;
 		}
-		return this.editorCombineablePatterns_GeneralTab;
+		return this.editorCombineablePatterns_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAlternativePatterns_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAlternativePatterns_GeneralTab_Editor() {
-		if (this.editorAlternativePatterns_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAlternativePatterns_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAlternativePatterns_property_tab_generalTab_Editor() {
+		if (this.editorAlternativePatterns_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getCoordinationPattern_AlternativePatterns();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -122,14 +118,14 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
-			this.editorAlternativePatterns_GeneralTab = editor;
+			this.editorAlternativePatterns_property_tab_generalTab = editor;
 		}
-		return this.editorAlternativePatterns_GeneralTab;
+		return this.editorAlternativePatterns_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDescriptionAspects_Description_AspectsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDescriptionAspects_Description_AspectsTab_Editor() {
-		if (this.editorDescriptionAspects_Description_AspectsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDescriptionAspects_property_tab_descriptionAspectsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDescriptionAspects_property_tab_descriptionAspectsTab_Editor() {
+		if (this.editorDescriptionAspects_property_tab_descriptionAspectsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getCoordinationPattern_DescriptionAspects();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -137,44 +133,44 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
-			this.editorDescriptionAspects_Description_AspectsTab = editor;
+			this.editorDescriptionAspects_property_tab_descriptionAspectsTab = editor;
 		}
-		return this.editorDescriptionAspects_Description_AspectsTab;
+		return this.editorDescriptionAspects_property_tab_descriptionAspectsTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLegalConfigurations_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLegalConfigurations_GeneralTab_Editor() {
-		if (this.editorLegalConfigurations_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerifiedConfigurations_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerifiedConfigurations_property_tab_generalTab_Editor() {
+		if (this.editorVerifiedConfigurations_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-					.getCoordinationPattern_LegalConfigurations();
+					.getAbstractCoordinationPattern_VerifiedConfigurations();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
-			this.editorLegalConfigurations_GeneralTab = editor;
+			this.editorVerifiedConfigurations_property_tab_generalTab = editor;
 		}
-		return this.editorLegalConfigurations_GeneralTab;
+		return this.editorVerifiedConfigurations_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPatternParameters_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPatternParameters_GeneralTab_Editor() {
-		if (this.editorPatternParameters_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPatternParameters_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPatternParameters_property_tab_generalTab_Editor() {
+		if (this.editorPatternParameters_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-					.getCoordinationPattern_PatternParameters();
+					.getAbstractCoordinationPattern_PatternParameters();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
-			this.editorPatternParameters_GeneralTab = editor;
+			this.editorPatternParameters_property_tab_generalTab = editor;
 		}
-		return this.editorPatternParameters_GeneralTab;
+		return this.editorPatternParameters_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAdaptedFromPattern_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAdaptedFromPattern_GeneralTab_Editor() {
-		if (this.editorAdaptedFromPattern_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAdaptedFromPattern_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAdaptedFromPattern_property_tab_generalTab_Editor() {
+		if (this.editorAdaptedFromPattern_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 					.getAbstractCoordinationSpecification_AdaptedFromPattern();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -182,14 +178,14 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
-			this.editorAdaptedFromPattern_GeneralTab = editor;
+			this.editorAdaptedFromPattern_property_tab_generalTab = editor;
 		}
-		return this.editorAdaptedFromPattern_GeneralTab;
+		return this.editorAdaptedFromPattern_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
-		if (this.editorComment_DocumentationTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
+		if (this.editorComment_property_tab_documentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -198,27 +194,27 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			editor.setTooltipMessage(
 					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
-			this.editorComment_DocumentationTab = editor;
+			this.editorComment_property_tab_documentationTab = editor;
 		}
-		return this.editorComment_DocumentationTab;
+		return this.editorComment_property_tab_documentationTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerificationConstraintRepositories_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerificationConstraintRepositories_GeneralTab_Editor() {
-		if (this.editorVerificationConstraintRepositories_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerificationConstraintRepositories_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerificationConstraintRepositories_property_tab_generalTab_Editor() {
+		if (this.editorVerificationConstraintRepositories_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 					.getVerifiableElement_VerificationConstraintRepositories();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
@@ -227,14 +223,14 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			editor.setTooltipMessage(
 					"The referenced repository that contains verifiable constraints for this element.");
 
-			this.editorVerificationConstraintRepositories_GeneralTab = editor;
+			this.editorVerificationConstraintRepositories_property_tab_generalTab = editor;
 		}
-		return this.editorVerificationConstraintRepositories_GeneralTab;
+		return this.editorVerificationConstraintRepositories_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
-		if (this.editorName_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getNamedElement_Name();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -254,9 +250,9 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-			this.editorName_GeneralTab = editor;
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorName_GeneralTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
 	//

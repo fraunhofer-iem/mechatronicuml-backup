@@ -31,19 +31,17 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getDescriptionAspects <em>Description Aspects</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getLegalConfigurations <em>Legal Configurations</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getPatternParameters <em>Pattern Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getCombineablePatterns <em>Combineable Patterns</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getAlternativePatterns <em>Alternative Patterns</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getDescriptionAspects <em>Description Aspects</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getPatternVariants <em>Pattern Variants</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePatternNames'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePatternNames='-- A name of a CoordinationPattern must be unique.\r\nCoordinationPattern.allInstances()->isUnique(name)'"
+ * @model
  * @generated
  */
-public interface CoordinationPattern extends AbstractCoordinationSpecification {
+public interface CoordinationPattern extends AbstractCoordinationPattern {
 	/**
 	 * Returns the value of the '<em><b>Description Aspects</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -70,36 +68,22 @@ public interface CoordinationPattern extends AbstractCoordinationSpecification {
 	void setDescriptionAspects(DescriptionAspects value);
 
 	/**
-	 * Returns the value of the '<em><b>Legal Configurations</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration#getCoordinationPattern <em>Coordination Pattern</em>}'.
+	 * Returns the value of the '<em><b>Pattern Variants</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant#getOriginalPattern <em>Original Pattern</em>}'.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pattern Variants</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Legal Configurations</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_LegalConfigurations()
-	 * @see de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration#getCoordinationPattern
-	 * @model opposite="coordinationPattern" containment="true"
+	 * @return the value of the '<em>Pattern Variants</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_PatternVariants()
+	 * @see de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant#getOriginalPattern
+	 * @model opposite="originalPattern"
 	 * @generated
 	 */
-	EList<LegalConfiguration> getLegalConfigurations();
-
-	/**
-	 * Returns the value of the '<em><b>Pattern Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Pattern Parameters</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_PatternParameters()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Parameter> getPatternParameters();
+	EList<CoordinationPatternVariant> getPatternVariants();
 
 	/**
 	 * Returns the value of the '<em><b>Combineable Patterns</b></em>' reference list.

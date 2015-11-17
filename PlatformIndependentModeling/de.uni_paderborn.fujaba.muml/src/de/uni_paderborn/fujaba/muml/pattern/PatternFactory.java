@@ -50,13 +50,22 @@ public interface PatternFactory extends EFactory {
 	DescriptionAspects createDescriptionAspects();
 
 	/**
-	 * Returns a new object of class '<em>Legal Configuration</em>'.
+	 * Returns a new object of class '<em>Verified Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Legal Configuration</em>'.
+	 * @return a new object of class '<em>Verified Configuration</em>'.
 	 * @generated
 	 */
-	LegalConfiguration createLegalConfiguration();
+	VerifiedConfiguration createVerifiedConfiguration();
+
+	/**
+	 * Returns a new object of class '<em>Coordination Pattern Variant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coordination Pattern Variant</em>'.
+	 * @generated
+	 */
+	CoordinationPatternVariant createCoordinationPatternVariant();
 
 	/**
 	 * Returns the package supported by this factory.

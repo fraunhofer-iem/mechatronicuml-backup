@@ -87,16 +87,24 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	protected PatternSwitch<Adapter> modelSwitch =
 		new PatternSwitch<Adapter>() {
 			@Override
-			public Adapter caseCoordinationPattern(CoordinationPattern object) {
-				return createCoordinationPatternAdapter();
+			public Adapter caseAbstractCoordinationPattern(AbstractCoordinationPattern object) {
+				return createAbstractCoordinationPatternAdapter();
 			}
 			@Override
 			public Adapter caseDescriptionAspects(DescriptionAspects object) {
 				return createDescriptionAspectsAdapter();
 			}
 			@Override
-			public Adapter caseLegalConfiguration(LegalConfiguration object) {
-				return createLegalConfigurationAdapter();
+			public Adapter caseVerifiedConfiguration(VerifiedConfiguration object) {
+				return createVerifiedConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseCoordinationPatternVariant(CoordinationPatternVariant object) {
+				return createCoordinationPatternVariantAdapter();
+			}
+			@Override
+			public Adapter caseCoordinationPattern(CoordinationPattern object) {
+				return createCoordinationPatternAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -139,6 +147,20 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern <em>Abstract Coordination Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern
+	 * @generated
+	 */
+	public Adapter createAbstractCoordinationPatternAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern <em>Coordination Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -167,16 +189,30 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration <em>Legal Configuration</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration <em>Verified Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration
+	 * @see de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration
 	 * @generated
 	 */
-	public Adapter createLegalConfigurationAdapter() {
+	public Adapter createVerifiedConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant <em>Coordination Pattern Variant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant
+	 * @generated
+	 */
+	public Adapter createCoordinationPatternVariantAdapter() {
 		return null;
 	}
 
