@@ -26,6 +26,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart(view);
 
+			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart(
+						view);
+
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart(view);
 
@@ -76,6 +80,14 @@ public class MumlEditPartFactory implements EditPartFactory {
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart(view);
 
+			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart(
+						view);
+
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart(
 						view);
@@ -86,6 +98,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:

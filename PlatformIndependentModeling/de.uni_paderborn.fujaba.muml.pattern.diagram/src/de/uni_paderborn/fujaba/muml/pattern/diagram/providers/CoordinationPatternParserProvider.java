@@ -123,6 +123,24 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser coordinationPatternVariantName_5012Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getCoordinationPatternVariantName_5012Parser() {
+		if (coordinationPatternVariantName_5012Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser(
+					features);
+			coordinationPatternVariantName_5012Parser = parser;
+		}
+		return coordinationPatternVariantName_5012Parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IParser getParser(int visualID) {
@@ -147,6 +165,8 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 			return getConnectorQualityOfServiceAssumptionsLabel_5009Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptionsLabel_5010Parser();
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart.VISUAL_ID:
+			return getCoordinationPatternVariantName_5012Parser();
 		}
 		return null;
 	}

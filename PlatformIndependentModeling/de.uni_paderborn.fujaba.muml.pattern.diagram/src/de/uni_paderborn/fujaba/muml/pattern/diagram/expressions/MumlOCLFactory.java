@@ -35,7 +35,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression[24];
+		this.expressions = new de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression[34];
 		this.expressionBodies = new String[] { "\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -56,6 +56,16 @@ public class MumlOCLFactory {
 				"if (self.messageLossPossible)\r\nthen \'Message Loss Possible\' else \'Message Loss NOT Possible\' endif", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
+				"\'role1\'", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"\'role2\'", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }", //$NON-NLS-1$
+				"\'\'", //$NON-NLS-1$
+				"\'0\'", //$NON-NLS-1$
+				"\'0\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$

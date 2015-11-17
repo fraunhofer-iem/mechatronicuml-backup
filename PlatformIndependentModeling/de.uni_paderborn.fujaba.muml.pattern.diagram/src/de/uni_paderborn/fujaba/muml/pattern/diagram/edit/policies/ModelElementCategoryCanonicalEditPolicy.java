@@ -126,7 +126,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 				int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID });
+						de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -157,8 +158,9 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view);
+		int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view);
+		return visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -329,6 +331,18 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramUpdater
+						.getCoordinationPatternVariant_2002ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
@@ -397,6 +411,18 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramUpdater
 						.getConnectorQualityOfServiceAssumptions_3007ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramUpdater
+						.getCoordinationPatternVariant_3008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

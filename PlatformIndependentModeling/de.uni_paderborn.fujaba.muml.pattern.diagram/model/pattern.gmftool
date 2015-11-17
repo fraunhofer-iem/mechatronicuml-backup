@@ -18,6 +18,10 @@
           xsi:type="gmftool:CreationTool"
           title="Connector"
           description="creates a connector"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Coordination Pattern Variation"
+          description="creates a coordination pattern variation"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

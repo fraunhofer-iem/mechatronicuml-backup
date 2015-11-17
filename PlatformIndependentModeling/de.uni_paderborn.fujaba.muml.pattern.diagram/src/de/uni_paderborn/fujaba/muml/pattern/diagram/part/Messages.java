@@ -276,6 +276,16 @@ public class Messages extends NLS {
 	public static String Connector2CreationTool_desc;
 
 	/**
+	* @generated
+	*/
+	public static String CoordinationPatternVariation3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String CoordinationPatternVariation3CreationTool_desc;
+
+	/**
 	 * @generated
 	 */
 	public static String Role1CreationTool_title;
@@ -301,6 +311,11 @@ public class Messages extends NLS {
 	public static String MessageTypeParametersCompartmentEditPart_title;
 
 	/**
+	* @generated
+	*/
+	public static String CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart_title;
+
+	/**
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
@@ -314,6 +329,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_CoordinationPattern_2001_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_CoordinationPatternVariant_2002_outgoinglinks;
 
 	/**
 	 * @generated
@@ -339,6 +359,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3007_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_CoordinationPatternVariant_3008_outgoinglinks;
 
 	/**
 	 * @generated

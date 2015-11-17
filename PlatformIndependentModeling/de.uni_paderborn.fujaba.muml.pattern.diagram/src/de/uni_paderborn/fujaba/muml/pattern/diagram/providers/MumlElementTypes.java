@@ -53,6 +53,12 @@ public class MumlElementTypes {
 	public static final IElementType CoordinationPattern_2001 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
 	/**
+	* @generated
+	*/
+	public static final IElementType CoordinationPatternVariant_2002 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	public static final IElementType CoordinationPattern_3003 = getElementType(
@@ -82,6 +88,12 @@ public class MumlElementTypes {
 	 */
 	public static final IElementType ConnectorQualityOfServiceAssumptions_3007 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.ConnectorQualityOfServiceAssumptions_3007"); //$NON-NLS-1$
+	/**
+	* @generated
+	*/
+	public static final IElementType CoordinationPatternVariant_3008 = getElementType(
+			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -147,6 +159,9 @@ public class MumlElementTypes {
 			elements.put(CoordinationPattern_2001,
 					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPattern());
 
+			elements.put(CoordinationPatternVariant_2002,
+					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPatternVariant());
+
 			elements.put(CoordinationPattern_3003,
 					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPattern());
 
@@ -164,6 +179,9 @@ public class MumlElementTypes {
 			elements.put(ConnectorQualityOfServiceAssumptions_3007,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getConnectorQualityOfServiceAssumptions());
+
+			elements.put(CoordinationPatternVariant_3008,
+					de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPatternVariant());
 
 			elements.put(AbstractCoordinationSpecificationRoles_4002,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
@@ -198,12 +216,14 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
 			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2001);
+			KNOWN_ELEMENT_TYPES.add(CoordinationPatternVariant_2002);
 			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_3003);
 			KNOWN_ELEMENT_TYPES.add(Role_3002);
 			KNOWN_ELEMENT_TYPES.add(MessageBuffer_3004);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3005);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3006);
 			KNOWN_ELEMENT_TYPES.add(ConnectorQualityOfServiceAssumptions_3007);
+			KNOWN_ELEMENT_TYPES.add(CoordinationPatternVariant_3008);
 			KNOWN_ELEMENT_TYPES.add(AbstractCoordinationSpecificationRoles_4002);
 			KNOWN_ELEMENT_TYPES.add(RoleConnector_4001);
 			KNOWN_ELEMENT_TYPES.add(DiscreteInteractionEndpointReceiverMessageBuffer_4003);
@@ -221,6 +241,8 @@ public class MumlElementTypes {
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return CoordinationPattern_2001;
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+			return CoordinationPatternVariant_2002;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 			return CoordinationPattern_3003;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
@@ -233,6 +255,8 @@ public class MumlElementTypes {
 			return Parameter_3006;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return ConnectorQualityOfServiceAssumptions_3007;
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+			return CoordinationPatternVariant_3008;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
 			return AbstractCoordinationSpecificationRoles_4002;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:

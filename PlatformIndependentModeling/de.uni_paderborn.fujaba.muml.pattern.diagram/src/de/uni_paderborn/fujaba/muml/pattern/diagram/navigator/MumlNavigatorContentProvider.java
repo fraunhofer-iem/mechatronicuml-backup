@@ -217,6 +217,10 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
 							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
 							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
@@ -270,6 +274,51 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
 							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.NavigatorGroupName_CoordinationPatternVariant_2002_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
 							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
@@ -391,6 +440,23 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.NavigatorGroupName_CoordinationPatternVariant_3008_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
@@ -444,7 +510,15 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
 							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+							de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);

@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.draw2d.ConnectionAnchor;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
@@ -318,14 +320,21 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public PatternFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(2), getMapMode().DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(6), getMapMode().DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(8), getMapMode().DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
-			this.addPoint(new Point(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
+			this.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(1)));
+			this.addPoint(new Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(2)));
+			this.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(2)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(2), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(0)));
 			this.setFill(true);
+			this.setBackgroundColor(THIS_BACK);
 			this.setLocation(new Point(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
 			createContents();
 		}
@@ -339,7 +348,15 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 
 			fFigurePatternNameLabel.setText("");
 
-			this.add(fFigurePatternNameLabel);
+			GridData constraintFFigurePatternNameLabel = new GridData();
+			constraintFFigurePatternNameLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigurePatternNameLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigurePatternNameLabel.horizontalIndent = 0;
+			constraintFFigurePatternNameLabel.horizontalSpan = 1;
+			constraintFFigurePatternNameLabel.verticalSpan = 1;
+			constraintFFigurePatternNameLabel.grabExcessHorizontalSpace = true;
+			constraintFFigurePatternNameLabel.grabExcessVerticalSpace = true;
+			this.add(fFigurePatternNameLabel, constraintFFigurePatternNameLabel);
 
 		}
 
@@ -351,6 +368,11 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 		}
 
 	}
+
+	/**
+	* @generated
+	*/
+	static final Color THIS_BACK = new Color(null, 251, 215, 187);
 
 	/**
 	 * @generated

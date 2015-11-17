@@ -213,7 +213,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Coordination Pattern"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3003,3002,3004,3005,3006,3007"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,3003,3002,3004,3005,3006,3007,3008"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002,4001,4003,4004"/>
       </viewProvider>
    </extension>
@@ -226,16 +226,16 @@
             <method name="getType()" value="Coordination Pattern"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3003,3002,3004,3005,3006,3007"/>
+            <method name="getType()" value="2001,2002,3003,3002,3004,3005,3006,3007,3008"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4002,4001,4003,4004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5003,5002,5006,5007,5011,5005,5004,5008,5009,5010"/>
+            <method name="getType()" value="5003,5002,5006,5007,5011,5005,5004,5008,5009,5010,5012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003"/>
+            <method name="getType()" value="7001,7002,7003,7004"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -253,6 +253,11 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart" id="CoordinationPattern_2001"/>
          <context elements="CoordinationPattern_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationPatternVariantEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart" id="CoordinationPatternVariant_2002"/>
+         <context elements="CoordinationPatternVariant_2002"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationPattern2EditPart">
          <Priority name="Lowest"/>
@@ -283,6 +288,11 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart" id="ConnectorQualityOfServiceAssumptions_3007"/>
          <context elements="ConnectorQualityOfServiceAssumptions_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationPatternVariant2EditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart" id="CoordinationPatternVariant_3008"/>
+         <context elements="CoordinationPatternVariant_3008"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -315,6 +325,16 @@
                eclass="CoordinationPattern"
                edithelper="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.helpers.CoordinationPatternEditHelper">
             <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"
+               name="%metatype.name.CoordinationPatternVariant_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CoordinationPatternVariant"
+               edithelper="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.helpers.CoordinationPatternVariantEditHelper">
+            <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
@@ -376,6 +396,15 @@
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"
+               name="%metatype.name.CoordinationPatternVariant_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"/>
+            <param name="semanticHint" value="3008"/>
+         </specializationType>
+      </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"
@@ -427,12 +456,14 @@
       <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.ModelElementCategory_1000"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.MessageBuffer_3004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.MessageType_3005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Parameter_3006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.ConnectorQualityOfServiceAssumptions_3007"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4003"/>
@@ -673,6 +704,11 @@
                packageNsUri="http://www.fujaba.de/muml/pattern/0.3.18">
          </child>
          
+         <child
+               class="CoordinationPatternVariant"
+               packageNsUri="http://www.fujaba.de/muml/pattern/0.3.18">
+         </child>
+         
          
       </category>
    </extension>
@@ -695,6 +731,11 @@
          <topLevelNode
                domainElement="CoordinationPattern"
                semanticHint="2001">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="CoordinationPatternVariant"
+               semanticHint="2002">
          </topLevelNode>
          
       </editor>

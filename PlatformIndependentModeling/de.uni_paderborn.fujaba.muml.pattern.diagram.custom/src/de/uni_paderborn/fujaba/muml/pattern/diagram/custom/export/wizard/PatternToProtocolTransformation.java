@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;

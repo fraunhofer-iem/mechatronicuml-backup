@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
@@ -33,6 +34,8 @@ public class MumlDiagramUpdater {
 			return getMessageBufferMessageBufferCompartment_7002SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
 			return getMessageTypeParametersCompartment_7003SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
+			return getCoordinationPatternVariantCoordinationProtocolContainerCompartment_7004SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -53,6 +56,11 @@ public class MumlDiagramUpdater {
 			int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getNodeVisualID(view,
 					childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+			if (visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor(childElement,
 						visualID));
 				continue;
@@ -184,6 +192,67 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> getCoordinationPatternVariantCoordinationProtocolContainerCompartment_7004SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) containerView
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor>();
+		{
+			de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification childElement = modelElement
+					.getGmfAbstractCoordinationSpecification();
+			int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
+			}
+		}
+		for (Iterator<?> it = modelElement.getRoles().iterator(); it.hasNext();) {
+			de.uni_paderborn.fujaba.muml.protocol.Role childElement = (de.uni_paderborn.fujaba.muml.protocol.Role) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getGmfMessageBuffers().iterator(); it.hasNext();) {
+			de.uni_paderborn.fujaba.muml.connector.MessageBuffer childElement = (de.uni_paderborn.fujaba.muml.connector.MessageBuffer) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+		}
+		{
+			de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions childElement = modelElement
+					.getGmfConnectorQualityOfServiceAssumptions();
+			int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor(childElement,
+						visualID));
+			}
+		}
+
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getContainedLinks(
@@ -193,6 +262,8 @@ public class MumlDiagramUpdater {
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getCoordinationPattern_2001ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_2002ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 			return getCoordinationPattern_3003ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
@@ -205,6 +276,8 @@ public class MumlDiagramUpdater {
 			return getParameter_3006ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptions_3007ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_3008ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001ContainedLinks(view);
 		}
@@ -219,6 +292,8 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getCoordinationPattern_2001IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_2002IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 			return getCoordinationPattern_3003IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
@@ -231,6 +306,8 @@ public class MumlDiagramUpdater {
 			return getParameter_3006IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptions_3007IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_3008IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001IncomingLinks(view);
 		}
@@ -245,6 +322,8 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getCoordinationPattern_2001OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_2002OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 			return getCoordinationPattern_3003OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
@@ -257,6 +336,8 @@ public class MumlDiagramUpdater {
 			return getParameter_3006OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptions_3007OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_3008OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001OutgoingLinks(view);
 		}
@@ -277,6 +358,19 @@ public class MumlDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPattern_2001ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_RoleConnector_4001(modelElement));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_2002ContainedLinks(
+			View view) {
+		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
@@ -343,6 +437,19 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_3008ContainedLinks(
+			View view) {
+		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_RoleConnector_4001(modelElement));
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getRoleConnector_4001ContainedLinks(
@@ -359,6 +466,14 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPattern_2001IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_2002IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -434,6 +549,14 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_3008IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getRoleConnector_4001IncomingLinks(
@@ -447,6 +570,18 @@ public class MumlDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPattern_2001OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_2002OutgoingLinks(
+			View view) {
+		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
@@ -509,6 +644,18 @@ public class MumlDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getConnectorQualityOfServiceAssumptions_3007OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_3008OutgoingLinks(
+			View view) {
+		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
+		return result;
 	}
 
 	/**

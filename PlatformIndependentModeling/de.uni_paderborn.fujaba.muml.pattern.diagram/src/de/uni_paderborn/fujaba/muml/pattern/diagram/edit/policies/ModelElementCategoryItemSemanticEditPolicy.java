@@ -30,6 +30,12 @@ public class ModelElementCategoryItemSemanticEditPolicy
 					new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.commands.CoordinationPatternCreateCommand(
 							req));
 		}
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_2002 == req
+				.getElementType()) {
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.commands.CoordinationPatternVariantCreateCommand(
+							req));
+		}
 		return super.getCreateCommand(req);
 	}
 

@@ -119,6 +119,10 @@ public class MumlVisualIDRegistry {
 					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID;
 			}
+			if (de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPatternVariant()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID;
+			}
 			break;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPattern()
@@ -148,6 +152,24 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getParameter()
 					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getCoordinationPatternVariant()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRole()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getMessageBuffer()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getConnectorQualityOfServiceAssumptions().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -181,9 +203,17 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -235,6 +265,11 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			break;
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -256,6 +291,20 @@ public class MumlVisualIDRegistry {
 			break;
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -307,6 +356,7 @@ public class MumlVisualIDRegistry {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -325,6 +375,7 @@ public class MumlVisualIDRegistry {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

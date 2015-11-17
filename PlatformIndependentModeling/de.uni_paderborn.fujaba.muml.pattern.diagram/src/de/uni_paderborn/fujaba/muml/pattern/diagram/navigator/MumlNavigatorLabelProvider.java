@@ -76,6 +76,10 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPattern", //$NON-NLS-1$
 					de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_2001);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPatternVariant", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_2002);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.fujaba.de/muml/protocol/0.4.0?Role", //$NON-NLS-1$
 					de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002);
@@ -95,6 +99,9 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/protocol/0.4.0?ConnectorQualityOfServiceAssumptions", //$NON-NLS-1$
 					de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPatternVariant", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_3008);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?RoleConnector", //$NON-NLS-1$
 					de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001);
@@ -167,6 +174,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 			return getModelElementCategory_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getCoordinationPattern_2001Text(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_2002Text(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 			return getRole_3002Text(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
@@ -179,6 +188,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 			return getParameter_3006Text(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptions_3007Text(view);
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+			return getCoordinationPatternVariant_3008Text(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001Text(view);
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
@@ -217,6 +228,21 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 		} else {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 					.logError("No domain element for view with visualID = " + 2001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getCoordinationPatternVariant_2002Text(View view) {
+		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant domainModelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -333,6 +359,26 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 		} else {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 					.logError("Parser was not found for label " + 5008); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getCoordinationPatternVariant_3008Text(View view) {
+		IParser parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_3008,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5012); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
