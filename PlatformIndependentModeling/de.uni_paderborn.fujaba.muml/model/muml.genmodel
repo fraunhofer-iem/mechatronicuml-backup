@@ -369,6 +369,8 @@
       <genClasses ecoreClass="muml.ecore#//msgtype/MessageType">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//msgtype/MessageType/parameters"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//msgtype/MessageType/repository"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//msgtype/MessageType/securityDomain"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//msgtype/MessageTypeRepository">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
@@ -534,6 +536,15 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//behavior/Variable/constant"/>
         <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//behavior/Variable/initializeExpression"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Securitydomain" basePackage="de.uni_paderborn.fujaba.muml"
+        disposableProviderFactory="true" ecorePackage="muml.ecore#//securitydomain">
+      <genClasses ecoreClass="muml.ecore#//securitydomain/SecurityDomain">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//securitydomain/SecurityDomain/repository"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//securitydomain/SecurityDomainRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//securitydomain/SecurityDomainRepository/securityDomains"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>
