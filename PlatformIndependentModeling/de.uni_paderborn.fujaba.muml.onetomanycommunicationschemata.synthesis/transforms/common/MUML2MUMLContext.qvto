@@ -422,7 +422,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration,
 			muml::realtimestatechart::Vertex::Vertex2Vertex,
 			muml::types::DataType::DataType2DataType,
-			muml::pattern::LegalConfiguration::LegalConfiguration2LegalConfiguration,
+			muml::pattern::VerifiedConfiguration::VerifiedConfiguration2VerifiedConfiguration,
 			core::Repository::Repository2Repository,
 			muml::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart,
 			muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification,
@@ -465,7 +465,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 			muml::connector::MessageBuffer::MessageBuffer2MessageBuffer,
 			muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration,
 			muml::realtimestatechart::Vertex::Vertex2Vertex,
-			muml::pattern::LegalConfiguration::LegalConfiguration2LegalConfiguration,
+			muml::pattern::VerifiedConfiguration::VerifiedConfiguration2VerifiedConfiguration,
 			muml::types::DataType::DataType2DataType,
 			muml::behavior::TypedNamedElement::TypedNamedElement2TypedNamedElement,
 			core::Repository::Repository2Repository,
@@ -488,14 +488,27 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_extension := self._extension.map Extension2Extension(context);
 	    	_roles := self._roles.map Role2Role(context);
 	    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector(context);
-	    	_adaptedFromPattern := self._adaptedFromPattern.map CoordinationPattern2CoordinationPattern(context);
+	    	_adaptedFromPattern := self._adaptedFromPattern.map AbstractCoordinationPattern2AbstractCoordinationPattern(context);
 	    	_descriptionAspects := self._descriptionAspects.map PlainTextualDescriptionAspects2PlainTextualDescriptionAspects(context);
-	    	_legalConfigurations := self._legalConfigurations.map LegalConfiguration2LegalConfiguration(context);
+	    	_verifiedConfigurations := self._verifiedConfigurations.map VerifiedConfiguration2VerifiedConfiguration(context);
 	    	_patternParameters := self._patternParameters.map Parameter2Parameter(context);
 	    	_combineablePatterns := self._combineablePatterns.map CoordinationPattern2CoordinationPattern(context);
 	    	_alternativePatterns := self._alternativePatterns.map CoordinationPattern2CoordinationPattern(context);
 	   		 }
-	   		 
+	
+	mapping muml::pattern::CoordinationPatternVariant :: CoordinationPatternVariant2CoordinationPatternVariant(context : OclAny) : muml::pattern::CoordinationPatternVariant{
+	    	_name := self._name;
+	    	_comment := self._comment;
+	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
+	    	_extension := self._extension.map Extension2Extension(context);
+	    	_roles := self._roles.map Role2Role(context);
+	    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector(context);
+	    	_adaptedFromPattern := self._adaptedFromPattern.map AbstractCoordinationPattern2AbstractCoordinationPattern(context);	    	
+	    	_verifiedConfigurations := self._verifiedConfigurations.map VerifiedConfiguration2VerifiedConfiguration(context);
+	    	_patternParameters := self._patternParameters.map Parameter2Parameter(context);
+	   		 }
+	
+  		 
 	mapping muml::pattern::DescriptionAspects :: PlainTextualDescriptionAspects2PlainTextualDescriptionAspects(outerCountext : OclAny) : muml::pattern::DescriptionAspects{
 	    	_overview := self._overview;
 	    	_context := self._context;
@@ -511,13 +524,13 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	verification_properties := self.verification_properties;
 	   		 }
 	   		 
-	mapping muml::pattern::LegalConfiguration :: LegalConfiguration2LegalConfiguration(context : OclAny) : muml::pattern::LegalConfiguration{
+	mapping muml::pattern::VerifiedConfiguration :: VerifiedConfiguration2VerifiedConfiguration(context : OclAny) : muml::pattern::VerifiedConfiguration{
 	    	_name := self._name;
 	    	_comment := self._comment;
 	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
 	    	_extension := self._extension.map Extension2Extension(context);
 	    	_parameterBindings := self._parameterBindings.map ParameterBinding2ParameterBinding(context);
-	    	_coordinationPattern := self._coordinationPattern.map CoordinationPattern2CoordinationPattern(context);
+	    	_coordinationPattern := self._coordinationPattern.map AbstractCoordinationPattern2AbstractCoordinationPattern(context);
 	   		 }
 	   		 
 	mapping muml::realtimestatechart::Deadline :: Deadline2Deadline(context : OclAny) : muml::realtimestatechart::Deadline disjuncts
@@ -826,6 +839,11 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_extension := self._extension.map Extension2Extension(context);
 	   		 }
 	   		 
+	mapping muml::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern2AbstractCoordinationPattern(context : OclAny) : muml::pattern::AbstractCoordinationPattern 
+	disjuncts muml::pattern::CoordinationPattern::CoordinationPattern2CoordinationPattern;
+	
+
+	
 	mapping muml::types::DataType :: DataType2DataType(context : OclAny) : muml::types::DataType disjuncts
 			muml::component::Port::Port2Port,
 			muml::protocol::Role::Role2Role,
@@ -1106,7 +1124,7 @@ modeltype instance uses 'http://www.fujaba.de/muml/instance/0.4.0';
 	    	_extension := self._extension.map Extension2Extension(context);
 	    	_roles := self._roles.map Role2Role(context);
 	    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector(context);
-	    	_adaptedFromPattern := self._adaptedFromPattern.map CoordinationPattern2CoordinationPattern(context);
+	    	_adaptedFromPattern := self._adaptedFromPattern.map AbstractCoordinationPattern2AbstractCoordinationPattern(context);
 	   		 }
 	   		 
 	mapping muml::protocol::Role :: Role2Role(context : OclAny) : muml::protocol::Role{
