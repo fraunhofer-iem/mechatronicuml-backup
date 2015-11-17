@@ -68,6 +68,7 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationPattern
 			addCombineablePatternsPropertyDescriptor(object);
 			addAlternativePatternsPropertyDescriptor(object);
 			addDescriptionAspectsPropertyDescriptor(object);
+			addPatternVariantsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,28 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationPattern
 				 getString("_UI_CoordinationPattern_descriptionAspects_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_descriptionAspects_feature", "_UI_CoordinationPattern_type"),
 				 PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pattern Variants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPatternVariantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CoordinationPattern_patternVariants_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_patternVariants_feature", "_UI_CoordinationPattern_type"),
+				 PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_VARIANTS,
 				 true,
 				 false,
 				 false,
