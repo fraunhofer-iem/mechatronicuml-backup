@@ -62,7 +62,7 @@
           editPolicyQualifiedClassName=" "/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="&quot;CustomAbstractCoordinationSpecificationUpdateEditPolicy&quot;"
+          key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -441,8 +441,8 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;CustomLabelUpdateEditPolicy&quot;"
-            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
+            key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.QoSA_LABEL_UpdateEditPolicy"
+            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomConnectorOfServiceAssumptionsWrappedLabelUpdateEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.6"/>
@@ -461,8 +461,8 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;CustomLabelUpdateEditPolicy&quot;"
-            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
+            key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.QoSA_LABEL_UpdateEditPolicy"
+            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomConnectorOfServiceAssumptionsWrappedLabelUpdateEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.7"/>
@@ -499,7 +499,7 @@
           editPolicyQualifiedClassName=" "/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="&quot;CustomAbstractCoordinationSpecificationUpdateEditPolicy&quot;"
+          key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
       <modelFacet>
         <metaClass

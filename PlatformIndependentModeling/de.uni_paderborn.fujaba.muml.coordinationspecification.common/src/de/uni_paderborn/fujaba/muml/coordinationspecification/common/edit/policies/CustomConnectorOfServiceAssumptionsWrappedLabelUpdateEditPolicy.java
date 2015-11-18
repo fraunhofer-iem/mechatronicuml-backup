@@ -1,7 +1,5 @@
-package de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies;
+package de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.core.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
@@ -10,7 +8,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * This Policy is responsible for the correct refreshment of the expression of the ExpressionLabel * 
  * @author sthiele2 
  */
-public class CustomWrappedLabelUpdateEditPolicy extends NotifyingGraphicalEditPolicy {	
+public class CustomConnectorOfServiceAssumptionsWrappedLabelUpdateEditPolicy extends NotifyingGraphicalEditPolicy {	
 	
 	@Override
 	protected void addListeners() 

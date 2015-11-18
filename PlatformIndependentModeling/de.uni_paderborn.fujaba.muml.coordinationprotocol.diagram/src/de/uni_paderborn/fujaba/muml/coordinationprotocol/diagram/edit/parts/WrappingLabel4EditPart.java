@@ -136,8 +136,9 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements IText
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultNodeLabelDragPolicy());
 
-		installEditPolicy("CustomWrappingLabelEditPolicy", //$NON-NLS-1$
-				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.QoSA_LABEL_UpdateEditPolicy,
+				new de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomConnectorOfServiceAssumptionsWrappedLabelUpdateEditPolicy());
 
 	}
 
@@ -398,8 +399,8 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements IText
 							Character initialChar = (Character) theRequest.getExtendedData()
 									.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
-						} else
-							if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+						} else if ((theRequest instanceof DirectEditRequest)
+								&& (getEditText().equals(getLabelText()))) {
 							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {

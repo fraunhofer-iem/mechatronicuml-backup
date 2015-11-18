@@ -96,7 +96,8 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 
 		removeEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE);
 
-		installEditPolicy("CustomAbstractCoordinationSpecificationUpdateEditPolicy", //$NON-NLS-1$
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY,
 				new de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
