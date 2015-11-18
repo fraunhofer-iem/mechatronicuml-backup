@@ -64,6 +64,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/pattern/CoordinationPattern"/>
@@ -404,6 +408,10 @@
             xsi:type="gmfgen:StyleAttributes"
             fixedBackground="true"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.muml.custom.nonDeletable"
+          editPolicyQualifiedClassName=" "/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
@@ -501,6 +509,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/pattern/CoordinationPatternVariant"/>
@@ -547,6 +559,10 @@
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NO_LINKS_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.NoLinksEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/pattern/CoordinationPattern"/>
@@ -752,6 +768,10 @@
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NO_LINKS_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.NoLinksEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/pattern/CoordinationPatternVariant"/>
@@ -1164,6 +1184,14 @@
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureParametersCompartmentFigure"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.HorizontalCompartmentEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7004"

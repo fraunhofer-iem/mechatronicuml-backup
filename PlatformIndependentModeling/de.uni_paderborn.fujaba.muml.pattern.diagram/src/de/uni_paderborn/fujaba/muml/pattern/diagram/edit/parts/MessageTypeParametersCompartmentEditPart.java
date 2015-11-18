@@ -108,6 +108,14 @@ public class MessageTypeParametersCompartmentEditPart extends ListCompartmentEdi
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MessageTypeParametersCompartmentCanonicalEditPolicy());
+
+		installEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.compartment.HorizontalCompartmentEditPolicy());
+
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
+
 	}
 
 	/**

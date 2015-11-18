@@ -7,21 +7,7 @@
       <ParserProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.providers.CustomMumlParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
-   </extension>
-    
- <extension
-         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
-      <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.providers.CustomPatternEditPartProvider">
-         <Priority
-               name="Low">
-         </Priority>
-      </editpartProvider>
-   </extension>
-
-
-  
-  
+   </extension>  
 
    <!-- optionally, specify keybindings -->
    
