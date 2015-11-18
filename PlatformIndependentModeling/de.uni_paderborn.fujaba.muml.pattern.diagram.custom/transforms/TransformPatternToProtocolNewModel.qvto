@@ -28,24 +28,24 @@ main()
 	var debug : Boolean := true;
 	// get the input parameters. There is exactly one root and exactly one coordination pattern	
 	theRootNode := input.rootObjects()[RootNode] -> any(true);	
-	var thePattern : CoordinationPattern;
+	var thePattern : AbstractCoordinationPattern;
 	
 	if( not debug){
 		// not debug:	
-		thePattern := input.rootObjects()[CoordinationPattern] -> any(true);
+		thePattern := input.rootObjects()[AbstractCoordinationPattern] -> any(true);
 		bindings := input.rootObjects()[ParameterBinding];			
 	}
 	else {
 		// Debug:
 		var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
-		thePattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
+		thePattern := patternCategory.modelElements->at(1).oclAsType(AbstractCoordinationPattern);
 		bindings := thePattern.verifiedConfigurations->at(1).parameterBindings;
 		
 	};
 
 	
 	// check whether the input is correct: 
-	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
+	assert fatal (thePattern != null) with log ("AbstractCoordinationPattern is null!" + thePattern.name);
 	assert fatal (theRootNode != null) with log ("RootNode is null!");  
     assert fatal (if(thePattern.patternParameters->size() > 0) then (bindings != null and bindings->size() = thePattern.patternParameters->size()) else true endif) with log ("Parameter Bindings are null!");
     assert fatal (if( bindings->size() >0) then bindings->size() = thePattern.patternParameters->size()  else true endif);
@@ -67,14 +67,14 @@ main()
 	 };	
 	 
     // start transformation
-	var protocol : CoordinationProtocol := thePattern.map CoordinationPattern2CoordinationProtocol();
+	var protocol : CoordinationProtocol := thePattern.map AbstractCoordinationPattern2CoordinationProtocol();
 	var protocolCategory : ModelElementCategory := getProtocolCategory(rootOfNewModel);
 	protocolCategory.modelElements += protocol;
 	protocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);  
 }
 
 
-mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol @output
+mapping muml::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol @output
 {	
 	result.name := self.name + "_intermediate";
 	result.comment := self.comment;

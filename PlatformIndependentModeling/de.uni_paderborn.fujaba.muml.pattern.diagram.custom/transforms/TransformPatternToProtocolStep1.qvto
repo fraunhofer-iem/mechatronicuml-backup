@@ -32,7 +32,7 @@ main()
 	//bindings := thePattern.legalConfigurations->at(1).parameterBindings;
 	
 	// not debug:	
-	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	var thePattern : AbstractCoordinationPattern := input.rootObjects()[AbstractCoordinationPattern] -> any(true);
 	bindings := input.rootObjects()[ParameterBinding];
 	
 	
@@ -46,7 +46,7 @@ main()
     // start transformation
 	createProtocol(thePattern);
 }
-helper createProtocol(pattern : CoordinationPattern)
+helper createProtocol(pattern : AbstractCoordinationPattern)
 {
 	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
 	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
@@ -55,7 +55,7 @@ helper createProtocol(pattern : CoordinationPattern)
 }
 
 
-mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol
+mapping muml::pattern::AbstractCoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol
 {	
 	result.name := self.name;
 	result.comment := self.comment;
