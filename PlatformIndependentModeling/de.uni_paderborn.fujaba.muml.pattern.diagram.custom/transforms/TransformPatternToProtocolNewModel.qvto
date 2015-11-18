@@ -39,7 +39,7 @@ main()
 		// Debug:
 		var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
 		thePattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
-		bindings := thePattern.legalConfigurations->at(1).parameterBindings;
+		bindings := thePattern.verifiedConfigurations->at(1).parameterBindings;
 		
 	};
 
