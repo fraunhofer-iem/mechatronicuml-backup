@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
@@ -46,7 +47,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 public class PatternToProtocolTransformation {
 	
 	
-	public static void saveInput(CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
+	public static void saveInput(AbstractCoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
 	{
 		
 		EObject[] input = new EObject[bindings.size()+2];
@@ -104,7 +105,7 @@ public class PatternToProtocolTransformation {
 		
 	}
 
-	public static CoordinationProtocol transformPatternToProtocol(CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain) {
+	public static CoordinationProtocol transformPatternToProtocol(AbstractCoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain) {
 		
 		// create the input for the transformation. It consists of the rootNode, the 
 		// selectedPattern and the ParameterBindings
@@ -140,7 +141,7 @@ public class PatternToProtocolTransformation {
 	}	
 	
 
-	public static CoordinationProtocol transformPatternToProtocolVerification(CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain) {
+	public static CoordinationProtocol transformPatternToProtocolVerification(AbstractCoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain) {
 		
 		// create the input for the transformation. It consists of the rootNode, the 
 		// selectedPattern and the ParameterBindings

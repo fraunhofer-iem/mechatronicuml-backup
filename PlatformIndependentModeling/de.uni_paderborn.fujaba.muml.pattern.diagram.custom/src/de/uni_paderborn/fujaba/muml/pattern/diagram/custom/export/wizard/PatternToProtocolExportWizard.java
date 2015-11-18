@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
@@ -40,7 +40,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 	private PatternToProtocolExportWizardPage1 page1;
 	private PatternToProtocolExportWizardPage2 page2;
-	private ArrayList<CoordinationPattern> patternList = new ArrayList<CoordinationPattern>();
+	private ArrayList<AbstractCoordinationPattern> patternList = new ArrayList<AbstractCoordinationPattern>();
 
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
@@ -92,11 +92,11 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 		// 1) fetch the selected Coordination Pattern and the given Parameter
 		// Bindings
-		CoordinationPattern thePattern = null;
+		AbstractCoordinationPattern thePattern = null;
 		ArrayList<ParameterBinding> bindings = null;
 		for (EObject sourceElement : page1.getSourceElements()) {
-			if (sourceElement instanceof CoordinationPattern)
-				thePattern = (CoordinationPattern) sourceElement;
+			if (sourceElement instanceof AbstractCoordinationPattern)
+				thePattern = (AbstractCoordinationPattern) sourceElement;
 		}
 		// 2)check whether the ParameterBindings assign correct values to the parameter
 		bindings = page2.getParameterBindings();	
@@ -158,7 +158,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 	private static void transformPatternToProtocol(EditingDomain editingDomain,
 			RootNode rootNode, ArrayList<ParameterBinding> bindings, Shell shell,
-			CoordinationPattern thePattern) {
+			AbstractCoordinationPattern thePattern) {
 
 		// get the protocol category and get the number of protocols within this
 		// category

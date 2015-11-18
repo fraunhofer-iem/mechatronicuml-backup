@@ -22,8 +22,9 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
+
 
 /**
  * The second page of the PatternToProtocolExportWizard. Displays all Parameter
@@ -117,14 +118,14 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 		for (Control c : children) {
 			c.setVisible(false);
 		}
-		CoordinationPattern p = page1.getSelectedPattern();
+		AbstractCoordinationPattern p = page1.getSelectedPattern();
 		if (p == null) {
 			Label l = (Label) children[0];
 			l.setVisible(true);
 			l.setText("No pattern selected!");
 			return;
 		}
-		LegalConfiguration lc = page1.getSelectedLegalConfiguration();
+		VerifiedConfiguration lc = page1.getSelectedVerifiedConfiguration();
 		parameterToTextMapping = new HashMap<Parameter, Text>();
 		int counter = 1;
 		List<Parameter> parameterList = p.getPatternParameters();

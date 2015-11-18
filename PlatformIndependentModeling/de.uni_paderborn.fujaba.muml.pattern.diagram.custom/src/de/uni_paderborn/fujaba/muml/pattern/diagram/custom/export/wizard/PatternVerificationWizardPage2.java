@@ -20,14 +20,14 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
 
 public class PatternVerificationWizardPage2 extends AbstractPatternVerificationWizardPage implements ICheckStateListener {
 
 
 	public PatternVerificationWizardPage2(String pageName, String pageTitle,
-			String pageDescription, CoordinationPattern pattern,
+			String pageDescription, AbstractCoordinationPattern pattern,
 			FormToolkit toolkit) {
 		super(pageName, pageTitle, pageDescription, pattern, toolkit);
 		// TODO Auto-generated constructor stub
@@ -54,7 +54,7 @@ public class PatternVerificationWizardPage2 extends AbstractPatternVerificationW
 		section.setClient(comp);
 		Label selectionLabel = toolkit
 				.createLabel(comp,
-						"Define the parameter bindings, if not choosen a legal configuration:");
+						"Define the parameter bindings, if not choosen a verified configuration:");
 		GridData gridData = new GridData(GridData.VERTICAL_ALIGN_FILL
 				| GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL);
 		gridData.horizontalSpan = 2;
@@ -95,9 +95,9 @@ public class PatternVerificationWizardPage2 extends AbstractPatternVerificationW
 	@Override
 	public void checkStateChanged(CheckStateChangedEvent event) {
 		// TODO Auto-generated method stub
-		if(event.getElement() instanceof LegalConfiguration)
+		if(event.getElement() instanceof VerifiedConfiguration)
 		{
-			LegalConfiguration lc = (LegalConfiguration)event.getElement();
+			VerifiedConfiguration lc = (VerifiedConfiguration)event.getElement();
 			for(ParameterBinding binding : lc.getParameterBindings())
 			{
 				Text t = parameterToTextMapping.get(binding.getParameter());

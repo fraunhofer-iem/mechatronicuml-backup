@@ -3,13 +3,9 @@ package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 import java.util.ArrayList;
 
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -18,13 +14,10 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
 import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage.DomainElementPageExtension;
-import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
-import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
 
 /**
  * First page of the export wizard for the Pattern-To-Protocol transformation.
@@ -52,18 +45,18 @@ public class PatternToProtocolExportWizardPage1 extends
 		}	
 	}
 
-	public CoordinationPattern getSelectedPattern() {
+	public AbstractCoordinationPattern getSelectedPattern() {
 		for (Object element : domainElementExtension.getCheckedElements()) {
-			if (element instanceof CoordinationPattern)
-				return (CoordinationPattern) element;
+			if (element instanceof AbstractCoordinationPattern)
+				return (AbstractCoordinationPattern) element;
 		}
 		return null;
 	}
 
-	public LegalConfiguration getSelectedLegalConfiguration() {
+	public VerifiedConfiguration getSelectedVerifiedConfiguration() {
 		for (Object element : domainElementExtension.getCheckedElements()) {
-			if (element instanceof LegalConfiguration)
-				return (LegalConfiguration) element;
+			if (element instanceof VerifiedConfiguration)
+				return (VerifiedConfiguration) element;
 		}
 		return null;
 	}
@@ -97,8 +90,12 @@ public class PatternToProtocolExportWizardPage1 extends
 
 	@Override
 	public boolean wizardPageSupportsSourceModelElement(EObject element) {
-		return element.getClass().getName().contains("CoordinationPattern")
-				|| element.getClass().getName().contains("LegalConfiguration");
+		
+		
+		return element instanceof AbstractCoordinationPattern || element instanceof VerifiedConfiguration;
+//				
+//				element.getClass().getName().contains("CoordinationPattern")
+//				|| element.getClass().getName().contains("VerifiedConfiguration");
 	}
 
 	@Override
@@ -111,43 +108,43 @@ public class PatternToProtocolExportWizardPage1 extends
 					"Please implement 'wizardGetSupportedSelectionMode()' to provide a non-null selection mode that your fujaba export wizard supports.");
 
 			String errorMessage = null;
-			ArrayList<LegalConfiguration> selectedLegalConfigurations = new ArrayList<LegalConfiguration>();
-			ArrayList<CoordinationPattern> selectedPatterns = new ArrayList<CoordinationPattern>();
-			ArrayList<CoordinationPattern> referencedPatterns = new ArrayList<CoordinationPattern>();
+			ArrayList<VerifiedConfiguration> selectedVerifiedConfigurations = new ArrayList<VerifiedConfiguration>();
+			ArrayList<AbstractCoordinationPattern> selectedPatterns = new ArrayList<AbstractCoordinationPattern>();
+			ArrayList<AbstractCoordinationPattern> referencedPatterns = new ArrayList<AbstractCoordinationPattern>();
 			for (Object element : domainElementExtension.getCheckedElements()) {
 				if (!wizardPageSupportsSourceModelElement((EObject) element)) {
 					errorMessage = "Selection contains unsupported elements.";
 					break;
 				}
-				if (element instanceof LegalConfiguration) {
-					selectedLegalConfigurations
-							.add((LegalConfiguration) element);
+				if (element instanceof VerifiedConfiguration) {
+					selectedVerifiedConfigurations
+							.add((VerifiedConfiguration) element);
 					if (!referencedPatterns
-							.contains(((LegalConfiguration) element)
+							.contains(((VerifiedConfiguration) element)
 									.getCoordinationPattern()))
-						referencedPatterns.add(((LegalConfiguration) element)
+						referencedPatterns.add(((VerifiedConfiguration) element)
 								.getCoordinationPattern());
 					else {
-						errorMessage = "Only one legal configuration may be selected for the transformation.";
+						errorMessage = "Only one verified configuration may be selected for the transformation.";
 						break;
 					}
 				}
-				if (element instanceof CoordinationPattern)
-					selectedPatterns.add((CoordinationPattern) element);
+				if (element instanceof AbstractCoordinationPattern)
+					selectedPatterns.add((AbstractCoordinationPattern) element);
 			}
 			if (errorMessage == null) {
 				if (selectedPatterns.size() != 1)
 					errorMessage = "Choose exactly one CoordinationPattern.";
 				if (errorMessage == null
-						&& selectedLegalConfigurations.size() > 1)
-					errorMessage = "Choose at most one LegalConfiguration.";
+						&& selectedVerifiedConfigurations.size() > 1)
+					errorMessage = "Choose at most one VerifiedConfiguration.";
 			}
 			if (errorMessage == null) {
-				for (LegalConfiguration config : selectedLegalConfigurations) {
+				for (VerifiedConfiguration config : selectedVerifiedConfigurations) {
 					boolean corrspondentPatternSelected = selectedPatterns
 							.contains(config.getCoordinationPattern());
 					if (!corrspondentPatternSelected) {
-						errorMessage = "Selecting a LegalConfiguration requires the selection of the correspondent CoordinationPattern.";
+						errorMessage = "Selecting a VerifiedConfiguration requires the selection of the correspondent CoordinationPattern or CoordinationPatternVariant.";
 						break;
 					}
 				}
@@ -173,8 +170,8 @@ public class PatternToProtocolExportWizardPage1 extends
 				public boolean select(Viewer viewer,
 						Object parentElement, Object element) {
 					// TODO Auto-generated method stub
-					if (element instanceof CoordinationPattern
-							|| element instanceof LegalConfiguration
+					if (element instanceof AbstractCoordinationPattern
+							|| element instanceof VerifiedConfiguration
 							|| element instanceof RootNode
 							|| (element instanceof ModelElementCategory && ((ModelElementCategory) element)
 									.getName().contains("pattern")))

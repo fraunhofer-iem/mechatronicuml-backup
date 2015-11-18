@@ -17,14 +17,15 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
 import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
-import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
+
 
 public class PatternVerificationWizardPage1 extends
 		AbstractPatternVerificationWizardPage {
 
 	public PatternVerificationWizardPage1(String pageName, String pageTitle,
-			String pageDescription, CoordinationPattern pattern,
+			String pageDescription, AbstractCoordinationPattern pattern,
 			FormToolkit toolkit,ICheckStateListener treeViewerListener) {
 		super(pageName, pageTitle, pageDescription, pattern, toolkit);
 		// TODO Auto-generated constructor stub
@@ -43,7 +44,7 @@ public class PatternVerificationWizardPage1 extends
 		int sectionStyle = Section.TITLE_BAR | Section.CLIENT_INDENT
 				| Section.EXPANDED;
 		Section section = toolkit.createSection(parent, sectionStyle);
-		section.setText("Choose Legal Configuration:");
+		section.setText("Choose Verified Configuration:");
 
 		Composite composite = toolkit.createComposite(section);
 		section.setClient(composite);
@@ -66,7 +67,7 @@ public class PatternVerificationWizardPage1 extends
 				adapterFactory) {
 			@Override
 			public boolean isEnabled(Object object) {
-				return object instanceof LegalConfiguration;
+				return object instanceof VerifiedConfiguration;
 			}
 		});
 
@@ -88,7 +89,7 @@ public class PatternVerificationWizardPage1 extends
 			public boolean select(Viewer viewer, Object parentElement,
 					Object element) {
 				// TODO Auto-generated method stub
-				return element instanceof LegalConfiguration;
+				return element instanceof VerifiedConfiguration;
 			}
 		});
 		this.setControl(section);
