@@ -165,6 +165,11 @@
                        category="domain"
              id="property.tab.general"
              label="%tab.general"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.descriptionAspects"
+             label="%tab.descriptionAspects"/>
       </propertyTabs>
    </extension>
 
@@ -203,6 +208,12 @@
             id="property.section.general" 
             tab="property.tab.general"
             filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
+            id="property.section.descriptionAspects" 
+            tab="property.tab.descriptionAspects"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Description_AspectsTabElementFilter"
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>
