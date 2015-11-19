@@ -89,7 +89,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Overview();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -104,7 +104,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Context();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -119,7 +119,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Problem();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -134,7 +134,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Solution();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -149,7 +149,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Structure();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -164,7 +164,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Behavior();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -179,7 +179,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Examples();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -194,7 +194,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Consequences();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -209,7 +209,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Combineability();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -224,7 +224,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Variants();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -239,7 +239,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Alternatives();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			editor.setTooltipMessage("\\todosd{document!}");
 
@@ -254,7 +254,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
 					.getDescriptionAspects_Verification_properties();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
 			this.editorVerification_properties_property_tab_generalTab = editor;
 		}
