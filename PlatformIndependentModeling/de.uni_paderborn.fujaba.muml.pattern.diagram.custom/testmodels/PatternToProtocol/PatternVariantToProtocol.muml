@@ -57,7 +57,7 @@
   <categories xmi:id="_hNXtMGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
   <categories xmi:id="_hNXtMWddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
   <categories xmi:id="_k0VMwGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern">
-    <modelElements xsi:type="pattern:CoordinationPatternVariant" xmi:id="_ldoBYGddEeW2PYMF5P3p8Q" name="Pattern">
+    <modelElements xsi:type="pattern:CoordinationPatternVariant" xmi:id="_ldoBYGddEeW2PYMF5P3p8Q" name="Pattern" originalPattern="_-5apAI6eEeWORsmFM0Dyxw">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_vNsYIHmDEeWFQM-OXapvnw">
         <properties xmi:id="_Dx_DwHvCEeWl5KBPSsNDxw" comment="a deadlock never occurs">
           <expression xsi:type="Quantifiers:AGExpr" xmi:id="_Dx_DwXvCEeWl5KBPSsNDxw">
@@ -174,6 +174,30 @@
         </parameterBindings>
       </verifiedConfigurations>
       <patternParameters xmi:id="_7WFzYGdmEeWJc7rlIredIQ" name="parameter1" dataType="_hNXtJmddEeW2PYMF5P3p8Q"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_-5apAI6eEeWORsmFM0Dyxw" name="Pattern" patternVariants="_ldoBYGddEeW2PYMF5P3p8Q">
+      <roles xmi:id="_-5h9wI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" name="role1">
+        <cardinality xmi:id="_-5loII6eEeWORsmFM0Dyxw">
+          <lowerBound xmi:id="_-5mPMI6eEeWORsmFM0Dyxw"/>
+          <upperBound xmi:id="_-5m2QI6eEeWORsmFM0Dyxw"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_-5ndUI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" name="role2">
+        <cardinality xmi:id="_-5oEYI6eEeWORsmFM0Dyxw">
+          <lowerBound xmi:id="_-5oEYY6eEeWORsmFM0Dyxw"/>
+          <upperBound xmi:id="_-5orcI6eEeWORsmFM0Dyxw"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_-5pSgI6eEeWORsmFM0Dyxw" connectorEndpoints="_-5h9wI6eEeWORsmFM0Dyxw _-5ndUI6eEeWORsmFM0Dyxw">
+        <connectorQualityOfServiceAssumptions xmi:id="_-5ruwI6eEeWORsmFM0Dyxw" comment="">
+          <minMessageDelay xmi:id="_-5s84I6eEeWORsmFM0Dyxw" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-5s84Y6eEeWORsmFM0Dyxw" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_-5sV0I6eEeWORsmFM0Dyxw" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-5sV0Y6eEeWORsmFM0Dyxw" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
