@@ -38,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
@@ -170,8 +170,8 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			setScopeForEObject((Operation) object);
 		} else if (object instanceof Variable) {
 			setScopeForEObject((Variable) object);
-		} else if (object instanceof CoordinationPattern) {
-			setScopeForEObject((CoordinationPattern) object);
+		} else if (object instanceof AbstractCoordinationPattern) {
+			setScopeForEObject((AbstractCoordinationPattern) object);
 		} else if (object instanceof RealtimeStatechart) {
 			setScopeForRTSC((RealtimeStatechart) object);
 		} else if (object != null) {
@@ -234,7 +234,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		setScopeForRTSC(variable.eContainer());
 	}
 	
-	public void setScopeForEObject(CoordinationPattern pattern) {
+	public void setScopeForEObject(AbstractCoordinationPattern pattern) {
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		typedNamedElementList.addAll(pattern.getPatternParameters());
 	}
@@ -247,8 +247,8 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		typedNamedElementList.addAll(rtsc.getAllAvailableVariables());
 		if (rtsc.getPortOrRoleStatechart().getBehavioralElement() instanceof Role
-				&& ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol() instanceof CoordinationPattern) {
-			CoordinationPattern pattern = (CoordinationPattern) ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol();
+				&& ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol() instanceof AbstractCoordinationPattern) {
+			AbstractCoordinationPattern pattern = (AbstractCoordinationPattern) ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol();
 			typedNamedElementList.addAll(pattern.getPatternParameters());
 		}
 		if (rtsc.getPortOrRoleStatechart().getBehavioralElement()instanceof DiscreteInteractionEndpoint) {
