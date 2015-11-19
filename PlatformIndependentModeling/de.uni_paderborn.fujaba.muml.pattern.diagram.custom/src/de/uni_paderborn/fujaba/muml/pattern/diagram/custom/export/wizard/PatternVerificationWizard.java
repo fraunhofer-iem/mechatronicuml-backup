@@ -42,15 +42,15 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 		// TODO Auto-generated method stub
 		super.addPages();
 		p2 = new PatternVerificationWizardPage2(
-				"SelectLegalConfiguration",
+				"SelectVerifiedConfiguration",
 				"Step 2: Manual definition of a legal configuration",
-				"On this page you can alter the values of the chosen LegalConfiguration or define your own configuration. "
+				"On this page you can alter the values of the chosen VerifiedConfiguration or define your own configuration. "
 						+ "If your configuration is complete, press the Finish-Button in order to start the Model Checking.",
 				selectedPattern, toolkit);
 		PatternVerificationWizardPage1 p1 = new PatternVerificationWizardPage1(
-				"DefineLegalConfiguration",
+				"DefineVerifiedConfiguration",
 				"Step 1: Choose a Legal Configuration",
-				"On this page you can select a LegalConfiguration for the parameters. The chosen configuration is used by the Uppaal Model Checking."
+				"On this page you can select a VerifiedConfiguration for the parameters. The chosen configuration is used by the Uppaal Model Checking."
 						+ "If you do not want to chooes a LegalConfiguraion, you can also define a configuration manually on the next page.",
 
 				selectedPattern, toolkit, p2);

@@ -163,12 +163,6 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 	public ArrayList<ParameterBinding> getParameterBindings() {
 
 		ArrayList<ParameterBinding> bindingList = new ArrayList<ParameterBinding>();
-		/*
-		 * LegalConfiguration lc = page1.getSelectedLegalConfiguration(); if(lc
-		 * !=null){ for(ParameterBinding binding : lc.getParameterBindings()) {
-		 * Text t = hm.get(binding.getParameter()); if(t!=null) {
-		 * hm.remove(binding.getParameter()); bindingList.add(binding); } } }
-		 */
 		for (Parameter p : parameterToTextMapping.keySet()) {
 			ParameterBinding binding = BehaviorFactory.eINSTANCE
 					.createParameterBinding();
