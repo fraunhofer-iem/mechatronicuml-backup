@@ -95,7 +95,7 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Combineable Patterns</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_CombineablePatterns()
-	 * @model
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()->select(p| not (p = self))'"
 	 * @generated
 	 */
 	EList<CoordinationPattern> getCombineablePatterns();
@@ -110,7 +110,7 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Alternative Patterns</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_AlternativePatterns()
-	 * @model
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()->select(p| not (p = self))'"
 	 * @generated
 	 */
 	EList<CoordinationPattern> getAlternativePatterns();

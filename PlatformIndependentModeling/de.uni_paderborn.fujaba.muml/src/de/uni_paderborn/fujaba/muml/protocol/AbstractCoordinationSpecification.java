@@ -140,7 +140,7 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adapted From Pattern</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_AdaptedFromPattern()
-	 * @model
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()->select(p| not (p = self))'"
 	 * @generated
 	 */
 	EList<AbstractCoordinationPattern> getAdaptedFromPattern();

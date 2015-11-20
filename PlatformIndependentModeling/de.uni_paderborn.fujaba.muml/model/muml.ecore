@@ -1008,6 +1008,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="\todosd{document!}"/>
         </eAnnotations>
+        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+          <details key="filter" value="pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"/>
+        </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="#//protocol/AbstractCoordinationSpecification">
@@ -2984,11 +2987,17 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="\todosd{document!}"/>
         </eAnnotations>
+        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+          <details key="filter" value="pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"/>
+        </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="alternativePatterns"
           upperBound="-1" eType="#//pattern/CoordinationPattern">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="\todosd{document!}"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+          <details key="filter" value="pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionAspects" lowerBound="1"

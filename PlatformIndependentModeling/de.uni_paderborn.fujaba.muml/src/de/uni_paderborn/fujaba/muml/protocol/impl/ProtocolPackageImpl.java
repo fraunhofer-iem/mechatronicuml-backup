@@ -509,6 +509,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -624,6 +626,22 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getAbstractCoordinationSpecification_AdaptedFromPattern(), 
+		   source, 
+		   new String[] {
+			 "filter", "pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"
 		   });
 	}
 

@@ -601,6 +601,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -645,6 +647,28 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   new String[] {
 			 "PatternWithParametersNeedsVerifiedConfigurationWarning", "-- @warning\r\n--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\nself.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0",
 			 "UniquePatternNames", "-- A name of a CoordinationPattern must be unique.\r\nCoordinationPattern.allInstances()->isUnique(name)"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getCoordinationPattern_CombineablePatterns(), 
+		   source, 
+		   new String[] {
+			 "filter", "pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"
+		   });	
+		addAnnotation
+		  (getCoordinationPattern_AlternativePatterns(), 
+		   source, 
+		   new String[] {
+			 "filter", "pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"
 		   });
 	}
 
