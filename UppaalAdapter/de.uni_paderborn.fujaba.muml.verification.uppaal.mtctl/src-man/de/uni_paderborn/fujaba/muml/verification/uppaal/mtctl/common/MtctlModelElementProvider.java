@@ -92,8 +92,8 @@ public class MtctlModelElementProvider {
 	}
 
 	/**
-	 * Called by setScopeForEObject() if the top-level-element is a CoordinationProtocol.
-	 * Collects everything that can be referenced from mtctl in a CoordinationProtocol.
+	 * Called by setScopeForEObject() if the top-level-element is an AbstractCoordinationSpecification.
+	 * Collects everything that can be referenced from mtctl in an AbstractCoordinationSpecification.
 	 * @param object
 	 */
 	private void initForCoordinationProtocol(AbstractCoordinationSpecification object) {
