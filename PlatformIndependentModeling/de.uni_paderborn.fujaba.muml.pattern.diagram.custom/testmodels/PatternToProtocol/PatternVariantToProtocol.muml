@@ -30,8 +30,9 @@
           </expressions>
         </action>
       </transitions>
-      <states xmi:id="_VdWiEWdlEeWDqoFdtyaAuw" name="init" outgoingTransitions="_XyGL4GdlEeWDqoFdtyaAuw" initial="true"/>
-      <states xmi:id="_XVJxMGdlEeWDqoFdtyaAuw" name="state2" incomingTransitions="_XyGL4GdlEeWDqoFdtyaAuw"/>
+      <transitions xmi:id="_fVvHUI-EEeWmmOmRWalNHA" priority="1" target="_VdWiEWdlEeWDqoFdtyaAuw" source="_XVJxMGdlEeWDqoFdtyaAuw"/>
+      <states xmi:id="_VdWiEWdlEeWDqoFdtyaAuw" name="init" outgoingTransitions="_XyGL4GdlEeWDqoFdtyaAuw" incomingTransitions="_fVvHUI-EEeWmmOmRWalNHA" initial="true"/>
+      <states xmi:id="_XVJxMGdlEeWDqoFdtyaAuw" name="state2" outgoingTransitions="_fVvHUI-EEeWmmOmRWalNHA" incomingTransitions="_XyGL4GdlEeWDqoFdtyaAuw"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yi1OAGdmEeWJc7rlIredIQ" name="role2" behavioralElement="_leC4IWddEeW2PYMF5P3p8Q">
       <transitions xmi:id="_24zvwGdmEeWJc7rlIredIQ" priority="1" target="_1lyBoGdmEeWJc7rlIredIQ" source="_yi1OAWdmEeWJc7rlIredIQ">
@@ -43,8 +44,9 @@
           <message xmi:id="_LSSU4GdoEeWVNolmKo9JXA" instanceOf="_oScYwGdlEeWDqoFdtyaAuw"/>
         </events>
       </transitions>
-      <states xmi:id="_yi1OAWdmEeWJc7rlIredIQ" name="init" outgoingTransitions="_24zvwGdmEeWJc7rlIredIQ" initial="true"/>
-      <states xmi:id="_1lyBoGdmEeWJc7rlIredIQ" name="state2" incomingTransitions="_24zvwGdmEeWJc7rlIredIQ"/>
+      <transitions xmi:id="_kyCX8I-EEeWmmOmRWalNHA" priority="1" target="_yi1OAWdmEeWJc7rlIredIQ" source="_1lyBoGdmEeWJc7rlIredIQ"/>
+      <states xmi:id="_yi1OAWdmEeWJc7rlIredIQ" name="init" outgoingTransitions="_24zvwGdmEeWJc7rlIredIQ" incomingTransitions="_kyCX8I-EEeWmmOmRWalNHA" initial="true"/>
+      <states xmi:id="_1lyBoGdmEeWJc7rlIredIQ" name="state2" outgoingTransitions="_kyCX8I-EEeWmmOmRWalNHA" incomingTransitions="_24zvwGdmEeWJc7rlIredIQ"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QnxpoI96EeWSLqn0Kjoxwg" name="role2" behavioralElement="_-5ndUI6eEeWORsmFM0Dyxw">
       <transitions xmi:id="_QnxpoY96EeWSLqn0Kjoxwg" priority="1" target="_QnxpqI96EeWSLqn0Kjoxwg" source="_Qnxpp496EeWSLqn0Kjoxwg">
@@ -56,8 +58,9 @@
           <message xmi:id="_Qnxppo96EeWSLqn0Kjoxwg" instanceOf="_oScYwGdlEeWDqoFdtyaAuw"/>
         </events>
       </transitions>
-      <states xmi:id="_Qnxpp496EeWSLqn0Kjoxwg" name="init" outgoingTransitions="_QnxpoY96EeWSLqn0Kjoxwg" initial="true"/>
-      <states xmi:id="_QnxpqI96EeWSLqn0Kjoxwg" name="state2" incomingTransitions="_QnxpoY96EeWSLqn0Kjoxwg"/>
+      <transitions xmi:id="_i_Z8sI-EEeWmmOmRWalNHA" priority="1" target="_Qnxpp496EeWSLqn0Kjoxwg" source="_QnxpqI96EeWSLqn0Kjoxwg"/>
+      <states xmi:id="_Qnxpp496EeWSLqn0Kjoxwg" name="init" outgoingTransitions="_QnxpoY96EeWSLqn0Kjoxwg" incomingTransitions="_i_Z8sI-EEeWmmOmRWalNHA" initial="true"/>
+      <states xmi:id="_QnxpqI96EeWSLqn0Kjoxwg" name="state2" outgoingTransitions="_i_Z8sI-EEeWmmOmRWalNHA" incomingTransitions="_QnxpoY96EeWSLqn0Kjoxwg"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_REYtII96EeWSLqn0Kjoxwg" name="role1" behavioralElement="_-5h9wI6eEeWORsmFM0Dyxw">
       <variables xmi:id="_REYtIY96EeWSLqn0Kjoxwg" name="vara1" dataType="_hNXtI2ddEeW2PYMF5P3p8Q"/>
@@ -74,8 +77,9 @@
           </expressions>
         </action>
       </transitions>
-      <states xmi:id="_REYtKo96EeWSLqn0Kjoxwg" name="init" outgoingTransitions="_REYtIo96EeWSLqn0Kjoxwg" initial="true"/>
-      <states xmi:id="_REYtK496EeWSLqn0Kjoxwg" name="state2" incomingTransitions="_REYtIo96EeWSLqn0Kjoxwg"/>
+      <transitions xmi:id="_hHv3gI-EEeWmmOmRWalNHA" priority="1" target="_REYtKo96EeWSLqn0Kjoxwg" source="_REYtK496EeWSLqn0Kjoxwg"/>
+      <states xmi:id="_REYtKo96EeWSLqn0Kjoxwg" name="init" outgoingTransitions="_REYtIo96EeWSLqn0Kjoxwg" incomingTransitions="_hHv3gI-EEeWmmOmRWalNHA" initial="true"/>
+      <states xmi:id="_REYtK496EeWSLqn0Kjoxwg" name="state2" outgoingTransitions="_hHv3gI-EEeWmmOmRWalNHA" incomingTransitions="_REYtIo96EeWSLqn0Kjoxwg"/>
     </modelElements>
   </categories>
   <categories xmi:id="_hNXtLmddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
