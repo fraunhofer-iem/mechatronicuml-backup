@@ -50,10 +50,6 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QnxpoI96EeWSLqn0Kjoxwg" name="role2" behavioralElement="_-5ndUI6eEeWORsmFM0Dyxw">
       <transitions xmi:id="_QnxpoY96EeWSLqn0Kjoxwg" priority="1" target="_QnxpqI96EeWSLqn0Kjoxwg" source="_Qnxpp496EeWSLqn0Kjoxwg">
-        <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_Qnxpoo96EeWSLqn0Kjoxwg" operator="GREATER">
-          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Qnxpo496EeWSLqn0Kjoxwg" typedNamedElement="_7WFzYGdmEeWJc7rlIredIQ"/>
-          <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_QnxppI96EeWSLqn0Kjoxwg" value="0"/>
-        </guard>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_QnxppY96EeWSLqn0Kjoxwg">
           <message xmi:id="_Qnxppo96EeWSLqn0Kjoxwg" instanceOf="_oScYwGdlEeWDqoFdtyaAuw"/>
         </events>
@@ -92,6 +88,34 @@
   <categories xmi:id="_hNXtMGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
   <categories xmi:id="_hNXtMWddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
   <categories xmi:id="_k0VMwGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern">
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_-5apAI6eEeWORsmFM0Dyxw" name="Pattern" patternVariants="_ldoBYGddEeW2PYMF5P3p8Q">
+      <roles xmi:id="_-5h9wI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" behavior="_REYtII96EeWSLqn0Kjoxwg" name="role1" receiverMessageTypes="_oScYwGdlEeWDqoFdtyaAuw">
+        <cardinality xmi:id="_-5loII6eEeWORsmFM0Dyxw">
+          <lowerBound xmi:id="_geHQMI96EeWSLqn0Kjoxwg"/>
+          <upperBound xmi:id="_geHQMY96EeWSLqn0Kjoxwg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_fMTqEI96EeWSLqn0Kjoxwg" name="buffer12" messageType="_oScYwGdlEeWDqoFdtyaAuw">
+          <bufferSize xmi:id="_gIzukI96EeWSLqn0Kjoxwg" value="2"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_-5ndUI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" behavior="_QnxpoI96EeWSLqn0Kjoxwg" name="role2" senderMessageTypes="_oScYwGdlEeWDqoFdtyaAuw">
+        <cardinality xmi:id="_-5oEYI6eEeWORsmFM0Dyxw">
+          <lowerBound xmi:id="_MJ22YI-GEeWmmOmRWalNHA"/>
+          <upperBound xmi:id="_MJ22YY-GEeWmmOmRWalNHA"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_-5pSgI6eEeWORsmFM0Dyxw" connectorEndpoints="_-5h9wI6eEeWORsmFM0Dyxw _-5ndUI6eEeWORsmFM0Dyxw">
+        <connectorQualityOfServiceAssumptions xmi:id="_-5ruwI6eEeWORsmFM0Dyxw" comment="">
+          <minMessageDelay xmi:id="_-5s84I6eEeWORsmFM0Dyxw" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-5s84Y6eEeWORsmFM0Dyxw" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_-5sV0I6eEeWORsmFM0Dyxw" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-5sV0Y6eEeWORsmFM0Dyxw" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+      <descriptionAspects xmi:id="_X2dd4I96EeWSLqn0Kjoxwg" overview="asd" context="asd" problem="sad" solution="as" structure="as" behavior="sa" examples="ads" consequences="das" combineability="d" variants="ad" alternatives="asd" verification_properties="asdasdsa"/>
+    </modelElements>
     <modelElements xsi:type="pattern:CoordinationPatternVariant" xmi:id="_ldoBYGddEeW2PYMF5P3p8Q" name="Pattern" originalPattern="_-5apAI6eEeWORsmFM0Dyxw">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_vNsYIHmDEeWFQM-OXapvnw">
         <properties xmi:id="_Dx_DwHvCEeWl5KBPSsNDxw" comment="a deadlock never occurs">
@@ -209,34 +233,6 @@
         </parameterBindings>
       </verifiedConfigurations>
       <patternParameters xmi:id="_7WFzYGdmEeWJc7rlIredIQ" name="parameter1" dataType="_hNXtJmddEeW2PYMF5P3p8Q"/>
-    </modelElements>
-    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_-5apAI6eEeWORsmFM0Dyxw" name="Pattern" patternVariants="_ldoBYGddEeW2PYMF5P3p8Q">
-      <roles xmi:id="_-5h9wI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" behavior="_REYtII96EeWSLqn0Kjoxwg" name="role1" receiverMessageTypes="_oScYwGdlEeWDqoFdtyaAuw">
-        <cardinality xmi:id="_-5loII6eEeWORsmFM0Dyxw">
-          <lowerBound xmi:id="_geHQMI96EeWSLqn0Kjoxwg"/>
-          <upperBound xmi:id="_geHQMY96EeWSLqn0Kjoxwg"/>
-        </cardinality>
-        <receiverMessageBuffer xmi:id="_fMTqEI96EeWSLqn0Kjoxwg" name="buffer12" messageType="_oScYwGdlEeWDqoFdtyaAuw">
-          <bufferSize xmi:id="_gIzukI96EeWSLqn0Kjoxwg" value="2"/>
-        </receiverMessageBuffer>
-      </roles>
-      <roles xmi:id="_-5ndUI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" behavior="_QnxpoI96EeWSLqn0Kjoxwg" name="role2" senderMessageTypes="_oScYwGdlEeWDqoFdtyaAuw">
-        <cardinality xmi:id="_-5oEYI6eEeWORsmFM0Dyxw">
-          <lowerBound xmi:id="_VX6X0I96EeWSLqn0Kjoxwg"/>
-          <upperBound xmi:id="_VX6X0Y96EeWSLqn0Kjoxwg"/>
-        </cardinality>
-      </roles>
-      <roleConnector xmi:id="_-5pSgI6eEeWORsmFM0Dyxw" connectorEndpoints="_-5h9wI6eEeWORsmFM0Dyxw _-5ndUI6eEeWORsmFM0Dyxw">
-        <connectorQualityOfServiceAssumptions xmi:id="_-5ruwI6eEeWORsmFM0Dyxw" comment="">
-          <minMessageDelay xmi:id="_-5s84I6eEeWORsmFM0Dyxw" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-5s84Y6eEeWORsmFM0Dyxw" value="0"/>
-          </minMessageDelay>
-          <maxMessageDelay xmi:id="_-5sV0I6eEeWORsmFM0Dyxw" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-5sV0Y6eEeWORsmFM0Dyxw" value="0"/>
-          </maxMessageDelay>
-        </connectorQualityOfServiceAssumptions>
-      </roleConnector>
-      <descriptionAspects xmi:id="_X2dd4I96EeWSLqn0Kjoxwg" overview="asd" context="asd" problem="sad" solution="as" structure="as" behavior="sa" examples="ads" consequences="das" combineability="d" variants="ad" alternatives="asd" verification_properties="asdasdsa"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
