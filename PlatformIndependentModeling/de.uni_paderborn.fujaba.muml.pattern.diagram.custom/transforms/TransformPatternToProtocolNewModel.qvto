@@ -25,7 +25,7 @@ property rootOfNewModel: RootNode;
 
 main()
 { 
-	var debug : Boolean := true;
+	var debug : Boolean := false;
 	// get the input parameters. There is exactly one root and exactly one coordination pattern	
 	theRootNode := input.rootObjects()[RootNode] -> any(true);	
 	var thePattern : AbstractCoordinationPattern;
@@ -126,6 +126,10 @@ mapping PrimitiveDataType::transform(): EObject {
 	init{
 		if(self.eContainer().oclIsKindOf(ModelElementCategory)){
 			result := self.map create().oclAsType(PrimitiveDataType);
+			var element := self.oclAsType(EObject);	
+			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+				setValues(result, f, getValues(element, f));
+			};
 		}	
 		else {
 			result := self;
