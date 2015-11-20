@@ -1,4 +1,5 @@
 library PatternProtocolCommon;
+import ModelcopyLibrary;
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -31,3 +32,41 @@ query getMsgTypeCategory(theRootNode : RootNode) : ModelElementCategory {
 query getTypesCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
 }
+
+
+mapping Role :: transform() : EObject {
+	init {
+		result := self.map create();
+	}
+	
+	var resultingRole : Role := result.oclAsType(Role);
+	resultingRole.behavior := self.behavior.map transform().oclAsType(Behavior);
+	resultingRole.senderMessageTypes := self.senderMessageTypes.map transform().oclAsType(MessageType);
+	resultingRole.receiverMessageTypes := self.receiverMessageTypes.map transform().oclAsType(MessageType);
+	resultingRole.coordinatorBehavior := self.coordinatorBehavior.map transform().oclAsType(Behavior);
+	resultingRole.subroleBehavior := self.subroleBehavior.map transform().oclAsType(Behavior);
+	resultingRole.receiverMessageBuffer := self.receiverMessageBuffer.map transform().oclAsType(MessageBuffer);
+	resultingRole.cardinality := self.cardinality.map transform().oclAsType(Cardinality);
+
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+}
+
+mapping RoleConnector :: transform() : EObject {
+	init {
+		result := self.map create();
+	}
+	
+	var resultingConnector : RoleConnector := result.oclAsType(RoleConnector);
+	resultingConnector.connectorEndpoints := self.connectorEndpoints.map transform().oclAsType(ConnectorEndpoint);
+	resultingConnector.connectorQualityOfServiceAssumptions := self.connectorQualityOfServiceAssumptions.map transform().oclAsType(ConnectorQualityOfServiceAssumptions);
+	
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+}
+
+

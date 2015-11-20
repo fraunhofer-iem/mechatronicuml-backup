@@ -16,8 +16,6 @@ modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
-
-
 mapping DiscreteInteractionEndpoint :: transform() : EObject {
 	init {
 		result := self.map create();
@@ -39,7 +37,10 @@ mapping DataType :: transform() : EObject {
 			result :=  self;	
 		}
 		else {
-			if(self.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) {
+			if(self.oclIsKindOf(muml::protocol::Role)) {
+				result := self.oclAsType(muml::protocol::Role).map transform();
+			}
+			else if(self.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) {
 				result := self.oclAsType(muml::connector::DiscreteInteractionEndpoint).map transform();
 			}
 			else if(self.oclIsKindOf(muml::component::Component)){

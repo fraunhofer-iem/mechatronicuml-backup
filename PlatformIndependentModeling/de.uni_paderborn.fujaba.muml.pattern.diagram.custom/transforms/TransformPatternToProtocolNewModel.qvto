@@ -137,6 +137,10 @@ mapping PrimitiveDataType::transform(): EObject {
 	}		
 }
 
-
+mapping AbstractCoordinationSpecification:: transform() : EObject {
+	init {
+		result := null;
+	}
+}
 
 
