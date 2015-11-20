@@ -46,6 +46,37 @@
       <states xmi:id="_yi1OAWdmEeWJc7rlIredIQ" name="init" outgoingTransitions="_24zvwGdmEeWJc7rlIredIQ" initial="true"/>
       <states xmi:id="_1lyBoGdmEeWJc7rlIredIQ" name="state2" incomingTransitions="_24zvwGdmEeWJc7rlIredIQ"/>
     </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QnxpoI96EeWSLqn0Kjoxwg" name="role2" behavioralElement="_-5ndUI6eEeWORsmFM0Dyxw">
+      <transitions xmi:id="_QnxpoY96EeWSLqn0Kjoxwg" priority="1" target="_QnxpqI96EeWSLqn0Kjoxwg" source="_Qnxpp496EeWSLqn0Kjoxwg">
+        <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_Qnxpoo96EeWSLqn0Kjoxwg" operator="GREATER">
+          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Qnxpo496EeWSLqn0Kjoxwg" typedNamedElement="_7WFzYGdmEeWJc7rlIredIQ"/>
+          <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_QnxppI96EeWSLqn0Kjoxwg" value="0"/>
+        </guard>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_QnxppY96EeWSLqn0Kjoxwg">
+          <message xmi:id="_Qnxppo96EeWSLqn0Kjoxwg" instanceOf="_oScYwGdlEeWDqoFdtyaAuw"/>
+        </events>
+      </transitions>
+      <states xmi:id="_Qnxpp496EeWSLqn0Kjoxwg" name="init" outgoingTransitions="_QnxpoY96EeWSLqn0Kjoxwg" initial="true"/>
+      <states xmi:id="_QnxpqI96EeWSLqn0Kjoxwg" name="state2" incomingTransitions="_QnxpoY96EeWSLqn0Kjoxwg"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_REYtII96EeWSLqn0Kjoxwg" name="role1" behavioralElement="_-5h9wI6eEeWORsmFM0Dyxw">
+      <variables xmi:id="_REYtIY96EeWSLqn0Kjoxwg" name="vara1" dataType="_hNXtI2ddEeW2PYMF5P3p8Q"/>
+      <transitions xmi:id="_REYtIo96EeWSLqn0Kjoxwg" priority="1" target="_REYtK496EeWSLqn0Kjoxwg" source="_REYtKo96EeWSLqn0Kjoxwg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_REYtI496EeWSLqn0Kjoxwg" kind="TRIGGER">
+          <message xmi:id="_REYtJI96EeWSLqn0Kjoxwg" instanceOf="_oScYwGdlEeWDqoFdtyaAuw"/>
+        </events>
+        <action xmi:id="_REYtJY96EeWSLqn0Kjoxwg" name="vara1 := true;">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_REYtJo96EeWSLqn0Kjoxwg">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_REYtJ496EeWSLqn0Kjoxwg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_REYtKI96EeWSLqn0Kjoxwg" value="true"/>
+              <lhs_typedNamedElementExpression xmi:id="_REYtKY96EeWSLqn0Kjoxwg" typedNamedElement="_REYtIY96EeWSLqn0Kjoxwg"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <states xmi:id="_REYtKo96EeWSLqn0Kjoxwg" name="init" outgoingTransitions="_REYtIo96EeWSLqn0Kjoxwg" initial="true"/>
+      <states xmi:id="_REYtK496EeWSLqn0Kjoxwg" name="state2" incomingTransitions="_REYtIo96EeWSLqn0Kjoxwg"/>
+    </modelElements>
   </categories>
   <categories xmi:id="_hNXtLmddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
   <categories xmi:id="_hNXtL2ddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
@@ -176,16 +207,19 @@
       <patternParameters xmi:id="_7WFzYGdmEeWJc7rlIredIQ" name="parameter1" dataType="_hNXtJmddEeW2PYMF5P3p8Q"/>
     </modelElements>
     <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_-5apAI6eEeWORsmFM0Dyxw" name="Pattern" patternVariants="_ldoBYGddEeW2PYMF5P3p8Q">
-      <roles xmi:id="_-5h9wI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" name="role1">
+      <roles xmi:id="_-5h9wI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" behavior="_REYtII96EeWSLqn0Kjoxwg" name="role1" receiverMessageTypes="_oScYwGdlEeWDqoFdtyaAuw">
         <cardinality xmi:id="_-5loII6eEeWORsmFM0Dyxw">
-          <lowerBound xmi:id="_-5mPMI6eEeWORsmFM0Dyxw"/>
-          <upperBound xmi:id="_-5m2QI6eEeWORsmFM0Dyxw"/>
+          <lowerBound xmi:id="_geHQMI96EeWSLqn0Kjoxwg"/>
+          <upperBound xmi:id="_geHQMY96EeWSLqn0Kjoxwg"/>
         </cardinality>
+        <receiverMessageBuffer xmi:id="_fMTqEI96EeWSLqn0Kjoxwg" name="buffer12" messageType="_oScYwGdlEeWDqoFdtyaAuw">
+          <bufferSize xmi:id="_gIzukI96EeWSLqn0Kjoxwg" value="2"/>
+        </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_-5ndUI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" name="role2">
+      <roles xmi:id="_-5ndUI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" behavior="_QnxpoI96EeWSLqn0Kjoxwg" name="role2" senderMessageTypes="_oScYwGdlEeWDqoFdtyaAuw">
         <cardinality xmi:id="_-5oEYI6eEeWORsmFM0Dyxw">
-          <lowerBound xmi:id="_-5oEYY6eEeWORsmFM0Dyxw"/>
-          <upperBound xmi:id="_-5orcI6eEeWORsmFM0Dyxw"/>
+          <lowerBound xmi:id="_VX6X0I96EeWSLqn0Kjoxwg"/>
+          <upperBound xmi:id="_VX6X0Y96EeWSLqn0Kjoxwg"/>
         </cardinality>
       </roles>
       <roleConnector xmi:id="_-5pSgI6eEeWORsmFM0Dyxw" connectorEndpoints="_-5h9wI6eEeWORsmFM0Dyxw _-5ndUI6eEeWORsmFM0Dyxw">
@@ -198,6 +232,7 @@
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
+      <descriptionAspects xmi:id="_X2dd4I96EeWSLqn0Kjoxwg" overview="asd" context="asd" problem="sad" solution="as" structure="as" behavior="sa" examples="ads" consequences="das" combineability="d" variants="ad" alternatives="asd" verification_properties="asdasdsa"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
