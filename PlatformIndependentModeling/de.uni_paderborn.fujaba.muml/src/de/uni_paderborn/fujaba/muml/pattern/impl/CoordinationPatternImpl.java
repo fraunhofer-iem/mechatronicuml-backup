@@ -17,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant;
 import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
-import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects;
 

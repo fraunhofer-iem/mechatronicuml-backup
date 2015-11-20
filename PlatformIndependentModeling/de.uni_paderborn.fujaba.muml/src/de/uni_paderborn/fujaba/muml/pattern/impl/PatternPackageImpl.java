@@ -43,7 +43,6 @@ import de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant;
 import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
-import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects;
