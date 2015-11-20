@@ -67,64 +67,32 @@
                commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.AddDefaultPropertiesAction"
                label="Add Default Verification Properties">
             <visibleWhen>
-                <or>
-	               <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and> 
-	                <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and>       
-               </or>             
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
             </visibleWhen>
          </command>
          <command
                commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.UppaalVerificationAction"
                label="Verify Multiple Properties">
-            <visibleWhen>
-                <or>
-	               <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and> 
-	                <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and>       
-               </or>            
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
             </visibleWhen>
          </command>
       	                   
@@ -132,32 +100,16 @@
                commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportTraceImageAction"
                label="Verify Single Property for a Trace">
             <visibleWhen>
-                 <or>
-	               <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and> 
-	                <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and>       
-               </or>            
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
             </visibleWhen>
          </command>
          <menu
@@ -167,65 +119,33 @@
                      commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalModelAction"
                      label="Generate Uppaal Model">
             <visibleWhen>
-                <or>
-	               <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and> 
-	                <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and>       
-               </or>          
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
             </visibleWhen>
          </command>
 
          <command
                commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalXMLAction"
                label="Generate Uppaal XML File">
-            <visibleWhen>
-            <or>
-	               <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and> 
-	                <and>
-	                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"/></with>
-	               	  
-	               	  <with variable="selection"><iterate ifEmpty="false">
-	               	     <or> 
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart"/>
-	                        <instanceof value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart"/>
-	                     </or>
-	                  </iterate></with>    
-	               </and>       
-               </or>       
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
             </visibleWhen>
          </command>
          </menu>

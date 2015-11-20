@@ -3,8 +3,6 @@ package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 
@@ -12,22 +10,20 @@ import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 
-	CoordinationPattern selectedPattern;
+	AbstractCoordinationPattern selectedPattern;
 	PatternVerificationWizardPage2 p2;
 	CoordinationProtocol protocolFromSelectedPattern;
 
-	@Override
-	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
+	
+	public void init(IWorkbench workbench, IStructuredSelection currentSelection, AbstractCoordinationPattern selectedPattern) {
 		// TODO Auto-generated method stub
 		super.init(workbench, currentSelection);
-		selectedPattern = (CoordinationPattern) ((View) ((EditPart) currentSelection
-				.iterator().next()).getModel()).getElement();
+		this.selectedPattern = selectedPattern;
 		this.setWindowTitle("Pattern Verification Wizard");
 	}
 
