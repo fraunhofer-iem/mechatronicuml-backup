@@ -63,11 +63,11 @@
       </references>
     </modelElements>
     <modelElements xsi:type="structdatatype:StructType" xmi:id="_q2GvlXShEeSlCdM66-7ACQ" name="AffectedComponentsEntry">
-      <attributes xmi:id="_q2GvlnShEeSlCdM66-7ACQ" name="request" type="_hm9EU7iwEeKp46K0r5yxrg"/>
-      <attributes xmi:id="_q2Gvl3ShEeSlCdM66-7ACQ" name="reply" type="_hm9EU7iwEeKp46K0r5yxrg"/>
-      <attributes xmi:id="_q2GvmHShEeSlCdM66-7ACQ" name="action" type="_hm9EU7iwEeKp46K0r5yxrg"/>
-      <attributes xmi:id="_q2GvmXShEeSlCdM66-7ACQ" name="voteCommit" type="_hm9EU7iwEeKp46K0r5yxrg"/>
-      <attributes xmi:id="_q2GvmnShEeSlCdM66-7ACQ" name="finished" type="_hm9EU7iwEeKp46K0r5yxrg"/>
+      <attributes xmi:id="_q2GvlnShEeSlCdM66-7ACQ" name="request" dataType="_hm9EU7iwEeKp46K0r5yxrg"/>
+      <attributes xmi:id="_q2Gvl3ShEeSlCdM66-7ACQ" name="reply" dataType="_hm9EU7iwEeKp46K0r5yxrg"/>
+      <attributes xmi:id="_q2GvmHShEeSlCdM66-7ACQ" name="action" dataType="_hm9EU7iwEeKp46K0r5yxrg"/>
+      <attributes xmi:id="_q2GvmXShEeSlCdM66-7ACQ" name="voteCommit" dataType="_hm9EU7iwEeKp46K0r5yxrg"/>
+      <attributes xmi:id="_q2GvmnShEeSlCdM66-7ACQ" name="finished" dataType="_hm9EU7iwEeKp46K0r5yxrg"/>
     </modelElements>
   </categories>
   <categories xmi:id="_SuoZoLi6EeKp46K0r5yxrg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
