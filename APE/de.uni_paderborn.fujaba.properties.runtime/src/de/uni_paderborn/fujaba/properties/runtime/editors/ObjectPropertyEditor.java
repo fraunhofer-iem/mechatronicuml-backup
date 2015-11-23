@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory
  */
 public class ObjectPropertyEditor extends CategoryPropertyEditor {
 	
-	public final static boolean USE_CACHE = false;
+	public final static boolean USE_CACHE = true;
 
 	private Map<EClass, List<IPropertyEditor>> cache = new HashMap<EClass, List<IPropertyEditor>>();
 	
