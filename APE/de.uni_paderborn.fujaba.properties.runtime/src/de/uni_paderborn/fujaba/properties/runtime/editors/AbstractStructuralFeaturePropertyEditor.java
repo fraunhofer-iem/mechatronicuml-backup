@@ -31,12 +31,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.ocl.Query;
 import org.eclipse.ocl.ecore.OCLExpression;
-import org.eclipse.ocl.examples.eventmanager.EventFilter;
-import org.eclipse.ocl.examples.eventmanager.EventManager;
-import org.eclipse.ocl.examples.eventmanager.EventManagerFactory;
-import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzer;
-import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzerFactory;
-import org.eclipse.ocl.examples.impactanalyzer.util.OCLFactory;
 import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
@@ -413,32 +407,18 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			return false;
 		}
 		
-		final ImpactAnalyzer impactAnalyzer = ImpactAnalyzerFactory.INSTANCE
-				.createImpactAnalyzer(expression, // the expression to
-													// re-evaluate incrementally
-						element.eClass(),
-						false, // whether to re-evaluate when new context
-								// objects appear
-						OCLFactory.getInstance());
-
-		EventFilter filter = impactAnalyzer.createFilterForExpression();
-		EventManager eventManager = EventManagerFactory.eINSTANCE
-				.getEventManagerFor(myResourceSet);
-		eventManager.subscribe(filter, adapter);
 
 		// store adapter to unregister them in dispose()
 		eventAdapters.put(adapter, myResourceSet);
 
-		
+		myResourceSet.eAdapters().add(adapter);
 		
 		return true;
 	}
 
 	public void unregisterEventAdapter(Adapter adapter) {
 		ResourceSet myResourceSet = eventAdapters.get(adapter);
-		EventManager eventManager = EventManagerFactory.eINSTANCE
-				.getEventManagerFor(myResourceSet);
-		eventManager.unsubscribe(adapter);
+		myResourceSet.eAdapters().remove(adapter);
 	}
 
 	protected void removeEventAdapters() {
