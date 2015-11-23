@@ -17,7 +17,9 @@ import de.uni_paderborn.fujaba.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 public class RoleEditPolicy extends PortBaseEditPolicy {
 
@@ -41,7 +43,8 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	public void handleNotificationEvent(Notification notification) {
 	
 	
-		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
+		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY || notification.getFeature() == ValuetypePackage.Literals.CARDINALITY__LOWER_BOUND 
+				|| notification.getFeature() == ValuetypePackage.Literals.CARDINALITY__UPPER_BOUND ) {
 			refreshArrow();
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES) {
@@ -57,7 +60,23 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 		}
 	}
 	
-	
+	@Override
+	protected void addListeners() 
+	{
+		super.addListeners();
+		Role myRole = this.getRole();
+		Cardinality card = myRole.getCardinality();
+		if(card!=null)
+		{
+			this.addNotificationListener(card);
+			NaturalNumber n1 = card.getLowerBound();
+			NaturalNumber n2 = card.getUpperBound();
+			if(n1!=null)
+				this.addNotificationListener(n1);
+			if(n2!=null)
+				this.addNotificationListener(n2);
+		}			
+	}
 	
 /**
  * @author sthiele2
