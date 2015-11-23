@@ -194,6 +194,11 @@ public class ParameterizedRealtimeStatechartItemProvider extends RealtimeStatech
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(BehaviorPackage.Literals.BEHAVIOR__OPERATIONS,
 				 RealtimestatechartparameterFactory.eINSTANCE.createAPICallParameter()));
 

@@ -83,6 +83,11 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.psm.properties.properties.editor.MessageEditor$Factory"
+             type="http://www.fujaba.de/muml/psm/properties/0.4.0/#Message">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.RefinedAtomicComponentInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#RefinedAtomicComponentInstance">
        </propertyEditor>

@@ -141,6 +141,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.Message} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageItemProvider messageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.Message}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageAdapter() {
+		if (messageItemProvider == null) {
+			messageItemProvider = new MessageItemProvider(this);
+		}
+
+		return messageItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,6 +265,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (wcetItemProvider != null) wcetItemProvider.dispose();
 		if (requiredMemoryItemProvider != null) requiredMemoryItemProvider.dispose();
 		if (schedulingItemProvider != null) schedulingItemProvider.dispose();
+		if (messageItemProvider != null) messageItemProvider.dispose();
 	}
 
 }

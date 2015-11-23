@@ -1,14 +1,11 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.allocation.provider;
+package de.uni_paderborn.fujaba.muml.psm.properties.provider;
 
 
-import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationFactory;
-import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
-import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
-
-import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
-import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
+import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
+import de.uni_paderborn.fujaba.muml.psm.properties.Message;
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -16,31 +13,25 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.Message} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SystemAllocationItemProvider extends ExtendableElementItemProvider {
+public class MessageItemProvider extends SchedulingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SystemAllocationItemProvider(AdapterFactory adapterFactory) {
+	public MessageItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,48 +46,25 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCicPropertyDescriptor(object);
-			addHpicPropertyDescriptor(object);
+			addMessageTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Cic feature.
+	 * This adds a property descriptor for the Message Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCicPropertyDescriptor(Object object) {
+	protected void addMessageTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SystemAllocation_cic_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SystemAllocation_cic_feature", "_UI_SystemAllocation_type"),
-				 AllocationPackage.Literals.SYSTEM_ALLOCATION__CIC,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Hpic feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHpicPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SystemAllocation_hpic_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SystemAllocation_hpic_feature", "_UI_SystemAllocation_type"),
-				 AllocationPackage.Literals.SYSTEM_ALLOCATION__HPIC,
+				 getString("_UI_Message_messageType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Message_messageType_feature", "_UI_Message_type"),
+				 PropertiesPackage.Literals.MESSAGE__MESSAGE_TYPE,
 				 true,
 				 false,
 				 true,
@@ -117,7 +85,7 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(AllocationPackage.Literals.SYSTEM_ALLOCATION__ALLOCATIONS);
+			childrenFeatures.add(PropertiesPackage.Literals.MESSAGE__SIZE);
 		}
 		return childrenFeatures;
 	}
@@ -136,14 +104,14 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 	}
 
 	/**
-	 * This returns SystemAllocation.gif.
+	 * This returns Message.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SystemAllocation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Message"));
 	}
 
 	/**
@@ -154,7 +122,7 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SystemAllocation_type");
+		return getString("_UI_Message_type");
 	}
 	
 
@@ -169,8 +137,8 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SystemAllocation.class)) {
-			case AllocationPackage.SYSTEM_ALLOCATION__ALLOCATIONS:
+		switch (notification.getFeatureID(Message.class)) {
+			case PropertiesPackage.MESSAGE__SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -190,39 +158,8 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PropertiesFactory.eINSTANCE.createWCET()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PropertiesFactory.eINSTANCE.createScheduling()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PropertiesFactory.eINSTANCE.createMessage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AllocationPackage.Literals.SYSTEM_ALLOCATION__ALLOCATIONS,
-				 AllocationFactory.eINSTANCE.createAllocation()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return PsmEditPlugin.INSTANCE;
+				(PropertiesPackage.Literals.MESSAGE__SIZE,
+				 HwvaluetypeFactory.eINSTANCE.createDataSize()));
 	}
 
 }

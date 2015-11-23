@@ -60,7 +60,7 @@
         <genFeature href="psm.genmodel#//psm/properties/WCET/wcet"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="psm.genmodel#//psm/properties/WCET/resourceInstance"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
@@ -93,6 +93,17 @@
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="psm.genmodel#//psm/properties/Message"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/Message/messageType"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="psm.genmodel#//psm/properties/Message/size"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
     </classes>
   </packages>
   <packages>

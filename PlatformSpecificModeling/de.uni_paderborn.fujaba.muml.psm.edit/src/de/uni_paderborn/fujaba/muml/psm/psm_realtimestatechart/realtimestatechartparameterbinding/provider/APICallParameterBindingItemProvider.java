@@ -298,6 +298,11 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 Psm_realtimestatechartFactory.eINSTANCE.createAPICall()));
 
