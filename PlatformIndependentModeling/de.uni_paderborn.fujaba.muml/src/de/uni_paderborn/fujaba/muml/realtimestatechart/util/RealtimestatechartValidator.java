@@ -51,6 +51,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
+ * * @generated not
  */
 public class RealtimestatechartValidator extends MumlValidator {
 	/**

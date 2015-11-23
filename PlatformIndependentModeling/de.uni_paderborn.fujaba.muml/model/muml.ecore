@@ -2851,21 +2851,22 @@
   </eSubpackages>
   <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/pattern/0.3.18" nsPrefix="pattern">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationPattern" abstract="true"
         eSuperTypes="#//protocol/AbstractCoordinationSpecification">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="\todosd{document!}"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniquePatternNames"/>
-        </eAnnotations>
-        <details key="constraints" value="UniquePatternNames PatternWithParametersNeedsVerifiedConfigurationWarning"/>
+        <details key="constraints" value="UniquePatternNames PatternWithParametersNeedsVerifiedConfiguration"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="PatternWithParametersNeedsVerifiedConfigurationWarning" value="-- @warning&#xD;&#xA;--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters&#xD;&#xA;self.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0"/>
-        <details key="UniquePatternNames" value="-- A name of a CoordinationPattern must be unique.&#xD;&#xA;CoordinationPattern.allInstances()->isUnique(name)"/>
+        <details key="PatternWithParametersNeedsVerifiedConfiguration" value="-- @warning&#xD;&#xA;--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters&#xD;&#xA;self.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0"/>
+        <details key="UniquePatternNames" value="-- A name of a CoordinationPattern must be unique.&#xD;&#xA;AbstractCoordinationPattern.allInstances()->isUnique(name)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="verifiedConfigurations"
           upperBound="-1" eType="#//pattern/VerifiedConfiguration" containment="true"

@@ -617,19 +617,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (this, 
 		   source, 
 		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });	
 		addAnnotation
 		  (abstractCoordinationPatternEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniquePatternNames PatternWithParametersNeedsVerifiedConfigurationWarning"
-		   });
-		addAnnotation
-		  (abstractCoordinationPatternEClass, 
-		   new boolean[] { true },
-		   "http://www.eclipse.org/emf/2002/Ecore",
-		   new String[] {
-			 "constraints", "UniquePatternNames"
+			 "constraints", "UniquePatternNames PatternWithParametersNeedsVerifiedConfiguration"
 		   });
 	}
 
@@ -645,8 +641,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (abstractCoordinationPatternEClass, 
 		   source, 
 		   new String[] {
-			 "PatternWithParametersNeedsVerifiedConfigurationWarning", "-- @warning\r\n--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\nself.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0",
-			 "UniquePatternNames", "-- A name of a CoordinationPattern must be unique.\r\nCoordinationPattern.allInstances()->isUnique(name)"
+			 "PatternWithParametersNeedsVerifiedConfiguration", "-- @warning\r\n--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\nself.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0",
+			 "UniquePatternNames", "-- A name of a CoordinationPattern must be unique.\r\nAbstractCoordinationPattern.allInstances()->isUnique(name)"
 		   });
 	}
 

@@ -12,28 +12,32 @@
  */
 package de.uni_paderborn.fujaba.muml.pattern.util;
 
-import de.uni_paderborn.fujaba.muml.pattern.*;
-
-import de.uni_paderborn.fujaba.muml.protocol.util.ProtocolValidator;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.pattern.*;
+import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant;
+import de.uni_paderborn.fujaba.muml.pattern.DescriptionAspects;
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
+import de.uni_paderborn.fujaba.muml.protocol.util.ProtocolValidator;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage
- * @generated
+ * @generated not
  */
-public class PatternValidator extends EObjectValidator {
+public class PatternValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -141,9 +145,18 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(abstractCoordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(abstractCoordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(abstractCoordinationPattern, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(abstractCoordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfiguration(abstractCoordinationPattern, diagnostics, context);
 		return result;
 	}
+
+	/**
+	 * The cached validation expression for the UniquePatternNames constraint of '<em>Abstract Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ABSTRACT_COORDINATION_PATTERN__UNIQUE_PATTERN_NAMES__EEXPRESSION = "-- A name of a CoordinationPattern must be unique.\r\n" +
+		"AbstractCoordinationPattern.allInstances()->isUnique(name)";
 
 	/**
 	 * Validates the UniquePatternNames constraint of '<em>Abstract Coordination Pattern</em>'.
@@ -152,53 +165,49 @@ public class PatternValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAbstractCoordinationPattern_UniquePatternNames(AbstractCoordinationPattern abstractCoordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "UniquePatternNames", getObjectLabel(abstractCoordinationPattern, context) },
-						 new Object[] { abstractCoordinationPattern },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN,
+				 abstractCoordinationPattern,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniquePatternNames",
+				 ABSTRACT_COORDINATION_PATTERN__UNIQUE_PATTERN_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
-	 * Validates the PatternWithParametersNeedsVerifiedConfigurationWarning constraint of '<em>Abstract Coordination Pattern</em>'.
+	 * The cached validation expression for the PatternWithParametersNeedsVerifiedConfiguration constraint of '<em>Abstract Coordination Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(AbstractCoordinationPattern abstractCoordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "PatternWithParametersNeedsVerifiedConfigurationWarning", getObjectLabel(abstractCoordinationPattern, context) },
-						 new Object[] { abstractCoordinationPattern },
-						 context));
-			}
-			return false;
-		}
-		return true;
+	protected static final String ABSTRACT_COORDINATION_PATTERN__PATTERN_WITH_PARAMETERS_NEEDS_VERIFIED_CONFIGURATION__EEXPRESSION = "-- @warning\r\n" +
+		"--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\n" +
+		"self.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0";
+
+	/**
+	 * Validates the PatternWithParametersNeedsVerifiedConfiguration constraint of '<em>Abstract Coordination Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfiguration(AbstractCoordinationPattern abstractCoordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.ABSTRACT_COORDINATION_PATTERN,
+				 abstractCoordinationPattern,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PatternWithParametersNeedsVerifiedConfiguration",
+				 ABSTRACT_COORDINATION_PATTERN__PATTERN_WITH_PARAMETERS_NEEDS_VERIFIED_CONFIGURATION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -220,7 +229,7 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(coordinationPattern, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(coordinationPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfiguration(coordinationPattern, diagnostics, context);
 		return result;
 	}
 
@@ -261,7 +270,7 @@ public class PatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationPatternVariant, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(coordinationPatternVariant, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(coordinationPatternVariant, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfigurationWarning(coordinationPatternVariant, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfiguration(coordinationPatternVariant, diagnostics, context);
 		return result;
 	}
 
