@@ -194,6 +194,11 @@ public class MappingRepositoryItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(PortapimappingPackage.Literals.MAPPING_REPOSITORY__PORT_API_MAPPINGS,
 				 PortapimappingFactory.eINSTANCE.createPortApiMapping()));
 

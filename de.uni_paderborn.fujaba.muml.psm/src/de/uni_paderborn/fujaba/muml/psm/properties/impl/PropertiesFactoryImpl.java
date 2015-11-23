@@ -59,6 +59,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.WCET: return createWCET();
 			case PropertiesPackage.REQUIRED_MEMORY: return createRequiredMemory();
 			case PropertiesPackage.SCHEDULING: return createScheduling();
+			case PropertiesPackage.MESSAGE: return createMessage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +93,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public Scheduling createScheduling() {
 		SchedulingImpl scheduling = new SchedulingImpl();
 		return scheduling;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Message createMessage() {
+		MessageImpl message = new MessageImpl();
+		return message;
 	}
 
 	/**

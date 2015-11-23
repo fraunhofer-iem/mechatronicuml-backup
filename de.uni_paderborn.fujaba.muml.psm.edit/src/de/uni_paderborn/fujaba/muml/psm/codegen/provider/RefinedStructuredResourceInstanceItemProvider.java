@@ -167,6 +167,11 @@ public class RefinedStructuredResourceInstanceItemProvider extends StructuredRes
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 PropertiesFactory.eINSTANCE.createScheduling()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
 	}
 
 	/**

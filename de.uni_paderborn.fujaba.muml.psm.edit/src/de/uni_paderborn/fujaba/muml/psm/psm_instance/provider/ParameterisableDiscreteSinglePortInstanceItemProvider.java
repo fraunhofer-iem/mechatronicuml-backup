@@ -164,6 +164,11 @@ public class ParameterisableDiscreteSinglePortInstanceItemProvider extends Discr
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(Psm_instancePackage.Literals.PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__BINDINGS,
 				 RealtimestatechartparameterbindingFactory.eINSTANCE.createAPICallParameterBinding()));
 

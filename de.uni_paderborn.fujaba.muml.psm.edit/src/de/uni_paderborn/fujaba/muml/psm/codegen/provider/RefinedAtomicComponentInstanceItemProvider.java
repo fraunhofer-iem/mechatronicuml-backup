@@ -234,6 +234,11 @@ public class RefinedAtomicComponentInstanceItemProvider extends AtomicComponentI
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
 				 Psm_instanceFactory.eINSTANCE.createParameterisableDiscreteSinglePortInstance()));
 

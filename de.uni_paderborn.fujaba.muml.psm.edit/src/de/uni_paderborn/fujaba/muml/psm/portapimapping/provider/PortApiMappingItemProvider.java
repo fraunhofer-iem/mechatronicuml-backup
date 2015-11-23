@@ -195,6 +195,11 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
 				 Psm_realtimestatechartFactory.eINSTANCE.createAPICall()));
 

@@ -882,6 +882,304 @@ public interface PropertiesPackage extends EPackage {
 	int SCHEDULING_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl <em>Message</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMessage()
+	 * @generated
+	 */
+	int MESSAGE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__ANNOTATION = SCHEDULING__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__EXTENSION = SCHEDULING__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__BASE = SCHEDULING__BASE;
+
+	/**
+	 * The feature id for the '<em><b>Model Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__MODEL_BASE = SCHEDULING__MODEL_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__OWNING_ANNOTATION = SCHEDULING__OWNING_ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__EXTENDABLE_BASE = SCHEDULING__EXTENDABLE_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Deadline</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__DEADLINE = SCHEDULING__DEADLINE;
+
+	/**
+	 * The feature id for the '<em><b>Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__PERIOD = SCHEDULING__PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__PRIORITY = SCHEDULING__PRIORITY;
+
+	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__MESSAGE_TYPE = SCHEDULING_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__SIZE = SCHEDULING_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_FEATURE_COUNT = SCHEDULING_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ECLASS = SCHEDULING___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___EIS_PROXY = SCHEDULING___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ERESOURCE = SCHEDULING___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ECONTAINER = SCHEDULING___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ECONTAINING_FEATURE = SCHEDULING___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ECONTAINMENT_FEATURE = SCHEDULING___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ECONTENTS = SCHEDULING___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___EALL_CONTENTS = SCHEDULING___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ECROSS_REFERENCES = SCHEDULING___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___EGET__ESTRUCTURALFEATURE = SCHEDULING___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SCHEDULING___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___ESET__ESTRUCTURALFEATURE_OBJECT = SCHEDULING___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___EIS_SET__ESTRUCTURALFEATURE = SCHEDULING___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___EUNSET__ESTRUCTURALFEATURE = SCHEDULING___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___EINVOKE__EOPERATION_ELIST = SCHEDULING___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___GET_EXTENSION__ECLASS = SCHEDULING___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___PROVIDE_EXTENSION__ECLASS = SCHEDULING___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___GET_ANNOTATION__STRING = SCHEDULING___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___PROVIDE_ANNOTATION__STRING = SCHEDULING___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_OPERATION_COUNT = SCHEDULING_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET <em>WCET</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -987,6 +1285,38 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getScheduling_Priority();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.Message <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Message
+	 * @generated
+	 */
+	EClass getMessage();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Message#getMessageType <em>Message Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Message Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Message#getMessageType()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EReference getMessage_MessageType();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Message#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Size</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Message#getSize()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EReference getMessage_Size();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1096,6 +1426,32 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCHEDULING__PRIORITY = eINSTANCE.getScheduling_Priority();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl <em>Message</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMessage()
+		 * @generated
+		 */
+		EClass MESSAGE = eINSTANCE.getMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE__MESSAGE_TYPE = eINSTANCE.getMessage_MessageType();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE__SIZE = eINSTANCE.getMessage_Size();
 
 	}
 

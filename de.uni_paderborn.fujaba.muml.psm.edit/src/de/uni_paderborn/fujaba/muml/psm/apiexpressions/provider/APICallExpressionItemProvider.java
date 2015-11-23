@@ -186,6 +186,11 @@ public class APICallExpressionItemProvider extends ExpressionItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ApiexpressionsPackage.Literals.API_CALL_EXPRESSION__PARAMETER_BINDINGS,
 				 BehaviorFactory.eINSTANCE.createParameterBinding()));
 	}
