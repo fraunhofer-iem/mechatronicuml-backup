@@ -66,11 +66,7 @@ mapping State :: State2State() : State {
 		urgent := self.urgent;
 		
 		--Due to precondition of mappings the correct ones are chosen
-		self.channels->forEach(channel) {
-			var bool : Boolean := channel.urgentAndNonUrgentTransitionsSynchronize();
-			var y := 5;
-		};
-		
+				
 		channels := self.channels->map SyncChannel2SyncChannel();
 		channels += self.channels->map SyncChannel2UrgentSyncChannel();
 		channels += self.channels->map SyncChannel2NonUrgentSyncChannel();
