@@ -66,6 +66,11 @@ mapping State :: State2State() : State {
 		urgent := self.urgent;
 		
 		--Due to precondition of mappings the correct ones are chosen
+		self.channels->forEach(channel) {
+			var bool : Boolean := channel.urgentAndNonUrgentTransitionsSynchronize();
+			var y := 5;
+		};
+		
 		channels := self.channels->map SyncChannel2SyncChannel();
 		channels += self.channels->map SyncChannel2UrgentSyncChannel();
 		channels += self.channels->map SyncChannel2NonUrgentSyncChannel();
@@ -258,10 +263,13 @@ helper SynchronizationChannel :: urgentAndNonUrgentTransitionsSynchronize() : Bo
 			if(curSync.syncChannel = self and not curSync.container().oclAsType(Transition).urgent)
 			nonUrgentTransitionSyncs := true;
 			
-			if(urgentTransitionSyncs and nonUrgentTransitionSyncs)
-			return true;	
+			// known qvto-bug: a return statement within a forEach loop does not return
+			// see the bug report: https://bugs.eclipse.org/bugs/show_bug.cgi?id=472376 
+			if(urgentTransitionSyncs and nonUrgentTransitionSyncs){
+				return true;
+			};			
 		};
-		return false;
+		return urgentTransitionSyncs and nonUrgentTransitionSyncs;
 }
 
 -- check whether urgent transitions with an urgent state as source and an arbitrary non-urgent synchronization synchronize via the same synchronization channel
