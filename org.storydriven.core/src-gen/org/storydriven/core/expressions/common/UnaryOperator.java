@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Unary Operator</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.storydriven.core.expressions.common.CommonPackage#getUnaryOperator()
+ * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getUnaryOperator()
  * @model
  * @generated
  */

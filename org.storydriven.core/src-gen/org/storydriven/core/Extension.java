@@ -162,7 +162,7 @@ public interface Extension extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Extendable Base</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.storydriven.core.ExtendableElement#getExtension <em>Extension</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.storydriven.core.ExtendableElement#getExtensions <em>Extensions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Extendable Base</em>' container reference isn't clear,
@@ -172,8 +172,8 @@ public interface Extension extends ExtendableElement {
 	 * @return the value of the '<em>Extendable Base</em>' container reference.
 	 * @see #setExtendableBase(ExtendableElement)
 	 * @see org.storydriven.core.CorePackage#getExtension_ExtendableBase()
-	 * @see org.storydriven.core.ExtendableElement#getExtension
-	 * @model opposite="extension" transient="false" ordered="false"
+	 * @see org.storydriven.core.ExtendableElement#getExtensions
+	 * @model opposite="extensions" transient="false" ordered="false"
 	 * @generated
 	 */
 	ExtendableElement getExtendableBase();

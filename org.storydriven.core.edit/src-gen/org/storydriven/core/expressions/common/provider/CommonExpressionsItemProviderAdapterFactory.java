@@ -202,8 +202,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -247,8 +246,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -297,16 +295,11 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public void dispose() {
-		if (unaryExpressionItemProvider != null)
-			unaryExpressionItemProvider.dispose();
-		if (comparisonExpressionItemProvider != null)
-			comparisonExpressionItemProvider.dispose();
-		if (arithmeticExpressionItemProvider != null)
-			arithmeticExpressionItemProvider.dispose();
-		if (logicalExpressionItemProvider != null)
-			logicalExpressionItemProvider.dispose();
-		if (literalExpressionItemProvider != null)
-			literalExpressionItemProvider.dispose();
+		if (unaryExpressionItemProvider != null) unaryExpressionItemProvider.dispose();
+		if (comparisonExpressionItemProvider != null) comparisonExpressionItemProvider.dispose();
+		if (arithmeticExpressionItemProvider != null) arithmeticExpressionItemProvider.dispose();
+		if (logicalExpressionItemProvider != null) logicalExpressionItemProvider.dispose();
+		if (literalExpressionItemProvider != null) literalExpressionItemProvider.dispose();
 	}
 
 }

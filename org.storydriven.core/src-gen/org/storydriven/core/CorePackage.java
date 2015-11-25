@@ -77,22 +77,22 @@ public interface CorePackage extends EPackage {
 	int EXTENDABLE_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDABLE_ELEMENT__ANNOTATION = EcorePackage.EOBJECT_FEATURE_COUNT + 0;
+	int EXTENDABLE_ELEMENT__ANNOTATIONS = EcorePackage.EOBJECT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDABLE_ELEMENT__EXTENSION = EcorePackage.EOBJECT_FEATURE_COUNT + 1;
+	int EXTENDABLE_ELEMENT__EXTENSIONS = EcorePackage.EOBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Extendable Element</em>' class.
@@ -304,22 +304,22 @@ public interface CorePackage extends EPackage {
 	int COMMENTABLE_ELEMENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENTABLE_ELEMENT__ANNOTATION = EXTENDABLE_ELEMENT__ANNOTATION;
+	int COMMENTABLE_ELEMENT__ANNOTATIONS = EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENTABLE_ELEMENT__EXTENSION = EXTENDABLE_ELEMENT__EXTENSION;
+	int COMMENTABLE_ELEMENT__EXTENSIONS = EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -520,22 +520,22 @@ public interface CorePackage extends EPackage {
 	int COMMENTABLE_ELEMENT_OPERATION_COUNT = EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__ANNOTATION = EXTENDABLE_ELEMENT__ANNOTATION;
+	int EXTENSION__ANNOTATIONS = EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__EXTENSION = EXTENDABLE_ELEMENT__EXTENSION;
+	int EXTENSION__EXTENSIONS = EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -773,22 +773,22 @@ public interface CorePackage extends EPackage {
 	int NAMED_ELEMENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT__ANNOTATION = EXTENDABLE_ELEMENT__ANNOTATION;
+	int NAMED_ELEMENT__ANNOTATIONS = EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT__EXTENSION = EXTENDABLE_ELEMENT__EXTENSION;
+	int NAMED_ELEMENT__EXTENSIONS = EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -999,22 +999,22 @@ public interface CorePackage extends EPackage {
 	int REPOSITORY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__ANNOTATION = NAMED_ELEMENT__ANNOTATION;
+	int REPOSITORY__ANNOTATIONS = NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__EXTENSION = NAMED_ELEMENT__EXTENSION;
+	int REPOSITORY__EXTENSIONS = NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1244,26 +1244,26 @@ public interface CorePackage extends EPackage {
 	EClass getExtendableElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getAnnotation <em>Annotation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getAnnotations <em>Annotations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotation</em>'.
-	 * @see org.storydriven.core.ExtendableElement#getAnnotation()
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
+	 * @see org.storydriven.core.ExtendableElement#getAnnotations()
 	 * @see #getExtendableElement()
 	 * @generated
 	 */
-	EReference getExtendableElement_Annotation();
+	EReference getExtendableElement_Annotations();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getExtension <em>Extension</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getExtensions <em>Extensions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Extension</em>'.
-	 * @see org.storydriven.core.ExtendableElement#getExtension()
+	 * @return the meta object for the containment reference list '<em>Extensions</em>'.
+	 * @see org.storydriven.core.ExtendableElement#getExtensions()
 	 * @see #getExtendableElement()
 	 * @generated
 	 */
-	EReference getExtendableElement_Extension();
+	EReference getExtendableElement_Extensions();
 
 	/**
 	 * Returns the meta object for the '{@link org.storydriven.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}' operation.
@@ -1445,20 +1445,20 @@ public interface CorePackage extends EPackage {
 		EClass EXTENDABLE_ELEMENT = eINSTANCE.getExtendableElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotation</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__ANNOTATION = eINSTANCE.getExtendableElement_Annotation();
+		EReference EXTENDABLE_ELEMENT__ANNOTATIONS = eINSTANCE.getExtendableElement_Annotations();
 
 		/**
-		 * The meta object literal for the '<em><b>Extension</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Extensions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__EXTENSION = eINSTANCE.getExtendableElement_Extension();
+		EReference EXTENDABLE_ELEMENT__EXTENSIONS = eINSTANCE.getExtendableElement_Extensions();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Extension</b></em>' operation.

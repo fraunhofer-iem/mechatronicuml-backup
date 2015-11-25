@@ -16,8 +16,8 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
-import org.storydriven.core.expressions.common.CommonPackage;
-import org.storydriven.core.expressions.common.impl.CommonPackageImpl;
+import org.storydriven.core.expressions.common.CommonExpressionsPackage;
+import org.storydriven.core.expressions.common.impl.CommonExpressionsPackageImpl;
 import org.storydriven.core.impl.CorePackageImpl;
 
 /**
@@ -90,17 +90,17 @@ public class ExpressionsPackageImpl extends EPackageImpl implements
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
-		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI) instanceof CommonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI) : CommonPackage.eINSTANCE);
+		CommonExpressionsPackageImpl theCommonExpressionsPackage = (CommonExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI) instanceof CommonExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI) : CommonExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExpressionsPackage.createPackageContents();
 		theCorePackage.createPackageContents();
-		theCommonPackage.createPackageContents();
+		theCommonExpressionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theExpressionsPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
-		theCommonPackage.initializePackageContents();
+		theCommonExpressionsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theExpressionsPackage.freeze();
@@ -226,11 +226,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CommonPackage theCommonPackage = (CommonPackage)EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonExpressionsPackage theCommonExpressionsPackage = (CommonExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Add subpackages
-		getESubpackages().add(theCommonPackage);
+		getESubpackages().add(theCommonExpressionsPackage);
 
 		// Create type parameters
 

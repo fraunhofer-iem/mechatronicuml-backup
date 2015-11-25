@@ -1,17 +1,15 @@
+
 package org.storydriven.core.properties.common.editor;
 
 /**
  * @generated
  */
-public class LiteralExpressionEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class LiteralExpressionEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public LiteralExpressionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public LiteralExpressionEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,12 +21,6 @@ public class LiteralExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
-
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
-
 			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -37,13 +29,7 @@ public class LiteralExpressionEditor
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
-
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
-
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
 
 		} else {
 		}
@@ -57,39 +43,12 @@ public class LiteralExpressionEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
-			editor.setTooltipMessage("String representation of the value, e.g. \"5\", \"3.14\", \"c\", \"text\", or \"true\".");
+			editor.setTooltipMessage(
+					"String representation of the value, e.g. \"5\", \"3.14\", \"c\", \"text\", or \"true\".");
 
 			this.editorValue_GeneralTab = editor;
 		}
 		return this.editorValue_GeneralTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
-		if (this.editorComment_DocumentationTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-					.getCommentableElement_Comment();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, true);
-
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
-
-			this.editorComment_DocumentationTab = editor;
-		}
-		return this.editorComment_DocumentationTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorExtension_ExtensionsTab = editor;
-		}
-		return this.editorExtension_ExtensionsTab;
 	}
 
 	//
@@ -100,32 +59,22 @@ public class LiteralExpressionEditor
 	 * @generated
 	 */
 	public LiteralExpressionEditor(String tab) {
-		this(
-				tab,
-				org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
-						.getLiteralExpression());
+		this(tab, org.storydriven.core.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE.getLiteralExpression());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new LiteralExpressionEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general"}).contains(tab);
 		}
 	}
 

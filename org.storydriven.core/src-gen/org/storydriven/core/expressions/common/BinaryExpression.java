@@ -25,7 +25,7 @@ import org.storydriven.core.expressions.Expression;
  *   <li>{@link org.storydriven.core.expressions.common.BinaryExpression#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
  *
- * @see org.storydriven.core.expressions.common.CommonPackage#getBinaryExpression()
+ * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getBinaryExpression()
  * @model abstract="true"
  * @generated
  */
@@ -39,7 +39,7 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Left Expression</em>' containment reference.
 	 * @see #setLeftExpression(Expression)
-	 * @see org.storydriven.core.expressions.common.CommonPackage#getBinaryExpression_LeftExpression()
+	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getBinaryExpression_LeftExpression()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Right Expression</em>' containment reference.
 	 * @see #setRightExpression(Expression)
-	 * @see org.storydriven.core.expressions.common.CommonPackage#getBinaryExpression_RightExpression()
+	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getBinaryExpression_RightExpression()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */

@@ -1,3 +1,4 @@
+
 package org.storydriven.core.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,17 +17,14 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new org.storydriven.core.provider.CoreItemProviderAdapterFactory());
+		factories.add(new org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
 
-		factories
-				.add(new org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
+		factories.add(new org.storydriven.core.provider.CoreItemProviderAdapterFactory());
 
-		factories
-				.add(new org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory());
+		factories.add(
+				new org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory());
 
 	}
 

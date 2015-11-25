@@ -1,3 +1,4 @@
+
 package org.storydriven.core.properties.constraint;
 
 public class CreationConstraintContributor

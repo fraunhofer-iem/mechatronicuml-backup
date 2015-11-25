@@ -24,7 +24,7 @@ import org.storydriven.core.expressions.Expression;
  *   <li>{@link org.storydriven.core.expressions.common.LiteralExpression#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.storydriven.core.expressions.common.CommonPackage#getLiteralExpression()
+ * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLiteralExpression()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface LiteralExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see org.storydriven.core.expressions.common.CommonPackage#getLiteralExpression_Value()
+	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLiteralExpression_Value()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

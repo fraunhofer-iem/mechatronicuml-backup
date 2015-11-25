@@ -205,7 +205,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newExtendableBase != null)
-				msgs = ((InternalEObject)newExtendableBase).eInverseAdd(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
+				msgs = ((InternalEObject)newExtendableBase).eInverseAdd(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS, ExtendableElement.class, msgs);
 			msgs = basicSetExtendableBase(newExtendableBase, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -255,7 +255,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case CorePackage.EXTENSION__EXTENDABLE_BASE:
-				return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
+				return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS, ExtendableElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

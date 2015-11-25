@@ -49,10 +49,10 @@
       </eAnnotations>
       <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" ordered="false"
         upperBound="-1" eType="#//Extension" containment="true" eOpposite="#//Extension/extendableBase"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Extension" abstract="true" eSuperTypes="#//ExtendableElement">
@@ -73,7 +73,7 @@
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation" volatile="true"
         transient="true" unsettable="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extendableBase" ordered="false"
-        eType="#//ExtendableElement" eOpposite="#//ExtendableElement/extension">
+        eType="#//ExtendableElement" eOpposite="#//ExtendableElement/extensions">
       <eAnnotations source="subsets" references="#//Extension/base"/>
     </eStructuralFeatures>
   </eClassifiers>

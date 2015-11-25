@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.storydriven.core.ExtendableElement#getAnnotation <em>Annotation</em>}</li>
- *   <li>{@link org.storydriven.core.ExtendableElement#getExtension <em>Extension</em>}</li>
+ *   <li>{@link org.storydriven.core.ExtendableElement#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link org.storydriven.core.ExtendableElement#getExtensions <em>Extensions</em>}</li>
  * </ul>
  *
  * @see org.storydriven.core.CorePackage#getExtendableElement()
@@ -34,38 +34,38 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ExtendableElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Annotation</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EAnnotation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Annotation</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotation</em>' containment reference list.
-	 * @see org.storydriven.core.CorePackage#getExtendableElement_Annotation()
+	 * @return the value of the '<em>Annotations</em>' containment reference list.
+	 * @see org.storydriven.core.CorePackage#getExtendableElement_Annotations()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<EAnnotation> getAnnotation();
+	EList<EAnnotation> getAnnotations();
 
 	/**
-	 * Returns the value of the '<em><b>Extension</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Extensions</b></em>' containment reference list.
 	 * The list contents are of type {@link org.storydriven.core.Extension}.
 	 * It is bidirectional and its opposite is '{@link org.storydriven.core.Extension#getExtendableBase <em>Extendable Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Extension</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Extensions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Extension</em>' containment reference list.
-	 * @see org.storydriven.core.CorePackage#getExtendableElement_Extension()
+	 * @return the value of the '<em>Extensions</em>' containment reference list.
+	 * @see org.storydriven.core.CorePackage#getExtendableElement_Extensions()
 	 * @see org.storydriven.core.Extension#getExtendableBase
 	 * @model opposite="extendableBase" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Extension> getExtension();
+	EList<Extension> getExtensions();
 
 	/**
 	 * <!-- begin-user-doc -->

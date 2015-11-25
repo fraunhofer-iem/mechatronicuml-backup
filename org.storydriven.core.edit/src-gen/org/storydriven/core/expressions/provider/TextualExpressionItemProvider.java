@@ -11,17 +11,15 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.storydriven.core.expressions.TextualExpression} object.
@@ -29,9 +27,7 @@ import org.storydriven.core.expressions.TextualExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TextualExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class TextualExpressionItemProvider extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,18 +63,19 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	protected void addExpressionTextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_TextualExpression_expressionText_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_TextualExpression_expressionText_feature",
-								"_UI_TextualExpression_type"),
-						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
-						true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TextualExpression_expressionText_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_expressionText_feature", "_UI_TextualExpression_type"),
+				 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -88,17 +85,19 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	protected void addLanguagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_TextualExpression_language_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_TextualExpression_language_feature",
-						"_UI_TextualExpression_type"),
-				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TextualExpression_language_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_language_feature", "_UI_TextualExpression_type"),
+				 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -108,19 +107,36 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	protected void addLanguageVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_TextualExpression_languageVersion_feature"),
-						getString(
-								"_UI_PropertyDescriptor_description",
-								"_UI_TextualExpression_languageVersion_feature",
-								"_UI_TextualExpression_type"),
-						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
-						true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TextualExpression_languageVersion_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_languageVersion_feature", "_UI_TextualExpression_type"),
+				 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__AST);
+		}
+		return childrenFeatures;
 	}
 
 	/**
@@ -129,8 +145,22 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns TextualExpression.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TextualExpression"));
 	}
 
 	/**
@@ -141,9 +171,10 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TextualExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_TextualExpression_type")
-				: getString("_UI_TextualExpression_type") + " " + label;
+		String label = ((TextualExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_TextualExpression_type") :
+			getString("_UI_TextualExpression_type") + " " + label;
 	}
 
 	/**
@@ -158,12 +189,14 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextualExpression.class)) {
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__AST:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -179,6 +212,36 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__AST,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__AST,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__AST,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__AST,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__AST,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__AST,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

@@ -22,7 +22,7 @@ package org.storydriven.core.expressions.common;
  *   <li>{@link org.storydriven.core.expressions.common.ComparisonExpression#getOperator <em>Operator</em>}</li>
  * </ul>
  *
- * @see org.storydriven.core.expressions.common.CommonPackage#getComparisonExpression()
+ * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getComparisonExpression()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface ComparisonExpression extends BinaryExpression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.storydriven.core.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
-	 * @see org.storydriven.core.expressions.common.CommonPackage#getComparisonExpression_Operator()
+	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getComparisonExpression_Operator()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
