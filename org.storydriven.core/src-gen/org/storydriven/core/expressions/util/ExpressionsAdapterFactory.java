@@ -12,7 +12,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.expressions.*;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
@@ -60,7 +59,7 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -72,31 +71,27 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected ExpressionsSwitch<Adapter> modelSwitch = new ExpressionsSwitch<Adapter>() {
-		@Override
-		public Adapter caseExpression(Expression object) {
-			return createExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseTextualExpression(TextualExpression object) {
-			return createTextualExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseExtendableElement(ExtendableElement object) {
-			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCommentableElement(CommentableElement object) {
-			return createCommentableElementAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseTextualExpression(TextualExpression object) {
+				return createTextualExpressionAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -108,7 +103,7 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

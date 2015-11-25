@@ -284,16 +284,6 @@ public interface CorePackage extends EPackage {
 	int EXTENDABLE_ELEMENT_OPERATION_COUNT = EcorePackage.EOBJECT_OPERATION_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.storydriven.core.impl.TypedElementImpl <em>Typed Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.storydriven.core.impl.TypedElementImpl
-	 * @see org.storydriven.core.impl.CorePackageImpl#getTypedElement()
-	 * @generated
-	 */
-	int TYPED_ELEMENT = 4;
-
-	/**
 	 * The meta object id for the '{@link org.storydriven.core.impl.ExtensionImpl <em>Extension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -999,231 +989,6 @@ public interface CorePackage extends EPackage {
 	int NAMED_ELEMENT_OPERATION_COUNT = EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT__ANNOTATION = EXTENDABLE_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT__EXTENSION = EXTENDABLE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT__TYPE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT__GENERIC_TYPE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Typed Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT_FEATURE_COUNT = EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ECLASS = EXTENDABLE_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___EIS_PROXY = EXTENDABLE_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ERESOURCE = EXTENDABLE_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ECONTAINER = EXTENDABLE_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ECONTAINING_FEATURE = EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ECONTAINMENT_FEATURE = EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ECONTENTS = EXTENDABLE_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___EALL_CONTENTS = EXTENDABLE_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ECROSS_REFERENCES = EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___EGET__ESTRUCTURALFEATURE = EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE = EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___EUNSET__ESTRUCTURALFEATURE = EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___EINVOKE__EOPERATION_ELIST = EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___GET_EXTENSION__ECLASS = EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___PROVIDE_EXTENSION__ECLASS = EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___GET_ANNOTATION__STRING = EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT___PROVIDE_ANNOTATION__STRING = EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Typed Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT_OPERATION_COUNT = EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.storydriven.core.impl.RepositoryImpl <em>Repository</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1231,7 +996,7 @@ public interface CorePackage extends EPackage {
 	 * @see org.storydriven.core.impl.CorePackageImpl#getRepository()
 	 * @generated
 	 */
-	int REPOSITORY = 5;
+	int REPOSITORY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1459,38 +1224,6 @@ public interface CorePackage extends EPackage {
 	int REPOSITORY_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link org.storydriven.core.TypedElement <em>Typed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Typed Element</em>'.
-	 * @see org.storydriven.core.TypedElement
-	 * @generated
-	 */
-	EClass getTypedElement();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.storydriven.core.TypedElement#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.storydriven.core.TypedElement#getType()
-	 * @see #getTypedElement()
-	 * @generated
-	 */
-	EReference getTypedElement_Type();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.storydriven.core.TypedElement#getGenericType <em>Generic Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Generic Type</em>'.
-	 * @see org.storydriven.core.TypedElement#getGenericType()
-	 * @see #getTypedElement()
-	 * @generated
-	 */
-	EReference getTypedElement_GenericType();
-
-	/**
 	 * Returns the meta object for class '{@link org.storydriven.core.Repository <em>Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1511,22 +1244,22 @@ public interface CorePackage extends EPackage {
 	EClass getExtendableElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getAnnotations <em>Annotation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getAnnotation <em>Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Annotation</em>'.
-	 * @see org.storydriven.core.ExtendableElement#getAnnotations()
+	 * @see org.storydriven.core.ExtendableElement#getAnnotation()
 	 * @see #getExtendableElement()
 	 * @generated
 	 */
 	EReference getExtendableElement_Annotation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getExtensions <em>Extension</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.storydriven.core.ExtendableElement#getExtension <em>Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Extension</em>'.
-	 * @see org.storydriven.core.ExtendableElement#getExtensions()
+	 * @see org.storydriven.core.ExtendableElement#getExtension()
 	 * @see #getExtendableElement()
 	 * @generated
 	 */
@@ -1692,33 +1425,6 @@ public interface CorePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.storydriven.core.impl.TypedElementImpl <em>Typed Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.core.impl.TypedElementImpl
-		 * @see org.storydriven.core.impl.CorePackageImpl#getTypedElement()
-		 * @generated
-		 */
-		EClass TYPED_ELEMENT = eINSTANCE.getTypedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPED_ELEMENT__TYPE = eINSTANCE.getTypedElement_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Generic Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPED_ELEMENT__GENERIC_TYPE = eINSTANCE
-				.getTypedElement_GenericType();
-
-		/**
 		 * The meta object literal for the '{@link org.storydriven.core.impl.RepositoryImpl <em>Repository</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1744,8 +1450,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__ANNOTATION = eINSTANCE
-				.getExtendableElement_Annotation();
+		EReference EXTENDABLE_ELEMENT__ANNOTATION = eINSTANCE.getExtendableElement_Annotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Extension</b></em>' containment reference list feature.
@@ -1753,8 +1458,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__EXTENSION = eINSTANCE
-				.getExtendableElement_Extension();
+		EReference EXTENDABLE_ELEMENT__EXTENSION = eINSTANCE.getExtendableElement_Extension();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Extension</b></em>' operation.
@@ -1762,8 +1466,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = eINSTANCE
-				.getExtendableElement__GetExtension__EClass();
+		EOperation EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = eINSTANCE.getExtendableElement__GetExtension__EClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Provide Extension</b></em>' operation.
@@ -1771,8 +1474,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS = eINSTANCE
-				.getExtendableElement__ProvideExtension__EClass();
+		EOperation EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS = eINSTANCE.getExtendableElement__ProvideExtension__EClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Annotation</b></em>' operation.
@@ -1780,8 +1482,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING = eINSTANCE
-				.getExtendableElement__GetAnnotation__String();
+		EOperation EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING = eINSTANCE.getExtendableElement__GetAnnotation__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Provide Annotation</b></em>' operation.
@@ -1789,8 +1490,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING = eINSTANCE
-				.getExtendableElement__ProvideAnnotation__String();
+		EOperation EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING = eINSTANCE.getExtendableElement__ProvideAnnotation__String();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.impl.ExtensionImpl <em>Extension</em>}' class.
@@ -1824,8 +1524,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENSION__OWNING_ANNOTATION = eINSTANCE
-				.getExtension_OwningAnnotation();
+		EReference EXTENSION__OWNING_ANNOTATION = eINSTANCE.getExtension_OwningAnnotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Extendable Base</b></em>' container reference feature.
@@ -1833,8 +1532,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENSION__EXTENDABLE_BASE = eINSTANCE
-				.getExtension_ExtendableBase();
+		EReference EXTENSION__EXTENDABLE_BASE = eINSTANCE.getExtension_ExtendableBase();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.impl.CommentableElementImpl <em>Commentable Element</em>}' class.
@@ -1852,8 +1550,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMENTABLE_ELEMENT__COMMENT = eINSTANCE
-				.getCommentableElement_Comment();
+		EAttribute COMMENTABLE_ELEMENT__COMMENT = eINSTANCE.getCommentableElement_Comment();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.impl.NamedElementImpl <em>Named Element</em>}' class.

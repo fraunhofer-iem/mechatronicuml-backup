@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.storydriven.core.ExtendableElement#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link org.storydriven.core.ExtendableElement#getExtensions <em>Extension</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.storydriven.core.ExtendableElement#getAnnotation <em>Annotation</em>}</li>
+ *   <li>{@link org.storydriven.core.ExtendableElement#getExtension <em>Extension</em>}</li>
+ * </ul>
  *
  * @see org.storydriven.core.CorePackage#getExtendableElement()
  * @model abstract="true"
@@ -44,10 +44,10 @@ public interface ExtendableElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Annotation</em>' containment reference list.
 	 * @see org.storydriven.core.CorePackage#getExtendableElement_Annotation()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<EAnnotation> getAnnotations();
+	EList<EAnnotation> getAnnotation();
 
 	/**
 	 * Returns the value of the '<em><b>Extension</b></em>' containment reference list.
@@ -62,10 +62,10 @@ public interface ExtendableElement extends EObject {
 	 * @return the value of the '<em>Extension</em>' containment reference list.
 	 * @see org.storydriven.core.CorePackage#getExtendableElement_Extension()
 	 * @see org.storydriven.core.Extension#getExtendableBase
-	 * @model opposite="extendableBase" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="extendableBase" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Extension> getExtensions();
+	EList<Extension> getExtension();
 
 	/**
 	 * <!-- begin-user-doc -->

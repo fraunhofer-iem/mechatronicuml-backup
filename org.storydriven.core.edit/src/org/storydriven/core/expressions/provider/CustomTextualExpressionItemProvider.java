@@ -26,12 +26,6 @@ public class CustomTextualExpressionItemProvider extends TextualExpressionItemPr
 			buffer.append(language);
 		}
 
-		String languageVersion = textualExpression.getLanguageVersion();
-		if (languageVersion != null) {
-			buffer.append(' ');
-			buffer.append(languageVersion);
-		}
-
 		return buffer.toString();
 	}
 }

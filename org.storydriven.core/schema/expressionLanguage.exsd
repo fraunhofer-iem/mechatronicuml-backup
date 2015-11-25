@@ -63,6 +63,16 @@
                </documentation>
             </annotation>
          </attribute>
+         <attribute name="grammar" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.storydriven.core.expressions.IExpressionLanguageGrammar"/>
+               </appinfo>
+            </annotation>
+         </attribute>
       </complexType>
    </element>
 

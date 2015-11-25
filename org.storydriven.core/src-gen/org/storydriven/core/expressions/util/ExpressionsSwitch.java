@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.expressions.*;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
@@ -54,7 +53,7 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -73,32 +72,24 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case ExpressionsPackage.EXPRESSION: {
-			Expression expression = (Expression) theEObject;
-			T result = caseExpression(expression);
-			if (result == null)
-				result = caseCommentableElement(expression);
-			if (result == null)
-				result = caseExtendableElement(expression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ExpressionsPackage.TEXTUAL_EXPRESSION: {
-			TextualExpression textualExpression = (TextualExpression) theEObject;
-			T result = caseTextualExpression(textualExpression);
-			if (result == null)
-				result = caseExpression(textualExpression);
-			if (result == null)
-				result = caseCommentableElement(textualExpression);
-			if (result == null)
-				result = caseExtendableElement(textualExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
+			case ExpressionsPackage.EXPRESSION: {
+				Expression expression = (Expression)theEObject;
+				T result = caseExpression(expression);
+				if (result == null) result = caseCommentableElement(expression);
+				if (result == null) result = caseExtendableElement(expression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpressionsPackage.TEXTUAL_EXPRESSION: {
+				TextualExpression textualExpression = (TextualExpression)theEObject;
+				T result = caseTextualExpression(textualExpression);
+				if (result == null) result = caseExpression(textualExpression);
+				if (result == null) result = caseCommentableElement(textualExpression);
+				if (result == null) result = caseExtendableElement(textualExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			default: return defaultCase(theEObject);
 		}
 	}
 

@@ -19,13 +19,13 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.UnaryExpression#getEnclosedExpression <em>Enclosed Expression</em>}</li>
  *   <li>{@link org.storydriven.core.expressions.common.UnaryExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getUnaryExpression()
+ * @see org.storydriven.core.expressions.common.CommonPackage#getUnaryExpression()
  * @model
  * @generated
  */
@@ -39,8 +39,8 @@ public interface UnaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Enclosed Expression</em>' containment reference.
 	 * @see #setEnclosedExpression(Expression)
-	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getUnaryExpression_EnclosedExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @see org.storydriven.core.expressions.common.CommonPackage#getUnaryExpression_EnclosedExpression()
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getEnclosedExpression();
@@ -70,7 +70,7 @@ public interface UnaryExpression extends Expression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.storydriven.core.expressions.common.UnaryOperator
 	 * @see #setOperator(UnaryOperator)
-	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getUnaryExpression_Operator()
+	 * @see org.storydriven.core.expressions.common.CommonPackage#getUnaryExpression_Operator()
 	 * @model required="true"
 	 * @generated
 	 */

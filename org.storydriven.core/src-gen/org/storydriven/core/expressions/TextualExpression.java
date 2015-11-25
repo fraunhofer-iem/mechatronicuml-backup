@@ -6,6 +6,8 @@
  */
 package org.storydriven.core.expressions;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Textual Expression</b></em>'.
@@ -17,12 +19,13 @@ package org.storydriven.core.expressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.TextualExpression#getExpressionText <em>Expression Text</em>}</li>
  *   <li>{@link org.storydriven.core.expressions.TextualExpression#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.storydriven.core.expressions.TextualExpression#getLanguageVersion <em>Language Version</em>}</li>
+ *   <li>{@link org.storydriven.core.expressions.TextualExpression#getAst <em>Ast</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.storydriven.core.expressions.ExpressionsPackage#getTextualExpression()
  * @model
@@ -84,13 +87,12 @@ public interface TextualExpression extends Expression {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * String representation of the used language's version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]
-	 * Examples: 1.4 or 3.0.1 or 1.0.2.20101208.
+	 * String representation of the used language which has to be unique. Examples are OCL and Java.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Language Version</em>' attribute.
 	 * @see #setLanguageVersion(String)
 	 * @see org.storydriven.core.expressions.ExpressionsPackage#getTextualExpression_LanguageVersion()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getLanguageVersion();
@@ -104,5 +106,31 @@ public interface TextualExpression extends Expression {
 	 * @generated
 	 */
 	void setLanguageVersion(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ast</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ast</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ast</em>' containment reference.
+	 * @see #setAst(EObject)
+	 * @see org.storydriven.core.expressions.ExpressionsPackage#getTextualExpression_Ast()
+	 * @model containment="true" transient="true"
+	 * @generated
+	 */
+	EObject getAst();
+
+	/**
+	 * Sets the value of the '{@link org.storydriven.core.expressions.TextualExpression#getAst <em>Ast</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ast</em>' containment reference.
+	 * @see #getAst()
+	 * @generated
+	 */
+	void setAst(EObject value);
 
 } // TextualExpression

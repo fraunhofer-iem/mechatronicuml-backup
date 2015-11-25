@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.core.expressions.*;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
@@ -32,12 +31,12 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements
 	 */
 	public static ExpressionsFactory init() {
 		try {
-			ExpressionsFactory theExpressionsFactory = (ExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory(ExpressionsPackage.eNS_URI);
+			ExpressionsFactory theExpressionsFactory = (ExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory(ExpressionsPackage.eNS_URI);
 			if (theExpressionsFactory != null) {
 				return theExpressionsFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ExpressionsFactoryImpl();
@@ -61,11 +60,9 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case ExpressionsPackage.TEXTUAL_EXPRESSION:
-			return createTextualExpression();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case ExpressionsPackage.TEXTUAL_EXPRESSION: return createTextualExpression();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -85,7 +82,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements
 	 * @generated
 	 */
 	public ExpressionsPackage getExpressionsPackage() {
-		return (ExpressionsPackage) getEPackage();
+		return (ExpressionsPackage)getEPackage();
 	}
 
 	/**

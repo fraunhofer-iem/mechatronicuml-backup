@@ -88,18 +88,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true" eSuperTypes="#//ExtendableElement">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType."/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"
-        changeable="false" volatile="true" transient="true" derived="true">
-      <eAnnotations source="union"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="genericType" ordered="false"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EGenericType"
-        unsettable="true" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repository" abstract="true" eSuperTypes="#//NamedElement #//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Repositories are used for grouping model elements that may be reused in different contexts."/>
@@ -137,11 +125,13 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageVersion" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="String representation of the used language's version. The format is &lt;Major>.&lt;Minor>[.&lt;Revision>[.&lt;Build>]]&#xD;&#xA;Examples: 1.4 or 3.0.1 or 1.0.2.20101208."/>
+          <details key="documentation" value="String representation of the used language which has to be unique. Examples are OCL and Java."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ast" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+          transient="true" containment="true"/>
     </eClassifiers>
     <eSubpackages name="common" nsURI="http://www.storydriven.org/core/expressions/common/0.3.1"
         nsPrefix="sdcec">

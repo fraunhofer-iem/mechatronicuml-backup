@@ -9,6 +9,7 @@ package org.storydriven.core.expressions;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
 /**
@@ -63,8 +64,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExpressionsPackage eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsPackageImpl
-			.init();
+	ExpressionsPackage eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.core.expressions.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -357,13 +357,22 @@ public interface ExpressionsPackage extends EPackage {
 	int TEXTUAL_EXPRESSION__LANGUAGE_VERSION = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Ast</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXTUAL_EXPRESSION__AST = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Textual Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+	int TEXTUAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -599,6 +608,17 @@ public interface ExpressionsPackage extends EPackage {
 	EAttribute getTextualExpression_LanguageVersion();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.storydriven.core.expressions.TextualExpression#getAst <em>Ast</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Ast</em>'.
+	 * @see org.storydriven.core.expressions.TextualExpression#getAst()
+	 * @see #getTextualExpression()
+	 * @generated
+	 */
+	EReference getTextualExpression_Ast();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -647,8 +667,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__EXPRESSION_TEXT = eINSTANCE
-				.getTextualExpression_ExpressionText();
+		EAttribute TEXTUAL_EXPRESSION__EXPRESSION_TEXT = eINSTANCE.getTextualExpression_ExpressionText();
 
 		/**
 		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
@@ -656,8 +675,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE = eINSTANCE
-				.getTextualExpression_Language();
+		EAttribute TEXTUAL_EXPRESSION__LANGUAGE = eINSTANCE.getTextualExpression_Language();
 
 		/**
 		 * The meta object literal for the '<em><b>Language Version</b></em>' attribute feature.
@@ -665,8 +683,15 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE
-				.getTextualExpression_LanguageVersion();
+		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE.getTextualExpression_LanguageVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Ast</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEXTUAL_EXPRESSION__AST = eINSTANCE.getTextualExpression_Ast();
 
 	}
 

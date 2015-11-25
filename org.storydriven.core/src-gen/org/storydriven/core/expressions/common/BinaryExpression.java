@@ -19,13 +19,13 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.BinaryExpression#getLeftExpression <em>Left Expression</em>}</li>
  *   <li>{@link org.storydriven.core.expressions.common.BinaryExpression#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getBinaryExpression()
+ * @see org.storydriven.core.expressions.common.CommonPackage#getBinaryExpression()
  * @model abstract="true"
  * @generated
  */
@@ -39,8 +39,8 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Left Expression</em>' containment reference.
 	 * @see #setLeftExpression(Expression)
-	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getBinaryExpression_LeftExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @see org.storydriven.core.expressions.common.CommonPackage#getBinaryExpression_LeftExpression()
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getLeftExpression();
@@ -64,8 +64,8 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Right Expression</em>' containment reference.
 	 * @see #setRightExpression(Expression)
-	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getBinaryExpression_RightExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @see org.storydriven.core.expressions.common.CommonPackage#getBinaryExpression_RightExpression()
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getRightExpression();
