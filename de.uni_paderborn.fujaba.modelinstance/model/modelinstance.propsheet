@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_VZEMMMwbEeSjx7OWZCcdLw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler xmi:id="_VZEMMcwbEeSjx7OWZCcdLw"/>
+  <genModel href="modelinstance.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin xmi:id="_VZEMMswbEeSjx7OWZCcdLw" id="de.uni_paderborn.fujaba.modelinstance.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <packages xmi:id="_VZEMM8wbEeSjx7OWZCcdLw">
+    <genPackage href="modelinstance.genmodel#//modelinstance"/>
+    <classes xmi:id="_VZEzQMwbEeSjx7OWZCcdLw">
+      <genClass href="modelinstance.genmodel#//modelinstance/RootNode"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZEzQcwbEeSjx7OWZCcdLw" initializeOCLExpression="">
+        <genFeature href="modelinstance.genmodel#//modelinstance/RootNode/categories"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZEzQswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZEzQ8wbEeSjx7OWZCcdLw" title="Lists" properties="_VZEzQcwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZEzRMwbEeSjx7OWZCcdLw">
+      <genClass href="modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/name"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZEzRcwbEeSjx7OWZCcdLw" initializeOCLExpression="">
+        <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZEzRswbEeSjx7OWZCcdLw"/>
+        <creationConstraint xmi:id="_VZEzR8wbEeSjx7OWZCcdLw">
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_VZEzSMwbEeSjx7OWZCcdLw" expression="isValidEClass(eclass)"/>
+        </creationConstraint>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZEzScwbEeSjx7OWZCcdLw" title="Lists" properties="_VZEzRcwbEeSjx7OWZCcdLw"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
