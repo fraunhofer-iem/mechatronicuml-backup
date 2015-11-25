@@ -77,22 +77,22 @@ public interface TypesPackage extends EPackage {
 	int DATA_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int DATA_TYPE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int DATA_TYPE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -312,22 +312,22 @@ public interface TypesPackage extends EPackage {
 	int ARRAY_DATA_TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+	int ARRAY_DATA_TYPE__ANNOTATIONS = DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+	int ARRAY_DATA_TYPE__EXTENSIONS = DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -565,22 +565,22 @@ public interface TypesPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+	int PRIMITIVE_DATA_TYPE__ANNOTATIONS = DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+	int PRIMITIVE_DATA_TYPE__EXTENSIONS = DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -809,22 +809,22 @@ public interface TypesPackage extends EPackage {
 	int RANGED_PRIMITIVE_DATA_TYPE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RANGED_PRIMITIVE_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+	int RANGED_PRIMITIVE_DATA_TYPE__ANNOTATIONS = DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RANGED_PRIMITIVE_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+	int RANGED_PRIMITIVE_DATA_TYPE__EXTENSIONS = DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1062,22 +1062,22 @@ public interface TypesPackage extends EPackage {
 	int STRUCTURE_DATA_TYPE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+	int STRUCTURE_DATA_TYPE__ANNOTATIONS = DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+	int STRUCTURE_DATA_TYPE__EXTENSIONS = DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1306,22 +1306,22 @@ public interface TypesPackage extends EPackage {
 	int ATTRIBUTE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__ANNOTATION = BehaviorPackage.TYPED_NAMED_ELEMENT__ANNOTATION;
+	int ATTRIBUTE__ANNOTATIONS = BehaviorPackage.TYPED_NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__EXTENSION = BehaviorPackage.TYPED_NAMED_ELEMENT__EXTENSION;
+	int ATTRIBUTE__EXTENSIONS = BehaviorPackage.TYPED_NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

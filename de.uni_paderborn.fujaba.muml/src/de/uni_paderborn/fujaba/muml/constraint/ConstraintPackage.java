@@ -81,22 +81,22 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFICATION_CONSTRAINT_REPOSITORY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFICATION_CONSTRAINT_REPOSITORY__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int VERIFICATION_CONSTRAINT_REPOSITORY__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFICATION_CONSTRAINT_REPOSITORY__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int VERIFICATION_CONSTRAINT_REPOSITORY__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Verification Constraint Repository</em>' class.
@@ -298,22 +298,22 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFIABLE_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_ELEMENT__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int VERIFIABLE_ELEMENT__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_ELEMENT__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int VERIFIABLE_ELEMENT__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Verification Constraint Repositories</b></em>' containment reference list.

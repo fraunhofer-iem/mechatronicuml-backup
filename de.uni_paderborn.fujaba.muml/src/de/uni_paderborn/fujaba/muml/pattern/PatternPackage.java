@@ -82,22 +82,22 @@ public interface PatternPackage extends EPackage {
 	int ABSTRACT_COORDINATION_PATTERN = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_PATTERN__ANNOTATION = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ANNOTATION;
+	int ABSTRACT_COORDINATION_PATTERN__ANNOTATIONS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_PATTERN__EXTENSION = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__EXTENSION;
+	int ABSTRACT_COORDINATION_PATTERN__EXTENSIONS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -576,22 +576,22 @@ public interface PatternPackage extends EPackage {
 	int VERIFIED_CONFIGURATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIED_CONFIGURATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int VERIFIED_CONFIGURATION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIED_CONFIGURATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int VERIFIED_CONFIGURATION__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -829,22 +829,22 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN_VARIANT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN_VARIANT__ANNOTATION = ABSTRACT_COORDINATION_PATTERN__ANNOTATION;
+	int COORDINATION_PATTERN_VARIANT__ANNOTATIONS = ABSTRACT_COORDINATION_PATTERN__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN_VARIANT__EXTENSION = ABSTRACT_COORDINATION_PATTERN__EXTENSION;
+	int COORDINATION_PATTERN_VARIANT__EXTENSIONS = ABSTRACT_COORDINATION_PATTERN__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1144,22 +1144,22 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN_VARIANT_OPERATION_COUNT = ABSTRACT_COORDINATION_PATTERN_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__ANNOTATION = ABSTRACT_COORDINATION_PATTERN__ANNOTATION;
+	int COORDINATION_PATTERN__ANNOTATIONS = ABSTRACT_COORDINATION_PATTERN__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN__EXTENSION = ABSTRACT_COORDINATION_PATTERN__EXTENSION;
+	int COORDINATION_PATTERN__EXTENSIONS = ABSTRACT_COORDINATION_PATTERN__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

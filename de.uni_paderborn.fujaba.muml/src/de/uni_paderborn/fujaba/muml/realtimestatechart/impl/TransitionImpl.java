@@ -57,8 +57,8 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getExtensions <em>Extensions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getSynchronization <em>Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getTarget <em>Target</em>}</li>
@@ -83,7 +83,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
  */
 public class TransitionImpl extends PrioritizedElementImpl implements Transition {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -93,7 +93,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	protected EList<EAnnotation> annotations;
 
 	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
+	 * The cached value of the '{@link #getExtensions() <em>Extensions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getExtensions()
@@ -344,7 +344,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	 */
 	public EList<EAnnotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartPackage.TRANSITION__ANNOTATION);
+			annotations = new EObjectContainmentEList<EAnnotation>(EAnnotation.class, this, RealtimestatechartPackage.TRANSITION__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -356,7 +356,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	 */
 	public EList<Extension> getExtensions() {
 		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartPackage.TRANSITION__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+			extensions = new EObjectContainmentWithInverseEList<Extension>(Extension.class, this, RealtimestatechartPackage.TRANSITION__EXTENSIONS, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
 		return extensions;
 	}
@@ -936,7 +936,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
+			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				if (target != null)
@@ -958,9 +958,9 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
+			case RealtimestatechartPackage.TRANSITION__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
+			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return basicSetSynchronization(null, msgs);
@@ -992,9 +992,9 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
+			case RealtimestatechartPackage.TRANSITION__ANNOTATIONS:
 				return getAnnotations();
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
+			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 				return getExtensions();
 			case RealtimestatechartPackage.TRANSITION__COMMENT:
 				return getComment();
@@ -1050,11 +1050,11 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
+			case RealtimestatechartPackage.TRANSITION__ANNOTATIONS:
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
+			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
 				return;
@@ -1113,10 +1113,10 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
+			case RealtimestatechartPackage.TRANSITION__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
+			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 				getExtensions().clear();
 				return;
 			case RealtimestatechartPackage.TRANSITION__COMMENT:
@@ -1170,9 +1170,9 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
+			case RealtimestatechartPackage.TRANSITION__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case RealtimestatechartPackage.TRANSITION__EXTENSION:
+			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 				return extensions != null && !extensions.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
@@ -1228,8 +1228,8 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 		}
 		if (baseClass == ExtendableElement.class) {
 			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.TRANSITION__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case RealtimestatechartPackage.TRANSITION__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+				case RealtimestatechartPackage.TRANSITION__ANNOTATIONS: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
+				case RealtimestatechartPackage.TRANSITION__EXTENSIONS: return CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 				default: return -1;
 			}
 		}
@@ -1256,8 +1256,8 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 		}
 		if (baseClass == ExtendableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return RealtimestatechartPackage.TRANSITION__ANNOTATION;
-				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return RealtimestatechartPackage.TRANSITION__EXTENSION;
+				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS: return RealtimestatechartPackage.TRANSITION__ANNOTATIONS;
+				case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS: return RealtimestatechartPackage.TRANSITION__EXTENSIONS;
 				default: return -1;
 			}
 		}

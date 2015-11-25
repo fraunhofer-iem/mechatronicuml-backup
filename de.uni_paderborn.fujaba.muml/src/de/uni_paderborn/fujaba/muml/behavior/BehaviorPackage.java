@@ -187,22 +187,22 @@ public interface BehaviorPackage extends EPackage {
 	int OPERATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int OPERATION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int OPERATION__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -439,22 +439,22 @@ public interface BehaviorPackage extends EPackage {
 	int OPERATION_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int TYPED_NAMED_ELEMENT__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int TYPED_NAMED_ELEMENT__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -674,22 +674,22 @@ public interface BehaviorPackage extends EPackage {
 	int PARAMETER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__ANNOTATION = TYPED_NAMED_ELEMENT__ANNOTATION;
+	int PARAMETER__ANNOTATIONS = TYPED_NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__EXTENSION = TYPED_NAMED_ELEMENT__EXTENSION;
+	int PARAMETER__EXTENSIONS = TYPED_NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -918,22 +918,22 @@ public interface BehaviorPackage extends EPackage {
 	int PARAMETER_BINDING = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int PARAMETER_BINDING__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int PARAMETER_BINDING__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -1144,22 +1144,22 @@ public interface BehaviorPackage extends EPackage {
 	int PARAMETER_BINDING_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__ANNOTATION = TYPED_NAMED_ELEMENT__ANNOTATION;
+	int VARIABLE__ANNOTATIONS = TYPED_NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__EXTENSION = TYPED_NAMED_ELEMENT__EXTENSION;
+	int VARIABLE__EXTENSIONS = TYPED_NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1407,22 +1407,22 @@ public interface BehaviorPackage extends EPackage {
 	int OPERATION_REPOSITORY = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_REPOSITORY__ANNOTATION = CorePackage.REPOSITORY__ANNOTATION;
+	int OPERATION_REPOSITORY__ANNOTATIONS = CorePackage.REPOSITORY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_REPOSITORY__EXTENSION = CorePackage.REPOSITORY__EXTENSION;
+	int OPERATION_REPOSITORY__EXTENSIONS = CorePackage.REPOSITORY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
