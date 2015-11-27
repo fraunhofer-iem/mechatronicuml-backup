@@ -2,9 +2,11 @@ import transforms.lib.MUML2MUML;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
 modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype instancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
 modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
@@ -137,7 +139,7 @@ constructor Synchronization :: Synchronization(channel : SynchronizationChannel,
 		
 		syncChannel := channel;		
 		kind := syncKind; 		
-		selectorExpression := selectorExp;
+		selectorExpression := selectorExp.mapExpression();
 }
 
 mapping Synchronization :: Synchronization2Synchronization() : Synchronization {
@@ -239,14 +241,20 @@ mapping Expression :: Expression2Expression() : Expression disjuncts
 	                                           mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
 
 // Create an OrExpr to capture the cases in which two transitions are created (i.e. when urgent and non-urgent transitions synchronize and a transition is non-urgent)
-mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and not self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent} {
-	leftOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2UrgentTransition()}};
-	rightOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition()}};
+mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent} {
+	leftOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2UrgentTransition();
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)
+	
+	}};
+	rightOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)
+	}};
 }
 
 mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}{
 	// taking care of transitionFiringExpr with transitions that are mapped with Transition2NonUrgentTransition. Only called when TransitionFiringExpr2OrExpr does not apply
-	transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition()};
+	transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)};
 }
 
 helper SynchronizationChannel :: urgentAndNonUrgentTransitionsSynchronize() : Boolean{
