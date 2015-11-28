@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -91,9 +92,12 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 			if (!filterOcl.isEmpty()) {
 				try {
 					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), filterOcl);
+					filterQuery.getEvaluationEnvironment().add("context", object);
 					Object choice = filterQuery.evaluate(object);
 					Collection<Object> choices = new ArrayList<Object>();
-					choices.add(null);
+					if (feature instanceof EReference) {
+						choices.add(null);
+					}
 					if (choice instanceof Collection) {
 						for (Object o : (Collection<?>) choice) {
 							if (o != null) {
@@ -182,7 +186,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 */
 	protected void checkResult(Collection<?> choices) {
 		for (Object object : choices) {
-			if (object != null && !feature.getEType().isInstance(object)) {
+			if (!feature.getEType().isInstance(object)) {
 				throw new RuntimeException("[OCL Choices] Invalid choice returned for " + feature.getEContainingClass().getName() + "." + feature.getName() + " : " + feature.getEType().getName() + ". Element was: " + object.toString());
 			}
 		}
