@@ -85,6 +85,8 @@ public class SpinnerPropertyEditor extends
 		EDataType dataType = ((EAttribute) feature).getEAttributeType();
 		if (dataType.getName() == "EInt") {
 			newValue = (int) doubleValue;
+		} else if (dataType.getName() == "ELong") {
+			newValue = (long) doubleValue;
 		} else if (dataType.getName() == "EFloat") {
 			newValue = (float) doubleValue;
 		} else if (dataType.getName() == "EDouble") {
