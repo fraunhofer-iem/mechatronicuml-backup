@@ -34,7 +34,7 @@ mapping RealtimeStatechart::rtsc2graphviz() : DotGraph
 	inherits EObject::initialGraphSettings, EObject::initialNodeSettings, EObject::initialEdgeSettings
 {
 	var nodeList : Sequence(DotNode) := self.states->map state2node();
-	self.transitions->map transition2edge();
+	self.transitions->transition2edge();
 	if (self.isPortRtsc()) then {
 		self.addPortNodes(result);
 		subgraphs += object DotGraph {
@@ -56,7 +56,7 @@ mapping RealtimeStatechart::rtsc2graphviz() : DotGraph
 }
 
 helper Transition::fixupContainments(inout graph : DotGraph) {
-	log("call: " + self.source.name);
+	log("call: " + self.source.name + " -> " + self.target.name);
 	var edges : Sequence(DotEdge) := self.resolve(DotEdge);
 	var nodes : Sequence(DotNode) := self.resolve(DotNode);
 	assert fatal (edges->notEmpty()) with log("err");
@@ -71,15 +71,26 @@ mapping State::state2node() : DotNode {
 	name := self.name;
 }
 
-mapping Transition::transition2edge() : e1:DotEdge, e2:DotEdge, n:DotNode {
-	// include prio in the name in order to handle multiple transitions
-	// from node to another
-	n.name := self.getName();
-	//n.name := 'transitionNode_' + self.source.name + '_' + self.target.name;
-	e1.source := self.source.resolveone(DotNode);
-	e1.target := n;
-	e2.source := n;
-	e2.target := self.target.resolveone(DotNode);
+helper Transition::transition2edge() {
+	// establishes the needed traces
+	var node : DotNode := self.map transition2node();
+	self.map transition2edge(node, true);
+	self.map transition2edge(node, false);
+	return;
+}
+
+mapping Transition::transition2node() : DotNode {
+	name := self.getName();
+}
+
+mapping Transition::transition2edge(node : DotNode, isSource : Boolean) : DotEdge {
+	if (isSource) {
+		source := self.source.resolveone(DotNode);
+		target := node;
+	} else {
+		source := node;
+		target := self.target.resolveone(DotNode);
+	} endif;
 }
 
 helper RealtimeStatechart::addPortNodes(inout graph : DotGraph) {
