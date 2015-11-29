@@ -21,11 +21,11 @@ public class GenTaskEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorGenComponentInstances_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorGenComponentInstances_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorGenComponentInstances_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorGenComponentInstances_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -43,17 +43,17 @@ public class GenTaskEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenComponentInstances_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenComponentInstances_PSMTab_Editor() {
-		if (this.editorGenComponentInstances_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenComponentInstances_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenComponentInstances_property_tab_psmTab_Editor() {
+		if (this.editorGenComponentInstances_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE
 					.getGenTask_GenComponentInstances();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorGenComponentInstances_PSMTab = editor;
+			this.editorGenComponentInstances_property_tab_psmTab = editor;
 		}
-		return this.editorGenComponentInstances_PSMTab;
+		return this.editorGenComponentInstances_property_tab_psmTab;
 	}
 
 	//

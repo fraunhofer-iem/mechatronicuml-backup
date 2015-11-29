@@ -21,11 +21,11 @@ public class ImportEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorImportURI_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorImportURI_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorImportURI_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorImportURI_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -43,9 +43,9 @@ public class ImportEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorImportURI_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorImportURI_PSMTab_Editor() {
-		if (this.editorImportURI_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorImportURI_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorImportURI_property_tab_psmTab_Editor() {
+		if (this.editorImportURI_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.PsmPackage.eINSTANCE
 					.getImport_ImportURI();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -53,9 +53,9 @@ public class ImportEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 			editor.setTooltipMessage("The URI of the imported model.");
 
-			this.editorImportURI_PSMTab = editor;
+			this.editorImportURI_property_tab_psmTab = editor;
 		}
-		return this.editorImportURI_PSMTab;
+		return this.editorImportURI_property_tab_psmTab;
 	}
 
 	//

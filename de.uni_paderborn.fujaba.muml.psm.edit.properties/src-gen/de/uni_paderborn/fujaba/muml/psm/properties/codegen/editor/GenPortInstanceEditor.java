@@ -21,19 +21,19 @@ public class GenPortInstanceEditor extends de.uni_paderborn.fujaba.properties.ru
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorPortInstance_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorPortInstance_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorSamplingTime_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorSamplingTime_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorExecCommand_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorExecCommand_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorPortInstance_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorPortInstance_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorSamplingTime_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorSamplingTime_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorExecCommand_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorExecCommand_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -51,43 +51,43 @@ public class GenPortInstanceEditor extends de.uni_paderborn.fujaba.properties.ru
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortInstance_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortInstance_PSMTab_Editor() {
-		if (this.editorPortInstance_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortInstance_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortInstance_property_tab_psmTab_Editor() {
+		if (this.editorPortInstance_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE
 					.getGenPortInstance_PortInstance();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorPortInstance_PSMTab = editor;
+			this.editorPortInstance_property_tab_psmTab = editor;
 		}
-		return this.editorPortInstance_PSMTab;
+		return this.editorPortInstance_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSamplingTime_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSamplingTime_PSMTab_Editor() {
-		if (this.editorSamplingTime_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSamplingTime_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSamplingTime_property_tab_psmTab_Editor() {
+		if (this.editorSamplingTime_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE
 					.getGenPortInstance_SamplingTime();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorSamplingTime_PSMTab = editor;
+			this.editorSamplingTime_property_tab_psmTab = editor;
 		}
-		return this.editorSamplingTime_PSMTab;
+		return this.editorSamplingTime_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExecCommand_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExecCommand_PSMTab_Editor() {
-		if (this.editorExecCommand_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExecCommand_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExecCommand_property_tab_psmTab_Editor() {
+		if (this.editorExecCommand_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE
 					.getGenPortInstance_ExecCommand();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExecCommand_PSMTab = editor;
+			this.editorExecCommand_property_tab_psmTab = editor;
 		}
-		return this.editorExecCommand_PSMTab;
+		return this.editorExecCommand_property_tab_psmTab;
 	}
 
 	//
