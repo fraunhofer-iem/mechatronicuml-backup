@@ -21,17 +21,17 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorCic_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorCic_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorHpic_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorHpic_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorCic_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorCic_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorHpic_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorHpic_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -39,7 +39,7 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -51,9 +51,9 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCic_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCic_PSMTab_Editor() {
-		if (this.editorCic_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCic_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCic_property_tab_psmTab_Editor() {
+		if (this.editorCic_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE
 					.getSystemAllocation_Cic();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -61,14 +61,14 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 
 			editor.setTooltipMessage("The allocated ComponentInstanceConfiguration.");
 
-			this.editorCic_PSMTab = editor;
+			this.editorCic_property_tab_psmTab = editor;
 		}
-		return this.editorCic_PSMTab;
+		return this.editorCic_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHpic_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHpic_PSMTab_Editor() {
-		if (this.editorHpic_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHpic_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHpic_property_tab_psmTab_Editor() {
+		if (this.editorHpic_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE
 					.getSystemAllocation_Hpic();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -76,22 +76,22 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 
 			editor.setTooltipMessage("The allocated HardwarePlatformInstanceConfiguration.");
 
-			this.editorHpic_PSMTab = editor;
+			this.editorHpic_property_tab_psmTab = editor;
 		}
-		return this.editorHpic_PSMTab;
+		return this.editorHpic_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	//

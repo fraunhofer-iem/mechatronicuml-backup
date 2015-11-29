@@ -21,15 +21,15 @@ public class GenComponentInstanceEditor extends de.uni_paderborn.fujaba.properti
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorComponentInstance_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorInitCommands_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorInitCommands_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorComponentInstance_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorComponentInstance_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorInitCommands_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorInitCommands_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -47,30 +47,30 @@ public class GenComponentInstanceEditor extends de.uni_paderborn.fujaba.properti
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentInstance_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentInstance_PSMTab_Editor() {
-		if (this.editorComponentInstance_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentInstance_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentInstance_property_tab_psmTab_Editor() {
+		if (this.editorComponentInstance_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE
 					.getGenComponentInstance_ComponentInstance();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorComponentInstance_PSMTab = editor;
+			this.editorComponentInstance_property_tab_psmTab = editor;
 		}
-		return this.editorComponentInstance_PSMTab;
+		return this.editorComponentInstance_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInitCommands_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInitCommands_PSMTab_Editor() {
-		if (this.editorInitCommands_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInitCommands_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInitCommands_property_tab_psmTab_Editor() {
+		if (this.editorInitCommands_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE
 					.getGenComponentInstance_InitCommands();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorInitCommands_PSMTab = editor;
+			this.editorInitCommands_property_tab_psmTab = editor;
 		}
-		return this.editorInitCommands_PSMTab;
+		return this.editorInitCommands_property_tab_psmTab;
 	}
 
 	//

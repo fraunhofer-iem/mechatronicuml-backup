@@ -21,11 +21,11 @@ public class TimeParameterBindingEditor extends de.uni_paderborn.fujaba.properti
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorParameter_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorParameter_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorParameter_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorParameter_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -43,9 +43,9 @@ public class TimeParameterBindingEditor extends de.uni_paderborn.fujaba.properti
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameter_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameter_PSMTab_Editor() {
-		if (this.editorParameter_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameter_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameter_property_tab_psmTab_Editor() {
+		if (this.editorParameter_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.eINSTANCE
 					.getRealtimeStatechartParameterBinding_Parameter();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -53,9 +53,9 @@ public class TimeParameterBindingEditor extends de.uni_paderborn.fujaba.properti
 
 			editor.setTooltipMessage("The parameter, to which a concrete value will be assigned.");
 
-			this.editorParameter_PSMTab = editor;
+			this.editorParameter_property_tab_psmTab = editor;
 		}
-		return this.editorParameter_PSMTab;
+		return this.editorParameter_property_tab_psmTab;
 	}
 
 	//

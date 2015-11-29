@@ -90,7 +90,7 @@
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" reconcile="false" initializeOCLExpression="">
         <genFeature href="psm.genmodel#//psm/properties/Scheduling/priority"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>

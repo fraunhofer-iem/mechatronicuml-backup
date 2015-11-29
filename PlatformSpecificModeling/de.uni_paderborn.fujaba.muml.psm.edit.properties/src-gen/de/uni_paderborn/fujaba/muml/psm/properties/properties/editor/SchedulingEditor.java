@@ -21,21 +21,21 @@ public class SchedulingEditor extends de.uni_paderborn.fujaba.properties.runtime
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorDeadline_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorDeadline_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorPeriod_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorPeriod_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorPriority_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorPriority_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorDeadline_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorDeadline_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorPeriod_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorPeriod_property_tab_psmTab_Editor(), false);
 
-			addPropertyEditor(createEditorPriority_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorPriority_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -43,7 +43,7 @@ public class SchedulingEditor extends de.uni_paderborn.fujaba.properties.runtime
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -55,56 +55,56 @@ public class SchedulingEditor extends de.uni_paderborn.fujaba.properties.runtime
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDeadline_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDeadline_PSMTab_Editor() {
-		if (this.editorDeadline_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDeadline_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDeadline_property_tab_psmTab_Editor() {
+		if (this.editorDeadline_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE
 					.getScheduling_Deadline();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			this.editorDeadline_PSMTab = editor;
+			this.editorDeadline_property_tab_psmTab = editor;
 		}
-		return this.editorDeadline_PSMTab;
+		return this.editorDeadline_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPeriod_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPeriod_PSMTab_Editor() {
-		if (this.editorPeriod_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPeriod_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPeriod_property_tab_psmTab_Editor() {
+		if (this.editorPeriod_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE
 					.getScheduling_Period();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			this.editorPeriod_PSMTab = editor;
+			this.editorPeriod_property_tab_psmTab = editor;
 		}
-		return this.editorPeriod_PSMTab;
+		return this.editorPeriod_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPriority_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPriority_PSMTab_Editor() {
-		if (this.editorPriority_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPriority_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPriority_property_tab_psmTab_Editor() {
+		if (this.editorPriority_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage.eINSTANCE
 					.getScheduling_Priority();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
 
-			this.editorPriority_PSMTab = editor;
+			this.editorPriority_property_tab_psmTab = editor;
 		}
-		return this.editorPriority_PSMTab;
+		return this.editorPriority_property_tab_psmTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	//

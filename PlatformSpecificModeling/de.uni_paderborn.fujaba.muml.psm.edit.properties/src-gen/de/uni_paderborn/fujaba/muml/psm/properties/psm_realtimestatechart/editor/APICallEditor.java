@@ -21,11 +21,11 @@ public class APICallEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorApiCallSignature_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorApiCallSignature_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
-			addPropertyEditor(createEditorApiCallSignature_PSMTab_Editor(), false);
+			addPropertyEditor(createEditorApiCallSignature_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -43,17 +43,17 @@ public class APICallEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorApiCallSignature_PSMTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorApiCallSignature_PSMTab_Editor() {
-		if (this.editorApiCallSignature_PSMTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorApiCallSignature_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorApiCallSignature_property_tab_psmTab_Editor() {
+		if (this.editorApiCallSignature_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.eINSTANCE
 					.getAPICall_ApiCallSignature();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorApiCallSignature_PSMTab = editor;
+			this.editorApiCallSignature_property_tab_psmTab = editor;
 		}
-		return this.editorApiCallSignature_PSMTab;
+		return this.editorApiCallSignature_property_tab_psmTab;
 	}
 
 	//
