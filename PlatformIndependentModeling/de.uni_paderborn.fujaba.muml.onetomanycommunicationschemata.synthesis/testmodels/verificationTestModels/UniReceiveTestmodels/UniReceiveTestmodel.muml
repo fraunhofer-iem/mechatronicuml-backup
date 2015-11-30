@@ -4,7 +4,12 @@
   <categories xmi:id="_N8D30XvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_N8D30nvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YwviYHvSEeWJtcJpbyRDKg" name="rtscRole2" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
-      <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg">
+      <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg" urgent="false">
+        <clockConstraints xmi:id="_LUWV0JdJEeW_n8FySayE1g" clock="_I7_-YJdJEeW_n8FySayE1g" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_MWDDYJdJEeW_n8FySayE1g">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_OcM3kJdJEeW_n8FySayE1g" value="2"/>
+          </bound>
+        </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DALtMHvfEeWJtcJpbyRDKg" kind="TRIGGER">
           <message xmi:id="_DT4FQHvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
           <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:SingleReceive" xmi:id="_tKO6EH7-EeWVlPbN-IV2YA"/>
@@ -13,16 +18,27 @@
       <transitions xmi:id="_vDh8EHvfEeWJtcJpbyRDKg" priority="1" target="_YwviYXvSEeWJtcJpbyRDKg" source="_a1XFgHvSEeWJtcJpbyRDKg"/>
       <states xmi:id="_YwviYXvSEeWJtcJpbyRDKg" name="init" outgoingTransitions="_ec7pIHvSEeWJtcJpbyRDKg" incomingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" initial="true"/>
       <states xmi:id="_a1XFgHvSEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" incomingTransitions="_ec7pIHvSEeWJtcJpbyRDKg"/>
+      <clocks xmi:id="_I7_-YJdJEeW_n8FySayE1g" name="clock"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_XgFVUHveEeWJtcJpbyRDKg" name="rtscRole1" behavioralElement="_Sa9sEHvSEeWJtcJpbyRDKg">
-      <transitions xmi:id="_e2BBEHveEeWJtcJpbyRDKg" priority="1" target="_dTNxkHveEeWJtcJpbyRDKg" source="_XgFVUXveEeWJtcJpbyRDKg">
+      <transitions xmi:id="_e2BBEHveEeWJtcJpbyRDKg" priority="1" target="_XgFVUXveEeWJtcJpbyRDKg" source="_XgFVUXveEeWJtcJpbyRDKg" urgent="false">
+        <clockConstraints xmi:id="_7o_QMJdIEeW_n8FySayE1g" clock="_3MFAAJdIEeW_n8FySayE1g" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_8VHWYJdIEeW_n8FySayE1g">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_8nbOYJdIEeW_n8FySayE1g" value="2"/>
+          </bound>
+        </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_0DpnAHvfEeWJtcJpbyRDKg">
           <message xmi:id="_0cpV0HvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
         </events>
       </transitions>
-      <transitions xmi:id="_qj7_gH75EeWQAISb8pKNiQ" priority="1" target="_XgFVUXveEeWJtcJpbyRDKg" source="_dTNxkHveEeWJtcJpbyRDKg"/>
-      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" incomingTransitions="_qj7_gH75EeWQAISb8pKNiQ" initial="true"/>
-      <states xmi:id="_dTNxkHveEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_qj7_gH75EeWQAISb8pKNiQ" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg"/>
+      <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg" initial="true">
+        <invariants xmi:id="_4xRcMJdIEeW_n8FySayE1g" clock="_3MFAAJdIEeW_n8FySayE1g">
+          <bound xmi:id="_5jC3YJdIEeW_n8FySayE1g">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_6P6kcJdIEeW_n8FySayE1g" value="2"/>
+          </bound>
+        </invariants>
+      </states>
+      <clocks xmi:id="_3MFAAJdIEeW_n8FySayE1g" name="c1"/>
     </modelElements>
   </categories>
   <categories xmi:id="_N8D303vSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
