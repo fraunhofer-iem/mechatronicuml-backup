@@ -537,4 +537,15 @@
     <element xmi:type="realtimestatechart:Transition" href="../UniReceiveTestmodelTransformed.muml#_PiTBopdnEeW_n8FySayE1g"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DyLMwpdoEeW_n8FySayE1g" points="[55, 4, -179, 57]$[193, 17, -41, 70]$[228, -42, -6, 11]"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_wwjbUJd6EeW_n8FySayE1g" type="4003" source="_DUiOgJdoEeW_n8FySayE1g" target="_DUhnf5doEeW_n8FySayE1g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wwkCYJd6EeW_n8FySayE1g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wwkCYZd6EeW_n8FySayE1g" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_wwkCYpd6EeW_n8FySayE1g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wwkCY5d6EeW_n8FySayE1g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wwjbUZd6EeW_n8FySayE1g" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../UniReceiveTestmodelTransformed.muml#_wwVY4Jd6EeW_n8FySayE1g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wwjbUpd6EeW_n8FySayE1g" points="[12, -29, 516, 439]$[113, -281, 617, 187]$[-469, -458, 35, 10]"/>
+  </edges>
 </notation:Diagram>

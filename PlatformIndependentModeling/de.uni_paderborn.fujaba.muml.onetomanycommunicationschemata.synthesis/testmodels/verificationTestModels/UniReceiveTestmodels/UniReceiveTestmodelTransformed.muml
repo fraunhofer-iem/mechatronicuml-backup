@@ -144,6 +144,13 @@
                       </expressions>
                     </action>
                   </transitions>
+                  <transitions xmi:id="_wwVY4Jd6EeW_n8FySayE1g" priority="3" target="_PiTBrJdnEeW_n8FySayE1g" source="_PiTBrZdnEeW_n8FySayE1g">
+                    <synchronization xmi:id="_yCYPkJd6EeW_n8FySayE1g" syncChannel="_PiTBspdnEeW_n8FySayE1g" kind="RECEIVE">
+                      <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_zmtJEJd6EeW_n8FySayE1g">
+                        <position xmi:id="_zmtJEZd6EeW_n8FySayE1g"/>
+                      </selectorExpression>
+                    </synchronization>
+                  </transitions>
                   <states xmi:id="_PiTBkpdnEeW_n8FySayE1g" name="init" outgoingTransitions="_PiTBfJdnEeW_n8FySayE1g" incomingTransitions="_PiTBe5dnEeW_n8FySayE1g" initial="true">
                     <embeddedRegions xmi:id="_PiTBk5dnEeW_n8FySayE1g" priority="1">
                       <embeddedStatechart xmi:id="_PiTBlJdnEeW_n8FySayE1g" name="singleReceiveCheck_init_state2_1">
@@ -209,8 +216,8 @@
                     </embeddedRegions>
                     <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_PiTBq5dnEeW_n8FySayE1g" name="init_Requested_ExitPoint" outgoingTransitions="_PiTBjJdnEeW_n8FySayE1g" incomingTransitions="_PiTBopdnEeW_n8FySayE1g"/>
                   </states>
-                  <states xmi:id="_PiTBrJdnEeW_n8FySayE1g" name="state2" outgoingTransitions="_PiTBe5dnEeW_n8FySayE1g" incomingTransitions="_PiTBfpdnEeW_n8FySayE1g _PiTBhJdnEeW_n8FySayE1g"/>
-                  <states xmi:id="_PiTBrZdnEeW_n8FySayE1g" name="init_Intermediate_1_state2" outgoingTransitions="_PiTBhJdnEeW_n8FySayE1g _PiTBfpdnEeW_n8FySayE1g" incomingTransitions="_PiTBfJdnEeW_n8FySayE1g _PiTBjJdnEeW_n8FySayE1g"/>
+                  <states xmi:id="_PiTBrJdnEeW_n8FySayE1g" name="state2" outgoingTransitions="_PiTBe5dnEeW_n8FySayE1g" incomingTransitions="_PiTBfpdnEeW_n8FySayE1g _PiTBhJdnEeW_n8FySayE1g _wwVY4Jd6EeW_n8FySayE1g"/>
+                  <states xmi:id="_PiTBrZdnEeW_n8FySayE1g" name="init_Intermediate_1_state2" outgoingTransitions="_PiTBhJdnEeW_n8FySayE1g _PiTBfpdnEeW_n8FySayE1g _wwVY4Jd6EeW_n8FySayE1g" incomingTransitions="_PiTBfJdnEeW_n8FySayE1g _PiTBjJdnEeW_n8FySayE1g"/>
                 </embeddedStatechart>
               </embeddedRegions>
             </states>
