@@ -40,7 +40,13 @@
                 </bound>
               </clockConstraints>
             </transitions>
-            <transitions xmi:id="_PiTBXpdnEeW_n8FySayE1g" priority="1" target="_PiTBdZdnEeW_n8FySayE1g" source="_PiTBdJdnEeW_n8FySayE1g"/>
+            <transitions xmi:id="_PiTBXpdnEeW_n8FySayE1g" priority="1" target="_PiTBdZdnEeW_n8FySayE1g" source="_PiTBdJdnEeW_n8FySayE1g">
+              <synchronization xmi:id="_PB-lsJdrEeW_n8FySayE1g" syncChannel="_PiTBspdnEeW_n8FySayE1g">
+                <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_RfSVoJdrEeW_n8FySayE1g">
+                  <position xmi:id="_RfSVoZdrEeW_n8FySayE1g" kind="FIRST"/>
+                </selectorExpression>
+              </synchronization>
+            </transitions>
             <transitions xmi:id="_PiTBX5dnEeW_n8FySayE1g" priority="1" target="_PiTBc5dnEeW_n8FySayE1g" source="_PiTBdZdnEeW_n8FySayE1g">
               <synchronization xmi:id="_PiTBYJdnEeW_n8FySayE1g" syncChannel="_PiTBsZdnEeW_n8FySayE1g" kind="RECEIVE"/>
             </transitions>
@@ -66,7 +72,7 @@
                   <states xmi:id="_PiTBbpdnEeW_n8FySayE1g" name="Requesting" outgoingTransitions="_PiTBa5dnEeW_n8FySayE1g" incomingTransitions="_PiTBZJdnEeW_n8FySayE1g"/>
                 </embeddedStatechart>
               </embeddedRegions>
-              <entryEvent xmi:id="_PiTBb5dnEeW_n8FySayE1g"/>
+              <entryEvent xmi:id="_PiTBb5dnEeW_n8FySayE1g" clockResets="_PiTBs5dnEeW_n8FySayE1g"/>
               <invariants xmi:id="_PiTBcJdnEeW_n8FySayE1g" clock="_PiTBs5dnEeW_n8FySayE1g">
                 <bound xmi:id="_PiTBcZdnEeW_n8FySayE1g" unit="MILLISECONDS">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_PiTBcpdnEeW_n8FySayE1g" value="2"/>
@@ -85,7 +91,12 @@
                 <embeddedStatechart xmi:id="_PiTBepdnEeW_n8FySayE1g" name="subrole_schema_statechart1">
                   <transitions xmi:id="_PiTBe5dnEeW_n8FySayE1g" priority="1" target="_PiTBkpdnEeW_n8FySayE1g" source="_PiTBrJdnEeW_n8FySayE1g"/>
                   <transitions xmi:id="_PiTBfJdnEeW_n8FySayE1g" priority="1" target="_PiTBrZdnEeW_n8FySayE1g" source="_PiTBkpdnEeW_n8FySayE1g">
-                    <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_PiTBfZdnEeW_n8FySayE1g" typedNamedElement="_PiTBUZdnEeW_n8FySayE1g"/>
+                    <synchronization xmi:id="_8_b7YJdsEeW_n8FySayE1g" syncChannel="_PiTBspdnEeW_n8FySayE1g" kind="RECEIVE">
+                      <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_-z14QJdsEeW_n8FySayE1g">
+                        <position xmi:id="_-z14QZdsEeW_n8FySayE1g"/>
+                      </selectorExpression>
+                    </synchronization>
+                    <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ZmnzsJdsEeW_n8FySayE1g" typedNamedElement="_PiTBUZdnEeW_n8FySayE1g"/>
                   </transitions>
                   <transitions xmi:id="_PiTBfpdnEeW_n8FySayE1g" priority="2" target="_PiTBrJdnEeW_n8FySayE1g" source="_PiTBrZdnEeW_n8FySayE1g">
                     <synchronization xmi:id="_PiTBf5dnEeW_n8FySayE1g" syncChannel="_PiTBspdnEeW_n8FySayE1g">
@@ -153,7 +164,7 @@
                           </guard>
                         </transitions>
                         <transitions xmi:id="_PiTBmJdnEeW_n8FySayE1g" priority="2" target="_PiTBqZdnEeW_n8FySayE1g" source="_PiTBqpdnEeW_n8FySayE1g">
-                          <synchronization xmi:id="_PiTBmZdnEeW_n8FySayE1g" syncChannel="_PiTBspdnEeW_n8FySayE1g">
+                          <synchronization xmi:id="_PiTBmZdnEeW_n8FySayE1g" syncChannel="_PiTBrpdnEeW_n8FySayE1g">
                             <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_PiTBmpdnEeW_n8FySayE1g">
                               <position xmi:id="_PiTBm5dnEeW_n8FySayE1g">
                                 <successor xmi:id="_PiTBnJdnEeW_n8FySayE1g" kind="NEXT"/>
@@ -199,7 +210,7 @@
                     <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_PiTBq5dnEeW_n8FySayE1g" name="init_Requested_ExitPoint" outgoingTransitions="_PiTBjJdnEeW_n8FySayE1g" incomingTransitions="_PiTBopdnEeW_n8FySayE1g"/>
                   </states>
                   <states xmi:id="_PiTBrJdnEeW_n8FySayE1g" name="state2" outgoingTransitions="_PiTBe5dnEeW_n8FySayE1g" incomingTransitions="_PiTBfpdnEeW_n8FySayE1g _PiTBhJdnEeW_n8FySayE1g"/>
-                  <states xmi:id="_PiTBrZdnEeW_n8FySayE1g" name="init_Intermediate_1_state2" outgoingTransitions="_PiTBfpdnEeW_n8FySayE1g _PiTBhJdnEeW_n8FySayE1g" incomingTransitions="_PiTBfJdnEeW_n8FySayE1g _PiTBjJdnEeW_n8FySayE1g"/>
+                  <states xmi:id="_PiTBrZdnEeW_n8FySayE1g" name="init_Intermediate_1_state2" outgoingTransitions="_PiTBhJdnEeW_n8FySayE1g _PiTBfpdnEeW_n8FySayE1g" incomingTransitions="_PiTBfJdnEeW_n8FySayE1g _PiTBjJdnEeW_n8FySayE1g"/>
                 </embeddedStatechart>
               </embeddedRegions>
             </states>
