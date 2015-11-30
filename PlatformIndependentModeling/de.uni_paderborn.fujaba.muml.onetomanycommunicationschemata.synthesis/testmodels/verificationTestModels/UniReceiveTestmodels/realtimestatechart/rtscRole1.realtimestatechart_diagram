@@ -25,53 +25,10 @@
         <element xmi:type="realtimestatechart:State" href="../UniReceiveTestmodelTransformed.muml#_XgFVUXveEeWJtcJpbyRDKg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gO9uwX8EEeWVlPbN-IV2YA"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_gO9uz38EEeWVlPbN-IV2YA" type="3032" fontName="Segoe UI" lineColor="0">
-        <children xmi:type="notation:DecorationNode" xmi:id="_gO9u0X8EEeWVlPbN-IV2YA" type="5060"/>
-        <children xmi:type="notation:DecorationNode" xmi:id="_gO9u0n8EEeWVlPbN-IV2YA" type="7031">
-          <styles xmi:type="notation:SortingStyle" xmi:id="_gO9u038EEeWVlPbN-IV2YA" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
-          <styles xmi:type="notation:FilteringStyle" xmi:id="_gO9u1H8EEeWVlPbN-IV2YA"/>
-        </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_gO9u1X8EEeWVlPbN-IV2YA" type="7032">
-          <styles xmi:type="notation:SortingStyle" xmi:id="_gO9u1n8EEeWVlPbN-IV2YA"/>
-          <styles xmi:type="notation:FilteringStyle" xmi:id="_gO9u138EEeWVlPbN-IV2YA"/>
-        </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_gO9u2H8EEeWVlPbN-IV2YA" type="7033">
-          <styles xmi:type="notation:SortingStyle" xmi:id="_gO9u2X8EEeWVlPbN-IV2YA"/>
-          <styles xmi:type="notation:FilteringStyle" xmi:id="_gO9u2n8EEeWVlPbN-IV2YA"/>
-        </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_gO9u238EEeWVlPbN-IV2YA" type="7034">
-          <styles xmi:type="notation:SortingStyle" xmi:id="_gO9u3H8EEeWVlPbN-IV2YA"/>
-          <styles xmi:type="notation:FilteringStyle" xmi:id="_gO9u3X8EEeWVlPbN-IV2YA"/>
-        </children>
-        <element xmi:type="realtimestatechart:State" href="../UniReceiveTestmodelTransformed.muml#_dTNxkHveEeWJtcJpbyRDKg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gO9u0H8EEeWVlPbN-IV2YA" x="530" y="45"/>
-      </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../UniReceiveTestmodelTransformed.muml#_XgFVUHveEeWJtcJpbyRDKg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gO6rcX8EEeWVlPbN-IV2YA" width="865" height="307"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_fmq_sX8EEeWVlPbN-IV2YA"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../UniReceiveTestmodelTransformed.muml#_XgFVUHveEeWJtcJpbyRDKg"/>
-  <edges xmi:type="notation:Connector" xmi:id="_gPFDgH8EEeWVlPbN-IV2YA" type="4003" source="_gO9uwH8EEeWVlPbN-IV2YA" target="_gO9uz38EEeWVlPbN-IV2YA" lineColor="0">
-    <children xmi:type="notation:DecorationNode" xmi:id="_gPFDg38EEeWVlPbN-IV2YA" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_gPFDhH8EEeWVlPbN-IV2YA" y="-20"/>
-    </children>
-    <children xmi:type="notation:DecorationNode" xmi:id="_gPFDhX8EEeWVlPbN-IV2YA" type="6006">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_gPFDhn8EEeWVlPbN-IV2YA" x="-10" y="20"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_gPFDgX8EEeWVlPbN-IV2YA" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../UniReceiveTestmodelTransformed.muml#_e2BBEHveEeWJtcJpbyRDKg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gPFDgn8EEeWVlPbN-IV2YA" points="[21, 4, -2, 0]$[-11, 0, -34, -4]"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_gPWJQH8EEeWVlPbN-IV2YA" type="4003" source="_gO9uz38EEeWVlPbN-IV2YA" target="_gO9uwH8EEeWVlPbN-IV2YA" lineColor="0">
-    <children xmi:type="notation:DecorationNode" xmi:id="_gPWJQ38EEeWVlPbN-IV2YA" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_gPWJRH8EEeWVlPbN-IV2YA" y="-20"/>
-    </children>
-    <children xmi:type="notation:DecorationNode" xmi:id="_gPWJRX8EEeWVlPbN-IV2YA" type="6006">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_gPWJRn8EEeWVlPbN-IV2YA" x="-10" y="20"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_gPWJQX8EEeWVlPbN-IV2YA" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../UniReceiveTestmodelTransformed.muml#_qj7_gH75EeWQAISb8pKNiQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gPWJQn8EEeWVlPbN-IV2YA" points="[-9, 29, 444, 17]$[-16, 55, 437, 43]$[-453, 73, 0, 61]$[-453, 48, 0, 36]"/>
-  </edges>
 </notation:Diagram>
