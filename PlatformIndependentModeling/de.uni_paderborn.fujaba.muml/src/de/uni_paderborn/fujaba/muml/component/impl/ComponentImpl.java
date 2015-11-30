@@ -35,8 +35,8 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComponentKind <em>Component Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,16 +63,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPorts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Port> ports;
-
-	/**
 	 * The default value of the '{@link #getComponentKind() <em>Component Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,6 +81,16 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * @ordered
 	 */
 	protected ComponentKind componentKind = COMPONENT_KIND_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Port> ports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,10 +204,10 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		switch (featureID) {
 			case ComponentPackage.COMPONENT__COMMENT:
 				return getComment();
-			case ComponentPackage.COMPONENT__PORTS:
-				return getPorts();
 			case ComponentPackage.COMPONENT__COMPONENT_KIND:
 				return getComponentKind();
+			case ComponentPackage.COMPONENT__PORTS:
+				return getPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,12 +224,12 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__COMMENT:
 				setComment((String)newValue);
 				return;
+			case ComponentPackage.COMPONENT__COMPONENT_KIND:
+				setComponentKind((ComponentKind)newValue);
+				return;
 			case ComponentPackage.COMPONENT__PORTS:
 				getPorts().clear();
 				getPorts().addAll((Collection<? extends Port>)newValue);
-				return;
-			case ComponentPackage.COMPONENT__COMPONENT_KIND:
-				setComponentKind((ComponentKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -246,11 +246,11 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ComponentPackage.COMPONENT__PORTS:
-				getPorts().clear();
-				return;
 			case ComponentPackage.COMPONENT__COMPONENT_KIND:
 				setComponentKind(COMPONENT_KIND_EDEFAULT);
+				return;
+			case ComponentPackage.COMPONENT__PORTS:
+				getPorts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -266,10 +266,10 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		switch (featureID) {
 			case ComponentPackage.COMPONENT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ComponentPackage.COMPONENT__PORTS:
-				return ports != null && !ports.isEmpty();
 			case ComponentPackage.COMPONENT__COMPONENT_KIND:
 				return componentKind != COMPONENT_KIND_EDEFAULT;
+			case ComponentPackage.COMPONENT__PORTS:
+				return ports != null && !ports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

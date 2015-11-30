@@ -23,16 +23,19 @@
         <details key="UniquePortNames" value="-- Port names must be unique&#xA;self.ports->isUnique(name)"/>
         <details key="UniqueComponentNames" value="-- The component's name must be unique.&#xA;Component.allInstances()->select(c|c&lt;>self)->collect(name)->excludes(self.name)&#xA;-- author: adann"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-          eType="#//component/Port" containment="true" eOpposite="#//component/Port/component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentKind" lowerBound="1"
           eType="#//component/ComponentKind" defaultValueLiteral="software component">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This attribute specifies the kind of the component. A component may be either&#xD;&#xA;discrete software component, a continuous component, a hybrid component &#xD;&#xA;or a hardware component."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+          <details key="filter" value="if(self.oclIsKindOf(component::AtomicComponent)) &#xD;&#xA;&#x9; then OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::SOFTWARE_COMPONENT } &#xD;&#xA;else &#xD;&#xA;&#x9;OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::HYBRID_COMPONENT, ComponentKind::SOFTWARE_COMPONENT} endif&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+          eType="#//component/Port" containment="true" eOpposite="#//component/Port/component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

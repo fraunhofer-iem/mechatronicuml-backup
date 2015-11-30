@@ -27,8 +27,8 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentKind <em>Component Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getPorts <em>Ports</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent()
@@ -71,6 +71,7 @@ public interface Component extends NamedElement, CommentableElement, DataType {
 	 * @see #setComponentKind(ComponentKind)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent_ComponentKind()
 	 * @model default="software component" required="true"
+	 *        annotation="http://www.muml.org/emf/OCLFilter filter='if(self.oclIsKindOf(component::AtomicComponent)) \r\n\t then OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::SOFTWARE_COMPONENT } \r\nelse \r\n\tOrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::HYBRID_COMPONENT, ComponentKind::SOFTWARE_COMPONENT} endif\r\n\r\n\r\n'"
 	 * @generated
 	 */
 	ComponentKind getComponentKind();

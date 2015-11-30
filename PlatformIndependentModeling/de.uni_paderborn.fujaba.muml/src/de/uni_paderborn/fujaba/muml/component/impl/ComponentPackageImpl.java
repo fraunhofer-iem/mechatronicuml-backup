@@ -326,7 +326,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getComponent_Ports() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(0);
+		return (EReference)componentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -335,7 +335,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EAttribute getComponent_ComponentKind() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -871,8 +871,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Create classes and their features
 		componentEClass = createEClass(COMPONENT);
-		createEReference(componentEClass, COMPONENT__PORTS);
 		createEAttribute(componentEClass, COMPONENT__COMPONENT_KIND);
+		createEReference(componentEClass, COMPONENT__PORTS);
 
 		portEClass = createEClass(PORT);
 		createEReference(portEClass, PORT__COMPONENT);
@@ -1018,8 +1018,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponent_Ports(), this.getPort(), this.getPort_Component(), "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_ComponentKind(), this.getComponentKind(), "componentKind", "software component", 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Ports(), this.getPort(), this.getPort_Component(), "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPort_Component(), this.getComponent(), this.getComponent_Ports(), "component", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1111,6 +1111,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -1404,6 +1406,22 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "SoftwareComponentOnlyDiscreteOrHybridPorts", "-- Static software components must only have discrete ports and hybrid ports.\r\nself.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getComponent_ComponentKind(), 
+		   source, 
+		   new String[] {
+			 "filter", "if(self.oclIsKindOf(component::AtomicComponent)) \r\n\t then OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::SOFTWARE_COMPONENT } \r\nelse \r\n\tOrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::HYBRID_COMPONENT, ComponentKind::SOFTWARE_COMPONENT} endif\r\n\r\n\r\n"
 		   });
 	}
 
