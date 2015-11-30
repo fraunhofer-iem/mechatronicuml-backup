@@ -16,7 +16,13 @@
         </events>
       </transitions>
       <transitions xmi:id="_vDh8EHvfEeWJtcJpbyRDKg" priority="1" target="_YwviYXvSEeWJtcJpbyRDKg" source="_a1XFgHvSEeWJtcJpbyRDKg"/>
-      <states xmi:id="_YwviYXvSEeWJtcJpbyRDKg" name="init" outgoingTransitions="_ec7pIHvSEeWJtcJpbyRDKg" incomingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" initial="true"/>
+      <states xmi:id="_YwviYXvSEeWJtcJpbyRDKg" name="init" outgoingTransitions="_ec7pIHvSEeWJtcJpbyRDKg" incomingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" initial="true">
+        <invariants xmi:id="_jBKqQJdmEeW_n8FySayE1g" clock="_I7_-YJdJEeW_n8FySayE1g">
+          <bound xmi:id="_jqWxMJdmEeW_n8FySayE1g">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_kB1dEJdmEeW_n8FySayE1g" value="2"/>
+          </bound>
+        </invariants>
+      </states>
       <states xmi:id="_a1XFgHvSEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" incomingTransitions="_ec7pIHvSEeWJtcJpbyRDKg"/>
       <clocks xmi:id="_I7_-YJdJEeW_n8FySayE1g" name="clock"/>
     </modelElements>
@@ -32,11 +38,7 @@
         </events>
       </transitions>
       <states xmi:id="_XgFVUXveEeWJtcJpbyRDKg" name="init" outgoingTransitions="_e2BBEHveEeWJtcJpbyRDKg" incomingTransitions="_e2BBEHveEeWJtcJpbyRDKg" initial="true">
-        <invariants xmi:id="_4xRcMJdIEeW_n8FySayE1g" clock="_3MFAAJdIEeW_n8FySayE1g">
-          <bound xmi:id="_5jC3YJdIEeW_n8FySayE1g">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_6P6kcJdIEeW_n8FySayE1g" value="2"/>
-          </bound>
-        </invariants>
+        <entryEvent xmi:id="_n5FIUJdOEeW_n8FySayE1g" clockResets="_3MFAAJdIEeW_n8FySayE1g"/>
       </states>
       <clocks xmi:id="_3MFAAJdIEeW_n8FySayE1g" name="c1"/>
     </modelElements>
