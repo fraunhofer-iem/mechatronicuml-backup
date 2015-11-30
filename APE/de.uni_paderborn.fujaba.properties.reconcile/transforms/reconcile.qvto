@@ -212,7 +212,6 @@ mapping Property::spinnerEditor() : SpinnerPropertyEditor when {self.genFeature.
 			result := self.editor.oclAsType(SpinnerPropertyEditor);
 		} endif;
 	}
-	digits := 0;
 }
 
 mapping Property::comboEditor() : ComboBoxPropertyEditor when {(self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment) or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EDataType) and self.genFeature.ecoreFeature.eType.name <> 'EString' and self.genFeature.ecoreFeature.eType.name <> 'EFloat' and self.genFeature.ecoreFeature.eType.name <> 'EDouble') or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
@@ -226,10 +225,10 @@ mapping Property::textEditor() : TextPropertyEditor when {self.genFeature.ecoreF
 	init {
 		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(TextPropertyEditor)) then {
 			result := self.editor.oclAsType(TextPropertyEditor);
+		} else {
+			result := new TextPropertyEditor(self.genFeature.propertyMultiLine);
 		} endif;
 	}
-
-	multiLine := self.genFeature.propertyMultiLine;
 }
 
 
@@ -251,6 +250,10 @@ constructor Plugin::Plugin(genModel : GenModel) {
 	id := genModel.modelPluginID + ".edit.properties";
 	name := "Properties";
 	version := '0.1';
+}
+
+constructor TextPropertyEditor::TextPropertyEditor(_multiLine : Boolean) {
+	multiLine := _multiLine;
 }
 
 constructor PropertyTab::PropertyTab(_id : String, _name : String) {
