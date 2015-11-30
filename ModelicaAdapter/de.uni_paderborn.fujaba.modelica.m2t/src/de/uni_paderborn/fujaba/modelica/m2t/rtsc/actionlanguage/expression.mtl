@@ -219,14 +219,16 @@
 [if usePre]pre([expression.typedNamedElement.getFullyQualifiedName(fqname)/][generateIndices(expression, usePre, fqname)/])[else][expression.typedNamedElement.getFullyQualifiedName(fqname)/][generateIndices(expression, usePre, fqname)/][/if]
 [/template]
 
-[** TODO: implement AttributeAccessorExpression
- * Generates indices for a TypedNamedElementExpression with indices
+[**
+ * Generates indices for a TypedNamedElementExpression with elementAccessors.
+ * Currently, only expressions of the kind ArrayIndexExpression are supported as
+ * elementAccessors.
  * @param expression the typed named element expression
  * @param usePre use pre construct for rhs variables (and for guards)
  * @param fqname a fully qualified name or the empty string 
 */]
-[template private generateIndices(expression : TypedNamedElementExpression, usePre : Boolean, fqname : String) ? (expression.oclAsType(ArrayIndexExpression).index->notEmpty())]
-['['/][for (index : Expression | expression.oclAsType(ArrayIndexExpression).index) separator(', ')][generateExpression(index, usePre, fqname)/] + 1[/for][']'/]
+[template private generateIndices(expression : TypedNamedElementExpression, usePre : Boolean, fqname : String) ? (expression.elementAccessors->notEmpty() and expression.elementAccessors->forAll(oclIsKindOf(ArrayIndexExpression)))]
+['['/][for (index : Expression | expression.elementAccessors) separator(', ')][generateExpression(index, usePre, fqname)/] + 1[/for][']'/]
 [/template]
 
 [**
@@ -237,6 +239,16 @@
 */]
 [template private generateExpression(expression : ArrayInitializeExpression, usePre : Boolean, fqname : String)]
 {[for (expr : Expression | expression.expressions) separator(', ')][generateExpression(expr, usePre, fqname)/][/for]}
+[/template]
+
+[**
+ * Generates an array index expession.
+ * @param expression the array index expression
+ * @param usePre use pre construct for rhs variables and for guards
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template private generateExpression(expression : ArrayIndexExpression, usePre : Boolean, fqname : String)]
+[generateExpression(expression.index, usePre, fqname)/]
 [/template]
 
 [**
