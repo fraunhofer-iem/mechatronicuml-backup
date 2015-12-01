@@ -33,12 +33,17 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 	}
 	
-	abstract query getMessagePoolCapacity() : Integer {
+	abstract query getMessageBufferPoolCapacity() : Integer {
 		
 		return assert fatal (false) with log('Should be overridden');
 		
 	}
 	
+	abstract query getConnectorCapacity() : Integer {
+		
+		return assert fatal (false) with log('Should be overridden');
+		
+	}
 	mapping OrderedSet(DiscretePortInstance) :: DiscretePortInstances2NextArray() : Variable {
 		
 		name := 'next';
@@ -718,18 +723,29 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 	}
 	
 	
-	mapping createCapacityVariable() : Variable {
+	mapping createMaxBufferSizeVariable() : Variable {
 		
 		name := 'MAX_BUFFER_SIZE';
 		
 		initializer := object ExpressionInitializer {
 			expression := object LiteralExpression {
-				text := getMessagePoolCapacity().repr();
+				text := getMessageBufferPoolCapacity().repr();
 			}
 		}
 		
 	}
 	
+	mapping createConnectorCapacityVariable() : Variable {
+		
+		name := 'MAX_CONNECTOR_SIZE';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := getConnectorCapacity().repr();
+			}
+		}
+		
+	}
 	
 	mapping createTailFieldVariable() : Variable {
 		
@@ -746,7 +762,7 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 			
 			sizeExpression := object IdentifierExpression {
 				
-				identifier := resolveoneIn(createCapacityVariable, Variable)
+				identifier := resolveoneIn(createMaxBufferSizeVariable, Variable)
 				
 			}
 			
@@ -835,7 +851,7 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		index += object ValueIndex {
 			sizeExpression := object IdentifierExpression {
-				identifier := map createCapacityVariable()
+				identifier := map createConnectorCapacityVariable()
 			}
 		}
 		

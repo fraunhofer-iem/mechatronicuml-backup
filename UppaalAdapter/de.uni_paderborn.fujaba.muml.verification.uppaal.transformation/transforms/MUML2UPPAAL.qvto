@@ -139,7 +139,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	}
 
 	
-	query getMessagePoolCapacity() : Integer {
+	query getMessageBufferPoolCapacity() : Integer {
 		
 		// set capacity for all message pools to the size of the largest buffer in the source model
 		// or connector size
@@ -152,10 +152,18 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		assert fatal (buffers->notEmpty()) with log('At least one message buffer expected.');
 		
 		var maxBufferSize := buffers->bufferSize->sortedBy(value)->last().value;
+		//var connectorOutBufferSize := options.objects()->any(oclIsKindOf(Options)).oclAsType(Options).connectorOutBufferSize;
+		
+		return maxBufferSize;
+	}
+	
+	query getConnectorCapacity() : Integer {
+		
 		var connectorOutBufferSize := options.objects()->any(oclIsKindOf(Options)).oclAsType(Options).connectorOutBufferSize;
 		
-		return if maxBufferSize > connectorOutBufferSize then maxBufferSize else connectorOutBufferSize endif; 
+		return connectorOutBufferSize;
 	}
+	
 	
 	
 	query DiscretePortInstance :: behavior() : Behavior {
@@ -194,11 +202,11 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		var connectors : Set(ConnectorInstance) = cicToVerify().portConnectorInstances;
 		
 		// we assume here a message has to be inside a connector or inside a buffer
-		return (bufferInstances->size() + connectors->size()) * getMessagePoolCapacity();
+		return (bufferInstances->size() * getMessageBufferPoolCapacity() + connectors->size() * getConnectorCapacity()) ;
 		
 	}
-
-
+    
+   
 	query getMaximalNumberOfBuffersPerPort() : Integer {
 		
 		var portInstances := cicToVerify().discretePortInstances();
@@ -1133,7 +1141,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 		declaration += map createNumberOfMessagesInTransitDeclaration();
 		
-		declaration += map createCapacityDeclaration();
+		declaration += map createBufferCapacityDeclaration();
+		
+		declaration += map createConnectorCapacityDeclaration();
 
 		declaration += map createMaximalNumberOfBuffersPerRoleConstantDeclaration();
 		
