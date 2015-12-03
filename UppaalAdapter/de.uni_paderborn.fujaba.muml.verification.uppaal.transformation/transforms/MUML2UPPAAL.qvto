@@ -138,12 +138,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 	}
 
-	
-	query getMessageBufferPoolCapacity() : Integer {
+	query getMaxBufferSize() : Integer {
+		// returns the max Buffer size
 		
-		// set capacity for all message pools to the size of the largest buffer in the source model
-		// or connector size
-						
 		var buffers : Set(MessageBuffer) := 
 			cicToVerify()
 			.discretePortInstances()
@@ -151,13 +148,20 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 
 		assert fatal (buffers->notEmpty()) with log('At least one message buffer expected.');
 		
-		var maxBufferSize := buffers->bufferSize->sortedBy(value)->last().value;
-		//var connectorOutBufferSize := options.objects()->any(oclIsKindOf(Options)).oclAsType(Options).connectorOutBufferSize;
-		
-		return maxBufferSize;
+		return buffers->bufferSize->sortedBy(value)->last().value;
 	}
 	
-	query getConnectorCapacity() : Integer {
+	query getMaxOfBufferAndConnectorSize() : Integer {		
+		// set capacity for all message pools to the size of the largest buffer in the source model
+		// or connector size				
+		
+		var maxBufferSize := getMaxBufferSize();
+		var connectorOutBufferSize := getConnectorSize();
+		
+		return if maxBufferSize > connectorOutBufferSize then maxBufferSize else connectorOutBufferSize endif; 	
+	}
+	
+	query getConnectorSize() : Integer {
 		
 		var connectorOutBufferSize := options.objects()->any(oclIsKindOf(Options)).oclAsType(Options).connectorOutBufferSize;
 		
@@ -202,7 +206,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		var connectors : Set(ConnectorInstance) = cicToVerify().portConnectorInstances;
 		
 		// we assume here a message has to be inside a connector or inside a buffer
-		return (bufferInstances->size() * getMessageBufferPoolCapacity() + connectors->size() * getConnectorCapacity()) ;
+		return (bufferInstances->size() * getMaxBufferSize() + connectors->size() * getConnectorSize()) ;
 		
 	}
     
@@ -1141,9 +1145,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 		declaration += map createNumberOfMessagesInTransitDeclaration();
 		
-		declaration += map createBufferCapacityDeclaration();
+		declaration += map createMaxBufferAndConnectorSizeVariableDeclaration();
 		
-		declaration += map createConnectorCapacityDeclaration();
+		declaration += map createConnectorSizeVariableDeclaration();
 
 		declaration += map createMaximalNumberOfBuffersPerRoleConstantDeclaration();
 		

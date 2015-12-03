@@ -323,7 +323,7 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 	}
 		
 	
-	mapping createBufferCapacityDeclaration() : DataVariableDeclaration {
+	mapping createMaxBufferAndConnectorSizeVariableDeclaration() : DataVariableDeclaration {
 		
 		prefix := DataVariablePrefix::CONST;
 		
@@ -333,11 +333,11 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 			
 		};
 		
-		variable += map createMaxBufferSizeVariable();
+		variable += map createMaxOfBufferAndConnectorSizeVariable();
 		
 	}
 
-	mapping createConnectorCapacityDeclaration() : DataVariableDeclaration {
+	mapping createConnectorSizeVariableDeclaration() : DataVariableDeclaration {
 		
 		prefix := DataVariablePrefix::CONST;
 		
@@ -347,7 +347,7 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 			
 		};
 		
-		variable += map createConnectorCapacityVariable();
+		variable += map createConnectorSizeVariable();
 		
 	}
 	
@@ -371,7 +371,7 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 				};
 				
 				upperBound := object IdentifierExpression {
-					identifier := map createMaxBufferSizeVariable();
+					identifier := map createMaxOfBufferAndConnectorSizeVariable();
 				}
 				
 			}
@@ -954,7 +954,7 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 				secondExpr := object ArithmeticExpression {
 					
 					firstExpr := object IdentifierExpression {
-						identifier := map createConnectorCapacityVariable()						
+						identifier := map createConnectorSizeVariable()						
 					};
 					
 					operator := ArithmeticOperator::SUBTRACT;
@@ -1339,7 +1339,7 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 				};
 	
 				upperBound := object IdentifierExpression {
-					identifier := map createMaxBufferSizeVariable();
+					identifier := map createMaxOfBufferAndConnectorSizeVariable();
 				};
 				
 			}
