@@ -1,5 +1,6 @@
 library SchemaSpecificMUML2MUML;
-import MUML2MUMLContext;
+import ModelcopyLibrary;
+
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -35,268 +36,197 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 // When a Variable is acces
 // It is not possible to use self.deepclone() since references to other elements should reference the mapped elements instead of the original values, as it is done in deepClone()
 
-property counter : Integer = 1;
 
-helper Expression :: cloneExpression() : Expression {
-	counter := counter +1;
-	return self.map Expression2Expression(counter);
-}
-
-helper Action :: cloneAction() : Action {
-	counter := counter + 1;
-	return self.map Action2Action(counter);
-}
-
-helper DoEvent :: cloneDoEvent() : DoEvent {
-	counter := counter + 1;
-	return self.map DoEvent2DoEvent(counter);
-}
-
-helper AsynchronousMessageEvent :: cloneAsynchronousMessageEvent() : AsynchronousMessageEvent{
-	counter := counter +1;
-	return self.map AsynchronousMessageEvent2AsynchronousMessageEvent(counter);
+	mapping TypedNamedElement :: transform() : EObject disjuncts 
+		Variable::transform,
+		Parameter::transform,
+		TypedNamedElement::failOnUnsupportedTypedNamedElement;
 	
-}
-
-helper ClockConstraint :: cloneClockConstraint() : ClockConstraint {
-	counter := counter + 1; 
-	return self.map ClockConstraint2ClockConstraint(counter);
-}
-	-- expressions
-
+	mapping TypedNamedElement::failOnUnsupportedTypedNamedElement() : EObject {
 		
-mapping Expression :: failOnUnsupportedExpression(context:OclAny) : Expression {
-	init {
-		assert fatal (false) with log('Unsupported expression type.')
-	}
-}	
-			
-		
-mapping UnaryExpression :: Unary2Unary(context:OclAny) : UnaryExpression {
-			
-	enclosedExpression := self.enclosedExpression.map Expression2Expression(context);
-	
-	operator := self.operator;
-			
-}	
-	
-	
-	mapping actionlanguage::TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression(context : OclAny) : actionlanguage::TypedNamedElementExpression{
-    	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-    	_extension := self._extension.map Extension2Extension(context);
-    	_typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
-    	_elementAccessors := self._elementAccessors.map ElementAccessorExpression2ElementAccessorExpression(context);
-   		 }
-		
-	mapping TypedNamedElement:: TypedNamedElement2TypedNamedElement() : TypedNamedElement {
 		init {
-			result := null;
-			if(self.oclIsTypeOf(muml::behavior::Variable)){
-				result :=  self.oclAsType(muml::behavior::Variable).map Variable2Variable();
-			};
-			if(self.oclIsTypeOf(muml::behavior::Parameter)){
-				result :=  self.oclAsType(muml::behavior::Parameter).map Parameter2Parameter();
-			};
-			
-			assert fatal (not (result = null)) with log ("Error: The result may not be null! Probably an additional type check is necessary!");
-			
+			assert fatal (false) with log("The TypedNamedElement "+self.toString()+" is unsupported.")
 		}
 	}
-
-	mapping actionlanguage::OperationCall :: OperationCall2OperationCall(context : OclAny) : actionlanguage::OperationCall{
-	    	_comment := self._comment;
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_operation := self._operation.map Operation2Operation();
-	    	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding(context);
-	   		 }
-
-
-	mapping actionlanguage::TriggerMessageExpression :: TriggerMessageExpression2TriggerMessageExpression(context : OclAny) : actionlanguage::TriggerMessageExpression{
-	    	_comment := self._comment;
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_messageType := self._messageType;
-	    	_parameter := self._parameter;
-	   		 }
-
-	mapping actionlanguage::LocalVariableDeclarationStatement :: LocalVariableDeclarationStatement2LocalVariableDeclarationStatement(context : OclAny) : actionlanguage::LocalVariableDeclarationStatement{
-	    	_comment := self._comment;
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_variable := self._variable.map Variable2Variable();
-	   		 }
-	   		 
-	mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoiceExpression2NondeterministicChoiceExpression(context : OclAny) : actionlanguage::NondeterministicChoiceExpression{
-	    	_comment := self._comment;
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_range := self._range.map Range2Range(context);
-	    	_dataType := self._dataType;
-	   		 }
-
 	
--- variables, operations, parametes... 
+	
+	mapping actionlanguage::TriggerMessageExpression :: transform() : EObject {
+		init {
+			result := self.map create();
+		}
+		var element := self.oclAsType(TriggerMessageExpression);
+		var resultingElement : TriggerMessageExpression := result.oclAsType(TriggerMessageExpression);
+		resultingElement.messageType := self.messageType;
+		resultingElement.parameter := self.parameter;
+		
+		resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+	    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
+	    	
+		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+		};
+	}
 
-	abstract mapping TypedNamedElement :: BasicTypedNamedElement2TypedNamedElement() : TypedNamedElement {
-		name := self.name;
-		dataType := self.dataType;		
+	mapping actionLanguage::NondeterministicChoiceExpression ::transform() : EObject {
+		init {
+			result := self.map create();
+		}
+		var element := self.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		var resultingElement : actionLanguage::NondeterministicChoiceExpression := result.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		resultingElement.range := self.range.map transform().oclAsType(Range);
+		resultingElement.dataType := self.dataType;
+		
+		resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+	    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
+	    	
+		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+		};	
 	}
 	
-	mapping Variable :: Variable2Variable() : Variable inherits TypedNamedElement::BasicTypedNamedElement2TypedNamedElement {
-		init{
-			if(internalVariables->includes(self))
-			{
-				result := new Variable();
-				result.initializeExpression := self.initializeExpression.map Expression2Expression("INPUT");
-				result.constant := self.constant;
+-- variables, operations, parametes...
 
+
+
+	mapping Variable :: transform() : EObject {
+		init {
+			if(internalVariables->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : behavior::Variable := result.oclAsType(behavior::Variable);
+		
+				resultingElement.dataType := self.dataType;
+				resultingElement.initializeExpression := self.initializeExpression.map multiTransform().oclAsType(Expression);
+				resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+			    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
+				
+				var element := self.oclAsType(behavior::Variable);	    	
+				element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element, f));
+				};		
 			}
-			else
-			{
+			else {
 				result := self;
 			}			
-		}
-	};
-		
-		
-		
-mapping muml::behavior::ParameterBinding :: ParameterBinding2ParameterBinding(context : OclAny) : muml::behavior::ParameterBinding{
-	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	_extension := self._extension.map Extension2Extension(context);
-	_parameter := self._parameter.map Parameter2Parameter();
-	_value := self._value.map Expression2Expression(context);
-	 }
-	
-
-	
-mapping Operation :: Operation2Operation() : Operation {
-		init{
-			if(internalOperations->includes(self))
-			{
-				result := new Operation();
-				result.name := self.name;
-				result.returnType := self.returnType;
-				result.implementations := self.implementations->cloneExpression();
-				result.parameters := self.parameters->map Parameter2Parameter();
-			}
-			else
-			{
-				result := self;
-			}
 		}			
-	}			
-	
+	}	
 
-	mapping muml::behavior::Parameter :: Parameter2Parameter() : muml::behavior::Parameter{
-	    	counter := counter +1;
-	    	_name := self._name;
-	    	_comment := self._comment;
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(counter);
-	    	_extension := self._extension.map Extension2Extension(counter);
-	    	_dataType := self.dataType;
-	   		 }	
+		mapping Operation :: transform() : EObject {
+		init {
+			if(internalOperations->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : behavior::Operation := result.oclAsType(behavior::Operation);
+		
+				resultingElement.returnType := self.returnType;
+				
+				resultingElement.implementations := self.implementations->map transform().oclAsType(Expression);
+				resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+			    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
+			    resultingElement.parameters := self.parameters -> map transform().oclAsType(Parameter);
+			    
+			    var element := self.oclAsType(behavior::Operation);			    	
+				element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element, f));
+				};		
+			}
+			else {
+				result := self;
+			}			
+		}			
+	}
+
+	mapping Parameter :: transform() : EObject {
+		init{
+			result := self.map create ();			
+		}
+		
+		var resultingElement : Parameter := result.oclAsType(Parameter);
+		resultingElement.dataType := self.dataType;
+		
+		var element := self.oclAsType(behavior::Operation);			    	
+			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+				setValues(result, f, getValues(element, f));
+		};
+		
+	}
 
 		-- synchronizations
-	
-mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny) : SynchronizationChannel {		
-		init{
-			if(internalSynchronizations->includes(self))
-			{
-				result := new SynchronizationChannel();
-				result.name := self.name;							
-				result.selectorType := self.selectorType;		
+	mapping SynchronizationChannel :: transform() : EObject {
+		init {
+			if(internalSynchronizations->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : SynchronizationChannel := result.oclAsType(SynchronizationChannel);
+		
+		
+				resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+			    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
+				resultingElement.selectorType := self.selectorType;
+				resultingElement.state := self.state.map transform().oclAsType(State);
+			    
+			    var element := self.oclAsType(SynchronizationChannel);			    	
+				element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element, f));
+				};		
 			}
-			else
-			{
+			else {
 				result := self;
-			}
+			}			
 		}		
 	}
-
-
-
 	
 	-- Clocks	
-mapping Clock :: Clock2Clock() : Clock {
-		init{
-			if(internalClocks->includes(self))
-			{
-				result := new Clock();
-				result.name := self.name;	
+	
+	mapping Clock :: transform() : EObject {
+		init {
+			if(internalClocks->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : Clock := result.oclAsType(Clock);		
+		
+				resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+			    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
+			 	resultingElement.statechart := self.statechart.map transform().oclAsType(RealtimeStatechart);
+			    
+			    var element := self.oclAsType(Clock);			    	
+				element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element, f));
+				};		
 			}
-			else
-			{
+			else {
 				result := self;
-			}		
+			}			
 		}		
 	}
-	mapping muml::realtimestatechart::ClockConstraint :: ClockConstraint2ClockConstraint(context : OclAny) : muml::realtimestatechart::ClockConstraint{
-	    	_operator := self._operator;
-	    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-	    	_extension := self._extension.map Extension2Extension(context);
-	    	_bound := self._bound.map TimeValue2TimeValue(context);
-	    	_clock := self._clock.map Clock2Clock();
-	   		 }	
 
-mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny) : AbsoluteDeadline {		
-		upperBound := self.upperBound.map TimeValue2TimeValue(context);
-		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);		
-		clock := self.clock.map Clock2Clock();		
-	}
-
-mapping EntryEvent :: EntryEvent2EntryEventCoordinator(context:OclAny, region:RealtimeStatechart) : EntryEvent {
+	mapping muml::realtimestatechart::AsynchronousMessageEvent :: transform() : EObject {
+		init {
+			result := self.map create();
+		}
 		
-		clockResets += self.clockResets.map Clock2Clock();
+		var resultingElement : AsynchronousMessageEvent := result.oclAsType(AsynchronousMessageEvent);
+		resultingElement.message := self.message.map transform().oclAsType(Message);
 		
-		action := self.action.map Action2Action(context);
-					
+		var element := self.oclAsType(Clock);			    	
+		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+		};			
 	}
 	
-mapping ExitEvent :: ExitEvent2ExitEventCoordinator(context:OclAny, region:RealtimeStatechart) : ExitEvent {
+	mapping muml::realtimestatechart::Message :: transform() : EObject {
+		init {
+			result := self.map create();
+		}
 		
-		clockResets += self.clockResets.map Clock2Clock();
+		var resultingElement : Message := result.oclAsType(Message);
+		resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+		resultingElement._extension := self._extension.map transform().oclAsType(Extension);
+		resultingElement.instanceOf := self.instanceOf;
+		resultingElement.parameterBinding := self.parameterBinding.map transform().oclAsType(ParameterBinding);
 		
-		action := self.action.map Action2Action(context);
-					
+		var element := self.oclAsType(Clock);			    	
+		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+		};	
 	}
-	
-mapping EntryEvent :: EntryEvent2EntryEventSubrole(context:OclAny, region:RealtimeStatechart) : EntryEvent {
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-		
-		kind := self.kind;
-					
-	}
-	
-
-mapping ExitEvent :: ExitEvent2ExitEventSubrole(context:OclAny, region:RealtimeStatechart) : ExitEvent {
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-		
-		kind := self.kind;
-					
-	}
-	
-
-	
-
-
-mapping AsynchronousMessageEvent :: AsynchronousMessageEvent2AsynchronousMessageEvent(context:OclAny) : AsynchronousMessageEvent {
-		
-		kind := self.kind;
-		
-		message := self.message.map Message2Message(context);
-		
-	}
-	
-
-mapping muml::realtimestatechart::Message :: Message2Message(context : OclAny) : muml::realtimestatechart::Message{
-    	_annotation := self._annotation.map EAnnotation2EAnnotation(context);
-    	_extension := self._extension.map Extension2Extension(context);
-    	_instanceOf := self._instanceOf;
-    	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding(context);
-   		 }
-	   		 
-

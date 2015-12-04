@@ -62,10 +62,10 @@ mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, r
 	source := self.source.map Vertex2VertexCoordinator(context);
 	target := self.map Schema2CoordinatorIntermediateState(context,1,loadBalancingDLCName);
 	priority := self.priority;
-	guard := self.guard.map Expression2Expression(result);	
+	guard := self.guard.map multiTransform().oclAsType(Expression);	
 	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
 		urgent := false;		
-	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);
 	synchronization := self. createSynchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 }
 
@@ -89,8 +89,8 @@ mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, reg
 	source := self.map Schema2CoordinatorIntermediateState(context,2,loadBalancingDLCName);
 	target := self.target.map Vertex2VertexCoordinator(context);
 	priority := 1;
-	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
-	result.action := self.action.cloneAction();
+	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
+	result.action := self.action.map multiTransform().oclAsType(Action);
 	synchronization :=self.createSynchronization(loadBalancingDone,SynchronizationKind::RECEIVE);	
 }
 
@@ -125,9 +125,9 @@ mapping Transition :: LoadBalancing2TransCheckEmbeddedCoordinator(context:OclAny
 			urgent := false;
 		};
 		
-		clockConstraints := self.clockConstraints.cloneClockConstraint();
+		clockConstraints := self.clockConstraints.map multiTransform().oclAsType(ClockConstraint);
 		
-		guard := self.guard.map Expression2Expression(result);
+		guard := self.guard.map multiTransform().oclAsType(Expression);
 		
 		synchronization :=	self. createSynchronization(  loadBalancingCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 			
@@ -167,14 +167,14 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 		if(not self.clockConstraints->isEmpty()) {
 			urgent := false;
 		};
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);		
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map multiTransform().oclAsType(ClockConstraint);
 		
 		synchronization := self.createSynchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 		
 		if(self.guard.oclIsUndefined()){
 			guard := self. createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName));
 		}else{
-			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map Expression2Expression(new LogicalExpression()),self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)));
+			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map multiTransform().oclAsType(Expression),self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)));
 		};
 					
 	}
@@ -191,11 +191,11 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 				
 		synchronization := self.createSynchronization(  loadBalancing,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 						
-		events += self.raiseMessageEvent.cloneAsynchronousMessageEvent();
+		events += self.raiseMessageEvent.map multiTransform().oclAsType(AsynchronousMessageEvent);
 		
-		clockResets += self.clockResets->map Clock2Clock();
+		clockResets += self.clockResets->map transform().oclAsType(Clock);
 		
-		action := self.action.cloneAction();
+		action := self.action.map multiTransform().oclAsType(Action);
 		
 		if(action.oclIsUndefined()) {
 			action := new Action();
@@ -339,7 +339,7 @@ mapping Transition :: LoadBalancingResponseMessage2TransitionFromCheckToRequeste
 		
 		target := self.map RegionState(context, "Requested",false);		
 		
-		result.guard := self.createLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result),self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getFreeForWorkVariable(),null),LogicOperator::AND);
+		result.guard := self.createLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression),self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getFreeForWorkVariable(),null),LogicOperator::AND);
 		
 		action := self.createActionWithTwoVariableAssignments(loadBalancingPossibleName + " := true; " + taskPlannedName + " := true;",loadBalancingPossibleName, taskPlannedName, "true");
 		
@@ -373,7 +373,7 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2
 		
 		action := self.createActionWithVariableAssignmentBlock(taskPlannedName + ":= false;",taskPlannedName, "false");
 		
-		clockConstraints += self.createClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map TimeValue2TimeValue(result),ComparingOperator::LESS_OR_EQUAL);
+		clockConstraints += self.createClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map multiTransform().oclAsType(TimeValue),ComparingOperator::LESS_OR_EQUAL);
 		
 		urgent := false;
 }
@@ -386,11 +386,11 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3
 		
 		target := self.map RegionState(context, "Requested",false);		
 
-	 	guard := self.createLogicalExpression(self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getNeverHadATaskVariable(), UnaryOperator::NOT),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result), LogicOperator::AND);
+	 	guard := self.createLogicalExpression(self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getNeverHadATaskVariable(), UnaryOperator::NOT),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression), LogicOperator::AND);
 			
 		action := self.createActionWithTwoVariableAssignments(loadBalancingPossibleName + " := false; "+ taskPlannedName + " :=false;",loadBalancingPossibleName,taskPlannedName,"false");
 		
-		clockConstraints += self.createClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map TimeValue2TimeValue(result),ComparingOperator::GREATER);
+		clockConstraints += self.createClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map multiTransform().oclAsType(TimeValue),ComparingOperator::GREATER);
 		
 		urgent := false;
 }
@@ -403,7 +403,7 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested4
 		
 		target := self.map RegionState(context, "Requested",false);		
 		
-		guard := self.createLogicalExpression(self.createTypedNamedElementExpression(self.getNeverHadATaskVariable()),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result), LogicOperator::AND);
+		guard := self.createLogicalExpression(self.createTypedNamedElementExpression(self.getNeverHadATaskVariable()),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression), LogicOperator::AND);
 			
 		action := self.createActionWithTwoVariableAssignments(loadBalancingPossibleName + " := true; "+ taskPlannedName + " :=true;",loadBalancingPossibleName,taskPlannedName,"true");
 				
@@ -494,7 +494,7 @@ helper RealtimeStatechart :: AddResponseActionsToResponseMessageRTSC(loadBalanci
 		};
 		
 		transition.action.name := transition.action.name + loadBalancing.onResponseAction.name;
-		transition.action.expressions += loadBalancing.onResponseAction.expressions->cloneExpression();
+		transition.action.expressions += loadBalancing.onResponseAction.expressions->multiTransform().oclAsType(Expression);
 		
 }
 

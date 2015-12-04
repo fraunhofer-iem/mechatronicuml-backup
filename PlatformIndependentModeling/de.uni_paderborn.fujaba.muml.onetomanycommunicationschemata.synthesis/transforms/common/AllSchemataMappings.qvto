@@ -97,15 +97,15 @@ mapping Transition :: Schema2Clock(clockName : String) : Clock
 //@author: sthiele2 -- creates a clock constraint in order to disassamble a deadline at a schema-specifying-transition
 helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 {
-	var cc : ClockConstraint := new ClockConstraint();
+		var cc : ClockConstraint := new ClockConstraint();
 		var timeValue : TimeValue;
 		if(mapLowerBound)
 		{
-			cc.bound := self.relativeDeadline.lowerBound.map TimeValue2TimeValue(cc);
+			cc.bound := self.relativeDeadline.lowerBound.map multiTransform().oclAsType(TimeValue);
 		}
 		else
 		{
-			cc.bound := self.relativeDeadline.upperBound.map TimeValue2TimeValue(cc);
+			cc.bound := self.relativeDeadline.upperBound.map multiTransform().oclAsType(TimeValue);
 		};
 		cc.operator := operator;
 		cc.clock := self.map Schema2Clock(clockName);
@@ -188,12 +188,11 @@ mapping Transition :: RegionState(context:OclAny, StateName:String, ini:Boolean)
 
 	
 helper Transition :: TransferSchemaNotCondition() : UnaryExpression {
-
-		var un : UnaryExpression := new UnaryExpression();
+var un : UnaryExpression := new UnaryExpression();
 		if(not self.raiseMessageEvent.oclIsUndefined()){
-			un.enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(un);
+			un.enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression);
 		}else{
-			un.enclosedExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(un);
+			un.enclosedExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression);
 		};	
 
 		un.operator := UnaryOperator::NOT;
@@ -303,7 +302,7 @@ helper Transition :: createBlockWithAssignmentAndCloneAllActionExpressions(varNa
 		var block : Block := new Block();
 		
 		block.expressions += self. createAssignment(varName1, assignValue);
-		block.expressions += self.action.expressions.cloneExpression();
+		block.expressions += self.action.expressions.map multiTransform().oclAsType(Expression);
 			
 		return block;
 	}
@@ -508,19 +507,19 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 		
 		priority := self.priority;
 		
-		clockResets := self.clockResets->select(c|not isClockSubRoleSpecific(c))->map Clock2Clock();
+		clockResets := self.clockResets->select(c|not isClockSubRoleSpecific(c))->map transform().oclAsType(Clock);
 		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(context);
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);
 		
-		guard := self.guard.map Expression2Expression(context);
+		guard := self.guard.map multiTransform().oclAsType(Expression);
 		
-		action := self.action.cloneAction();
+		action := self.action.map multiTransform().oclAsType(Action);
 		
-		synchronization := self.synchronization.map Synchronization2Synchronization(context);
+		synchronization := self.synchronization.map multiTransform().oclAsType(Synchronization);
 		
-		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline(context);
+		absoluteDeadlines := self.absoluteDeadlines->map multiTransform().oclAsType(AbsoluteDeadline);
 		
-		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline(context);
+		relativeDeadline := self.relativeDeadline.map multiTransform().oclAsType(RelativeDeadline);
 		
 		blockable := self.blockable;
 		
@@ -556,7 +555,7 @@ mapping Expression :: Expression2UnaryExpression(context : OclAny, _operator : U
 		
 		result.operator := _operator;
 		
-		result.enclosedExpression := self.map Expression2Expression(context);
+		result.enclosedExpression := self.map multiTransform().oclAsType(Expression);
 }	
 
 

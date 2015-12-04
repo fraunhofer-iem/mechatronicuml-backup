@@ -27,10 +27,10 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 		
 		target := self.map Schema2CoordinatorIntermediateState(context, 1,multiReceiveDLCName);
 		
-		guard := self.guard.map Expression2Expression(context);
+		guard := self.guard.map multiTransform().oclAsType(Expression);
 		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
 			urgent := false;		
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);	
 	
 		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::SEND  ,PositionSelectorKind::FIRST);
 		
@@ -45,9 +45,9 @@ mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator
 		
 		target := self.target.map Vertex2VertexCoordinator(context);
 				
-		clockResets := self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
+		clockResets := self.clockResets->select(c| not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 		
-		action := self.action.cloneAction();
+		action := self.action.map multiTransform().oclAsType(Action);
 		
 		if(not self.relativeDeadline.oclIsUndefined()){
 			urgent := false;
@@ -71,7 +71,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subro
 		
 		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
 		{
-			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
+			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression);
 		}endif;
 			
 		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
@@ -105,9 +105,9 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate1ToIntermediate2Su
 		
 		target := self.map Schema2SubroleIntermediateState(context,2);
 		
-		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
+		events += self.triggerMessageEvent.map multiTransform().oclAsType(AsynchronousMessageEvent);
 		
-		action := self.triggerMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::MultiReceive).failureAction.cloneAction();
+		action := self.triggerMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::MultiReceive).failureAction.map multiTransform().oclAsType(Action);
 }
 
 // @author: sthiele2 -- creates a second transition in the subrole region from the intermediate state 1 source to the intermediate state 2
@@ -120,7 +120,7 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Su
 		
 		target := self.map Schema2SubroleIntermediateState(context,2);
 		
-		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.cloneAction();
+		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.map multiTransform().oclAsType(Action);
 }	
 
 // @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state

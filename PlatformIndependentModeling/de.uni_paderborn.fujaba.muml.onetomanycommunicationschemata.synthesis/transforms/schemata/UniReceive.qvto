@@ -29,9 +29,9 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:
 		
 		target := self.target.map Vertex2VertexCoordinator(context);
 		
-		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
+		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 		
-		action := self.action.cloneAction();
+		action := self.action.map multiTransform().oclAsType(Action);
 		
 		synchronization := self. createSynchronization( singleReceiveDone,SynchronizationKind::RECEIVE);
 			
@@ -68,9 +68,9 @@ mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny
 		target := self.map RegionState(context,  "Requesting", false);
 		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty())
 			urgent := false;			
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);	
 	
-		guard := self.guard.map Expression2Expression(context);
+		guard := self.guard.map multiTransform().oclAsType(Expression);
 		
 		synchronization := self. createSynchronization(singleReceiveCheck, SynchronizationKind::SEND,PositionSelectorKind::FIRST);
 			
@@ -115,7 +115,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 		
 		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
 			urgent := false;		
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);	
 }
 	
 --------------------------------------------------------------- Transfer Schema SingleReceive of Subrole------------------------------------------------------------------
@@ -205,7 +205,7 @@ mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateSt
 		
 		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined())
 			{
-				action.expressions += self.triggerMessageEvent.oneToManyCommunicationSchema.action.expressions.map Expression2Expression(context);
+				action.expressions += self.triggerMessageEvent.oneToManyCommunicationSchema.action.expressions.map multiTransform().oclAsType(Expression);
 			};
 }
 
@@ -225,28 +225,28 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		}
 		else if(not self.guard.oclIsUndefined())
 		{
-			guard := self.guard.map Expression2Expression(context);
+			guard := self.guard.map multiTransform().oclAsType(Expression);
 		}
 		else
 		{
-			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context);
+			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression);
 		}
 		endif;
 		
 		synchronization := self. createSynchronization( singleReceivePossibleName, SynchronizationKind::SEND);
 		
-		events += self.triggerMessageEvent.cloneAsynchronousMessageEvent();
+		events += self.triggerMessageEvent.map multiTransform().oclAsType(AsynchronousMessageEvent);
 		
 		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
 			urgent := false;		
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->cloneClockConstraint();	
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);	
 }
 		
 
 mapping Transition :: TransferSchemaGuardAndLocalConditions(context : OclAny) : expressions::common::LogicalExpression
 {
-		leftExpression := self.guard.cloneExpression();
-		rightExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.cloneExpression();
+		leftExpression := self.guard.multiTransform().oclAsType(Expression);
+		rightExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.multiTransform().oclAsType(Expression);
 		operator := LogicOperator::AND;	
 }
 	

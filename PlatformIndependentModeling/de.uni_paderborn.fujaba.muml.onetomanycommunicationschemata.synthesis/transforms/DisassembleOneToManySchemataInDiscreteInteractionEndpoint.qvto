@@ -103,11 +103,11 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		name := self.name + "Impl";
 		
 		// **select non subrolespecific elements
-		clocks += self.clocks.map Clock2Clock();
+		clocks += self.clocks.map transform().oclAsType(Clock);
 		
-		variables += self.variables.map Variable2Variable();
+		variables += self.variables.map transform().oclAsType(Variable);
 		
-		operations += self.operations.map Operation2Operation();
+		operations += self.operations.map transform().oclAsType(Operation);
 		// the proper transformation
 		states += self.map Rtsc2InitialState();
 		
@@ -464,11 +464,11 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 			};
 		};
 				
-		operations += sourceRealtimeStatechart.subRoleSpecificOperations.map Operation2Operation();
+		operations += sourceRealtimeStatechart.subRoleSpecificOperations.map transform().oclAsType(Operation);
 		
-		variables += sourceRealtimeStatechart.subRoleSpecificVariables->map Variable2Variable();
+		variables += sourceRealtimeStatechart.subRoleSpecificVariables->map transform().oclAsType(Variable);
 		
-		clocks += sourceRealtimeStatechart.subRoleSpecificClocks.map Clock2Clock();
+		clocks += sourceRealtimeStatechart.subRoleSpecificClocks.map transform().oclAsType(Clock);
 				
 	}
 
@@ -493,7 +493,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 		
 		urgent := self.urgent;				
 	
-		entryEvent := self.entryEvent.map EntryEvent2EntryEventCoordinator(context,null);			
+		entryEvent := self.entryEvent.map multiTransform().oclAsType(EntryEvent);			
 		
 		// @author: sthiele2 -- add clock resets for the source states of schema transitions 
 		self.outgoingTransitions->select(t|((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
@@ -578,11 +578,11 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 		};
 		
 		
-		exitEvent := self.exitEvent.map ExitEvent2ExitEventCoordinator(context, null);
+		exitEvent := self.exitEvent.map multiTransform().oclAsType(ExitEvent);
 		
-		doEvent := self.doEvent.cloneDoEvent();
+		doEvent := self.doEvent.multiTransform().oclAsType(DoEvent);
 		
-		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(result);
+		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map multiTransform().oclAsType(ClockConstraint);
 	
 	
 		-- copy the embedded regions of the state:
