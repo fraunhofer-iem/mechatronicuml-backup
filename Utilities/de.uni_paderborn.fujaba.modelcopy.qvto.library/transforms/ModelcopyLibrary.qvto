@@ -6,7 +6,13 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 mapping OclAny::create() : EObject {
 	init {
-		result := self.oclAsType(EObject).eClass().ePackage.eFactoryInstance.create(self.oclAsType(EObject).eClass());
+	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) then{
+		result:=self.oclAsType(EObject);
+	}else{
+		var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
+		var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
+		result := factory.create(self.oclAsType(EObject).eClass());
+		}endif;
 	}
 }
 
@@ -21,6 +27,24 @@ mapping OclAny::transform() : EObject {
 	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 		setValues(result, f, getValues(element, f));
 	};
+}
+
+
+mapping OclAny :: multiTransform() : EObject {
+	init {		
+		var resolvedElement : OclAny := self.resolveoneIn(OclAny::transform,OclAny);
+		
+		var mapped : OclAny := null;
+		
+		if(resolvedElement.oclIsUndefined()) {
+			mapped := self.map transform();
+		}
+		else {
+			mapped := resolvedElement.oclAsType(Stdlib::Element).deepclone();
+		}
+		endif;
+		result := mapped.oclAsType(EObject);
+	}
 }
 
 query EStructuralFeature::isValidFeature() : Boolean {
