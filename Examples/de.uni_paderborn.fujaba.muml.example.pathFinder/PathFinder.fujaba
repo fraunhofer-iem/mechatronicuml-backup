@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r2996)-->
+<!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_9LmCAH9WEeO-DvQQYvJh6Q">
-  <categories xmi:id="_9LmpEH9WEeO-DvQQYvJh6Q" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_9LmpEX9WEeO-DvQQYvJh6Q" name="VOID"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_9LmpEn9WEeO-DvQQYvJh6Q" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_9LmpE39WEeO-DvQQYvJh6Q" name="INT8" primitiveType="INT8"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_9LmpFH9WEeO-DvQQYvJh6Q" name="INT16" primitiveType="INT16"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_9LmpFX9WEeO-DvQQYvJh6Q" name="INT32" primitiveType="INT32"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_9LmpFn9WEeO-DvQQYvJh6Q" name="INT64" primitiveType="INT64"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_9LmpF39WEeO-DvQQYvJh6Q" name="DOUBLE" primitiveType="DOUBLE"/>
-  </categories>
+  <categories xmi:id="_9LmpEH9WEeO-DvQQYvJh6Q" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_Ir6DgH9XEeO-DvQQYvJh6Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_DRdfEKm_EeOm7bbPSJmxhg" name="Exploration" behavior="_VONM0H9fEeOl-LRN5Q0gXA">
       <ports xsi:type="component:DiscretePort" xmi:id="_xgAaMKm_EeOm7bbPSJmxhg" name="sender" behavior="_Qlo1canAEeOHxO33vmqIUg" senderMessageTypes="_kswCoH9YEeO-DvQQYvJh6Q _o1bIMH9YEeO-DvQQYvJh6Q" refinedRole="_ygKAwH9bEeO-DvQQYvJh6Q">
@@ -25,7 +17,7 @@
           <lowerBound xmi:id="_PGmroanAEeOHxO33vmqIUg"/>
           <upperBound xmi:id="_PGmroqnAEeOHxO33vmqIUg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_PGsyQKnAEeOHxO33vmqIUg" messageType="_kswCoH9YEeO-DvQQYvJh6Q _o1bIMH9YEeO-DvQQYvJh6Q">
+        <receiverMessageBuffer xmi:id="_PGsyQKnAEeOHxO33vmqIUg" name="receiver_buf" messageType="_kswCoH9YEeO-DvQQYvJh6Q _o1bIMH9YEeO-DvQQYvJh6Q">
           <bufferSize xmi:id="_PGsyQanAEeOHxO33vmqIUg" value="5"/>
         </receiverMessageBuffer>
       </ports>
@@ -34,7 +26,7 @@
           <lowerBound xmi:id="_NeYwoanAEeOHxO33vmqIUg"/>
           <upperBound xmi:id="_NeYwoqnAEeOHxO33vmqIUg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_Nelk8KnAEeOHxO33vmqIUg" messageType="_-B00gH9YEeO-DvQQYvJh6Q __W04kH9YEeO-DvQQYvJh6Q _AmjbEH9ZEeO-DvQQYvJh6Q">
+        <receiverMessageBuffer xmi:id="_Nelk8KnAEeOHxO33vmqIUg" name="master_buf" messageType="_-B00gH9YEeO-DvQQYvJh6Q __W04kH9YEeO-DvQQYvJh6Q _AmjbEH9ZEeO-DvQQYvJh6Q">
           <bufferSize xmi:id="_Nelk8anAEeOHxO33vmqIUg" value="10"/>
         </receiverMessageBuffer>
       </ports>
@@ -51,7 +43,7 @@
           <lowerBound xmi:id="_LPOKYanAEeOHxO33vmqIUg"/>
           <upperBound xmi:id="_LPOKYqnAEeOHxO33vmqIUg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_LPq2UKnAEeOHxO33vmqIUg" messageType="_sWzkQH9YEeO-DvQQYvJh6Q _uHCLwH9YEeO-DvQQYvJh6Q _19r-8H9YEeO-DvQQYvJh6Q _3jFPcH9YEeO-DvQQYvJh6Q _5Xbh8H9YEeO-DvQQYvJh6Q">
+        <receiverMessageBuffer xmi:id="_LPq2UKnAEeOHxO33vmqIUg" name="slave_buf" messageType="_sWzkQH9YEeO-DvQQYvJh6Q _uHCLwH9YEeO-DvQQYvJh6Q _19r-8H9YEeO-DvQQYvJh6Q _3jFPcH9YEeO-DvQQYvJh6Q _5Xbh8H9YEeO-DvQQYvJh6Q">
           <bufferSize xmi:id="_LPq2UanAEeOHxO33vmqIUg" value="10"/>
         </receiverMessageBuffer>
       </ports>
@@ -100,7 +92,7 @@
           <lowerBound xmi:id="_U2ZHwcFgEeOAftoj-Q76rA"/>
           <upperBound xmi:id="_U2ZHwsFgEeOAftoj-Q76rA"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_U2kG4MFgEeOAftoj-Q76rA" messageType="_EaPQoMFbEeOGlPg7Nylgjw _T84fIMFbEeOGlPg7Nylgjw _YGh1EMFbEeOGlPg7Nylgjw">
+        <receiverMessageBuffer xmi:id="_U2kG4MFgEeOAftoj-Q76rA" name="wifi_buf" messageType="_EaPQoMFbEeOGlPg7Nylgjw _T84fIMFbEeOGlPg7Nylgjw _YGh1EMFbEeOGlPg7Nylgjw">
           <bufferSize xmi:id="_U2kG4cFgEeOAftoj-Q76rA" value="10"/>
         </receiverMessageBuffer>
       </ports>
@@ -108,14 +100,20 @@
   </categories>
   <categories xmi:id="_4w5i4H9XEeO-DvQQYvJh6Q" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_4w5i4X9XEeO-DvQQYvJh6Q" name="sender" behavioralElement="_ygKAwH9bEeO-DvQQYvJh6Q">
-      <operations xmi:id="_T2ytsITgEeOdxuAxiJdQoA" name="is_ENTER_button_pressed" returnType="_9LmpEn9WEeO-DvQQYvJh6Q"/>
+      <operations xmi:id="_T2ytsITgEeOdxuAxiJdQoA" name="is_ENTER_button_pressed">
+        <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+      </operations>
       <transitions xmi:id="_EGt5sH9aEeO-DvQQYvJh6Q" priority="1" target="_CjqykH9aEeO-DvQQYvJh6Q" source="_4w5i4n9XEeO-DvQQYvJh6Q">
         <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_mMjkEITgEeOdxuAxiJdQoA" operator="EQUAL">
           <leftExpression xsi:type="actionlanguage:OperationCall" xmi:id="_mMjkEYTgEeOdxuAxiJdQoA" operation="_T2ytsITgEeOdxuAxiJdQoA"/>
           <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_mMjkEoTgEeOdxuAxiJdQoA" value="0"/>
         </guard>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_0JbhIH9aEeO-DvQQYvJh6Q">
-          <message xmi:id="_0mAIYH9aEeO-DvQQYvJh6Q" instanceOf="_kswCoH9YEeO-DvQQYvJh6Q"/>
+          <message xmi:id="_0mAIYH9aEeO-DvQQYvJh6Q" instanceOf="_kswCoH9YEeO-DvQQYvJh6Q">
+            <parameterBinding xmi:id="_1UGQMJq1EeWHH7cQ5HOrAg" parameter="_5FFswI5WEeO4nOhI6PjUMw">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_pDRiUJq2EeWHH7cQ5HOrAg" value="1"/>
+            </parameterBinding>
+          </message>
         </events>
       </transitions>
       <transitions xmi:id="_E9o6oH9aEeO-DvQQYvJh6Q" priority="1" target="_4w5i4n9XEeO-DvQQYvJh6Q" source="_CjqykH9aEeO-DvQQYvJh6Q">
@@ -127,10 +125,7 @@
           <message xmi:id="_6SbfsH9aEeO-DvQQYvJh6Q" instanceOf="_o1bIMH9YEeO-DvQQYvJh6Q"/>
         </events>
       </transitions>
-      <states xmi:id="_4w5i4n9XEeO-DvQQYvJh6Q" name="Stop" outgoingTransitions="_EGt5sH9aEeO-DvQQYvJh6Q" incomingTransitions="_E9o6oH9aEeO-DvQQYvJh6Q" initial="true">
-        <embeddedRegions xmi:id="_7l1xAJPiEeOZKL6c4yfp1Q" priority="1"/>
-        <embeddedRegions xmi:id="_bFAtoJPjEeOZKL6c4yfp1Q" priority="2"/>
-      </states>
+      <states xmi:id="_4w5i4n9XEeO-DvQQYvJh6Q" name="Stop" outgoingTransitions="_EGt5sH9aEeO-DvQQYvJh6Q" incomingTransitions="_E9o6oH9aEeO-DvQQYvJh6Q" initial="true"/>
       <states xmi:id="_CjqykH9aEeO-DvQQYvJh6Q" name="Go" outgoingTransitions="_E9o6oH9aEeO-DvQQYvJh6Q" incomingTransitions="_EGt5sH9aEeO-DvQQYvJh6Q"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_FjXzAH9cEeO-DvQQYvJh6Q" name="receiver" behavioralElement="_ygLO4X9bEeO-DvQQYvJh6Q">
@@ -154,7 +149,9 @@
       <states xmi:id="_VONM0X9fEeOl-LRN5Q0gXA" name="init" initial="true">
         <embeddedRegions xmi:id="_Qlo1cKnAEeOHxO33vmqIUg" priority="1">
           <embeddedStatechart xmi:id="_Qlo1canAEeOHxO33vmqIUg" name="sender_sender" behavioralElement="_xgAaMKm_EeOm7bbPSJmxhg">
-            <operations xmi:id="_Qlo1cqnAEeOHxO33vmqIUg" name="is_ENTER_button_pressed" returnType="_9LmpEn9WEeO-DvQQYvJh6Q"/>
+            <operations xmi:id="_Qlo1cqnAEeOHxO33vmqIUg" name="is_ENTER_button_pressed">
+              <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+            </operations>
             <transitions xmi:id="_Qlo1c6nAEeOHxO33vmqIUg" priority="1" target="_Qlo1gqnAEeOHxO33vmqIUg" source="_Qlo1f6nAEeOHxO33vmqIUg">
               <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_Qlo1dKnAEeOHxO33vmqIUg" operator="EQUAL">
                 <leftExpression xsi:type="actionlanguage:OperationCall" xmi:id="_Qlo1danAEeOHxO33vmqIUg" operation="_Qlo1cqnAEeOHxO33vmqIUg"/>
@@ -184,26 +181,40 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_csC3YH9fEeOl-LRN5Q0gXA" name="Navigation" behavioralElement="_GKycoKm_EeOm7bbPSJmxhg">
-      <variables xmi:id="_E21cgI5XEeO4nOhI6PjUMw" name="tempWert" dataType="_9LmpF39WEeO-DvQQYvJh6Q">
+      <variables xmi:id="_E21cgI5XEeO4nOhI6PjUMw" name="tempWert">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GqGJ4I5XEeO4nOhI6PjUMw" value="0.0"/>
       </variables>
       <states xmi:id="_csC3YX9fEeOl-LRN5Q0gXA" name="init" initial="true">
         <embeddedRegions xmi:id="_NeooQKnAEeOHxO33vmqIUg" priority="1">
           <embeddedStatechart xmi:id="_NepPUKnAEeOHxO33vmqIUg" name="master_master" behavioralElement="_z3OwQKm_EeOm7bbPSJmxhg">
-            <operations xmi:id="_NepPUanAEeOHxO33vmqIUg" name="isAngleReached" returnType="_9LmpEn9WEeO-DvQQYvJh6Q">
-              <parameters xmi:id="_NepPUqnAEeOHxO33vmqIUg" name="target" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
-              <parameters xmi:id="_NepPU6nAEeOHxO33vmqIUg" name="current" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+            <operations xmi:id="_NepPUanAEeOHxO33vmqIUg" name="isAngleReached">
+              <parameters xmi:id="_NepPUqnAEeOHxO33vmqIUg" name="target">
+                <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              </parameters>
+              <parameters xmi:id="_NepPU6nAEeOHxO33vmqIUg" name="current">
+                <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              </parameters>
+              <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
             </operations>
-            <operations xmi:id="_NepPVKnAEeOHxO33vmqIUg" name="get_compass_sensor" returnType="_9LmpFX9WEeO-DvQQYvJh6Q">
-              <parameters xmi:id="_NepPVanAEeOHxO33vmqIUg" name="SENSOR" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+            <operations xmi:id="_NepPVKnAEeOHxO33vmqIUg" name="get_compass_sensor">
+              <parameters xmi:id="_NepPVanAEeOHxO33vmqIUg" name="SENSOR">
+                <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              </parameters>
+              <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
             </operations>
-            <operations xmi:id="_NepPVqnAEeOHxO33vmqIUg" name="set_motors" returnType="_9LmpEX9WEeO-DvQQYvJh6Q">
-              <parameters xmi:id="_NepPV6nAEeOHxO33vmqIUg" name="mode" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+            <operations xmi:id="_NepPVqnAEeOHxO33vmqIUg" name="set_motors">
+              <parameters xmi:id="_NepPV6nAEeOHxO33vmqIUg" name="mode">
+                <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              </parameters>
+              <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#void"/>
             </operations>
-            <variables xmi:id="_NepPWKnAEeOHxO33vmqIUg" name="refAngular" dataType="_9LmpFX9WEeO-DvQQYvJh6Q">
+            <variables xmi:id="_NepPWKnAEeOHxO33vmqIUg" name="refAngular">
+              <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_NepPWanAEeOHxO33vmqIUg" value="0"/>
             </variables>
-            <variables xmi:id="_NepPWqnAEeOHxO33vmqIUg" name="startAngular" dataType="_9LmpFX9WEeO-DvQQYvJh6Q">
+            <variables xmi:id="_NepPWqnAEeOHxO33vmqIUg" name="startAngular">
+              <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_NepPW6nAEeOHxO33vmqIUg" value="0"/>
             </variables>
             <transitions xmi:id="_NepPXKnAEeOHxO33vmqIUg" priority="1" target="_IeA5AMFkEeOyMvJpN2qZJA" source="_NepPp6nAEeOHxO33vmqIUg">
@@ -503,8 +514,11 @@
       <states xmi:id="_jNJz8X9fEeOl-LRN5Q0gXA" name="init" initial="true">
         <embeddedRegions xmi:id="_LPzZMKnAEeOHxO33vmqIUg" priority="1">
           <embeddedStatechart xmi:id="_LP2cgKnAEeOHxO33vmqIUg" name="slave_slave" behavioralElement="_yKHuMKm_EeOm7bbPSJmxhg">
-            <operations xmi:id="_LP2cganAEeOHxO33vmqIUg" name="get_sonar_sensor" returnType="_9LmpFX9WEeO-DvQQYvJh6Q">
-              <parameters xmi:id="_LP2cgqnAEeOHxO33vmqIUg" name="SENSOR" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+            <operations xmi:id="_LP2cganAEeOHxO33vmqIUg" name="get_sonar_sensor">
+              <parameters xmi:id="_LP2cgqnAEeOHxO33vmqIUg" name="SENSOR">
+                <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              </parameters>
+              <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
             </operations>
             <states xmi:id="_LP2cg6nAEeOHxO33vmqIUg" name="Main" initial="true">
               <embeddedRegions xmi:id="_LP2chKnAEeOHxO33vmqIUg" priority="1">
@@ -609,8 +623,11 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_cNfdsH9gEeOl-LRN5Q0gXA" name="slave" behavioralElement="_HYSwcX9gEeOl-LRN5Q0gXA">
-      <operations xmi:id="_2tPIIITgEeOdxuAxiJdQoA" name="get_sonar_sensor" returnType="_9LmpFX9WEeO-DvQQYvJh6Q">
-        <parameters xmi:id="_44b0YITgEeOdxuAxiJdQoA" name="SENSOR" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+      <operations xmi:id="_2tPIIITgEeOdxuAxiJdQoA" name="get_sonar_sensor">
+        <parameters xmi:id="_44b0YITgEeOdxuAxiJdQoA" name="SENSOR">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </operations>
       <states xmi:id="_cNfdsX9gEeOl-LRN5Q0gXA" name="Main" initial="true">
         <embeddedRegions xmi:id="_iSiecH9iEeOl-LRN5Q0gXA" priority="1">
@@ -676,12 +693,12 @@
         <embeddedRegions xmi:id="_0_iwIH9iEeOl-LRN5Q0gXA" priority="3">
           <embeddedStatechart xmi:id="_0_j-QH9iEeOl-LRN5Q0gXA" name="DetectionLeft">
             <transitions xmi:id="__DwAAH9iEeOl-LRN5Q0gXA" priority="1" target="_0_j-QX9iEeOl-LRN5Q0gXA" source="_5PW_gH9iEeOl-LRN5Q0gXA">
-              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_ubXmkH9kEeOl-LRN5Q0gXA">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_ubXmkH9kEeOl-LRN5Q0gXA" kind="TRIGGER">
                 <message xmi:id="_uuTwsH9kEeOl-LRN5Q0gXA" instanceOf="_sWzkQH9YEeO-DvQQYvJh6Q"/>
               </events>
             </transitions>
             <transitions xmi:id="_AJxz8H9jEeOl-LRN5Q0gXA" priority="1" target="_5PW_gH9iEeOl-LRN5Q0gXA" source="_0_j-QX9iEeOl-LRN5Q0gXA">
-              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_sgMTUH9kEeOl-LRN5Q0gXA">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_sgMTUH9kEeOl-LRN5Q0gXA" kind="TRIGGER">
                 <message xmi:id="_tERQwH9kEeOl-LRN5Q0gXA" instanceOf="_5Xbh8H9YEeO-DvQQYvJh6Q"/>
               </events>
             </transitions>
@@ -698,7 +715,7 @@
                       </leftExpression>
                       <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_iOD4xIThEeOdxuAxiJdQoA" value="50"/>
                     </guard>
-                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_wl3IMH9kEeOl-LRN5Q0gXA" kind="TRIGGER">
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_wl3IMH9kEeOl-LRN5Q0gXA">
                       <message xmi:id="_w7CuAH9kEeOl-LRN5Q0gXA" instanceOf="__W04kH9YEeO-DvQQYvJh6Q"/>
                     </events>
                   </transitions>
@@ -712,20 +729,33 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_2FODIIHxEeOIHIieco8jLg" name="master" behavioralElement="_HYRiUH9gEeOl-LRN5Q0gXA">
-      <operations xmi:id="_KjPz0ITiEeOdxuAxiJdQoA" name="isAngleReached" returnType="_9LmpEn9WEeO-DvQQYvJh6Q">
-        <parameters xmi:id="_OFdWUITiEeOdxuAxiJdQoA" name="target" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
-        <parameters xmi:id="_QmgWyoTiEeOdxuAxiJdQoA" name="current" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+      <operations xmi:id="_KjPz0ITiEeOdxuAxiJdQoA" name="isAngleReached">
+        <parameters xmi:id="_OFdWUITiEeOdxuAxiJdQoA" name="target">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <parameters xmi:id="_QmgWyoTiEeOdxuAxiJdQoA" name="current">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
       </operations>
-      <operations xmi:id="_TD3xEITiEeOdxuAxiJdQoA" name="get_compass_sensor" returnType="_9LmpFX9WEeO-DvQQYvJh6Q">
-        <parameters xmi:id="_U4r9oITiEeOdxuAxiJdQoA" name="SENSOR" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+      <operations xmi:id="_TD3xEITiEeOdxuAxiJdQoA" name="get_compass_sensor">
+        <parameters xmi:id="_U4r9oITiEeOdxuAxiJdQoA" name="SENSOR">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </operations>
-      <operations xmi:id="_bV3ccITiEeOdxuAxiJdQoA" name="set_motors" returnType="_9LmpEX9WEeO-DvQQYvJh6Q">
-        <parameters xmi:id="_cVbcAITiEeOdxuAxiJdQoA" name="mode" dataType="_9LmpFX9WEeO-DvQQYvJh6Q"/>
+      <operations xmi:id="_bV3ccITiEeOdxuAxiJdQoA" name="set_motors">
+        <parameters xmi:id="_cVbcAITiEeOdxuAxiJdQoA" name="mode">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#void"/>
       </operations>
-      <variables xmi:id="_e5Iu4ITiEeOdxuAxiJdQoA" name="refAngular" dataType="_9LmpFX9WEeO-DvQQYvJh6Q">
+      <variables xmi:id="_e5Iu4ITiEeOdxuAxiJdQoA" name="refAngular">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_gxxEcITiEeOdxuAxiJdQoA" value="0"/>
       </variables>
-      <variables xmi:id="_hVy-kITiEeOdxuAxiJdQoA" name="startAngular" dataType="_9LmpFX9WEeO-DvQQYvJh6Q">
+      <variables xmi:id="_hVy-kITiEeOdxuAxiJdQoA" name="startAngular">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_iM17UITiEeOdxuAxiJdQoA" value="0"/>
       </variables>
       <transitions xmi:id="_BycBUITpEeOo9tnQ8HZFmw" priority="1" target="_pKAhwITiEeOdxuAxiJdQoA" source="_2FODIYHxEeOIHIieco8jLg"/>
@@ -762,7 +792,11 @@
           </rightExpression>
         </guard>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_AYFRQITrEeOPcqKYh5mPnw">
-          <message xmi:id="_At4iIITrEeOPcqKYh5mPnw" instanceOf="_uHCLwH9YEeO-DvQQYvJh6Q"/>
+          <message xmi:id="_At4iIITrEeOPcqKYh5mPnw" instanceOf="_uHCLwH9YEeO-DvQQYvJh6Q">
+            <parameterBinding xmi:id="_SnqzwJq9EeWHH7cQ5HOrAg" parameter="_F7PSEI5SEeOoZccQlGKjpA">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_TqkbMJq9EeWHH7cQ5HOrAg" value="0"/>
+            </parameterBinding>
+          </message>
         </events>
       </transitions>
       <transitions xmi:id="_GvCMQITrEeOPcqKYh5mPnw" priority="1" target="_ujkAYITiEeOdxuAxiJdQoA" source="_xQ034ITiEeOdxuAxiJdQoA">
@@ -814,7 +848,11 @@
           <message xmi:id="_qgOgQIUCEeOsg9Whob33ag" instanceOf="_AmjbEH9ZEeO-DvQQYvJh6Q"/>
         </events>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_9-XT8IUCEeOsg9Whob33ag">
-          <message xmi:id="_-pn3cIUCEeOsg9Whob33ag" instanceOf="_uHCLwH9YEeO-DvQQYvJh6Q"/>
+          <message xmi:id="_-pn3cIUCEeOsg9Whob33ag" instanceOf="_uHCLwH9YEeO-DvQQYvJh6Q">
+            <parameterBinding xmi:id="_YADNsJq9EeWHH7cQ5HOrAg" parameter="_F7PSEI5SEeOoZccQlGKjpA">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_YvlNMJq9EeWHH7cQ5HOrAg" value="0"/>
+            </parameterBinding>
+          </message>
         </events>
         <action xmi:id="_s00ZEIUCEeOsg9Whob33ag" name="Turn Right">
           <expressions xsi:type="actionlanguage:OperationCall" xmi:id="__6FZwIUCEeOsg9Whob33ag" operation="_bV3ccITiEeOdxuAxiJdQoA">
@@ -943,8 +981,11 @@
       <states xmi:id="_iams8cFbEeOGlPg7Nylgjw" name="ready" outgoingTransitions="_XiQYcMFdEeOHfMcSSRjLhQ _aDjQgMFdEeOHfMcSSRjLhQ _cHtgoMFdEeOHfMcSSRjLhQ" incomingTransitions="_XiQYcMFdEeOHfMcSSRjLhQ _aDjQgMFdEeOHfMcSSRjLhQ _cHtgoMFdEeOHfMcSSRjLhQ" initial="true"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_lJYx8MFcEeOfVuqHzZcmOQ" name="WifiWifiBeh" behavioralElement="_xdaaQMFaEeOfdO5VzAmj_g">
-      <operations xmi:id="_C1FwYMFeEeOHfMcSSRjLhQ" name="sendWifi" returnType="_9LmpEX9WEeO-DvQQYvJh6Q">
-        <parameters xmi:id="_D6lY0MFeEeOHfMcSSRjLhQ" name="mode" dataType="_9LmpFX9WEeO-DvQQYvJh6Q" comment="0 = straight&#xA;1 = left&#xA;2 = right"/>
+      <operations xmi:id="_C1FwYMFeEeOHfMcSSRjLhQ" name="sendWifi">
+        <parameters xmi:id="_D6lY0MFeEeOHfMcSSRjLhQ" name="mode" comment="0 = straight&#xA;1 = left&#xA;2 = right">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#void"/>
       </operations>
       <transitions xmi:id="_1N-acMFdEeOHfMcSSRjLhQ" priority="1" target="_x6nzUMFdEeOHfMcSSRjLhQ" source="_lJaAEMFcEeOfVuqHzZcmOQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_5ieVgMFdEeOHfMcSSRjLhQ" kind="TRIGGER">
@@ -1003,8 +1044,11 @@
       <states xmi:id="_PJpAUcFgEeOAftoj-Q76rA" name="init" initial="true">
         <embeddedRegions xmi:id="_U2qNgMFgEeOAftoj-Q76rA" priority="1">
           <embeddedStatechart xmi:id="_U2q0kMFgEeOAftoj-Q76rA" name="WifiWifiBeh_wifi" behavioralElement="_edxgcMFaEeOfdO5VzAmj_g">
-            <operations xmi:id="_U2q0kcFgEeOAftoj-Q76rA" name="sendWifi" returnType="_9LmpEX9WEeO-DvQQYvJh6Q">
-              <parameters xmi:id="_U2q0ksFgEeOAftoj-Q76rA" name="mode" dataType="_9LmpFX9WEeO-DvQQYvJh6Q" comment="0 = straight&#xA;1 = left&#xA;2 = right"/>
+            <operations xmi:id="_U2q0kcFgEeOAftoj-Q76rA" name="sendWifi">
+              <parameters xmi:id="_U2q0ksFgEeOAftoj-Q76rA" name="mode" comment="0 = straight&#xA;1 = left&#xA;2 = right">
+                <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              </parameters>
+              <returnType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#void"/>
             </operations>
             <transitions xmi:id="_U2q0k8FgEeOAftoj-Q76rA" priority="1" target="_U2q0oMFgEeOAftoj-Q76rA" source="_U2q0n8FgEeOAftoj-Q76rA">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_U2q0lMFgEeOAftoj-Q76rA" kind="TRIGGER">
@@ -1066,14 +1110,18 @@
   <categories xmi:id="_i2iH4H9YEeO-DvQQYvJh6Q" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_jh1usH9YEeO-DvQQYvJh6Q" name="Exploration">
       <messageTypes xmi:id="_kswCoH9YEeO-DvQQYvJh6Q" name="start">
-        <parameters xmi:id="_5FFswI5WEeO4nOhI6PjUMw" name="wert" dataType="_9LmpF39WEeO-DvQQYvJh6Q"/>
+        <parameters xmi:id="_5FFswI5WEeO4nOhI6PjUMw" name="wert">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        </parameters>
       </messageTypes>
       <messageTypes xmi:id="_o1bIMH9YEeO-DvQQYvJh6Q" name="stop"/>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_q16ZQH9YEeO-DvQQYvJh6Q" name="Navigation">
       <messageTypes xmi:id="_sWzkQH9YEeO-DvQQYvJh6Q" name="stopDetectLeft"/>
       <messageTypes xmi:id="_uHCLwH9YEeO-DvQQYvJh6Q" name="stopDetectRight">
-        <parameters xmi:id="_F7PSEI5SEeOoZccQlGKjpA" name="wert" dataType="_9LmpF39WEeO-DvQQYvJh6Q"/>
+        <parameters xmi:id="_F7PSEI5SEeOoZccQlGKjpA" name="wert">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        </parameters>
       </messageTypes>
       <messageTypes xmi:id="_19r-8H9YEeO-DvQQYvJh6Q" name="turnFinished"/>
       <messageTypes xmi:id="_3jFPcH9YEeO-DvQQYvJh6Q" name="detectRight"/>
@@ -1103,7 +1151,7 @@
           <lowerBound xmi:id="_9ZZGEIHKEeOHorPmi2Cieg"/>
           <upperBound xmi:id="_9ZfMsIHKEeOHorPmi2Cieg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_uJ4HkH9cEeOvztdWNTWebA" messageType="_kswCoH9YEeO-DvQQYvJh6Q _o1bIMH9YEeO-DvQQYvJh6Q">
+        <receiverMessageBuffer xmi:id="_uJ4HkH9cEeOvztdWNTWebA" name="recveiver_role_buf" messageType="_kswCoH9YEeO-DvQQYvJh6Q _o1bIMH9YEeO-DvQQYvJh6Q">
           <bufferSize xmi:id="_vb_PsH9cEeOvztdWNTWebA" value="5"/>
         </receiverMessageBuffer>
       </roles>
@@ -1124,7 +1172,7 @@
           <lowerBound xmi:id="_HYSJYX9gEeOl-LRN5Q0gXA"/>
           <upperBound xmi:id="_HYSwcH9gEeOl-LRN5Q0gXA"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_j2JlQH9tEeOEYPVNG8t05g" messageType="_-B00gH9YEeO-DvQQYvJh6Q __W04kH9YEeO-DvQQYvJh6Q _AmjbEH9ZEeO-DvQQYvJh6Q">
+        <receiverMessageBuffer xmi:id="_j2JlQH9tEeOEYPVNG8t05g" name="master_role_buf" messageType="_-B00gH9YEeO-DvQQYvJh6Q __W04kH9YEeO-DvQQYvJh6Q _AmjbEH9ZEeO-DvQQYvJh6Q">
           <bufferSize xmi:id="_l9kkwH9tEeOEYPVNG8t05g" value="10"/>
         </receiverMessageBuffer>
       </roles>
@@ -1133,7 +1181,7 @@
           <lowerBound xmi:id="_vvrYAH9tEeOEYPVNG8t05g"/>
           <upperBound xmi:id="_vvyFsH9tEeOEYPVNG8t05g"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_sgp3QH9tEeOEYPVNG8t05g" messageType="_sWzkQH9YEeO-DvQQYvJh6Q _uHCLwH9YEeO-DvQQYvJh6Q _19r-8H9YEeO-DvQQYvJh6Q _3jFPcH9YEeO-DvQQYvJh6Q _5Xbh8H9YEeO-DvQQYvJh6Q">
+        <receiverMessageBuffer xmi:id="_sgp3QH9tEeOEYPVNG8t05g" name="slave_role_buf" messageType="_sWzkQH9YEeO-DvQQYvJh6Q _uHCLwH9YEeO-DvQQYvJh6Q _19r-8H9YEeO-DvQQYvJh6Q _3jFPcH9YEeO-DvQQYvJh6Q _5Xbh8H9YEeO-DvQQYvJh6Q">
           <bufferSize xmi:id="_uwhBEH9tEeOEYPVNG8t05g" value="10"/>
         </receiverMessageBuffer>
       </roles>
@@ -1154,7 +1202,7 @@
           <lowerBound xmi:id="_xdbBUcFaEeOfdO5VzAmj_g"/>
           <upperBound xmi:id="_xdboYMFaEeOfdO5VzAmj_g"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_y5ZlMMFcEeOfVuqHzZcmOQ" messageType="_EaPQoMFbEeOGlPg7Nylgjw _T84fIMFbEeOGlPg7Nylgjw _YGh1EMFbEeOGlPg7Nylgjw">
+        <receiverMessageBuffer xmi:id="_y5ZlMMFcEeOfVuqHzZcmOQ" name="wifi_role_buf" messageType="_EaPQoMFbEeOGlPg7Nylgjw _T84fIMFbEeOGlPg7Nylgjw _YGh1EMFbEeOGlPg7Nylgjw">
           <bufferSize xmi:id="_zs-XMMFcEeOfVuqHzZcmOQ" value="10"/>
         </receiverMessageBuffer>
       </roles>
