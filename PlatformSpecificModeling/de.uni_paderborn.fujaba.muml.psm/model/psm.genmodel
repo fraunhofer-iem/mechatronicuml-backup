@@ -55,6 +55,7 @@
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//properties/CANMessageFrame">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/CANMessageFrame/priority"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/CANMessageFrame/deadline"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Psm_realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.psm"

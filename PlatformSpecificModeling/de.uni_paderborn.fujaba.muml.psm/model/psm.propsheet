@@ -112,6 +112,10 @@
         <genFeature href="psm.genmodel#//psm/properties/CANMessageFrame/priority"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/CANMessageFrame/deadline"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
     </classes>
   </packages>
   <packages>
