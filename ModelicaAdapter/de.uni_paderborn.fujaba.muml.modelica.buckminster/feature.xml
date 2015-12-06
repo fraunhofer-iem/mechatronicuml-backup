@@ -38,6 +38,7 @@
       <import plugin="de.uni_paderborn.fujaba.graphviz.plain.xtext.ui"/>
       <import plugin="de.uni_paderborn.fujaba.muml"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage"/>
+      <import plugin="de.uni_paderborn.fujaba.modelica.m2t.transform"/>
    </requires>
 
    <plugin
