@@ -141,26 +141,49 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.Message} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MessageItemProvider messageItemProvider;
+	protected MessageFrameItemProvider messageFrameItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.Message}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMessageAdapter() {
-		if (messageItemProvider == null) {
-			messageItemProvider = new MessageItemProvider(this);
+	public Adapter createMessageFrameAdapter() {
+		if (messageFrameItemProvider == null) {
+			messageFrameItemProvider = new MessageFrameItemProvider(this);
 		}
 
-		return messageItemProvider;
+		return messageFrameItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CANMessageFrameItemProvider canMessageFrameItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCANMessageFrameAdapter() {
+		if (canMessageFrameItemProvider == null) {
+			canMessageFrameItemProvider = new CANMessageFrameItemProvider(this);
+		}
+
+		return canMessageFrameItemProvider;
 	}
 
 	/**
@@ -265,7 +288,8 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (wcetItemProvider != null) wcetItemProvider.dispose();
 		if (requiredMemoryItemProvider != null) requiredMemoryItemProvider.dispose();
 		if (schedulingItemProvider != null) schedulingItemProvider.dispose();
-		if (messageItemProvider != null) messageItemProvider.dispose();
+		if (messageFrameItemProvider != null) messageFrameItemProvider.dispose();
+		if (canMessageFrameItemProvider != null) canMessageFrameItemProvider.dispose();
 	}
 
 }

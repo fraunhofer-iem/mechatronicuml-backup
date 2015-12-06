@@ -882,14 +882,14 @@ public interface PropertiesPackage extends EPackage {
 	int SCHEDULING_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl <em>Message</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageFrameImpl <em>Message Frame</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMessage()
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageFrameImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMessageFrame()
 	 * @generated
 	 */
-	int MESSAGE = 3;
+	int MESSAGE_FRAME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -898,7 +898,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__ANNOTATION = SCHEDULING__ANNOTATION;
+	int MESSAGE_FRAME__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -907,7 +907,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__EXTENSION = SCHEDULING__EXTENSION;
+	int MESSAGE_FRAME__EXTENSION = CorePackage.EXTENSION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -916,7 +916,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__BASE = SCHEDULING__BASE;
+	int MESSAGE_FRAME__BASE = CorePackage.EXTENSION__BASE;
 
 	/**
 	 * The feature id for the '<em><b>Model Base</b></em>' reference.
@@ -925,7 +925,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__MODEL_BASE = SCHEDULING__MODEL_BASE;
+	int MESSAGE_FRAME__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
 
 	/**
 	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
@@ -934,7 +934,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__OWNING_ANNOTATION = SCHEDULING__OWNING_ANNOTATION;
+	int MESSAGE_FRAME__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
@@ -943,43 +943,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__EXTENDABLE_BASE = SCHEDULING__EXTENDABLE_BASE;
-
-	/**
-	 * The feature id for the '<em><b>Deadline</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__DEADLINE = SCHEDULING__DEADLINE;
-
-	/**
-	 * The feature id for the '<em><b>Period</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__PERIOD = SCHEDULING__PERIOD;
-
-	/**
-	 * The feature id for the '<em><b>Priority</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__PRIORITY = SCHEDULING__PRIORITY;
-
-	/**
-	 * The feature id for the '<em><b>Message Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__MESSAGE_TYPE = SCHEDULING_FEATURE_COUNT + 0;
+	int MESSAGE_FRAME__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' containment reference.
@@ -988,16 +952,25 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__SIZE = SCHEDULING_FEATURE_COUNT + 1;
+	int MESSAGE_FRAME__SIZE = CorePackage.EXTENSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Message</em>' class.
+	 * The feature id for the '<em><b>Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FEATURE_COUNT = SCHEDULING_FEATURE_COUNT + 2;
+	int MESSAGE_FRAME__PERIOD = CorePackage.EXTENSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Message Frame</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_FRAME_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1006,7 +979,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ECLASS = SCHEDULING___ECLASS;
+	int MESSAGE_FRAME___ECLASS = CorePackage.EXTENSION___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -1015,7 +988,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___EIS_PROXY = SCHEDULING___EIS_PROXY;
+	int MESSAGE_FRAME___EIS_PROXY = CorePackage.EXTENSION___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -1024,7 +997,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ERESOURCE = SCHEDULING___ERESOURCE;
+	int MESSAGE_FRAME___ERESOURCE = CorePackage.EXTENSION___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -1033,7 +1006,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ECONTAINER = SCHEDULING___ECONTAINER;
+	int MESSAGE_FRAME___ECONTAINER = CorePackage.EXTENSION___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -1042,7 +1015,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ECONTAINING_FEATURE = SCHEDULING___ECONTAINING_FEATURE;
+	int MESSAGE_FRAME___ECONTAINING_FEATURE = CorePackage.EXTENSION___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -1051,7 +1024,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ECONTAINMENT_FEATURE = SCHEDULING___ECONTAINMENT_FEATURE;
+	int MESSAGE_FRAME___ECONTAINMENT_FEATURE = CorePackage.EXTENSION___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -1060,7 +1033,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ECONTENTS = SCHEDULING___ECONTENTS;
+	int MESSAGE_FRAME___ECONTENTS = CorePackage.EXTENSION___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -1069,7 +1042,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___EALL_CONTENTS = SCHEDULING___EALL_CONTENTS;
+	int MESSAGE_FRAME___EALL_CONTENTS = CorePackage.EXTENSION___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1078,7 +1051,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ECROSS_REFERENCES = SCHEDULING___ECROSS_REFERENCES;
+	int MESSAGE_FRAME___ECROSS_REFERENCES = CorePackage.EXTENSION___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1087,7 +1060,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___EGET__ESTRUCTURALFEATURE = SCHEDULING___EGET__ESTRUCTURALFEATURE;
+	int MESSAGE_FRAME___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1096,7 +1069,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SCHEDULING___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int MESSAGE_FRAME___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1105,7 +1078,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___ESET__ESTRUCTURALFEATURE_OBJECT = SCHEDULING___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int MESSAGE_FRAME___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1114,7 +1087,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___EIS_SET__ESTRUCTURALFEATURE = SCHEDULING___EIS_SET__ESTRUCTURALFEATURE;
+	int MESSAGE_FRAME___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1123,7 +1096,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___EUNSET__ESTRUCTURALFEATURE = SCHEDULING___EUNSET__ESTRUCTURALFEATURE;
+	int MESSAGE_FRAME___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1132,7 +1105,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___EINVOKE__EOPERATION_ELIST = SCHEDULING___EINVOKE__EOPERATION_ELIST;
+	int MESSAGE_FRAME___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1141,7 +1114,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___GET_EXTENSION__ECLASS = SCHEDULING___GET_EXTENSION__ECLASS;
+	int MESSAGE_FRAME___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1150,7 +1123,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___PROVIDE_EXTENSION__ECLASS = SCHEDULING___PROVIDE_EXTENSION__ECLASS;
+	int MESSAGE_FRAME___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENSION___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1159,7 +1132,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___GET_ANNOTATION__STRING = SCHEDULING___GET_ANNOTATION__STRING;
+	int MESSAGE_FRAME___GET_ANNOTATION__STRING = CorePackage.EXTENSION___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1168,16 +1141,296 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___PROVIDE_ANNOTATION__STRING = SCHEDULING___PROVIDE_ANNOTATION__STRING;
+	int MESSAGE_FRAME___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENSION___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Message</em>' class.
+	 * The number of operations of the '<em>Message Frame</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_OPERATION_COUNT = SCHEDULING_OPERATION_COUNT + 0;
+	int MESSAGE_FRAME_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.CANMessageFrameImpl <em>CAN Message Frame</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.CANMessageFrameImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getCANMessageFrame()
+	 * @generated
+	 */
+	int CAN_MESSAGE_FRAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__ANNOTATION = MESSAGE_FRAME__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__EXTENSION = MESSAGE_FRAME__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__BASE = MESSAGE_FRAME__BASE;
+
+	/**
+	 * The feature id for the '<em><b>Model Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__MODEL_BASE = MESSAGE_FRAME__MODEL_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__OWNING_ANNOTATION = MESSAGE_FRAME__OWNING_ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__EXTENDABLE_BASE = MESSAGE_FRAME__EXTENDABLE_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__SIZE = MESSAGE_FRAME__SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__PERIOD = MESSAGE_FRAME__PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__PRIORITY = MESSAGE_FRAME_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>CAN Message Frame</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME_FEATURE_COUNT = MESSAGE_FRAME_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ECLASS = MESSAGE_FRAME___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___EIS_PROXY = MESSAGE_FRAME___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ERESOURCE = MESSAGE_FRAME___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ECONTAINER = MESSAGE_FRAME___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ECONTAINING_FEATURE = MESSAGE_FRAME___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ECONTAINMENT_FEATURE = MESSAGE_FRAME___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ECONTENTS = MESSAGE_FRAME___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___EALL_CONTENTS = MESSAGE_FRAME___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ECROSS_REFERENCES = MESSAGE_FRAME___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___EGET__ESTRUCTURALFEATURE = MESSAGE_FRAME___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___EGET__ESTRUCTURALFEATURE_BOOLEAN = MESSAGE_FRAME___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___ESET__ESTRUCTURALFEATURE_OBJECT = MESSAGE_FRAME___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___EIS_SET__ESTRUCTURALFEATURE = MESSAGE_FRAME___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___EUNSET__ESTRUCTURALFEATURE = MESSAGE_FRAME___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___EINVOKE__EOPERATION_ELIST = MESSAGE_FRAME___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___GET_EXTENSION__ECLASS = MESSAGE_FRAME___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___PROVIDE_EXTENSION__ECLASS = MESSAGE_FRAME___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___GET_ANNOTATION__STRING = MESSAGE_FRAME___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___PROVIDE_ANNOTATION__STRING = MESSAGE_FRAME___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>CAN Message Frame</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME_OPERATION_COUNT = MESSAGE_FRAME_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET <em>WCET</em>}'.
@@ -1287,36 +1540,57 @@ public interface PropertiesPackage extends EPackage {
 	EReference getScheduling_Priority();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.Message <em>Message</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame <em>Message Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Message</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Message
+	 * @return the meta object for class '<em>Message Frame</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame
 	 * @generated
 	 */
-	EClass getMessage();
+	EClass getMessageFrame();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Message#getMessageType <em>Message Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Message Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Message#getMessageType()
-	 * @see #getMessage()
-	 * @generated
-	 */
-	EReference getMessage_MessageType();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Message#getSize <em>Size</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Size</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Message#getSize()
-	 * @see #getMessage()
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame#getSize()
+	 * @see #getMessageFrame()
 	 * @generated
 	 */
-	EReference getMessage_Size();
+	EReference getMessageFrame_Size();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame#getPeriod <em>Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Period</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame#getPeriod()
+	 * @see #getMessageFrame()
+	 * @generated
+	 */
+	EReference getMessageFrame_Period();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame <em>CAN Message Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>CAN Message Frame</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame
+	 * @generated
+	 */
+	EClass getCANMessageFrame();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame#getPriority <em>Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Priority</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame#getPriority()
+	 * @see #getCANMessageFrame()
+	 * @generated
+	 */
+	EReference getCANMessageFrame_Priority();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1428,22 +1702,14 @@ public interface PropertiesPackage extends EPackage {
 		EReference SCHEDULING__PRIORITY = eINSTANCE.getScheduling_Priority();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl <em>Message</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageFrameImpl <em>Message Frame</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMessage()
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MessageFrameImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMessageFrame()
 		 * @generated
 		 */
-		EClass MESSAGE = eINSTANCE.getMessage();
-
-		/**
-		 * The meta object literal for the '<em><b>Message Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE__MESSAGE_TYPE = eINSTANCE.getMessage_MessageType();
+		EClass MESSAGE_FRAME = eINSTANCE.getMessageFrame();
 
 		/**
 		 * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
@@ -1451,7 +1717,33 @@ public interface PropertiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MESSAGE__SIZE = eINSTANCE.getMessage_Size();
+		EReference MESSAGE_FRAME__SIZE = eINSTANCE.getMessageFrame_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Period</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_FRAME__PERIOD = eINSTANCE.getMessageFrame_Period();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.CANMessageFrameImpl <em>CAN Message Frame</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.CANMessageFrameImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getCANMessageFrame()
+		 * @generated
+		 */
+		EClass CAN_MESSAGE_FRAME = eINSTANCE.getCANMessageFrame();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CAN_MESSAGE_FRAME__PRIORITY = eINSTANCE.getCANMessageFrame_Priority();
 
 	}
 

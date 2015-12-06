@@ -49,13 +49,22 @@ public interface PropertiesFactory extends EFactory {
 	Scheduling createScheduling();
 
 	/**
-	 * Returns a new object of class '<em>Message</em>'.
+	 * Returns a new object of class '<em>Message Frame</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Message</em>'.
+	 * @return a new object of class '<em>Message Frame</em>'.
 	 * @generated
 	 */
-	Message createMessage();
+	MessageFrame createMessageFrame();
+
+	/**
+	 * Returns a new object of class '<em>CAN Message Frame</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>CAN Message Frame</em>'.
+	 * @generated
+	 */
+	CANMessageFrame createCANMessageFrame();
 
 	/**
 	 * Returns the package supported by this factory.

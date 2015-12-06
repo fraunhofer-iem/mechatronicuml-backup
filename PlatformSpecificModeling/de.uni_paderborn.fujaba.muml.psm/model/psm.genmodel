@@ -49,10 +49,12 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//properties/Scheduling/priority"/>
       </genClasses>
-      <genClasses ecoreClass="psm.ecore#//properties/Message">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//properties/Message/messageType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/Message/size"/>
+      <genClasses ecoreClass="psm.ecore#//properties/MessageFrame">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/MessageFrame/size"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/MessageFrame/period"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//properties/CANMessageFrame">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/CANMessageFrame/priority"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Psm_realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.psm"

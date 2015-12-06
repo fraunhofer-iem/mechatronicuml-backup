@@ -94,14 +94,22 @@
       </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
-    <classes superClasses="//@packages.1/@classes.2">
-      <genClass href="psm.genmodel#//psm/properties/Message"/>
+    <classes>
+      <genClass href="psm.genmodel#//psm/properties/MessageFrame"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/properties/Message/messageType"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <genFeature href="psm.genmodel#//psm/properties/MessageFrame/size"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
-        <genFeature href="psm.genmodel#//psm/properties/Message/size"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/MessageFrame/period"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.3">
+      <genClass href="psm.genmodel#//psm/properties/CANMessageFrame"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/CANMessageFrame/priority"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
     </classes>

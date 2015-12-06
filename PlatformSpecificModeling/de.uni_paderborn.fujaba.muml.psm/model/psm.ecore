@@ -121,13 +121,23 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="priority" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="#//properties/Scheduling">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageFrame" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Extension">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents the scheduling properties of a CAN message (XXX: should we&#xA;rename the class to CANMessage?)"/>
+        <details key="documentation" value="Represents a general message frame."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="size" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="period" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CANMessageFrame" eSuperTypes="#//properties/MessageFrame">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a CAN message frame."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="priority" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>

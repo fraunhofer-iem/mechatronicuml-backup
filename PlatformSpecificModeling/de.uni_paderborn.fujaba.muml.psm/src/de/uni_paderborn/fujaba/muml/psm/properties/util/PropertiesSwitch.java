@@ -92,12 +92,20 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.MESSAGE: {
-				Message message = (Message)theEObject;
-				T result = caseMessage(message);
-				if (result == null) result = caseScheduling(message);
-				if (result == null) result = caseExtension(message);
-				if (result == null) result = caseExtendableElement(message);
+			case PropertiesPackage.MESSAGE_FRAME: {
+				MessageFrame messageFrame = (MessageFrame)theEObject;
+				T result = caseMessageFrame(messageFrame);
+				if (result == null) result = caseExtension(messageFrame);
+				if (result == null) result = caseExtendableElement(messageFrame);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.CAN_MESSAGE_FRAME: {
+				CANMessageFrame canMessageFrame = (CANMessageFrame)theEObject;
+				T result = caseCANMessageFrame(canMessageFrame);
+				if (result == null) result = caseMessageFrame(canMessageFrame);
+				if (result == null) result = caseExtension(canMessageFrame);
+				if (result == null) result = caseExtendableElement(canMessageFrame);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -151,17 +159,32 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Message Frame</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Message Frame</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMessage(Message object) {
+	public T caseMessageFrame(MessageFrame object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>CAN Message Frame</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>CAN Message Frame</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCANMessageFrame(CANMessageFrame object) {
 		return null;
 	}
 
