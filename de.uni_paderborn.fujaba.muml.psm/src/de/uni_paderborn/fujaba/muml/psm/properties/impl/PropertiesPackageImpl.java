@@ -8,7 +8,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.Hwplatforminstan
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
 import de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationPackageImpl;
@@ -19,7 +18,8 @@ import de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.impl.PsmPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
-import de.uni_paderborn.fujaba.muml.psm.properties.Message;
+import de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame;
+import de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory;
@@ -73,7 +73,14 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass messageEClass = null;
+	private EClass messageFrameEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass canMessageFrameEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -269,8 +276,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMessage() {
-		return messageEClass;
+	public EClass getMessageFrame() {
+		return messageFrameEClass;
 	}
 
 	/**
@@ -278,8 +285,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessage_MessageType() {
-		return (EReference)messageEClass.getEStructuralFeatures().get(0);
+	public EReference getMessageFrame_Size() {
+		return (EReference)messageFrameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -287,8 +294,26 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessage_Size() {
-		return (EReference)messageEClass.getEStructuralFeatures().get(1);
+	public EReference getMessageFrame_Period() {
+		return (EReference)messageFrameEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCANMessageFrame() {
+		return canMessageFrameEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCANMessageFrame_Priority() {
+		return (EReference)canMessageFrameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -332,9 +357,12 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEReference(schedulingEClass, SCHEDULING__PERIOD);
 		createEReference(schedulingEClass, SCHEDULING__PRIORITY);
 
-		messageEClass = createEClass(MESSAGE);
-		createEReference(messageEClass, MESSAGE__MESSAGE_TYPE);
-		createEReference(messageEClass, MESSAGE__SIZE);
+		messageFrameEClass = createEClass(MESSAGE_FRAME);
+		createEReference(messageFrameEClass, MESSAGE_FRAME__SIZE);
+		createEReference(messageFrameEClass, MESSAGE_FRAME__PERIOD);
+
+		canMessageFrameEClass = createEClass(CAN_MESSAGE_FRAME);
+		createEReference(canMessageFrameEClass, CAN_MESSAGE_FRAME__PRIORITY);
 	}
 
 	/**
@@ -365,7 +393,6 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
 		HwvaluetypePackage theHwvaluetypePackage = (HwvaluetypePackage)EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI);
-		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -375,7 +402,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		wcetEClass.getESuperTypes().add(theCorePackage.getExtension());
 		requiredMemoryEClass.getESuperTypes().add(theCorePackage.getExtension());
 		schedulingEClass.getESuperTypes().add(theCorePackage.getExtension());
-		messageEClass.getESuperTypes().add(this.getScheduling());
+		messageFrameEClass.getESuperTypes().add(theCorePackage.getExtension());
+		canMessageFrameEClass.getESuperTypes().add(this.getMessageFrame());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(wcetEClass, de.uni_paderborn.fujaba.muml.psm.properties.WCET.class, "WCET", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -391,9 +419,12 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEReference(getScheduling_Period(), theValuetypePackage.getTimeValue(), null, "period", null, 1, 1, Scheduling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScheduling_Priority(), theValuetypePackage.getNaturalNumber(), null, "priority", null, 0, 1, Scheduling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessage_MessageType(), theMsgtypePackage.getMessageType(), null, "messageType", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessage_Size(), theHwvaluetypePackage.getDataSize(), null, "size", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(messageFrameEClass, MessageFrame.class, "MessageFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageFrame_Size(), theHwvaluetypePackage.getDataSize(), null, "size", null, 1, 1, MessageFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageFrame_Period(), theValuetypePackage.getTimeValue(), null, "period", null, 1, 1, MessageFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(canMessageFrameEClass, CANMessageFrame.class, "CANMessageFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCANMessageFrame_Priority(), theValuetypePackage.getNaturalNumber(), null, "priority", null, 1, 1, CANMessageFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //PropertiesPackageImpl

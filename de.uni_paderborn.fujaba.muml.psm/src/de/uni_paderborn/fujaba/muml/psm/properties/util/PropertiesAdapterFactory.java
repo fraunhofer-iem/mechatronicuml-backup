@@ -82,8 +82,12 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 				return createSchedulingAdapter();
 			}
 			@Override
-			public Adapter caseMessage(Message object) {
-				return createMessageAdapter();
+			public Adapter caseMessageFrame(MessageFrame object) {
+				return createMessageFrameAdapter();
+			}
+			@Override
+			public Adapter caseCANMessageFrame(CANMessageFrame object) {
+				return createCANMessageFrameAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -156,16 +160,30 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.Message <em>Message</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame <em>Message Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Message
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame
 	 * @generated
 	 */
-	public Adapter createMessageAdapter() {
+	public Adapter createMessageFrameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame <em>CAN Message Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame
+	 * @generated
+	 */
+	public Adapter createCANMessageFrameAdapter() {
 		return null;
 	}
 

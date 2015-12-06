@@ -148,7 +148,12 @@ public class APICallItemProvider extends OperationCallItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PropertiesFactory.eINSTANCE.createMessage()));
+				 PropertiesFactory.eINSTANCE.createMessageFrame()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createCANMessageFrame()));
 	}
 
 	/**

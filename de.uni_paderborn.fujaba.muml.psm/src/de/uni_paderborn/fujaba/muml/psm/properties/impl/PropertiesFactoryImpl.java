@@ -59,7 +59,8 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.WCET: return createWCET();
 			case PropertiesPackage.REQUIRED_MEMORY: return createRequiredMemory();
 			case PropertiesPackage.SCHEDULING: return createScheduling();
-			case PropertiesPackage.MESSAGE: return createMessage();
+			case PropertiesPackage.MESSAGE_FRAME: return createMessageFrame();
+			case PropertiesPackage.CAN_MESSAGE_FRAME: return createCANMessageFrame();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -100,9 +101,19 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Message createMessage() {
-		MessageImpl message = new MessageImpl();
-		return message;
+	public MessageFrame createMessageFrame() {
+		MessageFrameImpl messageFrame = new MessageFrameImpl();
+		return messageFrame;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CANMessageFrame createCANMessageFrame() {
+		CANMessageFrameImpl canMessageFrame = new CANMessageFrameImpl();
+		return canMessageFrame;
 	}
 
 	/**

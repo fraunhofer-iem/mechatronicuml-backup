@@ -4,8 +4,14 @@ package de.uni_paderborn.fujaba.muml.psm.properties.provider;
 
 
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
-import de.uni_paderborn.fujaba.muml.psm.properties.Message;
+
+import de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame;
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
+
+import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,25 +19,29 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.ExtensionItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.Message} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MessageItemProvider extends SchedulingItemProvider {
+public class MessageFrameItemProvider 
+	extends ExtensionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageItemProvider(AdapterFactory adapterFactory) {
+	public MessageFrameItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,31 +56,8 @@ public class MessageItemProvider extends SchedulingItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMessageTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Message Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMessageTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Message_messageType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Message_messageType_feature", "_UI_Message_type"),
-				 PropertiesPackage.Literals.MESSAGE__MESSAGE_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -85,7 +72,8 @@ public class MessageItemProvider extends SchedulingItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PropertiesPackage.Literals.MESSAGE__SIZE);
+			childrenFeatures.add(PropertiesPackage.Literals.MESSAGE_FRAME__SIZE);
+			childrenFeatures.add(PropertiesPackage.Literals.MESSAGE_FRAME__PERIOD);
 		}
 		return childrenFeatures;
 	}
@@ -104,14 +92,14 @@ public class MessageItemProvider extends SchedulingItemProvider {
 	}
 
 	/**
-	 * This returns Message.gif.
+	 * This returns MessageFrame.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Message"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MessageFrame"));
 	}
 
 	/**
@@ -122,7 +110,7 @@ public class MessageItemProvider extends SchedulingItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Message_type");
+		return getString("_UI_MessageFrame_type");
 	}
 	
 
@@ -137,8 +125,9 @@ public class MessageItemProvider extends SchedulingItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Message.class)) {
-			case PropertiesPackage.MESSAGE__SIZE:
+		switch (notification.getFeatureID(MessageFrame.class)) {
+			case PropertiesPackage.MESSAGE_FRAME__SIZE:
+			case PropertiesPackage.MESSAGE_FRAME__PERIOD:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -158,8 +147,49 @@ public class MessageItemProvider extends SchedulingItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.MESSAGE__SIZE,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createMessageFrame()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createCANMessageFrame()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.MESSAGE_FRAME__SIZE,
 				 HwvaluetypeFactory.eINSTANCE.createDataSize()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.MESSAGE_FRAME__PERIOD,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return PsmEditPlugin.INSTANCE;
 	}
 
 }
