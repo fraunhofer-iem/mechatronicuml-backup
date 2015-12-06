@@ -321,6 +321,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCANMessageFrame_Deadline() {
+		return (EReference)canMessageFrameEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PropertiesFactory getPropertiesFactory() {
 		return (PropertiesFactory)getEFactoryInstance();
 	}
@@ -363,6 +372,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		canMessageFrameEClass = createEClass(CAN_MESSAGE_FRAME);
 		createEReference(canMessageFrameEClass, CAN_MESSAGE_FRAME__PRIORITY);
+		createEReference(canMessageFrameEClass, CAN_MESSAGE_FRAME__DEADLINE);
 	}
 
 	/**
@@ -425,6 +435,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(canMessageFrameEClass, CANMessageFrame.class, "CANMessageFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCANMessageFrame_Priority(), theValuetypePackage.getNaturalNumber(), null, "priority", null, 1, 1, CANMessageFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCANMessageFrame_Deadline(), theValuetypePackage.getTimeValue(), null, "deadline", null, 1, 1, CANMessageFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //PropertiesPackageImpl

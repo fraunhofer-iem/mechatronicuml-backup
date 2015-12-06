@@ -1244,13 +1244,22 @@ public interface PropertiesPackage extends EPackage {
 	int CAN_MESSAGE_FRAME__PRIORITY = MESSAGE_FRAME_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Deadline</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME__DEADLINE = MESSAGE_FRAME_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>CAN Message Frame</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAN_MESSAGE_FRAME_FEATURE_COUNT = MESSAGE_FRAME_FEATURE_COUNT + 1;
+	int CAN_MESSAGE_FRAME_FEATURE_COUNT = MESSAGE_FRAME_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1593,6 +1602,17 @@ public interface PropertiesPackage extends EPackage {
 	EReference getCANMessageFrame_Priority();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame#getDeadline <em>Deadline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Deadline</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.CANMessageFrame#getDeadline()
+	 * @see #getCANMessageFrame()
+	 * @generated
+	 */
+	EReference getCANMessageFrame_Deadline();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1744,6 +1764,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CAN_MESSAGE_FRAME__PRIORITY = eINSTANCE.getCANMessageFrame_Priority();
+
+		/**
+		 * The meta object literal for the '<em><b>Deadline</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CAN_MESSAGE_FRAME__DEADLINE = eINSTANCE.getCANMessageFrame_Deadline();
 
 	}
 
