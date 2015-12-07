@@ -46,7 +46,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 				final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
 				final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
 				«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
-				«EXPAND addReadOnlyFilter("editor", "feature") FOREACH readOnlyFilter»
+				«EXPAND addReadOnlyFilter("editor", "feature") FOREACH readOnlyFilters»
 				«IF initializeOCLExpression != null && initializeOCLExpression.toString().length > 0»
 					«EXPAND setInitializeOCLExpression("editor", "feature")»
 				«ENDIF»
