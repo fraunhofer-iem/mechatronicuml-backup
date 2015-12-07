@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -87,14 +89,18 @@ public class OCLFilterItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OCLFilter)object).getExpression();
-		return label == null || label.length() == 0 ?
-			getString("_UI_OCLFilter_type") :
-			getString("_UI_OCLFilter_type") + " " + label;
+		String text = getString("_UI_OCLFilter_type");
+		EStructuralFeature containmentFeature = ((EObject) object).eContainmentFeature();
+		if (containmentFeature == PropertiesPackage.Literals.PROPERTY__VISIBILITY_FILTERS) {
+			text = "Visibility " + text;
+		} else if (containmentFeature == PropertiesPackage.Literals.PROPERTY__READ_ONLY_FILTERS) {
+			text = "Read Only " + text;
+		}
+		return text;
 	}
 
 	/**
