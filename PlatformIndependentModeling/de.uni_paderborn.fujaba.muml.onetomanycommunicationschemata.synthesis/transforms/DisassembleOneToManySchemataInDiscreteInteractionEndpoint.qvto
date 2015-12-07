@@ -28,10 +28,18 @@ property schemaCount : Integer =0; // counter for the schemata in order to enume
 
 main() {
 	var debugging : Boolean := true;
- 	//debug:
+ 	
+ 	if(debugging) {
+ 		//debug:
 	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
-	// not debug:
-	//currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);		
+		
+ 	}
+ 	else
+ 	{
+ 		// not debug:
+		currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
+ 	}endif;
+ 			
 	disassembleDiscreteInteractionPointRTSC(currentRealtimeStatechart);
 	
 	if( not debugging ) {

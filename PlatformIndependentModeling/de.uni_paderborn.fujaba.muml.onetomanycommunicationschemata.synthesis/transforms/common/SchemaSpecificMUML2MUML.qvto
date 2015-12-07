@@ -49,6 +49,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}
 	}
 	
+
 	
 	mapping actionlanguage::TriggerMessageExpression :: transform() : EObject {
 		init {
@@ -144,7 +145,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		var resultingElement : Parameter := result.oclAsType(Parameter);
 		resultingElement.dataType := self.dataType;
 		
-		var element := self.oclAsType(behavior::Operation);			    	
+		var element := self.oclAsType(Parameter);			    	
 			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 				setValues(result, f, getValues(element, f));
 		};
@@ -157,8 +158,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 			if(internalSynchronizations->includes(self)){
 				result := self.map create();
 				
-				var resultingElement : SynchronizationChannel := result.oclAsType(SynchronizationChannel);
-		
+				var resultingElement : SynchronizationChannel := result.oclAsType(SynchronizationChannel);		
 		
 				resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
 			    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
@@ -187,7 +187,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		
 				resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
 			    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
-			 	resultingElement.statechart := self.statechart.map transform().oclAsType(RealtimeStatechart);
+			 	//resultingElement.statechart := self.statechart.map transform().oclAsType(RealtimeStatechart);
 			    
 			    var element := self.oclAsType(Clock);			    	
 				element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
@@ -196,22 +196,18 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 			}
 			else {
 				result := self;
-			}			
+			}
+			endif;			
 		}		
 	}
 
 	mapping muml::realtimestatechart::AsynchronousMessageEvent :: transform() : EObject {
 		init {
 			result := self.map create();
-		}
-		
+		}		
 		var resultingElement : AsynchronousMessageEvent := result.oclAsType(AsynchronousMessageEvent);
 		resultingElement.message := self.message.map transform().oclAsType(Message);
-		
-		var element := self.oclAsType(Clock);			    	
-		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-			setValues(result, f, getValues(element, f));
-		};			
+		resultingElement.kind := self.kind;		
 	}
 	
 	mapping muml::realtimestatechart::Message :: transform() : EObject {
@@ -225,7 +221,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		resultingElement.instanceOf := self.instanceOf;
 		resultingElement.parameterBinding := self.parameterBinding.map transform().oclAsType(ParameterBinding);
 		
-		var element := self.oclAsType(Clock);			    	
+		var element := self.oclAsType(Message);			    	
 		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 			setValues(result, f, getValues(element, f));
 		};	
