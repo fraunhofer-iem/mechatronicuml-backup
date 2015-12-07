@@ -101,6 +101,8 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(c
 		clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
 		urgent := false;
 	};
+	
+	synchronization := self.createSynchronization(singleReceive, SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 }
 	
 mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart) : Transition {
@@ -130,6 +132,8 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 		target := self.map Schema2SubroleIntermediateState(context,1);
 	
 		guard := self. createTypedNamedElementExpression(self.map Schema2BooleanVariable(consumeSingleReceiveName));
+		
+		synchronization := self.createSynchronization(singleReceive, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 	}
 	
 
@@ -163,6 +167,18 @@ mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole
 		action := self. createActionWithVariableAssignmentBlock("consumeSingleReceive:=false", consumeSingleReceiveName, "false");
 			
 		synchronization := self. createSynchronization(singleReceiveDone, SynchronizationKind::SEND );			
+	}
+	
+// @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region			
+mapping Transition :: SingleReceive2Transition3FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 1;
+		
+		target := self.map Transition2StateSubrole(region,self.target, false);
+		
+		source := self.map Schema2SubroleIntermediateState(context,1);	
+			
+		synchronization := self. createSynchronization(singleReceive, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);			
 	}
 	
 mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region {
@@ -280,7 +296,7 @@ mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAn
 		
 		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL,consumeSingleReceiveName,true);
 		
-		synchronization := self. createSynchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		synchronization := self. createSynchronization( singleReceiveCheck, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
 	}
 	
