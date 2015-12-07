@@ -58,6 +58,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	protected void inputChanged(Object oldObject) {
 		updateVisibility(true);
+		updateEnablement();
 		refresh();
 	}
 
@@ -67,6 +68,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 		parentComposite = parent;
 		doCreateControls(parent, toolkit);
 		updateVisibility(true, true);
+		updateEnablement(true);
 	}
 	
 	protected abstract void doCreateControls(Composite parent, FormToolkit toolkit);
@@ -165,11 +167,13 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	@Override
 	public void addReadOnlyFilter(IFilter filter) {
 		readOnlyFilters.add(filter);
+		updateEnablement();
 	}
 	
 	@Override
 	public void removeReadOnlyFilter(IFilter filter) {
 		readOnlyFilters.remove(filter);
+		updateEnablement();
 	}
 
 	@Override
