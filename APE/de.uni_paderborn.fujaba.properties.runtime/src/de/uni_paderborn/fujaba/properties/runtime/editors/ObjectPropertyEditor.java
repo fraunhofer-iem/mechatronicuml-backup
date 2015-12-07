@@ -30,11 +30,23 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 	
 	private String tab;
 	
+	/**
+	 * This defines if this ObjectPropertyEditor is managed by another editor (e.g. NavigationFeaturePropertyEditor).
+	 * If managed by another editor, the other editor manages our visibility and enablement.
+	 * Thus, we should not allow updateVisibility() and updateEnablement() on us directly.
+	 * The other editor that manages us, must keep track of updating our visibility and enablement for us. 
+	 */
+	private boolean managed = false;
+	
 	public ObjectPropertyEditor(String tab, AdapterFactory adapterFactory, String title, boolean initiallyOpen) {
 		super(adapterFactory, SWT.VERTICAL, title, initiallyOpen, false);
 		this.tab = tab;
 	}
 
+	void setManaged(boolean embedded) {
+		this.managed = managed;
+	}
+	
 	@Override
 	protected void inputChanged(Object oldObject) {
 		super.inputChanged(oldObject);
@@ -120,6 +132,13 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			}
 		}
 		
+	}
+
+	public void updateVisibility(boolean relayout, boolean force) {
+		if (managed) {
+			return;
+		}
+		super.updateVisibility(relayout, force);
 	}
 	
 }

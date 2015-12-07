@@ -636,13 +636,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__VISIBILITY_FILTERS = ORDERED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Read Only Filters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__READ_ONLY_FILTERS = ORDERED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Tab</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TAB = ORDERED_ELEMENT_FEATURE_COUNT + 2;
+	int PROPERTY__TAB = ORDERED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Editor</b></em>' containment reference.
@@ -651,7 +660,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__EDITOR = ORDERED_ELEMENT_FEATURE_COUNT + 3;
+	int PROPERTY__EDITOR = ORDERED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Tooltip</b></em>' attribute.
@@ -660,7 +669,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TOOLTIP = ORDERED_ELEMENT_FEATURE_COUNT + 4;
+	int PROPERTY__TOOLTIP = ORDERED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Reconcile</b></em>' attribute.
@@ -669,7 +678,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__RECONCILE = ORDERED_ELEMENT_FEATURE_COUNT + 5;
+	int PROPERTY__RECONCILE = ORDERED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Creation Constraint</b></em>' containment reference.
@@ -678,7 +687,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CREATION_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 6;
+	int PROPERTY__CREATION_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Creation Opposite Constraint</b></em>' containment reference.
@@ -687,7 +696,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 7;
+	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Initialize OCL Expression</b></em>' attribute.
@@ -696,7 +705,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__INITIALIZE_OCL_EXPRESSION = ORDERED_ELEMENT_FEATURE_COUNT + 8;
+	int PROPERTY__INITIALIZE_OCL_EXPRESSION = ORDERED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -705,7 +714,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = ORDERED_ELEMENT_FEATURE_COUNT + 9;
+	int PROPERTY_FEATURE_COUNT = ORDERED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
@@ -1788,6 +1797,17 @@ public interface PropertiesPackage extends EPackage {
 	EReference getProperty_VisibilityFilters();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.properties.Property#getReadOnlyFilters <em>Read Only Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Read Only Filters</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Property#getReadOnlyFilters()
+	 * @see #getProperty()
+	 * @generated
+	 */
+	EReference getProperty_ReadOnlyFilters();
+
+	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.properties.Property#getTab <em>Tab</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2571,6 +2591,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY__VISIBILITY_FILTERS = eINSTANCE.getProperty_VisibilityFilters();
+
+		/**
+		 * The meta object literal for the '<em><b>Read Only Filters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY__READ_ONLY_FILTERS = eINSTANCE.getProperty_ReadOnlyFilters();
 
 		/**
 		 * The meta object literal for the '<em><b>Tab</b></em>' reference feature.

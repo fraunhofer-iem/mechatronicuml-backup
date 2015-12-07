@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.CustomTransformation#getUri <em>Uri</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.CustomTransformation#isEnabled <em>Enabled</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.CustomTransformation#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getCustomTransformation()
  * @model

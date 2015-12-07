@@ -24,13 +24,13 @@ import de.uni_paderborn.fujaba.properties.PropertyCategory;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyCategoryImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyCategoryImpl#isVertical <em>Vertical</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyCategoryImpl#isOpen <em>Open</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyCategoryImpl#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

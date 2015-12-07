@@ -17,30 +17,20 @@ import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
 
 public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
-	private boolean visible = true;
 
 	protected Composite parentComposite = null;
-
 	protected Object input = null;
-
 	protected boolean disposed = false;
-
 	protected AdapterFactory adapterFactory = null;
-
-	protected List<IFilter> visibilityFilters = new ArrayList<IFilter>();
-
 	protected String tooltipMessage = "";
 
-	protected boolean controllingVisibility;
-	
-	public boolean isControllingVisibility() {
-		return controllingVisibility;
-	}
-	
-	public void setControllingVisibility(boolean controllingVisibility) {
-		this.controllingVisibility = controllingVisibility;
-	}
+	// Visibility
+	protected List<IFilter> visibilityFilters = new ArrayList<IFilter>();
+	private boolean visible = true;
 
+	// Enablement
+	protected List<IFilter> readOnlyFilters = new ArrayList<IFilter>();
+	private boolean enabled = true;
 	
 	protected FocusListener focusListener = new FocusAdapter() {
 		public void focusGained(org.eclipse.swt.events.FocusEvent e) {
@@ -51,7 +41,6 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	};
 
 	public AbstractPropertyEditor(AdapterFactory adapterFactory) {
-		controllingVisibility = true;
 		if (adapterFactory == null) {
 			adapterFactory = RuntimePlugin.DEFAULT_ADAPTER_FACTORY;
 		}
@@ -122,9 +111,6 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	}
 
 	public void updateVisibility(boolean relayout, boolean force) {
-		if (!isControllingVisibility()) {
-			return;
-		}
 		boolean visibility = true;
 		for (IFilter filter : visibilityFilters) {
 			if (!filter.select(input)) {
@@ -152,6 +138,18 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 		}
 	}
 
+	protected void doSetVisible(boolean visible) {
+		for (Control control : getControls()) {
+			if (control != null && !control.isDisposed()) { // elements can be null, see javadoc of getControls()
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+	}
+
+
 	public boolean isVisible() {
 		return visible;
 	}
@@ -163,21 +161,64 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	public void hide() {
 		setVisible(false);
 	}
+	
+	@Override
+	public void addReadOnlyFilter(IFilter filter) {
+		readOnlyFilters.add(filter);
+	}
+	
+	@Override
+	public void removeReadOnlyFilter(IFilter filter) {
+		readOnlyFilters.remove(filter);
+	}
+
+	@Override
+	public void updateEnablement() {
+		updateEnablement(false);
+	}
+
+	public void updateEnablement(boolean force) {
+		boolean enablement = true;
+		for (IFilter filter : readOnlyFilters) {
+			if (filter.select(input)) {
+				enablement = false;
+				break;
+			}
+		}
+		setEnabled(enablement, force);
+	}
+
+	public void setEnabled(boolean enabled) {
+		setEnabled(enabled, false);
+	}
+
+	@Override
+	public void setEnabled(boolean enabled, boolean force) {
+	
+		if (this.enabled == enabled && !force) {
+			return;
+		}
+		this.enabled = enabled;
+		doSetEnabled(enabled);
+		
+	}
+	protected void doSetEnabled(boolean enabled) {
+		for (Control control : getControls()) {
+			if (control != null && !control.isDisposed()) { // elements can be null, see javadoc of getControls()
+				control.setEnabled(enabled);
+			}
+		}
+	}
+
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
 
 	public void layout() {
 		if (parentComposite != null) {
 			RuntimePlugin.revalidateLayout(parentComposite);
-		}
-	}
-
-	protected void doSetVisible(boolean visible) {
-		for (Control control : getControls()) {
-			if (control != null && !control.isDisposed()) { // elements can be null, see javadoc of getControls()
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
 		}
 	}
 

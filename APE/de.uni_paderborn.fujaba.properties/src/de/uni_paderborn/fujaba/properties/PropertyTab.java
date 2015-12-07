@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyTab#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyTab#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyTab#getAfterTab <em>After Tab</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPropertyTab()
  * @model

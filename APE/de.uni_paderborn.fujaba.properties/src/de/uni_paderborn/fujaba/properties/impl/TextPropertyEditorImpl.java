@@ -15,10 +15,10 @@ import de.uni_paderborn.fujaba.properties.TextPropertyEditor;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.TextPropertyEditorImpl#isMultiLine <em>Multi Line</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

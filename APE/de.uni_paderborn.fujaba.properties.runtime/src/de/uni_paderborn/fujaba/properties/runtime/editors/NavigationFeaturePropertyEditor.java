@@ -81,7 +81,7 @@ public class NavigationFeaturePropertyEditor extends
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
 		ObjectPropertyEditor editor = new ObjectPropertyEditor(null, adapterFactory, "null", initiallyOpen);
-		editor.setControllingVisibility(false);
+		editor.setManaged(true);
 		return editor;
 	}
 
@@ -344,6 +344,11 @@ public class NavigationFeaturePropertyEditor extends
 	protected void doSetVisible(boolean visible) {
 		navigatedEditor.setVisible(visible);
 	}
+	
+	@Override
+	protected void doSetEnabled(boolean enabled) {
+		navigatedEditor.setEnabled(enabled);
+	}
 
 	@Override
 	public void setTooltipMessage(String message) {
@@ -359,16 +364,5 @@ public class NavigationFeaturePropertyEditor extends
 	protected Collection<Control> getControls() {
 		return navigatedEditor.getControls();
 	}
-	
-	@Override
-	public void addVisibilityFilter(IFilter filter) {
-		super.addVisibilityFilter(filter);
-		//navigatedEditor.addVisibilityFilter(filter);
-	}
-	
-	@Override
-	public void removeVisibilityFilter(IFilter filter) {
-		super.removeVisibilityFilter(filter);
-		//navigatedEditor.removeVisibilityFilter(filter);
-	}
+
 }

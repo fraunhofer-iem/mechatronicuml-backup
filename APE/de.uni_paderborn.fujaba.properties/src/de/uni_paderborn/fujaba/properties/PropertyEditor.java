@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyEditor#getProperty <em>Property</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPropertyEditor()
  * @model abstract="true"

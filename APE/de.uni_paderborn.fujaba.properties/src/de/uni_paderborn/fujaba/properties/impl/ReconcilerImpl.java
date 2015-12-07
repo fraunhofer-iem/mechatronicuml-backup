@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.properties.Reconciler;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ReconcilerImpl#isEnabled <em>Enabled</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ReconcilerImpl#isReconcilePackages <em>Reconcile Packages</em>}</li>
@@ -31,7 +32,6 @@ import de.uni_paderborn.fujaba.properties.Reconciler;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ReconcilerImpl#isReconcileProperties <em>Reconcile Properties</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ReconcilerImpl#getCustomTransformations <em>Custom Transformations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -28,9 +28,11 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getGenFeature <em>Gen Feature</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getVisibilityFilters <em>Visibility Filters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getReadOnlyFilters <em>Read Only Filters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
@@ -39,7 +41,6 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getInitializeOCLExpression <em>Initialize OCL Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -63,6 +64,16 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 	 * @ordered
 	 */
 	protected EList<Filter> visibilityFilters;
+
+	/**
+	 * The cached value of the '{@link #getReadOnlyFilters() <em>Read Only Filters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReadOnlyFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Filter> readOnlyFilters;
 
 	/**
 	 * The cached value of the '{@link #getTab() <em>Tab</em>}' reference.
@@ -231,6 +242,18 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 			visibilityFilters = new EObjectContainmentEList<Filter>(Filter.class, this, PropertiesPackage.PROPERTY__VISIBILITY_FILTERS);
 		}
 		return visibilityFilters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Filter> getReadOnlyFilters() {
+		if (readOnlyFilters == null) {
+			readOnlyFilters = new EObjectContainmentEList<Filter>(Filter.class, this, PropertiesPackage.PROPERTY__READ_ONLY_FILTERS);
+		}
+		return readOnlyFilters;
 	}
 
 	/**
@@ -489,6 +512,8 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 		switch (featureID) {
 			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
 				return ((InternalEList<?>)getVisibilityFilters()).basicRemove(otherEnd, msgs);
+			case PropertiesPackage.PROPERTY__READ_ONLY_FILTERS:
+				return ((InternalEList<?>)getReadOnlyFilters()).basicRemove(otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__EDITOR:
 				return basicSetEditor(null, msgs);
 			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
@@ -512,6 +537,8 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 				return basicGetGenFeature();
 			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
 				return getVisibilityFilters();
+			case PropertiesPackage.PROPERTY__READ_ONLY_FILTERS:
+				return getReadOnlyFilters();
 			case PropertiesPackage.PROPERTY__TAB:
 				if (resolve) return getTab();
 				return basicGetTab();
@@ -546,6 +573,10 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
 				getVisibilityFilters().clear();
 				getVisibilityFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
+			case PropertiesPackage.PROPERTY__READ_ONLY_FILTERS:
+				getReadOnlyFilters().clear();
+				getReadOnlyFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__TAB:
 				setTab((PropertyTab)newValue);
@@ -586,6 +617,9 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
 				getVisibilityFilters().clear();
 				return;
+			case PropertiesPackage.PROPERTY__READ_ONLY_FILTERS:
+				getReadOnlyFilters().clear();
+				return;
 			case PropertiesPackage.PROPERTY__TAB:
 				setTab((PropertyTab)null);
 				return;
@@ -623,6 +657,8 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 				return genFeature != null;
 			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
 				return visibilityFilters != null && !visibilityFilters.isEmpty();
+			case PropertiesPackage.PROPERTY__READ_ONLY_FILTERS:
+				return readOnlyFilters != null && !readOnlyFilters.isEmpty();
 			case PropertiesPackage.PROPERTY__TAB:
 				return tab != null;
 			case PropertiesPackage.PROPERTY__EDITOR:

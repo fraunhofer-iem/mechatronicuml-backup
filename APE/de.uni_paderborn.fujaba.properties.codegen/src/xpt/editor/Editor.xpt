@@ -46,6 +46,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 				final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
 				final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
 				«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
+				«EXPAND addReadOnlyFilter("editor", "feature") FOREACH visibilityFilters»
 				«IF initializeOCLExpression != null && initializeOCLExpression.toString().length > 0»
 					«EXPAND setInitializeOCLExpression("editor", "feature")»
 				«ENDIF»
@@ -180,7 +181,6 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 
 
 «DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
-
 «DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR OCLFilter»
 	{
 		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
@@ -212,6 +212,38 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 	}
 «ENDDEFINE»
 
+
+«DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
+«DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR OCLFilter»
+	{
+		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
+		«editorVar».setInput(input);
+		«editorVar».registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+			@Override
+			public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+				boolean visibleBefore = «editorVar».isVisible();
+				«editorVar».updateVisibility(true);
+
+				// Set default value, if we are hiding the editor and it was not hidden before.
+				if (!«editorVar».isVisible() && visibleBefore) {
+					«editorVar».setDefaultValue();
+				}
+			}
+		});
+		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+		org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+
+			@Override
+			public boolean select(Object object) {
+				return object != null && Boolean.TRUE.equals(query.evaluate(object));
+			}
+
+		};
+		if (filter != null) {
+			«editorVar».addReadOnlyFilter(filter);
+		}
+	}
+«ENDDEFINE»
 
 «DEFINE setInitializeOCLExpression(String editorVar, String featureVar) FOR Property»
 	{

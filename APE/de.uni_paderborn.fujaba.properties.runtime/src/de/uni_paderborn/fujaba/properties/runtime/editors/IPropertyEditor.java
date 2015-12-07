@@ -21,22 +21,21 @@ public interface IPropertyEditor {
 
 	AdapterFactory getAdapterFactory();
 	
+	// Visibility
 	void addVisibilityFilter(IFilter filter);
-	
 	void removeVisibilityFilter(IFilter filter);
-
 	void setVisible(boolean visible, boolean relayout, boolean force);
-	
 	void updateVisibility(boolean relayout);
+
+	// Enablement
+	void addReadOnlyFilter(IFilter filter);
+	void removeReadOnlyFilter(IFilter filter);
+	void setEnabled(boolean enabled, boolean force);
+	void updateEnablement();
+	
 	
 	void setFocus();
 
 	void setTooltipMessage(String message);
 	
-	boolean isControllingVisibility();
-	
-	void setControllingVisibility(boolean controllingVisibility);
-
-
-
 }

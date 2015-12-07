@@ -814,7 +814,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProperty_Tab() {
+	public EReference getProperty_ReadOnlyFilters() {
 		return (EReference)propertyEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -823,7 +823,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProperty_Editor() {
+	public EReference getProperty_Tab() {
 		return (EReference)propertyEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -832,8 +832,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProperty_Tooltip() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(4);
+	public EReference getProperty_Editor() {
+		return (EReference)propertyEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -841,7 +841,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProperty_Reconcile() {
+	public EAttribute getProperty_Tooltip() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -850,8 +850,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProperty_CreationConstraint() {
-		return (EReference)propertyEClass.getEStructuralFeatures().get(6);
+	public EAttribute getProperty_Reconcile() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -859,7 +859,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProperty_CreationOppositeConstraint() {
+	public EReference getProperty_CreationConstraint() {
 		return (EReference)propertyEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -868,8 +868,17 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getProperty_CreationOppositeConstraint() {
+		return (EReference)propertyEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getProperty_InitializeOCLExpression() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1149,6 +1158,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		propertyEClass = createEClass(PROPERTY);
 		createEReference(propertyEClass, PROPERTY__GEN_FEATURE);
 		createEReference(propertyEClass, PROPERTY__VISIBILITY_FILTERS);
+		createEReference(propertyEClass, PROPERTY__READ_ONLY_FILTERS);
 		createEReference(propertyEClass, PROPERTY__TAB);
 		createEReference(propertyEClass, PROPERTY__EDITOR);
 		createEAttribute(propertyEClass, PROPERTY__TOOLTIP);
@@ -1311,6 +1321,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProperty_GenFeature(), theGenModelPackage.getGenFeature(), null, "genFeature", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_VisibilityFilters(), this.getFilter(), null, "visibilityFilters", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_ReadOnlyFilters(), this.getFilter(), null, "readOnlyFilters", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Tab(), this.getPropertyTab(), null, "tab", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Editor(), this.getPropertyEditor(), this.getPropertyEditor_Property(), "editor", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Tooltip(), theEcorePackage.getEString(), "tooltip", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

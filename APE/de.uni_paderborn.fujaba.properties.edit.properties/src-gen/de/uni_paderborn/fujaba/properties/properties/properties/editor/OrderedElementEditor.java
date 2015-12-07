@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.properties.properties.properties.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class OrderedElementEditor
 	/**
 	 * @generated
 	 */
-	public OrderedElementEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public OrderedElementEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}

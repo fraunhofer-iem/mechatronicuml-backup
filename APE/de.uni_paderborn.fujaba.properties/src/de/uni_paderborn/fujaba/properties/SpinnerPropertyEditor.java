@@ -10,10 +10,10 @@ package de.uni_paderborn.fujaba.properties;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.SpinnerPropertyEditor#getDigits <em>Digits</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getSpinnerPropertyEditor()
  * @model

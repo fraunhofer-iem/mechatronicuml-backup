@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Reconciler#isEnabled <em>Enabled</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Reconciler#isReconcilePackages <em>Reconcile Packages</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Reconciler#isReconcileProperties <em>Reconcile Properties</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Reconciler#getCustomTransformations <em>Custom Transformations</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getReconciler()
  * @model

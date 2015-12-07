@@ -15,10 +15,10 @@ import de.uni_paderborn.fujaba.properties.PropertiesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.CustomPropertyEditorImpl#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getGenClass <em>Gen Class</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getPackage <em>Package</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getBaseInsertPoints <em>Base Insert Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueFeatures UniqueCategoryTitles PropertiesFromSelfOrSuperclasses'"

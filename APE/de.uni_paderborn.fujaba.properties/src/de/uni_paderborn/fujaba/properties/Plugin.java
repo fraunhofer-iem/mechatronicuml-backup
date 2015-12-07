@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getName <em>Name</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getRequiredBundles <em>Required Bundles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getRequiredExecutionEnvironment <em>Required Execution Environment</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPlugin()
  * @model

@@ -15,10 +15,10 @@ import de.uni_paderborn.fujaba.properties.SpinnerPropertyEditor;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.SpinnerPropertyEditorImpl#getDigits <em>Digits</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

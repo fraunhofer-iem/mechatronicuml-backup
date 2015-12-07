@@ -122,10 +122,12 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		if (adapterFactory != null && input != null) {
 			IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(input,
 					IItemPropertySource.class);
-			for (IItemPropertyDescriptor descriptor : ips.getPropertyDescriptors(input)) {
-				if (feature.equals(descriptor.getFeature(input))) {
-					itemPropertyDescriptor = descriptor;
-					break;
+			if (ips != null) {
+				for (IItemPropertyDescriptor descriptor : ips.getPropertyDescriptors(input)) {
+					if (feature.equals(descriptor.getFeature(input))) {
+						itemPropertyDescriptor = descriptor;
+						break;
+					}
 				}
 			}
 		}

@@ -15,12 +15,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Package#getGenPackage <em>Gen Package</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Package#getClasses <em>Classes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Package#getGenerator <em>Generator</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPackage()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueClasses'"

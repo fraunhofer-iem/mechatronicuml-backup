@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.properties.PropertyCategory;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getGenClass <em>Gen Class</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getPackage <em>Package</em>}</li>
@@ -40,7 +41,6 @@ import de.uni_paderborn.fujaba.properties.PropertyCategory;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getBaseInsertPoints <em>Base Insert Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getPropertyCategories <em>Property Categories</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

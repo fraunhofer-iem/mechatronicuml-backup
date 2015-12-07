@@ -25,12 +25,12 @@ import de.uni_paderborn.fujaba.properties.PropertyGenerator;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PackageImpl#getGenPackage <em>Gen Package</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PackageImpl#getClasses <em>Classes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PackageImpl#getGenerator <em>Generator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

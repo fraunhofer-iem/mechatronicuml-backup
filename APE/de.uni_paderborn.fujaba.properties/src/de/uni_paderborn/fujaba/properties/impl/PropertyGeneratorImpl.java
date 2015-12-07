@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.properties.Reconciler;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyGeneratorImpl#getReconciler <em>Reconciler</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyGeneratorImpl#getGenModel <em>Gen Model</em>}</li>
@@ -40,7 +41,6 @@ import de.uni_paderborn.fujaba.properties.Reconciler;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyGeneratorImpl#getContributorId <em>Contributor Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyGeneratorImpl#getSourceFolder <em>Source Folder</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

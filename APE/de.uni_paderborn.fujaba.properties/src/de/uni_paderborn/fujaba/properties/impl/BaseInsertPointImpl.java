@@ -16,10 +16,10 @@ import de.uni_paderborn.fujaba.properties.PropertiesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.BaseInsertPointImpl#getBaseClass <em>Base Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

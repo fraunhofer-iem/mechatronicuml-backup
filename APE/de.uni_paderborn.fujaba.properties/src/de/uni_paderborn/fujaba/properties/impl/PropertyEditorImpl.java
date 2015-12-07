@@ -20,10 +20,10 @@ import de.uni_paderborn.fujaba.properties.PropertyEditor;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl#getProperty <em>Property</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

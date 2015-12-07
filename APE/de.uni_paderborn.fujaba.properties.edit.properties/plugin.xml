@@ -41,7 +41,7 @@
       <propertySections contributorId="de.uni_paderborn.fujaba.properties.contributor">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.properties.properties.tabs.GeneralTabElementFilter"
+            filter="de.uni_paderborn.fujaba.properties.properties.tabs.De_uni_paderborn_fujaba_properties_tab_generalTabElementFilter"
             id="de.uni_paderborn.fujaba.properties.tab.general"
             tab="de.uni_paderborn.fujaba.properties.tab.general">
              <input

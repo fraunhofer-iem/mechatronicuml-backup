@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.properties.properties.properties.editor;
 
 /**
  * @generated
  */
-public class CreationConstraintEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class CreationConstraintEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public CreationConstraintEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public CreationConstraintEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,27 +21,27 @@ public class CreationConstraintEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorFilters_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFilters_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorFilters_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFilters_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFilters_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFilters_GeneralTab_Editor() {
-		if (this.editorFilters_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFilters_de_uni_paderborn_fujaba_properties_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFilters_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor() {
+		if (this.editorFilters_de_uni_paderborn_fujaba_properties_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getCreationConstraint_Filters();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorFilters_GeneralTab = editor;
+			this.editorFilters_de_uni_paderborn_fujaba_properties_tab_generalTab = editor;
 		}
-		return this.editorFilters_GeneralTab;
+		return this.editorFilters_de_uni_paderborn_fujaba_properties_tab_generalTab;
 	}
 
 	//
@@ -54,30 +52,22 @@ public class CreationConstraintEditor
 	 * @generated
 	 */
 	public CreationConstraintEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getCreationConstraint());
+		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE.getCreationConstraint());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new CreationConstraintEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"de.uni_paderborn.fujaba.properties.tab.general"})
+			return java.util.Arrays.asList(new java.lang.String[]{"de.uni_paderborn.fujaba.properties.tab.general"})
 					.contains(tab);
 		}
 	}

@@ -11,8 +11,6 @@ import de.uni_paderborn.fujaba.properties.PropertiesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Combo Box Property Editor</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.properties.PropertiesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getName <em>Name</em>}</li>
@@ -28,7 +29,6 @@ import de.uni_paderborn.fujaba.properties.PropertiesPackage;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getRequiredBundles <em>Required Bundles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getRequiredExecutionEnvironment <em>Required Execution Environment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

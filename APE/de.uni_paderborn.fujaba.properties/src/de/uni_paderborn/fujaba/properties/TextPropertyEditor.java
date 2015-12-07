@@ -10,10 +10,10 @@ package de.uni_paderborn.fujaba.properties;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.TextPropertyEditor#isMultiLine <em>Multi Line</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getTextPropertyEditor()
  * @model

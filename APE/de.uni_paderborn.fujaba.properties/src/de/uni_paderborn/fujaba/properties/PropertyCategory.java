@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getTitle <em>Title</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#isVertical <em>Vertical</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#isOpen <em>Open</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPropertyCategory()
  * @model

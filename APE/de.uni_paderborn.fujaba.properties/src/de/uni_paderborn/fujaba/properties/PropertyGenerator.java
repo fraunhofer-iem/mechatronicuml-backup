@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyGenerator#getReconciler <em>Reconciler</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyGenerator#getGenModel <em>Gen Model</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyGenerator#getContributorId <em>Contributor Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyGenerator#getSourceFolder <em>Source Folder</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPropertyGenerator()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePackages NoSelfReference'"

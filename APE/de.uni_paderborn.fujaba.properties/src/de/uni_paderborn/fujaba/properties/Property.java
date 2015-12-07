@@ -15,9 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getGenFeature <em>Gen Feature</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getVisibilityFilters <em>Visibility Filters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getReadOnlyFilters <em>Read Only Filters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
@@ -26,7 +28,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getInitializeOCLExpression <em>Initialize OCL Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CreationConstraintForContainments CreationOppositeConstraintForContainers'"
@@ -75,6 +76,22 @@ public interface Property extends OrderedElement {
 	 * @generated
 	 */
 	EList<Filter> getVisibilityFilters();
+
+	/**
+	 * Returns the value of the '<em><b>Read Only Filters</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Read Only Filters</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Read Only Filters</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_ReadOnlyFilters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Filter> getReadOnlyFilters();
 
 	/**
 	 * Returns the value of the '<em><b>Tab</b></em>' reference.

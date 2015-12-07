@@ -20,12 +20,12 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyTabImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyTabImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyTabImpl#getAfterTab <em>After Tab</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

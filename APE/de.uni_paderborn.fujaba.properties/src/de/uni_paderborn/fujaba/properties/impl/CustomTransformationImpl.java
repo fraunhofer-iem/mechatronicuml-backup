@@ -17,12 +17,12 @@ import de.uni_paderborn.fujaba.properties.TransformationPosition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.CustomTransformationImpl#getUri <em>Uri</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.CustomTransformationImpl#isEnabled <em>Enabled</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.CustomTransformationImpl#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.properties.properties.constraint;
 
 public class CreationConstraintContributor

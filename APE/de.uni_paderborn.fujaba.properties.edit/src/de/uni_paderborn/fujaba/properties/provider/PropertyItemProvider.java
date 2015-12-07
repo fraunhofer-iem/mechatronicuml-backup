@@ -233,6 +233,7 @@ public class PropertyItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__VISIBILITY_FILTERS);
+			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__READ_ONLY_FILTERS);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__EDITOR);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__CREATION_CONSTRAINT);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__CREATION_OPPOSITE_CONSTRAINT);
@@ -306,6 +307,7 @@ public class PropertyItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
+			case PropertiesPackage.PROPERTY__READ_ONLY_FILTERS:
 			case PropertiesPackage.PROPERTY__EDITOR:
 			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
 			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
@@ -329,6 +331,11 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__VISIBILITY_FILTERS,
+				 PropertiesFactory.eINSTANCE.createOCLFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__READ_ONLY_FILTERS,
 				 PropertiesFactory.eINSTANCE.createOCLFilter()));
 
 		newChildDescriptors.add
@@ -404,6 +411,8 @@ public class PropertyItemProvider
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == PropertiesPackage.Literals.PROPERTY__VISIBILITY_FILTERS ||
+			childFeature == PropertiesPackage.Literals.PROPERTY__READ_ONLY_FILTERS ||
 			childFeature == PropertiesPackage.Literals.PROPERTY__CREATION_CONSTRAINT ||
 			childFeature == PropertiesPackage.Literals.PROPERTY__CREATION_OPPOSITE_CONSTRAINT;
 

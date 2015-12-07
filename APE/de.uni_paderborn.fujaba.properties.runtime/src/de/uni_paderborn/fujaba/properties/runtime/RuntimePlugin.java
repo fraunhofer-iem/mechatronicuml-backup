@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EClass;
@@ -495,8 +496,15 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		});
 
 		// Get Element Name
-		String elementName = container.eClass().getName();
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(container, IItemLabelProvider.class);
+		String elementName = "";
+		if (container != null) {
+			elementName = container.eClass().getName();
+		}
+		IItemLabelProvider labelProvider = null;
+		Adapter adapter = adapterFactory.adapt(container, IItemLabelProvider.class);
+		if (adapter instanceof IItemLabelProvider) {
+			labelProvider = (IItemLabelProvider) adapter;
+		}
 		if (labelProvider != null) {
 			elementName = labelProvider.getText(container);
 		}
