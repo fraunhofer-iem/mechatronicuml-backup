@@ -216,9 +216,9 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		events += self.raiseMessageEvent.map multiTransform().oclAsType(TransitionEvent);
 		
 		var leftExpression : Expression := 	self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
-		var rightExpression : Expression := self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendIterateName));
+		var rightExpression : Expression := createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendIterateName));
 		
-		guard := self.createLogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
+		guard := new LogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
 				
 	}
 	
@@ -237,7 +237,7 @@ mapping Transition :: Iterate2TransSendSyncNotConditionSubrole(context:OclAny, r
 		
 		var leftExpression : Expression := 	self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
 		var rightExpression : Expression := self.createUnaryExpressionEnclosingTypedNamedElementExpression(sendIterateName, UnaryOperator::NOT);
-		guard :=  self.createLogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
+		guard :=  new LogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
 				
 		priority :=2;
 		
@@ -252,7 +252,7 @@ mapping Transition :: Iterate2IdleToIntermediate2SubroleRegion(context: OclAny, 
 		
 	target := self.map Schema2SubroleIntermediateState(context,2);
 	
-	guard := self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
+	guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
 		
 }
 
@@ -266,9 +266,9 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	target := self.map Schema2SubroleIntermediateState(context, 2);
 	
 	var expr1 :=  self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
-	var expr2 := self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(iterateDelayVariableName));
+	var expr2 := createTypedNamedElementExpression(self.map Schema2BooleanVariable(iterateDelayVariableName));
 		
-	var logic := self.createLogicalExpression(expr1,expr2,LogicOperator::AND);
+	var logic := new LogicalExpression(expr1,expr2,LogicOperator::AND);
 	
 	var logic2 : Expression;
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
@@ -277,7 +277,7 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 		var expr4 := new UnaryExpression();
 		expr4.enclosedExpression := expr3;
 		expr4.operator := UnaryOperator::NOT;
-		logic2 := self.createLogicalExpression(logic,expr4, LogicOperator::AND);
+		logic2 := new LogicalExpression(logic,expr4, LogicOperator::AND);
 	}
 	else {
 		logic2 := logic;
@@ -302,7 +302,7 @@ mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRe
 	
 	var expr1 :=  self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
 	var expr2 := self.createUnaryExpressionEnclosingTypedNamedElementExpression(iterateDelayVariableName, UnaryOperator::NOT);
-	var logic := self.createLogicalExpression(expr1,expr2,LogicOperator::AND);
+	var logic := new LogicalExpression(expr1,expr2,LogicOperator::AND);
 	
 	var logic2 : Expression;
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
@@ -311,7 +311,7 @@ mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRe
 		var expr4 := new UnaryExpression();
 		expr4.enclosedExpression := expr3;
 		expr4.operator := UnaryOperator::NOT;
-		logic2 := self.createLogicalExpression(logic,expr4, LogicOperator::AND);
+		logic2 := new LogicalExpression(logic,expr4, LogicOperator::AND);
 	}
 	else {
 		logic2 := logic;
@@ -329,11 +329,11 @@ mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRe
 	
 	target := self.map Schema2SubroleIntermediateState(context, 2);
 	
-	var expr1 :=  self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
+	var expr1 :=  createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
 		
 	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map multiTransform().oclAsType(Expression);
 	
-	guard := self.createLogicalExpression(expr1,expr2,LogicOperator::OR);
+	guard := new LogicalExpression(expr1,expr2,LogicOperator::OR);
 	
 	action := self.createActionWithVariableAssignmentBlock(terminateIterationName + ":= true;",terminateIterationName,"true");
 	
@@ -349,11 +349,11 @@ mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		
 		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
 			synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
-			guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		}
 		else {
 			synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
-			guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
+			guard :=  createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
 		}endif;		
 	}
 			
@@ -366,10 +366,10 @@ mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region
 		source := self.map Schema2SubroleIntermediateState(context,2);		
 		
 		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
-			guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);			
+			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);			
 		}		
 		else {
-			guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);	
+			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);	
 		}endif;	
 		
 		
@@ -417,7 +417,7 @@ mapping Transition :: Iterate2RequestedIdleCheckSubrole(context:OclAny, region:R
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		synchronization := self.createSynchronization( "iterateCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
@@ -431,7 +431,7 @@ mapping Transition :: Iterate2RequestedIdleCheckDoneSubrole(context:OclAny, regi
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self. createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		synchronization := self.createSynchronization(iterateCheckDone,SynchronizationKind::SEND);
 					

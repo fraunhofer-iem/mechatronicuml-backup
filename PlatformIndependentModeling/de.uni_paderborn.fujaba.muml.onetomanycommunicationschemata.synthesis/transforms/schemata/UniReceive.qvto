@@ -129,9 +129,10 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
+		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 	
-		guard := self. createTypedNamedElementExpression(self.map Schema2BooleanVariable(consumeSingleReceiveName));
+		guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(consumeSingleReceiveName));
 		
 		synchronization := self.createSynchronization(singleReceive, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 	}
@@ -149,7 +150,7 @@ mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole
 		
 		synchronization := self. createSynchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
-		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 	
@@ -162,7 +163,7 @@ mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);	
 		
-		guard := self.  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 				
 		action := self. createActionWithVariableAssignmentBlock("consumeSingleReceive:=false", consumeSingleReceiveName, "false");
 			

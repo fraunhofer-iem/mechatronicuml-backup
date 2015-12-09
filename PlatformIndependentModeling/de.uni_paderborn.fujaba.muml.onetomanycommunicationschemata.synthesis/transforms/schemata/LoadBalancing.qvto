@@ -172,9 +172,9 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 		synchronization := self.createSynchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
 		
 		if(self.guard.oclIsUndefined()){
-			guard := self. createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName));
+			guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName));
 		}else{
-			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map multiTransform().oclAsType(Expression),self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)));
+			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map multiTransform().oclAsType(Expression),createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)));
 		};
 					
 	}
@@ -208,15 +208,15 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		
 		if (not lb.responseMessage.oclIsUndefined()) {
 			action.name := action.name + freeForWorkName + ":= false";	
-			action.expressions +=self.Transition2Block( self. createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getFreeForWorkVariable(),	self.createLiteralExpression("false")));
+			action.expressions +=self.Transition2Block( createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getFreeForWorkVariable(),	new LiteralExpression("false")));
 		
 		}else if(not lb.maxWorkingTime.oclIsUndefined()) {
 			action.name := action.name + neverHadATaskName + ":= false";	
-			action.expressions +=self.Transition2Block( self. createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getNeverHadATaskVariable(),	self.createLiteralExpression("false")));
+			action.expressions +=self.Transition2Block( createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getNeverHadATaskVariable(),	new LiteralExpression("false")));
 			clockResets += self.getLoadBalancingTaskMessageClock();
 		};		
 				
-		guard := self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(taskPlannedName));
+		guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(taskPlannedName));
 		
 	}
 	
@@ -244,7 +244,7 @@ mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAn
 		
 		synchronization := 	self.createSynchronization( loadBalancing,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
-		guard := self.createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 			
@@ -256,7 +256,7 @@ mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, 
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);		
 		
-		guard := self. createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
@@ -325,7 +325,7 @@ mapping Transition :: LoadBalancingResponseMessage2TransitionFromCheckToRequeste
 		
 		target := self.map RegionState(context, "Requested",false);		
 		
-		result.guard := self.createLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2UnaryExpression(result,UnaryOperator::NOT),self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getFreeForWorkVariable(), UnaryOperator::NOT),LogicOperator::OR);
+		result.guard := new LogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2UnaryExpression(result,UnaryOperator::NOT),createUnaryExpressionEnclosingTypedNamedElementExpression(self.getFreeForWorkVariable(), UnaryOperator::NOT),LogicOperator::OR);
 
 		action := self.createActionWithVariableAssignmentBlock(taskPlannedName + " := false;",taskPlannedName,"false");		
 }
@@ -339,7 +339,7 @@ mapping Transition :: LoadBalancingResponseMessage2TransitionFromCheckToRequeste
 		
 		target := self.map RegionState(context, "Requested",false);		
 		
-		result.guard := self.createLogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression),self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getFreeForWorkVariable(),null),LogicOperator::AND);
+		result.guard := new LogicalExpression(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression),createUnaryExpressionEnclosingTypedNamedElementExpression(self.getFreeForWorkVariable(),null),LogicOperator::AND);
 		
 		action := self.createActionWithTwoVariableAssignments(loadBalancingPossibleName + " := true; " + taskPlannedName + " := true;",loadBalancingPossibleName, taskPlannedName, "true");
 		
@@ -369,11 +369,11 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2
 		
 		target := self.map RegionState(context, "Requested",false);
 		
-		guard := self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getNeverHadATaskVariable(),UnaryOperator::NOT);
+		guard := createUnaryExpressionEnclosingTypedNamedElementExpression(self.getNeverHadATaskVariable(),UnaryOperator::NOT);
 		
 		action := self.createActionWithVariableAssignmentBlock(taskPlannedName + ":= false;",taskPlannedName, "false");
 		
-		clockConstraints += self.createClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map multiTransform().oclAsType(TimeValue),ComparingOperator::LESS_OR_EQUAL);
+		clockConstraints += new ClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map multiTransform().oclAsType(TimeValue),ComparingOperator::LESS_OR_EQUAL);
 		
 		urgent := false;
 }
@@ -386,11 +386,11 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3
 		
 		target := self.map RegionState(context, "Requested",false);		
 
-	 	guard := self.createLogicalExpression(self.createUnaryExpressionEnclosingTypedNamedElementExpression(self.getNeverHadATaskVariable(), UnaryOperator::NOT),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression), LogicOperator::AND);
+	 	guard := new LogicalExpression(createUnaryExpressionEnclosingTypedNamedElementExpression(self.getNeverHadATaskVariable(), UnaryOperator::NOT),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression), LogicOperator::AND);
 			
 		action := self.createActionWithTwoVariableAssignments(loadBalancingPossibleName + " := false; "+ taskPlannedName + " :=false;",loadBalancingPossibleName,taskPlannedName,"false");
 		
-		clockConstraints += self.createClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map multiTransform().oclAsType(TimeValue),ComparingOperator::GREATER);
+		clockConstraints += new ClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map multiTransform().oclAsType(TimeValue),ComparingOperator::GREATER);
 		
 		urgent := false;
 }
@@ -403,7 +403,7 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested4
 		
 		target := self.map RegionState(context, "Requested",false);		
 		
-		guard := self.createLogicalExpression(self.createTypedNamedElementExpression(self.getNeverHadATaskVariable()),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression), LogicOperator::AND);
+		guard := new LogicalExpression(createTypedNamedElementExpression(self.getNeverHadATaskVariable()),self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression), LogicOperator::AND);
 			
 		action := self.createActionWithTwoVariableAssignments(loadBalancingPossibleName + " := true; "+ taskPlannedName + " :=true;",loadBalancingPossibleName,taskPlannedName,"true");
 				
@@ -416,7 +416,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle1(context:OclAn
 		
 		source := self.map RegionState(context, "Requested",false);	
 		
-		guard := self.createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST,ComparingOperator::EQUAL);
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST,ComparingOperator::EQUAL);
 		
 		synchronization := self.createSynchronization(loadBalancingCheckDone, SynchronizationKind::SEND);
 		
@@ -430,7 +430,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle2(context:OclAn
 		
 		source := self.map RegionState(context, "Requested",false);	
 		
-		guard := self.createLogicalExpression(self.createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.createUnaryExpressionEnclosingTypedNamedElementExpression(loadBalancingPossibleName, UnaryOperator::NOT),LogicOperator::AND);
+		guard := new LogicalExpression(createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.createUnaryExpressionEnclosingTypedNamedElementExpression(loadBalancingPossibleName, UnaryOperator::NOT),LogicOperator::AND);
 		
 		synchronization := self.createSynchronization(loadBalancingCheck, SynchronizationKind::SEND,PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -444,7 +444,7 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAn
 		
 		source := self.map RegionState(context, "Requested",false);	
 		
-		guard := self.createLogicalExpression(self.createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), self.createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)),LogicOperator::AND);
+		guard :=  new LogicalExpression(createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST,ComparingOperator::UNEQUAL), createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)),LogicOperator::AND);
 		
 		synchronization := self.createSynchronization(loadBalancingCheck, SynchronizationKind::SEND,PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -481,8 +481,8 @@ mapping RealtimeStatechart :: createSelfTransitionOfResponseRTSC (messageType : 
 		action.name := "freeForWork := true";
 		var ass : Assignment := new Assignment();
 		ass.assignOperator := AssignOperator::ASSIGN;
-		ass.rhs_assignExpression := result.createLiteralExpression("true");
-		ass.lhs_typedNamedElementExpression := result.createTypedNamedElementExpression(self.getPortOrRoleStatechart().map getFreeForWorkVariable());
+		ass.rhs_assignExpression := new LiteralExpression("true");
+		ass.lhs_typedNamedElementExpression := createTypedNamedElementExpression(self.getPortOrRoleStatechart().map getFreeForWorkVariable());
 		action.expressions += ass;
 }
 

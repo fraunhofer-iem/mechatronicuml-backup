@@ -428,6 +428,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromSourceToIntermediate(context, region);
 		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition1FromIntermediateToReceivedSubrole(context, region);
 		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition2FromIntermediateToReceivedSubrole(context, region);
+		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition3FromIntermediateToReceivedSubrole(context, region);
 		transitions += self->asSet()->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context,region);
 				
 		-- add variable assignments to Entry Events of intermediate states of multicast and iterate 
@@ -524,7 +525,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				block := new Block();
 				entryEvent.action.name := entryEvent.action.name.concat(" unicastPossible := false;");
-				block.expressions += t. createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(unicastPossibleName),t. createLiteralExpression("false")  );
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(unicastPossibleName),new LiteralExpression("false")  );
 				if(not t.relativeDeadline.oclIsUndefined()) {
 					entryEvent.clockResets += t.map Schema2Clock(unicastDLCName);
 				};
@@ -538,7 +539,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 					};		
 					entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
 					block := new Block();
-					block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(multicastPossibleName),t.map createLiteralExpression("false")  );
+					block.expressions +=createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(multicastPossibleName),new LiteralExpression("false")  );
 				};
 				if(not t.relativeDeadline.oclIsUndefined()) {
 					if(entryEvent.action.oclIsUndefined()) {
@@ -555,7 +556,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" loadBalancingPossible := false;");
 				block := new Block();
-				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(loadBalancingPossibleName),t. createLiteralExpression("false")  );
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(loadBalancingPossibleName), new LiteralExpression("false")  );
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) {
 				if(entryEvent.action.oclIsUndefined()) {
@@ -564,9 +565,9 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 				};
 				entryEvent.action.name := entryEvent.action.name.concat(" iteratePossible := false;");
 				block := new Block();
-				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(iteratePossibleName),t. createLiteralExpression("false")  );
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(iteratePossibleName), new LiteralExpression("false")  );
 				entryEvent.action.name.concat(" terminate := false;");
-				block.expressions += t.createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(terminateIterationName),t. createLiteralExpression("false")  );
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(terminateIterationName),new LiteralExpression("false")  );
 			};
 			var triggerSchema : OneToManyCommunicationSchema := t.triggerMessageEvent.oneToManyCommunicationSchema;
 			if(triggerSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))
