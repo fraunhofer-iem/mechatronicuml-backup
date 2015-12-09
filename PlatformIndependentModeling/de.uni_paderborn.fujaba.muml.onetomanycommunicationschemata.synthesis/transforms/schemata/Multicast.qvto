@@ -165,7 +165,8 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 ----------------------------------------------------------------- Transfer Schema Multicast of Subrole-------------------------------------------------------------------
 
 // first mapping from 	
-mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema()} {
 		priority := 1;
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
@@ -186,7 +187,8 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 	}
 	
 	
-mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
@@ -202,7 +204,8 @@ mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny,
 	}
 	
 	
-mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema()} {
 	
 		priority := 2;
 		
@@ -216,7 +219,8 @@ mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, r
 					
 	}
 			
-mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema()} {
 	
 		priority := 1;
 		

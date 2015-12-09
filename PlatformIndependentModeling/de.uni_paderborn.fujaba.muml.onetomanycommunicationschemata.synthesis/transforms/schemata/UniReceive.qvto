@@ -21,7 +21,8 @@ property singleReceivePossibleName : String = "singleReceivePossible";
 property consumeSingleReceiveName : String = "consumeSingleReceive";
 --------------------------------------------------------------Transfer Schema SingleReceive of Coordinator------------------------------------------------------------------
 	
-mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()} {
 		// creates in the coordinator region the transition from the intermediate state 2 to the (mapped) target state of the schema transition
 		priority := 1;
 		
@@ -37,7 +38,8 @@ mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:
 			
 	}
 
-mapping Transition :: SingleReceive2SourceRegionCoordinator(context:OclAny) : Region {
+mapping Transition :: SingleReceive2SourceRegionCoordinator(context:OclAny) : Region
+	when {self.usesUniReceiveSchema()}  {
 		
 		priority := self.priority;
 		
@@ -47,7 +49,8 @@ mapping Transition :: SingleReceive2SourceRegionCoordinator(context:OclAny) : Re
 					
 	}
 	
-mapping Transition :: SingleReceive2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart {
+mapping Transition :: SingleReceive2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart 
+	when {self.usesUniReceiveSchema()} {
 		
 		name:= "singleReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
@@ -59,7 +62,8 @@ mapping Transition :: SingleReceive2SourceEmbeddedRTSCCoordinator(context:OclAny
 					
 	}
 	
-mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny) : Transition {
+mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny) : Transition 
+	when {self.usesUniReceiveSchema()} {
 
 		priority := 1;
 		
@@ -76,7 +80,8 @@ mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny
 			
 	}
 	
-mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition {
+mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition 
+	when {self.usesUniReceiveSchema()} {
 
 		priority := 1;
 		
@@ -90,22 +95,24 @@ mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:Oc
 //mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region:RealtimeStatechart, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 	
 	
-mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(context : OclAny, region:RealtimeStatechart): Transition{
-	priority := 1;
-	
-	target := self.map Schema2CoordinatorIntermediateState(context, 2, singleReceiveDLCName);
-	
-	source := self.map Schema2CoordinatorIntermediateState(context, 1, singleReceiveDLCName);
-	//invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
-	if(not self.relativeDeadline.oclIsUndefined()) {
-		clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
-		urgent := false;
-	};
-	
-	synchronization := self.createSynchronization(singleReceive, SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(context : OclAny, region:RealtimeStatechart): Transition
+	when {self.usesUniReceiveSchema()} {
+		priority := 1;
+		
+		target := self.map Schema2CoordinatorIntermediateState(context, 2, singleReceiveDLCName);
+		
+		source := self.map Schema2CoordinatorIntermediateState(context, 1, singleReceiveDLCName);
+		//invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
+		if(not self.relativeDeadline.oclIsUndefined()) {
+			clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
+			urgent := false;
+		};
+		
+		synchronization := self.createSynchronization(singleReceive, SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 }
 	
-mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
 	
 		priority := self.priority;
 		
@@ -123,14 +130,15 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 --------------------------------------------------------------- Transfer Schema SingleReceive of Subrole------------------------------------------------------------------
 	
 // @author: sthiele2 -- this mapping generates the transition from the source of the schema-transition to an intermediate state
-mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(parentStatechart:RealtimeStatechart, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
 
 		priority := (self.priority);
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
 		
-		target := self.map Schema2SubroleIntermediateState(context,1);
+		target := self.map Schema2SubroleIntermediateState(parentStatechart,1);
 	
 		guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(consumeSingleReceiveName));
 		
@@ -140,7 +148,8 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 
  
 // @author sthiele2 -- one of the transitions from target state to source state in the subrole-region
-mapping Transition :: SingleReceive2Transition1TargetToSourceSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2Transition1TargetToSourceSubrole(parentStatechart:RealtimeStatechart, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
 	
 		priority := 2;
 		
@@ -156,7 +165,8 @@ mapping Transition :: SingleReceive2Transition1TargetToSourceSubrole(context:Ocl
 	}
 	
 // @author sthiele2 -- one of the transitions from target state to source state in the subrole-region			
-mapping Transition :: SingleReceive2Transition2TargetToSourceSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2Transition2TargetToSourceSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
 	
 		priority := 1;
 		
@@ -172,7 +182,8 @@ mapping Transition :: SingleReceive2Transition2TargetToSourceSubrole(context:Ocl
 	}
 	
 // @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region			
-mapping Transition :: SingleReceive2Transition3FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2Transition3FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
 	
 		priority := 1;
 		
@@ -183,7 +194,8 @@ mapping Transition :: SingleReceive2Transition3FromIntermediateToReceivedSubrole
 		synchronization := self. createSynchronization(singleReceive, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);			
 	}
 	
-mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region {
+mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region 
+	when {self.usesUniReceiveSchema()} {
 		
 		priority := self.priority;
 		
@@ -193,7 +205,8 @@ mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:R
 	}
 
 // @author: sthiele2 -- creates the embedded rtsc of the schema transition's source node in the subrole region	
-mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
+mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart 
+	when {self.usesUniReceiveSchema()} {
 		
 		name:= "singleReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
@@ -212,7 +225,8 @@ mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, re
 	}
 
 // @author: sthiele2 -- creates a transition from the exit point of the schema-transition's source to the intermediate state in the subrole region
-mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region:RealtimeStatechart) : Transition{
+mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()} {
 		priority := 1;
 		
 		source := self.map SingleReceive2StateExitPoint();
@@ -228,7 +242,8 @@ mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateSt
 }
 
 
-mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(context : OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(context : OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
 		priority := 3;
 		
 		source := self.map RegionState(context,  "Requested", false);	
@@ -262,19 +277,21 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		
 
 mapping Transition :: TransferSchemaGuardAndLocalConditions(context : OclAny) : expressions::common::LogicalExpression
-{
+	when {self.usesUniReceiveSchema()} {
 		leftExpression := self.guard.multiTransform().oclAsType(Expression);
 		rightExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.multiTransform().oclAsType(Expression);
 		operator := LogicOperator::AND;	
 }
 	
-mapping Transition :: SingleReceive2StateExitPoint() : ExitPoint {
+mapping Transition :: SingleReceive2StateExitPoint() : ExitPoint 
+	when {self.usesUniReceiveSchema()} {
 		result.name := self.source.name + "_Requested_ExitPoint";		
 		}
 		
 
 	
-mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
 	
 		priority := 1;
 				
@@ -288,7 +305,8 @@ mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAn
 					
 	}
 	
-mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
 	
 		priority := 2;
 				
@@ -302,7 +320,8 @@ mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAn
 					
 	}
 	
-mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
 	
 		priority := 3;
 				
@@ -316,7 +335,8 @@ mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(contex
 		
 	}
 	
-mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
 	
 		priority := 1;
 				
