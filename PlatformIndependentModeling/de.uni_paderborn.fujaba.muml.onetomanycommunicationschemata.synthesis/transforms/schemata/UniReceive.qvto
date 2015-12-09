@@ -139,29 +139,30 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 	
 
  
-// @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region
-mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+// @author sthiele2 -- one of the transitions from target state to source state in the subrole-region
+mapping Transition :: SingleReceive2Transition1TargetToSourceSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
 		
-		target := self.map Transition2StateSubrole(region,self.target, false);
+		target := self.map Transition2StateSubrole(region,self.source, true);
 		
-		source := self.map Schema2SubroleIntermediateState(context,1);	
+		source := self.map Transition2StateSubrole(region,self.target, false);
 		
 		synchronization := self. createSynchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
-					
+		
+		action := self. createActionWithVariableAssignmentBlock("consumeSingleReceive:=false", consumeSingleReceiveName, "false");			
 	}
 	
-// @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region			
-mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+// @author sthiele2 -- one of the transitions from target state to source state in the subrole-region			
+mapping Transition :: SingleReceive2Transition2TargetToSourceSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;
 		
-		target := self.map Transition2StateSubrole(region,self.target, false);
+		target := self.map Transition2StateSubrole(region,self.source, true);
 		
-		source := self.map Schema2SubroleIntermediateState(context,1);	
+		source := self.map Transition2StateSubrole(region,self.target, false);
 		
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 				

@@ -14,6 +14,7 @@ modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
 modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+//modeltype ocl uses 'http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore';
 
 property rootNode : RootNode;
 
@@ -110,7 +111,7 @@ helper Transition :: createClockConstraint(clockName : String, _timeValue : Time
 }
 	
 	--Transfer Schemata Guards, Clock Constraints, CLock Resets
-	
+
 helper createComparisonExpressionForSelectorKind( position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
 		
 		var comp : ComparisonExpression := new ComparisonExpression();
@@ -243,11 +244,13 @@ helper Transition :: createActionWithVariableAssignmentAndCloneAllExpressionsOfA
 	
 helper Transition :: createBlockWithAssignmentAndCloneAllActionExpressions(varName1:String, assignValue:String) : Block {
 		
-		var block : Block := new Block();
+		var exprSet : Set(Expression):= Set{};
 		
-		block.expressions += self. createAssignment(varName1, assignValue);
-		block.expressions += self.action.expressions.map multiTransform().oclAsType(Expression);
-			
+		exprSet += self. createAssignment(varName1, assignValue); 
+		exprSet += self.action.expressions.map multiTransform().oclAsType(Expression);
+		
+		var block : Block := new Block(exprSet);
+		
 		return block;
 	}
 
@@ -589,7 +592,42 @@ helper Transition :: createLogicalExpressionWithTwoConcatenatedVariables(varName
 		logical.operator := LogicOperator::AND;
 		return logical;
 }
+helper Transition :: usesAnySchema () : Boolean {	
+	assert fatal(self.raiseMessageEvent.oclIsUndefined() or self.triggerMessageEvent.oclIsUndefined() ) with log ("A transition cannot define a triggerMessageEvent and a raiseMessageEvent at the same time");
+	return (not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
+	or
+	(not self.triggerMessageEvent.oclIsUndefined()) and (not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined());
+}	
 
+helper Transition :: usesLoadBalancingSchema() : Boolean {		
+		return self.usesAnySchema() and
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::LoadBalancing); 
+	}
+
+helper Transition :: usesUniReceiveSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::SingleReceive);
+	}
+
+helper Transition :: usesIterateSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::Iterate);
+	}
+	
+helper Transition :: usesMulticastSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::Multicast);
+	}
+	
+helper Transition :: usesUnicastSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::Unicast);
+	}
+	
+helper Transition :: usesMultiReceiveSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::MultiReceive);
+	}
 
 helper createEntryEventWithVariableAssignment(_assignedVariable : Variable, _assignedValue : String) {
 		var expr := new LiteralExpression(_assignedValue);				

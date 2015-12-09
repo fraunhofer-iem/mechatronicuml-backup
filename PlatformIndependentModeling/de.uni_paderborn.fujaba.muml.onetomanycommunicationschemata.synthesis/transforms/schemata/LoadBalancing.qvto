@@ -174,7 +174,7 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 		if(self.guard.oclIsUndefined()){
 			guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName));
 		}else{
-			guard := self.Transition2LogicalExpression(LogicOperator::AND, self.guard.map multiTransform().oclAsType(Expression),createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)));
+			guard := new LogicalExpression( self.guard.map multiTransform().oclAsType(Expression),createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)),LogicOperator::AND);
 		};
 					
 	}
