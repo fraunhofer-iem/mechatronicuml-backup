@@ -4,7 +4,12 @@
   <categories xmi:id="_N8D30XvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_N8D30nvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YwviYHvSEeWJtcJpbyRDKg" name="rtscRole1" behavioralElement="_Sa9sEHvSEeWJtcJpbyRDKg">
-      <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg">
+      <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg" urgent="false">
+        <clockConstraints xmi:id="_SUPnQJ84EeW8iZ0RzpdKGQ" clock="_Q9LGoJ84EeW8iZ0RzpdKGQ" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_Ssu_wJ84EeW8iZ0RzpdKGQ">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_TQt2kJ84EeW8iZ0RzpdKGQ" value="1"/>
+          </bound>
+        </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DALtMHvfEeWJtcJpbyRDKg">
           <message xmi:id="_DT4FQHvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
           <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:LoadBalancing" xmi:id="_ldwUoHvfEeWJtcJpbyRDKg">
@@ -15,8 +20,16 @@
         </events>
       </transitions>
       <transitions xmi:id="_vDh8EHvfEeWJtcJpbyRDKg" priority="1" target="_YwviYXvSEeWJtcJpbyRDKg" source="_a1XFgHvSEeWJtcJpbyRDKg"/>
-      <states xmi:id="_YwviYXvSEeWJtcJpbyRDKg" name="init" outgoingTransitions="_ec7pIHvSEeWJtcJpbyRDKg" incomingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" initial="true"/>
+      <states xmi:id="_YwviYXvSEeWJtcJpbyRDKg" name="init" outgoingTransitions="_ec7pIHvSEeWJtcJpbyRDKg" incomingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" initial="true">
+        <entryEvent xmi:id="_VEF4sJ84EeW8iZ0RzpdKGQ" clockResets="_Q9LGoJ84EeW8iZ0RzpdKGQ"/>
+        <invariants xmi:id="_W7wk8J84EeW8iZ0RzpdKGQ" clock="_Q9LGoJ84EeW8iZ0RzpdKGQ">
+          <bound xmi:id="_XX8KoJ84EeW8iZ0RzpdKGQ">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_X_Wv8J84EeW8iZ0RzpdKGQ" value="1"/>
+          </bound>
+        </invariants>
+      </states>
       <states xmi:id="_a1XFgHvSEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" incomingTransitions="_ec7pIHvSEeWJtcJpbyRDKg"/>
+      <clocks xmi:id="_Q9LGoJ84EeW8iZ0RzpdKGQ" name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_XgFVUHveEeWJtcJpbyRDKg" name="rtscRole2" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
       <transitions xmi:id="_e2BBEHveEeWJtcJpbyRDKg" priority="1" target="_dTNxkHveEeWJtcJpbyRDKg" source="_XgFVUXveEeWJtcJpbyRDKg">
