@@ -4,7 +4,7 @@
   <categories xmi:id="_N8D30XvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_N8D30nvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YwviYHvSEeWJtcJpbyRDKg" name="rtscRole1" behavioralElement="_Sa9sEHvSEeWJtcJpbyRDKg">
-      <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg">
+      <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg" urgent="false">
         <clockConstraints xmi:id="_7FS7wJ80EeW8iZ0RzpdKGQ" clock="_5cZrUJ80EeW8iZ0RzpdKGQ" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_7eMj8J80EeW8iZ0RzpdKGQ">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_75h1EJ80EeW8iZ0RzpdKGQ" value="1"/>
