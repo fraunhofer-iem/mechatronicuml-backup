@@ -181,7 +181,8 @@ mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, 
 	
 --------------------------------------------------------------- Transfer Schema LoadBalancing of Subrole----------------------------------------------------------------------
 	
-mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesLoadBalancingSchema()} {
 
 		priority := (self.priority-1)*2+2;
 		
@@ -220,7 +221,8 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		
 	}
 	
-mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesLoadBalancingSchema()} {
 
 		priority := (self.priority-1)*2+1;
 		
@@ -234,7 +236,8 @@ mapping Transition :: LoadBalancing2TransSendSynNotFirstcSubrole(context:OclAny,
 		
 	}
 	
-mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesLoadBalancingSchema()} {
 	
 		priority := 2;
 		
@@ -248,7 +251,8 @@ mapping Transition :: LoadBalancing2TransReceiveSyncNotLastSubrole(context:OclAn
 					
 	}
 			
-mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesLoadBalancingSchema()} {
 	
 		priority := 1;
 		

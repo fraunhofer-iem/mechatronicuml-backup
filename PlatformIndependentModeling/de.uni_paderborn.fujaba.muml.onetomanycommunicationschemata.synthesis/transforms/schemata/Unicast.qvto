@@ -126,7 +126,8 @@ mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny) 
 	
 --------------------------------------------------------------- Transfer Schema Unicast of Subrole----------------------------------------------------------------------
 	
-mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUnicastSchema()} {
 
 		priority := (self.priority-1)*2+2;
 		
@@ -176,7 +177,8 @@ mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, regio
 		
 	}
 	
-mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUnicastSchema()} {
 	
 		priority := 2;
 		
@@ -190,7 +192,8 @@ mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 					
 	}
 			
-mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUnicastSchema()} {
 	
 		priority := 1;
 		
@@ -309,7 +312,8 @@ mapping Transition :: Unicast2IdleRequestedNotFulfilledSubrole(context:OclAny, r
 					
 	}
 	
-mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUnicastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
