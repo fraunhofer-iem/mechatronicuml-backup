@@ -428,7 +428,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		transitions += self.map SingleReceive2TransitionFromSourceToIntermediate(context, region);
 		transitions += self.map SingleReceive2Transition1TargetToSourceSubrole(context, region);
 		transitions += self.map SingleReceive2Transition2TargetToSourceSubrole(context, region);
-		transitions += self.map SingleReceive2Transition3FromIntermediateToReceivedSubrole(context, region);
+		transitions += self.map SingleReceive2Transition1FromIntermediateToReceivedSubrole(context, region);
 		transitions += self.map SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context,region);
 				
 		-- add variable assignments to Entry Events of intermediate states of multicast and iterate 

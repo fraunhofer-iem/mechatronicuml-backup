@@ -135,14 +135,12 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(parentSta
 
 		priority := (self.priority);
 		
-		source := self.map Transition2StateSubrole(region,self.source, true);
-		
+		source := self.map Transition2StateSubrole(region,self.source, true);		
 		
 		target := self.map Schema2SubroleIntermediateState(parentStatechart,1);
 	
 		guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(consumeSingleReceiveName));
 		
-		synchronization := self.createSynchronization(singleReceive, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 	}
 	
 
@@ -182,7 +180,7 @@ mapping Transition :: SingleReceive2Transition2TargetToSourceSubrole(context:Ocl
 	}
 	
 // @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region			
-mapping Transition :: SingleReceive2Transition3FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
 	when {self.usesUniReceiveSchema()} {
 	
 		priority := 1;
@@ -190,7 +188,7 @@ mapping Transition :: SingleReceive2Transition3FromIntermediateToReceivedSubrole
 		target := self.map Transition2StateSubrole(region,self.target, false);
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);	
-			
+	
 		synchronization := self. createSynchronization(singleReceive, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);			
 	}
 	
