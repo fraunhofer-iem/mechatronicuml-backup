@@ -18,10 +18,10 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  de.uni_paderborn.fujaba.graphviz;resolution:=optional,
  de.uni_paderborn.uppaal.cmd;bundle-version="0.5.0",
  de.uni_paderborn.fujaba.common;bundle-version="0.5.0",
- org.storydriven.core;bundle-version="1.0.1"
+ org.storydriven.core;bundle-version="1.0.1",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.options;bundle-version="0.5.0"
 Export-Package: de.uni_paderborn.uppaal.job,
  de.uni_paderborn.uppaal.job.layout
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Import-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.options
 Bundle-ActivationPolicy: lazy
