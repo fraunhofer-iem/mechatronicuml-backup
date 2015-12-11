@@ -1,6 +1,8 @@
 package de.uni_paderborn.uppaal.ui.wizard;
 
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -11,7 +13,10 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.dialogs.WizardExportResourcesPage;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 
 import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
@@ -20,6 +25,7 @@ import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
 import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.uppaal.NTA;
+import de.uni_paderborn.uppaal.job.UppaalXMLSynthesisOperation;
 import de.uni_paderborn.uppaal.requirements.PropertyRepository;
 
 public class UppaalExportWizard extends AbstractFujabaExportWizard {
@@ -34,6 +40,8 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 		setWindowTitle("Uppaal EMF To Uppaal XML Export");
 		setDefaultPageImageDescriptor(IDEWorkbenchPlugin
 				.getIDEImageDescriptor("wizban/exportzip_wiz.png"));//$NON-NLS-1$
+		
+		setNeedsProgressMonitor(true);
 	}
 
 	@Override
@@ -43,7 +51,7 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 	
 	@Override
 	public void addPages() {
-
+				
 		// Source page
 		sourcePage = new AbstractFujabaExportSourcePage("source", toolkit, getResourceSet(), initialSelection) {
 
@@ -72,30 +80,30 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 		addPage(sourcePage);
 		
 		// Source page
-		sourcePage2 = new AbstractFujabaExportSourcePage("source", toolkit, getResourceSet(), initialSelection) {
-
-			@Override
-			public void setVisible(boolean visible) {
-				super.setVisible(visible);
-			}
-			
-			@Override
-			public String wizardPageGetSourceFileExtension() {
-				return "requirements";
-			}
-
-			@Override
-			public boolean wizardPageSupportsSourceModelElement(EObject element) {
-				return element instanceof PropertyRepository;
-			}
-
-			@Override
-			public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
-				return ElementSelectionMode.ELEMENT_SELECTION_MODE_SINGLE;
-			}
-			
-		};
-		addPage(sourcePage2);
+//		sourcePage2 = new AbstractFujabaExportSourcePage("source", toolkit, getResourceSet(), initialSelection) {
+//
+//			@Override
+//			public void setVisible(boolean visible) {
+//				super.setVisible(visible);
+//			}
+//			
+//			@Override
+//			public String wizardPageGetSourceFileExtension() {
+//				return "requirements";
+//			}
+//
+//			@Override
+//			public boolean wizardPageSupportsSourceModelElement(EObject element) {
+//				return element instanceof PropertyRepository;
+//			}
+//
+//			@Override
+//			public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
+//				return ElementSelectionMode.ELEMENT_SELECTION_MODE_SINGLE;
+//			}
+//			
+//		};
+//		addPage(sourcePage2);
 
 		// Target page
 		targetPage = new UppaalExportTargetPage("target", toolkit);
@@ -104,25 +112,35 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 
 	@Override
 	public IFujabaExportOperation wizardCreateExportOperation() {
-		final URI destination = targetPage.getDestinationURI();
+		//final URI destination = targetPage.getDestinationURI();
+		
+		final IResource destination = targetPage.getDestinationResource();
 		
 		final NTA nta = getNTA();
 		final PropertyRepository propertyRepository = getPropertyRepository();
 		return new AbstractFujabaExportOperation() {
 			@Override
 			protected IStatus doExecute(IProgressMonitor progressMonitor) {
-				String fullPath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString() + destination.devicePath().substring(9);
-				final IPath path = new Path(fullPath);
+				//String fullPath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString() + destination.devicePath().substring(9);
+				//final IPath path = new Path(fullPath);
 				
 //				URI targetURI = destination.appendSegment(((NTA) nta).getName()).appendFileExtension("uppaal");
 //
 //				URI targetURIRequirements = destination.appendSegment(((NTA) nta).getName()).appendFileExtension("requirements");
 //				
 				//Start the job
-				Job job = new UppaalXMLSynthesisJob(nta, propertyRepository, path, true);
+				//Job job = new UppaalXMLSynthesisJob(nta, propertyRepository, path, true);
 				
-				job.addJobChangeListener(new ExportJobChangeAdapter());
-				job.schedule();
+				try {
+					//getContainer().run(fork, cancelable, runnable);
+					ResourcesPlugin.getWorkspace().run(new UppaalXMLSynthesisOperation(nta, propertyRepository, destination, true), progressMonitor);
+				}
+				catch(CoreException e) {
+					return e.getStatus();
+				}
+					
+				//job.addJobChangeListener(new ExportJobChangeAdapter());
+				//job.schedule();
 				System.out.println("done");
 				return Status.OK_STATUS;
 			}
@@ -139,9 +157,11 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 	}
 	
 	public PropertyRepository getPropertyRepository() {
-		for (EObject element : sourcePage2.getSourceElements()) {
-			if (element instanceof PropertyRepository) {
-				return (PropertyRepository) element;
+		if (sourcePage2 != null) {
+			for (EObject element : sourcePage2.getSourceElements()) {
+				if (element instanceof PropertyRepository) {
+					return (PropertyRepository) element;
+				}
 			}
 		}
 		return null;

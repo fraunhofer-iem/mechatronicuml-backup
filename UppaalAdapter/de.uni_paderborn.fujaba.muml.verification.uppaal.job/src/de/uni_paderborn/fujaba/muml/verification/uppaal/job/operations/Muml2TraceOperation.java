@@ -1,10 +1,12 @@
-package de.uni_paderborn.fujaba.muml.verification.uppaal.job;
+package de.uni_paderborn.fujaba.muml.verification.uppaal.job.operations;
 
 import java.util.Arrays;
 import java.util.Iterator;
 
+import org.eclipse.core.resources.IWorkspaceRunnable;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -24,48 +26,43 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.Tempor
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage;
 
-public class Muml2TraceJob extends SynchronousJob {
+public class Muml2TraceOperation implements IWorkspaceRunnable {
 	
 	private VerifiableElement verifiableElement;
 	private ZoneGraph trace;
 	protected VerificationOptionsProvider optionsProvider;
 	protected VerificationPropertyChoiceProvider propertyChoiceProvider;
 	
-	public Muml2TraceJob(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
-		super("MUML to Trace Transformation");
+	public Muml2TraceOperation(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
 		this.verifiableElement = verifiableElement;
 		this.optionsProvider = optionsProvider;
 		this.propertyChoiceProvider = propertyChoiceProvider;
 	}
 	
-	@Override
-	protected IStatus run(IProgressMonitor monitor) {
+	public void run(IProgressMonitor monitor) throws CoreException {
 		ModelExtent reachabilityResultExtent;
-		IStatus status;
-		
+				
 		try {
 			
-			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
+			SubMonitor subMonitor = SubMonitor.convert(monitor, "MUML to Trace Transformation", 100);
 			
 			//Clone model, mark verifiable element, etc.
-			PrepareModelJob prepareJob = new PrepareModelJob(verifiableElement);
-			status = prepareJob.execute(subMonitor.newChild(10));
-			if (!status.isOK())
-				return status;
-			verifiableElement = prepareJob.getClonedVerifiableElement();
-			ModelExtent clonedModel = prepareJob.getClonedExtent();
+			PrepareModelOperation prepareOperation = new PrepareModelOperation(verifiableElement);
+			prepareOperation.run(subMonitor.newChild(10));
+			verifiableElement = prepareOperation.getClonedVerifiableElement();
+			ModelExtent clonedModel = prepareOperation.getClonedExtent();
 			
 			//Get verification options
 			if (!optionsProvider.prepareOptionsProvider(verifiableElement))
-				return Status.CANCEL_STATUS;
+				throw new OperationCanceledException();
 			
 			//Create CIC, run mtctl normalizations and split normalization to figure out which properties can be verified
-			TransformationJob verifiableElement2VerifiableCICTransformation = new TransformationJob("Creating equivalent CIC and splitting properties", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2VerifiableCIC.qvto", true));
+			TransformationOperation verifiableElement2VerifiableCICOperation = new TransformationOperation("Creating equivalent CIC and splitting properties", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2VerifiableCIC.qvto", true));
 			//input, options, out propertySplitModel, out staticallyNormalized, out muml_cic
 			ModelExtent verifiableCicExtent = new BasicModelExtent();
 			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));
-			verifiableElement2VerifiableCICTransformation.setTransformationParameters(clonedModel, optionsExtent, verifiableCicExtent, new BasicModelExtent(), new BasicModelExtent());
-			verifiableElement2VerifiableCICTransformation.execute(subMonitor.newChild(20));
+			verifiableElement2VerifiableCICOperation.setTransformationParameters(clonedModel, optionsExtent, verifiableCicExtent, new BasicModelExtent(), new BasicModelExtent());
+			verifiableElement2VerifiableCICOperation.run(subMonitor.newChild(20));
 			
 			//Find the new element to verify (now a CIC)
 			EObject newCICtoVerify = null;
@@ -85,7 +82,7 @@ public class Muml2TraceJob extends SynchronousJob {
 			
 			//Get property choice for the CIC
 			if (!propertyChoiceProvider.preparePropertyChoiceProvider(verifiableElement))
-				return Status.CANCEL_STATUS;
+				throw new OperationCanceledException();
 			
 			//Remove the properties that are not supposed to be verified
 			Iterator<VerificationConstraintRepository> repoIt = verifiableElement.getVerificationConstraintRepositories().iterator();
@@ -109,26 +106,21 @@ public class Muml2TraceJob extends SynchronousJob {
 			}
 			
 			if (propertyCount != 1 || !(lastProperty.getExpression() instanceof TemporalQuantifierExpr)) {
-				return new Status(Status.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", "Please select exactly one simple property verifiable with Uppaal");
+				throw new CoreException(new Status(Status.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", "Please select exactly one simple property verifiable with Uppaal"));
 			}			
 			
 			//Verify the resulting CIC with the one property
-			TransformationJob mainTransformation = new TransformationJob(this.getName(), URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Trace.qvto", true));
+			TransformationOperation mainTransformation = new TransformationOperation("MUML to Trace Transformation", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Trace.qvto", true));
 			reachabilityResultExtent = new BasicModelExtent();
 			mainTransformation.setTransformationParameters(verifiableCicExtent, optionsExtent, reachabilityResultExtent);
-			status = mainTransformation.execute(subMonitor.newChild(70));
+			mainTransformation.run(subMonitor.newChild(70));
 
 			//Finished
-			if(status.isOK())
-				trace = (ZoneGraph) reachabilityResultExtent.getContents().get(0);
-			else
-				return status;
-			
+			trace = (ZoneGraph) reachabilityResultExtent.getContents().get(0);
+						
 			if (monitor.isCanceled()) {
-				return Status.CANCEL_STATUS;
+				throw new OperationCanceledException();
 			}
-			
-			return Status.OK_STATUS;
 		}
 		finally {
 			monitor.done();
@@ -136,13 +128,7 @@ public class Muml2TraceJob extends SynchronousJob {
 			
 	};
 	
-	public ZoneGraph getTrace() {
-		try {
-			join();
-		} catch (InterruptedException e) {
-			return null;
-		}
-		
+	public ZoneGraph getTrace() {		
 		return trace;
 	}
 	

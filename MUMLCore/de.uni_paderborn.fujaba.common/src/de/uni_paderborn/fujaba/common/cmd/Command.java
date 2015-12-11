@@ -10,6 +10,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import org.eclipse.core.runtime.IPath;
 
@@ -38,11 +39,11 @@ public abstract class Command {
 		
 	}
 	
-	public String getOutput(Reader reader) throws IOException {
+	public String getOutput(Reader reader) throws IOException, ExecutionException, InterruptedException {
 		
 		StringWriter stringWriter = new StringWriter();
 				
-		this.execute(reader, stringWriter).waitFor();
+		this.execute(reader, stringWriter).waitForExitValue();
 		
 		stringWriter.close();
 		
@@ -50,9 +51,9 @@ public abstract class Command {
 		
 	}
 	
-	public void printOutput(Reader reader, OutputStream stream) throws IOException {
+	public void printOutput(Reader reader, OutputStream stream) throws IOException, ExecutionException, InterruptedException {
 		Writer writer = new PrintWriter(stream);		
-		this.execute(reader, writer);
+		this.execute(reader, writer).waitForExitValue();
 		writer.close();
 	}
 			

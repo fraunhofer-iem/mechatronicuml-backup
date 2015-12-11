@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  de.uni_paderborn.fujaba.graphviz.blackbox;resolution:=optional,
  de.uni_paderborn.uppaal.serialization,
  org.storydriven.core,
- org.eclipse.core.filesystem
+ org.eclipse.core.filesystem,
+ de.uni_paderborn.uppaal.job;bundle-version="0.5.0"
 Export-Package: de.uni_paderborn.uppaal.ui.wizard
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName

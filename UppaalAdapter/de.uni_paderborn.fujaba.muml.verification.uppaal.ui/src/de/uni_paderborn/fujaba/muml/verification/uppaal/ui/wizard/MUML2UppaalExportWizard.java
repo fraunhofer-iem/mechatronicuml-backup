@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard;
 
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -19,7 +18,7 @@ import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.ExportUppaalModelJob;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalModelJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportJobChangeAdapter;
@@ -90,7 +89,7 @@ public class MUML2UppaalExportWizard extends AbstractFujabaExportWizard {
 				URI targetURIRequirements = destination.appendSegment(((NamedElement) verifiableElement).getName()).appendFileExtension("requirements");
 
 				//Start the job
-				Job job = new ExportUppaalModelJob(verifiableElement, targetURI, targetURIRequirements, new VerificationOptionsProvider() {
+				Job job = new Muml2UppaalModelJob(verifiableElement, targetURI, targetURIRequirements, new VerificationOptionsProvider() {
 					@Override
 					public boolean prepareOptionsProvider(VerifiableElement element) {
 						return true;

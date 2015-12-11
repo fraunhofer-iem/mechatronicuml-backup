@@ -15,8 +15,9 @@ import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGra
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.graphviz.CICGraphvizExport;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyChoiceProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.operations.Muml2TraceOperation;
 
-public class ExportTraceImageJob extends Job {
+public class Muml2TraceImageJob extends Job {
 	
 	private VerifiableElement verifiableElement;
 	private IPath targetPath;
@@ -24,7 +25,7 @@ public class ExportTraceImageJob extends Job {
 	private VerificationOptionsProvider optionsProvider;
 	private VerificationPropertyChoiceProvider propertyChoiceProvider;
 				
-	public ExportTraceImageJob(VerifiableElement verifiableElement, IPath targetPath, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
+	public Muml2TraceImageJob(VerifiableElement verifiableElement, IPath targetPath, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
 		super("Trace Image Export");
 		
 		setUser(true);
@@ -35,7 +36,7 @@ public class ExportTraceImageJob extends Job {
 		this.propertyChoiceProvider = propertyChoiceProvider;		
 	}
 	
-	public ExportTraceImageJob(VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
+	public Muml2TraceImageJob(VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
 		this(verifiableElement, resource.getLocation(), optionsProvider, propertyChoiceProvider);
 		this.resource = resource;
 	}
@@ -52,18 +53,15 @@ public class ExportTraceImageJob extends Job {
 				subMonitor.setWorkRemaining(90);
 			}
 			
-			IStatus status;
-			Muml2TraceJob m2m = new Muml2TraceJob(verifiableElement, optionsProvider, propertyChoiceProvider);
-			status = m2m.execute(subMonitor.newChild(70));
-			ZoneGraph trace;
-			
-			if(status.isOK()) {
-				trace = m2m.getTrace();
+			Muml2TraceOperation m2m = new Muml2TraceOperation(verifiableElement, optionsProvider, propertyChoiceProvider);
+			try {
+				m2m.run(subMonitor.newChild(70));
 			}
-			else {
-				return status;
+			catch(CoreException e) {
+				return e.getStatus();
 			}
-			
+			ZoneGraph trace = m2m.getTrace();
+						
 			if (subMonitor.isCanceled()) {
 				return Status.CANCEL_STATUS;
 			};

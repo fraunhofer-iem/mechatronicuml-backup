@@ -1,12 +1,14 @@
-package de.uni_paderborn.fujaba.muml.verification.uppaal.job;
+package de.uni_paderborn.fujaba.muml.verification.uppaal.job.operations;
 
 import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.resources.IWorkspaceRunnable;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -18,11 +20,15 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 
-public class TransformationJob extends SynchronousJob {
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Activator;
+
+public class TransformationOperation implements IWorkspaceRunnable {
 	
 	protected URI uri;
 	protected ModelExtent params[] = null;
 	protected Map<String, Object> configProperties = null;
+	
+	private String title;
 	
 	private static Map<URI, TransformationExecutor> executors = new HashMap<URI, TransformationExecutor>(); //maps a transformation URI to its executor
 	
@@ -31,8 +37,8 @@ public class TransformationJob extends SynchronousJob {
 	 * @param title what the job should show that it does
 	 * @param uri the uri of the transformation to run
 	 */
-	public TransformationJob(String title, URI uri) {
-		super(title);
+	public TransformationOperation(String title, URI uri) {
+		this.title = title;
 		this.uri = uri;
 	}
 	
@@ -92,14 +98,14 @@ public class TransformationJob extends SynchronousJob {
 	}
 			
 	@Override
-	protected IStatus run(IProgressMonitor monitor) {
+	public void run(IProgressMonitor monitor) throws CoreException {
 				
 		ExecutionContextImpl context;
 		Diagnostic diagnostic;
 		IStatus status;
 		
 		try {
-			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 120);
+			SubMonitor subMonitor = SubMonitor.convert(monitor, title, 120);
 						
 			if (executors.get(uri) == null) {
 				subMonitor.subTask("Load Model-to-Model Transformation");
@@ -110,11 +116,11 @@ public class TransformationJob extends SynchronousJob {
 					// re-initialize the transformation executor when the compilation fails
 					// this ensures a new compilation and allows bugfixes to be considered
 					forgetTransformation(uri);
-					return status;
+					throw new CoreException(status);
 				}
 				
 				if (monitor.isCanceled()) {
-					return Status.CANCEL_STATUS;
+					throw new OperationCanceledException();
 				}
 			};
 			
@@ -138,10 +144,10 @@ public class TransformationJob extends SynchronousJob {
 			//Validate
 			status = BasicDiagnostic.toIStatus(diagnostic);
 			if(!status.isOK())
-				return status;
+				throw new CoreException(status);
 			
 			if (monitor.isCanceled()) {
-				return Status.CANCEL_STATUS;
+				throw new OperationCanceledException();
 			};
 			
 			
@@ -156,15 +162,13 @@ public class TransformationJob extends SynchronousJob {
 						status = BasicDiagnostic.toIStatus(diagnostic);
 						if(!status.isOK()) {
 							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
-							return status;
+							throw new CoreException(status);
 						}
 					}
 				}
 					
 			subMonitor.worked(10);
-			
-			return Status.OK_STATUS;
-		
+					
 		}
 		finally {
 			monitor.done();

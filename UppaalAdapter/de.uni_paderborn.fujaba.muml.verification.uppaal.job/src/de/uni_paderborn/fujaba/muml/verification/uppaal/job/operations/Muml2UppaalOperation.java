@@ -1,10 +1,11 @@
-package de.uni_paderborn.fujaba.muml.verification.uppaal.job;
+package de.uni_paderborn.fujaba.muml.verification.uppaal.job.operations;
 
 import java.util.Arrays;
 
+import org.eclipse.core.resources.IWorkspaceRunnable;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
@@ -17,45 +18,42 @@ import de.uni_paderborn.uppaal.NTA;
 import de.uni_paderborn.uppaal.requirements.PropertyRepository;
 import de.uni_paderborn.uppaal.requirements.impl.RequirementsFactoryImpl;
 
-public class Muml2UppaalJob extends SynchronousJob {
+public class Muml2UppaalOperation implements IWorkspaceRunnable {
 	
 	private VerifiableElement verifiableElement;
 	private NTA nta;
 	private PropertyRepository propertyRepository;
 	private VerificationOptionsProvider optionsProvider;
 	
-	public Muml2UppaalJob(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider) {
-		super("MUML to UPPAAL Transformation");
+	public Muml2UppaalOperation(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider) {
 		this.verifiableElement = verifiableElement;
 		this.optionsProvider = optionsProvider;
 	}
 		
 	@Override
-	protected IStatus run(IProgressMonitor monitor) {
-		IStatus status;
-		
+	public void run(IProgressMonitor monitor) throws CoreException {
+			
 		try {
-			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
+			SubMonitor subMonitor = SubMonitor.convert(monitor, "MUML to UPPAAL Transformation", 100);
 			
 			//Clone model, mark verifiable element, etc.
-			PrepareModelJob prepareJob = new PrepareModelJob(verifiableElement);
-			status = prepareJob.execute(subMonitor.newChild(10));
-			if (!status.isOK())
-				return status;
-			verifiableElement = prepareJob.getClonedVerifiableElement();
-			ModelExtent mainInputExtent = prepareJob.getClonedExtent();
+			PrepareModelOperation prepareOperation = new PrepareModelOperation(verifiableElement);
+			prepareOperation.run(subMonitor.newChild(10));
+			
+			verifiableElement = prepareOperation.getClonedVerifiableElement();
+			ModelExtent mainInputExtent = prepareOperation.getClonedExtent();
 			
 			//Prepare other necessary information (typically: show verification wizard)
 			if (!optionsProvider.prepareOptionsProvider(verifiableElement))
-				return Status.CANCEL_STATUS;
+				throw new OperationCanceledException();
 			
 			//Start the verification job
-			TransformationJob verifyJob = new TransformationJob("Running verification process", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2UPPAAL.qvto", true));
+			TransformationOperation verifyOperation = new TransformationOperation("Running verification process", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2UPPAAL.qvto", true));
 			ModelExtent uppaalModelExtent = new BasicModelExtent();
 			ModelExtent uppaalReqModelExtent = new BasicModelExtent();
 			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));
-			verifyJob.setTransformationParameters(mainInputExtent, optionsExtent, uppaalModelExtent, uppaalReqModelExtent, new BasicModelExtent(), new BasicModelExtent(), new BasicModelExtent());
-			status = verifyJob.execute(subMonitor.newChild(90));
+			verifyOperation.setTransformationParameters(mainInputExtent, optionsExtent, uppaalModelExtent, uppaalReqModelExtent, new BasicModelExtent(), new BasicModelExtent(), new BasicModelExtent());
+			verifyOperation.run(subMonitor.newChild(90));
 			
 			//Make results available
 			if (uppaalModelExtent.getContents().size() != 0)
@@ -63,16 +61,7 @@ public class Muml2UppaalJob extends SynchronousJob {
 			if (uppaalReqModelExtent.getContents().size() != 0)
 				propertyRepository = (PropertyRepository) uppaalReqModelExtent.getContents().get(0);
 			else
-				propertyRepository = RequirementsFactoryImpl.eINSTANCE.createPropertyRepository();
-			
-			if (!status.isOK())
-				return status;
-			
-			if (monitor.isCanceled()) 
-				return Status.CANCEL_STATUS;
-			
-			return Status.OK_STATUS;
-		
+				propertyRepository = RequirementsFactoryImpl.eINSTANCE.createPropertyRepository();		
 		}
 		finally {
 			monitor.done();
@@ -80,23 +69,10 @@ public class Muml2UppaalJob extends SynchronousJob {
 	};
 	
 	public NTA getNTA() {
-		try {
-			join();
-		} catch (InterruptedException e) {
-			return null;
-		}
-		
 		return nta;
-		
 	}
 	
 	public PropertyRepository getPropertyRepository() {
-		try {
-			join();
-		} catch (InterruptedException e) {
-			return null;
-		}
-		
 		return propertyRepository;
 	}
 	

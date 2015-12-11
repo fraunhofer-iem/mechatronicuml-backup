@@ -5,8 +5,8 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyResultAcceptor;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 
 public class PropertiesResultWizard extends Wizard implements VerificationPropertyResultAcceptor  {
 	protected PropertyResultRepository result = null;

@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.ExportUppaalModelJob;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalModelJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 
@@ -51,7 +51,7 @@ public class ExportUppaalModelAction extends AbstractUppaalAction {
 						.addFileExtension("requirements").toPortableString(), true);
 
 		// Start the job
-		Job job = new ExportUppaalModelJob(verifiableElement, targetURI, targetURIRequirements,
+		Job job = new Muml2UppaalModelJob(verifiableElement, targetURI, targetURIRequirements,
 				new VerificationOptionsProvider() {
 					OptionsWizardPage optionsPage = null;
 					WizardDialog dialog = null;

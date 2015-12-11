@@ -75,7 +75,7 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IExpo
         	}
         	if (element instanceof IAdaptable) {
         		IAdaptable adaptable = (IAdaptable) element;
-        		eObject = (EObject) adaptable.getAdapter(EObject.class);
+        		eObject = adaptable.getAdapter(EObject.class);
         	}
         	if (eObject != null) {
         		editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);

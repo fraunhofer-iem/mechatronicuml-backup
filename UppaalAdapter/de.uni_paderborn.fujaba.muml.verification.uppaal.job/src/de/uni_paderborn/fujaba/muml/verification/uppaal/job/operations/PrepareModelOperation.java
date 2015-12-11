@@ -1,11 +1,12 @@
-package de.uni_paderborn.fujaba.muml.verification.uppaal.job;
+package de.uni_paderborn.fujaba.muml.verification.uppaal.job.operations;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import org.eclipse.core.resources.IWorkspaceRunnable;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -24,36 +25,33 @@ import de.uni_paderborn.fujaba.muml.verification.verificationExtension.Verificat
  * After this ran, you get a cloned ModelExtent and a reference to the cloned verifiableElement via the getter methods. 
  * The cloned verifiableElement will not contain VerificationConstraints other than mtctl PropertyRepositories.
  */
-public class PrepareModelJob extends SynchronousJob {
+public class PrepareModelOperation implements IWorkspaceRunnable {
 	
 	protected VerifiableElement verifiableElement;
 	private VerifiableElement clonedVerifiableElement;
-	protected IStatus status = Status.OK_STATUS;
 	private ModelExtent resultExtent;
 	
-	public PrepareModelJob(VerifiableElement verifiableElement) {
-		super("Preparing verification");
+	public PrepareModelOperation(VerifiableElement verifiableElement) {
 		this.verifiableElement = verifiableElement;
 	}
 		
 	@Override
-	protected IStatus run(IProgressMonitor monitor) {
+	public void run(IProgressMonitor monitor) throws CoreException {
 		
 		try {
-			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
+			SubMonitor subMonitor = SubMonitor.convert(monitor, "Preparing verification", 100);
 			
 			//Clone the model and mark the VerifiableElement that we're interested in
-			TransformationJob cloneJob = new TransformationJob("Cloning model", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/CloneAndMark.qvto", true));
+			TransformationOperation cloneOperation = new TransformationOperation("Cloning model", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/CloneAndMark.qvto", true));
 			ModelExtent inputExtent = new BasicModelExtent(verifiableElement.eResource().getContents());
 			ModelExtent verifiableElementExtent = new BasicModelExtent(Arrays.asList(new VerifiableElement[] {verifiableElement}));
 			resultExtent = new BasicModelExtent();
 			
-			cloneJob.setTransformationParameters(inputExtent, verifiableElementExtent, resultExtent);
+			cloneOperation.setTransformationParameters(inputExtent, verifiableElementExtent, resultExtent);
 			HashMap<String, Object> configProperties = new HashMap<String, Object>();
-			cloneJob.setTransformationConfigProperties(configProperties);
-			status = cloneJob.execute(subMonitor.newChild(90));
-			if (!status.isOK())
-				return status;
+			cloneOperation.setTransformationConfigProperties(configProperties);
+			cloneOperation.run(subMonitor.newChild(90));
+			
 			
 			//Find the marked element in the copy
 			EObject clonedVerifiableElement = null;
@@ -84,9 +82,8 @@ public class PrepareModelJob extends SynchronousJob {
 			}
 			
 			if (propertyCount == 0)
-				return new Status(Status.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", ((NamedElement) this.verifiableElement).getName()+" has no properties to verify");
+				throw new CoreException(new Status(Status.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", ((NamedElement) this.verifiableElement).getName()+" has no properties to verify"));
 			
-			return status;
 		}
 		finally {
 			monitor.done();
@@ -94,20 +91,10 @@ public class PrepareModelJob extends SynchronousJob {
 	}
 	
 	public ModelExtent getClonedExtent() {
-		try {
-			this.join();
-		} catch (InterruptedException e) {
-			return null;
-		}
 		return resultExtent;
 	}
 	
 	public VerifiableElement getClonedVerifiableElement()  {
-		try {
-			this.join();
-		} catch (InterruptedException e) {
-			return null;
-		}
 		return clonedVerifiableElement;
 	}
 }

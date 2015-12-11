@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
 
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.ExportTraceImageJob;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2TraceImageJob;
 
 public class ExportTraceImageAction extends AbstractUppaalAction {
 
@@ -36,7 +36,7 @@ public class ExportTraceImageAction extends AbstractUppaalAction {
 
 		IPath targetPath = (IPath) result[0];
 		IResource resource = ResourcesPlugin.getWorkspace().getRoot().findMember(targetPath);
-		Job job = new ExportTraceImageJob(verifiableElement, resource, provider, provider);
+		Job job = new Muml2TraceImageJob(verifiableElement, resource, provider, provider);
 		job.addJobChangeListener(new ExportJobChangeAdapter());
 		job.schedule();
 

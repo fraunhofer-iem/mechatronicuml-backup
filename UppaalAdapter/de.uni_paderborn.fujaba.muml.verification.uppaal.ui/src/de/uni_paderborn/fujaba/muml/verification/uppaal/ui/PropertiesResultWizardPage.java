@@ -9,9 +9,9 @@ import java.util.Set;
 
 import org.eclipse.swt.widgets.Composite;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResult;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 
 public class PropertiesResultWizardPage extends PropertiesWizardPage {
 	Set<Property> fulfilledProperties;

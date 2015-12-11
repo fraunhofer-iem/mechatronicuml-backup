@@ -1,23 +1,28 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.job;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRunnable;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.core.runtime.jobs.Job;
 
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.operations.Muml2UppaalOperation;
+import de.uni_paderborn.uppaal.job.UppaalXMLSynthesisOperation;
 
-public class ExportUppaalXMLJob extends SynchronousJob {
+public class Muml2UppaalXMLJob extends Job {
 	
 	private VerifiableElement verifiableElement;
 	private VerificationOptionsProvider optionsProvider;
 	private IPath targetPath;
 	private IResource resource;
 				
-	public ExportUppaalXMLJob(VerifiableElement verifiableElement, IPath targetPath, VerificationOptionsProvider optionsProvider) {
+	public Muml2UppaalXMLJob(VerifiableElement verifiableElement, IPath targetPath, VerificationOptionsProvider optionsProvider) {
 		
 		super("UPPAAL XML Export");
 		
@@ -28,7 +33,7 @@ public class ExportUppaalXMLJob extends SynchronousJob {
 		this.optionsProvider = optionsProvider;
 	}
 	
-	public ExportUppaalXMLJob(VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider) {
+	public Muml2UppaalXMLJob(VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider) {
 		
 		this(verifiableElement, resource.getLocation(), optionsProvider);
 		
@@ -41,20 +46,26 @@ public class ExportUppaalXMLJob extends SynchronousJob {
 										
 		try {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
-			IStatus status;
 			
-			Muml2UppaalJob m2m = new Muml2UppaalJob(verifiableElement, optionsProvider);
-			status = m2m.execute(subMonitor.newChild(70));
-			if(!status.isOK()) {
-				return status;
+			
+			Muml2UppaalOperation m2m = new Muml2UppaalOperation(verifiableElement, optionsProvider);
+			try {
+				m2m.run(subMonitor.newChild(70));
+			}
+			catch(CoreException e) {
+				return e.getStatus();
 			}
 			
-			SynchronousJob xmlSynthesis = resource == null ? new UppaalXMLSynthesisJob(m2m.getNTA(), m2m.getPropertyRepository(), targetPath, true) : new UppaalXMLSynthesisJob(m2m.getNTA(), m2m.getPropertyRepository(), resource, true);
-			status = xmlSynthesis.execute(subMonitor.newChild(30));
-			if(!status.isOK()) {
-				return status;
-			}
 			
+			IWorkspaceRunnable xmlSynthesis = resource == null ? new UppaalXMLSynthesisOperation(m2m.getNTA(), m2m.getPropertyRepository(), targetPath, true) : new UppaalXMLSynthesisOperation(m2m.getNTA(), m2m.getPropertyRepository(), resource, true);
+			
+			try {
+				xmlSynthesis.run(subMonitor.newChild(30));
+			}
+			catch(CoreException e) {
+				return e.getStatus();
+			}
+						
 			return Status.OK_STATUS;
 		
 		}

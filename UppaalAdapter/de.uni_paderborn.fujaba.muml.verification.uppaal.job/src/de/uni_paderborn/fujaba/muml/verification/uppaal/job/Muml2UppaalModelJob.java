@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -18,12 +19,13 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.operations.Muml2UppaalOperation;
 import de.uni_paderborn.uppaal.NTA;
 import de.uni_paderborn.uppaal.requirements.PropertyRepository;
 
-public class ExportUppaalModelJob extends Job {
+public class Muml2UppaalModelJob extends Job {
 	
-	public ExportUppaalModelJob(VerifiableElement verifiableElement, URI uri, URI propertyUri, VerificationOptionsProvider optionsProvider) {
+	public Muml2UppaalModelJob(VerifiableElement verifiableElement, URI uri, URI propertyUri, VerificationOptionsProvider optionsProvider) {
 		super("UPPAAL Network of Timed Automata Model Export");
 		
 		setUser(true);
@@ -43,11 +45,16 @@ public class ExportUppaalModelJob extends Job {
 	protected IStatus run(IProgressMonitor monitor) {
 		
 		try {
-			IStatus status;
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
 
-			Muml2UppaalJob m2m = new Muml2UppaalJob(verifiableElement, optionsProvider);
-			status = m2m.execute(subMonitor.newChild(70));
+			Muml2UppaalOperation m2m = new Muml2UppaalOperation(verifiableElement, optionsProvider);
+			try {
+				m2m.run(subMonitor.newChild(70));
+			}
+			catch(CoreException e) {
+				return e.getStatus();
+			}
+			
 			if (subMonitor.isCanceled()) {
 				return Status.CANCEL_STATUS;
 			};
@@ -55,11 +62,7 @@ public class ExportUppaalModelJob extends Job {
 			NTA nta = m2m.getNTA();
 			PropertyRepository properties = m2m.getPropertyRepository();
 			
-			if(nta == null || properties == null) {
-				return status;
-			}
-			
-			
+						
 			{
 				subMonitor.subTask("Save NTA");
 			
@@ -112,7 +115,7 @@ public class ExportUppaalModelJob extends Job {
 			    subMonitor.worked(15);
 			}
 		    
-		    return status.isOK() ? Status.OK_STATUS : status;
+		    return Status.OK_STATUS;
 	    
 		} finally {
 			monitor.done();

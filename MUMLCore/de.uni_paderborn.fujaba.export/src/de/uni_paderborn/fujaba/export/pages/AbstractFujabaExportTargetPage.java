@@ -65,6 +65,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 	protected TreeViewer treeViewer;
 	protected Text destinationText;
 	
+	protected IResource destination;
+	
 	public static String OVERWRITE_KEY = "overwrite";
 	
     public AbstractFujabaExportTargetPage(String name, FormToolkit toolkit) {
@@ -359,16 +361,18 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				String destination = "";
+				String destinationString = "";
 				if (treeViewer.getSelection() instanceof IStructuredSelection) {
 					IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
 					if (!selection.isEmpty() && selection.getFirstElement() instanceof IResource) {
 						IResource resource = (IResource) selection.getFirstElement();
+						destination = resource;
 						URI uri = URI.createPlatformResourceURI(resource.getFullPath().toString(), true);
-						destination = uri.toString();
+						destinationString = uri.toString();
 					}
 				}
-				destinationText.setText(destination);
+				//destinationText.setText(destination);
+				destinationText.setText(destinationString);
 				validatePage();
 			}
         	
@@ -467,6 +471,10 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 	
 	public boolean wizardPageSupportsFilesystem() {
 		return true;
+	}
+	
+	public IResource getDestinationResource() {
+		return destination; 
 	}
 	
 	public URI getDestinationURI() {
