@@ -36,7 +36,7 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_epNavRx7EeSKP_lLzmbIVg"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_epNavhx7EeSKP_lLzmbIVg"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="operations.fujaba#_eo_YQRx7EeSKP_lLzmbIVg"/>
+                    <element xmi:type="realtimestatechart:State" href="operations.muml#_eo_YQRx7EeSKP_lLzmbIVg"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_epNasRx7EeSKP_lLzmbIVg" x="-4" width="258" height="125"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_gfUnwBx7EeSKP_lLzmbIVg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
@@ -57,17 +57,17 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_gfUnzRx7EeSKP_lLzmbIVg"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_gfUnzhx7EeSKP_lLzmbIVg"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="operations.fujaba#_gfSLgBx7EeSKP_lLzmbIVg"/>
+                    <element xmi:type="realtimestatechart:State" href="operations.muml#_gfSLgBx7EeSKP_lLzmbIVg"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gfUnwRx7EeSKP_lLzmbIVg" x="5" y="225" width="226" height="118"/>
                   </children>
                 </children>
-                <element xmi:type="realtimestatechart:RealtimeStatechart" href="operations.fujaba#_eo_YQBx7EeSKP_lLzmbIVg"/>
+                <element xmi:type="realtimestatechart:RealtimeStatechart" href="operations.muml#_eo_YQBx7EeSKP_lLzmbIVg"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_epMMkRx7EeSKP_lLzmbIVg"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_epAmZhx7EeSKP_lLzmbIVg"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_epAmZxx7EeSKP_lLzmbIVg"/>
             </children>
-            <element xmi:type="realtimestatechart:Region" href="operations.fujaba#_eo8U8Bx7EeSKP_lLzmbIVg"/>
+            <element xmi:type="realtimestatechart:Region" href="operations.muml#_eo8U8Bx7EeSKP_lLzmbIVg"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_epAmYRx7EeSKP_lLzmbIVg"/>
           </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_XiWsxxx7EeSKP_lLzmbIVg"/>
@@ -81,15 +81,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_XiXT1Bx7EeSKP_lLzmbIVg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_XiXT1Rx7EeSKP_lLzmbIVg"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="operations.fujaba#_XfHLgRx7EeSKP_lLzmbIVg"/>
+        <element xmi:type="realtimestatechart:State" href="operations.muml#_XfHLgRx7EeSKP_lLzmbIVg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XiWswRx7EeSKP_lLzmbIVg" width="801" height="511"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="operations.fujaba#_XfHLgBx7EeSKP_lLzmbIVg"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="operations.muml#_XfHLgBx7EeSKP_lLzmbIVg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XiR0QRx7EeSKP_lLzmbIVg" width="847" height="577"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_XfHLgxx7EeSKP_lLzmbIVg"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="operations.fujaba#_XfHLgBx7EeSKP_lLzmbIVg"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="operations.muml#_XfHLgBx7EeSKP_lLzmbIVg"/>
   <edges xmi:type="notation:Connector" xmi:id="_iuIBoBx7EeSKP_lLzmbIVg" type="4003" source="_epNasBx7EeSKP_lLzmbIVg" target="_gfUnwBx7EeSKP_lLzmbIVg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_iuIosBx7EeSKP_lLzmbIVg" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_iuIosRx7EeSKP_lLzmbIVg" x="2" y="45"/>
@@ -98,7 +98,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_iuIosxx7EeSKP_lLzmbIVg" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_iuIBoRx7EeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
-    <element xmi:type="realtimestatechart:Transition" href="operations.fujaba#_iuDJIBx7EeSKP_lLzmbIVg"/>
+    <element xmi:type="realtimestatechart:Transition" href="operations.muml#_iuDJIBx7EeSKP_lLzmbIVg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iuIBohx7EeSKP_lLzmbIVg" points="[36, 2, -246, 0]$[260, -20, -22, -22]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iud_4Bx7EeSKP_lLzmbIVg" id="(0.32170542635658916,0.96)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iud_4Rx7EeSKP_lLzmbIVg" id="(0.3008849557522124,0.09322033898305085)"/>
@@ -111,7 +111,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_jNh6cxx7EeSKP_lLzmbIVg" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_jNhTYRx7EeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
-    <element xmi:type="realtimestatechart:Transition" href="operations.fujaba#_jNfeMBx7EeSKP_lLzmbIVg"/>
+    <element xmi:type="realtimestatechart:Transition" href="operations.muml#_jNfeMBx7EeSKP_lLzmbIVg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jNhTYhx7EeSKP_lLzmbIVg" points="[-19, -2, 215, 0]$[-206, 14, 28, 16]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jN8KIBx7EeSKP_lLzmbIVg" id="(0.9026548672566371,0.00847457627118644)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jN8KIRx7EeSKP_lLzmbIVg" id="(0.8255813953488372,0.872)"/>
@@ -124,7 +124,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_jfLEExx7EeSKP_lLzmbIVg" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_jfKdARx7EeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
-    <element xmi:type="realtimestatechart:Transition" href="operations.fujaba#_jfIn0Bx7EeSKP_lLzmbIVg"/>
+    <element xmi:type="realtimestatechart:Transition" href="operations.muml#_jfIn0Bx7EeSKP_lLzmbIVg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jfKdAhx7EeSKP_lLzmbIVg" points="[33, -14, 33, -14]$[33, -14, 33, -14]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jflTwBx7EeSKP_lLzmbIVg" id="(0.8539823008849557,0.2288135593220339)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jflTwRx7EeSKP_lLzmbIVg" id="(0.8539823008849557,0.2288135593220339)"/>
@@ -137,7 +137,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_k2W5cxx7EeSKP_lLzmbIVg" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_k2WSYRx7EeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
-    <element xmi:type="realtimestatechart:Transition" href="operations.fujaba#_k2UdMBx7EeSKP_lLzmbIVg"/>
+    <element xmi:type="realtimestatechart:Transition" href="operations.muml#_k2UdMBx7EeSKP_lLzmbIVg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k2WSYhx7EeSKP_lLzmbIVg" points="[211, -62, 4, -20]$[273, -79, 66, -37]$[273, -25, 66, 17]$[211, -41, 4, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k2p0YBx7EeSKP_lLzmbIVg" id="(0.1821705426356589,0.848)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k2qbcBx7EeSKP_lLzmbIVg" id="(0.9844961240310077,0.512)"/>
