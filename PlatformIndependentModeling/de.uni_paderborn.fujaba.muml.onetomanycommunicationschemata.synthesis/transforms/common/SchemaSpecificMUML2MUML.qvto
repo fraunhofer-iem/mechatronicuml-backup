@@ -37,19 +37,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 // It is not possible to use self.deepclone() since references to other elements should reference the mapped elements instead of the original values, as it is done in deepClone()
 
 
-	mapping TypedNamedElement :: transform() : EObject disjuncts 
-		Variable::transform,
-		Parameter::transform,
-		TypedNamedElement::failOnUnsupportedTypedNamedElement;
-	
-	mapping TypedNamedElement::failOnUnsupportedTypedNamedElement() : EObject {
-		
-		init {
-			assert fatal (false) with log("The TypedNamedElement "+self.toString()+" is unsupported.")
-		}
-	}
-	
-
 	
 	mapping actionlanguage::TriggerMessageExpression :: transform() : EObject {
 		init {
@@ -68,6 +55,23 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		};
 	}
 
+	mapping actionlanguage::TriggerMessageExpression :: transform(container : OclAny) : EObject {
+		init {
+			result := self.map create(container);
+		}
+		var element := self.oclAsType(TriggerMessageExpression);
+		var resultingElement : TriggerMessageExpression := result.oclAsType(TriggerMessageExpression);
+		resultingElement.messageType := self.messageType;
+		resultingElement.parameter := self.parameter;
+		
+		resultingElement.annotation := self._annotation.map transform(container).oclAsType(EAnnotation);
+	    resultingElement._extension := self._extension.map transform(container).oclAsType(Extension);
+	    	
+		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+		};
+	}
+	
 	mapping actionLanguage::NondeterministicChoiceExpression ::transform() : EObject {
 		init {
 			result := self.map create();
@@ -85,6 +89,22 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		};	
 	}
 	
+	mapping actionLanguage::NondeterministicChoiceExpression ::transform(container : OclAny) : EObject {
+		init {
+			result := self.map create(container);
+		}
+		var element := self.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		var resultingElement : actionLanguage::NondeterministicChoiceExpression := result.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		resultingElement.range := self.range.map transform(container).oclAsType(Range);
+		resultingElement.dataType := self.dataType;
+		
+		resultingElement.annotation := self._annotation.map transform(container).oclAsType(EAnnotation);
+	    resultingElement._extension := self._extension.map transform(container).oclAsType(Extension);
+	    	
+		element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+		};	
+	}
 -- variables, operations, parametes...
 
 
@@ -97,7 +117,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 				var resultingElement : behavior::Variable := result.oclAsType(behavior::Variable);
 		
 				resultingElement.dataType := self.dataType;
-				resultingElement.initializeExpression := self.initializeExpression.map multiTransform().oclAsType(Expression);
+				resultingElement.initializeExpression := self.initializeExpression.map transform(result).oclAsType(Expression);
 				resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
 			    resultingElement._extension := self._extension.map transform().oclAsType(Extension);
 				
@@ -112,7 +132,13 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}			
 	}	
 
-		mapping Operation :: transform() : EObject {
+ 	mapping Variable :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
+	
+	mapping Operation :: transform() : EObject {
 		init {
 			if(internalOperations->includes(self)){
 				result := self.map create();
@@ -136,6 +162,12 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 			}			
 		}			
 	}
+	
+	mapping Operation :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
 
 	mapping Parameter :: transform() : EObject {
 		init{
@@ -152,6 +184,11 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		
 	}
 
+	mapping Parameter :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
 		-- synchronizations
 	mapping SynchronizationChannel :: transform() : EObject {
 		init {
@@ -176,6 +213,12 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}		
 	}
 	
+	
+	mapping SynchronizationChannel :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
 	-- Clocks	
 	
 	mapping Clock :: transform() : EObject {
@@ -201,9 +244,25 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}		
 	}
 
+
+	mapping Clock :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
+ 	
 	mapping muml::realtimestatechart::AsynchronousMessageEvent :: transform() : EObject {
 		init {
 			result := self.map create();
+		}		
+		var resultingElement : AsynchronousMessageEvent := result.oclAsType(AsynchronousMessageEvent);
+		resultingElement.message := self.message.map transform().oclAsType(Message);
+		resultingElement.kind := self.kind;		
+	}
+	
+	mapping muml::realtimestatechart::AsynchronousMessageEvent :: transform(container : OclAny) : EObject {
+		init {
+			result := self.map create(container);
 		}		
 		var resultingElement : AsynchronousMessageEvent := result.oclAsType(AsynchronousMessageEvent);
 		resultingElement.message := self.message.map transform().oclAsType(Message);

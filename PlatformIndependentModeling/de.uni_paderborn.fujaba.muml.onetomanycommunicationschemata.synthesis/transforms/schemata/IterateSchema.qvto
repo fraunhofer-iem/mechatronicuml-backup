@@ -32,11 +32,11 @@ mapping Transition :: Iterate2CoordinatorStartTransition(context:OclAny, region:
 	source := self.source.map Vertex2VertexCoordinator(context);
 	target := self.map Schema2CoordinatorIntermediateState(context,1,iterateDLCName);
 	priority := self.priority;
-	guard := self.guard.map multiTransform().oclAsType(Expression);	
+	guard := self.guard.map transform(result).oclAsType(Expression);	
 	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
 		urgent := false;
 	};		
-	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))-> map multiTransform().oclAsType(ClockConstraint);
+	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))-> map transform(result).oclAsType(ClockConstraint);
 	
 	synchronization := self. createSynchronization(  iterateCheckDone,SynchronizationKind::RECEIVE);
 }
@@ -76,10 +76,10 @@ mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:Re
 		if(not self.action.name.oclIsUndefined()) {
 			result.action.name := result.action.name + self.action.name;
 		};
-		result.action.expressions += self.action.expressions.map multiTransform().oclAsType(Expression);
+		result.action.expressions += self.action.expressions.map transform(result).oclAsType(Expression);
 		
 	} else {
-		result.action := self.action.map multiTransform().oclAsType(Action);
+		result.action := self.action.map transform(result).oclAsType(Action);
 	};
 	
 	synchronization := self. createSynchronization(iterateDone,SynchronizationKind::RECEIVE);
@@ -99,9 +99,9 @@ mapping Transition :: NonConditionalIterate2TranssitionFromSourceToIntermediate(
 		
 		if(not self.clockConstraints->isEmpty())
 			urgent := false;
-		clockConstraints += self.clockConstraints->map multiTransform().oclAsType(ClockConstraint);
+		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);
 		
-		guard := self.guard.map multiTransform().oclAsType(Expression);
+		guard := self.guard.map transform(result).oclAsType(Expression);
 }
 
 mapping Transition :: NonConditionalIterate2TransitionFromIntermediateToTarget(context:OclAny, region:RealtimeStatechart) : Transition{
@@ -112,7 +112,7 @@ mapping Transition :: NonConditionalIterate2TransitionFromIntermediateToTarget(c
 	
 		target := self.target.map Vertex2VertexCoordinator(context);
 		
-		action := self.action.map multiTransform().oclAsType(Action);
+		action := self.action.map transform(result).oclAsType(Action);
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 	
@@ -152,9 +152,9 @@ mapping Transition :: Iterate2TransCheckEmbeddedCoordinator(context:OclAny, regi
 		target := self.map RegionState(context,  "Requesting", false);
 		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
 			urgent := false;			
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);
 	
-		guard := self.guard.map multiTransform().oclAsType(Expression);
+		guard := self.guard.map transform(result).oclAsType(Expression);
 		
 		synchronization := 	self. createSynchronization( iterateCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 			
@@ -196,7 +196,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		if(not self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->isEmpty())
 			urgent := false;
 				
-		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);
+		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);
 	
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 		
@@ -205,7 +205,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		action.name :="";
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined()) {
-			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map multiTransform().oclAsType(Expression);
+			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map transform(result).oclAsType(Expression);
 			action.name :=  action.name + self.raiseMessageEvent.oneToManyCommunicationSchema.action.name;
 		};
 		
@@ -213,7 +213,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		
 		action.name := action.name + " " + iterateDelayVariableName + " := true";
 		
-		events += self.raiseMessageEvent.map multiTransform().oclAsType(TransitionEvent);
+		events += self.raiseMessageEvent.map transform(result).oclAsType(TransitionEvent);
 		
 		var leftExpression : Expression := 	self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
 		var rightExpression : Expression := createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendIterateName));
@@ -273,7 +273,7 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	var logic2 : Expression;
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
 		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate)
-		.terminationCondition.map multiTransform().oclAsType(Expression);
+		.terminationCondition.map transform(result).oclAsType(Expression);
 		var expr4 := new UnaryExpression();
 		expr4.enclosedExpression := expr3;
 		expr4.operator := UnaryOperator::NOT;
@@ -287,7 +287,7 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {	
 		urgent := false;
-		clockConstraints += self.createClockConstraint(iterateDelayClockName, self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map multiTransform().oclAsType(TimeValue), ComparingOperator:: GREATER_OR_EQUAL);
+		clockConstraints += self.createClockConstraint(iterateDelayClockName, self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map transform(result).oclAsType(TimeValue), ComparingOperator:: GREATER_OR_EQUAL);
 	};
 	
 }
@@ -307,7 +307,7 @@ mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRe
 	var logic2 : Expression;
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
 		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate)
-		.terminationCondition.map multiTransform().oclAsType(Expression);
+		.terminationCondition.map transform(result).oclAsType(Expression);
 		var expr4 := new UnaryExpression();
 		expr4.enclosedExpression := expr3;
 		expr4.operator := UnaryOperator::NOT;
@@ -331,7 +331,7 @@ mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRe
 	
 	var expr1 :=  createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
 		
-	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map multiTransform().oclAsType(Expression);
+	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map transform(result).oclAsType(Expression);
 	
 	guard := new LogicalExpression(expr1,expr2,LogicOperator::OR);
 	
@@ -445,14 +445,14 @@ mapping Transition :: Iterate2IdleRequestedFulfilledSubrole(context:OclAny, regi
 		
 		source := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression);
-		
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transform(result).oclAsType(Expression);
+	
 		synchronization := 	self.createSynchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
 		action := self.createActionWithTwoVariableAssignments(iteratePossibleName + " :=true; " + sendIterateName + ":= true;",iteratePossibleName, sendIterateName,"true");
 					
 	}
-	
+
 mapping Transition :: Iterate2IdleRequestedNotFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;

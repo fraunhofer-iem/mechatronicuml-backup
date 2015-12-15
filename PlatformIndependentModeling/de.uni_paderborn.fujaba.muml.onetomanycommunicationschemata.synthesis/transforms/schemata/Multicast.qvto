@@ -28,11 +28,11 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 	source := self.source.map Vertex2VertexCoordinator(context);
 	target := self.map Schema2CoordinatorIntermediateState(context,1,multicastDLCName);
 	priority := self.priority;
-	guard := self.guard.map multiTransform().oclAsType(Expression);		
+	guard := self.guard.map transform(result).oclAsType(Expression);		
 	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
 		urgent := false;
 	};	
-	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);	
+	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);	
 	
 	synchronization := self. createSynchronization(  multicastCheckDone,SynchronizationKind::RECEIVE);
 }
@@ -61,7 +61,7 @@ mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:
 	target := self.target.map Vertex2VertexCoordinator(context);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
-	result.action := self.action.map multiTransform().oclAsType(Action);
+	result.action := self.action.map transform(result).oclAsType(Action);
 	
 	synchronization := self. createSynchronization(multicastDone,SynchronizationKind::RECEIVE);
 }
@@ -80,9 +80,9 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 		
 		if(not self.clockConstraints->isEmpty())
 			urgent := false;
-		clockConstraints += self.clockConstraints->map multiTransform().oclAsType(ClockConstraint);
+		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);
 		
-		guard := self.guard.map multiTransform().oclAsType(Expression);
+		guard := self.guard.map transform(result).oclAsType(Expression);
 }
 
 mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget(context:OclAny, region:RealtimeStatechart) : Transition{
@@ -93,7 +93,7 @@ mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget
 	
 		target := self.target.map Vertex2VertexCoordinator(context);
 		
-		action := self.action.map multiTransform().oclAsType(Action);
+		action := self.action.map transform(result).oclAsType(Action);
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 	
@@ -133,9 +133,9 @@ mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny) : 
 		target := self.map RegionState(context,  "Requesting", false);
 		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
 			urgent := false;			
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map multiTransform().oclAsType(ClockConstraint);	
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);	
 	
-		guard := self.guard.map multiTransform().oclAsType(Expression);
+		guard := self.guard.map transform(result).oclAsType(Expression);
 		
 		synchronization := 	self. createSynchronization( multicastCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 			
@@ -177,9 +177,9 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 		
-		action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map multiTransform().oclAsType(Action);
+		action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map transform(result).oclAsType(Action);
 		
-		events += self.raiseMessageEvent.map multiTransform().oclAsType(AsynchronousMessageEvent);
+		events += self.raiseMessageEvent.map transform(result).oclAsType(AsynchronousMessageEvent);
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
 			guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendMulticastName));
@@ -302,7 +302,7 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		source := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map multiTransform().oclAsType(Expression);
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transform(result).oclAsType(Expression);
 		
 		synchronization := 	self.createSynchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
