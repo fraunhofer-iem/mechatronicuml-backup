@@ -17,7 +17,15 @@
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DALtMHvfEeWJtcJpbyRDKg">
           <message xmi:id="_DT4FQHvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
           <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:Unicast" xmi:id="_W8LDQKMrEeWam_JCEl8SAQ">
-            <condition xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_vFj1YKM8EeWhwNYhOXFnsw" typedNamedElement="_pUKegKM8EeWhwNYhOXFnsw"/>
+            <condition xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_GizwsKNCEeWhwNYhOXFnsw" typedNamedElement="_E4TTgKM-EeWhwNYhOXFnsw"/>
+            <action xmi:id="_1JwPoKNAEeWhwNYhOXFnsw" name="asd">
+              <expressions xsi:type="actionlanguage:Block" xmi:id="_HcJMcKNCEeWhwNYhOXFnsw">
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_HcJMcaNCEeWhwNYhOXFnsw" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_HcJMcqNCEeWhwNYhOXFnsw" value="false"/>
+                  <lhs_typedNamedElementExpression xmi:id="_HcJMc6NCEeWhwNYhOXFnsw" typedNamedElement="_E4TTgKM-EeWhwNYhOXFnsw"/>
+                </expressions>
+              </expressions>
+            </action>
           </oneToManyCommunicationSchema>
         </events>
       </transitions>
@@ -52,6 +60,10 @@
       </states>
       <states xmi:id="_a1XFgHvSEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" incomingTransitions="_ec7pIHvSEeWJtcJpbyRDKg"/>
       <clocks xmi:id="_Q9LGoJ84EeW8iZ0RzpdKGQ" name="c"/>
+      <subRoleSpecificVariables xmi:id="_E4TTgKM-EeWhwNYhOXFnsw" name="subRoleVar">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GxPyIKM-EeWhwNYhOXFnsw" value="false"/>
+      </subRoleSpecificVariables>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_XgFVUHveEeWJtcJpbyRDKg" name="rtscRole2" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
       <transitions xmi:id="_e2BBEHveEeWJtcJpbyRDKg" priority="1" target="_dTNxkHveEeWJtcJpbyRDKg" source="_XgFVUXveEeWJtcJpbyRDKg">
