@@ -4,21 +4,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 
-import javax.security.auth.login.FailedLoginException;
-
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
-import  org.junit.*;
-import static org.junit.Assert.assertTrue;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalJob;
+import org.junit.runners.Parameterized.Parameters;;
 
 @RunWith(value = Parameterized.class)
 public class MUML2UPPAAL extends Model2Model {
