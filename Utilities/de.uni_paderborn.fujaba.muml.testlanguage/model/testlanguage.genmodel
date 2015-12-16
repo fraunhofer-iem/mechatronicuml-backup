@@ -44,6 +44,7 @@
     </genClasses>
     <genClasses ecoreClass="testlanguage.ecore#//Port">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute testlanguage.ecore#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testlanguage.ecore#//Port/inOut"/>
     </genClasses>
     <genClasses ecoreClass="testlanguage.ecore#//TestCase">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testlanguage.ecore#//TestCase/nodes"/>

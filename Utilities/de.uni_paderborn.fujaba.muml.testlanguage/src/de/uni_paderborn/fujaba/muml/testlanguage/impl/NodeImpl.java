@@ -37,11 +37,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <em><b>Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.impl.NodeImpl#getInputs
  * <em>Inputs</em>}</li>
- * <li>
- * {@link de.uni_paderborn.fujaba.muml.testlanguage.impl.NodeImpl#getOutputs
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.impl.NodeImpl#getOutputs
  * <em>Outputs</em>}</li>
  * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.impl.NodeImpl#getLabel
  * <em>Label</em>}</li>
@@ -58,7 +58,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * {@link de.uni_paderborn.fujaba.muml.testlanguage.impl.NodeImpl#getOutputCache
  * <em>Output Cache</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -182,8 +181,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<Input> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectContainmentWithInverseEList<Input>(Input.class,
-					this, TestLanguagePackage.NODE__INPUTS,
+			inputs = new EObjectContainmentWithInverseEList<Input>(Input.class, this, TestLanguagePackage.NODE__INPUTS,
 					TestLanguagePackage.INPUT__NODE);
 		}
 		return inputs;
@@ -196,9 +194,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<Output> getOutputs() {
 		if (outputs == null) {
-			outputs = new EObjectContainmentWithInverseEList<Output>(
-					Output.class, this, TestLanguagePackage.NODE__OUTPUTS,
-					TestLanguagePackage.OUTPUT__NODE);
+			outputs = new EObjectContainmentWithInverseEList<Output>(Output.class, this,
+					TestLanguagePackage.NODE__OUTPUTS, TestLanguagePackage.OUTPUT__NODE);
 		}
 		return outputs;
 	}
@@ -221,8 +218,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		String oldLabel = label;
 		label = newLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.NODE__LABEL, oldLabel, label));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.NODE__LABEL, oldLabel, label));
 	}
 
 	/**
@@ -239,14 +235,12 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetSpecification(
-			NodeSpecification newSpecification, NotificationChain msgs) {
+	public NotificationChain basicSetSpecification(NodeSpecification newSpecification, NotificationChain msgs) {
 		NodeSpecification oldSpecification = specification;
 		specification = newSpecification;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, TestLanguagePackage.NODE__SPECIFICATION,
-					oldSpecification, newSpecification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestLanguagePackage.NODE__SPECIFICATION, oldSpecification, newSpecification);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -265,21 +259,16 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 			NotificationChain msgs = null;
 			if (specification != null)
 				msgs = ((InternalEObject) specification).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- TestLanguagePackage.NODE__SPECIFICATION,
-						null, msgs);
+						EOPPOSITE_FEATURE_BASE - TestLanguagePackage.NODE__SPECIFICATION, null, msgs);
 			if (newSpecification != null)
 				msgs = ((InternalEObject) newSpecification).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE
-								- TestLanguagePackage.NODE__SPECIFICATION,
-						null, msgs);
+						EOPPOSITE_FEATURE_BASE - TestLanguagePackage.NODE__SPECIFICATION, null, msgs);
 			msgs = basicSetSpecification(newSpecification, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.NODE__SPECIFICATION, newSpecification,
-					newSpecification));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.NODE__SPECIFICATION,
+					newSpecification, newSpecification));
 	}
 
 	/**
@@ -300,8 +289,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		String oldSpecificationClassName = specificationClassName;
 		specificationClassName = newSpecificationClassName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.NODE__SPECIFICATION_CLASS_NAME,
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.NODE__SPECIFICATION_CLASS_NAME,
 					oldSpecificationClassName, specificationClassName));
 	}
 
@@ -323,8 +311,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		Map<String, Object> oldInputCache = inputCache;
 		inputCache = newInputCache;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.NODE__INPUT_CACHE, oldInputCache,
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.NODE__INPUT_CACHE, oldInputCache,
 					inputCache));
 	}
 
@@ -346,9 +333,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		Map<String, Object> oldOutputCache = outputCache;
 		outputCache = newOutputCache;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.NODE__OUTPUT_CACHE, oldOutputCache,
-					outputCache));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.NODE__OUTPUT_CACHE,
+					oldOutputCache, outputCache));
 	}
 
 	/**
@@ -378,17 +364,17 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		for (EObject specObj : this.specification.getPortSpecifications()) {
 			PortSpecification spec = (PortSpecification) specObj;
 
-			if (spec.getType() == PortType.IN
-					|| spec.getType() == PortType.INOUT) {
+			boolean specificationIsInOut = spec.getType() == PortType.INOUT;
+
+			if (spec.getType() == PortType.IN || spec.getType() == PortType.INOUT) {
 
 				// Can we reuse an old input port?
 				boolean reuse = false;
 				Iterator<Input> iter = oldInputs.iterator();
 				while (iter.hasNext()) {
 					Input input = iter.next();
-					if (input.getName().equals(spec.getName())
-							&& input.isOptional() == spec.isOptional()
-							&& input.getDataType() == spec.getDataType()) {
+					if (input.getName().equals(spec.getName()) && input.isOptional() == spec.isOptional()
+							&& input.getDataType() == spec.getDataType() && input.isInOut() == specificationIsInOut) {
 						this.getInputs().add(input);
 						iter.remove();
 						reuse = true;
@@ -402,19 +388,19 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 					input.setName(spec.getName());
 					input.setOptional(spec.isOptional());
 					input.setDataType(spec.getDataType());
+					input.setInOut(specificationIsInOut);
 					this.getInputs().add(input);
 				}
 			}
 
-			if (spec.getType() == PortType.OUT
-					|| spec.getType() == PortType.INOUT) {
+			if (spec.getType() == PortType.OUT || spec.getType() == PortType.INOUT) {
 
 				// Can we reuse an old output port?
 				boolean reuse = false;
 				Iterator<Output> iter = oldOutputs.iterator();
 				while (iter.hasNext()) {
 					Output output = iter.next();
-					if (output.getName().equals(spec.getName())) {
+					if (output.getName().equals(spec.getName()) && output.isInOut() == specificationIsInOut) {
 						this.getOutputs().add(output);
 						iter.remove();
 						reuse = true;
@@ -424,9 +410,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 
 				// If not, create a new output port.
 				if (!reuse) {
-					Output output = TestLanguageFactory.eINSTANCE
-							.createOutput();
+					Output output = TestLanguageFactory.eINSTANCE.createOutput();
 					output.setName(spec.getName());
+					output.setInOut(specificationIsInOut);
 					this.getOutputs().add(output);
 				}
 			}
@@ -479,8 +465,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 
 		try {
 			// Execute the behavior that is written in the specification.
-			this.specification.execute(this.getInputCache(),
-					this.getOutputCache());
+			this.specification.execute(this.getInputCache(), this.getOutputCache());
 
 			return;
 		} catch (Exception e) {
@@ -502,8 +487,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	public void createSpecification() {
 		try {
 			SpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
-			java.lang.reflect.Method creator = fac.getClass().getMethod(
-					"create" + this.specificationClassName);
+			java.lang.reflect.Method creator = fac.getClass().getMethod("create" + this.specificationClassName);
 
 			this.setSpecification((NodeSpecification) creator.invoke(fac));
 			this.specification.initialize();
@@ -526,15 +510,12 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TestLanguagePackage.NODE__INPUTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getInputs())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getInputs()).basicAdd(otherEnd, msgs);
 		case TestLanguagePackage.NODE__OUTPUTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutputs())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutputs()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -545,14 +526,12 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TestLanguagePackage.NODE__INPUTS:
 			return ((InternalEList<?>) getInputs()).basicRemove(otherEnd, msgs);
 		case TestLanguagePackage.NODE__OUTPUTS:
-			return ((InternalEList<?>) getOutputs())
-					.basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getOutputs()).basicRemove(otherEnd, msgs);
 		case TestLanguagePackage.NODE__SPECIFICATION:
 			return basicSetSpecification(null, msgs);
 		}
@@ -667,14 +646,12 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		case TestLanguagePackage.NODE__OUTPUTS:
 			return outputs != null && !outputs.isEmpty();
 		case TestLanguagePackage.NODE__LABEL:
-			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT
-					.equals(label);
+			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 		case TestLanguagePackage.NODE__SPECIFICATION:
 			return specification != null;
 		case TestLanguagePackage.NODE__SPECIFICATION_CLASS_NAME:
 			return SPECIFICATION_CLASS_NAME_EDEFAULT == null ? specificationClassName != null
-					: !SPECIFICATION_CLASS_NAME_EDEFAULT
-							.equals(specificationClassName);
+					: !SPECIFICATION_CLASS_NAME_EDEFAULT.equals(specificationClassName);
 		case TestLanguagePackage.NODE__INPUT_CACHE:
 			return inputCache != null;
 		case TestLanguagePackage.NODE__OUTPUT_CACHE:
@@ -689,8 +666,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case TestLanguagePackage.NODE___SETUP_FROM_SPECIFICATION:
 			setupFromSpecification();

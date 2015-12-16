@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
@@ -29,13 +30,18 @@ import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.Extension;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl;
+import de.uni_paderborn.fujaba.modelinstance.impl.ModelinstanceFactoryImpl;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.CheckMTCTL;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.NodeSpecification;
@@ -48,6 +54,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.CoordinationProt
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvider;
+import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionFactory;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -134,11 +141,9 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 	public void initialize() {
 		this.setLabel("Check MTCTL");
 		this.addPortSpecification(PortType.IN, "muml", false,
-				de.uni_paderborn.fujaba.modelinstance.RootNode.class);
-		this.addPortSpecification(
-				PortType.IN,
-				"options",
-				true,
+				EObject.class);
+//				de.uni_paderborn.fujaba.modelinstance.RootNode.class);
+		this.addPortSpecification(PortType.IN, "options", true,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "results", false);
 	}
@@ -155,128 +160,178 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		if ("".equals(this.getProperties())) {
 			throw new ExecutionException("No properties to verify.");
 		}
-
+		
+		// Copy the MUML model so we do not destroy it.
+		// Copier copier = new Copier();
+		
+		RootNode muml = null;
+		CoordinationProtocol protocol = null;
+		
+		Extension extension = null;
+		
+		RootNode rootNode = null;
+//		EObject rootNode = null;
+		
+		if (inputs.get("muml") instanceof RootNode){
+			rootNode = (RootNode) inputs.get("muml");
+		}
+		else if(inputs.get("muml") instanceof CoordinationProtocol){
+			
+			protocol = (CoordinationProtocol) inputs.get("muml");
+			
+//			rootNode = (RootNode)((CoordinationProtocol) inputs.get("muml")).eContainer().eContainer();			
+			
+			
+			if ((EcoreUtil.getRootContainer(protocol) instanceof RootNode)){
+				rootNode = (RootNode)EcoreUtil.getRootContainer(protocol);
+			}else{
+				throw new ExecutionException("The coordination protocol doesn't have correct RootContainer");
+			}
+			
+			
+			extension = protocol.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE.getElementToVerifyExtension());
+			if (extension == null) {
+				extension = VerificationExtensionFactory.eINSTANCE.createElementToVerifyExtension();
+				protocol.getExtensions().add(extension);
+			}
+		}
+		else{
+			throw new ExecutionException("Coordination protocol is not specified.");
+		}
+		
+		
 		// Copy the MUML model so we do not destroy it.
 		Copier copier = new Copier();
-		RootNode muml = (RootNode) copier.copy((RootNode) inputs.get("muml"));
+		muml = (RootNode) copier.copy(rootNode);
 		copier.copyReferences();
 
-		// Get the CoordinationProtocol category.
-		ModelElementCategory category = null;
-		for (ModelElementCategory cur : muml.getCategories()) {
-			if (cur.getKey().equals(
-					"de.uni_paderborn.fujaba.muml.protocol.category")) {
-				category = cur;
-				break;
+			// Get the CoordinationProtocol category.
+			ModelElementCategory category = null;
+			for (ModelElementCategory cur : muml.getCategories()) {
+				if (cur.getKey().equals(
+						"de.uni_paderborn.fujaba.muml.protocol.category")) {
+					category = cur;
+					break;
+				}
 			}
-		}
-		if (category == null) {
-			throw new ExecutionException(
-					"Model does not contain a CoordinationProtocol category.");
-		}
-
-		// Look for a CoordinationProtocol that asks for a verification,
-		// otherwise just choose any.
-		CoordinationProtocol protocol = null;
-		for (ExtendableElement cur : category.getModelElements()) {
-			protocol = (CoordinationProtocol) cur;
-
-			if (protocol
-					.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE
-							.getElementToVerifyExtension()) != null) {
-				break;
+			
+			if (category == null) {
+				throw new ExecutionException(
+						"Model does not contain a CoordinationProtocol category.");
 			}
-		}
-		if (protocol == null) {
-			throw new ExecutionException(
-					"Model does not contain a CoordinationProtocol.");
-		}
+			
+			// Look for a CoordinationProtocol that asks for a verification,
+			// otherwise just choose any.
 
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getLoadOptions().put(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-		MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
-		Resource resource = resourceSet.createResource(URI.createURI("dummy:/dummy.mtctl"));
-		resource.load(new ByteArrayInputStream(properties.getBytes(StandardCharsets.UTF_8)), resourceSet.getLoadOptions());
+			for (ExtendableElement cur : category.getModelElements()) {
+				protocol = (CoordinationProtocol) cur;
+
+				if (protocol
+						.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE
+								.getElementToVerifyExtension()) != null) {
+					break;
+				}
+				// In case there is no protocol with extension,
+				// the last coordination protocol is used
+			}
+			if (protocol == null) {
+				throw new ExecutionException(
+						"Model does not contain a CoordinationProtocol.");
+			}
 		
-		// Parse the PropertyRepository we have in the context of the protocol.
-		PropertyRepository propertyRepository = (PropertyRepository) resource.getContents().get(0);
+			
+			ResourceSet resourceSet = new ResourceSetImpl();
+			resourceSet.getLoadOptions().put(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+			MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
+			Resource resource = resourceSet.createResource(URI.createURI("dummy:/dummy.mtctl"));
+			resource.load(new ByteArrayInputStream(properties.getBytes(StandardCharsets.UTF_8)), resourceSet.getLoadOptions());
+			
+			// Parse the PropertyRepository we have in the context of the protocol.
+			PropertyRepository propertyRepository = (PropertyRepository) resource.getContents().get(0);
+			
+			///////////////////////////////
+			///// Jan's previous code ////
+			/////////////////////////////
+//			new Object() {
+	//
+//				@Inject
+//				private XtextResourceSet resourceSet;
+	//
+//				public EObject parse(CoordinationProtocol protocol,
+//						String properties) throws Exception {
+//					// Source: http://davehofmann.de/blog/?p=101
+//					Injector injector = Guice
+//							.createInjector(new MtctlRuntimeModule());
+//					
+//					injector.injectMembers(this);
+//					this.resourceSet.addLoadOption(
+//							XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+	//
+//					// Parse the given properties and return it.
+//					MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
+//					Resource resource = resourceSet.createResource(URI
+//							.createURI("dummy:/dummy.mtctl"));
+//					resource.load(
+//							new ByteArrayInputStream(properties
+//									.getBytes(StandardCharsets.UTF_8)), resourceSet
+//									.getLoadOptions());
+//					return resource.getContents().get(0);
+//				}
+//			}.parse(protocol, this.getProperties());
+
+			// Replace all existing PropertyRepositories by the one we just created.
+			protocol.getVerificationConstraintRepositories().clear();
+			protocol.getVerificationConstraintRepositories()
+					.add(propertyRepository);
+
+			// Verify for results (= apply the transformation by the MTCTL people).
+			URI realURI = URI
+					.createURI("platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Results.qvto");
+			TransformationExecutor executor = new TransformationExecutor(realURI);
+			ExecutionContextImpl context;
+			IStatus status;
+			status = BasicDiagnostic.toIStatus(executor.loadTransformation());
+			if (!status.isOK()) {
+				throw new ExecutionException(status.getMessage());
+			}
+			context = new ExecutionContextImpl();
+
+			// Check if we have custom options or use the default ones.
+			CoordinationProtocolOptions options;
+			if (inputs.containsKey("options") && inputs.get("options") != null) {
+				options = (CoordinationProtocolOptions) inputs.get("options");
+			} else {
+				options = OptionsFactory.eINSTANCE
+						.createCoordinationProtocolOptions();
+				options.setTraceOptions(TraceOptions.NONE);
+			}
+			
+			// Create the extents.
+			BasicModelExtent mumlExtent = new BasicModelExtent();
+			mumlExtent.add(muml);
+			BasicModelExtent optionsExtent = new BasicModelExtent();
+			optionsExtent.add(options);
+			BasicModelExtent resultExtent = new BasicModelExtent();
+
+			// Execute the transformation.
+			OutputStreamWriter outStream = new OutputStreamWriter(System.out);
+			Log log = new WriterLog(outStream);
+			context.setLog(log);
+			ExecutionDiagnostic dia = executor.execute(context, mumlExtent, optionsExtent, resultExtent);
+			
+			if (extension != null){
+				extension = null; //Is this enoguh or I should remove the extension from the list of protocol's extensions? 
+			}
+			
+			// Check if we succeeded.
+			if (dia.getSeverity() != ExecutionDiagnostic.OK)
+			{
+				throw new ExecutionException(dia.getMessage());
+			}
+			
+			// Get the output.
+			outputs.put("results", resultExtent.getContents().get(0));
 		
-		
-//		new Object() {
-//
-//			@Inject
-//			private XtextResourceSet resourceSet;
-//
-//			public EObject parse(CoordinationProtocol protocol,
-//					String properties) throws Exception {
-//				// Source: http://davehofmann.de/blog/?p=101
-//				Injector injector = Guice
-//						.createInjector(new MtctlRuntimeModule());
-//				
-//				injector.injectMembers(this);
-//				this.resourceSet.addLoadOption(
-//						XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-//
-//				// Parse the given properties and return it.
-//				MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
-//				Resource resource = resourceSet.createResource(URI
-//						.createURI("dummy:/dummy.mtctl"));
-//				resource.load(
-//						new ByteArrayInputStream(properties
-//								.getBytes(StandardCharsets.UTF_8)), resourceSet
-//								.getLoadOptions());
-//				return resource.getContents().get(0);
-//			}
-//		}.parse(protocol, this.getProperties());
-
-		// Replace all existing PropertyRepositories by the one we just created.
-		protocol.getVerificationConstraintRepositories().clear();
-		protocol.getVerificationConstraintRepositories()
-				.add(propertyRepository);
-
-		// Verify for results (= apply the transformation by the MTCTL people).
-		URI realURI = URI
-				.createURI("platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Results.qvto");
-		TransformationExecutor executor = new TransformationExecutor(realURI);
-		ExecutionContextImpl context;
-		IStatus status;
-		status = BasicDiagnostic.toIStatus(executor.loadTransformation());
-		if (!status.isOK()) {
-			throw new ExecutionException(status.getMessage());
-		}
-		context = new ExecutionContextImpl();
-
-		// Check if we have custom options or use the default ones.
-		CoordinationProtocolOptions options;
-		if (inputs.containsKey("options") && inputs.get("options") != null) {
-			options = (CoordinationProtocolOptions) inputs.get("options");
-		} else {
-			options = OptionsFactory.eINSTANCE
-					.createCoordinationProtocolOptions();
-			options.setTraceOptions(TraceOptions.NONE);
-		}
-
-		// Create the extents.
-		BasicModelExtent mumlExtent = new BasicModelExtent();
-		mumlExtent.add(muml);
-		BasicModelExtent optionsExtent = new BasicModelExtent();
-		optionsExtent.add(options);
-		BasicModelExtent resultExtent = new BasicModelExtent();
-
-		// Execute the transformation.
-		OutputStreamWriter outStream = new OutputStreamWriter(System.out);
-		Log log = new WriterLog(outStream);
-		context.setLog(log);
-		ExecutionDiagnostic dia = executor.execute(context, mumlExtent, optionsExtent, resultExtent);
-
-		// Check if we succeeded.
-		if (dia.getSeverity() != ExecutionDiagnostic.OK)
-		{
-			throw new ExecutionException(dia.getMessage());
-		}
-		
-		// Get the output.
-		outputs.put("results", resultExtent.getContents().get(0));
 	}
 
 	/**

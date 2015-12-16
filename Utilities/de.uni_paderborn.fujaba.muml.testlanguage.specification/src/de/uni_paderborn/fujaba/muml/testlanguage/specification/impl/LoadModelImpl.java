@@ -127,6 +127,7 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 		// Load the model.
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(realURI.trimFragment(), true);
+		
 		EObject result = null;
 
 		if (realURI.hasFragment()) {
@@ -137,7 +138,7 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 
 		// Put the loaded model onto the output.
 		outputs.put("model", result);
-
+		System.out.println(outputs);
 		return;
 	}
 

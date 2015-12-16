@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <em><b>Output</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link de.uni_paderborn.fujaba.muml.testlanguage.impl.OutputImpl#getTargets
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.impl.OutputImpl#getNode
  * <em>Node</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -71,9 +71,8 @@ public class OutputImpl extends PortImpl implements Output {
 	 */
 	public EList<Input> getTargets() {
 		if (targets == null) {
-			targets = new EObjectWithInverseResolvingEList<Input>(Input.class,
-					this, TestLanguagePackage.OUTPUT__TARGETS,
-					TestLanguagePackage.INPUT__SOURCE);
+			targets = new EObjectWithInverseResolvingEList<Input>(Input.class, this,
+					TestLanguagePackage.OUTPUT__TARGETS, TestLanguagePackage.INPUT__SOURCE);
 		}
 		return targets;
 	}
@@ -95,8 +94,7 @@ public class OutputImpl extends PortImpl implements Output {
 	 * @generated
 	 */
 	public NotificationChain basicSetNode(Node newNode, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newNode,
-				TestLanguagePackage.OUTPUT__NODE, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newNode, TestLanguagePackage.OUTPUT__NODE, msgs);
 		return msgs;
 	}
 
@@ -109,20 +107,18 @@ public class OutputImpl extends PortImpl implements Output {
 		if (newNode != eInternalContainer()
 				|| (eContainerFeatureID() != TestLanguagePackage.OUTPUT__NODE && newNode != null)) {
 			if (EcoreUtil.isAncestor(this, newNode))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newNode != null)
-				msgs = ((InternalEObject) newNode).eInverseAdd(this,
-						TestLanguagePackage.NODE__OUTPUTS, Node.class, msgs);
+				msgs = ((InternalEObject) newNode).eInverseAdd(this, TestLanguagePackage.NODE__OUTPUTS, Node.class,
+						msgs);
 			msgs = basicSetNode(newNode, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.OUTPUT__NODE, newNode, newNode));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.OUTPUT__NODE, newNode, newNode));
 	}
 
 	/**
@@ -145,12 +141,10 @@ public class OutputImpl extends PortImpl implements Output {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TestLanguagePackage.OUTPUT__TARGETS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargets())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargets()).basicAdd(otherEnd, msgs);
 		case TestLanguagePackage.OUTPUT__NODE:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
@@ -165,12 +159,10 @@ public class OutputImpl extends PortImpl implements Output {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TestLanguagePackage.OUTPUT__TARGETS:
-			return ((InternalEList<?>) getTargets())
-					.basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getTargets()).basicRemove(otherEnd, msgs);
 		case TestLanguagePackage.OUTPUT__NODE:
 			return basicSetNode(null, msgs);
 		}
@@ -183,12 +175,10 @@ public class OutputImpl extends PortImpl implements Output {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case TestLanguagePackage.OUTPUT__NODE:
-			return eInternalContainer().eInverseRemove(this,
-					TestLanguagePackage.NODE__OUTPUTS, Node.class, msgs);
+			return eInternalContainer().eInverseRemove(this, TestLanguagePackage.NODE__OUTPUTS, Node.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -269,8 +259,7 @@ public class OutputImpl extends PortImpl implements Output {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case TestLanguagePackage.OUTPUT___GET_DATA:
 			return getData();

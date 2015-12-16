@@ -32,9 +32,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * 
  * @generated
  */
-public class TestCaseItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class TestCaseItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -71,8 +70,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TestLanguagePackage.Literals.TEST_CASE__NODES);
@@ -101,8 +99,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/TestCase"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TestCase"));
 	}
 
 	/**
@@ -130,8 +127,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(TestCase.class)) {
 		case TestLanguagePackage.TEST_CASE__NODES:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -145,12 +141,10 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.TEST_CASE__NODES,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.TEST_CASE__NODES,
 				TestLanguageFactory.eINSTANCE.createNode()));
 	}
 

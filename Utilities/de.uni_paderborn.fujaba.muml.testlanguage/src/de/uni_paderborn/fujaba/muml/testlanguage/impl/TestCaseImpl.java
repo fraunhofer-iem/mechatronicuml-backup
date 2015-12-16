@@ -25,17 +25,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <em><b>Test Case</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link de.uni_paderborn.fujaba.muml.testlanguage.impl.TestCaseImpl#getNodes
  * <em>Nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class TestCaseImpl extends MinimalEObjectImpl.Container implements
-		TestCase {
+public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCase {
 	/**
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -72,8 +71,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Node> getNodes() {
 		if (nodes == null) {
-			nodes = new EObjectContainmentEList<Node>(Node.class, this,
-					TestLanguagePackage.TEST_CASE__NODES);
+			nodes = new EObjectContainmentEList<Node>(Node.class, this, TestLanguagePackage.TEST_CASE__NODES);
 		}
 		return nodes;
 	}
@@ -84,8 +82,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TestLanguagePackage.TEST_CASE__NODES:
 			return ((InternalEList<?>) getNodes()).basicRemove(otherEnd, msgs);

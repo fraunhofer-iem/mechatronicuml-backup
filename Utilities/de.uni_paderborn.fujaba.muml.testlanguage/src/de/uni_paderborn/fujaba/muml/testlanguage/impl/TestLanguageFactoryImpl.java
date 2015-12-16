@@ -18,8 +18,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * 
  * @generated
  */
-public class TestLanguageFactoryImpl extends EFactoryImpl implements
-		TestLanguageFactory {
+public class TestLanguageFactoryImpl extends EFactoryImpl implements TestLanguageFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -66,8 +65,7 @@ public class TestLanguageFactoryImpl extends EFactoryImpl implements
 		case TestLanguagePackage.TEST_CASE:
 			return createTestCase();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 

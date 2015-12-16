@@ -36,9 +36,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * 
  * @generated
  */
-public class NodeItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class NodeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -77,15 +76,12 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addInputsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Node_inputs_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Node_inputs_feature", "_UI_Node_type"),
-				TestLanguagePackage.Literals.NODE__INPUTS, false, false, false,
-				null, getString("_UI_PortsPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Node_inputs_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Node_inputs_feature", "_UI_Node_type"),
+						TestLanguagePackage.Literals.NODE__INPUTS, false, false, false, null,
+						getString("_UI_PortsPropertyCategory"), null));
 	}
 
 	/**
@@ -95,15 +91,12 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addOutputsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Node_outputs_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Node_outputs_feature", "_UI_Node_type"),
-				TestLanguagePackage.Literals.NODE__OUTPUTS, false, false,
-				false, null, getString("_UI_PortsPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Node_outputs_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Node_outputs_feature", "_UI_Node_type"),
+						TestLanguagePackage.Literals.NODE__OUTPUTS, false, false, false, null,
+						getString("_UI_PortsPropertyCategory"), null));
 	}
 
 	/**
@@ -113,16 +106,12 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Node_label_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Node_label_feature", "_UI_Node_type"),
-				TestLanguagePackage.Literals.NODE__LABEL, false, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				getString("_UI_VisualPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Node_label_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Node_label_feature", "_UI_Node_type"),
+						TestLanguagePackage.Literals.NODE__LABEL, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_VisualPropertyCategory"), null));
 	}
 
 	/**
@@ -133,17 +122,12 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 */
 	protected void addSpecificationClassNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Node_specificationClassName_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Node_specificationClassName_feature",
+				getString("_UI_PropertyDescriptor_description", "_UI_Node_specificationClassName_feature",
 						"_UI_Node_type"),
-				TestLanguagePackage.Literals.NODE__SPECIFICATION_CLASS_NAME,
-				false, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				getString("_UI_InternalPropertyCategory"), null));
+				TestLanguagePackage.Literals.NODE__SPECIFICATION_CLASS_NAME, false, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_InternalPropertyCategory"), null));
 	}
 
 	/**
@@ -153,16 +137,12 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addInputCachePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Node_inputCache_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Node_inputCache_feature", "_UI_Node_type"),
-				TestLanguagePackage.Literals.NODE__INPUT_CACHE, false, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				getString("_UI_InternalPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Node_inputCache_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Node_inputCache_feature", "_UI_Node_type"),
+						TestLanguagePackage.Literals.NODE__INPUT_CACHE, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_InternalPropertyCategory"), null));
 	}
 
 	/**
@@ -172,16 +152,13 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addOutputCachePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Node_outputCache_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Node_outputCache_feature", "_UI_Node_type"),
-				TestLanguagePackage.Literals.NODE__OUTPUT_CACHE, false, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				getString("_UI_InternalPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Node_outputCache_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Node_outputCache_feature",
+								"_UI_Node_type"),
+						TestLanguagePackage.Literals.NODE__OUTPUT_CACHE, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_InternalPropertyCategory"), null));
 	}
 
 	/**
@@ -195,14 +172,12 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TestLanguagePackage.Literals.NODE__INPUTS);
 			childrenFeatures.add(TestLanguagePackage.Literals.NODE__OUTPUTS);
-			childrenFeatures
-					.add(TestLanguagePackage.Literals.NODE__SPECIFICATION);
+			childrenFeatures.add(TestLanguagePackage.Literals.NODE__SPECIFICATION);
 		}
 		return childrenFeatures;
 	}
@@ -228,8 +203,7 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Node"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Node"));
 	}
 
 	/**
@@ -260,14 +234,12 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 		switch (notification.getFeatureID(Node.class)) {
 		case TestLanguagePackage.NODE__LABEL:
 		case TestLanguagePackage.NODE__SPECIFICATION_CLASS_NAME:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TestLanguagePackage.NODE__INPUTS:
 		case TestLanguagePackage.NODE__OUTPUTS:
 		case TestLanguagePackage.NODE__SPECIFICATION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -281,64 +253,49 @@ public class NodeItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__INPUTS,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__INPUTS,
 				TestLanguageFactory.eINSTANCE.createInput()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__OUTPUTS,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__OUTPUTS,
 				TestLanguageFactory.eINSTANCE.createOutput()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createDefault()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createLoadModel()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createCompareModels()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createValidateModel()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createSaveModel()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createTransformation()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createExecuteUPPAAL()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createPrimitiveString()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createAssertBool()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createAssertDiagnosticTrace()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createAssertResult()));
 
-		newChildDescriptors.add(createChildParameter(
-				TestLanguagePackage.Literals.NODE__SPECIFICATION,
+		newChildDescriptors.add(createChildParameter(TestLanguagePackage.Literals.NODE__SPECIFICATION,
 				SpecificationFactory.eINSTANCE.createCheckMTCTL()));
 	}
 

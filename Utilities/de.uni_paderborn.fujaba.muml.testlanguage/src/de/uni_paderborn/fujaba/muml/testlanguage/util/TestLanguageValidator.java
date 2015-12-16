@@ -87,8 +87,8 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * @generated
 	 */
 	@Override
-	protected boolean validate(int classifierID, Object value,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		switch (classifierID) {
 		case TestLanguagePackage.NODE:
 			return validateNode((Node) value, diagnostics, context);
@@ -110,21 +110,16 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateNode(Node node, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateNode(Node node, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(node, diagnostics, context))
 			return false;
-		boolean result = validate_EveryMultiplicityConforms(node, diagnostics,
-				context);
+		boolean result = validate_EveryMultiplicityConforms(node, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(node, diagnostics,
-					context);
+			result &= validate_EveryDataValueConforms(node, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(node, diagnostics,
-					context);
+			result &= validate_EveryReferenceIsContained(node, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(node,
-					diagnostics, context);
+			result &= validate_EveryBidirectionalReferenceIsPaired(node, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validate_EveryProxyResolves(node, diagnostics, context);
 		if (result || diagnostics != null)
@@ -153,11 +148,9 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateNode_noCyclesAllowed(Node node,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate(TestLanguagePackage.Literals.NODE, node, diagnostics,
-				context, "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				"noCyclesAllowed", NODE__NO_CYCLES_ALLOWED__EEXPRESSION,
+	public boolean validateNode_noCyclesAllowed(Node node, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate(TestLanguagePackage.Literals.NODE, node, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL", "noCyclesAllowed", NODE__NO_CYCLES_ALLOWED__EEXPRESSION,
 				Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
@@ -166,21 +159,16 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateInput(Input input, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateInput(Input input, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(input, diagnostics, context))
 			return false;
-		boolean result = validate_EveryMultiplicityConforms(input, diagnostics,
-				context);
+		boolean result = validate_EveryMultiplicityConforms(input, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(input, diagnostics,
-					context);
+			result &= validate_EveryDataValueConforms(input, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(input, diagnostics,
-					context);
+			result &= validate_EveryReferenceIsContained(input, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(input,
-					diagnostics, context);
+			result &= validate_EveryBidirectionalReferenceIsPaired(input, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validate_EveryProxyResolves(input, diagnostics, context);
 		if (result || diagnostics != null)
@@ -190,8 +178,7 @@ public class TestLanguageValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(input, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateInput_mandatoryInputMustBeConnected(input,
-					diagnostics, context);
+			result &= validateInput_mandatoryInputMustBeConnected(input, diagnostics, context);
 		return result;
 	}
 
@@ -211,13 +198,11 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateInput_mandatoryInputMustBeConnected(Input input,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate(TestLanguagePackage.Literals.INPUT, input, diagnostics,
-				context, "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				"mandatoryInputMustBeConnected",
-				INPUT__MANDATORY_INPUT_MUST_BE_CONNECTED__EEXPRESSION,
-				Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+	public boolean validateInput_mandatoryInputMustBeConnected(Input input, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate(TestLanguagePackage.Literals.INPUT, input, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL", "mandatoryInputMustBeConnected",
+				INPUT__MANDATORY_INPUT_MUST_BE_CONNECTED__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -225,8 +210,7 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateOutput(Output output, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateOutput(Output output, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(output, diagnostics, context);
 	}
 
@@ -235,8 +219,7 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validatePort(Port port, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validatePort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(port, diagnostics, context);
 	}
 
@@ -245,8 +228,7 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateTestCase(TestCase testCase,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTestCase(TestCase testCase, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(testCase, diagnostics, context);
 	}
 

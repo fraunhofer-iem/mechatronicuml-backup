@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <em><b>Input</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>
- * {@link de.uni_paderborn.fujaba.muml.testlanguage.impl.InputImpl#getSource
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.impl.InputImpl#getSource
  * <em>Source</em>}</li>
  * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.impl.InputImpl#getNode
  * <em>Node</em>}</li>
@@ -33,7 +33,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * {@link de.uni_paderborn.fujaba.muml.testlanguage.impl.InputImpl#getDataType
  * <em>Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -108,9 +107,8 @@ public class InputImpl extends PortImpl implements Input {
 			source = (Output) eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TestLanguagePackage.INPUT__SOURCE, oldSource,
-							source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestLanguagePackage.INPUT__SOURCE,
+							oldSource, source));
 			}
 		}
 		return source;
@@ -130,14 +128,12 @@ public class InputImpl extends PortImpl implements Input {
 	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetSource(Output newSource,
-			NotificationChain msgs) {
+	public NotificationChain basicSetSource(Output newSource, NotificationChain msgs) {
 		Output oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, TestLanguagePackage.INPUT__SOURCE,
-					oldSource, newSource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestLanguagePackage.INPUT__SOURCE, oldSource, newSource);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -155,20 +151,17 @@ public class InputImpl extends PortImpl implements Input {
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject) source)
-						.eInverseRemove(this,
-								TestLanguagePackage.OUTPUT__TARGETS,
-								Output.class, msgs);
+				msgs = ((InternalEObject) source).eInverseRemove(this, TestLanguagePackage.OUTPUT__TARGETS,
+						Output.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject) newSource)
-						.eInverseAdd(this, TestLanguagePackage.OUTPUT__TARGETS,
-								Output.class, msgs);
+				msgs = ((InternalEObject) newSource).eInverseAdd(this, TestLanguagePackage.OUTPUT__TARGETS,
+						Output.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.INPUT__SOURCE, newSource, newSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.INPUT__SOURCE, newSource,
+					newSource));
 	}
 
 	/**
@@ -188,8 +181,7 @@ public class InputImpl extends PortImpl implements Input {
 	 * @generated
 	 */
 	public NotificationChain basicSetNode(Node newNode, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newNode,
-				TestLanguagePackage.INPUT__NODE, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newNode, TestLanguagePackage.INPUT__NODE, msgs);
 		return msgs;
 	}
 
@@ -202,20 +194,18 @@ public class InputImpl extends PortImpl implements Input {
 		if (newNode != eInternalContainer()
 				|| (eContainerFeatureID() != TestLanguagePackage.INPUT__NODE && newNode != null)) {
 			if (EcoreUtil.isAncestor(this, newNode))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newNode != null)
-				msgs = ((InternalEObject) newNode).eInverseAdd(this,
-						TestLanguagePackage.NODE__INPUTS, Node.class, msgs);
+				msgs = ((InternalEObject) newNode).eInverseAdd(this, TestLanguagePackage.NODE__INPUTS, Node.class,
+						msgs);
 			msgs = basicSetNode(newNode, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.INPUT__NODE, newNode, newNode));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.INPUT__NODE, newNode, newNode));
 	}
 
 	/**
@@ -236,8 +226,8 @@ public class InputImpl extends PortImpl implements Input {
 		boolean oldOptional = optional;
 		optional = newOptional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.INPUT__OPTIONAL, oldOptional, optional));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.INPUT__OPTIONAL, oldOptional,
+					optional));
 	}
 
 	/**
@@ -258,8 +248,8 @@ public class InputImpl extends PortImpl implements Input {
 		Class<?> oldDataType = dataType;
 		dataType = newDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TestLanguagePackage.INPUT__DATA_TYPE, oldDataType, dataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.INPUT__DATA_TYPE, oldDataType,
+					dataType));
 	}
 
 	/**
@@ -281,15 +271,12 @@ public class InputImpl extends PortImpl implements Input {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TestLanguagePackage.INPUT__SOURCE:
 			if (source != null)
-				msgs = ((InternalEObject) source)
-						.eInverseRemove(this,
-								TestLanguagePackage.OUTPUT__TARGETS,
-								Output.class, msgs);
+				msgs = ((InternalEObject) source).eInverseRemove(this, TestLanguagePackage.OUTPUT__TARGETS,
+						Output.class, msgs);
 			return basicSetSource((Output) otherEnd, msgs);
 		case TestLanguagePackage.INPUT__NODE:
 			if (eInternalContainer() != null)
@@ -305,8 +292,7 @@ public class InputImpl extends PortImpl implements Input {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TestLanguagePackage.INPUT__SOURCE:
 			return basicSetSource(null, msgs);
@@ -322,12 +308,10 @@ public class InputImpl extends PortImpl implements Input {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case TestLanguagePackage.INPUT__NODE:
-			return eInternalContainer().eInverseRemove(this,
-					TestLanguagePackage.NODE__INPUTS, Node.class, msgs);
+			return eInternalContainer().eInverseRemove(this, TestLanguagePackage.NODE__INPUTS, Node.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -428,8 +412,7 @@ public class InputImpl extends PortImpl implements Input {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case TestLanguagePackage.INPUT___GET_DATA:
 			return getData();

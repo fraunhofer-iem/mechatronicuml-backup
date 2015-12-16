@@ -17,24 +17,24 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getInputs <em>
- * Inputs</em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getOutputs <em>
- * Outputs</em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getLabel <em>Label
- * </em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getInputs
+ * <em>Inputs</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getOutputs
+ * <em>Outputs</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getLabel
+ * <em>Label</em>}</li>
  * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getSpecification
  * <em>Specification</em>}</li>
  * <li>
  * {@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getSpecificationClassName
  * <em>Specification Class Name</em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getInputCache <em>
- * Input Cache</em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getOutputCache <em>
- * Output Cache</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getInputCache
+ * <em>Input Cache</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Node#getOutputCache
+ * <em>Output Cache</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.testlanguage.TestLanguagePackage#getNode()
  * @model annotation=

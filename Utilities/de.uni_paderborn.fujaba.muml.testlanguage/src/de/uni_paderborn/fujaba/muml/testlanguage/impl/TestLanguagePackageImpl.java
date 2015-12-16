@@ -29,8 +29,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * 
  * @generated
  */
-public class TestLanguagePackageImpl extends EPackageImpl implements
-		TestLanguagePackage {
+public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguagePackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -109,13 +108,12 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 	 */
 	public static TestLanguagePackage init() {
 		if (isInited)
-			return (TestLanguagePackage) EPackage.Registry.INSTANCE
-					.getEPackage(TestLanguagePackage.eNS_URI);
+			return (TestLanguagePackage) EPackage.Registry.INSTANCE.getEPackage(TestLanguagePackage.eNS_URI);
 
 		// Obtain or create and register package
 		TestLanguagePackageImpl theTestLanguagePackage = (TestLanguagePackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof TestLanguagePackageImpl ? EPackage.Registry.INSTANCE
-				.get(eNS_URI) : new TestLanguagePackageImpl());
+				.get(eNS_URI) instanceof TestLanguagePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new TestLanguagePackageImpl());
 
 		isInited = true;
 
@@ -129,19 +127,17 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 		theTestLanguagePackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put(theTestLanguagePackage,
-				new EValidator.Descriptor() {
-					public EValidator getEValidator() {
-						return TestLanguageValidator.INSTANCE;
-					}
-				});
+		EValidator.Registry.INSTANCE.put(theTestLanguagePackage, new EValidator.Descriptor() {
+			public EValidator getEValidator() {
+				return TestLanguageValidator.INSTANCE;
+			}
+		});
 
 		// Mark meta-data to indicate it can't be changed
 		theTestLanguagePackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(TestLanguagePackage.eNS_URI,
-				theTestLanguagePackage);
+		EPackage.Registry.INSTANCE.put(TestLanguagePackage.eNS_URI, theTestLanguagePackage);
 		return theTestLanguagePackage;
 	}
 
@@ -357,6 +353,15 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 	 * 
 	 * @generated
 	 */
+	public EAttribute getPort_InOut() {
+		return (EAttribute) portEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getTestCase() {
 		return testCaseEClass;
 	}
@@ -425,6 +430,7 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__NAME);
+		createEAttribute(portEClass, PORT__IN_OUT);
 
 		testCaseEClass = createEClass(TEST_CASE);
 		createEReference(testCaseEClass, TEST_CASE__NODES);
@@ -467,113 +473,83 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 		outputEClass.getESuperTypes().add(this.getPort());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNode_Inputs(), this.getInput(), this.getInput_Node(),
-				"inputs", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNode_Inputs(), this.getInput(), this.getInput_Node(), "inputs", null, 0, -1, Node.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getNode_Inputs().getEKeys().add(this.getPort_Name());
-		initEReference(getNode_Outputs(), this.getOutput(),
-				this.getOutput_Node(), "outputs", null, 0, -1, Node.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getNode_Outputs(), this.getOutput(), this.getOutput_Node(), "outputs", null, 0, -1, Node.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getNode_Outputs().getEKeys().add(this.getPort_Name());
-		initEAttribute(getNode_Label(), ecorePackage.getEString(), "label",
-				"node", 1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getNode_Specification(),
-				theSpecificationPackage.getNodeSpecification(), null,
-				"specification", null, 0, 1, Node.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEAttribute(getNode_Label(), ecorePackage.getEString(), "label", "node", 1, 1, Node.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_Specification(), theSpecificationPackage.getNodeSpecification(), null, "specification",
+				null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNode_SpecificationClassName(),
-				ecorePackage.getEString(), "specificationClassName", "Default",
-				1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_SpecificationClassName(), ecorePackage.getEString(), "specificationClassName", "Default",
+				1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		initEAttribute(getNode_InputCache(), g1, "inputCache", null, 0, 1,
-				Node.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_InputCache(), g1, "inputCache", null, 0, 1, Node.class, IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		initEAttribute(getNode_OutputCache(), g1, "outputCache", null, 0, 1,
-				Node.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_OutputCache(), g1, "outputCache", null, 0, 1, Node.class, IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getNode__SetupFromSpecification(), null,
-				"setupFromSpecification", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getNode__SetupFromSpecification(), null, "setupFromSpecification", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = initEOperation(getNode__Execute(), null, "execute", 1,
-				1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getNode__Execute(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theSpecificationPackage.getExecutionException());
 
-		initEOperation(getNode__CreateSpecification(), null,
-				"createSpecification", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getNode__CreateSpecification(), null, "createSpecification", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInput_Source(), this.getOutput(),
-				this.getOutput_Targets(), "source", null, 0, 1, Input.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getInput_Node(), this.getNode(), this.getNode_Inputs(),
-				"node", null, 1, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInput_Optional(), ecorePackage.getEBoolean(),
-				"optional", "false", 1, 1, Input.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInput_Source(), this.getOutput(), this.getOutput_Targets(), "source", null, 0, 1, Input.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInput_Node(), this.getNode(), this.getNode_Inputs(), "node", null, 1, 1, Input.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInput_Optional(), ecorePackage.getEBoolean(), "optional", "false", 1, 1, Input.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		initEAttribute(getInput_DataType(), g1, "dataType", null, 0, 1,
-				Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInput_DataType(), g1, "dataType", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getInput__GetData(), ecorePackage.getEJavaObject(),
-				"getData", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInput__GetData(), ecorePackage.getEJavaObject(), "getData", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(outputEClass, Output.class, "Output", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOutput_Targets(), this.getInput(),
-				this.getInput_Source(), "targets", null, 0, -1, Output.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getOutput_Node(), this.getNode(),
-				this.getNode_Outputs(), "node", null, 1, 1, Output.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEOperation(getOutput__GetData(), ecorePackage.getEJavaObject(),
-				"getData", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name",
-				"port", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTestCase_Nodes(), this.getNode(), null, "nodes",
-				null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEClass(outputEClass, Output.class, "Output", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOutput_Targets(), this.getInput(), this.getInput_Source(), "targets", null, 0, -1,
+				Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutput_Node(), this.getNode(), this.getNode_Outputs(), "node", null, 1, 1, Output.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getOutput__GetData(), ecorePackage.getEJavaObject(), "getData", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", "port", 1, 1, Port.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_InOut(), ecorePackage.getEBoolean(), "inOut", null, 0, 1, Port.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTestCase_Nodes(), this.getNode(), null, "nodes", null, 0, -1, TestCase.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -596,25 +572,16 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source, new String[] { "validationDelegates",
-				"http://www.eclipse.org/emf/2002/Ecore/OCL" });
-		addAnnotation(nodeEClass, source, new String[] { "constraints",
-				"noCyclesAllowed" });
-		addAnnotation(
-				inputEClass,
-				source,
-				new String[] { "constraints", "mandatoryInputMustBeConnected",
-						"documentation",
-						"This class represents a specific type of port that is used as an input." });
-		addAnnotation(
-				outputEClass,
-				source,
-				new String[] { "documentation",
-						"This class represents a specific type of port that is used as an output." });
-		addAnnotation(portEClass, source, new String[] { "documentation",
-				"Abstract class for ports." });
-		addAnnotation(testCaseEClass, source, new String[] { "documentation",
-				"Container class that represents a test case." });
+		addAnnotation(this, source,
+				new String[] { "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL" });
+		addAnnotation(nodeEClass, source, new String[] { "constraints", "noCyclesAllowed" });
+		addAnnotation(inputEClass, source, new String[] { "constraints", "mandatoryInputMustBeConnected",
+				"documentation", "This class represents a specific type of port that is used as an input." });
+		addAnnotation(outputEClass, source, new String[] { "documentation",
+				"This class represents a specific type of port that is used as an output." });
+		addAnnotation(portEClass, source, new String[] { "documentation", "Abstract class for ports." });
+		addAnnotation(testCaseEClass, source,
+				new String[] { "documentation", "Container class that represents a test case." });
 	}
 
 	/**
@@ -626,18 +593,10 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation(
-				nodeEClass,
-				source,
-				new String[] {
-						"noCyclesAllowed",
-						"-- Nodes may not be part of a cycle or be dependent on a node that is part of a cycle.\r\nself.outputs.targets.node->asSet()->closure(outputs.targets.node)->excludes(self)" });
-		addAnnotation(
-				inputEClass,
-				source,
-				new String[] {
-						"mandatoryInputMustBeConnected",
-						"-- Inputs that are mandatory (= not optional) must have a connection.\r\nself.source.oclIsUndefined() implies self.optional" });
+		addAnnotation(nodeEClass, source, new String[] { "noCyclesAllowed",
+				"-- Nodes may not be part of a cycle or be dependent on a node that is part of a cycle.\r\nself.outputs.targets.node->asSet()->closure(outputs.targets.node)->excludes(self)" });
+		addAnnotation(inputEClass, source, new String[] { "mandatoryInputMustBeConnected",
+				"-- Inputs that are mandatory (= not optional) must have a connection.\r\nself.source.oclIsUndefined() implies self.optional" });
 	}
 
 	/**
@@ -649,46 +608,26 @@ public class TestLanguagePackageImpl extends EPackageImpl implements
 	 */
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";
-		addAnnotation(
-				getNode__SetupFromSpecification(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Set the label according to the specification.\r\n\t\tthis.setLabel(this.specification.getLabel());\r\n\r\n\t\t// Remember old in- and outputs for later reuse.\r\n\t\tList<Input> oldInputs = new LinkedList<Input>();\r\n\t\tfor (Input input : this.getInputs()) {\r\n\t\t\toldInputs.add(input);\r\n\t\t}\r\n\t\tList<Output> oldOutputs = new LinkedList<Output>();\r\n\t\tfor (Output output : this.getOutputs()) {\r\n\t\t\toldOutputs.add(output);\r\n\t\t}\r\n\r\n\t\t// Clear old ports.\r\n\t\tthis.getInputs().clear();\r\n\t\tthis.getOutputs().clear();\r\n\r\n\t\t// Setup new ports and reuse old ones if possible.\r\n\t\tfor (EObject specObj : this.specification.getPortSpecifications()) {\r\n\t\t\tPortSpecification spec = (PortSpecification) specObj;\r\n\r\n\t\t\tif (spec.getType() == PortType.IN\r\n\t\t\t\t\t|| spec.getType() == PortType.INOUT) {\r\n\r\n\t\t\t\t// Can we reuse an old input port?\r\n\t\t\t\tboolean reuse = false;\r\n\t\t\t\tIterator<Input> iter = oldInputs.iterator();\r\n\t\t\t\twhile (iter.hasNext()) {\r\n\t\t\t\t\tInput input = iter.next();\r\n\t\t\t\t\tif (input.getName().equals(spec.getName())\r\n\t\t\t\t\t\t\t&& input.isOptional() == spec.isOptional()\r\n\t\t\t\t\t\t\t&& input.getDataType() == spec.getDataType()) {\r\n\t\t\t\t\t\tthis.getInputs().add(input);\r\n\t\t\t\t\t\titer.remove();\r\n\t\t\t\t\t\treuse = true;\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// If not, create a new input port.\r\n\t\t\t\tif (!reuse) {\r\n\t\t\t\t\tInput input = TestLanguageFactory.eINSTANCE.createInput();\r\n\t\t\t\t\tinput.setName(spec.getName());\r\n\t\t\t\t\tinput.setOptional(spec.isOptional());\r\n\t\t\t\t\tinput.setDataType(spec.getDataType());\r\n\t\t\t\t\tthis.getInputs().add(input);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\r\n\t\t\tif (spec.getType() == PortType.OUT\r\n\t\t\t\t\t|| spec.getType() == PortType.INOUT) {\r\n\r\n\t\t\t\t// Can we reuse an old output port?\r\n\t\t\t\tboolean reuse = false;\r\n\t\t\t\tIterator<Output> iter = oldOutputs.iterator();\r\n\t\t\t\twhile (iter.hasNext()) {\r\n\t\t\t\t\tOutput output = iter.next();\r\n\t\t\t\t\tif (output.getName().equals(spec.getName())) {\r\n\t\t\t\t\t\tthis.getOutputs().add(output);\r\n\t\t\t\t\t\titer.remove();\r\n\t\t\t\t\t\treuse = true;\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// If not, create a new output port.\r\n\t\t\t\tif (!reuse) {\r\n\t\t\t\t\tOutput output = TestLanguageFactory.eINSTANCE\r\n\t\t\t\t\t\t\t.createOutput();\r\n\t\t\t\t\toutput.setName(spec.getName());\r\n\t\t\t\t\tthis.getOutputs().add(output);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t\t// Disconnect old ports that are not used anymore.\r\n\t\tfor (Input input : oldInputs) {\r\n\t\t\tinput.setSource(null);\r\n\t\t}\r\n\t\tfor (Output output : oldOutputs) {\r\n\t\t\tfor (Input input : output.getTargets()) {\r\n\t\t\t\tinput.setSource(null);\r\n\t\t\t}\r\n\t\t}",
-						"documentation",
-						"Performs a setup routine for the specific node, i.e. it sets the label and ports according to the NodeSpecification." });
-		addAnnotation(
-				getNode__Execute(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// FIXME Hack to disable notifications so that the transactional editing\r\n\t\t// domain won\'t complain about me modifying the domain element.\r\n\t\tthis.eSetDeliver(false);\r\n\r\n\t\t// Initialize caches if needed.\r\n\t\tif (this.getInputCache() == null) {\r\n\t\t\tthis.setInputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\t\tif (this.getOutputCache() == null) {\r\n\t\t\tthis.setOutputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\r\n\t\t// Refresh the input cache.\r\n\t\tfor (Input input : this.getInputs()) {\r\n\t\t\tif (input.getSource() == null) {\r\n\t\t\t\tthis.getInputCache().remove(input.getName());\r\n\t\t\t} else {\r\n\t\t\t\tthis.getInputCache().put(input.getName(), input.getData());\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Clear the output cache.\r\n\t\tthis.getOutputCache().clear();\r\n\r\n\t\t// NOTE A check whether all non-optional ports actually get data is not\r\n\t\t// necessary, as previous constraints already took care of this.\r\n\r\n\t\ttry {\r\n\t\t\t// Execute the behavior that is written in the specification.\r\n\t\t\tthis.specification.execute(this.getInputCache(),\r\n\t\t\t\t\tthis.getOutputCache());\r\n\r\n\t\t\treturn;\r\n\t\t} catch (Exception e) {\r\n\r\n\t\t\t// Clear the output cache.\r\n\t\t\tthis.getOutputCache().clear();\r\n\r\n\t\t\tthrow new ExecutionException(e);\r\n\t\t} finally {\r\n\t\t\tthis.eSetDeliver(true);\r\n\t\t}",
-						"documentation",
-						"Executes the node. It basically just delegates to the execute()-method of the NodeSpecification, but also does some maintenance.\r\n\r\n@throws ExecutionException if an error occurs during execution, containing an error message." });
-		addAnnotation(
-				getNode__CreateSpecification(),
-				source,
-				new String[] {
-						"body",
-						"try {\r\n\tSpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;\r\n\tjava.lang.reflect.Method creator = fac.getClass().getMethod(\"create\"+this.specificationClassName);\r\n\t\r\n\tthis.setSpecification((NodeSpecification) creator.invoke(fac));\r\n\tthis.specification.initialize();\r\n} catch (NoSuchMethodException e) {\r\n\t// The desired NodeSpecification does not exist.\r\n\te.printStackTrace();\r\n} catch (InvocationTargetException e) {\r\n\te.printStackTrace();\r\n} catch (IllegalAccessException e) {\r\n\te.printStackTrace();\r\n} catch (Exception e) {\r\n\te.printStackTrace();\r\n}",
-						"documentation",
-						"Reflectively creates the underlying NodeSpecification by looking into the field specificationClassName and searching a class of that name." });
-		addAnnotation(
-				getInput__GetData(),
-				source,
-				new String[] {
-						"body",
-						"if (this.getSource() == null)\r\n{\r\n\treturn null;\r\n}\r\n\t\t\r\nreturn this.getSource().getData();",
-						"documentation",
-						"Returns the data that flows to this input port.\r\n\r\n@return An object that is delivered by a connected output port or null, if the input is not connected." });
-		addAnnotation(
-				getOutput__GetData(),
-				source,
-				new String[] {
-						"body",
-						"if (this.getNode().getOutputCache() == null)\r\n{\r\n\treturn null;\r\n}\r\n\t\t\r\nreturn this.getNode().getOutputCache().get(this.getName());",
-						"documentation",
-						"Returns the object that this port gets from its node.\r\n\r\n@return The object filed in the outputCache of the associated node with the name of this port, or null if there is no data." });
+		addAnnotation(getNode__SetupFromSpecification(), source, new String[] { "body",
+				"\t\t// Set the label according to the specification.\r\n\t\tthis.setLabel(this.specification.getLabel());\r\n\r\n\t\t// Remember old in- and outputs for later reuse.\r\n\t\tList<Input> oldInputs = new LinkedList<Input>();\r\n\t\tfor (Input input : this.getInputs()) {\r\n\t\t\toldInputs.add(input);\r\n\t\t}\r\n\t\tList<Output> oldOutputs = new LinkedList<Output>();\r\n\t\tfor (Output output : this.getOutputs()) {\r\n\t\t\toldOutputs.add(output);\r\n\t\t}\r\n\r\n\t\t// Clear old ports.\r\n\t\tthis.getInputs().clear();\r\n\t\tthis.getOutputs().clear();\r\n\r\n\t\t// Setup new ports and reuse old ones if possible.\r\n\t\tfor (EObject specObj : this.specification.getPortSpecifications()) {\r\n\t\t\tPortSpecification spec = (PortSpecification) specObj;\r\n\r\n\t\t\tboolean specificationIsInOut = spec.getType() == PortType.INOUT;\r\n\t\t\t\r\n\t\t\tif (spec.getType() == PortType.IN || spec.getType() == PortType.INOUT) {\r\n\r\n\t\t\t\t// Can we reuse an old input port?\r\n\t\t\t\tboolean reuse = false;\r\n\t\t\t\tIterator<Input> iter = oldInputs.iterator();\r\n\t\t\t\twhile (iter.hasNext()) {\r\n\t\t\t\t\tInput input = iter.next();\r\n\t\t\t\t\tif (input.getName().equals(spec.getName()) && input.isOptional() == spec.isOptional()\r\n\t\t\t\t\t\t\t&& input.getDataType() == spec.getDataType() && input.isInOut() == specificationIsInOut) {\r\n\t\t\t\t\t\tthis.getInputs().add(input);\r\n\t\t\t\t\t\titer.remove();\r\n\t\t\t\t\t\treuse = true;\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// If not, create a new input port.\r\n\t\t\t\tif (!reuse) {\r\n\t\t\t\t\tInput input = TestLanguageFactory.eINSTANCE.createInput();\r\n\t\t\t\t\tinput.setName(spec.getName());\r\n\t\t\t\t\tinput.setOptional(spec.isOptional());\r\n\t\t\t\t\tinput.setDataType(spec.getDataType());\r\n\t\t\t\t\tinput.setInOut(specificationIsInOut);\r\n\t\t\t\t\tthis.getInputs().add(input);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\r\n\t\t\tif (spec.getType() == PortType.OUT || spec.getType() == PortType.INOUT) {\r\n\r\n\t\t\t\t// Can we reuse an old output port?\r\n\t\t\t\tboolean reuse = false;\r\n\t\t\t\tIterator<Output> iter = oldOutputs.iterator();\r\n\t\t\t\twhile (iter.hasNext()) {\r\n\t\t\t\t\tOutput output = iter.next();\r\n\t\t\t\t\tif (output.getName().equals(spec.getName()) && output.isInOut() == specificationIsInOut) {\r\n\t\t\t\t\t\tthis.getOutputs().add(output);\r\n\t\t\t\t\t\titer.remove();\r\n\t\t\t\t\t\treuse = true;\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// If not, create a new output port.\r\n\t\t\t\tif (!reuse) {\r\n\t\t\t\t\tOutput output = TestLanguageFactory.eINSTANCE.createOutput();\r\n\t\t\t\t\toutput.setName(spec.getName());\r\n\t\t\t\t\toutput.setInOut(specificationIsInOut);\r\n\t\t\t\t\tthis.getOutputs().add(output);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\r\n\t\t}\r\n\r\n\t\t// Disconnect old ports that are not used anymore.\r\n\t\tfor (Input input : oldInputs) {\r\n\t\t\tinput.setSource(null);\r\n\t\t}\r\n\t\tfor (Output output : oldOutputs) {\r\n\t\t\tfor (Input input : output.getTargets()) {\r\n\t\t\t\tinput.setSource(null);\r\n\t\t\t}\r\n\t\t}",
+				"documentation",
+				"Performs a setup routine for the specific node, i.e. it sets the label and ports according to the NodeSpecification." });
+		addAnnotation(getNode__Execute(), source, new String[] { "body",
+				"\t\t// FIXME Hack to disable notifications so that the transactional editing\r\n\t\t// domain won\'t complain about me modifying the domain element.\r\n\t\tthis.eSetDeliver(false);\r\n\r\n\t\t// Initialize caches if needed.\r\n\t\tif (this.getInputCache() == null) {\r\n\t\t\tthis.setInputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\t\tif (this.getOutputCache() == null) {\r\n\t\t\tthis.setOutputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\r\n\t\t// Refresh the input cache.\r\n\t\tfor (Input input : this.getInputs()) {\r\n\t\t\tif (input.getSource() == null) {\r\n\t\t\t\tthis.getInputCache().remove(input.getName());\r\n\t\t\t} else {\r\n\t\t\t\tthis.getInputCache().put(input.getName(), input.getData());\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Clear the output cache.\r\n\t\tthis.getOutputCache().clear();\r\n\r\n\t\t// NOTE A check whether all non-optional ports actually get data is not\r\n\t\t// necessary, as previous constraints already took care of this.\r\n\r\n\t\ttry {\r\n\t\t\t// Execute the behavior that is written in the specification.\r\n\t\t\tthis.specification.execute(this.getInputCache(),\r\n\t\t\t\t\tthis.getOutputCache());\r\n\r\n\t\t\treturn;\r\n\t\t} catch (Exception e) {\r\n\r\n\t\t\t// Clear the output cache.\r\n\t\t\tthis.getOutputCache().clear();\r\n\r\n\t\t\tthrow new ExecutionException(e);\r\n\t\t} finally {\r\n\t\t\tthis.eSetDeliver(true);\r\n\t\t}",
+				"documentation",
+				"Executes the node. It basically just delegates to the execute()-method of the NodeSpecification, but also does some maintenance.\r\n\r\n@throws ExecutionException if an error occurs during execution, containing an error message." });
+		addAnnotation(getNode__CreateSpecification(), source, new String[] { "body",
+				"try {\r\n\tSpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;\r\n\tjava.lang.reflect.Method creator = fac.getClass().getMethod(\"create\"+this.specificationClassName);\r\n\t\r\n\tthis.setSpecification((NodeSpecification) creator.invoke(fac));\r\n\tthis.specification.initialize();\r\n} catch (NoSuchMethodException e) {\r\n\t// The desired NodeSpecification does not exist.\r\n\te.printStackTrace();\r\n} catch (InvocationTargetException e) {\r\n\te.printStackTrace();\r\n} catch (IllegalAccessException e) {\r\n\te.printStackTrace();\r\n} catch (Exception e) {\r\n\te.printStackTrace();\r\n}",
+				"documentation",
+				"Reflectively creates the underlying NodeSpecification by looking into the field specificationClassName and searching a class of that name." });
+		addAnnotation(getInput__GetData(), source, new String[] { "body",
+				"if (this.getSource() == null)\r\n{\r\n\treturn null;\r\n}\r\n\t\t\r\nreturn this.getSource().getData();",
+				"documentation",
+				"Returns the data that flows to this input port.\r\n\r\n@return An object that is delivered by a connected output port or null, if the input is not connected." });
+		addAnnotation(getOutput__GetData(), source, new String[] { "body",
+				"if (this.getNode().getOutputCache() == null)\r\n{\r\n\treturn null;\r\n}\r\n\t\t\r\nreturn this.getNode().getOutputCache().get(this.getName());",
+				"documentation",
+				"Returns the object that this port gets from its node.\r\n\r\n@return The object filed in the outputCache of the associated node with the name of this port, or null if there is no data." });
 	}
 
 } // TestLanguagePackageImpl

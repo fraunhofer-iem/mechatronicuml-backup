@@ -8,17 +8,17 @@ package de.uni_paderborn.fujaba.muml.testlanguage;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#getSource <em>
- * Source</em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#getNode <em>Node
- * </em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#isOptional <em>
- * Optional</em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#getDataType <em>
- * Data Type</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#getSource
+ * <em>Source</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#getNode
+ * <em>Node</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#isOptional
+ * <em>Optional</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Input#getDataType
+ * <em>Data Type</em>}</li>
+ * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.testlanguage.TestLanguagePackage#getInput()
  * @model annotation=

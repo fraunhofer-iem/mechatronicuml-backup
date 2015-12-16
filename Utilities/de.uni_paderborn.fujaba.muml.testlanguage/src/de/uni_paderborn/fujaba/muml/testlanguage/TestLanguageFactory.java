@@ -18,8 +18,7 @@ public interface TestLanguageFactory extends EFactory {
 	 * 
 	 * @generated
 	 */
-	TestLanguageFactory eINSTANCE = de.uni_paderborn.fujaba.muml.testlanguage.impl.TestLanguageFactoryImpl
-			.init();
+	TestLanguageFactory eINSTANCE = de.uni_paderborn.fujaba.muml.testlanguage.impl.TestLanguageFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Node</em>'. <!-- begin-user-doc -->

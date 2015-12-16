@@ -55,15 +55,12 @@ public class OutputItemProvider extends PortItemProvider {
 	 * @generated
 	 */
 	protected void addTargetsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Output_targets_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Output_targets_feature", "_UI_Output_type"),
-				TestLanguagePackage.Literals.OUTPUT__TARGETS, false, false,
-				true, null, null, null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Output_targets_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Output_targets_feature",
+								"_UI_Output_type"),
+						TestLanguagePackage.Literals.OUTPUT__TARGETS, false, false, true, null, null, null));
 	}
 
 	/**
@@ -73,8 +70,7 @@ public class OutputItemProvider extends PortItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Output"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Output"));
 	}
 
 	/**
@@ -112,8 +108,7 @@ public class OutputItemProvider extends PortItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

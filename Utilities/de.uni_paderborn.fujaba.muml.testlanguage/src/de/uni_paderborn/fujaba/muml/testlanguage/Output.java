@@ -10,13 +10,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Output#getTargets <em>
- * Targets</em>}</li>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Output#getNode <em>Node
- * </em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Output#getTargets
+ * <em>Targets</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Output#getNode
+ * <em>Node</em>}</li>
+ * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.testlanguage.TestLanguagePackage#getOutput()
  * @model annotation=

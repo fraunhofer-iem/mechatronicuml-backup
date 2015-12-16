@@ -53,8 +53,7 @@ public interface TestLanguagePackage extends EPackage {
 	 * 
 	 * @generated
 	 */
-	TestLanguagePackage eINSTANCE = de.uni_paderborn.fujaba.muml.testlanguage.impl.TestLanguagePackageImpl
-			.init();
+	TestLanguagePackage eINSTANCE = de.uni_paderborn.fujaba.muml.testlanguage.impl.TestLanguagePackageImpl.init();
 
 	/**
 	 * The meta object id for the '
@@ -196,13 +195,22 @@ public interface TestLanguagePackage extends EPackage {
 	int PORT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>In Out</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__IN_OUT = 1;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 1;
+	int PORT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class. <!--
@@ -232,6 +240,15 @@ public interface TestLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT__NAME = PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>In Out</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__IN_OUT = PORT__IN_OUT;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference. <!--
@@ -315,6 +332,15 @@ public interface TestLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int OUTPUT__NAME = PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>In Out</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__IN_OUT = PORT__IN_OUT;
 
 	/**
 	 * The feature id for the '<em><b>Targets</b></em>' reference list. <!--
@@ -679,6 +705,18 @@ public interface TestLanguagePackage extends EPackage {
 	EAttribute getPort_Name();
 
 	/**
+	 * Returns the meta object for the attribute '
+	 * {@link de.uni_paderborn.fujaba.muml.testlanguage.Port#isInOut
+	 * <em>In Out</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>In Out</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.testlanguage.Port#isInOut()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EAttribute getPort_InOut();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link de.uni_paderborn.fujaba.muml.testlanguage.TestCase
 	 * <em>Test Case</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -777,8 +815,7 @@ public interface TestLanguagePackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute NODE__SPECIFICATION_CLASS_NAME = eINSTANCE
-				.getNode_SpecificationClassName();
+		EAttribute NODE__SPECIFICATION_CLASS_NAME = eINSTANCE.getNode_SpecificationClassName();
 
 		/**
 		 * The meta object literal for the '<em><b>Input Cache</b></em>'
@@ -803,8 +840,7 @@ public interface TestLanguagePackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation NODE___SETUP_FROM_SPECIFICATION = eINSTANCE
-				.getNode__SetupFromSpecification();
+		EOperation NODE___SETUP_FROM_SPECIFICATION = eINSTANCE.getNode__SetupFromSpecification();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -820,8 +856,7 @@ public interface TestLanguagePackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation NODE___CREATE_SPECIFICATION = eINSTANCE
-				.getNode__CreateSpecification();
+		EOperation NODE___CREATE_SPECIFICATION = eINSTANCE.getNode__CreateSpecification();
 
 		/**
 		 * The meta object literal for the '
@@ -928,6 +963,14 @@ public interface TestLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>In Out</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute PORT__IN_OUT = eINSTANCE.getPort_InOut();
 
 		/**
 		 * The meta object literal for the '

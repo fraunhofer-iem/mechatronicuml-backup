@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.TestCase#getNodes <em>
- * Nodes</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.TestCase#getNodes
+ * <em>Nodes</em>}</li>
+ * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.testlanguage.TestLanguagePackage#getTestCase()
  * @model annotation=

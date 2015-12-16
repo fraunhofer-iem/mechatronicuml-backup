@@ -59,15 +59,11 @@ public class InputItemProvider extends PortItemProvider {
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Input_source_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Input_source_feature", "_UI_Input_type"),
-				TestLanguagePackage.Literals.INPUT__SOURCE, false, false, true,
-				null, null, null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Input_source_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Input_source_feature", "_UI_Input_type"),
+						TestLanguagePackage.Literals.INPUT__SOURCE, false, false, true, null, null, null));
 	}
 
 	/**
@@ -77,15 +73,12 @@ public class InputItemProvider extends PortItemProvider {
 	 * @generated
 	 */
 	protected void addOptionalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Input_optional_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Input_optional_feature", "_UI_Input_type"),
-				TestLanguagePackage.Literals.INPUT__OPTIONAL, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Input_optional_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Input_optional_feature", "_UI_Input_type"),
+						TestLanguagePackage.Literals.INPUT__OPTIONAL, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -95,15 +88,12 @@ public class InputItemProvider extends PortItemProvider {
 	 * @generated
 	 */
 	protected void addDataTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Input_dataType_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Input_dataType_feature", "_UI_Input_type"),
-				TestLanguagePackage.Literals.INPUT__DATA_TYPE, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Input_dataType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Input_dataType_feature", "_UI_Input_type"),
+						TestLanguagePackage.Literals.INPUT__DATA_TYPE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -113,8 +103,7 @@ public class InputItemProvider extends PortItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Input"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Input"));
 	}
 
 	/**
@@ -145,8 +134,7 @@ public class InputItemProvider extends PortItemProvider {
 		switch (notification.getFeatureID(Input.class)) {
 		case TestLanguagePackage.INPUT__OPTIONAL:
 		case TestLanguagePackage.INPUT__DATA_TYPE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -160,8 +148,7 @@ public class InputItemProvider extends PortItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

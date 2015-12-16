@@ -10,11 +10,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Port#getName <em>Name
- * </em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Port#getName
+ * <em>Name</em>}</li>
+ * <li>{@link de.uni_paderborn.fujaba.muml.testlanguage.Port#isInOut
+ * <em>In Out</em>}</li>
+ * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.testlanguage.TestLanguagePackage#getPort()
  * @model abstract="true" annotation=
@@ -50,5 +52,35 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>In Out</b></em>' attribute. <!--
+	 * begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>In Out</em>' attribute isn't clear, there
+	 * really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>In Out</em>' attribute.
+	 * @see #setInOut(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.testlanguage.TestLanguagePackage#getPort_InOut()
+	 * @model
+	 * @generated
+	 */
+	boolean isInOut();
+
+	/**
+	 * Sets the value of the '
+	 * {@link de.uni_paderborn.fujaba.muml.testlanguage.Port#isInOut
+	 * <em>In Out</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>In Out</em>' attribute.
+	 * @see #isInOut()
+	 * @generated
+	 */
+	void setInOut(boolean value);
 
 } // Port
