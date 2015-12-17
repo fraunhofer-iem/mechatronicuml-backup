@@ -87,7 +87,7 @@ mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, reg
 }
 
 mapping Transition :: LoadBalancing2SourceRegionCoordinator(context:OclAny) : Region 
-	when {self.usesLoadBalancingSchema()} {
+	when {self.usesLoadBalancingSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
 		init {
 			result := self.map Schema2SourceRegionCoordinator(context, loadBalancingCheck, loadBalancingCheckDone, loadBalancingPossibleName);			
 		}				

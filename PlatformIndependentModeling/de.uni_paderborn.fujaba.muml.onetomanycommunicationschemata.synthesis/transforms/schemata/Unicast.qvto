@@ -52,7 +52,7 @@ mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region:Re
 }
 // @author: sthiele2
 mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny): Region
-	when {self.usesUnicastSchema()}  {
+	when {self.usesUnicastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()}  {
 	init {
 		result := self.map Schema2SourceRegionCoordinator(context, unicastCheck, unicastCheckDone, unicastPossibleName );
 	}					
