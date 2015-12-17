@@ -1,5 +1,6 @@
 library Unicast;
 import common.AllSchemataMappings;
+import CoordinatorBehaviorTemplate;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -25,104 +26,37 @@ property sendUnicastName : String = "sendUnicast";
 	
 
 // @author: sthiele2
-mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUnicastSchema()} {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
-	source := self.source.map Vertex2VertexCoordinator(context);
-	target := self.map Schema2CoordinatorIntermediateState(context,1,unicastDLCName);
-	priority := self.priority;
-	guard := self.guard.map transform(result).oclAsType(Expression);		
-	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty())
-		urgent := false;	
-	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);	
-	
-	synchronization := self. createSynchronization( unicastCheckDone,SynchronizationKind::SEND);
+	init {
+		result := self.map Schema2CoordinatorStartTransition(context, region, unicastCheckDone, unicastDLCName, unicastPossibleName);
+	}
 }
 
 // @author: sthiele2
 mapping Transition :: Unicast2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition
-{
+	when {self.usesUnicastSchema()} {
 	// creates the transition from intermediate state 1 to intermediate state 2
-	source := self.map Schema2CoordinatorIntermediateState(context,1, unicastDLCName);
-	target := self.map Schema2CoordinatorIntermediateState(context,2,unicastDLCName);	
-	priority := 1;
-	if(not self.relativeDeadline.oclIsUndefined())
-	{
-		urgent := false;
-		result.clockConstraints += self. RelativeDeadline2ClockConstraint(true, ComparingOperator::GREATER_OR_EQUAL, unicastDLCName );
-	};
-	synchronization := self.createSynchronization( unicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
-}
+	init {			
+		result := self.map Schema2CoordinatorIntermediateTransition(context, region, unicast, unicastDLCName);		
+	}
+} 
 
 // @author: sthiele2
 mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition
-{
-	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
-	source := self.map Schema2CoordinatorIntermediateState(context,2,unicastDLCName);
-	target := self.target.map Vertex2VertexCoordinator(context);
-	priority := 1;
-	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
-	result.action := self.action.map transform(result).oclAsType(Action);
-	synchronization :=self.createSynchronization(unicastDone,SynchronizationKind::RECEIVE);	
+	when {self.usesUnicastSchema()} {
+	init {
+		result := self.map Schema2CoordinatorEndTransition(context, region, unicastDone, unicastDLCName);
+	}
 }
-
-
-mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny): Region {
-		
-		priority := self.priority;
-		
-		parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);
-		
-		embeddedStatechart := self.map Unicast2SourceEmbeddedRTSCCoordinator(context);
-					
-	}
-	
-mapping Transition :: Unicast2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart {
-		
-		name:= "unicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
-		
-		states += self.map RegionState(context,  "Idle", true);
-		states += self.map RegionState(context,  "Requesting", false);
-		
-		transitions += self.map Unicast2TransCheckEmbeddedCoordinator(context);
-		transitions += self.map Unicast2TransCheckDoneEmbeddedCoordinator(context);
-					
-	}
-	
-mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny) : Transition {
-
-		priority := 1;
-		
-		source := self.map RegionState(context,  "Idle", true);
-		
-		target := self.map RegionState(context,  "Requesting", false);
-		
-		if(not self.clockConstraints->isEmpty())
-			urgent := false;	
-		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);	
-	
-		clockConstraints := self.clockConstraints.map transform(result).oclAsType(ClockConstraint);
-		
-		guard := self.guard.map transform(result).oclAsType(Expression);
-		
-		synchronization :=	self. createSynchronization(  unicastCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
-			
-	}
-	
-mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition {
-
-		priority := 1;
-		
-		target := self.map RegionState(context,  "Idle", true);
-		
-		source := self.map RegionState(context,  "Requesting", false);
-		
-		synchronization := self. createSynchronization( unicastCheckDone,SynchronizationKind::RECEIVE);
-		
-		guard := self. createUnaryExpressionEnclosingTypedNamedElementExpression( unicastPossibleName, UnaryOperator::NOT);
-			
-	}
-	
-
+// @author: sthiele2
+mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny): Region
+	when {self.usesUnicastSchema()}  {
+	init {
+		result := self.map Schema2SourceRegionCoordinator(context, unicastCheck, unicastCheckDone, unicastPossibleName );
+	}					
+}
 	
 --------------------------------------------------------------- Transfer Schema Unicast of Subrole----------------------------------------------------------------------
 	
@@ -148,7 +82,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 			guard := self.createLogicalExpressionWithTwoConcatenatedVariables(sendUnicastName, unicastPossibleName, false);
 			
 			if(self.action.oclIsUndefined()){
-				action := self. createActionWithVariableAssignmentBlock( "sendUnicast:=false", sendUnicastName, "false");
+				action := self. createActionWithVariableAssignmentBlock( "sendUnicast:=false", sendUnicastName, "false");				
 			}else{
 
 				action := self. createActionWithVariableAssignmentAndCloneAllExpressionsOfAction("sendUnicast:=false", sendUnicastName, "false");
@@ -158,24 +92,12 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);
 			action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map transform(result).oclAsType(Action);
 		}endif;
-		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined()) {
+			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map transform(result).oclAsType(Expression);
+		}
 	}
 	
-mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 
-		priority := (self.priority-1)*2+1;
-		
-		source := self.map Transition2StateSubrole(region,self.source, true);
-		
-		target := self.map Schema2SubroleIntermediateState(context,1);
-					
-		synchronization :=self. createSynchronization(unicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);--error
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
-		
-		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
-		
-	}
 	
 mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
 	when {self.usesUnicastSchema()} {
