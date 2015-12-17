@@ -1,5 +1,7 @@
 library Iterate;
 import common.AllSchemataMappings;
+import CoordinatorBehaviorTemplate;
+
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -27,158 +29,46 @@ property iterateDelayClockName : String = "Delay_Clock";
 ----------------------------------------------------------------Transfer Schema Iterate of Coordinator------------------------------------------------------------------
 
 // @author: sthiele2
-mapping Transition :: Iterate2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: Iterate2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition 
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
-	source := self.source.map Vertex2VertexCoordinator(context);
-	target := self.map Schema2CoordinatorIntermediateState(context,1,iterateDLCName);
-	priority := self.priority;
-	guard := self.guard.map transform(result).oclAsType(Expression);	
-	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
-		urgent := false;
-	};		
-	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))-> map transform(result).oclAsType(ClockConstraint);
-	
-	synchronization := self. createSynchronization(  iterateCheckDone,SynchronizationKind::RECEIVE);
+	when {self.usesIterateSchema()} {
+		init {
+			result := self.map Schema2CoordinatorStartTransition(context, region, iterateCheckDone, iterateDLCName, iteratePossibleName);
+		}
 }
 
 // @author: sthiele2
 mapping Transition :: Iterate2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition
-{
 	// creates the transition from intermediate state 1 to intermediate state 2
-	source := self.map Schema2CoordinatorIntermediateState(context,1,iterateDLCName);
-	target := self.map Schema2CoordinatorIntermediateState(context,2,iterateDLCName);	
-	priority := 1;
-	if(not self.relativeDeadline.oclIsUndefined())
-	{
-		urgent := false;
-		result.clockConstraints += self. RelativeDeadline2ClockConstraint( true, ComparingOperator::GREATER_OR_EQUAL, iterateDLCName );
-	};
-	if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
-		synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
-	}
-	else {
-		synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::LAST);
-	};
+	when {self.usesIterateSchema()} {
+		init {
+			result := self.map Schema2CoordinatorIntermediateTransition(context, region, iterate, iterateDLCName);
+		}
 }
 
 // @author: sthiele2
 mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition
-{
-	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
-	source := self.map Schema2CoordinatorIntermediateState(context, 2, iterateDLCName);
-	target := self.target.map Vertex2VertexCoordinator(context);
-	priority := 1;
-	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
-	
-	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
-		
-		result.action := self.createActionWithVariableAssignmentBlock(terminateIterationName +  " := false;",terminateIterationName,"false");
-		if(not self.action.name.oclIsUndefined()) {
-			result.action.name := result.action.name + self.action.name;
-		};
-		result.action.expressions += self.action.expressions.map transform(result).oclAsType(Expression);
-		
-	} else {
-		result.action := self.action.map transform(result).oclAsType(Action);
-	};
-	
-	synchronization := self. createSynchronization(iterateDone,SynchronizationKind::RECEIVE);
-}
-
-	
-------------- non Conditional Coordinator Mappings	
-mapping Transition :: NonConditionalIterate2TranssitionFromSourceToIntermediate(context:OclAny, region:RealtimeStatechart) : Transition {
-
-		priority := self.priority;
-						
-		source := self.source.map Vertex2VertexCoordinator(context);
-		
-		target := self.map Schema2CoordinatorIntermediateState(context,1, iterateDLCName);
-		
-		synchronization := self. createSynchronization(  iterate,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
-		
-		if(not self.clockConstraints->isEmpty())
-			urgent := false;
-		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);
-		
-		guard := self.guard.map transform(result).oclAsType(Expression);
-}
-
-mapping Transition :: NonConditionalIterate2TransitionFromIntermediateToTarget(context:OclAny, region:RealtimeStatechart) : Transition{
-	
-		priority := 1;
-		
-		source := self.map Schema2CoordinatorIntermediateState(context, 1,iterateDLCName);
-	
-		target := self.target.map Vertex2VertexCoordinator(context);
-		
-		action := self.action.map transform(result).oclAsType(Action);
-		
-		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
-	
-		synchronization := self. createSynchronization(  iterateDone,SynchronizationKind::RECEIVE);	
+	when {self.usesIterateSchema()} {
+		init {
+			result := self.map Schema2CoordinatorEndTransition(context, region, iterateDone, iterateDLCName);
+			if(result.action.oclIsUndefined()) {
+				result.action := self.createActionWithVariableAssignmentBlock(terminateIterationName +  " := false;",terminateIterationName,"false");	
+			}
+			else {
+				result.action.expressions += self.createAssignment(terminateIterationName, "false");	
+			}			
+		}	
 }
 
 ---------------- Coordinator Mappings for Embedded State
 
-mapping Transition :: Iterate2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region {
-		
-		priority := self.priority;
-		
-		parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);
-		
-		embeddedStatechart := self.map Iterate2SourceEmbeddedRTSCCoordinator(context, region);
-					
+mapping Transition :: Iterate2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region 
+	when {self.usesIterateSchema() }
+	{
+		init {
+			result := self.map Schema2SourceRegionCoordinator(context,iterateCheck, iterateCheckDone, iteratePossibleName); 
+		}
 	}
-	
-mapping Transition :: Iterate2SourceEmbeddedRTSCCoordinator(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
-		
-		name:= "iterateCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
-		
-		states += self.map RegionState(context,  "Idle", true);
-		states += self.map RegionState(context,  "Requesting", false);
-		
-		transitions += self.map Iterate2TransCheckEmbeddedCoordinator(context, region);
-		transitions += self.map Iterate2TransCheckDoneEmbeddedCoordinator(context, region);
-					
-	}
-	
-mapping Transition :: Iterate2TransCheckEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
-
-		priority := 1;
-		
-		source := self.map RegionState(context,  "Idle", true);
-		
-		target := self.map RegionState(context,  "Requesting", false);
-		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
-			urgent := false;			
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);
-	
-		guard := self.guard.map transform(result).oclAsType(Expression);
-		
-		synchronization := 	self. createSynchronization( iterateCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
-			
-	}
-	
-mapping Transition :: Iterate2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
-
-		priority := 1;
-		
-		target := self.map RegionState(context,  "Idle", true);
-		
-		source := self.map RegionState(context,  "Requesting", false);
-		
-	
-		
-		synchronization :=  self. createSynchronization( iterateCheckDone,SynchronizationKind::RECEIVE);
-		
-		guard := self. createUnaryExpressionEnclosingTypedNamedElementExpression( iteratePossibleName, UnaryOperator::NOT);
-			
-	}
-	
-	
-
-	
 
 	
 ----------------------------------------------------------------- Transfer Schema Iterate of Subrole-------------------------------------------------------------------

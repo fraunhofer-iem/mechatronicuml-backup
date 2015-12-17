@@ -240,15 +240,11 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeSta
 		transitions += self.transitions.map LoadBalancing2CoordinatorIntermediateTransition(context,region);
 		transitions += self.transitions.map LoadBalancing2CoordinatorEndTransition(context,region);
 		
-		self.transitions->forEach(t) {		
-			
-			if(not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) {
-				transitions += t.map Iterate2CoordinatorStartTransition(context, region);
-				transitions += t.map Iterate2CoordinatorIntermediateTransition(context,region);
-				transitions += t.map Iterate2CoordinatorEndTransition(context,region);
-			};
 		
-		};		
+		transitions += self.transitions.map Iterate2CoordinatorStartTransition(context, region);
+		transitions += self.transitions.map Iterate2CoordinatorIntermediateTransition(context,region);
+		transitions += self.transitions.map Iterate2CoordinatorEndTransition(context,region);
+			
 		
 		// @author: sthiele2 -- add clocks for the implementation of the relative deadlines
 		clocks += self.transitions->select(t| t.usesUnicastSchema()).map Schema2Clock(unicastDLCName);
