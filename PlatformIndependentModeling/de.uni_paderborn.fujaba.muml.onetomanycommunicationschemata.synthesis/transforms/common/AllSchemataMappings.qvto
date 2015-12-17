@@ -207,7 +207,7 @@ helper  Transition :: createActionWithVariableAssignmentBlock(actionName:String,
 helper Transition :: createBlockWithVariableAssignment(varName:String, assignValue:String ) : Block {
 		
 
-		return self.Transition2Block(self.createAssignment( varName, assignValue));
+		return new Block(Set{self.createAssignment( varName, assignValue)});
 		
 		
 	}
@@ -499,19 +499,7 @@ mapping Expression :: Expression2UnaryExpression(context : OclAny, _operator : U
 }	
 
 
-helper Transition :: Transition2Block(blockExpressions : Set(Expression)) : Block {
-	
-	var block : Block := new Block();
-	
-	block.expressions += blockExpressions;
-	
-	return block;
-}
 
-helper Transition :: Transition2Block(blockExpression : Expression) : Block{
-	return  self. Transition2Block(Set{blockExpression});
-	
-}
 
 
 helper Transition:: Transition2ComparisonExpression(comparingoperator : ComparingOperator,lhs:Expression, rhs:Expression): core::expressions::common::ComparisonExpression{
@@ -602,8 +590,15 @@ helper Transition :: usesAnySchema () : Boolean {
 helper Transition :: usesLoadBalancingSchema() : Boolean {		
 		return self.usesAnySchema() and
 		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::LoadBalancing); 
+		self.usesSchema(LoadBalancing.oclAsType(EClass));
 	}
 
+
+helper Transition :: usesSchema(cl : EClass) : Boolean {		
+		return self.usesAnySchema() and
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(EObject).eClass() = cl;
+	}
+	
 helper Transition :: usesUniReceiveSchema() : Boolean {
 		return self.usesAnySchema() and 
 		self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::SingleReceive);
