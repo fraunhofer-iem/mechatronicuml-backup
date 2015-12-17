@@ -209,11 +209,11 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		
 		if (not lb.responseMessage.oclIsUndefined()) {
 			action.name := action.name + freeForWorkName + ":= false";	
-			action.expressions +=self.Transition2Block( createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getFreeForWorkVariable(),	new LiteralExpression("false")));
+			action.expressions += new Block( Set{ createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getFreeForWorkVariable(),	new LiteralExpression("false"))});
 		
 		}else if(not lb.maxWorkingTime.oclIsUndefined()) {
 			action.name := action.name + neverHadATaskName + ":= false";	
-			action.expressions +=self.Transition2Block( createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getNeverHadATaskVariable(),	new LiteralExpression("false")));
+			action.expressions += new Block(Set{ createTypedNamedElementAssignmentExpression( AssignOperator::ASSIGN, self.getNeverHadATaskVariable(),	new LiteralExpression("false"))});
 			clockResets += self.getLoadBalancingTaskMessageClock();
 		};		
 				
