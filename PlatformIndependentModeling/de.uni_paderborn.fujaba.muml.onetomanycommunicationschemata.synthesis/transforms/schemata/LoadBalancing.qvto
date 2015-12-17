@@ -1,5 +1,7 @@
 library LoadBalancing;
 import common.AllSchemataMappings;
+import CoordinatorBehaviorTemplate;
+
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -57,127 +59,40 @@ helper Transition :: getLoadBalancingTaskMessageClock() : Clock {
 ------------------------------------------------------------Transfer Schema LoadBalancing of Coordinator------------------------------------------------------------------
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition {
+mapping Transition :: LoadBalancing2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition 
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
-	source := self.source.map Vertex2VertexCoordinator(context);
-	target := self.map Schema2CoordinatorIntermediateState(context,1,loadBalancingDLCName);
-	priority := self.priority;
-	guard := self.guard.map transform(result).oclAsType(Expression);	
-	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
-		urgent := false;		
-	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);
-	synchronization := self. createSynchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
+	when {self.usesLoadBalancingSchema()} {
+		init {
+			result := self.map Schema2CoordinatorStartTransition(context, region, loadBalancingCheckDone, loadBalancingDLCName, loadBalancingPossibleName);
+		}
+	
 }
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition {
+mapping Transition :: LoadBalancing2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition 
 	// creates the transition from intermediate state 1 to intermediate state 2
-	source := self.map Schema2CoordinatorIntermediateState(context,1, loadBalancingDLCName);
-	target := self.map Schema2CoordinatorIntermediateState(context,2,loadBalancingDLCName);	
-	priority := 1;
-	if(not self.relativeDeadline.oclIsUndefined())
-	{
-		urgent := false;
-		result.clockConstraints += self. RelativeDeadline2ClockConstraint(true, ComparingOperator::GREATER_OR_EQUAL, loadBalancingDLCName );
-	};
-	synchronization := self.createSynchronization( loadBalancing,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+	when { self.usesLoadBalancingSchema() } {
+		init {
+			result := self.map Schema2CoordinatorIntermediateTransition(context, region, loadBalancing, loadBalancingDLCName); 
+		}
 }
 
 // @author: sthiele2
-mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition {
+mapping Transition :: LoadBalancing2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition 
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
-	source := self.map Schema2CoordinatorIntermediateState(context,2,loadBalancingDLCName);
-	target := self.target.map Vertex2VertexCoordinator(context);
-	priority := 1;
-	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
-	result.action := self.action.map transform(result).oclAsType(Action);
-	synchronization :=self.createSynchronization(loadBalancingDone,SynchronizationKind::RECEIVE);	
+	when {self.usesLoadBalancingSchema()} {
+		init {
+			result := self.map Schema2CoordinatorEndTransition(context, region, loadBalancingDone, loadBalancingDLCName);
+		}
 }
 
-
-mapping Transition :: LoadBalancing2SourceRegionCoordinator(context:OclAny) : Region {
-		
-	priority := self.priority;		
-	parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);		
-	embeddedStatechart := self.map LoadBalancing2SourceEmbeddedRTSCCoordinator(context);					
+mapping Transition :: LoadBalancing2SourceRegionCoordinator(context:OclAny) : Region 
+	when {self.usesLoadBalancingSchema()} {
+		init {
+			result := self.map Schema2SourceRegionCoordinator(context, loadBalancingCheck, loadBalancingCheckDone, loadBalancingPossibleName);			
+		}				
 }
-	
-mapping Transition :: LoadBalancing2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart {
-		
-	name:= "loadBalancingCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
-	
-	states += self.map RegionState(context,  "Idle", true);
-	states += self.map RegionState(context,  "Requesting", false);
-	
-	transitions += self.map LoadBalancing2TransCheckEmbeddedCoordinator(context);
-	transitions += self.map LoadBalancing2TransCheckDoneEmbeddedCoordinator(context);
-}
-	
-mapping Transition :: LoadBalancing2TransCheckEmbeddedCoordinator(context:OclAny) : Transition {
 
-		priority := 1;
-		
-		source := self.map RegionState(context,  "Idle", true);
-		
-		target := self.map RegionState(context,  "Requesting", false);
-		
-		if(not self.clockConstraints->isEmpty()) {
-			urgent := false;
-		};
-		
-		clockConstraints := self.clockConstraints.map transform(result).oclAsType(ClockConstraint);
-		
-		guard := self.guard.map transform(result).oclAsType(Expression);
-		
-		synchronization :=	self. createSynchronization(  loadBalancingCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
-			
-	}
-	
-mapping Transition :: LoadBalancing2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition {
-
-		priority := 1;
-		
-		target := self.map RegionState(context,  "Idle", true);
-		
-		source := self.map RegionState(context,  "Requesting", false);
-		
-		synchronization := self. createSynchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
-		
-		guard := self. createUnaryExpressionEnclosingTypedNamedElementExpression( loadBalancingPossibleName, UnaryOperator::NOT);
-			
-	}
-	
-	
-mapping Transition :: LoadBalancing2StateCoordinator(context:OclAny, region:RealtimeStatechart) : State {
-	
-		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
-		
-		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context);	
-						
-	}
-	
-mapping Transition :: LoadBalancing2TransReceiveSyncCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
-	
-		priority := self.priority;
-		
-		target := self.map LoadBalancing2StateCoordinator(context, region);
-		
-		source := self.source.map Vertex2VertexCoordinator(context);
-		
-		if(not self.clockConstraints->isEmpty()) {
-			urgent := false;
-		};
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map transform(result).oclAsType(ClockConstraint);
-		
-		synchronization := self.createSynchronization( loadBalancingCheckDone,SynchronizationKind::RECEIVE);
-		
-		if(self.guard.oclIsUndefined()){
-			guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName));
-		}else{
-			guard := new LogicalExpression( self.guard.map transform(result).oclAsType(Expression),createTypedNamedElementExpression(self.map Schema2BooleanVariable(loadBalancingPossibleName)),LogicOperator::AND);
-		};
-					
-	}
 	
 --------------------------------------------------------------- Transfer Schema LoadBalancing of Subrole----------------------------------------------------------------------
 	

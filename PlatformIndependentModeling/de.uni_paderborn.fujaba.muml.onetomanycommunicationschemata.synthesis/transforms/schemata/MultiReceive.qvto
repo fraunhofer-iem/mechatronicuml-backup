@@ -18,7 +18,8 @@ property multiReceiveDoneChannelName : String = "multiReceiveDone";
 -------------------------------------------------------------Transfer Schema MultiReceive of Coordinator------------------------------------------------------------------
 
 // @author: sthiele2 -- creates a transition in the coordinator region from the schema-transition's soruce to the intermediate state
-mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator(context : OclAny, region:RealtimeStatechart) : Transition{
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator(context : OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesMultiReceiveSchema()}{
 	
 		priority := self.priority;
 		
@@ -37,7 +38,8 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 }
 
 // @author: sthiele2 -- create a transition in the coordinator region from the intermediate state to the schema-transition's target 
-mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator(context : OclAny, region:RealtimeStatechart) : Transition{
+mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator(context : OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesMultiReceiveSchema()} {
 		
 		priority := 1;
 		
