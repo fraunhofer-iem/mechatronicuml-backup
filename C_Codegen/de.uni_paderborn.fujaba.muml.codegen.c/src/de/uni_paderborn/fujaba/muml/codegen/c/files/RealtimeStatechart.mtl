@@ -638,7 +638,7 @@ if (0){
 
 
 [template private getOperationMethodCall (opCall : OperationCall) post(cdtbeautifier())]
-[opCall.operation.getMethodName()/]([for (pBinding:ParameterBinding | opCall.parameterBinding) separator (',')][pBinding.getValue()/][/for])
+[opCall.operation.getMethodName()/](stateChart[for (pBinding:ParameterBinding | opCall.parameterBinding)], [pBinding.getValue()/][/for])
 [/template]
 
 [template private getRegionVariables (rtsc: RealtimeStatechart, state : State) post(cdtbeautifier())]

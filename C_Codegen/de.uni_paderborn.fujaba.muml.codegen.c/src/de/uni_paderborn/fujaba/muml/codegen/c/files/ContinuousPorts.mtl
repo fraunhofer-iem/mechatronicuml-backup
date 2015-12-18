@@ -29,7 +29,6 @@
 
 	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
 	#include "[if (useSubDir)]../types/[/if]customTypes.h"
-#include "[if (useSubDir)]../operations/[/if]operations.h"
 [/template]
 
 [template public generateContinuousPortHeaderFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]

@@ -21,21 +21,9 @@
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
-[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->asSet())]
-[let allOperations : Set(Operation) = atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
-[file ('compTest.txt', false, 'UTF-8')]
-[CIs/]
-[atomics.name/]
-[allOperations.name/]
-[/file]
-[/let]
-[/let]
 
 [generateOperationHeader(CIs, path, useSubDir)/]
 [generateOperationClass(CIs, path, useSubDir)/]
-
-
-
 
 [/template]
 
@@ -47,7 +35,7 @@
 [template public generateOperationHeader(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
 [file (path+getFileName4Operations(true, useSubDir), false, 'UTF-8')]
-[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->asSet())]
+[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet())]
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
 #ifdef __cplusplus
@@ -56,12 +44,19 @@
 
 	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
 	#include "[if (useSubDir)]../types/[/if]customTypes.h"
+	[for (atomic : AtomicComponent | atomics)]
+	[let rtsc : RealtimeStatechart = atomic.behavior]
+	#include "[if (useSubDir)]../[/if][getFileName(rtsc, true,useSubDir)/]"
+	[/let]
+	[/for]
+
 
 
 [for (atomic : AtomicComponent | atomics)]
 
 // Operations of RTSC of component [atomic.getName()/]
-	[let allOperations : Set(Operation) = atomic.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
+[let rtsc : RealtimeStatechart = atomic.behavior.oclAsType(RealtimeStatechart)]
+[let allOperations : Set(Operation) = rtsc.eAllContents(Operation)->asSet()]
 			
 		[for (operation : Operation | allOperations)]
 		/**
@@ -69,8 +64,9 @@
  		 * @details This function shall contain the implementation of the operation [operation.name/].
 		 * [for (p: Parameter | operation.parameters)]@param [p.getName()/] [/for]
 		 */
-		[operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]);
+		[operation.returnType.getTypeName()/] [operation.getName()/]([rtsc.getClassName()/]* stateChart[for (p: Parameter | operation.parameters)], [p.dataType.getTypeName()/] [p.getName()/][/for]);
 [/for]
+[/let]
 [/let]
 [/for]
 [/let]
@@ -89,7 +85,7 @@
 [template public generateOperationClass(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
 [file (path+getFileName4Operations(false, useSubDir), false, 'UTF-8')]
-[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->asSet())]
+[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet())]
 
 #include "operations.h"
 /** [protected ('user includes **/')] 
@@ -101,23 +97,23 @@
 [for (atomic : AtomicComponent | atomics)]
 
 // Operations of RTSC of component [atomic.getName()/]
-[let allOperations : Set(Operation) = atomic.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
-			
-
+[let rtsc : RealtimeStatechart = atomic.behavior.oclAsType(RealtimeStatechart)]
+[let allOperations : Set(Operation) = rtsc.eAllContents(Operation)->asSet()]
 [for (operation : Operation | allOperations)]
 
-[operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]){
+[operation.returnType.getTypeName()/] [operation.getName()/]([rtsc.getClassName()/]* stateChart[for (p: Parameter | operation.parameters)], [p.dataType.getTypeName()/] [p.getName()/][/for]){
 
 [if (operation.implementations->at(1).oclIsUndefined())]
 /** [protected (operation.getName()+' **/')] 
 //add your implementation here
 	[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
-		//default return value
-	[operation.returnType.name/]
-		return [getDefaultReturn(operation)/];
+	//default return value
+	[operation.returnType.getTypeName()/] ret = [operation.returnType.getDefaultValue()/];
+	return ret;
 	[/if]
 /**[/protected]**/
 [else]
+ /** auto generated implementation **/
 	[operation.returnType.getTypeName()/] [operation.getOperationOutputVariableName()/] = [operation.returnType.getDefaultValue()/];
 	[generateExpression(operation.implementations->at(1),'')/]
 	return [operation.getOperationOutputVariableName()/];
@@ -127,6 +123,7 @@
 
 
 [/for]
+[/let]
 [/let]
 [/for]
 [/let]
