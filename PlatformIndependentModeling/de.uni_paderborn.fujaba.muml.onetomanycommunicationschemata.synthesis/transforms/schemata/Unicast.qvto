@@ -111,7 +111,8 @@ mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		synchronization := 	self. createSynchronization( unicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
-					
+		
+		action := self. createActionWithVariableAssignmentBlock("unicastPossible:=false", unicastPossibleName, "false");			
 	}
 			
 mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
@@ -125,15 +126,9 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 		
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
-		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
-				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
-				
-			action := self. createActionWithVariableAssignmentBlock("unicastPossible:=false", unicastPossibleName, "false");
+		action := self. createActionWithVariableAssignmentBlock("unicastPossible:=false", unicastPossibleName, "false");	
 			
-		}endif;
-			
-		result.synchronization :=self. createSynchronization(unicastDone,SynchronizationKind::SEND);		
+		synchronization :=self. createSynchronization(unicastDone,SynchronizationKind::SEND);		
 	}
 
 	
@@ -165,12 +160,12 @@ mapping Transition :: Unicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:R
 mapping Transition :: Unicast2RequestedIdleCheckSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
-				
+		
 		source := self.map RegionState(context,  "Requested", false);
 		
 		target := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression( ComparingOperator::UNEQUAL,unicastPossibleName, false);
+		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression( ComparingOperator::UNEQUAL,unicastPossibleName, true);
 
 		synchronization := 	self. createSynchronization( unicastCheck,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
