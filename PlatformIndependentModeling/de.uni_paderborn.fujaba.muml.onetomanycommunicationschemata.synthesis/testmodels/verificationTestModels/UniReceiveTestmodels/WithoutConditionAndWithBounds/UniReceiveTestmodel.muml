@@ -12,10 +12,10 @@
         </clockConstraints>
         <relativeDeadline xmi:id="_wJS1MKWrEeW9X8zemlWS3Q">
           <upperBound xmi:id="_wZUOMKWrEeW9X8zemlWS3Q">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_xRDHcKWrEeW9X8zemlWS3Q" value="0"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_mVtl0KWsEeW9X8zemlWS3Q" value="2"/>
           </upperBound>
           <lowerBound xmi:id="_xSAJsKWrEeW9X8zemlWS3Q">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_yDTDwKWrEeW9X8zemlWS3Q" value="2"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_mzj_cKWsEeW9X8zemlWS3Q" value="0"/>
           </lowerBound>
         </relativeDeadline>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DALtMHvfEeWJtcJpbyRDKg" kind="TRIGGER">
