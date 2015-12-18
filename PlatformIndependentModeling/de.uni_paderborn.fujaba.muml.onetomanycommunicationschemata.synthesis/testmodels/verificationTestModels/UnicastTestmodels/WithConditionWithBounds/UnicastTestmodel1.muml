@@ -70,7 +70,7 @@
       <clocks xmi:id="_Q9LGoJ84EeW8iZ0RzpdKGQ" name="c"/>
       <subRoleSpecificVariables xmi:id="_E4TTgKM-EeWhwNYhOXFnsw" name="subRoleVar">
         <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GxPyIKM-EeWhwNYhOXFnsw" value="false"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_dzafgKWqEeW9X8zemlWS3Q" value="true"/>
       </subRoleSpecificVariables>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_XgFVUHveEeWJtcJpbyRDKg" name="rtscRole2" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
