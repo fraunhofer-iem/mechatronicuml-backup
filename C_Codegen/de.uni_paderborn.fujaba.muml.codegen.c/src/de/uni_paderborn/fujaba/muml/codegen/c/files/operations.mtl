@@ -21,12 +21,21 @@
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
-[let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
+[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->asSet())]
 [let allOperations : Set(Operation) = atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
-	[generateOperationHeader(allOperations, path, useSubDir)/]
-	[generateOperationClass(allOperations, path, useSubDir)/]
+[file ('compTest.txt', false, 'UTF-8')]
+[CIs/]
+[atomics.name/]
+[allOperations.name/]
+[/file]
 [/let]
 [/let]
+
+[generateOperationHeader(CIs, path, useSubDir)/]
+[generateOperationClass(CIs, path, useSubDir)/]
+
+
+
 
 [/template]
 
@@ -35,9 +44,10 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationHeader(allOperations : Set(Operation), path : String, useSubDir: Boolean)]
+[template public generateOperationHeader(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
 [file (path+getFileName4Operations(true, useSubDir), false, 'UTF-8')]
+[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->asSet())]
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
 #ifdef __cplusplus
@@ -46,15 +56,25 @@
 
 	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
 	#include "[if (useSubDir)]../types/[/if]customTypes.h"
-[for (operation : Operation | allOperations)]
-/**
- * @brief Implementation stub of operation [operation.name/]
- * @details This function shall contain the implementation of the operation [operation.name/]. Up to now, there is no generated implementation. It has to be written by the developer.
- *
- * [for (p: Parameter | operation.parameters)]@param [p.getName()/] [/for]
- */
-[operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]);
+
+
+[for (atomic : AtomicComponent | atomics)]
+
+// Operations of RTSC of component [atomic.getName()/]
+	[let allOperations : Set(Operation) = atomic.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
+			
+		[for (operation : Operation | allOperations)]
+		/**
+		 * @brief Implementation stub of operation [operation.name/]
+ 		 * @details This function shall contain the implementation of the operation [operation.name/].
+		 * [for (p: Parameter | operation.parameters)]@param [p.getName()/] [/for]
+		 */
+		[operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]);
 [/for]
+[/let]
+[/for]
+[/let]
+
 #ifdef __cplusplus
   }
 #endif
@@ -66,13 +86,24 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationClass(allOperations : Set(Operation), path : String, useSubDir: Boolean)]
+[template public generateOperationClass(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
 [file (path+getFileName4Operations(false, useSubDir), false, 'UTF-8')]
+[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->asSet())]
+
 #include "operations.h"
 /** [protected ('user includes **/')] 
 
 /**[/protected]**/
+
+
+
+[for (atomic : AtomicComponent | atomics)]
+
+// Operations of RTSC of component [atomic.getName()/]
+[let allOperations : Set(Operation) = atomic.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
+			
+
 [for (operation : Operation | allOperations)]
 
 [operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]){
@@ -87,7 +118,7 @@
 	[/if]
 /**[/protected]**/
 [else]
-	[operation.returnType.getTypeName()/] [operation.getOperationOutputVariableName()/];
+	[operation.returnType.getTypeName()/] [operation.getOperationOutputVariableName()/] = [operation.returnType.getDefaultValue()/];
 	[generateExpression(operation.implementations->at(1),'')/]
 	return [operation.getOperationOutputVariableName()/];
 [/if]
@@ -96,6 +127,10 @@
 
 
 [/for]
+[/let]
+[/for]
+[/let]
+
 [/file]
 [/template]
 

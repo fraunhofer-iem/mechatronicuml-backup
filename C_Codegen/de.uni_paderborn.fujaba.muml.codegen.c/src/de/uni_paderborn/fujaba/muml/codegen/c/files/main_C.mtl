@@ -82,8 +82,10 @@ int main(){
 			[/if]
 		[/for]
 [/for]
+[if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
 //initialize continuous parts
 initializeContinuousImplementations();
+[/if]
 #ifdef DEBUG
 printDebugInformation("Initialization done...start execution.\n");
 #endif

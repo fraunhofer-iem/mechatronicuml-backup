@@ -14,7 +14,7 @@
 [template public generateMakeFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
 
 [file (path+'makefile', false, 'UTF-8')]
-[let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
+[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->asSet())]
 
 RTSC = [for (comp : Component | CIs.componentType->asSet())][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 COMP = [for (comp : Component | CIs.componentType->asSet())][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
