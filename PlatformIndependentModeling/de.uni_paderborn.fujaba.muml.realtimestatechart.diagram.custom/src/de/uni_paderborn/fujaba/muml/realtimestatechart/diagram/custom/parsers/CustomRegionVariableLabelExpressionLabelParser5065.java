@@ -19,8 +19,13 @@ public class CustomRegionVariableLabelExpressionLabelParser5065 extends
 	public String getPrintString(IAdaptable element, int flags) {
 		// TODO Auto-generated method stub
 		Region region = (Region) element.getAdapter(EObject.class);
-		RealtimeStatechart stateChart =  region.getEmbeddedStatechart();
-		return AbstractRTSCLabelParser.getStringForVariablesOperationsClocks(stateChart);
+		if (region != null) {
+			RealtimeStatechart stateChart =  region.getEmbeddedStatechart();
+			if (stateChart != null) {
+				return AbstractRTSCLabelParser.getStringForVariablesOperationsClocks(stateChart);
+			}
+		}
+		return "";
 	}
 
 	@Override
