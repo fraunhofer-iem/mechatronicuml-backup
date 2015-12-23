@@ -246,6 +246,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		RealtimeStatechart rtsc = (RealtimeStatechart) object;
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		typedNamedElementList.addAll(rtsc.getAllAvailableVariables());
+		typedNamedElementList.addAll(rtsc.getSubRoleSpecificVariables());
 		if (rtsc.getPortOrRoleStatechart().getBehavioralElement() instanceof Role
 				&& ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol() instanceof AbstractCoordinationPattern) {
 			AbstractCoordinationPattern pattern = (AbstractCoordinationPattern) ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol();
