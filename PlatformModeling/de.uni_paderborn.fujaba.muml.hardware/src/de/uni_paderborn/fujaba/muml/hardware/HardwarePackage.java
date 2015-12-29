@@ -43,7 +43,7 @@ public interface HardwarePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/hardware/1.0/";
+	String eNS_URI = "http://www.fujaba.de/muml/hardware/1.1/";
 
 	/**
 	 * The package namespace name.
