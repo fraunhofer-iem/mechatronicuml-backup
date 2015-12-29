@@ -418,6 +418,29 @@ printDebugInformation("[getVariableName(targetRTSC)/] switched state to [getName
  * @param transition the transition
 */]
 [template public transitionCondition (component:Component, rtsc : RealtimeStatechart, transition : Transition)]
+	[if (transition.target.oclIsKindOf(State))]
+		[singleTransitionCondition(component, rtsc, transition)/]
+	[else]
+	[singleTransitionCondition(component, rtsc, transition)/] &&
+		[for (t : Transition | transition.target.incomingTransitions->reject(tr | tr = transition)) separator(' && ')]
+			 [transitionConditionRecursive(component, rtsc, t)/]
+		[/for]
+	[/if]
+
+[/template]
+
+[template public transitionConditionRecursive (component:Component, rtsc : RealtimeStatechart, transition : Transition)]
+	[if (transition.source.oclIsKindOf(State))]
+		[singleTransitionCondition(component, rtsc, transition)/] && (stateChart->[getVariableName(transition.statechart)/] == [transition.source.oclAsType(State).getName()/])
+	[else]
+		[singleTransitionCondition(component, rtsc, transition)/] && [for (pt : Transition | transition.source.incomingTransitions->reject(tr | tr = transition)) separator(' && ')]
+[transitionConditionRecursive(component, pt.statechart, pt)/]
+ [/for]
+	[/if] 
+[/template]
+
+
+[template public singleTransitionCondition(component:Component, rtsc : RealtimeStatechart, transition : Transition)]
 	[if (transition.triggerMessageEvent.oclIsUndefined() and transition.clockConstraints->size()=0 and transition.guard.oclIsUndefined())]
 		1
 	[else]
