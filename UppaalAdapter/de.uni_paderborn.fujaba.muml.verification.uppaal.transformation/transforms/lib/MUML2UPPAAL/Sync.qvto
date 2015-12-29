@@ -38,6 +38,10 @@ modeltype storydriven_expressions uses core::expressions('http://www.storydriven
 	query SynchronizationChannel :: belongsToSubrole() : Boolean {
 		return assert fatal (false) with log('Should never be reached.') 
 	}
+	
+	query RealtimeStatechart :: belongsToRole() : Boolean {
+		return assert fatal (false) with log('Should never be reached.');
+	}
 				
 	mapping SynchronizationChannel :: SyncChannel2Variable() : Variable {
 		
@@ -92,7 +96,7 @@ modeltype storydriven_expressions uses core::expressions('http://www.storydriven
 		
 		var ID : Variable;
 		
-		if (self.syncChannel.state.parentStatechart.isPortOrRoleStatechart())
+		if (self.syncChannel.state.parentStatechart.belongsToRole())
 		then {
 		
 			assert fatal (portOrRoleInstanceID != null) with log('Port/role instance ID must be specified.');
@@ -121,7 +125,7 @@ modeltype storydriven_expressions uses core::expressions('http://www.storydriven
 	
 		var ID : Variable;
 		
-		if (self.syncChannel.state.parentStatechart.isPortOrRoleStatechart())
+		if (self.syncChannel.state.parentStatechart.belongsToRole())
 		then {
 			assert fatal (portOrRoleInstanceID != null) with log('Port/role instance ID must be specified.');
 			

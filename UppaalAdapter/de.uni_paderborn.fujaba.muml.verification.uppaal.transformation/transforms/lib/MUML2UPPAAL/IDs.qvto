@@ -42,6 +42,10 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 		return assert fatal (false) with log('Should be overridden.')
 	}
 	
+	query RealtimeStatechart :: belongsToRole() : Boolean {
+		return assert fatal (false) with log('Should never be reached.');
+	}
+	
 	
 	query ComponentInstanceConfiguration :: components() : OrderedSet(Component) {
 		
@@ -125,8 +129,15 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 	mapping muml_behavior::Variable :: Variable2IDRange() : DeclaredType when {not self.getOwningStatechart().oclIsUndefined()} {
 		
 		init {
-		
-			result := self.getOwningStatechart().map RTSC2IDRange()
+			if(self.isPortOrRoleVariable()) {
+				result := map DiscretePortInstanceType();
+			}
+			else if (self.isComponentVariable()) {
+				result := map ComponentInstanceType();
+			}
+			else 
+				assert fatal (false) with log ("A variable must either be a component or a role variable");
+			
 			
 		}
 		
@@ -145,9 +156,15 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 	mapping SynchronizationChannel :: SyncChannel2IDRange() : DeclaredType {
 		
 		init {
-						
-			result := self.state.parentStatechart.map RTSC2IDRange()
-			
+			// due to the hierarchy normalization, the distinction between the id range must 
+			// depend on the channel and not its realtimestatechart. So do not use the 
+			// mapping RTSC2IDRange for channels!
+			if(self.isPortOrRoleSyncC()) {
+				result := self.state.parentStatechart.map RTSC2PortOrRoleIDRange();
+			}
+			else {
+				result := self.state.parentStatechart.map RTSC2ComponentIDRange();
+			};			
 		}
 		
 	}
@@ -156,7 +173,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 		RealtimeStatechart::RTSC2PortOrRoleIDRange, 
 		RealtimeStatechart::RTSC2ComponentIDRange;
 	
-	mapping RealtimeStatechart :: RTSC2ComponentIDRange() : DeclaredType when {(not self.isPortOrRoleStatechart()) and (self.isComponentStatechart())} {
+	mapping RealtimeStatechart :: RTSC2ComponentIDRange() : DeclaredType when {(not self.belongsToRole()) and (self.isComponentStatechart())} {
 		
 		init {
 			
@@ -166,7 +183,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 		
 	}
 	
-	mapping RealtimeStatechart :: RTSC2PortOrRoleIDRange() : DeclaredType when {self.isPortOrRoleStatechart()} {
+	mapping RealtimeStatechart :: RTSC2PortOrRoleIDRange() : DeclaredType when {self.belongsToRole()} {
 		
 		init {
 				

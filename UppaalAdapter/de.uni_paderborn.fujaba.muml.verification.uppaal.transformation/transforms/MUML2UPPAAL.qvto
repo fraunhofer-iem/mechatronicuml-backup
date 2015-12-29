@@ -97,6 +97,60 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		return depends;
 	}
 	
+	query RealtimeStatechart :: beforeHierarchyNormalization() : RealtimeStatechart {
+		var rtscBeforeHierarchyNormalization := self;
+		while(rtscBeforeHierarchyNormalization.flat) {
+			rtscBeforeHierarchyNormalization := 
+				rtscBeforeHierarchyNormalization.invresolveone(RealtimeStatechart);
+		};
+		
+		return rtscBeforeHierarchyNormalization;
+	}
+	
+	query muml_behavior::Variable :: variableContainedInPortBeforeHierarchyNormalization() : Boolean {
+		
+		var allSubroleStatecharts := cicToVerify().getAllDiscretePortRealtimeStatecharts();
+		var allSubRoleStatechartsbefHie := allSubroleStatecharts->beforeHierarchyNormalization().getAllStatechartsPrefix();
+		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(muml_behavior::Variable) := allSubRoleStatechartsbefHie.variables;
+		
+		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);
+	
+		return resulting; 
+	}
+	
+	query muml_behavior::Variable :: searchResolveTreeRecursively(variables : Sequence(muml_behavior::Variable)) : Boolean {		
+		if(variables->includes(self)) {
+			return true;
+		};
+		var resolvingSequence : Sequence(muml_behavior::Variable) := self.invresolve(muml_behavior::Variable);
+		if(resolvingSequence->size() > 0) {
+			var returnValue : Boolean := false;
+			resolvingSequence->forEach(variable) {				
+				returnValue := returnValue or variable.searchResolveTreeRecursively(variables);
+				if(returnValue) {
+					break;
+				};
+			};
+			return returnValue;
+		}
+		else return false;
+	}
+	
+	query muml_behavior::Variable :: variableContainedInSubPortBeforeHierarchyNormalization() : Boolean {
+		
+		
+		var allRoleStatechartsAfterHierarchyNormalization := cicToVerify().getAllDiscretePortRealtimeStatecharts();
+		var allRoleStatechartsBeforHierarchyNormalization := allRoleStatechartsAfterHierarchyNormalization->beforeHierarchyNormalization().getAllStatechartsPrefix();
+		
+		var portBehaviors : Sequence(RealtimeStatechart) :=
+		 allRoleStatechartsBeforHierarchyNormalization->select(rtsc : RealtimeStatechart | not rtsc.behavioralElement.oclIsUndefined() and rtsc.behavioralElement.oclIsKindOf(DiscreteInteractionEndpoint)).behavioralElement.oclAsType(DiscreteInteractionEndpoint).subroleBehavior.oclAsType(RealtimeStatechart);
+		
+		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(muml_behavior::Variable) := allRoleStatechartsBeforHierarchyNormalization->select(rtsc : RealtimeStatechart | portBehaviors->includes(rtsc)).getAllStatechartsPrefix().variables;
+	
+		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);
+	
+		return resulting; 		
+	}
 	
 	query cicToVerify() : ComponentInstanceConfiguration {
 
@@ -223,7 +277,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 
 	query ConnectorInstance :: getRoleConnector() : RoleConnector {
 		
-		return self.connectorEndpointInstances->first().oclAsType(DiscretePortInstance).refinedRole.roleConnector
+		return self.connectorEndpointInstances->first().oclAsType(DiscretePortInstance).refinedRole.roleConnector;
 		
 	}
 	
@@ -326,11 +380,25 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			->flatten();
 	}
 	
+		
+	
 	query ComponentInstanceConfiguration :: getAllDiscretePortBehaviors() : Sequence(Behavior) {
 	
-		return self.discretePorts()->collect(behavior.oclAsType(RealtimeStatechart)).getRtscDependencies()
+		return self.discretePorts()->collect(behavior.oclAsType(RealtimeStatechart)).getRtscDependencies();
 	
 	}
+	
+	
+	query ComponentInstanceConfiguration :: getAllDiscretePortRealtimeStatecharts() : Sequence(RealtimeStatechart) {
+	
+		return self.discretePorts()->collect(behavior.oclAsType(RealtimeStatechart)).getRtscDependencies();
+	
+	}
+	
+	query RealtimeStatechart :: belongsToRole() : Boolean {
+		
+		return cicToVerify().getAllDiscretePortRealtimeStatecharts()->includes(self);
+	}	
 	
 	query RealtimeStatechart :: belongsToSubrole() : Boolean {
 				
@@ -355,11 +423,16 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	}
 	
 	query muml_behavior::Variable :: belongsToSubrole() : Boolean {
-	
-		var allVariablesOfSubroleRtscs := cicToVerify().getAllSubroleRtscs()->variables->flatten();
 		
-		return allVariablesOfSubroleRtscs->includes(self)
+		var allSubRoleRtscs := cicToVerify().getAllSubroleRtscs();		
+		var allVariablesOfSubroleRtscs := allSubRoleRtscs->variables->flatten();		
+		var isSubRoleVariable : Boolean :=  allVariablesOfSubroleRtscs->includes(self);
 		
+		if (not isSubRoleVariable) {
+			isSubRoleVariable := self.variableContainedInSubPortBeforeHierarchyNormalization();
+		};
+		
+		return isSubRoleVariable;
 	}
 	
 	query muml_behavior::Operation :: belongsToSubrole() : Boolean {
@@ -489,9 +562,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			self.componentInstance.componentType.oclAsType(AtomicComponent).behavior
 				.getAllBehaviorsPrefix()		
 				->map Behavior2Template()->forEach(template) {
-					var behavioralElem := template.invresolveoneIn(Behavior::Behavior2Template).oclAsType(Behavior)
-						->closure(b | if b.behavioralElement = null then b.oclAsType(RealtimeStatechart).parentRegion.parentState.parentStatechart else b endif)->any(behavioralElement != null).behavioralElement;	
-					if (not behavioralElem.oclIsUndefined() and behavioralElem.oclIsKindOf(Component))
+					var rtsc := template.invresolveoneIn(Behavior::Behavior2Template).oclAsType(RealtimeStatechart);						
+					if (not rtsc.belongsToRole())
 						result += self.componentInstance.map ComponentInstance2Declaration(template)
 					else
 						result += self.map DiscretePortInstance2Declaration(template);
@@ -636,8 +708,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		};
 				
 		argument += new LiteralExpression(self.getID());
-		
-		argument += new LiteralExpression(self.portInstances->any(true).oclAsType(DiscretePortInstance).getID()); //TODO - remove this hack (argument is actually unnecessary)
 				
 	}
 	
@@ -776,7 +846,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		}
 		endif;
 		
-		if (self.isPortOrRoleStatechart())
+		if (self.belongsToRole())
 		then {
 		
 			parameter += object Parameter {
@@ -791,7 +861,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 				
 					variable += portOrRoleInstanceID;
 					
-					prefix := DataVariablePrefix::CONST
+					prefix := DataVariablePrefix::CONST;
 				
 				}	
 							
@@ -811,7 +881,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 					
 						variable += subPortOrRoleInstanceID;
 						
-						prefix := DataVariablePrefix::CONST
+						prefix := DataVariablePrefix::CONST;
 					
 					}	
 								

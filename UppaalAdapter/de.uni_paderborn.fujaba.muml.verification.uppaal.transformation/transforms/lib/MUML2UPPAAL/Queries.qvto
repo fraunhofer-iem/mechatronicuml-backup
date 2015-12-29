@@ -18,6 +18,24 @@ modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0
 
 modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 
+	query RealtimeStatechart :: belongsToRole() : Boolean {
+		return assert fatal (false) with log('Should never be reached.');
+	}
+
+	query muml_behavior::Variable :: variableContainedInPortBeforeHierarchyNormalization() : Boolean {
+	
+		return assert fatal (false) with log ('Should never be reached');
+	}
+	
+	query muml_behavior::Variable :: variableContainedInSubPortBeforeHierarchyNormalization() : Boolean {
+		return assert fatal (false) with log ('Should never be reached');
+	}
+	
+	query SynchronizationChannel :: synchronizationChannelContainedInPortBeforeHierarchyNormalization() : Boolean {
+		return assert fatal (false) with log ('Should never be reached');
+	}
+	
+	
 	query State :: getLocationKind() : LocationKind {
 				
 		return switch {
@@ -72,12 +90,6 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		
 	}
 	
-	query RealtimeStatechart :: isPortOrRoleStatechart() : Boolean {
-		
-		return not self.getPortOrRoleStatechart().oclIsUndefined()
-		
-	}
-	
 	query RealtimeStatechart :: isComponentStatechart() : Boolean {
 		
 		return not self.getComponentStatechart().oclIsUndefined()
@@ -87,10 +99,27 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 	query muml_behavior::Variable :: isPortOrRoleVariable() : Boolean {
 		
 		var statechart : RealtimeStatechart = self.getOwningStatechart();
+		var isPortOrRoleVariable : Boolean := statechart.belongsToRole();
 		
-		return (not statechart.oclIsUndefined()) and statechart.isPortOrRoleStatechart()
+		if (not isPortOrRoleVariable) {
+			isPortOrRoleVariable := self.variableContainedInPortBeforeHierarchyNormalization();						
+		};
+		return isPortOrRoleVariable;
 		
 	}
+	
+		query SynchronizationChannel :: isPortOrRoleSyncC() : Boolean {
+		
+		var statechart : RealtimeStatechart = self.state.parentStatechart;
+		var isPortOrRoleChannel : Boolean := statechart.belongsToRole();
+		
+		if (not isPortOrRoleChannel) {
+			isPortOrRoleChannel := self.synchronizationChannelContainedInPortBeforeHierarchyNormalization();						
+		};
+		return isPortOrRoleChannel;
+		
+	}
+	
 	
 	query muml_behavior::Variable :: isComponentVariable() : Boolean {
 		
@@ -102,7 +131,7 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 	
 	query Clock :: isPortOrRoleClock() : Boolean {
 		
-		return self.statechart.isPortOrRoleStatechart()
+		return self.statechart.belongsToRole();
 		
 	}
 	
