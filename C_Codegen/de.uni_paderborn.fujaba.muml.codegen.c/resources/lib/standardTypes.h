@@ -2,7 +2,9 @@
  * @file
  * @author MUML
  * @brief In this files the data types which are used in the generated Code are defined
+ * @description type definitions are based on  ISO/IEC 9899:1999 specification, TC3, p. 22, § 5.2.4.2.1 Sizes of integer types <limits.h>.
  * @warning These types shall be adapted for a specific target platform
+ *
  */
 #ifndef TYPES_H_
 #define TYPES_H_
@@ -21,28 +23,28 @@ typedef int int_t;
 /**
  * @brief Type to specify a signed Integer (8 bit)
  */
-typedef short int8_T;
+typedef signed char int8_T;
 /**
  * @brief Type to specify a signed Integer (16 bit)
  */
-typedef int int16_T;
+typedef signed short int16_T;
 /**
  * @brief Type to specify a signed Integer (32 bit)
  */
-typedef long int32_T;
+typedef signed long int32_T;
 /**
  * @brief Type to specify a signed Integer (64 bit)
  */
-typedef long long int64_T;
+typedef signed long long int64_T;
 
 /**
  * @brief Type to specify an unsigned Integer (8 bit)
  */
-typedef unsigned short uint8_T;
+typedef unsigned char uint8_T;
 /**
  * @brief Type to specify an unsigned Integer (16 bit)
  */
-typedef unsigned int uint16_T;
+typedef unsigned short uint16_T;
 /**
  * @brief Type to specify an unsigned Integer (32 bit)
  */
