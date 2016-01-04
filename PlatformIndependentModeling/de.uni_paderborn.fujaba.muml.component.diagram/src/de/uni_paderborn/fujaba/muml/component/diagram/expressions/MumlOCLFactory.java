@@ -51,7 +51,7 @@ public class MumlOCLFactory {
 		this.expressionBodies = new String[] { "1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"if refinedRole.oclIsUndefined() then \'\' else \': \'.concat(\n\tif refinedRole.name.oclIsUndefined() then \'\' else refinedRole.name endif\n) endif", //$NON-NLS-1$
-				"(\n\tif (self.name.oclIsUndefined()) then \'\' else self.name endif\n).concat(\' (\').concat(\n\t(if dataType.name.oclIsUndefined() then \'null\' else dataType.name endif).concat(if samplingInterval.oclIsUndefined() then \'\' else \', \'.concat(samplingInterval.toString()) endif)\n).concat(\')\')", //$NON-NLS-1$
+				"(\n\tif dataType.name.oclIsUndefined() then \'\' else dataType.name.concat(\' \') endif\n).concat(\n\tif (self.name.oclIsUndefined()) then \'\' else self.name endif\n).concat(\n\tif samplingInterval.oclIsUndefined() then \'\' else \' [\'.concat(samplingInterval.toString()).concat(\']\') endif\n)\n", //$NON-NLS-1$
 				"if (self.name.oclIsUndefined()) then\n\t\'\'\nelse\n\tself.name\nendif", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$

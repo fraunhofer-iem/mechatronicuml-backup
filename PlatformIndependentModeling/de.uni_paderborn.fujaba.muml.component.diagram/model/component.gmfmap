@@ -128,7 +128,7 @@
             <diagramLabel
                 href="component.gmfgraph#PortRefinementLabel"/>
             <viewExpression
-                body="(&#xA;&#x9;if (self.name.oclIsUndefined()) then '' else self.name endif&#xA;).concat(' (').concat(&#xA;&#x9;(if dataType.name.oclIsUndefined() then 'null' else dataType.name endif).concat(if samplingInterval.oclIsUndefined() then '' else ', '.concat(samplingInterval.toString()) endif)&#xA;).concat(')')"/>
+                body="(&#xA;&#x9;if dataType.name.oclIsUndefined() then '' else dataType.name.concat(' ') endif&#xA;).concat(&#xA;&#x9;if (self.name.oclIsUndefined()) then '' else self.name endif&#xA;).concat(&#xA;&#x9;if samplingInterval.oclIsUndefined() then '' else ' ['.concat(samplingInterval.toString()).concat(']') endif&#xA;)&#xA;"/>
             <editExpression
                 body="if (self.name.oclIsUndefined()) then&#xA;&#x9;''&#xA;else&#xA;&#x9;self.name&#xA;endif"/>
           </labelMappings>
