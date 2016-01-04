@@ -85,7 +85,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	private void determineSide(int newX) {
 
 		Role myRole = this.getRole();
-		if (myRole.getRoleConnector() == null) {
+		if (myRole == null || myRole.getRoleConnector() == null) {
 			return;
 		}
 		List<Role> roles = myRole.getRoleConnector().getRoles();
