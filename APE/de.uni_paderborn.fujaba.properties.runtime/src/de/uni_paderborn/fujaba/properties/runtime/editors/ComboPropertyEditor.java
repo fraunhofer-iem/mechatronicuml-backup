@@ -237,7 +237,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	@Override
 	public void refresh() {
 		super.refresh();
-		if (comboViewer != null) {
+		if (comboViewer != null && !comboViewer.getCombo().isDisposed()) {
 			comboViewer.refresh();
 		}
 		setInput();
