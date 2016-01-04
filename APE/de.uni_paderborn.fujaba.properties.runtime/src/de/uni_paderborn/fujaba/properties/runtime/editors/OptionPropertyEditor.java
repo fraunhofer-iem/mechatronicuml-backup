@@ -33,7 +33,7 @@ public class OptionPropertyEditor extends
 	
 	public OptionPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
 		super(adapterFactory, feature);
-		refreshWhenResourceSetChanges = true;
+		//refreshWhenResourceSetChanges = true;
 	}
 
 	@Override

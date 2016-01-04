@@ -61,7 +61,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
 		this(adapterFactory, feature, feature instanceof EReference);
-		refreshWhenResourceSetChanges = true;
+		//refreshWhenResourceSetChanges = true;
 	}
 
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature, boolean hasSearchButton) {
