@@ -98,7 +98,8 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
 			navigatorView = ((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorItem) abstractNavigatorItem)
 					.getView();
-		} else if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorGroup) {
+		} else
+			if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorGroup) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorGroup navigatorGroup = (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorGroup) abstractNavigatorItem;
 			if (navigatorGroup
 					.getParent() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
