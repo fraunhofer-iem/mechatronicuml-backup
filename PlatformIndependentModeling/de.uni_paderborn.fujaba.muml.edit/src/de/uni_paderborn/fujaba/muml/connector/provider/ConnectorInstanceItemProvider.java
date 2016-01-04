@@ -61,15 +61,16 @@ public class ConnectorInstanceItemProvider
 		return itemPropertyDescriptors;
 	}
 
+
 	/**
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ConnectorInstance_type_feature"),
@@ -80,24 +81,7 @@ public class ConnectorInstanceItemProvider
 				 true,
 				 null,
 				 null,
-				 null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				ConnectorInstance instance = (ConnectorInstance) object;
-				List<Connector> connectors = new ArrayList<Connector>();
-				for (Object value : super.getChoiceOfValues(object)) {
-					if (value instanceof Connector && isValidConnectorType((Connector) value, instance)) {
-						connectors.add((Connector) value);
-					}
-				}
-				return connectors;
-			}
-		});
-	}
-	
-	protected boolean isValidConnectorType(Connector value,
-			ConnectorInstance instance) {
-		return false;
+				 null));
 	}
 
 	/**

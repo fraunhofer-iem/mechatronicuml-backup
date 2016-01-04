@@ -1106,6 +1106,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "filter", "self.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts"
+		   });	
+		addAnnotation
+		  (portConnectorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "filter", "self.portInstances.portPart.connectors->select(c | c.connectorEndpoints.oclAsType(component::PortPart) = self.connectorEndpointInstances.oclAsType(PortInstance).portPart)->asSet()",
+			 "feature", "type"
 		   });
 	}
 

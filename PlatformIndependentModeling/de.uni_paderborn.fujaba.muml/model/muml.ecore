@@ -647,6 +647,10 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="ValidPortConnectorInstance" value="-- The connected PortInstances do not correspond to the selected PortConnectorType&#xA;let directPortTypes : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint|endPoint.oclIsKindOf(component::Port)).oclAsType(component::Port)->asOrderedSet() else OrderedSet{} endif in&#xA;let portTypesFromPortParts : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint | endPoint.oclIsKindOf(component::PortPart)).oclAsType(component::PortPart)->collect(portType)->asOrderedSet() else OrderedSet{} endif  in&#xA;let allPortTypes : Set(component::Port) = directPortTypes->union(portTypesFromPortParts)->asOrderedSet() in&#xA;if (self.type.oclIsUndefined() or self.connectorEndpointInstances->isEmpty()) then &#xA;&#x9;true&#xA;else&#xA;&#x9;allPortTypes->symmetricDifference(self.connectorEndpointInstances.type.oclAsType(component::Port)->asSet())->isEmpty()&#xA;endif&#xA;-- adann&#xD;&#xA;"/>
       </eAnnotations>
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="filter" value="self.portInstances.portPart.connectors->select(c | c.connectorEndpoints.oclAsType(component::PortPart) = self.connectorEndpointInstances.oclAsType(PortInstance).portPart)->asSet()"/>
+        <details key="feature" value="type"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorType" eType="#//component/PortConnector"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
