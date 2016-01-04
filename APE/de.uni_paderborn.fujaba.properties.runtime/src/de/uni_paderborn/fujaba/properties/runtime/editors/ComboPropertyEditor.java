@@ -172,7 +172,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	}
 	
 	private void setInput() {
-		if (!isDisposed()) {
+		if (!comboViewer.getCombo().isDisposed()) {
 			Object value = this.value;
 	
 			Collection<Object> choices = getChoices();
