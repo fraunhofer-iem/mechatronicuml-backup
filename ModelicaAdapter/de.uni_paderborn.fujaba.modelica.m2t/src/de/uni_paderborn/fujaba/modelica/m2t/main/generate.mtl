@@ -12,28 +12,19 @@
 
 [import de::uni_paderborn::fujaba::modelica::m2t::component::component]
 
-[template public generateElement(aRootNode : RootNode)] 
+[template public generateElement(cic : ComponentInstanceConfiguration)]
 [comment @main/]
-[comment be sure that the properties file is given as an argument in the run configuration !!!  /]
-
-[comment  get component instance configuration and start transformation/]
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)] 
-	[comment: search for model instance category/]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).generateRootCIC(
-			modelElementCategory.createRegionInstances())/]
-	[/if]
-[/for]
+	[cic.generateRootCIC(cic.createRegionInstances())/]
 [/template]
 
 [**
  * Invokes the qvto transformation which transforms a Region into a
  * RegionInstance. This is an in-place m2m transformation and does not
  * change the original/source model.
- * @param category the "instance" model element category
+ * @param cic the "root" component instance configuration
 */]
-[query public createRegionInstances(category : ModelElementCategory) : Map =
+[query public createRegionInstances(cic : ComponentInstanceConfiguration) : Map =
 	invoke('de.uni_paderborn.fujaba.modelica.m2t.instantiator.RegionInstanceInstantiator',
-		'instantiate(de.uni_paderborn.fujaba.modelinstance.ModelElementCategory)',
-		Sequence{category}) 
+		'instantiate(de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)',
+		Sequence{cic}) 
 /]

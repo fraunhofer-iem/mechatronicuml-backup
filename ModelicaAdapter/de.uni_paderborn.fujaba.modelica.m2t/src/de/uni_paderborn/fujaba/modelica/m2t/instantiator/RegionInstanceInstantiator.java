@@ -10,11 +10,11 @@ import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelica.m2t.transform.Map;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 
 public class RegionInstanceInstantiator {
-	public Map instantiate(ModelElementCategory instanceCategory) {
+	public Map instantiate(ComponentInstanceConfiguration cic) {
 		URI transformationURI = URI
 				.createPlatformPluginURI(
 						"/de.uni_paderborn.fujaba.modelica.m2t/transforms/RegionInstantiation.qvto",
@@ -22,9 +22,9 @@ public class RegionInstanceInstantiator {
 		TransformationExecutor executor = new TransformationExecutor(
 				transformationURI);
 		ExecutionContextImpl context = new ExecutionContextImpl();
-		List<ModelElementCategory> categoryList = new ArrayList<ModelElementCategory>();
-		categoryList.add(instanceCategory);
-		ModelExtent modelExtent = new BasicModelExtent(categoryList);
+		List<ComponentInstanceConfiguration> cicList = new ArrayList<ComponentInstanceConfiguration>();
+		cicList.add(cic);
+		ModelExtent modelExtent = new BasicModelExtent(cicList);
 		ModelExtent outExtent = new BasicModelExtent();
 		ExecutionDiagnostic result = executor.execute(context, modelExtent, outExtent);
 		if (result.getSeverity() != ExecutionDiagnostic.OK) {
