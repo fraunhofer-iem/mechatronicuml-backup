@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.properties.runtime.editors;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -27,10 +28,12 @@ public class OptionPropertyEditor extends
 	private FormToolkit toolkit;
 	private Composite composite;
 	private Label label;
+	private Collection<Object> currentChoices = null;
 	private Map<Object, Button> buttons = new HashMap<Object, Button>();
 	
 	public OptionPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
 		super(adapterFactory, feature);
+		refreshWhenResourceSetChanges = true;
 	}
 
 	@Override
@@ -74,32 +77,49 @@ public class OptionPropertyEditor extends
 	
 	public void updateChoices(Object input) {
 		if (composite != null) {
-			for (Button button : buttons.values()) {
-				button.dispose();
-
-			}
-			buttons.clear();
-			
+			Collection<Object> choices = null;
 			if (input != null) {
-				Collection<?> choices = getChoices();
-				for (final Object choice : choices) {
-					String label = labelProvider.getText(choice);
-					if (choice == null) {
-						label = "null";
-					}
-					Button button = toolkit.createButton(composite, label, SWT.RADIO);
-					button.addSelectionListener(new SelectionAdapter() {
-						@Override
-						public void widgetSelected(SelectionEvent e) {
-							modify(choice);
-							super.widgetSelected(e);
+				choices = getChoices();
+			}
+			
+			// Find out if choices changed
+			boolean changed = true;
+			if (choices != null && currentChoices != null) {
+				Iterator<?> it1 = choices.iterator();
+				Iterator<?> it2 = currentChoices.iterator();
+				while (it1.hasNext() && it2.hasNext() && it1.next() == it2.next()) {
+				}
+				changed = it1.hasNext() || it2.hasNext();
+			}
+			
+			if (changed) {
+				currentChoices = choices;
+				for (Button button : buttons.values()) {
+					button.dispose();
+				}
+				buttons.clear();
+				
+				if (choices != null) {
+					for (final Object choice : choices) {
+						String label = labelProvider.getText(choice);
+						if (choice == null) {
+							label = "null";
 						}
-
-					});
-					buttons.put(choice, button);
+						Button button = toolkit.createButton(composite, label, SWT.RADIO);
+						button.addSelectionListener(new SelectionAdapter() {
+							@Override
+							public void widgetSelected(SelectionEvent e) {
+								modify(choice);
+								super.widgetSelected(e);
+							}
+	
+						});
+						buttons.put(choice, button);
+					}
 				}
 			}
-			refresh();
+			
+			updateSelection();
 		}
 	}
 
@@ -136,6 +156,10 @@ public class OptionPropertyEditor extends
 	@Override
 	public void refresh() {
 		super.refresh();
+		updateChoices(input);
+	}
+
+	protected void updateSelection() {
 
 		Button selectedButton = buttons.get(value);
 		
@@ -146,7 +170,6 @@ public class OptionPropertyEditor extends
 			}
 		}
 	}
-
 
 	@Override
 	protected Collection<Control> getControls() {

@@ -7,14 +7,17 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
+import org.eclipse.jface.viewers.IOpenListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.OpenEvent;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.ViewerSorter;
@@ -54,8 +57,11 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	
 	protected Button searchButton;
 	
+	
+	
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
 		this(adapterFactory, feature, feature instanceof EReference);
+		refreshWhenResourceSetChanges = true;
 	}
 
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature, boolean hasSearchButton) {
@@ -128,6 +134,13 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		
 		// Sort alphabetically
 		comboViewer.setSorter(new ViewerSorter());
+		comboViewer.addOpenListener(new IOpenListener() {
+
+			@Override
+			public void open(OpenEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("");
+			} });
 		
 		if (hasSearchButton) {
 			searchButton = new Button(parent, SWT.PUSH);
@@ -211,6 +224,15 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		}
 	}
 
+
+	protected void removeListeners() {
+		super.removeListeners();
+		
+	}
+	
+	protected void addListeners() {
+		super.addListeners();
+	}
 	
 	@Override
 	public void refresh() {

@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.properties.runtime.editors;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +21,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -53,10 +53,19 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	protected Object value;
 	
+	protected boolean refreshWhenResourceSetChanges = false;
+	
 	protected IItemPropertyDescriptor itemPropertyDescriptor;
 	protected List<IValueChangedListener> valueChangedListeners = new ArrayList<IValueChangedListener>();
 	
-	private Adapter adapter = new AdapterImpl() {
+	protected Adapter adapter = new AdapterImpl() {
+		@Override
+		public void notifyChanged(Notification msg) {
+			internalNotify(msg);
+		}
+	};
+	
+	protected EContentAdapter contentAdapter = new EContentAdapter() {
 		@Override
 		public void notifyChanged(Notification msg) {
 			internalNotify(msg);
@@ -111,7 +120,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	public void dispose() {
 		super.dispose();
 		removeListeners();
-		removeEventAdapters();
 	}
 	
 
@@ -155,15 +163,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		
 		// Update Adapters
 		updateAdapters();
-		
-		// Register those expressions that could not be registered before, because no editing domain was known before the first inputChanged() call
-		removeEventAdapters();
-		if (!oclAdapters.isEmpty()) {
-			for(Adapter adapter : oclAdapters.keySet()) {
-				OCLExpression expression = oclAdapters.get(adapter);
-				registerOCLAdapter(expression, adapter);
-			}
-		}
 	}
 	
 	private Object unwrap(Object value) {
@@ -202,13 +201,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 	}
 
-	protected void updateAdapters() {
-		removeListeners();
-		
-		if (input != null) {
-			addListeners();
-		}
-	}
 
 	private void internalNotify(final Notification notification) {
 		if (Display.getCurrent() == null) {
@@ -228,6 +220,9 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		if (notification.getFeature() == feature) {
 			updateValue();
 		}
+		if (refreshWhenResourceSetChanges && !isDisposed()) {
+			refresh();
+		}
 	}
 
 	public void addValueChangedListener(IValueChangedListener listener) {
@@ -244,7 +239,14 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 	}
 
+	protected void updateAdapters() {
+		removeListeners();
+		if (input != null) {
+			addListeners();
+		}
+	}
 	protected void removeListeners() {
+		removeEventAdapters();
 		for (EObject element : hookedObjects) {
 			element.eAdapters().remove(adapter);	
 		}
@@ -253,6 +255,22 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	protected void addListeners() {
 		registerListener(element);
+		
+		if (refreshWhenResourceSetChanges) {
+			ResourceSet resourceSet = getResourceSet();
+			if (resourceSet != null)  {
+				resourceSet.eAdapters().add(contentAdapter);
+				eventAdapters.put(contentAdapter, resourceSet);
+			}
+		}
+		
+		// Register those expressions that could not be registered before, because no editing domain was known before the first inputChanged() call
+		if (!oclAdapters.isEmpty()) {
+			for(Adapter adapter : oclAdapters.keySet()) {
+				OCLExpression expression = oclAdapters.get(adapter);
+				registerOCLAdapter(expression, adapter);
+			}
+		}
 	}
 
 	protected void registerListener(EObject element) {
