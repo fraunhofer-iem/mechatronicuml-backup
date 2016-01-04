@@ -12,8 +12,8 @@
     <requiredBundles>org.storydriven.core</requiredBundles>
   </plugin>
   <tabs xmi:id="_i_NxEOHNEeS5Putgio2lkg" id="property.tab.general" name="General" afterTab=""/>
-  <tabs xmi:id="_i_OYIOHNEeS5Putgio2lkg" id="property.tab.documentation" name="Documentation" afterTab="property.tab.general"/>
-  <tabs xmi:id="_i_OYIeHNEeS5Putgio2lkg" id="property.tab.extensions" name="Extensions" afterTab=""/>
+  <tabs xmi:id="_i_OYIOHNEeS5Putgio2lkg" id="property.tab.documentation" name="Documentation" afterTab="property.tab.extensions"/>
+  <tabs xmi:id="_i_OYIeHNEeS5Putgio2lkg" id="property.tab.extensions" name="Extensions" afterTab="property.tab.general"/>
   <packages xmi:id="_i_O_MOHNEeS5Putgio2lkg">
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core"/>
     <classes xmi:id="_i_O_MeHNEeS5Putgio2lkg" superClasses="_i_PmQuHNEeS5Putgio2lkg">
