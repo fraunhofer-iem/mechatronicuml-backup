@@ -16,25 +16,6 @@ public class CustomPortPartEditPart extends PortPartEditPart {
 	}
 
 	@Override
-	protected final void handleNotificationEvent(final Notification notification) {
-		Object feature = notification.getFeature();
-
-		if (ConnectorPackage.Literals.CONNECTOR_ENDPOINT__CONNECTORS.equals(feature)) {
-			//executeTransformation();
-		}
-		super.handleNotificationEvent(notification);
-	}
-
-	private void executeTransformation() {
-		EditingDomain editingDomain = getEditingDomain();
-		if (editingDomain != null) {
-			PortPart portPart = (PortPart) getNotationView()
-					.getElement();
-			Activator.updateCoordinationProtocolParts(editingDomain, portPart.getComponentPart().getParentComponent());
-		}
-	}
-
-	@Override
 	protected void doCanonicalRefresh() {
 		// DO NOTHING TO PREVENT PROBLEMS
 	}

@@ -29,12 +29,6 @@ public class CustomStructuredcomponentEditPartFactory extends
 				return new CustomStaticStructuredComponentEditPart(view);	
 			case CustomPortPartEditPart.VISUAL_ID:
 				return new CustomPortPartEditPart(view);
-//			case CustomRolePatternEditPart.VISUAL_ID:
-//				return new CustomRolePatternEditPart(view);
-//			case CustomDiscretePortGmfProtocolEditPart.VISUAL_ID:
-//				return new CustomDiscretePortGmfProtocolEditPart(view);
-//			case CustomDiscretePort2EditPart.VISUAL_ID:
-//				return new CustomDiscretePort2EditPart(view);
 			case CustomComponentPartEditPart.VISUAL_ID:
 				return new CustomComponentPartEditPart(view);
 			case CustomStaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
