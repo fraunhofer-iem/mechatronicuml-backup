@@ -87,7 +87,7 @@ public abstract class AbstractSingleFeatureXtextPropertyEditor extends
 		if (embeddedXtextEditor != null && !text.equals(embeddedXtextEditor.getDocument().get())) {
 			updating++;
 			try {
-				Display.getCurrent().syncExec(new Runnable() {
+				Display.getDefault().syncExec(new Runnable() {
 					@Override
 					public void run() {
 						embeddedXtextEditor.update(text);
