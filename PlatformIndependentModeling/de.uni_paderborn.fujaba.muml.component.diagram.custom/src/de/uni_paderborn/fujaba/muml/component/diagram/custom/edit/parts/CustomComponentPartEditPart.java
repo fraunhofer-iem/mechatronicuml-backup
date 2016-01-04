@@ -8,8 +8,10 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.widgets.Display;
 
@@ -166,7 +168,19 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	private void executeTransformation() {
 		executePortPartTransformation();
 		executeCoordinationProtocolPartTransformation();
+		Display.getCurrent().asyncExec(new Runnable() {
 
+			@Override
+			public void run() {
+				EObject element = getDiagramView().getElement();
+				if (element != null) {
+					for (CanonicalEditPolicy policy : CanonicalEditPolicy.getRegisteredEditPolicies(element)) {
+						policy.refresh();
+					}
+				}
+			}
+			
+		});
 	}
 
 	private void executePortPartTransformation() {

@@ -25,10 +25,10 @@ main() {
 		};
 		
 		-- Remove empty CoordinationProtocolParts
-		--var coordinationProtocolParts := component.coordinationProtocolParts;
-		--coordinationProtocolParts->select(portParts->isEmpty())->forEach(p) {
-		--	input.removeElement(p);
-		--};
+		var coordinationProtocolParts := component.coordinationProtocolParts;
+		coordinationProtocolParts->select(portParts->isEmpty())->forEach(p) {
+			input.removeElement(p);
+		};
 		
 		--coordinationProtocolParts->forEach(p) {
 		--	input.removeElement(p);
