@@ -841,6 +841,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -1088,6 +1090,22 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   new String[] {
 			 "NumberOfembeddedComponentInstancesCorrespondsToLowerBound", " -- Not all ComponentParts with a lowerBound > 0 are initialized\nlet componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\ncomponentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)\n-- adann",
 			 "NumberOfembeddedComponentInstancesCorrespondsToUpperBound", " -- The number of initialized ComponentInstances does not corresponds to the specified upperBound\nlet componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\nlet componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\ncomponentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()<=part.cardinality.upperBound.value else true endif)\n-- adann ticket:937"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getComponentInstance_ComponentPart(), 
+		   source, 
+		   new String[] {
+			 "filter", "self.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts"
 		   });
 	}
 

@@ -100,7 +100,7 @@ public interface ComponentInstance extends NamedElement {
 	 * @return the value of the '<em>Component Part</em>' reference.
 	 * @see #setComponentPart(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstance_ComponentPart()
-	 * @model
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='self.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts'"
 	 * @generated
 	 */
 	ComponentPart getComponentPart();

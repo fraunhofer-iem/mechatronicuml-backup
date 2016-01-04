@@ -615,6 +615,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="If the component instance is contained in a structured component instance,&#xD;&#xA;then the corresponding structure component has has component part that &#xD;&#xA;was used to include the component type of this instance. Then, this reference &#xD;&#xA;points to this component part. We can use this reference for deciding how &#xD;&#xA;many instances of a particular part exist in a structured component instance&#xD;&#xA;such that we can enforce the cardinalities of the component part during run-time."/>
         </eAnnotations>
+        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+          <details key="filter" value="self.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts"/>
+        </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentCIC" lowerBound="1"
           eType="#//instance/ComponentInstanceConfiguration" eOpposite="#//instance/ComponentInstanceConfiguration/componentInstances">

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -93,7 +94,9 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), filterOcl);
 					Object choice = filterQuery.evaluate(object);
 					Collection<Object> choices = new ArrayList<Object>();
-					choices.add(null);
+					if (feature instanceof EReference) {
+						choices.add(null);
+					}
 					if (choice instanceof Collection) {
 						for (Object o : (Collection<?>) choice) {
 							if (o != null) {
