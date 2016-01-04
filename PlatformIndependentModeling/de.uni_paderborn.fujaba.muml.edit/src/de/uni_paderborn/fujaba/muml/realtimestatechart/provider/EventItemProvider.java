@@ -13,6 +13,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.command.DeleteCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,6 +30,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -73,11 +79,11 @@ public class EventItemProvider
 	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Event_kind_feature"),
@@ -88,7 +94,26 @@ public class EventItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
-				 null));
+				 null) {
+			@Override
+			public void setPropertyValue(Object object, Object value) {
+				EObject element = (EObject) object;
+			    EditingDomain editingDomain = getEditingDomain(object);
+			    if (editingDomain != null && element instanceof AsynchronousMessageEvent) {
+			    	AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) element;
+			    	editingDomain.getCommandStack().execute(new ChangeCommand(element) {
+						@Override
+						protected void doExecute() {
+							messageEvent.setKind((EventKind) value);
+							DeleteCommand.create(editingDomain, messageEvent.getMessage()).execute();
+							messageEvent.setMessage(null);
+						}
+					});
+			    } else {
+			    	super.setPropertyValue(object, value);
+			    }
+			}
+		});
 	}
 
 	/**
