@@ -191,6 +191,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 					RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS,
 					RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
 					BehaviorPackage.Literals.PARAMETER_BINDING__VALUE,//
+					BehaviorPackage.Literals.PARAMETER_BINDING__PARAMETER,//
 			});
 
 	final static Collection<EReference> REFERENCES = getReferences(FEATURES);
