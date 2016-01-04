@@ -6,6 +6,7 @@ import java.util.Collections;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.swt.widgets.Display;
 
 import com.google.inject.Injector;
 
@@ -82,11 +83,16 @@ public abstract class AbstractSingleFeatureXtextPropertyEditor extends
 		updateText(text);
 	}
 	
-	private void updateText(String text) {
+	private void updateText(final String text) {
 		if (embeddedXtextEditor != null && !text.equals(embeddedXtextEditor.getDocument().get())) {
 			updating++;
 			try {
-				embeddedXtextEditor.update(text);
+				Display.getCurrent().syncExec(new Runnable() {
+					@Override
+					public void run() {
+						embeddedXtextEditor.update(text);
+					}
+				});
 			} finally {
 				updating--;
 			}

@@ -260,19 +260,15 @@ public abstract class AbstractXtextPropertyEditor extends
 	@Override
 	public void refresh() {
 		super.refresh();
-		if (!hasFocus()) {
+		if (!isActive()) {
 			updateText();
 		}
 	}
 	
-	private boolean hasFocus() {
-		return embeddedXtextEditor != null && embeddedXtextEditor.getViewer().getTextWidget().isFocusControl();
-	}
-
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		if (!hasFocus()) {
+		if (!isActive()) {
 			updateText();
 		}
 	}
