@@ -31,5 +31,29 @@
             id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardProtocolToPattern"
             name="Protocol To Pattern Transformation Wizard">
       </wizard>
-   </extension>  
+   </extension>
+   
+   
+   
+   
+   
+   <!-- prevent deleting inner coordination pattern -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"
+		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"
+		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+     
 </plugin>
