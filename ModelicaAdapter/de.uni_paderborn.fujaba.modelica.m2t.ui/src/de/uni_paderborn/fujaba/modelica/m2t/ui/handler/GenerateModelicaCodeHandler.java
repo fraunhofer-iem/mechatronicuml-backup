@@ -3,21 +3,24 @@ package de.uni_paderborn.fujaba.modelica.m2t.ui.handler;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -25,7 +28,8 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.modelica.m2t.ui.Activator;
-import de.uni_paderborn.fujaba.modelica.m2t.ui.common.GenerateAll;
+import de.uni_paderborn.fujaba.modelica.m2t.ui.common.Generator;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 
 public class GenerateModelicaCodeHandler extends AbstractHandler {
 
@@ -51,37 +55,60 @@ public class GenerateModelicaCodeHandler extends AbstractHandler {
 		// copied from generated AcceleoGenerateModelicaCodeGeneratorAction
 		IRunnableWithProgress operation = new IRunnableWithProgress() {
 			public void run(IProgressMonitor monitor) {
-				try {
-					Iterator<IFile> filesIt = files.iterator();
-					while (filesIt.hasNext()) {
-						IFile model = (IFile)filesIt.next();
-						URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
-						try {
-							IContainer target = model.getProject().getFolder("src-gen");
-							GenerateAll generator = new GenerateAll(modelURI, target, Collections.<Object>emptyList());
-							generator.doGenerate(monitor);
-						} catch (IOException e) {
-							IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
-							Activator.getDefault().getLog().log(status);
-						} finally {
-							model.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
-						}
+				Iterator<IFile> filesIt = files.iterator();
+				while (filesIt.hasNext()) {
+					IFile model = (IFile)filesIt.next();
+					ComponentInstanceConfiguration cic = getCIC(model);
+					if (cic == null) {
+						throw new IllegalArgumentException(model.getName()
+								+ ": no cic found");
 					}
-				} catch (CoreException e) {
-					IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
-					Activator.getDefault().getLog().log(status);
+					IFolder directory = model.getProject().getFolder("src-gen");
+					try {
+						// wrap potential exception into unchecked RTE.
+						Generator.generateCode(cic, directory, monitor);
+					} catch (CoreException e) {
+						throw new RuntimeException(e);
+					} catch (IOException e) {
+						throw new RuntimeException(e);
+					}
 				}
 			}
 		};
+		
 		try {
 			PlatformUI.getWorkbench().getProgressService().run(true, true, operation);
 		} catch (InvocationTargetException e) {
-			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
-			Activator.getDefault().getLog().log(status);
+			logError(e);
 		} catch (InterruptedException e) {
-			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
-			Activator.getDefault().getLog().log(status);
+			logError(e);
+		} catch (RuntimeException e) {
+			logError(e);
 		}
 	}
-
+	
+	private static ComponentInstanceConfiguration getCIC(IFile file) {
+		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(uri, true);
+		TreeIterator<EObject> tit = resource.getAllContents();
+		while (tit.hasNext()) {
+			EObject object = tit.next();
+			if ((object instanceof ComponentInstanceConfiguration)
+					&& ((ComponentInstanceConfiguration) object).getParentStructuredComponentInstance() == null) {
+				return (ComponentInstanceConfiguration) object;
+			}
+		}
+		return null;
+	}
+	
+	private static void logError(String message, Throwable e) {
+		IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message, e);
+		Activator.getDefault().getLog().log(status);
+	}
+	
+	private static void logError(Throwable e) {
+		logError(e.getMessage(), e);
+	}
+	
 }
