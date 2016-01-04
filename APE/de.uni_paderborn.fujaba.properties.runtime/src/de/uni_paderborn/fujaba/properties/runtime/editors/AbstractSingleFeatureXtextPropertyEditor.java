@@ -84,19 +84,19 @@ public abstract class AbstractSingleFeatureXtextPropertyEditor extends
 	}
 	
 	private void updateText(final String text) {
-		if (embeddedXtextEditor != null && !text.equals(embeddedXtextEditor.getDocument().get())) {
-			updating++;
-			try {
-				Display.getDefault().syncExec(new Runnable() {
-					@Override
-					public void run() {
+		Display.getDefault().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				if (embeddedXtextEditor != null && embeddedXtextEditor.getViewer().getDocument() != null && !text.equals(embeddedXtextEditor.getDocument().get())) {
+					updating++;
+					try {
 						embeddedXtextEditor.update(text);
+					} finally {
+						updating--;
 					}
-				});
-			} finally {
-				updating--;
+				}
 			}
-		}
+		});
 	}
 
 	@Override
