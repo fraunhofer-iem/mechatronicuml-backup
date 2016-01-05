@@ -114,9 +114,13 @@
 /**[/protected]**/
 [else]
  /** auto generated implementation **/
+[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
 	[operation.returnType.getTypeName()/] [operation.getOperationOutputVariableName()/] = [operation.returnType.getDefaultValue()/];
+[/if]
 	[generateExpression(operation.implementations->at(1),'')/]
+[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
 	return [operation.getOperationOutputVariableName()/];
+[/if]
 [/if]
 
 }
