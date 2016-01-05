@@ -421,7 +421,7 @@ if ([generateExpression(expression.ifCondition, fqname) /]){
 }
 [if expression.elseIfStatements->size() > 0/]
 [for (elseifExp : ElseIfStatement | expression.elseIfStatements)]
-else if ([elseifExp.elseIfCondition/]){
+else if ([generateExpression(elseifExp.elseIfCondition, fqname)/]){
 [generateExpression(elseifExp.elseIfBlock, fqname)/]
 }
 [/for]
