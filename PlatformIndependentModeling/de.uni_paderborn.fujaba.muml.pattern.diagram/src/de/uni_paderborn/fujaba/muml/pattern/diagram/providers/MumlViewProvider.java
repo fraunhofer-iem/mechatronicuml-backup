@@ -466,7 +466,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		createCompartment(node,
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getType(
 						de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
+				false, false, true, true);
 		return node;
 	}
 
