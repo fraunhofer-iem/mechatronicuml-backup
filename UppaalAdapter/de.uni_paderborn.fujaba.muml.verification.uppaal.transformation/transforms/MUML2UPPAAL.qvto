@@ -103,6 +103,13 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		return self.searchResolveTreeRecursively(allPortVariablesBeforeHierarchyNormalization);
 	}
 	
+	query muml_behavior::Operation :: operationContainedInPortBeforeHierarchyNormalization() : Boolean {		
+		var allPortStatechartsbefHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();
+		var allPortOperationsBeforeHierarchyNormalization : Sequence(muml_behavior::Operation) := allPortStatechartsbefHierarchyNormalization.operations;
+		
+		return self.searchResolveTreeRecursively(allPortOperationsBeforeHierarchyNormalization);
+	}
+	
 	query SynchronizationChannel :: synchronizationChannelContainedInPortBeforeHierarchyNormalization() : Boolean {		
 		var allPortStatechartsbefHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();
 		
@@ -111,6 +118,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 		return self.searchResolveTreeRecursively(allSynchronizationChannelsBeforeHierarchieNormalization);
 	}
+	
 	query Clock :: clockContainedInPortBeforeHierarchyNormalization() : Boolean {
 		var allPortStatechartsBeforeHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();
 		var allPortClocksBeforeHierarchyNormalization := allPortStatechartsBeforeHierarchyNormalization.clocks;
@@ -146,6 +154,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		}
 		else if(self.oclIsKindOf(muml_rtsc::Clock)) {
 			resolvingSequence := self.invresolve(muml_rtsc::Clock);
+		}
+		else if(self.oclIsKindOf(muml_behavior::Operation)) {
+			resolvingSequence := self.invresolve(muml_behavior::Operation);
 		};
 		if(resolvingSequence->size() > 0) {
 			var returnValue : Boolean := false;
@@ -158,14 +169,21 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			return returnValue;
 		}
 		else return false;
-	}
-	
+	}	
 	
 	query muml_behavior::Variable :: variableContainedInSubPortBeforeHierarchyNormalization() : Boolean {
 		var subPortBehaviors : Sequence(RealtimeStatechart) := getAllSubPortStatechartsBeforeHierarchyNormalizion();
 		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(muml_behavior::Variable) := subPortBehaviors.getAllStatechartsPrefix().variables;
 	
 		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);	
+		return resulting; 		
+	}
+	
+	query muml_behavior::Operation :: operationContainedInSubPortBeforeHierarchyNormalization() : Boolean {
+		var subPortBehaviors : Sequence(RealtimeStatechart) := getAllSubPortStatechartsBeforeHierarchyNormalizion();
+		var allSubroleOperationsBeforeHierarchyNormalization : Sequence(muml_behavior::Operation) := subPortBehaviors.getAllStatechartsPrefix().operations;
+	
+		var resulting :=  self.searchResolveTreeRecursively(allSubroleOperationsBeforeHierarchyNormalization);	
 		return resulting; 		
 	}
 	
@@ -217,21 +235,16 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			->max();
 		log("getMaximalNumberOfBuffersPerDiscretePort: " + maximum.toString());
 		return maximum;
-	}
-	
-	
+	}	
 	
 	query overallNumberOfDiscretePortInstances() : Integer {
 		
 		return cicToVerify().discretePortInstances()->size()
-		
-	}
-	
+	}	
 	
 	query overallNumberOfComponentInstances() : Integer {
 	
-		return cicToVerify().componentInstances->size()
-		
+		return cicToVerify().componentInstances->size()	
 	}
 
 	query getMaxBufferSize() : Integer {
@@ -264,21 +277,16 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		return connectorOutBufferSize;
 	}
 	
-	
-	
 	query DiscretePortInstance :: behavior() : Behavior {
 	
 		return self.portType.oclAsType(DiscretePort).behavior;
 	}
 	
-	
 	query ConnectorEndpoint :: getBufferSize() : Integer {
 	
-		return assert fatal (false) with log('Should never be reached.')
-		
+		return assert fatal (false) with log('Should never be reached.')		
 	}
 
-	
 	query messageTypes() : OrderedSet(MessageType) {
 	
 		var ports := cicToVerify().discretePorts();
@@ -291,7 +299,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			->asOrderedSet() 
 	}
 	
-	
 	query getMaximalNumberOfMessagesInTransit() : Integer {
 	
 		var bufferInstances : Sequence(MessageBuffer) = 
@@ -302,50 +309,40 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		var connectors : Set(ConnectorInstance) = cicToVerify().portConnectorInstances;
 		
 		// we assume here a message has to be inside a connector or inside a buffer
-		return (bufferInstances->size() * getMaxBufferSize() + connectors->size() * getConnectorSize()) ;
-		
+		return (bufferInstances->size() * getMaxBufferSize() + connectors->size() * getConnectorSize()) ;		
 	}
     
-   
-	query getMaximalNumberOfBuffersPerPort() : Integer {
+   query getMaximalNumberOfBuffersPerPort() : Integer {
 		
 		var portInstances := cicToVerify().discretePortInstances();
 
 		assert fatal (portInstances->notEmpty()) with log('At least one port instance expected.');
 
 		return portInstances->sortedBy(receiverMessageBuffer->size())->last().receiverMessageBuffer->size();
-
 	}
 
 	query ConnectorInstance :: getRoleConnector() : RoleConnector {
 		
-		return self.connectorEndpointInstances->first().oclAsType(DiscretePortInstance).refinedRole.roleConnector;
-		
-	}
-	
-	
+		return self.connectorEndpointInstances->first().oclAsType(DiscretePortInstance).refinedRole.roleConnector;		
+	}	
 	// QoS assumptions	
 			
 	query Connector :: getMinDelay() : Expression {
 		return new LiteralExpression(0);
-	}
-	
+	}	
 	
 	query Connector :: getMaxDelay() : Expression {
 		return new LiteralExpression(0);
-	}
-	
+	}	
 	
 	query Connector :: getMessageLoss() : Expression {
 		return new LiteralExpression(false);
 	}
 	
-	
 	query RoleConnector :: getMinDelay() : Expression {
 		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
 		return self.connectorQualityOfServiceAssumptions.minMessageDelay.mapTimeValue2Expression(null,null,null);
-	}
-	
+	}	
 	
 	query RoleConnector :: getMaxDelay() : Expression {
 		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
@@ -355,8 +352,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 	query RoleConnector :: getMessageLoss() : Expression {
 		return new LiteralExpression(self.connectorQualityOfServiceAssumptions.messageLossPossible);
-	}
-	
+	}	
 	
 	//TODO move to shared library
 	query Collection(OclAny) :: sortedByName() : Sequence(OclAny) {
@@ -370,8 +366,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		objects += named.oclAsType(NamedElement)->sortedBy(name);
 		objects += unnamed;
 	
-		return objects;
-	
+		return objects;	
 	}
 	
 	
@@ -382,8 +377,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		if (originalTransition.oclIsUndefined()) return false;
 		if (originalTransition.absoluteDeadlines->notEmpty() or originalTransition.relativeDeadline != null) then return false endif;
 		return true;
-	}
-	
+	}	
 	
 	query SynchronizationChannel :: isUrgent() : Boolean {
 		
@@ -420,16 +414,13 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			->collect(subroleBehavior.oclAsType(RealtimeStatechart))
 			->getRtscDependencies()
 			->flatten();
-	}
-	
-		
+	}		
 	
 	query ComponentInstanceConfiguration :: getAllDiscretePortBehaviors() : Sequence(Behavior) {
 	
 		return self.discretePorts()->collect(behavior.oclAsType(RealtimeStatechart)).getRtscDependencies();
 	
 	}
-	
 	
 	query ComponentInstanceConfiguration :: getAllDiscretePortRealtimeStatecharts() : Sequence(RealtimeStatechart) {
 	
@@ -444,8 +435,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 	query RealtimeStatechart :: belongsToSubrole() : Boolean {
 				
-		return cicToVerify().getAllSubroleRtscs()->includes(self);
-		
+		return cicToVerify().getAllSubroleRtscs()->includes(self);		
 	}
 	
 	query SynchronizationChannel :: belongsToSubrole() : Boolean {
@@ -469,8 +459,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		if(not isSubRoleClock) {
 			isSubRoleClock := self.clockContainedInSubPortBeforeHierarchyNormalization();
 		};
-		return isSubRoleClock;
-		
+		return isSubRoleClock;		
 	}
 	
 	query muml_behavior::Variable :: belongsToSubrole() : Boolean {
@@ -490,7 +479,12 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 		var allOperationsOfSubroleRtscs := cicToVerify().getAllSubroleRtscs()->operations->flatten();
 		
-		return allOperationsOfSubroleRtscs->includes(self)
+		var isSubRoleOperation : Boolean := allOperationsOfSubroleRtscs->includes(self);
+		
+		if (not isSubRoleOperation) {
+			isSubRoleOperation := self.operationContainedInSubPortBeforeHierarchyNormalization();
+		};
+		return isSubRoleOperation;
 	}
 	
 	query AsynchronousMessageEvent :: belongsToSubrole() : Boolean {

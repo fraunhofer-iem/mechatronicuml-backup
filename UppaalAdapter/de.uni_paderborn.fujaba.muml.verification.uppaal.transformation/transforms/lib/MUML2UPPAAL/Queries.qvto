@@ -30,10 +30,13 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		return assert fatal (false) with log ('Should never be reached');
 	}
 	
-	query SynchronizationChannel :: synchronizationChannelContainedInPortBeforeHierarchyNormalization() : Boolean {
-		return assert fatal (false) with log ('Should never be reached');
+	query Operation :: operationContainedInPortBeforeHierarchyNormalization() : Boolean {
+		return assert fatal (false) with log('Should never be reached');
 	}
 	
+	query SynchronizationChannel :: synchronizationChannelContainedInPortBeforeHierarchyNormalization() : Boolean {
+		return assert fatal (false) with log ('Should never be reached');
+	}	
 	
 	query State :: getLocationKind() : LocationKind {				
 		return switch {
@@ -109,6 +112,9 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		return isPortOrRoleChannel;
 	}
 	
+	query Operation :: isPortOrRoleOperation() : Boolean {
+		return self.operationContainedInPortBeforeHierarchyNormalization();						
+	}
 	
 	query muml_behavior::Variable :: isComponentVariable() : Boolean {
 		
@@ -128,6 +134,5 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 	
 	query Clock :: isComponentClock() : Boolean {
 		
-		return self.statechart.isComponentStatechart()
-		
+		return self.statechart.isComponentStatechart()		
 	}

@@ -115,28 +115,32 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 			
 		};
 		
-		var portOrRoleInstanceID : uppaal_declarations::Variable := self.map Operation2PortOrRoleInstanceID(); 
-		
-		parameter += object uppaal_declarations::Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
+		var portOrRoleInstanceID : uppaal_declarations::Variable;
+		if(self.isPortOrRoleOperation()){
+			portOrRoleInstanceID := self.map Operation2PortOrRoleInstanceID(); 
 			
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType();
-				};
+			parameter += object uppaal_declarations::Parameter {
+			
+				variableDeclaration := object DataVariableDeclaration {
 				
-				variable += portOrRoleInstanceID;
-				
-				prefix := DataVariablePrefix::CONST
-				
-			}
-						
+					typeDefinition := object TypeReference {
+						referredType := map DiscretePortInstanceType();
+					};
+					
+					variable += portOrRoleInstanceID;
+					
+					prefix := DataVariablePrefix::CONST
+					
+				}							
+			};
 		};
 		
+		var subPortOrRoleInstanceID : uppaal_declarations::Variable;
 		
-		var subPortOrRoleInstanceID : uppaal_declarations::Variable := self.map Operation2SubPortOrRoleInstanceID(); 
 		if(self.belongsToSubrole()) 
 		then {
+			subPortOrRoleInstanceID := self.map Operation2SubPortOrRoleInstanceID(); 
+			
 			parameter += object uppaal_declarations::Parameter {
 			
 				variableDeclaration := object DataVariableDeclaration {
@@ -161,12 +165,14 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		
 		
 		-- map function expressions to a single block
-		if(self.belongsToSubrole()) 
-		then {
+		if(self.belongsToSubrole()) {
 			block := self.implementations->map Expressions2Block(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-		} else {
+		} else if(self.isPortOrRoleOperation()){
 			block := self.implementations->map Expressions2Block(componentInstanceID, portOrRoleInstanceID, null);
-		} endif;	 	
+		} else {
+			block := self.implementations->map Expressions2Block(componentInstanceID, null, null);
+		}
+		endif;	 	
 		
 	}
 	
