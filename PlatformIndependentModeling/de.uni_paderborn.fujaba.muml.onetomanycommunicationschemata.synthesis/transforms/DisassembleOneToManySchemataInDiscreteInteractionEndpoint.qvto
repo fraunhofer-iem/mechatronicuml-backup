@@ -403,13 +403,12 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 				
 		-- add variable assignments to Entry Events of intermediate states of multicast and iterate 
 		
-		if(self.usesMulticastSchema()) {
+		if(self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()) {
 			
 			var intermediateState1 : State := self.map Schema2SubroleIntermediateState(context, 1);
 			if(intermediateState1.entryEvent.oclIsUndefined()) {
 				
-				intermediateState1.entryEvent := new EntryEvent();
-				
+				intermediateState1.entryEvent := new EntryEvent();				
 				intermediateState1.entryEvent.kind := EventKind::RAISE;
 							
 			};
