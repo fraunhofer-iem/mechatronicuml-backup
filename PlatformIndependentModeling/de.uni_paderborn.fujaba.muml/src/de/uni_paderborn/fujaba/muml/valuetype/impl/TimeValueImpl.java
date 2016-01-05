@@ -212,6 +212,8 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	// This is externalized from toString() so that it can be used from other places
 	// (TimeUnit.toString() would be a better place for this, but TimeUnit cannot be changed, since it is not part of MUML).
 	public static String getUnitRepresentation(TimeUnit unit) {
+		if(unit == null)
+			return "";
 		switch (unit) {
 		case DAYS:
 			return "d";
