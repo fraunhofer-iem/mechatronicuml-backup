@@ -108,7 +108,7 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		
 	}
 	
-		query SynchronizationChannel :: isPortOrRoleSyncC() : Boolean {
+		query SynchronizationChannel :: isPortOrRoleSyncChannel() : Boolean {
 		
 		var statechart : RealtimeStatechart = self.state.parentStatechart;
 		var isPortOrRoleChannel : Boolean := statechart.belongsToRole();

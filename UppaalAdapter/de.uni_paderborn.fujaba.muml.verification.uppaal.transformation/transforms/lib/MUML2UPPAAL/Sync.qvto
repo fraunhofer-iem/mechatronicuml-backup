@@ -96,7 +96,7 @@ modeltype storydriven_expressions uses core::expressions('http://www.storydriven
 		
 		var ID : Variable;
 		
-		if (self.syncChannel.state.parentStatechart.belongsToRole())
+		if (self.syncChannel.isPortOrRoleSyncChannel())
 		then {
 		
 			assert fatal (portOrRoleInstanceID != null) with log('Port/role instance ID must be specified.');
@@ -125,7 +125,7 @@ modeltype storydriven_expressions uses core::expressions('http://www.storydriven
 	
 		var ID : Variable;
 		
-		if (self.syncChannel.state.parentStatechart.belongsToRole())
+		if (self.syncChannel.isPortOrRoleSyncChannel())
 		then {
 			assert fatal (portOrRoleInstanceID != null) with log('Port/role instance ID must be specified.');
 			

@@ -146,11 +146,13 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 	mapping Clock :: Clock2IDRange() : DeclaredType {
 		
 		init {
-						
-			result := self.statechart.map RTSC2IDRange()
-			
-		}
-		
+			if(self.isPortOrRoleClock()) {
+				result := map DiscretePortInstanceType();
+			}
+			else {
+				result := map ComponentInstanceType();
+			}			
+		}		
 	}
 	
 	mapping SynchronizationChannel :: SyncChannel2IDRange() : DeclaredType {
@@ -159,11 +161,11 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 			// due to the hierarchy normalization, the distinction between the id range must 
 			// depend on the channel and not its realtimestatechart. So do not use the 
 			// mapping RTSC2IDRange for channels!
-			if(self.isPortOrRoleSyncC()) {
-				result := self.state.parentStatechart.map RTSC2PortOrRoleIDRange();
+			if(self.isPortOrRoleSyncChannel()) {
+				result := map DiscretePortInstanceType();
 			}
 			else {
-				result := self.state.parentStatechart.map RTSC2ComponentIDRange();
+				result := map ComponentInstanceType();
 			};			
 		}
 		
