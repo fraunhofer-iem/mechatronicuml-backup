@@ -93,8 +93,35 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 
 		};
 		
-		
 		return depends;
+	}
+	
+	query muml_behavior::Variable :: variableContainedInPortBeforeHierarchyNormalization() : Boolean {		
+		var allPortStatechartsbefHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();
+		var allPortVariablesBeforeHierarchyNormalization : Sequence(muml_behavior::Variable) := allPortStatechartsbefHierarchyNormalization.variables;
+		
+		return self.searchResolveTreeRecursively(allPortVariablesBeforeHierarchyNormalization);
+	}
+	
+	query SynchronizationChannel :: synchronizationChannelContainedInPortBeforeHierarchyNormalization() : Boolean {		
+		var allPortStatechartsbefHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();
+		
+		var allSynchronizationChannelsBeforeHierarchieNormalization : Sequence(SynchronizationChannel) 
+		:= allPortStatechartsbefHierarchyNormalization.states->select(s|not s.embeddedRegions->isEmpty()).channels;
+		
+		return self.searchResolveTreeRecursively(allSynchronizationChannelsBeforeHierarchieNormalization);
+	}
+	query Clock :: clockContainedInPortBeforeHierarchyNormalization() : Boolean {
+		var allPortStatechartsBeforeHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();
+		var allPortClocksBeforeHierarchyNormalization := allPortStatechartsBeforeHierarchyNormalization.clocks;
+		
+		return self.searchResolveTreeRecursively(allPortClocksBeforeHierarchyNormalization);			
+	}
+	
+	query getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization() : Sequence(RealtimeStatechart) {
+		var allPortStatecharts := cicToVerify().getAllDiscretePortRealtimeStatecharts();
+		var allPortStatechartsbefHierarchyNormalization := allPortStatecharts->beforeHierarchyNormalization().getAllStatechartsPrefix();
+		return allPortStatechartsbefHierarchyNormalization;
 	}
 	
 	query RealtimeStatechart :: beforeHierarchyNormalization() : RealtimeStatechart {
@@ -102,28 +129,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		while(rtscBeforeHierarchyNormalization.flat) {
 			rtscBeforeHierarchyNormalization := 
 				rtscBeforeHierarchyNormalization.invresolveone(RealtimeStatechart);
-		};
-		
+		};		
 		return rtscBeforeHierarchyNormalization;
-	}
-	
-	query muml_behavior::Variable :: variableContainedInPortBeforeHierarchyNormalization() : Boolean {
-		
-		var allPortStatecharts := cicToVerify().getAllDiscretePortRealtimeStatecharts();
-		var allPortStatechartsbefHierarchyNormalization := allPortStatecharts->beforeHierarchyNormalization().getAllStatechartsPrefix();
-		var allPortVariablesBeforeHierarchyNormalization : Sequence(muml_behavior::Variable) := allPortStatechartsbefHierarchyNormalization.variables;
-		
-		return self.searchResolveTreeRecursively(allPortVariablesBeforeHierarchyNormalization);
-	}
-	
-	query SynchronizationChannel :: synchronizationChannelContainedInPortBeforeHierarchyNormalization() : Boolean {
-		
-		var allPortStatecharts := cicToVerify().getAllDiscretePortRealtimeStatecharts();
-		var allPortStatechartsbefHierarchyNormalization := allPortStatecharts->beforeHierarchyNormalization().getAllStatechartsPrefix();
-		var allSynchronizationChannelsBeforeHierarchieNormalization : Sequence(SynchronizationChannel) 
-		:= allPortStatechartsbefHierarchyNormalization.states->select(s|not s.embeddedRegions->isEmpty()).channels;
-		
-		return self.searchResolveTreeRecursively(allSynchronizationChannelsBeforeHierarchieNormalization);
 	}
 	
 	query OclAny :: searchResolveTreeRecursively(set : Sequence(OclAny)) : Boolean {
@@ -136,6 +143,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		}
 		else if(self.oclIsKindOf(muml_behavior::Variable)) {
 			resolvingSequence := self.invresolve(muml_behavior::Variable);
+		}
+		else if(self.oclIsKindOf(muml_rtsc::Clock)) {
+			resolvingSequence := self.invresolve(muml_rtsc::Clock);
 		};
 		if(resolvingSequence->size() > 0) {
 			var returnValue : Boolean := false;
@@ -148,43 +158,40 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			return returnValue;
 		}
 		else return false;
-		
 	}
 	
 	
 	query muml_behavior::Variable :: variableContainedInSubPortBeforeHierarchyNormalization() : Boolean {
-		
-		
-		var allRoleStatechartsAfterHierarchyNormalization := cicToVerify().getAllDiscretePortRealtimeStatecharts();
-		var allRoleStatechartsBeforHierarchyNormalization := allRoleStatechartsAfterHierarchyNormalization->beforeHierarchyNormalization().getAllStatechartsPrefix();
-		
-		var portBehaviors : Sequence(RealtimeStatechart) :=
-		 allRoleStatechartsBeforHierarchyNormalization->select(rtsc : RealtimeStatechart | not rtsc.behavioralElement.oclIsUndefined() and rtsc.behavioralElement.oclIsKindOf(DiscreteInteractionEndpoint)).behavioralElement.oclAsType(DiscreteInteractionEndpoint).subroleBehavior.oclAsType(RealtimeStatechart);
-		
-		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(muml_behavior::Variable) := allRoleStatechartsBeforHierarchyNormalization->select(rtsc : RealtimeStatechart | portBehaviors->includes(rtsc)).getAllStatechartsPrefix().variables;
+		var subPortBehaviors : Sequence(RealtimeStatechart) := getAllSubPortStatechartsBeforeHierarchyNormalizion();
+		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(muml_behavior::Variable) := subPortBehaviors.getAllStatechartsPrefix().variables;
 	
-		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);
-	
+		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);	
 		return resulting; 		
+	}
+	
+	query Clock :: clockContainedInSubPortBeforeHierarchyNormalization() : Boolean {
+		var subPortBehaviors : Sequence(RealtimeStatechart) := getAllSubPortStatechartsBeforeHierarchyNormalizion();
+		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(Clock) := subPortBehaviors.getAllStatechartsPrefix().clocks;
+	
+		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);	
+		return resulting; 
 	}
 	
 	query SynchronizationChannel :: synchChannelContainedInSubPortBeforeHierarchyNormalization() : Boolean {
-		
-		
-		var allRoleStatechartsAfterHierarchyNormalization := cicToVerify().getAllDiscretePortRealtimeStatecharts();
-		var allRoleStatechartsBeforHierarchyNormalization := allRoleStatechartsAfterHierarchyNormalization->beforeHierarchyNormalization().getAllStatechartsPrefix();
-		
-		var portBehaviors : Sequence(RealtimeStatechart) :=
-		 allRoleStatechartsBeforHierarchyNormalization->select(rtsc : RealtimeStatechart | not rtsc.behavioralElement.oclIsUndefined() and rtsc.behavioralElement.oclIsKindOf(DiscreteInteractionEndpoint)).behavioralElement.oclAsType(DiscreteInteractionEndpoint).subroleBehavior.oclAsType(RealtimeStatechart);
-		
-		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(SynchronizationChannel) := allRoleStatechartsBeforHierarchyNormalization->select(rtsc : RealtimeStatechart | portBehaviors->includes(rtsc)).getAllStatechartsPrefix().states->select(s|not s.embeddedRegions->isEmpty()).channels;
+		var subPortBehaviors : Sequence(RealtimeStatechart) := getAllSubPortStatechartsBeforeHierarchyNormalizion();
+		var allSubroleVariablesBeforeHierarchyNormalization : Sequence(SynchronizationChannel) := subPortBehaviors.getAllStatechartsPrefix().states->select(s|not s.embeddedRegions->isEmpty()).channels;
 	
-		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);
-	
+		var resulting :=  self.searchResolveTreeRecursively(allSubroleVariablesBeforeHierarchyNormalization);	
 		return resulting; 		
 	}
 	
-	
+	query getAllSubPortStatechartsBeforeHierarchyNormalizion() : Sequence(RealtimeStatechart) {		
+		var allRoleStatechartsBeforHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();		
+		
+		return allRoleStatechartsBeforHierarchyNormalization
+			->select(rtsc : RealtimeStatechart | not rtsc.behavioralElement.oclIsUndefined() and rtsc.behavioralElement.oclIsKindOf(DiscreteInteractionEndpoint))
+				.behavioralElement.oclAsType(DiscreteInteractionEndpoint).subroleBehavior.oclAsType(RealtimeStatechart);
+	}
 	
 	query cicToVerify() : ComponentInstanceConfiguration {
 
@@ -457,8 +464,12 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	query Clock :: belongsToSubrole() : Boolean {
 	
 		var allClocksOfSubroleRtscs := cicToVerify().getAllSubroleRtscs()->clocks->flatten();
+		var isSubRoleClock : Boolean := allClocksOfSubroleRtscs->includes(self);
 		
-		return allClocksOfSubroleRtscs->includes(self);
+		if(not isSubRoleClock) {
+			isSubRoleClock := self.clockContainedInSubPortBeforeHierarchyNormalization();
+		};
+		return isSubRoleClock;
 		
 	}
 	

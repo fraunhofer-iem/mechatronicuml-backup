@@ -22,12 +22,11 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		return assert fatal (false) with log('Should never be reached.');
 	}
 
-	query muml_behavior::Variable :: variableContainedInPortBeforeHierarchyNormalization() : Boolean {
-	
+	query muml_behavior::Variable :: variableContainedInPortBeforeHierarchyNormalization() : Boolean {	
 		return assert fatal (false) with log ('Should never be reached');
 	}
 	
-	query muml_behavior::Variable :: variableContainedInSubPortBeforeHierarchyNormalization() : Boolean {
+	query Clock :: clockContainedInPortBeforeHierarchyNormalization() : Boolean {
 		return assert fatal (false) with log ('Should never be reached');
 	}
 	
@@ -36,20 +35,16 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 	}
 	
 	
-	query State :: getLocationKind() : LocationKind {
-				
+	query State :: getLocationKind() : LocationKind {				
 		return switch {
 			case (self.isCommitted()) LocationKind::COMMITED;
 			case (self.urgent) LocationKind::URGENT;
 			else LocationKind::NORMAL;
 		}
-		
 	}
 	
-	query State :: isCommitted() : Boolean {
-		
+	query State :: isCommitted() : Boolean {		
 		return self.extension->exists(oclIsKindOf(CommittedExtension));
-				
 	}
 	
 	query muml_behavior::Variable :: getOwningStatechart() : RealtimeStatechart {
@@ -67,7 +62,6 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		assert fatal (self.container().oclIsKindOf(RealtimeStatechart)) with log('Operation must be contained by statechart.');
 		
 		return self.container().oclAsType(RealtimeStatechart)
-		
 	}
 		
 	query TransitionEvent :: getOwningStatechart() : RealtimeStatechart {
@@ -75,7 +69,6 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		assert fatal (self.container().oclIsKindOf(Transition)) with log('Transition event must be contained by statechart.');
 		
 		return self.container().oclAsType(Transition).statechart;
-		
 	}
 	
 	query RealtimeStatechart :: getComponentStatechart() : RealtimeStatechart {
@@ -87,13 +80,11 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 			then highestParent
 			else null
 			endif
-		
 	}
 	
 	query RealtimeStatechart :: isComponentStatechart() : Boolean {
 		
-		return not self.getComponentStatechart().oclIsUndefined()
-		
+		return not self.getComponentStatechart().oclIsUndefined();
 	}
 		
 	query muml_behavior::Variable :: isPortOrRoleVariable() : Boolean {
@@ -105,10 +96,9 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 			isPortOrRoleVariable := self.variableContainedInPortBeforeHierarchyNormalization();						
 		};
 		return isPortOrRoleVariable;
-		
 	}
 	
-		query SynchronizationChannel :: isPortOrRoleSyncChannel() : Boolean {
+	query SynchronizationChannel :: isPortOrRoleSyncChannel() : Boolean {
 		
 		var statechart : RealtimeStatechart = self.state.parentStatechart;
 		var isPortOrRoleChannel : Boolean := statechart.belongsToRole();
@@ -117,7 +107,6 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 			isPortOrRoleChannel := self.synchronizationChannelContainedInPortBeforeHierarchyNormalization();						
 		};
 		return isPortOrRoleChannel;
-		
 	}
 	
 	
@@ -126,13 +115,15 @@ modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 		var statechart : RealtimeStatechart = self.getOwningStatechart();
 		
 		return (not statechart.oclIsUndefined()) and statechart.isComponentStatechart()
-		
 	}
 	
 	query Clock :: isPortOrRoleClock() : Boolean {
 		
-		return self.statechart.belongsToRole();
-		
+		var isPortOrRoleClock :=  self.statechart.belongsToRole();
+		if (not isPortOrRoleClock) {
+			isPortOrRoleClock := self.clockContainedInPortBeforeHierarchyNormalization();
+		};
+		return isPortOrRoleClock;
 	}
 	
 	query Clock :: isComponentClock() : Boolean {

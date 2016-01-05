@@ -89,8 +89,7 @@ modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/u
 			
 			typeDefinition := object TypeReference {
 				referredType := self.map Clock2IDRange();
-			}
-			
+			}			
 		}
 				
 	}
