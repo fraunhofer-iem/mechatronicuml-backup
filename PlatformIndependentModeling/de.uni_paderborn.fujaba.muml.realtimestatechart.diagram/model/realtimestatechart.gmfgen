@@ -1190,7 +1190,7 @@
       <expressions
           body="'action'"/>
       <expressions
-          body="'do / '.concat(&#xD;&#xA;&#x9;if self.action.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'{'.concat(self.action.name).concat('}')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' [').concat(&#xD;&#xA;&#x9;if self.period.oclIsUndefined() then 'n.a.' else self.period.toString() endif&#xD;&#xA;).concat(']')"/>
+          body="'do / '.concat(&#xD;&#xA;&#x9;if self.action.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'{'.concat(self.action.name).concat('}')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' [').concat(&#xA;&#x9;-- by accessing &quot;self.period.value&quot; and &quot;self.period.unit&quot; we make sure that we are informed about changes.&#xA;&#x9;-- (OCL Impact Analyzer)&#xD;&#xA;&#x9;if self.period.value.oclIsUndefined() or self.period.unit.oclIsUndefined() then 'n.a.' else self.period.toString() endif&#xD;&#xA;).concat(']')"/>
       <expressions
           body="'exit /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
       <expressions
