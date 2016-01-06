@@ -62,6 +62,11 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	public static String FILTER_KEY = "filter";
 
 	/**
+	 * The OCL object used to execute queries.
+	 */
+	private OCL ocl = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
+	
+	/**
 	 * Default constructor, calls super constructor.
 	 */
 	public OCLItemPropertyDescriptor(AdapterFactory adapterFactory,ResourceLocator resourceLocator,String displayName,String description,EStructuralFeature feature,boolean isSettable,Object staticImage,String category,String[] filterFlags) {
@@ -87,7 +92,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	public Collection<?> getChoiceOfValues(Object object) {
 		if (object instanceof EObject && feature != null) {
 			EObject element = (EObject) object;
-			
+			Object invalid = ocl.getEnvironment().getOCLStandardLibrary().getInvalid();
 			String filterOcl = findDetailValue(element.eClass(), FILTER_KEY);
 			if (!filterOcl.isEmpty()) {
 				try {
@@ -103,7 +108,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 								choices.add(o);
 							}
 						}
-					} else if (choice != null) {
+					} else if (choice != null && choice != invalid) {
 						choices.add(choice);
 					}
 					checkResult(choices);
@@ -162,8 +167,6 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 *             If the OCL expression contains errors.
 	 */
 	protected Query<org.eclipse.emf.ecore.EClassifier, ?, ?> createQuery(EClassifier context, String oclText) throws ParserException {
-		OCL ocl = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
-	
 		Helper helper = ocl.createOCLHelper();
 		helper.setAttributeContext(context, feature);
 		ParsingOptions.setOption(helper.getEnvironment(),
@@ -184,11 +187,11 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * @param choices Choices to check
 	 */
 	protected void checkResult(Collection<?> choices) {
+		
 		for (Object object : choices) {
 			if (object != null && !feature.getEType().isInstance(object)) {
 				throw new RuntimeException("[OCL Choices] Invalid choice returned for " + feature.getEContainingClass().getName() + "." + feature.getName() + " : " + feature.getEType().getName() + ". Element was: " + object.toString());
 			}
 		}
 	}
-	
 }
