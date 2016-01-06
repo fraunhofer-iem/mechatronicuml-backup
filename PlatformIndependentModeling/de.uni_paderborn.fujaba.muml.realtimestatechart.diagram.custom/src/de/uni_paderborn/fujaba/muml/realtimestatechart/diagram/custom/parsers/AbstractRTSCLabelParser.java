@@ -21,9 +21,15 @@ public abstract class AbstractRTSCLabelParser {
 
 		StringBuilder sbVariables = new StringBuilder();
 		for (Variable var : variableList) {
+
 			if (sbVariables.length() != 0) {
 				sbVariables.append(", ");
 			}
+			
+			if (var.isConstant()) {
+				sbVariables.append("const ");
+			}
+			
 			if (var.getDataType() != null) {
 				sbVariables.append(var.getDataType().getName());
 				sbVariables.append(' ');
