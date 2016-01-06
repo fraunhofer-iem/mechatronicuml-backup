@@ -169,11 +169,18 @@ public class ParameterBindingItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ParameterBinding_type");
+		ParameterBinding parameterBinding = (ParameterBinding) object;
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(getString("_UI_ParameterBinding_type"));
+		if (parameterBinding.getParameter() != null) {
+			buffer.append(' ');
+			buffer.append(parameterBinding.getParameter().getName());
+		}
+		return buffer.toString();
 	}
 
 	/**
