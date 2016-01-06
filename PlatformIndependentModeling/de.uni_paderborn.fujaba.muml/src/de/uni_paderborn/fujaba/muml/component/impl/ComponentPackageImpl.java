@@ -1141,7 +1141,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"
+			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortShouldRefineRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"
 		   });	
 		addAnnotation
 		  (componentPartEClass, 
@@ -1227,7 +1227,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "DiscretePortRequiresMessageTypes", "-- Discrete Port must define sender or receiver message types\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "DiscretePortRequiresBehavior", "-- A discrete port of an atomic component must have a Behavior Specification\r\n(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()",
 			 "DiscretePortAtStructuredComponentHasNoBehavior", "-- Discrete Port at Structured Component must not have behavior\n(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()",
-			 "DiscretePortRequiresRole", "-- Discrete Port must refine a role\nself.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()",
+			 "DiscretePortShouldRefineRole", "-- @warning\n-- Discrete Port should refine a role\nself.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()",
 			 "DiscretePortAndRoleSameMessageTypes", "-- Discrete Port must have the same message types as its refined role\r\nnot self.refinedRole.oclIsUndefined() implies\r\n\t(self.senderMessageTypes->asSet() = self.refinedRole.senderMessageTypes->asSet() \r\n\t and\r\n\t self.receiverMessageTypes->asSet() = self.refinedRole.receiverMessageTypes->asSet() \r\n\t)",
 			 "DiscretePortCardinalityMustComplyWithRefinedRoleCardinality", "-- Cardinality of discrete port and its refined role must match\r\n((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) \r\nimplies \r\n((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))",
 			 "MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior", "-- The coordinatorBehavior and subroleBehavior should be set if this is a multiport and its RTSC does not use one-to-many communication schemata.\r\n(self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies (self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.coordinatorBehavior.oclIsUndefined())\r\nand self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"

@@ -293,7 +293,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortShouldRefineRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior(discretePort, diagnostics, context);
 		return result;
@@ -426,21 +426,22 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the DiscretePortRequiresRole constraint of '<em>Discrete Port</em>'.
+	 * The cached validation expression for the DiscretePortShouldRefineRole constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION = "-- Discrete Port must refine a role\n" +
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_SHOULD_REFINE_ROLE__EEXPRESSION = "-- @warning\n" +
+		"-- Discrete Port should refine a role\n" +
 		"self.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()";
 
 	/**
-	 * Validates the DiscretePortRequiresRole constraint of '<em>Discrete Port</em>'.
+	 * Validates the DiscretePortShouldRefineRole constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscretePort_DiscretePortRequiresRole(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDiscretePort_DiscretePortShouldRefineRole(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.DISCRETE_PORT,
@@ -448,8 +449,8 @@ public class ComponentValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "DiscretePortRequiresRole",
-				 DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION,
+				 "DiscretePortShouldRefineRole",
+				 DISCRETE_PORT__DISCRETE_PORT_SHOULD_REFINE_ROLE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
