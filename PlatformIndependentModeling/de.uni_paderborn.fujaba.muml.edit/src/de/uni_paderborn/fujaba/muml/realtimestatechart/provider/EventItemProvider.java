@@ -81,7 +81,7 @@ public class EventItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addKindPropertyDescriptor(Object object) {
+	protected void addKindPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add
 			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -96,11 +96,11 @@ public class EventItemProvider
 				 null,
 				 null) {
 			@Override
-			public void setPropertyValue(Object object, Object value) {
-				EObject element = (EObject) object;
-			    EditingDomain editingDomain = getEditingDomain(object);
+			public void setPropertyValue(final Object object, final Object value) {
+				final EObject element = (EObject) object;
+			    final EditingDomain editingDomain = getEditingDomain(object);
 			    if (editingDomain != null && element instanceof AsynchronousMessageEvent) {
-			    	AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) element;
+			    	final AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) element;
 			    	editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 						@Override
 						protected void doExecute() {
