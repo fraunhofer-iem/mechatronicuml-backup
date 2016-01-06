@@ -168,8 +168,6 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			setScopeForEObject((ParameterBinding) object);
 		} else if (object instanceof Operation) {
 			setScopeForEObject((Operation) object);
-		} else if (object instanceof Variable) {
-			setScopeForEObject((Variable) object);
 		} else if (object instanceof AbstractCoordinationPattern) {
 			setScopeForEObject((AbstractCoordinationPattern) object);
 		} else if (object instanceof RealtimeStatechart) {
@@ -229,10 +227,20 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			typedNamedElementList.add(parameter);
 		}
 	}
-	
-	public void setScopeForEObject(Variable variable) {
-		setScopeForRTSC(variable.eContainer());
-	}
+
+
+	// NOTE (Ingo)
+	// Fix for bug #1120.
+	// @marcus:
+	// Variables can be contained at places other than RTSC (for example: LocalVariableDeclarations).
+	// Therefore we want to go upwards, until we find an RTSC.
+	// By disabling this method we effectively get that behavior,
+	// because setScopeSwitch() recursively calls itself with eContainer() until an RTSC is found.
+	// The other case (where a Variable is contained at an RTSC) should still work, because then also the RTSC is found.
+
+//	public void setScopeForEObject(Variable variable) {
+//		setScopeForRTSC(variable.eContainer());
+//	}
 	
 	public void setScopeForEObject(AbstractCoordinationPattern pattern) {
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
