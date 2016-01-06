@@ -20,6 +20,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.semanticweb.owlapi.model.IRI;
 
 import de.uni_paderborn.fujaba.muml.ontology.OntologyExtension;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog.OntologyDialog;
@@ -33,25 +34,18 @@ public class OntologyPropertyEditor extends
 	protected Label label;
 	protected Composite listContainer;
 	protected String currentValue = "";
-	// protected TableViewer tableViewer;
 	protected Button ontologyButton;
-
 	protected EObject selection;
-	private Button buttonCreate;
-	private Button buttonRemove;
 	private Composite container;
 
 	public OntologyPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
 		super(adapterFactory, feature);
-		// TODO Auto-generated constructor stub
 
 	}
 
 	@Override
 	public void setFocus() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -83,6 +77,10 @@ public class OntologyPropertyEditor extends
 				OntologyDialog dialog = OntologyDialogFactory.getInstance()
 						.createOntologyDialog(parentComposite.getShell(),
 								getElement().eContainer());
+				if (value instanceof String) {
+					IRI iri = IRI.create((String) value);
+					dialog.setDefaultIRI(iri);
+				}
 				int status = dialog.open();
 				if (status == IDialogConstants.OK_ID) {
 					setValue(dialog.getResult().getIRI().toString());
@@ -122,7 +120,9 @@ public class OntologyPropertyEditor extends
 		// TODO Auto-generated method stub
 		super.handleNotificationEvent(notification);
 		if (notification.getFeature() == feature) {
-			ontologyButton.setText(getOntologyString());
+			if (ontologyButton != null) {
+				ontologyButton.setText(getOntologyString());
+			}
 			RuntimePlugin.revalidateLayout(ontologyButton);
 		}
 	}
