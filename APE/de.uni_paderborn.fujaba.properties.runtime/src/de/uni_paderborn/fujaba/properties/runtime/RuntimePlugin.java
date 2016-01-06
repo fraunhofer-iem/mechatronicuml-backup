@@ -427,6 +427,9 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 	
 	public static void revalidateLayout (Control control) {
+		if (control == null || control.isDisposed()) {
+			return;
+		}
 		//System.out.println("Relayouting...");
 		Control c = control;
 		do {
