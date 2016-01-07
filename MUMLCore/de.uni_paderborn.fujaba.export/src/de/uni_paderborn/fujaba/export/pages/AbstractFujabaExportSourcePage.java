@@ -54,6 +54,8 @@ public abstract class AbstractFujabaExportSourcePage extends
 
 	protected ArrayList<ResourceChangeListener> resourceChangedListeners = new ArrayList<ResourceChangeListener>();
 
+	protected ArrayList<ICheckStateListener> checkStateListeners = new ArrayList<ICheckStateListener>();
+	
 	/**
 	 * Creates a fujaba-export source page.
 	 * 
@@ -72,15 +74,22 @@ public abstract class AbstractFujabaExportSourcePage extends
 		this.selection = selection;
 
 		setTitle("Select Transformation Source");
-		setDescription("Select the Fujaba domain element that should be transformed.");
+		setDescription("Select the MechatronicUML domain element that should be transformed.");
 
 		String fileExtension = wizardPageGetSourceFileExtension();
 		Assert.isNotNull(
 				fileExtension,
-				"Please implement 'wizardPageGetSourceFileExtension()' to provide a non-null file extension that the fujaba-export-wizard supports.");
+				"Please implement 'wizardPageGetSourceFileExtension()' to provide a non-null file extension that the MechatronicUML-export-wizard supports.");
 		setModelFileExtension(fileExtension);
 	}
 
+	public void addSelectionListenerOfTreeViewer(ICheckStateListener listener) {		
+		if(domainElementExtension != null && domainElementExtension.getTreeViewer()!= null)
+			domainElementExtension.getTreeViewer().addCheckStateListener(listener);
+		else
+			checkStateListeners.add(listener);
+	}
+	
 	@Override
 	public void createControl(Composite parent) {
 		int sectionStyle = Section.TITLE_BAR | Section.CLIENT_INDENT
@@ -93,7 +102,12 @@ public abstract class AbstractFujabaExportSourcePage extends
 		composite.setLayout(new GridLayout());
 		super.createControl(composite);
 		setControl(section);
-
+		if(domainElementExtension.getTreeViewer()!= null)
+			{
+				for(ICheckStateListener listener : checkStateListeners){
+					domainElementExtension.getTreeViewer().addCheckStateListener(listener);
+				}
+			}
 		validatePage();
 	}
 
@@ -292,7 +306,7 @@ public abstract class AbstractFujabaExportSourcePage extends
 		ElementSelectionMode elementSelectionMode = wizardPageGetSupportedSelectionMode();
 		Assert.isNotNull(
 				elementSelectionMode,
-				"Please implement 'wizardGetSupportedSelectionMode()' to provide a non-null selection mode that your fujaba export wizard supports.");
+				"Please implement 'wizardGetSupportedSelectionMode()' to provide a non-null selection mode that your MechatronicUML export wizard supports.");
 
 		String errorMessage = null;
 		if (elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_NONE

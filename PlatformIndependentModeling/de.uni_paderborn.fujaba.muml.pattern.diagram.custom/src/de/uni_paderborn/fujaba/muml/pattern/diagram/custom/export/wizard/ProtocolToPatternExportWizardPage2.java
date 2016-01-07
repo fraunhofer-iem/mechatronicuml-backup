@@ -9,6 +9,8 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.IWizardPage;
@@ -48,6 +50,8 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 		super(pageName);
 		this.toolkit = toolkit;
 		// TODO Auto-generated constructor stub
+		setTitle("Variable Selection");
+		setDescription("Select the variables that should become parameters of the generated CoordinationPattern. This step is optional.");
 	}
 
 	@Override
@@ -67,14 +71,14 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.minimumHeight = 200;
 		tree.setLayoutData(gridData);
-		tree.addListener(SWT.EraseItem, new Listener() {
-			public void handleEvent(Event event) {
-				if ((event.detail & SWT.SELECTED) != 0 && true) {
-					// event.detail &= ~SWT.SELECTED;
-				}
-			}
-		});
-
+//		tree.addListener(SWT.EraseItem, new Listener() {
+//			public void handleEvent(Event event) {
+//				if ((event.detail & SWT.SELECTED) != 0 && true) {
+//					// event.detail &= ~SWT.SELECTED;
+//				}
+//			}
+//		});
+		
 		parent.layout(true, true);
 
 		
@@ -84,6 +88,16 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				// TODO Auto-generated method stub
+				System.out.println("Check changed");
+				validatePage();
+			}
+		});
+		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("Selection changed");
 				validatePage();
 			}
 		});
@@ -186,5 +200,12 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 		}		
 		setErrorMessage(errorMessage);
 		setPageComplete(errorMessage == null);
+	}
+	
+
+	@Override
+	public boolean isPageComplete() {
+		// TODO Auto-generated method stub
+		return super.isPageComplete() && this.isCurrentPage();
 	}
 }

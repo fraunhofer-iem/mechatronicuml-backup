@@ -78,7 +78,6 @@ public class PatternVerificationWizardPage2 extends AbstractPatternVerificationW
 			l.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
 					| GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
 			Text t = toolkit.createText(mainComp, "");
-
 			t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
 					| GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
 			l.setVisible(true);
@@ -106,18 +105,6 @@ public class PatternVerificationWizardPage2 extends AbstractPatternVerificationW
 			}
 		}
 		
-	}
-	@Override
-	public boolean isPageComplete() {	
-		boolean complete = super.isPageComplete();
-		if(complete)
-		{
-			for(Text text : parameterToTextMapping.values())
-			{
-				complete &= text.getText() !=null && !text.getText().equals("");
-			}
-		}
-		return complete;		
 	}
 
 	public ArrayList<ParameterBinding> getBindings()

@@ -5,6 +5,8 @@ import java.util.Collections;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.text.Assert;
+import org.eclipse.jface.viewers.CheckStateChangedEvent;
+import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.ui.IWorkbench;
@@ -42,6 +44,15 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 		this.addPage(page1);
 		this.addPage(page2);
 		page1.addResourceChangeListener(page2);
+		page1.addSelectionListenerOfTreeViewer(new ICheckStateListener() {			
+			@Override
+			public void checkStateChanged(CheckStateChangedEvent event) {
+				// TODO Auto-generated method stub
+				if(event.getElement() instanceof CoordinationProtocol) {
+					page2.refresh((CoordinationProtocol)event.getElement());	
+				}
+			}
+		});
 	}
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
@@ -82,14 +93,14 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 	}
 
 
-		
-	@Override
-	public IWizardPage getNextPage(IWizardPage page) {
-		// TODO Auto-generated method stub
-		IWizardPage next = super.getNextPage(page);
-		CoordinationProtocol selectedElement = (CoordinationProtocol)page1.getSourceElements()[0];
-		if (next == page2)
-			page2.refresh(selectedElement);
-		return next;
-	}
+//		
+//	@Override
+//	public IWizardPage getNextPage(IWizardPage page) {
+//		// TODO Auto-generated method stub
+//		IWizardPage next = super.getNextPage(page);
+//		CoordinationProtocol selectedElement = (CoordinationProtocol)page1.getSourceElements()[0];
+//		if (next == page2)
+//			page2.refresh(selectedElement);
+//		return next;
+//	}
 }

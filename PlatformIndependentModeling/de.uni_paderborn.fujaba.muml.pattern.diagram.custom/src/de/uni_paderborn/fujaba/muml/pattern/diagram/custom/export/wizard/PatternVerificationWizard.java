@@ -3,14 +3,19 @@ package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 public class PatternVerificationWizard extends AbstractFujabaExportWizard {
@@ -39,15 +44,15 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 		super.addPages();
 		p2 = new PatternVerificationWizardPage2(
 				"SelectVerifiedConfiguration",
-				"Step 2: Manual definition of a legal configuration",
+				"Step 2: Manual definition of a verified configuration",
 				"On this page you can alter the values of the chosen VerifiedConfiguration or define your own configuration. "
 						+ "If your configuration is complete, press the Finish-Button in order to start the Model Checking.",
 				selectedPattern, toolkit);
 		PatternVerificationWizardPage1 p1 = new PatternVerificationWizardPage1(
 				"DefineVerifiedConfiguration",
-				"Step 1: Choose a Legal Configuration",
+				"Step 1: Choose a verified configuration",
 				"On this page you can select a VerifiedConfiguration for the parameters. The chosen configuration is used by the Uppaal Model Checking."
-						+ "If you do not want to chooes a LegalConfiguraion, you can also define a configuration manually on the next page.",
+						+ "If you do not want to chooes a verified configuration, you can also define a configuration manually on the next page.",
 
 				selectedPattern, toolkit, p2);
 
@@ -75,7 +80,24 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 	public boolean performFinish() {
 		// TODO Auto-generated method stub
 		super.performFinish();
+		
+		for (ParameterBinding binding : p2.getBindings()) {			
+			Expression value = binding.getValue();
 
+			if (!(value instanceof LiteralExpression)
+					|| ((LiteralExpression) value).getValue().equals("")) {
+				ErrorDialog dialog = new ErrorDialog(
+						this.getShell(),
+						"ERROR when validating the Parameter Bindings",
+						null,
+						new org.eclipse.core.runtime.Status(IStatus.ERROR,
+								Activator.ID,
+								"Each Parameter Binding must bind a value to its Parameter!"),
+						IStatus.ERROR);
+				dialog.open();
+				return false;
+			}
+		}
 		//PatternToProtocolTransformation.saveInput(selectedPattern, (RootNode)selectedPattern.eContainer().eContainer(), p2.getBindings(), editingDomain);
 		this.startUppaalModelChecking();
 		return true;

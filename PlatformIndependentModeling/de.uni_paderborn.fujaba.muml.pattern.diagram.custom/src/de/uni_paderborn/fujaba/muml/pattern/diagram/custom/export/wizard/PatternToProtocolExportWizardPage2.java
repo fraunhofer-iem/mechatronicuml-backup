@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.viewers.CheckStateChangedEvent;
+import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -18,6 +21,7 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.common.LiteralExpression;
 
+import de.uni_paderborn.fujaba.export.listeners.ResourceChangeListener;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
@@ -38,16 +42,13 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 
 	Label selectionLabel;
 	FormToolkit toolkit;
-	PatternToProtocolExportWizardPage1 page1;
 	HashMap<Parameter, Text> parameterToTextMapping;
 
 	public PatternToProtocolExportWizardPage2(String pageName,
-			FormToolkit toolkit, PatternToProtocolExportWizardPage1 page1) {
+			FormToolkit toolkit) {
 		super(pageName);
 		this.toolkit = toolkit;
-		this.setTitle("Set or Modify the parameter bindings");
-		this.page1 = page1;
-
+		this.setTitle("Set or Modify the parameter bindings");	
 	}
 
 	@Override
@@ -112,20 +113,20 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 
 	}
 
-	public void refresh() {
+	public void refresh(AbstractCoordinationPattern selectedPattern, VerifiedConfiguration selectedVerifiedConfiguration) {
 
 		Control[] children = mainComp.getChildren();
 		for (Control c : children) {
 			c.setVisible(false);
 		}
-		AbstractCoordinationPattern p = page1.getSelectedPattern();
+		AbstractCoordinationPattern p = selectedPattern;
 		if (p == null) {
 			Label l = (Label) children[0];
 			l.setVisible(true);
 			l.setText("No pattern selected!");
 			return;
 		}
-		VerifiedConfiguration lc = page1.getSelectedVerifiedConfiguration();
+		VerifiedConfiguration lc = selectedVerifiedConfiguration;
 		parameterToTextMapping = new HashMap<Parameter, Text>();
 		int counter = 1;
 		List<Parameter> parameterList = p.getPatternParameters();

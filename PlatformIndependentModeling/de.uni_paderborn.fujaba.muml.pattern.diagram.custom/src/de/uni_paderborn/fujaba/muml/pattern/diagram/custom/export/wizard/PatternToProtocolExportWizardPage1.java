@@ -33,7 +33,7 @@ public class PatternToProtocolExportWizardPage1 extends
 			FormToolkit toolkit, ResourceSet resourceSet, ISelection selection) {
 		super(pageId, toolkit, resourceSet, selection);
 		// TODO Auto-generated constructor stub
-
+	
 	}
 
 	@Override

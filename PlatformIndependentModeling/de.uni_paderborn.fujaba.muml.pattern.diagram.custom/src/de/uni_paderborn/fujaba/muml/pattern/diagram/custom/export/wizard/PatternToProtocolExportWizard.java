@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.viewers.CheckStateChangedEvent;
+import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.widgets.Shell;
@@ -21,6 +23,7 @@ import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.common.LiteralExpression;
 
+import de.uni_paderborn.fujaba.export.listeners.ResourceChangeListener;
 import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
@@ -61,9 +64,22 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 				this.getResourceSet(), this.initialSelection);
 		addPage(page1);
 		page2 = new PatternToProtocolExportWizardPage2(
-				"DefineParameterBinding", toolkit,
-				(PatternToProtocolExportWizardPage1) page1);
+				"DefineParameterBinding", toolkit);
 		addPage(page2);
+		page1.addSelectionListenerOfTreeViewer(new ICheckStateListener() {			
+			@Override
+			public void checkStateChanged(CheckStateChangedEvent event) {
+				// TODO Auto-generated method stub
+				page2.refresh(page1.getSelectedPattern(), page1.getSelectedVerifiedConfiguration());
+			}
+		});
+		page1.addResourceChangeListener(new ResourceChangeListener() {			
+			@Override
+			public void handleResourceChange(Resource newResource) {
+				// TODO Auto-generated method stub
+				page2.refresh(page1.getSelectedPattern(), page1.getSelectedVerifiedConfiguration());				
+			}
+		});	
 	}
 
 	@Override
@@ -186,14 +202,14 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 		
 	}
 
-	@Override
-	public IWizardPage getNextPage(IWizardPage page) {
-		// TODO Auto-generated method stub
-		IWizardPage next = super.getNextPage(page);
-		if (next == page2)
-			page2.refresh();
-		return next;
-	}
+//	@Override
+//	public IWizardPage getNextPage(IWizardPage page) {
+//		// TODO Auto-generated method stub
+//		IWizardPage next = super.getNextPage(page);
+//		if (next == page2)
+//			page2.refresh();
+//		return next;
+//	}
 
 	
 
