@@ -25,6 +25,7 @@
       </transitions>
       <transitions xmi:id="_vDh8EHvfEeWJtcJpbyRDKg" priority="1" target="_YwviYXvSEeWJtcJpbyRDKg" source="_a1XFgHvSEeWJtcJpbyRDKg"/>
       <states xmi:id="_YwviYXvSEeWJtcJpbyRDKg" name="init" outgoingTransitions="_ec7pIHvSEeWJtcJpbyRDKg" incomingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" initial="true">
+        <entryEvent xmi:id="_SzyiwLYdEeWfsMwrP2bVtQ" clockResets="_I7_-YJdJEeW_n8FySayE1g"/>
         <invariants xmi:id="_jBKqQJdmEeW_n8FySayE1g" clock="_I7_-YJdJEeW_n8FySayE1g">
           <bound xmi:id="_jqWxMJdmEeW_n8FySayE1g">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_kB1dEJdmEeW_n8FySayE1g" value="2"/>
