@@ -117,13 +117,22 @@ public interface AllocationPackage extends EPackage {
 	int SYSTEM_ALLOCATION__HPIC = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Assembly Connector Instance Allocations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>System Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ALLOCATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int SYSTEM_ALLOCATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -542,6 +551,53 @@ public interface AllocationPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.AssemblyConnectorInstanceAllocationImpl <em>Assembly Connector Instance Allocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.impl.AssemblyConnectorInstanceAllocationImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationPackageImpl#getAssemblyConnectorInstanceAllocation()
+	 * @generated
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Assembly Connector Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Network Connector Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION__NETWORK_CONNECTOR_INSTANCE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Assembly Connector Instance Allocation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Assembly Connector Instance Allocation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation <em>System Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -585,6 +641,17 @@ public interface AllocationPackage extends EPackage {
 	EReference getSystemAllocation_Hpic();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getAssemblyConnectorInstanceAllocations <em>Assembly Connector Instance Allocations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Assembly Connector Instance Allocations</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getAssemblyConnectorInstanceAllocations()
+	 * @see #getSystemAllocation()
+	 * @generated
+	 */
+	EReference getSystemAllocation_AssemblyConnectorInstanceAllocations();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.allocation.Allocation <em>Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -615,6 +682,38 @@ public interface AllocationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAllocation_ResourceInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation <em>Assembly Connector Instance Allocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assembly Connector Instance Allocation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation
+	 * @generated
+	 */
+	EClass getAssemblyConnectorInstanceAllocation();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation#getAssemblyConnectorInstance <em>Assembly Connector Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Assembly Connector Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation#getAssemblyConnectorInstance()
+	 * @see #getAssemblyConnectorInstanceAllocation()
+	 * @generated
+	 */
+	EReference getAssemblyConnectorInstanceAllocation_AssemblyConnectorInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation#getNetworkConnectorInstance <em>Network Connector Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Network Connector Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation#getNetworkConnectorInstance()
+	 * @see #getAssemblyConnectorInstanceAllocation()
+	 * @generated
+	 */
+	EReference getAssemblyConnectorInstanceAllocation_NetworkConnectorInstance();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -674,6 +773,14 @@ public interface AllocationPackage extends EPackage {
 		EReference SYSTEM_ALLOCATION__HPIC = eINSTANCE.getSystemAllocation_Hpic();
 
 		/**
+		 * The meta object literal for the '<em><b>Assembly Connector Instance Allocations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS = eINSTANCE.getSystemAllocation_AssemblyConnectorInstanceAllocations();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationImpl <em>Allocation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -698,6 +805,32 @@ public interface AllocationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ALLOCATION__RESOURCE_INSTANCE = eINSTANCE.getAllocation_ResourceInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.AssemblyConnectorInstanceAllocationImpl <em>Assembly Connector Instance Allocation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.psm.allocation.impl.AssemblyConnectorInstanceAllocationImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationPackageImpl#getAssemblyConnectorInstanceAllocation()
+		 * @generated
+		 */
+		EClass ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION = eINSTANCE.getAssemblyConnectorInstanceAllocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Assembly Connector Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE = eINSTANCE.getAssemblyConnectorInstanceAllocation_AssemblyConnectorInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Network Connector Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION__NETWORK_CONNECTOR_INSTANCE = eINSTANCE.getAssemblyConnectorInstanceAllocation_NetworkConnectorInstance();
 
 	}
 

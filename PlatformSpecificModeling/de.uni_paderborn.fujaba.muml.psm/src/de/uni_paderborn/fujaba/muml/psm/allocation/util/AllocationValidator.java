@@ -90,6 +90,8 @@ public class AllocationValidator extends EObjectValidator {
 				return validateSystemAllocation((SystemAllocation)value, diagnostics, context);
 			case AllocationPackage.ALLOCATION:
 				return validateAllocation((Allocation)value, diagnostics, context);
+			case AllocationPackage.ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION:
+				return validateAssemblyConnectorInstanceAllocation((AssemblyConnectorInstanceAllocation)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -152,6 +154,15 @@ public class AllocationValidator extends EObjectValidator {
 	 */
 	public boolean validateAllocation(Allocation allocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(allocation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnectorInstanceAllocation(AssemblyConnectorInstanceAllocation assemblyConnectorInstanceAllocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(assemblyConnectorInstanceAllocation, diagnostics, context);
 	}
 
 	/**

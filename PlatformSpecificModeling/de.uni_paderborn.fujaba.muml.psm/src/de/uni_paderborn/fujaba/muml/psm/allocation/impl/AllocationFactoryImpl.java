@@ -58,6 +58,7 @@ public class AllocationFactoryImpl extends EFactoryImpl implements AllocationFac
 		switch (eClass.getClassifierID()) {
 			case AllocationPackage.SYSTEM_ALLOCATION: return createSystemAllocation();
 			case AllocationPackage.ALLOCATION: return createAllocation();
+			case AllocationPackage.ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION: return createAssemblyConnectorInstanceAllocation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +82,16 @@ public class AllocationFactoryImpl extends EFactoryImpl implements AllocationFac
 	public Allocation createAllocation() {
 		AllocationImpl allocation = new AllocationImpl();
 		return allocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssemblyConnectorInstanceAllocation createAssemblyConnectorInstanceAllocation() {
+		AssemblyConnectorInstanceAllocationImpl assemblyConnectorInstanceAllocation = new AssemblyConnectorInstanceAllocationImpl();
+		return assemblyConnectorInstanceAllocation;
 	}
 
 	/**

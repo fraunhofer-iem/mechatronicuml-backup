@@ -24,6 +24,7 @@ import org.storydriven.core.ExtendableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getAllocations <em>Allocations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getCic <em>Cic</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getHpic <em>Hpic</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getAssemblyConnectorInstanceAllocations <em>Assembly Connector Instance Allocations</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#getSystemAllocation()
@@ -100,5 +101,20 @@ public interface SystemAllocation extends ExtendableElement {
 	 * @generated
 	 */
 	void setHpic(HWPlatformInstanceConfiguration value);
+
+	/**
+	 * Returns the value of the '<em><b>Assembly Connector Instance Allocations</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The assembly connector instance allocations.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Assembly Connector Instance Allocations</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#getSystemAllocation_AssemblyConnectorInstanceAllocations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AssemblyConnectorInstanceAllocation> getAssemblyConnectorInstanceAllocations();
 
 } // SystemAllocation

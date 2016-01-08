@@ -6,6 +6,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstan
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
+import de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 
 import java.util.Collection;
@@ -35,6 +36,7 @@ import org.storydriven.core.impl.ExtendableElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getAllocations <em>Allocations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getCic <em>Cic</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getHpic <em>Hpic</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getAssemblyConnectorInstanceAllocations <em>Assembly Connector Instance Allocations</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +70,16 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 	 * @ordered
 	 */
 	protected HWPlatformInstanceConfiguration hpic;
+
+	/**
+	 * The cached value of the '{@link #getAssemblyConnectorInstanceAllocations() <em>Assembly Connector Instance Allocations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssemblyConnectorInstanceAllocations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AssemblyConnectorInstanceAllocation> assemblyConnectorInstanceAllocations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,11 +193,25 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AssemblyConnectorInstanceAllocation> getAssemblyConnectorInstanceAllocations() {
+		if (assemblyConnectorInstanceAllocations == null) {
+			assemblyConnectorInstanceAllocations = new EObjectContainmentEList<AssemblyConnectorInstanceAllocation>(AssemblyConnectorInstanceAllocation.class, this, AllocationPackage.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS);
+		}
+		return assemblyConnectorInstanceAllocations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AllocationPackage.SYSTEM_ALLOCATION__ALLOCATIONS:
 				return ((InternalEList<?>)getAllocations()).basicRemove(otherEnd, msgs);
+			case AllocationPackage.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS:
+				return ((InternalEList<?>)getAssemblyConnectorInstanceAllocations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -206,6 +232,8 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
 				if (resolve) return getHpic();
 				return basicGetHpic();
+			case AllocationPackage.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS:
+				return getAssemblyConnectorInstanceAllocations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,6 +257,10 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
 				setHpic((HWPlatformInstanceConfiguration)newValue);
 				return;
+			case AllocationPackage.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS:
+				getAssemblyConnectorInstanceAllocations().clear();
+				getAssemblyConnectorInstanceAllocations().addAll((Collection<? extends AssemblyConnectorInstanceAllocation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -250,6 +282,9 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
 				setHpic((HWPlatformInstanceConfiguration)null);
 				return;
+			case AllocationPackage.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS:
+				getAssemblyConnectorInstanceAllocations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -268,6 +303,8 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 				return cic != null;
 			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
 				return hpic != null;
+			case AllocationPackage.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS:
+				return assemblyConnectorInstanceAllocations != null && !assemblyConnectorInstanceAllocations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

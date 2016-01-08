@@ -51,6 +51,13 @@
           <details key="documentation" value="The allocated HardwarePlatformInstanceConfiguration."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorInstanceAllocations"
+          upperBound="-1" eType="#//allocation/AssemblyConnectorInstanceAllocation"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The assembly connector instance allocations."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Allocation" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -66,6 +73,23 @@
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The allocated Resource Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnectorInstanceAllocation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an allocation of exactly one AssemblyConnectorInstance&#xA;to at most one NetworkConnectorInstance. If the networkConnectorInstance reference&#xA;is null, the component instances that are connected via the assemblyConnectorInstance&#xA;reference are allocated to the same ECU (and communicate by local means)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorInstance"
+          lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AssemblyConnectorInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The assembly connector instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectorInstance"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/NetworkConnectorInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The network connector instance that is used by the assemblyConnector.connectorEndpointInstances&#xA;to communicate with each other. If this reference is null, the assemblyConnector.connectorEndpointInstances&#xA;communicate with each other by local means."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

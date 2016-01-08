@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
 import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationFactory;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
+import de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.util.AllocationValidator;
@@ -77,6 +78,13 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * @generated
 	 */
 	private EClass allocationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass assemblyConnectorInstanceAllocationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -227,6 +235,15 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSystemAllocation_AssemblyConnectorInstanceAllocations() {
+		return (EReference)systemAllocationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAllocation() {
 		return allocationEClass;
 	}
@@ -247,6 +264,33 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 */
 	public EReference getAllocation_ResourceInstance() {
 		return (EReference)allocationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAssemblyConnectorInstanceAllocation() {
+		return assemblyConnectorInstanceAllocationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssemblyConnectorInstanceAllocation_AssemblyConnectorInstance() {
+		return (EReference)assemblyConnectorInstanceAllocationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssemblyConnectorInstanceAllocation_NetworkConnectorInstance() {
+		return (EReference)assemblyConnectorInstanceAllocationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -281,10 +325,15 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__ALLOCATIONS);
 		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__CIC);
 		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__HPIC);
+		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS);
 
 		allocationEClass = createEClass(ALLOCATION);
 		createEReference(allocationEClass, ALLOCATION__COMPONENT_INSTANCE);
 		createEReference(allocationEClass, ALLOCATION__RESOURCE_INSTANCE);
+
+		assemblyConnectorInstanceAllocationEClass = createEClass(ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION);
+		createEReference(assemblyConnectorInstanceAllocationEClass, ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE);
+		createEReference(assemblyConnectorInstanceAllocationEClass, ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATION__NETWORK_CONNECTOR_INSTANCE);
 	}
 
 	/**
@@ -329,10 +378,15 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		initEReference(getSystemAllocation_Allocations(), this.getAllocation(), null, "allocations", null, 1, -1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystemAllocation_Cic(), theInstancePackage.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystemAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystemAllocation_AssemblyConnectorInstanceAllocations(), this.getAssemblyConnectorInstanceAllocation(), null, "assemblyConnectorInstanceAllocations", null, 0, -1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(allocationEClass, Allocation.class, "Allocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAllocation_ComponentInstance(), theInstancePackage.getComponentInstance(), null, "componentInstance", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAllocation_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(assemblyConnectorInstanceAllocationEClass, AssemblyConnectorInstanceAllocation.class, "AssemblyConnectorInstanceAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAssemblyConnectorInstanceAllocation_AssemblyConnectorInstance(), theInstancePackage.getAssemblyConnectorInstance(), null, "assemblyConnectorInstance", null, 1, 1, AssemblyConnectorInstanceAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssemblyConnectorInstanceAllocation_NetworkConnectorInstance(), theHwplatforminstancePackage.getNetworkConnectorInstance(), null, "networkConnectorInstance", null, 0, 1, AssemblyConnectorInstanceAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
