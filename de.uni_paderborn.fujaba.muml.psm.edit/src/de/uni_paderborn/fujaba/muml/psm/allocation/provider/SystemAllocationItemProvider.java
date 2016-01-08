@@ -118,6 +118,7 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AllocationPackage.Literals.SYSTEM_ALLOCATION__ALLOCATIONS);
+			childrenFeatures.add(AllocationPackage.Literals.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -171,6 +172,7 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 
 		switch (notification.getFeatureID(SystemAllocation.class)) {
 			case AllocationPackage.SYSTEM_ALLOCATION__ALLOCATIONS:
+			case AllocationPackage.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -217,6 +219,11 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 			(createChildParameter
 				(AllocationPackage.Literals.SYSTEM_ALLOCATION__ALLOCATIONS,
 				 AllocationFactory.eINSTANCE.createAllocation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AllocationPackage.Literals.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS,
+				 AllocationFactory.eINSTANCE.createAssemblyConnectorInstanceAllocation()));
 	}
 
 	/**

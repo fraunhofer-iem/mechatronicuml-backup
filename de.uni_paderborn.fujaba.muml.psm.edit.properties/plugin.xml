@@ -158,6 +158,11 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor.AssemblyConnectorInstanceAllocationEditor$Factory"
+             type="http://www.fujaba.de/muml/psm/allocation/0.4.0/#AssemblyConnectorInstanceAllocation">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.psm.properties.portapimapping.editor.PortApiMappingEditor$Factory"
              type="http://www.fujaba.de/muml/psm/portapimapping/0.4.0/#PortApiMapping">
        </propertyEditor>

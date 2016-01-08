@@ -40,6 +40,15 @@ public interface AllocationFactory extends EFactory {
 	Allocation createAllocation();
 
 	/**
+	 * Returns a new object of class '<em>Assembly Connector Instance Allocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assembly Connector Instance Allocation</em>'.
+	 * @generated
+	 */
+	AssemblyConnectorInstanceAllocation createAssemblyConnectorInstanceAllocation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

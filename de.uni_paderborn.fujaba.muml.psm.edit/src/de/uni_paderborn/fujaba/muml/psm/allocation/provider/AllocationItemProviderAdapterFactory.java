@@ -118,6 +118,29 @@ public class AllocationItemProviderAdapterFactory extends AllocationAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssemblyConnectorInstanceAllocationItemProvider assemblyConnectorInstanceAllocationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssemblyConnectorInstanceAllocationAdapter() {
+		if (assemblyConnectorInstanceAllocationItemProvider == null) {
+			assemblyConnectorInstanceAllocationItemProvider = new AssemblyConnectorInstanceAllocationItemProvider(this);
+		}
+
+		return assemblyConnectorInstanceAllocationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,6 +241,7 @@ public class AllocationItemProviderAdapterFactory extends AllocationAdapterFacto
 	public void dispose() {
 		if (systemAllocationItemProvider != null) systemAllocationItemProvider.dispose();
 		if (allocationItemProvider != null) allocationItemProvider.dispose();
+		if (assemblyConnectorInstanceAllocationItemProvider != null) assemblyConnectorInstanceAllocationItemProvider.dispose();
 	}
 
 }

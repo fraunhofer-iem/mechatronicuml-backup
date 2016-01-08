@@ -27,11 +27,19 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 
 			addPropertyEditor(createEditorHpic_property_tab_psmTab_Editor(), false);
 
+			addPropertyEditor(createEditorAllocations_property_tab_psmTab_Editor(), false);
+
+			addPropertyEditor(createEditorAssemblyConnectorInstanceAllocations_property_tab_psmTab_Editor(), false);
+
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
 			addPropertyEditor(createEditorCic_property_tab_psmTab_Editor(), false);
 
 			addPropertyEditor(createEditorHpic_property_tab_psmTab_Editor(), false);
+
+			addPropertyEditor(createEditorAllocations_property_tab_psmTab_Editor(), false);
+
+			addPropertyEditor(createEditorAssemblyConnectorInstanceAllocations_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -43,7 +51,7 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description_Aspects
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -79,6 +87,36 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 			this.editorHpic_property_tab_psmTab = editor;
 		}
 		return this.editorHpic_property_tab_psmTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAllocations_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAllocations_property_tab_psmTab_Editor() {
+		if (this.editorAllocations_property_tab_psmTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE
+					.getSystemAllocation_Allocations();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The different allocations that have been defined for this System Allocation.");
+
+			this.editorAllocations_property_tab_psmTab = editor;
+		}
+		return this.editorAllocations_property_tab_psmTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAssemblyConnectorInstanceAllocations_property_tab_psmTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAssemblyConnectorInstanceAllocations_property_tab_psmTab_Editor() {
+		if (this.editorAssemblyConnectorInstanceAllocations_property_tab_psmTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage.eINSTANCE
+					.getSystemAllocation_AssemblyConnectorInstanceAllocations();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The assembly connector instance allocations.");
+
+			this.editorAssemblyConnectorInstanceAllocations_property_tab_psmTab = editor;
+		}
+		return this.editorAssemblyConnectorInstanceAllocations_property_tab_psmTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
@@ -117,9 +155,8 @@ public class SystemAllocationEditor extends de.uni_paderborn.fujaba.properties.r
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm",
+					"property.tab.psm", "property.tab.psm", "property.tab.extensions"}).contains(tab);
 		}
 	}
 
