@@ -147,8 +147,9 @@ public class CANMessageFrameEditor extends de.uni_paderborn.fujaba.properties.ru
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm",
-					"property.tab.psm", "property.tab.psm", "property.tab.general", "property.tab.extensions"})
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm", "property.tab.extensions",
+							"property.tab.psm", "property.tab.psm", "property.tab.general", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}
