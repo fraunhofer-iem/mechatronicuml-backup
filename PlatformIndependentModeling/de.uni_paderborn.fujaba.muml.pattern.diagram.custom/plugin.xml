@@ -15,10 +15,6 @@
    
      <extension
          point="org.eclipse.ui.exportWizards">
-      <category
-            id="de.uni_paderborn.fujaba.export"
-            name="MechatronicUML">
-      </category>
       <wizard
             category="de.uni_paderborn.fujaba.export"
             class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
