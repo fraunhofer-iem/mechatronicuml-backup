@@ -44,6 +44,7 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 	}
 
 	void setManaged(boolean embedded) {
+		// XXX bug; self assignment! can we safely change behavior here?
 		this.managed = managed;
 	}
 	
