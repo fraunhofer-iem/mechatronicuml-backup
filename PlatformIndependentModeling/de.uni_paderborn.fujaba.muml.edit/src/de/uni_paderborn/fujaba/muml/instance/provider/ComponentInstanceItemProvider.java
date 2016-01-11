@@ -7,31 +7,23 @@
 package de.uni_paderborn.fujaba.muml.instance.provider;
 
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
-import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance} object.
@@ -75,11 +67,11 @@ public class ComponentInstanceItemProvider
 	 * This adds a property descriptor for the Component Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addComponentTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentInstance_componentType_feature"),
@@ -90,36 +82,7 @@ public class ComponentInstanceItemProvider
 				 true,
 				 null,
 				 null,
-				 null) {
-
-					@Override
-					public Collection<?> getChoiceOfValues(Object object) {
-						Collection<?> choices = super.getChoiceOfValues(object);
-						
-						// Restrict allowed type based on the kind of ComponentInstance
-						EClass allowedType = null;
-						if (object instanceof StructuredComponentInstance) {
-							allowedType = ComponentPackage.Literals.STRUCTURED_COMPONENT;
-						} else if (object instanceof AtomicComponentInstance){
-							allowedType = ComponentPackage.Literals.ATOMIC_COMPONENT;
-						}
-						
-						// Filter the choices
-						if (allowedType != null) {
-							Collection<?> filteredChoices = new ArrayList<Object>(choices);
-							for (Object choice : choices) {
-								if (choice != null && !allowedType.isSuperTypeOf(((EObject) choice).eClass())) {
-									filteredChoices.remove(choice);
-								}
-							}
-							choices = filteredChoices;
-						}
-						
-						
-						return choices;
-					}
-				
-			});
+				 null));
 	}
 
 	/**

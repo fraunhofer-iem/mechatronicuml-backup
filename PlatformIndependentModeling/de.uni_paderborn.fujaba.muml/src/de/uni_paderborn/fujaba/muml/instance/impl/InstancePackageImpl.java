@@ -1102,6 +1102,12 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	protected void createOCLFilterAnnotations() {
 		String source = "http://www.muml.org/emf/OCLFilter";	
 		addAnnotation
+		  (getComponentInstance_ComponentType(), 
+		   source, 
+		   new String[] {
+			 "filter", "(\nif self.parentCIC.parentStructuredComponentInstance.oclIsUndefined() then\n\tcomponent::Component::allInstances()\nelse\n\tself.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts.componentType\nendif\n)->select(x | (self.oclIsKindOf(AtomicComponentInstance) and x.oclIsKindOf(component::AtomicComponent)) or (self.oclIsKindOf(StructuredComponentInstance) and x.oclIsKindOf(component::StructuredComponent)))"
+		   });	
+		addAnnotation
 		  (getComponentInstance_ComponentPart(), 
 		   source, 
 		   new String[] {
