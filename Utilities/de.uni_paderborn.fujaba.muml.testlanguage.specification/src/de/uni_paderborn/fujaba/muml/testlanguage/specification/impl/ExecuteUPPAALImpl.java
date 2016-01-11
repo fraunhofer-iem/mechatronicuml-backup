@@ -2,23 +2,24 @@
  */
 package de.uni_paderborn.fujaba.muml.testlanguage.specification.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.ExecuteUPPAAL;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.NodeSpecification;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.PortType;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationPackage;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.VerifyTAJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.CoordinationProtocolOptions;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
 import de.uni_paderborn.uppaal.NTA;
+import de.uni_paderborn.uppaal.job.VerifyTAOperation;
 import de.uni_paderborn.uppaal.requirements.PropertyRepository;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -87,17 +88,12 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements
 		}
 
 		// Start the job that serialized and then verifies the NTA.
-		VerifyTAJob job = new VerifyTAJob((NTA) inputs.get("nta"),
+		VerifyTAOperation operation = new VerifyTAOperation((NTA) inputs.get("nta"),
 				(PropertyRepository) inputs.get("property_repository"), options);
-		IStatus status = job.execute(new NullProgressMonitor());
-
-		// Throw an exception if something went wrong.
-		if (!status.isOK()) {
-			throw new ExecutionException(status.getMessage());
-		}
+		operation.run(new NullProgressMonitor());
 
 		// Put the traces on the output port and return.
-		outputs.put("trace_repository", job.getTraceRepository());
+		outputs.put("trace_repository", operation.getTraceRepository());
 		return;
 	}
 

@@ -16,6 +16,69 @@
       [Enter License Description here.]
    </license>
 
+   <requires>
+      <import feature="de.uni_paderborn.uppaal.feature" version="0.5.0.qualifier"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.validation" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+      <import plugin="org.eclipse.gmf.runtime.notation" version="1.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.validation.ui"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="org.eclipse.gmf.tooling.runtime"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.validate" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.common"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.common.ui"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.emf.util.ui"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.runtime"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.ui"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.emf.compare" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml"/>
+      <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.job" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.uppaal" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.uppaal.requirements" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.uppaal.trace"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.results" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.extension" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.uppaal.job"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="de.uni_paderborn.fujaba.muml.testlanguage"
          download-size="0"

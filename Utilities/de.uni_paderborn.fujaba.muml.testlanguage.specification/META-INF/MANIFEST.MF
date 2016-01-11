@@ -24,6 +24,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext,
  de.uni_paderborn.fujaba.muml.verification.extension;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.verification.uppaal.options;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.verification.uppaal.options;bundle-version="0.4.0",
+ de.uni_paderborn.uppaal.job
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.xmi.impl
