@@ -627,7 +627,15 @@ public class ReconfigurationMUMLAnalysis {
 		
 		// Check all transitions
 		for (Transition t : transitions) {
-			DiscreteInteractionEndpoint port = portStatecharts.get(t.getStatechart().getPortOrRoleStatechart());
+			RealtimeStatechart portOrRoleStatechart = t.getStatechart().getPortOrRoleStatechart();
+			
+			// For MUML #1362:
+			// getPortOrRoleStatechart() can now return null; to be sure we keep the old functionality here.
+			if (portOrRoleStatechart == null) {
+				portOrRoleStatechart = t.getStatechart();
+			}
+			
+			DiscreteInteractionEndpoint port = portStatecharts.get(portOrRoleStatechart);
 			
 			//TODO Hack for subRole RTSC
 			if(port == null)

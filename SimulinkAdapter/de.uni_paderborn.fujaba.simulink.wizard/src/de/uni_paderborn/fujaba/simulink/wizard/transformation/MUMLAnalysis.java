@@ -45,6 +45,7 @@ import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
@@ -537,7 +538,16 @@ public class MUMLAnalysis {
 		
 		// Check all transitions
 		for (Transition t : transitions) {
-			DiscretePort port = portStatecharts.get(t.getStatechart().getPortOrRoleStatechart());		
+			
+			RealtimeStatechart portOrRoleStatechart = t.getStatechart().getPortOrRoleStatechart();
+			
+			// For MUML #1362:
+			// getPortOrRoleStatechart() can now return null; to be sure we keep the old functionality here.
+			if (portOrRoleStatechart == null) {
+				portOrRoleStatechart = t.getStatechart();
+			}
+
+			DiscretePort port = portStatecharts.get(portOrRoleStatechart);		
 			
 			// Analyze trigger message event
 			String[] queueReceiveOperations = getTriggerMessageEventStrings(t, port);		
