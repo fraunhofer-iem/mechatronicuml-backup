@@ -249,6 +249,9 @@ public class NavigationFeaturePropertyEditor extends
 	protected void valueChanged() {
 		super.valueChanged();
 		refreshButtons();
+		if (value == null) {
+			navigatedEditor.getSection().setExpanded(false);
+		}
 		if (feature.isMany()) {
 			navigatedEditor.setInput(manyValue);
 		} else {
