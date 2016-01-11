@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource.provider;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.ProcessorOwnedCacheItemProvider;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import java.util.Collection;
 import java.util.List;
@@ -56,11 +57,11 @@ public class ProcessorItemProvider
 	 * This adds a property descriptor for the Owned Cache feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	protected void addOwnedCachePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ProcessorOwnedCacheItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Processor_ownedCache_feature"),

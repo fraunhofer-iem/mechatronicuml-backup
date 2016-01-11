@@ -21,21 +21,21 @@ public class TimeIntervalEditor extends de.uni_paderborn.fujaba.properties.runti
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUnit_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUnit_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUnit_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUnit_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -43,13 +43,15 @@ public class TimeIntervalEditor extends de.uni_paderborn.fujaba.properties.runti
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnit_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnit_GeneralTab_Editor() {
-		if (this.editorUnit_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnit_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnit_property_tab_generalTab_Editor() {
+		if (this.editorUnit_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 					.getTimeInterval_Unit();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -57,14 +59,14 @@ public class TimeIntervalEditor extends de.uni_paderborn.fujaba.properties.runti
 
 			editor.setTooltipMessage("The unit for this TimeInterval.");
 
-			this.editorUnit_GeneralTab = editor;
+			this.editorUnit_property_tab_generalTab = editor;
 		}
-		return this.editorUnit_GeneralTab;
+		return this.editorUnit_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_GeneralTab_Editor() {
-		if (this.editorLowerBound_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_property_tab_generalTab_Editor() {
+		if (this.editorLowerBound_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 					.getRange_LowerBound();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -72,14 +74,14 @@ public class TimeIntervalEditor extends de.uni_paderborn.fujaba.properties.runti
 
 			editor.setTooltipMessage("Defines the lower bound of the range.");
 
-			this.editorLowerBound_GeneralTab = editor;
+			this.editorLowerBound_property_tab_generalTab = editor;
 		}
-		return this.editorLowerBound_GeneralTab;
+		return this.editorLowerBound_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_GeneralTab_Editor() {
-		if (this.editorUpperBound_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_property_tab_generalTab_Editor() {
+		if (this.editorUpperBound_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 					.getRange_UpperBound();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -87,9 +89,9 @@ public class TimeIntervalEditor extends de.uni_paderborn.fujaba.properties.runti
 
 			editor.setTooltipMessage("Defines the upper bound of the range.");
 
-			this.editorUpperBound_GeneralTab = editor;
+			this.editorUpperBound_property_tab_generalTab = editor;
 		}
-		return this.editorUpperBound_GeneralTab;
+		return this.editorUpperBound_property_tab_generalTab;
 	}
 
 	//

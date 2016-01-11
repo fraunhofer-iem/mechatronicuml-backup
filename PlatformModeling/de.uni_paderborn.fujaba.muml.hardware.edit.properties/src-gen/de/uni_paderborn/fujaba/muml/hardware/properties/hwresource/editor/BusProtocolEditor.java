@@ -21,69 +21,71 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorFurtherInformation_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFurtherInformation_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsTimeTriggered_GeneralTab_Editor(), false);
+					createEditorIsTimeTriggered_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsEventTriggered_GeneralTab_Editor(), false);
+					createEditorIsEventTriggered_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsNetworkingProtocol_GeneralTab_Editor(), false);
+					createEditorIsNetworkingProtocol_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsSerial_GeneralTab_Editor(), false);
+					createEditorIsSerial_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorBusProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBusProtocol_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorFurtherInformation_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFurtherInformation_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsTimeTriggered_GeneralTab_Editor(), false);
+					createEditorIsTimeTriggered_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsEventTriggered_GeneralTab_Editor(), false);
+					createEditorIsEventTriggered_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsNetworkingProtocol_GeneralTab_Editor(), false);
+					createEditorIsNetworkingProtocol_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsSerial_GeneralTab_Editor(), false);
+					createEditorIsSerial_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorBusProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBusProtocol_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBusProtocol_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBusProtocol_GeneralTab_Editor() {
-		if (this.editorBusProtocol_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBusProtocol_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBusProtocol_property_tab_generalTab_Editor() {
+		if (this.editorBusProtocol_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getBusProtocol_BusProtocol();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -91,14 +93,14 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 
 			editor.setTooltipMessage("The bus protocol type.");
 
-			this.editorBusProtocol_GeneralTab = editor;
+			this.editorBusProtocol_property_tab_generalTab = editor;
 		}
-		return this.editorBusProtocol_GeneralTab;
+		return this.editorBusProtocol_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsTimeTriggered_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsTimeTriggered_GeneralTab_Editor() {
-		if (this.editorIsTimeTriggered_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsTimeTriggered_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsTimeTriggered_property_tab_generalTab_Editor() {
+		if (this.editorIsTimeTriggered_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationProtocol_IsTimeTriggered();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
@@ -106,14 +108,14 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 
 			editor.setTooltipMessage("Determines if the protocol is time triggered. ");
 
-			this.editorIsTimeTriggered_GeneralTab = editor;
+			this.editorIsTimeTriggered_property_tab_generalTab = editor;
 		}
-		return this.editorIsTimeTriggered_GeneralTab;
+		return this.editorIsTimeTriggered_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsEventTriggered_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsEventTriggered_GeneralTab_Editor() {
-		if (this.editorIsEventTriggered_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsEventTriggered_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsEventTriggered_property_tab_generalTab_Editor() {
+		if (this.editorIsEventTriggered_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationProtocol_IsEventTriggered();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
@@ -121,14 +123,14 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 
 			editor.setTooltipMessage("Determines if this protocol is event triggered.");
 
-			this.editorIsEventTriggered_GeneralTab = editor;
+			this.editorIsEventTriggered_property_tab_generalTab = editor;
 		}
-		return this.editorIsEventTriggered_GeneralTab;
+		return this.editorIsEventTriggered_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFurtherInformation_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFurtherInformation_GeneralTab_Editor() {
-		if (this.editorFurtherInformation_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFurtherInformation_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFurtherInformation_property_tab_generalTab_Editor() {
+		if (this.editorFurtherInformation_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationProtocol_FurtherInformation();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -136,14 +138,14 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 
 			editor.setTooltipMessage("Further information for this protocol (i.e. Version, or another Protocol).");
 
-			this.editorFurtherInformation_GeneralTab = editor;
+			this.editorFurtherInformation_property_tab_generalTab = editor;
 		}
-		return this.editorFurtherInformation_GeneralTab;
+		return this.editorFurtherInformation_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsNetworkingProtocol_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsNetworkingProtocol_GeneralTab_Editor() {
-		if (this.editorIsNetworkingProtocol_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsNetworkingProtocol_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsNetworkingProtocol_property_tab_generalTab_Editor() {
+		if (this.editorIsNetworkingProtocol_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationProtocol_IsNetworkingProtocol();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
@@ -152,14 +154,14 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 			editor.setTooltipMessage(
 					"Used t inidicate wether this Protocol is used for Networking ECUs or for triggering Sensors or Actuators.");
 
-			this.editorIsNetworkingProtocol_GeneralTab = editor;
+			this.editorIsNetworkingProtocol_property_tab_generalTab = editor;
 		}
-		return this.editorIsNetworkingProtocol_GeneralTab;
+		return this.editorIsNetworkingProtocol_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsSerial_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsSerial_GeneralTab_Editor() {
-		if (this.editorIsSerial_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsSerial_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsSerial_property_tab_generalTab_Editor() {
+		if (this.editorIsSerial_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationProtocol_IsSerial();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
@@ -167,14 +169,14 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 
 			editor.setTooltipMessage("Determines if this CommunicationMedia uses a serial communication.");
 
-			this.editorIsSerial_GeneralTab = editor;
+			this.editorIsSerial_property_tab_generalTab = editor;
 		}
-		return this.editorIsSerial_GeneralTab;
+		return this.editorIsSerial_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
-		if (this.editorName_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getNamedElement_Name();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -194,22 +196,22 @@ public class BusProtocolEditor extends de.uni_paderborn.fujaba.properties.runtim
 
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-			this.editorName_GeneralTab = editor;
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorName_GeneralTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	//

@@ -21,17 +21,17 @@ public class FrequencyEditor extends de.uni_paderborn.fujaba.properties.runtime.
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorValue_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUnit_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUnit_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorValue_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUnit_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUnit_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,13 +39,15 @@ public class FrequencyEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_GeneralTab_Editor() {
-		if (this.editorValue_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_property_tab_generalTab_Editor() {
+		if (this.editorValue_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 					.getFrequency_Value();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -53,14 +55,14 @@ public class FrequencyEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 			editor.setTooltipMessage("The value of the frequency.");
 
-			this.editorValue_GeneralTab = editor;
+			this.editorValue_property_tab_generalTab = editor;
 		}
-		return this.editorValue_GeneralTab;
+		return this.editorValue_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnit_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnit_GeneralTab_Editor() {
-		if (this.editorUnit_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnit_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnit_property_tab_generalTab_Editor() {
+		if (this.editorUnit_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 					.getFrequency_Unit();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -68,9 +70,9 @@ public class FrequencyEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 			editor.setTooltipMessage("The unit of this value (i.e. Hz, MHz,etc).");
 
-			this.editorUnit_GeneralTab = editor;
+			this.editorUnit_property_tab_generalTab = editor;
 		}
-		return this.editorUnit_GeneralTab;
+		return this.editorUnit_property_tab_generalTab;
 	}
 
 	//

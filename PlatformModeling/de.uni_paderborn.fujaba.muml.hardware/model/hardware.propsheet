@@ -198,7 +198,7 @@
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
         <genFeature href="hardware.genmodel#//hardware/hwresource/Processor/nbCores"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor" digits="2"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RlcE5c1gEeSIgPDefa6ZBw" superClasses="_RlV-Rs1gEeSIgPDefa6ZBw">

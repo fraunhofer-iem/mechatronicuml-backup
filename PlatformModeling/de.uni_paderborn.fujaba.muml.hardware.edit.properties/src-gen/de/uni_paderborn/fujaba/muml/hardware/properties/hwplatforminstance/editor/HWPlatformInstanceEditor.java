@@ -21,43 +21,45 @@ public class HWPlatformInstanceEditor extends de.uni_paderborn.fujaba.properties
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorHwplatformType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHwplatformType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorEmbeddedHPIC_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorEmbeddedHPIC_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentHPIC_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParentHPIC_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorHwplatformType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHwplatformType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorEmbeddedHPIC_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorEmbeddedHPIC_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentHPIC_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParentHPIC_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwplatformType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwplatformType_GeneralTab_Editor() {
-		if (this.editorHwplatformType_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwplatformType_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwplatformType_property_tab_generalTab_Editor() {
+		if (this.editorHwplatformType_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 					.getHWPlatformInstance_HwplatformType();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -65,14 +67,14 @@ public class HWPlatformInstanceEditor extends de.uni_paderborn.fujaba.properties
 
 			editor.setTooltipMessage("The HWPlatform type of which this instance is derived.");
 
-			this.editorHwplatformType_GeneralTab = editor;
+			this.editorHwplatformType_property_tab_generalTab = editor;
 		}
-		return this.editorHwplatformType_GeneralTab;
+		return this.editorHwplatformType_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedHPIC_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedHPIC_GeneralTab_Editor() {
-		if (this.editorEmbeddedHPIC_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedHPIC_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedHPIC_property_tab_generalTab_Editor() {
+		if (this.editorEmbeddedHPIC_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 					.getHWPlatformInstance_EmbeddedHPIC();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -80,14 +82,14 @@ public class HWPlatformInstanceEditor extends de.uni_paderborn.fujaba.properties
 
 			editor.setTooltipMessage("The embedded Hardware Platform Instance Configuration.\n");
 
-			this.editorEmbeddedHPIC_GeneralTab = editor;
+			this.editorEmbeddedHPIC_property_tab_generalTab = editor;
 		}
-		return this.editorEmbeddedHPIC_GeneralTab;
+		return this.editorEmbeddedHPIC_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentHPIC_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentHPIC_GeneralTab_Editor() {
-		if (this.editorParentHPIC_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentHPIC_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentHPIC_property_tab_generalTab_Editor() {
+		if (this.editorParentHPIC_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 					.getHWPlatformInstance_ParentHPIC();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -96,14 +98,14 @@ public class HWPlatformInstanceEditor extends de.uni_paderborn.fujaba.properties
 			editor.setTooltipMessage(
 					"The Hardware Platform Instance Configuration in which this HWPlatformInstance is embedded.\n");
 
-			this.editorParentHPIC_GeneralTab = editor;
+			this.editorParentHPIC_property_tab_generalTab = editor;
 		}
-		return this.editorParentHPIC_GeneralTab;
+		return this.editorParentHPIC_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
-		if (this.editorName_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getNamedElement_Name();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -123,22 +125,22 @@ public class HWPlatformInstanceEditor extends de.uni_paderborn.fujaba.properties
 
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-			this.editorName_GeneralTab = editor;
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorName_GeneralTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	//

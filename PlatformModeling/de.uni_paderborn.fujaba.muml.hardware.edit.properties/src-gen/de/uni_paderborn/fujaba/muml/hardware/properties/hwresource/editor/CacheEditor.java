@@ -21,83 +21,85 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentStructuredResource_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParentStructuredResource_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorMemoryAccess_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMemoryAccess_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorMemoryType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMemoryType_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsVolatile_GeneralTab_Editor(), false);
+					createEditorIsVolatile_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorWritePolicy_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorWritePolicy_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorReplacementPolicy_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReplacementPolicy_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorNbSets_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorNbSets_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAssociativity_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAssociativity_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorUsedByProcessor_GeneralTab_Editor(), false);
+					createEditorUsedByProcessor_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentStructuredResource_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParentStructuredResource_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorMemoryAccess_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMemoryAccess_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorMemoryType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMemoryType_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorIsVolatile_GeneralTab_Editor(), false);
+					createEditorIsVolatile_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorWritePolicy_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorWritePolicy_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorReplacementPolicy_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReplacementPolicy_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorNbSets_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorNbSets_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorAssociativity_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAssociativity_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorUsedByProcessor_GeneralTab_Editor(), false);
+					createEditorUsedByProcessor_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorWritePolicy_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorWritePolicy_GeneralTab_Editor() {
-		if (this.editorWritePolicy_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorWritePolicy_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorWritePolicy_property_tab_generalTab_Editor() {
+		if (this.editorWritePolicy_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCache_WritePolicy();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -105,14 +107,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 
 			editor.setTooltipMessage("Determines the write policy of the Cache.");
 
-			this.editorWritePolicy_GeneralTab = editor;
+			this.editorWritePolicy_property_tab_generalTab = editor;
 		}
-		return this.editorWritePolicy_GeneralTab;
+		return this.editorWritePolicy_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReplacementPolicy_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReplacementPolicy_GeneralTab_Editor() {
-		if (this.editorReplacementPolicy_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReplacementPolicy_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReplacementPolicy_property_tab_generalTab_Editor() {
+		if (this.editorReplacementPolicy_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCache_ReplacementPolicy();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -120,14 +122,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 
 			editor.setTooltipMessage("Determines the replacement policy for this Cache.");
 
-			this.editorReplacementPolicy_GeneralTab = editor;
+			this.editorReplacementPolicy_property_tab_generalTab = editor;
 		}
-		return this.editorReplacementPolicy_GeneralTab;
+		return this.editorReplacementPolicy_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNbSets_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNbSets_GeneralTab_Editor() {
-		if (this.editorNbSets_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNbSets_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNbSets_property_tab_generalTab_Editor() {
+		if (this.editorNbSets_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCache_NbSets();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -136,14 +138,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 			editor.setTooltipMessage(
 					"Specifies the number of sets.\n If the nbSets are one, the cache is full-associative.");
 
-			this.editorNbSets_GeneralTab = editor;
+			this.editorNbSets_property_tab_generalTab = editor;
 		}
-		return this.editorNbSets_GeneralTab;
+		return this.editorNbSets_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAssociativity_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAssociativity_GeneralTab_Editor() {
-		if (this.editorAssociativity_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAssociativity_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAssociativity_property_tab_generalTab_Editor() {
+		if (this.editorAssociativity_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCache_Associativity();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -152,14 +154,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 			editor.setTooltipMessage(
 					"The associativity of this cache. It represents the number of blocks in one set. An associativity of 1 represents a direct mapped cache.");
 
-			this.editorAssociativity_GeneralTab = editor;
+			this.editorAssociativity_property_tab_generalTab = editor;
 		}
-		return this.editorAssociativity_GeneralTab;
+		return this.editorAssociativity_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUsedByProcessor_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUsedByProcessor_GeneralTab_Editor() {
-		if (this.editorUsedByProcessor_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUsedByProcessor_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUsedByProcessor_property_tab_generalTab_Editor() {
+		if (this.editorUsedByProcessor_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCache_UsedByProcessor();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -167,14 +169,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 
 			editor.setTooltipMessage("The processors which use this cache.");
 
-			this.editorUsedByProcessor_GeneralTab = editor;
+			this.editorUsedByProcessor_property_tab_generalTab = editor;
 		}
-		return this.editorUsedByProcessor_GeneralTab;
+		return this.editorUsedByProcessor_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMemoryAccess_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMemoryAccess_GeneralTab_Editor() {
-		if (this.editorMemoryAccess_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMemoryAccess_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMemoryAccess_property_tab_generalTab_Editor() {
+		if (this.editorMemoryAccess_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getMemoryResource_MemoryAccess();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -182,14 +184,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 
 			editor.setTooltipMessage("Specifies what kind of access is allowed for this MemoryResource.");
 
-			this.editorMemoryAccess_GeneralTab = editor;
+			this.editorMemoryAccess_property_tab_generalTab = editor;
 		}
-		return this.editorMemoryAccess_GeneralTab;
+		return this.editorMemoryAccess_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsVolatile_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsVolatile_GeneralTab_Editor() {
-		if (this.editorIsVolatile_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsVolatile_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsVolatile_property_tab_generalTab_Editor() {
+		if (this.editorIsVolatile_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getMemoryResource_IsVolatile();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
@@ -198,14 +200,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 			editor.setTooltipMessage(
 					"Specifies if this MemoryResource is volatile or non-volatile. \nNon-volatile Memory (i.e. ROM) could be used to store the binary code.\nVolatile Memory (i.e SRAM) is used during execution of code.");
 
-			this.editorIsVolatile_GeneralTab = editor;
+			this.editorIsVolatile_property_tab_generalTab = editor;
 		}
-		return this.editorIsVolatile_GeneralTab;
+		return this.editorIsVolatile_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMemoryType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMemoryType_GeneralTab_Editor() {
-		if (this.editorMemoryType_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMemoryType_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMemoryType_property_tab_generalTab_Editor() {
+		if (this.editorMemoryType_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getMemoryResource_MemoryType();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -213,14 +215,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 
 			editor.setTooltipMessage("The type of this MemoryResource.");
 
-			this.editorMemoryType_GeneralTab = editor;
+			this.editorMemoryType_property_tab_generalTab = editor;
 		}
-		return this.editorMemoryType_GeneralTab;
+		return this.editorMemoryType_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentStructuredResource_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentStructuredResource_GeneralTab_Editor() {
-		if (this.editorParentStructuredResource_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentStructuredResource_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentStructuredResource_property_tab_generalTab_Editor() {
+		if (this.editorParentStructuredResource_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getAtomicResource_ParentStructuredResource();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -228,14 +230,14 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 
 			editor.setTooltipMessage("The StructuredResource, this AtomicResource belongs to.");
 
-			this.editorParentStructuredResource_GeneralTab = editor;
+			this.editorParentStructuredResource_property_tab_generalTab = editor;
 		}
-		return this.editorParentStructuredResource_GeneralTab;
+		return this.editorParentStructuredResource_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
-		if (this.editorName_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getNamedElement_Name();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -255,22 +257,22 @@ public class CacheEditor extends de.uni_paderborn.fujaba.properties.runtime.edit
 
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-			this.editorName_GeneralTab = editor;
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorName_GeneralTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			this.editorExtension_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
+		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	//
