@@ -385,10 +385,17 @@
     </classes>
     <classes xmi:id="_VZN9O8wbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZN9PMwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/behavior/Behavior/variables"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="eclass.name &lt;> 'TimeParameter'"/>
+        </creationConstraint>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZN9PMwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/parentRegion"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZN9PcwbEeSjx7OWZCcdLw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZN9PswbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/transitions"/>
@@ -429,9 +436,9 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
       <superClasses href="#_VZTcx8wbEeSjx7OWZCcdLw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
     <classes xmi:id="_VZOkR8wbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/realtimestatechart/Event"/>

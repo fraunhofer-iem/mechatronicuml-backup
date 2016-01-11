@@ -23,6 +23,10 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorBehavioralElement_property_tab_generalTab_Editor(), false);
@@ -30,12 +34,6 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 			addPropertyEditor(createEditorOperations_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorVariables_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
-
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorParentRegion_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
@@ -64,15 +62,13 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorBehavioralElement_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorOperations_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorVariables_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorParentRegion_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
@@ -109,20 +105,40 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentRegion_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentRegion_property_tab_generalTab_Editor() {
-		if (this.editorParentRegion_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getRealtimeStatechart_ParentRegion();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariables_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariables_property_tab_generalTab_Editor() {
+		if (this.editorVariables_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+					.getBehavior_Variables();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
-					"If the real-time statechart is embedded into a region of a composite state,\nthan this reference returns the region of this state. If the real-time statechart\nis not embedded, this reference will be undefined.");
+					"A behavior may define a set of variables in order to store data. The variables\nmay be accessed by various elements, e.g., operations and the behavior specification itself.\nThe variables are contained in the behavior.");
 
-			this.editorParentRegion_property_tab_generalTab = editor;
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression("eclass.name <> 'TimeParameter'", feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				query.getEvaluationEnvironment().add("eclass", null);
+				de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
+
+					@Override
+					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
+						query.getEvaluationEnvironment().replace("eclass", eClass);
+						return Boolean.TRUE.equals(query.evaluate(object));
+					}
+
+				};
+				if (filter != null) {
+					editor.addCreationFilter(filter);
+				}
+			}
+
+			this.editorVariables_property_tab_generalTab = editor;
 		}
-		return this.editorParentRegion_property_tab_generalTab;
+		return this.editorVariables_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTransitions_property_tab_generalTab;
@@ -324,6 +340,46 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 		return this.editorSubRoleSpecificOperations_property_tab_generalTab;
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getNamedElement_Name();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			{
+				final org.eclipse.ocl.ecore.OCLExpression initExpression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression(
+								"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)",
+								feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(initExpression);
+				if (query != null) {
+					editor.setInitializeQuery(query);
+				}
+			}
+
+			editor.setTooltipMessage("The name attribute of a meta-model element.");
+
+			this.editorName_property_tab_generalTab = editor;
+		}
+		return this.editorName_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
+		if (this.editorExtension_property_tab_extensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extension();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorExtension_property_tab_extensionsTab = editor;
+		}
+		return this.editorExtension_property_tab_extensionsTab;
+	}
+
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
 		if (this.editorComment_property_tab_documentationTab == null) {
@@ -338,19 +394,6 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 			this.editorComment_property_tab_documentationTab = editor;
 		}
 		return this.editorComment_property_tab_documentationTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorExtension_property_tab_extensionsTab = editor;
-		}
-		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavioralElement_property_tab_generalTab;
@@ -384,49 +427,6 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 		return this.editorOperations_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariables_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariables_property_tab_generalTab_Editor() {
-		if (this.editorVariables_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-					.getBehavior_Variables();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"A behavior may define a set of variables in order to store data. The variables\nmay be accessed by various elements, e.g., operations and the behavior specification itself.\nThe variables are contained in the behavior.");
-
-			this.editorVariables_property_tab_generalTab = editor;
-		}
-		return this.editorVariables_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
-		if (this.editorName_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-					.getNamedElement_Name();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression initExpression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression(
-								"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)",
-								feature, getEClass());
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(initExpression);
-				if (query != null) {
-					editor.setInitializeQuery(query);
-				}
-			}
-
-			editor.setTooltipMessage("The name attribute of a meta-model element.");
-
-			this.editorName_property_tab_generalTab = editor;
-		}
-		return this.editorName_property_tab_generalTab;
-	}
-
 	//
 	// instantiation
 	//
@@ -453,9 +453,9 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
 					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.extensions", "property.tab.documentation", "property.tab.general",
+					"property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 
