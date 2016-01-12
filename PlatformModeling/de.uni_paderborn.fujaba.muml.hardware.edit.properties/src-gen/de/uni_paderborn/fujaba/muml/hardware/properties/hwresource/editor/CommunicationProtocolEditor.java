@@ -75,8 +75,6 @@ public abstract class CommunicationProtocolEditor
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
-
 		} else {
 		}
 	}

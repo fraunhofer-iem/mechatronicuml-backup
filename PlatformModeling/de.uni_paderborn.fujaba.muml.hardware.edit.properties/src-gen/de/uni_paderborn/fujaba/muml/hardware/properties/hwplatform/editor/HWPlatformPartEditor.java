@@ -47,8 +47,6 @@ public class HWPlatformPartEditor extends de.uni_paderborn.fujaba.properties.run
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
-
 		} else {
 		}
 	}

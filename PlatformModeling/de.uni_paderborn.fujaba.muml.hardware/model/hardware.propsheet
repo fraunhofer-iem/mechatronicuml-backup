@@ -434,6 +434,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/HWPort/cardinality"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
