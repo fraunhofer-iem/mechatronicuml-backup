@@ -47,35 +47,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 public class PatternToProtocolTransformation {
 	
 	
-	public static void saveInput(AbstractCoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
-	{
-		
-		EObject[] input = new EObject[bindings.size()+2];
-		input[0]= rootNode;
-		input[1]=selectedPattern;	
-		for(int i=0; i< bindings.size();i++)
-		{
-			input[i+2] = bindings.get(i);
-		}
-		final EObject[] in = input;
-		editingDomain.getCommandStack().execute(new ChangeCommand(selectedPattern) {
-
-			@Override
-			protected void doExecute() {
-
-				ResourceSet resourceSet = new ResourceSetImpl();
-				Resource resource = resourceSet.createResource(URI.createPlatformResourceURI("Test/input.xmi", true));
-				Collection<EObject> c = Arrays.asList(in);
-				resource.getContents().addAll(c);
-				try {
-					resource.save(Collections.emptyMap());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-			}
-		});
-	}
+	
 	
 	
 	public static CoordinationPattern transformProtocolToPattern(CoordinationProtocol protocol, Variable[] variables,  EditingDomain editingDomain)
