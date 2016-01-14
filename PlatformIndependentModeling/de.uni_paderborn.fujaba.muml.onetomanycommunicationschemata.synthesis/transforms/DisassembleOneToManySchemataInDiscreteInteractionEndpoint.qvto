@@ -38,8 +38,9 @@ main() {
  	{
  		// not debug:
 		currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
- 	}endif;
- 			
+ 	};
+ 	// disassemble only when necessary!
+ 	assert fatal (currentRealtimeStatechart.usesOneToManyCommunicationSchemata) with log ("The RealtimeStatechart uses no one-to-many schemata to disassemble!");
 	disassembleDiscreteInteractionPointRTSC(currentRealtimeStatechart);
 	
 	if( not debugging ) {
@@ -51,16 +52,20 @@ main() {
 	};
 }
 
-helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) : RealtimeStatechart
+helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) : RealtimeStatechart 
 {	
-	currentRealtimeStatechart := inputRTSC;
-	rootNode :=currentRealtimeStatechart.getHighestParentStatechart().eContainer().eContainer().oclAsType(RootNode);
-	assert fatal (currentRealtimeStatechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) with log ("The specified RealtimeStatechart must be the behavior of a discrete port or a role!");
-	
-	// step 1: normalize transitions that define two schemata:
-	normalize(currentRealtimeStatechart);
-	// step 2: disassemble schematas
-	return currentRealtimeStatechart.map RTSC2RTSC();	
+	if(inputRTSC.usesOneToManyCommunicationSchemata) {
+		currentRealtimeStatechart := inputRTSC;
+		rootNode :=currentRealtimeStatechart.getHighestParentStatechart().eContainer().eContainer().oclAsType(RootNode);
+		assert fatal (currentRealtimeStatechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) with log ("The specified RealtimeStatechart must be the behavior of a discrete port or a role!");
+		
+		
+		// step 1: normalize transitions that define two schemata:
+		normalize(currentRealtimeStatechart);
+		// step 2: disassemble schematas
+		return currentRealtimeStatechart.map RTSC2RTSC();	
+	} else 
+	return inputRTSC;	
 }
 
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
