@@ -27,7 +27,7 @@ property currentRealtimeStatechart : RealtimeStatechart;
 property schemaCount : Integer =0; // counter for the schemata in order to enumerate the realtimestatechart names
 
 main() {
-	var debugging : Boolean := true;
+	var debugging : Boolean := false;
  	
  	if(debugging) {
  		//debug:
