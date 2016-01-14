@@ -12,11 +12,13 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
@@ -28,6 +30,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 
@@ -101,12 +104,25 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		final List<ModelExtent> modelExtents = Arrays
 				.asList(new ModelExtent[] { inputExtent });
 
+		final Resource resource = rtsc.eResource();
 		// Load QVTO script
 		String transformationKind = "";
 		if(rtsc.getBehavioralElement() instanceof Component) {
 			transformationKind = disassembleComponentTransformation;
-		}else
+		}else if(rtsc.getBehavioralElement() instanceof DiscreteInteractionEndpoint) {
 			transformationKind = disassemblePortOrRoleTransformation;
+		} else {
+			ErrorDialog dialog = new ErrorDialog(
+					shell,
+					"ERROR when checking the containment of the Realtimestatechart",
+					null,
+					new org.eclipse.core.runtime.Status(IStatus.ERROR,
+							"",
+							"It is not possible to disassemble non-root realtime statecharts of a DiscreteInteractionEndpoint or Component or a realtime statechart not contained in a DiscreteInteractionEndpoint or Component"),
+					IStatus.ERROR);
+			dialog.open();
+		}
+			
 		
 		final TransformationExecutor transformationExecutor = getTransformationExecutor(
 				transformationKind, true);
@@ -122,7 +138,7 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
-		final Resource resource = rtsc.eResource();
+		
 		try {
 			resource.save(Collections.emptyMap());
 		} catch (IOException e) {
