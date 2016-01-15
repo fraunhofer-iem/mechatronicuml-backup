@@ -516,12 +516,8 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 					block := new Block();
 					block.expressions +=createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(multicastPossibleName),new LiteralExpression("false")  );
 				};
-				if(not t.relativeDeadline.oclIsUndefined()) {
-					if(entryEvent.action.oclIsUndefined()) {
-						entryEvent.action := new Action();
-						entryEvent.action.name := "";				
-					};		
-					entryEvent.clockResets += t.map Schema2Clock(unicastDLCName);
+				if(not t.relativeDeadline.oclIsUndefined()) {						
+					entryEvent.clockResets += t.map Schema2Clock(multicastDLCName);
 				};
 			}
 			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
