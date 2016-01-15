@@ -5,12 +5,12 @@ modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelins
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
-modeltype HardwarePackage uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype ResourcePackage uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype PlatformPackage uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype PlatformInstancePackage uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.0/');
-modeltype HWValueTypePackage uses hardware::hwvaluetype('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype HardwarePackage uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype ResourcePackage uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype PlatformPackage uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype PlatformInstancePackage uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype HWValueTypePackage uses hardware::hwvaluetype('http://www.fujaba.de/muml/hardware/1.1/');
 
 
 
