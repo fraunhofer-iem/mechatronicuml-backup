@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.psm.properties.provider;
 
 
+import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
@@ -203,6 +204,11 @@ public class RequiredMemoryItemProvider extends ExtensionItemProvider {
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 PropertiesFactory.eINSTANCE.createCANMessageFrame()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.REQUIRED_MEMORY__REQUIRED_MEMORY,
+				 HwvaluetypeFactory.eINSTANCE.createDataSize()));
 	}
 
 	/**
