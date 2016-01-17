@@ -8,6 +8,7 @@ import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -203,6 +204,11 @@ public class WCETItemProvider extends ExtensionItemProvider {
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 PropertiesFactory.eINSTANCE.createCANMessageFrame()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.WCET__WCET,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**
