@@ -180,10 +180,10 @@ public abstract class GenmodelTest extends TraverseTest {
 	}
 
 	/**
-	 * Tests, if the 'Create Children' setting is set correctly.
+	 * Tests, if the 'Create Child' setting is set correctly.
 	 */
 	@Test
-	public void validCreateChildrenSetting() {
+	public void validCreateChildSetting() {
 		final ProblemCollector problems = new ProblemCollector();
 		accept(getRootElement(), new IResourceVisitor() {
 			@Override
@@ -195,13 +195,13 @@ public abstract class GenmodelTest extends TraverseTest {
 					if (ecoreFeature instanceof EReference) {
 						EReference reference = (EReference) ecoreFeature;
 
-						boolean createChildren = reference.isContainment()
+						boolean createChild = reference.isContainment()
 								&& !reference.isDerived();
 
-						if (genFeature.isChildren() != createChildren) {
+						if (genFeature.isCreateChild() != createChild) {
 							problems.add(getLabel(genFeature)
-									+ ": 'Create Children' must be set to "
-									+ Boolean.valueOf(createChildren)
+									+ ": 'Create Child' must be set to "
+									+ Boolean.valueOf(createChild)
 											.toString() + ".");
 						}
 					}
