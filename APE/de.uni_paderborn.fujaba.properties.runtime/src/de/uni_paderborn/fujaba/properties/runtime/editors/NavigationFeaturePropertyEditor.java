@@ -212,6 +212,11 @@ public class NavigationFeaturePropertyEditor extends
 			classViewer.getCombo().setVisible(shouldShowClassesCombo());
 		}
 	}
+	
+	// #1376: Hide Creation Editors if no class exists that might be created.
+	public void setVisible(boolean visible, boolean relayout, boolean force) {
+		super.setVisible(visible && !eClasses.isEmpty(), relayout, force);
+	}
 
 	protected boolean shouldShowClassesCombo() {
 		return eClasses != null && eClasses.size() > 1;
