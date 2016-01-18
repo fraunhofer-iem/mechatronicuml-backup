@@ -6,6 +6,7 @@
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YwviYHvSEeWJtcJpbyRDKg" name="rtscRole2" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
       <variables xmi:id="_MaT9IL39EeWqhIVP39pr2A" name="gobalVar">
         <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="__HnikL39EeWqhIVP39pr2A" value="true"/>
       </variables>
       <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg" urgent="false">
         <clockConstraints xmi:id="_LUWV0JdJEeW_n8FySayE1g" clock="_I7_-YJdJEeW_n8FySayE1g" operator="GREATER_OR_EQUAL">
