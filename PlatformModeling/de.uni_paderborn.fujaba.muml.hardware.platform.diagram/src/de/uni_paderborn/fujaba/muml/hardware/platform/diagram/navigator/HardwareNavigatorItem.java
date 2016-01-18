@@ -10,32 +10,28 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 public class HardwareNavigatorItem
-		extends
-		de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareAbstractNavigatorItem {
+		extends de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareAbstractNavigatorItem {
 
 	/**
 	 * @generated
 	 */
 	static {
 		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem
-								&& (adapterType == View.class || adapterType == EObject.class)) {
-							return ((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem) adaptableObject)
-									.getView();
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem
+						&& (adapterType == View.class || adapterType == EObject.class)) {
+					return ((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem) adaptableObject)
+							.getView();
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem.class);
 	}
 
 	/**
@@ -76,8 +72,7 @@ public class HardwareNavigatorItem
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem) {
-			return EcoreUtil
-					.getURI(getView())
+			return EcoreUtil.getURI(getView())
 					.equals(EcoreUtil
 							.getURI(((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareNavigatorItem) obj)
 									.getView()));

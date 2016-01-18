@@ -17,34 +17,28 @@ public class HardwareDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class,
-				IPropertySource.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) {
-							de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem domainNavigatorItem = (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) adaptableObject;
-							EObject eObject = domainNavigatorItem.getEObject();
-							if (adapterType == EObject.class) {
-								return eObject;
-							}
-							if (adapterType == IPropertySource.class) {
-								return domainNavigatorItem
-										.getPropertySourceProvider()
-										.getPropertySource(eObject);
-							}
-						}
-
-						return null;
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) {
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem domainNavigatorItem = (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) adaptableObject;
+					EObject eObject = domainNavigatorItem.getEObject();
+					if (adapterType == EObject.class) {
+						return eObject;
 					}
-
-					public Class[] getAdapterList() {
-						return supportedTypes;
+					if (adapterType == IPropertySource.class) {
+						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
-				},
-				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem.class);
+				}
+
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem.class);
 	}
 
 	/**
@@ -65,8 +59,7 @@ public class HardwareDomainNavigatorItem extends PlatformObject {
 	/**
 	 * @generated
 	 */
-	public HardwareDomainNavigatorItem(EObject eObject, Object parent,
-			IPropertySourceProvider propertySourceProvider) {
+	public HardwareDomainNavigatorItem(EObject eObject, Object parent, IPropertySourceProvider propertySourceProvider) {
 		myParent = parent;
 		myEObject = eObject;
 		myPropertySourceProvider = propertySourceProvider;
@@ -98,8 +91,7 @@ public class HardwareDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) {
-			return EcoreUtil
-					.getURI(getEObject())
+			return EcoreUtil.getURI(getEObject())
 					.equals(EcoreUtil
 							.getURI(((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) obj)
 									.getEObject()));

@@ -71,8 +71,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart()
-					.getModel();
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
 				Integer id = new Integer(
 						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
@@ -98,12 +97,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest,
-				semanticCommand);
+		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
-					semanticCommand, destroyRequest) : null;
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -111,35 +108,28 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command addDeleteViewCommand(Command mainCommand,
-			DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
-				getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand
-				.chain(deleteViewCommand);
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Command getEditHelperCommand(IEditCommandRequest request,
-			Command editPolicyCommand) {
+	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
-					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
-					command);
+			ICommand command = editPolicyCommand instanceof ICommandProxy
+					? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
-				requestContextElementType);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
 		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
 		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(),
-						command.getLabel()).compose(command);
+				command = new CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
 			}
 			return new ICommandProxy(command);
 		}
@@ -152,8 +142,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	private IElementType getContextElementType(IEditCommandRequest request) {
 		IElementType requestContextElementType = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes
 				.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType
-				: myElementType;
+		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
 	/**
@@ -252,16 +241,14 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -286,10 +273,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it
-				.hasNext();) {
+		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View) it.next();
-			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
+			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() //$NON-NLS-1$
+					|| nextView.getElement() != view.getElement()) {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
@@ -303,9 +290,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		LinkConstraints cached = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
 				.getInstance().getLinkConstraints();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-					.getInstance().setLinkConstraints(
-							cached = new LinkConstraints());
+			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
+					.setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -328,10 +314,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateNetworkConnector_4032(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
-			return canExistNetworkConnector_4032(container, null, source,
-					target, sourceView, targetView);
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+			return canExistNetworkConnector_4032(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
@@ -341,8 +325,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target, View sourceView, View targetView) {
 			return true;
 		}
 
@@ -352,8 +335,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public java.lang.String getErrorNetworkConnector_4032(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target, View sourceView, View targetView) {
 			return null;
 		}
 

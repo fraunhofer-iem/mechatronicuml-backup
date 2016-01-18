@@ -11,8 +11,7 @@ public class HardwareEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public HardwareEditPartProvider() {
-		super(
-				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HardwareEditPartFactory(),
+		super(new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HardwareEditPartFactory(),
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE,
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID);
 	}

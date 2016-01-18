@@ -11,8 +11,7 @@ import org.eclipse.ui.IWorkbenchPage;
 /**
  * @generated
  */
-public class HardwareDiagramActionBarContributor extends
-		DiagramActionBarContributor {
+public class HardwareDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**
 	 * @generated
@@ -34,18 +33,15 @@ public class HardwareDiagramActionBarContributor extends
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview
-		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(
-				IWorkbenchActionConstants.M_FILE);
+		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_FILE);
 		assert fileMenu != null;
 		fileMenu.remove("pageSetupAction"); //$NON-NLS-1$
-		IMenuManager editMenu = bars.getMenuManager().findMenuUsingPath(
-				IWorkbenchActionConstants.M_EDIT);
+		IMenuManager editMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_EDIT);
 		assert editMenu != null;
 		if (editMenu.find("validationGroup") == null) { //$NON-NLS-1$
 			editMenu.add(new GroupMarker("validationGroup")); //$NON-NLS-1$
 		}
-		IAction validateAction = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.ValidateAction(
-				page);
+		IAction validateAction = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.ValidateAction(page);
 		editMenu.appendToGroup("validationGroup", validateAction); //$NON-NLS-1$
 	}
 }

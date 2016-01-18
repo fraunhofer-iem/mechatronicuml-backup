@@ -17,8 +17,7 @@ import org.storydriven.core.CorePackage;
 /**
  * @generated
  */
-public class HardwareParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class HardwareParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -58,10 +57,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getHWPlatformPartName_5061Parser() {
 		if (hWPlatformPartName_5061Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			hWPlatformPartName_5061Parser = parser;
@@ -100,10 +97,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getResourcePartName_5064Parser() {
 		if (resourcePartName_5064Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
 			resourcePartName_5064Parser = parser;
@@ -178,10 +173,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

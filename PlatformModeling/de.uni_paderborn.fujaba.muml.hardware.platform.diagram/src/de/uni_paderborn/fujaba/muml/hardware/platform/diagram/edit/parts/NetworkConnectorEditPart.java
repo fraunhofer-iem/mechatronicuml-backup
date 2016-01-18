@@ -21,8 +21,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class NetworkConnectorEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class NetworkConnectorEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -64,8 +63,7 @@ public class NetworkConnectorEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.NetworkConnectorItemSemanticEditPolicy());
 	}
 
@@ -119,16 +117,13 @@ public class NetworkConnectorEditPart extends ConnectionNodeEditPart implements
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
 			Display.getCurrent().asyncExec(new Runnable() {
 				@Override
 				public void run() {

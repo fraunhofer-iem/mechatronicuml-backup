@@ -10,15 +10,14 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 /**
  * @generated
  */
-public class HardwareDomainNavigatorLabelProvider implements
-		ICommonLabelProvider {
+public class HardwareDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
+					.getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -31,8 +30,8 @@ public class HardwareDomainNavigatorLabelProvider implements
 	 */
 	public Image getImage(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) element)
+			return myAdapterFactoryLabelProvider.getImage(
+					((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) element)
 							.getEObject());
 		}
 		return null;
@@ -43,8 +42,8 @@ public class HardwareDomainNavigatorLabelProvider implements
 	 */
 	public String getText(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) element)
+			return myAdapterFactoryLabelProvider.getText(
+					((de.uni_paderborn.fujaba.muml.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) element)
 							.getEObject());
 		}
 		return null;

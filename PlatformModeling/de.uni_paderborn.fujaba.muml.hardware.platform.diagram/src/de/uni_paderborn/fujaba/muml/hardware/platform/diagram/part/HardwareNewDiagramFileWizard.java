@@ -51,8 +51,8 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	public HardwareNewDiagramFileWizard(URI domainModelURI,
-			EObject diagramRoot, TransactionalEditingDomain editingDomain) {
+	public HardwareNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot,
+			TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
@@ -60,37 +60,32 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 		myFileCreationPage = new WizardNewFileCreationPage(
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
-		myFileCreationPage
-				.setTitle(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage
-				.setDescription(NLS
-						.bind(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageDescription,
-								de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID));
+		myFileCreationPage.setTitle(
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageDescription,
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID));
 		IPath filePath;
-		String fileName = URI.decode(domainModelURI.trimFileExtension()
-				.lastSegment());
+		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
-			filePath = new Path(domainModelURI.trimSegments(1)
-					.toPlatformString(true));
+			filePath = new Path(domainModelURI.trimSegments(1).toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
 			filePath = new Path(domainModelURI.trimSegments(1).toFileString());
 		} else {
 			// TODO : use some default path
-			throw new IllegalArgumentException(
-					"Unsupported URI: " + domainModelURI); //$NON-NLS-1$
+			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage
 				.setFileName(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorUtil
-						.getUniqueFileName(filePath, fileName,
-								"platform_diagram")); //$NON-NLS-1$
+						.getUniqueFileName(filePath, fileName, "platform_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage
-				.setTitle(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage
-				.setDescription(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageDescription);
+		diagramRootElementSelectionPage.setTitle(
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setDescription(
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 		myEditingDomain = editingDomain;
@@ -110,59 +105,45 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile diagramFile = myFileCreationPage.createNewFile();
-		de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorUtil
-				.setCharset(diagramFile);
+		de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
-				.getFullPath().toString(), true);
+		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
-		final Resource diagramResource = resourceSet
-				.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
-				myEditingDomain,
+		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain,
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_InitDiagramCommand,
 				affectedFiles) {
 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				int diagramVID = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
-						.getDiagramVisualID(diagramRootElementSelectionPage
-								.getModelElement());
+						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
 				if (diagramVID != de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.VISUAL_ID) {
-					return CommandResult
-							.newErrorCommandResult(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_IncorrectRootError);
+					return CommandResult.newErrorCommandResult(
+							de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = ViewService
-						.createDiagram(
-								diagramRootElementSelectionPage
-										.getModelElement(),
-								de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
+						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID,
+						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command,
-					new NullProgressMonitor(), null);
-			diagramResource
-					.save(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorUtil
-							.getSaveOptions());
+			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
+			diagramResource.save(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorUtil
+					.getSaveOptions());
 			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorUtil
 					.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-					.getInstance().logError(
-							"Unable to create model and diagram", e); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
+					.logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
+					.logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-					.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
+					.logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
 	}
@@ -171,8 +152,7 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 	 * @generated
 	 */
 	private static class DiagramRootElementSelectionPage
-			extends
-			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.ModelElementSelectionPage {
+			extends de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.ModelElementSelectionPage {
 
 		/**
 		 * @generated
@@ -193,16 +173,15 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 		 */
 		protected boolean validatePage() {
 			if (getModelElement() == null) {
-				setErrorMessage(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
+				setErrorMessage(
+						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
-			boolean result = ViewService
-					.getInstance()
-					.provides(
-							new CreateDiagramViewOperation(
-									new EObjectAdapter(getModelElement()),
-									de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID,
-									de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			boolean result = ViewService.getInstance()
+					.provides(new CreateDiagramViewOperation(new EObjectAdapter(
+							getModelElement()),
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID,
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null
 					: de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;

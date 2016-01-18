@@ -87,24 +87,20 @@ public class BusEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.BusItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -116,8 +112,7 @@ public class BusEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -213,10 +208,10 @@ public class BusEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 50) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -310,8 +305,9 @@ public class BusEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -338,28 +334,17 @@ public class BusEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(2)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(4)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(3)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(3)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(4)));
-			this.addPoint(new Point(getMapMode().DPtoLP(6), getMapMode()
-					.DPtoLP(2)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(2)));
+			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
+			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode().DPtoLP(4)));
+			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode().DPtoLP(3)));
+			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(3)));
+			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(4)));
+			this.addPoint(new Point(getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
+			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(1)));
+			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
 			createContents();
 		}
 
@@ -401,8 +386,7 @@ public class BusEditPart extends ShapeNodeEditPart {
 			constraintFFigureBusProtocolFigure.verticalSpan = 0;
 			constraintFFigureBusProtocolFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureBusProtocolFigure.grabExcessVerticalSpace = true;
-			busContainer0.add(fFigureBusProtocolFigure,
-					constraintFFigureBusProtocolFigure);
+			busContainer0.add(fFigureBusProtocolFigure, constraintFFigureBusProtocolFigure);
 
 			fFigureBusBandwidthFigure = new WrappingLabel();
 
@@ -416,8 +400,7 @@ public class BusEditPart extends ShapeNodeEditPart {
 			constraintFFigureBusBandwidthFigure.verticalSpan = 1;
 			constraintFFigureBusBandwidthFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureBusBandwidthFigure.grabExcessVerticalSpace = true;
-			busContainer0.add(fFigureBusBandwidthFigure,
-					constraintFFigureBusBandwidthFigure);
+			busContainer0.add(fFigureBusBandwidthFigure, constraintFFigureBusBandwidthFigure);
 
 		}
 
@@ -440,7 +423,6 @@ public class BusEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREBUSPROTOCOLFIGURE_FONT = new Font(
-			Display.getCurrent(), "BOLD", 9, SWT.BOLD);
+	static final Font FFIGUREBUSPROTOCOLFIGURE_FONT = new Font(Display.getCurrent(), "BOLD", 9, SWT.BOLD);
 
 }
