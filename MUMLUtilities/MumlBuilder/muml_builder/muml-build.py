@@ -23,7 +23,7 @@ P2_DEST_SUFFIX["windows32"] = "win32-x86"
 def readConfigFile(filename, useLocalURL=False):
     installableUnits = []
     tag = ""
-    with open(filename, "r") as file:
+    with open(filename, "rU") as file:
         urlToUse = next(file).strip().split("useRemoteURL:")[1]
         if urlToUse.lower() == "no":
             useLocalURL = True
@@ -31,13 +31,13 @@ def readConfigFile(filename, useLocalURL=False):
         localURL = next(file).strip().split("local-url:")[1]
         contents = next(file).split(":")
         if contents[0] == "tag":
-            tag = contents[1].rstrip(os.linesep)
+            tag = contents[1].rstrip("\n")
         else:
-            installableUnits.append(contents[1].rstrip(os.linesep))
+            installableUnits.append(contents[1].rstrip("\n"))
         for line in file:
             if line.strip():
                 contents = line.split("iu:")
-                installableUnits.append(contents[1].rstrip(os.linesep))
+                installableUnits.append(contents[1].rstrip("\n"))
     if useLocalURL:
         url = localURL
     return url, tag, installableUnits
