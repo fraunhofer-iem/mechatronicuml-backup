@@ -87,7 +87,7 @@
             <diagramLabel
                 href="component.gmfgraph#PortRefinementLabel"/>
             <viewExpression
-                body="if refinedRole.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refinedRole.name.oclIsUndefined() then '' else refinedRole.name endif&#xA;) endif"/>
+                body="if refinedRole.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;(if refinedRole.coordinationProtocol.name.oclIsUndefined() then '' else refinedRole.coordinationProtocol.name.concat('.') endif).concat&#xA;&#x9;(if refinedRole.name.oclIsUndefined() then '' else refinedRole.name endif)&#xA;) endif"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

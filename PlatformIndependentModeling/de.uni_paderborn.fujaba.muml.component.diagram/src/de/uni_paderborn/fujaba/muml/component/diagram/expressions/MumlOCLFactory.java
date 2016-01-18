@@ -50,7 +50,7 @@ public class MumlOCLFactory {
 		this.expressions = new de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression[13];
 		this.expressionBodies = new String[] { "1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
-				"if refinedRole.oclIsUndefined() then \'\' else \': \'.concat(\n\tif refinedRole.name.oclIsUndefined() then \'\' else refinedRole.name endif\n) endif", //$NON-NLS-1$
+				"if refinedRole.oclIsUndefined() then \'\' else \': \'.concat(\n\t(if refinedRole.coordinationProtocol.name.oclIsUndefined() then \'\' else refinedRole.coordinationProtocol.name.concat(\'.\') endif).concat\n\t(if refinedRole.name.oclIsUndefined() then \'\' else refinedRole.name endif)\n) endif", //$NON-NLS-1$
 				"(\n\tif dataType.name.oclIsUndefined() then \'\' else dataType.name.concat(\' \') endif\n).concat(\n\tif (self.name.oclIsUndefined()) then \'\' else self.name endif\n).concat(\n\t-- Fix for update bug #1307:\n\t-- Access samplingInterval.expression and samplingInterval.unit\n\tif samplingInterval.unit.oclIsUndefined() and samplingInterval.value.oclIsUndefined() then \'\' else \' [\'.concat(samplingInterval.toString()).concat(\']\') endif\n)\n", //$NON-NLS-1$
 				"if (self.name.oclIsUndefined()) then\n\t\'\'\nelse\n\tself.name\nendif", //$NON-NLS-1$
 				"1", //$NON-NLS-1$

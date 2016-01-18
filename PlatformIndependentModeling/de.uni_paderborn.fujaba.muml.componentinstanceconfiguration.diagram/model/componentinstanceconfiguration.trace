@@ -33,6 +33,9 @@
     <nodeLabelTraces
         visualID="5040"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5049"
+        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2023"
@@ -97,6 +100,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/instance/0.4.0' and _eClass_.name = 'DiscreteSinglePortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/instance/0.4.0' and _eClass_.name = 'ComponentInstance') and _containmentMF_.name = 'portInstances')">
     <nodeLabelTraces
         visualID="5044"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5050"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
