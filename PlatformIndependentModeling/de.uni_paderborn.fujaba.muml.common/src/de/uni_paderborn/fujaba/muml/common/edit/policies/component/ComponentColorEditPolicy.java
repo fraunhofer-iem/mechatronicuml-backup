@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -16,8 +17,9 @@ import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
-	
+
 	private static final Color COLOR_CONTINUOUS = new Color(null, 230, 230, 230);
+	private static final Color COLOR_SOFTWARE = new Color(null, 214, 226, 190);
 
 	@Override
 	public void activate() {
@@ -82,11 +84,16 @@ public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
 		IFigure figure = ((GraphicalEditPart)getHost()).getContentPane();
 		Component component = getComponent();
 		Color color = ColorConstants.white;
-		if (component != null && component.getComponentKind() == ComponentKind.CONTINUOUS_COMPONENT)  {
-			color = COLOR_CONTINUOUS;
+		if (component instanceof AtomicComponent) {
+			if (component.getComponentKind() == ComponentKind.CONTINUOUS_COMPONENT)  {
+				color = COLOR_CONTINUOUS;
+			}
+			if (component.getComponentKind() == ComponentKind.SOFTWARE_COMPONENT)  {
+				color = COLOR_SOFTWARE;
+			}
 		}
 		if (figure != null ){
-			figure.setBackgroundColor(color);;
+			figure.setBackgroundColor(color);
 		}
 	}
 }
