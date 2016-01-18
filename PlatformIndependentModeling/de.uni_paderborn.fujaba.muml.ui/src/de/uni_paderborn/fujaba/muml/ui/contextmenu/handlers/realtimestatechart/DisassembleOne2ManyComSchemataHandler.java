@@ -117,10 +117,11 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 					"ERROR when checking the containment of the Realtimestatechart",
 					null,
 					new org.eclipse.core.runtime.Status(IStatus.ERROR,
-							"",
+							de.uni_paderborn.fujaba.muml.ui.Activator.ID,
 							"It is not possible to disassemble non-root realtime statecharts of a DiscreteInteractionEndpoint or Component or a realtime statechart not contained in a DiscreteInteractionEndpoint or Component"),
 					IStatus.ERROR);
 			dialog.open();
+			return;
 		}
 			
 		

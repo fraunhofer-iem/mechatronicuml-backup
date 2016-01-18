@@ -15,6 +15,7 @@ public class Activator implements BundleActivator {
 
 	private Map<String, TransformationExecutor> transformationExecutors = new HashMap<String, TransformationExecutor>();
 
+	public static final String ID = "de.uni_paderborn.fujaba.muml.ui";
 	static BundleContext getContext() {
 		return context;
 	}
