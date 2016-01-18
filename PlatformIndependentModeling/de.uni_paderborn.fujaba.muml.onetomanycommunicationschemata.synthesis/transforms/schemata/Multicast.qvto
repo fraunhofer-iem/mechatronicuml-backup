@@ -56,7 +56,7 @@ when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommuni
 mapping Transition :: Multicast2SourceRegionCoordinator(context:OclAny) : Region 
 	when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
 		init {
-			self.map Schema2SourceRegionCoordinator(context, multicastCheck, multicastCheckDone, multicastPossibleName);	
+			result := self.map Schema2SourceRegionCoordinator(context, multicastCheck, multicastCheckDone, multicastPossibleName);	
 		}					
 	}
 
