@@ -1,0 +1,20 @@
+import DissassembleOneToManySchematasInComponentBehavior;
+
+transformation DisassembleComponentWrapper(inout input : rtsc);
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+
+main() {
+	var disassembleComponent : DissassembleOneToManySchematasInComponentBehavior := new DissassembleOneToManySchematasInComponentBehavior(input);
+	disassembleComponent.transform();
+}

@@ -36,8 +36,8 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 
 public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 
-	private static String disassembleComponentTransformation = "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/DissassembleOneToManySchematasInComponentBehavior.qvto";
-	private static String disassemblePortOrRoleTransformation = "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/DisassembleOneToManySchemataInDiscreteInteractionEndpoint.qvto";
+	private static String disassembleComponentTransformation = "/de.uni_paderborn.fujaba.muml.ui/transforms/realtimestatechart/DisassembleComponentWrapper.qvto";
+	private static String disassemblePortOrRoleTransformation = "/de.uni_paderborn.fujaba.muml.ui/transforms/realtimestatechart/DisassambleDiscreteInteractionEndpointWrapper";
 	
 	private static Map<String, TransformationExecutor> transformationExecutors = new HashMap<String, TransformationExecutor>();
 
