@@ -21,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The communication schema convergecast allows for receiving a message by each subrole.
+ * The communication schema MultiReceive allows for receiving a message by each subrole.
  * <!-- end-model-doc -->
  *
  * <p>

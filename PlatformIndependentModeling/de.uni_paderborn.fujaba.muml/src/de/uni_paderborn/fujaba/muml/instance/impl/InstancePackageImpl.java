@@ -1117,7 +1117,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "filter", "self.portInstances.portPart.connectors->select(c | c.connectorEndpoints.oclAsType(component::PortPart) = self.connectorEndpointInstances.oclAsType(PortInstance).portPart)->asSet()",
+			 "filter", "let types : Set(connector::ConnectorEndpoint) = self.portInstances->collect(pi | if (pi.portPart.oclIsUndefined()) then pi.type else pi.portPart endif).oclAsType(connector::ConnectorEndpoint)->asSet()\nin types.connectors->select(c | c.connectorEndpoints->asSet() = types)->asSet()",
 			 "feature", "type"
 		   });
 	}
