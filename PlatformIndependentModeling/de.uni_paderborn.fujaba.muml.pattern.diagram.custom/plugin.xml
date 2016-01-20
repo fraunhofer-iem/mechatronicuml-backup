@@ -40,7 +40,6 @@
          <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"/>
       </binding>
    </extension>
-       
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.4.0">
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"
@@ -51,5 +50,59 @@
       </metamodel>
    </extension>
    
+   
+   <!-- prevent deleting inner coordination pattern variant -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"
+		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"
+		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocolAdvice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocolAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"
+		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocolAdvice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocolAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"
+		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+     
      
 </plugin>
