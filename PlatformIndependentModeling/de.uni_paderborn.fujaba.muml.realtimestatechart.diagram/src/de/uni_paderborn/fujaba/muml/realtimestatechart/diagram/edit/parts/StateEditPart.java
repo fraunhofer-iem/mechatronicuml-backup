@@ -14,6 +14,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts;
 
 import java.util.Collection;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
@@ -118,6 +119,9 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 
 		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy());
+
+		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE,
+				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -591,6 +595,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			fFigureRegionsCompartment = new RectangleFigure();
 
 			fFigureRegionsCompartment.setOutline(false);
+			fFigureRegionsCompartment.setBackgroundColor(ColorConstants.white);
 
 			GridData constraintFFigureRegionsCompartment = new GridData();
 			constraintFFigureRegionsCompartment.verticalAlignment = GridData.FILL;

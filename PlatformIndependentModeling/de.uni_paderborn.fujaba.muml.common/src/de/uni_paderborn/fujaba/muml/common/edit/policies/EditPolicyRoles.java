@@ -10,6 +10,8 @@ public interface EditPolicyRoles extends de.uni_paderborn.fujaba.common.edit.pol
 
 	public static final String COMPONENT_COLOR_ROLE = "ComponentColorRole"; //$NON-NLS-1$
 	
+	public static final String STATE_COLOR_ROLE = "StateColorRole"; //$NON-NLS-1$
+	
 	public static final String CONNECTION_POINT_VISUALIZATION_ROLE = "ConnectionPointVisualizationRole"; //$NON-NLS-1$
 	
 }

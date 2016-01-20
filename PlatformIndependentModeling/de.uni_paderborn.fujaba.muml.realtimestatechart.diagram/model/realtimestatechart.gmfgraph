@@ -235,6 +235,8 @@
                 grabExcessVerticalSpace="true"
                 verticalAlignment="FILL"
                 horizontalAlignment="FILL"/>
+            <backgroundColor
+                xsi:type="gmfgraph:ConstantColor"/>
           </children>
         </children>
       </actualFigure>
