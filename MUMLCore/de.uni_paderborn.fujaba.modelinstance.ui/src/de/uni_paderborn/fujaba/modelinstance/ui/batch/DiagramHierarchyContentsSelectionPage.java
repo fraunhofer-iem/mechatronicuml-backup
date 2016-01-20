@@ -5,8 +5,11 @@ import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
 
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramElementValidator;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.pages.DiagramContentsSelectionPage;
@@ -15,6 +18,8 @@ public class DiagramHierarchyContentsSelectionPage extends
 		DiagramContentsSelectionPage {
 
 	protected HierarchyCheckedTreeViewer hierarchyTreeViewer;
+	
+	protected boolean overwriteDiagrams;
 
 	public DiagramHierarchyContentsSelectionPage(String pageId,
 			IDiagramElementValidator validator, String modelElementCategoryKey, AdapterFactory adapterFactory) {
@@ -31,13 +36,35 @@ public class DiagramHierarchyContentsSelectionPage extends
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		Composite plate = (Composite) getControl();
-		final Button useHierarchy = new Button(plate, SWT.CHECK);
-		useHierarchy.setText("Create diagrams for contained objects");
-		useHierarchy.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				hierarchyTreeViewer.setUseHierarchy(useHierarchy.getSelection());
-			}
-		});
+		Group group = new Group(plate, SWT.BORDER);
+		group.setText("Options");
+		group.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
+		group.setLayout(new GridLayout(1, true));
+
+		{
+			final Button useHierarchyButton = new Button(group, SWT.CHECK);
+			useHierarchyButton.setText("&Create diagrams for contained objects");
+			useHierarchyButton.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					hierarchyTreeViewer.setUseHierarchy(useHierarchyButton.getSelection());
+				}
+			});
+		}
+		
+		{
+			final Button overwriteDiagramsButton = new Button(group, SWT.CHECK);
+			overwriteDiagramsButton.setText("&Overwrite existing diagrams");
+			overwriteDiagramsButton.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					DiagramHierarchyContentsSelectionPage.this.overwriteDiagrams = overwriteDiagramsButton.getSelection();
+				}
+			});
+		}
+	}
+	
+	public boolean isOverwriteDiagrams() {
+		return overwriteDiagrams;
 	}
 }

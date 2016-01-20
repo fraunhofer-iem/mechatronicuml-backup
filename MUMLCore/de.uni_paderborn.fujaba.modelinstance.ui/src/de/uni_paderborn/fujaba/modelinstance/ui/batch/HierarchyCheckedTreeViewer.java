@@ -34,8 +34,11 @@ public class HierarchyCheckedTreeViewer extends CheckboxTreeViewer {
 	
 	public void setUseHierarchy(boolean useHierarchy) {
 		this.useHierarchy = useHierarchy;
+		for (TreeItem item : getTree().getItems()) {
+			updateChildrenItems(item);
+		}
 	}
-
+	
 	private void initViewer() {
 		setUseHashlookup(true);
 		addCheckStateListener(new ICheckStateListener() {

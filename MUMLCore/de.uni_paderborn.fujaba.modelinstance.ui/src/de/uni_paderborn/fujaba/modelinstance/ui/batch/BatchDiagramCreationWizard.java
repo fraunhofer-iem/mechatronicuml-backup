@@ -124,7 +124,7 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 					throws CoreException, InterruptedException {
 				Collection<EObject> elements = diagramContentsSelectionPage
 						.getSelectedElements();
-				createDiagrams(elements, monitor);
+				createDiagrams(elements, monitor, diagramContentsSelectionPage.isOverwriteDiagrams());
 			}
 		};
 		try {
@@ -145,12 +145,26 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 		return true;
 	}
 
+	public void createDiagrams(Collection<EObject> elements,
+			IProgressMonitor progressMonitor) {
+		createDiagrams(elements, progressMonitor, false);
+	}
+
 	/**
 	 * This method should be called within a workspace modify operation since it
 	 * creates resources.
+	 * 
+	 * @param elements
+	 *            The elements to create diagrams for.
+	 * @param progressMonitor
+	 *            The monitor to show progress in.
+	 * @param overwriteDiagrams
+	 *            <code>true</code> if diagrams should be overwritten, else a
+	 *            unique name will be chosen to prevent overwriting existing
+	 *            diagrams.
 	 */
 	public void createDiagrams(Collection<EObject> elements,
-			IProgressMonitor progressMonitor) {
+			IProgressMonitor progressMonitor, boolean overwriteDiagrams) {
 		progressMonitor.beginTask(
 				Messages.DiagramEditorUtil_CreateDiagramProgressTask,
 				elements.size());
@@ -199,8 +213,13 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 				}
 			}
 
-			String diagramFilename = getUniqueFileName(diagramDirectory,
-					elementLabel, diagramInformation.getFileExtension());
+			String diagramFilename;
+			if (overwriteDiagrams) {
+				diagramFilename = elementLabel + "." + diagramInformation.getFileExtension();
+			} else {
+				diagramFilename = getUniqueFileName(diagramDirectory, elementLabel, diagramInformation.getFileExtension());
+			}
+
 			IPath diagramPath = diagramDirectory.append(diagramFilename);
 			URI diagramURI = URI.createPlatformResourceURI(
 					diagramPath.toOSString(), true);
