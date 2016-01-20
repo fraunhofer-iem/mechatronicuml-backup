@@ -193,7 +193,7 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * @return the value of the '<em>Minimum Retry Time</em>' containment reference.
 	 * @see #setMinimumRetryTime(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_MinimumRetryTime()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	TimeValue getMinimumRetryTime();

@@ -183,8 +183,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnValues" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="minimumRetryTime" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimumRetryTime" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionTimingSpecification" abstract="true"
