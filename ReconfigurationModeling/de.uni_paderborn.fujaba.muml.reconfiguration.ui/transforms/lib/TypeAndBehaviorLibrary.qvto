@@ -1,5 +1,6 @@
 import ProjectSpecificConstants;
 import ActionLanguageBaseLibrary;
+import PredefinedTypesLibrary;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -19,13 +20,13 @@ modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujab
 library TypeAndBehaviorLibrary;
 
 -- define string representations of the muml types
-property voidType : String = PrimitiveTypes::VOID.repr();
-property boolType : String = PrimitiveTypes::BOOLEAN.repr();
-property byteType : String = PrimitiveTypes::INT8.repr();
-property shortType : String = PrimitiveTypes::INT16.repr();
-property intType : String = PrimitiveTypes::INT32.repr();
-property longType : String = PrimitiveTypes::INT64.repr();
-property doubleType : String = PrimitiveTypes::DOUBLE.repr();
+property voidType : String = 'void';
+property boolType : String = 'boolean';
+property byteType : String = 'byte';
+property shortType : String = 'short';
+property intType : String = 'int32';
+property longType : String = 'int64';
+property doubleType : String = 'double';
 
 
 ------------ helper functions --------------
@@ -60,11 +61,11 @@ helper RootNode::createAffectedComponentsType() : StructType {
 	var entryType : StructType := new StructType(genTypeAffectedComponentsEntry);
 	
 	-- create attributes
-	entryType.attributes += new Attribute(genAttrRequest, self.getPrimitiveType(boolType));
-	entryType.attributes += new Attribute(genAttrReply, self.getPrimitiveType(boolType));
-	entryType.attributes += new Attribute(genAttrAction, self.getPrimitiveType(boolType));
-	entryType.attributes += new Attribute(genAttrVoteCommit, self.getPrimitiveType(boolType));
-	entryType.attributes += new Attribute(genAttrFinished, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrRequest, getPrimitiveTypeByName(boolType));
+	entryType.attributes += new Attribute(genAttrReply, getPrimitiveTypeByName(boolType));
+	entryType.attributes += new Attribute(genAttrAction, getPrimitiveTypeByName(boolType));
+	entryType.attributes += new Attribute(genAttrVoteCommit, getPrimitiveTypeByName(boolType));
+	entryType.attributes += new Attribute(genAttrFinished, getPrimitiveTypeByName(boolType));
 	
 	-- create references
 	affectedCompType._references += new Reference(genRefEntries, entryType, new Cardinality(0, -1));
@@ -82,11 +83,11 @@ query RootNode::getTypesCategory() : ModelElementCategory {
 }
 
 -- return the primitive type with the given name which is contained in the types category of the rootNode
-query RootNode::getPrimitiveType(in typeName : String) : DataType{
+/*query RootNode::getPrimitiveType(in typeName : String) : DataType{
 	var typeCategory : ModelElementCategory := self.getTypesCategory();
 	var theType : DataType := (typeCategory.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(PrimitiveDataType) and t.oclAsType(PrimitiveDataType).name = typeName) -> any(true)).oclAsType(DataType);
 	return theType;
-}
+}*/
 
 -- return the parameter with the given name of an operation
 query Operation::getParameterByName(in theName : String) : Parameter{
