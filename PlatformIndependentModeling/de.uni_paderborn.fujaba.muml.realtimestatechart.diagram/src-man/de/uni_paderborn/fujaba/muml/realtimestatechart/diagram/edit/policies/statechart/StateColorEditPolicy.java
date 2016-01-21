@@ -9,7 +9,11 @@ import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant;
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -18,8 +22,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateE
 
 public class StateColorEditPolicy extends NotifyingGraphicalEditPolicy {
 
-	private static final Color COLOR_ROLE = new Color(null, 173, 216, 230);
+	private static final Color COLOR_PROTOCOL_ROLE = new Color(null, 173, 216, 230);
+	private static final Color COLOR_PATTERN_ROLE = new Color(null, 251, 215, 187);
 	private static final Color COLOR_PORT = new Color(null, 214, 226, 190);
+	private static final Color COLOR_COMPONENT = new Color(null, 214, 226, 190);
 
 	@Override
 	public void activate() {
@@ -91,7 +97,14 @@ public class StateColorEditPolicy extends NotifyingGraphicalEditPolicy {
 					if (statechart.getBehavioralElement() instanceof Port) {
 						color = COLOR_PORT;
 					} else if (statechart.getBehavioralElement() instanceof Role) {
-						color = COLOR_ROLE;
+						Role role = (Role) statechart.getBehavioralElement();
+						if (role.getCoordinationProtocol() instanceof CoordinationProtocol) {
+							color = COLOR_PROTOCOL_ROLE;
+						} else if (role.getCoordinationProtocol() instanceof CoordinationPattern || role.getCoordinationProtocol() instanceof CoordinationPatternVariant) {
+							color = COLOR_PATTERN_ROLE;
+						}
+					} else if (statechart.getBehavioralElement() instanceof AtomicComponent) {
+						color = COLOR_COMPONENT;
 					}
 					break;
 				}
