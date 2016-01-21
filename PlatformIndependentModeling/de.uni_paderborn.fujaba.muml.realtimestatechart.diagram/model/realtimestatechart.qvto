@@ -27,6 +27,10 @@ mapping inout GenEditorGenerator::editorSpecific() {
 		if (node.modelFacet.metaClass.ecoreClass.name = 'State') then {
 			node->map behavior('de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy');
 			node->map behavior('de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE', 'de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy');
+		} elif (node.modelFacet.metaClass.ecoreClass.name = 'ClockConstraint') then {
+			node->map behavior('"TitleHelper"', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
+		} elif (node.modelFacet.metaClass.ecoreClass.name = 'SynchronizationChannel') then {
+			node->map behavior('"TitleHelper"', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
 		} endif;
 	};
 

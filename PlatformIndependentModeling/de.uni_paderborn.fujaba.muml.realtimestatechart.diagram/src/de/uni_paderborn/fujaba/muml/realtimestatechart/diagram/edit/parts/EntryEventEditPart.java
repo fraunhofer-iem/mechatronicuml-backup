@@ -156,7 +156,7 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureStateEventLabel());
+					.setLabel(getPrimaryShape().getFigureStateItemLabel());
 			return true;
 		}
 		return false;
@@ -314,17 +314,21 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	public class StateItemFigure extends RectangleFigure {
 
 		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureStateEventLabel;
+		* @generated
+		*/
+		private WrappingLabel fFigureStateItemLabel;
+		/**
+		* @generated
+		*/
+		private WrappingLabel fFigureStatetemBoldLabel;
 
 		/**
-		 * @generated
-		 */
+			 * @generated
+			 */
 		public StateItemFigure() {
 
 			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
+			layoutThis.numColumns = 2;
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
@@ -337,37 +341,66 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureStateEventLabel = new WrappingLabel();
+			fFigureStatetemBoldLabel = new WrappingLabel();
 
-			fFigureStateEventLabel.setText("");
+			fFigureStatetemBoldLabel.setText("");
 
-			fFigureStateEventLabel.setFont(FFIGURESTATEEVENTLABEL_FONT);
+			fFigureStatetemBoldLabel.setFont(FFIGURESTATETEMBOLDLABEL_FONT);
 
-			GridData constraintFFigureStateEventLabel = new GridData();
-			constraintFFigureStateEventLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureStateEventLabel.horizontalAlignment = GridData.FILL;
-			constraintFFigureStateEventLabel.horizontalIndent = 0;
-			constraintFFigureStateEventLabel.horizontalSpan = 1;
-			constraintFFigureStateEventLabel.verticalSpan = 1;
-			constraintFFigureStateEventLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureStateEventLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureStateEventLabel, constraintFFigureStateEventLabel);
+			GridData constraintFFigureStatetemBoldLabel = new GridData();
+			constraintFFigureStatetemBoldLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureStatetemBoldLabel.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureStatetemBoldLabel.horizontalIndent = 0;
+			constraintFFigureStatetemBoldLabel.horizontalSpan = 1;
+			constraintFFigureStatetemBoldLabel.verticalSpan = 1;
+			constraintFFigureStatetemBoldLabel.grabExcessHorizontalSpace = false;
+			constraintFFigureStatetemBoldLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureStatetemBoldLabel, constraintFFigureStatetemBoldLabel);
+
+			fFigureStateItemLabel = new WrappingLabel();
+
+			fFigureStateItemLabel.setText("");
+
+			fFigureStateItemLabel.setFont(FFIGURESTATEITEMLABEL_FONT);
+
+			GridData constraintFFigureStateItemLabel = new GridData();
+			constraintFFigureStateItemLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureStateItemLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureStateItemLabel.horizontalIndent = 0;
+			constraintFFigureStateItemLabel.horizontalSpan = 1;
+			constraintFFigureStateItemLabel.verticalSpan = 1;
+			constraintFFigureStateItemLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureStateItemLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureStateItemLabel, constraintFFigureStateItemLabel);
 
 		}
 
 		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureStateEventLabel() {
-			return fFigureStateEventLabel;
+		* @generated
+		*/
+		public WrappingLabel getFigureStateItemLabel() {
+			return fFigureStateItemLabel;
+		}
+
+		/**
+		* @generated
+		*/
+		public WrappingLabel getFigureStatetemBoldLabel() {
+			return fFigureStatetemBoldLabel;
 		}
 
 	}
 
 	/**
-	 * @generated
-	 */
-	static final Font FFIGURESTATEEVENTLABEL_FONT = new Font(Display.getCurrent(),
+	* @generated
+	*/
+	static final Font FFIGURESTATETEMBOLDLABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 8, SWT.BOLD);
+
+	/**
+	* @generated
+	*/
+	static final Font FFIGURESTATEITEMLABEL_FONT = new Font(Display.getCurrent(),
 			Display.getDefault().getSystemFont().getFontData()[0].getName(), 8, SWT.NORMAL);
 
 }

@@ -347,7 +347,20 @@
           outline="false">
         <layout
             xsi:type="gmfgraph:GridLayout"
+            numColumns="2"
             equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StatetemBoldLabel"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              horizontalAlignment="BEGINNING"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              height="8"
+              style="BOLD"/>
+        </children>
         <children
             xsi:type="gmfgraph:Label"
             name="StateItemLabel">
@@ -361,7 +374,9 @@
         </children>
       </actualFigure>
       <accessors
-          accessor="getFigureStateEventLabel"
+          accessor="getFigureStateItemLabel"
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
+      <accessors
           figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
@@ -526,6 +541,11 @@
       figure="StateItemFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels
+      name="StateItemBoldLabel"
+      figure="StateItemFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.7/@accessors.1"/>
   <labels
       name="RegionNameLabel"
       figure="RegionFigure"
