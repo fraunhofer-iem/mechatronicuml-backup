@@ -53,6 +53,9 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	protected Object value;
 	
+	private List<EClass> creationEClasses = null;
+
+	
 	protected boolean refreshWhenResourceSetChanges = false;
 	
 	protected IItemPropertyDescriptor itemPropertyDescriptor;
@@ -446,8 +449,15 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			unregisterEventAdapter(adapter);
 		}
 	}
-
+	
 	public List<EClass> getCreationEClasses() {
+		if (creationEClasses == null) {
+			creationEClasses = calculateCreationEClasses();
+		}
+		return creationEClasses;
+	}
+
+	protected List<EClass> calculateCreationEClasses() {
 		List<EClass> eClasses = new ArrayList<EClass>();
 		for (EClass eClass : RuntimePlugin.getEClasses((EReference) feature)) {
 			boolean mayCreate = true;

@@ -45,7 +45,6 @@ public class NavigationFeaturePropertyEditor extends
 	protected boolean createMode = false;
 	private boolean initiallyOpen = false;
 	private EClass selectedClass = null;
-	private List<EClass> eClasses = new ArrayList<EClass>();
 
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature, boolean initiallyOpen) {
@@ -181,7 +180,7 @@ public class NavigationFeaturePropertyEditor extends
 	
 	private void updateEClassesList() {
 
-		eClasses = getCreationEClasses();
+		List<EClass> eClasses = getCreationEClasses();
 
 		selectedClass = null;
 		if (value instanceof EObject) {
@@ -215,10 +214,11 @@ public class NavigationFeaturePropertyEditor extends
 	
 	// #1376: Hide Creation Editors if no class exists that might be created.
 	public void setVisible(boolean visible, boolean relayout, boolean force) {
-		super.setVisible(visible && !eClasses.isEmpty(), relayout, force);
+		super.setVisible(visible && !getCreationEClasses().isEmpty(), relayout, force);
 	}
 
 	protected boolean shouldShowClassesCombo() {
+		List<EClass> eClasses = getCreationEClasses();
 		return eClasses != null && eClasses.size() > 1;
 	}
 

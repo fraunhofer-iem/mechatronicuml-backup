@@ -34,7 +34,6 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 
 	protected CategoryPropertyEditor categoryPropertyEditor;
 	protected IPropertyEditor createElementEditor;
-	protected List<EClass> eClasses = getCreationEClasses();
 	protected Map<Object, IPropertyEditor> editors = new HashMap<Object, IPropertyEditor>();
 
 	public FlattenedListPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
@@ -70,7 +69,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 	@Override
 	protected void inputChanged(Object oldObject) {
 		super.inputChanged(oldObject);
-		eClasses = getCreationEClasses();
+		List<EClass> eClasses = getCreationEClasses();
 		for (IPropertyEditor editor : editors.values()) {
 			editor.setInput(element);
 		}
@@ -115,7 +114,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 	
 	// #1376: Hide Creation Editors if no class exists that might be created.
 	public void setVisible(boolean visible, boolean relayout, boolean force) {
-		super.setVisible(visible && !eClasses.isEmpty(), relayout, force);
+		super.setVisible(visible && !getCreationEClasses().isEmpty(), relayout, force);
 	}
 
 	protected IPropertyEditor createSubEditor(Object object) {
@@ -204,6 +203,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		
 		private void updateEClassesList() {
 			selectedClass = null;
+			List<EClass> eClasses = getCreationEClasses();
 			if (!eClasses.isEmpty()) {
 				selectedClass = eClasses.get(0);
 			}
