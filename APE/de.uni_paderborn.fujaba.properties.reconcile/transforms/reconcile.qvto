@@ -127,7 +127,7 @@ mapping inout Property::reconcileProperty() {
 		} endif;
 		
 		-- #1373: Improve Reconciler: GenFeature.readOnly -> Add ReadOnlyFilter with OCL "true"
-		if (self.genFeature._property != GenPropertyKind::Readonly and self.readOnlyFilters->isEmpty()) then {
+		if (self.genFeature._property = GenPropertyKind::Readonly and self.readOnlyFilters->isEmpty()) then {
 			self.readOnlyFilters += new OCLFilter('true');
 		} endif;
 	} endif;
