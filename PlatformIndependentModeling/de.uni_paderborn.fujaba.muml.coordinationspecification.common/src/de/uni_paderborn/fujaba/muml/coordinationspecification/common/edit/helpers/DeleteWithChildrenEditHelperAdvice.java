@@ -1,12 +1,12 @@
 package de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -46,13 +46,17 @@ public class DeleteWithChildrenEditHelperAdvice extends AbstractEditHelperAdvice
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				EObject element = (EObject) request.getElementToDestroy();
-				List<EObject> elementsToDelete = new ArrayList<EObject>();
-				elementsToDelete.add(element);
-				TreeIterator<EObject> contentsIterator = element.eAllContents();
-				while (contentsIterator.hasNext()) {
-					elementsToDelete.add(contentsIterator.next());
+				DeleteCommand.create(request.getEditingDomain(), element).execute();
+				EObject parent = element.eContainer();
+				if (parent != null && element.eContainingFeature() != null) {
+					if (element.eContainingFeature().isMany()) {
+						List<Object> siblings = new ArrayList<Object>((Collection<?>)parent.eGet(element.eContainingFeature()));
+						siblings.remove(element);
+						parent.eSet(element.eContainingFeature(), siblings);
+					} else {
+						parent.eSet(element.eContainingFeature(), null);
+					}
 				}
-				DeleteCommand.create(request.getEditingDomain(), elementsToDelete).execute();
 				return CommandResult.newOKCommandResult(element);	
 			}
 		};
