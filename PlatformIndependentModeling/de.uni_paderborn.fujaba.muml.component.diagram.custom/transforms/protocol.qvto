@@ -14,88 +14,48 @@ main() {
 	// Editor supplies StructuredComponent in rootInput.
 	// In case we want to run this transformation differently (for debugging), we search for StructuredComponents.
 	if (components->isEmpty()) then {
-		components := StructuredComponent.allInstances();
+		components := input.objects()[StructuredComponent]
 	} endif;
 	
 	components->forEach(component) {
 	
-		-- Disconnect invalid PortParts
-		component.embeddedComponentParts.portParts->select(p | not p.isValid())->forEach(pp) {
-			pp.coordinationProtocolPart := null;
-		};
+		-- find assemblies
+		var assemblies := component.embeddedComponentParts.portParts.connectors[AssemblyConnector];
 		
-		-- Remove empty CoordinationProtocolParts
-		var coordinationProtocolParts := component.coordinationProtocolParts;
-		coordinationProtocolParts->select(portParts->isEmpty())->forEach(p) {
-			input.removeElement(p);
-		};
-		
-		--coordinationProtocolParts->forEach(p) {
-		--	input.removeElement(p);
-		--};
+		-- good assemblies only have PortParts with the same CS
+		var goodAssemblies := assemblies->select(a | a.connectorEndpoints[PortPart].portType->excluding(null)[DiscretePort].refinedRole->excluding(null).coordinationProtocol->excluding(null)->asSet()->size() = 1);
 
-
-
-
-
-		-- Merge CoordinationProtocolParts that can reach each other
-		--component.coordinationProtocolParts->forEach(p, q) {
-		--	if (p != q and p.coordinationProtocol = q.coordinationProtocol and p.isReachable(q)) then {
-		--		p.portParts += q.portParts;
-		--		input.removeElement(q);
-		--	} endif;
-		--};
+		-- 1: Find necessary coordination specifications (CS)
+		var newCS := goodAssemblies.connectorEndpoints[PortPart].portType->excluding(null)[DiscretePort].refinedRole->excluding(null).coordinationProtocol->excluding(null)[AbstractCoordinationSpecification]->asSet();
+		var oldCS := component.coordinationProtocolParts.coordinationProtocol->excluding(null)[AbstractCoordinationSpecification]->asSet();
+		var removedCS := oldCS - newCS;
+		var addedCS   := newCS - oldCS;
+		
+		-- 1A: Delete Coordination Specification Parts for removed CS
+		if (removedCS->notEmpty()) {
+			component.coordinationProtocolParts := component.coordinationProtocolParts->reject(CPP | removedCS->includes(CPP.coordinationProtocol));
+		} endif;
+		
+		-- 1B: Add Coordination Specication Parts for added CS
+		if (addedCS->notEmpty()) {
+			-- XXX currently we only create new parts for CoordinationProtocols, NOT PATTERNS, NOT VARIANTS. 
+			-- XXX Because the metamodel does not allow us to!
+			-- XXX CoordinationProtocolPart.coordinationProtocol should be of type AbstractCoordinationSpecification.
+			-- XXX That's why we filter here:
+			addedCS[CoordinationProtocol]->forEach(CS) {
+				component.coordinationProtocolParts += new CoordinationProtocolPart(CS);				
+			};
+		} endif;
 		
 		
-		
-		--component.connectors[AssemblyConnector]->forEach(a) {
-		--	component.coordinationProtocolParts->forEach(p) {
-		--		if (p.portParts->intersection(a.connectorEndpoints[PortPart])->isEmpty()) then {
-		--			
-		--		} endif;
-		--	};
-		--};
-		
-		// Create or reuse CoordinationProtocolParts for all valid PortParts
-		component.embeddedComponentParts.portParts->select(p | p.isValid())->forEach(p) {
-			var refinedRole := p.refinedRole;
-			
-			-- Find all PortParts that are reachable via AssemblyConnectors
-			var reachablePortParts := p.allReachablePortParts();
-
-			-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
-			var coordinationProtocolPart := component.coordinationProtocolParts->any(c | not c.portParts->intersection(reachablePortParts)->isEmpty());
-		
-			-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
-			if (coordinationProtocolPart = null) then {
-				coordinationProtocolPart := new CoordinationProtocolPart(refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol));
-				p.componentPart.parentComponent.coordinationProtocolParts += coordinationProtocolPart;
-			} endif;
-			
-			-- Associate this PortPart with the Coordination Protocol Part
-			p.coordinationProtocolPart := coordinationProtocolPart;
+		-- Connect every port part to the right CS part
+		component.embeddedComponentParts.portParts->forEach(portPart) {
+			var CS := portPart.portType->excluding(null)[DiscretePort].refinedRole->excluding(null).coordinationProtocol->excluding(null)->any(true);
+			portPart.coordinationProtocolPart := component.coordinationProtocolParts->select(CPP | CPP.coordinationProtocol = CS)->any(true);
 		};
 	};
 }
 
-query PortPart::isValid() : Boolean {
-	return self.connectors[AssemblyConnector]->notEmpty() and self.refinedRole != null
-	-- commenting out the following line seems to make the workaround r4009 unnecessary!  
-	-- and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
-	;
-}
-
-query CoordinationProtocolPart::isReachable(p : CoordinationProtocolPart) : Boolean {
-	return self.portParts->select(pp | p.isReachable(pp))->notEmpty();
-}
-
-query CoordinationProtocolPart::isReachable(portPart : PortPart) : Boolean {
-	return self.portParts.allReachablePortParts()->excludes(portPart);
-}
-
-query PortPart::allReachablePortParts() : OrderedSet(PortPart) {
-	return OrderedSet{ self }->closure(connectors[AssemblyConnector].portParts);
-}
-constructor CoordinationProtocolPart::CoordinationProtocolPart(p : CoordinationProtocol) {
-	coordinationProtocol := p;
-}
+constructor CoordinationProtocolPart::CoordinationProtocolPart(CS : CoordinationProtocol) {
+	coordinationProtocol := CS;
+} 
