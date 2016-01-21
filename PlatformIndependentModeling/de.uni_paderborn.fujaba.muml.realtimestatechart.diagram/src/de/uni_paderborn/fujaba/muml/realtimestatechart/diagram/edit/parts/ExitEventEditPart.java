@@ -332,6 +332,7 @@ public class ExitEventEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
+			this.setFill(false);
 			this.setOutline(false);
 			createContents();
 		}

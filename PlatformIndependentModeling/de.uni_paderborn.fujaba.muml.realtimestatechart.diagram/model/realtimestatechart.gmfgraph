@@ -202,7 +202,8 @@
           <children
               xsi:type="gmfgraph:Rectangle"
               name="InvariantCompartment"
-              outline="false">
+              outline="false"
+              fill="false">
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
                 horizontalAlignment="FILL"/>
@@ -210,7 +211,8 @@
           <children
               xsi:type="gmfgraph:Rectangle"
               name="ChannelCompartment"
-              outline="false">
+              outline="false"
+              fill="false">
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
                 grabExcessHorizontalSpace="true"
@@ -344,7 +346,8 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="StateItemFigure"
-          outline="false">
+          outline="false"
+          fill="false">
         <layout
             xsi:type="gmfgraph:GridLayout"
             numColumns="2"

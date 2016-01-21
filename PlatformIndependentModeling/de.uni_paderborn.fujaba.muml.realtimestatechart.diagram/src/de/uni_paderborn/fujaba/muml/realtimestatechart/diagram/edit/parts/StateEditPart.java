@@ -552,6 +552,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureInvariantCompartment = new RectangleFigure();
 
+			fFigureInvariantCompartment.setFill(false);
 			fFigureInvariantCompartment.setOutline(false);
 
 			GridData constraintFFigureInvariantCompartment = new GridData();
@@ -566,6 +567,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureChannelCompartment = new RectangleFigure();
 
+			fFigureChannelCompartment.setFill(false);
 			fFigureChannelCompartment.setOutline(false);
 
 			GridData constraintFFigureChannelCompartment = new GridData();
