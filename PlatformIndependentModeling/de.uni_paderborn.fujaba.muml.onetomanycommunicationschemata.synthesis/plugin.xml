@@ -8,19 +8,5 @@
             path="transforms">
       </sourceContainer>
    </extension>
-   <extension
-         point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
-      <transformation
-            file="transforms/DisassembleOneToManySchemataInDiscreteInteractionEndpoint.qvto"
-            id="DisassembleOneToManySchemataInDiscreteInteractionEndpoint">
-      </transformation>
-   </extension>
-   <extension
-         point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
-      <transformation
-            file="transforms/DissassembleOneToManySchematasInComponentBehavior.qvto"
-            id="DissassembleOneToManySchematasInComponentBehavior">
-      </transformation>
-   </extension>
 
 </plugin>

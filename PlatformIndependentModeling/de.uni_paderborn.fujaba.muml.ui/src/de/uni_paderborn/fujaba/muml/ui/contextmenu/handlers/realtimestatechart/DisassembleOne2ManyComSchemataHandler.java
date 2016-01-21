@@ -33,13 +33,14 @@ import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.ui.Activator;
+
 
 public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 
-	private static String disassembleComponentTransformation = "/de.uni_paderborn.fujaba.muml.ui/transforms/realtimestatechart/DisassembleComponentWrapper.qvto";
-	private static String disassemblePortOrRoleTransformation = "/de.uni_paderborn.fujaba.muml.ui/transforms/realtimestatechart/DisassambleDiscreteInteractionEndpointWrapper.qvto";
 	
-	private static Map<String, TransformationExecutor> transformationExecutors = new HashMap<String, TransformationExecutor>();
+	
+	
 
 	// janas transformation
 	// private static String dissambleTransformation=
@@ -108,9 +109,9 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		// Load QVTO script
 		String transformationKind = "";
 		if(rtsc.getBehavioralElement() instanceof Component) {
-			transformationKind = disassembleComponentTransformation;
+			transformationKind = Messages.disassembleComponentTransformation;
 		}else if(rtsc.getBehavioralElement() instanceof DiscreteInteractionEndpoint) {
-			transformationKind = disassemblePortOrRoleTransformation;
+			transformationKind = Messages.disassemblePortOrRoleTransformation;
 		} else {
 			ErrorDialog dialog = new ErrorDialog(
 					shell,
@@ -123,10 +124,12 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 			dialog.open();
 			return;
 		}
-			
+		final TransformationExecutor transformationExecutor = Activator
+				.getInstance()
+				.getTransformationExecutor(
+						transformationKind,
+						false);	
 		
-		final TransformationExecutor transformationExecutor = getTransformationExecutor(
-				transformationKind, true);
 
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);
@@ -148,27 +151,4 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 
 	}
 
-
-	private static TransformationExecutor getTransformationExecutor(
-			String transformationPath, boolean reload) {
-		TransformationExecutor transformationExecutor = transformationExecutors
-				.get(transformationPath);
-
-		if (reload) {
-			transformationExecutor = null;
-		}
-		if (transformationExecutor == null) {
-			URI transformationURI = URI.createPlatformPluginURI(
-					transformationPath, true);
-
-			// create executor and execution context
-			transformationExecutor = new TransformationExecutor(
-					transformationURI);
-			transformationExecutor.loadTransformation();
-
-			transformationExecutors.put(transformationPath,
-					transformationExecutor);
-		}
-		return transformationExecutor;
-	}
 }
