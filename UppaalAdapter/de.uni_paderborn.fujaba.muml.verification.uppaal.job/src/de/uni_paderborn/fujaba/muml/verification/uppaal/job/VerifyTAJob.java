@@ -58,6 +58,7 @@ public class VerifyTAJob extends SynchronousJob {
 	public static Injector injector;
 	
 	private TraceRepository traceRepository;
+	private String analysisResult;
 				
 	public VerifyTAJob(NTA nta, PropertyRepository properties, Options options) {
 		
@@ -152,6 +153,7 @@ public class VerifyTAJob extends SynchronousJob {
 			int exitCode = proc.waitFor();
 			
 			String result = stringWriter.toString();
+			this.analysisResult = result;
 			
 			if (exitCode != 0) {
 				return BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(new RuntimeException(result)));
@@ -218,6 +220,18 @@ public class VerifyTAJob extends SynchronousJob {
 		}
 		
 		return traceRepository;
+		
+	}
+	
+	public String getAnalysisResult() {
+		
+		try {
+			join();
+		} catch (InterruptedException e) {
+			return null;
+		}
+		
+		return this.analysisResult;
 		
 	}
 	
