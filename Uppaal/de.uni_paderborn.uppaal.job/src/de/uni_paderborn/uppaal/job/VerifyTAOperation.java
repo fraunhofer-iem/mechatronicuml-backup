@@ -63,10 +63,7 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 	
 	private TraceRepository traceRepository;
 				
-	public VerifyTAOperation(NTA nta, PropertyRepository properties, Options options) {
-		
-		//super("UPPAAL Model Checking");
-				
+	public VerifyTAOperation(NTA nta, PropertyRepository properties, Options options) {				
 		this.nta = nta;
 		this.properties = properties;
 		this.options = options;
@@ -167,60 +164,60 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 				
 		    		@Override
 		    		protected boolean stayAlive() {
-		    			return !uppaalMonitor.isCanceled();
+		    			return !monitor.isCanceled();
 		    		}
 		    	};
 		    		    
 		    	int exitCode = proc.waitForExitValue();
 		    	
-		    	uppaalMonitor.done();
-								
-				String result = stringWriter.toString();
-				
-				if (exitCode != 0) {
-					throw new CoreException(new Status(IStatus.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", result));
-				}
-				
-				if (monitor.isCanceled()) {
-					throw new OperationCanceledException();
-				};
+		    	monitor.done();
 		    	
-				
-				subMonitor.subTask("Parsing Results");
-				
-			    if (injector == null) {
-					injector = new DiagnosticTraceStandaloneSetup().createInjectorAndDoEMFRegistration();
-				}
-				ResourceSet resSet = injector.getInstance(XtextResourceSet.class);
-				String ext = injector.getInstance(Key.get(String.class, Names.named(Constants.FILE_EXTENSIONS)));
-				Resource resource = resSet.createResource(URI.createURI("dummy." + ext));
-				
-				Map<String, Boolean> options = new HashMap<String, Boolean>();
-				options.put(XtextResource.OPTION_RESOLVE_ALL, true);
-				
-				synchronized (DiagnosticTraceScopeProviderSingleton.getScopeProvider()) {
-						
-					DiagnosticTraceScopeProviderSingleton.getScopeProvider().setNTA(nta);
+		    	if (monitor.isCanceled()) {
+		    		throw new OperationCanceledException();
+		    	}
+		    	else {							
+					String result = stringWriter.toString();
 					
-					resource.load(new StringInputStream(result), options);					
-				}
-				
-				subMonitor.worked(10);
-				
-				
-				Diagnostic resourceDiagnostic = EcoreUtil.computeDiagnostic(resource, false);
-								
-				if (!BasicDiagnostic.toIStatus(resourceDiagnostic).isOK()) {
-					BasicDiagnostic parseDiagnostic = new BasicDiagnostic("de.uni_paderborn.fujaba.muml.verification.uppaal.job", resourceDiagnostic.getCode(), "Parsing the UPPAAL diagnostic trace failed", null);
-					parseDiagnostic.merge(resourceDiagnostic);
+					if (exitCode != 0) {
+						throw new CoreException(new Status(IStatus.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", result));
+					}
 					
-					throw new CoreException(BasicDiagnostic.toIStatus(parseDiagnostic));
-				}
-				
-				
-				assert !resource.getContents().isEmpty() && resource.getContents().get(0) instanceof TraceRepository;
+					subMonitor.subTask("Parsing Results");
+					
+				    if (injector == null) {
+						injector = new DiagnosticTraceStandaloneSetup().createInjectorAndDoEMFRegistration();
+					}
+					ResourceSet resSet = injector.getInstance(XtextResourceSet.class);
+					String ext = injector.getInstance(Key.get(String.class, Names.named(Constants.FILE_EXTENSIONS)));
+					Resource resource = resSet.createResource(URI.createURI("dummy." + ext));
+					
+					Map<String, Boolean> options = new HashMap<String, Boolean>();
+					options.put(XtextResource.OPTION_RESOLVE_ALL, true);
+					
+					synchronized (DiagnosticTraceScopeProviderSingleton.getScopeProvider()) {
+							
+						DiagnosticTraceScopeProviderSingleton.getScopeProvider().setNTA(nta);
 						
-				traceRepository = (TraceRepository) resource.getContents().get(0);
+						resource.load(new StringInputStream(result), options);					
+					}
+					
+					subMonitor.worked(10);
+					
+					
+					Diagnostic resourceDiagnostic = EcoreUtil.computeDiagnostic(resource, false);
+									
+					if (!BasicDiagnostic.toIStatus(resourceDiagnostic).isOK()) {
+						BasicDiagnostic parseDiagnostic = new BasicDiagnostic("de.uni_paderborn.fujaba.muml.verification.uppaal.job", resourceDiagnostic.getCode(), "Parsing the UPPAAL diagnostic trace failed", null);
+						parseDiagnostic.merge(resourceDiagnostic);
+						
+						throw new CoreException(BasicDiagnostic.toIStatus(parseDiagnostic));
+					}
+					
+					
+					assert !resource.getContents().isEmpty() && resource.getContents().get(0) instanceof TraceRepository;
+							
+					traceRepository = (TraceRepository) resource.getContents().get(0);
+		    	}
 			
 		    }
 		    catch (IOException e) {

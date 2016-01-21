@@ -1,9 +1,7 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox;
 
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
 import org.eclipse.m2m.qvt.oml.util.IContext;
@@ -29,18 +27,8 @@ public class TraceLibrary {
 		if (monitor == null)
 			monitor = new NullProgressMonitor();
 		
-		// TODO run in workspace?
 		verifyta.run(monitor);
-		
-		//ResourcesPlugin.getWorkspace().run(verifyta, monitor);
-		
-		//IStatus status = uppaalJob.execute(monitor);
-		
-//		if (!status.isOK()) {
-//			// propagate failure to QVTo by throwing an exception
-//			throw new CoreException(status);
-//		}
-		
+				
 		return verifyta.getTraceRepository();
 		
 	}
