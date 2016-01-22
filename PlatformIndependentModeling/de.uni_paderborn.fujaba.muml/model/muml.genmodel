@@ -289,7 +289,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Transition/blockable"/>
         <genFeatures children="true" createChild="true" propertyCategory="Guard" propertyDescription=""
             ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/guard"/>
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/events"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/events"/>
         <genFeatures children="true" createChild="true" propertyCategory="Action"
             propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/action"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Transition/urgent"/>
