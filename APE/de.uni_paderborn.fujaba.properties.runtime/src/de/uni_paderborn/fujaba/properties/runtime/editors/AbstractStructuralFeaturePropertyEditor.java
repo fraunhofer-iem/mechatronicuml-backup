@@ -3,10 +3,12 @@ package de.uni_paderborn.fujaba.properties.runtime.editors;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Adapter;
@@ -452,12 +454,24 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	public List<EClass> getCreationEClasses() {
 		if (creationEClasses == null) {
+
+			// Early evaluation: Prevent calling calculateCreationEClasses() with input==null.
+			if (input == null) {
+				return Collections.emptyList();
+			}
+			
 			creationEClasses = calculateCreationEClasses();
 		}
 		return creationEClasses;
 	}
 
+	/**
+	 * Calculates all types of objects that can be created. Do not call this with <code>input==null</code>!
+	 * 
+	 * @return the EClasses
+	 */
 	protected List<EClass> calculateCreationEClasses() {
+		Assert.isNotNull(input);
 		List<EClass> eClasses = new ArrayList<EClass>();
 		for (EClass eClass : RuntimePlugin.getEClasses((EReference) feature)) {
 			boolean mayCreate = true;
