@@ -44,6 +44,11 @@ function manifest_vendor(){
 	do
 		sed -i 's/Bundle-Vendor:\s*$/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
 	done
+
+	find $PWD -name "plugin.properties" |while read fname
+	do
+		sed -i 's/Bundle-Vendor: www\.example\.org/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
+	done
 }
 
 function feature_provider(){
