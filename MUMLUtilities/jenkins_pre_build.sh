@@ -47,7 +47,7 @@ function manifest_vendor(){
 
 	find $PWD -name "plugin.properties" |while read fname
 	do
-		sed -i 's/Bundle-Vendor: www\.example\.org/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
+		sed -i 's/providerName\s*=  www\.example\.org/providerName = Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
 	done
 }
 
