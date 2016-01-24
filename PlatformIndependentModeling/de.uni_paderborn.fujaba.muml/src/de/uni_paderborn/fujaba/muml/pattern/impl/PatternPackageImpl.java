@@ -600,6 +600,12 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "UniquePatternNames PatternWithParametersNeedsVerifiedConfiguration"
+		   });	
+		addAnnotation
+		  (verifiedConfigurationEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ensureBindingForAllPatternParameters"
 		   });
 	}
 
@@ -617,6 +623,12 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   new String[] {
 			 "PatternWithParametersNeedsVerifiedConfiguration", "-- @warning\r\n--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\nself.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0",
 			 "UniquePatternNames", "-- A name of a CoordinationPattern must be unique.\r\nAbstractCoordinationPattern.allInstances()->isUnique(name)"
+		   });	
+		addAnnotation
+		  (verifiedConfigurationEClass, 
+		   source, 
+		   new String[] {
+			 "ensureBindingForAllPatternParameters", "-- A VerifiedConfiguration must bind every CoordinaionPattern parameter\r\nself.coordinationPattern.patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))"
 		   });
 	}
 

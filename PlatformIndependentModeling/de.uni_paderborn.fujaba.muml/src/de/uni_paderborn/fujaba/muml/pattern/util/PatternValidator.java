@@ -248,7 +248,47 @@ public class PatternValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateVerifiedConfiguration(VerifiedConfiguration verifiedConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(verifiedConfiguration, diagnostics, context);
+		if (!validate_NoCircularContainment(verifiedConfiguration, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(verifiedConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVerifiedConfiguration_ensureBindingForAllPatternParameters(verifiedConfiguration, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ensureBindingForAllPatternParameters constraint of '<em>Verified Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String VERIFIED_CONFIGURATION__ENSURE_BINDING_FOR_ALL_PATTERN_PARAMETERS__EEXPRESSION = "-- A VerifiedConfiguration must bind every CoordinaionPattern parameter\r\n" +
+		"self.coordinationPattern.patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))";
+
+	/**
+	 * Validates the ensureBindingForAllPatternParameters constraint of '<em>Verified Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVerifiedConfiguration_ensureBindingForAllPatternParameters(VerifiedConfiguration verifiedConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PatternPackage.Literals.VERIFIED_CONFIGURATION,
+				 verifiedConfiguration,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ensureBindingForAllPatternParameters",
+				 VERIFIED_CONFIGURATION__ENSURE_BINDING_FOR_ALL_PATTERN_PARAMETERS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

@@ -10,101 +10,6 @@
   <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Muml" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
       ecorePackage="muml.ecore#/">
-    <nestedGenPackages prefix="Component" basePackage="de.uni_paderborn.fujaba.muml"
-        disposableProviderFactory="true" ecorePackage="muml.ecore#//component">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//component/ComponentKind">
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/ComponentKind/SOFTWARE_COMPONENT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/ComponentKind/CONTINUOUS_COMPONENT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/ComponentKind/HYBRID_COMPONENT"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//component/PortDirectionKind">
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/PortDirectionKind/IN"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/PortDirectionKind/OUT"/>
-      </genEnums>
-      <genClasses image="false" ecoreClass="muml.ecore#//component/Component">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/Component/componentKind"/>
-        <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="General"
-            ecoreFeature="ecore:EReference muml.ecore#//component/Component/ports"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/Port">
-        <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="General"
-            ecoreFeature="ecore:EReference muml.ecore#//component/Port/component"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/Port/portConnectors"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/ContinuousPort"/>
-      <genClasses ecoreClass="muml.ecore#//component/DiscretePort">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/DiscretePort/refinedRole"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/isDiscreteInPort"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/isDiscreteOutPort"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/isDiscreteInOutPort"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/multiPort"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/DiscretePort/coordinationProtocol"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/ComponentPart">
-        <genFeatures notify="false" createChild="false" propertyCategory="General"
-            propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/componentType"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="General"
-            ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/parentComponent"/>
-        <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
-            ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/cardinality"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/portParts"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/ComponentPart/multiPart"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/StaticStructuredComponent"/>
-      <genClasses ecoreClass="muml.ecore#//component/AtomicComponent">
-        <genOperations ecoreOperation="muml.ecore#//component/AtomicComponent/toString"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/AssemblyConnector">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/coordinationProtocolPart"/>
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/portParts"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/DelegationConnector">
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/portPart"/>
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/port"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="muml.ecore#//component/PortConnector">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortConnector/parentComponent"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/HybridPort">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/HybridPort/samplingInterval"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/StructuredComponent">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/embeddedComponentParts"/>
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/connectors"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/allStructuredComponents"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/allAtomicComponents"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/coordinationProtocolParts"/>
-        <genOperations ecoreOperation="muml.ecore#//component/StructuredComponent/toString"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/CoordinationProtocolPart">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolPart/coordinationProtocol"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolPart/portParts"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="muml.ecore#//component/DirectedTypedPort">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/kind"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/optional"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/outPort"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/inPort"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/DirectedTypedPort/initializeExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/PortPart">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/portType"/>
-        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/componentPart"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/coordinationProtocolPart"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/refinedRole"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/PortPart/name"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/StaticAtomicComponent"/>
-      <genClasses ecoreClass="muml.ecore#//component/StaticComponent"/>
-    </nestedGenPackages>
     <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//constraint">
       <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerificationConstraintRepository"/>
@@ -582,6 +487,101 @@
       <genClasses ecoreClass="muml.ecore#//behavior/OperationRepository">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/OperationRepository/operations"/>
       </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Component" basePackage="de.uni_paderborn.fujaba.muml"
+        disposableProviderFactory="true" ecorePackage="muml.ecore#//component">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//component/ComponentKind">
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/ComponentKind/CONTINUOUS_COMPONENT"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/ComponentKind/HYBRID_COMPONENT"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//component/PortDirectionKind">
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/PortDirectionKind/IN"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/PortDirectionKind/OUT"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="muml.ecore#//component/Component">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/Component/componentKind"/>
+        <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="General"
+            ecoreFeature="ecore:EReference muml.ecore#//component/Component/ports"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/Port">
+        <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="General"
+            ecoreFeature="ecore:EReference muml.ecore#//component/Port/component"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/Port/portConnectors"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/ContinuousPort"/>
+      <genClasses ecoreClass="muml.ecore#//component/DiscretePort">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/DiscretePort/refinedRole"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/isDiscreteInPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/isDiscreteOutPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/isDiscreteInOutPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/multiPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/DiscretePort/coordinationProtocol"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/ComponentPart">
+        <genFeatures notify="false" createChild="false" propertyCategory="General"
+            propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/componentType"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="General"
+            ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/parentComponent"/>
+        <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
+            ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/cardinality"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/ComponentPart/portParts"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/ComponentPart/multiPart"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/StaticStructuredComponent"/>
+      <genClasses ecoreClass="muml.ecore#//component/AtomicComponent">
+        <genOperations ecoreOperation="muml.ecore#//component/AtomicComponent/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/AssemblyConnector">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/coordinationProtocolPart"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/portParts"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/DelegationConnector">
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/portPart"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/port"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="muml.ecore#//component/PortConnector">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortConnector/parentComponent"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/HybridPort">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/HybridPort/samplingInterval"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/StructuredComponent">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/embeddedComponentParts"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/connectors"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/allStructuredComponents"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/allAtomicComponents"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/coordinationProtocolParts"/>
+        <genOperations ecoreOperation="muml.ecore#//component/StructuredComponent/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/CoordinationProtocolPart">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolPart/coordinationProtocol"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolPart/portParts"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="muml.ecore#//component/DirectedTypedPort">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/kind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/optional"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/outPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/inPort"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/DirectedTypedPort/initializeExpression"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/PortPart">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/portType"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/componentPart"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/coordinationProtocolPart"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/refinedRole"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/PortPart/name"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/StaticAtomicComponent"/>
+      <genClasses ecoreClass="muml.ecore#//component/StaticComponent"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//pattern">
