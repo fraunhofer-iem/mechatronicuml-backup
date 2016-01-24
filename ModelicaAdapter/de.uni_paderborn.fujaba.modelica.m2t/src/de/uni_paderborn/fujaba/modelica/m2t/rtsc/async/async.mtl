@@ -102,10 +102,12 @@
 [/template]
 
 [**
- * Create declarations for a trigger message events
+ * Create declarations for trigger message events
  * @param rtsc the (port) realtime statechart
 */]
-[template public createTriggerMessageEventDeclarations(rtsc : RealtimeStatechart) {
+[template public createTriggerMessageEventDeclarations(rtsc : RealtimeStatechart)
+	? (rtsc.isPortRTSC())
+{
 	events : Set(AsynchronousMessageEvent) = rtsc.getAllTriggerMessageEvents();
 }]
 	// trigger message event declarations
@@ -119,11 +121,35 @@
 		numberOfMessageBooleans=[ev.getBooleanParameters()->size()/])
 		[ev.createMailboxDeclAnnotation(rtsc)/];
 	[createInputDelegationPortDecl(ev, rtsc)/]
-	[for (param : Parameter | ev.message.instanceOf.parameters)]
-	[param.getType()/] [param.getTriggerMessageEventParameterVariableName(ev.message.instanceOf)/];
-	[/for]
+	[createTriggerMessageEventVariableDeclarations(ev, true)/]
 [/for]
 	// end trigger message event declarations
+[/template]
+
+[**
+ * create declarations for trigger message events
+ * @param rtsc a realtime statechart (not a port rtsc)
+*/]
+[template public createTriggerMessageEventDeclarations(rtsc : RealtimeStatechart)
+	? (not rtsc.isPortRTSC())
+{
+	events : Set(AsynchronousMessageEvent) = rtsc.transitions->asSet()->getTriggerMessageEvents();
+}]
+	// trigger message event declarations (non port rtsc)
+[for (ev : AsynchronousMessageEvent | events->getAsyncMessageEventRepr())]
+	[createTriggerMessageEventVariableDeclarations(ev, false)/]
+[/for]
+	// end trigger message event declarations (non port rtsc)
+[/template]
+
+[**
+ * Create variable declarations for a trigger message event
+ * @param ev the AsynchrounousMessageEvent
+*/]
+[template public createTriggerMessageEventVariableDeclarations(ev : AsynchronousMessageEvent, isPortRTSC : Boolean)]
+[for (param : Parameter | ev.message.instanceOf.parameters)]
+[if isPortRTSC]inner[else]outer[/if] [param.getType()/] [param.getTriggerMessageEventParameterVariableName(ev.message.instanceOf)/];
+[/for]
 [/template]
 
 [**

@@ -7,6 +7,13 @@
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::operation_queries]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
 
+[comment
+	Note: fqname is not really used anymore. Currently, it serves two purposes:
+	* it is used to indicate whether a fqname should be _computed_ (if fqname <> '')
+	* it _could_ used to indicate that a fqname for an operation call should be
+	  computed (but it is not that easy, because actually we would need to compute
+	  a fqname _relative_ to the statechart that is using the operation...)
+/]
 
 [**
  * Generates a LogicExpression
@@ -356,7 +363,7 @@
  * @param fqname a fully qualified name or the empty string
 */]
 [template public generateExpression(expression : TriggerMessageExpression, usePre : Boolean, fqname : String)]
-[expression.getTriggerMessageEventParameterVariableFullyQualifiedName() /]
+[expression.getTriggerMessageEventParameterVariableFullyQualifiedName(fqname <> '') /]
 [/template]
 
 [**

@@ -108,11 +108,18 @@
 /]
 
 [**
- * Returns the fully qualified name of the trigger message expression's parameter
- * variable. The variable is located in the port statechart.
+ * If fqname is True, it returns the fully qualified name of the
+ * trigger message expression's parameter variable. Otherwise, the
+ * unqualified name of the trigger message expression's parameter variable
+ * is returned.
+ * The variable is located in the port statechart.
  * @param expression the trigger message expression
+ * @param fqname indicates whether a fully qualified name should be returned
 */]
-[query public getTriggerMessageEventParameterVariableFullyQualifiedName(expression : TriggerMessageExpression) : String =
-	expression.getStatechart().getParentPortStatechart().getFullyQualifiedName()
-		+ '.' + getTriggerMessageEventParameterVariableName(expression.parameter, expression.messageType)
+[query public getTriggerMessageEventParameterVariableFullyQualifiedName(expression : TriggerMessageExpression, fqname : Boolean) : String =
+	if fqname then
+		expression.getStatechart().getParentPortStatechart().getFullyQualifiedName() + '.'
+	else
+		''
+	endif + getTriggerMessageEventParameterVariableName(expression.parameter, expression.messageType)
 /]

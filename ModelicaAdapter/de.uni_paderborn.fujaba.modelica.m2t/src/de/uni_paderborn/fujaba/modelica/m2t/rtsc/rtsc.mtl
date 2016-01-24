@@ -53,10 +53,10 @@ model [aRealtimeStatechart.getModelName()/][if not aRealtimeStatechart.isCompone
 	[createClockConstraintDeclarations(aRealtimeStatechart.transitions)/]
 	[if aRealtimeStatechart.isPortRTSC()]
 	[createRaiseMessageEventDeclarations(aRealtimeStatechart)/]
-	[createTriggerMessageEventDeclarations(aRealtimeStatechart)/]
 	[elseif aRealtimeStatechart.isComponentRTSC() or aRealtimeStatechart.isMultiPortRTSC()]
 	[createPortDeclarations(aRealtimeStatechart)/]
 	[/if]
+	[createTriggerMessageEventDeclarations(aRealtimeStatechart)/]
 	equation
 		[if not aRealtimeStatechart.isComponentRTSC()][connectInitialStep(aRealtimeStatechart)/][/if]
 		[connectSteps(aRealtimeStatechart.transitions)/]

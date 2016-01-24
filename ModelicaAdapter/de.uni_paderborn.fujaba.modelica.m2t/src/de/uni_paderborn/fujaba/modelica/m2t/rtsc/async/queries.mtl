@@ -205,9 +205,18 @@
  * @param rtsc the (root) realtime statechart
 */]
 [query public getAllTriggerMessageEvents(rtsc : RealtimeStatechart) : Set(AsynchronousMessageEvent) =
-	rtsc.transitions->asSet()->getTriggerMessageEvents()->union(
+	rtsc.getTriggerMessageEvents()->union(
 		rtsc.allSubstatecharts()->collect(transitions)->asSet()->getTriggerMessageEvents()
 	)
+/]
+
+[**
+ * Returns a set containing all trigger message events, which are used
+ * by a rtsc's transition.
+ * @param rtsc the realtime statechart
+*/]
+[query public getTriggerMessageEvents(rtsc : RealtimeStatechart) : Set(AsynchronousMessageEvent) =
+	rtsc.transitions->asSet()->getTriggerMessageEvents()
 /]
 
 [**
