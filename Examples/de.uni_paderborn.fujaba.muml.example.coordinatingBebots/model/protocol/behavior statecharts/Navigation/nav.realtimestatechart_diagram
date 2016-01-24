@@ -48,7 +48,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_I8yBsF6VEeOU6dzb6wKMjg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-i8QV6VEeOU6dzb6wKMjg" x="12" y="12" width="409" height="205"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-i8QV6VEeOU6dzb6wKMjg" x="12" y="12" width="484" height="244"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_I8yBs16VEeOU6dzb6wKMjg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_I8yBsF6VEeOU6dzb6wKMjg"/>

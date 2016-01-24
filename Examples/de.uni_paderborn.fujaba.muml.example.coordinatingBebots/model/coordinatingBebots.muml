@@ -1354,7 +1354,7 @@
       <states xmi:id="_st7YcXYQEeOftqkRKcg6BA" name="PositionTransmission sender" initial="true">
         <embeddedRegions xmi:id="_0Rc0QHYQEeOftqkRKcg6BA" priority="1">
           <embeddedStatechart xmi:id="_0RkJAHYQEeOftqkRKcg6BA" name="adaption">
-            <variables xmi:id="_l202YHYTEeOftqkRKcg6BA" name="curRole" dataType="_TxtyoF6PEeOU6dzb6wKMjg"/>
+            <variables xmi:id="_l202YHYTEeOftqkRKcg6BA" name="curRole" dataType="_bjqsAV6PEeOU6dzb6wKMjg"/>
             <transitions xmi:id="_Up6wYHYREeOftqkRKcg6BA" priority="1" target="_8zdRkHYQEeOftqkRKcg6BA" source="_0RlXIHYQEeOftqkRKcg6BA" urgent="false">
               <clockConstraints xmi:id="_Sc5NQHYTEeOftqkRKcg6BA" clock="_0XA-0HYSEeOftqkRKcg6BA" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_UYtZsHYTEeOftqkRKcg6BA" unit="MILLISECONDS">
@@ -1387,14 +1387,14 @@
                   <position xmi:id="_PxZeE3YYEeOftqkRKcg6BA" kind="LAST"/>
                 </rightExpression>
               </guard>
-              <action xmi:id="_fAtg4HYYEeOftqkRKcg6BA" name="curRole := curRole.next;">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_AHVXoH7ZEeOcPbY_GkBFqg">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AHVXoX7ZEeOcPbY_GkBFqg" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_AHVXon7ZEeOcPbY_GkBFqg">
-                      <typedNamedElementExpression xmi:id="_AHVXo37ZEeOcPbY_GkBFqg" typedNamedElement="_l202YHYTEeOftqkRKcg6BA"/>
-                      <position xmi:id="_AHVXpH7ZEeOcPbY_GkBFqg" kind="NEXT"/>
+              <action xmi:id="_fAtg4HYYEeOftqkRKcg6BA" name="curRole := curRole -> next ;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_nK3eUMIKEeW-rObVJ4wHQQ">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nK3eUcIKEeW-rObVJ4wHQQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_nK3eUsIKEeW-rObVJ4wHQQ">
+                      <typedNamedElementExpression xmi:id="_nK3eU8IKEeW-rObVJ4wHQQ" typedNamedElement="_l202YHYTEeOftqkRKcg6BA"/>
+                      <position xmi:id="_nK3eVMIKEeW-rObVJ4wHQQ" kind="NEXT"/>
                     </rhs_assignExpression>
-                    <lhs_typedNamedElementExpression xmi:id="_AHVXpX7ZEeOcPbY_GkBFqg" typedNamedElement="_l202YHYTEeOftqkRKcg6BA"/>
+                    <lhs_typedNamedElementExpression xmi:id="_nK3eVcIKEeW-rObVJ4wHQQ" typedNamedElement="_l202YHYTEeOftqkRKcg6BA"/>
                   </expressions>
                 </expressions>
               </action>
@@ -1467,8 +1467,8 @@
             <states xmi:id="_bGa5wHYREeOftqkRKcg6BA" name="Sent" outgoingTransitions="_eMGRQHYREeOftqkRKcg6BA" incomingTransitions="_dg6mQHYREeOftqkRKcg6BA"/>
           </embeddedStatechart>
         </embeddedRegions>
-        <channels xmi:id="_0h4AcHYREeOftqkRKcg6BA" name="send" selectorType="_TxtyoF6PEeOU6dzb6wKMjg"/>
-        <channels xmi:id="_2_CfEHYUEeOftqkRKcg6BA" name="done" selectorType="_TxtyoF6PEeOU6dzb6wKMjg"/>
+        <channels xmi:id="_0h4AcHYREeOftqkRKcg6BA" name="send" selectorType="_bjqsAV6PEeOU6dzb6wKMjg"/>
+        <channels xmi:id="_2_CfEHYUEeOftqkRKcg6BA" name="done" selectorType="_bjqsAV6PEeOU6dzb6wKMjg"/>
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_PLDk4HYaEeOftqkRKcg6BA" name="Position_Transmission_Receiver" behavioralElement="_bjr6IF6PEeOU6dzb6wKMjg">
@@ -1477,21 +1477,21 @@
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_lqZRILj0EeOZIIv29ABAIA" kind="TRIGGER">
           <message xmi:id="_l4msQLj0EeOZIIv29ABAIA" instanceOf="_zGbf0LjxEeOZIIv29ABAIA"/>
         </events>
-        <action xmi:id="_EMUxAHYbEeOftqkRKcg6BA" name="pos := position.pos;">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_BrwDELj1EeOZIIv29ABAIA">
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_BrwDEbj1EeOZIIv29ABAIA" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_BrwDErj1EeOZIIv29ABAIA" messageType="_zGbf0LjxEeOZIIv29ABAIA" parameter="_0YXo0LjxEeOZIIv29ABAIA"/>
-              <lhs_typedNamedElementExpression xmi:id="_BrwDE7j1EeOZIIv29ABAIA" typedNamedElement="_hF8dIHYaEeOftqkRKcg6BA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_kNXM4Fo3EeWOcM8VFD0TTw">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_BrwDFLj1EeOZIIv29ABAIA" value="0"/>
+        <action xmi:id="_EMUxAHYbEeOftqkRKcg6BA" name="pos [ 0 ] := position -> posX ; pos [ 1 ] := position -> posY ;">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_h48RsMIKEeW-rObVJ4wHQQ">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_h48RscIKEeW-rObVJ4wHQQ" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_h48RssIKEeW-rObVJ4wHQQ" messageType="_zGbf0LjxEeOZIIv29ABAIA" parameter="_0YXo0LjxEeOZIIv29ABAIA"/>
+              <lhs_typedNamedElementExpression xmi:id="_h48Rs8IKEeW-rObVJ4wHQQ" typedNamedElement="_hF8dIHYaEeOftqkRKcg6BA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_h48RtMIKEeW-rObVJ4wHQQ">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_h48RtcIKEeW-rObVJ4wHQQ" value="0"/>
                 </elementAccessors>
               </lhs_typedNamedElementExpression>
             </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_BrwDFbj1EeOZIIv29ABAIA" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_BrwDFrj1EeOZIIv29ABAIA" messageType="_zGbf0LjxEeOZIIv29ABAIA" parameter="_1gThQLjxEeOZIIv29ABAIA"/>
-              <lhs_typedNamedElementExpression xmi:id="_BrwDF7j1EeOZIIv29ABAIA" typedNamedElement="_hF8dIHYaEeOftqkRKcg6BA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_kNXz8Fo3EeWOcM8VFD0TTw">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_BrwDGLj1EeOZIIv29ABAIA" value="1"/>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_h48RtsIKEeW-rObVJ4wHQQ" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_h48Rt8IKEeW-rObVJ4wHQQ" messageType="_zGbf0LjxEeOZIIv29ABAIA" parameter="_1gThQLjxEeOZIIv29ABAIA"/>
+              <lhs_typedNamedElementExpression xmi:id="_h48RuMIKEeW-rObVJ4wHQQ" typedNamedElement="_hF8dIHYaEeOftqkRKcg6BA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_h48RucIKEeW-rObVJ4wHQQ">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_h48RusIKEeW-rObVJ4wHQQ" value="1"/>
                 </elementAccessors>
               </lhs_typedNamedElementExpression>
             </expressions>
