@@ -82,7 +82,7 @@ public class OperationRepositoryItemProvider extends RepositoryItemProvider {
 				 getString("_UI_OperationRepository_operations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OperationRepository_operations_feature", "_UI_OperationRepository_type"),
 				 BehaviorPackage.Literals.OPERATION_REPOSITORY__OPERATIONS,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

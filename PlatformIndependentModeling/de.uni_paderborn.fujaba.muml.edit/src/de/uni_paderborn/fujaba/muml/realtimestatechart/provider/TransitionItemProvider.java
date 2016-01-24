@@ -718,7 +718,7 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 				 getString("_UI_Transition_events_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_events_feature", "_UI_Transition_type"),
 				 RealtimestatechartPackage.Literals.TRANSITION__EVENTS,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

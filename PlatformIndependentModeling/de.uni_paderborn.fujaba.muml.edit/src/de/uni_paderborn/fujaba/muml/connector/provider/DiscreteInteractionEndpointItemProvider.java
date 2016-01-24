@@ -323,7 +323,7 @@ public class DiscreteInteractionEndpointItemProvider
 				 getString("_UI_DiscreteInteractionEndpoint_receiverMessageBuffer_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_receiverMessageBuffer_feature", "_UI_DiscreteInteractionEndpoint_type"),
 				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

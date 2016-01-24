@@ -79,7 +79,7 @@ public class TimeValueItemProvider
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
 				 ValuetypePackage.Literals.TIME_VALUE__VALUE,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

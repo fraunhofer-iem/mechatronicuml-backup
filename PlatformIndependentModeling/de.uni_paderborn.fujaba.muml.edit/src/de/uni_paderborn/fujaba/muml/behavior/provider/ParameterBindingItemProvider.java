@@ -116,7 +116,7 @@ public class ParameterBindingItemProvider
 				 getString("_UI_ParameterBinding_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterBinding_value_feature", "_UI_ParameterBinding_type"),
 				 BehaviorPackage.Literals.PARAMETER_BINDING__VALUE,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,
