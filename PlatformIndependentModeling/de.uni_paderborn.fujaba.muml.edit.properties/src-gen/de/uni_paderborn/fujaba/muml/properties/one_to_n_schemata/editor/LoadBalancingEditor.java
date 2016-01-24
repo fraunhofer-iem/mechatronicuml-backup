@@ -80,7 +80,7 @@ public class LoadBalancingEditor extends de.uni_paderborn.fujaba.properties.runt
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
-					"After the time period the wcet defines, a coordination partner that got a task assigned is ready to accept a new task.");
+					"After this maximum working time, a coordination partner that got a task assigned is ready to accept a new task.");
 
 			this.editorMaxWorkingTime_property_tab_generalTab = editor;
 		}
@@ -94,6 +94,8 @@ public class LoadBalancingEditor extends de.uni_paderborn.fujaba.properties.runt
 					.getLoadBalancing_OnResponseAction();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
+
+			editor.setTooltipMessage("Defines which action should be executed on response.");
 
 			this.editorOnResponseAction_property_tab_generalTab = editor;
 		}

@@ -20,6 +20,7 @@ import org.storydriven.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
+import de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 
 /**

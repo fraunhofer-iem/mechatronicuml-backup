@@ -69,7 +69,7 @@ public interface Iterate extends SendingOneToManyCommunicationSchema {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The delay of an iteration.
+	 * The delay between two iterations.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Delay</em>' containment reference.
 	 * @see #setDelay(TimeValue)

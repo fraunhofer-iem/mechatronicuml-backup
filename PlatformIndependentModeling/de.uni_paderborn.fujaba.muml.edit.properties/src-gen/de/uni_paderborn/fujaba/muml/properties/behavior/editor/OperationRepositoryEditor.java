@@ -71,6 +71,8 @@ public class OperationRepositoryEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
+			editor.setTooltipMessage("The operations of this repository.");
+
 			this.editorOperations_property_tab_generalTab = editor;
 		}
 		return this.editorOperations_property_tab_generalTab;

@@ -19,7 +19,7 @@ package de.uni_paderborn.fujaba.muml.pattern;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todosd{document!}
+ * This class represents a variant of a Real-Time Coordination Pattern.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -43,6 +43,9 @@ public interface CoordinationPatternVariant extends AbstractCoordinationPattern 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The original pattern of this variant.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Original Pattern</em>' reference.
 	 * @see #setOriginalPattern(CoordinationPattern)
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPatternVariant_OriginalPattern()

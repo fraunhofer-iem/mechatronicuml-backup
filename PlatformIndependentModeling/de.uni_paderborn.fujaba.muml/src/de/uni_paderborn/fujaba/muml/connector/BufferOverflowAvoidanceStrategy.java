@@ -23,6 +23,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Buffer Overflow Avoidance Strategy</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The kinds of strategies to avoid a buffer overflow of a message buffer.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getBufferOverflowAvoidanceStrategy()
  * @model
  * @generated
@@ -56,6 +59,9 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the incoming message buffer is full and a new message arrives, then discard the incoming message.
+	 * <!-- end-model-doc -->
 	 * @see #DISCARD_INCOMING_MESSAGE
 	 * @model literal="discard incoming message"
 	 * @generated
@@ -71,6 +77,9 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the incoming message buffer is full and a new message arrives, then discard the oldest message in the buffer.
+	 * <!-- end-model-doc -->
 	 * @see #DISCARD_OLDEST_MESSAGE_IN_BUFFER
 	 * @model literal="discard oldest message in buffer"
 	 * @generated

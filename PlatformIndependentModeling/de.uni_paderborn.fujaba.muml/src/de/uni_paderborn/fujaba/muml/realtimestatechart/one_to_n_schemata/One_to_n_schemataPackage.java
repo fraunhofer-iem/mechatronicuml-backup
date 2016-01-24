@@ -30,7 +30,8 @@ import org.eclipse.emf.ecore.EReference;
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * This package provides communication schemata a message of a multi role Real-Time Statechart may contain. They allow for designing dependencies between multiple one-to-one coordinations.
+ * This package provides communication schemata a message of a multi role Real-Time Statechart (or multi port RTSC) may contain. 
+ * They allow for designing dependencies between multiple one-to-one coordinations.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataFactory
  * @model kind="package"

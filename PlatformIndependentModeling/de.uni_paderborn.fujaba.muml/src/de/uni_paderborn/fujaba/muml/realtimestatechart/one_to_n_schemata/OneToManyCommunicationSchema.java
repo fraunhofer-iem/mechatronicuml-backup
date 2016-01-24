@@ -25,7 +25,7 @@ import org.storydriven.core.expressions.Expression;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An abstract class all communication schemata inherit from.
+ * An abstract class all communication schemata inherit from (at least indirectly).
  * <!-- end-model-doc -->
  *
  * <p>

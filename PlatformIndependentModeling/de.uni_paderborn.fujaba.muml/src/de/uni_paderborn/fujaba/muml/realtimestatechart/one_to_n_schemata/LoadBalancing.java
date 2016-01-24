@@ -72,7 +72,7 @@ public interface LoadBalancing extends SendingOneToManyCommunicationSchema {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * After the time period the wcet defines, a coordination partner that got a task assigned is ready to accept a new task.
+	 * After this maximum working time, a coordination partner that got a task assigned is ready to accept a new task.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Working Time</em>' containment reference.
 	 * @see #setMaxWorkingTime(TimeValue)
@@ -100,6 +100,9 @@ public interface LoadBalancing extends SendingOneToManyCommunicationSchema {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines which action should be executed on response.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>On Response Action</em>' containment reference.
 	 * @see #setOnResponseAction(Action)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getLoadBalancing_OnResponseAction()

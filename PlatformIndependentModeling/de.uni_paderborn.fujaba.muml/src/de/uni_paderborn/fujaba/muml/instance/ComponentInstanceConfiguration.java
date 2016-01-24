@@ -141,6 +141,9 @@ public interface ComponentInstanceConfiguration extends NamedElement, Commentabl
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of coordination protocol instances of a component instance configuration.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_CoordinationProtocolInstances()
 	 * @model containment="true"

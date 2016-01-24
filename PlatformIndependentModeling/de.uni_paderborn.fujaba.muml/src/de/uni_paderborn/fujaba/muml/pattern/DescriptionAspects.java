@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todosd{document!}
+ * A Real-Time Coordination Pattern contains a set a descriptions aspects.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -51,7 +51,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the overview of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Overview</em>' attribute.
 	 * @see #setOverview(String)
@@ -76,7 +76,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the context of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Context</em>' attribute.
 	 * @see #setContext(String)
@@ -101,7 +101,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the problem of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Problem</em>' attribute.
 	 * @see #setProblem(String)
@@ -126,7 +126,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the solution of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Solution</em>' attribute.
 	 * @see #setSolution(String)
@@ -151,7 +151,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the structure of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Structure</em>' attribute.
 	 * @see #setStructure(String)
@@ -176,7 +176,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the behavior of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Behavior</em>' attribute.
 	 * @see #setBehavior(String)
@@ -201,7 +201,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the examples of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Examples</em>' attribute.
 	 * @see #setExamples(String)
@@ -226,7 +226,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the consequences of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Consequences</em>' attribute.
 	 * @see #setConsequences(String)
@@ -251,7 +251,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the combineability of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Combineability</em>' attribute.
 	 * @see #setCombineability(String)
@@ -276,7 +276,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the variants of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Variants</em>' attribute.
 	 * @see #setVariants(String)
@@ -301,7 +301,7 @@ public interface DescriptionAspects extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * Describes the alternatives of the pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Alternatives</em>' attribute.
 	 * @see #setAlternatives(String)
@@ -329,6 +329,9 @@ public interface DescriptionAspects extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Describes the verification properties of the pattern.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Verification properties</em>' attribute.
 	 * @see #setVerification_properties(String)
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getDescriptionAspects_Verification_properties()

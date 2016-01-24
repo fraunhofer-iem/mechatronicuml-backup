@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todosd{document!}
+ * A Real-Time Coordination Pattern defines a formal design pattern for a Real-Time Coordination Pattern.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -47,7 +47,7 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * The description aspects of this pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Description Aspects</em>' containment reference.
 	 * @see #setDescriptionAspects(DescriptionAspects)
@@ -77,6 +77,9 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The variants of this pattern.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Pattern Variants</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_PatternVariants()
 	 * @see de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant#getOriginalPattern
@@ -91,7 +94,7 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * The combineable patterns of this pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Combineable Patterns</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_CombineablePatterns()
@@ -106,7 +109,7 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * The alternative patterns of this pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Alternative Patterns</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern_AlternativePatterns()

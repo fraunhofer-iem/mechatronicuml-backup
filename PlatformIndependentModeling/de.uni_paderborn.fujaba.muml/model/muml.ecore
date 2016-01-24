@@ -2,554 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.4.0" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
-  <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/component/0.4.0"
-      nsPrefix="component">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The package components contains all classes for modeling atomic and structured components.&#xD;&#xA;Components are defined on the type level and may be instantiated in a component instance configuration."/>
-    </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//types/DataType">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="UniquePortNames UniqueComponentNames"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="UniquePortNames" value="-- Port names must be unique&#xA;self.ports->isUnique(name)"/>
-        <details key="UniqueComponentNames" value="-- The component's name must be unique.&#xA;Component.allInstances()->select(c|c&lt;>self)->collect(name)->excludes(self.name)&#xA;-- author: adann"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentKind" lowerBound="1"
-          eType="#//component/ComponentKind" defaultValueLiteral="software component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This attribute specifies the kind of the component. A component may be either&#xD;&#xA;discrete software component, a continuous component, a hybrid component &#xD;&#xA;or a hardware component."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-          <details key="filter" value="if(self.oclIsKindOf(component::AtomicComponent)) &#xD;&#xA;&#x9; then OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::SOFTWARE_COMPONENT } &#xD;&#xA;else &#xD;&#xA;&#x9;OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::HYBRID_COMPONENT, ComponentKind::SOFTWARE_COMPONENT} endif&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-          eType="#//component/Port" containment="true" eOpposite="#//component/Port/component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//connector/ConnectorEndpoint #//types/DataType">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//component/Component"
-          eOpposite="#//component/Component/ports">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The component, this port belongs to. Theoretically the bounds&#xA;should be 1..1, but that would prevent the possibility for&#xA;ComponentPart.portsDerived to be a containment reference&#xA;(see ComponentPart.portsDerived)"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectors" upperBound="-1"
-          eType="#//component/PortConnector" changeable="false" volatile="true" transient="true"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Derived reference that returns all connectors that are attached to the Port that&#xD;&#xA;are of type PortConnector."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContinuousPort" eSuperTypes="#//component/DirectedTypedPort">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a concrete port specification which provides the &#xD;&#xA;continuous functionality of a port. A continuous port emits a signal value.&#xD;&#xA;A signal value has a data type and it has concrete values at all points in time."/>
-      </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//component/Port #//connector/DiscreteInteractionEndpoint">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortShouldRefineRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="DiscretePortRequiresMessageTypes" value="-- Discrete Port must define sender or receiver message types&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
-        <details key="DiscretePortRequiresBehavior" value="-- A discrete port of an atomic component must have a Behavior Specification&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
-        <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="-- Discrete Port at Structured Component must not have behavior&#xA;(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
-        <details key="DiscretePortShouldRefineRole" value="-- @warning&#xA;-- Discrete Port should refine a role&#xA;self.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
-        <details key="DiscretePortAndRoleSameMessageTypes" value="-- Discrete Port must have the same message types as its refined role&#xD;&#xA;not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes->asSet() = self.refinedRole.senderMessageTypes->asSet() &#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes->asSet() = self.refinedRole.receiverMessageTypes->asSet() &#xD;&#xA;&#x9;)"/>
-        <details key="DiscretePortCardinalityMustComplyWithRefinedRoleCardinality"
-            value="-- Cardinality of discrete port and its refined role must match&#xD;&#xA;((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) &#xD;&#xA;implies &#xD;&#xA;((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))"/>
-        <details key="MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"
-            value="-- The coordinatorBehavior and subroleBehavior should be set if this is a multiport and its RTSC does not use one-to-many communication schemata.&#xD;&#xA;(self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies (self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The role of a coordination protocol that this port refines."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the discrete port is an IN port"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() = 0"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteOutPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the discrete port is an OUT port"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.receiverMessageTypes ->size() = 0 and self.senderMessageTypes ->size() >= 1"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInOutPort"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the discrete port is an IN OUT port"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() >= 1"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPort" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the port is a multi port."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.multi"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
-          eType="#//protocol/CoordinationProtocol" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Derives the coordinationProtocol of the refined port."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if refinedRole.oclIsUndefined() or not refinedRole.coordinationProtocol.oclIsKindOf(protocol::CoordinationProtocol) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;refinedRole.coordinationProtocol.oclAsType(protocol::CoordinationProtocol)&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//types/DataType">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a component part. Component parts are used to specify&#xD;&#xA;the inner structure of a structured component. A component part represents&#xD;&#xA;another component that is embedded in a  structured &#xD;&#xA;component. It is specified on the model level and is &#xD;&#xA;always typed over a component (either structured or atomic)."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CardinalityLowerBoundSet" value="-- Lower bound of cardinality must be set&#xD;&#xA;if self.cardinality.lowerBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.lowerBound->notEmpty()&#xD;&#xA;endif"/>
-        <details key="TypeNotEqualToParent" value="-- Component Part must have the same type as its parent structured component&#xA;self.componentType &lt;> self.parentComponent"/>
-        <details key="CardinalityUpperBoundSet" value="-- Upper bound of cardinality must be set&#xD;&#xA;if self.cardinality.upperBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.upperBound->notEmpty()&#xD;&#xA;endif"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" lowerBound="1"
-          eType="#//component/Component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The component type typing this component part."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" lowerBound="1"
-          eType="#//component/StructuredComponent" eOpposite="#//component/StructuredComponent/embeddedComponentParts">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The structured component type containing this component part."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-          eType="#//valuetype/Cardinality" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" upperBound="-1"
-          eType="#//component/PortPart" unsettable="true" containment="true" eOpposite="#//component/PortPart/componentPart">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The ports of this part."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-          unsettable="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the part is a multi part.&#xD;&#xA;It is only used to simplify OCL constraints."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (not self.cardinality.oclIsUndefined() and not self.cardinality.upperBound.oclIsUndefined()) then&#xA;self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity&#xA;else false&#xA;endif"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StaticStructuredComponent" eSuperTypes="#//component/StructuredComponent #//component/StaticComponent">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A static structured component is a structured component whose internal structure consisting of component part, ports, delegation, and assemblies cannot be changed during run-time."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints"
-            value="-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports&#xA;ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))"/>
-      </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" abstract="true" eSuperTypes="#//component/Component #//behavior/BehavioralElement #//constraint/VerifiableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xD;&#xA;&#xD;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SoftwareComponentRequiresBehavior" value="-- Software component must have a behavior&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"/>
-        <details key="ValidComponentType" value="-- Atomic component must be of type SOFTWARE or CONTINUOUS.&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT"/>
-        <details key="SoftwareComponentValidPorts" value="-- Software component must only have hybrid ports or discrete ports&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::HybridPort))&#xA;&#x9;)"/>
-        <details key="ContinuousComponentValidPorts" value="-- Continuous Component must only have continuous ports.&#xA;self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(component::ContinuousPort))&#xA;&#x9;)"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts"/>
-      </eAnnotations>
-      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return &quot;Atomic_Component_&quot; + getName();"/>
-          <details key="documentation" value="Redefinition of the Java toString method."/>
-        </eAnnotations>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//component/PortConnector">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SelfAssemblyOnlyForMultiPortsOrMultiParts" value="--  Self assembly only allowed for multi ports and multi component-parts&#xA;selfConnector implies&#xA;let portPart : PortPart = portParts->first() in&#xA;portPart.portType.oclIsKindOf(component::DiscretePort) and (portPart.portType.oclAsType(component::DiscretePort).multi or portPart.componentPart.multiPart)&#xA;-- author: bingo, cgerking, see MUML #872"/>
-        <details key="AssemblySameStructuredComponent" value="-- Assembly must connect port parts within same structured component.&#xD;&#xA;portParts.componentPart.parentComponent->forAll(a, b | a = b)&#xD;&#xA;"/>
-        <details key="AssemblyBetweenDirectedTypedPortsRequiresSameDataType" value="-- Assembly between DirectedTypedPorts requires same Data Type&#xA;let directedTypedPorts : Sequence(component::DirectedTypedPort) = portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort) in&#xA;directedTypedPorts->forAll(p1,p2 | p1.dataType = p2.dataType)&#xA;-- author: bingo, cgerking, see MUML #873"/>
-        <details key="AssemblyBetweenDiscretePortsOrDirectedTypedPorts" value="-- Assembly may only connect exclusively Discrete Ports or exclusively Directed Typed Ports&#xA;(portParts.portType->forAll(oclIsKindOf(component::DiscretePort)) or portParts.portType->forAll(oclIsKindOf(component::DirectedTypedPort)))&#xA;-- author: bingo, cgerking, see MUML #874"/>
-        <details key="ValidPortDirections" value="-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds&#xA;portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)&#xA;-- author: bingo, cgerking, see MUML #875"/>
-        <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol"
-            value="-- Assembly may only connect ports refining roles of the same coordination protocol&#xA;portParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)&#xA;-- author: bingo, cgerking, see MUML #876"/>
-        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="-- Assembly may only connect ports refining different roles&#xD;&#xA;portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)&#xD;&#xA;-- author: bingo, cgerking, see MUML #877"/>
-        <details key="AssemblyBetweenDiscretePortsCompatibleMessageTypes" value="-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)&#xA;portParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->&#xA;forAll(p1, p2 | p1 &lt;> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())&#xA;-- author: bingo, cgerking, see MUML #878"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
-          eType="#//component/CoordinationProtocolPart" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination protocol part that this assembly uses."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.portParts->first().coordinationProtocolPart"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="1"
-          upperBound="2" eType="#//component/PortPart" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The port parts that the assembly connects. In case of a self-assembly, this will include only one port part."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//component/PortConnector">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DelegationOnlyBetweenSameDiscreteInteractionEndpoints DelegateToEmbeddedPort DelegationBetweenDirectedTypedPortsRequiresSameDataType DelegationBetweenDiscretePortsOrDirectedTypedPorts DelegationBetweenDiscretePortsEqualMessageTypes ValidPortDirections DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="DelegationBetweenDirectedTypedPortsRequiresSameDataType" value="-- Delegation between DirectedTypedPorts requires same Data Type&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and portPart.portType.oclIsKindOf(component::DirectedTypedPort) and port.oclIsKindOf(component::DirectedTypedPort))&#xD;&#xA;implies &#xD;&#xA;portPart.portType.oclAsType(component::DirectedTypedPort).dataType = port.oclAsType(component::DirectedTypedPort).dataType&#xD;&#xA;-- author: bingo, cgerking, see MUML #879"/>
-        <details key="DelegationBetweenDiscretePortsOrDirectedTypedPorts" value="-- Delegation may only connect exclusively Discrete Ports or exclusively Directed Typed Ports&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies &#xD;&#xA;let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in&#xD;&#xA;(ports->forAll(oclIsKindOf(connector::DiscreteInteractionEndpoint)) or ports->forAll(oclIsKindOf(component::DirectedTypedPort)))&#xD;&#xA;-- author: bingo, cgerking, see MUML #880"/>
-        <details key="DelegationBetweenDiscretePortsEqualMessageTypes" value="-- Delegation may only connect discrete ports with equal message types&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies &#xD;&#xA;let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in&#xD;&#xA;ports->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->forAll(p1, p2 | p1.senderMessageTypes->asSet() = p2.senderMessageTypes->asSet() and p1.receiverMessageTypes->asSet() = p2.receiverMessageTypes->asSet())&#xD;&#xA;-- author: bingo, cgerking, see MUML #81"/>
-        <details key="ValidPortDirections" value="-- Delegation may only connect Directed Typed Ports with different Port Direction Kinds&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies &#xD;&#xA;let ports : OrderedSet (Port) = OrderedSet { portPart.portType, port } in ports->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->forAll(p1, p2 | p1.kind = p2.kind)&#xD;&#xA;-- author: bingo, cgerking, see MUML #882"/>
-        <details key="DelegationBetweenDiscretePortsRequiresSameRoles" value="-- Delegation may only connect ports refining same roles&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort)) &#xD;&#xA;implies &#xD;&#xA;self.port.oclAsType(DiscretePort).refinedRole = self.portPart.refinedRole&#xD;&#xA;-- author: bingo, cgerking, see MUML #883"/>
-        <details key="DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
-            value="-- Delegation starting at Multi Port must connect to a multi port or single port at multi part&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort) and self.port.oclAsType(DiscretePort).multi)&#xD;&#xA;implies&#xD;&#xA;((self.portPart.portType.oclIsKindOf(DiscretePort) and self.portPart.portType.oclAsType(DiscretePort).multi) or self.portPart.componentPart.multiPart)&#xD;&#xA;-- author: bingo, cgerking, see MUML #884"/>
-        <details key="DelegateToEmbeddedPort" value="-- Delegation must delegate to a Port at an embedded Component Part.&#xD;&#xA;if portPart.oclIsUndefined() or portPart.componentPart.oclIsUndefined() or port.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else&#xD;&#xA;&#x9;portPart.componentPart.parentComponent = port.component&#xD;&#xA;endif&#xD;&#xA;"/>
-        <details key="DelegationOnlyBetweenSameDiscreteInteractionEndpoints" value="-- Delegations may only connect Ports of the same kind&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies (&#xD;&#xA;&#x9;(port.oclIsKindOf(connector::DiscreteInteractionEndpoint))&#xD;&#xA;&#x9;implies&#xD;&#xA;&#x9;(port.eClass() = portPart.portType.eClass())&#xD;&#xA;)&#xD;&#xA;-- author: chris227, see MUML #1043"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" lowerBound="1"
-          eType="#//component/PortPart" changeable="false" volatile="true" transient="true"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The port part that this delegation delegates to."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
-          eType="#//component/Port" changeable="false" volatile="true" transient="true"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The delegating port for this delegation."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PortConnector" abstract="true" eSuperTypes="#//connector/Connector">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This abstract class is the common super class of delegations and assemblies between two ports."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" lowerBound="1"
-          eType="#//component/StructuredComponent" eOpposite="#//component/StructuredComponent/connectors">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The structured component this connector belongs to."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ComponentKind">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The entries of the enumeration represent different kinds of components. These&#xD;&#xA;are discrete software components, continous components containing controller&#xD;&#xA;code, and hybrid components that is a discrete software component which may have &#xD;&#xA;continuous input signals."/>
-      </eAnnotations>
-      <eLiterals name="SOFTWARE_COMPONENT" literal="software component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A component of this kind represent discrete software components. A discrete software component has a behavior specification which is given by means of a real-time statechart."/>
-        </eAnnotations>
-      </eLiterals>
-      <eLiterals name="CONTINUOUS_COMPONENT" value="1" literal="continuous component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A continuous component represents a continuous controller. Such components do not carry a behavior specification in MechatronicUML. Instead, we assume that the behavior of such components is modeled by using a control engineering tool like Matlab/Simulink, Dymola/Modelica or CamelView. In MechatronicUML, only the interface of these components is modeled. The interface is given by their ports."/>
-        </eAnnotations>
-      </eLiterals>
-      <eLiterals name="HYBRID_COMPONENT" value="2" literal="hybrid component">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A hybrid component bridges the gap between discrete software components and continuous control components. A hybrid component may be considered as a discrete software component which has special ports for reading and writing continuous signals from and to continuous components, e.g., for setting a new reference value to a controller."/>
-        </eAnnotations>
-      </eLiterals>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//component/DirectedTypedPort">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="samplingInterval" lowerBound="1"
-          eType="#//valuetype/TimeValue" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. "/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="PortDirectionKind">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Decides the direction of a continous port."/>
-      </eAnnotations>
-      <eLiterals name="IN">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represent an IN-Port of a continous port."/>
-        </eAnnotations>
-      </eLiterals>
-      <eLiterals name="OUT" value="1">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represent an OUT-Port of a continous port."/>
-        </eAnnotations>
-      </eLiterals>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StructuredComponent" abstract="true"
-        eSuperTypes="#//component/Component">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName SoftwareComponentNoContinuousPorts"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="StructuredComponentAllowsNoHybridPorts" value="-- A structured component allows no hybrid ports.&#xD;&#xA;self.ports->forAll(port | not port.oclIsKindOf(component::HybridPort))"/>
-        <details key="ValidComponentType" value="-- Structured components must be either software or hybrid components&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::HYBRID_COMPONENT"/>
-        <details key="NoCyclicComponentPartHierarchy" value="-- Hierarchy of embedded component parts must not include myself&#xD;&#xA;if self.allStructuredComponents->oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;not self.allStructuredComponents->includes(self)&#xD;&#xA;endif"/>
-        <details key="DiscreteStructuredComponentValidParts" value="-- Structured software component must only have software component parts &#xD;&#xA;if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsKindOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif"/>
-        <details key="HybridStructuredComponentValidPorts" value="-- Structured hybrid component must only have discrete or continuous ports&#xD;&#xA;self.componentKind = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
-        <details key="ComponentPartsHaveUniqueName" value="-- Names of embedded component parts must be unique&#xA;self.embeddedComponentParts -> isUnique(name)"/>
-        <details key="SoftwareComponentNoContinuousPorts" value="-- Software component must not have continuous ports&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(p | not p.oclIsKindOf(ContinuousPort))"/>
-      </eAnnotations>
-      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="return &quot;Structured_Component_&quot; + getName();"/>
-          <details key="documentation" value="Redefinition of the Java toString method."/>
-        </eAnnotations>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedComponentParts"
-          lowerBound="1" upperBound="-1" eType="#//component/ComponentPart" containment="true"
-          eOpposite="#//component/ComponentPart/parentComponent">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The component parts this structured component contains."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-          eType="#//component/PortConnector" containment="true" eOpposite="#//component/PortConnector/parentComponent">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The connectors this structured component contains. These can either be delegations or assemblies."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allStructuredComponents"
-          upperBound="-1" eType="#//component/StructuredComponent" changeable="false"
-          volatile="true" transient="true" unsettable="true" derived="true" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self->closure(&#xD;&#xA;&#x9;embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;componentType.oclIsKindOf(StructuredComponent)&#xD;&#xA;&#x9;).componentType.oclAsType(StructuredComponent)&#xD;&#xA;)"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Transitive closure of all StructuredComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allAtomicComponents"
-          upperBound="-1" eType="#//component/AtomicComponent" changeable="false"
-          volatile="true" transient="true" unsettable="true" derived="true" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.allStructuredComponents->collect(&#xD;&#xA;&#x9;embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;componentType.oclIsKindOf(component::AtomicComponent)&#xD;&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xD;&#xA;)->asOrderedSet()"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Transitive closure of all AtomicComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy.&#xA;Note: AtomicComponents from directly embeddedParts are NOT included"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolParts"
-          upperBound="-1" eType="#//component/CoordinationProtocolPart" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A coordination protocol (pattern) can occur within a structured component. It defines the communication behavior of an assembly connection that connects discrete ports with each other."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="OnlyDiscretePortParts"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="OnlyDiscretePortParts" value="-- Coordination Protocol Part must only have discrete Port Parts&#xD;&#xA;not self.portParts->oclIsUndefined()&#xD;&#xA;implies&#xD;&#xA;self.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
-          lowerBound="1" eType="#//protocol/CoordinationProtocol">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination protocol (pattern) of this CoordinationProtocolPart."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
-          upperBound="-1" eType="#//component/PortPart" eOpposite="#//component/PortPart/coordinationProtocolPart">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The discrete port parts that take part in this protocol part."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DirectedTypedPort" abstract="true"
-        eSuperTypes="#//component/Port #//behavior/TypedNamedElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="InitializeExpressionOnlyForOutPorts"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="InitializeExpressionOnlyForOutPorts" value="-- Only out ports may have an initialize expression.&#xA;self.kind &lt;> component::PortDirectionKind::OUT implies self.initializeExpression.oclIsUndefined()"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Directed typed port is the common super class of continuous and hybrid ports. &#xD;&#xA;A directed typed port has a direction (either IN or OUT) and specifies a data type.&#xD;&#xA;At present, we only support primitive and array data types, where the array elements&#xD;&#xA;need to have a primitive type."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
-          eType="#//component/PortDirectionKind">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Defines the direction of this directed typed port."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          defaultValueLiteral="false">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Decides if this port is optional. An optional port does not need to be instantiated&#xD;&#xA;in all instances of the containing component."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="outPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the port is an OUT port"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.kind = component::PortDirectionKind::OUT"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the port is an IN port"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.kind = component::PortDirectionKind::IN"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-          containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A initialize expression specifies the initial value that is emitted by the port after&#xD;&#xA;it has been instantiated. Thus, we only provide initialize expressions for out-port."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//connector/ConnectorEndpoint">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="PortParts are contained in ComponentParts. They represent a &#xD;&#xA;port of a component in the part structure inside a structured component. &#xD;&#xA;PortParts are the endpoints for AssemblyConnectors and DelegationConnectors."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-          eType="#//component/Port">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The port of the component that is represented by this PortPart."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
-          eType="#//component/ComponentPart" eOpposite="#//component/ComponentPart/portParts">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The component part that contains this PortPart. The port reference by the &#xD;&#xA;portType reference needs to be contained in the component that is referenced&#xD;&#xA;by this reference."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
-          eType="#//component/CoordinationProtocolPart" eOpposite="#//component/CoordinationProtocolPart/portParts">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="If the port type refines a role, this part refers to the enclosing coordination protocol."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role"
-          changeable="false" volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The role of a coordination protocol that this partial instance of a port refines."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if portType.name.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.name&#xA;endif"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The name of the port type."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StaticAtomicComponent" eSuperTypes="#//component/AtomicComponent #//component/StaticComponent">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A static atomic component is an atomic component whose internal structure&#xD;&#xA;consisting of its set of ports cannot be changed during run-time."/>
-      </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StaticComponent" abstract="true" eSuperTypes="#//component/Component">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="SoftwareComponentOnlyDiscreteOrHybridPorts"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SoftwareComponentOnlyDiscreteOrHybridPorts" value="-- Static software components must only have discrete ports and hybrid ports.&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A static component is a component whose internal structure cannot be changed during run-time."/>
-      </eAnnotations>
-    </eClassifiers>
-  </eSubpackages>
   <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/constraint/0.4.0"
       nsPrefix="constraint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -802,7 +254,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolInstances"
-          upperBound="-1" eType="#//instance/CoordinationProtocolInstance" containment="true"/>
+          upperBound="-1" eType="#//instance/CoordinationProtocolInstance" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The set of coordination protocol instances of a component instance configuration."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//instance/PortInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1019,7 +475,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="adaptedFromPattern" upperBound="-1"
           eType="#//pattern/AbstractCoordinationPattern">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="If this coordination specification is adapted from one or more Real-Time Coordination Pattern, then these patterns are listed here."/>
         </eAnnotations>
         <eAnnotations source="http://www.muml.org/emf/OCLFilter">
           <details key="filter" value="pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"/>
@@ -1045,9 +501,12 @@
         <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a role of a coordination protocol. "/>
+        </eAnnotations>
         <details key="RoleRequiresBehavior" value="-- Role requires behavior&#xA;not self.behavior.oclIsUndefined()"/>
         <details key="RoleRequiresMessageTypes" value="-- Role requires message types to be set&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
-        <details key="MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior" value="-- The coordinatorBehavior and subroleBehavior should be set if this is a multirole and its RTSC does not use one-to-many communication schemata.&#xD;&#xA;(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
+        <details key="MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior" value="-- A multiport requires that either all messages in the RTSCs use one-to-many communication schemata or that the references coordinatorBehavior and subroleBehavior are set.&#xD;&#xA;(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roles">
@@ -1079,7 +538,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination protocol."/>
+        <details key="documentation" value="This class represents a communication channel for asynchronous messages connecting two roles of a coordination protocol."/>
         <contents xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//connector/Connector">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination protocol."/>
@@ -1976,7 +1435,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExitEvent" eSuperTypes="#//realtimestatechart/EntryOrExitEvent">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents an exit event. The action associated with this &#xD;&#xA;event will be executed when the state is left.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+        <details key="documentation" value="This class represents an exit event. The action associated with this &#xD;&#xA;event will be executed when the state is left.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic &#xA;element for different notational elements within the same container."/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StateConnectionPoint" abstract="true"
@@ -2031,11 +1490,11 @@
         <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This package provides communication schemata a message of a multi role Real-Time Statechart may contain. They allow for designing dependencies between multiple one-to-one coordinations."/>
+        <details key="documentation" value="This package provides communication schemata a message of a multi role Real-Time Statechart (or multi port RTSC) may contain. &#xD;&#xA;They allow for designing dependencies between multiple one-to-one coordinations."/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="OneToManyCommunicationSchema" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="An abstract class all communication schemata inherit from."/>
+          <details key="documentation" value="An abstract class all communication schemata inherit from (at least indirectly)."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
             containment="true">
@@ -2081,7 +1540,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//valuetype/TimeValue"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The delay of an iteration."/>
+            <details key="documentation" value="The delay between two iterations."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="startFromFirst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -2112,15 +1571,20 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="maxWorkingTime" eType="#//valuetype/TimeValue"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="After the time period the wcet defines, a coordination partner that got a task assigned is ready to accept a new task."/>
+            <details key="documentation" value="After this maximum working time, a coordination partner that got a task assigned is ready to accept a new task."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="onResponseAction" eType="#//realtimestatechart/Action"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Defines which action should be executed on response."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SingleReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentaion" value="Using this communication schema, only one subrole is allowed to receive a message."/>
+          <details key="documentation" value="This communication schema enables to receive a single message by one subrole."/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MultiReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema">
@@ -2128,12 +1592,24 @@
           <details key="documentation" value="The communication schema MultiReceive allows for receiving a message by each subrole."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="failureAction" eType="#//realtimestatechart/Action"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Defines which action should be executed if the multireceive fails."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ReceivingOneToManyCommunicationSchema"
-          abstract="true" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
+          abstract="true" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An abstract class that all communication schemata have to inherit from if they shall receive messages."/>
+        </eAnnotations>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SendingOneToManyCommunicationSchema"
-          abstract="true" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
+          abstract="true" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An abstract class that all communication schemata have to inherit from if they shall send messages."/>
+        </eAnnotations>
+      </eClassifiers>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/msgtype/0.4.0" nsPrefix="msgtype">
@@ -2539,7 +2015,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferOverflowAvoidanceStrategy"
-          lowerBound="1" eType="#//connector/BufferOverflowAvoidanceStrategy" defaultValueLiteral="discard incoming message"/>
+          lowerBound="1" eType="#//connector/BufferOverflowAvoidanceStrategy" defaultValueLiteral="discard incoming message">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the strategy to avoid a buffer overflow."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="gmfMessageTypes" lowerBound="1"
           upperBound="-1" eType="#//msgtype/MessageType" volatile="true" transient="true"
           derived="true" containment="true">
@@ -2552,8 +2032,19 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BufferOverflowAvoidanceStrategy">
-      <eLiterals name="DISCARD_INCOMING_MESSAGE" literal="discard incoming message"/>
-      <eLiterals name="DISCARD_OLDEST_MESSAGE_IN_BUFFER" value="1" literal="discard oldest message in buffer"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kinds of strategies to avoid a buffer overflow of a message buffer."/>
+      </eAnnotations>
+      <eLiterals name="DISCARD_INCOMING_MESSAGE" literal="discard incoming message">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If the incoming message buffer is full and a new message arrives, then discard the incoming message."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="DISCARD_OLDEST_MESSAGE_IN_BUFFER" value="1" literal="discard oldest message in buffer">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If the incoming message buffer is full and a new message arrives, then discard the oldest message in the buffer."/>
+        </eAnnotations>
+      </eLiterals>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/valuetype/0.4.0"
@@ -2859,11 +2350,565 @@
         <details key="documentation" value="An OperationRepository groups a set of reusable Operations. Operations are not required to have an implementation."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-          eType="#//behavior/Operation" containment="true"/>
+          eType="#//behavior/Operation" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The operations of this repository."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/component/0.4.0"
+      nsPrefix="component">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The package components contains all classes for modeling atomic and structured components.&#xD;&#xA;Components are defined on the type level and may be instantiated in a component instance configuration."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xD;&#xA;&#xD;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="UniquePortNames UniqueComponentNames"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="UniquePortNames" value="-- Port names must be unique&#xA;self.ports->isUnique(name)"/>
+        <details key="UniqueComponentNames" value="-- The component's name must be unique.&#xA;Component.allInstances()->select(c|c&lt;>self)->collect(name)->excludes(self.name)&#xA;-- author: adann"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentKind" lowerBound="1"
+          eType="#//component/ComponentKind" defaultValueLiteral="software component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute specifies the kind of the component. A component may be either&#xD;&#xA;discrete software component, a continuous component, a hybrid component &#xD;&#xA;or a hardware component."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+          <details key="filter" value="if(self.oclIsKindOf(component::AtomicComponent)) &#xD;&#xA;&#x9; then OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::SOFTWARE_COMPONENT } &#xD;&#xA;else &#xD;&#xA;&#x9;OrderedSet {ComponentKind::CONTINUOUS_COMPONENT, ComponentKind::HYBRID_COMPONENT, ComponentKind::SOFTWARE_COMPONENT} endif&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+          eType="#//component/Port" containment="true" eOpposite="#//component/Port/component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//connector/ConnectorEndpoint #//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//component/Component"
+          eOpposite="#//component/Component/ports">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The component, this port belongs to. Theoretically the bounds&#xA;should be 1..1, but that would prevent the possibility for&#xA;ComponentPart.portsDerived to be a containment reference&#xA;(see ComponentPart.portsDerived)"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectors" upperBound="-1"
+          eType="#//component/PortConnector" changeable="false" volatile="true" transient="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Derived reference that returns all connectors that are attached to the Port that&#xD;&#xA;are of type PortConnector."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContinuousPort" eSuperTypes="#//component/DirectedTypedPort">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a concrete port specification which provides the &#xD;&#xA;continuous functionality of a port. A continuous port emits a signal value.&#xD;&#xA;A signal value has a data type and it has concrete values at all points in time."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//component/Port #//connector/DiscreteInteractionEndpoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortShouldRefineRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="DiscretePortRequiresMessageTypes" value="-- Discrete Port must define sender or receiver message types&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
+        <details key="DiscretePortRequiresBehavior" value="-- A discrete port of an atomic component must have a Behavior Specification&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
+        <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="-- Discrete Port at Structured Component must not have behavior&#xA;(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
+        <details key="DiscretePortShouldRefineRole" value="-- @warning&#xA;-- Discrete Port should refine a role&#xA;self.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
+        <details key="DiscretePortAndRoleSameMessageTypes" value="-- Discrete Port must have the same message types as its refined role&#xD;&#xA;not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes->asSet() = self.refinedRole.senderMessageTypes->asSet() &#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes->asSet() = self.refinedRole.receiverMessageTypes->asSet() &#xD;&#xA;&#x9;)"/>
+        <details key="DiscretePortCardinalityMustComplyWithRefinedRoleCardinality"
+            value="-- Cardinality of discrete port and its refined role must match&#xD;&#xA;((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) &#xD;&#xA;implies &#xD;&#xA;((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))"/>
+        <details key="MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"
+            value="-- A multiport requires that either all messages in the RTSCs use one-to-many communication schemata or that the references coordinatorBehavior and subroleBehavior are set.&#xD;&#xA;(self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies (self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.coordinatorBehavior.oclIsUndefined())&#xD;&#xA;and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The role of a coordination protocol that this port refines."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the discrete port is an IN port"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() = 0"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteOutPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the discrete port is an OUT port"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.receiverMessageTypes ->size() = 0 and self.senderMessageTypes ->size() >= 1"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInOutPort"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the discrete port is an IN OUT port"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() >= 1"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPort" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the port is a multi port."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.multi"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+          eType="#//protocol/CoordinationProtocol" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Derives the coordinationProtocol of the refined port."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if refinedRole.oclIsUndefined() or not refinedRole.coordinationProtocol.oclIsKindOf(protocol::CoordinationProtocol) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;refinedRole.coordinationProtocol.oclAsType(protocol::CoordinationProtocol)&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a component part. Component parts are used to specify&#xD;&#xA;the inner structure of a structured component. A component part represents&#xD;&#xA;another component that is embedded in a  structured &#xD;&#xA;component. It is specified on the model level and is &#xD;&#xA;always typed over a component (either structured or atomic)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CardinalityLowerBoundSet" value="-- Lower bound of cardinality must be set&#xD;&#xA;if self.cardinality.lowerBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.lowerBound->notEmpty()&#xD;&#xA;endif"/>
+        <details key="TypeNotEqualToParent" value="-- Component Part must have the same type as its parent structured component&#xA;self.componentType &lt;> self.parentComponent"/>
+        <details key="CardinalityUpperBoundSet" value="-- Upper bound of cardinality must be set&#xD;&#xA;if self.cardinality.upperBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.upperBound->notEmpty()&#xD;&#xA;endif"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" lowerBound="1"
+          eType="#//component/Component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The component type typing this component part."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" lowerBound="1"
+          eType="#//component/StructuredComponent" eOpposite="#//component/StructuredComponent/embeddedComponentParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The structured component type containing this component part."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+          eType="#//valuetype/Cardinality" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" upperBound="-1"
+          eType="#//component/PortPart" unsettable="true" containment="true" eOpposite="#//component/PortPart/componentPart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ports of this part."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          unsettable="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the part is a multi part.&#xD;&#xA;It is only used to simplify OCL constraints."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (not self.cardinality.oclIsUndefined() and not self.cardinality.upperBound.oclIsUndefined()) then&#xA;self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity&#xA;else false&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticStructuredComponent" eSuperTypes="#//component/StructuredComponent #//component/StaticComponent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A static structured component is a structured component whose internal structure consisting of component part, ports, delegation, and assemblies cannot be changed during run-time."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints"
+            value="-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports&#xA;ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" abstract="true" eSuperTypes="#//component/Component #//behavior/BehavioralElement #//constraint/VerifiableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xD;&#xA;&#xD;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="SoftwareComponentRequiresBehavior" value="-- Software component must have a behavior&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"/>
+        <details key="ValidComponentType" value="-- Atomic component must be of type SOFTWARE or CONTINUOUS.&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT"/>
+        <details key="SoftwareComponentValidPorts" value="-- Software component must only have hybrid ports or discrete ports&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::HybridPort))&#xA;&#x9;)"/>
+        <details key="ContinuousComponentValidPorts" value="-- Continuous Component must only have continuous ports.&#xA;self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(component::ContinuousPort))&#xA;&#x9;)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts"/>
+      </eAnnotations>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return &quot;Atomic_Component_&quot; + getName();"/>
+          <details key="documentation" value="Redefinition of the Java toString method."/>
+        </eAnnotations>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//component/PortConnector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="SelfAssemblyOnlyForMultiPortsOrMultiParts" value="--  Self assembly only allowed for multi ports and multi component-parts&#xA;selfConnector implies&#xA;let portPart : PortPart = portParts->first() in&#xA;portPart.portType.oclIsKindOf(component::DiscretePort) and (portPart.portType.oclAsType(component::DiscretePort).multi or portPart.componentPart.multiPart)&#xA;-- author: bingo, cgerking, see MUML #872"/>
+        <details key="AssemblySameStructuredComponent" value="-- Assembly must connect port parts within same structured component.&#xD;&#xA;portParts.componentPart.parentComponent->forAll(a, b | a = b)&#xD;&#xA;"/>
+        <details key="AssemblyBetweenDirectedTypedPortsRequiresSameDataType" value="-- Assembly between DirectedTypedPorts requires same Data Type&#xA;let directedTypedPorts : Sequence(component::DirectedTypedPort) = portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort) in&#xA;directedTypedPorts->forAll(p1,p2 | p1.dataType = p2.dataType)&#xA;-- author: bingo, cgerking, see MUML #873"/>
+        <details key="AssemblyBetweenDiscretePortsOrDirectedTypedPorts" value="-- Assembly may only connect exclusively Discrete Ports or exclusively Directed Typed Ports&#xA;(portParts.portType->forAll(oclIsKindOf(component::DiscretePort)) or portParts.portType->forAll(oclIsKindOf(component::DirectedTypedPort)))&#xA;-- author: bingo, cgerking, see MUML #874"/>
+        <details key="ValidPortDirections" value="-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds&#xA;portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)&#xA;-- author: bingo, cgerking, see MUML #875"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol"
+            value="-- Assembly may only connect ports refining roles of the same coordination protocol&#xA;portParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)&#xA;-- author: bingo, cgerking, see MUML #876"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="-- Assembly may only connect ports refining different roles&#xD;&#xA;portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)&#xD;&#xA;-- author: bingo, cgerking, see MUML #877"/>
+        <details key="AssemblyBetweenDiscretePortsCompatibleMessageTypes" value="-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)&#xA;portParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->&#xA;forAll(p1, p2 | p1 &lt;> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())&#xA;-- author: bingo, cgerking, see MUML #878"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
+          eType="#//component/CoordinationProtocolPart" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The coordination protocol part that this assembly uses."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.portParts->first().coordinationProtocolPart"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="1"
+          upperBound="2" eType="#//component/PortPart" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port parts that the assembly connects. In case of a self-assembly, this will include only one port part."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//component/PortConnector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="DelegationOnlyBetweenSameDiscreteInteractionEndpoints DelegateToEmbeddedPort DelegationBetweenDirectedTypedPortsRequiresSameDataType DelegationBetweenDiscretePortsOrDirectedTypedPorts DelegationBetweenDiscretePortsEqualMessageTypes ValidPortDirections DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="DelegationBetweenDirectedTypedPortsRequiresSameDataType" value="-- Delegation between DirectedTypedPorts requires same Data Type&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and portPart.portType.oclIsKindOf(component::DirectedTypedPort) and port.oclIsKindOf(component::DirectedTypedPort))&#xD;&#xA;implies &#xD;&#xA;portPart.portType.oclAsType(component::DirectedTypedPort).dataType = port.oclAsType(component::DirectedTypedPort).dataType&#xD;&#xA;-- author: bingo, cgerking, see MUML #879"/>
+        <details key="DelegationBetweenDiscretePortsOrDirectedTypedPorts" value="-- Delegation may only connect exclusively Discrete Ports or exclusively Directed Typed Ports&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies &#xD;&#xA;let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in&#xD;&#xA;(ports->forAll(oclIsKindOf(connector::DiscreteInteractionEndpoint)) or ports->forAll(oclIsKindOf(component::DirectedTypedPort)))&#xD;&#xA;-- author: bingo, cgerking, see MUML #880"/>
+        <details key="DelegationBetweenDiscretePortsEqualMessageTypes" value="-- Delegation may only connect discrete ports with equal message types&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies &#xD;&#xA;let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in&#xD;&#xA;ports->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->forAll(p1, p2 | p1.senderMessageTypes->asSet() = p2.senderMessageTypes->asSet() and p1.receiverMessageTypes->asSet() = p2.receiverMessageTypes->asSet())&#xD;&#xA;-- author: bingo, cgerking, see MUML #81"/>
+        <details key="ValidPortDirections" value="-- Delegation may only connect Directed Typed Ports with different Port Direction Kinds&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies &#xD;&#xA;let ports : OrderedSet (Port) = OrderedSet { portPart.portType, port } in ports->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->forAll(p1, p2 | p1.kind = p2.kind)&#xD;&#xA;-- author: bingo, cgerking, see MUML #882"/>
+        <details key="DelegationBetweenDiscretePortsRequiresSameRoles" value="-- Delegation may only connect ports refining same roles&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort)) &#xD;&#xA;implies &#xD;&#xA;self.port.oclAsType(DiscretePort).refinedRole = self.portPart.refinedRole&#xD;&#xA;-- author: bingo, cgerking, see MUML #883"/>
+        <details key="DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
+            value="-- Delegation starting at Multi Port must connect to a multi port or single port at multi part&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort) and self.port.oclAsType(DiscretePort).multi)&#xD;&#xA;implies&#xD;&#xA;((self.portPart.portType.oclIsKindOf(DiscretePort) and self.portPart.portType.oclAsType(DiscretePort).multi) or self.portPart.componentPart.multiPart)&#xD;&#xA;-- author: bingo, cgerking, see MUML #884"/>
+        <details key="DelegateToEmbeddedPort" value="-- Delegation must delegate to a Port at an embedded Component Part.&#xD;&#xA;if portPart.oclIsUndefined() or portPart.componentPart.oclIsUndefined() or port.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else&#xD;&#xA;&#x9;portPart.componentPart.parentComponent = port.component&#xD;&#xA;endif&#xD;&#xA;"/>
+        <details key="DelegationOnlyBetweenSameDiscreteInteractionEndpoints" value="-- Delegations may only connect Ports of the same kind&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())&#xD;&#xA;implies (&#xD;&#xA;&#x9;(port.oclIsKindOf(connector::DiscreteInteractionEndpoint))&#xD;&#xA;&#x9;implies&#xD;&#xA;&#x9;(port.eClass() = portPart.portType.eClass())&#xD;&#xA;)&#xD;&#xA;-- author: chris227, see MUML #1043"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" lowerBound="1"
+          eType="#//component/PortPart" changeable="false" volatile="true" transient="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port part that this delegation delegates to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
+          eType="#//component/Port" changeable="false" volatile="true" transient="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The delegating port for this delegation."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortConnector" abstract="true" eSuperTypes="#//connector/Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class is the common super class of delegations and assemblies between two ports."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" lowerBound="1"
+          eType="#//component/StructuredComponent" eOpposite="#//component/StructuredComponent/connectors">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The structured component this connector belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ComponentKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The entries of the enumeration represent different kinds of components. These&#xD;&#xA;are discrete software components, continous components containing controller&#xD;&#xA;code, and hybrid components that is a discrete software component which may have &#xD;&#xA;continuous input signals."/>
+      </eAnnotations>
+      <eLiterals name="SOFTWARE_COMPONENT" literal="software component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A component of this kind represent discrete software components. A discrete software component has a behavior specification which is given by means of a real-time statechart."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="CONTINUOUS_COMPONENT" value="1" literal="continuous component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A continuous component represents a continuous controller. Such components do not carry a behavior specification in MechatronicUML. Instead, we assume that the behavior of such components is modeled by using a control engineering tool like Matlab/Simulink, Dymola/Modelica or CamelView. In MechatronicUML, only the interface of these components is modeled. The interface is given by their ports."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="HYBRID_COMPONENT" value="2" literal="hybrid component">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A hybrid component bridges the gap between discrete software components and continuous control components. A hybrid component may be considered as a discrete software component which has special ports for reading and writing continuous signals from and to continuous components, e.g., for setting a new reference value to a controller."/>
+        </eAnnotations>
+      </eLiterals>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//component/DirectedTypedPort">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="samplingInterval" lowerBound="1"
+          eType="#//valuetype/TimeValue" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. "/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="PortDirectionKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Decides the direction of a continous port."/>
+      </eAnnotations>
+      <eLiterals name="IN">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represent an IN-Port of a continous port."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="OUT" value="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represent an OUT-Port of a continous port."/>
+        </eAnnotations>
+      </eLiterals>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredComponent" abstract="true"
+        eSuperTypes="#//component/Component">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName SoftwareComponentNoContinuousPorts"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="StructuredComponentAllowsNoHybridPorts" value="-- A structured component allows no hybrid ports.&#xD;&#xA;self.ports->forAll(port | not port.oclIsKindOf(component::HybridPort))"/>
+        <details key="ValidComponentType" value="-- Structured components must be either software or hybrid components&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::HYBRID_COMPONENT"/>
+        <details key="NoCyclicComponentPartHierarchy" value="-- Hierarchy of embedded component parts must not include myself&#xD;&#xA;if self.allStructuredComponents->oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;not self.allStructuredComponents->includes(self)&#xD;&#xA;endif"/>
+        <details key="DiscreteStructuredComponentValidParts" value="-- Structured software component must only have software component parts &#xD;&#xA;if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsKindOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif"/>
+        <details key="HybridStructuredComponentValidPorts" value="-- Structured hybrid component must only have discrete or continuous ports&#xD;&#xA;self.componentKind = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
+        <details key="ComponentPartsHaveUniqueName" value="-- Names of embedded component parts must be unique&#xA;self.embeddedComponentParts -> isUnique(name)"/>
+        <details key="SoftwareComponentNoContinuousPorts" value="-- Software component must not have continuous ports&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(p | not p.oclIsKindOf(ContinuousPort))"/>
+      </eAnnotations>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return &quot;Structured_Component_&quot; + getName();"/>
+          <details key="documentation" value="Redefinition of the Java toString method."/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedComponentParts"
+          lowerBound="1" upperBound="-1" eType="#//component/ComponentPart" containment="true"
+          eOpposite="#//component/ComponentPart/parentComponent">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The component parts this structured component contains."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+          eType="#//component/PortConnector" containment="true" eOpposite="#//component/PortConnector/parentComponent">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connectors this structured component contains. These can either be delegations or assemblies."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allStructuredComponents"
+          upperBound="-1" eType="#//component/StructuredComponent" changeable="false"
+          volatile="true" transient="true" unsettable="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self->closure(&#xD;&#xA;&#x9;embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;componentType.oclIsKindOf(StructuredComponent)&#xD;&#xA;&#x9;).componentType.oclAsType(StructuredComponent)&#xD;&#xA;)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Transitive closure of all StructuredComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allAtomicComponents"
+          upperBound="-1" eType="#//component/AtomicComponent" changeable="false"
+          volatile="true" transient="true" unsettable="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.allStructuredComponents->collect(&#xD;&#xA;&#x9;embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;componentType.oclIsKindOf(component::AtomicComponent)&#xD;&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xD;&#xA;)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Transitive closure of all AtomicComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy.&#xA;Note: AtomicComponents from directly embeddedParts are NOT included"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolParts"
+          upperBound="-1" eType="#//component/CoordinationProtocolPart" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A coordination protocol (pattern) can occur within a structured component. It defines the communication behavior of an assembly connection that connects discrete ports with each other."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="OnlyDiscretePortParts"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="OnlyDiscretePortParts" value="-- Coordination Protocol Part must only have discrete Port Parts&#xD;&#xA;not self.portParts->oclIsUndefined()&#xD;&#xA;implies&#xD;&#xA;self.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+          lowerBound="1" eType="#//protocol/CoordinationProtocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The coordination protocol (pattern) of this CoordinationProtocolPart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
+          upperBound="-1" eType="#//component/PortPart" eOpposite="#//component/PortPart/coordinationProtocolPart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The discrete port parts that take part in this protocol part."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DirectedTypedPort" abstract="true"
+        eSuperTypes="#//component/Port #//behavior/TypedNamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="InitializeExpressionOnlyForOutPorts"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="InitializeExpressionOnlyForOutPorts" value="-- Only out ports may have an initialize expression.&#xA;self.kind &lt;> component::PortDirectionKind::OUT implies self.initializeExpression.oclIsUndefined()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Directed typed port is the common super class of continuous and hybrid ports. &#xD;&#xA;A directed typed port has a direction (either IN or OUT) and specifies a data type.&#xD;&#xA;At present, we only support primitive and array data types, where the array elements&#xD;&#xA;need to have a primitive type."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+          eType="#//component/PortDirectionKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the direction of this directed typed port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Decides if this port is optional. An optional port does not need to be instantiated&#xD;&#xA;in all instances of the containing component."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="outPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the port is an OUT port"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.kind = component::PortDirectionKind::OUT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the port is an IN port"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.kind = component::PortDirectionKind::IN"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
+          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A initialize expression specifies the initial value that is emitted by the port after&#xD;&#xA;it has been instantiated. Thus, we only provide initialize expressions for out-port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//connector/ConnectorEndpoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="PortParts are contained in ComponentParts. They represent a &#xD;&#xA;port of a component in the part structure inside a structured component. &#xD;&#xA;PortParts are the endpoints for AssemblyConnectors and DelegationConnectors."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
+          eType="#//component/Port">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port of the component that is represented by this PortPart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
+          eType="#//component/ComponentPart" eOpposite="#//component/ComponentPart/portParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The component part that contains this PortPart. The port reference by the &#xD;&#xA;portType reference needs to be contained in the component that is referenced&#xD;&#xA;by this reference."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
+          eType="#//component/CoordinationProtocolPart" eOpposite="#//component/CoordinationProtocolPart/portParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If the port type refines a role, this part refers to the enclosing coordination protocol."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role"
+          changeable="false" volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The role of a coordination protocol that this partial instance of a port refines."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if portType.name.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.name&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the port type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticAtomicComponent" eSuperTypes="#//component/AtomicComponent #//component/StaticComponent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A static atomic component is an atomic component whose internal structure&#xD;&#xA;consisting of its set of ports cannot be changed during run-time."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticComponent" abstract="true" eSuperTypes="#//component/Component">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="SoftwareComponentOnlyDiscreteOrHybridPorts"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="SoftwareComponentOnlyDiscreteOrHybridPorts" value="-- Static software components must only have discrete ports and hybrid ports.&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A static component is a component whose internal structure cannot be changed during run-time."/>
+      </eAnnotations>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/pattern/0.3.18" nsPrefix="pattern">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package defines all modeling elements in order to define Real-Time Coordination Patterns."/>
+    </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2872,7 +2917,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationPattern" abstract="true"
         eSuperTypes="#//protocol/AbstractCoordinationSpecification">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="\todosd{document!}"/>
+        <details key="documentation" value="An abstract class that contains all referencs and attributes of a Real-Time Coordination Pattern."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UniquePatternNames PatternWithParametersNeedsVerifiedConfiguration"/>
@@ -2885,97 +2930,101 @@
           upperBound="-1" eType="#//pattern/VerifiedConfiguration" containment="true"
           eOpposite="#//pattern/VerifiedConfiguration/coordinationPattern">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="The verified configurations of this pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="patternParameters" upperBound="-1"
           eType="#//behavior/Parameter" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="The parameters that this pattern defines."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DescriptionAspects">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="\todosd{document!}"/>
+        <details key="documentation" value="A Real-Time Coordination Pattern contains a set a descriptions aspects."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="overview" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the overview of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the context of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="problem" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the problem of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="solution" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the solution of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="structure" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the structure of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="behavior" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the behavior of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="examples" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the examples of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="consequences" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the consequences of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="combineability" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the combineability of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="variants" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the variants of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="alternatives" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="Describes the alternatives of the pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="verification_properties"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Describes the verification properties of the pattern."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VerifiedConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="\todosd{document!}"/>
+        <details key="documentation" value="A Real-Time Coordination Pattern may define one or more verified configurations. It has a name and may be commented. In particular, it defines a concrete value for each parameter of the pattern."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
           eType="#//behavior/ParameterBinding" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="The parameter bindings of this verified configuration."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
@@ -2987,19 +3036,23 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CoordinationPatternVariant" eSuperTypes="#//pattern/AbstractCoordinationPattern">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="\todosd{document!}"/>
+        <details key="documentation" value="This class represents a variant of a Real-Time Coordination Pattern."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="originalPattern" lowerBound="1"
-          eType="#//pattern/CoordinationPattern" eOpposite="#//pattern/CoordinationPattern/patternVariants"/>
+          eType="#//pattern/CoordinationPattern" eOpposite="#//pattern/CoordinationPattern/patternVariants">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The original pattern of this variant."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="#//pattern/AbstractCoordinationPattern">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="\todosd{document!}"/>
+        <details key="documentation" value="A Real-Time Coordination Pattern defines a formal design pattern for a Real-Time Coordination Pattern."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="combineablePatterns"
           upperBound="-1" eType="#//pattern/CoordinationPattern">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="The combineable patterns of this pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.muml.org/emf/OCLFilter">
           <details key="filter" value="pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"/>
@@ -3008,7 +3061,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="alternativePatterns"
           upperBound="-1" eType="#//pattern/CoordinationPattern">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="The alternative patterns of this pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.muml.org/emf/OCLFilter">
           <details key="filter" value="pattern::CoordinationPattern::allInstances()->select(p| not (p = self))"/>
@@ -3017,11 +3070,15 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionAspects" lowerBound="1"
           eType="#//pattern/DescriptionAspects" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="\todosd{document!}"/>
+          <details key="documentation" value="The description aspects of this pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="patternVariants" upperBound="-1"
-          eType="#//pattern/CoordinationPatternVariant" eOpposite="#//pattern/CoordinationPatternVariant/originalPattern"/>
+          eType="#//pattern/CoordinationPatternVariant" eOpposite="#//pattern/CoordinationPatternVariant/originalPattern">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The variants of this pattern."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

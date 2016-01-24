@@ -155,7 +155,7 @@ public class AttributeItemProvider extends TypedNamedElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
+		return de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin.INSTANCE;
 	}
 
 }

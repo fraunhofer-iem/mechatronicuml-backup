@@ -69,7 +69,7 @@ public class VerifiedConfigurationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("The parameter bindings of this verified configuration.");
 
 			this.editorParameterBindings_property_tab_generalTab = editor;
 		}

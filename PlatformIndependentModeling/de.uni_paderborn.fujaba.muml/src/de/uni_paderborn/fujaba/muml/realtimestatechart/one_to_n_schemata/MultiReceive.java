@@ -45,6 +45,9 @@ public interface MultiReceive extends ReceivingOneToManyCommunicationSchema {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines which action should be executed if the multireceive fails.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Failure Action</em>' containment reference.
 	 * @see #setFailureAction(Action)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getMultiReceive_FailureAction()

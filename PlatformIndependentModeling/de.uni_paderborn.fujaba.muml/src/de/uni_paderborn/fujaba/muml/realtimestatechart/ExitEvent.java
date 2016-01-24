@@ -16,7 +16,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart;
  * This class represents an exit event. The action associated with this 
  * event will be executed when the state is left.
  * \paragraph{Note}
- * We need this subclass, because GMF forbids using the same semantic
+ * We need this subclass, because GMF forbids using the same semantic 
  * element for different notational elements within the same container.
  * <!-- end-model-doc -->
  *

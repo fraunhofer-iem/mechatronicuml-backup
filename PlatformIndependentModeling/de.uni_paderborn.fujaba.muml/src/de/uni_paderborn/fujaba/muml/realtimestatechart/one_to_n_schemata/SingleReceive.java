@@ -18,6 +18,10 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
  * A representation of the model object '<em><b>Single Receive</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This communication schema enables to receive a single message by one subrole.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getSingleReceive()
  * @model annotation="http://www.eclipse.org/emf/2002/GenModel documentaion='Using this communication schema, only one subrole is allowed to receive a message.'"

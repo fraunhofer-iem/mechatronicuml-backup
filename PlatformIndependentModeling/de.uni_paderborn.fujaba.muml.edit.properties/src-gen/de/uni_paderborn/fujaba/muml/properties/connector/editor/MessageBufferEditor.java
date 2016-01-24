@@ -160,6 +160,8 @@ public class MessageBufferEditor extends de.uni_paderborn.fujaba.properties.runt
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
 
+			editor.setTooltipMessage("Defines the strategy to avoid a buffer overflow.");
+
 			this.editorBufferOverflowAvoidanceStrategy_property_tab_generalTab = editor;
 		}
 		return this.editorBufferOverflowAvoidanceStrategy_property_tab_generalTab;

@@ -18,6 +18,10 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
  * A representation of the model object '<em><b>Receiving One To Many Communication Schema</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An abstract class that all communication schemata have to inherit from if they shall receive messages.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getReceivingOneToManyCommunicationSchema()
  * @model abstract="true"

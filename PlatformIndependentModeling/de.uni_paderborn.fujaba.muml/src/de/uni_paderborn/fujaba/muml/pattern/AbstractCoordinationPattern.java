@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todosd{document!}
+ * An abstract class that contains all referencs and attributes of a Real-Time Coordination Pattern.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -49,7 +49,7 @@ public interface AbstractCoordinationPattern extends AbstractCoordinationSpecifi
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * The verified configurations of this pattern.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Verified Configurations</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getAbstractCoordinationPattern_VerifiedConfigurations()
@@ -65,7 +65,7 @@ public interface AbstractCoordinationPattern extends AbstractCoordinationSpecifi
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * The parameters that this pattern defines.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Pattern Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getAbstractCoordinationPattern_PatternParameters()

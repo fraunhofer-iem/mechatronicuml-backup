@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProvider;
+import de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.component.PortConnector} object.

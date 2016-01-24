@@ -55,6 +55,8 @@ public class MultiReceiveEditor extends de.uni_paderborn.fujaba.properties.runti
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
+			editor.setTooltipMessage("Defines which action should be executed if the multireceive fails.");
+
 			this.editorFailureAction_property_tab_generalTab = editor;
 		}
 		return this.editorFailureAction_property_tab_generalTab;

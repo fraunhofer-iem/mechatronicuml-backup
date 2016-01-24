@@ -112,6 +112,9 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the strategy to avoid a buffer overflow.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Buffer Overflow Avoidance Strategy</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy
 	 * @see #setBufferOverflowAvoidanceStrategy(BufferOverflowAvoidanceStrategy)

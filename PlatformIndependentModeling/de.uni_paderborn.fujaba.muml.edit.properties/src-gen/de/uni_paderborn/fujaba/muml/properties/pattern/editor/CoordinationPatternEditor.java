@@ -105,7 +105,7 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("The combineable patterns of this pattern.");
 
 			this.editorCombineablePatterns_property_tab_generalTab = editor;
 		}
@@ -120,7 +120,7 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("The alternative patterns of this pattern.");
 
 			this.editorAlternativePatterns_property_tab_generalTab = editor;
 		}
@@ -135,7 +135,7 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("The description aspects of this pattern.");
 
 			this.editorDescriptionAspects_property_tab_descriptionAspectsTab = editor;
 		}
@@ -150,6 +150,8 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
+			editor.setTooltipMessage("The variants of this pattern.");
+
 			this.editorPatternVariants_property_tab_generalTab = editor;
 		}
 		return this.editorPatternVariants_property_tab_generalTab;
@@ -163,7 +165,7 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("The verified configurations of this pattern.");
 
 			this.editorVerifiedConfigurations_property_tab_generalTab = editor;
 		}
@@ -178,7 +180,7 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("The parameters that this pattern defines.");
 
 			this.editorPatternParameters_property_tab_generalTab = editor;
 		}
@@ -193,7 +195,8 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage(
+					"If this coordination specification is adapted from one or more Real-Time Coordination Pattern, then these patterns are listed here.");
 
 			this.editorAdaptedFromPattern_property_tab_generalTab = editor;
 		}

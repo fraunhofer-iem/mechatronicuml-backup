@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 
 /**

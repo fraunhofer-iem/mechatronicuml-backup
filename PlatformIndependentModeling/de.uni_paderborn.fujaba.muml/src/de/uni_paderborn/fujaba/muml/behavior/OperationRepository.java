@@ -46,6 +46,9 @@ public interface OperationRepository extends Repository {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The operations of this repository.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operations</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getOperationRepository_Operations()
 	 * @model containment="true"

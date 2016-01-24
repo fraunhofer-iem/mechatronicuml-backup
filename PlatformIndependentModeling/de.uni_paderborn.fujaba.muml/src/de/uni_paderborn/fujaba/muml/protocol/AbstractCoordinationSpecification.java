@@ -136,7 +136,7 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * If this coordination specification is adapted from one or more Real-Time Coordination Pattern, then these patterns are listed here.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adapted From Pattern</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_AdaptedFromPattern()

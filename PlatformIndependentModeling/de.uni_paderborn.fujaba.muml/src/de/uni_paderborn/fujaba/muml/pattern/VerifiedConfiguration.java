@@ -25,7 +25,7 @@ import org.storydriven.core.NamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todosd{document!}
+ * A Real-Time Coordination Pattern may define one or more verified configurations. It has a name and may be commented. In particular, it defines a concrete value for each parameter of the pattern.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -47,7 +47,7 @@ public interface VerifiedConfiguration extends NamedElement, CommentableElement 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{document!}
+	 * The parameter bindings of this verified configuration.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter Bindings</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getVerifiedConfiguration_ParameterBindings()

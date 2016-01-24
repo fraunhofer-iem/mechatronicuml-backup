@@ -91,7 +91,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the overview of the pattern.");
 
 			this.editorOverview_property_tab_generalTab = editor;
 		}
@@ -106,7 +106,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the context of the pattern.");
 
 			this.editorContext_property_tab_generalTab = editor;
 		}
@@ -121,7 +121,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the problem of the pattern.");
 
 			this.editorProblem_property_tab_generalTab = editor;
 		}
@@ -136,7 +136,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the solution of the pattern.");
 
 			this.editorSolution_property_tab_generalTab = editor;
 		}
@@ -151,7 +151,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the structure of the pattern.");
 
 			this.editorStructure_property_tab_generalTab = editor;
 		}
@@ -166,7 +166,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the behavior of the pattern.");
 
 			this.editorBehavior_property_tab_generalTab = editor;
 		}
@@ -181,7 +181,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the examples of the pattern.");
 
 			this.editorExamples_property_tab_generalTab = editor;
 		}
@@ -196,7 +196,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the consequences of the pattern.");
 
 			this.editorConsequences_property_tab_generalTab = editor;
 		}
@@ -211,7 +211,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the combineability of the pattern.");
 
 			this.editorCombineability_property_tab_generalTab = editor;
 		}
@@ -226,7 +226,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the variants of the pattern.");
 
 			this.editorVariants_property_tab_generalTab = editor;
 		}
@@ -241,7 +241,7 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage("Describes the alternatives of the pattern.");
 
 			this.editorAlternatives_property_tab_generalTab = editor;
 		}
@@ -255,6 +255,8 @@ public class DescriptionAspectsEditor extends de.uni_paderborn.fujaba.properties
 					.getDescriptionAspects_Verification_properties();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("Describes the verification properties of the pattern.");
 
 			this.editorVerification_properties_property_tab_generalTab = editor;
 		}

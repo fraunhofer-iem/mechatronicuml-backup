@@ -4,7 +4,7 @@ Bundle-Name: MechatronicUML Edit-Support
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.edit;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin$Implementation
 Bundle-Vendor: Software Engineering Group,
  Heinz Nixdorf Institute,
  University of Paderborn

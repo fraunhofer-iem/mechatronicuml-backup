@@ -71,7 +71,8 @@ public class CoordinationProtocolEditor extends de.uni_paderborn.fujaba.properti
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("\\todosd{document!}");
+			editor.setTooltipMessage(
+					"If this coordination specification is adapted from one or more Real-Time Coordination Pattern, then these patterns are listed here.");
 
 			this.editorAdaptedFromPattern_property_tab_generalTab = editor;
 		}

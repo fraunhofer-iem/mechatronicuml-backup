@@ -94,7 +94,7 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The delay of an iteration.");
+			editor.setTooltipMessage("The delay between two iterations.");
 
 			this.editorDelay_property_tab_generalTab = editor;
 		}

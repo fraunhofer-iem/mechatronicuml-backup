@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a communication channel connecting two roles of a coordination protocol.
+ * This class represents a communication channel for asynchronous messages connecting two roles of a coordination protocol.
  * <!-- end-model-doc -->
  *
  * <p>

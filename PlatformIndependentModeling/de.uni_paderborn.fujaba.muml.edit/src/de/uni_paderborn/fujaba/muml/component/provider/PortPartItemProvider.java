@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorEndpointItemProvider;
+import de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.component.PortPart} object.
