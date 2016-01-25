@@ -47,6 +47,9 @@ public class PropertiesCheck {
 		} catch (IOException e) {
 			// TODO: handle exception
 		}
+		if(!currentBinIncludes.isEmpty()){
+			currentBinIncludes+=", ";
+		}
 		properties.setProperty("bin.includes", currentBinIncludes+"feature.properties");
 		properties.store(new OutputStreamWriter(new FileOutputStream(file)), "");
 	}
