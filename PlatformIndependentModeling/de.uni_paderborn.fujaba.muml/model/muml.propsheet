@@ -317,6 +317,9 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="if(self.kind = EventKind::RAISE) then one_to_n_schemata::SendingOneToManyCommunicationSchema.oclAsType(ecore::EClass).isSuperTypeOf(eclass) else one_to_n_schemata::ReceivingOneToManyCommunicationSchema.oclAsType(ecore::EClass).isSuperTypeOf(eclass) endif"/>
+        </creationConstraint>
       </orderedElements>
     </classes>
     <classes xmi:id="_VZNWI8wbEeSjx7OWZCcdLw" superClasses="_VZOkS8wbEeSjx7OWZCcdLw">

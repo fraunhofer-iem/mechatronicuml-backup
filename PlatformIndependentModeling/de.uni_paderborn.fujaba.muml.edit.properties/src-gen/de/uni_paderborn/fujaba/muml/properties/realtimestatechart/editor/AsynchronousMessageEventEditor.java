@@ -76,6 +76,28 @@ public class AsynchronousMessageEventEditor
 			editor.setTooltipMessage(
 					"An asynchronous message event must have a one-to-many communication schema if the statechart defines the behavior of a multi role.");
 
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression(
+								"if(self.kind = EventKind::RAISE) then one_to_n_schemata::SendingOneToManyCommunicationSchema.oclAsType(ecore::EClass).isSuperTypeOf(eclass) else one_to_n_schemata::ReceivingOneToManyCommunicationSchema.oclAsType(ecore::EClass).isSuperTypeOf(eclass) endif",
+								feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				query.getEvaluationEnvironment().add("eclass", null);
+				de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
+
+					@Override
+					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
+						query.getEvaluationEnvironment().replace("eclass", eClass);
+						return Boolean.TRUE.equals(query.evaluate(object));
+					}
+
+				};
+				if (filter != null) {
+					editor.addCreationFilter(filter);
+				}
+			}
+
 			this.editorOneToManyCommunicationSchema_property_tab_generalTab = editor;
 		}
 		return this.editorOneToManyCommunicationSchema_property_tab_generalTab;
