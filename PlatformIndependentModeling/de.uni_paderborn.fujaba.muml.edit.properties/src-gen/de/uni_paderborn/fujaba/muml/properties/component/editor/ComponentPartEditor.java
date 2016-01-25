@@ -43,6 +43,8 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorPortParts_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -58,6 +60,8 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 			addPropertyEditor(createEditorParentComponent_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorPortParts_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -102,37 +106,6 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
-
 			editor.setTooltipMessage("The structured component type containing this component part.");
 
 			this.editorParentComponent_property_tab_generalTab = editor;
@@ -154,6 +127,21 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 			this.editorCardinality_property_tab_generalTab = editor;
 		}
 		return this.editorCardinality_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortParts_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortParts_property_tab_generalTab_Editor() {
+		if (this.editorPortParts_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getComponentPart_PortParts();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The ports of this part.");
+
+			this.editorPortParts_property_tab_generalTab = editor;
+		}
+		return this.editorPortParts_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -235,10 +223,9 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general",
-							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.documentation",
+					"property.tab.extensions", "property.tab.general"}).contains(tab);
 		}
 	}
 

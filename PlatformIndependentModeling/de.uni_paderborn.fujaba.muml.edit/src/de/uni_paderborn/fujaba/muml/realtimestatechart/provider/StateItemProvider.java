@@ -284,7 +284,7 @@ public class StateItemProvider
 				 getString("_UI_State_connectionPoints_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_State_connectionPoints_feature", "_UI_State_type"),
 				 RealtimestatechartPackage.Literals.STATE__CONNECTION_POINTS,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

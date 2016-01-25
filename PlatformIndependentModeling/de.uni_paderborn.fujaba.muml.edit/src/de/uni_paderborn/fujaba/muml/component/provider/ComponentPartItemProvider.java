@@ -66,6 +66,7 @@ public class ComponentPartItemProvider
 			addComponentTypePropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addPortPartsPropertyDescriptor(object);
 			addMultiPartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -129,7 +130,7 @@ public class ComponentPartItemProvider
 				 getString("_UI_ComponentPart_parentComponent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_parentComponent_feature", "_UI_ComponentPart_type"),
 				 ComponentPackage.Literals.COMPONENT_PART__PARENT_COMPONENT,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,
@@ -185,6 +186,28 @@ public class ComponentPartItemProvider
 			 rootPropertyDescriptor));
 	}
 
+
+	/**
+	 * This adds a property descriptor for the Port Parts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortPartsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentPart_portParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_portParts_feature", "_UI_ComponentPart_type"),
+				 ComponentPackage.Literals.COMPONENT_PART__PORT_PARTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
 
 	/**
 	 * This adds a property descriptor for the Multi Part feature.

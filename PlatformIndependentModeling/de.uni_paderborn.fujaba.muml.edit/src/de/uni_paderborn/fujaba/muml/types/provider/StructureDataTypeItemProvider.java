@@ -76,7 +76,7 @@ public class StructureDataTypeItemProvider extends DataTypeItemProvider {
 				 getString("_UI_StructureDataType_attributes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StructureDataType_attributes_feature", "_UI_StructureDataType_type"),
 				 TypesPackage.Literals.STRUCTURE_DATA_TYPE__ATTRIBUTES,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

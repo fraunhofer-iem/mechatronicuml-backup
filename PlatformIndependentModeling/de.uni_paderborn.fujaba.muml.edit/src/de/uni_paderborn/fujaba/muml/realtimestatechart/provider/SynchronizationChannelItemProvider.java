@@ -96,7 +96,7 @@ public class SynchronizationChannelItemProvider extends
 				 getString("_UI_SynchronizationChannel_state_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SynchronizationChannel_state_feature", "_UI_SynchronizationChannel_type"),
 				 RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__STATE,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

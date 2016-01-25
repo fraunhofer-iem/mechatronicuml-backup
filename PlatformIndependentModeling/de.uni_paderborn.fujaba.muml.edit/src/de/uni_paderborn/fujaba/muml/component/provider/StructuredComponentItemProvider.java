@@ -50,9 +50,33 @@ public class StructuredComponentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEmbeddedComponentPartsPropertyDescriptor(object);
 			addConnectorsPropertyDescriptor(object);
+			addCoordinationProtocolPartsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Embedded Component Parts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmbeddedComponentPartsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StructuredComponent_embeddedComponentParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredComponent_embeddedComponentParts_feature", "_UI_StructuredComponent_type"),
+				 ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -69,7 +93,29 @@ public class StructuredComponentItemProvider
 				 getString("_UI_StructuredComponent_connectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredComponent_connectors_feature", "_UI_StructuredComponent_type"),
 				 ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
+				 true,
 				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Coordination Protocol Parts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordinationProtocolPartsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StructuredComponent_coordinationProtocolParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredComponent_coordinationProtocolParts_feature", "_UI_StructuredComponent_type"),
+				 ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS,
+				 true,
 				 false,
 				 false,
 				 null,

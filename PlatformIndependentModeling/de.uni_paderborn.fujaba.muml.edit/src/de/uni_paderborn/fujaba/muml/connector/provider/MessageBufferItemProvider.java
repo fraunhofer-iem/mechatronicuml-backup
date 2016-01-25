@@ -155,7 +155,7 @@ public class MessageBufferItemProvider
 				 getString("_UI_MessageBuffer_discreteInteractionEndpoint_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_discreteInteractionEndpoint_feature", "_UI_MessageBuffer_type"),
 				 ConnectorPackage.Literals.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

@@ -75,7 +75,7 @@ public class ClockItemProvider
 				 getString("_UI_Clock_statechart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Clock_statechart_feature", "_UI_Clock_type"),
 				 RealtimestatechartPackage.Literals.CLOCK__STATECHART,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

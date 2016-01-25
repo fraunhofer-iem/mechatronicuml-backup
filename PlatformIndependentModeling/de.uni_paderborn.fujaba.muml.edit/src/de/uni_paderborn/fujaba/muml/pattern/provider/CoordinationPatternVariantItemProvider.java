@@ -72,7 +72,7 @@ public class CoordinationPatternVariantItemProvider extends AbstractCoordination
 				 getString("_UI_CoordinationPatternVariant_originalPattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPatternVariant_originalPattern_feature", "_UI_CoordinationPatternVariant_type"),
 				 PatternPackage.Literals.COORDINATION_PATTERN_VARIANT__ORIGINAL_PATTERN,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

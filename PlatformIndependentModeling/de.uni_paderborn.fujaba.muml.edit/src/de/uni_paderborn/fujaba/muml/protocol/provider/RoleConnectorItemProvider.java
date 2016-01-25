@@ -79,7 +79,7 @@ public class RoleConnectorItemProvider
 				 getString("_UI_RoleConnector_coordinationProtocol_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_coordinationProtocol_feature", "_UI_RoleConnector_type"),
 				 ProtocolPackage.Literals.ROLE_CONNECTOR__COORDINATION_PROTOCOL,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

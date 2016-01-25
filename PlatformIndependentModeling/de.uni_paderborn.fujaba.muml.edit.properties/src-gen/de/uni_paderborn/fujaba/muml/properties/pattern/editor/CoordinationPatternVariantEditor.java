@@ -37,6 +37,10 @@ public class CoordinationPatternVariantEditor
 
 			addPropertyEditor(createEditorAdaptedFromPattern_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorRoles_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorRoleConnector_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorVerifiedConfigurations_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorPatternParameters_property_tab_generalTab_Editor(), false);
@@ -54,6 +58,10 @@ public class CoordinationPatternVariantEditor
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorAdaptedFromPattern_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorRoles_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorRoleConnector_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorVerifiedConfigurations_property_tab_generalTab_Editor(), false);
 
@@ -84,37 +92,6 @@ public class CoordinationPatternVariantEditor
 					.getCoordinationPatternVariant_OriginalPattern();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
 
 			editor.setTooltipMessage("The original pattern of this variant.");
 
@@ -167,6 +144,37 @@ public class CoordinationPatternVariantEditor
 			this.editorAdaptedFromPattern_property_tab_generalTab = editor;
 		}
 		return this.editorAdaptedFromPattern_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRoles_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRoles_property_tab_generalTab_Editor() {
+		if (this.editorRoles_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getAbstractCoordinationSpecification_Roles();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The roles belonging to this coordination protocol.");
+
+			this.editorRoles_property_tab_generalTab = editor;
+		}
+		return this.editorRoles_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRoleConnector_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRoleConnector_property_tab_generalTab_Editor() {
+		if (this.editorRoleConnector_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getAbstractCoordinationSpecification_RoleConnector();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"Each coordination protocol has exactly one role connector.\nCardinality is 1 because there exists no useful protocol with more than two roles. If a useful protocol exists with more than 2 roles, then change cardinality to 1..*");
+
+			this.editorRoleConnector_property_tab_generalTab = editor;
+		}
+		return this.editorRoleConnector_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -265,8 +273,9 @@ public class CoordinationPatternVariantEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general", "property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions", "property.tab.general",
+					"property.tab.general"}).contains(tab);
 		}
 	}
 

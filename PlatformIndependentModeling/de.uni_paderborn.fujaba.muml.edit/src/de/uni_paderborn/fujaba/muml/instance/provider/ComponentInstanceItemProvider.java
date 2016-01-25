@@ -99,7 +99,7 @@ public class ComponentInstanceItemProvider
 				 getString("_UI_ComponentInstance_portInstances_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_portInstances_feature", "_UI_ComponentInstance_type"),
 				 InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

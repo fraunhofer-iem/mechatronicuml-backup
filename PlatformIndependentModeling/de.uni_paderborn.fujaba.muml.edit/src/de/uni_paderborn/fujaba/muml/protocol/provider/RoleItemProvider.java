@@ -73,7 +73,7 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider {
 				 getString("_UI_Role_coordinationProtocol_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_coordinationProtocol_feature", "_UI_Role_type"),
 				 ProtocolPackage.Literals.ROLE__COORDINATION_PROTOCOL,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

@@ -132,7 +132,7 @@ public class VerifiedConfigurationItemProvider extends NamedElementItemProvider 
 				 getString("_UI_VerifiedConfiguration_coordinationPattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_VerifiedConfiguration_coordinationPattern_feature", "_UI_VerifiedConfiguration_type"),
 				 PatternPackage.Literals.VERIFIED_CONFIGURATION__COORDINATION_PATTERN,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

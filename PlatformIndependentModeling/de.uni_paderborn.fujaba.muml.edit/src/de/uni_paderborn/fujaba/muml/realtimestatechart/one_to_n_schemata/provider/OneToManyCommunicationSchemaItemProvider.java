@@ -122,7 +122,7 @@ public class OneToManyCommunicationSchemaItemProvider
 				 getString("_UI_OneToManyCommunicationSchema_asynchronousMessageEvent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OneToManyCommunicationSchema_asynchronousMessageEvent_feature", "_UI_OneToManyCommunicationSchema_type"),
 				 One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

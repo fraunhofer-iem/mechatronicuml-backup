@@ -49,6 +49,10 @@ public abstract class StructuredComponentEditor
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorEmbeddedComponentParts_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorCoordinationProtocolParts_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -68,6 +72,10 @@ public abstract class StructuredComponentEditor
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorEmbeddedComponentParts_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorCoordinationProtocolParts_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -97,43 +105,43 @@ public abstract class StructuredComponentEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
-
 			editor.setTooltipMessage(
 					"The connectors this structured component contains. These can either be delegations or assemblies.");
 
 			this.editorConnectors_property_tab_generalTab = editor;
 		}
 		return this.editorConnectors_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedComponentParts_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedComponentParts_property_tab_generalTab_Editor() {
+		if (this.editorEmbeddedComponentParts_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getStructuredComponent_EmbeddedComponentParts();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The component parts this structured component contains.");
+
+			this.editorEmbeddedComponentParts_property_tab_generalTab = editor;
+		}
+		return this.editorEmbeddedComponentParts_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocolParts_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationProtocolParts_property_tab_generalTab_Editor() {
+		if (this.editorCoordinationProtocolParts_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getStructuredComponent_CoordinationProtocolParts();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent.");
+
+			this.editorCoordinationProtocolParts_property_tab_generalTab = editor;
+		}
+		return this.editorCoordinationProtocolParts_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPorts_property_tab_generalTab;
@@ -143,37 +151,6 @@ public abstract class StructuredComponentEditor
 					.getComponent_Ports();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
 
 			editor.setTooltipMessage(
 					"The ports of a component represent the interaction points between the component and its environment.");

@@ -69,7 +69,7 @@ public class StructuredComponentInstanceItemProvider
 				 getString("_UI_StructuredComponentInstance_embeddedCIC_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredComponentInstance_embeddedCIC_feature", "_UI_StructuredComponentInstance_type"),
 				 InstancePackage.Literals.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

@@ -152,7 +152,7 @@ public class SynchronizationItemProvider
 				 getString("_UI_Synchronization_selectorExpression_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_selectorExpression_feature", "_UI_Synchronization_type"),
 				 RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

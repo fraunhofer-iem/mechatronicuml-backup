@@ -103,7 +103,7 @@ public class ComponentItemProvider
 				 getString("_UI_Component_ports_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Component_ports_feature", "_UI_Component_type"),
 				 ComponentPackage.Literals.COMPONENT__PORTS,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

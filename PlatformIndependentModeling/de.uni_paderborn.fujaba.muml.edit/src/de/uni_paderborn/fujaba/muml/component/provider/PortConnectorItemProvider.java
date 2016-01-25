@@ -69,7 +69,7 @@ public class PortConnectorItemProvider
 				 getString("_UI_PortConnector_parentComponent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PortConnector_parentComponent_feature", "_UI_PortConnector_type"),
 				 ComponentPackage.Literals.PORT_CONNECTOR__PARENT_COMPONENT,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

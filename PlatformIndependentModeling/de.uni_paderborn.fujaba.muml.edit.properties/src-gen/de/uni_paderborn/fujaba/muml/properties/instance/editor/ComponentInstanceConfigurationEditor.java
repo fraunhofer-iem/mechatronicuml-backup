@@ -46,6 +46,8 @@ public class ComponentInstanceConfigurationEditor
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorPortConnectorInstances_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorCoordinationProtocolInstances_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -66,6 +68,8 @@ public class ComponentInstanceConfigurationEditor
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorPortConnectorInstances_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorCoordinationProtocolInstances_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -91,37 +95,6 @@ public class ComponentInstanceConfigurationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
-
 			editor.setTooltipMessage("The set of component instances of a component instance configuration.");
 
 			this.editorComponentInstances_property_tab_generalTab = editor;
@@ -136,37 +109,6 @@ public class ComponentInstanceConfigurationEditor
 					.getComponentInstanceConfiguration_PortConnectorInstances();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
 
 			editor.setTooltipMessage("The set of connector instances of a component instance configuration.");
 
@@ -189,6 +131,22 @@ public class ComponentInstanceConfigurationEditor
 			this.editorParentStructuredComponentInstance_property_tab_generalTab = editor;
 		}
 		return this.editorParentStructuredComponentInstance_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocolInstances_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationProtocolInstances_property_tab_generalTab_Editor() {
+		if (this.editorCoordinationProtocolInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+					.getComponentInstanceConfiguration_CoordinationProtocolInstances();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The set of coordination protocol instances of a component instance configuration.");
+
+			this.editorCoordinationProtocolInstances_property_tab_generalTab = editor;
+		}
+		return this.editorCoordinationProtocolInstances_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -287,8 +245,8 @@ public class ComponentInstanceConfigurationEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.documentation", "property.tab.extensions",
-					"property.tab.general", "property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.documentation",
+					"property.tab.extensions", "property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

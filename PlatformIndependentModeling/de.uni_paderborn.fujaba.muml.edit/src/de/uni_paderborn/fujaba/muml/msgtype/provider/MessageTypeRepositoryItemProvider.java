@@ -76,7 +76,7 @@ public class MessageTypeRepositoryItemProvider
 				 getString("_UI_MessageTypeRepository_messageTypes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MessageTypeRepository_messageTypes_feature", "_UI_MessageTypeRepository_type"),
 				 MsgtypePackage.Literals.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

@@ -29,6 +29,8 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 			addPropertyEditor(createEditorParentState_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorEmbeddedStatechart_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -38,6 +40,8 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorParentState_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorEmbeddedStatechart_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -59,42 +63,26 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
-
 			editor.setTooltipMessage("The state this region is embedded.");
 
 			this.editorParentState_property_tab_generalTab = editor;
 		}
 		return this.editorParentState_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedStatechart_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedStatechart_property_tab_generalTab_Editor() {
+		if (this.editorEmbeddedStatechart_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getRegion_EmbeddedStatechart();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The realtime statechart this region embeds.");
+
+			this.editorEmbeddedStatechart_property_tab_generalTab = editor;
+		}
+		return this.editorEmbeddedStatechart_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -164,8 +152,10 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

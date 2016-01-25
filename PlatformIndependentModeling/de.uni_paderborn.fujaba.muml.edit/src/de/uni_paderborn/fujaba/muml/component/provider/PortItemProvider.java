@@ -96,7 +96,7 @@ public class PortItemProvider
 				 getString("_UI_Port_component_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Port_component_feature", "_UI_Port_type"),
 				 ComponentPackage.Literals.PORT__COMPONENT,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

@@ -60,6 +60,7 @@ public class RegionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPriorityPropertyDescriptor(object);
+			addEmbeddedStatechartPropertyDescriptor(object);
 			addParentStatePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
@@ -84,6 +85,28 @@ public class RegionItemProvider
 				 false,
 				 true,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Embedded Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmbeddedStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Region_embeddedStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Region_embeddedStatechart_feature", "_UI_Region_type"),
+				 RealtimestatechartPackage.Literals.REGION__EMBEDDED_STATECHART,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
@@ -156,7 +179,7 @@ public class RegionItemProvider
 				 getString("_UI_Region_parentState_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Region_parentState_feature", "_UI_Region_type"),
 				 RealtimestatechartPackage.Literals.REGION__PARENT_STATE,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,
