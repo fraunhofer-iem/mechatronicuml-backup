@@ -77,10 +77,12 @@ public class PropertiesCheck {
 		DocumentBuilder db = dbf.newDocumentBuilder();
 		Document document = db.parse(file);
 
-		fixAttribute("license", "url", "%licenseURL", document);
-		fixAttribute("feature", "provider-name", "%providerName", document);
-		fixText("license", "\n      %license\n   ", document);
-		fixText("copyright", "\n      %copyright\n   ", document);
+		
+		setAttribute(getNode(new String[] { "feature", "license" }, document), "url", "%licenseURL", document);
+		setAttribute(getNode(new String[] { "feature" }, document), "provider-name", "%providerName", document);
+		setAttribute(getNode(new String[] { "feature", "copyright" }, document), "url", "%copyrightURL", document);
+		setText(getNode(new String[] { "feature", "license" }, document), "\n      %license\n   ", document);
+		setText(getNode(new String[] { "feature", "copyright" }, document), "\n      %copyright\n   ", document);
 
 		// Use a Transformer for output
 		TransformerFactory tFactory = TransformerFactory.newInstance();
@@ -90,25 +92,43 @@ public class PropertiesCheck {
 		StreamResult result = new StreamResult(new FileOutputStream(file));
 		transformer.transform(source, result);
 	}
-
-	private void fixAttribute(String tagName, String attributeName, String attributeValue, Document document) {
-		NodeList nodeList = document.getElementsByTagName(tagName);
-		if (nodeList.getLength() > 0) {
-			Node license = nodeList.item(0);
-			license.getAttributes().getNamedItem(attributeName).setNodeValue(attributeValue);
+	
+	
+	private Node getNode(String tags[], Document document) {
+		Node node = document;
+		for (String tag : tags) {
+			Node nextNode = null;
+			for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+				Node childNode = node.getChildNodes().item(i);
+				if (childNode.getNodeName().equals(tag)) {
+					nextNode = childNode;
+					break;
+				}
+			}
+			if (nextNode == null) {
+				throw new IllegalArgumentException("No child tag found with name: " + tag);
+			}
+			node = nextNode;
+			
 		}
+		return node;
 	}
 
-	private void fixText(String tagName, String text, Document document) {
-		NodeList nodeList = document.getElementsByTagName(tagName);
-		if (nodeList.getLength() > 0) {
-			Node license = nodeList.item(0);
-			for (int i = 0; i < license.getChildNodes().getLength(); i++) {
-				Node child = license.getChildNodes().item(i);
-				license.removeChild(child);
-			}
-			license.appendChild(document.createTextNode(text));
+	private void setAttribute(Node node, String attributeName, String attributeValue, Document document) {
+		Node attribute = node.getAttributes().getNamedItem(attributeName);
+		if (attribute == null) {
+			attribute = document.createAttribute(attributeName);
+			node.getAttributes().setNamedItem(attribute);
 		}
+		attribute.setNodeValue(attributeValue);
+	}
+
+	private void setText(Node node, String text, Document document) {
+		for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+			Node child = node.getChildNodes().item(i);
+			node.removeChild(child);
+		}
+		node.appendChild(document.createTextNode(text));
 	}
 
 }
