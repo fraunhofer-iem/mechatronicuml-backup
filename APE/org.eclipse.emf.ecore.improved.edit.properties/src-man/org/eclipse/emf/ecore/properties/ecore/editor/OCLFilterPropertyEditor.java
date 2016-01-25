@@ -50,7 +50,7 @@ public class OCLFilterPropertyEditor extends CustomOCLPropertyEditor {
 		EAnnotation annotation = getAnnotation();
 		if (annotation != null && annotation.getDetails().get("filter") != null) {
 			text = annotation.getDetails().get("filter");
-		} else if (reference != null) {
+		} else if (reference != null && reference.getEType() != null && reference.getEContainingClass() != null && reference.getEType().getEPackage() != null) {
 			if (reference.getEType().getEPackage() != reference.getEContainingClass().getEPackage()) {
 				text = reference.getEType().getEPackage().getName() + "::";
 			}
