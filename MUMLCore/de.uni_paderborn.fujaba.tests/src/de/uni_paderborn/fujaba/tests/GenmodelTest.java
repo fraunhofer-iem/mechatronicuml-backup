@@ -256,20 +256,23 @@ public abstract class GenmodelTest extends TraverseTest {
 					GenFeature genFeature = (GenFeature) element;
 					
 					if (genFeature.isDerived() && genFeature.getProperty() == GenPropertyKind.EDITABLE_LITERAL) {
-						problems.add(getLabel(genFeature)
-								+ ": derive = true AND 'PropertyType' is set to EDITABLE.");
 						
 						if (RepairingState.REPAIRING) {
 							genFeature.setProperty(GenPropertyKind.READONLY_LITERAL);
+						} else {
+							problems.add(getLabel(genFeature)
+									+ ": derive = true AND 'PropertyType' is set to EDITABLE.");
 						}
 					}
 					
-					if (!genFeature.isDerived() && !genFeature.isContains() && genFeature.getProperty() == GenPropertyKind.NONE_LITERAL) {
-						problems.add(getLabel(genFeature)
-								+ ": derive = false AND 'PropertyType' is set to NONE.");
-						
+					if (!genFeature.isDerived() && genFeature.getProperty() != GenPropertyKind.EDITABLE_LITERAL) {
+					
 						if (RepairingState.REPAIRING) {
-							genFeature.setProperty(GenPropertyKind.READONLY_LITERAL);
+							genFeature.setProperty(GenPropertyKind.EDITABLE_LITERAL);
+						} else {
+							problems.add(getLabel(genFeature)
+									+ ": derive = false means that 'PropertyType' must be EDITABLE.");
+							
 						}
 					}
 				}
