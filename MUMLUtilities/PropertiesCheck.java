@@ -39,7 +39,12 @@ public class PropertiesCheck {
 	public void fixBuildProperties(String filename) throws FileNotFoundException, IOException{
 		Properties properties = new Properties();
 		File file = new File(filename);
-		properties.load(new InputStreamReader(new FileInputStream(new File(filename))));
+		try {
+			properties.load(new InputStreamReader(new FileInputStream(new File(filename))));
+
+		} catch (IOException e) {
+			// TODO: handle exception
+		}
 		String currentBinIncludes = properties.getProperty("bin.includes");
 		properties.setProperty("bin.includes", currentBinIncludes+"feature.properties");
 		properties.store(new OutputStreamWriter(new FileOutputStream(file)), "");
@@ -48,7 +53,12 @@ public class PropertiesCheck {
 	public void fixFeatureProperties(String filename) throws IOException {
 		Properties properties = new Properties();
 		File file = new File(filename);
-		properties.load(new InputStreamReader(new FileInputStream(new File(filename))));
+		try {
+			properties.load(new InputStreamReader(new FileInputStream(new File(filename))));
+
+		} catch (IOException e) {
+			// TODO: handle exception
+		}
 		properties.setProperty("providerName",
 				"Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany \n  Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany");
 		properties.setProperty("copyright",
