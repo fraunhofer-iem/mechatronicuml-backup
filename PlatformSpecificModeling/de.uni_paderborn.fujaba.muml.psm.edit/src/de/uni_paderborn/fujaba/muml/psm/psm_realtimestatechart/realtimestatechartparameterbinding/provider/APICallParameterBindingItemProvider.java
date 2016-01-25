@@ -153,7 +153,7 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 				 getString("_UI_Operation_parameters_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_parameters_feature", "_UI_Operation_type"),
 				 BehaviorPackage.Literals.OPERATION__PARAMETERS,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

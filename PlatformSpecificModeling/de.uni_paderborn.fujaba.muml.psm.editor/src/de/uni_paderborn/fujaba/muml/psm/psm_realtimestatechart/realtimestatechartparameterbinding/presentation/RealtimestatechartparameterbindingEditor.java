@@ -784,7 +784,6 @@ public class RealtimestatechartparameterbindingEditor
 		adapterFactory.addAdapterFactory(new HwplatforminstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HwresourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HwresourceinstanceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ComponentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ConstraintItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new InstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ProtocolItemProviderAdapterFactory());
@@ -795,6 +794,7 @@ public class RealtimestatechartparameterbindingEditor
 		adapterFactory.addAdapterFactory(new ConnectorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ValuetypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BehaviorItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ComponentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new PatternItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SwplatformItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());

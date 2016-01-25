@@ -64,6 +64,7 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPortPropertyDescriptor(object);
+			addRepositoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +86,28 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Repository feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRepositoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortApiMapping_repository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortApiMapping_repository_feature", "_UI_PortApiMapping_type"),
+				 PortapimappingPackage.Literals.PORT_API_MAPPING__REPOSITORY,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
