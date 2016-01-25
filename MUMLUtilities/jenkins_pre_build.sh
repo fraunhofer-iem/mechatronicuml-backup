@@ -39,27 +39,25 @@ function junit_test(){
 	done
 }
 
-function manifest_vendor(){
+function manage_copyright_license_vendor(){
+	wget https://svn-serv.cs.upb.de/mechatronicuml/trunk/MUMLUtilities/PropertiesCheck.java
+	javac  PropertiesCheck.java
 	find $PWD -name "MANIFEST.MF" |while read fname
 	do
-		sed -i 's/Bundle-Vendor:\s*$/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
+		sed -i 's/Bundle-Vendor:.*$/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
 	done
 
 	find $PWD -name "plugin.properties" |while read fname
 	do
-		sed -i 's/providerName\s*=\s*www\.example\.org.*/providerName = Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
+		java -cp . PropertiesCheck $fname
 	done
-}
 
-function feature_provider(){
 	find $PWD -name "feature.properties" |while read fname
 	do
-		sed -i 's/providerName=\s*$/providerName=Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
-		sed -i 's/license=\s*$/license=Fujaba Licence Agreement\\n July 21, 2012\\n\\n This feature is free software; you can redistribute and\/or modify it under the terms of the Eclipse Public License (EPL) as published by the Eclipse Foundation. You can access the full text of the license agreement under http:\/\/www.eclipse.org\/legal\/epl-v10.html \\n This feature is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE./' $fname
-		sed -i 's/copyright=\s*$/copyright=Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany \\n All rights reserved. This program and the accompanying materials\\n are made available under the terms of the Eclipse Public License v1.0\\n which accompanies this distribution, and is available at\\n http:\/\/www.eclipse.org\/legal\/epl-v10.html/' $fname
+		java -cp . PropertiesCheck $fname
 	done
 }
 
-manifest_vendor
-feature_provider
+
+manage_copyright_license_vendor
 junit_test
