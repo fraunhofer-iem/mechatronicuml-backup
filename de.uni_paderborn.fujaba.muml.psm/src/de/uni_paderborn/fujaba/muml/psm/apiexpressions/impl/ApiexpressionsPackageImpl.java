@@ -372,12 +372,6 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });	
 		addAnnotation
-		  (apiCallExpressionEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "ParameterBindingForEveryParameter"
-		   });	
-		addAnnotation
 		  (continuousPortExpressionEClass, 
 		   source, 
 		   new String[] {
@@ -397,7 +391,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		  (continuousPortExpressionEClass, 
 		   source, 
 		   new String[] {
-			 "OnlyInPortsAllowed", "self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN"
+			 "OnlyInPortsAllowed", "-- Only Inport are allowed\nlet result :  Boolean = (self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN) in\nif ( result.oclIsUndefined()) \nthen \ntrue\nelse\nfalse\n endif"
 		   });
 	}
 

@@ -120,7 +120,7 @@ public interface GenPortInstance extends EObject {
 	 * @see #setTargetPortInstance(PortInstance)
 	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getGenPortInstance_TargetPortInstance()
 	 * @model volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in\nconnectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance)->any(true)\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in\nconnectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance).oclAsType(muml::instance::PortInstance)->any(true)\n'"
 	 * @generated
 	 */
 	PortInstance getTargetPortInstance();

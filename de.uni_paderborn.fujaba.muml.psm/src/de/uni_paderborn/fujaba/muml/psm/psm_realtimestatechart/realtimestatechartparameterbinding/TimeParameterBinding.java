@@ -21,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage#getTimeParameterBinding()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyTimeParameterAllowed'"
+ * @model
  * @generated
  */
 public interface TimeParameterBinding extends RealtimeStatechartParameterBinding {

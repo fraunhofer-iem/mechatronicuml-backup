@@ -67,6 +67,7 @@
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
         </creationOppositeConstraint>
@@ -86,6 +87,7 @@
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
         </creationOppositeConstraint>
@@ -104,11 +106,12 @@
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" reconcile="false" initializeOCLExpression="">
         <genFeature href="psm.genmodel#//psm/properties/Scheduling/priority"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
         </creationOppositeConstraint>
@@ -129,9 +132,9 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="psm.genmodel#//psm/properties/CANMessageFrame"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" reconcile="false">
         <genFeature href="psm.genmodel#//psm/properties/CANMessageFrame/priority"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
         <genFeature href="psm.genmodel#//psm/properties/CANMessageFrame/deadline"/>
@@ -140,6 +143,7 @@
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(muml::instance::PortInstance)"/>
         </creationOppositeConstraint>
@@ -213,6 +217,14 @@
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
         <genFeature href="psm.genmodel#//psm/codegen/GenSystem/genECUs"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/codegen/GenSystem/cic"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/codegen/GenSystem/hpic"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
   </packages>
@@ -294,6 +306,10 @@
         <genFeature href="psm.genmodel#//psm/portapimapping/PortApiMapping/port"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/portapimapping/PortApiMapping/repository"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
     </classes>
     <classes>
@@ -316,6 +332,10 @@
     </classes>
     <classes>
       <genClass href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
     </classes>

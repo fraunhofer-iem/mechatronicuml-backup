@@ -28,7 +28,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage#getAPICallExpression()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ParameterBindingForEveryParameter'"
+ * @model
  * @generated
  */
 public interface APICallExpression extends Expression {

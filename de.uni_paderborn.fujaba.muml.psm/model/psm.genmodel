@@ -69,8 +69,8 @@
         disposableProviderFactory="true" ecorePackage="psm.ecore#//psm_realtimestatechart">
       <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/ParameterizedRealtimeStatechart">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/ParameterizedRealtimeStatechart/parameters"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/ParameterizedRealtimeStatechart/allParameters"/>
+        <genFeatures property="Readonly" createChild="false" propertyDescription=""
+            propertySortChoices="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/ParameterizedRealtimeStatechart/allParameters"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/APICall">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -81,7 +81,7 @@
         <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/APICallParameter"/>
         <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/TimeParameter"/>
         <genClasses image="false" ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Realtimestatechartparameterbinding" basePackage="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart"
@@ -93,7 +93,7 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding/timeValue"/>
         </genClasses>
         <genClasses image="false" ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/parameter"/>
         </genClasses>
@@ -111,7 +111,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/port"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/execCommand"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/repository"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/repository"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/initCommand"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//portapimapping/MappingRepository">
@@ -144,7 +144,7 @@
       <genClasses ecoreClass="psm.ecore#//codegen/RefinedStructuredResourceInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/RefinedStructuredResourceInstance/allUsedMessageTypes"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/CodeGenAllocation">
@@ -165,7 +165,7 @@
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/samplingTime"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/execCommand"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/targetPortInstance"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/GenECU">
@@ -180,8 +180,8 @@
       <genClasses ecoreClass="psm.ecore#//codegen/GenSystem">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/genECUs"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/cic"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/hpic"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/cic"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenSystem/hpic"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>
