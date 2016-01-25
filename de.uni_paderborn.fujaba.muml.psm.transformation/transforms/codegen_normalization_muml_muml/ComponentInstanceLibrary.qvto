@@ -44,9 +44,9 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 /**
 * Replace a hybridPortInstance with a  DiscretePortinstance
 */
-mapping HybridPortInstance::transform():EObject inherits OclAny::transform{
+mapping HybridPortInstance::transform():EObject {
 	init{
-	result:=self.map create();
+	result := self.map transform();
 	}
 /*	var portInstance: DiscreteSinglePortInstance := result.oclAsType(DiscreteSinglePortInstance);
 	portInstance.name:=self.name;
@@ -85,9 +85,9 @@ mapping HybridPortInstance::create():EObject{
 /**
 * Replace a ContiniuosPortIsntance with a  ParametiredDiscreteSinglePortinstance
 */
-mapping ContinuousPortInstance::transform():EObject  inherits OclAny::transform{
+mapping ContinuousPortInstance::transform():EObject  {
 init{
-	 result:=self.map create();
+	 result := self.map transform();
 	
 	}
 /*	var portInstance: DiscreteSinglePortInstance := result.oclAsType(DiscreteSinglePortInstance);
