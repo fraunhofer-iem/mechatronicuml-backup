@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 
 import de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor;
 
@@ -55,22 +57,32 @@ public class DocumentationAnnotationPropertyEditor extends TextPropertyEditor {
 
 
 	@Override
-	protected void doSetValue(Object newObject) {
-		String newValue = newObject.toString();
-		String documentation = getDocumentation(value);
-		if (text != null && !newValue.equals(documentation)) {
-			//setValue(newValue);
-			EModelElement modelElement = (EModelElement) element;
-			EAnnotation annotation = modelElement.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel");
-		
-			if (annotation == null) {
-				annotation = (EAnnotation) EcoreUtil.create(EcorePackage.Literals.EANNOTATION);
-				annotation.setSource("http://www.eclipse.org/emf/2002/GenModel");
-				modelElement.getEAnnotations().add(annotation);
-			}
+	protected void doSetValue(Object newValue) {
+		final Object finalNewValue = newValue;
+		EditingDomain editingDomain = getEditingDomain(element);
+		editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 			
-			annotation.getDetails().put("documentation", newValue);
-		}
+			@Override
+			protected void doExecute() {
+				String newValue = finalNewValue.toString();
+				String documentation = getDocumentation(value);
+				if (text != null && !newValue.equals(documentation)) {
+					//setValue(newValue);
+					EModelElement modelElement = (EModelElement) element;
+					EAnnotation annotation = modelElement.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel");
+				
+					if (annotation == null) {
+						annotation = (EAnnotation) EcoreUtil.create(EcorePackage.Literals.EANNOTATION);
+						annotation.setSource("http://www.eclipse.org/emf/2002/GenModel");
+						modelElement.getEAnnotations().add(annotation);
+					}
+					
+					annotation.getDetails().put("documentation", newValue);
+				}
+			}
+		
+		});
+		
 	}
 
 }
