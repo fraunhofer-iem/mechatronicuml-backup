@@ -10,10 +10,10 @@ package de.uni_paderborn.uppaal.trace.diagnosticTrace;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.DelayTransition#getDuration <em>Duration</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getDelayTransition()
  * @model

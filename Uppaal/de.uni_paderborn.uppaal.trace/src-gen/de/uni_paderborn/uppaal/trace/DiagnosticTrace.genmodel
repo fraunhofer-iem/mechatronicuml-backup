@@ -3,10 +3,10 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.uppaal.trace/src-gen" editDirectory="/de.uni_paderborn.uppaal.trace.edit/src"
     editorDirectory="/de.uni_paderborn.uppaal.trace.editor/src" modelPluginID="de.uni_paderborn.uppaal.trace"
     forceOverwrite="true" modelName="DiagnosticTrace" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="de.uni_paderborn.uppaal.trace.edit"
-    editorPluginID="de.uni_paderborn.uppaal.trace.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/de.uni_paderborn.uppaal/model/uppaal.genmodel#//uppaal/core platform:/resource/de.uni_paderborn.uppaal/model/uppaal.genmodel#//uppaal/declarations platform:/resource/de.uni_paderborn.uppaal/model/uppaal.genmodel#//uppaal/templates">
+    complianceLevel="6.0" copyrightFields="false" editPluginID="de.uni_paderborn.uppaal.trace.edit"
+    editorPluginID="de.uni_paderborn.uppaal.trace.editor" runtimeVersion="2.11" usedGenPackages="platform:/resource/de.uni_paderborn.uppaal/model/uppaal.genmodel#//uppaal/core platform:/resource/de.uni_paderborn.uppaal/model/uppaal.genmodel#//uppaal/declarations platform:/resource/de.uni_paderborn.uppaal/model/uppaal.genmodel#//uppaal/templates platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
   <genPackages prefix="DiagnosticTrace" basePackage="de.uni_paderborn.uppaal.trace"
-      resource="XML" disposableProviderFactory="true" ecorePackage="DiagnosticTrace.ecore#/">
+      disposableProviderFactory="true" ecorePackage="DiagnosticTrace.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="DiagnosticTrace.ecore#//Result">
       <genEnumLiterals ecoreEnumLiteral="DiagnosticTrace.ecore#//Result/SUCCESS"/>
       <genEnumLiterals ecoreEnumLiteral="DiagnosticTrace.ecore#//Result/FAILURE"/>

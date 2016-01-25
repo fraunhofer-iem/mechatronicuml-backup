@@ -22,13 +22,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.VariableValueImpl#getFirstNamedElementReference <em>First Named Element Reference</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.VariableValueImpl#getSecondNamedElementReference <em>Second Named Element Reference</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.VariableValueImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.VariableValueImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -13,11 +13,11 @@ import de.uni_paderborn.uppaal.templates.SynchronizationKind;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.ChannelSynchronization#getChannel <em>Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.ChannelSynchronization#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getChannelSynchronization()
  * @model

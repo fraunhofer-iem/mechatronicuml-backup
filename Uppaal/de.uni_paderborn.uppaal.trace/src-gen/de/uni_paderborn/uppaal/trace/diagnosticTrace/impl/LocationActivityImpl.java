@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.LocationActivityImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.LocationActivityImpl#getLocation <em>Location</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

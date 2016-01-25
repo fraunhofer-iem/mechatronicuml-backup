@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.EdgeActivity#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.EdgeActivity#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.EdgeActivity#getDetails <em>Details</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getEdgeActivity()
  * @model

@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.ChannelSynchronizationImpl#getChannel <em>Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.ChannelSynchronizationImpl#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

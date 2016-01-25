@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.NamedElementReference#getSingleNamedElementReference <em>Single Named Element Reference</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.NamedElementReference#getNamedElementReference <em>Named Element Reference</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getNamedElementReference()
  * @model

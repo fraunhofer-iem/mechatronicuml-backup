@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.ProcessIdentifierImpl#getTemplate <em>Template</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.ProcessIdentifierImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

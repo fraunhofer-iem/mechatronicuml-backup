@@ -12,41 +12,45 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalDiagnosticTraceLexer extends Lexer {
-    public static final int RULE_ID=5;
-    public static final int T__29=29;
     public static final int RULE_DEPTH=7;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=10;
     public static final int RULE_EDGE=6;
-    public static final int RULE_ML_COMMENT=9;
+    public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__37=37;
+    public static final int T__16=16;
+    public static final int T__38=38;
+    public static final int T__17=17;
+    public static final int T__39=39;
+    public static final int T__18=18;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__13=13;
+    public static final int T__35=35;
+    public static final int T__14=14;
+    public static final int T__36=36;
+    public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_STRING=8;
-    public static final int T__16=16;
-    public static final int T__33=33;
-    public static final int T__15=15;
-    public static final int T__34=34;
-    public static final int T__18=18;
-    public static final int T__35=35;
-    public static final int T__17=17;
-    public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int RULE_INT=4;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=4;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -87,10 +91,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:12:7: ( 'Verifying property' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:12:9: 'Verifying property'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:12:7: ( 'Verifying' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:12:9: 'Verifying'
             {
-            match("Verifying property"); 
+            match("Verifying"); 
 
 
             }
@@ -108,10 +112,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:13:7: ( 'at line' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:13:9: 'at line'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:13:7: ( 'property' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:13:9: 'property'
             {
-            match("at line"); 
+            match("property"); 
 
 
             }
@@ -129,10 +133,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:14:7: ( 'Showing counter example.' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:14:9: 'Showing counter example.'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:14:7: ( 'formula' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:14:9: 'formula'
             {
-            match("Showing counter example."); 
+            match("formula"); 
 
 
             }
@@ -150,10 +154,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:15:7: ( 'Showing example trace.' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:15:9: 'Showing example trace.'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:15:7: ( 'at line' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:15:9: 'at line'
             {
-            match("Showing example trace."); 
+            match("at line"); 
 
 
             }
@@ -171,10 +175,11 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:16:7: ( '(' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:16:9: '('
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:16:7: ( 'Showing counter example.' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:16:9: 'Showing counter example.'
             {
-            match('('); 
+            match("Showing counter example."); 
+
 
             }
 
@@ -191,10 +196,11 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:17:7: ( ',' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:17:9: ','
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:17:7: ( 'Showing example trace.' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:17:9: 'Showing example trace.'
             {
-            match(','); 
+            match("Showing example trace."); 
+
 
             }
 
@@ -211,10 +217,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:18:7: ( ')' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:18:9: ')'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:18:7: ( '(' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:18:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -231,10 +237,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:19:7: ( '.' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:19:9: '.'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:19:7: ( ',' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:19:9: ','
             {
-            match('.'); 
+            match(','); 
 
             }
 
@@ -251,10 +257,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:20:7: ( '-' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:20:9: '-'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:20:7: ( ')' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:20:9: ')'
             {
-            match('-'); 
+            match(')'); 
 
             }
 
@@ -271,10 +277,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:21:7: ( '[' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:21:9: '['
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:21:7: ( '.' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:21:9: '.'
             {
-            match('['); 
+            match('.'); 
 
             }
 
@@ -291,10 +297,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:22:7: ( ']' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:22:9: ']'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:22:7: ( '-' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:22:9: '-'
             {
-            match(']'); 
+            match('-'); 
 
             }
 
@@ -311,11 +317,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:23:7: ( 'State' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:23:9: 'State'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:23:7: ( '[' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:23:9: '['
             {
-            match("State"); 
-
+            match('['); 
 
             }
 
@@ -332,10 +337,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:24:7: ( ':' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:24:9: ':'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:24:7: ( ']' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:24:9: ']'
             {
-            match(':'); 
+            match(']'); 
 
             }
 
@@ -352,10 +357,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:25:7: ( '->' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:25:9: '->'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:25:7: ( 'State' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:25:9: 'State'
             {
-            match("->"); 
+            match("State"); 
 
 
             }
@@ -373,11 +378,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:26:7: ( 'tau' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:26:9: 'tau'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:26:7: ( ':' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:26:9: ':'
             {
-            match("tau"); 
-
+            match(':'); 
 
             }
 
@@ -394,10 +398,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:27:7: ( 'Delay:' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:27:9: 'Delay:'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:27:7: ( '->' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:27:9: '->'
             {
-            match("Delay:"); 
+            match("->"); 
 
 
             }
@@ -415,10 +419,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:28:7: ( 'Transitions:' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:28:9: 'Transitions:'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:28:7: ( 'tau' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:28:9: 'tau'
             {
-            match("Transitions:"); 
+            match("tau"); 
 
 
             }
@@ -436,10 +440,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:29:7: ( '-- Property is satisfied.' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:29:9: '-- Property is satisfied.'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:29:7: ( 'Delay:' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:29:9: 'Delay:'
             {
-            match("-- Property is satisfied."); 
+            match("Delay:"); 
 
 
             }
@@ -457,10 +461,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:30:7: ( '-- Property is NOT satisfied.' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:30:9: '-- Property is NOT satisfied.'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:30:7: ( 'Transitions:' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:30:9: 'Transitions:'
             {
-            match("-- Property is NOT satisfied."); 
+            match("Transitions:"); 
 
 
             }
@@ -478,10 +482,11 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:31:7: ( '=' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:31:9: '='
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:31:7: ( '-- Property is satisfied.' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:31:9: '-- Property is satisfied.'
             {
-            match('='); 
+            match("-- Property is satisfied."); 
+
 
             }
 
@@ -498,10 +503,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:32:7: ( '<=' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:32:9: '<='
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:32:7: ( '-- Property is NOT satisfied.' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:32:9: '-- Property is NOT satisfied.'
             {
-            match("<="); 
+            match("-- Property is NOT satisfied."); 
 
 
             }
@@ -519,10 +524,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:33:7: ( '>=' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:33:9: '>='
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:33:7: ( '-- Formula is satisfied.' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:33:9: '-- Formula is satisfied.'
             {
-            match(">="); 
+            match("-- Formula is satisfied."); 
 
 
             }
@@ -540,10 +545,11 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:34:7: ( '?' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:34:9: '?'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:34:7: ( '-- Formula is NOT satisfied.' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:34:9: '-- Formula is NOT satisfied.'
             {
-            match('?'); 
+            match("-- Formula is NOT satisfied."); 
+
 
             }
 
@@ -560,10 +566,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:35:7: ( '!' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:35:9: '!'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:35:7: ( '=' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:35:9: '='
             {
-            match('!'); 
+            match('='); 
 
             }
 
@@ -575,13 +581,95 @@ public class InternalDiagnosticTraceLexer extends Lexer {
     }
     // $ANTLR end "T__37"
 
+    // $ANTLR start "T__38"
+    public final void mT__38() throws RecognitionException {
+        try {
+            int _type = T__38;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:36:7: ( '<=' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:36:9: '<='
+            {
+            match("<="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__38"
+
+    // $ANTLR start "T__39"
+    public final void mT__39() throws RecognitionException {
+        try {
+            int _type = T__39;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:37:7: ( '>=' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:37:9: '>='
+            {
+            match(">="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__39"
+
+    // $ANTLR start "T__40"
+    public final void mT__40() throws RecognitionException {
+        try {
+            int _type = T__40;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:38:7: ( '?' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:38:9: '?'
+            {
+            match('?'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__40"
+
+    // $ANTLR start "T__41"
+    public final void mT__41() throws RecognitionException {
+        try {
+            int _type = T__41;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:39:7: ( '!' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:39:9: '!'
+            {
+            match('!'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__41"
+
     // $ANTLR start "RULE_DEPTH"
     public final void mRULE_DEPTH() throws RecognitionException {
         try {
             int _type = RULE_DEPTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1070:12: ( '#depth=' RULE_INT )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1070:14: '#depth=' RULE_INT
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1091:12: ( '#depth=' RULE_INT )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1091:14: '#depth=' RULE_INT
             {
             match("#depth="); 
 
@@ -602,11 +690,11 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_EDGE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1072:11: ( '{' ( options {greedy=false; } : . )* '}' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1072:13: '{' ( options {greedy=false; } : . )* '}'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1093:11: ( '{' ( options {greedy=false; } : . )* '}' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1093:13: '{' ( options {greedy=false; } : . )* '}'
             {
             match('{'); 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1072:17: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1093:17: ( options {greedy=false; } : . )*
             loop1:
             do {
                 int alt1=2;
@@ -622,7 +710,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1072:45: .
+            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1093:45: .
             	    {
             	    matchAny(); 
 
@@ -651,10 +739,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1074:10: ( ( '-' )? ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1074:12: ( '-' )? ( '0' .. '9' )+
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1095:10: ( ( '-' )? ( '0' .. '9' )+ )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1095:12: ( '-' )? ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1074:12: ( '-' )?
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1095:12: ( '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -663,7 +751,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1074:12: '-'
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1095:12: '-'
                     {
                     match('-'); 
 
@@ -672,7 +760,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1074:17: ( '0' .. '9' )+
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1095:17: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -686,7 +774,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1074:18: '0' .. '9'
+            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1095:18: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -718,10 +806,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1097:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1097:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:11: ( '^' )?
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1097:11: ( '^' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -730,7 +818,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:11: '^'
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1097:11: '^'
                     {
                     match('^'); 
 
@@ -748,7 +836,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1097:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -797,10 +885,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -818,10 +906,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -837,23 +925,15 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -878,10 +958,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -897,23 +977,15 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1099:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -956,12 +1028,12 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1080:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1080:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1101:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1101:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1080:24: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1101:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -986,7 +1058,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1080:52: .
+            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1101:52: .
             	    {
             	    matchAny(); 
 
@@ -1016,12 +1088,12 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1034,7 +1106,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1054,7 +1126,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:40: ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1063,9 +1135,9 @@ public class InternalDiagnosticTraceLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:41: ( '\\r' )? '\\n'
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:41: ( '\\r' )?
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1074,7 +1146,7 @@ public class InternalDiagnosticTraceLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:41: '\\r'
+                            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1103:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1106,10 +1178,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1084:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1084:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1105:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1105:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1084:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1105:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1163,8 +1235,8 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1086:16: ( . )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1086:18: .
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1107:16: ( . )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1107:18: .
             {
             matchAny(); 
 
@@ -1179,8 +1251,8 @@ public class InternalDiagnosticTraceLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | RULE_DEPTH | RULE_EDGE | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt14=34;
+        // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | RULE_DEPTH | RULE_EDGE | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt14=38;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
@@ -1359,63 +1431,91 @@ public class InternalDiagnosticTraceLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:160: RULE_DEPTH
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:160: T__38
+                {
+                mT__38(); 
+
+                }
+                break;
+            case 27 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:166: T__39
+                {
+                mT__39(); 
+
+                }
+                break;
+            case 28 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:172: T__40
+                {
+                mT__40(); 
+
+                }
+                break;
+            case 29 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:178: T__41
+                {
+                mT__41(); 
+
+                }
+                break;
+            case 30 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:184: RULE_DEPTH
                 {
                 mRULE_DEPTH(); 
 
                 }
                 break;
-            case 27 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:171: RULE_EDGE
+            case 31 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:195: RULE_EDGE
                 {
                 mRULE_EDGE(); 
 
                 }
                 break;
-            case 28 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:181: RULE_INT
+            case 32 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:205: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 29 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:190: RULE_ID
+            case 33 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:214: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 30 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:198: RULE_STRING
+            case 34 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:222: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 31 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:210: RULE_ML_COMMENT
+            case 35 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:234: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 32 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:226: RULE_SL_COMMENT
+            case 36 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:250: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 33 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:242: RULE_WS
+            case 37 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:266: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 34 :
-                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:250: RULE_ANY_OTHER
+            case 38 :
+                // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1:274: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1429,130 +1529,97 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\4\40\4\uffff\1\53\3\uffff\3\40\1\uffff\2\36\2\uffff\2"+
-        "\36\1\uffff\1\36\1\uffff\3\36\2\uffff\1\40\1\uffff\4\40\13\uffff"+
-        "\3\40\13\uffff\2\40\1\uffff\2\40\1\uffff\1\114\6\40\2\uffff\5\40"+
-        "\1\131\1\uffff\5\40\3\uffff\1\40\1\uffff\2\40\1\uffff\2\40\2\uffff"+
-        "\2\40\3\uffff\1\40\2\uffff\1\40\1\uffff\1\40\7\uffff";
+        "\1\uffff\6\42\4\uffff\1\60\3\uffff\3\42\1\uffff\2\40\2\uffff\2\40\1\uffff\1\40\1\uffff\3\40\2\uffff\1\42\1\uffff\6\42\13\uffff\3\42\13\uffff\4\42\1\uffff\2\42\1\uffff\1\125\10\42\3\uffff\7\42\1\147\2\uffff\7\42\4\uffff\1\42\1\uffff\2\42\1\166\1\42\2\uffff\2\42\1\174\4\uffff\1\42\1\u0082\5\uffff\1\42\3\uffff\1\42\2\uffff\1\42\14\uffff";
     static final String DFA14_eofS =
-        "\167\uffff";
+        "\u0095\uffff";
     static final String DFA14_minS =
-        "\1\0\1\141\1\145\1\164\1\150\4\uffff\1\55\3\uffff\1\141\1\145\1"+
-        "\162\1\uffff\2\75\2\uffff\1\144\1\0\1\uffff\1\101\1\uffff\2\0\1"+
-        "\52\2\uffff\1\156\1\uffff\1\162\1\40\1\157\1\141\5\uffff\1\40\5"+
-        "\uffff\1\165\1\154\1\141\13\uffff\1\156\1\151\1\uffff\1\167\1\164"+
-        "\1\120\1\60\1\141\1\156\1\157\1\146\1\151\1\145\1\162\1\uffff\1"+
-        "\171\1\163\1\164\1\171\1\156\1\60\1\157\1\72\1\151\1\40\1\151\1"+
-        "\147\1\uffff\1\160\1\uffff\1\164\1\uffff\1\156\1\40\1\145\1\151"+
-        "\1\147\1\143\1\162\1\157\1\40\2\uffff\1\164\1\156\1\uffff\1\171"+
-        "\1\163\1\40\1\72\1\151\1\uffff\1\163\1\40\1\116\2\uffff";
+        "\1\0\1\141\1\145\1\162\1\157\1\164\1\150\4\uffff\1\55\3\uffff\1\141\1\145\1\162\1\uffff\2\75\2\uffff\1\144\1\0\1\uffff\1\101\1\uffff\2\0\1\52\2\uffff\1\156\1\uffff\1\162\1\157\1\162\1\40\1\157\1\141\5\uffff\1\40\5\uffff\1\165\1\154\1\141\13\uffff\1\156\1\151\1\160\1\155\1\uffff\1\167\1\164\1\106\1\60\1\141\1\156\1\157\1\146\1\145\1\165\1\151\1\145\1\162\1\157\1\uffff\1\171\1\163\1\164\1\171\1\162\1\154\1\156\1\60\1\157\1\162\1\72\1\151\1\40\1\151\1\164\1\141\1\147\1\uffff\1\160\1\155\1\uffff\1\164\1\uffff\1\156\1\171\1\60\1\40\1\145\1\165\1\151\1\147\1\60\1\uffff\1\143\1\162\1\154\1\157\1\60\3\uffff\1\164\1\141\1\156\1\uffff\1\171\1\40\1\163\1\40\1\151\1\72\1\151\1\163\1\uffff\1\163\2\40\2\116\4\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\141\1\145\2\164\4\uffff\1\76\3\uffff\1\141\1\145\1\162"+
-        "\1\uffff\2\75\2\uffff\1\144\1\uffff\1\uffff\1\172\1\uffff\2\uffff"+
-        "\1\57\2\uffff\1\156\1\uffff\1\162\1\40\1\157\1\141\5\uffff\1\40"+
-        "\5\uffff\1\165\1\154\1\141\13\uffff\1\156\1\151\1\uffff\1\167\1"+
-        "\164\1\120\1\172\1\141\1\156\1\157\1\146\1\151\1\145\1\162\1\uffff"+
-        "\1\171\1\163\1\164\1\171\1\156\1\172\1\157\1\72\1\151\1\40\1\151"+
-        "\1\147\1\uffff\1\160\1\uffff\1\164\1\uffff\1\156\1\40\1\145\1\151"+
-        "\1\147\1\145\1\162\1\157\1\40\2\uffff\1\164\1\156\1\uffff\1\171"+
-        "\1\163\1\40\1\72\1\151\1\uffff\1\163\1\40\1\163\2\uffff";
+        "\1\uffff\1\141\1\145\1\162\1\157\2\164\4\uffff\1\76\3\uffff\1\141\1\145\1\162\1\uffff\2\75\2\uffff\1\144\1\uffff\1\uffff\1\172\1\uffff\2\uffff\1\57\2\uffff\1\156\1\uffff\1\162\1\157\1\162\1\40\1\157\1\141\5\uffff\1\40\5\uffff\1\165\1\154\1\141\13\uffff\1\156\1\151\1\160\1\155\1\uffff\1\167\1\164\1\120\1\172\1\141\1\156\1\157\1\146\1\145\1\165\1\151\1\145\1\162\1\157\1\uffff\1\171\1\163\1\164\1\171\1\162\1\154\1\156\1\172\1\157\1\162\1\72\1\151\1\40\1\151\1\164\1\141\1\147\1\uffff\1\160\1\155\1\uffff\1\164\1\uffff\1\156\1\171\1\172\1\40\1\145\1\165\1\151\1\147\1\172\1\uffff\1\145\1\162\1\154\1\157\1\172\3\uffff\1\164\1\141\1\156\1\uffff\1\171\1\40\1\163\1\40\1\151\1\72\1\151\1\163\1\uffff\1\163\2\40\2\163\4\uffff";
     static final String DFA14_acceptS =
-        "\5\uffff\1\6\1\7\1\10\1\11\1\uffff\1\13\1\14\1\16\3\uffff\1\25"+
-        "\2\uffff\1\30\1\31\2\uffff\1\34\1\uffff\1\35\3\uffff\1\41\1\42\1"+
-        "\uffff\1\35\4\uffff\1\6\1\7\1\10\1\11\1\17\1\uffff\1\12\1\34\1\13"+
-        "\1\14\1\16\3\uffff\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\36\1\37"+
-        "\1\40\1\41\2\uffff\1\3\13\uffff\1\20\14\uffff\1\15\1\uffff\1\21"+
-        "\1\uffff\1\1\11\uffff\1\4\1\5\2\uffff\1\2\5\uffff\1\22\3\uffff\1"+
-        "\23\1\24";
+        "\7\uffff\1\10\1\11\1\12\1\13\1\uffff\1\15\1\16\1\20\3\uffff\1\31\2\uffff\1\34\1\35\2\uffff\1\40\1\uffff\1\41\3\uffff\1\45\1\46\1\uffff\1\41\6\uffff\1\10\1\11\1\12\1\13\1\21\1\uffff\1\40\1\14\1\15\1\16\1\20\3\uffff\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\42\1\43\1\44\1\45\4\uffff\1\5\16\uffff\1\22\21\uffff\1\17\2\uffff\1\23\1\uffff\1\1\11\uffff\1\4\5\uffff\1\3\1\6\1\7\3\uffff\1\2\10\uffff\1\24\5\uffff\1\27\1\30\1\25\1\26";
     static final String DFA14_specialS =
-        "\1\1\25\uffff\1\2\3\uffff\1\0\1\3\133\uffff}>";
+        "\1\3\27\uffff\1\1\3\uffff\1\2\1\0\167\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\11\36\2\35\2\36\1\35\22\36\1\35\1\24\1\32\1\25\3\36\1\33\1"+
-            "\5\1\7\2\36\1\6\1\11\1\10\1\34\12\27\1\14\1\36\1\21\1\20\1\22"+
-            "\1\23\1\36\2\31\1\1\1\16\16\31\1\4\1\17\1\31\1\2\4\31\1\12\1"+
-            "\36\1\13\1\30\1\31\1\36\1\3\22\31\1\15\6\31\1\26\uff84\36",
-            "\1\37",
+            "\11\40\2\37\2\40\1\37\22\40\1\37\1\26\1\34\1\27\3\40\1\35\1\7\1\11\2\40\1\10\1\13\1\12\1\36\12\31\1\16\1\40\1\23\1\22\1\24\1\25\1\40\2\33\1\1\1\20\16\33\1\6\1\21\1\33\1\2\4\33\1\14\1\40\1\15\1\32\1\33\1\40\1\5\4\33\1\4\11\33\1\3\3\33\1\17\6\33\1\30\uff84\40",
             "\1\41",
-            "\1\42",
-            "\1\43\13\uffff\1\44",
+            "\1\43",
+            "\1\44",
+            "\1\45",
+            "\1\46",
+            "\1\47\13\uffff\1\50",
             "",
             "",
             "",
             "",
-            "\1\52\2\uffff\12\54\4\uffff\1\51",
+            "\1\56\2\uffff\12\57\4\uffff\1\55",
             "",
             "",
-            "",
-            "\1\60",
-            "\1\61",
-            "\1\62",
             "",
             "\1\64",
             "\1\65",
-            "",
+            "\1\66",
             "",
             "\1\70",
-            "\0\71",
-            "",
-            "\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "\0\72",
-            "\0\72",
-            "\1\73\4\uffff\1\74",
+            "\1\71",
             "",
             "",
-            "\1\76",
+            "\1\74",
+            "\0\75",
             "",
-            "\1\77",
-            "\1\100",
-            "\1\101",
+            "\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "\0\76",
+            "\0\76",
+            "\1\77\4\uffff\1\100",
+            "",
+            "",
             "\1\102",
             "",
-            "",
-            "",
-            "",
-            "",
             "\1\103",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\104",
             "\1\105",
             "\1\106",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\107",
             "\1\110",
             "",
+            "",
+            "",
+            "",
+            "",
             "\1\111",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\112",
             "\1\113",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\114",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\115",
             "\1\116",
             "\1\117",
             "\1\120",
+            "",
             "\1\121",
             "\1\122",
-            "\1\123",
-            "",
-            "\1\124",
-            "\1\125",
+            "\1\124\11\uffff\1\123",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\1\126",
             "\1\127",
             "\1\130",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\131",
             "\1\132",
             "\1\133",
             "\1\134",
@@ -1561,32 +1628,66 @@ public class InternalDiagnosticTraceLexer extends Lexer {
             "\1\137",
             "",
             "\1\140",
-            "",
             "\1\141",
-            "",
             "\1\142",
             "\1\143",
             "\1\144",
             "\1\145",
             "\1\146",
-            "\1\147\1\uffff\1\150",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\1\150",
             "\1\151",
             "\1\152",
             "\1\153",
-            "",
-            "",
             "\1\154",
             "\1\155",
-            "",
             "\1\156",
             "\1\157",
             "\1\160",
+            "",
             "\1\161",
             "\1\162",
             "",
             "\1\163",
+            "",
             "\1\164",
-            "\1\166\44\uffff\1\165",
+            "\1\165",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\1\167",
+            "\1\170",
+            "\1\171",
+            "\1\172",
+            "\1\173",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "\1\175\1\uffff\1\176",
+            "\1\177",
+            "\1\u0080",
+            "\1\u0081",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "",
+            "",
+            "\1\u0083",
+            "\1\u0084",
+            "\1\u0085",
+            "",
+            "\1\u0086",
+            "\1\u0087",
+            "\1\u0088",
+            "\1\u0089",
+            "\1\u008a",
+            "\1\u008b",
+            "\1\u008c",
+            "\1\u008d",
+            "",
+            "\1\u008e",
+            "\1\u008f",
+            "\1\u0090",
+            "\1\u0092\44\uffff\1\u0091",
+            "\1\u0094\44\uffff\1\u0093",
+            "",
+            "",
             "",
             ""
     };
@@ -1621,23 +1722,43 @@ public class InternalDiagnosticTraceLexer extends Lexer {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | RULE_DEPTH | RULE_EDGE | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | RULE_DEPTH | RULE_EDGE | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_26 = input.LA(1);
+                        int LA14_29 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_26>='\u0000' && LA14_26<='\uFFFF')) ) {s = 58;}
+                        if ( ((LA14_29>='\u0000' && LA14_29<='\uFFFF')) ) {s = 62;}
 
-                        else s = 30;
+                        else s = 32;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA14_24 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 61;}
+
+                        else s = 32;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA14_28 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_28>='\u0000' && LA14_28<='\uFFFF')) ) {s = 62;}
+
+                        else s = 32;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -1645,81 +1766,65 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                         else if ( (LA14_0=='V') ) {s = 2;}
 
-                        else if ( (LA14_0=='a') ) {s = 3;}
+                        else if ( (LA14_0=='p') ) {s = 3;}
 
-                        else if ( (LA14_0=='S') ) {s = 4;}
+                        else if ( (LA14_0=='f') ) {s = 4;}
 
-                        else if ( (LA14_0=='(') ) {s = 5;}
+                        else if ( (LA14_0=='a') ) {s = 5;}
 
-                        else if ( (LA14_0==',') ) {s = 6;}
+                        else if ( (LA14_0=='S') ) {s = 6;}
 
-                        else if ( (LA14_0==')') ) {s = 7;}
+                        else if ( (LA14_0=='(') ) {s = 7;}
 
-                        else if ( (LA14_0=='.') ) {s = 8;}
+                        else if ( (LA14_0==',') ) {s = 8;}
 
-                        else if ( (LA14_0=='-') ) {s = 9;}
+                        else if ( (LA14_0==')') ) {s = 9;}
 
-                        else if ( (LA14_0=='[') ) {s = 10;}
+                        else if ( (LA14_0=='.') ) {s = 10;}
 
-                        else if ( (LA14_0==']') ) {s = 11;}
+                        else if ( (LA14_0=='-') ) {s = 11;}
 
-                        else if ( (LA14_0==':') ) {s = 12;}
+                        else if ( (LA14_0=='[') ) {s = 12;}
 
-                        else if ( (LA14_0=='t') ) {s = 13;}
+                        else if ( (LA14_0==']') ) {s = 13;}
 
-                        else if ( (LA14_0=='D') ) {s = 14;}
+                        else if ( (LA14_0==':') ) {s = 14;}
 
-                        else if ( (LA14_0=='T') ) {s = 15;}
+                        else if ( (LA14_0=='t') ) {s = 15;}
 
-                        else if ( (LA14_0=='=') ) {s = 16;}
+                        else if ( (LA14_0=='D') ) {s = 16;}
 
-                        else if ( (LA14_0=='<') ) {s = 17;}
+                        else if ( (LA14_0=='T') ) {s = 17;}
 
-                        else if ( (LA14_0=='>') ) {s = 18;}
+                        else if ( (LA14_0=='=') ) {s = 18;}
 
-                        else if ( (LA14_0=='?') ) {s = 19;}
+                        else if ( (LA14_0=='<') ) {s = 19;}
 
-                        else if ( (LA14_0=='!') ) {s = 20;}
+                        else if ( (LA14_0=='>') ) {s = 20;}
 
-                        else if ( (LA14_0=='#') ) {s = 21;}
+                        else if ( (LA14_0=='?') ) {s = 21;}
 
-                        else if ( (LA14_0=='{') ) {s = 22;}
+                        else if ( (LA14_0=='!') ) {s = 22;}
 
-                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 23;}
+                        else if ( (LA14_0=='#') ) {s = 23;}
 
-                        else if ( (LA14_0=='^') ) {s = 24;}
+                        else if ( (LA14_0=='{') ) {s = 24;}
 
-                        else if ( ((LA14_0>='A' && LA14_0<='B')||(LA14_0>='E' && LA14_0<='R')||LA14_0=='U'||(LA14_0>='W' && LA14_0<='Z')||LA14_0=='_'||(LA14_0>='b' && LA14_0<='s')||(LA14_0>='u' && LA14_0<='z')) ) {s = 25;}
+                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 25;}
 
-                        else if ( (LA14_0=='\"') ) {s = 26;}
+                        else if ( (LA14_0=='^') ) {s = 26;}
 
-                        else if ( (LA14_0=='\'') ) {s = 27;}
+                        else if ( ((LA14_0>='A' && LA14_0<='B')||(LA14_0>='E' && LA14_0<='R')||LA14_0=='U'||(LA14_0>='W' && LA14_0<='Z')||LA14_0=='_'||(LA14_0>='b' && LA14_0<='e')||(LA14_0>='g' && LA14_0<='o')||(LA14_0>='q' && LA14_0<='s')||(LA14_0>='u' && LA14_0<='z')) ) {s = 27;}
 
-                        else if ( (LA14_0=='/') ) {s = 28;}
+                        else if ( (LA14_0=='\"') ) {s = 28;}
 
-                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 29;}
+                        else if ( (LA14_0=='\'') ) {s = 29;}
 
-                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='$' && LA14_0<='&')||(LA14_0>='*' && LA14_0<='+')||LA14_0==';'||LA14_0=='@'||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='|' && LA14_0<='\uFFFF')) ) {s = 30;}
+                        else if ( (LA14_0=='/') ) {s = 30;}
 
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA14_22 = input.LA(1);
+                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 31;}
 
-                        s = -1;
-                        if ( ((LA14_22>='\u0000' && LA14_22<='\uFFFF')) ) {s = 57;}
-
-                        else s = 30;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA14_27 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_27>='\u0000' && LA14_27<='\uFFFF')) ) {s = 58;}
-
-                        else s = 30;
+                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='$' && LA14_0<='&')||(LA14_0>='*' && LA14_0<='+')||LA14_0==';'||LA14_0=='@'||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='|' && LA14_0<='\uFFFF')) ) {s = 32;}
 
                         if ( s>=0 ) return s;
                         break;

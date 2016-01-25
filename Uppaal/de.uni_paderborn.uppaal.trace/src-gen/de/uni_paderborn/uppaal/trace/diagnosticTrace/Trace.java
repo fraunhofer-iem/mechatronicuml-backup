@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.Trace#getProperty <em>Property</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.Trace#getLine <em>Line</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.Trace#getResult <em>Result</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.Trace#getTraceItems <em>Trace Items</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTrace()
  * @model

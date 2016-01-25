@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.TraceImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.TraceImpl#getLine <em>Line</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.TraceImpl#getResult <em>Result</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.TraceImpl#getTraceItems <em>Trace Items</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

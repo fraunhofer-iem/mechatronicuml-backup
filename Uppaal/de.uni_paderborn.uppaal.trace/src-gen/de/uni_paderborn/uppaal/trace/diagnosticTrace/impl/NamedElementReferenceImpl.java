@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.NamedElementReferenceImpl#getSingleNamedElementReference <em>Single Named Element Reference</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.NamedElementReferenceImpl#getNamedElementReference <em>Named Element Reference</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

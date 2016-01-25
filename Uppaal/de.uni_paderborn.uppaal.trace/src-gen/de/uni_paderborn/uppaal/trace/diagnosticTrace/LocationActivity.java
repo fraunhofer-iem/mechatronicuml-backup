@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.LocationActivity#getProcess <em>Process</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.LocationActivity#getLocation <em>Location</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getLocationActivity()
  * @model

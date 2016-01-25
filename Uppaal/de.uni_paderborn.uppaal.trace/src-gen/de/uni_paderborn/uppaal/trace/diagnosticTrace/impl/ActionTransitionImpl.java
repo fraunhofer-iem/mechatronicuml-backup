@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.ActionTransitionImpl#getEdgeActivities <em>Edge Activities</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

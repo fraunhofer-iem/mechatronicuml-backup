@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.SingleNamedElementReferenceImpl#getNamedElement <em>Named Element</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.trace.diagnosticTrace.impl.SingleNamedElementReferenceImpl#getIndexes <em>Indexes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
