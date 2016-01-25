@@ -44,7 +44,7 @@ function manage_copyright_license_vendor(){
 	javac  PropertiesCheck.java
 	find $PWD -name "MANIFEST.MF" |while read fname
 	do
-		sed -i 's/Bundle-Vendor:.*$/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT/' $fname
+		sed -i 's/Bundle-Vendor:.*$/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, and Fraunhofer Research Institution for​ Mechatronic Systems Design IEM, Germany/' $fname
 	done
 
 	find $PWD -name "plugin.properties" |while read fname
