@@ -47,12 +47,8 @@ function manage_copyright_license_vendor(){
 		sed -i 's/Bundle-Vendor:.*$/Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, and Fraunhofer Research Institution for​ Mechatronic Systems Design IEM, Germany/' $fname
 	done
 
-	find $PWD -name "plugin.properties" |while read fname
-	do
-		java -cp . PropertiesCheck $fname
-	done
 
-	find $PWD -name "feature.properties" |while read fname
+	find $PWD -name "feature.xml" |while read fname
 	do
 		java -cp . PropertiesCheck $fname
 	done
