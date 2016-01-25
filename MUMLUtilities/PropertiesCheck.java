@@ -18,7 +18,7 @@ public class PropertiesCheck {
         Properties properties = new Properties();
         File file = new File(filename);
         properties.load(new InputStreamReader(new FileInputStream(new File(filename))));
-        properties.setProperty("providerName", "Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany \n  Fraunhofer Research Institution for​ Mechatronic Systems Design IEM, Germany");
+        properties.setProperty("providerName", "Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany \n  Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany");
         properties.setProperty("copyright", "MechatronicUML Tool Suite \n Copyright 2009-2016,\n Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany \n Fraunhofer Research Institution for​ Mechatronic Systems Design IEM, Germany \n \n http://www.muml.org\n");
         properties.setProperty("license", licenseText);
         properties.store(new OutputStreamWriter(new FileOutputStream(file)), "");
