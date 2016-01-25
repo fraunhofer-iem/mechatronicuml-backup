@@ -39,13 +39,14 @@ public class PropertiesCheck {
 	public void fixBuildProperties(String filename) throws FileNotFoundException, IOException{
 		Properties properties = new Properties();
 		File file = new File(filename);
+		String currentBinIncludes="";
 		try {
 			properties.load(new InputStreamReader(new FileInputStream(new File(filename))));
+			currentBinIncludes = properties.getProperty("bin.includes");
 
 		} catch (IOException e) {
 			// TODO: handle exception
 		}
-		String currentBinIncludes = properties.getProperty("bin.includes");
 		properties.setProperty("bin.includes", currentBinIncludes+"feature.properties");
 		properties.store(new OutputStreamWriter(new FileOutputStream(file)), "");
 	}
