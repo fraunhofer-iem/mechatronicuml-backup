@@ -24,7 +24,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * @see de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage#getContinuousPortExpression()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyInPortsAllowed'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyInPortsAllowed='self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyInPortsAllowed='-- Only Inport are allowed\nlet result :  Boolean = (self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN) in\nif ( result.oclIsUndefined()) \nthen \ntrue\nelse\nfalse\n endif'"
  * @generated
  */
 public interface ContinuousPortExpression extends Expression {

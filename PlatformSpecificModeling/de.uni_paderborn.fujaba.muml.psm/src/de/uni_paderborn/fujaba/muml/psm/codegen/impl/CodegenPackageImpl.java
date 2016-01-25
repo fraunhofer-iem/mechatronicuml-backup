@@ -570,7 +570,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		initEClass(refinedStructuredResourceInstanceEClass, RefinedStructuredResourceInstance.class, "RefinedStructuredResourceInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRefinedStructuredResourceInstance_AllocatedAtomicComponentInstances(), this.getRefinedAtomicComponentInstance(), this.getRefinedAtomicComponentInstance_AllocatedResourceInstance(), "allocatedAtomicComponentInstances", null, 0, -1, RefinedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRefinedStructuredResourceInstance_AllUsedMessageTypes(), theMsgtypePackage.getMessageType(), null, "allUsedMessageTypes", null, 0, -1, RefinedStructuredResourceInstance.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRefinedStructuredResourceInstance_AllUsedMessageTypes(), theMsgtypePackage.getMessageType(), null, "allUsedMessageTypes", null, 0, -1, RefinedStructuredResourceInstance.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(codeGenAllocationEClass, CodeGenAllocation.class, "CodeGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCodeGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -636,13 +636,13 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		  (getRefinedStructuredResourceInstance_AllUsedMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "let discretePortInstance : Set(instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(instance::DiscretePortInstance)).oclAsType(instance::DiscretePortInstance)->asOrderedSet() in\ndiscretePortInstance.receiverMessageTypes->asOrderedSet()->union(discretePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()\n\n\n\n"
+			 "derivation", "let discretePortInstances : Set(instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(instance::DiscretePortInstance)).oclAsType(instance::DiscretePortInstance)->asOrderedSet() in\ndiscretePortInstances.receiverMessageTypes->union(discretePortInstances.senderMessageTypes).oclAsType(msgtype::MessageType)->asSet()"
 		   });	
 		addAnnotation
 		  (getGenPortInstance_TargetPortInstance(), 
 		   source, 
 		   new String[] {
-			 "derivation", "let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in\nconnectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance)->any(true)\n"
+			 "derivation", "let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in\nconnectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance).oclAsType(muml::instance::PortInstance)->any(true)\n"
 		   });
 	}
 

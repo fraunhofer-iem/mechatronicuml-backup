@@ -23,7 +23,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage#getAPICallParameterBinding()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyCallParameterAllowed'"
+ * @model
  * @generated
  */
 public interface APICallParameterBinding extends RealtimeStatechartParameterBinding, Operation {

@@ -57,9 +57,6 @@ import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechar
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingFactory;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.TimeParameterBinding;
-
-import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.util.RealtimestatechartparameterbindingValidator;
-
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -67,8 +64,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.storydriven.core.expressions.ExpressionsPackage;
@@ -190,15 +185,6 @@ public class RealtimestatechartparameterbindingPackageImpl extends EPackageImpl 
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
 		theCodegenPackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theRealtimestatechartparameterbindingPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return RealtimestatechartparameterbindingValidator.INSTANCE;
-				 }
-			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theRealtimestatechartparameterbindingPackage.freeze();
@@ -360,32 +346,6 @@ public class RealtimestatechartparameterbindingPackageImpl extends EPackageImpl 
 		initEClass(realtimeStatechartParameterBindingEClass, RealtimeStatechartParameterBinding.class, "RealtimeStatechartParameterBinding", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRealtimeStatechartParameterBinding_PortInstance(), thePsm_instancePackage.getParameterisableDiscreteSinglePortInstance(), thePsm_instancePackage.getParameterisableDiscreteSinglePortInstance_Bindings(), "portInstance", null, 1, 1, RealtimeStatechartParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartParameterBinding_Parameter(), theRealtimestatechartparameterPackage.getRealtimeStatechartParameter(), null, "parameter", null, 1, 1, RealtimeStatechartParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create annotations
-		// http://www.eclipse.org/emf/2002/Ecore
-		createEcoreAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
-		addAnnotation
-		  (apiCallParameterBindingEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "onlyCallParameterAllowed"
-		   });	
-		addAnnotation
-		  (timeParameterBindingEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "onlyTimeParameterAllowed"
-		   });
 	}
 
 } //RealtimestatechartparameterbindingPackageImpl

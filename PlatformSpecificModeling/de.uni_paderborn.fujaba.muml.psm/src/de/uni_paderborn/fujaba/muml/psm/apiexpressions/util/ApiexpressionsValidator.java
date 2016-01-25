@@ -103,45 +103,7 @@ public class ApiexpressionsValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAPICallExpression(APICallExpression apiCallExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(apiCallExpression, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(apiCallExpression, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAPICallExpression_ParameterBindingForEveryParameter(apiCallExpression, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the ParameterBindingForEveryParameter constraint of '<em>API Call Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAPICallExpression_ParameterBindingForEveryParameter(APICallExpression apiCallExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ParameterBindingForEveryParameter", getObjectLabel(apiCallExpression, context) },
-						 new Object[] { apiCallExpression },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return validate_EveryDefaultConstraint(apiCallExpression, diagnostics, context);
 	}
 
 	/**
@@ -178,7 +140,14 @@ public class ApiexpressionsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONTINUOUS_PORT_EXPRESSION__ONLY_IN_PORTS_ALLOWED__EEXPRESSION = "self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN";
+	protected static final String CONTINUOUS_PORT_EXPRESSION__ONLY_IN_PORTS_ALLOWED__EEXPRESSION = "-- Only Inport are allowed\n" +
+		"let result :  Boolean = (self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN) in\n" +
+		"if ( result.oclIsUndefined()) \n" +
+		"then \n" +
+		"true\n" +
+		"else\n" +
+		"false\n" +
+		" endif";
 
 	/**
 	 * Validates the OnlyInPortsAllowed constraint of '<em>Continuous Port Expression</em>'.
