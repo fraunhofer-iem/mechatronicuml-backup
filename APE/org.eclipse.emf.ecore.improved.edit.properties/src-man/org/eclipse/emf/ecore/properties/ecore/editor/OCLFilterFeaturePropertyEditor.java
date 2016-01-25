@@ -2,12 +2,13 @@ package org.eclipse.emf.ecore.properties.ecore.editor;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 
 import de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor;
 
@@ -63,20 +64,28 @@ public class OCLFilterFeaturePropertyEditor extends TextPropertyEditor {
 
 	@Override
 	protected void doSetValue(Object newObject) {
-		String newValue = newObject.toString();
-		String feature = getFeature(value);
-		if (text != null && !newValue.equals(feature)) {
-			EAnnotation annotation = getAnnotation();
-		
-			if (annotation == null) {
-				annotation = (EAnnotation) EcoreUtil.create(EcorePackage.Literals.EANNOTATION);
-				annotation.setSource("http://www.muml.org/emf/OCLFilter");
-				EModelElement modelElement = (EModelElement) element;
-				modelElement.getEAnnotations().add(annotation);
-			}
+		final Object finalNewValue = newObject;
+		EditingDomain editingDomain = getEditingDomain(element);
+		editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 			
-			annotation.getDetails().put("feature", newValue);
-		}
+			@Override
+			protected void doExecute() {
+				String newValue = finalNewValue.toString();
+				String feature = getFeature(value);
+				if (text != null && !newValue.equals(feature)) {
+					EAnnotation annotation = getAnnotation();
+				
+					if (annotation == null) {
+						annotation = (EAnnotation) EcoreUtil.create(EcorePackage.Literals.EANNOTATION);
+						annotation.setSource("http://www.muml.org/emf/OCLFilter");
+						EModelElement modelElement = (EModelElement) element;
+						modelElement.getEAnnotations().add(annotation);
+					}
+					
+					annotation.getDetails().put("feature", newValue);
+				}
+			}
+		});
 	}
 
 }
