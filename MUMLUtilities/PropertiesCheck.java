@@ -78,6 +78,7 @@ public class PropertiesCheck {
 		Document document = db.parse(file);
 
 		fixAttribute("license", "url", "%licenseURL", document);
+		fixAttribute("feature", "provider-name", "%providerName", document);
 		fixText("license", "\n      %license\n   ", document);
 		fixText("copyright", "\n      %copyright\n   ", document);
 
