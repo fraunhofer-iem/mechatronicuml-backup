@@ -32,7 +32,7 @@ public class PropertiesCheck {
     	if(filename.endsWith("feature.xml")){
     		propCheck.fixFeatureXML(filename);
     		propCheck.fixFeatureProperties(filename.replace("feature.xml", "feature.properties"));
-    		propCheck.fixBuildProperties(filename.replace("feature.xml", "feature.properties"));
+    		propCheck.fixBuildProperties(filename.replace("feature.xml", "build.properties"));
     	}
     }
 	
