@@ -1,9 +1,13 @@
 package de.uni_paderborn.fujaba.muml.types;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collections;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
@@ -19,7 +23,6 @@ public class PredefinedTypesResourceFactory implements Resource.Factory {
 			try {
 				PREDEFINED_TYPES_RESOURCE.load(Collections.EMPTY_MAP);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -28,7 +31,19 @@ public class PredefinedTypesResourceFactory implements Resource.Factory {
 
 	public Resource createResource(URI uri) {
 		if (PREDEFINED_TYPES_URI.equals(uri)) {
-			return getResource();
+			return new XMIResourceImpl(uri) {
+				@Override
+				public void doLoad(InputStream inputStream, Map<?, ?> options) throws IOException {
+				}
+				@Override
+				public EObject getEObject(String uriFragment) {
+					return getResource().getEObject(uriFragment);
+				}
+				@Override
+				public EList<EObject> getContents() {
+					return getResource().getContents();
+				}
+			};
 		}
 		return null;
 	}
