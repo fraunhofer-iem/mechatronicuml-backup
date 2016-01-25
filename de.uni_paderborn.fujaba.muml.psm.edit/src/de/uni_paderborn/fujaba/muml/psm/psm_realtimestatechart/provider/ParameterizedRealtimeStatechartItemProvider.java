@@ -83,7 +83,7 @@ public class ParameterizedRealtimeStatechartItemProvider extends RealtimeStatech
 				 getString("_UI_ParameterizedRealtimeStatechart_allParameters_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterizedRealtimeStatechart_allParameters_feature", "_UI_ParameterizedRealtimeStatechart_type"),
 				 Psm_realtimestatechartPackage.Literals.PARAMETERIZED_REALTIME_STATECHART__ALL_PARAMETERS,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -159,6 +159,9 @@ public class ParameterizedRealtimeStatechartItemProvider extends RealtimeStatech
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterizedRealtimeStatechart.class)) {
+			case Psm_realtimestatechartPackage.PARAMETERIZED_REALTIME_STATECHART__ALL_PARAMETERS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case Psm_realtimestatechartPackage.PARAMETERIZED_REALTIME_STATECHART__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

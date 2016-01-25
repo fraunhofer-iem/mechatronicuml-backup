@@ -56,6 +56,7 @@ public class RealtimeStatechartParameterItemProvider extends NamedElementItemPro
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +79,28 @@ public class RealtimeStatechartParameterItemProvider extends NamedElementItemPro
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechartParameter_statechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechartParameter_statechart_feature", "_UI_RealtimeStatechartParameter_type"),
+				 RealtimestatechartparameterPackage.Literals.REALTIME_STATECHART_PARAMETER__STATECHART,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

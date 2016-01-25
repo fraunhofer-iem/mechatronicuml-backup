@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 
 /**
@@ -95,7 +96,7 @@ public class RefinedStructuredResourceInstanceItemProvider extends StructuredRes
 				 getString("_UI_RefinedStructuredResourceInstance_allUsedMessageTypes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RefinedStructuredResourceInstance_allUsedMessageTypes_feature", "_UI_RefinedStructuredResourceInstance_type"),
 				 CodegenPackage.Literals.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -139,6 +140,12 @@ public class RefinedStructuredResourceInstanceItemProvider extends StructuredRes
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(RefinedStructuredResourceInstance.class)) {
+			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

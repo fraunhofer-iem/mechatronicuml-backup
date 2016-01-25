@@ -64,6 +64,8 @@ public class GenSystemItemProvider
 			super.getPropertyDescriptors(object);
 
 			addGenECUsPropertyDescriptor(object);
+			addCicPropertyDescriptor(object);
+			addHpicPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +87,50 @@ public class GenSystemItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cic feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCicPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenSystem_cic_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenSystem_cic_feature", "_UI_GenSystem_type"),
+				 CodegenPackage.Literals.GEN_SYSTEM__CIC,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hpic feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHpicPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenSystem_hpic_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenSystem_hpic_feature", "_UI_GenSystem_type"),
+				 CodegenPackage.Literals.GEN_SYSTEM__HPIC,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
