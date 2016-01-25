@@ -51,9 +51,9 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 *  HybridPorts of a SturcutedComponent are Replaced  with DiscretePorts
 */
 
-mapping StaticStructuredComponent::transform():EObject  inherits OclAny::transform {
+mapping StaticStructuredComponent::transform():EObject  {
 	init {
-		result := self.map create();
+		result := self.map transform();
 	}
 	var component:StaticStructuredComponent = result.oclAsType(StaticStructuredComponent);
 	component.componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
@@ -68,9 +68,11 @@ mapping StaticStructuredComponent::transform():EObject  inherits OclAny::transfo
 * The HybridPorts of a HybridComponent are Replaced  with DiscretePorts
 */
 
-mapping StaticAtomicComponent::transform():EObject inherits OclAny::transform{
+	
+
+mapping StaticAtomicComponent::transform():EObject{
 	init {
-		result := self.map create();
+		result := self.map transform();
 	}
 	var component:StaticAtomicComponent = result.oclAsType(StaticAtomicComponent);
 	component.componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
@@ -78,8 +80,8 @@ mapping StaticAtomicComponent::transform():EObject inherits OclAny::transform{
 			component.behavior:=self.map mapcreateEmptyRealtimeStateChart();
 	}endif;
 		component.name:=self.name;
-	
 }
+
 
 
 
