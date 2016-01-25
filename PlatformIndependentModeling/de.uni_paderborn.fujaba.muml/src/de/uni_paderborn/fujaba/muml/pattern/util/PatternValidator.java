@@ -268,7 +268,7 @@ public class PatternValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String VERIFIED_CONFIGURATION__ENSURE_BINDING_FOR_ALL_PATTERN_PARAMETERS__EEXPRESSION = "-- A VerifiedConfiguration must bind every CoordinaionPattern parameter\r\n" +
-		"self.coordinationPattern.patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))";
+		"self.coordinationPattern.oclAsSet()->select(object|object <> null).patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))";
 
 	/**
 	 * Validates the ensureBindingForAllPatternParameters constraint of '<em>Verified Configuration</em>'.

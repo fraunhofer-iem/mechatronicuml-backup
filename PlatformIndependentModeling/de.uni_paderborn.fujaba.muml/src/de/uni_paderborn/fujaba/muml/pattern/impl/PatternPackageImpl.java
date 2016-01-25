@@ -628,7 +628,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (verifiedConfigurationEClass, 
 		   source, 
 		   new String[] {
-			 "ensureBindingForAllPatternParameters", "-- A VerifiedConfiguration must bind every CoordinaionPattern parameter\r\nself.coordinationPattern.patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))"
+			 "ensureBindingForAllPatternParameters", "-- A VerifiedConfiguration must bind every CoordinaionPattern parameter\r\nself.coordinationPattern.oclAsSet()->select(object|object <> null).patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))"
 		   });
 	}
 

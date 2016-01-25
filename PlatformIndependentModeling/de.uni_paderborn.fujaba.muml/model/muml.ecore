@@ -3025,7 +3025,7 @@
         <details key="constraints" value="ensureBindingForAllPatternParameters"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="ensureBindingForAllPatternParameters" value="-- A VerifiedConfiguration must bind every CoordinaionPattern parameter&#xD;&#xA;self.coordinationPattern.patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))"/>
+        <details key="ensureBindingForAllPatternParameters" value="-- A VerifiedConfiguration must bind every CoordinaionPattern parameter&#xD;&#xA;self.coordinationPattern.oclAsSet()->select(object|object &lt;> null).patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
           eType="#//behavior/ParameterBinding" containment="true">
