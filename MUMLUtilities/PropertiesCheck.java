@@ -95,7 +95,7 @@ public class PropertiesCheck {
 		NodeList nodeList = document.getElementsByTagName(tagName);
 		if (nodeList.getLength() > 0) {
 			Node license = nodeList.item(0);
-			license.getAttributes().getNamedItem("url").setNodeValue("%licenseURL");
+			license.getAttributes().getNamedItem(attributeName).setNodeValue(attributeValue);
 		}
 	}
 
