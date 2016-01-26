@@ -29,11 +29,27 @@ public class HWPlatformInstanceConfigurationEditor
 
 			addPropertyEditor(createEditorParentHWPlatformInstance_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwplatformInstances_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorNetworkingHardwareInstances_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorResources_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorNetworkConnectorInstances_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorParentHWPlatformInstance_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorHwplatformInstances_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorNetworkingHardwareInstances_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorResources_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorNetworkConnectorInstances_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -44,6 +60,8 @@ public class HWPlatformInstanceConfigurationEditor
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
@@ -63,6 +81,67 @@ public class HWPlatformInstanceConfigurationEditor
 			this.editorParentHWPlatformInstance_property_tab_generalTab = editor;
 		}
 		return this.editorParentHWPlatformInstance_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwplatformInstances_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwplatformInstances_property_tab_generalTab_Editor() {
+		if (this.editorHwplatformInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
+					.getHWPlatformInstanceConfiguration_HwplatformInstances();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The set of HWPlatformInstances of this HWPlatformInstanceConfiguration.");
+
+			this.editorHwplatformInstances_property_tab_generalTab = editor;
+		}
+		return this.editorHwplatformInstances_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNetworkingHardwareInstances_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNetworkingHardwareInstances_property_tab_generalTab_Editor() {
+		if (this.editorNetworkingHardwareInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
+					.getHWPlatformInstanceConfiguration_NetworkingHardwareInstances();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The NetworkingHardwareInstances of this HWPlatformInstanceConfiguration. \n");
+
+			this.editorNetworkingHardwareInstances_property_tab_generalTab = editor;
+		}
+		return this.editorNetworkingHardwareInstances_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorResources_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorResources_property_tab_generalTab_Editor() {
+		if (this.editorResources_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
+					.getHWPlatformInstanceConfiguration_Resources();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The ResourceInstances that belong to this HWPlatformInstance.");
+
+			this.editorResources_property_tab_generalTab = editor;
+		}
+		return this.editorResources_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNetworkConnectorInstances_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNetworkConnectorInstances_property_tab_generalTab_Editor() {
+		if (this.editorNetworkConnectorInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
+					.getHWPlatformInstanceConfiguration_NetworkConnectorInstances();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The NetworkingConnectorInstances of this HWPlatformInstanceConfiguration. \nNetworkConnectorInstances are used to connect different HWPlatformInstances via bridges or HWPortInstances.");
+
+			this.editorNetworkConnectorInstances_property_tab_generalTab = editor;
+		}
+		return this.editorNetworkConnectorInstances_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -118,8 +197,9 @@ public class HWPlatformInstanceConfigurationEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.documentation",
-					"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

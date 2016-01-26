@@ -29,6 +29,8 @@ public abstract class PlatformPartEditor
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwPortParts_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -37,6 +39,8 @@ public abstract class PlatformPartEditor
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwPortParts_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
@@ -44,6 +48,8 @@ public abstract class PlatformPartEditor
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
@@ -63,6 +69,22 @@ public abstract class PlatformPartEditor
 			this.editorCardinality_property_tab_generalTab = editor;
 		}
 		return this.editorCardinality_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwPortParts_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwPortParts_property_tab_generalTab_Editor() {
+		if (this.editorHwPortParts_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+					.getPlatformPart_HwPortParts();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The delegation ports of this HWPlatformPart.\nThey are derived from the hwPlatformType.");
+
+			this.editorHwPortParts_property_tab_generalTab = editor;
+		}
+		return this.editorHwPortParts_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;

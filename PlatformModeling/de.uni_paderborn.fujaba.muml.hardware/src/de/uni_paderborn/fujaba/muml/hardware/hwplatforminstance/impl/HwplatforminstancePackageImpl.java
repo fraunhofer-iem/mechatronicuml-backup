@@ -148,7 +148,6 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
@@ -158,6 +157,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		ComponentPackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies

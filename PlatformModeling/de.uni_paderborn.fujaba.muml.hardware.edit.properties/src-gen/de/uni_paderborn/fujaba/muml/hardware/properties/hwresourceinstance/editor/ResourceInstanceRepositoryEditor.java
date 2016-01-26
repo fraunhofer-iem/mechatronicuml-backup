@@ -27,9 +27,13 @@ public class ResourceInstanceRepositoryEditor
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
+			addPropertyEditor(createEditorResourceInstances_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorResourceInstances_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,8 +45,26 @@ public class ResourceInstanceRepositoryEditor
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorResourceInstances_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorResourceInstances_property_tab_generalTab_Editor() {
+		if (this.editorResourceInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+					.getResourceInstanceRepository_ResourceInstances();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The ResourceInstances that are contained in this ResourceInstanceRepository. They are derived from a ResourceTypeRepository.");
+
+			this.editorResourceInstances_property_tab_generalTab = editor;
+		}
+		return this.editorResourceInstances_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -98,9 +120,8 @@ public class ResourceInstanceRepositoryEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"property.tab.documentation", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.documentation",
+					"property.tab.extensions"}).contains(tab);
 		}
 	}
 

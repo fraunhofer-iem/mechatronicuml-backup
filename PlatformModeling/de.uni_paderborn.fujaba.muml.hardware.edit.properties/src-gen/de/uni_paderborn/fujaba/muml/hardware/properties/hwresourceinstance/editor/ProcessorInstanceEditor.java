@@ -27,6 +27,8 @@ public class ProcessorInstanceEditor extends de.uni_paderborn.fujaba.properties.
 
 			addPropertyEditor(createEditorResourceType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwports_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorFrequency_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorMIPS_property_tab_generalTab_Editor(), false);
@@ -43,6 +45,8 @@ public class ProcessorInstanceEditor extends de.uni_paderborn.fujaba.properties.
 
 			addPropertyEditor(createEditorResourceType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwports_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorFrequency_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorMIPS_property_tab_generalTab_Editor(), false);
@@ -58,6 +62,8 @@ public class ProcessorInstanceEditor extends de.uni_paderborn.fujaba.properties.
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
@@ -138,6 +144,21 @@ public class ProcessorInstanceEditor extends de.uni_paderborn.fujaba.properties.
 		return this.editorResourceType_property_tab_generalTab;
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwports_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwports_property_tab_generalTab_Editor() {
+		if (this.editorHwports_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+					.getResourceInstance_Hwports();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The HWPort of this ResourceType.\n\n");
+
+			this.editorHwports_property_tab_generalTab = editor;
+		}
+		return this.editorHwports_property_tab_generalTab;
+	}
+
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
 		if (this.editorName_property_tab_generalTab == null) {
@@ -204,7 +225,7 @@ public class ProcessorInstanceEditor extends de.uni_paderborn.fujaba.properties.
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
 					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.extensions"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

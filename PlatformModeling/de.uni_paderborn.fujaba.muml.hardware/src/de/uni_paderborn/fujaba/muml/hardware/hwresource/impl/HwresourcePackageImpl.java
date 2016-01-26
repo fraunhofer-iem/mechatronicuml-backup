@@ -280,7 +280,6 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
@@ -290,6 +289,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		ComponentPackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies

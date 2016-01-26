@@ -44,6 +44,10 @@ public abstract class CommunicationProtocolEditor
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorIsSerial_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorDataFrameSize_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorBandwidth_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -67,6 +71,10 @@ public abstract class CommunicationProtocolEditor
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorIsSerial_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorDataFrameSize_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorBandwidth_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
@@ -74,6 +82,8 @@ public abstract class CommunicationProtocolEditor
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
@@ -153,6 +163,36 @@ public abstract class CommunicationProtocolEditor
 			this.editorIsSerial_property_tab_generalTab = editor;
 		}
 		return this.editorIsSerial_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataFrameSize_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataFrameSize_property_tab_generalTab_Editor() {
+		if (this.editorDataFrameSize_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getCommunicationProtocol_DataFrameSize();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The size of a data frame.");
+
+			this.editorDataFrameSize_property_tab_generalTab = editor;
+		}
+		return this.editorDataFrameSize_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBandwidth_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBandwidth_property_tab_generalTab_Editor() {
+		if (this.editorBandwidth_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getCommunicationProtocol_Bandwidth();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The bandwidth of this CommunicationMedia.");
+
+			this.editorBandwidth_property_tab_generalTab = editor;
+		}
+		return this.editorBandwidth_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;

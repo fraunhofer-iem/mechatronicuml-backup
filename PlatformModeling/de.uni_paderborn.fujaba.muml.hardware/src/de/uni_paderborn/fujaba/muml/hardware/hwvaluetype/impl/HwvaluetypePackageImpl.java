@@ -140,7 +140,6 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
@@ -150,6 +149,7 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		ComponentPackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies

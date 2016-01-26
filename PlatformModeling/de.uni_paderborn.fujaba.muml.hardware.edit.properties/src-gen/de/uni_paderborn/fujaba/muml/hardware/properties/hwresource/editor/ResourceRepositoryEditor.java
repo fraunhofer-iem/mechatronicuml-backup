@@ -25,9 +25,17 @@ public class ResourceRepositoryEditor extends de.uni_paderborn.fujaba.properties
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
+			addPropertyEditor(createEditorResources_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorProtocols_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorResources_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorProtocols_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,8 +47,41 @@ public class ResourceRepositoryEditor extends de.uni_paderborn.fujaba.properties
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorResources_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorResources_property_tab_generalTab_Editor() {
+		if (this.editorResources_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getResourceRepository_Resources();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The ResourceTypes that are contained in this ResourceTypeRepository.");
+
+			this.editorResources_property_tab_generalTab = editor;
+		}
+		return this.editorResources_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorProtocols_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorProtocols_property_tab_generalTab_Editor() {
+		if (this.editorProtocols_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getResourceRepository_Protocols();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The CommunicationProtocols that belong to this ResourceTypeRepository.\nCommunicationProtocols are used to specify the protocol used by HWPort and CommunicationMedia.");
+
+			this.editorProtocols_property_tab_generalTab = editor;
+		}
+		return this.editorProtocols_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -95,9 +136,8 @@ public class ResourceRepositoryEditor extends de.uni_paderborn.fujaba.properties
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"property.tab.documentation", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

@@ -33,6 +33,8 @@ public class NetworkBridgeEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
+			addPropertyEditor(createEditorDelay_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -42,6 +44,8 @@ public class NetworkBridgeEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorDelay_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -55,8 +59,26 @@ public class NetworkBridgeEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDelay_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDelay_property_tab_generalTab_Editor() {
+		if (this.editorDelay_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+					.getNetworkBridge_Delay();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The time variation this Bridge needs to transmit data between different Networks.");
+
+			this.editorDelay_property_tab_generalTab = editor;
+		}
+		return this.editorDelay_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectors_property_tab_generalTab;
@@ -126,8 +148,8 @@ public class NetworkBridgeEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.documentation",
-					"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

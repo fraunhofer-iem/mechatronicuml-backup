@@ -29,6 +29,8 @@ public abstract class MemoryResourceInstanceEditor
 
 			addPropertyEditor(createEditorResourceType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwports_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorMemorySize_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorThroughput_property_tab_generalTab_Editor(), false);
@@ -41,6 +43,8 @@ public abstract class MemoryResourceInstanceEditor
 
 			addPropertyEditor(createEditorResourceType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwports_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorMemorySize_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorThroughput_property_tab_generalTab_Editor(), false);
@@ -52,6 +56,8 @@ public abstract class MemoryResourceInstanceEditor
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else {
 		}
@@ -100,6 +106,21 @@ public abstract class MemoryResourceInstanceEditor
 			this.editorResourceType_property_tab_generalTab = editor;
 		}
 		return this.editorResourceType_property_tab_generalTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwports_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwports_property_tab_generalTab_Editor() {
+		if (this.editorHwports_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+					.getResourceInstance_Hwports();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The HWPort of this ResourceType.\n\n");
+
+			this.editorHwports_property_tab_generalTab = editor;
+		}
+		return this.editorHwports_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
