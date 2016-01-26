@@ -7,25 +7,20 @@
 
    <description url="https://trac.cs.upb.de/mechatronicuml">
       This feature provides the Fujaba Real-Time Tool Suite.
-It is a tool suite for modeling and formally verifying the software of networked mechatronic systems using the DSL ​MechatronicUML.
-The Fujaba Real-Time Tool Suite is implemented as a plug-in to the Eclipse framework.
+It is a tool suite for modeling and formally verifying the software
+of networked mechatronic systems using the DSL ​MechatronicUML.
+The Fujaba Real-Time Tool Suite is implemented as a plug-in to
+the Eclipse framework.
    </description>
 
-   <copyright>
-      Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
-All rights reserved. This program and the accompanying materials
-are made available under the terms of the Eclipse Public License v1.0
-which accompanies this distribution, and is available at
-http://www.eclipse.org/legal/epl-v10.html
+   <copyright url="%copyrightURL">
+      %copyright
    </copyright>
 
-   <license url="license.html">
-      Fujaba Licence Agreement
-July 21, 2012
-
-This feature is free software; you can redistribute and/or modify it under the terms of the Eclipse Public License (EPL) as published by the Eclipse Foundation. You can access the full text of the license agreement under http://www.eclipse.org/legal/epl-v10.html
-This feature is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+   <license url="%licenseURL">
+      %license
    </license>
+
    <includes
          id="de.uni_paderborn.fujaba.muml.pim.feature"
          version="0.0.0"/>
@@ -227,7 +222,5 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    <includes
          id="de.uni_paderborn.fujaba.modelcopy.source.feature"
          version="0.0.0"/>
-
- 
 
 </feature>
