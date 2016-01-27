@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:one_to_n_schemata="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_N8D30HvSEeWJtcJpbyRDKg">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:one_to_n_schemata="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmi:id="_N8D30HvSEeWJtcJpbyRDKg">
   <categories xmi:id="_N8D30XvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_N8D30nvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YwviYHvSEeWJtcJpbyRDKg" name="rtscRole2" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
-      <variables xmi:id="_llXS8MTlEeW37cQOSjXgbg" name="globalVar">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fJ-R8MTnEeWWl5026f4uIg" value="true"/>
-      </variables>
       <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg" urgent="false">
         <clockConstraints xmi:id="_LUWV0JdJEeW_n8FySayE1g" clock="_I7_-YJdJEeW_n8FySayE1g" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_MWDDYJdJEeW_n8FySayE1g">
@@ -25,29 +21,9 @@
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DALtMHvfEeWJtcJpbyRDKg" kind="TRIGGER">
           <message xmi:id="_DT4FQHvfEeWJtcJpbyRDKg" instanceOf="_WdIhAHvSEeWJtcJpbyRDKg"/>
           <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:SingleReceive" xmi:id="_tKO6EH7-EeWVlPbN-IV2YA">
-            <condition xsi:type="sdcec:ComparisonExpression" xmi:id="_M1TAsMTnEeWWl5026f4uIg" operator="EQUAL">
-              <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_M1TAscTnEeWWl5026f4uIg" typedNamedElement="_llXS8MTlEeW37cQOSjXgbg"/>
-              <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_M1TAssTnEeWWl5026f4uIg" operator="EQUAL">
-                <leftExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_M1TAs8TnEeWWl5026f4uIg">
-                  <position xmi:id="_M1TAtMTnEeWWl5026f4uIg"/>
-                </leftExpression>
-                <rightExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_M1TAtcTnEeWWl5026f4uIg">
-                  <position xmi:id="_M1TAtsTnEeWWl5026f4uIg" kind="LAST"/>
-                </rightExpression>
-              </rightExpression>
-            </condition>
+            <condition xsi:type="sdcec:LiteralExpression" xmi:id="_bhpgYMTnEeWWl5026f4uIg" value="true"/>
           </oneToManyCommunicationSchema>
         </events>
-        <action xmi:id="_TfSo8MTmEeWWl5026f4uIg" name="globalVar := not globalVar;">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_1F2v4MTmEeWWl5026f4uIg">
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_1F2v4cTmEeWWl5026f4uIg" assignOperator=":=">
-              <rhs_assignExpression xsi:type="sdcec:UnaryExpression" xmi:id="_1F2v4sTmEeWWl5026f4uIg">
-                <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_1F2v48TmEeWWl5026f4uIg" typedNamedElement="_llXS8MTlEeW37cQOSjXgbg"/>
-              </rhs_assignExpression>
-              <lhs_typedNamedElementExpression xmi:id="_1F2v5MTmEeWWl5026f4uIg" typedNamedElement="_llXS8MTlEeW37cQOSjXgbg"/>
-            </expressions>
-          </expressions>
-        </action>
       </transitions>
       <transitions xmi:id="_vDh8EHvfEeWJtcJpbyRDKg" priority="1" target="_YwviYXvSEeWJtcJpbyRDKg" source="_a1XFgHvSEeWJtcJpbyRDKg"/>
       <states xmi:id="_YwviYXvSEeWJtcJpbyRDKg" name="init" outgoingTransitions="_ec7pIHvSEeWJtcJpbyRDKg" incomingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" initial="true">
