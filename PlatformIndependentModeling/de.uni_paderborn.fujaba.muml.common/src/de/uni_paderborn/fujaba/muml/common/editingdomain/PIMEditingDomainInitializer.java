@@ -33,8 +33,8 @@ public class PIMEditingDomainInitializer implements IEditingDomainInitializer {
 	public void initialize(EditingDomain editingDomain) {
 
 		if (!hasPrimitiveTypes(editingDomain)) {
-		//	editingDomain.getResourceSet().getResource(
-		//			de.uni_paderborn.fujaba.muml.types.blackbox.TypesBlackbox.PREDEFINED_TYPES_URI, true);
+			editingDomain.getResourceSet().getResource(
+					de.uni_paderborn.fujaba.muml.types.blackbox.TypesBlackbox.PREDEFINED_TYPES_URI, true);
 		}		
 	}
 

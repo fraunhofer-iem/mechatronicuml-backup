@@ -45,13 +45,13 @@ public class TypeCategoryInitializer implements IModelInitializer {
 		}
 
 		// Deactivated, because of Shared Primitive Types; see MUML #1008
-		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
-			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
-					.createPrimitiveDataType();
-			primitiveDataType.setPrimitiveType(type);
-			primitiveDataType.setName(type.getName().toLowerCase());
-			typesCategory.getModelElements().add(primitiveDataType);
-		}
+//		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
+//			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
+//					.createPrimitiveDataType();
+//			primitiveDataType.setPrimitiveType(type);
+//			primitiveDataType.setName(type.getName().toLowerCase());
+//			typesCategory.getModelElements().add(primitiveDataType);
+//		}
 	}
 
 }
