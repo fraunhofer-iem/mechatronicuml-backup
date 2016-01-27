@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.eclipse.core.runtime.Platform;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -13,8 +14,13 @@ import de.uni_paderborn.fujaba.tests.GenmodelTest;
 @RunWith(Parameterized.class)
 public class PimGenmodelTest extends GenmodelTest {
 
-	public PimGenmodelTest(String genmodelPath) throws IOException {
+	public PimGenmodelTest(String genmodelPath) throws Exception {
 		super(genmodelPath);
+		for (String args : Platform.getApplicationArgs()) {
+			if (args.equals("-testargument")) {
+				throw new Exception(args);
+			}
+		}
 	}
 	
 	@Parameters
