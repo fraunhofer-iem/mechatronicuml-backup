@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- MUML Predefined Types -->
+<!-- Please make sure that the uuid of every element equals its name, because we rely on that (see TypesBlackbox.findPredefinedType()) -->
+
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0">
   <types:PrimitiveDataType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="void" name="void"/>
   <types:PrimitiveDataType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="boolean" name="boolean" primitiveType="BOOLEAN"/>
