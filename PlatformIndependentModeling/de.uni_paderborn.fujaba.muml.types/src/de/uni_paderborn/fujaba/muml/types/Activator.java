@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.types;
 
-import org.eclipse.emf.ecore.resource.Resource;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -18,7 +17,7 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("mumltypes", new PredefinedTypesResourceFactory());
+//		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("mumltypes", new PredefinedTypesResourceFactory());
 	}
 
 	/*
@@ -27,7 +26,7 @@ public class Activator implements BundleActivator {
 	 */
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().remove("mumltypes");
+//		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().remove("mumltypes");
 	}
 
 }

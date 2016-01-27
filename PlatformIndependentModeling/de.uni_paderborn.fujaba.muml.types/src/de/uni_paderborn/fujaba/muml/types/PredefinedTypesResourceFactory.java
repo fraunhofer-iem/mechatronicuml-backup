@@ -1,19 +1,36 @@
 package de.uni_paderborn.fujaba.muml.types;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Collections;
-import java.util.Map;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
+/**
+ * This ResourceFactory ensures that the PredefinedTypes resource is only
+ * created once (as singleton).
+ * 
+ * This is considered harmful, we should load the Predefined Types Resource in
+ * every ResourceSet. See bug #1379 for details.
+ * 
+ * @author bingo
+ * @deprecated Do not use this anymore, but instead make sure that Predefined Types are loaded in every ResourceSet (see #1379).
+ *
+ */
+@Deprecated
 public class PredefinedTypesResourceFactory implements Resource.Factory {
 
-	public static URI PREDEFINED_TYPES_URI = URI.createURI("platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes");
+	public PredefinedTypesResourceFactory() {
+
+	}
+
+	/**
+	 * @deprecated Please use TypesBlackbox.PREDEFINED_TYPES_URI
+	 */
+	@Deprecated
+	public static URI PREDEFINED_TYPES_URI = URI
+			.createURI("platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes");
 
 	private static Resource PREDEFINED_TYPES_RESOURCE = null;
 
@@ -31,19 +48,7 @@ public class PredefinedTypesResourceFactory implements Resource.Factory {
 
 	public Resource createResource(URI uri) {
 		if (PREDEFINED_TYPES_URI.equals(uri)) {
-			return new XMIResourceImpl(uri) {
-				@Override
-				public void doLoad(InputStream inputStream, Map<?, ?> options) throws IOException {
-				}
-				@Override
-				public EObject getEObject(String uriFragment) {
-					return getResource().getEObject(uriFragment);
-				}
-				@Override
-				public EList<EObject> getContents() {
-					return getResource().getContents();
-				}
-			};
+			return getResource();
 		}
 		return null;
 	}
