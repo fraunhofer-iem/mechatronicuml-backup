@@ -193,9 +193,9 @@ public class GenerateAll {
 		monitor.worked(1);
 
 		// run protobuf-message-gen
-		String command = "java -jar " + target + File.separator + "messages" + File.separator
-				+ "protoc-1.0M4.jar -I=" + target + File.separator + "messages" + " --c_out=" + target
-				+ File.separator + "messages" + File.separator + " Messages.proto";
+				String command = "java -jar " +"\"" +target + File.separator + "messages" + File.separator
+						+ "protoc-1.0M4.jar\" -I=\"" + target + File.separator + "messages\"" + " --c_out=\"" + target
+						+ File.separator + "messages" +"\""+ " Messages.proto";
 
 		String output = executeCommand(command);
 		System.out.println(output);
