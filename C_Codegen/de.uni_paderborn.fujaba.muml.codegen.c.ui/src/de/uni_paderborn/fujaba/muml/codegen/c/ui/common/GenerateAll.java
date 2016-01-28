@@ -12,40 +12,33 @@ package de.uni_paderborn.fujaba.muml.codegen.c.ui.common;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import org.eclipse.emf.common.util.BasicMonitor;
 import org.apache.commons.io.FileUtils;
-import org.eclipse.core.internal.utils.FileUtil;
 import org.eclipse.core.resources.IContainer;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.osgi.framework.Bundle;
+import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
-
-import org.storydriven.core.ExtendableElement;
-
-
 
 /**
  * Main entry point of the 'C' generation module.
@@ -99,56 +92,68 @@ public class GenerateAll {
 		if (!targetFolder.getLocation().toFile().exists()) {
 			targetFolder.getLocation().toFile().mkdirs();
 		}
-		
-		// final URI template0 = getTemplateURI("de.uni_paderborn.fujaba.muml.codegen.c", new Path("/de/uni_paderborn/fujaba/muml/model/gen/c/main/main.emtl"));
-		// de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(modelURI, targetFolder.getLocation().toFile(), arguments) {
-		//	protected URI createTemplateURI(String entry) {
-		//		return template0;
-		//	}
-		//};
-		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-		try {		
-			monitor.subTask("Loading...");		
-			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
+
+		// final URI template0 =
+		// getTemplateURI("de.uni_paderborn.fujaba.muml.codegen.c", new
+		// Path("/de/uni_paderborn/fujaba/muml/model/gen/c/main/main.emtl"));
+		// de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new
+		// de.uni_paderborn.fujaba.muml.codegen.c.main.Main(modelURI,
+		// targetFolder.getLocation().toFile(), arguments) {
+		// protected URI createTemplateURI(String entry) {
+		// return template0;
+		// }
+		// };
+		// gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+		try {
+			monitor.subTask("Loading...");
+			URL resources = FileLocator.toFileURL(Platform
+					.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
 			File sourceFolder = new File(resources.toURI());
 			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
 			int monitorCounter = 1;
 
 			Resource modelResource = new ResourceSetImpl().getResource(modelURI, true);
-			
-			if (modelResource.getContents().get(0).eClass().getName() == "Diagram"){
+
+			if (modelResource.getContents().get(0).eClass().getName() == "Diagram") {
 				Diagram diagImpl = (Diagram) modelResource.getContents().get(0);
 
-				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)diagImpl.getElement();
+				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration) diagImpl.getElement();
 				generateCIC(monitor, cic);
-				
-				/*
-				monitor.subTask("Copying library to target folders...");
 
-				File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
-				this.copyFolder(sourceFolder, target);
-				monitor.worked(++monitorCounter);
-				*/
-				
-			}else if (modelResource.getContents().get(0).eClass().getName() == "RootNode") {
+				/*
+				 * monitor.subTask("Copying library to target folders...");
+				 * 
+				 * File target = new
+				 * File(targetFolder.getLocationURI().toString().substring(5) +
+				 * File.separator + cic.getName());
+				 * this.copyFolder(sourceFolder, target);
+				 * monitor.worked(++monitorCounter);
+				 */
+
+			} else if (modelResource.getContents().get(0).eClass().getName() == "RootNode") {
 				RootNode rootNode = (RootNode) resource.getContents().get(0);
 
-				for (ModelElementCategory mec : rootNode.getCategories()){
-					if (mec.getKey().matches("de.uni_paderborn.fujaba.muml.instance.category")){
+				for (ModelElementCategory mec : rootNode.getCategories()) {
+					if (mec.getKey().matches("de.uni_paderborn.fujaba.muml.instance.category")) {
 
-						for (ExtendableElement me : mec.getModelElements()){
-							ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)me;
+						for (ExtendableElement me : mec.getModelElements()) {
+							ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration) me;
 
-							monitor.subTask("generating "+cic.getName()+"...");
-							de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
+							monitor.subTask("generating " + cic.getName() + "...");
+							de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(
+									cic, targetFolder.getLocation().toFile(), arguments);
 							monitor.worked(++monitorCounter);
-							
+
 							monitor.subTask("Copying library to target folder...");
-							File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
-							this.copyFolder(sourceFolder, target);
+							File target = new File(targetFolder.getLocationURI().toString().substring(5)
+									+ File.separator + cic.getName());
+							FileUtils.copyDirectory(sourceFolder, target);
 							monitor.worked(++monitorCounter);
-							
-							String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+
+							String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil
+									.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c",
+											"de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(),
+											targetFolder.getFullPath().toString(), new ArrayList<String>());
 							gen0.setGenerationID(generationID);
 							gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 
@@ -156,48 +161,46 @@ public class GenerateAll {
 					}
 				}
 			}
-		}
-		catch (UnsupportedOperationException e){
+		} catch (UnsupportedOperationException e) {
+			e.printStackTrace();
+		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
-		catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
-		
+
 	}
 
-	public void generateCIC(IProgressMonitor monitor,
-			ComponentInstanceConfiguration cic) throws IOException {
-		//System.out.println(cic.getName());
+	public void generateCIC(IProgressMonitor monitor, ComponentInstanceConfiguration cic) throws IOException  {
+		// System.out.println(cic.getName());
 
-		monitor.subTask("generating "+cic.getName()+"...");
-		de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		monitor.subTask("generating " + cic.getName() + "...");
+		de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(
+				cic, targetFolder.getLocation().toFile(), arguments);
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID(
+				"de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main",
+				modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.worked(1);
-		try {	
-			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
-			File sourceFolder = new File(resources.toURI());
-			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
+		URL resources = FileLocator.toFileURL(Platform
+				.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
+		File sourceFolder = new File(URLDecoder.decode(resources.getFile(), "UTF-8"));
 
 		monitor.subTask("Copying library to target folder...");
-		File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
-		this.copyFolder(sourceFolder, target);
+		File target = new File(URLDecoder.decode(
+				targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName(), "UTF-8"));
+		FileUtils.copyDirectory(sourceFolder, target);
+
 		monitor.worked(1);
-		
-		 //run protobuf-message-gen
-		String command = "java -jar " + target + File.separator + "messages" + File.separator + "protoc-1.0M4.jar -I=" + target + File.separator + "messages" + " --c_out=" + target + File.separator + "messages" + File.separator + " Messages.proto"; 
-		
+
+		// run protobuf-message-gen
+		String command = "java -jar " + target + File.separator + "messages" + File.separator
+				+ "protoc-1.0M4.jar -I=" + target + File.separator + "messages" + " --c_out=" + target
+				+ File.separator + "messages" + File.separator + " Messages.proto";
+
 		String output = executeCommand(command);
 		System.out.println(output);
-		
-		}
-		catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
 	}
-	
+
 	/**
 	 * Finds the template in the plug-in. Returns the template plug-in URI.
 	 * 
@@ -246,33 +249,28 @@ public class GenerateAll {
 		}
 		return result;
 	}
-	
-	public void copyFolder(File sourceLocation , File targetLocation) throws IOException 
-	{
-		FileUtils.copyDirectory(sourceLocation, targetLocation);
-	}
+
 	
 	private String executeCommand(String command) {
-		 
+
 		StringBuffer output = new StringBuffer();
- 
+
 		Process p;
 		try {
 			p = Runtime.getRuntime().exec(command);
 			p.waitFor();
-			BufferedReader reader = 
-                            new BufferedReader(new InputStreamReader(p.getInputStream()));
- 
-                        String line = "";			
-			while ((line = reader.readLine())!= null) {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+			String line = "";
+			while ((line = reader.readLine()) != null) {
 				output.append(line + "\n");
 			}
- 
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
- 
+
 		return output.toString();
- 
+
 	}
 }
