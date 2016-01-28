@@ -25,6 +25,8 @@ import java.util.Enumeration;
 import java.util.List;
 
 import org.eclipse.emf.common.util.BasicMonitor;
+import org.apache.commons.io.FileUtils;
+import org.eclipse.core.internal.utils.FileUtil;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -247,33 +249,7 @@ public class GenerateAll {
 	
 	public void copyFolder(File sourceLocation , File targetLocation) throws IOException 
 	{
-	    if (sourceLocation.isDirectory()) 
-	    {
-	        if (!targetLocation.exists()) 
-	        {
-	            targetLocation.mkdir();
-	        }
-	        String[] subFolder = sourceLocation.list();
-	        for (int i=0; i<subFolder.length; i++) 
-	        {
-	            copyFolder(new File(sourceLocation, subFolder[i]),
-	                    new File(targetLocation, subFolder[i]));
-	        }
-	    } 
-	    else 
-	    {
-	        byte[] buffer = new byte[1024];
-	        int x;
-	        InputStream input = new FileInputStream(sourceLocation);
-	        OutputStream output = new FileOutputStream(targetLocation);
-	        
-	        while ((x = input.read(buffer)) > 0) 
-	        {
-	            output.write(buffer, 0, x);
-	        }
-	        input.close();
-	        output.close();
-	    }
+		FileUtils.copyDirectory(sourceLocation, targetLocation);
 	}
 	
 	private String executeCommand(String command) {

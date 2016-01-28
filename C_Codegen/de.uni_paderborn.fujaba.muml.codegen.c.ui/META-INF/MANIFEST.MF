@@ -22,7 +22,8 @@ Require-Bundle: org.eclipse.ui,
  de.uni_paderborn.fujaba.muml.codegen.c,
  de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.export;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.codegen.export.ui
+ de.uni_paderborn.fujaba.muml.codegen.export.ui,
+ org.apache.commons.io;bundle-version="2.2.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
