@@ -26,6 +26,8 @@ public class ExecuteQvtoTransformationCommand extends ChangeCommand {
 		this(transformationExecutor, modelExtents, new ExecutionContextImpl());
 	}
 	
+	
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public ExecuteQvtoTransformationCommand(TransformationExecutor transformationExecutor, List<ModelExtent> modelExtents, ExecutionContext executionContext){
 		super((Collection) getAllNotifiers(modelExtents));
@@ -39,6 +41,10 @@ public class ExecuteQvtoTransformationCommand extends ChangeCommand {
 	           "Diagnosis of several elements",
 	           getAllNotifiers(modelExtents).toArray()
 	          );
+	}
+	
+	public BasicDiagnostic getDiagnostic() {
+		return diagnostic;
 	}
 
 	private static Collection<EObject> getAllNotifiers(
