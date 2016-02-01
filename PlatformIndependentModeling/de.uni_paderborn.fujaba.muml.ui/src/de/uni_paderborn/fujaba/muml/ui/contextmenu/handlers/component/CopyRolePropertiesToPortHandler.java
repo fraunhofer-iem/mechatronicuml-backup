@@ -16,6 +16,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -130,15 +131,10 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
 		// check whether role and all necessary behavior references are set
 		if (role == null) {
-			MessageDialog.openInformation(shell, "Role not specified", //$NON-NLS-1$
-					"Refined Role must be set for this Port, to copy the Role properties."); //$NON-NLS-1$
-			return;
+			finalReportMessage = "Refined Role must be set for this Port, to copy the Role properties."; //$NON-NLS-1$
 		} else if (role.getCardinality() != null && role.getCardinality().getUpperBound().getValue() > 1
 				&& role.getCoordinatorBehavior() == null && role.getSubroleBehavior() == null) {
-			MessageDialog.openInformation(shell, "SubroleBehavior or AdaptationBehavior not set", //$NON-NLS-1$
-					"The multi role needs to specify a \"SubroleBehavior\" and a \"AdaptationBehavior\"."); //$NON-NLS-1$
-
-			return;
+			finalReportMessage = "The multi role needs to specify a \"SubroleBehavior\" and a \"AdaptationBehavior\"."; //$NON-NLS-1$
 		}
 
 		else if (FujabaCommonPlugin.showValidationResults(Collections.singletonList(role),
@@ -158,10 +154,10 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 						0);
 				int result = dialog.open();
 				// cancel has been pressed
-				if (result == 0) {
-					return;
-				} else {
+				if (result != 0) {
 					shallPortRTSCbeReplaced = true;
+				} else {
+					return;
 				}
 			}
 
@@ -172,31 +168,39 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
 			}
 
-			if (hadReceiverMessageBuffer) {
-				finalReportMessage += "Role properties have been successfully copied to the Port. Existing MessageBuffer specification was overwritten."; //$NON-NLS-1$
-
-			}
-
 			// call the transformation
-			executeCopyRoleTransformation(editingDomain, atomicComponent, port, shallPortRTSCbeReplaced);
-			/**
-			 * Create the Component RTSC Diagram
-			 */
-			if (isComponentRTSCCreated) {
-				createComponentRTSCDiagram(atomicComponent, shell);
-				finalReportMessage += "\n" //$NON-NLS-1$
-						+ "A new RTSC has been created for the Component:" //$NON-NLS-1$
-						+ atomicComponent.getName() + "."; //$NON-NLS-1$
+			Diagnostic diagnostic = executeCopyRoleTransformation(editingDomain, atomicComponent, port,
+					shallPortRTSCbeReplaced);
+			if (diagnostic.getCode() == Diagnostic.OK) {
+				if (hadReceiverMessageBuffer) {
+					finalReportMessage += "Role properties have been successfully copied to the Port. Existing MessageBuffer specification was overwritten."; //$NON-NLS-1$
 
+				} else {
+					finalReportMessage += "Role properties have been successfully copied to the Port.";
+				}
+
+				/**
+				 * Create the Component RTSC Diagram
+				 */
+				if (isComponentRTSCCreated) {
+					createComponentRTSCDiagram(atomicComponent, shell);
+					finalReportMessage += "\n" //$NON-NLS-1$
+							+ "A new RTSC has been created for the Component:" //$NON-NLS-1$
+							+ atomicComponent.getName() + "."; //$NON-NLS-1$
+
+				}
+			} else {
+				finalReportMessage += "The QVTo Transformation failed with message \n" + diagnostic.getMessage();
 			}
-			MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
-					finalReportMessage);
+
 		}
+		MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
+				finalReportMessage);
 
 	}
 
-	private static void executeCopyRoleTransformation(EditingDomain editingDomain, AtomicComponent atomicComponent,
-			DiscretePort port, final boolean replacePortRTSC) {
+	private static Diagnostic executeCopyRoleTransformation(EditingDomain editingDomain,
+			AtomicComponent atomicComponent, DiscretePort port, final boolean replacePortRTSC) {
 		ModelExtent inputExtent;
 		if (port != null && atomicComponent != null) {
 			inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { atomicComponent, port }));
@@ -223,6 +227,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
+		return command.getDiagnostic();
 	}
 
 	private static void createComponentRTSCDiagram(AtomicComponent atomicComponent, Shell shell) {
