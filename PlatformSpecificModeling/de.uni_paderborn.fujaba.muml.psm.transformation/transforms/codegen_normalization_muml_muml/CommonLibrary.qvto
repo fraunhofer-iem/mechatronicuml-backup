@@ -48,8 +48,3 @@ query ComponentInstance::getGenComponentInstance():GenComponentInstance{
 query PortInstance::getGenPortInstance():GenPortInstance{
 	return property_genComponentInstance.genPortInstances->select(port|port.portInstance=self)->any(true);
 }
-
-query getPrimitiveDataType(_name:String):PrimitiveDataType {	
-	return getPrimitiveTypeByName(_name);
-	
-}
