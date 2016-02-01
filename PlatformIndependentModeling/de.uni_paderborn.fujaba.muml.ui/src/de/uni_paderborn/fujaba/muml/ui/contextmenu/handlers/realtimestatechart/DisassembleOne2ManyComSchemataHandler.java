@@ -1,21 +1,15 @@
 package de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.realtimestatechart;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.ErrorDialog;
@@ -105,7 +99,6 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		final List<ModelExtent> modelExtents = Arrays
 				.asList(new ModelExtent[] { inputExtent });
 
-		final Resource resource = rtsc.eResource();
 		// Load QVTO script
 		String transformationKind = "";
 		if(rtsc.getBehavioralElement() instanceof Component) {
@@ -137,18 +130,10 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);
 		}
-		// save
 
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
-		
-		try {
-			resource.save(Collections.emptyMap());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
 	}
 
 }
