@@ -8,16 +8,15 @@ package de.uni_paderborn.fujaba.modelinstance.util;
 
 import java.util.List;
 
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.XMLSave;
+import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMISaveImpl;
 import org.w3c.dom.Comment;
-import org.w3c.dom.Element;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
 
@@ -39,6 +38,9 @@ public class ModelinstanceResourceImpl extends XMIResourceImpl {
 	 */
 	public ModelinstanceResourceImpl(URI uri) {
 		super(uri);
+		
+		// Fix for #1378
+	    getDefaultSaveOptions().put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl.PlatformSchemeAware());
 	}
 
 	/**
