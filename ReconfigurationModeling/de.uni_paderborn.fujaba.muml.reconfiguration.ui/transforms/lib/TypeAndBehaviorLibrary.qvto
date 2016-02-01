@@ -61,11 +61,11 @@ helper RootNode::createAffectedComponentsType() : StructType {
 	var entryType : StructType := new StructType(genTypeAffectedComponentsEntry);
 	
 	-- create attributes
-	entryType.attributes += new Attribute(genAttrRequest, getPrimitiveTypeByName(boolType));
-	entryType.attributes += new Attribute(genAttrReply, getPrimitiveTypeByName(boolType));
-	entryType.attributes += new Attribute(genAttrAction, getPrimitiveTypeByName(boolType));
-	entryType.attributes += new Attribute(genAttrVoteCommit, getPrimitiveTypeByName(boolType));
-	entryType.attributes += new Attribute(genAttrFinished, getPrimitiveTypeByName(boolType));
+	entryType.attributes += new Attribute(genAttrRequest, BOOLEAN);
+	entryType.attributes += new Attribute(genAttrReply, BOOLEAN);
+	entryType.attributes += new Attribute(genAttrAction, BOOLEAN);
+	entryType.attributes += new Attribute(genAttrVoteCommit, BOOLEAN);
+	entryType.attributes += new Attribute(genAttrFinished, BOOLEAN);
 	
 	-- create references
 	affectedCompType._references += new Reference(genRefEntries, entryType, new Cardinality(0, -1));

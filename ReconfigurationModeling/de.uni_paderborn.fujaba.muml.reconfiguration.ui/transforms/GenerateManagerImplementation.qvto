@@ -152,12 +152,12 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : 
 	managerRTSC.states += initialState;
 	
 	-- add variables
-	managerRTSC.variables += new Variable(genVarManager_Reconfiguration, getPrimitiveTypeByName(intType));
+	managerRTSC.variables += new Variable(genVarManager_Reconfiguration, INT32);
 	
 	-- add sync channels
-	initialState.channels += new SynchronizationChannel(genSyncChanReply, getPrimitiveTypeByName(boolType));
-	initialState.channels += new SynchronizationChannel(genSyncChanParentReply, getPrimitiveTypeByName(boolType));
-	initialState.channels += new SynchronizationChannel(genSyncChanExecuted, getPrimitiveTypeByName(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanReply, BOOLEAN);
+	initialState.channels += new SynchronizationChannel(genSyncChanParentReply, BOOLEAN);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecuted, BOOLEAN);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecuteReconf, null);
 	
 	-- generate embedded statecharts
@@ -208,7 +208,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : 
 helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var requestVar : Variable := new Variable(genVarManager_Parent_Request, getPrimitiveTypeByName(boolType));
+	var requestVar : Variable := new Variable(genVarManager_Parent_Request, BOOLEAN);
 	rtsc.variables += requestVar;
 	
 	-- create states
@@ -266,7 +266,7 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var requestVar : Variable = new Variable(genVarManager_Executor_Reuqest, getPrimitiveTypeByName(boolType));
+	var requestVar : Variable = new Variable(genVarManager_Executor_Reuqest, BOOLEAN);
 	rtsc.variables += requestVar;
 	
 	-- create states
@@ -363,18 +363,18 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var requestVar : Variable := new Variable(genVarManager_Internal_Request, getPrimitiveTypeByName(boolType));
+	var requestVar : Variable := new Variable(genVarManager_Internal_Request, BOOLEAN);
 	rtsc.variables += requestVar;
 	
-	var resultVar : Variable := new Variable(genVarManager_Internal_Result, getPrimitiveTypeByName(boolType));
+	var resultVar : Variable := new Variable(genVarManager_Internal_Result, BOOLEAN);
 	rtsc.variables += resultVar;
 	
-	var invokePlannerOp : Operation := new Operation(genOpManager_Internal_invokePlanner, getPrimitiveTypeByName(boolType));
-	invokePlannerOp.parameters += new Parameter(genParamManager_Internal_invokePlanner_reconf, getPrimitiveTypeByName(intType));
+	var invokePlannerOp : Operation := new Operation(genOpManager_Internal_invokePlanner, BOOLEAN);
+	invokePlannerOp.parameters += new Parameter(genParamManager_Internal_invokePlanner_reconf, INT32);
 	rtsc.operations += invokePlannerOp;
 	
-	var isBlockedOp : Operation := new Operation(genOpManager_Internal_isBlocked, getPrimitiveTypeByName(boolType));
-	isBlockedOp.parameters += new Parameter(genParamManager_Internal_isBlocked_reconf, getPrimitiveTypeByName(intType));
+	var isBlockedOp : Operation := new Operation(genOpManager_Internal_isBlocked, BOOLEAN);
+	isBlockedOp.parameters += new Parameter(genParamManager_Internal_isBlocked_reconf, INT32);
 	rtsc.operations += isBlockedOp;
 	
 	-- create states
@@ -485,10 +485,10 @@ helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNo
 helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var requestVar : Variable := new Variable(genVarManager_EmbeddedCI_Request, getPrimitiveTypeByName(boolType));
+	var requestVar : Variable := new Variable(genVarManager_EmbeddedCI_Request, BOOLEAN);
 	rtsc.variables += requestVar;
 	
-	var propVar : Variable := new Variable(genVarManager_EmbeddedCI_Propagate, getPrimitiveTypeByName(boolType));
+	var propVar : Variable := new Variable(genVarManager_EmbeddedCI_Propagate, BOOLEAN);
 	rtsc.variables += propVar;
 	
 	-- create clocks
@@ -625,7 +625,7 @@ mapping ManagerSpecificationEntry::generateManagerSpecificationEntry(inout rootN
 	
 	-- generate operation, state, and transitions in the internal behavior if entry is treated
 	if(self.treat) then{
-		var checkStructCondOp : Operation := new Operation(genOpManager_Internal_checkStructCond_Prefix + self.messageType.name.firstToUpper(), getPrimitiveTypeByName(boolType));
+		var checkStructCondOp : Operation := new Operation(genOpManager_Internal_checkStructCond_Prefix + self.messageType.name.firstToUpper(), BOOLEAN);
 		internalRTSC.operations += checkStructCondOp;
 		
 		var checkXState : State := new State(genStateManager_Internal_Check_Prefix + self.messageType.name.firstToUpper());

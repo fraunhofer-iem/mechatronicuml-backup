@@ -68,15 +68,15 @@ helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : M
 	repo.messageTypes += new MessageType(genMsgTypeTeardown);
 	
 	msgType := new MessageType(genMsgTypeExecuteReconf);
-	msgType.parameters += new Parameter(genParamExecute_Reconf, getPrimitiveTypeByName(intType));
+	msgType.parameters += new Parameter(genParamExecute_Reconf, INT32);
 	repo.messageTypes += msgType;
 	
 	msgType := new MessageType(genMsgTypeConfirmRequest);
-	msgType.parameters += new Parameter(genParamConfirmRequest_Reconf, getPrimitiveTypeByName(intType));
+	msgType.parameters += new Parameter(genParamConfirmRequest_Reconf, INT32);
 	repo.messageTypes += msgType;
 	
 	msgType := new MessageType(genMsgTypeConfirm);
-	msgType.parameters += new Parameter(genParamConfirm_T, getPrimitiveTypeByName(intType));
+	msgType.parameters += new Parameter(genParamConfirm_T, INT32);
 	repo.messageTypes += msgType;
 	
 	return repo;

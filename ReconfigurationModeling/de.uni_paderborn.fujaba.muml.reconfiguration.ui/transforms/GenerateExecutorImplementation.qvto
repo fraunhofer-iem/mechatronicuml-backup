@@ -190,20 +190,20 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	executorRTSC.states += initialState;
 	
 	-- add variables
-	executorRTSC.variables += new Variable(genVarExecutor_SinglePhase, getPrimitiveTypeByName(boolType));
-	executorRTSC.variables += new Variable(genVarExecutor_Reconfiguration, getPrimitiveTypeByName(intType));
-	executorRTSC.variables += new Variable(genVarExecutor_TwoPCResult, getPrimitiveTypeByName(boolType));
-	executorRTSC.variables += new Variable(genVarExecutor_TmpCommitTime, getPrimitiveTypeByName(intType));
+	executorRTSC.variables += new Variable(genVarExecutor_SinglePhase, BOOLEAN);
+	executorRTSC.variables += new Variable(genVarExecutor_Reconfiguration, INT32);
+	executorRTSC.variables += new Variable(genVarExecutor_TwoPCResult, BOOLEAN);
+	executorRTSC.variables += new Variable(genVarExecutor_TmpCommitTime, INT32);
 	
 	-- add sync channels
-	initialState.channels += new SynchronizationChannel(genSyncChanExecutorExecute, getPrimitiveTypeByName(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorExecute, BOOLEAN);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorStartExecution, null);
-	initialState.channels += new SynchronizationChannel(genSyncChanExecutorInit2PC, getPrimitiveTypeByName(intType));
-	initialState.channels += new SynchronizationChannel(genSyncChanExecutorVotingComplete, getPrimitiveTypeByName(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorInit2PC, INT32);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorVotingComplete, BOOLEAN);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorDoAbort, null);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinished, null);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformReconf, null);
-	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinish, getPrimitiveTypeByName(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinish, BOOLEAN);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinished2PC, null);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformSetup, null);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinishPhase, null);
@@ -413,13 +413,13 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var deadlineVar : Variable := new Variable(genVarExecutor_Events_Deadline, getPrimitiveTypeByName(intType));
+	var deadlineVar : Variable := new Variable(genVarExecutor_Events_Deadline, INT32);
 	rtsc.variables += deadlineVar;
 	
-	var fromParentVar : Variable := new Variable(genVarExecutor_Events_FromParent, getPrimitiveTypeByName(boolType));
+	var fromParentVar : Variable := new Variable(genVarExecutor_Events_FromParent, BOOLEAN);
 	rtsc.variables += fromParentVar;
 	
-	var abortedReqWaitingVar : Variable := new Variable(genVarExecutor_Events_AbortReqWaiting, getPrimitiveTypeByName(boolType));
+	var abortedReqWaitingVar : Variable := new Variable(genVarExecutor_Events_AbortReqWaiting, BOOLEAN);
 	rtsc.variables += abortedReqWaitingVar;
 	
 	-- create clocks
@@ -754,13 +754,13 @@ helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout 
 	var subPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubPort, executor.ports -> any(name = 'embeddedCI'));
 	rtsc.variables += subPortVar;
 	
-	var tmpMsgVar : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpMsg, getPrimitiveTypeByName(intType));
+	var tmpMsgVar : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpMsg, INT32);
 	rtsc.variables += tmpMsgVar;
 	
-	var tmpCommitVar : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpCommit, getPrimitiveTypeByName(boolType));
+	var tmpCommitVar : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpCommit, BOOLEAN);
 	rtsc.variables += tmpCommitVar;
 	
-	var tmpCommitVarTime : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpCommitTime, getPrimitiveTypeByName(intType));
+	var tmpCommitVarTime : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpCommitTime, INT32);
 	rtsc.variables += tmpCommitVarTime;
 	
 	-- generate initial state
@@ -796,10 +796,10 @@ helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNo
 	var acVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Ac, rootNode.getOrCreateAffectedComponentsType());
 	rtsc.variables += acVar;
 	
-	var executionTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_ExecTime, getPrimitiveTypeByName(intType));
+	var executionTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_ExecTime, INT32);
 	rtsc.variables += executionTimeVar;
 	
-	var minCommitTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_MinCommitTime, getPrimitiveTypeByName(intType));
+	var minCommitTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_MinCommitTime, INT32);
 	rtsc.variables += minCommitTimeVar;
 	
 	var curPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_CurPort, executor.ports -> any(name = 'embeddedCI'));
@@ -810,7 +810,7 @@ helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNo
 	getNextPiActionOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC, rootNode.getOrCreateAffectedComponentsType());
 	rtsc.operations += getNextPiActionOp;
 	
-	var allActionsPerformedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_allActionsPerformed, getPrimitiveTypeByName(boolType));
+	var allActionsPerformedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_allActionsPerformed, BOOLEAN);
 	allActionsPerformedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC, rootNode.getOrCreateAffectedComponentsType());
 	rtsc.operations += allActionsPerformedOp;
 	
@@ -899,35 +899,35 @@ helper generateEmbeddedCIAdaptationVoteState(inout rootNode : RootNode, inout vo
 	var rtsc : RealtimeStatechart := createEmbeddedRTSC(voteState.name, voteState, 1);
 	
 	-- create variables
-	var finishedVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Vote_Finished, getPrimitiveTypeByName(boolType));
+	var finishedVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Vote_Finished, BOOLEAN);
 	finishedVar.initializeExpression := new LiteralExpression('false');
 	rtsc.variables += finishedVar;
 	
 	-- create operations
-	var storeMinCommitTimeOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_storeMinCommitTime, getPrimitiveTypeByName(voidType));
-	storeMinCommitTimeOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commitTime, getPrimitiveTypeByName(intType));
+	var storeMinCommitTimeOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_storeMinCommitTime, VOID);
+	storeMinCommitTimeOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commitTime, INT32);
 	rtsc.operations += storeMinCommitTimeOp;
 	
 	var getNextPIForReqOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getNextPIRequest, executor.ports -> any(name = 'embeddedCI'));
 	getNextPIForReqOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
 	rtsc.operations += getNextPIForReqOp;
 	
-	var getMessageNameOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getMessageName, getPrimitiveTypeByName(intType));
+	var getMessageNameOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getMessageName, INT32);
 	getMessageNameOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
 	getMessageNameOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, executor.ports -> any(name = 'embeddedCI'));
 	rtsc.operations += getMessageNameOp;
 	
-	var allRepliesReceivedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_allRepliesReceived, getPrimitiveTypeByName(boolType));
+	var allRepliesReceivedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_allRepliesReceived, BOOLEAN);
 	allRepliesReceivedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
 	rtsc.operations += allRepliesReceivedOp;
 	
-	var setReplyOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_setReply, getPrimitiveTypeByName(voidType));
+	var setReplyOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_setReply, VOID);
 	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
 	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, executor.ports -> any(name = 'embeddedCI'));
-	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commit, getPrimitiveTypeByName(boolType));
+	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commit, BOOLEAN);
 	rtsc.operations += setReplyOp;
 	
-	var canCommitOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_canCommit, getPrimitiveTypeByName(boolType));
+	var canCommitOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_canCommit, BOOLEAN);
 	rtsc.operations += canCommitOp;
 	
 	-- create entry and exit points
@@ -1018,16 +1018,16 @@ helper generateEmbeddedCIAdaptationExecuteSinglePhaseState(inout rootNode : Root
 	var rtsc : RealtimeStatechart := createEmbeddedRTSC(executeState.name, executeState, 1);
 	
 	-- create variables
-	var finishedVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Execute_Finished, getPrimitiveTypeByName(boolType));
+	var finishedVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Execute_Finished, BOOLEAN);
 	finishedVar.initializeExpression := new LiteralExpression('false');
 	rtsc.variables += finishedVar;
 	
 	-- create and retrieve operations
-	var allEmbeddedFinishedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Execute_allEmbeddedFinished, getPrimitiveTypeByName(boolType));
+	var allEmbeddedFinishedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Execute_allEmbeddedFinished, BOOLEAN);
 	allEmbeddedFinishedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
 	rtsc.operations += allEmbeddedFinishedOp;
 	
-	var setFinishedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Execute_setFinished, getPrimitiveTypeByName(voidType));
+	var setFinishedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Execute_setFinished, VOID);
 	setFinishedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
 	setFinishedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, executor.ports -> any(name = 'embeddedCI'));
 	rtsc.operations += setFinishedOp;
@@ -1111,39 +1111,39 @@ helper generateEmbeddedCIAdaptationExecuteThreePhaseState(inout rootNode : RootN
 	var statechart := createEmbeddedRTSC(executeState.name, executeState, 1);
 	
 	-- variables
-	var finishedVar := new Variable(genVarExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_finished, getPrimitiveTypeByName(boolType));
+	var finishedVar := new Variable(genVarExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_finished, BOOLEAN);
 	finishedVar.initializeExpression := new LiteralExpression('false');
 	statechart.variables += finishedVar;
 	
 	-- operations
-	var setFinishedSetupOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedStup, getPrimitiveTypeByName(voidType));
+	var setFinishedSetupOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedStup, VOID);
 	setFinishedSetupOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
 	setFinishedSetupOp.parameters += new Parameter(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port, executor.ports->any(name = 'embeddedCI'));
 	statechart.operations += setFinishedSetupOp;
 	
-	var allEmbeddedFinishedSetupOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedSetup, getPrimitiveTypeByName(boolType));
+	var allEmbeddedFinishedSetupOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedSetup, BOOLEAN);
 	allEmbeddedFinishedSetupOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
 	statechart.operations += allEmbeddedFinishedSetupOp;
 	
-	var setFinishedFadingOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedFading, getPrimitiveTypeByName(voidType));
+	var setFinishedFadingOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedFading, VOID);
 	setFinishedFadingOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
 	setFinishedFadingOp.parameters += new Parameter(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port, executor.ports->any(name = 'embeddedCI'));
 	statechart.operations += setFinishedFadingOp;
 	
-	var allEmbeddedFinishedFadingOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedFading, getPrimitiveTypeByName(boolType));
+	var allEmbeddedFinishedFadingOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedFading, BOOLEAN);
 	allEmbeddedFinishedFadingOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
 	statechart.operations += allEmbeddedFinishedFadingOp;
 	
-	var setFinishedTeardownOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedTeardown, getPrimitiveTypeByName(voidType));
+	var setFinishedTeardownOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedTeardown, VOID);
 	setFinishedTeardownOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
 	setFinishedTeardownOp.parameters += new Parameter(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port, executor.ports->any(name = 'embeddedCI'));
 	statechart.operations += setFinishedTeardownOp;
 	
-	var allEmbeddedFinishedTeardownOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedTeardown, getPrimitiveTypeByName(boolType));
+	var allEmbeddedFinishedTeardownOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedTeardown, BOOLEAN);
 	allEmbeddedFinishedTeardownOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
 	statechart.operations += allEmbeddedFinishedTeardownOp;
 	
-	var resetActionPerformedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_resetActionPerformed, getPrimitiveTypeByName(voidType));
+	var resetActionPerformedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_resetActionPerformed, VOID);
 	resetActionPerformedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
 	statechart.operations += resetActionPerformedOp;
 	
@@ -1400,7 +1400,7 @@ helper generateEmbeddedCIAdaptationAbortState(inout rootNode : RootNode, inout a
 	var rtsc : RealtimeStatechart := createEmbeddedRTSC(abortState.name, abortState, 1);
 	
 	-- create variables
-	var finishedVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Abort_Finished, getPrimitiveTypeByName(boolType));
+	var finishedVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Abort_Finished, BOOLEAN);
 	finishedVar.initializeExpression := new LiteralExpression('false');
 	rtsc.variables += finishedVar;
 	
@@ -1457,22 +1457,22 @@ helper generateEmbeddedCIAdaptationAbortState(inout rootNode : RootNode, inout a
 helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var commitTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_CommitTime, getPrimitiveTypeByName(intType));
+	var commitTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_CommitTime, INT32);
 	rtsc.variables += commitTimeVar;
 	
-	var timeForDecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForDec, getPrimitiveTypeByName(intType));
+	var timeForDecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForDec, INT32);
 	rtsc.variables += timeForDecVar;
 	
-	var timeForExecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForExec, getPrimitiveTypeByName(intType));
+	var timeForExecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForExec, INT32);
 	rtsc.variables += timeForExecVar;
 	
-	var timeForSetupVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForSetup, getPrimitiveTypeByName(intType));
+	var timeForSetupVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForSetup, INT32);
 	rtsc.variables += timeForSetupVar;
 	
-	var timeForFadingVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForFading, getPrimitiveTypeByName(intType));
+	var timeForFadingVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForFading, INT32);
 	rtsc.variables += timeForFadingVar;
 	
-	var timeForTeardownVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForTeardown, getPrimitiveTypeByName(intType));
+	var timeForTeardownVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForTeardown, INT32);
 	rtsc.variables += timeForTeardownVar;
 	
 	-- create clocks
@@ -1858,7 +1858,7 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterf
 	var subroleRTSC : RealtimeStatechart := embeddedCIRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_subrole);
 	
 	-- create variable for the message type in embeddedCI RTSC
-	var msgVar : Variable := new Variable(self.messageType.name + 'Msg', getPrimitiveTypeByName(intType));
+	var msgVar : Variable := new Variable(self.messageType.name + 'Msg', INT32);
 	msgVar.initializeExpression := new LiteralExpression(embeddedCIInterfaceEntryNumber.toString());
 	embeddedCIRTSC.variables += msgVar;
 	
@@ -1906,7 +1906,7 @@ when{self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationSinglePh
 	var internalBehaviorRtsc := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Internal);
 	
 	//TODO add implementation
-	var y1Operation := new Operation(theReconfigurationRule.name, getPrimitiveTypeByName(voidType));
+	var y1Operation := new Operation(theReconfigurationRule.name, VOID);
 	internalBehaviorRtsc.operations += y1Operation;
 	
 		-- Idle -> Start
@@ -2007,13 +2007,13 @@ when{self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationThreePha
 	region.embeddedStatechart := statechart;
 	
 	-- Operations
-	var y2_Setup := new Operation(theReconfigurationRule.name+'_setup', getPrimitiveTypeByName(voidType));
+	var y2_Setup := new Operation(theReconfigurationRule.name+'_setup', VOID);
 	statechart.operations += y2_Setup;
 	
-	var y2_Fading := new Operation(theReconfigurationRule.name+'_fading', getPrimitiveTypeByName(voidType));
+	var y2_Fading := new Operation(theReconfigurationRule.name+'_fading', VOID);
 	statechart.operations += y2_Fading;
 	
-	var y2_Teardown := new Operation(theReconfigurationRule.name+'_teardown', getPrimitiveTypeByName(voidType));
+	var y2_Teardown := new Operation(theReconfigurationRule.name+'_teardown', VOID);
 	statechart.operations += y2_Teardown;
 	
 	-- Entry/Exit Points
