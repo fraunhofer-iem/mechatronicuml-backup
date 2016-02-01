@@ -14,6 +14,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -103,45 +104,52 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		/**
 		 * Run the Transformation
 		 */
-		createRoleRTSCTransformation(editingDomain, role);
+		Diagnostic diagnostic=createRoleRTSCTransformation(editingDomain, role);
+		
+		if(diagnostic.getCode()==Diagnostic.OK){
+			/**
+			 * Create the Role RTSC Diagram
+			 */
+			final Collection<EObject> elements = new ArrayList<EObject>();
+			elements.add(role.getBehavior());
+			ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 
-		/**
-		 * Create the Role RTSC Diagram
-		 */
-		final Collection<EObject> elements = new ArrayList<EObject>();
-		elements.add(role.getBehavior());
-		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
+			try {
+				dialog.run(true, false, new IRunnableWithProgress() {
 
-		try {
-			dialog.run(true, false, new IRunnableWithProgress() {
+					@Override
+					public void run(IProgressMonitor monitor)
+							throws InvocationTargetException, InterruptedException {
 
-				@Override
-				public void run(IProgressMonitor monitor)
-						throws InvocationTargetException, InterruptedException {
+						BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
+						IFile file = getFile(resource);
+						IStructuredSelection selection = new StructuredSelection(
+								file);
 
-					BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
-					IFile file = getFile(resource);
-					IStructuredSelection selection = new StructuredSelection(
-							file);
+						wizard.init(null, selection);
+						wizard.createDiagrams(elements, monitor);
 
-					wizard.init(null, selection);
-					wizard.createDiagrams(elements, monitor);
-
-				}
-			});
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+					}
+				});
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+		else{
+			finalReportMessage="The QVTo Transformation failed with: \n"+diagnostic.getMessage();
+		}
+		
+		
 
 		MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
 				finalReportMessage);
 	}
 
-	private static void createRoleRTSCTransformation(
+	private static Diagnostic createRoleRTSCTransformation(
 			EditingDomain editingDomain, Role role) {
 		ModelExtent inputExtent = new BasicModelExtent(
 				Arrays.asList(new EObject[] { role }));
@@ -164,6 +172,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
+		return command.getDiagnostic();
 
 	}
 
