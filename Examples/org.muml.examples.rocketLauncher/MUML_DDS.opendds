@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opendds:OpenDDSModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opendds="http://www.opendds.org/modeling/schemas/OpenDDS/1.0" xmlns:qos="http://www.opendds.org/modeling/schemas/QoS/1.0" xmlns:topics="http://www.opendds.org/modeling/schemas/Topics/1.0" xmlns:types="http://www.opendds.org/modeling/schemas/Types/1.0" xmi:id="_VeBcMMkoEeWbAtw7kHpt1w" name="MUML_DDS">
+  <libs xsi:type="types:DataLib" xmi:id="_VeBcMckoEeWbAtw7kHpt1w" name="MUML_DataLib">
+    <types xsi:type="types:Struct" xmi:id="_VeBcMskoEeWbAtw7kHpt1w" name="DDS_M1launchCode_M1" isDcpsDataType="true">
+      <fields xmi:id="_VeBcM8koEeWbAtw7kHpt1w" name="id" type="_VeBcNckoEeWbAtw7kHpt1w"/>
+    </types>
+    <types xsi:type="types:Char" xmi:id="_VeBcNMkoEeWbAtw7kHpt1w"/>
+    <types xsi:type="types:Long" xmi:id="_VeBcNckoEeWbAtw7kHpt1w"/>
+  </libs>
+  <libs xsi:type="opendds:PolicyLib" xmi:id="_VeBcNskoEeWbAtw7kHpt1w">
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_VeBcN8koEeWbAtw7kHpt1w" name="peer1ReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_VeBcOMkoEeWbAtw7kHpt1w" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_VeBcOckoEeWbAtw7kHpt1w" name="peer2HistoryQos" depth="1" kind="KEEP_LAST"/>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_VeBcOskoEeWbAtw7kHpt1w" name="peer1HistoryQos" depth="1" kind="KEEP_LAST"/>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_VeBcO8koEeWbAtw7kHpt1w" name="verifierReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_VeBcPMkoEeWbAtw7kHpt1w" second="1"/>
+    </policies>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_VeBcPckoEeWbAtw7kHpt1w" name="peer2ReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_VeBcPskoEeWbAtw7kHpt1w" second="1"/>
+    </policies>
+  </libs>
+  <libs xsi:type="opendds:DcpsLib" xmi:id="_VeBcP8koEeWbAtw7kHpt1w">
+    <domains xmi:id="_VeBcQMkoEeWbAtw7kHpt1w" name="dummyDomain" domainId="-42"/>
+    <participants xmi:id="_VeBcQckoEeWbAtw7kHpt1w" name="LaunchDelegator_verifierParticipant" domain="_VeBcQMkoEeWbAtw7kHpt1w">
+      <publishers xmi:id="_VeBcQskoEeWbAtw7kHpt1w" name="verifierPublisher" transportId="-1">
+        <writers xmi:id="_VeBcQ8koEeWbAtw7kHpt1w" name="DDS_M1launchCode_M1DataWriter" reliability="_VeBcO8koEeWbAtw7kHpt1w" copyFromTopicQos="false" topic="_VeCDSMkoEeWbAtw7kHpt1w"/>
+      </publishers>
+    </participants>
+    <participants xmi:id="_VeBcRMkoEeWbAtw7kHpt1w" name="LaunchVerifier_peer2Participant" domain="_VeBcQMkoEeWbAtw7kHpt1w">
+      <subscribers xmi:id="_VeCDQMkoEeWbAtw7kHpt1w" name="peer2Subscriber" transportId="-1">
+        <readers xmi:id="_VeCDQckoEeWbAtw7kHpt1w" name="DDS_M1launchCode_M1DataReader" history="_VeBcOckoEeWbAtw7kHpt1w" reliability="_VeBcPckoEeWbAtw7kHpt1w" copyFromTopicQos="false" topic="_VeCDSMkoEeWbAtw7kHpt1w"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_VeCDQskoEeWbAtw7kHpt1w" name="LaunchVerifier_peer1Participant" domain="_VeBcQMkoEeWbAtw7kHpt1w">
+      <subscribers xmi:id="_VeCDQ8koEeWbAtw7kHpt1w" name="peer1Subscriber" transportId="-1">
+        <readers xmi:id="_VeCDRMkoEeWbAtw7kHpt1w" name="DDS_M1launchCode_M1DataReader" history="_VeBcOskoEeWbAtw7kHpt1w" reliability="_VeBcN8koEeWbAtw7kHpt1w" copyFromTopicQos="false" topic="_VeCDSMkoEeWbAtw7kHpt1w"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_VeCDRckoEeWbAtw7kHpt1w" name="LaunchDelegator_verifierParticipant" domain="_VeBcQMkoEeWbAtw7kHpt1w">
+      <publishers xmi:id="_VeCDRskoEeWbAtw7kHpt1w" name="verifierPublisher" transportId="-1">
+        <writers xmi:id="_VeCDR8koEeWbAtw7kHpt1w" name="DDS_M1launchCode_M1DataWriter" reliability="_VeBcO8koEeWbAtw7kHpt1w" copyFromTopicQos="false" topic="_VeCDSMkoEeWbAtw7kHpt1w"/>
+      </publishers>
+    </participants>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_VeCDSMkoEeWbAtw7kHpt1w" name="DDS_M1launchCode_M1verifierLaunchDelegator_Topicverifier" datatype="_VeBcMskoEeWbAtw7kHpt1w"/>
+  </libs>
+</opendds:OpenDDSModel>

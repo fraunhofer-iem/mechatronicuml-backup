@@ -1,0 +1,10 @@
+#ifndef MUML_DDS_IDL
+#define MUML_DDS_IDL
+
+  struct DDS_M1launchCode_M1;
+
+#pragma DCPS_DATA_TYPE "DDS_M1launchCode_M1"
+  struct DDS_M1launchCode_M1 {
+    long id;
+  };
+#endif 
