@@ -1,5 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.component;
 
+import java.util.Collection;
+
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
@@ -93,6 +95,9 @@ public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
 			}
 		}
 		if (figure != null ){
+			for (IFigure child : (Collection<IFigure>)figure.getChildren()) {
+				child.setBackgroundColor(color);
+			}
 			figure.setBackgroundColor(color);
 		}
 	}
