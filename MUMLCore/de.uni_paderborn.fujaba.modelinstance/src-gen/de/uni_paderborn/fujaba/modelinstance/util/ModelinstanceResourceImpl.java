@@ -34,7 +34,7 @@ public class ModelinstanceResourceImpl extends XMIResourceImpl {
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * @param uri the URI of the new resource.
-	 * @generated
+	 * @generated NOT
 	 */
 	public ModelinstanceResourceImpl(URI uri) {
 		super(uri);
