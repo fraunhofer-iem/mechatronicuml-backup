@@ -106,7 +106,9 @@ public class EventItemProvider
 						protected void doExecute() {
 							messageEvent.setKind((EventKind) value);
 							DeleteCommand.create(editingDomain, messageEvent.getMessage()).execute();
+							DeleteCommand.create(editingDomain, messageEvent.getOneToManyCommunicationSchema()).execute();
 							messageEvent.setMessage(null);
+							messageEvent.setOneToManyCommunicationSchema(null);
 						}
 					});
 			    } else {
