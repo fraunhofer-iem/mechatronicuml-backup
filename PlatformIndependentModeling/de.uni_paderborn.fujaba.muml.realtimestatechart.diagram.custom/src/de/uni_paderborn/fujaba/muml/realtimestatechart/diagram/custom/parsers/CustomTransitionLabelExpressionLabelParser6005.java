@@ -19,15 +19,20 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Iterate;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 public class CustomTransitionLabelExpressionLabelParser6005 extends
-		TransitionLabelExpressionLabelParser6005 implements ISemanticParser {
+		TransitionLabelExpressionLabelParser6005 /* implements ISemanticParser*/ {
+	
+	public CustomTransitionLabelExpressionLabelParser6005() {
+	}
 	
 	//static final int MAX_LINELENGTH = 50;
 
@@ -35,6 +40,8 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		String printString = super.getPrintString(element, flags);
 		Transition transition = (Transition) element.getAdapter(EObject.class);
 
+		printString = printString.replaceAll("\\{clockConstraintExpression}", getClockConstraintExpression(transition));
+		
 		printString = printString.replaceAll("\\{guardExpression\\}",
 				getGuardExpression(transition));
 
@@ -66,6 +73,38 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		
 		// #1001: Add manual linebreaks to prevent too long lines
 		return printString;//addManualLinebreaks(printString, MAX_LINELENGTH);
+	}
+	private String getClockConstraintExpression(Transition transition) {
+		StringBuffer buf = new StringBuffer();
+		boolean first = true;
+		for (ClockConstraint cc : transition.getClockConstraints()) {
+			if (!first) {
+				buf.append(", ");
+			}
+			if (cc.getClock() != null) {
+				buf.append(cc.getClock().getName());
+			} else {
+				buf.append("null");
+			}
+			buf.append(' ');
+			switch (cc.getOperator()) {
+			case EQUAL: 			buf.append('='); break;
+			case LESS: 				buf.append('<'); break;
+			case LESS_OR_EQUAL: 	buf.append('≤'); break; 
+			case GREATER_OR_EQUAL: 	buf.append('≥'); break;
+			case GREATER:			buf.append('>'); break;
+			case UNEQUAL:			buf.append('≠'); break;
+			case REGULAR_EXPRESSION:buf.append("regexp"); break; 
+			}
+			buf.append(' ');
+			if (cc.getBound() != null) {
+				buf.append(ParserUtilities.serializeTimeValue(cc.getBound(), transition));
+			} else {
+				buf.append("null");
+			}
+			first = false;
+		}
+		return buf.toString();
 	}
 //
 //	private static String addManualLinebreaks(String str, int maxLineLength) {
@@ -178,6 +217,8 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 					RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
 					RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
 					RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
+					ValuetypePackage.Literals.TIME_VALUE__UNIT,
+					ValuetypePackage.Literals.TIME_VALUE__VALUE,
 					RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 					RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_MESSAGE_EVENT,
 					RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE,
@@ -206,7 +247,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		return references;
 	}
-
+/*
 	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject semanticElement) {
 		return ParserUtilities.deduceAllElements(semanticElement, REFERENCES);
@@ -218,6 +259,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return FEATURES.contains(((ENotificationImpl) notification)
 				.getFeature());
 	}
+*/
 	private String getReceivingCommunicationSchemaConstraint(Transition transition) {
 		Expression condition = null;
 		AsynchronousMessageEvent triggerMsg = transition.getTriggerMessageEvent();
