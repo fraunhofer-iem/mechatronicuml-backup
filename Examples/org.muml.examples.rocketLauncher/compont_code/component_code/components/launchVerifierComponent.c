@@ -38,17 +38,14 @@
 		
 		void LaunchVerifierComponent_processStep(LaunchVerifierComponent* component) {
 				
-					bool_T storeVerifiedLaunch = component->stateChart->verifiedLaunch;
+		
 		
 					component->stateChart->LaunchVerifierLaunchVerifier_isExecutable = true;
 					component->stateChart->LaunchVerifierPeer1Master_peer1_isExecutable = true;
 					component->stateChart->LaunchVerifierPeer2Master_peer2_isExecutable = true;
 					component->stateChart->LaunchVerifierLaunchVerifier_mainStatechart_isExecutable = true;
 				LaunchVerifierLaunchVerifierStateChart_processStep(component->stateChart);
-				if(component->stateChart->verifiedLaunch!=storeVerifiedLaunch)
-				{
 					component->setterOf_verifiedLaunch(component->stateChart->verifiedLaunch);
-				}
 		}
 	
 		LaunchVerifierLaunchVerifierStateChart* LaunchVerifierComponent_getStateMachine(LaunchVerifierComponent* component) {

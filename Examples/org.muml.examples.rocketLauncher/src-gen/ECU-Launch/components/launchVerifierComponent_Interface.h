@@ -156,7 +156,8 @@
 						,
 								STATE_LAUNCHVERIFIERPEER1MASTER_MAIN /**< Represents the State: STATE_LAUNCHVERIFIERPEER1MASTER_MAIN of the Realtime-StateChart: LaunchVerifierPeer1Master_peer1 */
 						,		STATE_LAUNCHVERIFIERPEER2MASTER_MAIN /**< Represents the State: STATE_LAUNCHVERIFIERPEER2MASTER_MAIN of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
-						,		STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTINIT /**< Represents the State: STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTINIT of the Realtime-StateChart: LaunchVerifierLaunchVerifier_mainStatechart */	
+						,		STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED /**< Represents the State: STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED of the Realtime-StateChart: LaunchVerifierLaunchVerifier_mainStatechart */
+						,		STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED /**< Represents the State: STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED of the Realtime-StateChart: LaunchVerifierLaunchVerifier_mainStatechart */	
 					}LaunchVerifierLaunchVerifierState;
 				
 				

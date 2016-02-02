@@ -1,7 +1,7 @@
 	#include "lib/Debug.h"
 		#include "component_container/MCC_launcherComponent.h"
 		#include "component_container/MCC_launchVerifierComponent.h"
-
+#include <unistd.h>
 
 //variable for component Instances
 			LauncherComponent* cont_c1;
@@ -18,7 +18,7 @@ int main(){
 
 	 		
 		LaunchVerifierComponent_processStep(atomic_c2);
-	 		
+	 		usleep(500*1000);
 
 	}
 

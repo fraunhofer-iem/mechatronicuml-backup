@@ -34,7 +34,7 @@
 				LaunchVerifierLaunchVerifierStateChart* stateChart) {
 		
 			stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart =
-					STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTINIT;
+					STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED;
 		
 			// execute entry actions
 			// nothing to do
@@ -201,8 +201,10 @@
 		void LaunchVerifierLaunchVerifier_mainStatechartStateChart_processStep(
 				LaunchVerifierLaunchVerifierStateChart* stateChart) {
 			switch (stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart) {
-			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTINIT:
-				if (1
+			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED:
+				if (
+		
+				stateChart->peer1 == stateChart->peer2
 		
 				) {
 		
@@ -229,9 +231,43 @@
 					//release all created sent events
 					// change the state
 					stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart =
-							STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTINIT;
+							STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED;
 		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierLaunchVerifier_mainStatechart switched state to STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTINIT" );
+					printDebugInformation("currentStateOfLaunchVerifierLaunchVerifier_mainStatechart switched state to STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED" );
+		#endif		
+		
+					// execute entry actions
+					stateChart->verifiedLaunch = true;
+					;
+		
+				} else {
+		
+				}
+				break;
+			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED:
+				if (
+		
+				stateChart->peer1 != stateChart->peer2
+		
+				) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					stateChart->verifiedLaunch = false;
+					;
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart =
+							STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchVerifierLaunchVerifier_mainStatechart switched state to STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED" );
 		#endif		
 		
 					// execute entry actions
@@ -298,7 +334,11 @@
 		void LaunchVerifierLaunchVerifier_mainStatechartStateChart_exit(
 				LaunchVerifierLaunchVerifierStateChart* stateChart) {
 			switch (stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart) {
-			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTINIT:
+			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED:
 				// nothing to do
 		
 				break;

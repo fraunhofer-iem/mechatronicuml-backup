@@ -3,7 +3,7 @@
 		#include "../components/launchVerifierComponent_Interface.h"
 		
 		void contSelf(bool_T a){
-			  printf("received %d:",a);
+			  printf("received %d:\n",a);
 		}
 		
 	

@@ -167,7 +167,6 @@
 				
 					
 				
-							int32_T code; /**< The Realtime-StateChart Variable: code of Type: int32; */
 				
 								int32_T code;
 				
