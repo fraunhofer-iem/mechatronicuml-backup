@@ -19,7 +19,7 @@ RTSC = launchDelegatorLaunchDelegatorStateChart.o
 COMP = launchDelegatorComponent.o  
 LIB =   Debug.o
 CC = gcc
-CFLAGS = -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
+CFLAGS = -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -DDEBUG
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT)   $(DDSSOURCES)
@@ -56,4 +56,4 @@ Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
 
 clean:
-	rm -rf *o app
+	rm -rf *o 
