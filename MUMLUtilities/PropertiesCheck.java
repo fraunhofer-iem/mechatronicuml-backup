@@ -64,9 +64,9 @@ public class PropertiesCheck {
 			// TODO: handle exception
 		}
 		properties.setProperty("providerName",
-				"Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany \n  Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany");
+				"Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany and  Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany");
 		properties.setProperty("copyright",
-				"MechatronicUML Tool Suite \n Copyright 2009-2016,\n Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany \n Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany \n \n http://www.muml.org\n");
+				"MechatronicUML Tool Suite \n Copyright 2009-2016,\n Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany \n \n http://www.muml.org\n");
 		properties.setProperty("license", licenseText);
 		properties.store(new OutputStreamWriter(new FileOutputStream(file)), "");
 	}
