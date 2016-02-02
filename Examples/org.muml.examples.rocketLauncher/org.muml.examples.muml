@@ -109,14 +109,11 @@
       <states xmi:id="_bWFoIcjuEeW0gpRI-mS_yA" name="LaunchDelegator_main" initial="true">
         <embeddedRegions xmi:id="_bWFoIsjuEeW0gpRI-mS_yA" priority="1">
           <embeddedStatechart xmi:id="_bWFoI8juEeW0gpRI-mS_yA" name="peer_verifier" behavioralElement="_gPXyoMjrEeW0gpRI-mS_yA">
-            <variables xmi:id="_bWFoJMjuEeW0gpRI-mS_yA" name="code">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
-            </variables>
             <transitions xmi:id="_bWGPMMjuEeW0gpRI-mS_yA" priority="1" target="_bWGPNcjuEeW0gpRI-mS_yA" source="_bWGPNcjuEeW0gpRI-mS_yA">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_bWGPMcjuEeW0gpRI-mS_yA">
                 <message xmi:id="_bWGPMsjuEeW0gpRI-mS_yA" instanceOf="_jxLsgMjrEeW0gpRI-mS_yA">
                   <parameterBinding xmi:id="_bWGPM8juEeW0gpRI-mS_yA" parameter="_kuXtgMjrEeW0gpRI-mS_yA">
-                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_bWGPNMjuEeW0gpRI-mS_yA" typedNamedElement="_bWFoJMjuEeW0gpRI-mS_yA"/>
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_xXspoMmoEeWgH-bGO8AU1w" typedNamedElement="_W1YkcMjrEeW0gpRI-mS_yA"/>
                   </parameterBinding>
                 </message>
               </events>
