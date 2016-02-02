@@ -5,7 +5,7 @@
   <categories xmi:id="_IaAgAsjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_LkK5cMjsEeW0gpRI-mS_yA" name="peer" behavioralElement="_4UmGMMjrEeW0gpRI-mS_yA">
       <variables xmi:id="_j_y60MjsEeW0gpRI-mS_yA" name="code">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </variables>
       <transitions xmi:id="_QayDEMjsEeW0gpRI-mS_yA" priority="1" target="_LkK5ccjsEeW0gpRI-mS_yA" source="_LkK5ccjsEeW0gpRI-mS_yA">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_fUGnwMjsEeW0gpRI-mS_yA">
@@ -28,13 +28,13 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Yqrx0MjuEeW0gpRI-mS_yA" name="LaunchVerifier" behavioralElement="_curTEMjrEeW0gpRI-mS_yA">
       <variables xmi:id="_3wE8gMjuEeW0gpRI-mS_yA" name="peer1">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:UnaryExpression" xmi:id="_8vXhAMjuEeW0gpRI-mS_yA" operator="MINUS">
           <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8vXhAcjuEeW0gpRI-mS_yA" value="32"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_9SLTIMjuEeW0gpRI-mS_yA" name="peer2">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="__fcb8MjuEeW0gpRI-mS_yA" value="5"/>
       </variables>
       <states xmi:id="_Yqrx0cjuEeW0gpRI-mS_yA" name="LaunchVerifier_main" initial="true">
@@ -45,10 +45,10 @@
                 <message xmi:id="_Yqrx1sjuEeW0gpRI-mS_yA" instanceOf="_jxLsgMjrEeW0gpRI-mS_yA"/>
               </events>
               <action xmi:id="_uGBfwMjzEeW0gpRI-mS_yA" name="getValue">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_CjaUgMj1EeWzrcBaL-cniQ">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_CjaUgcj1EeWzrcBaL-cniQ" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CjaUgsj1EeWzrcBaL-cniQ" messageType="_jxLsgMjrEeW0gpRI-mS_yA" parameter="_kuXtgMjrEeW0gpRI-mS_yA"/>
-                    <lhs_typedNamedElementExpression xmi:id="_CjaUg8j1EeWzrcBaL-cniQ" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_cR6fgMmkEeWgH-bGO8AU1w">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_cR6fgcmkEeWgH-bGO8AU1w" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_cR6fgsmkEeWgH-bGO8AU1w" messageType="_jxLsgMjrEeW0gpRI-mS_yA" parameter="_kuXtgMjrEeW0gpRI-mS_yA"/>
+                    <lhs_typedNamedElementExpression xmi:id="_cR6fg8mkEeWgH-bGO8AU1w" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
                   </expressions>
                 </expressions>
               </action>
@@ -78,22 +78,22 @@
           <embeddedStatechart xmi:id="_19ougMjuEeW0gpRI-mS_yA" name="statechart">
             <transitions xmi:id="_iXrXYMj1EeWzrcBaL-cniQ" priority="1" target="_19p8oMjuEeW0gpRI-mS_yA" source="_19p8oMjuEeW0gpRI-mS_yA">
               <action xmi:id="_l_fLkMj1EeWzrcBaL-cniQ" name="setVerifiedLaunch">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_5p0BIMj1EeWzrcBaL-cniQ">
-                  <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_5p0BIcj1EeWzrcBaL-cniQ">
-                    <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_5p0BIsj1EeWzrcBaL-cniQ" operator="EQUAL">
-                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_5p0BI8j1EeWzrcBaL-cniQ" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
-                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_5p0BJMj1EeWzrcBaL-cniQ" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_kEUr4MmkEeWgH-bGO8AU1w">
+                  <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_kEUr4cmkEeWgH-bGO8AU1w">
+                    <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_kEUr4smkEeWgH-bGO8AU1w" operator="EQUAL">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kEUr48mkEeWgH-bGO8AU1w" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kEUr5MmkEeWgH-bGO8AU1w" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
                     </ifCondition>
-                    <ifBlock xmi:id="_5p0BJcj1EeWzrcBaL-cniQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_5p0BJsj1EeWzrcBaL-cniQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_5p0BJ8j1EeWzrcBaL-cniQ" value="true"/>
-                        <lhs_typedNamedElementExpression xmi:id="_5p0BKMj1EeWzrcBaL-cniQ" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                    <ifBlock xmi:id="_kEUr5cmkEeWgH-bGO8AU1w">
+                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_kEUr5smkEeWgH-bGO8AU1w" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_kEUr58mkEeWgH-bGO8AU1w" value="true"/>
+                        <lhs_typedNamedElementExpression xmi:id="_kEUr6MmkEeWgH-bGO8AU1w" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
                       </expressions>
                     </ifBlock>
-                    <elseBlock xmi:id="_5p0BKcj1EeWzrcBaL-cniQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_5p0BKsj1EeWzrcBaL-cniQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_5p0BK8j1EeWzrcBaL-cniQ" value="true"/>
-                        <lhs_typedNamedElementExpression xmi:id="_5p0BLMj1EeWzrcBaL-cniQ" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                    <elseBlock xmi:id="_kEUr6cmkEeWgH-bGO8AU1w">
+                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_kEUr6smkEeWgH-bGO8AU1w" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_kEUr68mkEeWgH-bGO8AU1w" value="false"/>
+                        <lhs_typedNamedElementExpression xmi:id="_kEUr7MmkEeWgH-bGO8AU1w" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
                       </expressions>
                     </elseBlock>
                   </expressions>
@@ -110,7 +110,7 @@
         <embeddedRegions xmi:id="_bWFoIsjuEeW0gpRI-mS_yA" priority="1">
           <embeddedStatechart xmi:id="_bWFoI8juEeW0gpRI-mS_yA" name="peer_verifier" behavioralElement="_gPXyoMjrEeW0gpRI-mS_yA">
             <variables xmi:id="_bWFoJMjuEeW0gpRI-mS_yA" name="code">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
             </variables>
             <transitions xmi:id="_bWGPMMjuEeW0gpRI-mS_yA" priority="1" target="_bWGPNcjuEeW0gpRI-mS_yA" source="_bWGPNcjuEeW0gpRI-mS_yA">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_bWGPMcjuEeW0gpRI-mS_yA">
@@ -160,7 +160,7 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_jLAdUMjrEeW0gpRI-mS_yA" name="M1">
       <messageTypes xmi:id="_jxLsgMjrEeW0gpRI-mS_yA" name="launchCode">
         <parameters xmi:id="_kuXtgMjrEeW0gpRI-mS_yA" name="id">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
@@ -205,12 +205,12 @@
   <categories xmi:id="_IaAgBsjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_MYz34MjrEeW0gpRI-mS_yA" name="IdentificationInput" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_TYcjgMjrEeW0gpRI-mS_yA" name="code" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_QUHP0MjrEeW0gpRI-mS_yA" name="LaunchDelegator" behavior="_bWFoIMjuEeW0gpRI-mS_yA">
       <ports xsi:type="component:HybridPort" xmi:id="_W1YkcMjrEeW0gpRI-mS_yA" name="code">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         <samplingInterval xmi:id="_Zg15kMj1EeWzrcBaL-cniQ">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_bIz88Mj1EeWzrcBaL-cniQ" value="100"/>
         </samplingInterval>
@@ -242,8 +242,8 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_M0m3gMj1EeWzrcBaL-cniQ" name="verifiedLaunch" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_rnVk4Mj1EeWzrcBaL-cniQ" value="false"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yzfPAMmkEeWgH-bGO8AU1w" value="false"/>
         <samplingInterval xmi:id="_Vz6U0Mj1EeWzrcBaL-cniQ" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_cYp0MMj1EeWzrcBaL-cniQ" value="100"/>
         </samplingInterval>
@@ -251,7 +251,7 @@
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_SKhW0Mj2EeWzrcBaL-cniQ" name="Launcher" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_T5EjUMj2EeWzrcBaL-cniQ" name="launch">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_YGfmAMj2EeWzrcBaL-cniQ" name="System" componentKind="hybrid component">

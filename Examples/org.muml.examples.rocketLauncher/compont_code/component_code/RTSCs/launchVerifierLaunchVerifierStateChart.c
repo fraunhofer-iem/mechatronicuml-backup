@@ -15,6 +15,7 @@
 			// nothing to do
 		
 			stateChart->LaunchVerifierPeer1Master_peer1_isExecutable = true;
+			stateChart->verifiedLaunch = false;
 		
 		}
 		void initializeLaunchVerifierPeer2Master_peer2Region(
@@ -216,7 +217,7 @@
 					}
 		
 					else {
-						stateChart->verifiedLaunch = true;
+						stateChart->verifiedLaunch = false;
 		
 					}
 		
