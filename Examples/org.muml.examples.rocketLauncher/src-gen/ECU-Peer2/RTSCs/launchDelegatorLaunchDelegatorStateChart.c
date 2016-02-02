@@ -8,7 +8,7 @@
 		void initializeLaunchDelegatorVerifierPeer_verifierRegion(
 				LaunchDelegatorLaunchDelegatorStateChart* stateChart) {
 		
-			stateChart->code = stateChart->code = 0;
+			stateChart->code  = 0;
 			;
 		
 			stateChart->currentStateOfLaunchDelegatorVerifierPeer_verifier =
