@@ -194,11 +194,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart) {
 			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureMinDelayLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart) {
-			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureMaxDelayLabel());
 			return true;
 		}
@@ -213,9 +208,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart) {
 			return true;
 		}
 		return false;
@@ -369,10 +361,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureMinDelayLabel;
-		/**
-		 * @generated
-		 */
 		private WrappingLabel fFigureMaxDelayLabel;
 
 		/**
@@ -425,20 +413,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 			constraintFFigureMsgLossLabel.grabExcessVerticalSpace = false;
 			this.add(fFigureMsgLossLabel, constraintFFigureMsgLossLabel);
 
-			fFigureMinDelayLabel = new WrappingLabel();
-
-			fFigureMinDelayLabel.setText("");
-
-			GridData constraintFFigureMinDelayLabel = new GridData();
-			constraintFFigureMinDelayLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureMinDelayLabel.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureMinDelayLabel.horizontalIndent = 0;
-			constraintFFigureMinDelayLabel.horizontalSpan = 1;
-			constraintFFigureMinDelayLabel.verticalSpan = 1;
-			constraintFFigureMinDelayLabel.grabExcessHorizontalSpace = false;
-			constraintFFigureMinDelayLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMinDelayLabel, constraintFFigureMinDelayLabel);
-
 			fFigureMaxDelayLabel = new WrappingLabel();
 
 			fFigureMaxDelayLabel.setText("");
@@ -453,6 +427,12 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 			constraintFFigureMaxDelayLabel.grabExcessVerticalSpace = false;
 			this.add(fFigureMaxDelayLabel, constraintFFigureMaxDelayLabel);
 
+			WrappingLabel staticPreserveMsgOrderLabel0 = new WrappingLabel();
+
+			staticPreserveMsgOrderLabel0.setText("PreserveMsgOrder: true");
+
+			this.add(staticPreserveMsgOrderLabel0);
+
 		}
 
 		/**
@@ -460,13 +440,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		 */
 		public WrappingLabel getFigureMsgLossLabel() {
 			return fFigureMsgLossLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureMinDelayLabel() {
-			return fFigureMinDelayLabel;
 		}
 
 		/**

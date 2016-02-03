@@ -559,9 +559,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Node label5021 = createLabel(node,
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry.getType(
 						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
-		Node label5022 = createLabel(node,
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry.getType(
-						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
 		return node;
 	}
 

@@ -37,15 +37,16 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
  */
 public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021 extends ExpressionLabelParserBase {
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 				.getExpression(18, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
@@ -54,22 +55,22 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
@@ -90,23 +91,23 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
@@ -114,8 +115,8 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	//
 	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
 	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {

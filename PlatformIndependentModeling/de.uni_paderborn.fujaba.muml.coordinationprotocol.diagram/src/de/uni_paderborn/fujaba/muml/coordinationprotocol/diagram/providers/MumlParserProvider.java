@@ -121,17 +121,10 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5021Parser() {
 		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getConnectorQualityOfServiceAssumptionsLabel_5022Parser() {
-		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022();
 	}
 
 	/**
@@ -157,8 +150,6 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 			return getConnectorQualityOfServiceAssumptionsLabel_5020Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptionsLabel_5021Parser();
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-			return getConnectorQualityOfServiceAssumptionsLabel_5022Parser();
 		}
 		return null;
 	}

@@ -6,7 +6,7 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022;
+import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
@@ -15,7 +15,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
  * @author sthiele2
  *
  */
-public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022 {
+public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021 {
 
 	public String getPrintString(IAdaptable element, int flags) {
 		String printString = "MaxDelay: ";

@@ -406,7 +406,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 
 			fFigureMessageBufferSizeLabel = new WrappingLabel();
 
-			fFigureMessageBufferSizeLabel.setText("Name:");
+			fFigureMessageBufferSizeLabel.setText("");
 
 			GridData constraintFFigureMessageBufferSizeLabel = new GridData();
 			constraintFFigureMessageBufferSizeLabel.verticalAlignment = GridData.CENTER;
