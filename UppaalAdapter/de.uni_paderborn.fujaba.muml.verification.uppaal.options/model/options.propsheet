@@ -51,6 +51,14 @@
         <genFeature href="options.genmodel#//options/HideOptionExtension/option"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_RnX-kc1gEeSIgPDefa6ZBw"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

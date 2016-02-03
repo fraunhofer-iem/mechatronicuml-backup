@@ -11,7 +11,7 @@
       disposableProviderFactory="true" ecorePackage="verificationExtension.ecore#/">
     <genClasses ecoreClass="verificationExtension.ecore#//CommittedExtension"/>
     <genClasses ecoreClass="verificationExtension.ecore#//ClockBindingsExtension">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference verificationExtension.ecore#//ClockBindingsExtension/clockBindings"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference verificationExtension.ecore#//ClockBindingsExtension/clockBindings"/>
     </genClasses>
     <genClasses ecoreClass="verificationExtension.ecore#//ClockBinding">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference verificationExtension.ecore#//ClockBinding/clock"/>

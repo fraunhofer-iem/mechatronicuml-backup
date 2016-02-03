@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.options.editor;
 
 /**
  * @generated
  */
-public class OptionsEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class OptionsEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public OptionsEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public OptionsEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,35 +21,31 @@ public class OptionsEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createConnectorOutBufferSize_OptionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorConnectorOutBufferSize_optionsTab_Editor(), false);
 
-			addPropertyEditor(createHashTableSize_OptionsTab_Editor(), false);
+			addPropertyEditor(createEditorHashTableSize_optionsTab_Editor(), false);
 
-			addPropertyEditor(createStateSpaceReduction_OptionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorStateSpaceReduction_optionsTab_Editor(), false);
 
-			addPropertyEditor(createTraceOptions_OptionsTab_Editor(), false);
+			addPropertyEditor(createEditorTraceOptions_optionsTab_Editor(), false);
 
 		} else if ("options".equals(tab)) { // Tab Options
 
-			addPropertyEditor(createConnectorOutBufferSize_OptionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorConnectorOutBufferSize_optionsTab_Editor(), false);
 
-			addPropertyEditor(createHashTableSize_OptionsTab_Editor(), false);
+			addPropertyEditor(createEditorHashTableSize_optionsTab_Editor(), false);
 
-			addPropertyEditor(createStateSpaceReduction_OptionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorStateSpaceReduction_optionsTab_Editor(), false);
 
-			addPropertyEditor(createTraceOptions_OptionsTab_Editor(), false);
+			addPropertyEditor(createEditorTraceOptions_optionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorOutBufferSize_OptionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createConnectorOutBufferSize_OptionsTab_Editor() {
-		if (this.editorConnectorOutBufferSize_OptionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorOutBufferSize_optionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectorOutBufferSize_optionsTab_Editor() {
+		if (this.editorConnectorOutBufferSize_optionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage.eINSTANCE
 					.getOptions_ConnectorOutBufferSize();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -62,22 +56,26 @@ public class OptionsEditor
 						.createOCLExpression(
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'connectorOutBufferSize')",
 								feature, getEClass());
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
-							}
-						});
+				editor.setInput(input);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
+
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -88,14 +86,14 @@ public class OptionsEditor
 
 			editor.setTooltipMessage("the size of the outgoing connector buffers");
 
-			this.editorConnectorOutBufferSize_OptionsTab = editor;
+			this.editorConnectorOutBufferSize_optionsTab = editor;
 		}
-		return this.editorConnectorOutBufferSize_OptionsTab;
+		return this.editorConnectorOutBufferSize_optionsTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHashTableSize_OptionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createHashTableSize_OptionsTab_Editor() {
-		if (this.editorHashTableSize_OptionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHashTableSize_optionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHashTableSize_optionsTab_Editor() {
+		if (this.editorHashTableSize_optionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage.eINSTANCE
 					.getOptions_HashTableSize();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
@@ -106,22 +104,26 @@ public class OptionsEditor
 						.createOCLExpression(
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'hashTableSize')",
 								feature, getEClass());
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
-							}
-						});
+				editor.setInput(input);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
+
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -132,14 +134,14 @@ public class OptionsEditor
 
 			editor.setTooltipMessage("the hash table size for bit state hashing will be 2^hashTableSize");
 
-			this.editorHashTableSize_OptionsTab = editor;
+			this.editorHashTableSize_optionsTab = editor;
 		}
-		return this.editorHashTableSize_OptionsTab;
+		return this.editorHashTableSize_optionsTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStateSpaceReduction_OptionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createStateSpaceReduction_OptionsTab_Editor() {
-		if (this.editorStateSpaceReduction_OptionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStateSpaceReduction_optionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorStateSpaceReduction_optionsTab_Editor() {
+		if (this.editorStateSpaceReduction_optionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage.eINSTANCE
 					.getOptions_StateSpaceReduction();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -150,22 +152,26 @@ public class OptionsEditor
 						.createOCLExpression(
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'stateSpaceReduction')",
 								feature, getEClass());
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
-							}
-						});
+				editor.setInput(input);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
+
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -176,14 +182,14 @@ public class OptionsEditor
 
 			editor.setTooltipMessage("options for the state space consumption");
 
-			this.editorStateSpaceReduction_OptionsTab = editor;
+			this.editorStateSpaceReduction_optionsTab = editor;
 		}
-		return this.editorStateSpaceReduction_OptionsTab;
+		return this.editorStateSpaceReduction_optionsTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTraceOptions_OptionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createTraceOptions_OptionsTab_Editor() {
-		if (this.editorTraceOptions_OptionsTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTraceOptions_optionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTraceOptions_optionsTab_Editor() {
+		if (this.editorTraceOptions_optionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage.eINSTANCE
 					.getOptions_TraceOptions();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -194,22 +200,26 @@ public class OptionsEditor
 						.createOCLExpression(
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'traceOptions')",
 								feature, getEClass());
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
-							}
-						});
+				editor.setInput(input);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
+
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -220,9 +230,9 @@ public class OptionsEditor
 
 			editor.setTooltipMessage("options for the generated traces");
 
-			this.editorTraceOptions_OptionsTab = editor;
+			this.editorTraceOptions_optionsTab = editor;
 		}
-		return this.editorTraceOptions_OptionsTab;
+		return this.editorTraceOptions_optionsTab;
 	}
 
 	//
@@ -233,31 +243,25 @@ public class OptionsEditor
 	 * @generated
 	 */
 	public OptionsEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage.eINSTANCE
-						.getOptions());
+				de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage.eINSTANCE.getOptions());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new OptionsEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"options", "options", "options",
-							"options"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"options", "options", "options", "options"})
+					.contains(tab);
 		}
 	}
 
