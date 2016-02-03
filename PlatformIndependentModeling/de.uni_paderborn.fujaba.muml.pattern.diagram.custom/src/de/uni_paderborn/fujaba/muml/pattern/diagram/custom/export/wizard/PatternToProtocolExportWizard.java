@@ -16,7 +16,6 @@ import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
@@ -133,7 +132,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 				return false;
 			}
 			String string = ((LiteralExpression) value).getValue();
-			if (!string.equals("false") || !string.equals("true")) {
+			if (!string.equals("false") && !string.equals("true")) {
 				try {
 					Integer.parseInt(string);
 				} catch (NumberFormatException e) {

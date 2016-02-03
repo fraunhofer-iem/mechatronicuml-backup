@@ -47,10 +47,10 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 	public PatternToProtocolExportWizardPage2(String pageName,
 			FormToolkit toolkit) {
 		super(pageName);
-		this.toolkit = toolkit;
+		this.toolkit = toolkit;		
 		this.setTitle("Set or Modify the parameter bindings");	
 	}
-
+	
 	@Override
 	public boolean isPageComplete() {
 		return super.isPageComplete() && this.isCurrentPage();

@@ -6,7 +6,7 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5009;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
@@ -15,33 +15,33 @@ import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
  * @author sthiele2
  *
  */
-public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008
-{	
+public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5009 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5009 {
+
 	public String getPrintString(IAdaptable element, int flags) {
-		String printString ="MinDelay: ";
-		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);
-		TimeValue minDelay = quosa.getMinMessageDelay();
-		if(minDelay == null)
+		String printString = "MaxDelay: ";
+		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);		
+		TimeValue maxDelay = quosa.getMaxMessageDelay();
+		if(maxDelay == null)
 			return "";
-		Expression minDelayExpr  = minDelay.getValue();
+		Expression maxDelayExpr  = maxDelay.getValue();
 		// serialize the expression to a string that can be displayed by the label
-		if(minDelayExpr != null)			
+		if(maxDelayExpr != null)			
 		{
 			String expressionText = null;
-			if(minDelayExpr instanceof TextualExpression) 
+			if(maxDelayExpr instanceof TextualExpression) 
 			{
-				expressionText = ((TextualExpression)minDelayExpr).getExpressionText();
+				expressionText = ((TextualExpression)maxDelayExpr).getExpressionText();
 			}
 			else
 			{
-				expressionText = LanguageResource.serializeEObjectSafe(minDelayExpr, minDelay);
+				expressionText = LanguageResource.serializeEObjectSafe(maxDelayExpr, maxDelay);
 			}
 			if(expressionText !=null)
 				printString+= expressionText;
 		}		
 		//add the time unit to the displayed string
-		printString += " "+ ((TimeValueImpl)minDelay).getUnitRepresentation(minDelay.getUnit());
+		printString += " "+((TimeValueImpl)maxDelay).getUnitRepresentation(maxDelay.getUnit());
 		return printString;
 	}
-	
+
 }
