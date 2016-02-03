@@ -50,32 +50,32 @@ import org.eclipse.ui.part.ShowInContext;
 public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String ID = "de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.pattern.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public CoordinationPatternDiagramEditor() {
 		super(true);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getContextID() {
 		return CONTEXT_ID;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
 		new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlPaletteFactory().fillPalette(root);
@@ -83,15 +83,15 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected PreferencesHint getPreferencesHint() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getContributorId() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.ID;
 	}
@@ -112,8 +112,8 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
@@ -123,8 +123,8 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public TransactionalEditingDomain getEditingDomain() {
 		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
@@ -134,8 +134,8 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			setDocumentProvider(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
@@ -146,29 +146,29 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void gotoMarker(IMarker marker) {
 		MarkerNavigationService.getInstance().gotoMarker(this, marker);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
@@ -244,15 +244,15 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ShowInContext getShowInContext() {
 		return new ShowInContext(getEditorInput(), getNavigatorSelection());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ISelection getNavigatorSelection() {
 		IDiagramDocument document = getDiagramDocument();
 		if (document == null) {
@@ -272,8 +272,8 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
 		de.uni_paderborn.fujaba.muml.pattern.diagram.part.DiagramEditorContextMenuProvider provider = new de.uni_paderborn.fujaba.muml.pattern.diagram.part.DiagramEditorContextMenuProvider(
@@ -303,8 +303,8 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
 		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart().getDiagramView());

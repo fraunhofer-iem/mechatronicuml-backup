@@ -22,8 +22,8 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 public class MumlNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	static {
 		de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance().getImageRegistry()
 				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
@@ -32,8 +32,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
 		if (element instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem && !isOwnView(
@@ -45,8 +45,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Image getImage(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup group = (de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) element;
@@ -66,8 +66,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
@@ -122,8 +122,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Image getImage(String key, IElementType elementType) {
 		ImageRegistry imageRegistry = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getImageRegistry();
@@ -143,8 +143,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getText(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup group = (de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorGroup) element;
@@ -163,8 +163,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getText(View view) {
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
@@ -203,8 +203,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getModelElementCategory_1000Text(View view) {
 		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory domainModelElement = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) view
 				.getElement();
@@ -218,8 +218,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getCoordinationPattern_2001Text(View view) {
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern domainModelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern) view
 				.getElement();
@@ -248,8 +248,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRole_3002Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 				.getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002,
@@ -267,8 +267,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getCoordinationPattern_3003Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 				.getParser(
@@ -287,8 +287,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMessageBuffer_3004Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 				.getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.MessageBuffer_3004,
@@ -306,8 +306,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMessageType_3005Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 				.getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.MessageType_3005,
@@ -325,8 +325,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getParameter_3006Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 				.getParser(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Parameter_3006,
@@ -344,8 +344,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getConnectorQualityOfServiceAssumptions_3007Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 				.getParser(
@@ -384,8 +384,8 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRoleConnector_4001Text(View view) {
 		de.uni_paderborn.fujaba.muml.protocol.RoleConnector domainModelElement = (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) view
 				.getElement();
@@ -399,68 +399,68 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAbstractCoordinationSpecificationRoles_4002Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getDiscreteInteractionEndpointReceiverMessageBuffer_4003Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRoleConnectorConnectorQualityOfServiceAssumptions_4004Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getUnknownElementText(View view) {
 		return "<UnknownElement Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getUnresolvedDomainElementProxyText(View view) {
 		return "<Unresolved domain element Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void restoreState(IMemento aMemento) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void saveState(IMemento aMemento) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getDescription(Object anElement) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean isOwnView(View view) {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 				.equals(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getModelID(view));

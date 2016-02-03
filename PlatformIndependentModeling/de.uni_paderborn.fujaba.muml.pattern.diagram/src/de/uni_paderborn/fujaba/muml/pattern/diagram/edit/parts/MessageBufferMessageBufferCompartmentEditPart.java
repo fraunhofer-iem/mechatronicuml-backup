@@ -9,7 +9,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
@@ -26,8 +25,8 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7002;
 
 	/**
@@ -54,8 +53,8 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MessageBufferMessageBufferCompartmentEditPart(View view) {
 		super(view);
 	}
@@ -68,15 +67,15 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.MessageBufferMessageBufferCompartmentEditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
@@ -95,8 +94,8 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
@@ -113,8 +112,8 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
@@ -122,8 +121,8 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
@@ -140,6 +139,10 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 		return super.getTargetEditPart(request);
 	}
 
+	// Fix to hide this Compartment, if it has no children. See also GMF bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=147855
+	// and workaround:
+	// http://www.eclipse.org/forums/index.php/m/9761/
 	/**
 	* @generated
 	*/
@@ -149,6 +152,7 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 		setVisibility(hasChildren);
 	}
 
+	// This is also part of the fix mentioned above.
 	/**
 	* @generated
 	*/

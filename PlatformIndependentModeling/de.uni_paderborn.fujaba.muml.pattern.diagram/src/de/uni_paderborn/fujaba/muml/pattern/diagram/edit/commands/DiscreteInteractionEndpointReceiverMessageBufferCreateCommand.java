@@ -15,18 +15,18 @@ import org.eclipse.gmf.runtime.notation.View;
 public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject source;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject target;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiscreteInteractionEndpointReceiverMessageBufferCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
@@ -35,8 +35,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand exten
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (source == null && target == null) {
 			return false;
@@ -70,8 +70,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand exten
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
@@ -85,22 +85,22 @@ public class DiscreteInteractionEndpointReceiverMessageBufferCreateCommand exten
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setElementToEdit(EObject element) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint getSource() {
 		return (de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint) source;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.MessageBuffer getTarget() {
 		return (de.uni_paderborn.fujaba.muml.connector.MessageBuffer) target;
 	}

@@ -42,32 +42,32 @@ import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
-	 * Extended request data key to hold editpart visual id.
-	 * @generated
-	 */
+	* Extended request data key to hold editpart visual id.
+	* @generated
+	*/
 	public static final String VISUAL_ID_KEY = "visual_id"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final IElementType myElementType;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected MumlBaseItemSemanticEditPolicy(IElementType elementType) {
 		myElementType = elementType;
 	}
 
 	/**
-	 * Extended request data key to hold editpart visual id.
-	 * Add visual id of edited editpart to extended data of the request
-	 * so command switch can decide what kind of diagram element is being edited.
-	 * It is done in those cases when it's not possible to deduce diagram
-	 * element kind from domain element.
-	 * 
-	 * @generated
-	 */
+	* Extended request data key to hold editpart visual id.
+	* Add visual id of edited editpart to extended data of the request
+	* so command switch can decide what kind of diagram element is being edited.
+	* It is done in those cases when it's not possible to deduce diagram
+	* element kind from domain element.
+	* 
+	* @generated
+	*/
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
@@ -81,17 +81,17 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * Returns visual id from request parameters.
-	 * @generated
-	 */
+	* Returns visual id from request parameters.
+	* @generated
+	*/
 	protected int getVisualID(IEditCommandRequest request) {
 		Object id = request.getParameter(VISUAL_ID_KEY);
 		return id instanceof Integer ? ((Integer) id).intValue() : -1;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
@@ -104,16 +104,16 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
 		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
 		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
 			ICommand command = editPolicyCommand instanceof ICommandProxy
@@ -135,8 +135,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IElementType getContextElementType(IEditCommandRequest request) {
 		IElementType requestContextElementType = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
 				.getElementType(getVisualID(request));
@@ -144,8 +144,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getSemanticCommandSwitch(IEditCommandRequest req) {
 		if (req instanceof CreateRelationshipRequest) {
 			return getCreateRelationshipCommand((CreateRelationshipRequest) req);
@@ -174,101 +174,101 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getConfigureCommand(ConfigureRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getSetCommand(SetRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getEditContextCommand(GetEditContextRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getMoveCommand(MoveRequest req) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected final Command getGEFWrapper(ICommand cmd) {
 		return new ICommandProxy(cmd);
 	}
 
 	/**
-	 * Returns editing domain from the host edit part.
-	 * @generated
-	 */
+	* Returns editing domain from the host edit part.
+	* @generated
+	*/
 	protected TransactionalEditingDomain getEditingDomain() {
 		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	/**
-	 * Clean all shortcuts to the host element from the same diagram
-	 * @generated
-	 */
+	* Clean all shortcuts to the host element from the same diagram
+	* @generated
+	*/
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
 		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
@@ -282,8 +282,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static LinkConstraints getLinkConstraints() {
 		LinkConstraints cached = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 				.getLinkConstraints();
@@ -300,8 +300,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	public static class LinkConstraints {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		LinkConstraints() {
 			// use static method #getLinkConstraints() to access instance
 		}
@@ -385,8 +385,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean canExistAbstractCoordinationSpecificationRoles_4002(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
 				de.uni_paderborn.fujaba.muml.protocol.Role target, View sourceView, View targetView) {
@@ -403,8 +403,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean canExistRoleConnector_4001(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector linkInstance,
@@ -425,7 +425,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					env.put("oppositeView", sourceView);
 
 					de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-							.getExpression(33, de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+							.getExpression(32, de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 									.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -463,7 +463,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					env.put("oppositeView", sourceView);
 
 					de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-							.getExpression(33, de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+							.getExpression(32, de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 									.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -492,8 +492,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean canExistDiscreteInteractionEndpointReceiverMessageBuffer_4003(
 				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target, View sourceView, View targetView) {
@@ -510,8 +510,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector source,
 				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target, View sourceView,

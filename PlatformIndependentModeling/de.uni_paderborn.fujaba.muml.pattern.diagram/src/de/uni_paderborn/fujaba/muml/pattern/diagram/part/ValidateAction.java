@@ -41,21 +41,21 @@ import org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation;
 public class ValidateAction extends Action {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IWorkbenchPage page;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ValidateAction(IWorkbenchPage page) {
 		setText(de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.ValidateActionMessage);
 		this.page = page;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void run() {
 		IWorkbenchPart workbenchPart = page.getActivePart();
 		if (workbenchPart instanceof IDiagramWorkbenchPart) {
@@ -75,8 +75,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static void runValidation(View view) {
 		try {
 			if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil.openDiagram(view.eResource())) {
@@ -95,8 +95,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static void runNonUIValidation(View view) {
 		DiagramEditPart diagramEditPart = OffscreenEditPartFactory.getInstance()
 				.createDiagramEditPart(view.getDiagram());
@@ -104,8 +104,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static void runValidation(DiagramEditPart diagramEditPart, View view) {
 		final DiagramEditPart fpart = diagramEditPart;
 		final View fview = view;
@@ -120,8 +120,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Diagnostic runEMFValidator(View target) {
 		if (target.isSetElement() && target.getElement() != null) {
 			return new Diagnostician() {
@@ -141,8 +141,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static void validate(DiagramEditPart diagramEditPart, View view) {
 		IFile target = view.eResource() != null ? WorkspaceSynchronizer.getFile(view.eResource()) : null;
 		if (target != null) {
@@ -160,8 +160,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static void createMarkers(IFile target, IStatus validationStatus, DiagramEditPart diagramEditPart) {
 		if (validationStatus.isOK()) {
 			return;
@@ -182,8 +182,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static void createMarkers(IFile target, Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
 		if (emfValidationStatus.getSeverity() == Diagnostic.OK) {
 			return;
@@ -208,8 +208,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static void addMarker(EditPartViewer viewer, IFile target, String elementId, String location,
 			String message, int statusSeverity) {
 		if (target == null) {
@@ -220,8 +220,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static int diagnosticToStatusSeverity(int diagnosticSeverity) {
 		if (diagnosticSeverity == Diagnostic.OK) {
 			return IStatus.OK;
@@ -236,8 +236,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Set<EObject> collectTargetElements(IStatus status, Set<EObject> targetElementCollector,
 			List allConstraintStatuses) {
 		if (status instanceof IConstraintStatus) {
@@ -254,8 +254,8 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Set<EObject> collectTargetElements(Diagnostic diagnostic, Set<EObject> targetElementCollector,
 			List allDiagnostics) {
 		List data = diagnostic.getData();

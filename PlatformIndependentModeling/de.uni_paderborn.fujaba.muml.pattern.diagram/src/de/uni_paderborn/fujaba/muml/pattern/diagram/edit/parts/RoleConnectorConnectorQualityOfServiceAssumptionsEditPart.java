@@ -19,8 +19,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends C
 		implements ITreeBranchEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 4004;
 
 	/**
@@ -47,15 +47,15 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends C
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleConnectorConnectorQualityOfServiceAssumptionsEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
@@ -63,21 +63,21 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends C
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
 
 	protected Connection createConnectionFigure() {
 		return new RoleConnectorQoSAConnectorConnectionFigure();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleConnectorQoSAConnectorConnectionFigure getPrimaryShape() {
 		return (RoleConnectorQoSAConnectorConnectionFigure) getFigure();
 	}

@@ -22,20 +22,20 @@ import org.eclipse.ocl.options.ParsingOptions;
 public class MumlOCLFactory {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression[] expressions;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final String[] expressionBodies;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression[34];
+		this.expressions = new de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression[33];
 		this.expressionBodies = new String[] { "\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -51,10 +51,9 @@ public class MumlOCLFactory {
 				"(\r\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.name\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' : \'.concat(self.dataType.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)\r\n\r\n", //$NON-NLS-1$
 				"if self.name.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tself.name\r\nendif", //$NON-NLS-1$
 				"\'Size: \'.concat(if(self.bufferSize.oclIsUndefined()) \r\nthen \'null\' else self.bufferSize.toString() endif)", //$NON-NLS-1$
-				"if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)\r\nthen \'Discard Incoming Messages\' else \'Displace Oldest Messages\' endif", //$NON-NLS-1$
+				"\'Discard: \'.concat(if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)\r\nthen \'Incoming Msgs\' else \'Oldest Msgs\' endif)", //$NON-NLS-1$
 				"\'Incoming Buffer: \'.concat(\r\n\tif (self.name.oclIsUndefined()) then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.name\r\n\tendif\r\n)", //$NON-NLS-1$
-				"if (self.messageLossPossible)\r\nthen \'Message Loss Possible\' else \'Message Loss NOT Possible\' endif", //$NON-NLS-1$
-				"\'\'", //$NON-NLS-1$
+				"\'Reliable: \'.concat(self.messageLossPossible.toString())", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -74,8 +73,8 @@ public class MumlOCLFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static MumlOCLFactory getInstance() {
 		MumlOCLFactory instance = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getMumlOCLFactory();
@@ -87,15 +86,15 @@ public class MumlOCLFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String getExpressionBody(int index) {
 		return getInstance().expressionBodies[index];
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
 		MumlOCLFactory cached = getInstance();
@@ -110,42 +109,42 @@ public class MumlOCLFactory {
 	}
 
 	/**
-	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
-	 * @generated
-	 */
+	* This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
+	* @generated
+	*/
 	public static de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression getExpression(
 			String body, EClassifier context, Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
 	/**
-	 * This method will become private in the next release
-	 * @generated
-	 */
+	* This method will become private in the next release
+	* @generated
+	*/
 	public static de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression getExpression(
 			String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class Expression
 			extends de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlAbstractExpression {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private final org.eclipse.ocl.ecore.OCL oclInstance;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private OCLExpression oclExpression;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
@@ -161,8 +160,8 @@ public class MumlOCLFactory {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
 			if (oclExpression == null) {
@@ -184,8 +183,8 @@ public class MumlOCLFactory {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
 				Map<String, EClassifier> environment) {
 			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
@@ -198,8 +197,8 @@ public class MumlOCLFactory {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
 				String name, EClassifier type) {
 			Variable var = EcoreFactory.eINSTANCE.createVariable();

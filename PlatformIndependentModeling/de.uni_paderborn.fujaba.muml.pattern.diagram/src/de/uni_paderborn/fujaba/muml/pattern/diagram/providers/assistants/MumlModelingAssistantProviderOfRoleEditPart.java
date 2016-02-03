@@ -15,9 +15,10 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSource(
@@ -25,8 +26,8 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetRelTypesOnSource(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
@@ -37,9 +38,10 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
@@ -48,8 +50,8 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart source,
 			IGraphicalEditPart targetEditPart) {
@@ -65,9 +67,10 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForTarget(
@@ -76,8 +79,8 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetTypesForTarget(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart source,
 			IElementType relationshipType) {
@@ -91,9 +94,10 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnTarget(
@@ -101,8 +105,8 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetRelTypesOnTarget(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
@@ -113,9 +117,10 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForSource(
@@ -124,8 +129,8 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetTypesForSource(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart target,
 			IElementType relationshipType) {

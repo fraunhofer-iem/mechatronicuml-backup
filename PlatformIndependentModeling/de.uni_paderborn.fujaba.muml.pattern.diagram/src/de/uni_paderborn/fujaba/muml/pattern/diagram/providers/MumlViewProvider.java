@@ -49,8 +49,8 @@ import org.eclipse.swt.graphics.FontData;
 public class MumlViewProvider extends AbstractProvider implements IViewProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public final boolean provides(IOperation operation) {
 		if (operation instanceof CreateViewForKindOperation) {
 			return provides((CreateViewForKindOperation) operation);
@@ -67,21 +67,21 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		    if (op.getViewKind() == Node.class)
-		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		    if (op.getViewKind() == Edge.class)
-		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Node.class)
+					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Edge.class)
+					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateDiagramViewOperation op) {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 				.equals(op.getSemanticHint())
@@ -90,8 +90,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateNodeViewOperation op) {
 		if (op.getContainerView() == null) {
 			return false;
@@ -164,8 +164,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateEdgeViewOperation op) {
 		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.isKnownElementType(elementType)
@@ -188,8 +188,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
@@ -200,8 +200,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNode(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		final EObject domainElement = getSemanticElement(semanticAdapter);
@@ -240,8 +240,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
@@ -264,8 +264,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createCoordinationPattern_2001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -346,8 +346,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createCoordinationPattern_3003(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -384,8 +384,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createRole_3002(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -426,8 +426,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMessageBuffer_3004(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -471,8 +471,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMessageType_3005(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -513,8 +513,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createParameter_3006(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -551,8 +551,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createConnectorQualityOfServiceAssumptions_3007(EObject domainElement, View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -586,8 +586,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
 		Node label5009 = createLabel(node, de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
-		Node label5010 = createLabel(node, de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -630,8 +628,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Edge createAbstractCoordinationSpecificationRoles_4002(View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -672,8 +670,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Edge createRoleConnector_4001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -714,8 +712,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Edge createDiscreteInteractionEndpointReceiverMessageBuffer_4003(View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -756,8 +754,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Edge createRoleConnectorConnectorQualityOfServiceAssumptions_4004(View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -798,8 +796,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void stampShortcut(View containerView, Node target) {
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID.equals(
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getModelID(containerView))) {
@@ -812,8 +810,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Node createLabel(View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
 		rv.setType(hint);
@@ -822,8 +820,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort,
 			boolean canFilter) {
 		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
@@ -852,8 +850,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private EObject getSemanticElement(IAdaptable semanticAdapter) {
 		if (semanticAdapter == null) {
 			return null;

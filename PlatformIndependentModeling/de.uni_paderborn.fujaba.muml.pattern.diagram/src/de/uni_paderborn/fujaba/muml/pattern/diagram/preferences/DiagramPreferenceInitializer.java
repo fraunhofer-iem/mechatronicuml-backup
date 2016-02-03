@@ -14,8 +14,8 @@ import org.eclipse.jface.preference.PreferenceConverter;
 public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
 
@@ -51,8 +51,8 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IPreferenceStore getPreferenceStore() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 				.getPreferenceStore();

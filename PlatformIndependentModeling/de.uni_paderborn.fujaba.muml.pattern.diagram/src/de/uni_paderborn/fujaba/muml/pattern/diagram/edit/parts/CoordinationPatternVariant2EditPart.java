@@ -374,8 +374,8 @@ public class CoordinationPatternVariant2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	static final Color THIS_BACK = new Color(null, 251, 215, 187);
 
 	/**

@@ -23,8 +23,8 @@ import org.eclipse.swt.widgets.Display;
 public class RoleConnectorEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 4001;
 
 	/**
@@ -51,15 +51,15 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements ITr
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleConnectorEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
@@ -67,31 +67,31 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements ITr
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
 	protected Connection createConnectionFigure() {
 		return new PolylineConnectionEx();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public PolylineConnectionEx getPrimaryShape() {
 		return (PolylineConnectionEx) getFigure();
 	}
 
 	/**
-	 * Handles the property changed event.
-	 * It additionally tests, if the source/target feature was changed and updates
-	 * the Connection's visualization accordingly.
-	 * @param notification The property changed event.
-	 * @generated
-	 */
+	* Handles the property changed event.
+	* It additionally tests, if the source/target feature was changed and updates
+	* the Connection's visualization accordingly.
+	* @param notification The property changed event.
+	* @generated
+	*/
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 
@@ -118,7 +118,13 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements ITr
 		super.handleNotificationEvent(notification);
 	}
 
+	/**
+	 * @generated
+	 */
 	protected void doCanonicalRefresh() {
+		if (getRoot() == null) {
+			return;
+		}
 		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 				.getRegisteredEditPolicies(getDiagramView().getElement());
 		for (CanonicalEditPolicy editPolicy : editPolicies) {

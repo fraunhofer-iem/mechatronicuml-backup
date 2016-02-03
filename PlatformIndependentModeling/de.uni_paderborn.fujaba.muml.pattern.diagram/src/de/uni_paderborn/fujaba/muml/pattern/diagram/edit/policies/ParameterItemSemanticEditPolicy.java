@@ -15,15 +15,15 @@ public class ParameterItemSemanticEditPolicy
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ParameterItemSemanticEditPolicy() {
 		super(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Parameter_3006);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);

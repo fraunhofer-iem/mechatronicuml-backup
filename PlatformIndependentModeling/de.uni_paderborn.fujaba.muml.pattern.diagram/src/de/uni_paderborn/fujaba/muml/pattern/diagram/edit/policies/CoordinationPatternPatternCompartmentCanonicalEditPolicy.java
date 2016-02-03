@@ -29,13 +29,13 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean canonicalNodes = true;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	/**
@@ -70,12 +70,11 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends Ca
 	public void removeNoConnectionView(String type) {
 		noConnectionViews.remove(type);
 	}
-
 	// END MUML TICKET #1247
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -86,8 +85,8 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends Ca
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
@@ -107,6 +106,7 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends Ca
 	 * @generated
 	 */
 	@SuppressWarnings("rawtypes")
+
 	protected List getSemanticChildrenList() {
 		List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
@@ -121,6 +121,7 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends Ca
 	 */
 
 	@SuppressWarnings("rawtypes")
+
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
 		if (!canonicalNodes) {
@@ -157,15 +158,15 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends Ca
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
@@ -179,8 +180,8 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends Ca
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;

@@ -8,271 +8,271 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	static {
 		NLS.initializeMessages("messages", Messages.class); //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Messages() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizardTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizard_DiagramModelFilePageTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizard_DiagramModelFilePageDescription;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizard_DomainModelFilePageTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizard_DomainModelFilePageDescription;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizardOpenEditorError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizardCreationError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlCreationWizardPageExtensionError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_isModifiable;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_handleElementContentChanged;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_IncorrectInputError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_NoDiagramInResourceError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_DiagramLoadingError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_SaveDiagramTask;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_SaveNextResourceTask;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlDocumentProvider_SaveAsOperation;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String InitDiagramFile_ResourceErrorDialogTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String InitDiagramFile_ResourceErrorDialogMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String InitDiagramFile_WizardTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String InitDiagramFile_OpenModelFileDialogTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_CreationPageName;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_CreationPageTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_CreationPageDescription;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlNewDiagramFileWizard_IncorrectRootError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPatternDiagramEditor_SavingDeletedFile;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPatternDiagramEditor_SaveAsErrorTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPatternDiagramEditor_SaveAsErrorMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPatternDiagramEditor_SaveErrorTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPatternDiagramEditor_SaveErrorMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlElementChooserDialog_SelectModelElementTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String ModelElementSelectionPageMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String ValidateActionMessage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String PatternToolGroup1Group_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String Misreferencedtools2Group_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String Misreferencedtools2Group_desc;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPattern1CreationTool_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPattern1CreationTool_desc;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String Connector2CreationTool_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String Connector2CreationTool_desc;
 
 	/**
@@ -286,28 +286,28 @@ public class Messages extends NLS {
 	public static String CoordinationPatternVariation3CreationTool_desc;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String Role1CreationTool_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String Role1CreationTool_desc;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CoordinationPatternPatternCompartmentEditPart_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MessageBufferMessageBufferCompartmentEditPart_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MessageTypeParametersCompartmentEditPart_title;
 
 	/**
@@ -316,18 +316,18 @@ public class Messages extends NLS {
 	public static String CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart_title;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String CommandName_OpenDiagram;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_CoordinationPattern_2001_outgoinglinks;
 
 	/**
@@ -336,28 +336,28 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_CoordinationPatternVariant_2002_outgoinglinks;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_Role_3002_incominglinks;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_Role_3002_outgoinglinks;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_CoordinationPattern_3003_outgoinglinks;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_MessageBuffer_3004_incominglinks;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3007_incominglinks;
 
 	/**
@@ -366,68 +366,68 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_CoordinationPatternVariant_3008_outgoinglinks;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_RoleConnector_4001_target;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_RoleConnector_4001_source;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_RoleConnector_4001_outgoinglinks;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_target;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_source;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4003_target;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4003_source;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4004_target;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4004_source;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MessageFormatParser_InvalidInputError;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlModelingAssistantProviderTitle;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String MumlModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	

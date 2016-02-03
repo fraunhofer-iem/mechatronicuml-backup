@@ -13,8 +13,8 @@ public class MumlNavigatorItem
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlAbstractNavigatorItem {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	static {
 		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
@@ -35,18 +35,18 @@ public class MumlNavigatorItem
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private View myView;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean myLeaf = false;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlNavigatorItem(View view, Object parent, boolean isLeaf) {
 		super(parent);
 		myView = view;
@@ -54,22 +54,22 @@ public class MumlNavigatorItem
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public View getView() {
 		return myView;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean isLeaf() {
 		return myLeaf;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean equals(Object obj) {
 		if (obj instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) {
 			return EcoreUtil.getURI(getView()).equals(EcoreUtil.getURI(
@@ -79,8 +79,8 @@ public class MumlNavigatorItem
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public int hashCode() {
 		return EcoreUtil.getURI(getView()).hashCode();
 	}

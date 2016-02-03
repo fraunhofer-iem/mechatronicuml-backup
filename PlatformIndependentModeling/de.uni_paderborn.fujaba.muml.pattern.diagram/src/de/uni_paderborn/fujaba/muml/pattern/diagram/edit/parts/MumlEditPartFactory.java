@@ -13,8 +13,8 @@ import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAcces
 public class MumlEditPartFactory implements EditPartFactory {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
@@ -77,9 +77,6 @@ public class MumlEditPartFactory implements EditPartFactory {
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart(view);
 
-			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart(view);
-
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart(
 						view);
@@ -125,16 +122,16 @@ public class MumlEditPartFactory implements EditPartFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private EditPart createUnrecognizedEditPart(EditPart context, Object model) {
 		// Handle creation of unrecognized child node EditParts here
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
 		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}

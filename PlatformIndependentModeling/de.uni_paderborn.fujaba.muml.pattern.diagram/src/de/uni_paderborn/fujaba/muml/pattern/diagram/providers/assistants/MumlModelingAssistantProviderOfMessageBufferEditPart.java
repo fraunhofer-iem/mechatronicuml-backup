@@ -25,9 +25,10 @@ public class MumlModelingAssistantProviderOfMessageBufferEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnTarget(
@@ -35,8 +36,8 @@ public class MumlModelingAssistantProviderOfMessageBufferEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetRelTypesOnTarget(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
@@ -46,9 +47,10 @@ public class MumlModelingAssistantProviderOfMessageBufferEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForSource(
@@ -57,8 +59,8 @@ public class MumlModelingAssistantProviderOfMessageBufferEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetTypesForSource(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart target,
 			IElementType relationshipType) {

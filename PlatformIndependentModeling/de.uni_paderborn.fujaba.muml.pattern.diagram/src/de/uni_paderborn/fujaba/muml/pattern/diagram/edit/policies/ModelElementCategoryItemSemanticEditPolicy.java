@@ -14,15 +14,15 @@ public class ModelElementCategoryItemSemanticEditPolicy
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ModelElementCategoryItemSemanticEditPolicy() {
 		super(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_2001 == req
 				.getElementType()) {
@@ -40,21 +40,21 @@ public class ModelElementCategoryItemSemanticEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
 			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}

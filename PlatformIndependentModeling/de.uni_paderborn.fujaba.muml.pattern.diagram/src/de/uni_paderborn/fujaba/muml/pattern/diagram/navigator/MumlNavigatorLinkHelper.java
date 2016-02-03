@@ -28,8 +28,8 @@ import org.eclipse.ui.part.FileEditorInput;
 public class MumlNavigatorLinkHelper implements ILinkHelper {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static IEditorInput getEditorInput(Diagram diagram) {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
@@ -47,8 +47,8 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IStructuredSelection findSelection(IEditorInput anInput) {
 		IDiagramDocument document = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getDocumentProvider().getDiagramDocument(anInput);
@@ -69,8 +69,8 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;

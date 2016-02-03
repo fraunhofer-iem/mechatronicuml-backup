@@ -28,18 +28,18 @@ import org.eclipse.ui.part.FileEditorInput;
 public class MumlNavigatorActionProvider extends CommonActionProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean myContribute;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private OpenDiagramAction myOpenDiagramAction;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init(ICommonActionExtensionSite aSite) {
 		super.init(aSite);
 		if (aSite.getViewSite() instanceof ICommonViewerWorkbenchSite) {
@@ -51,15 +51,15 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void makeActions(ICommonViewerWorkbenchSite viewerSite) {
 		myOpenDiagramAction = new OpenDiagramAction(viewerSite);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void fillActionBars(IActionBars actionBars) {
 		if (!myContribute) {
 			return;
@@ -72,37 +72,37 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void fillContextMenu(IMenuManager menu) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class OpenDiagramAction extends Action {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private Diagram myDiagram;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private ICommonViewerWorkbenchSite myViewerSite;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
 			super(de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public final void selectionChanged(IStructuredSelection selection) {
 			myDiagram = null;
 			if (selection.size() == 1) {
@@ -126,8 +126,8 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public void run() {
 			if (myDiagram == null || myDiagram.eResource() == null) {
 				return;
@@ -145,8 +145,8 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private static IEditorInput getEditorInput(Diagram diagram) {
 			Resource diagramResource = diagram.eResource();
 			for (EObject nextEObject : diagramResource.getContents()) {

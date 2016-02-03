@@ -37,8 +37,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 		implements de.uni_paderborn.fujaba.common.edit.policies.IDiagramCanonicalEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean canonicalNodes = true;
 
 	/**
@@ -73,12 +73,11 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	public void removeNoConnectionView(String type) {
 		noConnectionViews.remove(type);
 	}
-
 	// END MUML TICKET #1247
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -89,8 +88,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
 				.getModelElementCategory_ModelElements();
@@ -100,6 +99,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 * @generated
 	 */
 	@SuppressWarnings("rawtypes")
+
 	protected List getSemanticChildrenList() {
 		List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
@@ -114,6 +114,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 */
 
 	@SuppressWarnings("rawtypes")
+
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
 		if (!canonicalNodes) {
@@ -148,15 +149,15 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID
@@ -164,8 +165,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;
@@ -256,8 +257,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
@@ -297,8 +298,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> collectAllLinks(View view,
 			Domain2Notation domain2NotationMap) {
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
@@ -450,8 +451,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Collection<IAdaptable> createConnections(
 			Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
@@ -486,8 +487,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
@@ -497,29 +498,29 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
 			int hintVisualId) {
 		View view = (View) domain2NotationMap.getHinted(domainModelElement,
@@ -531,27 +532,27 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@SuppressWarnings("serial")
 	protected static class Domain2Notation extends HashMap<EObject, View> {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean containsDomainElement(EObject domainElement) {
 			return this.containsKey(domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public View getHinted(EObject domainEObject, String hint) {
 			return this.get(domainEObject);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public void putView(EObject domainElement, View view) {
 			if (!containsKey(view.getElement())) {
 				this.put(domainElement, view);

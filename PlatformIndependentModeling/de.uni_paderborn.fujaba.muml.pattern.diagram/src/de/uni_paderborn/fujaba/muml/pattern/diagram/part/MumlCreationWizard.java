@@ -11,8 +11,8 @@ public class MumlCreationWizard
 		extends de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
@@ -22,8 +22,8 @@ public class MumlCreationWizard
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public String getEditorId() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditor.ID;
@@ -31,8 +31,8 @@ public class MumlCreationWizard
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()

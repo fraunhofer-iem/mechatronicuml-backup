@@ -8,13 +8,13 @@ import org.eclipse.jface.viewers.ViewerSorter;
 public class MumlNavigatorSorter extends ViewerSorter {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static final int GROUP_CATEGORY = 7006;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public int category(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem item = (de.uni_paderborn.fujaba.muml.pattern.diagram.navigator.MumlNavigatorItem) element;

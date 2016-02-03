@@ -10,15 +10,15 @@ public class MessageTypeParametersCompartmentItemSemanticEditPolicy
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MessageTypeParametersCompartmentItemSemanticEditPolicy() {
 		super(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.MessageType_3005);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Parameter_3006 == req
 				.getElementType()) {

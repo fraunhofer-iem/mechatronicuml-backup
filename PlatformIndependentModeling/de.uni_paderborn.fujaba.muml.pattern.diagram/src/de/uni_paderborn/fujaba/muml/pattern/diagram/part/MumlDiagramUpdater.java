@@ -9,7 +9,6 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
@@ -21,8 +20,8 @@ import org.storydriven.core.ExtendableElement;
 public class MumlDiagramUpdater {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> getSemanticChildren(
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
@@ -41,8 +40,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> getModelElementCategory_1000SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
@@ -71,8 +70,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> getCoordinationPatternCoordinationProtocolContainerCompartment_7001SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -132,8 +131,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> getMessageBufferMessageBufferCompartment_7002SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -162,8 +161,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> getMessageTypeParametersCompartment_7003SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -253,8 +252,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getContainedLinks(
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
@@ -285,8 +284,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getIncomingLinks(
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
@@ -315,8 +314,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
@@ -366,8 +365,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_2002ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
@@ -437,8 +436,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_3008ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
@@ -471,8 +470,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_2002IncomingLinks(
 			View view) {
 		return Collections.emptyList();
@@ -549,8 +548,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_3008IncomingLinks(
 			View view) {
 		return Collections.emptyList();
@@ -577,8 +576,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_2002OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
@@ -647,8 +646,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getCoordinationPatternVariant_3008OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant modelElement = (de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant) view
@@ -672,8 +671,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_RoleConnector_4001(
 			de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
@@ -794,8 +793,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(
 			de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source) {
 		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
@@ -810,8 +809,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_RoleConnector_4001(
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = null;
@@ -854,8 +853,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getOutgoingFeatureModelFacetLinks_DiscreteInteractionEndpoint_ReceiverMessageBuffer_4003(
 			de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source) {
 		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
@@ -870,8 +869,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Collection<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> getOutgoingFeatureModelFacetLinks_RoleConnector_ConnectorQualityOfServiceAssumptions_4004(
 			de.uni_paderborn.fujaba.muml.protocol.RoleConnector source) {
 		LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlLinkDescriptor>();
@@ -887,8 +886,8 @@ public class MumlDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
 		/**
 		* @generated

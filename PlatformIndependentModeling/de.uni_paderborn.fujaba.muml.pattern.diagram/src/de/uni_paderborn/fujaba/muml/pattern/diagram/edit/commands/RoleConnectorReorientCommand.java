@@ -15,23 +15,23 @@ import org.eclipse.gmf.runtime.notation.View;
 public class RoleConnectorReorientCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final int reorientDirection;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject oldEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject newEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleConnectorReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
@@ -40,8 +40,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector) {
 			return false;
@@ -56,8 +56,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
@@ -66,7 +66,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-		  return false;
+			return false;
 		}
 		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
@@ -94,8 +94,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
@@ -104,7 +104,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-		  return false;
+			return false;
 		}
 		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
@@ -132,8 +132,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
@@ -148,8 +148,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientSource() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
@@ -162,8 +162,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
@@ -176,43 +176,43 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.protocol.RoleConnector getLink() {
 		return (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) getElementToEdit();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getOldSource() {
 		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getNewSource() {
 		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getOldTarget() {
 		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected int getReorientDirection() {
 		return reorientDirection;
 	}

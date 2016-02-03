@@ -27,8 +27,8 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 public class MessageTypeParametersCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7003;
 
 	/**
@@ -55,29 +55,29 @@ public class MessageTypeParametersCompartmentEditPart extends ListCompartmentEdi
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MessageTypeParametersCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean hasModelChildrenChanged(Notification evt) {
 		return false;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.MessageTypeParametersCompartmentEditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
@@ -96,8 +96,8 @@ public class MessageTypeParametersCompartmentEditPart extends ListCompartmentEdi
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
@@ -119,16 +119,16 @@ public class MessageTypeParametersCompartmentEditPart extends ListCompartmentEdi
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
@@ -150,8 +150,8 @@ public class MessageTypeParametersCompartmentEditPart extends ListCompartmentEdi
 	// and workaround:
 	// http://www.eclipse.org/forums/index.php/m/9761/
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshVisibility() {
 		final View notationView = getNotationView();
 		final boolean hasChildren = notationView.getChildren().size() > 0;
@@ -160,8 +160,8 @@ public class MessageTypeParametersCompartmentEditPart extends ListCompartmentEdi
 
 	// This is also part of the fix mentioned above.
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		refreshVisibility();

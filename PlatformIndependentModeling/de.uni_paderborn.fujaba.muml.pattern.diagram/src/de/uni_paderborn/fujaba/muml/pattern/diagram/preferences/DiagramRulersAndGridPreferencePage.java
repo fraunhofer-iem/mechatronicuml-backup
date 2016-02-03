@@ -8,8 +8,8 @@ import org.eclipse.gmf.runtime.diagram.ui.preferences.RulerGridPreferencePage;
 public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiagramRulersAndGridPreferencePage() {
 		setPreferenceStore(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 				.getPreferenceStore());

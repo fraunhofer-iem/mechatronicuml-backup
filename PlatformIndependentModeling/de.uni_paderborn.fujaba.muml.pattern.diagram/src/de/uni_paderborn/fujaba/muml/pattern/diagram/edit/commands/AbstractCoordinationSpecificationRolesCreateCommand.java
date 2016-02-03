@@ -15,18 +15,18 @@ import org.eclipse.gmf.runtime.notation.View;
 public class AbstractCoordinationSpecificationRolesCreateCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject source;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject target;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public AbstractCoordinationSpecificationRolesCreateCommand(CreateRelationshipRequest request, EObject source,
 			EObject target) {
 		super(request.getLabel(), null, request);
@@ -35,8 +35,8 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends EditEle
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (source == null && target == null) {
 			return false;
@@ -70,8 +70,8 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends EditEle
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
@@ -85,22 +85,22 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends EditEle
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setElementToEdit(EObject element) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getSource() {
 		return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) source;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.protocol.Role getTarget() {
 		return (de.uni_paderborn.fujaba.muml.protocol.Role) target;
 	}

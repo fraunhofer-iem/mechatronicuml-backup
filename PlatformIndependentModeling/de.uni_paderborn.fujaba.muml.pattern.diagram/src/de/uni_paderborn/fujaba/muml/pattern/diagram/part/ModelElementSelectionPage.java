@@ -9,8 +9,8 @@ import org.eclipse.gmf.tooling.runtime.part.DefaultModelElementSelectionPage;
 public class ModelElementSelectionPage extends DefaultModelElementSelectionPage {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ModelElementSelectionPage(String pageName) {
 		super(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 				.getItemProvidersAdapterFactory(), pageName);

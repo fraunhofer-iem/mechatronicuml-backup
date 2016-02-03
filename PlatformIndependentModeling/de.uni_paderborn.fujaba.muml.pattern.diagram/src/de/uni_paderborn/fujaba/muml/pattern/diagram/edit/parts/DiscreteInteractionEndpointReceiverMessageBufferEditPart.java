@@ -19,8 +19,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferEditPart extends Co
 		implements ITreeBranchEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 4003;
 
 	/**
@@ -47,15 +47,15 @@ public class DiscreteInteractionEndpointReceiverMessageBufferEditPart extends Co
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiscreteInteractionEndpointReceiverMessageBufferEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
@@ -63,21 +63,21 @@ public class DiscreteInteractionEndpointReceiverMessageBufferEditPart extends Co
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
 
 	protected Connection createConnectionFigure() {
 		return new RoleMessageBufferConnectionFigureDescriptor();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleMessageBufferConnectionFigureDescriptor getPrimaryShape() {
 		return (RoleMessageBufferConnectionFigureDescriptor) getFigure();
 	}

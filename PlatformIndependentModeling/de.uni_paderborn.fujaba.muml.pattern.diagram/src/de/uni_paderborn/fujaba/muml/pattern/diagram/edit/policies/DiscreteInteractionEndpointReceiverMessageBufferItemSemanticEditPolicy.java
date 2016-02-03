@@ -17,15 +17,15 @@ public class DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPol
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPolicy() {
 		super(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return getGEFWrapper(new DestroyReferenceCommand(req) {
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info)

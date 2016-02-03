@@ -16,28 +16,28 @@ import org.eclipse.gmf.runtime.notation.View;
 public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final int reorientDirection;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject referenceOwner;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject oldEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject newEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand(
 			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
@@ -48,8 +48,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector) {
 			return false;
@@ -64,8 +64,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector)) {
@@ -88,8 +88,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions)) {
@@ -112,8 +112,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
@@ -128,8 +128,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientSource() throws ExecutionException {
 
 		getOldSource().setConnectorQualityOfServiceAssumptions(null);
@@ -139,8 +139,8 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
 
 		getOldSource().setConnectorQualityOfServiceAssumptions(getNewTarget());
@@ -149,36 +149,36 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.protocol.RoleConnector getOldSource() {
 		return (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) referenceOwner;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.protocol.RoleConnector getNewSource() {
 		return (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions getOldTarget() {
 		return (de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected int getReorientDirection() {
 		return reorientDirection;
 	}

@@ -14,13 +14,13 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final String fileExtension;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
@@ -36,15 +36,15 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public URI getURI() {
 		return URI.createPlatformResourceURI(getFilePath().toString(), false);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IPath getFilePath() {
 		IPath path = getContainerFullPath();
 		if (path == null) {
@@ -58,8 +58,8 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		setFileName(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil
@@ -68,8 +68,8 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean validatePage() {
 		if (!super.validatePage()) {
 			return false;

@@ -20,36 +20,36 @@ import org.eclipse.swt.graphics.Image;
 public class MumlElementTypes {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private MumlElementTypes() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Map<IElementType, ENamedElement> elements;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 					.getItemProvidersAdapterFactory());
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType ModelElementCategory_1000 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType CoordinationPattern_2001 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
 	/**
@@ -57,35 +57,34 @@ public class MumlElementTypes {
 	*/
 	public static final IElementType CoordinationPatternVariant_2002 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"); //$NON-NLS-1$
-
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType CoordinationPattern_3003 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Role_3002 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType MessageBuffer_3004 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.MessageBuffer_3004"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType MessageType_3005 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.MessageType_3005"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Parameter_3006 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.Parameter_3006"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType ConnectorQualityOfServiceAssumptions_3007 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.ConnectorQualityOfServiceAssumptions_3007"); //$NON-NLS-1$
 	/**
@@ -93,61 +92,60 @@ public class MumlElementTypes {
 	*/
 	public static final IElementType CoordinationPatternVariant_3008 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"); //$NON-NLS-1$
-
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType AbstractCoordinationSpecificationRoles_4002 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType RoleConnector_4001 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType DiscreteInteractionEndpointReceiverMessageBuffer_4003 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4003"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType RoleConnectorConnectorQualityOfServiceAssumptions_4004 = getElementType(
 			"de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4004"); //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static Image getImage(ENamedElement element) {
 		return elementTypeImages.getImage(element);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
 		return getImageDescriptor(getElement(hint));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static Image getImage(IAdaptable hint) {
 		return getImage(getElement(hint));
 	}
 
 	/**
-	 * Returns 'type' of the ecore object associated with the hint.
-	 * 
-	 * @generated
-	 */
+	* Returns 'type' of the ecore object associated with the hint.
+	* 
+	* @generated
+	*/
 	public static ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
 		if (elements == null) {
@@ -202,15 +200,15 @@ public class MumlElementTypes {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
@@ -233,8 +231,8 @@ public class MumlElementTypes {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
@@ -270,8 +268,8 @@ public class MumlElementTypes {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**

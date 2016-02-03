@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.pattern.diagram.sheet;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -15,8 +16,8 @@ import org.eclipse.swt.graphics.Image;
 public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getText(Object element) {
 		element = unwrap(element);
 
@@ -38,8 +39,8 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
@@ -47,8 +48,8 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Object unwrap(Object element) {
 		if (element instanceof IStructuredSelection) {
 			return ((IStructuredSelection) element).getFirstElement();
@@ -57,8 +58,8 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private View getView(Object element) {
 		if (element instanceof View) {
 			return (View) element;
@@ -70,8 +71,8 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {

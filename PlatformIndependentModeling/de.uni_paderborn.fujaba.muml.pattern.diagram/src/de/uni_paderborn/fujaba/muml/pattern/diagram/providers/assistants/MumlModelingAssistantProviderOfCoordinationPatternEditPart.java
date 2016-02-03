@@ -15,9 +15,10 @@ public class MumlModelingAssistantProviderOfCoordinationPatternEditPart
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSource(
@@ -25,8 +26,8 @@ public class MumlModelingAssistantProviderOfCoordinationPatternEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetRelTypesOnSource(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
@@ -36,9 +37,10 @@ public class MumlModelingAssistantProviderOfCoordinationPatternEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
@@ -48,8 +50,8 @@ public class MumlModelingAssistantProviderOfCoordinationPatternEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart source,
 			IGraphicalEditPart targetEditPart) {
@@ -62,9 +64,10 @@ public class MumlModelingAssistantProviderOfCoordinationPatternEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForTarget(
@@ -73,8 +76,8 @@ public class MumlModelingAssistantProviderOfCoordinationPatternEditPart
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public List<IElementType> doGetTypesForTarget(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart source,
 			IElementType relationshipType) {

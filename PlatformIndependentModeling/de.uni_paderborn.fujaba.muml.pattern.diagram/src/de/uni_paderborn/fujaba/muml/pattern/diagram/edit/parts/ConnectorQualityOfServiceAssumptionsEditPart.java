@@ -42,8 +42,8 @@ import org.eclipse.swt.widgets.Display;
 public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 3007;
 
 	/**
@@ -70,25 +70,25 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure contentPane;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure primaryShape;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ConnectorQualityOfServiceAssumptionsEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
@@ -133,8 +133,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -158,22 +158,22 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createNodeShape() {
 		return primaryShape = new QualityOfServiceAssumptionsFigureDescriptor();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public QualityOfServiceAssumptionsFigureDescriptor getPrimaryShape() {
 		return (QualityOfServiceAssumptionsFigureDescriptor) primaryShape;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
@@ -182,11 +182,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureMinDelayLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart) {
-			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureMaxDelayLabel());
 			return true;
 		}
@@ -194,8 +189,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart) {
 			return true;
@@ -203,15 +198,12 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart) {
-			return true;
-		}
 		return false;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -220,8 +212,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
@@ -230,15 +222,15 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		return getContentPane();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
@@ -259,13 +251,13 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -276,11 +268,11 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
-	 * @generated
-	 */
+	* Default implementation treats passed figure as content pane.
+	* Respects layout one may have set for generated figure.
+	* @param nodeShape instance of generated figure class
+	* @generated
+	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
@@ -291,8 +283,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure getContentPane() {
 		if (contentPane != null) {
 			return contentPane;
@@ -301,8 +293,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -310,8 +302,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setBackgroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
@@ -319,8 +311,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineWidth(width);
@@ -328,8 +320,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
@@ -337,8 +329,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
@@ -353,10 +345,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		 * @generated
 		 */
 		private WrappingLabel fFigureMsgLossLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureMinDelayLabel;
 		/**
 		 * @generated
 		 */
@@ -412,20 +400,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 			constraintFFigureMsgLossLabel.grabExcessVerticalSpace = false;
 			this.add(fFigureMsgLossLabel, constraintFFigureMsgLossLabel);
 
-			fFigureMinDelayLabel = new WrappingLabel();
-
-			fFigureMinDelayLabel.setText("");
-
-			GridData constraintFFigureMinDelayLabel = new GridData();
-			constraintFFigureMinDelayLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureMinDelayLabel.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureMinDelayLabel.horizontalIndent = 0;
-			constraintFFigureMinDelayLabel.horizontalSpan = 1;
-			constraintFFigureMinDelayLabel.verticalSpan = 1;
-			constraintFFigureMinDelayLabel.grabExcessHorizontalSpace = false;
-			constraintFFigureMinDelayLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMinDelayLabel, constraintFFigureMinDelayLabel);
-
 			fFigureMaxDelayLabel = new WrappingLabel();
 
 			fFigureMaxDelayLabel.setText("");
@@ -440,6 +414,12 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 			constraintFFigureMaxDelayLabel.grabExcessVerticalSpace = false;
 			this.add(fFigureMaxDelayLabel, constraintFFigureMaxDelayLabel);
 
+			WrappingLabel staticPreserveMsgOrderLabel0 = new WrappingLabel();
+
+			staticPreserveMsgOrderLabel0.setText("PreserveMsgOrder: true");
+
+			this.add(staticPreserveMsgOrderLabel0);
+
 		}
 
 		/**
@@ -447,13 +427,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		 */
 		public WrappingLabel getFigureMsgLossLabel() {
 			return fFigureMsgLossLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureMinDelayLabel() {
-			return fFigureMinDelayLabel;
 		}
 
 		/**

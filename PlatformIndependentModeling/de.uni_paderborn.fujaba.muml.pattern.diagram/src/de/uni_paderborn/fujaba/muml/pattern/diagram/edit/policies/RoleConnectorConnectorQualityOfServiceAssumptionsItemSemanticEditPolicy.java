@@ -17,15 +17,15 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsItemSemanticEditPo
 		extends de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleConnectorConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
 		super(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return getGEFWrapper(new DestroyReferenceCommand(req) {
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info)

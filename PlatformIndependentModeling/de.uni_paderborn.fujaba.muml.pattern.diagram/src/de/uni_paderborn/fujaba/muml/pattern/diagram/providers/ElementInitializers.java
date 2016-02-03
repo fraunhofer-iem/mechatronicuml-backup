@@ -18,8 +18,8 @@ public class ElementInitializers {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init_CoordinationPattern_2001(de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.protocol.Role newInstance_0_0 = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
@@ -154,7 +154,7 @@ public class ElementInitializers {
 					.createRole();
 			instance.getRoles().add(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(20, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRole(), null)
+					.getExpression(19, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
 			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
@@ -164,7 +164,7 @@ public class ElementInitializers {
 					.createNaturalNumber();
 			newInstance_0_0_1_0.setLowerBound(newInstance_0_0_1_0_0_0);
 			Object value_0_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(21,
+					.getExpression(20,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_1_0_0_0);
 
@@ -176,7 +176,7 @@ public class ElementInitializers {
 					.createNaturalNumber();
 			newInstance_0_0_1_0.setUpperBound(newInstance_0_0_1_0_1_0);
 			Object value_0_0_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(22,
+					.getExpression(21,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_1_0_1_0);
 
@@ -188,7 +188,7 @@ public class ElementInitializers {
 					.createRole();
 			instance.getRoles().add(newInstance_0_1);
 			Object value_0_1_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(23, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRole(), null)
+					.getExpression(22, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_0_1);
 			newInstance_0_1.setName((String) value_0_1_0);
 			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_1_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
@@ -198,7 +198,7 @@ public class ElementInitializers {
 					.createNaturalNumber();
 			newInstance_0_1_1_0.setLowerBound(newInstance_0_1_1_0_0_0);
 			Object value_0_1_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(24,
+					.getExpression(23,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_1_1_0_0_0);
 
@@ -210,7 +210,7 @@ public class ElementInitializers {
 					.createNaturalNumber();
 			newInstance_0_1_1_0.setUpperBound(newInstance_0_1_1_0_1_0);
 			Object value_0_1_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(25,
+					.getExpression(24,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_1_1_0_1_0);
 
@@ -222,7 +222,7 @@ public class ElementInitializers {
 					.createRoleConnector();
 			instance.setRoleConnector(newInstance_1_0);
 			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(26,
+					.getExpression(25,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRoleConnector(), null)
 					.evaluate(newInstance_1_0);
 			if (value_1_0_0 instanceof Collection) {
@@ -236,7 +236,7 @@ public class ElementInitializers {
 					.createConnectorQualityOfServiceAssumptions();
 			newInstance_1_0.setConnectorQualityOfServiceAssumptions(newInstance_1_0_1_0);
 			Object value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(27, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getExpression(26, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getConnectorQualityOfServiceAssumptions(), null)
 					.evaluate(newInstance_1_0_1_0);
 			newInstance_1_0_1_0.setComment((String) value_1_0_1_0_0);
@@ -247,7 +247,7 @@ public class ElementInitializers {
 					.createLiteralExpression();
 			newInstance_1_0_1_0_1_0.setValue(newInstance_1_0_1_0_1_0_0_0);
 			Object value_1_0_1_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(28, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
+					.getExpression(27, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
 					.evaluate(newInstance_1_0_1_0_1_0_0_0);
 			newInstance_1_0_1_0_1_0_0_0.setValue((String) value_1_0_1_0_1_0_0_0_0);
 
@@ -260,7 +260,7 @@ public class ElementInitializers {
 					.createLiteralExpression();
 			newInstance_1_0_1_0_2_0.setValue(newInstance_1_0_1_0_2_0_0_0);
 			Object value_1_0_1_0_2_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(29, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
+					.getExpression(28, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
 					.evaluate(newInstance_1_0_1_0_2_0_0_0);
 			newInstance_1_0_1_0_2_0_0_0.setValue((String) value_1_0_1_0_2_0_0_0_0);
 
@@ -273,8 +273,8 @@ public class ElementInitializers {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init_Role_3002(de.uni_paderborn.fujaba.muml.protocol.Role instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
@@ -311,15 +311,15 @@ public class ElementInitializers {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init_RoleConnector_4001(de.uni_paderborn.fujaba.muml.protocol.RoleConnector instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions newInstance_0_0 = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 					.createConnectorQualityOfServiceAssumptions();
 			instance.setConnectorQualityOfServiceAssumptions(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(30, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getExpression(29, de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getConnectorQualityOfServiceAssumptions(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setComment((String) value_0_0_0);
@@ -329,7 +329,7 @@ public class ElementInitializers {
 			LiteralExpression newInstance_0_0_1_0_0_0 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			newInstance_0_0_1_0.setValue(newInstance_0_0_1_0_0_0);
 			Object value_0_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(31, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
+					.getExpression(30, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
 					.evaluate(newInstance_0_0_1_0_0_0);
 			newInstance_0_0_1_0_0_0.setValue((String) value_0_0_1_0_0_0_0);
 
@@ -341,7 +341,7 @@ public class ElementInitializers {
 			LiteralExpression newInstance_0_0_2_0_0_0 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			newInstance_0_0_2_0.setValue(newInstance_0_0_2_0_0_0);
 			Object value_0_0_2_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
-					.getExpression(32, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
+					.getExpression(31, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
 					.evaluate(newInstance_0_0_2_0_0_0);
 			newInstance_0_0_2_0_0_0.setValue((String) value_0_0_2_0_0_0_0);
 
@@ -354,8 +354,8 @@ public class ElementInitializers {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getElementInitializers();

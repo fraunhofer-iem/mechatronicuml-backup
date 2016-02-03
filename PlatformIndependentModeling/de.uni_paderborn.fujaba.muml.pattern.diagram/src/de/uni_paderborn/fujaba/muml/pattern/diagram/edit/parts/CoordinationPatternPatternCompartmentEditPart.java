@@ -25,8 +25,8 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7001;
 
 	/**
@@ -53,22 +53,22 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public CoordinationPatternPatternCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.CoordinationPatternPatternCompartmentEditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
@@ -87,8 +87,8 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
@@ -101,8 +101,8 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
@@ -110,8 +110,8 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()

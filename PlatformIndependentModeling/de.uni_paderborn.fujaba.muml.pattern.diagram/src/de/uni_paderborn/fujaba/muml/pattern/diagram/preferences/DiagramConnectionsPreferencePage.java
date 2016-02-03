@@ -8,8 +8,8 @@ import org.eclipse.gmf.runtime.diagram.ui.preferences.ConnectionsPreferencePage;
 public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiagramConnectionsPreferencePage() {
 		setPreferenceStore(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 				.getPreferenceStore());

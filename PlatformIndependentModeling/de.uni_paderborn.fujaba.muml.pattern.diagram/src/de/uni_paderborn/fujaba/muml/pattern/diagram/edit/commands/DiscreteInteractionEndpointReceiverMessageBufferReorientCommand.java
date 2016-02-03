@@ -16,28 +16,28 @@ import org.eclipse.gmf.runtime.notation.View;
 public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final int reorientDirection;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject referenceOwner;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject oldEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject newEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiscreteInteractionEndpointReceiverMessageBufferReorientCommand(
 			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
@@ -48,8 +48,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint) {
 			return false;
@@ -64,8 +64,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint)) {
@@ -88,8 +88,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer)) {
@@ -112,8 +112,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
@@ -128,8 +128,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientSource() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
@@ -142,8 +142,8 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
@@ -156,36 +156,36 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint getOldSource() {
 		return (de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint) referenceOwner;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint getNewSource() {
 		return (de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.MessageBuffer getOldTarget() {
 		return (de.uni_paderborn.fujaba.muml.connector.MessageBuffer) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected de.uni_paderborn.fujaba.muml.connector.MessageBuffer getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.connector.MessageBuffer) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected int getReorientDirection() {
 		return reorientDirection;
 	}

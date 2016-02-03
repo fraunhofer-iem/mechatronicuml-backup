@@ -18,16 +18,16 @@ import org.eclipse.gmf.runtime.notation.View;
 public class RoleCreateCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public RoleCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
-	 * FIXME: replace with setElementToEdit()
-	 * @generated
-	 */
+	* FIXME: replace with setElementToEdit()
+	* @generated
+	*/
 	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
@@ -37,8 +37,8 @@ public class RoleCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getElementToEdit();
 		if (container.getRoles().size() >= 2) {
@@ -49,8 +49,8 @@ public class RoleCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.protocol.Role newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 				.createRole();
@@ -68,8 +68,8 @@ public class RoleCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void doConfigure(de.uni_paderborn.fujaba.muml.protocol.Role newElement, IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();

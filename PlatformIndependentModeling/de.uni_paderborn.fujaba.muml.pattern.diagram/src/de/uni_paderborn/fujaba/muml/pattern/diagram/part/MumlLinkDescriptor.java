@@ -9,15 +9,15 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
  */
 public class MumlLinkDescriptor extends UpdaterLinkDescriptor {
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlLinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
 		super(source, destination, elementType, linkVID);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlLinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType,
 			int linkVID) {
 		super(source, destination, linkElement, elementType, linkVID);

@@ -19,14 +19,14 @@ import org.eclipse.gmf.runtime.emf.ui.providers.marker.AbstractModelMarkerNaviga
 public class MumlMarkerNavigationProvider extends AbstractModelMarkerNavigationProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.ID
 			+ ".diagnostic"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void doGotoMarker(IMarker marker) {
 		String elementId = marker.getAttribute(org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID, null);
 		if (elementId == null || !(getEditor() instanceof DiagramEditor)) {
@@ -46,8 +46,8 @@ public class MumlMarkerNavigationProvider extends AbstractModelMarkerNavigationP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static void deleteMarkers(IResource resource) {
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
@@ -58,8 +58,8 @@ public class MumlMarkerNavigationProvider extends AbstractModelMarkerNavigationP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static IMarker addMarker(IFile file, String elementId, String location, String message, int statusSeverity) {
 		IMarker marker = null;
 		try {

@@ -8,8 +8,8 @@ import org.eclipse.gmf.runtime.diagram.ui.preferences.AppearancePreferencePage;
 public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiagramAppearancePreferencePage() {
 		setPreferenceStore(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
 				.getPreferenceStore());

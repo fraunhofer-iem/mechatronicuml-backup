@@ -28,59 +28,59 @@ import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String ID = "de.uni_paderborn.fujaba.muml.pattern.diagram"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private LogHelper myLogHelper;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(ID);
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static MumlDiagramEditorPlugin instance;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ComposedAdapterFactory adapterFactory;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDocumentProvider documentProvider;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private de.uni_paderborn.fujaba.muml.pattern.diagram.providers.ElementInitializers initializers;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory oclFactory;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlDiagramEditorPlugin() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
@@ -90,8 +90,8 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
@@ -103,15 +103,15 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static MumlDiagramEditorPlugin getInstance() {
 		return instance;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
@@ -119,8 +119,8 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance()
 				.getCustomItemProviderAdapterFactories(ID, true);
@@ -131,7 +131,6 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
-		factories.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
@@ -144,6 +143,7 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
@@ -157,15 +157,15 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public AdapterFactory getItemProvidersAdapterFactory() {
 		return adapterFactory;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ImageDescriptor getItemImageDescriptor(Object item) {
 		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
 		if (labelProvider != null) {
@@ -232,8 +232,8 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
 			documentProvider = new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDocumentProvider();
@@ -242,79 +242,79 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void setLinkConstraints(
 			de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public de.uni_paderborn.fujaba.muml.pattern.diagram.providers.ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void setElementInitializers(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void setMumlOCLFactory(de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory f) {
 		this.oclFactory = f;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void logError(String error) {
 		getLogHelper().logError(error, null);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void logError(String error, Throwable throwable) {
 		getLogHelper().logError(error, throwable);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void logInfo(String message) {
 		getLogHelper().logInfo(message, null);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void logInfo(String message, Throwable throwable) {
 		getLogHelper().logInfo(message, throwable);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public LogHelper getLogHelper() {
 		return myLogHelper;
 	}

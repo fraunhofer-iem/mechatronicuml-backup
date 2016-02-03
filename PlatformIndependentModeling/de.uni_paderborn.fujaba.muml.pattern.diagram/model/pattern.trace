@@ -73,9 +73,6 @@
     <nodeLabelTraces
         visualID="5009"
         queryText="true"/>
-    <nodeLabelTraces
-        visualID="5010"
-        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3008"

@@ -8,8 +8,8 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterNodeDescriptor;
  */
 public class MumlNodeDescriptor extends UpdaterNodeDescriptor {
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlNodeDescriptor(EObject modelElement, int visualID) {
 		super(modelElement, visualID);
 	}

@@ -8,8 +8,8 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider;
 public class MumlEditPartProvider extends DefaultEditPartProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlEditPartProvider() {
 		super(new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MumlEditPartFactory(),
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE,

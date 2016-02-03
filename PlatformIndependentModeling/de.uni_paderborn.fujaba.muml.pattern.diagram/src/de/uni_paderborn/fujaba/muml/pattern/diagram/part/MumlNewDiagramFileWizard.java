@@ -34,23 +34,23 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 public class MumlNewDiagramFileWizard extends Wizard {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private WizardNewFileCreationPage myFileCreationPage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private de.uni_paderborn.fujaba.muml.pattern.diagram.part.ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private TransactionalEditingDomain myEditingDomain;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public MumlNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
@@ -90,16 +90,16 @@ public class MumlNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void addPages() {
 		addPage(myFileCreationPage);
 		addPage(diagramRootElementSelectionPage);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile diagramFile = myFileCreationPage.createNewFile();
@@ -146,28 +146,28 @@ public class MumlNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class DiagramRootElementSelectionPage
 			extends de.uni_paderborn.fujaba.muml.pattern.diagram.part.ModelElementSelectionPage {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		protected DiagramRootElementSelectionPage(String pageName) {
 			super(pageName);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		protected String getSelectionTitle() {
 			return de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		protected boolean validatePage() {
 			if (getModelElement() == null) {
 				setErrorMessage(

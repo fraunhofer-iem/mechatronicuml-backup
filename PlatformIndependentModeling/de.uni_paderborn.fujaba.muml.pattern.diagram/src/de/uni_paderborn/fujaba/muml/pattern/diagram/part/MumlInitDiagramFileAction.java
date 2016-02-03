@@ -27,13 +27,13 @@ public class MumlInitDiagramFileAction
 		extends de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static class CreateDiagramElement extends AbstractHandler {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
 		public Object execute(ExecutionEvent event) throws ExecutionException {
 			// Get shell and uri of current selection
@@ -72,16 +72,16 @@ public class MumlInitDiagramFileAction
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public void setCharset(IFile diagramFile) {
 		de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil.setCharset(diagramFile);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public String getUniqueFilename(String hint, String extension, IPath filePath) {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorUtil.getUniqueFileName(filePath, hint,
@@ -89,8 +89,8 @@ public class MumlInitDiagramFileAction
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public String getEditorId() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditor.ID;

@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.pattern.diagram.sheet;
 
 import java.util.ArrayList;
@@ -16,9 +17,9 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 public class MumlPropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
-	 * Modify/unwrap selection.
-	 * @generated
-	 */
+	* Modify/unwrap selection.
+	* @generated
+	*/
 	@Override
 	protected Object transformSelection(Object selected) {
 		selected = /*super.*/transformSelectionToDomain(selected);
@@ -26,8 +27,8 @@ public class MumlPropertySection extends DefaultPropertySection implements IProp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected AdapterFactory getAdapterFactory(Object object) {
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
@@ -50,8 +51,8 @@ public class MumlPropertySection extends DefaultPropertySection implements IProp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected AdapterFactoryEditingDomain getEditingDomainFor(Object object) {
 		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
 			return (AdapterFactoryEditingDomain) getEditingDomain();

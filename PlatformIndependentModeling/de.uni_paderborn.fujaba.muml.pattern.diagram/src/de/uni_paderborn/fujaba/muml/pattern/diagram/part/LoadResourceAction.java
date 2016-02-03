@@ -15,8 +15,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
  */
 public class LoadResourceAction extends DefaultLoadResourceAction {
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IEditorPart diagramEditor = HandlerUtil.getActiveEditorChecked(event);
 		Shell shell = diagramEditor.getEditorSite().getShell();

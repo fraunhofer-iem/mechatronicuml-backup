@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.pattern.diagram.part;
 
 import java.util.Collections;
@@ -15,17 +16,17 @@ import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 public class MumlPaletteFactory {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createPatternToolGroup1Group());
 		paletteRoot.add(createMisreferencedtools2Group());
 	}
 
 	/**
-	 * Creates "PatternToolGroup" palette tool group
-	 * @generated
-	 */
+	* Creates "PatternToolGroup" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createPatternToolGroup1Group() {
 		PaletteGroup paletteContainer = new PaletteGroup(
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.PatternToolGroup1Group_title);
@@ -37,9 +38,9 @@ public class MumlPaletteFactory {
 	}
 
 	/**
-	 * Creates "-- Mis-referenced tools --" palette tool group
-	 * @generated
-	 */
+	* Creates "-- Mis-referenced tools --" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createMisreferencedtools2Group() {
 		PaletteGroup paletteContainer = new PaletteGroup(
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Misreferencedtools2Group_title);
@@ -51,8 +52,8 @@ public class MumlPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createCoordinationPattern1CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.CoordinationPattern1CreationTool_title,
@@ -67,8 +68,8 @@ public class MumlPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createConnector2CreationTool() {
 		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Connector2CreationTool_title,
@@ -99,8 +100,8 @@ public class MumlPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createRole1CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Role1CreationTool_title,

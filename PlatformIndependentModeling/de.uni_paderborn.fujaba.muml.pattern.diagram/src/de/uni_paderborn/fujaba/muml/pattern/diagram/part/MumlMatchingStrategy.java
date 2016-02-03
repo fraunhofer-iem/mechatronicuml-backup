@@ -12,8 +12,8 @@ import org.eclipse.ui.PartInitException;
 public class MumlMatchingStrategy implements IEditorMatchingStrategy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean matches(IEditorReference editorRef, IEditorInput input) {
 		IEditorInput editorInput;
 		try {

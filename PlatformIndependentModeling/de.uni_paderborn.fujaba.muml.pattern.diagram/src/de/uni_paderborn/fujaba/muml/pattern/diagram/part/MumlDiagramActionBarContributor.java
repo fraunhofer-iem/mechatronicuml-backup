@@ -14,22 +14,22 @@ import org.eclipse.ui.IWorkbenchPage;
 public class MumlDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Class getEditorClass() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditor.class;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getEditorId() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditor.ID;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview

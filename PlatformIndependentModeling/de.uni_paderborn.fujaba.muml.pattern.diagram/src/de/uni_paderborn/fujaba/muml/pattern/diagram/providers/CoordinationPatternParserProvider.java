@@ -20,13 +20,13 @@ import org.storydriven.core.CorePackage;
 public class CoordinationPatternParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser coordinationPatternName_5003Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getCoordinationPatternName_5003Parser() {
 		if (coordinationPatternName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
@@ -38,13 +38,13 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser roleName_5002Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getRoleName_5002Parser() {
 		if (roleName_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
@@ -56,34 +56,34 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getMessageBufferLabel_5006Parser() {
 		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5006();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getMessageBufferLabel_5007Parser() {
 		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5007();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getMessageBufferLabel_5011Parser() {
 		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5011();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser messageTypeName_5005Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getMessageTypeName_5005Parser() {
 		if (messageTypeName_5005Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
@@ -95,31 +95,24 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getParameterLabel_5004Parser() {
 		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ParameterLabelExpressionLabelParser5004();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5008Parser() {
 		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5009Parser() {
 		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5009();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getConnectorQualityOfServiceAssumptionsLabel_5010Parser() {
-		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5010();
 	}
 
 	/**
@@ -141,8 +134,8 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID:
@@ -163,8 +156,6 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 			return getConnectorQualityOfServiceAssumptionsLabel_5008Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptionsLabel_5009Parser();
-		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-			return getConnectorQualityOfServiceAssumptionsLabel_5010Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart.VISUAL_ID:
 			return getCoordinationPatternVariantName_5012Parser();
 		}
@@ -172,16 +163,16 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
-	 * Utility method that consults ParserService
-	 * @generated
-	 */
+	* Utility method that consults ParserService
+	* @generated
+	*/
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {
 		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
@@ -195,8 +186,8 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
@@ -209,18 +200,18 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class HintAdapter extends ParserHintAdapter {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private final IElementType elementType;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public HintAdapter(IElementType type, EObject object, String parserHint) {
 			super(object, parserHint);
 			assert type != null;
@@ -228,8 +219,8 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public Object getAdapter(Class adapter) {
 			if (IElementType.class.equals(adapter)) {
 				return elementType;

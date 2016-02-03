@@ -27,8 +27,8 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class MessageTypeParametersCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean canonicalNodes = true;
 
 	/**
@@ -63,12 +63,11 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	public void removeNoConnectionView(String type) {
 		noConnectionViews.remove(type);
 	}
-
 	// END MUML TICKET #1247
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -79,8 +78,8 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getMessageType_Parameters();
 	}
@@ -89,6 +88,7 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	 * @generated
 	 */
 	@SuppressWarnings("rawtypes")
+
 	protected List getSemanticChildrenList() {
 		List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
@@ -103,6 +103,7 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	 */
 
 	@SuppressWarnings("rawtypes")
+
 	protected List getSemanticChildrenViewDescriptors() {
 		// Begin added to switch off toplevel canonical behavior:
 		if (!canonicalNodes) {
@@ -136,23 +137,23 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean isMyDiagramElement(View view) {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;
