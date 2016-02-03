@@ -24,8 +24,10 @@
 		'>='
 	else if comparingOperator = ComparingOperator::EQUAL then
 		'=='
-	else
-		'<>'
+	else if comparingOperator = ComparingOperator::UNEQUAL then
+		'!='
+	else '/*UNSUPPORTED COMPARING OPERATOR*/'
+	endif
 	endif
 	endif
 	endif
