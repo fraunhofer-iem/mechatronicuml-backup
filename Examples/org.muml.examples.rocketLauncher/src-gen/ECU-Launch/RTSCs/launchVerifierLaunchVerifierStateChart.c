@@ -48,7 +48,7 @@
 		
 			stateChart->peer1 = -32;
 		
-			stateChart->peer2 = 5;
+			stateChart->peer2 = -42;
 		
 			stateChart->currentStateOfLaunchVerifierLaunchVerifier =
 					STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAIN;
@@ -204,7 +204,7 @@
 			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED:
 				if (
 		
-				stateChart->peer1 == stateChart->peer2
+				stateChart->peer1 == stateChart->peer2 && stateChart->peer1 >0 && stateChart->peer2 > 0
 		
 				) {
 		
@@ -247,7 +247,7 @@
 			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED:
 				if (
 		
-				stateChart->peer1 != stateChart->peer2
+				stateChart->peer1 != stateChart->peer2 || stateChart->peer1<=0 || stateChart->peer2<=0
 		
 				) {
 		

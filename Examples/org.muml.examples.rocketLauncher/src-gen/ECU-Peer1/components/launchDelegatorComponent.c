@@ -3,9 +3,22 @@
 		#include "../components/launchDelegatorComponent_Interface.h"
 		
 		int32_T selfCont(void){
-				int i;
+				char c;
+				int i = 0;
+				int b = 1;
 			   printf("Enter Number : ");
-			   scanf("%d",&i);
+
+			   while (1) {
+				   c = getchar();
+				   if (c == 0 || c == 13 || c == 10) {
+					   break;
+				   }
+				   if (c >= '0' && c <= '9') {
+					   i += b * (c - '0');
+					   b *= 10;
+				   }
+			   };
+
 			   return i;
 		}
 		

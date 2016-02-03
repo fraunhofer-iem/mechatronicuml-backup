@@ -18,7 +18,7 @@ int main(){
 
 	 		
 		LaunchVerifierComponent_processStep(atomic_c2);
-	 		usleep(500*1000);
+	 		usleep(1000);
 
 	}
 

@@ -35,7 +35,9 @@
       </variables>
       <variables xmi:id="_9SLTIMjuEeW0gpRI-mS_yA" name="peer2">
         <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="__fcb8MjuEeW0gpRI-mS_yA" value="5"/>
+        <initializeExpression xsi:type="sdcec:UnaryExpression" xmi:id="_Je4EIMqdEeWg8I9CxdQyWw" operator="MINUS">
+          <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Je4EIcqdEeWg8I9CxdQyWw" value="42"/>
+        </initializeExpression>
       </variables>
       <states xmi:id="_Yqrx0cjuEeW0gpRI-mS_yA" name="LaunchVerifier_main" initial="true">
         <embeddedRegions xmi:id="_Yqrx0sjuEeW0gpRI-mS_yA" priority="1">
@@ -77,9 +79,21 @@
         <embeddedRegions xmi:id="_19UlcMjuEeW0gpRI-mS_yA" priority="3">
           <embeddedStatechart xmi:id="_19ougMjuEeW0gpRI-mS_yA" name="statechart">
             <transitions xmi:id="_iXrXYMj1EeWzrcBaL-cniQ" priority="1" target="_VWvp4Mm0EeWQPJzmExyJCA" source="_19p8oMjuEeW0gpRI-mS_yA">
-              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_4J3DgMm0EeWQPJzmExyJCA" operator="EQUAL">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4J3Dgcm0EeWQPJzmExyJCA" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
-                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4J3Dgsm0EeWQPJzmExyJCA" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+              <guard xsi:type="sdcec:LogicalExpression" xmi:id="_wvaEQMqdEeWg8I9CxdQyWw">
+                <leftExpression xsi:type="sdcec:LogicalExpression" xmi:id="_wvaEQcqdEeWg8I9CxdQyWw">
+                  <leftExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_wvaEQsqdEeWg8I9CxdQyWw" operator="EQUAL">
+                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaEQ8qdEeWg8I9CxdQyWw" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                    <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaERMqdEeWg8I9CxdQyWw" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+                  </leftExpression>
+                  <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_wvaERcqdEeWg8I9CxdQyWw" operator="GREATER">
+                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaERsqdEeWg8I9CxdQyWw" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                    <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_wvaER8qdEeWg8I9CxdQyWw" value="0"/>
+                  </rightExpression>
+                </leftExpression>
+                <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_wvaESMqdEeWg8I9CxdQyWw" operator="GREATER">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaEScqdEeWg8I9CxdQyWw" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+                  <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_wvaESsqdEeWg8I9CxdQyWw" value="0"/>
+                </rightExpression>
               </guard>
               <action xmi:id="_l_fLkMj1EeWzrcBaL-cniQ" name="setVerifiedLaunch">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_kEUr4MmkEeWgH-bGO8AU1w">

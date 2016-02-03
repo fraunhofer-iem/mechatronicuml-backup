@@ -8,7 +8,7 @@
 				  system("/root/demonstrator-green.sh");
 			  }
 			  else{
-				  system("/root/demonstrator-green.sh");
+				  system("/root/demonstrator-red.sh");
 
 			  }
 		}
