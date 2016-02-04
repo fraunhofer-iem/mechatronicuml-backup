@@ -1366,6 +1366,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_HybridPortNamesAndVariableNamesMustDiffer(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_UniqueNameOfStates(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoCycles(realtimeStatechart, diagnostics, context);
@@ -1376,6 +1377,40 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoMessageSendInCoordinatorRegion(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed(realtimeStatechart, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the HybridPortNamesAndVariableNamesMustDiffer constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__HYBRID_PORT_NAMES_AND_VARIABLE_NAMES_MUST_DIFFER__EEXPRESSION = "-- The names of hybrid ports and variable names of the Statechart must differ\r\n" +
+		"let com:component::AtomicComponent = if(self.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent)) \r\n" +
+		"then self.getHighestParentStatechart().behavioralElement.oclAsType(component::AtomicComponent) else null endif\r\n" +
+		" in  let allSubRoleSpecificVariables:Set(behavior::Variable) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).subRoleSpecificVariables->asSet() in\r\n" +
+		" not com.oclIsUndefined() implies  com.ports->select(port|port.oclIsKindOf(component::HybridPort)).name->forAll(portName| self.allAvailableVariables.name->excludes(portName) and allSubRoleSpecificVariables.name->excludes(portName))\r\n" +
+		"";
+
+	/**
+	 * Validates the HybridPortNamesAndVariableNamesMustDiffer constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_HybridPortNamesAndVariableNamesMustDiffer(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "HybridPortNamesAndVariableNamesMustDiffer",
+				 REALTIME_STATECHART__HYBRID_PORT_NAMES_AND_VARIABLE_NAMES_MUST_DIFFER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
