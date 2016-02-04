@@ -38,7 +38,7 @@ public class MumlOCLFactory {
 		this.expressions = new de.uni_paderborn.fujaba.muml.operationrepository.diagram.expressions.MumlAbstractExpression[2];
 		this.expressionBodies = new String[] {
 				"(\r\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(behavior::Operation).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.name\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' : \'.concat(self.dataType.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(behavior::Operation).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)", //$NON-NLS-1$
-				"if self.returnType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.returnType.name\r\n\tendif", //$NON-NLS-1$
+				"if self.returnType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.returnType.name.concat(\' \')\r\n\tendif", //$NON-NLS-1$
 		};
 	}
 

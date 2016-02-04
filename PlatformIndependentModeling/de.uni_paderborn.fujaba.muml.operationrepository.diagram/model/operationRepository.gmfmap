@@ -42,7 +42,7 @@
             <diagramLabel
                 href="operationRepository.gmfgraph#OperationReturnType"/>
             <viewExpression
-                body="if self.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.returnType.name&#xD;&#xA;&#x9;endif"/>
+                body="if self.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.returnType.name.concat(' ')&#xD;&#xA;&#x9;endif"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
