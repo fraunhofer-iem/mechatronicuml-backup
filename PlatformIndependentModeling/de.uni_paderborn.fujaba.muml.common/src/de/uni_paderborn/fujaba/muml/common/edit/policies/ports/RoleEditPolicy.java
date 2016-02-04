@@ -88,38 +88,27 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 		if (myRole == null || myRole.getRoleConnector() == null) {
 			return;
 		}
-		List<Role> roles = myRole.getRoleConnector().getRoles();
+		
 		EditPart myEditPart = this.getHost();
 		List<EditPart> children = myEditPart.getParent().getChildren();
 		for (EditPart child : children) {
 			EObject element = ((View) child.getModel()).getElement();
 			if (element instanceof Role && myRole != element) {
-				Role other = (Role) element;
+//				Role other = (Role) element;
 				org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure figure = ((BorderedNodeFigure) ((GraphicalEditPart) child)
 						.getFigure());
 				int otherX = figure.getLocation().x();
 				PortBaseEditPolicy otherPolicy = (PortBaseEditPolicy) child
 						.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE);
-
-				CustomPortFigure.PortType myPortType = this.getPortType(myRole);
-				if (myPortType == CustomPortFigure.PortType.OUT_PORT) {
-					if (otherX >= newX) {
-						this.sideChanged(PositionConstants.EAST);
-						otherPolicy.sideChanged(PositionConstants.WEST);
-					} else {
-						this.sideChanged(PositionConstants.WEST);
-						otherPolicy.sideChanged(PositionConstants.EAST);
-					}
-				} else if (myPortType == CustomPortFigure.PortType.IN_PORT) {
-
-					if (otherX >= newX) {
-						this.sideChanged(PositionConstants.EAST);
-						otherPolicy.sideChanged(PositionConstants.WEST);
-					} else {
-						this.sideChanged(PositionConstants.WEST);
-						otherPolicy.sideChanged(PositionConstants.EAST);
-					}
+						
+				if (otherX >= newX) {
+					this.sideChanged(PositionConstants.EAST);
+					otherPolicy.sideChanged(PositionConstants.WEST);
+				} else {
+					this.sideChanged(PositionConstants.WEST);
+					otherPolicy.sideChanged(PositionConstants.EAST);
 				}
+			
 			}
 		}
 	}
@@ -144,7 +133,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	@Override
 	protected void refreshPortType() {
 		CustomPortFigure.PortType type = CustomPortFigure.PortType.NONE;
-		Role role = (Role) getRole();
+		Role role =  getRole();
 		if (role != null) {
 			// Access the message interfaces...
 			boolean receiverInterfaceSet = role.getReceiverMessageTypes()
