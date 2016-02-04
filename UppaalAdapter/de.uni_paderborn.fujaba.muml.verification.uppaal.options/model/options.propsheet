@@ -2,6 +2,7 @@
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RnViUM1gEeSIgPDefa6ZBw" contributorId="">
   <reconciler xmi:id="_RnViUc1gEeSIgPDefa6ZBw"/>
   <genModel href="options.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
   <plugin xmi:id="_RnViUs1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.verification.uppaal.options.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
@@ -54,6 +55,7 @@
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         </creationOppositeConstraint>
