@@ -430,7 +430,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		if (control == null || control.isDisposed()) {
 			return;
 		}
-		System.out.println("Relayouting...");
+		//System.out.println("Relayouting...");
 		Control c = control;
 		do {
 			if (c instanceof ExpandBar) {
