@@ -8,14 +8,14 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_4WlDMcjrEeW0gpRI-mS_yA" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_4WlDMsjrEeW0gpRI-mS_yA" lineColor="0"/>
         <element xmi:type="protocol:CoordinationProtocol" href="org.muml.examples.muml#_4UO50MjrEeW0gpRI-mS_yA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4WlDM8jrEeW0gpRI-mS_yA" x="180" y="-6"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4WlDM8jrEeW0gpRI-mS_yA" x="247" y="18"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_4Wm4YMjrEeW0gpRI-mS_yA" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_4WnfcMjrEeW0gpRI-mS_yA" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_4WnfccjrEeW0gpRI-mS_yA" y="5"/>
         </children>
         <element xmi:type="protocol:Role" href="org.muml.examples.muml#_4UmGMMjrEeW0gpRI-mS_yA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Wm4YcjrEeW0gpRI-mS_yA" y="138"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Wm4YcjrEeW0gpRI-mS_yA" x="79" y="114"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_4WoGgMjrEeW0gpRI-mS_yA" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_4WoGgsjrEeW0gpRI-mS_yA" type="5006">
@@ -50,7 +50,7 @@
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="org.muml.examples.muml#_4UO50MjrEeW0gpRI-mS_yA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4VL8EcjrEeW0gpRI-mS_yA" x="60" y="108" width="553" height="277"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4VL8EcjrEeW0gpRI-mS_yA" x="60" y="108" width="925" height="625"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_3inPocjrEeW0gpRI-mS_yA"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="org.muml.examples.muml#_IaAgA8jrEeW0gpRI-mS_yA"/>

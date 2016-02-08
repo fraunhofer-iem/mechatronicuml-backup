@@ -186,7 +186,7 @@
         </receiverMessageBuffer>
       </roles>
       <roleConnector xmi:id="_4UyTccjrEeW0gpRI-mS_yA" connectorEndpoints="_4UmGMMjrEeW0gpRI-mS_yA _4UxFUcjrEeW0gpRI-mS_yA">
-        <connectorQualityOfServiceAssumptions xmi:id="_4U1WwMjrEeW0gpRI-mS_yA" comment="" messageLossPossible="true">
+        <connectorQualityOfServiceAssumptions xmi:id="_4U1WwMjrEeW0gpRI-mS_yA" comment="">
           <minMessageDelay xmi:id="_4U3L8MjrEeW0gpRI-mS_yA" unit="MILLISECONDS">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_4U3L8cjrEeW0gpRI-mS_yA" value="0"/>
           </minMessageDelay>
