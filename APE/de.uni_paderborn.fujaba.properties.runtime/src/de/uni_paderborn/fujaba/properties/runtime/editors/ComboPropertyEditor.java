@@ -198,6 +198,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
+		setInput(); // update selection choices
 		applySelection(value);
 	}
 	

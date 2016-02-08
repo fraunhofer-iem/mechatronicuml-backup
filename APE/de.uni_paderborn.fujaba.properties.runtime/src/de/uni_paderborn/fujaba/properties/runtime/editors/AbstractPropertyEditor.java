@@ -53,6 +53,8 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 		if (oldObject != object) {
 			input = object;
 			inputChanged(oldObject);
+		} else {
+			refresh();
 		}
 	}
 
