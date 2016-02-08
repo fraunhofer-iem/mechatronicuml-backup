@@ -80,6 +80,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	@Override
 	public void activate() {
 		super.activate();
+		updateCardinality();
 
 		Display.getCurrent().asyncExec(new Runnable() {
 			@Override
