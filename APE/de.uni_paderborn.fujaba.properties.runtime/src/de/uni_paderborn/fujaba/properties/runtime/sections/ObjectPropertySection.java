@@ -2,6 +2,9 @@ package de.uni_paderborn.fujaba.properties.runtime.sections;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -31,6 +34,13 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+		parent = new Composite(parent, SWT.NO_FOCUS) {
+			@Override
+			public boolean setFocus() {
+				return false;
+			}
+		};
+		parent.setLayout(new FillLayout());
 		this.parent = parent;
 
 		FormToolkit toolkit = getWidgetFactory();
@@ -48,6 +58,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	public boolean shouldUseExtraSpace() {
 		return true;
 	}
+
 
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		boolean changed = getSelection() != selection;
