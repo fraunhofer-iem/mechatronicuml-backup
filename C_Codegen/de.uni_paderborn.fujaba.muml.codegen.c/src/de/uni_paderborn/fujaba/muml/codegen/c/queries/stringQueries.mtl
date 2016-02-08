@@ -49,7 +49,7 @@ endif
 msgT.getName() + msgT.repository.getName() +'Message'/]
 
 [query public getBufferName (mb : MessageBuffer, pi : DiscretePortInstance) : String = 
-getName(mb.name) + pi.componentInstance.getName() /]
+getName(mb.name) +pi.getName()+ pi.componentInstance.getName() /]
 
 [query public getWriteMethod (cpi : ContinuousPortInstance) : String = 
 	'write_'+cpi.getName()+'_of'+cpi.componentInstance.componentType.getVariableName()+'_'+cpi.componentInstance.getName()
