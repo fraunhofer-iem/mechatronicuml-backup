@@ -217,7 +217,7 @@ else
 		getClassName(component).toLowerFirst()
 	+
 	if (header) then
-		'.h'
+		'_Interface.h'
 	else
 		'.c'
 	endif
@@ -603,13 +603,16 @@ endif
  * @param operation
 */]
 [query public getHeaderDefine(component : Component) : String = 
-	getClassName(component).toUpper() + '_H_'
+	getClassName(component).toUpper() + '_INTERFACE_H_'
 /]
 
 
-[query public getHeaderDefine(rtsc : RealtimeStatechart) : String = 
-	getClassName(rtsc).toUpper() + '_H_'	
-/]
+  
+ [query public getHeaderDefine(rtsc : RealtimeStatechart) : String = 
+ 	getClassName(rtsc).toUpper() + '_H_'	
+/] 
+
+
 
 [**
  * @param component

@@ -59,8 +59,7 @@
 */]
 [template public includes(rtsc : RealtimeStatechart, component : Component, useSubDir: Boolean) post(cdtbeautifier())]
 
-	#include "[if (useSubDir)]../Middleware/[/if]GlobalIdentifier.h"
-	#include "[getClassName(rtsc).toLowerFirst()/].h"
+	#include "[if useSubDir]../[/if][getFileName(component, true, useSubDir)/]"
 
 [/template]
 

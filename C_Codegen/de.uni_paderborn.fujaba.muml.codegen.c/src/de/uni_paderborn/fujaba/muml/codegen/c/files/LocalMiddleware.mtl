@@ -73,13 +73,6 @@
 #include "[if (useSubDir)]../lib/[/if]port.h"
 #include "[if (useSubDir)]../messages/[/if]messages_types.h" 
 
-
-//import all needed ComponentHeaders
-[for (component : Component | CIs.componentType) ? (component.oclIsKindOf(AtomicComponent))]
-[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
-#include "[if (useSubDir)]../[/if][component.getFileName(true, useSubDir)/]"
-[/if]
-[/for]
 [/template]
 
 
@@ -116,7 +109,7 @@ typedef struct Middleware {
 //Create components
 [for (compInst : ComponentInstance | CIs) ? (compInst.oclIsKindOf(AtomicComponentInstance))]
 [if ((compInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (compInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-	[compInst.getClassName()/]* [compInst.getVariableName()/]; /**< The ComponentInstance: [compInst.getName()/] of Type: [compInst.getClassName()/]*/
+	struct	[compInst.getClassName()/]* [compInst.getVariableName()/]; /**< The ComponentInstance: [compInst.getName()/] of Type: [compInst.getClassName()/]*/
 [/if]
 [/for]
 
@@ -232,6 +225,12 @@ PortID MW_getTargetPortIDforIdentifier(PortID portID);
 [template private generateMiddlewareCoreClass(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
 [file(path+getFileName4MWCore(false, useSubDir),false,'UTF-8')]
 #include "MiddlewareCore.h"
+//import all needed ComponentHeaders
+[for (component : Component | CIs.componentType) ? (component.oclIsKindOf(AtomicComponent))]
+[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
+#include "[if (useSubDir)]../[/if][component.getFileName(true, useSubDir)/]"
+[/if]
+[/for]
 
 /*
  * create a new middleware instance

@@ -46,7 +46,7 @@
 	#include "[if (useSubDir)]../types/[/if]customTypes.h"
 	[for (atomic : AtomicComponent | atomics)]
 	[let rtsc : RealtimeStatechart = atomic.behavior]
-	#include "[if (useSubDir)]../[/if][getFileName(rtsc, true,useSubDir)/]"
+	#include "[getFileName(atomic, true, useSubDir)/]"
 	[/let]
 	[/for]
 

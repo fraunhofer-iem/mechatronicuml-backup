@@ -47,11 +47,7 @@
 #include "[comp.getFileName(true, useSubDir)/]"
 		[/if]
 		[/for]
-		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
-		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
-#include "[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getFileName(true, useSubDir)/]"
-		[/if]
-		[/for]
+
 
 [comment create variable for every used component instance/]
 //variables for component instances

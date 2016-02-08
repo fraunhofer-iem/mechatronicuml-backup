@@ -51,13 +51,7 @@
  * @param statechart
 */]
 [template private includes(component : Component, useSubDir : Boolean) post(cdtbeautifier())]
-	// Standard library
-
-	[if component.oclIsKindOf(AtomicComponent)]
-		#include "[if (useSubDir)]../[/if][getFileName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart), true, useSubDir)/]"
-	[/if]
-
-	#include "[getClassName(component).toLowerFirst()/].h"
+	#include "[if (useSubDir)]../[/if][getFileName(component, true, useSubDir)/]"
 [/template]
 
 [**
