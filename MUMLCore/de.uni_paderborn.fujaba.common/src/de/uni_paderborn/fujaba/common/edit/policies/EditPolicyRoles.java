@@ -5,6 +5,11 @@ package de.uni_paderborn.fujaba.common.edit.policies;
  */
 public interface EditPolicyRoles {
 
+	/**
+	 * EditPolicies that are registered with the key "BACKGROUND_COLOR_ROLE" should implement IBackgroundColorEditPolicy.
+	 */
+	public static final String BACKGROUND_COLOR_ROLE = "BackgroundColorRole"; //$NON-NLS-1$
+
 	public static final String COMPARTMENT_BORDER_ROLE = "CompartmentBorderRole"; //$NON-NLS-1$
 	
 	public static final String COMPARTMENT_ORIENTATION_ROLE = "CompartmentOrientationRole"; //$NON-NLS-1$

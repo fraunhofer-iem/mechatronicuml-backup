@@ -66,9 +66,6 @@ public class CoordinationProtocolInstanceCreateCommand extends EditElementComman
 		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getElementToEdit();
 		owner.getCoordinationProtocolInstances().add(newElement);
 
-		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.ElementInitializers.getInstance()
-				.init_CoordinationProtocolInstance_2025(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

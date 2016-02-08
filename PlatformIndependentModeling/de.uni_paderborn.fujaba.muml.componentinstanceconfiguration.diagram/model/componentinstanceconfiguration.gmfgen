@@ -368,7 +368,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -761,7 +761,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass

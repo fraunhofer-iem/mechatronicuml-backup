@@ -1,15 +1,12 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.component;
 
-import java.util.Collection;
-
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentKind;
@@ -18,7 +15,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
-public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
+public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy implements IBackgroundColorEditPolicy {
 
 	private static final Color COLOR_CONTINUOUS = new Color(null, 230, 230, 230);
 	private static final Color COLOR_SOFTWARE = new Color(null, 214, 226, 190);
@@ -83,7 +80,11 @@ public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
 	}
 	
 	private void updateColor() {
-		IFigure figure = ((GraphicalEditPart)getHost()).getContentPane();
+		getHost().refresh();
+	}
+	
+	@Override
+	public Color getCurrentBackgroundColor() {
 		Component component = getComponent();
 		Color color = ColorConstants.white;
 		if (component instanceof AtomicComponent) {
@@ -94,11 +95,6 @@ public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
 				color = COLOR_SOFTWARE;
 			}
 		}
-		if (figure != null ){
-			for (IFigure child : (Collection<IFigure>)figure.getChildren()) {
-				child.setBackgroundColor(color);
-			}
-			figure.setBackgroundColor(color);
-		}
+		return color;
 	}
 }

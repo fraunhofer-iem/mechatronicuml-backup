@@ -44,6 +44,8 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.FillStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
@@ -85,6 +87,24 @@ public class StaticAtomicComponentEditPart extends AbstractBorderedShapeEditPart
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) {
+			setBackgroundColor(
+					((de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
+							.getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	* @generated
 	*/
 	protected IFigure contentPane;
@@ -118,7 +138,7 @@ public class StaticAtomicComponentEditPart extends AbstractBorderedShapeEditPart
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
 
-		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies

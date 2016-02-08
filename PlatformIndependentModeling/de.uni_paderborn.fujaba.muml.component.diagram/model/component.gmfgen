@@ -12,8 +12,7 @@
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
     copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.component.diagram/src">
-  <diagram
-      visualID="1000"
+  <diagram visualID="1000"
       editPartClassName="ModelElementCategoryEditPart"
       itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy"
       canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy"
@@ -276,7 +275,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -469,7 +468,7 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -526,7 +525,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -558,8 +557,7 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <links
-        visualID="4001"
+    <links visualID="4001"
         editPartClassName="AssemblyConnectorEditPart"
         itemSemanticEditPolicyClassName="AssemblyConnectorItemSemanticEditPolicy"
         notationViewFactoryClassName="AssemblyConnectorViewFactory"
@@ -590,8 +588,7 @@
           sourceEnd="//@expressionProviders/@providers.0/@expressions.9"
           targetEnd="//@expressionProviders/@providers.0/@expressions.10"/>
     </links>
-    <links
-        visualID="4002"
+    <links visualID="4002"
         editPartClassName="DelegationConnectorEditPart"
         itemSemanticEditPolicyClassName="DelegationConnectorItemSemanticEditPolicy"
         notationViewFactoryClassName="DelegationConnectorViewFactory"
@@ -622,8 +619,7 @@
           sourceEnd="//@expressionProviders/@providers.0/@expressions.11"
           targetEnd="//@expressionProviders/@providers.0/@expressions.12"/>
     </links>
-    <links
-        visualID="4004"
+    <links visualID="4004"
         editPartClassName="PortPartCoordinationProtocolPartEditPart"
         itemSemanticEditPolicyClassName="PortPartCoordinationProtocolPartItemSemanticEditPolicy"
         createCommandClassName="PortPartCoordinationProtocolPartCreateCommand"
@@ -774,8 +770,7 @@
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin
-      iD="de.uni_paderborn.fujaba.muml.component.diagram"
+  <plugin iD="de.uni_paderborn.fujaba.muml.component.diagram"
       name="Component Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.5.0.qualifier"
@@ -791,18 +786,14 @@
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
   </plugin>
-  <editor
-      className="ComponentDiagramEditor"/>
+  <editor className="ComponentDiagramEditor"/>
   <diagramUpdater/>
   <propertySheet>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab"
         iD="appearance"/>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab"
         iD="diagram"/>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab"
         iD="domain"
         label="Advanced">
       <filter
@@ -812,8 +803,7 @@
         <generatedTypes>abstractNavigatorItem</generatedTypes>
       </filter>
     </tabs>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab"
         iD="general"
         label="General"
         className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
@@ -822,8 +812,7 @@
           xsi:type="gmfgen:CustomTabFilter"
           className="org.storydriven.core.properties.tabs.GeneralTabElementFilter"/>
     </tabs>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab"
         iD="documentation"
         label="Documentation"
         className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
@@ -832,8 +821,7 @@
           xsi:type="gmfgen:CustomTabFilter"
           className="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"/>
     </tabs>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab"
         iD="extensions"
         label="Extensions"
         className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
@@ -917,8 +905,7 @@
   </labelParsers>
   <contextMenus
       context="//@diagram">
-    <items
-        xsi:type="gmfgen:LoadResourceAction"/>
+    <items xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
   <extensions>
     <rootInput

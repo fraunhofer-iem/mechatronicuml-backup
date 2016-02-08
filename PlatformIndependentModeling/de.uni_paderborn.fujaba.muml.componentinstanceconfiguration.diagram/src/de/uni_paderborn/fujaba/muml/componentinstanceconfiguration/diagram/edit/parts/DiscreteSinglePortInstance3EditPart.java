@@ -69,6 +69,24 @@ public class DiscreteSinglePortInstance3EditPart extends BorderedBorderItemEditP
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) {
+			setBackgroundColor(
+					((de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
+							.getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -120,6 +138,7 @@ public class DiscreteSinglePortInstance3EditPart extends BorderedBorderItemEditP
 				switch (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
 					return new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -158,7 +177,8 @@ public class DiscreteSinglePortInstance3EditPart extends BorderedBorderItemEditP
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart) {
+		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart
+				|| borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel8EditPart) {
 			// bug-fix: allows the free positioning of external Labels
 			de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator(
 					getMainFigure(), PositionConstants.SOUTH);

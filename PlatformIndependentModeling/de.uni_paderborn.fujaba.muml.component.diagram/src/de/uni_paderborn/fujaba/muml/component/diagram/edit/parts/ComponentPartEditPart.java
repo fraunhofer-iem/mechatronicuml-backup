@@ -85,6 +85,24 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) {
+			setBackgroundColor(
+					((de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
+							.getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -115,7 +133,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ComponentPartCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
-		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
