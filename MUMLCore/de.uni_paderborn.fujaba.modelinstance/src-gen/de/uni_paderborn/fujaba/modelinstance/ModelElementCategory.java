@@ -122,6 +122,9 @@ public interface ModelElementCategory extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Evaluates for the passed object whether it is a valid model element for this 
 	 * ModelElementCategory.
+	 * @param object
+	 *   The passed object that we check whether it is a valid model element for this 
+	 *   ModelElementCategory.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='isValidEClass(object.oclAsType(ecore::EObject).eClass())'"
 	 * @generated
@@ -133,6 +136,7 @@ public interface ModelElementCategory extends EObject {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Evaluates for the passed ecore class whether it is a valid type for model element for this ModelElementCategory.
+	 * @param eClass The passed eClass that we check whether it is a valid type for model element for this ModelElementCategory.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();\r\nif (plugin != null) {\r\n\tModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();\r\n\treturn registry.isValidEClass(key, eClass);\r\n}\r\nreturn false;'"
 	 * @generated

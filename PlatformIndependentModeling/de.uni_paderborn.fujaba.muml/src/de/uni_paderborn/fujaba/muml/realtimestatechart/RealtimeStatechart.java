@@ -269,6 +269,9 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of variables that is available within each subrole instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sub Role Specific Variables</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_SubRoleSpecificVariables()
 	 * @model containment="true"
@@ -285,6 +288,9 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of clocks that is available within each subrole instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sub Role Specific Clocks</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_SubRoleSpecificClocks()
 	 * @model containment="true"
@@ -301,6 +307,9 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of operations that is available within each subrole instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sub Role Specific Operations</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_SubRoleSpecificOperations()
 	 * @model containment="true"

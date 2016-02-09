@@ -123,6 +123,9 @@ public interface TimeValue extends ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This operation combines the defined value and the defined unit to one string.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with abbreviated unit.\r\nStringBuffer sb = new StringBuffer();\r\nif (value == null) {\r\n\tsb.append(\"null\");\r\n} else {\r\n\tif (value instanceof LiteralExpression) {\r\n\t\tsb.append(((LiteralExpression) value).getValue());\r\n\t} else {\r\n\t\tsb.append(value.eClass().getName());\r\n\t}\r\n}\r\nif (unit != null) {\r\n\tsb.append(\' \');\r\n\tsb.append(TimeValueImpl.getUnitRepresentation(unit));\r\n}\r\nreturn sb.toString();'"
 	 * @generated
 	 */

@@ -1353,11 +1353,23 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleSpecificVariables"
-          upperBound="-1" eType="#//behavior/Variable" containment="true"/>
+          upperBound="-1" eType="#//behavior/Variable" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The set of variables that is available within each subrole instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleSpecificClocks"
-          upperBound="-1" eType="#//realtimestatechart/Clock" containment="true"/>
+          upperBound="-1" eType="#//realtimestatechart/Clock" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The set of clocks that is available within each subrole instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleSpecificOperations"
-          upperBound="-1" eType="#//behavior/Operation" containment="true"/>
+          upperBound="-1" eType="#//behavior/Operation" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The set of operations that is available within each subrole instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2094,6 +2106,7 @@
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if (value instanceof LiteralExpression) {&#xD;&#xA;&#x9;&#x9;sb.append(((LiteralExpression) value).getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;sb.append(value.eClass().getName());&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;sb.append(TimeValueImpl.getUnitRepresentation(unit));&#xD;&#xA;}&#xD;&#xA;return sb.toString();"/>
+          <details key="documentation" value="This operation combines the defined value and the defined unit to one string."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Redefinition of the Java toString method."/>

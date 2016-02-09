@@ -25,7 +25,7 @@ public class RootNodeEditor extends de.uni_paderborn.fujaba.properties.runtime.e
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorCategories_GeneralTab_Editor(), false);
+					createEditorCategories_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -33,7 +33,7 @@ public class RootNodeEditor extends de.uni_paderborn.fujaba.properties.runtime.e
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorCategories_GeneralTab_Editor(), false);
+					createEditorCategories_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -43,9 +43,9 @@ public class RootNodeEditor extends de.uni_paderborn.fujaba.properties.runtime.e
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCategories_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCategories_GeneralTab_Editor() {
-		if (this.editorCategories_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCategories_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCategories_property_tab_generalTab_Editor() {
+		if (this.editorCategories_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
 					.getRootNode_Categories();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -53,9 +53,9 @@ public class RootNodeEditor extends de.uni_paderborn.fujaba.properties.runtime.e
 
 			editor.setTooltipMessage("The model element categories which are contained in this RootNode.");
 
-			this.editorCategories_GeneralTab = editor;
+			this.editorCategories_property_tab_generalTab = editor;
 		}
-		return this.editorCategories_GeneralTab;
+		return this.editorCategories_property_tab_generalTab;
 	}
 
 	//

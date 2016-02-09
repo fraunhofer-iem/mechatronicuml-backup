@@ -243,6 +243,8 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 				}
 			}
 
+			editor.setTooltipMessage("The set of variables that is available within each subrole instance.");
+
 			this.editorSubRoleSpecificVariables_property_tab_generalTab = editor;
 		}
 		return this.editorSubRoleSpecificVariables_property_tab_generalTab;
@@ -289,6 +291,8 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 				}
 			}
 
+			editor.setTooltipMessage("The set of clocks that is available within each subrole instance.");
+
 			this.editorSubRoleSpecificClocks_property_tab_generalTab = editor;
 		}
 		return this.editorSubRoleSpecificClocks_property_tab_generalTab;
@@ -334,6 +338,8 @@ public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties
 					editor.addVisibilityFilter(filter);
 				}
 			}
+
+			editor.setTooltipMessage("The set of operations that is available within each subrole instance.");
 
 			this.editorSubRoleSpecificOperations_property_tab_generalTab = editor;
 		}
