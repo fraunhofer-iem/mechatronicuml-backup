@@ -1158,7 +1158,7 @@ mapping core::expressions::common::LiteralExpression :: LiteralExpression2Litera
     	_extension := self._extension.map Extension2Extension();
    		 }
    		 
-mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression, actionlanguage::Loop::Loop2Loop, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall;
+mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression, actionlanguage::Loop::Loop2Loop, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall, actionlanguage::TimeValueExpression::TimeValueExpression2TimeValueExpression;
       	
 mapping core::expressions::TextualExpression :: TextualExpression2TextualExpression() : core::expressions::TextualExpression{
     	_comment := self._comment;
@@ -1168,7 +1168,14 @@ mapping core::expressions::TextualExpression :: TextualExpression2TextualExpress
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
    		 }
-   		 
+
+mapping actionLanguage::TimeValueExpression :: TimeValueExpression2TimeValueExpression() : actionLanguage::TimeValueExpression{
+        _annotation := self._annotation.map EAnnotation2EAnnotation();
+        _extension := self._extension.map Extension2Extension();
+        _comment := self._comment;
+        timeValue := self._timeValue.map TimeValue2TimeValue();
+}
+
 mapping muml::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : muml::protocol::AbstractCoordinationSpecification disjuncts muml::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol;
       	
 mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : muml::protocol::CoordinationProtocol{
