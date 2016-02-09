@@ -3,7 +3,7 @@
       id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject.feature"
       label="javax.inject external dependency"
       version="1.0.0.qualifier"
-      provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)">
+      provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
 
    <description>
       This feature provides a plugin that the ships javax.inject-1.jar,

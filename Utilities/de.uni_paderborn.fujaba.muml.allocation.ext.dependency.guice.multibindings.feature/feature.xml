@@ -3,7 +3,7 @@
       id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings.feature"
       label="guice-multibindings external dependency"
       version="4.0.0.beta5_qualifier"
-      provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)">
+      provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
 
    <description>
       This feature provides a plugin that the ships guice-multibindings-4.0-beta5.jar,

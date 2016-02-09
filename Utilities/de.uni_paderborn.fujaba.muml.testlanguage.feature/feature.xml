@@ -2,7 +2,8 @@
 <feature
       id="de.uni_paderborn.fujaba.muml.testlanguage.feature"
       label="Feature"
-      version="1.0.0.qualifier">
+      version="1.0.0.qualifier"
+      provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
