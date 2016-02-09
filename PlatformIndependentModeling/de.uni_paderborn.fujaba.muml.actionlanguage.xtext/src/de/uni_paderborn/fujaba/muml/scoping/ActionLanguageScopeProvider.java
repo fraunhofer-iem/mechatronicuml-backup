@@ -72,8 +72,6 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	// TODO: make this string public in class TypeCategoryInitializer
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
 
-	private static final String INT_ID = "INT";
-
 	@Inject
 	private IQualifiedNameProvider nameProvider;
 
@@ -117,7 +115,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			EReference ref) {
 		List<PrimitiveDataType> scopeList = new ArrayList<PrimitiveDataType>();
 		for (DataType dataType : typeList) {
-			if (dataType.getName().equals(INT_ID) && dataType instanceof PrimitiveDataType) {
+			if (isAllowedTypeForNondeterministicChoices(dataType) && dataType instanceof PrimitiveDataType) {
 				scopeList.add((PrimitiveDataType) dataType);
 				break;
 			}
@@ -125,6 +123,16 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		return createScope(scopeList);
 	}
 
+	// TODO using of strings is not nice, however, an enumeration in the types plugin is missing
+	boolean isAllowedTypeForNondeterministicChoices(DataType dataType){
+	 if ((dataType.getName().equals("uint8") || (dataType.getName().equals("uint16")) 
+			 || (dataType.getName().equals("uint32")) || (dataType.getName().equals("uint64")) 
+			 || (dataType.getName().equals("int8")) || (dataType.getName().equals("int16")) 
+			 || (dataType.getName().equals("int32"))) || (dataType.getName().equals("int64"))) {
+		 return true;
+	 } else return false;
+	}
+	
 	IScope scope_Operation(Object object, EReference ref) {
 		return createScope(operationList);
 	}
