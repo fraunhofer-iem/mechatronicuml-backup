@@ -21,13 +21,15 @@ public class TimeValueExpressionEditor extends de.uni_paderborn.fujaba.propertie
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorTimeValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTimeValue_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorTimeValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTimeValue_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -37,9 +39,9 @@ public class TimeValueExpressionEditor extends de.uni_paderborn.fujaba.propertie
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTimeValue_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTimeValue_GeneralTab_Editor() {
-		if (this.editorTimeValue_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTimeValue_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTimeValue_property_tab_generalTab_Editor() {
+		if (this.editorTimeValue_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getTimeValueExpression_TimeValue();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -47,9 +49,9 @@ public class TimeValueExpressionEditor extends de.uni_paderborn.fujaba.propertie
 
 			editor.setTooltipMessage("The TimeValue which is referenced by the TimeValueExpression.");
 
-			this.editorTimeValue_GeneralTab = editor;
+			this.editorTimeValue_property_tab_generalTab = editor;
 		}
-		return this.editorTimeValue_GeneralTab;
+		return this.editorTimeValue_property_tab_generalTab;
 	}
 
 	//

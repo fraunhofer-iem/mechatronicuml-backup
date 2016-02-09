@@ -21,13 +21,15 @@ public class ReturnStatementEditor extends de.uni_paderborn.fujaba.properties.ru
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExpression_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExpression_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -37,9 +39,9 @@ public class ReturnStatementEditor extends de.uni_paderborn.fujaba.properties.ru
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpression_GeneralTab_Editor() {
-		if (this.editorExpression_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpression_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpression_property_tab_generalTab_Editor() {
+		if (this.editorExpression_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getReturnStatement_Expression();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -47,9 +49,9 @@ public class ReturnStatementEditor extends de.uni_paderborn.fujaba.properties.ru
 
 			editor.setTooltipMessage("Return expression which blongs to a return statement.");
 
-			this.editorExpression_GeneralTab = editor;
+			this.editorExpression_property_tab_generalTab = editor;
 		}
-		return this.editorExpression_GeneralTab;
+		return this.editorExpression_property_tab_generalTab;
 	}
 
 	//

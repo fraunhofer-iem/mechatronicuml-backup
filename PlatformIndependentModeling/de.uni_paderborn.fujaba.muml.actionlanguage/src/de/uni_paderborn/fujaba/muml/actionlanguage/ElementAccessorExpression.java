@@ -19,6 +19,10 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Element Accessor Expression</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract base class for an element accessor.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getElementAccessorExpression()
  * @model abstract="true"

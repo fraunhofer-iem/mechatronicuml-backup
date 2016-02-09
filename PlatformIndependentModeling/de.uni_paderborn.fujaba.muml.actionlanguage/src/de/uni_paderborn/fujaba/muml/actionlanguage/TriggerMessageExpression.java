@@ -41,6 +41,9 @@ public interface TriggerMessageExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The MessageType that this TriggerMessageExpression represents.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Type</em>' reference.
 	 * @see #setMessageType(MessageType)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTriggerMessageExpression_MessageType()
@@ -67,6 +70,9 @@ public interface TriggerMessageExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The messageType's parameter that should be accessed.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(Parameter)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTriggerMessageExpression_Parameter()

@@ -131,6 +131,12 @@ public interface IfStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * List of ElseIfStatements. If the IfStatement's ifCondition evaluates to false
+	 * and it exists an ElseIfStatement in this list, whose elseIfCondition evaluates
+	 * to true, then the first ElseIfStatement (wrt. the list index), whose elseIfCondition
+	 * evaluates to true is executed. Otherwise, the elseBlock is executed (if present).
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Else If Statements</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_ElseIfStatements()
 	 * @model containment="true"

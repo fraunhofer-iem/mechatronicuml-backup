@@ -19,6 +19,10 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Array Index Expression</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Used to access an array element at a particular index.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

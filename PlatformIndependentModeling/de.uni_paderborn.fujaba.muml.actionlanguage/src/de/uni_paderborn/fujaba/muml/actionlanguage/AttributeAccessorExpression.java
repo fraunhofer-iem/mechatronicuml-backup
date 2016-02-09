@@ -19,6 +19,10 @@ import de.uni_paderborn.fujaba.muml.types.Attribute;
  * A representation of the model object '<em><b>Attribute Accessor Expression</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Used to access an attribute of a StructuredDataType.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -39,6 +43,9 @@ public interface AttributeAccessorExpression extends ElementAccessorExpression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The attribute of a StructuredDataType that should be accessed.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(Attribute)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAttributeAccessorExpression_Attribute()

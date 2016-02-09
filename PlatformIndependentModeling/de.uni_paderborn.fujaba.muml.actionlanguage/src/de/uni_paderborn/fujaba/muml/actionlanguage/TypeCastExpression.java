@@ -46,6 +46,9 @@ public interface TypeCastExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents the DataType to which the value of the enclosedExpression is converted.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Data Type</em>' reference.
 	 * @see #setDataType(DataType)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypeCastExpression_DataType()
@@ -72,6 +75,9 @@ public interface TypeCastExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents the expression that should be converted.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Enclosed Expression</em>' containment reference.
 	 * @see #setEnclosedExpression(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypeCastExpression_EnclosedExpression()

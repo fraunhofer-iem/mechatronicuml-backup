@@ -21,13 +21,15 @@ public class ArrayIndexExpressionEditor extends de.uni_paderborn.fujaba.properti
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorIndex_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorIndex_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorIndex_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorIndex_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -37,9 +39,9 @@ public class ArrayIndexExpressionEditor extends de.uni_paderborn.fujaba.properti
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIndex_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIndex_GeneralTab_Editor() {
-		if (this.editorIndex_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIndex_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIndex_property_tab_generalTab_Editor() {
+		if (this.editorIndex_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getArrayIndexExpression_Index();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -47,9 +49,9 @@ public class ArrayIndexExpressionEditor extends de.uni_paderborn.fujaba.properti
 
 			editor.setTooltipMessage("Indices which refer to an concrete index of an array.");
 
-			this.editorIndex_GeneralTab = editor;
+			this.editorIndex_property_tab_generalTab = editor;
 		}
-		return this.editorIndex_GeneralTab;
+		return this.editorIndex_property_tab_generalTab;
 	}
 
 	//

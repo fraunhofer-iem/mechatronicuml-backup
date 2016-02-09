@@ -39,6 +39,10 @@ public interface ArrayInitializeExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * List of expressions where each Expression is used to initialize a particular
+	 * array element.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expressions</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getArrayInitializeExpression_Expressions()
 	 * @model containment="true"

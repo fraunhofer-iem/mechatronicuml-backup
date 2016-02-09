@@ -73,6 +73,11 @@ public enum IncrementDecrementOperator implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents a post increment. The expression "a++" evaluates to the value of
+	 * the operand "a". After the execution, the operand "a" is incremented by 1
+	 * (a := a + 1).
+	 * <!-- end-model-doc -->
 	 * @see #INCREMENT
 	 * @model literal="++"
 	 * @generated
@@ -88,6 +93,11 @@ public enum IncrementDecrementOperator implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents a post decrement. The expression "a--" evaluates to the value of
+	 * the operand "a". After the execution, the operand "a" is decremented by 1
+	 * (a := a - 1).
+	 * <!-- end-model-doc -->
 	 * @see #DECREMENT
 	 * @model literal="--"
 	 * @generated

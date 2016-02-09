@@ -27,9 +27,11 @@ public class ArrayInitializeExpressionEditor
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorExpressions_GeneralTab_Editor(), false);
+					createEditorExpressions_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -37,7 +39,7 @@ public class ArrayInitializeExpressionEditor
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorExpressions_GeneralTab_Editor(), false);
+					createEditorExpressions_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -47,17 +49,20 @@ public class ArrayInitializeExpressionEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressions_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpressions_GeneralTab_Editor() {
-		if (this.editorExpressions_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressions_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpressions_property_tab_generalTab_Editor() {
+		if (this.editorExpressions_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getArrayInitializeExpression_Expressions();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExpressions_GeneralTab = editor;
+			editor.setTooltipMessage(
+					"List of expressions where each Expression is used to initialize a particular\narray element.");
+
+			this.editorExpressions_property_tab_generalTab = editor;
 		}
-		return this.editorExpressions_GeneralTab;
+		return this.editorExpressions_property_tab_generalTab;
 	}
 
 	//

@@ -285,7 +285,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
@@ -295,6 +294,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		ComponentPackage.eINSTANCE.eClass();
 		PatternPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

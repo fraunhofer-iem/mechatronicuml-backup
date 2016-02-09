@@ -21,17 +21,19 @@ public class WhileLoopEditor extends de.uni_paderborn.fujaba.properties.runtime.
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorBlock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBlock_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLoopTest_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLoopTest_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorBlock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBlock_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLoopTest_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLoopTest_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,9 +43,9 @@ public class WhileLoopEditor extends de.uni_paderborn.fujaba.properties.runtime.
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBlock_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBlock_GeneralTab_Editor() {
-		if (this.editorBlock_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBlock_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBlock_property_tab_generalTab_Editor() {
+		if (this.editorBlock_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getLoop_Block();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -51,14 +53,14 @@ public class WhileLoopEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 			editor.setTooltipMessage("Body block of the loop.");
 
-			this.editorBlock_GeneralTab = editor;
+			this.editorBlock_property_tab_generalTab = editor;
 		}
-		return this.editorBlock_GeneralTab;
+		return this.editorBlock_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLoopTest_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLoopTest_GeneralTab_Editor() {
-		if (this.editorLoopTest_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLoopTest_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLoopTest_property_tab_generalTab_Editor() {
+		if (this.editorLoopTest_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getLoop_LoopTest();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -66,9 +68,9 @@ public class WhileLoopEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 			editor.setTooltipMessage("If the loop test expression evaluates to true the block is executed. ");
 
-			this.editorLoopTest_GeneralTab = editor;
+			this.editorLoopTest_property_tab_generalTab = editor;
 		}
-		return this.editorLoopTest_GeneralTab;
+		return this.editorLoopTest_property_tab_generalTab;
 	}
 
 	//

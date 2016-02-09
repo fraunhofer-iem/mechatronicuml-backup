@@ -21,17 +21,19 @@ public class ElseIfStatementEditor extends de.uni_paderborn.fujaba.properties.ru
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorElseIfCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorElseIfCondition_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorElseIfBlock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorElseIfBlock_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorElseIfCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorElseIfCondition_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorElseIfBlock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorElseIfBlock_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,9 +43,9 @@ public class ElseIfStatementEditor extends de.uni_paderborn.fujaba.properties.ru
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorElseIfCondition_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorElseIfCondition_GeneralTab_Editor() {
-		if (this.editorElseIfCondition_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorElseIfCondition_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorElseIfCondition_property_tab_generalTab_Editor() {
+		if (this.editorElseIfCondition_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getElseIfStatement_ElseIfCondition();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -51,14 +53,14 @@ public class ElseIfStatementEditor extends de.uni_paderborn.fujaba.properties.ru
 
 			editor.setTooltipMessage("ElseIf condition of the if statement.");
 
-			this.editorElseIfCondition_GeneralTab = editor;
+			this.editorElseIfCondition_property_tab_generalTab = editor;
 		}
-		return this.editorElseIfCondition_GeneralTab;
+		return this.editorElseIfCondition_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorElseIfBlock_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorElseIfBlock_GeneralTab_Editor() {
-		if (this.editorElseIfBlock_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorElseIfBlock_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorElseIfBlock_property_tab_generalTab_Editor() {
+		if (this.editorElseIfBlock_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getElseIfStatement_ElseIfBlock();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -67,9 +69,9 @@ public class ElseIfStatementEditor extends de.uni_paderborn.fujaba.properties.ru
 			editor.setTooltipMessage(
 					"Block which is executed if the corresponding elseif condition evaluates to true.");
 
-			this.editorElseIfBlock_GeneralTab = editor;
+			this.editorElseIfBlock_property_tab_generalTab = editor;
 		}
-		return this.editorElseIfBlock_GeneralTab;
+		return this.editorElseIfBlock_property_tab_generalTab;
 	}
 
 	//

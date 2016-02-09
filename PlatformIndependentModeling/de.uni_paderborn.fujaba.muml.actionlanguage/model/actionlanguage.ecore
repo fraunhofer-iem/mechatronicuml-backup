@@ -9,15 +9,38 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="AssignOperator">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An AssignOperator is used to assign a new value to its left operand."/>
+    </eAnnotations>
     <eLiterals name="UNSET" literal="UNSET"/>
-    <eLiterals name="ASSIGN" value="1" literal=":="/>
-    <eLiterals name="PLUS_EQUAL" value="2" literal="+="/>
-    <eLiterals name="MINUS_EQUAL" value="4" literal="-="/>
+    <eLiterals name="ASSIGN" value="1" literal=":=">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the right operand is assigned to the left operand."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PLUS_EQUAL" value="2" literal="+=">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the right operand is added to the value of the left operand and&#xA;then assigned to the left operand. a += b can be rewritten as a := a + b."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MINUS_EQUAL" value="4" literal="-=">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the right operand is subtracted from the value of the left operand and&#xA;then assigned to the left operand. a -= b can be rewritten as a := a - b."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IncrementDecrementOperator">
     <eLiterals name="UNSET" literal="UNSET"/>
-    <eLiterals name="INCREMENT" value="2" literal="++"/>
-    <eLiterals name="DECREMENT" value="1" literal="--"/>
+    <eLiterals name="INCREMENT" value="2" literal="++">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a post increment. The expression &quot;a++&quot; evaluates to the value of&#xA;the operand &quot;a&quot;. After the execution, the operand &quot;a&quot; is incremented by 1&#xA;(a := a + 1)."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DECREMENT" value="1" literal="--">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a post decrement. The expression &quot;a--&quot; evaluates to the value of&#xA;the operand &quot;a&quot;. After the execution, the operand &quot;a&quot; is decremented by 1&#xA;(a := a - 1)."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -132,7 +155,11 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfStatements" upperBound="-1"
-        eType="#//ElseIfStatement" containment="true"/>
+        eType="#//ElseIfStatement" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="List of ElseIfStatements. If the IfStatement's ifCondition evaluates to false&#xA;and it exists an ElseIfStatement in this list, whose elseIfCondition evaluates&#xA;to true, then the first ElseIfStatement (wrt. the list index), whose elseIfCondition&#xA;evaluates to true is executed. Otherwise, the elseBlock is executed (if present)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationCall" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -174,9 +201,17 @@
       <details key="documentation" value="Represents a parameter of a transition's trigger message."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The MessageType that this TriggerMessageExpression represents."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The messageType's parameter that should be accessed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointReference"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
@@ -200,11 +235,31 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Defines keywords for referring to sub-role instance (sub-port instances) of a&#xD;&#xA;multi-role instance (multi-port instance). Self may be used by a sub-role&#xD;&#xA;instance (sub-port instance) and refers to the corresponding sub-role instance&#xD;&#xA;(sub-port instance) itself. First and last may be used by the adaptation behavior&#xD;&#xA;and refer to the first or last sub-role instance (sub-port instance) of the multi-role&#xD;&#xA;instance (multi-port instance). Given a reference sub-role instance (sub-port&#xD;&#xA;instance), next and prev refer to the next or previous sub-role instance (sub-port&#xD;&#xA;instance). If the reference sub-role instance (sub-port instance) is the last one &#xD;&#xA;(first one), then next (first) refers to null."/>
     </eAnnotations>
-    <eLiterals name="SELF"/>
-    <eLiterals name="FIRST" value="1"/>
-    <eLiterals name="LAST" value="2"/>
-    <eLiterals name="PREV" value="3" literal="PREV"/>
-    <eLiterals name="NEXT" value="4"/>
+    <eLiterals name="SELF">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="FIRST" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LAST" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PREV" value="3" literal="PREV">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="NEXT" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PositionSelector" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -264,7 +319,11 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
         eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="List of expressions where each Expression is used to initialize a particular&#xA;array element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NondeterministicChoiceExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -298,14 +357,29 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A TypeCastExpression enables to perform an explicit type cast of the value of the enclosedExpression to the data type given in the eponymous reference. "/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents the DataType to which the value of the enclosedExpression is converted."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enclosedExpression" lowerBound="1"
         eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents the expression that should be converted."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementAccessorExpression" abstract="true"
-      eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+      eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract base class for an element accessor."/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrayIndexExpression" eSuperTypes="#//ElementAccessorExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Used to access an array element at a particular index."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="index" lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -314,8 +388,15 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeAccessorExpression" eSuperTypes="#//ElementAccessorExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Used to access an attribute of a StructuredDataType."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/Attribute"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/Attribute">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The attribute of a StructuredDataType that should be accessed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElseIfStatement" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

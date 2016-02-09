@@ -21,13 +21,15 @@ public class TypeCastExpressionEditor extends de.uni_paderborn.fujaba.properties
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDataType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDataType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -37,17 +39,20 @@ public class TypeCastExpressionEditor extends de.uni_paderborn.fujaba.properties
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataType_GeneralTab_Editor() {
-		if (this.editorDataType_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataType_property_tab_generalTab_Editor() {
+		if (this.editorDataType_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getTypeCastExpression_DataType();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorDataType_GeneralTab = editor;
+			editor.setTooltipMessage(
+					"Represents the DataType to which the value of the enclosedExpression is converted.");
+
+			this.editorDataType_property_tab_generalTab = editor;
 		}
-		return this.editorDataType_GeneralTab;
+		return this.editorDataType_property_tab_generalTab;
 	}
 
 	//

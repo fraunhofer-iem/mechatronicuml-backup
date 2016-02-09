@@ -21,25 +21,27 @@ public class OperationCallEditor extends de.uni_paderborn.fujaba.properties.runt
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorOperation_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOperation_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorParameterBinding_GeneralTab_Editor(), false);
+					createEditorParameterBinding_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorOperation_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOperation_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
 					true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorParameterBinding_GeneralTab_Editor(), false);
+					createEditorParameterBinding_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -49,9 +51,9 @@ public class OperationCallEditor extends de.uni_paderborn.fujaba.properties.runt
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperation_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperation_GeneralTab_Editor() {
-		if (this.editorOperation_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperation_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperation_property_tab_generalTab_Editor() {
+		if (this.editorOperation_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getOperationCall_Operation();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -59,14 +61,14 @@ public class OperationCallEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			editor.setTooltipMessage("Operation which belongs to an operation call.");
 
-			this.editorOperation_GeneralTab = editor;
+			this.editorOperation_property_tab_generalTab = editor;
 		}
-		return this.editorOperation_GeneralTab;
+		return this.editorOperation_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameterBinding_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameterBinding_GeneralTab_Editor() {
-		if (this.editorParameterBinding_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameterBinding_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameterBinding_property_tab_generalTab_Editor() {
+		if (this.editorParameterBinding_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getOperationCall_ParameterBinding();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -74,9 +76,9 @@ public class OperationCallEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			editor.setTooltipMessage("Parameter bindings which belongs to an operation call.");
 
-			this.editorParameterBinding_GeneralTab = editor;
+			this.editorParameterBinding_property_tab_generalTab = editor;
 		}
-		return this.editorParameterBinding_GeneralTab;
+		return this.editorParameterBinding_property_tab_generalTab;
 	}
 
 	//

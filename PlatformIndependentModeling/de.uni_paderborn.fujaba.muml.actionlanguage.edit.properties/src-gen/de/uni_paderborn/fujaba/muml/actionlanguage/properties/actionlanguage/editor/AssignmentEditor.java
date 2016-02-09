@@ -21,25 +21,27 @@ public class AssignmentEditor extends de.uni_paderborn.fujaba.properties.runtime
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAssignOperator_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorRhs_assignExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRhs_assignExpression_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorIncrementDecrementOperator_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorIncrementDecrementOperator_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLhs_typedNamedElementExpression_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAssignOperator_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorRhs_assignExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRhs_assignExpression_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorIncrementDecrementOperator_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorIncrementDecrementOperator_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLhs_typedNamedElementExpression_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -49,9 +51,9 @@ public class AssignmentEditor extends de.uni_paderborn.fujaba.properties.runtime
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAssignOperator_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAssignOperator_GeneralTab_Editor() {
-		if (this.editorAssignOperator_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAssignOperator_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAssignOperator_property_tab_generalTab_Editor() {
+		if (this.editorAssignOperator_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_AssignOperator();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -60,14 +62,14 @@ public class AssignmentEditor extends de.uni_paderborn.fujaba.properties.runtime
 			editor.setTooltipMessage(
 					"An assignment is used to assign a value to a variable. A simple assignment is one made using the \\emph{<ASSIGN>} Operator \\emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. ");
 
-			this.editorAssignOperator_GeneralTab = editor;
+			this.editorAssignOperator_property_tab_generalTab = editor;
 		}
-		return this.editorAssignOperator_GeneralTab;
+		return this.editorAssignOperator_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRhs_assignExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRhs_assignExpression_GeneralTab_Editor() {
-		if (this.editorRhs_assignExpression_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRhs_assignExpression_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRhs_assignExpression_property_tab_generalTab_Editor() {
+		if (this.editorRhs_assignExpression_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_Rhs_assignExpression();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -76,14 +78,14 @@ public class AssignmentEditor extends de.uni_paderborn.fujaba.properties.runtime
 			editor.setTooltipMessage(
 					"The right-hand-side expression evaluates to a value which is assigned to the left-hand-side variable.");
 
-			this.editorRhs_assignExpression_GeneralTab = editor;
+			this.editorRhs_assignExpression_property_tab_generalTab = editor;
 		}
-		return this.editorRhs_assignExpression_GeneralTab;
+		return this.editorRhs_assignExpression_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncrementDecrementOperator_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncrementDecrementOperator_GeneralTab_Editor() {
-		if (this.editorIncrementDecrementOperator_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncrementDecrementOperator_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncrementDecrementOperator_property_tab_generalTab_Editor() {
+		if (this.editorIncrementDecrementOperator_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_IncrementDecrementOperator();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -91,14 +93,14 @@ public class AssignmentEditor extends de.uni_paderborn.fujaba.properties.runtime
 
 			editor.setTooltipMessage("Abbreviated form of x := x+1; or x :=x-1.");
 
-			this.editorIncrementDecrementOperator_GeneralTab = editor;
+			this.editorIncrementDecrementOperator_property_tab_generalTab = editor;
 		}
-		return this.editorIncrementDecrementOperator_GeneralTab;
+		return this.editorIncrementDecrementOperator_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLhs_typedNamedElementExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLhs_typedNamedElementExpression_GeneralTab_Editor() {
-		if (this.editorLhs_typedNamedElementExpression_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLhs_typedNamedElementExpression_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLhs_typedNamedElementExpression_property_tab_generalTab_Editor() {
+		if (this.editorLhs_typedNamedElementExpression_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_Lhs_typedNamedElementExpression();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -107,9 +109,9 @@ public class AssignmentEditor extends de.uni_paderborn.fujaba.properties.runtime
 			editor.setTooltipMessage(
 					" The left-hand-side of an assignment must be a single variable and must not be another expression.");
 
-			this.editorLhs_typedNamedElementExpression_GeneralTab = editor;
+			this.editorLhs_typedNamedElementExpression_property_tab_generalTab = editor;
 		}
-		return this.editorLhs_typedNamedElementExpression_GeneralTab;
+		return this.editorLhs_typedNamedElementExpression_property_tab_generalTab;
 	}
 
 	//

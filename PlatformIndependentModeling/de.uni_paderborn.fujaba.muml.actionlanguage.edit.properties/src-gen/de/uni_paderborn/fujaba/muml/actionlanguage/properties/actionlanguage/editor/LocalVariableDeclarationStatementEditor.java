@@ -23,13 +23,15 @@ public class LocalVariableDeclarationStatementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorVariable_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVariable_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorVariable_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVariable_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,9 +41,9 @@ public class LocalVariableDeclarationStatementEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariable_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariable_GeneralTab_Editor() {
-		if (this.editorVariable_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariable_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariable_property_tab_generalTab_Editor() {
+		if (this.editorVariable_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getLocalVariableDeclarationStatement_Variable();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -50,9 +52,9 @@ public class LocalVariableDeclarationStatementEditor
 			editor.setTooltipMessage(
 					"The variable that is declared and optionally initialized by this declaration \nstatement.");
 
-			this.editorVariable_GeneralTab = editor;
+			this.editorVariable_property_tab_generalTab = editor;
 		}
-		return this.editorVariable_GeneralTab;
+		return this.editorVariable_property_tab_generalTab;
 	}
 
 	//

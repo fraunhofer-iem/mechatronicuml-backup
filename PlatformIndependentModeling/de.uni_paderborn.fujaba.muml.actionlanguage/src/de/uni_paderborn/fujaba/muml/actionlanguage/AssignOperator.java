@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Assign Operator</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * An AssignOperator is used to assign a new value to its left operand.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignOperator()
  * @model
  * @generated
@@ -81,6 +84,9 @@ public enum AssignOperator implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The value of the right operand is assigned to the left operand.
+	 * <!-- end-model-doc -->
 	 * @see #ASSIGN
 	 * @model literal=":="
 	 * @generated
@@ -96,6 +102,10 @@ public enum AssignOperator implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The value of the right operand is added to the value of the left operand and
+	 * then assigned to the left operand. a += b can be rewritten as a := a + b.
+	 * <!-- end-model-doc -->
 	 * @see #PLUS_EQUAL
 	 * @model literal="+="
 	 * @generated
@@ -111,6 +121,10 @@ public enum AssignOperator implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The value of the right operand is subtracted from the value of the left operand and
+	 * then assigned to the left operand. a -= b can be rewritten as a := a - b.
+	 * <!-- end-model-doc -->
 	 * @see #MINUS_EQUAL
 	 * @model literal="-="
 	 * @generated

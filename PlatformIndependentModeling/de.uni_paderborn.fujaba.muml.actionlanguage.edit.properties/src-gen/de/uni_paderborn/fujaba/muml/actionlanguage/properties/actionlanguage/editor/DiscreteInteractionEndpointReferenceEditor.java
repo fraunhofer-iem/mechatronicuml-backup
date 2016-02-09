@@ -23,17 +23,19 @@ public class DiscreteInteractionEndpointReferenceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorTypedNamedElementExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTypedNamedElementExpression_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPosition_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorTypedNamedElementExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTypedNamedElementExpression_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPosition_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -43,9 +45,9 @@ public class DiscreteInteractionEndpointReferenceEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTypedNamedElementExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTypedNamedElementExpression_GeneralTab_Editor() {
-		if (this.editorTypedNamedElementExpression_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTypedNamedElementExpression_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTypedNamedElementExpression_property_tab_generalTab_Editor() {
+		if (this.editorTypedNamedElementExpression_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getDiscreteInteractionEndpointReference_TypedNamedElementExpression();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -54,14 +56,14 @@ public class DiscreteInteractionEndpointReferenceEditor
 			editor.setTooltipMessage(
 					"Allows to reference a variable containing a sub-role instance of sub-port instance.\nThis field is optional. ");
 
-			this.editorTypedNamedElementExpression_GeneralTab = editor;
+			this.editorTypedNamedElementExpression_property_tab_generalTab = editor;
 		}
-		return this.editorTypedNamedElementExpression_GeneralTab;
+		return this.editorTypedNamedElementExpression_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPosition_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPosition_GeneralTab_Editor() {
-		if (this.editorPosition_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPosition_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPosition_property_tab_generalTab_Editor() {
+		if (this.editorPosition_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getDiscreteInteractionEndpointReference_Position();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -70,9 +72,9 @@ public class DiscreteInteractionEndpointReferenceEditor
 			editor.setTooltipMessage(
 					"Defines the relative position of the sub-role instance or sub-port instance.\nIn particular, it enables to select the first or last sub-role instance (sub-port instance) of a \nmulti-role instance (multi-port instance) using keyword first and last, to select itself\nin case of a sub-role instance (sub-port instance) using keyword self, or the next\nor previous sub-role given a reference either by self or a variable using keywords\nnext and prev.");
 
-			this.editorPosition_GeneralTab = editor;
+			this.editorPosition_property_tab_generalTab = editor;
 		}
-		return this.editorPosition_GeneralTab;
+		return this.editorPosition_property_tab_generalTab;
 	}
 
 	//

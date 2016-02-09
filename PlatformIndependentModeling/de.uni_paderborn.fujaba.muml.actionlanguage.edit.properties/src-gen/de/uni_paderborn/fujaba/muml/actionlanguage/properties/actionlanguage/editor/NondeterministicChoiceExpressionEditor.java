@@ -23,17 +23,19 @@ public class NondeterministicChoiceExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorRange_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRange_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDataType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorRange_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRange_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDataType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -43,9 +45,9 @@ public class NondeterministicChoiceExpressionEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRange_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRange_GeneralTab_Editor() {
-		if (this.editorRange_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRange_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRange_property_tab_generalTab_Editor() {
+		if (this.editorRange_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getNondeterministicChoiceExpression_Range();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -54,14 +56,14 @@ public class NondeterministicChoiceExpressionEditor
 			editor.setTooltipMessage(
 					"The range defines the lower bound and the upper bound of the interval from which\nvalues will be chosen nondeterministically. Every value in this interval will be\nchosen with the same probability.");
 
-			this.editorRange_GeneralTab = editor;
+			this.editorRange_property_tab_generalTab = editor;
 		}
-		return this.editorRange_GeneralTab;
+		return this.editorRange_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataType_GeneralTab_Editor() {
-		if (this.editorDataType_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataType_property_tab_generalTab_Editor() {
+		if (this.editorDataType_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getNondeterministicChoiceExpression_DataType();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -70,9 +72,9 @@ public class NondeterministicChoiceExpressionEditor
 			editor.setTooltipMessage(
 					"The base type for the interval defined by the range. We only allow for integer types.");
 
-			this.editorDataType_GeneralTab = editor;
+			this.editorDataType_property_tab_generalTab = editor;
 		}
-		return this.editorDataType_GeneralTab;
+		return this.editorDataType_property_tab_generalTab;
 	}
 
 	//

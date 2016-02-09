@@ -23,13 +23,15 @@ public class AttributeAccessorExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorAttribute_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAttribute_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorAttribute_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAttribute_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,17 +41,19 @@ public class AttributeAccessorExpressionEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAttribute_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAttribute_GeneralTab_Editor() {
-		if (this.editorAttribute_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAttribute_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAttribute_property_tab_generalTab_Editor() {
+		if (this.editorAttribute_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAttributeAccessorExpression_Attribute();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorAttribute_GeneralTab = editor;
+			editor.setTooltipMessage("The attribute of a StructuredDataType that should be accessed.");
+
+			this.editorAttribute_property_tab_generalTab = editor;
 		}
-		return this.editorAttribute_GeneralTab;
+		return this.editorAttribute_property_tab_generalTab;
 	}
 
 	//

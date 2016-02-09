@@ -91,6 +91,9 @@ public enum PositionSelectorKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * See documentation of the PositionSelectorKind enumeration.
+	 * <!-- end-model-doc -->
 	 * @see #SELF
 	 * @model
 	 * @generated
@@ -106,6 +109,9 @@ public enum PositionSelectorKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * See documentation of the PositionSelectorKind enumeration.
+	 * <!-- end-model-doc -->
 	 * @see #FIRST
 	 * @model
 	 * @generated
@@ -121,6 +127,9 @@ public enum PositionSelectorKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * See documentation of the PositionSelectorKind enumeration.
+	 * <!-- end-model-doc -->
 	 * @see #LAST
 	 * @model
 	 * @generated
@@ -136,6 +145,9 @@ public enum PositionSelectorKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * See documentation of the PositionSelectorKind enumeration.
+	 * <!-- end-model-doc -->
 	 * @see #PREV
 	 * @model
 	 * @generated
@@ -151,6 +163,9 @@ public enum PositionSelectorKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * See documentation of the PositionSelectorKind enumeration.
+	 * <!-- end-model-doc -->
 	 * @see #NEXT
 	 * @model
 	 * @generated

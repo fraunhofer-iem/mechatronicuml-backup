@@ -21,17 +21,19 @@ public class PositionSelectorEditor extends de.uni_paderborn.fujaba.properties.r
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorSuccessor_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorSuccessor_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorSuccessor_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorSuccessor_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,9 +43,9 @@ public class PositionSelectorEditor extends de.uni_paderborn.fujaba.properties.r
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_GeneralTab_Editor() {
-		if (this.editorKind_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_property_tab_generalTab_Editor() {
+		if (this.editorKind_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getPositionSelector_Kind();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
@@ -51,14 +53,14 @@ public class PositionSelectorEditor extends de.uni_paderborn.fujaba.properties.r
 
 			editor.setTooltipMessage("The enum literal defining the position.");
 
-			this.editorKind_GeneralTab = editor;
+			this.editorKind_property_tab_generalTab = editor;
 		}
-		return this.editorKind_GeneralTab;
+		return this.editorKind_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSuccessor_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSuccessor_GeneralTab_Editor() {
-		if (this.editorSuccessor_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSuccessor_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSuccessor_property_tab_generalTab_Editor() {
+		if (this.editorSuccessor_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getPositionSelector_Successor();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -67,9 +69,9 @@ public class PositionSelectorEditor extends de.uni_paderborn.fujaba.properties.r
 			editor.setTooltipMessage(
 					"Successors of a PositionSelector enable to concatenate PositionSelectors for\nspecifying more complex expression like self.next or self.prev.prev.");
 
-			this.editorSuccessor_GeneralTab = editor;
+			this.editorSuccessor_property_tab_generalTab = editor;
 		}
-		return this.editorSuccessor_GeneralTab;
+		return this.editorSuccessor_property_tab_generalTab;
 	}
 
 	//
