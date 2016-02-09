@@ -994,54 +994,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_MINORMAXKEYWORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3226:22: ( ( 'maxMessageDelay' | 'minMessageDelay' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3226:24: ( 'maxMessageDelay' | 'minMessageDelay' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3226:22: ( 'maxMsgDelay' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3226:24: 'maxMsgDelay'
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3226:24: ( 'maxMessageDelay' | 'minMessageDelay' )
-            int alt1=2;
-            int LA1_0 = input.LA(1);
-
-            if ( (LA1_0=='m') ) {
-                int LA1_1 = input.LA(2);
-
-                if ( (LA1_1=='a') ) {
-                    alt1=1;
-                }
-                else if ( (LA1_1=='i') ) {
-                    alt1=2;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 1, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 1, 0, input);
-
-                throw nvae;
-            }
-            switch (alt1) {
-                case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3226:25: 'maxMessageDelay'
-                    {
-                    match("maxMessageDelay"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3226:43: 'minMessageDelay'
-                    {
-                    match("minMessageDelay"); 
-
-
-                    }
-                    break;
-
-            }
+            match("maxMsgDelay"); 
 
 
             }
@@ -1085,22 +1041,22 @@ public class InternalActionLanguageLexer extends Lexer {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3230:16: ( 'true' | 'false' )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3230:16: ( 'true' | 'false' )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            int alt1=2;
+            int LA1_0 = input.LA(1);
 
-            if ( (LA2_0=='t') ) {
-                alt2=1;
+            if ( (LA1_0=='t') ) {
+                alt1=1;
             }
-            else if ( (LA2_0=='f') ) {
-                alt2=2;
+            else if ( (LA1_0=='f') ) {
+                alt1=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
-            switch (alt2) {
+            switch (alt1) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3230:17: 'true'
                     {
@@ -1140,13 +1096,13 @@ public class InternalActionLanguageLexer extends Lexer {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3232:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3232:11: ( '^' )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            if ( (LA3_0=='^') ) {
-                alt3=1;
+            if ( (LA2_0=='^') ) {
+                alt2=1;
             }
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3232:11: '^'
                     {
@@ -1167,17 +1123,17 @@ public class InternalActionLanguageLexer extends Lexer {
                 throw mse;}
 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3232:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
-            loop4:
+            loop3:
             do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( ((LA4_0>='0' && LA4_0<='9')||(LA4_0>='A' && LA4_0<='Z')||LA4_0=='_'||(LA4_0>='a' && LA4_0<='z')) ) {
-                    alt4=1;
+                if ( ((LA3_0>='0' && LA3_0<='9')||(LA3_0>='A' && LA3_0<='Z')||LA3_0=='_'||(LA3_0>='a' && LA3_0<='z')) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt4) {
+                switch (alt3) {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:
             	    {
@@ -1195,7 +1151,7 @@ public class InternalActionLanguageLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop4;
+            	    break loop3;
                 }
             } while (true);
 
@@ -1219,18 +1175,18 @@ public class InternalActionLanguageLexer extends Lexer {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3234:12: ( '0' .. '9' )+
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3234:12: ( '0' .. '9' )+
-            int cnt5=0;
-            loop5:
+            int cnt4=0;
+            loop4:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt4=2;
+                int LA4_0 = input.LA(1);
 
-                if ( ((LA5_0>='0' && LA5_0<='9')) ) {
-                    alt5=1;
+                if ( ((LA4_0>='0' && LA4_0<='9')) ) {
+                    alt4=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt4) {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3234:13: '0' .. '9'
             	    {
@@ -1240,12 +1196,12 @@ public class InternalActionLanguageLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt5 >= 1 ) break loop5;
+            	    if ( cnt4 >= 1 ) break loop4;
                         EarlyExitException eee =
-                            new EarlyExitException(5, input);
+                            new EarlyExitException(4, input);
                         throw eee;
                 }
-                cnt5++;
+                cnt4++;
             } while (true);
 
 
@@ -1268,41 +1224,41 @@ public class InternalActionLanguageLexer extends Lexer {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3236:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3236:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA8_0=='\"') ) {
-                alt8=1;
+            if ( (LA7_0=='\"') ) {
+                alt7=1;
             }
-            else if ( (LA8_0=='\'') ) {
-                alt8=2;
+            else if ( (LA7_0=='\'') ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3236:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3236:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
-                    loop6:
+                    loop5:
                     do {
-                        int alt6=3;
-                        int LA6_0 = input.LA(1);
+                        int alt5=3;
+                        int LA5_0 = input.LA(1);
 
-                        if ( (LA6_0=='\\') ) {
-                            alt6=1;
+                        if ( (LA5_0=='\\') ) {
+                            alt5=1;
                         }
-                        else if ( ((LA6_0>='\u0000' && LA6_0<='!')||(LA6_0>='#' && LA6_0<='[')||(LA6_0>=']' && LA6_0<='\uFFFF')) ) {
-                            alt6=2;
+                        else if ( ((LA5_0>='\u0000' && LA5_0<='!')||(LA5_0>='#' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')) ) {
+                            alt5=2;
                         }
 
 
-                        switch (alt6) {
+                        switch (alt5) {
                     	case 1 :
                     	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3236:21: '\\\\' .
                     	    {
@@ -1328,7 +1284,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop6;
+                    	    break loop5;
                         }
                     } while (true);
 
@@ -1341,20 +1297,20 @@ public class InternalActionLanguageLexer extends Lexer {
                     {
                     match('\''); 
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3236:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
-                    loop7:
+                    loop6:
                     do {
-                        int alt7=3;
-                        int LA7_0 = input.LA(1);
+                        int alt6=3;
+                        int LA6_0 = input.LA(1);
 
-                        if ( (LA7_0=='\\') ) {
-                            alt7=1;
+                        if ( (LA6_0=='\\') ) {
+                            alt6=1;
                         }
-                        else if ( ((LA7_0>='\u0000' && LA7_0<='&')||(LA7_0>='(' && LA7_0<='[')||(LA7_0>=']' && LA7_0<='\uFFFF')) ) {
-                            alt7=2;
+                        else if ( ((LA6_0>='\u0000' && LA6_0<='&')||(LA6_0>='(' && LA6_0<='[')||(LA6_0>=']' && LA6_0<='\uFFFF')) ) {
+                            alt6=2;
                         }
 
 
-                        switch (alt7) {
+                        switch (alt6) {
                     	case 1 :
                     	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3236:54: '\\\\' .
                     	    {
@@ -1380,7 +1336,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop7;
+                    	    break loop6;
                         }
                     } while (true);
 
@@ -1413,29 +1369,29 @@ public class InternalActionLanguageLexer extends Lexer {
             match("/*"); 
 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3238:24: ( options {greedy=false; } : . )*
-            loop9:
+            loop8:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA9_0=='*') ) {
-                    int LA9_1 = input.LA(2);
+                if ( (LA8_0=='*') ) {
+                    int LA8_1 = input.LA(2);
 
-                    if ( (LA9_1=='/') ) {
-                        alt9=2;
+                    if ( (LA8_1=='/') ) {
+                        alt8=2;
                     }
-                    else if ( ((LA9_1>='\u0000' && LA9_1<='.')||(LA9_1>='0' && LA9_1<='\uFFFF')) ) {
-                        alt9=1;
+                    else if ( ((LA8_1>='\u0000' && LA8_1<='.')||(LA8_1>='0' && LA8_1<='\uFFFF')) ) {
+                        alt8=1;
                     }
 
 
                 }
-                else if ( ((LA9_0>='\u0000' && LA9_0<=')')||(LA9_0>='+' && LA9_0<='\uFFFF')) ) {
-                    alt9=1;
+                else if ( ((LA8_0>='\u0000' && LA8_0<=')')||(LA8_0>='+' && LA8_0<='\uFFFF')) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt8) {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3238:52: .
             	    {
@@ -1445,7 +1401,7 @@ public class InternalActionLanguageLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop8;
                 }
             } while (true);
 
@@ -1473,17 +1429,17 @@ public class InternalActionLanguageLexer extends Lexer {
             match("//"); 
 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3240:24: (~ ( ( '\\n' | '\\r' ) ) )*
-            loop10:
+            loop9:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( ((LA10_0>='\u0000' && LA10_0<='\t')||(LA10_0>='\u000B' && LA10_0<='\f')||(LA10_0>='\u000E' && LA10_0<='\uFFFF')) ) {
-                    alt10=1;
+                if ( ((LA9_0>='\u0000' && LA9_0<='\t')||(LA9_0>='\u000B' && LA9_0<='\f')||(LA9_0>='\u000E' && LA9_0<='\uFFFF')) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt9) {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3240:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
@@ -1501,29 +1457,29 @@ public class InternalActionLanguageLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop9;
                 }
             } while (true);
 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3240:40: ( ( '\\r' )? '\\n' )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA12_0=='\n'||LA12_0=='\r') ) {
-                alt12=1;
+            if ( (LA11_0=='\n'||LA11_0=='\r') ) {
+                alt11=1;
             }
-            switch (alt12) {
+            switch (alt11) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3240:41: ( '\\r' )? '\\n'
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3240:41: ( '\\r' )?
-                    int alt11=2;
-                    int LA11_0 = input.LA(1);
+                    int alt10=2;
+                    int LA10_0 = input.LA(1);
 
-                    if ( (LA11_0=='\r') ) {
-                        alt11=1;
+                    if ( (LA10_0=='\r') ) {
+                        alt10=1;
                     }
-                    switch (alt11) {
+                    switch (alt10) {
                         case 1 :
                             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3240:41: '\\r'
                             {
@@ -1561,18 +1517,18 @@ public class InternalActionLanguageLexer extends Lexer {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3242:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3242:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt13=0;
-            loop13:
+            int cnt12=0;
+            loop12:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {
-                    alt13=1;
+                if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {
+                    alt12=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt12) {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:
             	    {
@@ -1590,12 +1546,12 @@ public class InternalActionLanguageLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt13 >= 1 ) break loop13;
+            	    if ( cnt12 >= 1 ) break loop12;
                         EarlyExitException eee =
-                            new EarlyExitException(13, input);
+                            new EarlyExitException(12, input);
                         throw eee;
                 }
-                cnt13++;
+                cnt12++;
             } while (true);
 
 
@@ -1631,9 +1587,9 @@ public class InternalActionLanguageLexer extends Lexer {
 
     public void mTokens() throws RecognitionException {
         // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | RULE_MINORMAXKEYWORD | RULE_NUMBER | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt14=54;
-        alt14 = dfa14.predict(input);
-        switch (alt14) {
+        int alt13=54;
+        alt13 = dfa13.predict(input);
+        switch (alt13) {
             case 1 :
                 // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1:10: T__14
                 {
@@ -2018,21 +1974,58 @@ public class InternalActionLanguageLexer extends Lexer {
     }
 
 
-    protected DFA14 dfa14 = new DFA14(this);
-    static final String DFA14_eotS =
-        "\3\uffff\1\56\2\uffff\1\62\5\56\3\uffff\1\50\1\56\1\77\1\101\1\56\1\110\1\uffff\1\114\3\50\1\uffff\1\123\1\uffff\4\56\1\132\1\56\1\50\1\uffff\2\50\4\uffff\3\56\5\uffff\1\56\1\144\1\145\2\56\4\uffff\1\56\5\uffff\3\56\20\uffff\5\56\2\uffff\1\132\1\56\2\uffff\1\162\3\56\2\uffff\4\56\1\172\7\56\1\uffff\3\56\1\u0086\2\56\1\u0089\1\uffff\1\u008a\1\u008b\1\u008c\1\u008d\2\56\1\u0090\1\u0091\1\u0090\1\u0092\1\56\1\uffff\1\56\1\u0095\5\uffff\2\56\3\uffff\1\u0098\1\u0099\1\uffff\2\56\2\uffff\20\56\2\u00ac\1\uffff";
-    static final String DFA14_eofS =
-        "\u00ad\uffff";
-    static final String DFA14_minS =
-        "\1\0\2\uffff\1\141\2\uffff\1\73\1\150\1\157\1\146\1\154\1\145\3\uffff\1\75\1\157\2\75\1\145\1\55\1\uffff\1\53\1\174\1\46\1\75\1\uffff\1\52\1\uffff\1\145\1\141\1\162\1\141\1\56\1\162\1\101\1\uffff\2\0\4\uffff\2\162\1\154\5\uffff\1\151\2\60\1\163\1\164\4\uffff\1\156\5\uffff\1\154\1\164\1\170\20\uffff\1\154\1\163\1\145\1\170\1\156\2\uffff\1\56\1\165\2\uffff\1\60\2\163\1\154\2\uffff\1\145\1\165\1\163\1\154\1\60\1\164\1\146\1\164\1\166\2\115\1\145\1\uffff\1\164\2\145\1\60\1\162\1\164\1\60\1\uffff\4\60\2\145\4\60\1\146\1\uffff\1\156\1\60\5\uffff\2\163\3\uffff\2\60\1\uffff\2\163\2\uffff\2\141\2\147\2\145\2\104\2\145\2\154\2\141\2\171\2\60\1\uffff";
-    static final String DFA14_maxS =
-        "\1\uffff\2\uffff\1\157\2\uffff\1\73\1\150\1\157\1\146\1\154\1\145\3\uffff\1\75\1\157\1\76\1\75\1\165\1\76\1\uffff\1\75\1\174\1\46\1\75\1\uffff\1\57\1\uffff\1\145\1\141\1\162\1\151\1\71\1\162\1\172\1\uffff\2\uffff\4\uffff\2\162\1\154\5\uffff\1\151\2\172\1\163\1\164\4\uffff\1\156\5\uffff\1\154\1\164\1\170\20\uffff\1\154\1\163\1\145\1\170\1\156\2\uffff\1\71\1\165\2\uffff\1\172\2\163\1\154\2\uffff\1\145\1\165\1\163\1\154\1\172\1\164\1\146\1\164\1\166\2\115\1\145\1\uffff\1\164\2\145\1\172\1\162\1\164\1\172\1\uffff\4\172\2\145\4\172\1\146\1\uffff\1\156\1\172\5\uffff\2\163\3\uffff\2\172\1\uffff\2\163\2\uffff\2\141\2\147\2\145\2\104\2\145\2\154\2\141\2\171\2\172\1\uffff";
-    static final String DFA14_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\6\uffff\1\16\1\17\1\20\6\uffff\1\27\4\uffff\1\44\1\uffff\1\46\7\uffff\1\60\2\uffff\1\65\1\66\1\1\1\2\3\uffff\1\60\1\4\1\5\1\11\1\6\5\uffff\1\16\1\17\1\20\1\21\1\uffff\1\37\1\40\1\23\1\41\1\24\3\uffff\1\26\1\31\1\33\1\43\1\27\1\30\1\32\1\42\1\34\1\35\1\36\1\44\1\63\1\64\1\45\1\46\5\uffff\1\61\1\56\2\uffff\1\62\1\65\4\uffff\1\10\1\12\14\uffff\1\3\7\uffff\1\47\13\uffff\1\13\2\uffff\1\25\1\54\1\50\1\52\1\53\2\uffff\1\57\1\51\1\7\2\uffff\1\22\2\uffff\1\14\1\15\22\uffff\1\55";
-    static final String DFA14_specialS =
-        "\1\1\44\uffff\1\2\1\0\u0086\uffff}>";
-    static final String[] DFA14_transitionS = {
-            "\11\50\2\47\2\50\1\47\22\50\1\47\1\50\1\45\2\50\1\34\1\30\1\46\1\4\1\6\1\32\1\26\1\15\1\24\1\25\1\33\12\41\1\17\1\5\1\21\1\31\1\22\2\50\32\44\1\14\1\50\1\16\1\43\1\44\1\50\2\44\1\20\1\10\1\12\1\3\2\44\1\11\2\44\1\36\1\40\1\23\1\44\1\37\1\44\1\13\1\35\1\42\2\44\1\7\3\44\1\1\1\27\1\2\uff82\50",
+    protected DFA13 dfa13 = new DFA13(this);
+    static final String DFA13_eotS =
+        "\3\uffff\1\56\2\uffff\1\62\5\56\3\uffff\1\50\1\56\1\77\1\101\1"+
+        "\56\1\110\1\uffff\1\114\3\50\1\uffff\1\123\1\uffff\4\56\1\131\1"+
+        "\56\1\50\1\uffff\2\50\4\uffff\3\56\5\uffff\1\56\1\143\1\144\2\56"+
+        "\4\uffff\1\56\5\uffff\3\56\20\uffff\4\56\1\uffff\1\131\1\uffff\1"+
+        "\56\2\uffff\1\160\3\56\2\uffff\4\56\1\170\6\56\1\uffff\3\56\1\u0083"+
+        "\2\56\1\u0086\1\uffff\1\u0087\1\u0088\1\u0089\1\u008a\1\56\1\u008c"+
+        "\1\u008d\1\u008c\1\u008e\1\56\1\uffff\1\56\1\u0091\5\uffff\1\56"+
+        "\3\uffff\1\u0093\1\u0094\1\uffff\1\56\2\uffff\4\56\1\u009a\1\uffff";
+    static final String DFA13_eofS =
+        "\u009b\uffff";
+    static final String DFA13_minS =
+        "\1\0\2\uffff\1\141\2\uffff\1\73\1\150\1\157\1\146\1\154\1\145\3"+
+        "\uffff\1\75\1\157\2\75\1\145\1\55\1\uffff\1\53\1\174\1\46\1\75\1"+
+        "\uffff\1\52\1\uffff\1\145\1\141\1\162\1\141\1\56\1\162\1\101\1\uffff"+
+        "\2\0\4\uffff\2\162\1\154\5\uffff\1\151\2\60\1\163\1\164\4\uffff"+
+        "\1\156\5\uffff\1\154\1\164\1\170\20\uffff\1\154\1\163\1\145\1\170"+
+        "\1\uffff\1\56\1\uffff\1\165\2\uffff\1\60\2\163\1\154\2\uffff\1\145"+
+        "\1\165\1\163\1\154\1\60\1\164\1\146\1\164\1\166\1\115\1\145\1\uffff"+
+        "\1\164\2\145\1\60\1\162\1\164\1\60\1\uffff\4\60\1\163\4\60\1\146"+
+        "\1\uffff\1\156\1\60\5\uffff\1\147\3\uffff\2\60\1\uffff\1\104\2\uffff"+
+        "\1\145\1\154\1\141\1\171\1\60\1\uffff";
+    static final String DFA13_maxS =
+        "\1\uffff\2\uffff\1\157\2\uffff\1\73\1\150\1\157\1\146\1\154\1\145"+
+        "\3\uffff\1\75\1\157\1\76\1\75\1\165\1\76\1\uffff\1\75\1\174\1\46"+
+        "\1\75\1\uffff\1\57\1\uffff\1\145\1\141\1\162\1\141\1\71\1\162\1"+
+        "\172\1\uffff\2\uffff\4\uffff\2\162\1\154\5\uffff\1\151\2\172\1\163"+
+        "\1\164\4\uffff\1\156\5\uffff\1\154\1\164\1\170\20\uffff\1\154\1"+
+        "\163\1\145\1\170\1\uffff\1\71\1\uffff\1\165\2\uffff\1\172\2\163"+
+        "\1\154\2\uffff\1\145\1\165\1\163\1\154\1\172\1\164\1\146\1\164\1"+
+        "\166\1\115\1\145\1\uffff\1\164\2\145\1\172\1\162\1\164\1\172\1\uffff"+
+        "\4\172\1\163\4\172\1\146\1\uffff\1\156\1\172\5\uffff\1\147\3\uffff"+
+        "\2\172\1\uffff\1\104\2\uffff\1\145\1\154\1\141\1\171\1\172\1\uffff";
+    static final String DFA13_acceptS =
+        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\6\uffff\1\16\1\17\1\20\6\uffff"+
+        "\1\27\4\uffff\1\44\1\uffff\1\46\7\uffff\1\60\2\uffff\1\65\1\66\1"+
+        "\1\1\2\3\uffff\1\60\1\4\1\5\1\11\1\6\5\uffff\1\16\1\17\1\20\1\21"+
+        "\1\uffff\1\37\1\40\1\23\1\41\1\24\3\uffff\1\26\1\31\1\33\1\43\1"+
+        "\27\1\30\1\32\1\42\1\34\1\35\1\36\1\44\1\63\1\64\1\45\1\46\4\uffff"+
+        "\1\61\1\uffff\1\56\1\uffff\1\62\1\65\4\uffff\1\10\1\12\13\uffff"+
+        "\1\3\7\uffff\1\47\12\uffff\1\13\2\uffff\1\25\1\54\1\50\1\52\1\53"+
+        "\1\uffff\1\57\1\51\1\7\2\uffff\1\22\1\uffff\1\14\1\15\5\uffff\1"+
+        "\55";
+    static final String DFA13_specialS =
+        "\1\0\44\uffff\1\2\1\1\164\uffff}>";
+    static final String[] DFA13_transitionS = {
+            "\11\50\2\47\2\50\1\47\22\50\1\47\1\50\1\45\2\50\1\34\1\30\1"+
+            "\46\1\4\1\6\1\32\1\26\1\15\1\24\1\25\1\33\12\41\1\17\1\5\1\21"+
+            "\1\31\1\22\2\50\32\44\1\14\1\50\1\16\1\43\1\44\1\50\2\44\1\20"+
+            "\1\10\1\12\1\3\2\44\1\11\2\44\1\36\1\40\1\23\1\44\1\37\1\44"+
+            "\1\13\1\35\1\42\2\44\1\7\3\44\1\1\1\27\1\2\uff82\50",
             "",
             "",
             "\1\55\7\uffff\1\54\5\uffff\1\53",
@@ -2064,177 +2057,160 @@ public class InternalActionLanguageLexer extends Lexer {
             "\1\125",
             "\1\126",
             "\1\127",
-            "\1\130\7\uffff\1\131",
-            "\1\133\1\uffff\12\134",
-            "\1\135",
+            "\1\130",
+            "\1\133\1\uffff\12\132",
+            "\1\134",
             "\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\0\136",
-            "\0\136",
+            "\0\135",
+            "\0\135",
             "",
             "",
             "",
             "",
+            "\1\137",
             "\1\140",
             "\1\141",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\142",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\143",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\145",
             "\1\146",
+            "",
+            "",
+            "",
+            "",
             "\1\147",
             "",
             "",
             "",
             "",
+            "",
             "\1\150",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\151",
             "\1\152",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\153",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\154",
             "\1\155",
             "\1\156",
+            "",
+            "\1\133\1\uffff\12\132",
+            "",
             "\1\157",
-            "\1\160",
-            "",
-            "",
-            "\1\133\1\uffff\12\134",
-            "\1\161",
             "",
             "",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\161",
+            "\1\162",
             "\1\163",
+            "",
+            "",
             "\1\164",
             "\1\165",
-            "",
-            "",
             "\1\166",
             "\1\167",
-            "\1\170",
-            "\1\171",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\171",
+            "\1\172",
             "\1\173",
             "\1\174",
             "\1\175",
             "\1\176",
+            "",
             "\1\177",
             "\1\u0080",
             "\1\u0081",
-            "",
-            "\1\u0082",
-            "\1\u0083",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\10\56\1\u0082\21"+
+            "\56",
             "\1\u0084",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\10\56\1\u0085\21\56",
-            "\1\u0087",
-            "\1\u0088",
+            "\1\u0085",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\1\u008e",
+            "\1\u008b",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u008f",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\1\u0093",
             "",
-            "\1\u0094",
+            "\1\u0090",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "",
             "",
+            "",
+            "",
+            "\1\u0092",
+            "",
+            "",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\1\u0095",
             "",
             "",
             "\1\u0096",
             "\1\u0097",
-            "",
-            "",
-            "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
-            "\1\u009a",
-            "\1\u009b",
-            "",
-            "",
-            "\1\u009c",
-            "\1\u009d",
-            "\1\u009e",
-            "\1\u009f",
-            "\1\u00a0",
-            "\1\u00a1",
-            "\1\u00a2",
-            "\1\u00a3",
-            "\1\u00a4",
-            "\1\u00a5",
-            "\1\u00a6",
-            "\1\u00a7",
-            "\1\u00a8",
-            "\1\u00a9",
-            "\1\u00aa",
-            "\1\u00ab",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0098",
+            "\1\u0099",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             ""
     };
 
-    static final short[] DFA14_eot = DFA.unpackEncodedString(DFA14_eotS);
-    static final short[] DFA14_eof = DFA.unpackEncodedString(DFA14_eofS);
-    static final char[] DFA14_min = DFA.unpackEncodedStringToUnsignedChars(DFA14_minS);
-    static final char[] DFA14_max = DFA.unpackEncodedStringToUnsignedChars(DFA14_maxS);
-    static final short[] DFA14_accept = DFA.unpackEncodedString(DFA14_acceptS);
-    static final short[] DFA14_special = DFA.unpackEncodedString(DFA14_specialS);
-    static final short[][] DFA14_transition;
+    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
+    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
+    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
+    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
+    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
+    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
+    static final short[][] DFA13_transition;
 
     static {
-        int numStates = DFA14_transitionS.length;
-        DFA14_transition = new short[numStates][];
+        int numStates = DFA13_transitionS.length;
+        DFA13_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA14_transition[i] = DFA.unpackEncodedString(DFA14_transitionS[i]);
+            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
         }
     }
 
-    static class DFA14 extends DFA {
+    static class DFA13 extends DFA {
 
-        public DFA14(BaseRecognizer recognizer) {
+        public DFA13(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 14;
-            this.eot = DFA14_eot;
-            this.eof = DFA14_eof;
-            this.min = DFA14_min;
-            this.max = DFA14_max;
-            this.accept = DFA14_accept;
-            this.special = DFA14_special;
-            this.transition = DFA14_transition;
+            this.decisionNumber = 13;
+            this.eot = DFA13_eot;
+            this.eof = DFA13_eof;
+            this.min = DFA13_min;
+            this.max = DFA13_max;
+            this.accept = DFA13_accept;
+            this.special = DFA13_special;
+            this.transition = DFA13_transition;
         }
         public String getDescription() {
             return "1:1: Tokens : ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | RULE_MINORMAXKEYWORD | RULE_NUMBER | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
@@ -2244,106 +2220,106 @@ public class InternalActionLanguageLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_38 = input.LA(1);
+                        int LA13_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_38>='\u0000' && LA14_38<='\uFFFF')) ) {s = 94;}
+                        if ( (LA13_0=='{') ) {s = 1;}
+
+                        else if ( (LA13_0=='}') ) {s = 2;}
+
+                        else if ( (LA13_0=='f') ) {s = 3;}
+
+                        else if ( (LA13_0=='(') ) {s = 4;}
+
+                        else if ( (LA13_0==';') ) {s = 5;}
+
+                        else if ( (LA13_0==')') ) {s = 6;}
+
+                        else if ( (LA13_0=='w') ) {s = 7;}
+
+                        else if ( (LA13_0=='d') ) {s = 8;}
+
+                        else if ( (LA13_0=='i') ) {s = 9;}
+
+                        else if ( (LA13_0=='e') ) {s = 10;}
+
+                        else if ( (LA13_0=='r') ) {s = 11;}
+
+                        else if ( (LA13_0=='[') ) {s = 12;}
+
+                        else if ( (LA13_0==',') ) {s = 13;}
+
+                        else if ( (LA13_0==']') ) {s = 14;}
+
+                        else if ( (LA13_0==':') ) {s = 15;}
+
+                        else if ( (LA13_0=='c') ) {s = 16;}
+
+                        else if ( (LA13_0=='<') ) {s = 17;}
+
+                        else if ( (LA13_0=='>') ) {s = 18;}
+
+                        else if ( (LA13_0=='n') ) {s = 19;}
+
+                        else if ( (LA13_0=='-') ) {s = 20;}
+
+                        else if ( (LA13_0=='.') ) {s = 21;}
+
+                        else if ( (LA13_0=='+') ) {s = 22;}
+
+                        else if ( (LA13_0=='|') ) {s = 23;}
+
+                        else if ( (LA13_0=='&') ) {s = 24;}
+
+                        else if ( (LA13_0=='=') ) {s = 25;}
+
+                        else if ( (LA13_0=='*') ) {s = 26;}
+
+                        else if ( (LA13_0=='/') ) {s = 27;}
+
+                        else if ( (LA13_0=='%') ) {s = 28;}
+
+                        else if ( (LA13_0=='s') ) {s = 29;}
+
+                        else if ( (LA13_0=='l') ) {s = 30;}
+
+                        else if ( (LA13_0=='p') ) {s = 31;}
+
+                        else if ( (LA13_0=='m') ) {s = 32;}
+
+                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 33;}
+
+                        else if ( (LA13_0=='t') ) {s = 34;}
+
+                        else if ( (LA13_0=='^') ) {s = 35;}
+
+                        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||(LA13_0>='a' && LA13_0<='b')||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='k')||LA13_0=='o'||LA13_0=='q'||(LA13_0>='u' && LA13_0<='v')||(LA13_0>='x' && LA13_0<='z')) ) {s = 36;}
+
+                        else if ( (LA13_0=='\"') ) {s = 37;}
+
+                        else if ( (LA13_0=='\'') ) {s = 38;}
+
+                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 39;}
+
+                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='$')||(LA13_0>='?' && LA13_0<='@')||LA13_0=='\\'||LA13_0=='`'||(LA13_0>='~' && LA13_0<='\uFFFF')) ) {s = 40;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA13_38 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA13_38>='\u0000' && LA13_38<='\uFFFF')) ) {s = 93;}
 
                         else s = 40;
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
-                        int LA14_0 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA14_0=='{') ) {s = 1;}
-
-                        else if ( (LA14_0=='}') ) {s = 2;}
-
-                        else if ( (LA14_0=='f') ) {s = 3;}
-
-                        else if ( (LA14_0=='(') ) {s = 4;}
-
-                        else if ( (LA14_0==';') ) {s = 5;}
-
-                        else if ( (LA14_0==')') ) {s = 6;}
-
-                        else if ( (LA14_0=='w') ) {s = 7;}
-
-                        else if ( (LA14_0=='d') ) {s = 8;}
-
-                        else if ( (LA14_0=='i') ) {s = 9;}
-
-                        else if ( (LA14_0=='e') ) {s = 10;}
-
-                        else if ( (LA14_0=='r') ) {s = 11;}
-
-                        else if ( (LA14_0=='[') ) {s = 12;}
-
-                        else if ( (LA14_0==',') ) {s = 13;}
-
-                        else if ( (LA14_0==']') ) {s = 14;}
-
-                        else if ( (LA14_0==':') ) {s = 15;}
-
-                        else if ( (LA14_0=='c') ) {s = 16;}
-
-                        else if ( (LA14_0=='<') ) {s = 17;}
-
-                        else if ( (LA14_0=='>') ) {s = 18;}
-
-                        else if ( (LA14_0=='n') ) {s = 19;}
-
-                        else if ( (LA14_0=='-') ) {s = 20;}
-
-                        else if ( (LA14_0=='.') ) {s = 21;}
-
-                        else if ( (LA14_0=='+') ) {s = 22;}
-
-                        else if ( (LA14_0=='|') ) {s = 23;}
-
-                        else if ( (LA14_0=='&') ) {s = 24;}
-
-                        else if ( (LA14_0=='=') ) {s = 25;}
-
-                        else if ( (LA14_0=='*') ) {s = 26;}
-
-                        else if ( (LA14_0=='/') ) {s = 27;}
-
-                        else if ( (LA14_0=='%') ) {s = 28;}
-
-                        else if ( (LA14_0=='s') ) {s = 29;}
-
-                        else if ( (LA14_0=='l') ) {s = 30;}
-
-                        else if ( (LA14_0=='p') ) {s = 31;}
-
-                        else if ( (LA14_0=='m') ) {s = 32;}
-
-                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 33;}
-
-                        else if ( (LA14_0=='t') ) {s = 34;}
-
-                        else if ( (LA14_0=='^') ) {s = 35;}
-
-                        else if ( ((LA14_0>='A' && LA14_0<='Z')||LA14_0=='_'||(LA14_0>='a' && LA14_0<='b')||(LA14_0>='g' && LA14_0<='h')||(LA14_0>='j' && LA14_0<='k')||LA14_0=='o'||LA14_0=='q'||(LA14_0>='u' && LA14_0<='v')||(LA14_0>='x' && LA14_0<='z')) ) {s = 36;}
-
-                        else if ( (LA14_0=='\"') ) {s = 37;}
-
-                        else if ( (LA14_0=='\'') ) {s = 38;}
-
-                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 39;}
-
-                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||LA14_0=='!'||(LA14_0>='#' && LA14_0<='$')||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 40;}
-
-                        if ( s>=0 ) return s;
-                        break;
                     case 2 : 
-                        int LA14_37 = input.LA(1);
+                        int LA13_37 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_37>='\u0000' && LA14_37<='\uFFFF')) ) {s = 94;}
+                        if ( ((LA13_37>='\u0000' && LA13_37<='\uFFFF')) ) {s = 93;}
 
                         else s = 40;
 
@@ -2351,7 +2327,7 @@ public class InternalActionLanguageLexer extends Lexer {
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 14, _s, input);
+                new NoViableAltException(getDescription(), 13, _s, input);
             error(nvae);
             throw nvae;
         }

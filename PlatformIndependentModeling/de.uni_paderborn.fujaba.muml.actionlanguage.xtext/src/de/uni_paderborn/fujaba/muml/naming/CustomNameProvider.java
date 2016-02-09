@@ -11,9 +11,7 @@ public class CustomNameProvider extends DeclarativeSimpleNameProvider {
 		if (timeValue.eContainer() instanceof ConnectorQualityOfServiceAssumptions) {
 			ConnectorQualityOfServiceAssumptions qos = (ConnectorQualityOfServiceAssumptions) timeValue.eContainer();
 			if (qos.getMaxMessageDelay() == timeValue) {
-				return QualifiedName.create("maxMessageDelay");
-			} else if (qos.getMinMessageDelay() == timeValue) {
-				return QualifiedName.create("minMessageDelay");
+				return QualifiedName.create("maxMsgDelay");
 			}
 		}
 		return null;

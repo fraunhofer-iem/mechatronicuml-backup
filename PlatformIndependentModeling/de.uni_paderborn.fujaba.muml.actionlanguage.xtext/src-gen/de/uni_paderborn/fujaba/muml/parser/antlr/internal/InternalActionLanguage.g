@@ -3223,7 +3223,7 @@ rulePositionSelectorKind returns [Enumerator current=null]
 
 
 
-RULE_MINORMAXKEYWORD : ('maxMessageDelay'|'minMessageDelay');
+RULE_MINORMAXKEYWORD : 'maxMsgDelay';
 
 RULE_NUMBER : RULE_INT '.' RULE_INT;
 

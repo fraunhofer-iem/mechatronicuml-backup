@@ -288,8 +288,6 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 						&& role.getRoleConnector().getConnectorQualityOfServiceAssumptions() != null) {
 					timeValueList.add(
 							role.getRoleConnector().getConnectorQualityOfServiceAssumptions().getMaxMessageDelay());
-					timeValueList.add(
-							role.getRoleConnector().getConnectorQualityOfServiceAssumptions().getMinMessageDelay());
 				}
 			}
 		}

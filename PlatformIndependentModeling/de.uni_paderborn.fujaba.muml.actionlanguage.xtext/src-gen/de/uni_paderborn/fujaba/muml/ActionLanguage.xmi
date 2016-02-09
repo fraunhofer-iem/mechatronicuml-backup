@@ -784,10 +784,7 @@
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:Keyword" value="maxMessageDelay"/>
-        <elements xsi:type="xtext:Keyword" value="minMessageDelay"/>
-      </alternatives>
+      <alternatives xsi:type="xtext:Keyword" value="maxMsgDelay"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ExtendedTypedNamedElementExpression">
       <type metamodel="/0/@metamodelDeclarations.8">
