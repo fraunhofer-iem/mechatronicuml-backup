@@ -4,7 +4,7 @@ Bundle-Name: Opt4j
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.opt4j
 Bundle-Version: 3.1.3
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)
 Export-Package: org.opt4j.benchmarks,
  org.opt4j.benchmarks.dtlz,
  org.opt4j.benchmarks.knapsack,
