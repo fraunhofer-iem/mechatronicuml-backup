@@ -130,9 +130,10 @@
 				[comment initialize HybridPorts/]
 				//initialize hybrid ports
 				[for (hPort : HybridPort | behavioralElement.oclAsType(AtomicComponent).ports->select( port : Port  | port.oclIsKindOf(HybridPort)))]
-					stateChart->[hPort.getVariableName()/] = [getDefaultValue(hPort, '')/];
+					[if not hPort.initializeExpression.oclIsUndefined()]
+					stateChart->[hPort.getVariableName()/] = [hPort.initializeExpression.generateExpression('')/];
+					[/if]
 				[/for]
-
 
 				[comment reset member variables for the clocks of do actions. /]
 				[for (state : State | rtsc.states) ? (not state.doEvent.oclIsUndefined())]					
