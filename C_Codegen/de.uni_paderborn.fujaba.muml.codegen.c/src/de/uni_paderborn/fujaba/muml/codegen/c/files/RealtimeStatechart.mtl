@@ -129,7 +129,7 @@
 		
 				[comment initialize HybridPorts/]
 				//initialize hybrid ports
-				[for (hPort : HybridPort | behavioralElement.oclAsType(AtomicComponent).ports->select( hport : Port  | hport.oclIsKindOf(HybridPort)))]
+				[for (hPort : HybridPort | behavioralElement.oclAsType(AtomicComponent).ports->select( port : Port  | port.oclIsKindOf(HybridPort)))]
 					stateChart->[hPort.getVariableName()/] = [getDefaultValue(hPort, '')/];
 				[/for]
 
