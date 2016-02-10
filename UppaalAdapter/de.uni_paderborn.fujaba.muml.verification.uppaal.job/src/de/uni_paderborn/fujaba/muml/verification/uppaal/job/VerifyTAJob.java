@@ -46,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.uppaal.NTA;
 import de.uni_paderborn.uppaal.requirements.PropertyRepository;
 import de.uni_paderborn.uppaal.trace.DiagnosticTraceStandaloneSetup;
+import de.uni_paderborn.uppaal.trace.diagnosticTrace.Result;
 import de.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository;
 import de.uni_paderborn.uppaal.trace.scoping.DiagnosticTraceScopeProviderSingleton;
 
@@ -199,6 +200,13 @@ public class VerifyTAJob extends SynchronousJob {
 			assert !resource.getContents().isEmpty() && resource.getContents().get(0) instanceof TraceRepository;
 					
 			traceRepository = (TraceRepository) resource.getContents().get(0);
+			
+			if (traceRepository.getTraces().get(0).getResult() == Result.SUCCESS) {
+				
+			}
+			else if (traceRepository.getTraces().get(0).getResult() == Result.FAILURE) {
+				
+			}
 			
 			
 			return Status.OK_STATUS;

@@ -129,20 +129,20 @@ public class TransformationJob extends SynchronousJob {
 			
 			
 			//Validate models
-			subMonitor.subTask("Validate Models");
-			int i=0;
-			if (params != null)
-				for (ModelExtent extent : params) {
-					i++;
-					for (EObject obj : extent.getContents()) {
-						diagnostic = Diagnostician.INSTANCE.validate(obj);
-						status = BasicDiagnostic.toIStatus(diagnostic);
-						if(!status.isOK()) {
-							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
-							return status;
-						}
-					}
-				}
+//			subMonitor.subTask("Validate Models");
+//			int i=0;
+//			if (params != null)
+//				for (ModelExtent extent : params) {
+//					i++;
+//					for (EObject obj : extent.getContents()) {
+//						diagnostic = Diagnostician.INSTANCE.validate(obj);
+//						status = BasicDiagnostic.toIStatus(diagnostic);
+//						if(!status.isOK()) {
+//							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
+//							return status;
+//						}
+//					}
+//				}
 					
 			subMonitor.worked(10);
 			
