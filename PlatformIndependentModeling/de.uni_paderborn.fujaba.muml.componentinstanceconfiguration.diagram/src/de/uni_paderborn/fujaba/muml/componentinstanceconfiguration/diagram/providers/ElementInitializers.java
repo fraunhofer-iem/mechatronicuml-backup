@@ -31,7 +31,7 @@ public class ElementInitializers {
 					.createComponentInstanceConfiguration();
 			instance.setEmbeddedCIC(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(8, de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+					.getExpression(9, de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getComponentInstanceConfiguration(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
@@ -69,7 +69,7 @@ public class ElementInitializers {
 					.createComponentInstanceConfiguration();
 			instance.setEmbeddedCIC(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(8, de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+					.getExpression(9, de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getComponentInstanceConfiguration(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);

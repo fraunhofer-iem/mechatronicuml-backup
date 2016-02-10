@@ -47,14 +47,15 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlAbstractExpression[13];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlAbstractExpression[14];
 		this.expressionBodies = new String[] {
 				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
 				"self.multiInteractionEndpointInstance.oclIsUndefined()", //$NON-NLS-1$
 				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
-				"if refinedRole.oclIsUndefined() then \'\' else \': \'.concat(\n\t(if refinedRole.coordinationProtocol.name.oclIsUndefined() then \'\' else refinedRole.coordinationProtocol.name.concat(\'.\') endif).concat\n\t(if refinedRole.name.oclIsUndefined() then \'\' else refinedRole.name endif)\n) endif", //$NON-NLS-1$
+				"if not multiInteractionEndpointInstance.oclIsUndefined() then\n\t\'\'\nelse\n\tif refinedRole.oclIsUndefined() then \'\' else \': \'.concat(\n\t\t(if refinedRole.coordinationProtocol.name.oclIsUndefined() then \'\' else refinedRole.coordinationProtocol.name.concat(\'.\') endif).concat\n\t\t(if refinedRole.name.oclIsUndefined() then \'\' else refinedRole.name endif)\n\t) endif\nendif", //$NON-NLS-1$
 				"if self.multiInteractionEndpointInstance.oclIsUndefined() then\n\tnull\nelse\n\tif  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then\n\t\tself.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance\n\telse\n\t\tnull\n\tendif\nendif", //$NON-NLS-1$
 				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
+				"\tif refinedRole.oclIsUndefined() then \'\' else \': \'.concat(\n\t\t(if refinedRole.coordinationProtocol.name.oclIsUndefined() then \'\' else refinedRole.coordinationProtocol.name.concat(\'.\') endif).concat\n\t\t(if refinedRole.name.oclIsUndefined() then \'\' else refinedRole.name endif)\n\t) endif\n", //$NON-NLS-1$
 				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
 				"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
 				"\'configuration\'", //$NON-NLS-1$

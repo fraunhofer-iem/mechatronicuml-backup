@@ -98,7 +98,8 @@ public class ComponentinstanceconfigurationNavigatorLinkHelper implements ILinkH
 		if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
 			navigatorView = ((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) abstractNavigatorItem)
 					.getView();
-		} else if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) {
+		} else
+			if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) {
 			de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup navigatorGroup = (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) abstractNavigatorItem;
 			if (navigatorGroup
 					.getParent() instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {

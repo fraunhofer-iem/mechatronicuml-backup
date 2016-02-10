@@ -48,7 +48,7 @@ public class StructuredComponentInstanceLabelExpressionLabelParser5026 extends E
 	@Override
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-				.getExpression(8, de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getExpression(10, de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getStructuredComponentInstance(), null)
 				.body();
 	}

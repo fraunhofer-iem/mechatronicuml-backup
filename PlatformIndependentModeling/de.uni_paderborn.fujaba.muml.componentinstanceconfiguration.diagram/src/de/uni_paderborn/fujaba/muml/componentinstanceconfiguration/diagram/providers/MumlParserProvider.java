@@ -33,112 +33,126 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getHybridPortInstanceLabel_5039Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5039();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteSinglePortInstanceLabel_5040Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5040();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getDiscreteSinglePortInstanceLabel_5049Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5049();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteMultiPortInstanceLabel_5041Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5041();
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser getDiscreteMultiPortInstanceLabel_5051Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5051();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getContinuousPortInstanceLabel_5042Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5042();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getAtomicComponentInstanceLabel_5027Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5027();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredComponentInstanceLabel_5026Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5026();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolInstanceLabel_5048Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5048();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getHybridPortInstanceLabel_5043Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5043();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteSinglePortInstanceLabel_5044Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5044();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getDiscreteSinglePortInstanceLabel_5050Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5050();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteMultiPortInstanceLabel_5045Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5045();
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser getDiscreteMultiPortInstanceLabel_5052Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5052();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getContinuousPortInstanceLabel_5046Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5046();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getAtomicComponentInstanceLabel_5028Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5028();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredComponentInstanceLabel_5029Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5029();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolInstanceLabel_5047Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5047();
 	}
 
 	/**
@@ -154,6 +168,8 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 			return getDiscreteSinglePortInstanceLabel_5049Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceNameEditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstanceLabel_5041Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+			return getDiscreteMultiPortInstanceLabel_5051Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceNameEditPart.VISUAL_ID:
 			return getContinuousPortInstanceLabel_5042Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
@@ -170,6 +186,8 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 			return getDiscreteSinglePortInstanceLabel_5050Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstanceLabel_5045Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
+			return getDiscreteMultiPortInstanceLabel_5052Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID:
 			return getContinuousPortInstanceLabel_5046Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:

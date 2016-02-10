@@ -131,7 +131,7 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.5"/>
+            parser="//@labelParsers/@implementations.6"/>
       </labels>
     </childNodes>
     <childNodes
@@ -186,7 +186,7 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.6"/>
+            parser="//@labelParsers/@implementations.7"/>
       </labels>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -201,7 +201,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.7"/>
+            parser="//@labelParsers/@implementations.8"/>
       </labels>
     </childNodes>
     <childNodes
@@ -257,7 +257,22 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.8"/>
+            parser="//@labelParsers/@implementations.9"/>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5052"
+          editPartClassName="WrappingLabel10EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.10"/>
       </labels>
     </childNodes>
     <childNodes
@@ -311,7 +326,7 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.9"/>
+            parser="//@labelParsers/@implementations.11"/>
       </labels>
     </childNodes>
     <childNodes
@@ -395,7 +410,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.11"/>
+            parser="//@labelParsers/@implementations.13"/>
       </labels>
     </childNodes>
     <childNodes
@@ -439,7 +454,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.8">
+                  value="//@expressionProviders/@providers.0/@expressions.9">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -464,7 +479,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.12"/>
+            parser="//@labelParsers/@implementations.14"/>
       </labels>
     </childNodes>
     <childNodes
@@ -511,7 +526,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.13"/>
+            parser="//@labelParsers/@implementations.15"/>
       </labels>
     </childNodes>
     <topLevelNodes
@@ -684,6 +699,21 @@
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.3"/>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5051"
+          editPartClassName="WrappingLabel9EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.4"/>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2024"
@@ -733,7 +763,7 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.4"/>
+            parser="//@labelParsers/@implementations.5"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -788,7 +818,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.10"/>
+            parser="//@labelParsers/@implementations.12"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -831,7 +861,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.8">
+                  value="//@expressionProviders/@providers.0/@expressions.9">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -856,7 +886,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.14"/>
+            parser="//@labelParsers/@implementations.16"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -902,7 +932,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.15"/>
+            parser="//@labelParsers/@implementations.17"/>
       </labels>
     </topLevelNodes>
     <links
@@ -922,7 +952,7 @@
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.12">
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/AssemblyConnectorInstance"/>
         <containmentMetaFeature
@@ -952,7 +982,7 @@
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.12">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.13">
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DelegationConnectorInstance"/>
         <containmentMetaFeature
@@ -1188,10 +1218,10 @@
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
   </plugin>
@@ -1943,11 +1973,13 @@
       <expressions
           body="': '.concat(if self.portType.name.oclIsUndefined() then 'null' else self.portType.name endif)"/>
       <expressions
-          body="if refinedRole.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;(if refinedRole.coordinationProtocol.name.oclIsUndefined() then '' else refinedRole.coordinationProtocol.name.concat('.') endif).concat&#xA;&#x9;(if refinedRole.name.oclIsUndefined() then '' else refinedRole.name endif)&#xA;) endif"/>
+          body="if not multiInteractionEndpointInstance.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;if refinedRole.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;&#x9;(if refinedRole.coordinationProtocol.name.oclIsUndefined() then '' else refinedRole.coordinationProtocol.name.concat('.') endif).concat&#xA;&#x9;&#x9;(if refinedRole.name.oclIsUndefined() then '' else refinedRole.name endif)&#xA;&#x9;) endif&#xA;endif"/>
       <expressions
           body="if self.multiInteractionEndpointInstance.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;if  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then&#xA;&#x9;&#x9;self.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance&#xA;&#x9;else&#xA;&#x9;&#x9;null&#xA;&#x9;endif&#xA;endif"/>
       <expressions
           body="': '.concat(if self.portType.name.oclIsUndefined() then 'null' else self.portType.name endif)"/>
+      <expressions
+          body="&#x9;if refinedRole.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;&#x9;(if refinedRole.coordinationProtocol.name.oclIsUndefined() then '' else refinedRole.coordinationProtocol.name.concat('.') endif).concat&#xA;&#x9;&#x9;(if refinedRole.name.oclIsUndefined() then '' else refinedRole.name endif)&#xA;&#x9;) endif&#xA;"/>
       <expressions
           body="': '.concat(if self.portType.name.oclIsUndefined() then 'null' else self.portType.name endif)"/>
       <expressions
@@ -1971,6 +2003,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
+        className="HybridPortInstanceLabelExpressionLabelParser5039"
         viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/HybridPortInstance"/>
@@ -1978,6 +2011,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.1/@labels.0/@modelFacet"
+        className="DiscreteSinglePortInstanceLabelExpressionLabelParser5040"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteSinglePortInstance"/>
@@ -1985,6 +2019,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.1/@labels.1/@modelFacet"
+        className="DiscreteSinglePortInstanceLabelExpressionLabelParser5049"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteSinglePortInstance"/>
@@ -1992,20 +2027,31 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.2/@labels.0/@modelFacet"
+        className="DiscreteMultiPortInstanceLabelExpressionLabelParser5041"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteMultiPortInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@topLevelNodes.3/@labels.0/@modelFacet"
+        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
+        className="DiscreteMultiPortInstanceLabelExpressionLabelParser5051"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteMultiPortInstance"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.3/@labels.0/@modelFacet"
+        className="ContinuousPortInstanceLabelExpressionLabelParser5042"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/ContinuousPortInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
+        className="HybridPortInstanceLabelExpressionLabelParser5043"
         viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/HybridPortInstance"/>
@@ -2013,6 +2059,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
+        className="DiscreteSinglePortInstanceLabelExpressionLabelParser5044"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteSinglePortInstance"/>
@@ -2020,6 +2067,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
+        className="DiscreteSinglePortInstanceLabelExpressionLabelParser5050"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteSinglePortInstance"/>
@@ -2027,56 +2075,72 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
+        className="DiscreteMultiPortInstanceLabelExpressionLabelParser5045"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteMultiPortInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
+        className="DiscreteMultiPortInstanceLabelExpressionLabelParser5052"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/DiscreteMultiPortInstance"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        className="ContinuousPortInstanceLabelExpressionLabelParser5046"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/ContinuousPortInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.4/@labels.0/@modelFacet"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
+        className="AtomicComponentInstanceLabelExpressionLabelParser5027"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/AtomicComponentInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.0/@modelFacet"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
+        className="AtomicComponentInstanceLabelExpressionLabelParser5028"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/AtomicComponentInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.0/@modelFacet"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+        className="StructuredComponentInstanceLabelExpressionLabelParser5029"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/StructuredComponentInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.0/@modelFacet"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
+        className="CoordinationProtocolInstanceLabelExpressionLabelParser5047"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/CoordinationProtocolInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+        className="StructuredComponentInstanceLabelExpressionLabelParser5026"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/StructuredComponentInstance"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.6/@labels.0/@modelFacet"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
+        className="CoordinationProtocolInstanceLabelExpressionLabelParser5048"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/instance/CoordinationProtocolInstance"/>
     </implementations>

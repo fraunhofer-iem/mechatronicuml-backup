@@ -451,6 +451,13 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Location location5041 = (Location) label5041.getLayoutConstraint();
 		location5041.setX(0);
 		location5041.setY(5);
+		Node label5051 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
+		label5051.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5051 = (Location) label5051.getLayoutConstraint();
+		location5051.setX(0);
+		location5051.setY(5);
 		createCompartment(node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.getType(
 						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID),
@@ -802,6 +809,13 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Location location5045 = (Location) label5045.getLayoutConstraint();
 		location5045.setX(0);
 		location5045.setY(5);
+		Node label5052 = createLabel(node,
+				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID));
+		label5052.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5052 = (Location) label5052.getLayoutConstraint();
+		location5052.setX(0);
+		location5052.setY(5);
 		createCompartment(node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.getType(
 						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID),

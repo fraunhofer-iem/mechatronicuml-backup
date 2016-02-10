@@ -35,42 +35,43 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class DiscreteMultiPortInstanceLabelExpressionLabelParser5045 extends ExpressionLabelParserBase {
+public class DiscreteMultiPortInstanceLabelExpressionLabelParser5051 extends ExpressionLabelParserBase {
 	/**
-	 * @generated
-	 */
-	public DiscreteMultiPortInstanceLabelExpressionLabelParser5045() {
+	* @generated
+	*/
+	public DiscreteMultiPortInstanceLabelExpressionLabelParser5051() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-				.getExpression(5,
+				.getExpression(6,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE.getDiscreteMultiPortInstance(),
 						null)
 				.body();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
@@ -91,23 +92,23 @@ public class DiscreteMultiPortInstanceLabelExpressionLabelParser5045 extends Exp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
@@ -115,8 +116,8 @@ public class DiscreteMultiPortInstanceLabelExpressionLabelParser5045 extends Exp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	//
 	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
 	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {
