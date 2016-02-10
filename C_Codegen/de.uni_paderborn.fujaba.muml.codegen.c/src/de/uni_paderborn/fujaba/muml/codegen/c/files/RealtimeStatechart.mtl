@@ -122,12 +122,14 @@
 [let firstState : State = rtsc.getInitalState()] 
 				void [getInitializeMethodName(rtsc)/]([getSuperClassName(rtsc)/]* stateChart) {
 				[comment Member variables for the clocks of each region. /]
+				//initialize clocks
 				[for (clock : Clock | rtsc.clocks->collect(oclAsType(Clock)))]
 					Clock_reset(stateChart->[getVariableName(clock)/]);
 				[/for]
 		
 				[comment initialize HybridPorts/]
-				[for (hPort : HybridPort | rtsc.behavioralElement.oclAsType(AtomicComponent).ports->select( hport  | hPort.oclIsKindOf(HybridPort))]
+				//initialize hybrid ports
+				[for (hPort : HybridPort | behavioralElement.oclAsType(AtomicComponent).ports->select( hport : Port  | hport.oclIsKindOf(HybridPort)))]
 					stateChart->[hPort.getVariableName()/] = [getDefaultValue(hPort, '')/];
 				[/for]
 
@@ -138,6 +140,7 @@
 				[/for]
 
 				[comment Member variables for the variables of each region. /]	
+				//initialize variables of the root statechart
 				[for (variable : Variable | rtsc.variables->collect(oclAsType(Variable)))]
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
 						[variable.initializeExpression.generateExpression('')/]
@@ -149,7 +152,7 @@
 
 				[/for]
 			
-
+				//initialize init state
 				stateChart->[getVariableName(rtsc)/] = [getName(firstState)/];
 
 				[entryActions(rtsc, firstState)/]
