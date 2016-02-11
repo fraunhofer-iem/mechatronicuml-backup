@@ -124,7 +124,7 @@ init{
 
 mapping PrimitiveDataType::transform(): EObject {
 	init{
-		if(self.eContainer().oclIsKindOf(ModelElementCategory)){
+		if(self.eContainer().oclIsTypeOf(ModelElementCategory)){
 			result := self.map create().oclAsType(PrimitiveDataType);
 			var element := self.oclAsType(EObject);	
 			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
