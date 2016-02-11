@@ -1,17 +1,15 @@
+
 package org.storydriven.storydiagrams.properties.activities.editor;
 
 /**
  * @generated
  */
-public class ActivityEdgeEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class ActivityEdgeEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ActivityEdgeEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ActivityEdgeEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,21 +21,35 @@ public class ActivityEdgeEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorTarget_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTarget_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorSource_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorSource_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorGuard_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorGuard_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorTarget_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorSource_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorGuard_property_tab_generalTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTarget_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTarget_GeneralTab_Editor() {
-		if (this.editorTarget_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTarget_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTarget_property_tab_generalTab_Editor() {
+		if (this.editorTarget_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.activities.ActivitiesPackage.eINSTANCE
 					.getActivityEdge_Target();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -45,14 +57,14 @@ public class ActivityEdgeEditor
 
 			editor.setTooltipMessage("The target node of this ActivityEdge.");
 
-			this.editorTarget_GeneralTab = editor;
+			this.editorTarget_property_tab_generalTab = editor;
 		}
-		return this.editorTarget_GeneralTab;
+		return this.editorTarget_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSource_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSource_GeneralTab_Editor() {
-		if (this.editorSource_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSource_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSource_property_tab_generalTab_Editor() {
+		if (this.editorSource_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.activities.ActivitiesPackage.eINSTANCE
 					.getActivityEdge_Source();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -60,24 +72,25 @@ public class ActivityEdgeEditor
 
 			editor.setTooltipMessage("The source node of this ActivityEdge.");
 
-			this.editorSource_GeneralTab = editor;
+			this.editorSource_property_tab_generalTab = editor;
 		}
-		return this.editorSource_GeneralTab;
+		return this.editorSource_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGuard_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGuard_GeneralTab_Editor() {
-		if (this.editorGuard_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGuard_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGuard_property_tab_generalTab_Editor() {
+		if (this.editorGuard_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.activities.ActivitiesPackage.eINSTANCE
 					.getActivityEdge_Guard();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum.");
+			editor.setTooltipMessage(
+					"The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum.");
 
-			this.editorGuard_GeneralTab = editor;
+			this.editorGuard_property_tab_generalTab = editor;
 		}
-		return this.editorGuard_GeneralTab;
+		return this.editorGuard_property_tab_generalTab;
 	}
 
 	//
@@ -88,31 +101,23 @@ public class ActivityEdgeEditor
 	 * @generated
 	 */
 	public ActivityEdgeEditor(String tab) {
-		this(
-				tab,
-				org.storydriven.storydiagrams.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				org.storydriven.storydiagrams.activities.ActivitiesPackage.eINSTANCE
-						.getActivityEdge());
+		this(tab, org.storydriven.storydiagrams.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.storydriven.storydiagrams.activities.ActivitiesPackage.eINSTANCE.getActivityEdge());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ActivityEdgeEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general"})
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general"})
 					.contains(tab);
 		}
 	}

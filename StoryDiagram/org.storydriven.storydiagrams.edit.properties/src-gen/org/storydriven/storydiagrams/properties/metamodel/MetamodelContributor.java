@@ -1,3 +1,4 @@
+
 package org.storydriven.storydiagrams.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,23 +17,17 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory());
+		factories.add(new org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory());
 
-		factories
-				.add(new org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory());
+		factories.add(new org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory());
 
-		factories
-				.add(new org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory());
+		factories.add(new org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory());
 
-		factories
-				.add(new org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory());
+		factories.add(new org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory());
 
-		factories
-				.add(new org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory());
+		factories.add(new org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory());
 
 	}
 

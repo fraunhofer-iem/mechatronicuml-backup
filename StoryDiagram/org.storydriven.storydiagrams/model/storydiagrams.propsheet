@@ -88,8 +88,18 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes superClasses="//@packages.2/@classes.4">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/OperationExtension"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="#//@packages.2/@classes.4"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
     <classes superClasses="//@packages.1/@classes.6">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/MatchingStoryNode"/>
@@ -163,8 +173,18 @@
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.0">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterExtension"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="#//@packages.0/@classes.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
     <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable"/>
