@@ -87,10 +87,10 @@
       <nestedGenPackages prefix="Realtimestatechartparameterbinding" basePackage="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart"
           disposableProviderFactory="true" ecorePackage="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding">
         <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding/expression"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding/expression"/>
         </genClasses>
         <genClasses ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding/timeValue"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding/timeValue"/>
         </genClasses>
         <genClasses image="false" ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
@@ -156,7 +156,7 @@
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/componentInstance"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/initCommands"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/genPortInstances"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenComponentInstance/genPortInstances"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/GenPortInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -171,7 +171,7 @@
       <genClasses ecoreClass="psm.ecore#//codegen/GenECU">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenECU/ecu"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenECU/allocatedGenTasks"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/GenECU/allocatedGenTasks"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/GenTask">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
