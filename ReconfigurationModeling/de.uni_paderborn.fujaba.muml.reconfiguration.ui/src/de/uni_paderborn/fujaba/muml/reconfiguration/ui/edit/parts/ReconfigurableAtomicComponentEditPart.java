@@ -152,8 +152,8 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
@@ -219,7 +219,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
@@ -394,7 +394,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
 	}
 
 	/**

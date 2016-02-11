@@ -317,7 +317,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		Node label5028 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -416,7 +416,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		Node label5028 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
 		return node;
 	}
 	
@@ -599,7 +599,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		rv.setElement(domainElement);
 		rv.setType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID));
-
+		ViewUtil.insertChildView(containerView, rv, ViewUtil.APPEND, true);
 		return rv;
 	}
 

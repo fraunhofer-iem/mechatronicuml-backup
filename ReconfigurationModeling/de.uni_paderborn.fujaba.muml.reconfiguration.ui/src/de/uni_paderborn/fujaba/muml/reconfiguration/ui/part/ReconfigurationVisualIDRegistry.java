@@ -301,7 +301,7 @@ public class ReconfigurationVisualIDRegistry {
 
 			break;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID == nodeVisualID) {
