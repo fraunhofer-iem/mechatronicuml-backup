@@ -124,7 +124,7 @@
       <genClasses ecoreClass="psm.ecore#//apiexpressions/APICallExpression">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/APICallExpression/apiCommand"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/APICallExpression/parameterBindings"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/APICallExpression/parameterBindings"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//apiexpressions/EnumerationValueExpression">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
