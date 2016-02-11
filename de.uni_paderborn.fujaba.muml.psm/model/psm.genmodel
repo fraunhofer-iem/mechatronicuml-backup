@@ -93,7 +93,7 @@
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding/timeValue"/>
         </genClasses>
         <genClasses image="false" ecoreClass="psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
-          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
+          <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/parameter"/>
         </genClasses>
