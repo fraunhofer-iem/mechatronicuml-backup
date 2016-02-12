@@ -80,7 +80,7 @@ public class APICallParameterItemProvider extends RealtimeStatechartParameterIte
 				 getString("_UI_Operation_implementations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_implementations_feature", "_UI_Operation_type"),
 				 BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

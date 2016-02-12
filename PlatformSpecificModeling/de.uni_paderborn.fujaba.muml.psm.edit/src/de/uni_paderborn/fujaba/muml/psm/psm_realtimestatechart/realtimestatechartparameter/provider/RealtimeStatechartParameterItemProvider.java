@@ -97,7 +97,7 @@ public class RealtimeStatechartParameterItemProvider extends NamedElementItemPro
 				 getString("_UI_RealtimeStatechartParameter_statechart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechartParameter_statechart_feature", "_UI_RealtimeStatechartParameter_type"),
 				 RealtimestatechartparameterPackage.Literals.REALTIME_STATECHART_PARAMETER__STATECHART,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

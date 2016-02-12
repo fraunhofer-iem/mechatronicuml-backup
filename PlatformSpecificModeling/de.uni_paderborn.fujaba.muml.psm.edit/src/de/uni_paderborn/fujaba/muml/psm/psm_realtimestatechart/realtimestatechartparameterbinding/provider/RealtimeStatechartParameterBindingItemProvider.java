@@ -59,9 +59,32 @@ public class RealtimeStatechartParameterBindingItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPortInstancePropertyDescriptor(object);
 			addParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechartParameterBinding_portInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechartParameterBinding_portInstance_feature", "_UI_RealtimeStatechartParameterBinding_type"),
+				 RealtimestatechartparameterbindingPackage.Literals.REALTIME_STATECHART_PARAMETER_BINDING__PORT_INSTANCE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

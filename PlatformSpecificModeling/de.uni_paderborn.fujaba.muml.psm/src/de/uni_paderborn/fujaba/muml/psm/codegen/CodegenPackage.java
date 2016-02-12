@@ -444,22 +444,13 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>All Used Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Refined Structured Resource Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINED_STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 2;
+	int REFINED_STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -781,22 +772,13 @@ public interface CodegenPackage extends EPackage {
 	int GEN_PORT_INSTANCE__EXEC_COMMAND = 2;
 
 	/**
-	 * The feature id for the '<em><b>Target Port Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE = 3;
-
-	/**
 	 * The number of structural features of the '<em>Gen Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_PORT_INSTANCE_FEATURE_COUNT = 4;
+	int GEN_PORT_INSTANCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Gen Port Instance</em>' class.
@@ -989,17 +971,6 @@ public interface CodegenPackage extends EPackage {
 	EReference getRefinedStructuredResourceInstance_AllocatedAtomicComponentInstances();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance#getAllUsedMessageTypes <em>All Used Message Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>All Used Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance#getAllUsedMessageTypes()
-	 * @see #getRefinedStructuredResourceInstance()
-	 * @generated
-	 */
-	EReference getRefinedStructuredResourceInstance_AllUsedMessageTypes();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation <em>Code Gen Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1116,17 +1087,6 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGenPortInstance_ExecCommand();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getTargetPortInstance <em>Target Port Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target Port Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getTargetPortInstance()
-	 * @see #getGenPortInstance()
-	 * @generated
-	 */
-	EReference getGenPortInstance_TargetPortInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenECU <em>Gen ECU</em>}'.
@@ -1284,14 +1244,6 @@ public interface CodegenPackage extends EPackage {
 		EReference REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = eINSTANCE.getRefinedStructuredResourceInstance_AllocatedAtomicComponentInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>All Used Message Types</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES = eINSTANCE.getRefinedStructuredResourceInstance_AllUsedMessageTypes();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodeGenAllocationImpl <em>Code Gen Allocation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1384,14 +1336,6 @@ public interface CodegenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GEN_PORT_INSTANCE__EXEC_COMMAND = eINSTANCE.getGenPortInstance_ExecCommand();
-
-		/**
-		 * The meta object literal for the '<em><b>Target Port Instance</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE = eINSTANCE.getGenPortInstance_TargetPortInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenECUImpl <em>Gen ECU</em>}' class.

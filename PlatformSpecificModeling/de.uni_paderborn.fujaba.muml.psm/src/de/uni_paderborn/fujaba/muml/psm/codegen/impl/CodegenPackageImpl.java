@@ -15,8 +15,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.Hwresourceinstan
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-
 import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
@@ -268,15 +266,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRefinedStructuredResourceInstance_AllUsedMessageTypes() {
-		return (EReference)refinedStructuredResourceInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCodeGenAllocation() {
 		return codeGenAllocationEClass;
 	}
@@ -369,15 +358,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 */
 	public EReference getGenPortInstance_ExecCommand() {
 		return (EReference)genPortInstanceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getGenPortInstance_TargetPortInstance() {
-		return (EReference)genPortInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -494,7 +474,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		refinedStructuredResourceInstanceEClass = createEClass(REFINED_STRUCTURED_RESOURCE_INSTANCE);
 		createEReference(refinedStructuredResourceInstanceEClass, REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES);
-		createEReference(refinedStructuredResourceInstanceEClass, REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES);
 
 		codeGenAllocationEClass = createEClass(CODE_GEN_ALLOCATION);
 		createEReference(codeGenAllocationEClass, CODE_GEN_ALLOCATION__HPIC);
@@ -509,7 +488,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__PORT_INSTANCE);
 		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__SAMPLING_TIME);
 		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__EXEC_COMMAND);
-		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE);
 
 		genECUEClass = createEClass(GEN_ECU);
 		createEReference(genECUEClass, GEN_ECU__ECU);
@@ -550,7 +528,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		// Obtain other dependent packages
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
-		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		HwplatforminstancePackage theHwplatforminstancePackage = (HwplatforminstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
@@ -570,7 +547,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		initEClass(refinedStructuredResourceInstanceEClass, RefinedStructuredResourceInstance.class, "RefinedStructuredResourceInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRefinedStructuredResourceInstance_AllocatedAtomicComponentInstances(), this.getRefinedAtomicComponentInstance(), this.getRefinedAtomicComponentInstance_AllocatedResourceInstance(), "allocatedAtomicComponentInstances", null, 0, -1, RefinedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRefinedStructuredResourceInstance_AllUsedMessageTypes(), theMsgtypePackage.getMessageType(), null, "allUsedMessageTypes", null, 0, -1, RefinedStructuredResourceInstance.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(codeGenAllocationEClass, CodeGenAllocation.class, "CodeGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCodeGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -585,7 +561,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		initEReference(getGenPortInstance_PortInstance(), theInstancePackage.getPortInstance(), null, "portInstance", null, 1, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenPortInstance_SamplingTime(), theValuetypePackage.getTimeValue(), null, "samplingTime", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenPortInstance_ExecCommand(), theExpressionsPackage.getExpression(), null, "execCommand", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGenPortInstance_TargetPortInstance(), theInstancePackage.getPortInstance(), null, "targetPortInstance", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(genECUEClass, GenECU.class, "GenECU", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGenECU_Ecu(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "ecu", null, 1, 1, GenECU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -602,8 +577,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 	}
 
 	/**
@@ -621,28 +594,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
-		addAnnotation
-		  (getRefinedStructuredResourceInstance_AllUsedMessageTypes(), 
-		   source, 
-		   new String[] {
-			 "derivation", "let discretePortInstances : Set(instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(instance::DiscretePortInstance)).oclAsType(instance::DiscretePortInstance)->asOrderedSet() in\ndiscretePortInstances.receiverMessageTypes->union(discretePortInstances.senderMessageTypes).oclAsType(msgtype::MessageType)->asSet()"
-		   });	
-		addAnnotation
-		  (getGenPortInstance_TargetPortInstance(), 
-		   source, 
-		   new String[] {
-			 "derivation", "let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in\nconnectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance).oclAsType(muml::instance::PortInstance)->any(true)\n"
 		   });
 	}
 

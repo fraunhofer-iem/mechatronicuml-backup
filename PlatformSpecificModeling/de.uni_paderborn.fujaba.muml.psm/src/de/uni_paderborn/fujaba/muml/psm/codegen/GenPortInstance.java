@@ -22,7 +22,6 @@ import org.storydriven.core.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getPortInstance <em>Port Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getSamplingTime <em>Sampling Time</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getExecCommand <em>Exec Command</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getTargetPortInstance <em>Target Port Instance</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getGenPortInstance()
@@ -107,32 +106,5 @@ public interface GenPortInstance extends EObject {
 	 * @generated
 	 */
 	void setExecCommand(Expression value);
-
-	/**
-	 * Returns the value of the '<em><b>Target Port Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target Port Instance</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Port Instance</em>' reference.
-	 * @see #setTargetPortInstance(PortInstance)
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getGenPortInstance_TargetPortInstance()
-	 * @model volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let connectorEndPointInstances:Set(connector::ConnectorEndpointInstance) =self.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances) in\nconnectorEndPointInstances.oclAsType(instance::PortInstance)->reject(p|p.componentInstance.oclIsKindOf(instance::StructuredComponentInstance) or p = self.portInstance).oclAsType(muml::instance::PortInstance)->any(true)\n'"
-	 * @generated
-	 */
-	PortInstance getTargetPortInstance();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance#getTargetPortInstance <em>Target Port Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Port Instance</em>' reference.
-	 * @see #getTargetPortInstance()
-	 * @generated
-	 */
-	void setTargetPortInstance(PortInstance value);
 
 } // GenPortInstance

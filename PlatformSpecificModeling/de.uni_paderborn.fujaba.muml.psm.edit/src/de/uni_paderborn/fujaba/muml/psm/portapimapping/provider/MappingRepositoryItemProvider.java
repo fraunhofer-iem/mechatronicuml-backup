@@ -60,6 +60,8 @@ public class MappingRepositoryItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addPortApiMappingsPropertyDescriptor(object);
+			addImportsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +84,50 @@ public class MappingRepositoryItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Api Mappings feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortApiMappingsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MappingRepository_portApiMappings_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MappingRepository_portApiMappings_feature", "_UI_MappingRepository_type"),
+				 PortapimappingPackage.Literals.MAPPING_REPOSITORY__PORT_API_MAPPINGS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Imports feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImportsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MappingRepository_imports_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MappingRepository_imports_feature", "_UI_MappingRepository_type"),
+				 PortapimappingPackage.Literals.MAPPING_REPOSITORY__IMPORTS,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

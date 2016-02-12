@@ -64,7 +64,9 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPortPropertyDescriptor(object);
+			addExecCommandPropertyDescriptor(object);
 			addRepositoryPropertyDescriptor(object);
+			addInitCommandPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,6 +94,28 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Exec Command feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExecCommandPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortApiMapping_execCommand_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortApiMapping_execCommand_feature", "_UI_PortApiMapping_type"),
+				 PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Repository feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,7 +129,29 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 				 getString("_UI_PortApiMapping_repository_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PortApiMapping_repository_feature", "_UI_PortApiMapping_type"),
 				 PortapimappingPackage.Literals.PORT_API_MAPPING__REPOSITORY,
+				 true,
 				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Init Command feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitCommandPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortApiMapping_initCommand_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortApiMapping_initCommand_feature", "_UI_PortApiMapping_type"),
+				 PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
+				 true,
 				 false,
 				 false,
 				 null,

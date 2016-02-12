@@ -65,6 +65,7 @@ public class GenECUItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEcuPropertyDescriptor(object);
+			addAllocatedGenTasksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,28 @@ public class GenECUItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Allocated Gen Tasks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllocatedGenTasksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenECU_allocatedGenTasks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenECU_allocatedGenTasks_feature", "_UI_GenECU_type"),
+				 CodegenPackage.Literals.GEN_ECU__ALLOCATED_GEN_TASKS,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

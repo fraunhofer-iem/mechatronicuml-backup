@@ -64,9 +64,32 @@ public class ParameterizedRealtimeStatechartItemProvider extends RealtimeStatech
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addParametersPropertyDescriptor(object);
 			addAllParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ParameterizedRealtimeStatechart_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterizedRealtimeStatechart_parameters_feature", "_UI_ParameterizedRealtimeStatechart_type"),
+				 Psm_realtimestatechartPackage.Literals.PARAMETERIZED_REALTIME_STATECHART__PARAMETERS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

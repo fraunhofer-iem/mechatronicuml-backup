@@ -12,7 +12,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -31,7 +30,6 @@ import org.storydriven.core.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenPortInstanceImpl#getPortInstance <em>Port Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenPortInstanceImpl#getSamplingTime <em>Sampling Time</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenPortInstanceImpl#getExecCommand <em>Exec Command</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.GenPortInstanceImpl#getTargetPortInstance <em>Target Port Instance</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,16 +64,6 @@ public class GenPortInstanceImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected Expression execCommand;
-
-	/**
-	 * The cached setting delegate for the '{@link #getTargetPortInstance() <em>Target Port Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetPortInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate TARGET_PORT_INSTANCE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)CodegenPackage.Literals.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,33 +203,6 @@ public class GenPortInstanceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance getTargetPortInstance() {
-		return (PortInstance)TARGET_PORT_INSTANCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortInstance basicGetTargetPortInstance() {
-		return (PortInstance)TARGET_PORT_INSTANCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTargetPortInstance(PortInstance newTargetPortInstance) {
-		TARGET_PORT_INSTANCE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTargetPortInstance);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -254,9 +215,6 @@ public class GenPortInstanceImpl extends MinimalEObjectImpl.Container implements
 			case CodegenPackage.GEN_PORT_INSTANCE__EXEC_COMMAND:
 				if (resolve) return getExecCommand();
 				return basicGetExecCommand();
-			case CodegenPackage.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE:
-				if (resolve) return getTargetPortInstance();
-				return basicGetTargetPortInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,9 +235,6 @@ public class GenPortInstanceImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case CodegenPackage.GEN_PORT_INSTANCE__EXEC_COMMAND:
 				setExecCommand((Expression)newValue);
-				return;
-			case CodegenPackage.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE:
-				setTargetPortInstance((PortInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -302,9 +257,6 @@ public class GenPortInstanceImpl extends MinimalEObjectImpl.Container implements
 			case CodegenPackage.GEN_PORT_INSTANCE__EXEC_COMMAND:
 				setExecCommand((Expression)null);
 				return;
-			case CodegenPackage.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE:
-				setTargetPortInstance((PortInstance)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -323,8 +275,6 @@ public class GenPortInstanceImpl extends MinimalEObjectImpl.Container implements
 				return samplingTime != null;
 			case CodegenPackage.GEN_PORT_INSTANCE__EXEC_COMMAND:
 				return execCommand != null;
-			case CodegenPackage.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE:
-				return TARGET_PORT_INSTANCE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

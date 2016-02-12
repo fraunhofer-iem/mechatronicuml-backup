@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -47,8 +48,54 @@ public class CANMessageFrameItemProvider extends MessageFrameItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPriorityPropertyDescriptor(object);
+			addDeadlinePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Priority feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPriorityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CANMessageFrame_priority_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CANMessageFrame_priority_feature", "_UI_CANMessageFrame_type"),
+				 PropertiesPackage.Literals.CAN_MESSAGE_FRAME__PRIORITY,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Deadline feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeadlinePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CANMessageFrame_deadline_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CANMessageFrame_deadline_feature", "_UI_CANMessageFrame_type"),
+				 PropertiesPackage.Literals.CAN_MESSAGE_FRAME__DEADLINE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

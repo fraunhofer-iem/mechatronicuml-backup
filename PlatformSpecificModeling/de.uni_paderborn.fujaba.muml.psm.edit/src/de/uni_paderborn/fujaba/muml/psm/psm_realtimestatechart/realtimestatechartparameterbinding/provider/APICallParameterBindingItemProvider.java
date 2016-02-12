@@ -69,6 +69,7 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 			addImplementationsPropertyDescriptor(object);
 			addParametersPropertyDescriptor(object);
 			addReturnTypePropertyDescriptor(object);
+			addExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -131,7 +132,7 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 				 getString("_UI_Operation_implementations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_implementations_feature", "_UI_Operation_type"),
 				 BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,
@@ -178,6 +179,28 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_APICallParameterBinding_expression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APICallParameterBinding_expression_feature", "_UI_APICallParameterBinding_type"),
+				 RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

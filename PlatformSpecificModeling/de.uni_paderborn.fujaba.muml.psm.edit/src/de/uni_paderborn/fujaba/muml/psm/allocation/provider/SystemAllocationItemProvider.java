@@ -55,10 +55,34 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAllocationsPropertyDescriptor(object);
 			addCicPropertyDescriptor(object);
 			addHpicPropertyDescriptor(object);
+			addAssemblyConnectorInstanceAllocationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Allocations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllocationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SystemAllocation_allocations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SystemAllocation_allocations_feature", "_UI_SystemAllocation_type"),
+				 AllocationPackage.Literals.SYSTEM_ALLOCATION__ALLOCATIONS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -100,6 +124,28 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Assembly Connector Instance Allocations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssemblyConnectorInstanceAllocationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SystemAllocation_assemblyConnectorInstanceAllocations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SystemAllocation_assemblyConnectorInstanceAllocations_feature", "_UI_SystemAllocation_type"),
+				 AllocationPackage.Literals.SYSTEM_ALLOCATION__ASSEMBLY_CONNECTOR_INSTANCE_ALLOCATIONS,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
