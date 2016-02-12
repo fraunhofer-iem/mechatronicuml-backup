@@ -270,6 +270,15 @@ public abstract class GenmodelTest extends TraverseTest {
 						if (RepairingState.REPAIRING) {
 							genFeature.setProperty(GenPropertyKind.EDITABLE_LITERAL);
 						} else {
+							
+							//Feature is a reference to its partent
+							// its opposite is a containment, and thus it makes no sense to set it editable
+							if(genFeature.isReferenceType() ){
+								EReference reference = ((EReference) genFeature.getEcoreFeature());
+								if(reference.getEOpposite()!=null && reference.getEOpposite().isContainment())
+									return true;
+							}
+							
 							problems.add(getLabel(genFeature)
 									+ ": derive = false means that 'PropertyType' must be EDITABLE.");
 							
