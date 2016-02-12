@@ -52,7 +52,7 @@ public class HardwareOCLFactory {
 				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
-				"if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
+				"\'Frequency: \' +if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
 				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
 				"let mips : String = if self.MIPS.oclIsUndefined() then \'null\' else self.MIPS.toString() endif in\nlet cpi : String = if self.CPI.oclIsUndefined() then \'null\' else self.CPI.toString() endif in\n\'MIPS: \'+mips + \' / CPI: \'+cpi", //$NON-NLS-1$
 				"0", //$NON-NLS-1$

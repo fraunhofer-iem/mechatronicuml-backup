@@ -1123,6 +1123,7 @@
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
   </plugin>
   <editor/>
@@ -1268,7 +1269,7 @@
       <expressions
           body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
+          body="'Frequency: ' +if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
       <expressions
           body="'Enter frequency in form of:  Value Hz/MHz/GHz'"/>
       <expressions

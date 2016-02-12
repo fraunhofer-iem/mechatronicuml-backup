@@ -86,8 +86,7 @@ public class HardwareNavigatorLinkHelper implements ILinkHelper {
 		if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorItem) {
 			navigatorView = ((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorItem) abstractNavigatorItem)
 					.getView();
-		} else
-			if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup) {
+		} else if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup navigatorGroup = (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup) abstractNavigatorItem;
 			if (navigatorGroup
 					.getParent() instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorItem) {

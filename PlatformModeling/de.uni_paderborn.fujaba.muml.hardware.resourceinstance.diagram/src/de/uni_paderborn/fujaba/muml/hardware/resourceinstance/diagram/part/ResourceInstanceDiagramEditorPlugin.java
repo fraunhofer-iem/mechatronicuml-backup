@@ -146,7 +146,6 @@ public class ResourceInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
@@ -159,6 +158,7 @@ public class ResourceInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 		factories.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
