@@ -4,8 +4,6 @@ package de.uni_paderborn.fujaba.muml.psm.codegen.provider;
 
 
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import java.util.Collection;
@@ -24,7 +22,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance} object.
@@ -64,7 +61,6 @@ public class GenPortInstanceItemProvider
 			addPortInstancePropertyDescriptor(object);
 			addSamplingTimePropertyDescriptor(object);
 			addExecCommandPropertyDescriptor(object);
-			addTargetPortInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,28 +132,6 @@ public class GenPortInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Target Port Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetPortInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GenPortInstance_targetPortInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GenPortInstance_targetPortInstance_feature", "_UI_GenPortInstance_type"),
-				 CodegenPackage.Literals.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns GenPortInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -190,12 +164,6 @@ public class GenPortInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(GenPortInstance.class)) {
-			case CodegenPackage.GEN_PORT_INSTANCE__TARGET_PORT_INSTANCE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

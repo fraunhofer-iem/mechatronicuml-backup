@@ -3,9 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
-
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -22,7 +19,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance#getAllUsedMessageTypes <em>All Used Message Types</em>}</li>
  * </ul>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefinedStructuredResourceInstance()
@@ -46,21 +42,5 @@ public interface RefinedStructuredResourceInstance extends StructuredResourceIns
 	 * @generated
 	 */
 	EList<RefinedAtomicComponentInstance> getAllocatedAtomicComponentInstances();
-
-	/**
-	 * Returns the value of the '<em><b>All Used Message Types</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.msgtype.MessageType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * All MessageTypes which are used locally on this StructuredResourceInstance.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>All Used Message Types</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefinedStructuredResourceInstance_AllUsedMessageTypes()
-	 * @model transient="true" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let discretePortInstances : Set(instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(instance::DiscretePortInstance)).oclAsType(instance::DiscretePortInstance)->asOrderedSet() in\ndiscretePortInstances.receiverMessageTypes->union(discretePortInstances.senderMessageTypes).oclAsType(msgtype::MessageType)->asSet()'"
-	 * @generated
-	 */
-	EList<MessageType> getAllUsedMessageTypes();
 
 } // RefinedStructuredResourceInstance

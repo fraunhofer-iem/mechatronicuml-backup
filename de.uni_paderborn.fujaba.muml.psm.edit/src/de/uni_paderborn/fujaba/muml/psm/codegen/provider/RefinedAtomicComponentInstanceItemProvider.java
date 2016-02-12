@@ -60,6 +60,7 @@ public class RefinedAtomicComponentInstanceItemProvider extends AtomicComponentI
 
 			addComponentInstancePropertyDescriptor(object);
 			addInitCommandsPropertyDescriptor(object);
+			addGenPortInstancesPropertyDescriptor(object);
 			addAllocatedResourceInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -104,6 +105,28 @@ public class RefinedAtomicComponentInstanceItemProvider extends AtomicComponentI
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gen Port Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGenPortInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenComponentInstance_genPortInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenComponentInstance_genPortInstances_feature", "_UI_GenComponentInstance_type"),
+				 CodegenPackage.Literals.GEN_COMPONENT_INSTANCE__GEN_PORT_INSTANCES,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

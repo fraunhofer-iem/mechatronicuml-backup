@@ -144,8 +144,6 @@
       <genClasses ecoreClass="psm.ecore#//codegen/RefinedStructuredResourceInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//codegen/RefinedStructuredResourceInstance/allUsedMessageTypes"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/CodeGenAllocation">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/CodeGenAllocation/hpic"/>
@@ -165,8 +163,6 @@
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/samplingTime"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/execCommand"/>
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//codegen/GenPortInstance/targetPortInstance"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//codegen/GenECU">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

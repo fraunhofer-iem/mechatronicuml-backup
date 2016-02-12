@@ -431,7 +431,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		  (systemAllocationEClass, 
 		   source, 
 		   new String[] {
-			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\r\nlet cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->asOrderedSet()->union(self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC))->asOrderedSet() in\r\ncics.componentInstances->includesAll(self.allocations.componentInstance)"
+			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\r\nlet cics : Set(instance::ComponentInstanceConfiguration) = self.cic->asOrderedSet()->union(self.cic->closure(c | c.componentInstances->select(oclIsKindOf(instance::StructuredComponentInstance)).oclAsType(instance::StructuredComponentInstance).embeddedCIC))->asOrderedSet() in\r\ncics.componentInstances->includesAll(self.allocations.componentInstance)"
 		   });
 	}
 

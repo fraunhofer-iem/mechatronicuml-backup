@@ -3,9 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.StructuredResourceInstanceImpl;
-
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
@@ -17,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -32,7 +28,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedStructuredResourceInstanceImpl#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedStructuredResourceInstanceImpl#getAllUsedMessageTypes <em>All Used Message Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,16 +42,6 @@ public class RefinedStructuredResourceInstanceImpl extends StructuredResourceIns
 	 * @ordered
 	 */
 	protected EList<RefinedAtomicComponentInstance> allocatedAtomicComponentInstances;
-
-	/**
-	 * The cached setting delegate for the '{@link #getAllUsedMessageTypes() <em>All Used Message Types</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllUsedMessageTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate ALL_USED_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)CodegenPackage.Literals.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,16 +72,6 @@ public class RefinedStructuredResourceInstanceImpl extends StructuredResourceIns
 			allocatedAtomicComponentInstances = new EObjectWithInverseResolvingEList<RefinedAtomicComponentInstance>(RefinedAtomicComponentInstance.class, this, CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES, CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE);
 		}
 		return allocatedAtomicComponentInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<MessageType> getAllUsedMessageTypes() {
-		return (EList<MessageType>)ALL_USED_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -138,8 +113,6 @@ public class RefinedStructuredResourceInstanceImpl extends StructuredResourceIns
 		switch (featureID) {
 			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				return getAllocatedAtomicComponentInstances();
-			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES:
-				return getAllUsedMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,10 +130,6 @@ public class RefinedStructuredResourceInstanceImpl extends StructuredResourceIns
 				getAllocatedAtomicComponentInstances().clear();
 				getAllocatedAtomicComponentInstances().addAll((Collection<? extends RefinedAtomicComponentInstance>)newValue);
 				return;
-			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES:
-				getAllUsedMessageTypes().clear();
-				getAllUsedMessageTypes().addAll((Collection<? extends MessageType>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,9 +145,6 @@ public class RefinedStructuredResourceInstanceImpl extends StructuredResourceIns
 			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				getAllocatedAtomicComponentInstances().clear();
 				return;
-			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES:
-				getAllUsedMessageTypes().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,8 +159,6 @@ public class RefinedStructuredResourceInstanceImpl extends StructuredResourceIns
 		switch (featureID) {
 			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				return allocatedAtomicComponentInstances != null && !allocatedAtomicComponentInstances.isEmpty();
-			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES:
-				return ALL_USED_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.psm.presentation;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageEditPlugin;
+import de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.swplatform.provider.SwplatformEditPlugin;
@@ -50,7 +51,7 @@ public final class PsmEditorPlugin extends EMFPlugin {
 				ActionlanguageEditPlugin.INSTANCE,
 				CoreEditPlugin.INSTANCE,
 				HardwareEditPlugin.INSTANCE,
-				de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin.INSTANCE,
+				MumlEditPlugin.INSTANCE,
 				SwplatformEditPlugin.INSTANCE,
 			});
 	}
