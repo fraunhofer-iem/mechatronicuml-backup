@@ -416,7 +416,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MsgLossLabel"/>
             <viewExpression
-                body="'Reliable: '.concat(self.messageLossPossible.toString())"/>
+                body="'Reliable: '.concat((not self.messageLossPossible).toString())"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"

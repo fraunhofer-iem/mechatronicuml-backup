@@ -65,7 +65,7 @@ public class MumlOCLFactory {
 				"\'Size: \'.concat(if(self.bufferSize.oclIsUndefined()) \r\nthen \'null\' else self.bufferSize.toString() endif)", //$NON-NLS-1$
 				"\'Discard: \'.concat(if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)\r\nthen \'Incoming Msgs\' else \'Oldest Msgs\' endif)", //$NON-NLS-1$
 				"\'Incoming Buffer: \'.concat(\r\n\tif (self.name.oclIsUndefined()) then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.name\r\n\tendif\r\n)", //$NON-NLS-1$
-				"\'Reliable: \'.concat(self.messageLossPossible.toString())", //$NON-NLS-1$
+				"\'Reliable: \'.concat((not self.messageLossPossible).toString())", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$

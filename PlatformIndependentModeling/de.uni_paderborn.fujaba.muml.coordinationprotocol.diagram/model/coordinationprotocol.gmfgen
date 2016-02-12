@@ -1076,7 +1076,7 @@
       <expressions
           body="'Incoming Buffer: '.concat(&#xD;&#xA;&#x9;if (self.name.oclIsUndefined()) then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
       <expressions
-          body="'Reliable: '.concat(self.messageLossPossible.toString())"/>
+          body="'Reliable: '.concat((not self.messageLossPossible).toString())"/>
       <expressions
           body="''"/>
       <expressions
