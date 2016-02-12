@@ -14,3 +14,23 @@ Der CAN-Bus mit dem Namen "CAN-Bus-Brake-Platform" befindet sich in der "Brake.0
 Marcus
 
 [1] http://link.springer.com/article/10.1007%2Fs11241-007-9012-7
+
+
+Im Prinzip sind die Formeln aus Abschnitt 3 implementiert. Der "grobe"
+Ablauf ist wie folgt:
+
+Startpunkt ist "canRTA":
+- possibleMessages: Menge von Mengen von Nachrichten, wobei die Nachrichten
+   innerhalb einer Menge eine Busauslastung < 1 haben
+- fuer jede dieser Mengen machen wir eine RTA
+- blockingTime: entspricht Equation (5)
+- busyPeriod; entspricht Equation (8)
+- die Operation calculateWorstCaseResponseTimeTuples berechnet nun die
+   notwendigen Tuples, wobei die eigentliche "Arbeit" von der Operation
+   calculateWorstCaseResponseTimeLvalTuples erledigt wird
+
+Spaeter wird calculateWorstCaseResponseTime aufgerufen. Dort wird fuer jede potentielle "Nachrichteninstanz" der _aktuell_ betrachteten Nachricht eine RTA ausgefuehrt (calculateWorstCaseResponseTimeForInstanceq) - der Code in calculateWaitTimeForInstanceq entspricht im Wesentlichen Equation (13).
+
+calculateWorstCaseResponseTimeForInstanceq entspricht Equation (12) (J_m ist bei uns 0 / taucht nicht auf, da derzeit vom Jitter abstrahiert wird).
+Um in Equation (12) w_m(q) zu berechnen, wird calculateWaitTimeForInstanceq aufgerufen (dieser Aufruf berechnet Equation (11)).
+
