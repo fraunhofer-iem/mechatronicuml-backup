@@ -50,12 +50,13 @@ helper DirectedTypedPort::getMessageForDirectedTypedPort():MessageType{
 	}endif;
 	//get the ports which are connected to this port, because they have to share the same Message
 	var genportInstancesWithThisPortType : Bag(GenPortInstance) := property_genComponentInstance.genPortInstances->select(genPortInstance|genPortInstance.portInstance.portType=port);
-	var targetPortInstances : Bag(PortInstance) := genportInstancesWithThisPortType.targetPortInstance;
+	var targetPortInstances : Bag(PortInstance) := genportInstancesWithThisPortType.portInstance.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances).oclAsType(PortInstance)->asBag();
 	var setOfConnectedPorts : Bag(Port) := targetPortInstances.portType->union(genportInstancesWithThisPortType.portInstance.portType);
 	var message:MessageType :=setOfConnectedPorts.oclAsType(DirectedTypedPort)->asSet()->map createMessageForPorts();
 	property_apiMessageRepository.messageTypes += message; 
 	return message;
 }
+
 
 /**
 * Create a Message Type for
