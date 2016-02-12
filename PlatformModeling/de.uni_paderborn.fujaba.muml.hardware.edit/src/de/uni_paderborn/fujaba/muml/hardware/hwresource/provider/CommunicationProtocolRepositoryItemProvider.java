@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.NamedElementItemProvider;
@@ -46,8 +47,31 @@ public class CommunicationProtocolRepositoryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCommunicationProtocolsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Communication Protocols feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommunicationProtocolsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationProtocolRepository_communicationProtocols_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationProtocolRepository_communicationProtocols_feature", "_UI_CommunicationProtocolRepository_type"),
+				 HwresourcePackage.Literals.COMMUNICATION_PROTOCOL_REPOSITORY__COMMUNICATION_PROTOCOLS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

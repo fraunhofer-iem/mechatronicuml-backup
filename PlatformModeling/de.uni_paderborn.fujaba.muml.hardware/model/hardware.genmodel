@@ -36,7 +36,7 @@
         <genFeatures property="None" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/connectedNetworkConnector"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/queuingTime"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/payloadDataSize"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/payloadDataSize"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/parentPlatformPart"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/hwport"/>

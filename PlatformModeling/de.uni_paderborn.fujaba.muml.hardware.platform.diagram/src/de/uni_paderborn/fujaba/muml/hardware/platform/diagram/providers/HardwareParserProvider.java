@@ -20,10 +20,22 @@ import org.storydriven.core.CorePackage;
 public class HardwareParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
-	 * @generated
-	 */
-	private IParser getHWPlatformLabel_5069Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPlatformLabelExpressionLabelParser5069();
+	* @generated
+	*/
+	private IParser hWPlatformName_5069Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getHWPlatformName_5069Parser() {
+		if (hWPlatformName_5069Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.MessageFormatParser(
+					features, editableFeatures);
+			hWPlatformName_5069Parser = parser;
+		}
+		return hWPlatformName_5069Parser;
 	}
 
 	/**
@@ -140,7 +152,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getHWPlatformLabel_5069Parser();
+			return getHWPlatformName_5069Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 			return getBusLabel_5057Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:

@@ -110,6 +110,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/payloadDataSize"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes>

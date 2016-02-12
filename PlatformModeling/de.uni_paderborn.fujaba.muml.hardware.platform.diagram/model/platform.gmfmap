@@ -11,11 +11,13 @@
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform"/>
       <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping">
+          xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPlatformName"/>
-        <viewExpression
-            body="let name : String = if (self.name.oclIsUndefined()) then 'Platform' else self.name endif  in&#xA;let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name&#xA;else &#xA;&#x9;self.name&#xA;endif &#xA; in&#xA;nameToShow"/>
+        <features
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        <editableFeatures
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <diagramNode
           href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPlatformNode"/>

@@ -48,7 +48,9 @@ public class ProcessorItemProvider
 
 			addOwnedCachePropertyDescriptor(object);
 			addArchitecturePropertyDescriptor(object);
+			addNbCoresPropertyDescriptor(object);
 			addFamilyPropertyDescriptor(object);
+			addNbPipelineStagesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -98,6 +100,28 @@ public class ProcessorItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Nb Cores feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNbCoresPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Processor_nbCores_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Processor_nbCores_feature", "_UI_Processor_type"),
+				 HwresourcePackage.Literals.PROCESSOR__NB_CORES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Family feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,6 +139,28 @@ public class ProcessorItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Nb Pipeline Stages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNbPipelineStagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Processor_nbPipelineStages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Processor_nbPipelineStages_feature", "_UI_Processor_type"),
+				 HwresourcePackage.Literals.PROCESSOR__NB_PIPELINE_STAGES,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

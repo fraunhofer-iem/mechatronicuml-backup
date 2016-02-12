@@ -48,6 +48,7 @@ public class HWPlatformInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addHwplatformTypePropertyDescriptor(object);
+			addDelegationPortsPropertyDescriptor(object);
 			addEmbeddedHPICPropertyDescriptor(object);
 			addParentHPICPropertyDescriptor(object);
 		}
@@ -71,6 +72,28 @@ public class HWPlatformInstanceItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Delegation Ports feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDelegationPortsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstance_delegationPorts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstance_delegationPorts_feature", "_UI_HWPlatformInstance_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__DELEGATION_PORTS,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

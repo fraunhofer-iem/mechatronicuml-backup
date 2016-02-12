@@ -48,9 +48,79 @@ public class HWPlatformInstanceConfigurationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addHwplatformInstancesPropertyDescriptor(object);
+			addNetworkingHardwareInstancesPropertyDescriptor(object);
+			addResourcesPropertyDescriptor(object);
 			addParentHWPlatformInstancePropertyDescriptor(object);
+			addNetworkConnectorInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Hwplatform Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHwplatformInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstanceConfiguration_hwplatformInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstanceConfiguration_hwplatformInstances_feature", "_UI_HWPlatformInstanceConfiguration_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Networking Hardware Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNetworkingHardwareInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstanceConfiguration_networkingHardwareInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstanceConfiguration_networkingHardwareInstances_feature", "_UI_HWPlatformInstanceConfiguration_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Resources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstanceConfiguration_resources_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstanceConfiguration_resources_feature", "_UI_HWPlatformInstanceConfiguration_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -70,6 +140,28 @@ public class HWPlatformInstanceConfigurationItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Network Connector Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNetworkConnectorInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstanceConfiguration_networkConnectorInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstanceConfiguration_networkConnectorInstances_feature", "_UI_HWPlatformInstanceConfiguration_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

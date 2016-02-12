@@ -37,6 +37,8 @@ public class HWPortPartEditor extends de.uni_paderborn.fujaba.properties.runtime
 
 			addPropertyEditor(createEditorQueuingTime_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorPayloadDataSize_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -52,6 +54,8 @@ public class HWPortPartEditor extends de.uni_paderborn.fujaba.properties.runtime
 			addPropertyEditor(createEditorHwport_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorQueuingTime_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorPayloadDataSize_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -145,6 +149,22 @@ public class HWPortPartEditor extends de.uni_paderborn.fujaba.properties.runtime
 		return this.editorQueuingTime_property_tab_generalTab;
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPayloadDataSize_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPayloadDataSize_property_tab_generalTab_Editor() {
+		if (this.editorPayloadDataSize_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+					.getHWPortPart_PayloadDataSize();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The average size of the payload data that is transmitted over this HWPortInstance.");
+
+			this.editorPayloadDataSize_property_tab_generalTab = editor;
+		}
+		return this.editorPayloadDataSize_property_tab_generalTab;
+	}
+
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectors_property_tab_generalTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectors_property_tab_generalTab_Editor() {
 		if (this.editorConnectors_property_tab_generalTab == null) {
@@ -212,10 +232,9 @@ public class HWPortPartEditor extends de.uni_paderborn.fujaba.properties.runtime
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.documentation", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

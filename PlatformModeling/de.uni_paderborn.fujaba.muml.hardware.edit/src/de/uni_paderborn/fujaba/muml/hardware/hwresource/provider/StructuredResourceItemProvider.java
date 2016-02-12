@@ -11,6 +11,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -43,8 +44,31 @@ public class StructuredResourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEmbeddedAtomicResourcesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Embedded Atomic Resources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmbeddedAtomicResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StructuredResource_embeddedAtomicResources_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredResource_embeddedAtomicResources_feature", "_UI_StructuredResource_type"),
+				 HwresourcePackage.Literals.STRUCTURED_RESOURCE__EMBEDDED_ATOMIC_RESOURCES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

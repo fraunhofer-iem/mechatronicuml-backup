@@ -218,7 +218,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.18">
+              value="//@expressionProviders/@providers.0/@expressions.17">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -363,7 +363,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.19">
+              value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -446,7 +446,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.20">
+              value="//@expressionProviders/@providers.0/@expressions.19">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -561,7 +561,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.17">
+              value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -580,8 +580,13 @@
             getterName="getFigureHWPlatformNameLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.11"/>
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.4">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          <editableMetaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
       </labels>
     </topLevelNodes>
     <links
@@ -954,8 +959,6 @@
       <expressions
           body="let isStructuredResourceInstance : Boolean = if self.resourceType.oclIsUndefined() then false else&#xA; self.resourceType.oclIsTypeOf(hwresourceinstance::StructuredResourceInstance) endif in&#xA;let processor : Set(hwresourceinstance::ComputingResourceInstance) = if (isStructuredResourceInstance) then self.resourceType.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::ComputingResourceInstance)).oclAsType(hwresourceinstance::ComputingResourceInstance)->asOrderedSet()&#xA;else Set(hwresourceinstance::ComputingResourceInstance){}  endif in&#xA;let processorString : String = if processor->isEmpty() then 'Processor:' else processor->iterate(p; result : String = 'Processor:' | result.concat(p.frequency.toString().concat(', '))) endif in&#xA;processorString"/>
       <expressions
-          body="let name : String = if (self.name.oclIsUndefined()) then 'Platform' else self.name endif  in&#xA;let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name&#xA;else &#xA;&#x9;self.name&#xA;endif &#xA; in&#xA;nameToShow"/>
-      <expressions
           body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
       <expressions
           body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
@@ -1001,7 +1004,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
@@ -1051,14 +1054,6 @@
         viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
-        className="HWPlatformLabelExpressionLabelParser5069"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
     </implementations>
   </labelParsers>
   <contextMenus

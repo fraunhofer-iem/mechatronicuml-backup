@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -43,7 +41,7 @@ public final class HardwareEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
-		     MumlEditPlugin.INSTANCE,
+		     de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin.INSTANCE,
 		   });
 	}
 

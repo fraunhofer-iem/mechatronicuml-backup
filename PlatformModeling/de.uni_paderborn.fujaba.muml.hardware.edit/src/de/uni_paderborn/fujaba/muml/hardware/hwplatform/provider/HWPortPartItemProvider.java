@@ -46,10 +46,56 @@ public class HWPortPartItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addQueuingTimePropertyDescriptor(object);
+			addPayloadDataSizePropertyDescriptor(object);
 			addParentPlatformPartPropertyDescriptor(object);
 			addHwportPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Queuing Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addQueuingTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPortPart_queuingTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_queuingTime_feature", "_UI_HWPortPart_type"),
+				 HwplatformPackage.Literals.HW_PORT_PART__QUEUING_TIME,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Payload Data Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPayloadDataSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPortPart_payloadDataSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_payloadDataSize_feature", "_UI_HWPortPart_type"),
+				 HwplatformPackage.Literals.HW_PORT_PART__PAYLOAD_DATA_SIZE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

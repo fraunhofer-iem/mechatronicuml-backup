@@ -94,9 +94,9 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	private IParser parser;
 
 	/**
-	 * @generated
-	 */
-	private OclTracker.Registrator myOclRegistrator;
+	* @generated
+	*/
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -485,16 +485,28 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	 * @generated
 	 */
 	protected void addSemanticListeners() {
-		OclTracker tracker = getTracker();
-		tracker.initialize(resolveSemanticElement());
-		tracker.installListeners(getEditingDomain(), this, getOclRegistrator());
+		if (getParser() instanceof ISemanticParser) {
+			EObject element = resolveSemanticElement();
+			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
+			for (int i = 0; i < parserElements.size(); i++) {
+				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
+			}
+		} else {
+			super.addSemanticListeners();
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void removeSemanticListeners() {
-		getTracker().uninstallListeners();
+		if (parserElements != null) {
+			for (int i = 0; i < parserElements.size(); i++) {
+				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
+			}
+		} else {
+			super.removeSemanticListeners();
+		}
 	}
 
 	/**
@@ -517,34 +529,6 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
-	}
-
-	/**
-	 * @generated
-	 */
-	private OclTracker getTracker() {
-		return ((HasOclTracker) getParser()).getOclTracker();
-	}
-
-	/**
-	 * @generated
-	 */
-	private OclTracker.Registrator getOclRegistrator() {
-		if (myOclRegistrator == null) {
-			myOclRegistrator = new OclTracker.Registrator() {
-
-				@Override
-				public void registerListener(String filterId, NotificationListener listener, EObject element) {
-					addListenerFilter(filterId, listener, element);
-				}
-
-				@Override
-				public void unregisterListener(String filterId) {
-					removeListenerFilter(filterId);
-				}
-			};
-		}
-		return myOclRegistrator;
 	}
 
 	/**

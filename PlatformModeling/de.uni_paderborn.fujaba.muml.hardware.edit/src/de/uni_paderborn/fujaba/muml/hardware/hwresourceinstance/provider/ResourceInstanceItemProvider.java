@@ -50,9 +50,32 @@ public class ResourceInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addHwportsPropertyDescriptor(object);
 			addResourceTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Hwports feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHwportsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ResourceInstance_hwports_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceInstance_hwports_feature", "_UI_ResourceInstance_type"),
+				 HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__HWPORTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

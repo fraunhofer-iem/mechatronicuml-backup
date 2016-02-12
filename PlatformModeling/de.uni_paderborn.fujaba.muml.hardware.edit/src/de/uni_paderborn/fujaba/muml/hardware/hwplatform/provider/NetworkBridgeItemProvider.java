@@ -56,6 +56,7 @@ public class NetworkBridgeItemProvider extends NetworkingHardwareItemProvider {
 
 			addCommentPropertyDescriptor(object);
 			addConnectorsPropertyDescriptor(object);
+			addDelayPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -99,6 +100,28 @@ public class NetworkBridgeItemProvider extends NetworkingHardwareItemProvider {
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Delay feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDelayPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NetworkBridge_delay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NetworkBridge_delay_feature", "_UI_NetworkBridge_type"),
+				 HwplatformPackage.Literals.NETWORK_BRIDGE__DELAY,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

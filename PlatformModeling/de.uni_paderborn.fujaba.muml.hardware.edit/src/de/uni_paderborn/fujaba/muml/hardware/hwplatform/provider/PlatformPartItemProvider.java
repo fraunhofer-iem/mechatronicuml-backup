@@ -49,6 +49,7 @@ public class PlatformPartItemProvider
 
 			addParentHWPlatformPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addHwPortPartsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +90,28 @@ public class PlatformPartItemProvider
 				 getString("_UI_PlatformPart_cardinality_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformPart_cardinality_feature", "_UI_PlatformPart_type"),
 				 HwplatformPackage.Literals.PLATFORM_PART__CARDINALITY,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hw Port Parts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHwPortPartsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformPart_hwPortParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformPart_hwPortParts_feature", "_UI_PlatformPart_type"),
+				 HwplatformPackage.Literals.PLATFORM_PART__HW_PORT_PARTS,
 				 true,
 				 false,
 				 false,

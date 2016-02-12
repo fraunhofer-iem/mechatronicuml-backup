@@ -17,7 +17,7 @@ public class ElementInitializers {
 	public void init_HWPlatform_2009(de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(17, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+					.getExpression(16, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 							.getHWPlatform(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
@@ -60,7 +60,7 @@ public class ElementInitializers {
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(18, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+					.getExpression(17, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 							.getHWPlatformPart(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
@@ -76,7 +76,7 @@ public class ElementInitializers {
 	public void init_DelegationHWPort_3029(de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(19, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+					.getExpression(18, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 							.getDelegationHWPort(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
@@ -119,7 +119,7 @@ public class ElementInitializers {
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(20, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+					.getExpression(19, de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 							.getResourcePart(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);

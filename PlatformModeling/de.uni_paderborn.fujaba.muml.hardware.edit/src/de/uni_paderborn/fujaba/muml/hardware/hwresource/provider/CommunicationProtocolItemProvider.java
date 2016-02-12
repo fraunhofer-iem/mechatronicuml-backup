@@ -52,6 +52,8 @@ public class CommunicationProtocolItemProvider
 			addIsEventTriggeredPropertyDescriptor(object);
 			addFurtherInformationPropertyDescriptor(object);
 			addIsNetworkingProtocolPropertyDescriptor(object);
+			addDataFrameSizePropertyDescriptor(object);
+			addBandwidthPropertyDescriptor(object);
 			addIsSerialPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -141,6 +143,50 @@ public class CommunicationProtocolItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Data Frame Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDataFrameSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationProtocol_dataFrameSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationProtocol_dataFrameSize_feature", "_UI_CommunicationProtocol_type"),
+				 HwresourcePackage.Literals.COMMUNICATION_PROTOCOL__DATA_FRAME_SIZE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Bandwidth feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBandwidthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationProtocol_bandwidth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationProtocol_bandwidth_feature", "_UI_CommunicationProtocol_type"),
+				 HwresourcePackage.Literals.COMMUNICATION_PROTOCOL__BANDWIDTH,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

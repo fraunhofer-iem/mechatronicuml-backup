@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.NamedElementItemProvider;
@@ -45,8 +46,100 @@ public class HWPlatformItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEmbeddedPlatformPartsPropertyDescriptor(object);
+			addNetworkingHardwarePropertyDescriptor(object);
+			addDelegationPortsPropertyDescriptor(object);
+			addNetworkConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Embedded Platform Parts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmbeddedPlatformPartsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatform_embeddedPlatformParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatform_embeddedPlatformParts_feature", "_UI_HWPlatform_type"),
+				 HwplatformPackage.Literals.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Networking Hardware feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNetworkingHardwarePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatform_networkingHardware_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatform_networkingHardware_feature", "_UI_HWPlatform_type"),
+				 HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Delegation Ports feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDelegationPortsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatform_delegationPorts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatform_delegationPorts_feature", "_UI_HWPlatform_type"),
+				 HwplatformPackage.Literals.HW_PLATFORM__DELEGATION_PORTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Network Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNetworkConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatform_networkConnectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatform_networkConnectors_feature", "_UI_HWPlatform_type"),
+				 HwplatformPackage.Literals.HW_PLATFORM__NETWORK_CONNECTORS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
