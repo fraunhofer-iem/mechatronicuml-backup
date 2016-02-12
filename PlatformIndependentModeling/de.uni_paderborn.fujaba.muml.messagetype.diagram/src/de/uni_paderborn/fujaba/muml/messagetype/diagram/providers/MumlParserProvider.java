@@ -59,7 +59,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getParameterLabel_5016Parser() {
-		return new de.uni_paderborn.fujaba.muml.messagetype.diagram.parsers.ParameterLabelExpressionLabelParser5016();
+		return new de.uni_paderborn.fujaba.muml.messagetype.diagram.parsers.ParameterLabelExpressionLabelParser();
 	}
 
 	/**
