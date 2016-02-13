@@ -418,7 +418,7 @@ public class HWPlatform2EditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureHWPlatformNameLabel = new WrappingLabel();
 
-			fFigureHWPlatformNameLabel.setText("Platform");
+			fFigureHWPlatformNameLabel.setText("<...>");
 
 			hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);
 

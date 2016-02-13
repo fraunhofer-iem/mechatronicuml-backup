@@ -552,7 +552,7 @@
           <children
               xsi:type="gmfgraph:Label"
               name="HWPlatformNameLabel"
-              text="Platform"/>
+              text="&lt;...>"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"

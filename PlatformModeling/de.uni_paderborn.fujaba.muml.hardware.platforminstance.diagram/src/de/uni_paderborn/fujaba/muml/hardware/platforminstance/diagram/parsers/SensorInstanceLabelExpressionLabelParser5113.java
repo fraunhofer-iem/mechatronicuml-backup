@@ -36,7 +36,7 @@ public class SensorInstanceLabelExpressionLabelParser5113 extends ExpressionLabe
 	@Override
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(10,
+				.getExpression(9,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getSensorInstance(),
 						null)

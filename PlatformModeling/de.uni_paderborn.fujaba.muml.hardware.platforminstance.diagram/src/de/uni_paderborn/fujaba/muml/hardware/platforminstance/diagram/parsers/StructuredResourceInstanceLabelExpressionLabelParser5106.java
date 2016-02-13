@@ -36,7 +36,7 @@ public class StructuredResourceInstanceLabelExpressionLabelParser5106 extends Ex
 	@Override
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(5,
+				.getExpression(4,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getStructuredResourceInstance(),
 						null)

@@ -113,6 +113,7 @@ public class NetworkConnectorInstanceEditPart extends ConnectionNodeEditPart imp
 			fFigureLinkCommentFigure = new WrappingLabel();
 
 			fFigureLinkCommentFigure.setText("<...>");
+			fFigureLinkCommentFigure.setTextWrap(true);
 
 			this.add(fFigureLinkCommentFigure);
 

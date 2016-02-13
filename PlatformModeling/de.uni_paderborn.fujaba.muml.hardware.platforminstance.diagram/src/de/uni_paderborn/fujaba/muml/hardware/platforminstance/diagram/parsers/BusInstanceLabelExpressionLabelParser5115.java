@@ -36,7 +36,7 @@ public class BusInstanceLabelExpressionLabelParser5115 extends ExpressionLabelPa
 	@Override
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(12,
+				.getExpression(11,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 								.getBusInstance(),
 						null)

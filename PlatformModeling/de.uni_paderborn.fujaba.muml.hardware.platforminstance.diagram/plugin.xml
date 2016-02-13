@@ -390,7 +390,7 @@
             <method name="getType()" value="4012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5100,5103,5104,5105,5106,5107,5102,5108,5109,5110,5111,5112,5113,5114,5115,5116"/>
+            <method name="getType()" value="5118,5117,5100,5103,5104,5105,5106,5107,5102,5108,5109,5110,5111,5112,5113,5114,5115,5116"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7012,7013,7014"/>

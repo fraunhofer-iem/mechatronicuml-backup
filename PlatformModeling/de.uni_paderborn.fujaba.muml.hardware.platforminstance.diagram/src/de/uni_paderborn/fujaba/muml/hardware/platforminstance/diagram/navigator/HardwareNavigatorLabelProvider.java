@@ -223,13 +223,19 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getHWPlatformInstance_2005Text(View view) {
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance domainModelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_2005,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
+								.getType(
+										de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 2005); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5118); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -253,13 +259,19 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getHWPlatformInstance_3040Text(View view) {
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance domainModelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3040,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
+								.getType(
+										de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceName2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 3040); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5117); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

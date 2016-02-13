@@ -71,6 +71,24 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) {
+			setBackgroundColor(
+					((de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
+							.getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -160,6 +178,11 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureHWPlatformNameLabel());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureHWPlatformCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -182,6 +205,9 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart) {
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureHWPlatformCompartment();
 			pane.remove(
@@ -332,6 +358,15 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
+	* @generated
+	*/
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart.VISUAL_ID));
+	}
+
+	/**
 	 * @generated
 	 */
 	public class HWPlatform extends RectangleFigure {
@@ -387,7 +422,7 @@ public class HWPlatformInstanceEditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureHWPlatformNameLabel = new WrappingLabel();
 
-			fFigureHWPlatformNameLabel.setText("Platform");
+			fFigureHWPlatformNameLabel.setText("<...>");
 
 			hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);
 

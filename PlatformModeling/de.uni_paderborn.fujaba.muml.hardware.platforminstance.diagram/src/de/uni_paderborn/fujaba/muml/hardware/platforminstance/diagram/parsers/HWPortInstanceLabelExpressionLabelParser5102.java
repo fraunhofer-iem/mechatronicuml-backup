@@ -36,7 +36,7 @@ public class HWPortInstanceLabelExpressionLabelParser5102 extends ExpressionLabe
 	@Override
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(2,
+				.getExpression(1,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 								.getHWPortInstance(),
 						null)

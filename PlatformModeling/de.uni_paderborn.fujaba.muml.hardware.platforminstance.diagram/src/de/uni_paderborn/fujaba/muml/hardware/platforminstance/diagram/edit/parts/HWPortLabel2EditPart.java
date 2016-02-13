@@ -418,8 +418,8 @@ public class HWPortLabel2EditPart extends LabelEditPart implements ITextAwareEdi
 							Character initialChar = (Character) theRequest.getExtendedData()
 									.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
-						} else
-							if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+						} else if ((theRequest instanceof DirectEditRequest)
+								&& (getEditText().equals(getLabelText()))) {
 							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {
@@ -669,6 +669,9 @@ public class HWPortLabel2EditPart extends LabelEditPart implements ITextAwareEdi
 		 */
 		public HWPortLabelFigure() {
 			this.setText("<...>");
+			this.setTextUnderline(true);
+			this.setTextWrap(true);
+
 		}
 
 	}

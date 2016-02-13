@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers;
+package de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers;
 
 import java.util.Collections;
 
@@ -23,43 +23,41 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class SensorInstanceLabelExpressionLabelParser5112 extends ExpressionLabelParserBase {
+public class NetworkBridgeLabelExpressionLabelParser extends ExpressionLabelParserBase {
 	/**
-	 * @generated
-	 */
-	public SensorInstanceLabelExpressionLabelParser5112() {
+	* @generated
+	*/
+	public NetworkBridgeLabelExpressionLabelParser() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	protected String getExpressionBody() {
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(8,
-						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-								.getSensorInstance(),
-						null)
+		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory.getExpression(2,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE.getNetworkBridge(), null)
 				.body();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
@@ -80,23 +78,23 @@ public class SensorInstanceLabelExpressionLabelParser5112 extends ExpressionLabe
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
@@ -104,8 +102,8 @@ public class SensorInstanceLabelExpressionLabelParser5112 extends ExpressionLabe
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	//
 	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
 	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {

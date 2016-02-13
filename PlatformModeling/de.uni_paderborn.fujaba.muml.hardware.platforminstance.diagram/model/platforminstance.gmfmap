@@ -12,6 +12,15 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstance"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPlatformName"/>
+        <features
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        <editableFeatures
+            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="platforminstance.gmftool#//@palette/@tools.0/@tools.0"/>

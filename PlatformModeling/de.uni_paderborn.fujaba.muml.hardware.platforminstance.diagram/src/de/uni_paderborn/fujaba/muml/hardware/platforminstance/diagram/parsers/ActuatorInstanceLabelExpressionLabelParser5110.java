@@ -36,7 +36,7 @@ public class ActuatorInstanceLabelExpressionLabelParser5110 extends ExpressionLa
 	@Override
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(8,
+				.getExpression(7,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getActuatorInstance(),
 						null)

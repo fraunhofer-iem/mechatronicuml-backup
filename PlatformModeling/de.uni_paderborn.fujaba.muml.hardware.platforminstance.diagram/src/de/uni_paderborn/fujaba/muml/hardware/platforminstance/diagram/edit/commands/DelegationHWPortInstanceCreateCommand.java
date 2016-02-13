@@ -54,6 +54,9 @@ public class DelegationHWPortInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) getElementToEdit();
 		owner.getDelegationPorts().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers.getInstance()
+				.init_DelegationHWPortInstance_3041(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

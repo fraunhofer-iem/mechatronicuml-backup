@@ -36,7 +36,7 @@ public class NetworkBridgeInstanceLabelExpressionLabelParser5116 extends Express
 	@Override
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(13,
+				.getExpression(12,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 								.getNetworkBridgeInstance(),
 						null)
