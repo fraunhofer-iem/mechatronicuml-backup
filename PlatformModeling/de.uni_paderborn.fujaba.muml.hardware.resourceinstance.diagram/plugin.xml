@@ -767,6 +767,20 @@
             </visibleWhen>
          </command>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.toolbar5">
+            <command
+                  commandId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
+                  icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+                  id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
+                  label="Create ResourceInstance Diagram"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
    </extension>
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">

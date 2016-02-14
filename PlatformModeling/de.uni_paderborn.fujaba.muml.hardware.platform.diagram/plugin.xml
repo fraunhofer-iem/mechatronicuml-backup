@@ -725,6 +725,20 @@
             </visibleWhen>
          </command>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.toolbar2">
+            <command
+                  commandId="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.createDiagram"
+                  icon="icons/obj16/HwplatformDiagramFile.gif"
+                  id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.createDiagram"
+                  label="Create new Platform"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
    </extension>
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
