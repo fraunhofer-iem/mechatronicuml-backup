@@ -1,3 +1,10 @@
 eclipse.preferences.version=1
+encoding//OneToManyVersion_v1/model/overtaking.muml=UTF-8
+encoding//OneToManyVersion_v1/model/protocol/Overtaking.coordinationprotocol_diagram=UTF-8
+encoding//OneToManyVersion_v1_Disassembled/model/msgtype/Repository.messagetype_diagram=UTF-8
+encoding//OneToManyVersion_v1_Disassembled/model/overtaking.muml=UTF-8
+encoding//OneToManyVersion_v1_Disassembled/model/protocol/Overtaking.coordinationprotocol_diagram=UTF-8
+encoding//OneToManyVersion_v1_Disassembled/model/realtimestatechart/overtakee_Role.realtimestatechart_diagram=UTF-8
+encoding//OneToManyVersion_v1_Disassembled/model/realtimestatechart/overtaker_RoleImpl.realtimestatechart_diagram=UTF-8
 encoding//OneToOneVersion/model/overtaking.muml=UTF-8
 encoding//OneToOneVersion/model/protocol/Overtaking.coordinationprotocol_diagram=UTF-8
