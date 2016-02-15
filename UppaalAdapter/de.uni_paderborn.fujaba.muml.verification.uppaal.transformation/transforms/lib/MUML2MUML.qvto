@@ -1169,11 +1169,34 @@ mapping core::expressions::TextualExpression :: TextualExpression2TextualExpress
     	_extension := self._extension.map Extension2Extension();
    		 }
 
-mapping actionLanguage::TimeValueExpression :: TimeValueExpression2TimeValueExpression() : actionLanguage::TimeValueExpression{
-        _annotation := self._annotation.map EAnnotation2EAnnotation();
-        _extension := self._extension.map Extension2Extension();
-        _comment := self._comment;
-        timeValue := self._timeValue.map TimeValue2TimeValue();
+mapping actionLanguage::TimeValueExpression :: TimeValueExpression2TimeValueExpression() : core::expressions::Expression{
+        init {
+	        // check whether the TimeValueExpression is nested in another TimeValueExpression. If so, the nesting is 
+	        // removed by replacing the TimeValueExpression by the value of the TimeValueExpression.
+	        if(not self.isNestedInOtherTimeValue()) {
+	        	result := new TimeValueExpression();
+	        	result.oclAsType(actionLanguage::TimeValueExpression).timeValue := self._timeValue.map TimeValue2TimeValue();
+	        }
+	        else {
+	        	result := self.timeValue.value.map Expression2Expression().deepclone().oclAsType(core::expressions::Expression);	
+	        }endif;
+	        
+	        result._annotation := self._annotation.map EAnnotation2EAnnotation();
+	        result._extension := self._extension.map Extension2Extension();
+	        result._comment := self._comment;      
+        }        
+}
+
+helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
+	var eContainer : EObject := self.eContainer();
+	if(eContainer.oclIsTypeOf(TimeValue)) {
+		return true;
+	}elif(eContainer.oclIsTypeOf(core::expressions::Expression)) {
+		return eContainer.oclAsType(core::expressions::Expression).isNestedInOtherTimeValue();
+	} 
+	else {
+		return false;
+	}				
 }
 
 mapping muml::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : muml::protocol::AbstractCoordinationSpecification disjuncts muml::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol;
