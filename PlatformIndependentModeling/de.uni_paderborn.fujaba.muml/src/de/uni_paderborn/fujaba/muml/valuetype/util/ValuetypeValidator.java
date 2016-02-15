@@ -178,6 +178,7 @@ public class ValuetypeValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(timeValue, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(timeValue, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTimeValue_LiteralExpressionMustBeANaturalNumber(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTimeValue_NestedTimeValuesMustDefineEqualTimeUnits(timeValue, diagnostics, context);
 		return result;
 	}
 
@@ -221,6 +222,36 @@ public class ValuetypeValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "LiteralExpressionMustBeANaturalNumber",
 				 TIME_VALUE__LITERAL_EXPRESSION_MUST_BE_ANATURAL_NUMBER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NestedTimeValuesMustDefineEqualTimeUnits constraint of '<em>Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TIME_VALUE__NESTED_TIME_VALUES_MUST_DEFINE_EQUAL_TIME_UNITS__EEXPRESSION = "-- Nested TimeValues must use equal time units\r\n" +
+		"self.eContents()->closure(element| element.oclAsType(ecore::EObject).eContents()->union(element.oclAsType(ecore::EObject).eCrossReferences()))->forAll(element| element.oclIsTypeOf(valuetype::TimeValue) implies element.oclAsType(valuetype::TimeValue).unit = self.unit)";
+
+	/**
+	 * Validates the NestedTimeValuesMustDefineEqualTimeUnits constraint of '<em>Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTimeValue_NestedTimeValuesMustDefineEqualTimeUnits(TimeValue timeValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ValuetypePackage.Literals.TIME_VALUE,
+				 timeValue,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NestedTimeValuesMustDefineEqualTimeUnits",
+				 TIME_VALUE__NESTED_TIME_VALUES_MUST_DEFINE_EQUAL_TIME_UNITS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

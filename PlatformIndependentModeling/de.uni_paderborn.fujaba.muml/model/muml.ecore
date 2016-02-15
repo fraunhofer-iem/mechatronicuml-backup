@@ -2107,10 +2107,11 @@
         <details key="documentation" value="A time value defines a value concerning time and an optional time unit. The value is an expression and can therefore consist of various elements like variables, operators and literals."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="LiteralExpressionMustBeANaturalNumber"/>
+        <details key="constraints" value="LiteralExpressionMustBeANaturalNumber NestedTimeValuesMustDefineEqualTimeUnits"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="LiteralExpressionMustBeANaturalNumber" value="-- If a TimeValue has as value a LiteralExpression, it must be a natural number.&#xD;&#xA;-- 1. Check if the LiteralExpression can be cast to an Integer&#xD;&#xA;-- 2. Check if this Integer is greater or equal to zero.&#xD;&#xA;&#xD;&#xA;(&#xD;&#xA;not self.value.oclIsUndefined()&#xD;&#xA;and &#xD;&#xA;self.value.oclIsKindOf(core::expressions::common::LiteralExpression)&#xD;&#xA;)&#xD;&#xA;implies&#xD;&#xA;(&#xD;&#xA;not self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()&#xD;&#xA;and &#xD;&#xA;self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0&#xD;&#xA;)&#xD;&#xA;-- author: xell&#xD;&#xA;-- ticket: 770"/>
+        <details key="NestedTimeValuesMustDefineEqualTimeUnits" value="-- Nested TimeValues must use equal time units&#xD;&#xA;self.eContents()->closure(element| element.oclAsType(ecore::EObject).eContents()->union(element.oclAsType(ecore::EObject).eCrossReferences()))->forAll(element| element.oclIsTypeOf(valuetype::TimeValue) implies element.oclAsType(valuetype::TimeValue).unit = self.unit)"/>
       </eAnnotations>
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
