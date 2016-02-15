@@ -13,7 +13,6 @@ public class CustomHWPlatformInstance2EditPart extends
 
 	public CustomHWPlatformInstance2EditPart(View view) {
 		super(view);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override

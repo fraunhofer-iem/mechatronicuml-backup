@@ -545,7 +545,6 @@
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"
               horizontalAlignment="FILL"/>
           <layout
               xsi:type="gmfgraph:GridLayout"
@@ -664,7 +663,8 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ResourceContainerFigure"
-            outline="false">
+            outline="false"
+            fill="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"

@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.ed
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
@@ -22,46 +23,46 @@ import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wiz
 
 public class HWPlatformInstanceEditHelperAdvice extends AbstractEditHelperAdvice {
 
-
-
 	@Override
 	protected ICommand getAfterConfigureCommand(final ConfigureRequest request) {
 		ICompositeCommand compositeCommand = new CompositeCommand("Test");
 		ICommand command = super.getAfterConfigureCommand(request);
-		if (command != null) {
-			compositeCommand.add(command);
-		}
-
+		
 		ConfigureElementCommand cmd = new ConfigureElementCommand(request) {
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-
+				
+				
+				
 				HWPlatformInstance hwplatformInstance = (HWPlatformInstance) request.getElementToConfigure();
 				TransactionalEditingDomain editingDomain = getEditingDomain();
 				if (editingDomain != null) {
-
+				
 					HWPlatformInstanceConfiguration hwplatformInstanceConfig = (HWPlatformInstanceConfiguration) hwplatformInstance
 							.getParentHPIC();
 
 					// Create wizard
-					INewWizard wizard = new PlatformInstanceWizard(hwplatformInstance,hwplatformInstanceConfig, editingDomain);
+					INewWizard wizard = new PlatformInstanceWizard(hwplatformInstance, hwplatformInstanceConfig,
+							editingDomain);
 					wizard.init(PlatformUI.getWorkbench(), null);
 					// Open wizard dialog
 					WizardDialog dialog = new WizardDialog(
 							PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), wizard);
-					if(dialog.open()==Window.CANCEL){
-						
+					if (dialog.open() == Window.CANCEL) {
+
 						return CommandResult.newCancelledCommandResult();
 					}
 
 				}
-
 				return CommandResult.newOKCommandResult(hwplatformInstance);
 			}
 
 		};
 		compositeCommand.add(cmd);
+		if (command != null) {
+			compositeCommand.add(command);
+		}
 
 		return compositeCommand;
 	}

@@ -34,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 
 /**
  * Class representing the first page of the wizard
@@ -170,10 +171,10 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		WizardModel model = wizard.getModel();
 		model.setSelectedHWPlatform(selectedPlatform);
 
-		Dictionary<String, Integer> config = model.getConfiguration();
+		Dictionary<PlatformPart, Integer> config = model.getConfiguration();
 		for (Entry<PlatformPart, Integer> entry : currentCardinality.entrySet()) {
 
-			config.put(entry.getKey().getName(), entry.getValue());
+			config.put(entry.getKey(), entry.getValue());
 		}
 
 	}
@@ -201,10 +202,10 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				PlatformPart p = (PlatformPart) element;
 				String name = p.getName();
 				String type = "";
-				if (p instanceof HWPlatformPart) {
+				if (p instanceof HWPlatformPart && ((HWPlatformPart) p).getHwplatformType() != null) {
 					type = ((HWPlatformPart) p).getHwplatformType().getName();
 				}
-				if (p instanceof ResourcePart) {
+				if (p instanceof ResourcePart && ((ResourcePart) p).getResourceType() != null) {
 					type = ((ResourcePart) p).getResourceType().getName();
 				}
 				return name + ":" + type;

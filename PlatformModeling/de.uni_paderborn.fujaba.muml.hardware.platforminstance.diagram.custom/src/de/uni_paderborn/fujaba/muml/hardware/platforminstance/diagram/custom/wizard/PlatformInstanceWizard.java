@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wizard;
 
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
@@ -16,6 +17,8 @@ import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.m2m.qvt.oml.util.Log;
+import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
@@ -123,12 +126,13 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 			// Create execution context
 			ExecutionContextImpl context = new ExecutionContextImpl();
-
+			
 			/**
 			 * TODO Test config parameter
 			 */
 			context.setConfigProperty("initVector", model.getConfiguration());
-
+			Log log = new WriterLog(new OutputStreamWriter(System.out));
+			context.setLog(log);
 			ExecuteQvtoTransformationCommand cmd = new ExecuteQvtoTransformationCommand(transformationExecutor,
 					modelExtents, context);
 

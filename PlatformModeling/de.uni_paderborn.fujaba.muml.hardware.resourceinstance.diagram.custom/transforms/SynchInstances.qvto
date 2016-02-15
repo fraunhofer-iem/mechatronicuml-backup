@@ -105,8 +105,8 @@ var lowerBound : Integer;
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
 		if (resourceType.communicationResources ->select(p|p = portInstance.communicationResource)->isEmpty()) then {
 		
-				input.removeElement(portInstance);
-				portInstance.dump();
+				//input.removeElement(portInstance);
+			//	portInstance.dump();
 			}endif;
 			
 		}; 
