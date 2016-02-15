@@ -787,6 +787,23 @@
          </toolbar>
       </menuContribution>
    </extension>
+   
+   
+   <extension point="org.eclipse.ui.menus">
+     <menuContribution
+           allPopups="false"
+           locationURI="toolbar:org.eclipse.ui.navigator.ProjectExplorer">
+        <separator
+              name="my.separator"
+              visible="true">
+        </separator>
+        <command
+              commandId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.createDiagram"
+              icon="icons/obj16/HwplatforminstanceDiagramFile.gif"
+              style="push">
+        </command>
+     </menuContribution>
+    </extension>
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
