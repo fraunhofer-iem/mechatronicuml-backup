@@ -4,9 +4,11 @@ import java.util.Collection;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -23,7 +25,7 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
  * @generated
  */
 public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart
-		extends ShapeCompartmentEditPart {
+		extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -58,6 +60,13 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 */
 	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart(View view) {
 		super(view);
+	}
+
+	/**
+	* @generated
+	*/
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
 	}
 
 	/**
@@ -152,6 +161,24 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 			return getParent().getTargetEditPart(request);
 		}
 		return super.getTargetEditPart(request);
+	}
+
+	/**
+	* @generated
+	*/
+	protected void refreshVisibility() {
+		final View notationView = getNotationView();
+		final boolean hasChildren = notationView.getChildren().size() > 0;
+		setVisibility(hasChildren);
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		refreshVisibility();
+		super.handleNotificationEvent(event);
 	}
 
 }

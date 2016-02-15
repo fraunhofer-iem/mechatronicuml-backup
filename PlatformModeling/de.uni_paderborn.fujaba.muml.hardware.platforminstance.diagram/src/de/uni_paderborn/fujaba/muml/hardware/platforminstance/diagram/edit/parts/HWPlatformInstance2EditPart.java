@@ -371,6 +371,24 @@ public class HWPlatformInstance2EditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
+	* @generated
+	*/
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstanceConfiguration_3039) {
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
+								.getType(
+										de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
 	 * @generated
 	 */
 	public class HWPlatform extends RectangleFigure {
@@ -416,7 +434,7 @@ public class HWPlatformInstance2EditPart extends AbstractBorderedShapeEditPart {
 			constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;
 			constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;
 			constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;
-			constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;
+			constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = true;
 			this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);
 
 			GridLayout layoutHWPlatformTitleAreaFigure0 = new GridLayout();

@@ -545,6 +545,7 @@
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
               horizontalAlignment="FILL"/>
           <layout
               xsi:type="gmfgraph:GridLayout"

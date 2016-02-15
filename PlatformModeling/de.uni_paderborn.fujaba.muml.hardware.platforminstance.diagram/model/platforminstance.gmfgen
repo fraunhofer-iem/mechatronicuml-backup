@@ -75,7 +75,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="HWPlatform"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;&lt;...>&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = true;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;&lt;...>&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="400"
@@ -100,8 +100,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -166,8 +164,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/DelegationHWPortInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -232,8 +228,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -355,8 +349,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/HWPortInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -421,8 +413,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -519,8 +509,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -613,8 +601,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/BusInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -692,8 +678,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/NetworkBridgeInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -729,7 +713,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="HWPlatform"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;&lt;...>&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = true;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;&lt;...>&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="400"
@@ -750,8 +734,6 @@
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -812,8 +794,7 @@
         title="HWPlatformCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0"
-        listLayout="false">
+        node="//@diagram/@topLevelNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -848,8 +829,7 @@
         title="HWPlatformCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.1"
-        listLayout="false">
+        node="//@diagram/@childNodes.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
