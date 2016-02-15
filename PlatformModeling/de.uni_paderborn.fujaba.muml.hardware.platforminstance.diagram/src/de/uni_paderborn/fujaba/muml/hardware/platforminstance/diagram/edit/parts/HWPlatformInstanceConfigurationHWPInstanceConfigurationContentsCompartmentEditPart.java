@@ -25,7 +25,7 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
  * @generated
  */
 public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart
-		extends ListCompartmentEditPart {
+		extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -60,13 +60,6 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 */
 	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart(View view) {
 		super(view);
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
 	}
 
 	/**
@@ -161,24 +154,6 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 			return getParent().getTargetEditPart(request);
 		}
 		return super.getTargetEditPart(request);
-	}
-
-	/**
-	* @generated
-	*/
-	protected void refreshVisibility() {
-		final View notationView = getNotationView();
-		final boolean hasChildren = notationView.getChildren().size() > 0;
-		setVisibility(hasChildren);
-	}
-
-	/**
-	* @generated
-	*/
-	@Override
-	protected void handleNotificationEvent(Notification event) {
-		refreshVisibility();
-		super.handleNotificationEvent(event);
 	}
 
 }

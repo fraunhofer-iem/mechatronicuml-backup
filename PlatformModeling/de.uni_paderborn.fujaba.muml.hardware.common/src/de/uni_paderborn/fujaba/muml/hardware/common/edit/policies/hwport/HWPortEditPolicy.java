@@ -37,9 +37,9 @@ public class HWPortEditPolicy extends HWPortBaseEditPolicy {
 		CommunicationResource comResource = null;
 		
 		if (element != null) {
-			if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE
+			if (HwresourceinstancePackage.Literals.HW_PORT
 					.isSuperTypeOf(element.eClass())) {
-				comResource = (CommunicationResource) element;
+				comResource = ((HWPort) element).getCommunicationResource();
 			}
 			if (comResource != null) {
 				modelPortKind = comResource.getPortKind();
