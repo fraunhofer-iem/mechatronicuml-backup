@@ -69,6 +69,8 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 
 			// Get a unique filename for the new file
 			IPath filePath = getFullPath(trimmedURI);
+			
+			filePath = getSubFolder(filePath);
 
 			String hint = URI.decode(selectedFileURI.trimFileExtension()
 					.lastSegment());
@@ -85,6 +87,10 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 
 		return null;
 
+	}
+
+	protected IPath getSubFolder(IPath filePath) {
+		return filePath;
 	}
 
 	protected abstract void createContents(URI selectedURI, IFile newFile);

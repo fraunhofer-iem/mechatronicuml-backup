@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -22,6 +23,8 @@ import org.eclipse.ui.PartInitException;
 
 import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.common.Messages;
+import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
+import de.uni_paderborn.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.modelinstance.ui.commands.CreateEmptyDiagramCommand;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
@@ -96,6 +99,15 @@ public abstract class AbstractCreateDiagramFileCommand extends
 					Messages.CreationWizardOpenEditorError, null,
 					ex.getStatus());
 		}
+	}
+	
+	@Override
+	protected IPath getSubFolder(IPath filePath) {
+		String key = diagramInformation.getModelElementCategoryKey();
+		ModelElementCategoryRegistry registry = ModelInstancePlugin.getInstance().getModelElementCategoryRegistry();
+		String categoryName = registry.getCategoryName(key);
+		filePath = filePath.append(categoryName);
+		return filePath;
 	}
 
 	@Override
