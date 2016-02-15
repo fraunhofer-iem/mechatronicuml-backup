@@ -1,9 +1,15 @@
 package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.VisualPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
@@ -65,43 +71,40 @@ public class HWDelegationPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 	protected CommunicationKind getCommunicationKind() {
 		EObject element = getSemanticElement();
 		CommunicationKind kind = CommunicationKind.BUS;
-		
-		/**
-		 * TODO FIXME
-		 */
-		
+		if (element instanceof DelegationHWPortInstance) {
+			DelegationHWPortInstance port = (DelegationHWPortInstance) element;
+			if (!port.getConnectorInstances().isEmpty()) {
+				for (ConnectorEndpointInstance endpoint : port.getConnectorInstances().get(0)
+						.getConnectorEndpointInstances()) {
+					if (endpoint != port && endpoint instanceof HWPortInstance
+							&& ((HWPortInstance) endpoint).getType() != null) {
+						kind = ((HWPortInstance) endpoint).getPortKind();
+
+					}
+				}
+			}
+
+		}
+
 		return kind;
-		
-//		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
-//		DelegationHWPortInstance hwPortInstance = null;
-//		if (element != null) {
-//			if (HwplatforminstancePackage.Literals.DELEGATION_HW_PORT_INSTANCE
-//					.isSuperTypeOf(element.eClass())) {
-//				hwPortInstance = (DelegationHWPortInstance) element;
-//			}
-//			if (hwPortInstance != null && hwPortInstance.getType() != null
-//					&& HwplatformPackage.Literals.DELEGATION_HW_PORT
-//							.isSuperTypeOf(hwPortInstance.getType().eClass())) {
-//				modelPortKind = ((DelegationHWPort) hwPortInstance.getType())
-//						.getPortKind();
-//			}
-//		}
-//
-//		switch (modelPortKind.getValue()) {
-//		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
-//			kind = HWPortKind.BUS;
-//			break;
-//		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
-//			kind = HWPortKind.LINK;
-//			break;
-//
-//		}
-//		return kind;
+
 	}
 
 	@Override
 	protected boolean isOptionalPort() {
-		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void handleNotificationEvent(Notification notification) {
+		EStructuralFeature feature = null;
+		if (notification.getFeature() instanceof EStructuralFeature) {
+			feature = (EStructuralFeature) notification.getFeature();
+		}
+
+		if (feature == ConnectorPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES) {
+			refreshHWPortFigure();
+		}
+		super.handleNotificationEvent(notification);
 	}
 }
