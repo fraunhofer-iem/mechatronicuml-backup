@@ -100,7 +100,7 @@
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ciTJYaVaEeOczKUo4xOiNg" x="189" y="234"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_lRNxQEhbEeOJnpqrtjndJA"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_celHAaVaEeOczKUo4xOiNg" x="485" y="19" width="277"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_celHAaVaEeOczKUo4xOiNg" x="575" y="31" width="277"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_celHD6VaEeOczKUo4xOiNg" type="3032" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_celHEaVaEeOczKUo4xOiNg" type="5060"/>
@@ -156,7 +156,7 @@
                                   <styles xmi:type="notation:FilteringStyle" xmi:id="_cieInaVaEeOczKUo4xOiNg"/>
                                 </children>
                                 <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_lROYVEhbEeOJnpqrtjndJA"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cieIkKVaEeOczKUo4xOiNg" x="207" y="3"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cieIkKVaEeOczKUo4xOiNg" x="252" y="10"/>
                               </children>
                               <children xmi:type="notation:Shape" xmi:id="_cieInqVaEeOczKUo4xOiNg" type="3032" fontName="Segoe UI" lineColor="0">
                                 <children xmi:type="notation:DecorationNode" xmi:id="_cieIoKVaEeOczKUo4xOiNg" type="5060"/>
@@ -177,7 +177,7 @@
                                   <styles xmi:type="notation:FilteringStyle" xmi:id="_cievmKVaEeOczKUo4xOiNg"/>
                                 </children>
                                 <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_ldGyoFOUEeONi4ykyD_5PA"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cieIn6VaEeOczKUo4xOiNg" x="78" y="135" width="46"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cieIn6VaEeOczKUo4xOiNg" x="78" y="135" width="85"/>
                               </children>
                             </children>
                             <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_lROYT0hbEeOJnpqrtjndJA"/>
@@ -205,7 +205,7 @@
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cmqsAaVaEeOczKUo4xOiNg" x="418" y="180"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_lROYTUhbEeOJnpqrtjndJA"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_celHEKVaEeOczKUo4xOiNg" x="8" y="7" width="430" height="356"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_celHEKVaEeOczKUo4xOiNg" x="8" y="7" width="508" height="395"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_lRNxMUhbEeOJnpqrtjndJA"/>
@@ -229,11 +229,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_cedLN6VaEeOczKUo4xOiNg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../overtaking.muml#_cpa08UhbEeOJnpqrtjndJA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ceckIaVaEeOczKUo4xOiNg" width="819" height="515"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ceckIaVaEeOczKUo4xOiNg" width="951" height="606"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_cpa08EhbEeOJnpqrtjndJA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ceWdgaVaEeOczKUo4xOiNg" width="853" height="589"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ceWdgaVaEeOczKUo4xOiNg" width="1081" height="691"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_-OsA8aVZEeOczKUo4xOiNg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_cpa08EhbEeOJnpqrtjndJA"/>
@@ -305,7 +305,7 @@
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_lRNxMkhbEeOJnpqrtjndJA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cv12IqVaEeOczKUo4xOiNg" points="[20, 11, -31, -18]$[-10, -6, -61, -35]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qcMRYKVaEeOczKUo4xOiNg" id="(0.975,0.7096774193548387)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qKyYUKVaEeOczKUo4xOiNg" id="(0.04878048780487805,0.8888888888888888)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qKyYUKVaEeOczKUo4xOiNg" id="(0.028368794326241134,0.7168141592920354)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_cyik0KVaEeOczKUo4xOiNg" type="4003" source="_cieIj6VaEeOczKUo4xOiNg" target="_cieIgKVaEeOczKUo4xOiNg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_cyik06VaEeOczKUo4xOiNg" type="6005">
@@ -316,7 +316,8 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cyik0aVaEeOczKUo4xOiNg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_lRNxOUhbEeOJnpqrtjndJA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cyik0qVaEeOczKUo4xOiNg" points="[-61, -13, 178, -23]$[-61, -13, 178, -23]$[-219, 7, 20, -3]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cyik0qVaEeOczKUo4xOiNg" points="[-6, -1, 184, 0]$[-51, -1, 139, 0]$[-188, -1, 2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xO6boM87EeW344JiqAKLMQ" id="(0.0425531914893617,0.2743362831858407)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_a8U5oNX4EeOZKuJ3YlPPmg" id="(0.95,0.3225806451612903)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_cyvZIKVaEeOczKUo4xOiNg" type="4003" source="_cieIj6VaEeOczKUo4xOiNg" target="_cieInqVaEeOczKUo4xOiNg" lineColor="0">
