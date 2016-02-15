@@ -187,7 +187,7 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabelEditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceKindFigure());
+					.setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart) {
@@ -418,16 +418,19 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			GridData constraintResourceContainerFigure0 = new GridData();
-			constraintResourceContainerFigure0.verticalAlignment = GridData.CENTER;
-			constraintResourceContainerFigure0.horizontalAlignment = GridData.BEGINNING;
+			constraintResourceContainerFigure0.verticalAlignment = GridData.FILL;
+			constraintResourceContainerFigure0.horizontalAlignment = GridData.FILL;
 			constraintResourceContainerFigure0.horizontalIndent = 0;
 			constraintResourceContainerFigure0.horizontalSpan = 1;
 			constraintResourceContainerFigure0.verticalSpan = 1;
 			constraintResourceContainerFigure0.grabExcessHorizontalSpace = true;
-			constraintResourceContainerFigure0.grabExcessVerticalSpace = false;
+			constraintResourceContainerFigure0.grabExcessVerticalSpace = true;
 			this.add(resourceContainerFigure0, constraintResourceContainerFigure0);
 
-			resourceContainerFigure0.setLayoutManager(new StackLayout());
+			GridLayout layoutResourceContainerFigure0 = new GridLayout();
+			layoutResourceContainerFigure0.numColumns = 3;
+			layoutResourceContainerFigure0.makeColumnsEqualWidth = false;
+			resourceContainerFigure0.setLayoutManager(layoutResourceContainerFigure0);
 
 			RectangleFigure simpleResourceNameRectangle1 = new RectangleFigure();
 
@@ -489,7 +492,15 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 			simpleResourceIconRectangle1.setFill(false);
 			simpleResourceIconRectangle1.setOutline(false);
 
-			resourceContainerFigure0.add(simpleResourceIconRectangle1);
+			GridData constraintSimpleResourceIconRectangle1 = new GridData();
+			constraintSimpleResourceIconRectangle1.verticalAlignment = GridData.CENTER;
+			constraintSimpleResourceIconRectangle1.horizontalAlignment = GridData.CENTER;
+			constraintSimpleResourceIconRectangle1.horizontalIndent = 0;
+			constraintSimpleResourceIconRectangle1.horizontalSpan = 1;
+			constraintSimpleResourceIconRectangle1.verticalSpan = 1;
+			constraintSimpleResourceIconRectangle1.grabExcessHorizontalSpace = true;
+			constraintSimpleResourceIconRectangle1.grabExcessVerticalSpace = true;
+			resourceContainerFigure0.add(simpleResourceIconRectangle1, constraintSimpleResourceIconRectangle1);
 
 			GridLayout layoutSimpleResourceIconRectangle1 = new GridLayout();
 			layoutSimpleResourceIconRectangle1.numColumns = 1;

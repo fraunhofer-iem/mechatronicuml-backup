@@ -39,11 +39,6 @@ main() {
 		};
 	
 		
-		
-/*		hwplatformInstanceConfig.rootObjects()[HWPlatformInstanceConfiguration]->forEach(pi){
-		pi.hwplatformInstances+=platform.rootObjects()[HWPlatform]->map createHWPlatformInstance(".0",pi);
-		//pi.hwplatformType->map createHWPlatformInstance(".0",null);
-	}; */
 	
 	
 }
