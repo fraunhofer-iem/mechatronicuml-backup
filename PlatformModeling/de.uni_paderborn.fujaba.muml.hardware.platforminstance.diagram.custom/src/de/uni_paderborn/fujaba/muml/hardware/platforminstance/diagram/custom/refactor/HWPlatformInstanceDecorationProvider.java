@@ -16,7 +16,6 @@ import org.eclipse.gmf.runtime.diagram.ui.services.decorator.IDecoratorTarget;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.refactor.AbstractDecoratorProvider;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 
 /**
  * 

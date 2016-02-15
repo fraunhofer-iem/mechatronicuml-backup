@@ -6,13 +6,12 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.ICustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
@@ -30,12 +29,11 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 	public CustomHWPlatformPartEditPart(View view) {
 		super(view);
 	}
-	
-	
 
 	/**
-	 * The execution of the transformation keeps the ports of
-	 * this instance and its type in synch.
+	 * The execution of the transformation keeps the ports of this instance and
+	 * its type in synch.
+	 * 
 	 * @author adann
 	 */
 	@Override
@@ -49,22 +47,18 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 		});
 	}
 
-
-
 	@Override
 	protected IFigure createNodeShape() {
 		primaryShape = new ModifiedCustomSimpleResourceFigure();
 		primaryShape.setToolTip(new Label("Double-Click to open Platform"));
-		((ICustomResourceFigure) primaryShape).getFigureCustomIconFigure()
-				.setIcon(ResourceType.PLATFORM);
+		((SimpleResourceFigure) primaryShape).getFigureCustomIconFigure().setIcon(ResourceType.PLATFORM);
 		return primaryShape;
 	}
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
-		if (HwplatformPackage.Literals.HW_PLATFORM_PART__HWPLATFORM_TYPE
-				.equals(feature)) {
+		if (HwplatformPackage.Literals.HW_PLATFORM_PART__HWPLATFORM_TYPE.equals(feature)) {
 
 			executeTransformation();
 		}
@@ -76,16 +70,15 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 
 		EditingDomain editingDomain = getEditingDomain();
 		if (editingDomain != null) {
-			PlatformPart platformPart = (PlatformPart) getNotationView()
-					.getElement();
-			if(platformPart instanceof HWPlatformPart && ((HWPlatformPart)platformPart).getHwplatformType()==null){
+			PlatformPart platformPart = (PlatformPart) getNotationView().getElement();
+			if (platformPart instanceof HWPlatformPart && ((HWPlatformPart) platformPart).getHwplatformType() == null) {
 				return;
 			}
 			Activator.updateHWPortParts(editingDomain, platformPart);
 		}
 	}
-	
-	public class ModifiedCustomSimpleResourceFigure extends CustomSimpleResourceFigure{
+
+	public class ModifiedCustomSimpleResourceFigure extends SimpleResourceFigure  {
 		@Override
 		protected void fillShape(Graphics graphics) {
 			Color bgColor = graphics.getBackgroundColor();
@@ -98,6 +91,7 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 			graphics.setBackgroundColor(bgColor);
 			graphics.setForegroundColor(fgColor);
 		}
+
 	}
 
 }

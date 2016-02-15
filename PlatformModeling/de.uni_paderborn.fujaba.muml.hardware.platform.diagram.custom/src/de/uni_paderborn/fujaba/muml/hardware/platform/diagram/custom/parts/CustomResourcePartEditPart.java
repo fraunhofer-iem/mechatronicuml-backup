@@ -12,7 +12,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
@@ -62,16 +61,14 @@ public class CustomResourcePartEditPart extends ResourcePartEditPart {
 	protected IFigure createNodeShape() {
 		primaryShape = new ModifiedCustomResourceFigure();
 
-		primaryShape.setToolTip(new Label(
-				"Double-Click to open ResourceInstance"));
+		primaryShape.setToolTip(new Label("Double-Click to open ResourceInstance"));
 		return primaryShape;
 	}
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
-		if (HwplatformPackage.Literals.RESOURCE_PART__RESOURCE_TYPE
-				.equals(feature)) {
+		if (HwplatformPackage.Literals.RESOURCE_PART__RESOURCE_TYPE.equals(feature)) {
 
 			executeTransformation();
 			refreshFigure();
@@ -83,10 +80,8 @@ public class CustomResourcePartEditPart extends ResourcePartEditPart {
 
 		EditingDomain editingDomain = getEditingDomain();
 		if (editingDomain != null) {
-			PlatformPart platformPart = (PlatformPart) getNotationView()
-					.getElement();
-			if (platformPart instanceof ResourcePart
-					&& ((ResourcePart) platformPart).getResourceType() == null) {
+			PlatformPart platformPart = (PlatformPart) getNotationView().getElement();
+			if (platformPart instanceof ResourcePart && ((ResourcePart) platformPart).getResourceType() == null) {
 				return;
 			}
 			Activator.updateHWPortParts(editingDomain, platformPart);
@@ -95,26 +90,26 @@ public class CustomResourcePartEditPart extends ResourcePartEditPart {
 
 	private void refreshFigure() {
 		ResourcePart element = (ResourcePart) resolveSemanticElement();
-		CustomResourceFigure figure = (CustomResourceFigure) getContentPane();
-		if (element.getResourceType() != null
-				&& HwresourceinstancePackage.Literals.DEVICE_INSTANCE
-						.isSuperTypeOf(element.getResourceType().eClass())) {
+		ResourceFigure figure = (ResourceFigure) getContentPane();
+		if (element.getResourceType() != null && HwresourceinstancePackage.Literals.DEVICE_INSTANCE
+				.isSuperTypeOf(element.getResourceType().eClass())) {
 			isDevice = true;
-			figure.getFigureResourceInfoRectangle().setVisible(false);
+			figure.getFigureResourceRectangleInfo().setVisible(false);
 			figure.setBackgroundColor(COLOR_DEVICE);
 
 		} else {
 			isDevice = false;
-			figure.getFigureResourceInfoRectangle().setVisible(true);
+			figure.getFigureResourceRectangleInfo().setVisible(true);
 			figure.setBackgroundColor(COLOR_NORMAL);
 
 		}
 	}
 
-	public class ModifiedCustomResourceFigure extends CustomResourceFigure {
+	public class ModifiedCustomResourceFigure extends ResourceFigure  {
 
 		@Override
 		protected void fillShape(Graphics graphics) {
+
 			if (isDevice) {
 				super.fillShape(graphics);
 			}

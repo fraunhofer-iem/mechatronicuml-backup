@@ -5,9 +5,9 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.parsers.GeneralPlatformParser;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProgrammableLogicDeviceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.FrequencyUnit;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProgrammableLogicDeviceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5049;
 /** A customized LabelParser which parses the frequency and sets the values accordingly.
 *

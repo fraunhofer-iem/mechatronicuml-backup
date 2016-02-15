@@ -2,8 +2,12 @@ package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.part
 
 import java.util.Collection;
 import org.eclipse.draw2d.ConnectionAnchor;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -22,6 +26,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -160,14 +165,14 @@ public class ActuatorInstanceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure();
+		return primaryShape = new SimpleResourceFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure getPrimaryShape() {
-		return (de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure) primaryShape;
+	public SimpleResourceFigure getPrimaryShape() {
+		return (SimpleResourceFigure) primaryShape;
 	}
 
 	/**
@@ -186,7 +191,7 @@ public class ActuatorInstanceEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel4EditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
+					.setLabel(getPrimaryShape().getFigureResourceKindFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart) {
@@ -358,6 +363,172 @@ public class ActuatorInstanceEditPart extends AbstractBorderedShapeEditPart {
 		return getChildBySemanticHint(
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry.getType(
 						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	* @generated
+	*/
+	public class SimpleResourceFigure extends RectangleFigure {
+
+		/**
+		* @generated
+		*/
+		private WrappingLabel fFigureResourceNameFigure;
+		/**
+		* @generated
+		*/
+		private WrappingLabel fFigureResourceKindFigure;
+		/**
+		* @generated
+		*/
+		private WrappingLabel fFigureResourceCardinalityFigure;
+		/**
+			 * @generated
+			 */
+		private de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure fFigureCustomIconFigure;
+
+		/**
+		 * @generated
+		 */
+		private de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure myCustomIconFigure;
+
+		/**
+		 * @generated
+		 */
+		public SimpleResourceFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			RectangleFigure resourceContainerFigure0 = new RectangleFigure();
+
+			resourceContainerFigure0.setOutline(false);
+			resourceContainerFigure0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+
+			GridData constraintResourceContainerFigure0 = new GridData();
+			constraintResourceContainerFigure0.verticalAlignment = GridData.CENTER;
+			constraintResourceContainerFigure0.horizontalAlignment = GridData.BEGINNING;
+			constraintResourceContainerFigure0.horizontalIndent = 0;
+			constraintResourceContainerFigure0.horizontalSpan = 1;
+			constraintResourceContainerFigure0.verticalSpan = 1;
+			constraintResourceContainerFigure0.grabExcessHorizontalSpace = true;
+			constraintResourceContainerFigure0.grabExcessVerticalSpace = false;
+			this.add(resourceContainerFigure0, constraintResourceContainerFigure0);
+
+			resourceContainerFigure0.setLayoutManager(new StackLayout());
+
+			RectangleFigure simpleResourceNameRectangle1 = new RectangleFigure();
+
+			simpleResourceNameRectangle1.setFill(false);
+			simpleResourceNameRectangle1.setOutline(false);
+
+			resourceContainerFigure0.add(simpleResourceNameRectangle1);
+
+			GridLayout layoutSimpleResourceNameRectangle1 = new GridLayout();
+			layoutSimpleResourceNameRectangle1.numColumns = 3;
+			layoutSimpleResourceNameRectangle1.makeColumnsEqualWidth = false;
+			simpleResourceNameRectangle1.setLayoutManager(layoutSimpleResourceNameRectangle1);
+
+			fFigureResourceNameFigure = new WrappingLabel();
+
+			fFigureResourceNameFigure.setText("<...>");
+
+			GridData constraintFFigureResourceNameFigure = new GridData();
+			constraintFFigureResourceNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureResourceNameFigure.horizontalAlignment = GridData.END;
+			constraintFFigureResourceNameFigure.horizontalIndent = 0;
+			constraintFFigureResourceNameFigure.horizontalSpan = 1;
+			constraintFFigureResourceNameFigure.verticalSpan = 1;
+			constraintFFigureResourceNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureResourceNameFigure.grabExcessVerticalSpace = true;
+			simpleResourceNameRectangle1.add(fFigureResourceNameFigure, constraintFFigureResourceNameFigure);
+
+			fFigureResourceKindFigure = new WrappingLabel();
+
+			fFigureResourceKindFigure.setText("<...>");
+
+			GridData constraintFFigureResourceKindFigure = new GridData();
+			constraintFFigureResourceKindFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureResourceKindFigure.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureResourceKindFigure.horizontalIndent = 0;
+			constraintFFigureResourceKindFigure.horizontalSpan = 1;
+			constraintFFigureResourceKindFigure.verticalSpan = 1;
+			constraintFFigureResourceKindFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureResourceKindFigure.grabExcessVerticalSpace = true;
+			simpleResourceNameRectangle1.add(fFigureResourceKindFigure, constraintFFigureResourceKindFigure);
+
+			fFigureResourceCardinalityFigure = new WrappingLabel();
+
+			fFigureResourceCardinalityFigure.setText("<...>");
+
+			GridData constraintFFigureResourceCardinalityFigure = new GridData();
+			constraintFFigureResourceCardinalityFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureResourceCardinalityFigure.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureResourceCardinalityFigure.horizontalIndent = 0;
+			constraintFFigureResourceCardinalityFigure.horizontalSpan = 1;
+			constraintFFigureResourceCardinalityFigure.verticalSpan = 1;
+			constraintFFigureResourceCardinalityFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureResourceCardinalityFigure.grabExcessVerticalSpace = true;
+			simpleResourceNameRectangle1.add(fFigureResourceCardinalityFigure,
+					constraintFFigureResourceCardinalityFigure);
+
+			RectangleFigure simpleResourceIconRectangle1 = new RectangleFigure();
+
+			simpleResourceIconRectangle1.setFill(false);
+			simpleResourceIconRectangle1.setOutline(false);
+
+			resourceContainerFigure0.add(simpleResourceIconRectangle1);
+
+			GridLayout layoutSimpleResourceIconRectangle1 = new GridLayout();
+			layoutSimpleResourceIconRectangle1.numColumns = 1;
+			layoutSimpleResourceIconRectangle1.makeColumnsEqualWidth = false;
+			simpleResourceIconRectangle1.setLayoutManager(layoutSimpleResourceIconRectangle1);
+
+			myCustomIconFigure = new de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure();
+
+			simpleResourceIconRectangle1.add(myCustomIconFigure);
+
+		}
+
+		/**
+		* @generated
+		*/
+		public WrappingLabel getFigureResourceNameFigure() {
+			return fFigureResourceNameFigure;
+		}
+
+		/**
+		* @generated
+		*/
+		public WrappingLabel getFigureResourceKindFigure() {
+			return fFigureResourceKindFigure;
+		}
+
+		/**
+		* @generated
+		*/
+		public WrappingLabel getFigureResourceCardinalityFigure() {
+			return fFigureResourceCardinalityFigure;
+		}
+
+		/**
+			 * @generated
+			 */
+		public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure getFigureCustomIconFigure() {
+			return myCustomIconFigure;
+		}
+
 	}
 
 }

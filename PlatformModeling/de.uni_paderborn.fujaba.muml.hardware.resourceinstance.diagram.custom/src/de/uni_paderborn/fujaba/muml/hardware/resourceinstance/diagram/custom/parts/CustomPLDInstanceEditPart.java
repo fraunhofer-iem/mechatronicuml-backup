@@ -6,19 +6,10 @@ import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ComputingResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency;
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
-import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 public class CustomPLDInstanceEditPart extends ProgrammableLogicDeviceInstanceEditPart{
 

@@ -668,6 +668,9 @@ public class HWPortLabelEditPart extends LabelEditPart implements ITextAwareEdit
 		 */
 		public HWPortLabelFigure() {
 			this.setText("<...>");
+			this.setTextUnderline(true);
+			this.setTextWrap(true);
+
 		}
 
 	}

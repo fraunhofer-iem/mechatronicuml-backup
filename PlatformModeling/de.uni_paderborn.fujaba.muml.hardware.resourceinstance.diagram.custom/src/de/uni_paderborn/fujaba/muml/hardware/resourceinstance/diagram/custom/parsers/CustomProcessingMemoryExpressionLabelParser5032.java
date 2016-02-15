@@ -5,9 +5,9 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.parsers.GeneralPlatformParser;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessingMemoryInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSizeUnit;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessingMemoryInstance;
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.ProcessingMemoryInstanceLabelExpressionLabelParser5058;
 
 /**

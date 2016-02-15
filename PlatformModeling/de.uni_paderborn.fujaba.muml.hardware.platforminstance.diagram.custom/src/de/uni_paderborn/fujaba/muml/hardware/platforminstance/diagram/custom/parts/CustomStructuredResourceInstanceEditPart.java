@@ -6,8 +6,6 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
 
@@ -27,15 +25,15 @@ public class CustomStructuredResourceInstanceEditPart extends
 	
 	@Override
 	protected IFigure createNodeShape() {
-		 primaryShape = new CustomResourceFigure();
-		 ((CustomResourceFigure) primaryShape).getFigureResourceNameFigure().setTextUnderline(true);
-		 ((CustomResourceFigure) primaryShape).getFigureResourceKindFigure().setTextUnderline(true);
+		 primaryShape = new CustomStructuredResourceFigure();
+		 ((CustomStructuredResourceFigure) primaryShape).getFigureResourceNameFigure().setTextUnderline(true);
+		 ((CustomStructuredResourceFigure) primaryShape).getFigureResourceKindFigure().setTextUnderline(true);
 		return primaryShape;
 	} 
 	
 
 	
-	public class CustomStructuredResourceFigure extends CustomResourceFigure{
+	public class CustomStructuredResourceFigure extends ResourceFigure{
 		@Override
 		protected void fillShape(Graphics graphics) {
 			Color bgColor = graphics.getBackgroundColor();
@@ -48,5 +46,6 @@ public class CustomStructuredResourceInstanceEditPart extends
 			graphics.setBackgroundColor(bgColor);
 			graphics.setForegroundColor(fgColor);
 		}
+
 	}
 }

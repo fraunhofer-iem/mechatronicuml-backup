@@ -6,9 +6,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
-import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.parts.CustomHWPlatformInstanceEditPart.CustomHWPlatformFigure;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart;
-import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.HWPlatform;
 
 public class CustomHWPlatformInstance2EditPart extends
 		HWPlatformInstance2EditPart {

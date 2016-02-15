@@ -1,18 +1,24 @@
 package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Shape;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.ICustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Device;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
@@ -29,9 +35,10 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
  */
 public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 
-	static final Font BOLD_FONT = new Font(Display.getCurrent(), Display
-			.getDefault().getSystemFont().getFontData()[0].getName(), 9,
-			SWT.BOLD);
+	static final Font BOLD_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
+
+	public static final Color COLOR_DEVICE = new Color(null, 230, 230, 230);
 
 	@Override
 	public void activate() {
@@ -44,12 +51,25 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 		return ((AbstractGraphicalEditPart) getHost()).getContentPane();
 	}
 
-	public ICustomResourceFigure getResourceFigure() {
-		return (ICustomResourceFigure) getContentPane();
-	}
-
 	public CustomIconFigure getIconFigure() {
-		return getResourceFigure().getFigureCustomIconFigure();
+		try {
+			Method method = getContentPane().getClass().getMethod("getFigureCustomIconFigure");
+
+			return (CustomIconFigure) method.invoke(getContentPane());
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
@@ -64,37 +84,31 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 		Boolean isResourceInstance = isResourceInstance();
 
 		if (element != null) {
-			if (HwresourcePackage.Literals.STRUCTURED_RESOURCE
-					.isSuperTypeOf(element.eClass())) {
+			if (HwresourcePackage.Literals.STRUCTURED_RESOURCE.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.STRUCTURED;
 			}
-			if (HwresourcePackage.Literals.DEVICE.isSuperTypeOf(element
-					.eClass())) {
+			if (HwresourcePackage.Literals.DEVICE.isSuperTypeOf(element.eClass())) {
 				if (((Device) element).getDeviceKind() == DeviceKind.SENSOR) {
 					kind = ResourceType.SENSOR;
 				} else {
 					kind = ResourceType.ACTUATOR;
 				}
-				getResourceFigure().isDevice(true);
+				isDevice(true);
 			}
-			if (HwresourcePackage.Literals.PROCESSOR.isSuperTypeOf(element
-					.eClass())) {
+			if (HwresourcePackage.Literals.PROCESSOR.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.PROCESSOR;
 			}
-			if (HwresourcePackage.Literals.PROGRAMMABLE_LOGIC_DEVICE
-					.isSuperTypeOf(element.eClass())) {
+			if (HwresourcePackage.Literals.PROGRAMMABLE_LOGIC_DEVICE.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.PLD;
 			}
-			if (HwresourcePackage.Literals.MEMORY_RESOURCE
-					.isSuperTypeOf(element.eClass())) {
+			if (HwresourcePackage.Literals.MEMORY_RESOURCE.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.MEMORY;
 			}
-			if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE
-					.isSuperTypeOf(element.eClass())) {
+			if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.COMMUNICATION;
 			}
 			getIconFigure().setIcon(kind);
-			getResourceFigure().isResourceInstance(isResourceInstance);
+			isResourceInstance(isResourceInstance);
 		}
 
 	}
@@ -118,10 +132,9 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 	}
 
 	protected void setFont() {
-		getResourceFigure().getFigureResourceNameFigure().setFont(BOLD_FONT);
-		getResourceFigure().getFigureResourceKindFigure().setFont(BOLD_FONT);
-		getResourceFigure().getFigureResourceCardinalityFigure().setFont(
-				BOLD_FONT);
+		getFigureResourceNameFigure().setFont(BOLD_FONT);
+		getFigureResourceKindFigure().setFont(BOLD_FONT);
+		getFigureResourceCardinalityFigure().setFont(BOLD_FONT);
 	}
 
 	/**
@@ -138,6 +151,89 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 			refreshIcon();
 		}
 		super.handleNotificationEvent(notification);
+	}
+
+	public WrappingLabel getFigureResourceCardinalityFigure() {
+		try {
+			Method method = getContentPane().getClass().getMethod("getFigureResourceCardinalityFigure");
+
+			return (WrappingLabel) method.invoke(getContentPane());
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+
+	public WrappingLabel getFigureResourceKindFigure() {
+
+		try {
+			Method method = getContentPane().getClass().getMethod("getFigureResourceKindFigure");
+
+			return (WrappingLabel) method.invoke(getContentPane());
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+
+	public WrappingLabel getFigureResourceNameFigure() {
+		try {
+			Method method = getContentPane().getClass().getMethod("getFigureResourceNameFigure");
+
+			return (WrappingLabel) method.invoke(getContentPane());
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+
+	public void isResourceInstance(Boolean isInstance) {
+		getFigureResourceNameFigure().setTextUnderline(isInstance);
+		getFigureResourceKindFigure().setTextUnderline(isInstance);
+	}
+
+	public void isDevice(Boolean isDevice) {
+		if (isDevice) {
+			getContentPane().setBackgroundColor(COLOR_DEVICE);
+			((Shape) getContentPane()).setFill(true);
+
+		} else {
+			getContentPane().setBackgroundColor(ColorConstants.white);
+		}
+
 	}
 
 }

@@ -15,7 +15,7 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
         <features
             href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         <editableFeatures
@@ -24,7 +24,7 @@
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceKindLabel"/>
         <viewExpression
             body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       </labelMappings>
@@ -32,7 +32,7 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceCardinalityLabel"/>
         <viewExpression
             body="' '"/>
       </labelMappings>
@@ -57,7 +57,7 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
         <features
             href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
         <editableFeatures
@@ -66,14 +66,14 @@
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceKindLabel"/>
         <viewExpression
             body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceCardinalityLabel"/>
         <viewExpression
             body="' '"/>
       </labelMappings>

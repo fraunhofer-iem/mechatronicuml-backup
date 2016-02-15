@@ -13,7 +13,6 @@ import de.uni_paderborn.fujaba.muml.hardware.common.refactor.AbstractHierarchica
 import de.uni_paderborn.fujaba.muml.hardware.common.refactor.DiagramPartitioningUtil;
 import de.uni_paderborn.fujaba.muml.hardware.common.refactor.GMFNotationUtil;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 
 public class HWPlatformInstaceDecorator extends
 		AbstractHierarchicalElementDecorator<HWPlatformInstance> {
