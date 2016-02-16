@@ -9,7 +9,9 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.ErrorDialog;
@@ -123,10 +125,11 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 						transformationKind,
 						false);	
 		
-
+		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);
-
+		
+		
 		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);
 		}
@@ -134,6 +137,10 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
+		
+		Command deleteCommand = DeleteCommand.create(editingDomain, rtsc);
+		if(deleteCommand.canExecute())
+			editingDomain.getCommandStack().execute(deleteCommand);
 	}
 
 }
