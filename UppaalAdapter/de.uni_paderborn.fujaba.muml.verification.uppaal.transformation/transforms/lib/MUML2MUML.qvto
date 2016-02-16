@@ -1191,12 +1191,13 @@ helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
 	var eContainer : EObject := self.eContainer();
 	if(eContainer.oclIsTypeOf(TimeValue)) {
 		return true;
-	}elif(eContainer.oclIsTypeOf(core::expressions::Expression)) {
+	}else if(eContainer.oclIsKindOf(core::expressions::Expression) and not eContainer.oclIsUndefined()) {
 		return eContainer.oclAsType(core::expressions::Expression).isNestedInOtherTimeValue();
 	} 
 	else {
 		return false;
-	}				
+	}
+	endif;			
 }
 
 mapping muml::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : muml::protocol::AbstractCoordinationSpecification disjuncts muml::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol;
