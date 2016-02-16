@@ -383,6 +383,7 @@ public class CommunicationResource2EditPart extends ShapeNodeEditPart {
 
 			RectangleFigure resourceContainerFigure0 = new RectangleFigure();
 
+			resourceContainerFigure0.setFill(false);
 			resourceContainerFigure0.setOutline(false);
 			resourceContainerFigure0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));

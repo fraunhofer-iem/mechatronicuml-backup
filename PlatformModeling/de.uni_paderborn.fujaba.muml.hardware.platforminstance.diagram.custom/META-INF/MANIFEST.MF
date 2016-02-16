@@ -10,7 +10,8 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram;b
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
  de.uni_paderborn.fujaba.muml.hardware.common,
  org.eclipse.gmf.runtime.diagram.ui.properties,
- de.uni_paderborn.fujaba.muml.hardware
+ de.uni_paderborn.fujaba.muml.hardware,
+ org.eclipse.gmf.runtime.diagram.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.part.Activator
 Export-Package: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wizard

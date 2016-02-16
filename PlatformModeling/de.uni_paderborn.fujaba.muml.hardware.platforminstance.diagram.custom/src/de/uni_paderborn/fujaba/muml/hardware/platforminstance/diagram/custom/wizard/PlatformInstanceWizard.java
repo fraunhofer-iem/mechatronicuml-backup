@@ -10,6 +10,10 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
@@ -21,6 +25,8 @@ import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PlatformUI;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
@@ -137,6 +143,18 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 					modelExtents, context);
 
 			editingDomain.getCommandStack().execute(cmd);
+			
+			IWorkbenchPart work = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+					.getActivePart();
+			if (work instanceof IDiagramWorkbenchPart) {
+
+				EditPart rootEditPart = ((IDiagramWorkbenchPart) work).getDiagramEditPart();
+				CanonicalEditPolicy policy = (CanonicalEditPolicy) rootEditPart
+						.getEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
+				policy.refresh();
+
+			}
+			
 		}
 	}
 
