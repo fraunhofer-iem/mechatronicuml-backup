@@ -257,7 +257,8 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}		
 		var resultingElement : AsynchronousMessageEvent := result.oclAsType(AsynchronousMessageEvent);
 		resultingElement.message := self.message.map transform().oclAsType(Message);
-		resultingElement.kind := self.kind;		
+		resultingElement.kind := self.kind;
+				
 	}
 	
 	mapping muml::realtimestatechart::AsynchronousMessageEvent :: transform(container : OclAny) : EObject {
@@ -268,6 +269,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		resultingElement.message := self.message.map transform().oclAsType(Message);
 		resultingElement.kind := self.kind;		
 	}
+	
 	
 	mapping muml::realtimestatechart::Message :: transform() : EObject {
 		init {
@@ -285,3 +287,19 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 			setValues(result, f, getValues(element, f));
 		};	
 	}
+	
+	mapping muml::behavior::ParameterBinding :: transform() : EObject {
+		init {
+			result := self.map create();
+		}
+		
+		var resultingElement : ParameterBinding := result.oclAsType(ParameterBinding);
+		resultingElement.parameter := self.parameter;
+		resultingElement.value := self.value.map transform().oclAsType(Expression);
+		resultingElement.annotation := self._annotation.map transform().oclAsType(EAnnotation);
+		resultingElement._extension := self._extension.map transform().oclAsType(Extension);		
+	}
+	
+	
+	
+	
