@@ -65,6 +65,10 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 			}
 		}
 		
+		if(getExtension().equalsIgnoreCase("muml")){
+			validFile=true;
+		}
+		
 		if (!validFile) {
 			MessageDialog.open(MessageDialog.ERROR, shell, "File Selection Error", "Please select a *.muml file to create a diagram.", 0);
 			return null;
