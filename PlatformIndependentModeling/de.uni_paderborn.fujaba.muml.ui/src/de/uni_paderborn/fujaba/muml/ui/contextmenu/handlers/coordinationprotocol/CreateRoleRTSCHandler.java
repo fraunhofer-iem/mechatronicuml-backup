@@ -115,7 +115,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 			ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 
 			try {
-				dialog.run(true, false, new IRunnableWithProgress() {
+				dialog.run(false, false, new IRunnableWithProgress() {
 
 					@Override
 					public void run(IProgressMonitor monitor)
