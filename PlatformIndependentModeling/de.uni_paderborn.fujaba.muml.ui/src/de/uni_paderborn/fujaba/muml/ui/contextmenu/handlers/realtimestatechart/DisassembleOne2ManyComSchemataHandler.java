@@ -10,7 +10,11 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -27,6 +31,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.instance.util.InstanceValidator;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.ui.Activator;
@@ -80,6 +85,35 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 			editingDomain = AdapterFactoryEditingDomain
 					.getEditingDomainFor(objects.get(0));
 			for (RealtimeStatechart rtsc : objects) {
+				
+				if(!rtsc.isUsesOneToManyCommunicationSchemata()) {
+					ErrorDialog dialog = new ErrorDialog(
+							window.getShell(),
+							"ERROR when disassembling the RTSC",
+							null,
+							new org.eclipse.core.runtime.Status(IStatus.ERROR,
+									Activator.ID,
+									"You cannot disassemble a RTSC that does not use Schemata!"),
+							IStatus.ERROR);
+					dialog.open();
+					return null;
+					
+				}
+				Diagnostic diagnostic = Diagnostician.INSTANCE.validate(rtsc);
+				IStatus status = BasicDiagnostic.toIStatus(diagnostic);
+				if(!status.isOK()){					
+					ErrorDialog dialog = new ErrorDialog(
+							window.getShell(),
+							"ERROR when disassembling the RTSC",
+							null,
+							new org.eclipse.core.runtime.Status(IStatus.ERROR,
+									Activator.ID,
+									"The disassembling RTSC has validation errors!"),
+							IStatus.ERROR);
+					dialog.open();
+					return null;
+				}
+				
 				disassembleOne2ManyComSchemata(rtsc, window.getShell(),
 						editingDomain);
 			}
