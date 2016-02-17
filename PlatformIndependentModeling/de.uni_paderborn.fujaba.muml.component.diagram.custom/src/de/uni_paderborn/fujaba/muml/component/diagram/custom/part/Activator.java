@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.part;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
@@ -16,6 +18,7 @@ import org.osgi.framework.BundleContext;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 
 public class Activator extends AbstractUIPlugin {
@@ -93,7 +96,7 @@ public class Activator extends AbstractUIPlugin {
 				}
 	}
 	
-	public static void updateCoordinationProtocolParts(EditingDomain editingDomain, StructuredComponent component) {
+	public static void updateCoordinationProtocolParts(final EditingDomain editingDomain, final StructuredComponent component) {
 		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { component }));
 		
 		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
@@ -104,7 +107,18 @@ public class Activator extends AbstractUIPlugin {
 		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor,
-				modelExtents);
+				modelExtents) {
+			// Workaround for #1453
+			protected void doExecute() {
+				List<CoordinationProtocolPart> before = new ArrayList<CoordinationProtocolPart>(component.getCoordinationProtocolParts());
+				super.doExecute();
+				List<CoordinationProtocolPart> after = new ArrayList<CoordinationProtocolPart>(component.getCoordinationProtocolParts());
+				
+				// execute DeleteCommand on removed parts
+				before.removeAll(after);
+				DeleteCommand.create(editingDomain, before).execute();
+			}
+		};
 		if(command.canExecute()){
 			editingDomain.getCommandStack().execute(command);
 		}
