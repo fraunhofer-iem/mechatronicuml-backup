@@ -212,8 +212,8 @@ query ComponentInstanceConfiguration::createConnectors(parentStructuredComponent
 				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
 				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
 				if (endpoint1 != endpoint2)  {
-					var endpoint1Instances : Set(PortInstance) := endpoint1.resolve()->oclAsSet()[PortInstance];
-					var endpoint2Instances : Set(PortInstance) := endpoint2.resolve()->oclAsSet()[PortInstance];
+					var endpoint1Instances : Sequence(PortInstance) := endpoint1.resolve().oclAsSet()[PortInstance];
+					var endpoint2Instances : Sequence(PortInstance) := endpoint2.resolve().oclAsSet()[PortInstance];
 					endpoint1Instances->forEach(endPointInstance1){
 						endpoint2Instances->forEach(endPointInstance2) {						
 							// first check if the connector instances already exist:
@@ -266,7 +266,7 @@ query ComponentInstanceConfiguration::createConnectors(parentStructuredComponent
 													 sumOfLowerBounds := sumOfLowerBounds + otherEndpoint.resolve()->oclAsSet()[ConnectorEndpointInstance]->size();
 												};
 												// sum must be lower or equal than the lower bound of the multiport
-												if(sumOfLowerBounds <= multiPort.portType.oclAsType(DiscretePort).cardinality.lowerBound.value) {
+												if(sumOfLowerBounds <= multiPort.portType.oclAsType(DiscretePort).cardinality.upperBound.value) {
 													newConnectors += portConnector->map mapConnectorInstance(Set { endPointInstance1, endPointInstance2 })[PortConnectorInstance];
 												}
 											}	
