@@ -261,7 +261,7 @@ end [state.getComplexStateModelName() /];
 */]
 [template public generateEntryActions(rtsc : RealtimeStatechart) {
 	stateSet : Set(State) = rtsc.allSubstatecharts()->prepend(rtsc)->collect(
-		states->select(not entryEvent.oclIsUndefined() and not entryEvent.action.oclIsUndefined())
+		states->select(s : State | not s.entryEvent.oclIsUndefined() and not s.entryEvent.action.oclIsUndefined() and s.checkValidEntryExitDoEventAction(s.entryEvent.action.expressions->at(1)))
 	)->asOrderedSet();
 }]
 	// state entry actions
@@ -287,7 +287,7 @@ end [state.getComplexStateModelName() /];
 	// state exit actions
 [for (level : OrderedSet(RealtimeStatechart) | rtscSet)]
 [for (r : RealtimeStatechart | level)]
-[for (state : realtimestatechart::State | r.states->select(not exitEvent.oclIsUndefined() and not exitEvent.action.oclIsUndefined()))]
+[for (state : realtimestatechart::State | r.states->select(s : State | not s.exitEvent.oclIsUndefined() and not s.exitEvent.action.oclIsUndefined() and s.checkValidEntryExitDoEventAction(s.exitEvent.action.expressions->at(1))))]
 	[comment use ExitMarker.y here/]
 	when not [state.getFullyQualifiedName() /].active and pre([state.getFullyQualifiedName() /].active) then
 		[generateExpression(state.exitEvent.action.expressions->at(1), false, r.getFullyQualifiedName() ) /]
@@ -320,7 +320,7 @@ end [state.getComplexStateModelName() /];
 	rtscSet : OrderedSet(RealtimeStatechart) = rtsc.allSubstatecharts()->append(rtsc);
 }]
 	// do event actions
-[for (state : realtimestatechart::State | rtscSet->collect(states)->select(not doEvent.oclIsUndefined()))]
+[for (state : realtimestatechart::State | rtscSet->collect(states)->select(s : State | not s.doEvent.oclIsUndefined() and not s.doEvent.action.oclIsUndefined() and s.checkValidEntryExitDoEventAction(s.doEvent.action.expressions->at(1))))]
 	[let doEvent : DoEvent = state.doEvent]
 	when [state.getFullyQualifiedName()/].active then
 		[doEvent.getVariableName(rtsc)/] := time;

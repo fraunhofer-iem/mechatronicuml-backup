@@ -188,3 +188,34 @@
 [query public isEnterable(rtsc : RealtimeStatechart) : Boolean =
 	rtsc.embedded and rtsc.parentRegion.parentState.getEntryPoints()->notEmpty()
 /]
+
+[query public allSubExpressions(expression : Expression) : Set(Expression) =
+	expression.oclAsType(OclAny)->asSet()->closure(expr : OclAny |
+		expression.eAllContents()
+	)->select(
+		oclIsKindOf(Expression)
+	)->collect(
+		oclAsType(Expression)
+	)->asSet()
+	->union(Set{expression}) -- XXX: union necessary?
+/]
+
+[**
+ * Checks if the expression used in a doevent, entry, exit, or transition action
+ * only uses operation calls that refer to operations that are defined in
+ * a component rtsc.
+ * @param expression the expression to be checked
+*/]
+[query public validDoEventEntryExitTransitionAction(expression : Expression) : Boolean =
+	expression.allSubExpressions()->select(
+		oclIsKindOf(OperationCall)
+	)->collect(
+		oclAsType(OperationCall)
+	)->forAll(oc : OperationCall |
+		let container : OclAny = oc.operation.eContainer()
+		in
+		container.oclIsKindOf(RealtimeStatechart) and
+		container.oclAsType(RealtimeStatechart).operations->includes(oc.operation) and
+		container.oclAsType(RealtimeStatechart).isComponentRTSC()
+	)	
+/]

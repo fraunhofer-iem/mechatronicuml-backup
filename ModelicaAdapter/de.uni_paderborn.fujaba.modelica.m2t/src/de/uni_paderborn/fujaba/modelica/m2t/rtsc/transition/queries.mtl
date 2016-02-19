@@ -11,6 +11,7 @@
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::annotation]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::reporter]
 
 [**
  * Creates an annotation for a transition declaration
@@ -214,5 +215,46 @@
 	else
 		transition.source.outgoingTransitions->size() - transition.priority + 1
 	endif
+	endif
+/]
+
+[**
+ * Reports an error in case of an unsupported transition action.
+ * @param transition the transition
+ * @param expression the transition action expression
+ */]
+[query public checkValidTransitionAction(transition : Transition, expression : Expression) : Boolean =
+	if not expression.validDoEventEntryExitTransitionAction() then
+		(transition.getFullyQualifiedName() + ': only component rtsc operations are supported in a transition action')
+			->asSequence()->displayErrors()._not()
+	else
+		true
+	endif
+/]
+
+[**
+ * Reports an error in case of an unsupported transition guard.
+ * @param transition the transition
+ * @param expression the transition's guard expression
+ */]
+[query public checkValidTransitionGuard(transition : Transition, expression : Expression) : Boolean =
+	let valid : Boolean
+	=
+	expression.allSubExpressions()->select(
+		oclIsKindOf(OperationCall)
+	)->collect(
+		oclAsType(OperationCall)
+	)->forAll(oc : OperationCall |
+		let container : OclAny = oc.operation.eContainer()
+		in
+		container.oclIsKindOf(RealtimeStatechart) and
+		container.oclAsType(RealtimeStatechart).operations->includes(oc.operation)
+	)
+	in
+	if not valid then
+		(transition.getFullyQualifiedName() + ': only operations of the transition\'s parent rtsc are supported in a transition action')
+			->asSequence()->displayErrors()._not()
+	else
+		true
 	endif
 /]

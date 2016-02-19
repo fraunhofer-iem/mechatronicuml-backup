@@ -11,6 +11,7 @@
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::annotation]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::reporter]
 
 [**
  * Creates an annotation for a state declaration
@@ -173,4 +174,18 @@
 [query public hasClockResets(state : State) : Boolean =
 	not state.entryEvent.oclIsUndefined() and state.entryEvent.clockResets->notEmpty()
 	or not state.exitEvent.oclIsUndefined() and state.exitEvent.clockResets->notEmpty()
+/]
+
+[**
+ * Reports an error in case of an unsupported entry, exit, doevent action
+ * @param state the state
+ * @param expression the expression
+ */]
+[query public checkValidEntryExitDoEventAction(state : State, expression : Expression) : Boolean =
+	if not expression.validDoEventEntryExitTransitionAction() then
+		(state.getFullyQualifiedName() + ': only component rtsc operations are supported in an entry, exit, or doevent action')
+			->asSequence()->displayErrors()._not()
+	else
+		true
+	endif
 /]

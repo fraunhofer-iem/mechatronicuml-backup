@@ -224,7 +224,7 @@
 	// transition actions
 [for (level : OrderedSet(RealtimeStatechart) | rtscSet)]
 [for (r : RealtimeStatechart | level)]
-[for (transition : Transition | r.transitions->select(not action.oclIsUndefined() and action.expressions->notEmpty())->sortedBy(priority))]
+[for (transition : Transition | r.transitions->select(t : Transition | not t.action.oclIsUndefined() and t.action.expressions->notEmpty() and t.checkValidTransitionAction(t.action.expressions->at(1)))->sortedBy(priority))]
 	[comment generate first expression for now /]
 	when pre([transition.getFullyQualifiedName() /].fire) then
 		[generateExpression(transition.action.expressions->at(1), false, r.getFullyQualifiedName()) /]
