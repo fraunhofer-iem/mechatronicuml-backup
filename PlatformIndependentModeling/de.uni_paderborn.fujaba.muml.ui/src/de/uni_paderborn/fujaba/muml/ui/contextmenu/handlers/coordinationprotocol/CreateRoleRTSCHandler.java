@@ -1,9 +1,11 @@
 package de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.coordinationprotocol;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -93,7 +95,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 
 		/**
 		 * Create the Role RTSC Diagram
-		 */ 
+		 */
 		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 
 		try {
@@ -108,6 +110,13 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 							+ role.getName();
 					Diagnostic diagnostic = createRoleRTSCTransformation(editingDomain, role);
 					if (diagnostic.getCode() == Diagnostic.OK) {
+						//fix for #1407
+						try {
+							resource.save(Collections.EMPTY_MAP);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						Collection<EObject> elements = new ArrayList<EObject>();
 						elements.add(role.getBehavior());
 						BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
@@ -143,10 +152,6 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 
 		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);
-		}
-
-		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
-			editingDomain.getCommandStack().undo();
 		}
 		return command.getDiagnostic();
 

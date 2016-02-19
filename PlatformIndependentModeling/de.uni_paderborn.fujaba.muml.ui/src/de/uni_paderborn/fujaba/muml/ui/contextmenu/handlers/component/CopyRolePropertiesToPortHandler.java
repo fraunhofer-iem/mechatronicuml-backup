@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -102,39 +103,27 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 						editingDomain);
 			}
 		}
-		// if no RTSC for the Component have been created call the
-		// transformation to create the ComponentRTSC
-		// call the transformation
-		executeCopyRoleTransformation(editingDomain, atomicComponent, null, false);
-		/**
-		 * Create the Component RTSC Diagram
-		 */
-
-		createComponentRTSCDiagram(atomicComponent, shell);
-		String finalReportMessage = "A new RTSC has been created for the Component:" //$NON-NLS-1$
-				+ atomicComponent.getName() + "."; //$NON-NLS-1$
-
-		MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
-				finalReportMessage);
 
 	}
 
 	public static void copyRolePropertiesToPort(final AtomicComponent atomicComponent, final DiscretePort port,
 			final Shell shell, final EditingDomain editingDomain) {
 
-		boolean isComponentRTSCCreated = false;
+		boolean createComponentRTSC = false;
 		boolean shallPortRTSCbeReplaced = false;
-		String finalReportMessage = ""; //$NON-NLS-1$
-
 		boolean hadReceiverMessageBuffer = !port.getReceiverMessageBuffer().isEmpty();
 		Role role = port.getRefinedRole();
 
 		// check whether role and all necessary behavior references are set
 		if (role == null) {
-			finalReportMessage = "Refined Role must be set for this Port, to copy the Role properties."; //$NON-NLS-1$
+			MessageDialog.openInformation(shell, "Transformation Report",
+					"Refined Role must be set for this Port, to copy the Role properties.");
+			return;
 		} else if (role.getCardinality() != null && role.getCardinality().getUpperBound().getValue() > 1
 				&& role.getCoordinatorBehavior() == null && role.getSubroleBehavior() == null) {
-			finalReportMessage = "The multi role needs to specify a \"SubroleBehavior\" and a \"AdaptationBehavior\"."; //$NON-NLS-1$
+			MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
+					"The multi role needs to specify a \"SubroleBehavior\" and a \"AdaptationBehavior\".");
+			return;
 		}
 
 		else if (FujabaCommonPlugin.showValidationResults(Collections.singletonList(role),
@@ -164,38 +153,79 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 			// create component RTSC if we have a port of an atomic component
 			// that has no behavior yet
 			if (atomicComponent != null && atomicComponent.getBehavior() == null) {
-				isComponentRTSCCreated = true;
+				createComponentRTSC = true;
 
 			}
 
-			// call the transformation
-			Diagnostic diagnostic = executeCopyRoleTransformation(editingDomain, atomicComponent, port,
-					shallPortRTSCbeReplaced);
-			if (diagnostic.getCode() == Diagnostic.OK) {
-				if (hadReceiverMessageBuffer) {
-					finalReportMessage += "Role properties have been successfully copied to the Port. Existing MessageBuffer specification was overwritten."; //$NON-NLS-1$
-
-				} else {
-					finalReportMessage += "Role properties have been successfully copied to the Port.";
-				}
-
-				/**
-				 * Create the Component RTSC Diagram
-				 */
-				if (isComponentRTSCCreated) {
-					createComponentRTSCDiagram(atomicComponent, shell);
-					finalReportMessage += "\n" //$NON-NLS-1$
-							+ "A new RTSC has been created for the Component:" //$NON-NLS-1$
-							+ atomicComponent.getName() + "."; //$NON-NLS-1$
-
-				}
-			} else {
-				finalReportMessage += "The QVTo Transformation failed with message \n" + diagnostic.getMessage();
-			}
-
+			// execute the transformation
+			createComponentRTSCDiagram(atomicComponent, shell, editingDomain, port, shallPortRTSCbeReplaced,
+					createComponentRTSC, hadReceiverMessageBuffer);
 		}
-		MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
-				finalReportMessage);
+
+	}
+
+	private static void createComponentRTSCDiagram(final AtomicComponent atomicComponent, final Shell shell,
+			final EditingDomain editingDomain, final DiscretePort port, final boolean replacePortRTSC,
+			final boolean createComponentRTSC, final boolean hadReceiverMessageBuffer) {
+		IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+		final Resource resource = atomicComponent.eResource();
+		final IFile file = workspaceRoot.getFile(new Path(resource.getURI().toPlatformString(true)));
+		final Collection<EObject> elements = new ArrayList<EObject>();
+		elements.add(atomicComponent.getBehavior());
+		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
+		try {
+			dialog.run(true, false, new IRunnableWithProgress() {
+
+				@Override
+				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+					String finalReportMessage = ""; //$NON-NLS-1$
+					Diagnostic diagnostic = executeCopyRoleTransformation(editingDomain, atomicComponent, port,
+							replacePortRTSC);
+					if (diagnostic.getCode() == Diagnostic.OK) {
+						if (hadReceiverMessageBuffer) {
+							finalReportMessage += "Role properties have been successfully copied to the Port. Existing MessageBuffer specification was overwritten."; //$NON-NLS-1$
+
+						} else {
+							finalReportMessage += "Role properties have been successfully copied to the Port.";
+						}
+						
+						//fix for #1407
+						try {
+							resource.save(Collections.EMPTY_MAP);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+						/**
+						 * Create the Component RTSC Diagram
+						 */
+
+						if (createComponentRTSC) {
+							BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
+							IStructuredSelection selection = new StructuredSelection(file);
+
+							wizard.init(null, selection);
+							wizard.createDiagrams(elements, monitor);
+							finalReportMessage += "\n" //$NON-NLS-1$
+									+ "A new RTSC has been created for the Component:" //$NON-NLS-1$
+									+ atomicComponent.getName() + "."; //$NON-NLS-1$
+						}
+
+					} else {
+						finalReportMessage += "The QVTo Transformation failed with message \n"
+								+ diagnostic.getMessage();
+					}
+
+					MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
+							finalReportMessage);
+				}
+			});
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -205,9 +235,9 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 		if (port != null && atomicComponent != null) {
 			inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { atomicComponent, port }));
 
-		} else {
+		} 
+		else {
 			inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { atomicComponent }));
-
 		}
 		ModelExtent outputExtent = new BasicModelExtent();
 
@@ -224,41 +254,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 			editingDomain.getCommandStack().execute(command);
 		}
 
-		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
-			editingDomain.getCommandStack().undo();
-		}
 		return command.getDiagnostic();
-	}
-
-	private static void createComponentRTSCDiagram(AtomicComponent atomicComponent, Shell shell) {
-		IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-		final Resource resource = atomicComponent.eResource();
-		final IFile file = workspaceRoot.getFile(new Path(resource.getURI().toPlatformString(true)));
-		final Collection<EObject> elements = new ArrayList<EObject>();
-		elements.add(atomicComponent.getBehavior());
-		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
-		try {
-			dialog.run(true, false, new IRunnableWithProgress() {
-
-				@Override
-				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-
-					BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
-					IStructuredSelection selection = new StructuredSelection(file);
-
-					wizard.init(null, selection);
-					wizard.createDiagrams(elements, monitor);
-
-				}
-			});
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 	}
 
 }
