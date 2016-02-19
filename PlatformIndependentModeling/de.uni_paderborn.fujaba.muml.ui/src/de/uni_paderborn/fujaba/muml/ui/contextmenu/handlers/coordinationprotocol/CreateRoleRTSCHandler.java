@@ -40,11 +40,9 @@ import de.uni_paderborn.fujaba.muml.ui.Activator;
 
 public class CreateRoleRTSCHandler extends AbstractHandler {
 
-
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbenchWindow window = HandlerUtil
-				.getActiveWorkbenchWindowChecked(event);
+		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 
 		EditingDomain editingDomain;
 		// get and process current selection
@@ -53,8 +51,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		List<Role> objects = new ArrayList<Role>();
 
 		org.eclipse.emf.ecore.resource.Resource ecoreResource = null;
-		for (Object selectedElement : ((IStructuredSelection) selection)
-				.toArray()) {
+		for (Object selectedElement : ((IStructuredSelection) selection).toArray()) {
 			EObject object = null;
 			if (selectedElement instanceof IAdaptable) {
 				IAdaptable adaptable = (IAdaptable) selectedElement;
@@ -63,9 +60,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 			if (selectedElement instanceof EObject) {
 				object = (EObject) selectedElement;
 			}
-			if (object != null
-					&& ProtocolPackage.Literals.ROLE.isSuperTypeOf(object
-							.eClass())) {
+			if (object != null && ProtocolPackage.Literals.ROLE.isSuperTypeOf(object.eClass())) {
 				if (ecoreResource == null) {
 					ecoreResource = object.eResource();
 				} else if (ecoreResource != object.eResource()) {
@@ -76,8 +71,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		}
 
 		if (!objects.isEmpty()) {
-			editingDomain = AdapterFactoryEditingDomain
-					.getEditingDomainFor(objects.get(0));
+			editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(objects.get(0));
 			for (Role role : objects) {
 
 				createRoleRTSC(role, window.getShell(), editingDomain);
@@ -87,11 +81,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		return null;
 	}
 
-	public static void createRoleRTSC(final Role role, final Shell shell,
-			final EditingDomain editingDomain) {
-
-		String finalReportMessage = "Created the Role's RTSC \n Created the RTSC Diagram: " //$NON-NLS-1$
-				+ role.getName();
+	public static void createRoleRTSC(final Role role, final Shell shell, final EditingDomain editingDomain) {
 
 		final Resource resource = role.eResource();
 		if (role.getBehavior() != null) {
@@ -102,65 +92,52 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		}
 
 		/**
-		 * Run the Transformation
+		 * Create the Role RTSC Diagram
 		 */
-		Diagnostic diagnostic=createRoleRTSCTransformation(editingDomain, role);
-		
-		if(diagnostic.getCode()==Diagnostic.OK){
-			/**
-			 * Create the Role RTSC Diagram
-			 */
-			final Collection<EObject> elements = new ArrayList<EObject>();
-			elements.add(role.getBehavior());
-			ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
+		final Collection<EObject> elements = new ArrayList<EObject>();
+		elements.add(role.getBehavior());
+		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 
-			try {
-				dialog.run(false, false, new IRunnableWithProgress() {
+		try {
+			dialog.run(false, false, new IRunnableWithProgress() {
 
-					@Override
-					public void run(IProgressMonitor monitor)
-							throws InvocationTargetException, InterruptedException {
-
+				@Override
+				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+					/**
+					 * Run the Transformation
+					 */
+					String finalReportMessage = "Created the Role's RTSC \n Created the RTSC Diagram: " //$NON-NLS-1$
+							+ role.getName();
+					Diagnostic diagnostic = createRoleRTSCTransformation(editingDomain, role);
+					if (diagnostic.getCode() == Diagnostic.OK) {
 						BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
 						IFile file = getFile(resource);
-						IStructuredSelection selection = new StructuredSelection(
-								file);
+						IStructuredSelection selection = new StructuredSelection(file);
 
 						wizard.init(null, selection);
 						wizard.createDiagrams(elements, monitor);
-
+					} else {
+						finalReportMessage = "The QVTo Transformation failed with: \n" + diagnostic.getMessage();
 					}
-				});
-			} catch (InvocationTargetException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+					MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
+							finalReportMessage);
+				}
+			});
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
-		else{
-			finalReportMessage="The QVTo Transformation failed with: \n"+diagnostic.getMessage();
-		}
-		
-		
 
-		MessageDialog.openInformation(shell, "Transformation Report", //$NON-NLS-1$
-				finalReportMessage);
 	}
 
-	private static Diagnostic createRoleRTSCTransformation(
-			EditingDomain editingDomain, Role role) {
-		ModelExtent inputExtent = new BasicModelExtent(
-				Arrays.asList(new EObject[] { role }));
+	private static Diagnostic createRoleRTSCTransformation(EditingDomain editingDomain, Role role) {
+		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { role }));
 		ModelExtent outputExtent = new BasicModelExtent();
 
 		// Load QVTO script
-		final TransformationExecutor transformationExecutor = Activator
-				.getInstance()
-				.getTransformationExecutor(
-						Messages.CreateRoleRTSCHandler_PathCreateRoleRTSCTransformation,
-						false);
+		final TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor(Messages.CreateRoleRTSCHandler_PathCreateRoleRTSCTransformation, false);
 
 		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
 				transformationExecutor, inputExtent, outputExtent);
@@ -189,8 +166,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 					platformResourcePath.append('/');
 					platformResourcePath.append(uri.segment(j));
 				}
-				return ResourcesPlugin.getWorkspace().getRoot()
-						.getFile(new Path(platformResourcePath.toString()));
+				return ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformResourcePath.toString()));
 			}
 		}
 		return null;
