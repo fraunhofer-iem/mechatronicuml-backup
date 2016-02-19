@@ -93,9 +93,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 
 		/**
 		 * Create the Role RTSC Diagram
-		 */
-		final Collection<EObject> elements = new ArrayList<EObject>();
-		elements.add(role.getBehavior());
+		 */ 
 		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 
 		try {
@@ -110,6 +108,8 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 							+ role.getName();
 					Diagnostic diagnostic = createRoleRTSCTransformation(editingDomain, role);
 					if (diagnostic.getCode() == Diagnostic.OK) {
+						Collection<EObject> elements = new ArrayList<EObject>();
+						elements.add(role.getBehavior());
 						BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
 						IFile file = getFile(resource);
 						IStructuredSelection selection = new StructuredSelection(file);
@@ -128,7 +128,6 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	private static Diagnostic createRoleRTSCTransformation(EditingDomain editingDomain, Role role) {
