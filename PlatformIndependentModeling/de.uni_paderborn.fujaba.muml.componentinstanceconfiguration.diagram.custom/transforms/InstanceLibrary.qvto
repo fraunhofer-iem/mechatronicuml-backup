@@ -80,22 +80,18 @@ query DiscretePort::createSubPortInstances(part : ComponentPart, portPart : Port
 	return subPortInstances
 }
 
+property multiMappingHelper : Integer = 0;
 // Primitively creating and initializing one PortInstance by PortType
 query ConnectorEndpoint::createInstance(part : ComponentPart, portPart : PortPart, id : Integer) : ConnectorEndpointInstance {
-	return self.map single(part, portPart, id);
+	
+	multiMappingHelper := multiMappingHelper + 1;
+	// 
+	return self.map single(part, portPart, multiMappingHelper);
 }
 
 // Connector instances
 query Connector::otherEnd(thisEnd : ConnectorEndpoint) : ConnectorEndpoint {
 	return self.connectorEndpoints->select(e | e != thisEnd)->first();
-}
-
-//replaced this with the mapping mapConnectorInstance
-// thus this can be DELETED
-query Connector::createConnectorInstance(endpoints : Set(ConnectorEndpoint)) : ConnectorInstance {
-	var connectorInstance : ConnectorInstance := self.primCreateConnectorInstance();
-	connectorInstance.connectorEndpointInstances :=endpoints.late resolve(PortInstance);
-	return connectorInstance;
 }
 
  mapping Connector::mapConnectorInstance(endpoints : Set(ConnectorEndpointInstance)) : ConnectorInstance {
@@ -206,7 +202,7 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 
 
 
-
+property alreadyConnectedInstances : Set(PortInstance);
 //new Query to createConnetctorInstances
 query ComponentInstanceConfiguration::createConnectors(parentStructuredComponent:StructuredComponent) : Sequence(PortConnectorInstance){
 	var newConnectorInstances : Sequence(PortConnectorInstance);
@@ -275,7 +271,7 @@ query ComponentInstanceConfiguration::createConnectors(parentStructuredComponent
 												var sumOfLowerBounds : Integer := 0;
 												// sum up the lower bounds of all involved components
 												allConnectedEndpoints->forEach(otherEndpoint) {
-													var intt := otherEndpoint.resolve()->oclAsSet();
+													var intt := otherEndpoint.resolve();
 												
 													 sumOfLowerBounds := sumOfLowerBounds + intt->size();
 												};												
