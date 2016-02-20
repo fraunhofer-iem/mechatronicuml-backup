@@ -23,14 +23,22 @@
   <categories xmi:id="_MrkwfRx7EeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_XfHLgBx7EeSKP_lLzmbIVg" name="rootStatechart" behavioralElement="_tj3msBx8EeSKP_lLzmbIVg">
       <operations xmi:id="_zbWM4Bx7EeSKP_lLzmbIVg" name="increaseInt" returnType="_Mrkwdhx7EeSKP_lLzmbIVg">
+        <implementations xsi:type="actionlanguage:Block" xmi:id="_TXZMQNfhEeWRoflOKi_Auw">
+          <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_TXZMQdfhEeWRoflOKi_Auw">
+            <expression xsi:type="sdcec:ArithmeticExpression" xmi:id="_TXZMQtfhEeWRoflOKi_Auw">
+              <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_TXZMQ9fhEeWRoflOKi_Auw" typedNamedElement="_4BM9sBx7EeSKP_lLzmbIVg"/>
+              <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_TXZMRNfhEeWRoflOKi_Auw" value="1"/>
+            </expression>
+          </expressions>
+        </implementations>
         <parameters xmi:id="_4BM9sBx7EeSKP_lLzmbIVg" name="myInt" dataType="_Mrkwdhx7EeSKP_lLzmbIVg"/>
       </operations>
       <operations xmi:id="_9MrkEBx7EeSKP_lLzmbIVg" name="decreaseInt" returnType="_Mrkwdhx7EeSKP_lLzmbIVg">
-        <implementations xsi:type="actionlanguage:Block" xmi:id="_HIshQBx8EeSKP_lLzmbIVg">
-          <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_HIshQRx8EeSKP_lLzmbIVg">
-            <expression xsi:type="sdcec:ArithmeticExpression" xmi:id="_HIshQhx8EeSKP_lLzmbIVg" operator="MINUS">
-              <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_HIshQxx8EeSKP_lLzmbIVg" typedNamedElement="__ViuABx7EeSKP_lLzmbIVg"/>
-              <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_HIshRBx8EeSKP_lLzmbIVg" value="1"/>
+        <implementations xsi:type="actionlanguage:Block" xmi:id="_r7__8NfgEeWRoflOKi_Auw">
+          <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_r7__8dfgEeWRoflOKi_Auw">
+            <expression xsi:type="sdcec:ArithmeticExpression" xmi:id="_r7__8tfgEeWRoflOKi_Auw" operator="MINUS">
+              <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_r7__89fgEeWRoflOKi_Auw" typedNamedElement="__ViuABx7EeSKP_lLzmbIVg"/>
+              <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_r7__9NfgEeWRoflOKi_Auw" value="1"/>
             </expression>
           </expressions>
         </implementations>
@@ -56,10 +64,12 @@
             </transitions>
             <transitions xmi:id="_jfIn0Bx7EeSKP_lLzmbIVg" priority="1" target="_gfSLgBx7EeSKP_lLzmbIVg" source="_gfSLgBx7EeSKP_lLzmbIVg">
               <action xmi:id="_S88LYBx8EeSKP_lLzmbIVg" name="increaseVariable">
-                <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_iHTcwBx8EeSKP_lLzmbIVg" operation="_9MrkEBx7EeSKP_lLzmbIVg">
-                  <parameterBinding xmi:id="_iHTcwRx8EeSKP_lLzmbIVg" parameter="__ViuABx7EeSKP_lLzmbIVg">
-                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_iHTcwhx8EeSKP_lLzmbIVg" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
-                  </parameterBinding>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_xxsA8NfgEeWRoflOKi_Auw">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_xxsA8dfgEeWRoflOKi_Auw" operation="_9MrkEBx7EeSKP_lLzmbIVg">
+                    <parameterBinding xmi:id="_xxsA8tfgEeWRoflOKi_Auw" parameter="__ViuABx7EeSKP_lLzmbIVg">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_xxsA89fgEeWRoflOKi_Auw" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                    </parameterBinding>
+                  </expressions>
                 </expressions>
               </action>
             </transitions>
@@ -67,10 +77,12 @@
             <states xmi:id="_eo_YQRx7EeSKP_lLzmbIVg" name="State A" outgoingTransitions="_k2UdMBx7EeSKP_lLzmbIVg _iuDJIBx7EeSKP_lLzmbIVg" incomingTransitions="_jNfeMBx7EeSKP_lLzmbIVg _k2UdMBx7EeSKP_lLzmbIVg" initial="true">
               <entryEvent xmi:id="_ZnNrABx8EeSKP_lLzmbIVg">
                 <action xmi:id="_aN0YABx8EeSKP_lLzmbIVg" name="decreaseVariable">
-                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_giBhABx8EeSKP_lLzmbIVg" operation="_zbWM4Bx7EeSKP_lLzmbIVg">
-                    <parameterBinding xmi:id="_giBhARx8EeSKP_lLzmbIVg" parameter="_4BM9sBx7EeSKP_lLzmbIVg">
-                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_giBhAhx8EeSKP_lLzmbIVg" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
-                    </parameterBinding>
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_YhAm4NfgEeWRoflOKi_Auw">
+                    <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_YhAm4dfgEeWRoflOKi_Auw" operation="_zbWM4Bx7EeSKP_lLzmbIVg">
+                      <parameterBinding xmi:id="_YhAm4tfgEeWRoflOKi_Auw" parameter="_4BM9sBx7EeSKP_lLzmbIVg">
+                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_YhAm49fgEeWRoflOKi_Auw" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                      </parameterBinding>
+                    </expressions>
                   </expressions>
                 </action>
               </entryEvent>
