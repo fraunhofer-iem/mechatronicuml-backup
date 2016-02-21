@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r15221)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_w_ysIB4KEeSKP_lLzmbIVg">
+  <categories xmi:id="_w_ysIR4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_ysIh4KEeSKP_lLzmbIVg" name="void"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_ysIx4KEeSKP_lLzmbIVg" name="boolean" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_zTMB4KEeSKP_lLzmbIVg" name="int8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6QB4KEeSKP_lLzmbIVg" name="int16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6QR4KEeSKP_lLzmbIVg" name="int32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6Qh4KEeSKP_lLzmbIVg" name="int64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6Qx4KEeSKP_lLzmbIVg" name="double" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_w_z6RB4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_u0GlwB4MEeSKP_lLzmbIVg" name="root-cic">
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_viKloB4MEeSKP_lLzmbIVg" name="A1" componentType="_sapbEB4MEeSKP_lLzmbIVg"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_w_z6RR4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_sapbEB4MEeSKP_lLzmbIVg" name="aComponent" behavior="_UCEjIB4LEeSKP_lLzmbIVg"/>
+  </categories>
+  <categories xmi:id="_w_z6Rh4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
+  <categories xmi:id="_w_0hUB4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_w_0hUR4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_UCEjIB4LEeSKP_lLzmbIVg" name="Behavior" behavioralElement="_sapbEB4MEeSKP_lLzmbIVg">
+      <variables xmi:id="_MnfygB4MEeSKP_lLzmbIVg" name="i" dataType="_w_z6QR4KEeSKP_lLzmbIVg"/>
+      <states xmi:id="_UCEjIR4LEeSKP_lLzmbIVg" name="init" initial="true">
+        <embeddedRegions xmi:id="_XrVv4B4LEeSKP_lLzmbIVg" priority="1">
+          <embeddedStatechart xmi:id="_XrZaQB4LEeSKP_lLzmbIVg" name="Region1">
+            <transitions xmi:id="_miOEkB4LEeSKP_lLzmbIVg" priority="1" target="_kzM-AB4LEeSKP_lLzmbIVg" source="_XraBUB4LEeSKP_lLzmbIVg"/>
+            <transitions xmi:id="_rFEksB4LEeSKP_lLzmbIVg" priority="1" target="_dCsPEB4LEeSKP_lLzmbIVg" source="_o9gbQB4LEeSKP_lLzmbIVg"/>
+            <states xmi:id="_XraBUB4LEeSKP_lLzmbIVg" name="Start" outgoingTransitions="_miOEkB4LEeSKP_lLzmbIVg" initial="true">
+              <exitEvent xmi:id="_2NylkB4LEeSKP_lLzmbIVg">
+                <action xmi:id="_22XBcB4LEeSKP_lLzmbIVg" name="i=1">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_SIf88B4MEeSKP_lLzmbIVg">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_SIf88R4MEeSKP_lLzmbIVg" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_SIf88h4MEeSKP_lLzmbIVg" value="1"/>
+                      <lhs_typedNamedElementExpression xmi:id="_SIf88x4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </exitEvent>
+            </states>
+            <states xmi:id="_a0OzcB4LEeSKP_lLzmbIVg" name="Composite">
+              <embeddedRegions xmi:id="_b2-p4B4LEeSKP_lLzmbIVg" priority="1">
+                <embeddedStatechart xmi:id="_b3AfEB4LEeSKP_lLzmbIVg" name="innerRegion">
+                  <transitions xmi:id="_nnMvoB4LEeSKP_lLzmbIVg" priority="1" target="_l1mPIB4LEeSKP_lLzmbIVg" source="_kzM-AB4LEeSKP_lLzmbIVg"/>
+                  <transitions xmi:id="_qoQF0B4LEeSKP_lLzmbIVg" priority="1" target="_o9gbQB4LEeSKP_lLzmbIVg" source="_pUO5MB4LEeSKP_lLzmbIVg"/>
+                  <states xmi:id="_b3AfER4LEeSKP_lLzmbIVg" name="inner1" initial="true">
+                    <embeddedRegions xmi:id="_h1iTAB4LEeSKP_lLzmbIVg" priority="1">
+                      <embeddedStatechart xmi:id="_h1kIMB4LEeSKP_lLzmbIVg" name="composite2">
+                        <transitions xmi:id="_oQBqMB4LEeSKP_lLzmbIVg" priority="1" target="_h1kIMR4LEeSKP_lLzmbIVg" source="_l1mPIB4LEeSKP_lLzmbIVg"/>
+                        <transitions xmi:id="_qJVVMB4LEeSKP_lLzmbIVg" priority="1" target="_pUO5MB4LEeSKP_lLzmbIVg" source="_h1kIMR4LEeSKP_lLzmbIVg"/>
+                        <states xmi:id="_h1kIMR4LEeSKP_lLzmbIVg" name="someState" outgoingTransitions="_qJVVMB4LEeSKP_lLzmbIVg" incomingTransitions="_oQBqMB4LEeSKP_lLzmbIVg" initial="true">
+                          <exitEvent xmi:id="_ccJXAB4MEeSKP_lLzmbIVg">
+                            <action xmi:id="_c5NGcB4MEeSKP_lLzmbIVg" name="i=5">
+                              <expressions xsi:type="actionlanguage:Block" xmi:id="_fJJIwB4MEeSKP_lLzmbIVg">
+                                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fJJIwR4MEeSKP_lLzmbIVg" assignOperator=":=">
+                                  <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fJJIwh4MEeSKP_lLzmbIVg" value="5"/>
+                                  <lhs_typedNamedElementExpression xmi:id="_fJJIwx4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                                </expressions>
+                              </expressions>
+                            </action>
+                          </exitEvent>
+                          <entryEvent xmi:id="_Zjz38B4MEeSKP_lLzmbIVg">
+                            <action xmi:id="_Zu8w8B4MEeSKP_lLzmbIVg" name="i=4">
+                              <expressions xsi:type="actionlanguage:Block" xmi:id="_bwCe8B4MEeSKP_lLzmbIVg">
+                                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_bwCe8R4MEeSKP_lLzmbIVg" assignOperator=":=">
+                                  <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_bwCe8h4MEeSKP_lLzmbIVg" value="4"/>
+                                  <lhs_typedNamedElementExpression xmi:id="_bwCe8x4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                                </expressions>
+                              </expressions>
+                            </action>
+                          </entryEvent>
+                        </states>
+                      </embeddedStatechart>
+                    </embeddedRegions>
+                    <exitEvent xmi:id="_gAlHEB4MEeSKP_lLzmbIVg">
+                      <action xmi:id="_gZIJ8B4MEeSKP_lLzmbIVg" name="i=6">
+                        <expressions xsi:type="actionlanguage:Block" xmi:id="_kQ7h8B4MEeSKP_lLzmbIVg">
+                          <expressions xsi:type="actionlanguage:Assignment" xmi:id="_kQ7h8R4MEeSKP_lLzmbIVg" assignOperator=":=">
+                            <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_kQ7h8h4MEeSKP_lLzmbIVg" value="6"/>
+                            <lhs_typedNamedElementExpression xmi:id="_kQ7h8x4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                          </expressions>
+                        </expressions>
+                      </action>
+                    </exitEvent>
+                    <entryEvent xmi:id="_VPdt4B4MEeSKP_lLzmbIVg">
+                      <action xmi:id="_Vcby4B4MEeSKP_lLzmbIVg" name="i=3">
+                        <expressions xsi:type="actionlanguage:Block" xmi:id="_ZN6gcB4MEeSKP_lLzmbIVg">
+                          <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ZN6gcR4MEeSKP_lLzmbIVg" assignOperator=":=">
+                            <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_ZN6gch4MEeSKP_lLzmbIVg" value="3"/>
+                            <lhs_typedNamedElementExpression xmi:id="_ZN6gcx4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                          </expressions>
+                        </expressions>
+                      </action>
+                    </entryEvent>
+                    <connectionPoints xsi:type="realtimestatechart:EntryPoint" xmi:id="_l1mPIB4LEeSKP_lLzmbIVg" name="E1" outgoingTransitions="_oQBqMB4LEeSKP_lLzmbIVg" incomingTransitions="_nnMvoB4LEeSKP_lLzmbIVg"/>
+                    <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_pUO5MB4LEeSKP_lLzmbIVg" name="E2" outgoingTransitions="_qoQF0B4LEeSKP_lLzmbIVg" incomingTransitions="_qJVVMB4LEeSKP_lLzmbIVg"/>
+                  </states>
+                </embeddedStatechart>
+              </embeddedRegions>
+              <exitEvent xmi:id="_lC6_kB4MEeSKP_lLzmbIVg">
+                <action xmi:id="_lO17sB4MEeSKP_lLzmbIVg" name="i=7">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_njJgoB4MEeSKP_lLzmbIVg">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_njJgoR4MEeSKP_lLzmbIVg" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_njJgoh4MEeSKP_lLzmbIVg" value="7"/>
+                      <lhs_typedNamedElementExpression xmi:id="_njJgox4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </exitEvent>
+              <entryEvent xmi:id="_Gq2N4B4MEeSKP_lLzmbIVg">
+                <action xmi:id="_KFjaMB4MEeSKP_lLzmbIVg" name="i=2">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_UrxK8B4MEeSKP_lLzmbIVg">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_UrxK8R4MEeSKP_lLzmbIVg" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_UrxK8h4MEeSKP_lLzmbIVg" value="2"/>
+                      <lhs_typedNamedElementExpression xmi:id="_UrxK8x4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+              <connectionPoints xsi:type="realtimestatechart:EntryPoint" xmi:id="_kzM-AB4LEeSKP_lLzmbIVg" name="E1" outgoingTransitions="_nnMvoB4LEeSKP_lLzmbIVg" incomingTransitions="_miOEkB4LEeSKP_lLzmbIVg"/>
+              <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_o9gbQB4LEeSKP_lLzmbIVg" name="E2" outgoingTransitions="_rFEksB4LEeSKP_lLzmbIVg" incomingTransitions="_qoQF0B4LEeSKP_lLzmbIVg"/>
+            </states>
+            <states xmi:id="_dCsPEB4LEeSKP_lLzmbIVg" name="End" incomingTransitions="_rFEksB4LEeSKP_lLzmbIVg">
+              <entryEvent xmi:id="_n1M58B4MEeSKP_lLzmbIVg">
+                <action xmi:id="_oBb_IB4MEeSKP_lLzmbIVg" name="i=8">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_rIiS8B4MEeSKP_lLzmbIVg">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_rIiS8R4MEeSKP_lLzmbIVg" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_rIiS8h4MEeSKP_lLzmbIVg" value="8"/>
+                      <lhs_typedNamedElementExpression xmi:id="_rIiS8x4MEeSKP_lLzmbIVg" typedNamedElement="_MnfygB4MEeSKP_lLzmbIVg"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>
