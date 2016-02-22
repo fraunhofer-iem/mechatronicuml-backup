@@ -5,7 +5,6 @@
 	<property name="muml" value="de.uni_paderborn.fujaba.muml/model/muml.ecore" />
 	<property name="modelinstance" value="de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore" />
 	<property name="sdmcore" value="org.storydriven.core/model/core.ecore" />
-	<property name="storydiagrams" value="org.storydriven.storydiagrams/model/storydiagrams.ecore" />
 	<property name="actionlanguage" value="de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" />
 
 	<!-- set up EMF for standalone execution -->
@@ -50,12 +49,6 @@
 		<modelSlot value="sdmcore" />
 	</component>
 	
-	<!-- load storydiagrams-model and store it in slot 'storydiagrams' -->
-	<component class="org.eclipse.emf.mwe.utils.Reader">
-		<uri value="platform:/resource/${storydiagrams}" />
-		<modelSlot value="storydiagrams" />
-	</component>
-	
 	<!-- load actionlanguage-model and store it in slot 'actionlanguage' -->
 	<component class="org.eclipse.emf.mwe.utils.Reader">
 		<uri value="platform:/resource/${actionlanguage}" />
@@ -67,7 +60,7 @@
 		<metaModel idRef="mm_emf"/>
 		<globalVarDef name="filename" value="'A_TechDoc_Contents.tex'"/>
 		<globalVarDef name="figurepath" value="'figures/A_technical-reference/packages'"/>
-		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore,storydiagrams}"/> 	
+		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore}"/> 	
 		<outlet path="../03_PIM-Design/" overwrite="true" />
 		<outlet name='PACKAGEFIGURES' path='../03_PIM-Design/figures/A_technical-reference/packages/' overwrite='false'/>
 	</component>		
