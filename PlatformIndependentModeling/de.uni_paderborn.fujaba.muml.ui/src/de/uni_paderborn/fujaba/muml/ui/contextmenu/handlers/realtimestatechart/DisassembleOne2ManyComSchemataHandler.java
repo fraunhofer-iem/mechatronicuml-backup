@@ -14,11 +14,11 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
@@ -31,7 +31,6 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.instance.util.InstanceValidator;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.ui.Activator;
@@ -175,6 +174,9 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		Command deleteCommand = DeleteCommand.create(editingDomain, rtsc);
 		if(deleteCommand.canExecute())
 			editingDomain.getCommandStack().execute(deleteCommand);
+		
+		MessageDialog dialog = new MessageDialog(shell, "Disassemble One2Many Schemata Transformation Results", null, "The disassembling was successful. Please delete all diagrams of the disassembled RealtimeStatechart and create new diagrams for the created RealtimeStatechart", MessageDialog.INFORMATION , new String[]{"Ok"}, 0);
+		dialog.open();
 	}
 
 }
