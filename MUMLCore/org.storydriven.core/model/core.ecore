@@ -28,32 +28,63 @@
     <eOperations name="getExtension" ordered="false" lowerBound="1" eType="#//Extension">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.getExtension(this, type);"/>
+        <details key="documentation" value="Finds the registered extension of the provided type."/>
       </eAnnotations>
-      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The type that identifies the Extension to return."/>
+        </eAnnotations>
+      </eParameters>
     </eOperations>
     <eOperations name="provideExtension" ordered="false" lowerBound="1" eType="#//Extension">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.provideExtension(this, type);"/>
+        <details key="documentation" value="Creates and registers a new Extension of the provided type."/>
       </eAnnotations>
-      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The type of the new Extension."/>
+        </eAnnotations>
+      </eParameters>
     </eOperations>
     <eOperations name="getAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.getAnnotation(this, source);"/>
+        <details key="documentation" value="Finds the EAnnotation for the provided source."/>
       </eAnnotations>
-      <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The source that identifies the EAnnotation to return."/>
+        </eAnnotations>
+      </eParameters>
     </eOperations>
     <eOperations name="provideAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.provideAnnotation(this, source);"/>
+        <details key="documentation" value="Creates and registers a new EAnnotation with the provided source."/>
       </eAnnotations>
-      <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The source for the new EAnnotation."/>
+          </eAnnotations>
+          <details key="documentation" value="The source that identifies the EAnnotation to return."/>
+        </eAnnotations>
+      </eParameters>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Extendable Elements can be annotated by an EAnnotation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
-        upperBound="-1" eType="#//Extension" containment="true" eOpposite="#//Extension/extendableBase"/>
+        upperBound="-1" eType="#//Extension" containment="true" eOpposite="#//Extension/extendableBase">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Extendable Elements can be extended by an Extension."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Extension" abstract="true" eSuperTypes="#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -108,10 +139,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"
         changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="union"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Not used currently - returns always null."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericType" ordered="false"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EGenericType"
-        unsettable="true" containment="true"/>
+        unsettable="true" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The EMF EGenericType that is used to type this typed element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repository" abstract="true" eSuperTypes="#//NamedElement #//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -121,7 +159,7 @@
   <eSubpackages name="expressions" nsURI="http://www.storydriven.org/core/expressions/0.3.1"
       nsPrefix="expr">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The base package for all expressions which can be used for modeling activities&#xD;&#xA;and patterns."/>
+      <details key="documentation" value="The base package for all expressions that can be used for modeling activities and patterns."/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -162,6 +200,9 @@
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
         <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
         <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The package for all common expressions that can be used for modeling activities and patterns."/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
