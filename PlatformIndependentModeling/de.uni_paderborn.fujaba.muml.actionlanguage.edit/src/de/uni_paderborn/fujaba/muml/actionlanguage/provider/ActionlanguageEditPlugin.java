@@ -45,7 +45,7 @@ public final class ActionlanguageEditPlugin extends EMFPlugin {
 	public ActionlanguageEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     MumlEditPlugin.INSTANCE,
+		     de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
 		   });
 	}

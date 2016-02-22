@@ -188,6 +188,7 @@
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VaE43MwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
         <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/elementAccessors"/>
+        <readOnlyFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="true"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VaE43cwbEeSjx7OWZCcdLw"/>
       </orderedElements>
@@ -238,6 +239,7 @@
       <genClass href="actionlanguage.genmodel#//actionlanguage/ArrayIndexExpression"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VaFf8swbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
         <genFeature href="actionlanguage.genmodel#//actionlanguage/ArrayIndexExpression/index"/>
+        <readOnlyFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="true"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VaGG8MwbEeSjx7OWZCcdLw"/>
       </orderedElements>

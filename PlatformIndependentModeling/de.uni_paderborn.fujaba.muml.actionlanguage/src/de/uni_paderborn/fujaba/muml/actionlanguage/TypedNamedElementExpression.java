@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * To perform an action on a value of a variable of a \rtsc we use the typed named element expression, which has a reference to a typed named element and optional indicies if a concrete array element should be referenced.
+ * To perform an action on a value of a variable of a \rtsc we use the typed named element expression, which has a reference to a typed named element and optional indices if a concrete array element should be referenced.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -41,6 +41,9 @@ public interface TypedNamedElementExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The typed named element that is referenced.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Typed Named Element</em>' reference.
 	 * @see #setTypedNamedElement(TypedNamedElement)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression_TypedNamedElement()
@@ -68,6 +71,9 @@ public interface TypedNamedElementExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The indices used to access an element inside a referenced array.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Element Accessors</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression_ElementAccessors()
 	 * @model containment="true"
