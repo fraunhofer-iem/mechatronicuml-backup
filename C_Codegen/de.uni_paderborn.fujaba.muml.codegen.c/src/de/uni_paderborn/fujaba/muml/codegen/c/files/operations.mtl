@@ -46,7 +46,7 @@
 	#include "[if (useSubDir)]../types/[/if]customTypes.h"
 	[for (atomic : AtomicComponent | atomics)]
 	[let rtsc : RealtimeStatechart = atomic.behavior]
-	#include "[getFileName(atomic, true, useSubDir)/]"
+	typedef struct [rtsc.getClassName()/] [rtsc.getClassName()/];
 	[/let]
 	[/for]
 
@@ -88,6 +88,14 @@
 [let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet())]
 
 #include "operations.h"
+	[for (atomic : AtomicComponent | atomics)]
+	[let rtsc : RealtimeStatechart = atomic.behavior]
+	#include "../[getFileName(atomic, true, useSubDir)/]"
+	[/let]
+	[/for]
+
+
+
 /** [protected ('user includes **/')] 
 
 /**[/protected]**/
