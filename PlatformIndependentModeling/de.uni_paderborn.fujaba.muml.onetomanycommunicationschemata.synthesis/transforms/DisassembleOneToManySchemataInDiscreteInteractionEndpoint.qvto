@@ -44,10 +44,12 @@ main() {
 	disassembleDiscreteInteractionPointRTSC(currentRealtimeStatechart);
 	
 	if( not debugging ) {
+		
 		// when deleting the original/input statechart, we only have to consider the case when the currentRealtimeStatechart was contained in a ModelElementCategory.
 		// Otherwise, it is embedded in a region. In this case it is deleted anyways.
 		if(currentRealtimeStatechart.eContainer().oclIsTypeOf(ModelElementCategory)) {
 			currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements := currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements->excluding(currentRealtimeStatechart);
+			input.removeElement(currentRealtimeStatechart);
 		}
 	};
 }
@@ -176,9 +178,16 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 		};		
 		
+		
+		
+		
 		// normally override the behavorialElement
-		behavioralElement := self.behavioralElement;
-		getRealtimeStatechartCategory().modelElements +=result;
+		result.behavioralElement := self.behavioralElement;
+		
+		result.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).coordinatorBehavior := self.map State2CoordinatorRegion(self).embeddedStatechart;
+		result.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior := self.map State2SubroleRegion(self).embeddedStatechart;
+		
+		getRealtimeStatechartCategory().modelElements += result;
 	}
 	
 
@@ -242,7 +251,7 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeSta
 		clocks += self.transitions->select(t| t.usesMultiReceiveSchema() and not t.relativeDeadline.oclIsUndefined()).map Schema2Clock(multiReceiveDLCName);
 		clocks += self.transitions->select(t| t.usesLoadBalancingSchema() and not t.relativeDeadline.oclIsUndefined()).map Schema2Clock(loadBalancingDLCName);
 			
-		self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).coordinatorBehavior := result;
+		//self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).coordinatorBehavior := result;
 		}
 	
 mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
@@ -289,7 +298,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		
 		states += mainState;		
 		
-		self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior := result;
+		//self.behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior := result;
 }
 
 mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeStatechart : RealtimeStatechart) : Region {		

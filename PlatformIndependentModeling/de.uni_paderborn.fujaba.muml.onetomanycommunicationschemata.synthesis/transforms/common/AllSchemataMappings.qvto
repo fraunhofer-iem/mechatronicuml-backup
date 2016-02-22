@@ -360,7 +360,7 @@ mapping RealtimeStatechart :: Rtsc2InitialState() : State {
 		
 		initial := true;
 		
-		embeddedRegions += self->map State2CoordinatorRegion(self);
+		embeddedRegions += self.map State2CoordinatorRegion(self);
 		
 		embeddedRegions += self.map State2SubroleRegion(self);
 					
