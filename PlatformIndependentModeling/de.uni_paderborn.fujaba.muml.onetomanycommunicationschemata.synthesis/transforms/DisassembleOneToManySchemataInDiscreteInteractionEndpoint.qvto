@@ -48,8 +48,7 @@ main() {
 		// when deleting the original/input statechart, we only have to consider the case when the currentRealtimeStatechart was contained in a ModelElementCategory.
 		// Otherwise, it is embedded in a region. In this case it is deleted anyways.
 		if(currentRealtimeStatechart.eContainer().oclIsTypeOf(ModelElementCategory)) {
-			currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements := currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements->excluding(currentRealtimeStatechart);
-			input.removeElement(currentRealtimeStatechart);
+			currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements := currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements->excluding(currentRealtimeStatechart);			
 		}
 	};
 }
