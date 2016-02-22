@@ -428,10 +428,13 @@ printDebugInformation("[getVariableName(targetRTSC)/] switched state to [getName
 	[if (transition.target.oclIsKindOf(State))]
 		[singleTransitionCondition(component, rtsc, transition)/]
 	[else]
-	[singleTransitionCondition(component, rtsc, transition)/] &&
-		[for (t : Transition | transition.target.incomingTransitions->reject(tr | tr = transition)) separator(' && ')]
-			 [transitionConditionRecursive(component, rtsc, t)/]
-		[/for]
+	[singleTransitionCondition(component, rtsc, transition)/] 
+		[if not (transition.target.incomingTransitions->reject(tr | tr = transition)->isEmpty())]
+		&&
+			[for (t : Transition | transition.target.incomingTransitions->reject(tr | tr = transition)) separator(' && ')]
+				 [transitionConditionRecursive(component, rtsc, t)/]
+			[/for]
+		[/if]
 	[/if]
 
 [/template]
