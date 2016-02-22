@@ -18,15 +18,14 @@ import org.storydriven.core.NamedElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.impl.NamedElementImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class NamedElementImpl extends ExtendableElementImpl implements
-		NamedElement {
+public abstract class NamedElementImpl extends ExtendableElementImpl implements NamedElement {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,8 +83,7 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.NAMED_ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.NAMED_ELEMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -141,8 +139,7 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case CorePackage.NAMED_ELEMENT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}

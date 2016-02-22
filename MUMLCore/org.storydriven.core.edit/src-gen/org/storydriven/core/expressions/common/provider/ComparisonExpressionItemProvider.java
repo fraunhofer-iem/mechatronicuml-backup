@@ -29,10 +29,7 @@ import org.storydriven.core.expressions.common.ComparisonExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComparisonExpressionItemProvider extends
-		BinaryExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class ComparisonExpressionItemProvider extends BinaryExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,17 +64,12 @@ public class ComparisonExpressionItemProvider extends
 	 */
 	protected void addOperatorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ComparisonExpression_operator_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_ComparisonExpression_operator_feature",
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ComparisonExpression_operator_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComparisonExpression_operator_feature",
 								"_UI_ComparisonExpression_type"),
-						CommonExpressionsPackage.Literals.COMPARISON_EXPRESSION__OPERATOR,
-						true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				CommonExpressionsPackage.Literals.COMPARISON_EXPRESSION__OPERATOR, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -116,8 +108,7 @@ public class ComparisonExpressionItemProvider extends
 
 		switch (notification.getFeatureID(ComparisonExpression.class)) {
 		case CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -131,8 +122,7 @@ public class ComparisonExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -143,8 +133,7 @@ public class ComparisonExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature,
-			Object child, Collection<?> selection) {
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
 		Object childFeature = feature;
 		Object childObject = child;
 
@@ -152,9 +141,8 @@ public class ComparisonExpressionItemProvider extends
 				|| childFeature == CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

@@ -23,16 +23,15 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.impl.UnaryExpressionImpl#getEnclosedExpression <em>Enclosed Expression</em>}</li>
  *   <li>{@link org.storydriven.core.expressions.common.impl.UnaryExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class UnaryExpressionImpl extends ExpressionImpl implements
-		UnaryExpression {
+public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpression {
 	/**
 	 * The cached value of the '{@link #getEnclosedExpression() <em>Enclosed Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -92,28 +91,20 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 			enclosedExpression = (Expression) eResolveProxy(oldEnclosedExpression);
 			if (enclosedExpression != oldEnclosedExpression) {
 				InternalEObject newEnclosedExpression = (InternalEObject) enclosedExpression;
-				NotificationChain msgs = oldEnclosedExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-								null, null);
+				NotificationChain msgs = oldEnclosedExpression.eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, null,
+						null);
 				if (newEnclosedExpression.eInternalContainer() == null) {
-					msgs = newEnclosedExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-									null, msgs);
+					msgs = newEnclosedExpression.eInverseAdd(this,
+							EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+							null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-							oldEnclosedExpression, enclosedExpression));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, oldEnclosedExpression,
+							enclosedExpression));
 			}
 		}
 		return enclosedExpression;
@@ -133,16 +124,13 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnclosedExpression(
-			Expression newEnclosedExpression, NotificationChain msgs) {
+	public NotificationChain basicSetEnclosedExpression(Expression newEnclosedExpression, NotificationChain msgs) {
 		Expression oldEnclosedExpression = enclosedExpression;
 		enclosedExpression = newEnclosedExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-					this,
-					Notification.SET,
-					CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-					oldEnclosedExpression, newEnclosedExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, oldEnclosedExpression,
+					newEnclosedExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -160,28 +148,20 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 		if (newEnclosedExpression != enclosedExpression) {
 			NotificationChain msgs = null;
 			if (enclosedExpression != null)
-				msgs = ((InternalEObject) enclosedExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) enclosedExpression).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, null,
+						msgs);
 			if (newEnclosedExpression != null)
-				msgs = ((InternalEObject) newEnclosedExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) newEnclosedExpression).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, null,
+						msgs);
 			msgs = basicSetEnclosedExpression(newEnclosedExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-					newEnclosedExpression, newEnclosedExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, newEnclosedExpression,
+					newEnclosedExpression));
 	}
 
 	/**
@@ -202,8 +182,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 		UnaryOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR,
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR,
 					oldOperator, operator));
 	}
 
@@ -213,8 +192,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
 			return basicSetEnclosedExpression(null, msgs);

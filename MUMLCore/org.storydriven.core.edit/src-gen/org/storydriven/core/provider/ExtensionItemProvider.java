@@ -26,9 +26,7 @@ import org.storydriven.core.CorePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExtensionItemProvider extends ExtendableElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ExtensionItemProvider extends ExtendableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,15 +62,12 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	protected void addBasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Extension_base_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Extension_base_feature", "_UI_Extension_type"),
-				CorePackage.Literals.EXTENSION__BASE, false, false, false,
-				null, null, null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Extension_base_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Extension_base_feature",
+								"_UI_Extension_type"),
+						CorePackage.Literals.EXTENSION__BASE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -83,16 +78,11 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider
 	 */
 	protected void addModelBasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Extension_modelBase_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Extension_modelBase_feature",
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Extension_modelBase_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Extension_modelBase_feature",
 								"_UI_Extension_type"),
-						CorePackage.Literals.EXTENSION__MODEL_BASE, true,
-						false, true, null, null, null));
+						CorePackage.Literals.EXTENSION__MODEL_BASE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -102,16 +92,12 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	protected void addOwningAnnotationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Extension_owningAnnotation_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Extension_owningAnnotation_feature",
-						"_UI_Extension_type"),
-				CorePackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false,
-				true, null, null, null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Extension_owningAnnotation_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Extension_owningAnnotation_feature",
+								"_UI_Extension_type"),
+						CorePackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false, true, null, null, null));
 	}
 
 	/**
@@ -156,8 +142,7 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

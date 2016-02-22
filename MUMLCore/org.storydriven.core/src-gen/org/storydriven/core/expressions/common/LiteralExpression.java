@@ -19,10 +19,10 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.LiteralExpression#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLiteralExpression()
  * @model

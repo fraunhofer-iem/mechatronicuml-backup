@@ -19,15 +19,14 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.impl.LiteralExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class LiteralExpressionImpl extends ExpressionImpl implements
-		LiteralExpression {
+public class LiteralExpressionImpl extends ExpressionImpl implements LiteralExpression {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,8 +84,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE,
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE,
 					oldValue, value));
 	}
 
@@ -143,8 +141,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT
-					.equals(value);
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}

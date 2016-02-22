@@ -19,11 +19,11 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.UnaryExpression#getEnclosedExpression <em>Enclosed Expression</em>}</li>
  *   <li>{@link org.storydriven.core.expressions.common.UnaryExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getUnaryExpression()
  * @model

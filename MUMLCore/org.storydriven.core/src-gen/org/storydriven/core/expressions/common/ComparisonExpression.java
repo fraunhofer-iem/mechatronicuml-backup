@@ -17,10 +17,10 @@ package org.storydriven.core.expressions.common;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.ComparisonExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getComparisonExpression()
  * @model

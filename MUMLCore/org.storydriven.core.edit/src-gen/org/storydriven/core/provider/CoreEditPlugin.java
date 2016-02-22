@@ -40,7 +40,7 @@ public final class CoreEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public CoreEditPlugin() {
-		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] {});
 	}
 
 	/**

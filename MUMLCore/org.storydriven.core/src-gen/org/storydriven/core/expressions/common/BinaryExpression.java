@@ -19,11 +19,11 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.BinaryExpression#getLeftExpression <em>Left Expression</em>}</li>
  *   <li>{@link org.storydriven.core.expressions.common.BinaryExpression#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getBinaryExpression()
  * @model abstract="true"

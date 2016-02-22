@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Unary Operator</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The operator type used to specify unary logic expressions.
+ * <!-- end-model-doc -->
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getUnaryOperator()
  * @model
  * @generated
@@ -40,22 +43,24 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MINUS(2, "MINUS", "MINUS"), /**
-								 * The '<em><b>INCREMENT</b></em>' literal object.
-								 * <!-- begin-user-doc -->
-								 * <!-- end-user-doc -->
-								 * @see #INCREMENT_VALUE
-								 * @generated
-								 * @ordered
-								 */
-	INCREMENT(3, "INCREMENT", "INCREMENT"), /**
-											 * The '<em><b>DECREMENT</b></em>' literal object.
-											 * <!-- begin-user-doc -->
-											 * <!-- end-user-doc -->
-											 * @see #DECREMENT_VALUE
-											 * @generated
-											 * @ordered
-											 */
+	MINUS(2, "MINUS", "MINUS"),
+	/**
+	* The '<em><b>INCREMENT</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	* @see #INCREMENT_VALUE
+	* @generated
+	* @ordered
+	*/
+	INCREMENT(3, "INCREMENT", "INCREMENT"),
+	/**
+	* The '<em><b>DECREMENT</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	* @see #DECREMENT_VALUE
+	* @generated
+	* @ordered
+	*/
 	DECREMENT(4, "DECREMENT", "DECREMENT");
 
 	/**
@@ -124,8 +129,7 @@ public enum UnaryOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] {
-			NOT, MINUS, INCREMENT, DECREMENT, };
+	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] { NOT, MINUS, INCREMENT, DECREMENT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Unary Operator</b></em>' enumerators.
@@ -133,13 +137,14 @@ public enum UnaryOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<UnaryOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<UnaryOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Unary Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UnaryOperator get(String literal) {
@@ -156,6 +161,8 @@ public enum UnaryOperator implements Enumerator {
 	 * Returns the '<em><b>Unary Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UnaryOperator getByName(String name) {
@@ -172,6 +179,8 @@ public enum UnaryOperator implements Enumerator {
 	 * Returns the '<em><b>Unary Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UnaryOperator get(int value) {

@@ -18,15 +18,14 @@ import org.storydriven.core.Repository;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.impl.RepositoryImpl#getComment <em>Comment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class RepositoryImpl extends NamedElementImpl implements
-		Repository {
+public abstract class RepositoryImpl extends NamedElementImpl implements Repository {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,8 +83,8 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.REPOSITORY__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.REPOSITORY__COMMENT, oldComment,
+					comment));
 	}
 
 	/**
@@ -141,8 +140,7 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case CorePackage.REPOSITORY__COMMENT:
-			return COMMENT_EDEFAULT == null ? comment != null
-					: !COMMENT_EDEFAULT.equals(comment);
+			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
