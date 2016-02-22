@@ -160,7 +160,12 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		
 		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents);
+				transformationExecutor, modelExtents) {
+			protected void doExecute() {
+				super.doExecute();
+				DeleteCommand.create(editingDomain, rtsc).execute();
+			}
+		};
 		
 		
 		if (command.canExecute()) {
@@ -170,11 +175,7 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
-		
-		Command deleteCommand = DeleteCommand.create(editingDomain, rtsc);
-		if(deleteCommand.canExecute())
-			editingDomain.getCommandStack().execute(deleteCommand);
-		
+
 		MessageDialog dialog = new MessageDialog(shell, "Disassemble One2Many Schemata Transformation Results", null, "The disassembling was successful. Please delete all diagrams of the disassembled RealtimeStatechart and create new diagrams for the created RealtimeStatechart", MessageDialog.INFORMATION , new String[]{"Ok"}, 0);
 		dialog.open();
 	}
