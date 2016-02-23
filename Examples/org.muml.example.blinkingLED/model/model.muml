@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_yGfsoFL0EeWl58eUwm1Yvw">
-  <categories xmi:id="_yGfsoVL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTsFL0EeWl58eUwm1Yvw" name="void"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTsVL0EeWl58eUwm1Yvw" name="boolean" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTslL0EeWl58eUwm1Yvw" name="int8" primitiveType="INT8"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTs1L0EeWl58eUwm1Yvw" name="int16" primitiveType="INT16"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTtFL0EeWl58eUwm1Yvw" name="int32" primitiveType="INT32"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTtVL0EeWl58eUwm1Yvw" name="int64" primitiveType="INT64"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTtlL0EeWl58eUwm1Yvw" name="double" primitiveType="DOUBLE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTt1L0EeWl58eUwm1Yvw" name="uint8" primitiveType="UINT8"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTuFL0EeWl58eUwm1Yvw" name="uint16" primitiveType="UINT16"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTuVL0EeWl58eUwm1Yvw" name="uint32" primitiveType="UINT32"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_yGgTulL0EeWl58eUwm1Yvw" name="uint64" primitiveType="UINT64"/>
-  </categories>
+  <categories xmi:id="_yGfsoVL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_yGgTu1L0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QbiYcFL1EeWl58eUwm1Yvw" name="rootRTSC" behavioralElement="_2sZgwFL0EeWl58eUwm1Yvw">
       <states xmi:id="_QbiYcVL1EeWl58eUwm1Yvw" name="init" initial="true">
@@ -82,14 +70,17 @@
   </categories>
   <categories xmi:id="_yGgTv1L0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_2sZgwFL0EeWl58eUwm1Yvw" name="Main" behavior="_QbiYcFL1EeWl58eUwm1Yvw">
-      <ports xsi:type="component:HybridPort" xmi:id="_86mIYFL0EeWl58eUwm1Yvw" name="LED_voltage" dataType="_yGgTslL0EeWl58eUwm1Yvw" kind="OUT">
+      <ports xsi:type="component:HybridPort" xmi:id="_86mIYFL0EeWl58eUwm1Yvw" name="LED_voltage" kind="OUT">
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
         <samplingInterval xmi:id="_LgNt8FL1EeWl58eUwm1Yvw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_ME69gFL1EeWl58eUwm1Yvw" value="50"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_46ZpYFL0EeWl58eUwm1Yvw" name="LED" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_6WB54FL0EeWl58eUwm1Yvw" name="voltage" dataType="_yGgTslL0EeWl58eUwm1Yvw"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_6WB54FL0EeWl58eUwm1Yvw" name="voltage">
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_3g4m0FL2EeWl58eUwm1Yvw" name="System" componentKind="hybrid component">
       <embeddedComponentParts xmi:id="_4err0FL2EeWl58eUwm1Yvw" name="C1" componentType="_2sZgwFL0EeWl58eUwm1Yvw">
