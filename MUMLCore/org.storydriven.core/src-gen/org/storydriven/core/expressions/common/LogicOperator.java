@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * Defines the operators for binary logic expressions.
+ * Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.
  * <!-- end-model-doc -->
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLogicOperator()
  * @model
@@ -156,7 +156,8 @@ public enum LogicOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final LogicOperator[] VALUES_ARRAY = new LogicOperator[] { AND, OR, XOR, IMPLY, EQUIVALENT, };
+	private static final LogicOperator[] VALUES_ARRAY = new LogicOperator[] {
+			AND, OR, XOR, IMPLY, EQUIVALENT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Logic Operator</b></em>' enumerators.
@@ -164,14 +165,13 @@ public enum LogicOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<LogicOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<LogicOperator> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Logic Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicOperator get(String literal) {
@@ -188,8 +188,6 @@ public enum LogicOperator implements Enumerator {
 	 * Returns the '<em><b>Logic Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicOperator getByName(String name) {
@@ -206,8 +204,6 @@ public enum LogicOperator implements Enumerator {
 	 * Returns the '<em><b>Logic Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicOperator get(int value) {

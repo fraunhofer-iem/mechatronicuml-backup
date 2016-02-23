@@ -30,7 +30,9 @@ import org.storydriven.core.TypedElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TypedElementItemProvider extends ExtendableElementItemProvider {
+public class TypedElementItemProvider extends ExtendableElementItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,12 +66,16 @@ public class TypedElementItemProvider extends ExtendableElementItemProvider {
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TypedElement_type_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TypedElement_type_feature",
-								"_UI_TypedElement_type"),
-						CorePackage.Literals.TYPED_ELEMENT__TYPE, false, false, false, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_TypedElement_type_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_TypedElement_type_feature",
+						"_UI_TypedElement_type"),
+				CorePackage.Literals.TYPED_ELEMENT__TYPE, false, false, false,
+				null, null, null));
 	}
 
 	/**
@@ -81,10 +87,12 @@ public class TypedElementItemProvider extends ExtendableElementItemProvider {
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.TYPED_ELEMENT__GENERIC_TYPE);
+			childrenFeatures
+					.add(CorePackage.Literals.TYPED_ELEMENT__GENERIC_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -136,7 +144,8 @@ public class TypedElementItemProvider extends ExtendableElementItemProvider {
 
 		switch (notification.getFeatureID(TypedElement.class)) {
 		case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -150,8 +159,13 @@ public class TypedElementItemProvider extends ExtendableElementItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.TYPED_ELEMENT__GENERIC_TYPE,
+				EcoreFactory.eINSTANCE.createEGenericType()));
 	}
 
 }

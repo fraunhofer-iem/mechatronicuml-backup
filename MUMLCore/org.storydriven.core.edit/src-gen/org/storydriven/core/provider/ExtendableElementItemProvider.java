@@ -21,7 +21,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.ExtendableElement;
@@ -32,7 +31,9 @@ import org.storydriven.core.ExtendableElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExtendableElementItemProvider extends ItemProviderAdapter {
+public class ExtendableElementItemProvider extends EObjectItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,11 +68,14 @@ public class ExtendableElementItemProvider extends ItemProviderAdapter {
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures
+					.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
+			childrenFeatures
+					.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 		}
 		return childrenFeatures;
 	}
@@ -124,7 +128,8 @@ public class ExtendableElementItemProvider extends ItemProviderAdapter {
 		switch (notification.getFeatureID(ExtendableElement.class)) {
 		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
 		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -138,8 +143,13 @@ public class ExtendableElementItemProvider extends ItemProviderAdapter {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
+				EcoreFactory.eINSTANCE.createEAnnotation()));
 	}
 
 	/**

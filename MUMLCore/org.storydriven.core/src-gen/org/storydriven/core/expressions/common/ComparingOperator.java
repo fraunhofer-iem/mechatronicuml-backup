@@ -209,8 +209,9 @@ public enum ComparingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ComparingOperator[] VALUES_ARRAY = new ComparingOperator[] { LESS, LESS_OR_EQUAL, EQUAL,
-			GREATER_OR_EQUAL, GREATER, UNEQUAL, REGULAR_EXPRESSION, };
+	private static final ComparingOperator[] VALUES_ARRAY = new ComparingOperator[] {
+			LESS, LESS_OR_EQUAL, EQUAL, GREATER_OR_EQUAL, GREATER, UNEQUAL,
+			REGULAR_EXPRESSION, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Comparing Operator</b></em>' enumerators.
@@ -218,14 +219,13 @@ public enum ComparingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ComparingOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ComparingOperator> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Comparing Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComparingOperator get(String literal) {
@@ -242,8 +242,6 @@ public enum ComparingOperator implements Enumerator {
 	 * Returns the '<em><b>Comparing Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComparingOperator getByName(String name) {
@@ -260,8 +258,6 @@ public enum ComparingOperator implements Enumerator {
 	 * Returns the '<em><b>Comparing Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComparingOperator get(int value) {

@@ -25,7 +25,9 @@ import org.storydriven.core.Repository;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RepositoryItemProvider extends NamedElementItemProvider {
+public class RepositoryItemProvider extends NamedElementItemProvider 
+implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,13 +61,16 @@ public class RepositoryItemProvider extends NamedElementItemProvider {
 	 * @generated
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_CommentableElement_comment_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature",
-								"_UI_CommentableElement_type"),
-						CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_CommentableElement_comment_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_CommentableElement_comment_feature",
+						"_UI_CommentableElement_type"),
+				CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -76,7 +81,8 @@ public class RepositoryItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Repository"));
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/Repository"));
 	}
 
 	/**
@@ -115,7 +121,8 @@ public class RepositoryItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Repository.class)) {
 		case CorePackage.REPOSITORY__COMMENT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -129,7 +136,8 @@ public class RepositoryItemProvider extends NamedElementItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

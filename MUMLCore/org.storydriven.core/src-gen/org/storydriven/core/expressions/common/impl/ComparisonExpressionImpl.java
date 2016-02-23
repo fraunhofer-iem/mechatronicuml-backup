@@ -19,14 +19,15 @@ import org.storydriven.core.expressions.common.ComparisonExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.impl.ComparisonExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
-public class ComparisonExpressionImpl extends BinaryExpressionImpl implements ComparisonExpression {
+public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
+		ComparisonExpression {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,7 +86,8 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements Co
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR, oldOperator, operator));
+					CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR,
+					oldOperator, operator));
 	}
 
 	/**

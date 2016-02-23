@@ -22,7 +22,8 @@ import org.storydriven.core.expressions.TextualExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory {
+public class ExpressionsFactoryImpl extends EFactoryImpl implements
+		ExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -63,7 +64,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 		case ExpressionsPackage.TEXTUAL_EXPRESSION:
 			return createTextualExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 

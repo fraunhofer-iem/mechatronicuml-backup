@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.ExtendableElement#getAnnotations <em>Annotation</em>}</li>
  *   <li>{@link org.storydriven.core.ExtendableElement#getExtensions <em>Extension</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.storydriven.core.CorePackage#getExtendableElement()
  * @model abstract="true"
@@ -42,9 +42,6 @@ public interface ExtendableElement extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Extendable Elements can be annotated by an EAnnotation
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Annotation</em>' containment reference list.
 	 * @see org.storydriven.core.CorePackage#getExtendableElement_Annotation()
 	 * @model containment="true" resolveProxies="true" ordered="false"
@@ -62,9 +59,6 @@ public interface ExtendableElement extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Extendable Elements can be extended by an Extension.
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Extension</em>' containment reference list.
 	 * @see org.storydriven.core.CorePackage#getExtendableElement_Extension()
 	 * @see org.storydriven.core.Extension#getExtendableBase
@@ -76,10 +70,6 @@ public interface ExtendableElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Finds the registered extension of the provided type.
-	 * @param type The type that identifies the Extension to return.
-	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.getExtension(this, type);'"
 	 * @generated
@@ -89,10 +79,6 @@ public interface ExtendableElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Creates and registers a new Extension of the provided type.
-	 * @param type The type of the new Extension.
-	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.provideExtension(this, type);'"
 	 * @generated
@@ -102,10 +88,6 @@ public interface ExtendableElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Finds the EAnnotation for the provided source.
-	 * @param source The source that identifies the EAnnotation to return.
-	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" sourceRequired="true" sourceOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.getAnnotation(this, source);'"
 	 * @generated
@@ -115,10 +97,6 @@ public interface ExtendableElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Creates and registers a new EAnnotation with the provided source.
-	 * @param source The source that identifies the EAnnotation to return.
-	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" sourceRequired="true" sourceOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.provideAnnotation(this, source);'"
 	 * @generated

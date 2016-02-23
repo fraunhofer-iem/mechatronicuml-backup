@@ -17,10 +17,10 @@ package org.storydriven.core;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.CommentableElement#getComment <em>Comment</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.storydriven.core.CorePackage#getCommentableElement()
  * @model abstract="true"

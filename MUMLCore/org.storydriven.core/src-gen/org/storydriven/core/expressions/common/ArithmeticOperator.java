@@ -156,8 +156,8 @@ public enum ArithmeticOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ArithmeticOperator[] VALUES_ARRAY = new ArithmeticOperator[] { PLUS, MINUS, TIMES, DIVIDE,
-			MODULO, };
+	private static final ArithmeticOperator[] VALUES_ARRAY = new ArithmeticOperator[] {
+			PLUS, MINUS, TIMES, DIVIDE, MODULO, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Arithmetic Operator</b></em>' enumerators.
@@ -165,14 +165,13 @@ public enum ArithmeticOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ArithmeticOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ArithmeticOperator> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Arithmetic Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ArithmeticOperator get(String literal) {
@@ -189,8 +188,6 @@ public enum ArithmeticOperator implements Enumerator {
 	 * Returns the '<em><b>Arithmetic Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ArithmeticOperator getByName(String name) {
@@ -207,8 +204,6 @@ public enum ArithmeticOperator implements Enumerator {
 	 * Returns the '<em><b>Arithmetic Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ArithmeticOperator get(int value) {

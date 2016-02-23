@@ -26,7 +26,8 @@ import org.storydriven.core.impl.CorePackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsPackage {
+public class ExpressionsPackageImpl extends EPackageImpl implements
+		ExpressionsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,23 +82,27 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 */
 	public static ExpressionsPackage init() {
 		if (isInited)
-			return (ExpressionsPackage) EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+			return (ExpressionsPackage) EPackage.Registry.INSTANCE
+					.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Obtain or create and register package
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new ExpressionsPackageImpl());
+				.get(eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new ExpressionsPackageImpl());
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
+				.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		CommonExpressionsPackageImpl theCommonExpressionsPackage = (CommonExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(CommonExpressionsPackage.eNS_URI) instanceof CommonExpressionsPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI)
-						: CommonExpressionsPackage.eINSTANCE);
+				.getEPackage(CommonExpressionsPackage.eNS_URI) instanceof CommonExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(CommonExpressionsPackage.eNS_URI)
+				: CommonExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExpressionsPackage.createPackageContents();
@@ -113,7 +118,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		theExpressionsPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ExpressionsPackage.eNS_URI, theExpressionsPackage);
+		EPackage.Registry.INSTANCE.put(ExpressionsPackage.eNS_URI,
+				theExpressionsPackage);
 		return theExpressionsPackage;
 	}
 
@@ -141,7 +147,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * @generated
 	 */
 	public EAttribute getTextualExpression_ExpressionText() {
-		return (EAttribute) textualExpressionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) textualExpressionEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
@@ -150,7 +157,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * @generated
 	 */
 	public EAttribute getTextualExpression_Language() {
-		return (EAttribute) textualExpressionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) textualExpressionEClass.getEStructuralFeatures()
+				.get(1);
 	}
 
 	/**
@@ -159,7 +167,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * @generated
 	 */
 	public EAttribute getTextualExpression_LanguageVersion() {
-		return (EAttribute) textualExpressionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) textualExpressionEClass.getEStructuralFeatures()
+				.get(2);
 	}
 
 	/**
@@ -194,9 +203,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		expressionEClass = createEClass(EXPRESSION);
 
 		textualExpressionEClass = createEClass(TEXTUAL_EXPRESSION);
-		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__EXPRESSION_TEXT);
+		createEAttribute(textualExpressionEClass,
+				TEXTUAL_EXPRESSION__EXPRESSION_TEXT);
 		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE);
-		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE_VERSION);
+		createEAttribute(textualExpressionEClass,
+				TEXTUAL_EXPRESSION__LANGUAGE_VERSION);
 	}
 
 	/**
@@ -226,7 +237,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		// Obtain other dependent packages
 		CommonExpressionsPackage theCommonExpressionsPackage = (CommonExpressionsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(CommonExpressionsPackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE
+				.getEPackage(CorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theCommonExpressionsPackage);
@@ -236,24 +248,32 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		expressionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		expressionEClass.getESuperTypes().add(
+				theCorePackage.getCommentableElement());
 		textualExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
+		initEClass(expressionEClass, Expression.class, "Expression",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(textualExpressionEClass, TextualExpression.class, "TextualExpression", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(textualExpressionEClass, TextualExpression.class,
+				"TextualExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextualExpression_ExpressionText(), ecorePackage.getEString(), "expressionText", null, 1, 1,
-				TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTextualExpression_Language(), ecorePackage.getEString(), "language", null, 1, 1,
-				TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTextualExpression_LanguageVersion(), ecorePackage.getEString(), "languageVersion", null, 0, 1,
-				TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getTextualExpression_ExpressionText(),
+				ecorePackage.getEString(), "expressionText", null, 1, 1,
+				TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEAttribute(getTextualExpression_Language(),
+				ecorePackage.getEString(), "language", null, 1, 1,
+				TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEAttribute(getTextualExpression_LanguageVersion(),
+				ecorePackage.getEString(), "languageVersion", null, 0, 1,
+				TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
@@ -270,18 +290,39 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 */
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";
-		addAnnotation(this, source, new String[] { "documentation",
-				"The base package for all expressions that can be used for modeling activities and patterns." });
-		addAnnotation(expressionEClass, source, new String[] { "documentation",
-				"Represents any expression in an embedded textual language, e.g. OCL or Java. An expression\'s type is dynamically derived by an external mechanism (see TypedElement)." });
-		addAnnotation(textualExpressionEClass, source, new String[] { "documentation",
-				"Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java ." });
+		addAnnotation(
+				this,
+				source,
+				new String[] {
+						"documentation",
+						"The base package for all expressions which can be used for modeling activities\r\nand patterns." });
+		addAnnotation(
+				expressionEClass,
+				source,
+				new String[] {
+						"documentation",
+						"Represents any expression in an embedded textual language, e.g. OCL or Java. An expression\'s type is dynamically derived by an external mechanism (see TypedElement)." });
+		addAnnotation(
+				textualExpressionEClass,
+				source,
+				new String[] {
+						"documentation",
+						"Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java ." });
 		addAnnotation(getTextualExpression_ExpressionText(), source,
-				new String[] { "documentation", "Holds the expression, e.g. in OCL or Java." });
-		addAnnotation(getTextualExpression_Language(), source, new String[] { "documentation",
-				"String representation of the used language which has to be unique. Examples are OCL and Java." });
-		addAnnotation(getTextualExpression_LanguageVersion(), source, new String[] { "documentation",
-				"String representation of the used language\'s version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]\r\nExamples: 1.4 or 3.0.1 or 1.0.2.20101208." });
+				new String[] { "documentation",
+						"Holds the expression, e.g. in OCL or Java." });
+		addAnnotation(
+				getTextualExpression_Language(),
+				source,
+				new String[] {
+						"documentation",
+						"String representation of the used language which has to be unique. Examples are OCL and Java." });
+		addAnnotation(
+				getTextualExpression_LanguageVersion(),
+				source,
+				new String[] {
+						"documentation",
+						"String representation of the used language\'s version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]\r\nExamples: 1.4 or 3.0.1 or 1.0.2.20101208." });
 	}
 
 	/**
@@ -292,10 +333,12 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source,
-				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL", "settingDelegates",
-						"http://www.eclipse.org/emf/2002/Ecore/OCL", "validationDelegates",
-						"http://www.eclipse.org/emf/2002/Ecore/OCL" });
+		addAnnotation(this, source, new String[] { "invocationDelegates",
+				"http://www.eclipse.org/emf/2002/Ecore/OCL",
+				"settingDelegates",
+				"http://www.eclipse.org/emf/2002/Ecore/OCL",
+				"validationDelegates",
+				"http://www.eclipse.org/emf/2002/Ecore/OCL" });
 	}
 
 } //ExpressionsPackageImpl

@@ -30,7 +30,8 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public static CoreFactory init() {
 		try {
-			CoreFactory theCoreFactory = (CoreFactory) EPackage.Registry.INSTANCE.getEFactory(CorePackage.eNS_URI);
+			CoreFactory theCoreFactory = (CoreFactory) EPackage.Registry.INSTANCE
+					.getEFactory(CorePackage.eNS_URI);
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}
@@ -59,7 +60,8 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 

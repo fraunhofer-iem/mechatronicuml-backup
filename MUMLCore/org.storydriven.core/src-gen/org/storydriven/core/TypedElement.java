@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EGenericType;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.TypedElement#getType <em>Type</em>}</li>
  *   <li>{@link org.storydriven.core.TypedElement#getGenericType <em>Generic Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.storydriven.core.CorePackage#getTypedElement()
  * @model abstract="true"
@@ -40,9 +40,6 @@ public interface TypedElement extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Not used currently - returns always null.
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see org.storydriven.core.CorePackage#getTypedElement_Type()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -58,9 +55,6 @@ public interface TypedElement extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The EMF EGenericType that is used to type this typed element.
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Generic Type</em>' containment reference.
 	 * @see #isSetGenericType()
 	 * @see #unsetGenericType()

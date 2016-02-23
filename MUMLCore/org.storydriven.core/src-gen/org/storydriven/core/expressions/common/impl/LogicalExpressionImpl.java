@@ -19,14 +19,15 @@ import org.storydriven.core.expressions.common.LogicalExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.storydriven.core.expressions.common.impl.LogicalExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
-public class LogicalExpressionImpl extends BinaryExpressionImpl implements LogicalExpression {
+public class LogicalExpressionImpl extends BinaryExpressionImpl implements
+		LogicalExpression {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,7 +85,8 @@ public class LogicalExpressionImpl extends BinaryExpressionImpl implements Logic
 		LogicOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR,
 					oldOperator, operator));
 	}
 
