@@ -6,7 +6,6 @@ import java.io.FilenameFilter;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +43,7 @@ public class CodegenTest {
 	
 	// Check all muml/fujaba files in that project, see getProjects()
 	@Test
-	public void CheckCodegen() throws Exception {
+	public void Codegen() throws Exception {
 		checkFiles(project, new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String name) {
