@@ -24,7 +24,7 @@ CC = gcc
 CFLAGS = -c
 all: protobuf app
 protobuf: messages/Messages.proto
-        java -jar messages/protoc-1.0M4.jar -I=messages --c_out=messages Messages.proto
+	java -jar messages/protoc-1.0M4.jar -I=messages --c_out=messages Messages.proto
 app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o[/if] 
 	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o[/if] -o app
 [for (comp : Component | CIs.componentType->asSet())? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
