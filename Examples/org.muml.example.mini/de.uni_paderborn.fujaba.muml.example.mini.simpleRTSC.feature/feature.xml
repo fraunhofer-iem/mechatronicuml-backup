@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.example.railcab.feature"
-      label="MechatronicUML Arduino LED Example"
+      id="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC.feature"
+      label="MechatronicUML Realtime Statechart Example"
       version="0.5.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
 
    <description>
-      MechatronicUML Arduino LED Example
+      MechatronicUML Realtime Statechart Example
    </description>
 
    <copyright>
@@ -30,12 +30,5 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage" version="0.5.0" match="greaterOrEqual"/>
       <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.5.0"/>
    </requires>
-
-   <plugin
-         id="org.muml.example.blinkingLED"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
 </feature>
