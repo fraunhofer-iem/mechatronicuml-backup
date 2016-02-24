@@ -32,10 +32,9 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </requires>
 
    <plugin
-         id="org.muml.example.blinkingLED"
+         id="de.uni_paderborn.fujaba.muml.example.railcab"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>
