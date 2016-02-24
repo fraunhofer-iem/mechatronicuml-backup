@@ -107,7 +107,7 @@ public class FujabaSourceCodeExportWizard extends AbstractFujabaExportWizard {
 	public IFujabaExportOperation wizardCreateExportOperation() {
 		final EObject[] sourceElements = sourcePage.getSourceElements();
 		final URI targetURI = targetPage.getDestinationURI();
-		final IContainer target = ResourcesPlugin.getWorkspace().getRoot().getContainerForLocation(new Path(targetURI.toPlatformString(true)));
+		final IContainer target = (IContainer) ResourcesPlugin.getWorkspace().getRoot().findMember(targetURI.toPlatformString(true));
 
 		final ITargetPlatformGenerator targetPlatform = targetPlatformPage.getTargetPlatform();
 		
