@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Arduino LED Example
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.arduino.led
+Bundle-Version: 0.5.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.uni_paderborn.fujaba.muml;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.5.0"

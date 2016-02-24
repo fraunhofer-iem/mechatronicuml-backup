@@ -32,6 +32,10 @@
          id="de.uni_paderborn.fujaba.muml.example.railcab.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.arduino.led.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.junit"/>
       <import plugin="org.eclipse.osgi"/>
