@@ -24,7 +24,7 @@
 <rm:locator searchPathRef="eclipse_mars" failOnError="false"/>
 
 <rm:searchPath name="default">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="local" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="local" mutable="true" source="false">
       <rm:uri format="file:///{0}/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
@@ -39,7 +39,7 @@
 </rm:searchPath>
 
 <rm:searchPath name="MUMLCore">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/MUMLCore/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
@@ -47,7 +47,7 @@
 
 
 <rm:searchPath name="ModelMigration">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
@@ -56,98 +56,98 @@
  
  
 <rm:searchPath name="APE">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
   
 <rm:searchPath name="PlatformIndependentModeling">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
  </rm:searchPath>
  
 <rm:searchPath name="Uppaal">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/Uppaal/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="UppaalAdapter">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/UppaalAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="PlatformModeling">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/PlatformModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="ModelicaAdapter">
-   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
  	<rm:uri format="file:///data/jenkins/jobs/ModelicaAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="SimulinkAdapter">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/SimulinkAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
   
 <rm:searchPath name="UDBM">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>  
 
 <rm:searchPath name="C_Codegen">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/C_Codegen/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="VerificationCore">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/VerificationCore/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="StoryDiagram">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/StoryDiagram/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="ReconfigurationModeling">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/ReconfigurationModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="Examples">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/Examples/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
 </rm:searchPath> 
 
 <rm:searchPath name="ComponentBehaviorSynthesis">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/ComponentBehaviorSynthesis/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
@@ -155,7 +155,7 @@
    
 
 <rm:searchPath name="Graphviz">
-   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/Graphviz/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
   </rm:provider>
@@ -163,21 +163,21 @@
 
 
 <rm:searchPath name="PlatformSpecificModeling">
-   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/PlatformSpecificModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
   </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="Utilities_External">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/Utilities_External/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
 
 <rm:searchPath name="Ontology">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/OntologyModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
