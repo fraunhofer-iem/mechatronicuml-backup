@@ -17,10 +17,6 @@
    </license>
 
    <includes
-         id="org.muml.examples.rocketLauncher.feature"
-         version="0.0.0"/>
-
-   <includes
          id="de.uni_paderborn.fujaba.muml.example.blindOvertaking.feature"
          version="0.0.0"/>
 
@@ -70,6 +66,10 @@
 
    <includes
          id="de.uni_paderborn.fujaba.muml.coordinationpatternlib.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.example.rocketLauncher.feature"
          version="0.0.0"/>
 
    <requires>
