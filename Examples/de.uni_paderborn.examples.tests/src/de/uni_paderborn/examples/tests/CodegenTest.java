@@ -36,10 +36,15 @@ import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 @RunWith(Parameterized.class)
 public class CodegenTest {
+	private File project;
+	
+	public CodegenTest(File project) {
+		this.project = project;
+	}
 	
 	// Check all muml/fujaba files in that project, see getProjects()
 	@Test
-	public void CheckCodegen(File project) throws Exception {
+	public void CheckCodegen() throws Exception {
 		checkFiles(project, new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String name) {
