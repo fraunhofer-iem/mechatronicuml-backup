@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.arduino.led.feature"
+         id="org.muml.examples.rocketLauncher.feature"
          version="0.0.0"/>
 
    <includes
