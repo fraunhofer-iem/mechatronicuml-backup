@@ -5,5 +5,11 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.railcab;singleton:=tru
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: %Plugin.providerName
 Require-Bundle: de.uni_paderborn.fujaba.muml.example.ui;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.5.0"
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.reconfiguration;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.example.railcab.profileTypes;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.componentstorydiagram;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD;bundle-version="0.5.0",
+ org.storydriven.storydiagrams.expressions;bundle-version="1.0.0"
 Bundle-Localization: plugin
