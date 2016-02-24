@@ -44,7 +44,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.SensorInsta
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
 
-
 /**
  * Main entry point of the 'C' generation module.
  */
@@ -98,131 +97,115 @@ public class GenerateAll {
 			targetFolder.getLocation().toFile().mkdirs();
 		}
 		monitor.subTask("Loading...");
-		de.uni_paderborn.fujaba.muml.model.gen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.model.gen.c.main.Main(modelURI, targetFolder.getLocation().toFile(), arguments);
+		de.uni_paderborn.fujaba.muml.model.gen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.model.gen.c.main.Main(
+				modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.model.gen.c", "de.uni_paderborn.fujaba.muml.model.gen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID(
+				"de.uni_paderborn.fujaba.muml.model.gen.c", "de.uni_paderborn.fujaba.muml.model.gen.c.main.Main",
+				modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.worked(2);
-		
-		//TODO: Add to monitor
-		
-		//copy of needed files and command executions:
+
+		// TODO: Add to monitor
+
+		// copy of needed files and command executions:
 		monitor.subTask("Copying library files and generating messages...");
 		try {
-			//copy lib-folder
-	        //URL source_url = new URL("platform:/plugin/de.uni_paderborn.fujaba.muml.model.gen.c/resources/");		
-	        URL source_url = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.model.gen.c.Activator.PLUGIN_ID).getEntry("resources"));
-	        //File source = new File((FileLocator.resolve(source_url)).toURI().toString().substring(5)); // remove "file:"
+			// copy lib-folder
+			// URL source_url = new
+			// URL("platform:/plugin/de.uni_paderborn.fujaba.muml.model.gen.c/resources/");
+			URL source_url = FileLocator.toFileURL(Platform
+					.getBundle(de.uni_paderborn.fujaba.muml.model.gen.c.Activator.PLUGIN_ID).getEntry("resources"));
+			// File source = new
+			// File((FileLocator.resolve(source_url)).toURI().toString().substring(5));
+			// // remove "file:"
 
-			File source = new File(source_url.toURI());  
-	        
-		        //for every ecu
-				for (HWPlatformInstance hpi : getCodeGenmodel(modelURI).getHpic().getHwplatformInstances()) {	
-					for(ResourceInstance ri : hpi.getEmbeddedHPIC().getResources()){
-						if (!(ri instanceof ActuatorInstanceImpl)&& !(ri instanceof SensorInstanceImpl)) { // TODO: This is bad, but DeviceInstace doesn't work...
-							RefinedStructuredResourceInstance rsri = (RefinedStructuredResourceInstance) ri;
-							
-							File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + rsri.getName());
-							
-					        copyFolder(source, target);
-					        
-					        //run protobuf-message-gen
-							String command = "java -jar " + target + File.separator + "messages" + File.separator + "protoc-1.0M4.jar -I=" + target + File.separator + "messages" + " --c_out=" + target + File.separator + "messages" + File.separator + " Messages.proto"; 
-							
-							String output = executeCommand(command);
-							System.out.println(output);
-							}
-						}
+			File source = new File(source_url.toURI());
+
+			// for every ecu
+			for (HWPlatformInstance hpi : getCodeGenmodel(modelURI).getHpic().getHwplatformInstances()) {
+				for (ResourceInstance ri : hpi.getEmbeddedHPIC().getResources()) {
+					if (!(ri instanceof ActuatorInstanceImpl) && !(ri instanceof SensorInstanceImpl)) { // TODO:
+																										// This
+																										// is
+																										// bad,
+																										// but
+																										// DeviceInstace
+																										// doesn't
+																										// work...
+						RefinedStructuredResourceInstance rsri = (RefinedStructuredResourceInstance) ri;
+
+						File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator
+								+ rsri.getName());
+
+						copyFolder(source, target);
+
 					}
-			
+				}
+			}
+
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		monitor.worked(3);
-    }
-	
-	   public static CodGenAllocation getCodeGenmodel(URI model)
-	    {
-	    	ResourceSet resSet = new ResourceSetImpl();
-	    	Resource resource = resSet.getResource(model, true);
-	    	    // Get the first model element and cast it to the right type, in my
-	    	    // example everything is hierarchical included in this first node
-	    	CodGenAllocation cg = (CodGenAllocation) resource.getContents().get(0);
-	        return cg;
-	      }
-	    
-	    public static void copyFolder(File src, File dest)
-	        	throws IOException{
-	     
-	        	if(src.isDirectory()){
-	        		
-	        		//ignore svn-folder...
-	        		if(src.getName().equals(".svn")){
-	        			return;
-	        		}
-	     
-	        		//if directories not exists, create it
-	        		if(!dest.exists()){
-	        		   dest.mkdirs();
-	        		}
-	     
-	        		//list all the directory contents
-	        		String files[] = src.list();
-	     
-	        		for (String file : files) {
-	        		   //construct the src and dest file structure
-	        		   File srcFile = new File(src, file);
-	        		   File destFile = new File(dest, file);
-	        		   //recursive copy
-	        		   copyFolder(srcFile,destFile);
-	        		}
-	     
-	        	}else{        		   
-	        		//if file, then copy it
-	        		
-	        		//needs java 7, so commented out :(
-	        		//Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
-	        		
-	    	        byte[] buffer = new byte[1024];
-	    	        int x;
-	    	        InputStream input = new FileInputStream(src);
-	    	        OutputStream output = new FileOutputStream(dest);
-	    	        
-	    	        while ((x = input.read(buffer)) > 0) 
-	    	        {
-	    	            output.write(buffer, 0, x);
-	    	        }
-	    	        input.close();
-	    	        output.close();
-	        	}
-	        }
-	    
-		private String executeCommand(String command) {
-			 
-			StringBuffer output = new StringBuffer();
-	 
-			Process p;
-			try {
-				p = Runtime.getRuntime().exec(command);
-				p.waitFor();
-				BufferedReader reader = 
-	                            new BufferedReader(new InputStreamReader(p.getInputStream()));
-	 
-	                        String line = "";			
-				while ((line = reader.readLine())!= null) {
-					output.append(line + "\n");
-				}
-	 
-			} catch (Exception e) {
-				e.printStackTrace();
+	}
+
+	public static CodGenAllocation getCodeGenmodel(URI model) {
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(model, true);
+		// Get the first model element and cast it to the right type, in my
+		// example everything is hierarchical included in this first node
+		CodGenAllocation cg = (CodGenAllocation) resource.getContents().get(0);
+		return cg;
+	}
+
+	public static void copyFolder(File src, File dest) throws IOException {
+
+		if (src.isDirectory()) {
+
+			// ignore svn-folder...
+			if (src.getName().equals(".svn")) {
+				return;
 			}
-	 
-			return output.toString();
-	 
+
+			// if directories not exists, create it
+			if (!dest.exists()) {
+				dest.mkdirs();
+			}
+
+			// list all the directory contents
+			String files[] = src.list();
+
+			for (String file : files) {
+				// construct the src and dest file structure
+				File srcFile = new File(src, file);
+				File destFile = new File(dest, file);
+				// recursive copy
+				copyFolder(srcFile, destFile);
+			}
+
+		} else {
+			// if file, then copy it
+
+			// needs java 7, so commented out :(
+			// Files.copy(src.toPath(), dest.toPath(),
+			// StandardCopyOption.REPLACE_EXISTING);
+
+			byte[] buffer = new byte[1024];
+			int x;
+			InputStream input = new FileInputStream(src);
+			OutputStream output = new FileOutputStream(dest);
+
+			while ((x = input.read(buffer)) > 0) {
+				output.write(buffer, 0, x);
+			}
+			input.close();
+			output.close();
 		}
-	
+	}
+
 	/**
 	 * Finds the template in the plug-in. Returns the template plug-in URI.
 	 * 

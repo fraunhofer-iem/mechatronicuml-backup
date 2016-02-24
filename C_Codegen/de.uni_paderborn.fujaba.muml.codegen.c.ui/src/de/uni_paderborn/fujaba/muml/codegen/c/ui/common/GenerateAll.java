@@ -191,14 +191,6 @@ public class GenerateAll {
 		FileUtils.copyDirectory(sourceFolder, target);
 
 		monitor.worked(1);
-
-		// run protobuf-message-gen
-				String command = "java -jar " +"\"" +target + File.separator + "messages" + File.separator
-						+ "protoc-1.0M4.jar\" -I=\"" + target + File.separator + "messages\"" + " --c_out=\"" + target
-						+ File.separator + "messages" +"\""+ " Messages.proto";
-
-		String output = executeCommand(command);
-		System.out.println(output);
 	}
 
 	/**
@@ -212,7 +204,7 @@ public class GenerateAll {
 	 * @throws IOException
 	 * @generated NOT
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unused")
 	private URI getTemplateURI(String bundleID, IPath relativePath) throws IOException {
 		Bundle bundle = Platform.getBundle(bundleID);
 		if (bundle == null) {
@@ -250,27 +242,4 @@ public class GenerateAll {
 		return result;
 	}
 
-	
-	private String executeCommand(String command) {
-
-		StringBuffer output = new StringBuffer();
-
-		Process p;
-		try {
-			p = Runtime.getRuntime().exec(command);
-			p.waitFor();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-
-			String line = "";
-			while ((line = reader.readLine()) != null) {
-				output.append(line + "\n");
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return output.toString();
-
-	}
 }

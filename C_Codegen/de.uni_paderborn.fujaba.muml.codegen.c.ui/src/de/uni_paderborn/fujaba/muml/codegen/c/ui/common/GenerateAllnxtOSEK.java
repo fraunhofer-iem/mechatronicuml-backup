@@ -180,17 +180,10 @@ public class GenerateAllnxtOSEK {
 			File sourceFolder = new File(resources.toURI());
 			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
 
-		monitor.subTask("Copying library to target folder...");
-		File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
-		this.copyFolder(sourceFolder, target);
-		monitor.worked(1);
-		
-		 //run protobuf-message-gen
-		String command = "java -jar " + target + File.separator + "messages" + File.separator + "protoc-1.0M4.jar -I=" + target + File.separator + "messages" + " --c_out=" + target + File.separator + "messages" + File.separator + " Messages.proto"; 
-		
-		String output = executeCommand(command);
-		System.out.println(output);
-		
+			monitor.subTask("Copying library to target folder...");
+			File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
+			this.copyFolder(sourceFolder, target);
+			monitor.worked(1);
 		}
 		catch (URISyntaxException e) {
 			e.printStackTrace();
@@ -277,27 +270,4 @@ public class GenerateAllnxtOSEK {
 	    }
 	}
 	
-	private String executeCommand(String command) {
-		 
-		StringBuffer output = new StringBuffer();
- 
-		Process p;
-		try {
-			p = Runtime.getRuntime().exec(command);
-			p.waitFor();
-			BufferedReader reader = 
-                            new BufferedReader(new InputStreamReader(p.getInputStream()));
- 
-                        String line = "";			
-			while ((line = reader.readLine())!= null) {
-				output.append(line + "\n");
-			}
- 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
- 
-		return output.toString();
- 
-	}
 }
