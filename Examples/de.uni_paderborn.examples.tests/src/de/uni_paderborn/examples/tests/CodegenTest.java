@@ -78,7 +78,7 @@ public class CodegenTest {
 			Map<Object, Object> context = new HashMap<Object, Object>();
 			if (!Diagnostician.INSTANCE.validate(contents, diagnostics,
 					context)) {
-				problemCollector.add(resource.getURI().toString() + " is not valid.");
+				problemCollector.add(resource.getURI().toString() + " is not valid. ERROR: " + diagnostics.getMessage());
 			}
 		}
 	}
