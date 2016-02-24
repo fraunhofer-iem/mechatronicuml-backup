@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.1/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2aY7ENr5EeWU7egAQ86jrA" type="Platform" name="Telematics.platform_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_hi22ENr6EeWU7egAQ86jrA" type="2009" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hi22Etr6EeWU7egAQ86jrA" type="5069"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_hi22E9r6EeWU7egAQ86jrA" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_hi7HgNr6EeWU7egAQ86jrA" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_hi7Hgtr6EeWU7egAQ86jrA" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_hi7Hg9r6EeWU7egAQ86jrA" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_hi7HhNr6EeWU7egAQ86jrA" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_hi7Hhdr6EeWU7egAQ86jrA" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_hi7ukNr6EeWU7egAQ86jrA" type="5068"/>
+        <children xmi:type="notation:Shape" xmi:id="_hjxcENr6EeWU7egAQ86jrA" type="3028" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hjxcEtr6EeWU7egAQ86jrA" type="5060">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hjyDINr6EeWU7egAQ86jrA" x="-12" y="-51"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="../arduino_car_example.muml#_0YgRHpq9EeWHH7cQ5HOrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hjxcEdr6EeWU7egAQ86jrA" x="-12" y="12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hjyDIdr6EeWU7egAQ86jrA" type="3028" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hjyDI9r6EeWU7egAQ86jrA" type="5060">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hjyDJNr6EeWU7egAQ86jrA" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="../arduino_car_example.muml#_0YgRH5q9EeWHH7cQ5HOrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hjyDItr6EeWU7egAQ86jrA" x="250" y="33"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hjyqMNr6EeWU7egAQ86jrA" type="3028" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hjyqMtr6EeWU7egAQ86jrA" type="5060">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hjyqM9r6EeWU7egAQ86jrA" x="36" y="-27"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="../arduino_car_example.muml#_0YgRIJq9EeWHH7cQ5HOrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hjyqMdr6EeWU7egAQ86jrA" x="108" y="-12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hjyqNNr6EeWU7egAQ86jrA" type="3028" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hjyqNtr6EeWU7egAQ86jrA" type="5060">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hjzRQNr6EeWU7egAQ86jrA" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="../arduino_car_example.muml#_0YgRIZq9EeWHH7cQ5HOrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hjyqNdr6EeWU7egAQ86jrA" x="216" y="129"/>
+        </children>
+        <element xmi:type="hwplatform:ResourcePart" href="../arduino_car_example.muml#_0YgRHZq9EeWHH7cQ5HOrAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hi7Hgdr6EeWU7egAQ86jrA" x="93" y="44"/>
+      </children>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_hlbB4Nr6EeWU7egAQ86jrA" type="3029" fontName="Segoe UI" lineColor="0">
+      <element xmi:type="hwplatform:DelegationHWPort" href="../arduino_car_example.muml#_0YgRIpq9EeWHH7cQ5HOrAg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hlbo8Nr6EeWU7egAQ86jrA" x="324" y="388"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_hlbo8dr6EeWU7egAQ86jrA" type="3029" fontName="Segoe UI" lineColor="0">
+      <element xmi:type="hwplatform:DelegationHWPort" href="../arduino_car_example.muml#_0YgRI5q9EeWHH7cQ5HOrAg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hlbo8tr6EeWU7egAQ86jrA" x="431" y="168"/>
+    </children>
+    <element xmi:type="hwplatform:HWPlatform" href="../arduino_car_example.muml#_0YgRHJq9EeWHH7cQ5HOrAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hi22Edr6EeWU7egAQ86jrA" x="36" width="505" height="400"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_2aY7Edr5EeWU7egAQ86jrA"/>
+  <element xmi:type="hwplatform:HWPlatform" href="../arduino_car_example.muml#_0YgRHJq9EeWHH7cQ5HOrAg"/>
+</notation:Diagram>
