@@ -3,16 +3,18 @@ package de.uni_paderborn.examples.tests;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FilenameFilter;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -24,32 +26,40 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 import de.uni_paderborn.fujaba.muml.codegen.c.ui.export.C99SourceCodeExport;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
-import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
+@RunWith(Parameterized.class)
 public class CodegenTest {
-
-	private ProblemCollector problemCollector;
 	
+	// Check all muml/fujaba files in that project, see getProjects()
 	@Test
-	public void CheckCodegen() throws Exception {
-		problemCollector = new ProblemCollector();
+	public void CheckCodegen(File project) throws Exception {
+		checkFiles(project, new FilenameFilter() {
+			@Override
+			public boolean accept(File dir, String name) {
+				return name.endsWith(".muml") || name.endsWith(".fujaba");
+			}
+		});
+	}
+
+	// Find all projects and use them as constructor parameter
+	@Parameters
+	public static Collection<Object[]> getProjects() {
+		List<Object> projects = new ArrayList<Object>();
 		for (File directory : findWorkspaceLocation().listFiles()) {
 			if (directory.isDirectory()) {
 				if (Platform.getBundle(directory.getName()) != null) {
-					checkFiles(directory, new FilenameFilter() {
-						@Override
-						public boolean accept(File dir, String name) {
-							return name.endsWith(".muml") || name.endsWith(".fujaba");
-						}
-					});
+					projects.add(directory);
 				}
 			}
 		}
-		problemCollector.fail();
+		return Collections.singleton(projects.toArray());
 	}
 
 	private void checkFiles(File directory, FilenameFilter filenameFilter) throws Exception {
@@ -74,13 +84,13 @@ public class CodegenTest {
 		}
 	}
 
-	private void validateResource(Resource resource) {
+	private void validateResource(Resource resource) throws Exception {
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
 		for (EObject contents : resource.getContents()) {
 			Map<Object, Object> context = new HashMap<Object, Object>();
 			if (!Diagnostician.INSTANCE.validate(contents, diagnostics,
 					context)) {
-				problemCollector.add(resource.getURI().toString() + " is not valid. ERROR: " + diagnostics.getMessage());
+				throw new Exception(resource.getURI().toString() + " is not valid. ERROR: " + diagnostics.getMessage());
 			}
 		}
 	}
@@ -118,7 +128,7 @@ public class CodegenTest {
 				while (null != (line = br.readLine())) {
 					buffer.append(line);
 				}
-				problemCollector.add(buffer.toString());
+				throw new Exception(buffer.toString());
 			}
 		} finally {
 			project.delete(true, new NullProgressMonitor());
@@ -130,7 +140,7 @@ public class CodegenTest {
 	 * 
 	 * @return The workspace location.
 	 */
-	private File findWorkspaceLocation() {
+	private static File findWorkspaceLocation() {
 		return new File("."); // This requires that the launch configuration
 								// sets ${workspace_loc} as working directory!
 	}
