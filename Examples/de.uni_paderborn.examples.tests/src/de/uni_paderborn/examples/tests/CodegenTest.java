@@ -54,17 +54,17 @@ public class CodegenTest {
 	}
 
 	// Find all projects and use them as constructor parameter
-	@Parameters
+	@Parameters(name="{0}")
 	public static Collection<Object[]> getProjects() {
-		List<Object> projects = new ArrayList<Object>();
+		List<Object[]> projects = new ArrayList<Object[]>();
 		for (File directory : findWorkspaceLocation().listFiles()) {
 			if (directory.isDirectory()) {
 				if (Platform.getBundle(directory.getName()) != null) {
-					projects.add(directory);
+					projects.add(new Object[] { directory });
 				}
 			}
 		}
-		return Collections.singleton(projects.toArray());
+		return projects;
 	}
 
 	private void checkFiles(File directory, FilenameFilter filenameFilter) throws Exception {
