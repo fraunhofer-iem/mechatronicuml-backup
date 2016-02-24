@@ -4,5 +4,6 @@ Bundle-Name: %Plugin.name
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.railcab;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: %Plugin.providerName
-Require-Bundle: de.uni_paderborn.fujaba.muml.example.ui;bundle-version="0.4.0"
+Require-Bundle: de.uni_paderborn.fujaba.muml.example.ui;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.5.0"
 Bundle-Localization: plugin

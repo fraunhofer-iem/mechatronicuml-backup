@@ -32,6 +32,22 @@
          id="de.uni_paderborn.fujaba.muml.example.railcab.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.equinox.registry"/>
+      <import plugin="org.eclipse.core.runtime" version="3.11.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.11.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.codegen.c.ui" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.10.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.codegen.export.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.example.railcab" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.example.railcab.profileTypes" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.example.sectionEntry" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.example.blindOvertaking" version="0.5.0" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="de.uni_paderborn.examples.tests"
          download-size="0"
