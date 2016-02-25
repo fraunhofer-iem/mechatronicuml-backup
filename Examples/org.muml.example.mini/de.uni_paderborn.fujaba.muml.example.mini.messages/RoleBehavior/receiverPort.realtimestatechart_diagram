@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_LWqkQhyBEeSKP_lLzmbIVg" type="Real-Time Statechart" measurementUnit="Pixel">
-  <children xmi:type="notation:Shape" xmi:id="_VE49EByBEeSKP_lLzmbIVg" type="2007" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+  <children xmi:type="notation:Shape" xmi:id="_VE49EByBEeSKP_lLzmbIVg" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_VE49EhyBEeSKP_lLzmbIVg" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_VE49ExyBEeSKP_lLzmbIVg" type="5062"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_VE49FByBEeSKP_lLzmbIVg" type="7030">
@@ -23,11 +23,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_NGa1PhyCEeSKP_lLzmbIVg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../messages.muml#_LWqkQRyBEeSKP_lLzmbIVg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NGa1MRyCEeSKP_lLzmbIVg" width="288" height="205"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NGa1MRyCEeSKP_lLzmbIVg" width="141" height="122"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.muml#_LWqkQByBEeSKP_lLzmbIVg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VE49ERyBEeSKP_lLzmbIVg" width="865" height="532"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VE49ERyBEeSKP_lLzmbIVg" width="316" height="301"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_LWqkQxyBEeSKP_lLzmbIVg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.muml#_LWqkQByBEeSKP_lLzmbIVg"/>
@@ -38,7 +38,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_Pi--QhyCEeSKP_lLzmbIVg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Pi--QxyCEeSKP_lLzmbIVg" x="-10" y="20"/>
     </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_Pi-XMRyCEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Pi-XMRyCEeSKP_lLzmbIVg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../messages.muml#_Pi6s0ByCEeSKP_lLzmbIVg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Pi-XMhyCEeSKP_lLzmbIVg" points="[46, -3, -341, -14]$[261, -34, -126, -45]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PjSgQByCEeSKP_lLzmbIVg" id="(0.8402777777777778,0.5024390243902439)"/>
