@@ -9,7 +9,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_8-vZYegIEeSrL7p2IXXVVg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_8-vZYugIEeSrL7p2IXXVVg"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_890zYOgIEeSrL7p2IXXVVg"/>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_890zYOgIEeSrL7p2IXXVVg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8-apQegIEeSrL7p2IXXVVg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_-FBE8OgIEeSrL7p2IXXVVg" type="3007" fontName="Segoe UI" lineColor="0">
@@ -18,7 +18,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_-FBE9OgIEeSrL7p2IXXVVg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_-FBE9egIEeSrL7p2IXXVVg"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_-E_PwOgIEeSrL7p2IXXVVg"/>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_-E_PwOgIEeSrL7p2IXXVVg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-FBE8egIEeSrL7p2IXXVVg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="__AX58OgIEeSrL7p2IXXVVg" type="3007" fontName="Segoe UI" lineColor="0">
@@ -27,7 +27,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="__AYhA-gIEeSrL7p2IXXVVg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="__AYhBOgIEeSrL7p2IXXVVg"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../de.uni_paderborn.fujaba.muml.catalog.muml#__AWr0OgIEeSrL7p2IXXVVg"/>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#__AWr0OgIEeSrL7p2IXXVVg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="__AYhAOgIEeSrL7p2IXXVVg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_CrBmwOgJEeSrL7p2IXXVVg" type="3007" fontName="Segoe UI" lineColor="0">
@@ -36,15 +36,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_CrCN0egJEeSrL7p2IXXVVg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_CrCN0ugJEeSrL7p2IXXVVg"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_Cq_KgOgJEeSrL7p2IXXVVg"/>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_Cq_KgOgJEeSrL7p2IXXVVg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CrBmwegJEeSrL7p2IXXVVg"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_48z1AegIEeSrL7p2IXXVVg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_480cEOgIEeSrL7p2IXXVVg"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_45iekOgIEeSrL7p2IXXVVg"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../patterns.muml#_45iekOgIEeSrL7p2IXXVVg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48vjkegIEeSrL7p2IXXVVg" x="193" y="62" width="204" height="95"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_uRUisOgIEeSrL7p2IXXVVg"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_t0IlzedrEeSmgcfWtmVOuw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../patterns.muml#_t0IlzedrEeSmgcfWtmVOuw"/>
 </notation:Diagram>

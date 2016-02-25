@@ -22,7 +22,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_zVlSjeqUEeSdp6KdWPaGDw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_zVlSjuqUEeSdp6KdWPaGDw"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_bID-keqUEeSdp6KdWPaGDw"/>
+        <element xmi:type="realtimestatechart:State" href="../patterns.muml#_bID-keqUEeSdp6KdWPaGDw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zVlSgeqUEeSdp6KdWPaGDw" x="386" y="26" width="156" height="125"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_TXky4OqWEeSdp6KdWPaGDw" type="3032" fontName="Segoe UI" lineColor="0">
@@ -43,7 +43,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_TXlZ_OqWEeSdp6KdWPaGDw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_TXlZ_eqWEeSdp6KdWPaGDw"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_TXkL0OqWEeSdp6KdWPaGDw"/>
+        <element xmi:type="realtimestatechart:State" href="../patterns.muml#_TXkL0OqWEeSdp6KdWPaGDw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TXlZ8OqWEeSdp6KdWPaGDw" x="778" y="26" width="169" height="157"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Tk75cOqWEeSdp6KdWPaGDw" type="3032" fontName="Segoe UI" lineColor="0">
@@ -64,7 +64,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_Tk75feqWEeSdp6KdWPaGDw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_Tk75fuqWEeSdp6KdWPaGDw"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_Tk6rUOqWEeSdp6KdWPaGDw"/>
+        <element xmi:type="realtimestatechart:State" href="../patterns.muml#_Tk6rUOqWEeSdp6KdWPaGDw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tk75ceqWEeSdp6KdWPaGDw" x="26" y="38" width="205" height="121"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_T4Fe8OqWEeSdp6KdWPaGDw" type="3032" fontName="Segoe UI" lineColor="0">
@@ -85,15 +85,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_T4Fe_eqWEeSdp6KdWPaGDw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_T4Fe_uqWEeSdp6KdWPaGDw"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_T4EQ0OqWEeSdp6KdWPaGDw"/>
+        <element xmi:type="realtimestatechart:State" href="../patterns.muml#_T4EQ0OqWEeSdp6KdWPaGDw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T4Fe8eqWEeSdp6KdWPaGDw" x="134" y="278" width="325" height="97"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_bID-kOqUEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_bID-kOqUEeSdp6KdWPaGDw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zVhBEeqUEeSdp6KdWPaGDw" y="-12" width="973" height="541"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_bID-k-qUEeSdp6KdWPaGDw"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_bID-kOqUEeSdp6KdWPaGDw"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_bID-kOqUEeSdp6KdWPaGDw"/>
   <edges xmi:type="notation:Connector" xmi:id="_bnPjAOqWEeSdp6KdWPaGDw" type="4003" source="_zVlSgOqUEeSdp6KdWPaGDw" target="_TXky4OqWEeSdp6KdWPaGDw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_bnPjA-qWEeSdp6KdWPaGDw" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_bnPjBOqWEeSdp6KdWPaGDw" x="3" y="-13"/>
@@ -102,7 +102,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_bnPjBuqWEeSdp6KdWPaGDw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_bnPjAeqWEeSdp6KdWPaGDw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_bnI1UOqWEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_bnI1UOqWEeSdp6KdWPaGDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bnPjAuqWEeSdp6KdWPaGDw" points="[11, -6, -237, 0]$[239, -5, -9, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bnfaoOqWEeSdp6KdWPaGDw" id="(0.9166666666666666,0.632)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bngBsOqWEeSdp6KdWPaGDw" id="(0.029585798816568046,0.5605095541401274)"/>
@@ -115,7 +115,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cEhU5uqWEeSdp6KdWPaGDw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cEhU4eqWEeSdp6KdWPaGDw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_cEgt0OqWEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_cEgt0OqWEeSdp6KdWPaGDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cEhU4uqWEeSdp6KdWPaGDw" points="[-5, -1, 234, 0]$[-232, -1, 7, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cEv-YOqWEeSdp6KdWPaGDw" id="(0.06666666666666667,0.752)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cEv-YeqWEeSdp6KdWPaGDw" id="(0.9707317073170731,0.7272727272727273)"/>
@@ -128,7 +128,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cakdY-qWEeSdp6KdWPaGDw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_caj2UeqWEeSdp6KdWPaGDw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_cajPQOqWEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_cajPQOqWEeSdp6KdWPaGDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_caj2UuqWEeSdp6KdWPaGDw" points="[50, 0, 32, 3]$[112, 0, 94, 3]$[112, 82, 94, 85]$[20, 82, 2, 85]$[20, 20, 2, 23]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cazG4OqWEeSdp6KdWPaGDw" id="(0.5833333333333334,0.8441558441558441)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cazG4eqWEeSdp6KdWPaGDw" id="(0.7407407407407407,0.8181818181818182)"/>
@@ -141,7 +141,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_aup4s-qXEeSdp6KdWPaGDw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_aupRoeqXEeSdp6KdWPaGDw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_aukZIOqXEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_aukZIOqXEeSdp6KdWPaGDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aupRouqXEeSdp6KdWPaGDw" points="[0, 13, 31, 132]$[0, 72, 31, 191]$[-39, 72, -8, 191]$[-39, 13, -8, 132]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_au5JQOqXEeSdp6KdWPaGDw" id="(0.8698224852071006,0.9175257731958762)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_au5JQeqXEeSdp6KdWPaGDw" id="(0.6863905325443787,0.16494845360824742)"/>
@@ -154,7 +154,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_bPPdQ-qXEeSdp6KdWPaGDw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_bPO2MuqXEeSdp6KdWPaGDw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_bPO2MOqXEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_bPO2MOqXEeSdp6KdWPaGDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bPO2M-qXEeSdp6KdWPaGDw" points="[0, 141, -39, 120]$[0, 200, -39, 179]$[39, 200, 0, 179]$[39, 141, 0, 120]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bPdfsOqXEeSdp6KdWPaGDw" id="(0.23668639053254437,0.10309278350515463)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bPdfseqXEeSdp6KdWPaGDw" id="(0.46745562130177515,0.23711340206185566)"/>
@@ -167,7 +167,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_lE-zU-qXEeSdp6KdWPaGDw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_lE-MQeqXEeSdp6KdWPaGDw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_lE3ekOqXEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_lE3ekOqXEeSdp6KdWPaGDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lE-MQuqXEeSdp6KdWPaGDw" points="[-8, -3, 220, 0]$[-212, -12, 16, -9]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lFOD4OqXEeSdp6KdWPaGDw" id="(0.047337278106508875,0.18556701030927836)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lFOD4eqXEeSdp6KdWPaGDw" id="(0.8666666666666667,0.312)"/>
@@ -180,7 +180,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_lkZTM-qXEeSdp6KdWPaGDw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_lkYsIeqXEeSdp6KdWPaGDw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_lkYFEOqXEeSdp6KdWPaGDw"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_lkYFEOqXEeSdp6KdWPaGDw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lkYsIuqXEeSdp6KdWPaGDw" points="[-31, 31, 215, 37]$[-238, -13, 8, -7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lksOIOqXEeSdp6KdWPaGDw" id="(0.03550295857988166,0.08280254777070063)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lksOIeqXEeSdp6KdWPaGDw" id="(0.9083333333333333,0.16)"/>
@@ -193,7 +193,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_6k0jk-qYEeSOB_cH1Up36w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_6kz8geqYEeSOB_cH1Up36w" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_6kRxAOqYEeSOB_cH1Up36w"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_6kRxAOqYEeSOB_cH1Up36w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6kz8guqYEeSOB_cH1Up36w" points="[14, 4, -169, 0]$[169, -7, -14, -11]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6lUS0OqYEeSOB_cH1Up36w" id="(0.9317073170731708,0.09090909090909091)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6lUS0eqYEeSOB_cH1Up36w" id="(0.11666666666666667,0.216)"/>
@@ -206,7 +206,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9qAL0-qYEeSOB_cH1Up36w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_9p_kweqYEeSOB_cH1Up36w" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_9p4QAOqYEeSOB_cH1Up36w"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_9p4QAOqYEeSOB_cH1Up36w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9p_kwuqYEeSOB_cH1Up36w" points="[7, 21, -49, -131]$[35, 140, -21, -12]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9qkMgOqYEeSOB_cH1Up36w" id="(0.6097560975609756,0.9669421487603306)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9qkMgeqYEeSOB_cH1Up36w" id="(0.07734806629834254,0.030927835051546393)"/>
@@ -219,7 +219,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="__dVxs-qYEeSOB_cH1Up36w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="__dVKoeqYEeSOB_cH1Up36w" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#__dN14OqYEeSOB_cH1Up36w"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#__dN14OqYEeSOB_cH1Up36w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__dVKouqYEeSOB_cH1Up36w" points="[51, 4, -159, 0]$[206, 5, -4, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__duzQOqYEeSOB_cH1Up36w" id="(0.975609756097561,0.4214876033057851)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__duzQeqYEeSOB_cH1Up36w" id="(0.075,0.488)"/>
@@ -232,7 +232,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cti8YeqZEeSOB_cH1Up36w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_ctiVUeqZEeSOB_cH1Up36w" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_ctYkUOqZEeSOB_cH1Up36w"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_ctYkUOqZEeSOB_cH1Up36w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ctiVUuqZEeSOB_cH1Up36w" points="[4, -6, 0, 151]$[-1, -133, -5, 24]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cuD5wOqZEeSOB_cH1Up36w" id="(0.9584664536741214,0.061855670103092786)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cuD5weqZEeSOB_cH1Up36w" id="(0.43333333333333335,0.808)"/>
@@ -245,7 +245,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_dW-69uqZEeSOB_cH1Up36w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_dW-68eqZEeSOB_cH1Up36w" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_dW9s0OqZEeSOB_cH1Up36w"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_dW9s0OqZEeSOB_cH1Up36w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dW-68uqZEeSOB_cH1Up36w" points="[0, -8, -10, 147]$[-7, -139, -17, 16]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dXR14OqZEeSOB_cH1Up36w" id="(0.8274760383386581,0.08247422680412371)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dXR14eqZEeSOB_cH1Up36w" id="(0.14166666666666666,0.84)"/>
@@ -258,7 +258,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_hNzbgOqZEeSOB_cH1Up36w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_hNy0ceqZEeSOB_cH1Up36w" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_hNxmUOqZEeSOB_cH1Up36w"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_hNxmUOqZEeSOB_cH1Up36w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hNy0cuqZEeSOB_cH1Up36w" points="[31, 9, 80, 7]$[66, 9, 115, 7]$[66, 117, 115, 115]$[-42, 117, 7, 115]$[-42, 82, 7, 80]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hOFvYOqZEeSOB_cH1Up36w" id="(0.9009584664536742,0.15463917525773196)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hOFvYeqZEeSOB_cH1Up36w" id="(0.744408945686901,0.17525773195876287)"/>
@@ -271,7 +271,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_itUGduqZEeSOB_cH1Up36w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_itUGceqZEeSOB_cH1Up36w" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_itS4UOqZEeSOB_cH1Up36w"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_itS4UOqZEeSOB_cH1Up36w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_itUGcuqZEeSOB_cH1Up36w" points="[0, 5, 116, 89]$[0, 52, 116, 136]$[-108, 52, 8, 136]$[-108, 5, 8, 89]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_itnBYOqZEeSOB_cH1Up36w" id="(0.4984025559105431,0.9484536082474226)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_itnBYeqZEeSOB_cH1Up36w" id="(0.12779552715654952,0.08247422680412371)"/>

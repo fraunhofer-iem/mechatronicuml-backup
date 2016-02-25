@@ -22,15 +22,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_2Mt3Ou5DEeSkkcvANuOg5g"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_2Mt3O-5DEeSkkcvANuOg5g"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_P9fYge5CEeSkkcvANuOg5g"/>
+        <element xmi:type="realtimestatechart:State" href="../patterns.muml#_P9fYge5CEeSkkcvANuOg5g"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2MtQIe5DEeSkkcvANuOg5g"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_P9fYgO5CEeSkkcvANuOg5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j1s5Ee5CEeSkkcvANuOg5g" width="697" height="337"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_P9fYgO5CEeSkkcvANuOg5g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j1s5Ee5CEeSkkcvANuOg5g" width="286" height="271"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_P9h0we5CEeSkkcvANuOg5g"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_P9fYgO5CEeSkkcvANuOg5g"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_P9fYgO5CEeSkkcvANuOg5g"/>
   <edges xmi:type="notation:Connector" xmi:id="_7Q4UoO5DEeSkkcvANuOg5g" type="4003" source="_2MtQIO5DEeSkkcvANuOg5g" target="_2MtQIO5DEeSkkcvANuOg5g" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_7Q47sO5DEeSkkcvANuOg5g" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_7Q47se5DEeSkkcvANuOg5g" y="-20"/>
@@ -39,7 +39,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_7Q47s-5DEeSkkcvANuOg5g" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_7Q4Uoe5DEeSkkcvANuOg5g" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_7PyIcO5DEeSkkcvANuOg5g"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_7PyIcO5DEeSkkcvANuOg5g"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7Q4Uou5DEeSkkcvANuOg5g" points="[11, 0, 21, 0]$[11, 12, 21, 12]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7RPhAO5DEeSkkcvANuOg5g" id="(0.8791208791208791,0.7333333333333333)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7RPhAe5DEeSkkcvANuOg5g" id="(0.7692307692307693,0.7333333333333333)"/>

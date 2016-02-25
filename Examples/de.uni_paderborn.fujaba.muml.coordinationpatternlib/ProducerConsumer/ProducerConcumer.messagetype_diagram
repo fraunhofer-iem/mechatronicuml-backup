@@ -9,7 +9,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_umNRdO5GEeSkkcvANuOg5g"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_umNRde5GEeSkkcvANuOg5g"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_umMDUO5GEeSkkcvANuOg5g"/>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_umMDUO5GEeSkkcvANuOg5g"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_umNRce5GEeSkkcvANuOg5g"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_v1K-8O5GEeSkkcvANuOg5g" type="3007" fontName="Segoe UI" lineColor="0">
@@ -18,15 +18,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_v1K-9O5GEeSkkcvANuOg5g"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_v1K-9e5GEeSkkcvANuOg5g"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_v1KX4O5GEeSkkcvANuOg5g"/>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_v1KX4O5GEeSkkcvANuOg5g"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v1K-8e5GEeSkkcvANuOg5g"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_skAJJO5GEeSkkcvANuOg5g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_skAJJe5GEeSkkcvANuOg5g"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_sj9F0O5GEeSkkcvANuOg5g"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../patterns.muml#_sj9F0O5GEeSkkcvANuOg5g"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_skAJIe5GEeSkkcvANuOg5g" x="310" y="154" width="195"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_Krxqce5GEeSkkcvANuOg5g"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../de.uni_paderborn.fujaba.muml.catalog.muml#_t0IlzedrEeSmgcfWtmVOuw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../patterns.muml#_t0IlzedrEeSmgcfWtmVOuw"/>
 </notation:Diagram>
