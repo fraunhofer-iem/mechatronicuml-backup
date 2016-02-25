@@ -1,4 +1,2 @@
-within ;
-package Root_cic 
-annotation (uses(Modelica(version="3.2.1")));
+package Root_cic
 end Root_cic;

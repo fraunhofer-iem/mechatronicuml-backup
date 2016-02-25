@@ -1,3 +1,3 @@
 within Root_cic.A1;
-package TestSync 
+package TestSync
 end TestSync;
