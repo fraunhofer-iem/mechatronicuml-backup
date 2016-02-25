@@ -102,6 +102,7 @@
       <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom" version="0.4.0" match="greaterOrEqual"/>
       <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.5.0.qualifier"/>
       <import feature="de.uni_paderborn.fujaba.muml.storydiagrams.feature" version="0.5.0.201602222021"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper"/>
    </requires>
 
    <plugin
