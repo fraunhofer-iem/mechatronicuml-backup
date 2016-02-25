@@ -19,7 +19,7 @@
       </children>
       <children xmi:type="notation:Shape" xmi:id="_6YTcqtA5EeWxwcLCz5WDyg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_6YTcrNA5EeWxwcLCz5WDyg" type="5006">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_6YTcrdA5EeWxwcLCz5WDyg" x="45" y="-30"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_6YTcrdA5EeWxwcLCz5WDyg" x="-60" y="-45"/>
         </children>
         <element xmi:type="protocol:Role" href="../coordinatingBebots.muml#_mO9xE16PEeOU6dzb6wKMjg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6YTcq9A5EeWxwcLCz5WDyg" x="985" y="114"/>

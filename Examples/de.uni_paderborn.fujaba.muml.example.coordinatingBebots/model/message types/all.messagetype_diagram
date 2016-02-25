@@ -61,7 +61,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_EO4mI2mAEeOlIqc8khLIew"/>
     </children>
     <element xmi:type="msgtype:MessageTypeRepository" href="../coordinatingBebots.muml#_EOxRYGmAEeOlIqc8khLIew"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EO3_EWmAEeOlIqc8khLIew" x="216" y="240" width="276" height="85"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EO3_EWmAEeOlIqc8khLIew" x="270" y="240" width="316" height="121"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_MtuasGmAEeOlIqc8khLIew" type="2008" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_MtuasmmAEeOlIqc8khLIew" type="5017"/>
@@ -97,7 +97,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_EEfONXYcEeOftqkRKcg6BA"/>
     </children>
     <element xmi:type="msgtype:MessageTypeRepository" href="../coordinatingBebots.muml#_EEcx8HYcEeOftqkRKcg6BA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EEfOMXYcEeOftqkRKcg6BA" x="216" y="24" width="505" height="61"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EEfOMXYcEeOftqkRKcg6BA" x="285" y="15" width="736" height="91"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_A8qUAV6WEeOU6dzb6wKMjg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../coordinatingBebots.muml#_A8nQsF6WEeOU6dzb6wKMjg"/>
