@@ -272,7 +272,7 @@
           <message xmi:id="_4bjb4OqWEeSdp6KdWPaGDw" instanceOf="_lD1EIOqUEeSdp6KdWPaGDw"/>
         </events>
       </transitions>
-      <transitions xmi:id="_cEgt0OqWEeSdp6KdWPaGDw" priority="2" target="_Tk6rUOqWEeSdp6KdWPaGDw" source="_bID-keqUEeSdp6KdWPaGDw">
+      <transitions xmi:id="_cEgt0OqWEeSdp6KdWPaGDw" priority="2" target="_Tk6rUOqWEeSdp6KdWPaGDw" source="_bID-keqUEeSdp6KdWPaGDw" urgent="false">
         <clockConstraints xmi:id="_Rrw74OqXEeSdp6KdWPaGDw" clock="_M3a4kOqWEeSdp6KdWPaGDw" operator="GREATER">
           <bound xmi:id="_SpiLsOqXEeSdp6KdWPaGDw">
             <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_TeQNMOqXEeSdp6KdWPaGDw" typedNamedElement="_Hz10gOqXEeSdp6KdWPaGDw"/>
@@ -303,7 +303,7 @@
           <message xmi:id="_wpiboOqXEeSdp6KdWPaGDw" instanceOf="_lD1EIOqUEeSdp6KdWPaGDw"/>
         </events>
       </transitions>
-      <transitions xmi:id="_lE3ekOqXEeSdp6KdWPaGDw" priority="2" target="_bID-keqUEeSdp6KdWPaGDw" source="_TXkL0OqWEeSdp6KdWPaGDw">
+      <transitions xmi:id="_lE3ekOqXEeSdp6KdWPaGDw" priority="2" target="_bID-keqUEeSdp6KdWPaGDw" source="_TXkL0OqWEeSdp6KdWPaGDw" urgent="false">
         <clockConstraints xmi:id="_aH2h8OqYEeSOB_cH1Up36w" clock="_M3a4kOqWEeSdp6KdWPaGDw" operator="GREATER">
           <bound xmi:id="_anPMoOqYEeSOB_cH1Up36w">
             <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_baBUcOqYEeSOB_cH1Up36w" typedNamedElement="_JipVIOqWEeSdp6KdWPaGDw"/>
@@ -315,7 +315,7 @@
           <message xmi:id="_dI7GQOqYEeSOB_cH1Up36w" instanceOf="_nUyaIOqUEeSdp6KdWPaGDw"/>
         </events>
       </transitions>
-      <transitions xmi:id="_6kRxAOqYEeSOB_cH1Up36w" priority="1" target="_bID-keqUEeSdp6KdWPaGDw" source="_Tk6rUOqWEeSdp6KdWPaGDw">
+      <transitions xmi:id="_6kRxAOqYEeSOB_cH1Up36w" priority="1" target="_bID-keqUEeSdp6KdWPaGDw" source="_Tk6rUOqWEeSdp6KdWPaGDw" urgent="false">
         <clockConstraints xmi:id="_HnBOkOqZEeSOB_cH1Up36w" clock="_M3a4kOqWEeSdp6KdWPaGDw" operator="GREATER">
           <bound xmi:id="_H2o-8OqZEeSOB_cH1Up36w">
             <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_JB9ikOqZEeSOB_cH1Up36w" typedNamedElement="_HRP6QOqWEeSdp6KdWPaGDw"/>
@@ -340,7 +340,7 @@
           <message xmi:id="_GX4h8OqZEeSOB_cH1Up36w" instanceOf="_lD1EIOqUEeSdp6KdWPaGDw"/>
         </events>
       </transitions>
-      <transitions xmi:id="_ctYkUOqZEeSOB_cH1Up36w" priority="1" target="_bID-keqUEeSdp6KdWPaGDw" source="_T4EQ0OqWEeSdp6KdWPaGDw">
+      <transitions xmi:id="_ctYkUOqZEeSOB_cH1Up36w" priority="1" target="_bID-keqUEeSdp6KdWPaGDw" source="_T4EQ0OqWEeSdp6KdWPaGDw" urgent="false">
         <clockConstraints xmi:id="_EyO9UOqaEeSOB_cH1Up36w" clock="_M3a4kOqWEeSdp6KdWPaGDw" operator="GREATER">
           <bound xmi:id="_E-0AwOqaEeSOB_cH1Up36w">
             <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_F0iH0OqaEeSOB_cH1Up36w" typedNamedElement="_LEKyQOqWEeSdp6KdWPaGDw"/>
@@ -360,7 +360,7 @@
           <message xmi:id="_-0nIUOqZEeSOB_cH1Up36w" instanceOf="_nUyaIOqUEeSdp6KdWPaGDw"/>
         </events>
       </transitions>
-      <transitions xmi:id="_hNxmUOqZEeSOB_cH1Up36w" priority="3" target="_T4EQ0OqWEeSdp6KdWPaGDw" source="_T4EQ0OqWEeSdp6KdWPaGDw">
+      <transitions xmi:id="_hNxmUOqZEeSOB_cH1Up36w" priority="3" target="_T4EQ0OqWEeSdp6KdWPaGDw" source="_T4EQ0OqWEeSdp6KdWPaGDw" urgent="false">
         <clockConstraints xmi:id="_winCUOqZEeSOB_cH1Up36w" clock="_M3a4kOqWEeSdp6KdWPaGDw" operator="GREATER">
           <bound xmi:id="_w6uAUOqZEeSOB_cH1Up36w">
             <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_x2BK8OqZEeSOB_cH1Up36w" typedNamedElement="_LEKyQOqWEeSdp6KdWPaGDw"/>
@@ -448,34 +448,31 @@
       <states xmi:id="_RTF5ge5CEeSkkcvANuOg5g" name="waitForData" outgoingTransitions="_BRJN8O5EEeSkkcvANuOg5g" incomingTransitions="_BRJN8O5EEeSkkcvANuOg5g" initial="true"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_HT5akO5EEeSkkcvANuOg5g" name="senderPTRoleRTSC" behavioralElement="_ZP8wcO5EEeSkkcvANuOg5g">
-      <variables xmi:id="_yBhXMO5FEeSkkcvANuOg5g" name="period">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
-      </variables>
-      <transitions xmi:id="_61PPkO5FEeSkkcvANuOg5g" priority="1" target="_HT5ake5EEeSkkcvANuOg5g" source="_HT5ake5EEeSkkcvANuOg5g">
-        <clockConstraints xmi:id="_8-wg0O5FEeSkkcvANuOg5g" clock="_zpid4O5FEeSkkcvANuOg5g" operator="GREATER">
+      <transitions xmi:id="_61PPkO5FEeSkkcvANuOg5g" priority="1" target="_HT5ake5EEeSkkcvANuOg5g" source="_HT5ake5EEeSkkcvANuOg5g" urgent="false">
+        <clockConstraints xmi:id="_8-wg0O5FEeSkkcvANuOg5g" clock="_zpid4O5FEeSkkcvANuOg5g" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_9OSKkO5FEeSkkcvANuOg5g">
-            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-P6msO5FEeSkkcvANuOg5g" typedNamedElement="_yBhXMO5FEeSkkcvANuOg5g"/>
+            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_l-qgENwYEeWVGefPVpopOA" typedNamedElement="_-Lmj4O5EEeSkkcvANuOg5g"/>
           </bound>
         </clockConstraints>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_J4FacNwZEeWVGefPVpopOA">
+          <message xmi:id="_KFj1wNwZEeWVGefPVpopOA" instanceOf="_oDpOQO5EEeSkkcvANuOg5g"/>
+        </events>
       </transitions>
       <states xmi:id="_HT5ake5EEeSkkcvANuOg5g" name="PeriodicSending" outgoingTransitions="_61PPkO5FEeSkkcvANuOg5g" incomingTransitions="_61PPkO5FEeSkkcvANuOg5g" initial="true">
         <entryEvent xmi:id="_1OqBkO5FEeSkkcvANuOg5g" clockResets="_zpid4O5FEeSkkcvANuOg5g"/>
         <invariants xmi:id="_2yw4oO5FEeSkkcvANuOg5g" clock="_zpid4O5FEeSkkcvANuOg5g">
           <bound xmi:id="_3DPkoO5FEeSkkcvANuOg5g">
-            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_5RSwkO5FEeSkkcvANuOg5g" typedNamedElement="_yBhXMO5FEeSkkcvANuOg5g"/>
+            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_qrk7INwYEeWVGefPVpopOA" typedNamedElement="_-Lmj4O5EEeSkkcvANuOg5g"/>
           </bound>
         </invariants>
       </states>
       <clocks xmi:id="_zpid4O5FEeSkkcvANuOg5g" name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_H8N-0O5EEeSkkcvANuOg5g" name="receiverPTRoleRTSC" behavioralElement="_ZP8wdO5EEeSkkcvANuOg5g">
-      <variables xmi:id="_Ib2EoO5FEeSkkcvANuOg5g" name="timeout">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
-      </variables>
-      <transitions xmi:id="_WxvMIO5FEeSkkcvANuOg5g" priority="1" target="_SWr9IO5FEeSkkcvANuOg5g" source="_H8N-0e5EEeSkkcvANuOg5g">
-        <clockConstraints xmi:id="_ho0DYO5FEeSkkcvANuOg5g" clock="_Lvj4IO5FEeSkkcvANuOg5g" operator="GREATER">
+      <transitions xmi:id="_WxvMIO5FEeSkkcvANuOg5g" priority="1" target="_SWr9IO5FEeSkkcvANuOg5g" source="_H8N-0e5EEeSkkcvANuOg5g" urgent="false">
+        <clockConstraints xmi:id="_ho0DYO5FEeSkkcvANuOg5g" clock="_Lvj4IO5FEeSkkcvANuOg5g" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_h8ZGsO5FEeSkkcvANuOg5g">
-            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ll2gsO5FEeSkkcvANuOg5g" typedNamedElement="_Ib2EoO5FEeSkkcvANuOg5g"/>
+            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_1L6tYNwYEeWVGefPVpopOA" typedNamedElement="_7jXWUO5EEeSkkcvANuOg5g"/>
           </bound>
         </clockConstraints>
       </transitions>
@@ -493,7 +490,7 @@
         <entryEvent xmi:id="_ZOOcsO5FEeSkkcvANuOg5g" clockResets="_Lvj4IO5FEeSkkcvANuOg5g"/>
         <invariants xmi:id="_eC66wO5FEeSkkcvANuOg5g" clock="_Lvj4IO5FEeSkkcvANuOg5g">
           <bound xmi:id="_ecxlMO5FEeSkkcvANuOg5g">
-            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fx4W8O5FEeSkkcvANuOg5g" typedNamedElement="_Ib2EoO5FEeSkkcvANuOg5g"/>
+            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_zLcDYNwYEeWVGefPVpopOA" typedNamedElement="_7jXWUO5EEeSkkcvANuOg5g"/>
           </bound>
         </invariants>
       </states>
@@ -501,7 +498,7 @@
       <clocks xmi:id="_Lvj4IO5FEeSkkcvANuOg5g" name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_JOKc8O5GEeSkkcvANuOg5g" name="producerPCRoleRTSC" behavioralElement="_58-8cO5GEeSkkcvANuOg5g">
-      <transitions xmi:id="_YyIngO5OEeSkkcvANuOg5g" priority="1" target="_W1swAO5OEeSkkcvANuOg5g" source="_JOKc8e5GEeSkkcvANuOg5g">
+      <transitions xmi:id="_YyIngO5OEeSkkcvANuOg5g" priority="1" target="_W1swAO5OEeSkkcvANuOg5g" source="_JOKc8e5GEeSkkcvANuOg5g" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_br8GMO5OEeSkkcvANuOg5g">
           <message xmi:id="_dPQTEO5OEeSkkcvANuOg5g" instanceOf="_v1KX4O5GEeSkkcvANuOg5g"/>
         </events>
@@ -520,7 +517,7 @@
           <message xmi:id="_oDOzAO5OEeSkkcvANuOg5g" instanceOf="_v1KX4O5GEeSkkcvANuOg5g"/>
         </events>
       </transitions>
-      <transitions xmi:id="_mCSO8O5OEeSkkcvANuOg5g" priority="1" target="_J41xoe5GEeSkkcvANuOg5g" source="_kKWc8O5OEeSkkcvANuOg5g">
+      <transitions xmi:id="_mCSO8O5OEeSkkcvANuOg5g" priority="1" target="_J41xoe5GEeSkkcvANuOg5g" source="_kKWc8O5OEeSkkcvANuOg5g" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_oqK3MO5OEeSkkcvANuOg5g">
           <message xmi:id="_ozrYgO5OEeSkkcvANuOg5g" instanceOf="_umMDUO5GEeSkkcvANuOg5g"/>
         </events>
@@ -529,38 +526,49 @@
       <states xmi:id="_kKWc8O5OEeSkkcvANuOg5g" name="Consuming" outgoingTransitions="_mCSO8O5OEeSkkcvANuOg5g" incomingTransitions="_llXpcO5OEeSkkcvANuOg5g"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_t7p-8O5OEeSkkcvANuOg5g" name="providerLORoleRTSC" behavioralElement="_Skx38O5PEeSkkcvANuOg5g">
-      <variables xmi:id="_5YCtQO5PEeSkkcvANuOg5g" name="worktime">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
-      </variables>
-      <transitions xmi:id="_IhWOsO5QEeSkkcvANuOg5g" priority="1" target="_BYptsO5QEeSkkcvANuOg5g" source="_t7p-8e5OEeSkkcvANuOg5g">
+      <transitions xmi:id="_IhWOsO5QEeSkkcvANuOg5g" priority="1" target="_BYptsO5QEeSkkcvANuOg5g" source="_t7p-8e5OEeSkkcvANuOg5g" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_TiJCoO5QEeSkkcvANuOg5g">
           <message xmi:id="_TvW_QO5QEeSkkcvANuOg5g" instanceOf="_8Ye04O5OEeSkkcvANuOg5g"/>
         </events>
       </transitions>
-      <transitions xmi:id="_JB6lIO5QEeSkkcvANuOg5g" priority="2" target="_EKtloO5QEeSkkcvANuOg5g" source="_t7p-8e5OEeSkkcvANuOg5g">
+      <transitions xmi:id="_JB6lIO5QEeSkkcvANuOg5g" priority="2" target="_EKtloO5QEeSkkcvANuOg5g" source="_t7p-8e5OEeSkkcvANuOg5g" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_U0R_8O5QEeSkkcvANuOg5g">
           <message xmi:id="_VE9gQO5QEeSkkcvANuOg5g" instanceOf="_6Q-84O5OEeSkkcvANuOg5g"/>
         </events>
       </transitions>
-      <transitions xmi:id="_JqXFMO5QEeSkkcvANuOg5g" priority="1" target="_EKtloO5QEeSkkcvANuOg5g" source="_BYptsO5QEeSkkcvANuOg5g">
+      <transitions xmi:id="_JqXFMO5QEeSkkcvANuOg5g" priority="1" target="_EKtloO5QEeSkkcvANuOg5g" source="_BYptsO5QEeSkkcvANuOg5g" urgent="false">
+        <clockConstraints xmi:id="_xNXpoNwXEeWVGefPVpopOA" clock="_7QPlAO5PEeSkkcvANuOg5g" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_xwF8MNwXEeWVGefPVpopOA">
+            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yHkBANwXEeWVGefPVpopOA" typedNamedElement="_qK9W0NwXEeWVGefPVpopOA"/>
+          </bound>
+        </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_WGw7gO5QEeSkkcvANuOg5g">
           <message xmi:id="_WSBJQO5QEeSkkcvANuOg5g" instanceOf="_6Q-84O5OEeSkkcvANuOg5g"/>
         </events>
       </transitions>
-      <transitions xmi:id="_KOIgoO5QEeSkkcvANuOg5g" priority="1" target="_BYptsO5QEeSkkcvANuOg5g" source="_EKtloO5QEeSkkcvANuOg5g">
+      <transitions xmi:id="_KOIgoO5QEeSkkcvANuOg5g" priority="1" target="_BYptsO5QEeSkkcvANuOg5g" source="_EKtloO5QEeSkkcvANuOg5g" urgent="false">
+        <clockConstraints xmi:id="_ysBY8NwXEeWVGefPVpopOA" clock="_7QPlAO5PEeSkkcvANuOg5g" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_zJjCcNwXEeWVGefPVpopOA">
+            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_za6fQNwXEeWVGefPVpopOA" typedNamedElement="_qK9W0NwXEeWVGefPVpopOA"/>
+          </bound>
+        </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_XF7ScO5QEeSkkcvANuOg5g">
           <message xmi:id="_XSypwO5QEeSkkcvANuOg5g" instanceOf="_8Ye04O5OEeSkkcvANuOg5g"/>
         </events>
       </transitions>
-      <states xmi:id="_t7p-8e5OEeSkkcvANuOg5g" name="MeasuringLimig" outgoingTransitions="_IhWOsO5QEeSkkcvANuOg5g _JB6lIO5QEeSkkcvANuOg5g" initial="true">
+      <states xmi:id="_t7p-8e5OEeSkkcvANuOg5g" name="MeasuringLimit" outgoingTransitions="_IhWOsO5QEeSkkcvANuOg5g _JB6lIO5QEeSkkcvANuOg5g" initial="true">
         <invariants xmi:id="_PeEJMO5QEeSkkcvANuOg5g" clock="_7QPlAO5PEeSkkcvANuOg5g">
           <bound xmi:id="_P3GUQO5QEeSkkcvANuOg5g">
-            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_RSNnYO5QEeSkkcvANuOg5g" typedNamedElement="_5YCtQO5PEeSkkcvANuOg5g"/>
+            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_DPsmoNwYEeWVGefPVpopOA" typedNamedElement="_oRFzYO5PEeSkkcvANuOg5g"/>
           </bound>
         </invariants>
       </states>
-      <states xmi:id="_BYptsO5QEeSkkcvANuOg5g" name="LimitViolated" outgoingTransitions="_JqXFMO5QEeSkkcvANuOg5g" incomingTransitions="_IhWOsO5QEeSkkcvANuOg5g _KOIgoO5QEeSkkcvANuOg5g"/>
-      <states xmi:id="_EKtloO5QEeSkkcvANuOg5g" name="LimitRedeemed" outgoingTransitions="_KOIgoO5QEeSkkcvANuOg5g" incomingTransitions="_JB6lIO5QEeSkkcvANuOg5g _JqXFMO5QEeSkkcvANuOg5g"/>
+      <states xmi:id="_BYptsO5QEeSkkcvANuOg5g" name="LimitViolated" outgoingTransitions="_JqXFMO5QEeSkkcvANuOg5g" incomingTransitions="_IhWOsO5QEeSkkcvANuOg5g _KOIgoO5QEeSkkcvANuOg5g">
+        <entryEvent xmi:id="_k7mWANwXEeWVGefPVpopOA" clockResets="_7QPlAO5PEeSkkcvANuOg5g"/>
+      </states>
+      <states xmi:id="_EKtloO5QEeSkkcvANuOg5g" name="LimitRedeemed" outgoingTransitions="_KOIgoO5QEeSkkcvANuOg5g" incomingTransitions="_JB6lIO5QEeSkkcvANuOg5g _JqXFMO5QEeSkkcvANuOg5g">
+        <entryEvent xmi:id="_i1-tUNwXEeWVGefPVpopOA" clockResets="_7QPlAO5PEeSkkcvANuOg5g"/>
+      </states>
       <clocks xmi:id="_7QPlAO5PEeSkkcvANuOg5g" name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ui4XAO5OEeSkkcvANuOg5g" name="observerLORoleRTSC" behavioralElement="_SkyfAu5PEeSkkcvANuOg5g">
@@ -978,7 +986,7 @@
       <patternParameters xmi:id="_gQ9cwOptEeS9ysKE3OBWoQ" name="timeout">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </patternParameters>
-      <patternParameters xmi:id="_jBHQMOptEeS9ysKE3OBWoQ" name="delay">
+      <patternParameters xmi:id="_jBHQMOptEeS9ysKE3OBWoQ" name="maxMessageDelay">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </patternParameters>
       <descriptionAspects xmi:id="_TajWYO8gEeSAKuQp8oOTJg" overview="Synchronized Collaboration" context="Two independent systems can collaborate in a safety-critical environment, though cooperation adds more hazards." problem="Due to asynchronous communication and unreliable message transmission, the collaboration can get out of sync, i.e., one systems believes the collaboration is active, but the other does not know this. This error may result in safety-critical situations." solution="The systems should act with different roles: One is the master and the other is the slave. The system where the aforementioned safety-critical situation appears must be the master. The master is the one that initiates the activation and the deactivation." structure="master and slave" behavior="See RTSCs." examples="RailCabs" consequences="Both roles must have a pre-defined behavior when the collaboration is active or inactive. At run-time, the behavior must be adapted accordingly, because master and slave decide on this defined behavior to activate or deactivate the collaboration. Moreover, the slave cannot deactivate the collaboration" combineability="Combine it with Master-Slave-Assignment, if you want to dynamically define who should be master and slave." variants="The slave may also send a deactivation message. Though, this requires a reply of the master, otherwise the verification property does not hold." alternatives="Choose Master-Slave-Assignment, if you want dynamically defines a special collaboration for roles with equal rights" verification_properties="TODO"/>
@@ -1209,7 +1217,7 @@
           <upperBound xmi:id="_ma7zQOqPEeSdp6KdWPaGDw"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_xoR1cOqPEeSdp6KdWPaGDw" name="slaveBuf" messageType="_gDphEOqPEeSdp6KdWPaGDw _h4YOEOqPEeSdp6KdWPaGDw">
-          <bufferSize xmi:id="_SdfaoO5DEeSkkcvANuOg5g"/>
+          <bufferSize xmi:id="_Kmd1UNwXEeWVGefPVpopOA" value="2"/>
         </receiverMessageBuffer>
       </roles>
       <roleConnector xmi:id="_kD2nKOqPEeSdp6KdWPaGDw" connectorEndpoints="_kD2nIOqPEeSdp6KdWPaGDw _kD2nJOqPEeSdp6KdWPaGDw">
@@ -1597,7 +1605,7 @@
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
-      <patternParameters xmi:id="_7KpUUO5EEeSkkcvANuOg5g" name="delaymax">
+      <patternParameters xmi:id="_7KpUUO5EEeSkkcvANuOg5g" name="maxMessageDelay">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </patternParameters>
       <patternParameters xmi:id="_7jXWUO5EEeSkkcvANuOg5g" name="timeout">
@@ -1722,7 +1730,7 @@
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
-      <patternParameters xmi:id="_NjwSQO5IEeSkkcvANuOg5g" name="delaymax">
+      <patternParameters xmi:id="_NjwSQO5IEeSkkcvANuOg5g" name="maxMessageDelay">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </patternParameters>
       <descriptionAspects xmi:id="_dryOcPG5EeS9VOFkBPWDRw" overview="Producer Consumer " context="Working in a safety-critical section." problem="There exists a section where information or goods can be stored. The size of the section is 1. Furthermore, there exists two different systems. The one produces the information/good, the other consumes/clears it. The consumer may not act, if nothing is produced. Therefore, consuming and producing must alternate. Moreover, you have to satisfy that only one system / component is in the critical section at the same time. Otherwise, a safety-critical situation. Therefore, the participants must be assure that nobody is in the critical section, when they enter it." solution="Define a coordination protocol that specifies a bidirectional alternating lock. A producer produces the goods and informs the consumer as soon as the producing is finished and blocks is activities as long as the consumer does not send that it consumed the information/good." structure="producer and consumer" behavior="See RTSCs." examples="Two components of the BeBot have access to a shared memory. The first components can write on the memory, the second can read. While writing, it is forbidden to read, while reading it is forbidden to write." consequences="Only one producer and one consumer are interacting with each other. The verification properties only hold for the given behavior model, if you can guarantee that no message is lost. As there are no state invariants, each role must not leave the critical section." combineability="Combine it with Master-Slave-Assignment, if you want to dynamically define who should be producer (resp. master) and consumer (resp. slave)." variants="Add invariants to the Producing and Consuming state to restrict the time they can be in the critical section. You can extend the number of producers and / or the number of consumers. For many consumers, it may be possible to consume in parallel (e.g. reading a shared memory). State invariants could restrict the time, the consumer and or the producer can be active. The similarity to semaphores can be used to expand the pattern so that you can have a variable size for the inventory. Change the pattern in such a way, that it allows message lost." alternatives="This pattern is related to the pattern Block Execution, which provides also the possibility to lock actions within another component or to unlock them. The difference to Producer-Consumer is that only one component sets the lock and the unlock." verification_properties="TODO"/>
@@ -1838,11 +1846,14 @@
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
-      <patternParameters xmi:id="_n0QGYO5PEeSkkcvANuOg5g" name="delaymax">
+      <patternParameters xmi:id="_n0QGYO5PEeSkkcvANuOg5g" name="maxMessageDelay">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </patternParameters>
       <patternParameters xmi:id="_oRFzYO5PEeSkkcvANuOg5g" name="worktime">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      </patternParameters>
+      <patternParameters xmi:id="_qK9W0NwXEeWVGefPVpopOA" name="providerSenderDelay">
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
       </patternParameters>
       <descriptionAspects xmi:id="_tTFeAPG6EeS9VOFkBPWDRw" overview="Limit Observation" context="Information exchange between participants." problem="Two participants exist within a system. One collects numerical information, the other wants the know them. In particular, he wants to know if the numerical information violates a certain limit or not." solution="The goal should be to avoid as much communication as possible. Therefore, define a coordination protocol that consists of the two roles provider and observer. The provider collects the data and only informs the observer if the limit is violated or redeemed. At first, it is unknown if the limit is violated or redeemed, because the provider first has to explore the situation. In addition, the pattern warranted a disjunction of the observation and the processing and analysis of the environment situation." structure="provider and observer" behavior="See RTSCs" examples="One Example for the use of this pattern could be, that you have a limit value a BeBot can approach an object, so you can use the pattern Limit Observation like a distance control." consequences="Within the system, a limit must be pre-defined. If the limit is changed during run-time, the provider must be informed. It may be possible that the observer does not need to be informed, if the limit changes. The provider can not ask, which values were measured by the provider. The verification properties only hold for the given behavior model, if you can guarantee that no message is lost." combineability="Combine it with Fail-Operational-Delegation, if you want that the observer can change the limit during run-time." variants="You can extend the number of observers (1:n), if different components want to know if the limit exceeds. Another alternative is, that you extend the number of providers (n:1), so that the observer reacts, if one of the providers recognizes an exceeded limit. Thus, a m:n variant is also possible." alternatives="There are relations to the Request Information pattern: The difference is, if you use the pattern Limit Observation the information source informs about changes, if you use Request Information, the other component has to ask for this." verification_properties="TODO"/>
     </modelElements>

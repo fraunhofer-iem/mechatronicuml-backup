@@ -23,7 +23,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_FwhG3u5FEeSkkcvANuOg5g"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../patterns.muml#_H8N-0e5EEeSkkcvANuOg5g"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FwhG0e5FEeSkkcvANuOg5g" width="171" height="123"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FwhG0e5FEeSkkcvANuOg5g" width="201" height="123"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_SWyDwO5FEeSkkcvANuOg5g" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_SWyDwu5FEeSkkcvANuOg5g" type="5060"/>
@@ -48,7 +48,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_H8N-0O5EEeSkkcvANuOg5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fwdcce5FEeSkkcvANuOg5g" width="649" height="313"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fwdcce5FEeSkkcvANuOg5g" width="571" height="286"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_H8N-0-5EEeSkkcvANuOg5g"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_H8N-0O5EEeSkkcvANuOg5g"/>
@@ -87,7 +87,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Xqlfse5FEeSkkcvANuOg5g" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_Xqk4oO5FEeSkkcvANuOg5g"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Xqlfsu5FEeSkkcvANuOg5g" points="[109, 9, 38, 15]$[156, 9, 85, 15]$[156, 84, 85, 90]$[67, 84, -4, 90]$[67, 22, -4, 28]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Xqlfsu5FEeSkkcvANuOg5g" points="[129, 9, 45, 15]$[159, 9, 75, 15]$[159, 54, 75, 60]$[84, 54, 0, 60]$[84, 22, 0, 28]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Xq2lcO5FEeSkkcvANuOg5g" id="(0.36257309941520466,0.8211382113821138)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Xq2lce5FEeSkkcvANuOg5g" id="(0.7777777777777778,0.7723577235772358)"/>
   </edges>
