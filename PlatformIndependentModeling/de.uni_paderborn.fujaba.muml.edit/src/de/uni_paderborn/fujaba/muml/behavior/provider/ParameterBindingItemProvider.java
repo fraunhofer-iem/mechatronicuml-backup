@@ -65,15 +65,17 @@ public class ParameterBindingItemProvider
 		return itemPropertyDescriptors;
 	}
 
+
+
 	/**
 	 * This adds a property descriptor for the Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ParameterBinding_parameter_feature"),
@@ -84,22 +86,7 @@ public class ParameterBindingItemProvider
 				 true,
 				 null,
 				 null,
-				 null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					ParameterBinding parameterBinding = (ParameterBinding) object;
-					if (parameterBinding.eContainer() instanceof Message) {
-						Message message = (Message) parameterBinding.eContainer();
-						if (message.getInstanceOf() != null) {
-							return message.getInstanceOf().getParameters();
-						} else {
-							return new ArrayList<Object>();
-						}
-					}
-					
-					return super.getChoiceOfValues(object);
-				}
-			});
+				 null));
 	}
 
 	/**
@@ -255,4 +242,19 @@ public class ParameterBindingItemProvider
 		return de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin.INSTANCE;
 	}
 
+	/**
+	 * This enables OCL property filtering.
+	 * @generated OCL
+	 */
+	protected org.eclipse.emf.edit.provider.ItemPropertyDescriptor createItemPropertyDescriptor(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.common.util.ResourceLocator resourceLocator,String displayName,String description,org.eclipse.emf.ecore.EStructuralFeature feature,boolean isSettable,Object staticImage,String category,String[] filterFlags) {
+	    return new ocl.OCLItemPropertyDescriptor(adapterFactory,resourceLocator,displayName,description,feature,isSettable,false,false,staticImage,category,filterFlags);
+	}
+	
+	/**
+	 * This enables OCL property filtering.
+	 * @generated OCL
+	 */
+	protected org.eclipse.emf.edit.provider.ItemPropertyDescriptor createItemPropertyDescriptor(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.common.util.ResourceLocator resourceLocator, String displayName, String description, org.eclipse.emf.ecore.EStructuralFeature feature, boolean isSettable, boolean multiLine, boolean sortChoices, Object staticImage,String category, String[] filterFlags) {
+		return new ocl.OCLItemPropertyDescriptor(adapterFactory, resourceLocator, displayName,description,feature,isSettable,multiLine,sortChoices, staticImage, category,filterFlags);
+	}
 }

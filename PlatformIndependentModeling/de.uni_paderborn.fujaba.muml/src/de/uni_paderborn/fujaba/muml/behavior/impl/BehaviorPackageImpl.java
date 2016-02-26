@@ -547,6 +547,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
 	}
@@ -572,6 +574,22 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		   source, 
 		   new String[] {
 			 "constraints", "ConstantMustBeInitialized"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getParameterBinding_Parameter(), 
+		   source, 
+		   new String[] {
+			 "filter", "if(self.eContainer().oclIsTypeOf(realtimestatechart::Message)) then self.eContainer().oclAsType(realtimestatechart::Message).instanceOf.parameters else (\r\nif(self.eContainer().oclIsTypeOf(pattern::VerifiedConfiguration)) then self.eContainer().oclAsType(pattern::VerifiedConfiguration).coordinationPattern.patternParameters else behavior::Parameter.allInstances() endif)endif"
 		   });
 	}
 

@@ -42,6 +42,7 @@ public interface ParameterBinding extends ExtendableElement {
 	 * @see #setParameter(Parameter)
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getParameterBinding_Parameter()
 	 * @model required="true"
+	 *        annotation="http://www.muml.org/emf/OCLFilter filter='if(self.eContainer().oclIsTypeOf(realtimestatechart::Message)) then self.eContainer().oclAsType(realtimestatechart::Message).instanceOf.parameters else (\r\nif(self.eContainer().oclIsTypeOf(pattern::VerifiedConfiguration)) then self.eContainer().oclAsType(pattern::VerifiedConfiguration).coordinationPattern.patternParameters else behavior::Parameter.allInstances() endif)endif'"
 	 * @generated
 	 */
 	Parameter getParameter();

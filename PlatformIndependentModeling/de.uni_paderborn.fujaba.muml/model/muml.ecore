@@ -2323,6 +2323,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The mandatory parameter to which the value needs to be associated."/>
         </eAnnotations>
+        <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+          <details key="filter" value="if(self.eContainer().oclIsTypeOf(realtimestatechart::Message)) then self.eContainer().oclAsType(realtimestatechart::Message).instanceOf.parameters else (&#xD;&#xA;if(self.eContainer().oclIsTypeOf(pattern::VerifiedConfiguration)) then self.eContainer().oclAsType(pattern::VerifiedConfiguration).coordinationPattern.patternParameters else behavior::Parameter.allInstances() endif)endif"/>
+        </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
           eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
