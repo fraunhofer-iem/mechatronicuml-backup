@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_fKvPIJe3EeKIIefjcfllxA">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_fKvPIJe3EeKIIefjcfllxA">
   <categories xmi:id="_fLD_QJe3EeKIIefjcfllxA" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYJe3EeKIIefjcfllxA" name="void"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYZe3EeKIIefjcfllxA" name="boolean" primitiveType="BOOLEAN"/>
@@ -607,22 +607,22 @@
       <variables xmi:id="_6Ym7UKcxEeKFNPHtfiMz7g" name="stopCooperationA" dataType="_fLFNYZe3EeKIIefjcfllxA"/>
       <transitions xmi:id="_ONrOkJ3tEeKiuKmEjvlIFQ" priority="1" target="_CMjmEJ3tEeKiuKmEjvlIFQ" source="_CwUacJ3tEeKiuKmEjvlIFQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6YniYKcxEeKFNPHtfiMz7g" kind="TRIGGER">
-          <message xmi:id="_6YoJcKcxEeKFNPHtfiMz7g" instanceOf="_uofcgJ0bEeKe1dmyo6HznA"/>
+          <message xmi:id="_6YoJcKcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_OqDBgJ3tEeKiuKmEjvlIFQ" priority="2" target="_CcgGkJ3tEeKiuKmEjvlIFQ" source="_CwUacJ3tEeKiuKmEjvlIFQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6YoJcacxEeKFNPHtfiMz7g">
-          <message xmi:id="_6YowgKcxEeKFNPHtfiMz7g" instanceOf="_uofcgJ0bEeKe1dmyo6HznA"/>
+          <message xmi:id="_6YowgKcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_PEErEJ3tEeKiuKmEjvlIFQ" priority="1" target="_CMjmEJ3tEeKiuKmEjvlIFQ" source="_CcgGkJ3tEeKiuKmEjvlIFQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6YowgacxEeKFNPHtfiMz7g" kind="TRIGGER">
-          <message xmi:id="_6YpXkKcxEeKFNPHtfiMz7g" instanceOf="_uofcgJ0bEeKe1dmyo6HznA"/>
+          <message xmi:id="_6YpXkKcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_PfdmkJ3tEeKiuKmEjvlIFQ" priority="1" target="_CcgGkJ3tEeKiuKmEjvlIFQ" source="_CMjmEJ3tEeKiuKmEjvlIFQ" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6Yp-oKcxEeKFNPHtfiMz7g">
-          <message xmi:id="_6Yp-oacxEeKFNPHtfiMz7g" instanceOf="_uofcgJ0bEeKe1dmyo6HznA"/>
+          <message xmi:id="_6Yp-oacxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_QQDWAJ3tEeKiuKmEjvlIFQ" priority="2" target="_JNX9cJ3tEeKiuKmEjvlIFQ" source="_CcgGkJ3tEeKiuKmEjvlIFQ" urgent="false">
@@ -635,12 +635,12 @@
       <transitions xmi:id="_QwUxgJ3tEeKiuKmEjvlIFQ" priority="1" target="_CwUacJ3tEeKiuKmEjvlIFQ" source="_JNX9cJ3tEeKiuKmEjvlIFQ"/>
       <transitions xmi:id="_6Yrz0acxEeKFNPHtfiMz7g" priority="3" target="_CwUacJ3tEeKiuKmEjvlIFQ" source="_CMjmEJ3tEeKiuKmEjvlIFQ" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6Ysa46cxEeKFNPHtfiMz7g">
-          <message xmi:id="_6Ysa5KcxEeKFNPHtfiMz7g" instanceOf="_Y3bBAKK6EeKHT8i8WqTL9g"/>
+          <message xmi:id="_6Ysa5KcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_6YtB8KcxEeKFNPHtfiMz7g" priority="3" target="_CwUacJ3tEeKiuKmEjvlIFQ" source="_CcgGkJ3tEeKiuKmEjvlIFQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6YtB8acxEeKFNPHtfiMz7g" kind="TRIGGER">
-          <message xmi:id="_6YtB8qcxEeKFNPHtfiMz7g" instanceOf="_Y3bBAKK6EeKHT8i8WqTL9g"/>
+          <message xmi:id="_6YtB8qcxEeKFNPHtfiMz7g" instanceOf="_6ZDAMKcxEeKFNPHtfiMz7g"/>
         </events>
       </transitions>
       <states xmi:id="_CMjmEJ3tEeKiuKmEjvlIFQ" name="MyTurn" outgoingTransitions="_PfdmkJ3tEeKiuKmEjvlIFQ _6Yrz0acxEeKFNPHtfiMz7g" incomingTransitions="_ONrOkJ3tEeKiuKmEjvlIFQ _PEErEJ3tEeKiuKmEjvlIFQ">
@@ -667,17 +667,17 @@
       <variables xmi:id="_6Yx6cKcxEeKFNPHtfiMz7g" name="stopCooperationB" dataType="_fLFNYZe3EeKIIefjcfllxA"/>
       <transitions xmi:id="_ZU4MgJ3tEeKiuKmEjvlIFQ" priority="1" target="_XW410J3tEeKiuKmEjvlIFQ" source="_WhZ_UJ3tEeKiuKmEjvlIFQ" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6YyhgKcxEeKFNPHtfiMz7g">
-          <message xmi:id="_6YzIkKcxEeKFNPHtfiMz7g" instanceOf="_uofcgJ0bEeKe1dmyo6HznA"/>
+          <message xmi:id="_6YzIkKcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_Zw3k8J3tEeKiuKmEjvlIFQ" priority="1" target="_WhZ_UJ3tEeKiuKmEjvlIFQ" source="_XW410J3tEeKiuKmEjvlIFQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6YzIkacxEeKFNPHtfiMz7g" kind="TRIGGER">
-          <message xmi:id="_6YzvoKcxEeKFNPHtfiMz7g" instanceOf="_uofcgJ0bEeKe1dmyo6HznA"/>
+          <message xmi:id="_6YzvoKcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_aI5qcJ3tEeKiuKmEjvlIFQ" priority="1" target="_WhZ_UJ3tEeKiuKmEjvlIFQ" source="_Tu0i8Z3tEeKiuKmEjvlIFQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6YzvoacxEeKFNPHtfiMz7g" kind="TRIGGER">
-          <message xmi:id="_6Y0WsKcxEeKFNPHtfiMz7g" instanceOf="_uofcgJ0bEeKe1dmyo6HznA"/>
+          <message xmi:id="_6Y0WsKcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_bnPQsJ3tEeKiuKmEjvlIFQ" priority="2" target="_YYe1sJ3tEeKiuKmEjvlIFQ" source="_XW410J3tEeKiuKmEjvlIFQ" urgent="false">
@@ -690,12 +690,12 @@
       <transitions xmi:id="_b-J74J3tEeKiuKmEjvlIFQ" priority="1" target="_Tu0i8Z3tEeKiuKmEjvlIFQ" source="_YYe1sJ3tEeKiuKmEjvlIFQ"/>
       <transitions xmi:id="_6Y2y8KcxEeKFNPHtfiMz7g" priority="3" target="_Tu0i8Z3tEeKiuKmEjvlIFQ" source="_XW410J3tEeKiuKmEjvlIFQ">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6Y2y8acxEeKFNPHtfiMz7g" kind="TRIGGER">
-          <message xmi:id="_6Y2y8qcxEeKFNPHtfiMz7g" instanceOf="_Y3bBAKK6EeKHT8i8WqTL9g"/>
+          <message xmi:id="_6Y2y8qcxEeKFNPHtfiMz7g" instanceOf="_p5cyEJ3tEeKiuKmEjvlIFQ"/>
         </events>
       </transitions>
       <transitions xmi:id="_6Y2y86cxEeKFNPHtfiMz7g" priority="3" target="_Tu0i8Z3tEeKiuKmEjvlIFQ" source="_WhZ_UJ3tEeKiuKmEjvlIFQ" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6Y3aBKcxEeKFNPHtfiMz7g">
-          <message xmi:id="_6Y4BEKcxEeKFNPHtfiMz7g" instanceOf="_Y3bBAKK6EeKHT8i8WqTL9g"/>
+          <message xmi:id="_6Y4BEKcxEeKFNPHtfiMz7g" instanceOf="_6ZDAMKcxEeKFNPHtfiMz7g"/>
         </events>
       </transitions>
       <states xmi:id="_Tu0i8Z3tEeKiuKmEjvlIFQ" name="init" outgoingTransitions="_aI5qcJ3tEeKiuKmEjvlIFQ" incomingTransitions="_b-J74J3tEeKiuKmEjvlIFQ _6Y2y8KcxEeKFNPHtfiMz7g _6Y2y86cxEeKFNPHtfiMz7g" initial="true"/>
@@ -738,9 +738,9 @@
         <parameters xmi:id="_1bGjUJ0cEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
       </messageTypes>
     </modelElements>
-    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ovrtoJ3tEeKiuKmEjvlIFQ" name="TurnTransmission">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ovrtoJ3tEeKiuKmEjvlIFQ" name="TurnTransmission_Protocol">
       <messageTypes xmi:id="_p5cyEJ3tEeKiuKmEjvlIFQ" name="turn"/>
-      <messageTypes xmi:id="_6ZDAMKcxEeKFNPHtfiMz7g" name="stopCooperation"/>
+      <messageTypes xmi:id="_6ZDAMKcxEeKFNPHtfiMz7g" name="stopPlaying"/>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_P41VYKK6EeKHT8i8WqTL9g" name="TurnTransmission_stopped">
       <messageTypes xmi:id="_Y3bBAKK6EeKHT8i8WqTL9g" name="stopPlaying"/>
@@ -842,27 +842,27 @@
   </categories>
   <categories xmi:id="_MGeuAJ3sEeKiuKmEjvlIFQ" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_OfAEkJ3sEeKiuKmEjvlIFQ" name="TurnTransmission">
-      <roles xmi:id="_OfsBEJ3sEeKiuKmEjvlIFQ" connectors="_Oft2QZ3sEeKiuKmEjvlIFQ" behavior="_djbtEJ3sEeKiuKmEjvlIFQ" name="PartnerA" senderMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" receiverMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g">
+      <roles xmi:id="_OfsBEJ3sEeKiuKmEjvlIFQ" connectors="_Oft2QZ3sEeKiuKmEjvlIFQ" behavior="_djbtEJ3sEeKiuKmEjvlIFQ" name="PartnerA" senderMessageTypes="_p5cyEJ3tEeKiuKmEjvlIFQ _6ZDAMKcxEeKFNPHtfiMz7g" receiverMessageTypes="_p5cyEJ3tEeKiuKmEjvlIFQ _6ZDAMKcxEeKFNPHtfiMz7g">
         <cardinality xmi:id="_OfsoIJ3sEeKiuKmEjvlIFQ">
           <lowerBound xmi:id="_OjBXYGv-EeW66qqCAwhr8A"/>
           <upperBound xmi:id="_OjBXYWv-EeW66qqCAwhr8A"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_imi-4KcyEeKFNPHtfiMz7g" name="buffer1" messageType="_uofcgJ0bEeKe1dmyo6HznA" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+        <receiverMessageBuffer xmi:id="_imi-4KcyEeKFNPHtfiMz7g" name="buffer_turn" messageType="_p5cyEJ3tEeKiuKmEjvlIFQ" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
           <bufferSize xmi:id="_v_-FwGvyEeWg8pm-i8KXGA"/>
         </receiverMessageBuffer>
-        <receiverMessageBuffer xmi:id="_wkNbQGvyEeWg8pm-i8KXGA" name="buffer2" messageType="_Y3bBAKK6EeKHT8i8WqTL9g" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+        <receiverMessageBuffer xmi:id="_wkNbQGvyEeWg8pm-i8KXGA" name="buffer_stop" messageType="_6ZDAMKcxEeKFNPHtfiMz7g" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
           <bufferSize xmi:id="_x-7FwGvyEeWg8pm-i8KXGA"/>
         </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_OftPMZ3sEeKiuKmEjvlIFQ" connectors="_Oft2QZ3sEeKiuKmEjvlIFQ" behavior="_Tu0i8J3tEeKiuKmEjvlIFQ" name="PartnerB" senderMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" receiverMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g">
+      <roles xmi:id="_OftPMZ3sEeKiuKmEjvlIFQ" connectors="_Oft2QZ3sEeKiuKmEjvlIFQ" behavior="_Tu0i8J3tEeKiuKmEjvlIFQ" name="PartnerB" senderMessageTypes="_p5cyEJ3tEeKiuKmEjvlIFQ _6ZDAMKcxEeKFNPHtfiMz7g" receiverMessageTypes="_p5cyEJ3tEeKiuKmEjvlIFQ _6ZDAMKcxEeKFNPHtfiMz7g">
         <cardinality xmi:id="_OftPMp3sEeKiuKmEjvlIFQ">
           <lowerBound xmi:id="_dFap0Gv-EeW66qqCAwhr8A"/>
           <upperBound xmi:id="_dFbQ4Gv-EeW66qqCAwhr8A"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_n0ylYKcyEeKFNPHtfiMz7g" name="buffer2" messageType="_Y3bBAKK6EeKHT8i8WqTL9g" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+        <receiverMessageBuffer xmi:id="_n0ylYKcyEeKFNPHtfiMz7g" name="buffer_stop" messageType="_6ZDAMKcxEeKFNPHtfiMz7g" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
           <bufferSize xmi:id="_6vKzYGvyEeWg8pm-i8KXGA"/>
         </receiverMessageBuffer>
-        <receiverMessageBuffer xmi:id="_13KioGvyEeWg8pm-i8KXGA" name="buffer1" messageType="_uofcgJ0bEeKe1dmyo6HznA" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+        <receiverMessageBuffer xmi:id="_13KioGvyEeWg8pm-i8KXGA" name="buffer_turn" messageType="_p5cyEJ3tEeKiuKmEjvlIFQ" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
           <bufferSize xmi:id="_2nM4cGvyEeWg8pm-i8KXGA"/>
         </receiverMessageBuffer>
       </roles>
@@ -878,7 +878,5 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_rPr94GwDEeW66qqCAwhr8A" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
-    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_rPsk8GwDEeW66qqCAwhr8A"/>
-  </categories>
+  <categories xmi:id="_rPr94GwDEeW66qqCAwhr8A" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform"/>
 </modelinstance:RootNode>

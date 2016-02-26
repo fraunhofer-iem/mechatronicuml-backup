@@ -36,7 +36,7 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_gmtOdGt-EeWj9v6WhQr11w"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_gmtOdWt-EeWj9v6WhQr11w"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="../demonstrator.fujaba#_RPlLoJvEEeKe1dmyo6HznA"/>
+                    <element xmi:type="realtimestatechart:State" href="../cooperatingballplayingrobots.muml#_RPlLoJvEEeKe1dmyo6HznA"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmsAUWt-EeWj9v6WhQr11w"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_gmtOdmt-EeWj9v6WhQr11w" type="3032" fontName="Segoe UI" lineColor="0">
@@ -57,7 +57,7 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_gmt1i2t-EeWj9v6WhQr11w"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_gmt1jGt-EeWj9v6WhQr11w"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="../demonstrator.fujaba#_5UrcQJvEEeKe1dmyo6HznA"/>
+                    <element xmi:type="realtimestatechart:State" href="../cooperatingballplayingrobots.muml#_5UrcQJvEEeKe1dmyo6HznA"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmtOd2t-EeWj9v6WhQr11w" x="368" y="201"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_gmuckGt-EeWj9v6WhQr11w" type="3032" fontName="Segoe UI" lineColor="0">
@@ -78,7 +78,7 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_gmvDoWt-EeWj9v6WhQr11w"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_gmvDomt-EeWj9v6WhQr11w"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="../demonstrator.fujaba#_5oizcJvEEeKe1dmyo6HznA"/>
+                    <element xmi:type="realtimestatechart:State" href="../cooperatingballplayingrobots.muml#_5oizcJvEEeKe1dmyo6HznA"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmuckWt-EeWj9v6WhQr11w" x="756" y="189"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_gmvDo2t-EeWj9v6WhQr11w" type="3032" fontName="Segoe UI" lineColor="0">
@@ -99,17 +99,17 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_gmvqtGt-EeWj9v6WhQr11w"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_gmvqtWt-EeWj9v6WhQr11w"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="../demonstrator.fujaba#__FDfcJvEEeKe1dmyo6HznA"/>
+                    <element xmi:type="realtimestatechart:State" href="../cooperatingballplayingrobots.muml#__FDfcJvEEeKe1dmyo6HznA"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmvDpGt-EeWj9v6WhQr11w" x="920" y="33"/>
                   </children>
                 </children>
-                <element xmi:type="realtimestatechart:RealtimeStatechart" href="../demonstrator.fujaba#_RPg6MJvEEeKe1dmyo6HznA"/>
+                <element xmi:type="realtimestatechart:RealtimeStatechart" href="../cooperatingballplayingrobots.muml#_RPg6MJvEEeKe1dmyo6HznA"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmcvwWt-EeWj9v6WhQr11w"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_glkmA2t-EeWj9v6WhQr11w"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_glkmBGt-EeWj9v6WhQr11w"/>
             </children>
-            <element xmi:type="realtimestatechart:Region" href="../demonstrator.fujaba#_RPN_QJvEEeKe1dmyo6HznA"/>
+            <element xmi:type="realtimestatechart:Region" href="../cooperatingballplayingrobots.muml#_RPN_QJvEEeKe1dmyo6HznA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glj-8Wt-EeWj9v6WhQr11w"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_glkmBWt-EeWj9v6WhQr11w" type="3042" fontName="Segoe UI" lineColor="0">
@@ -120,7 +120,7 @@
               <styles xmi:type="notation:SortingStyle" xmi:id="_gllNEmt-EeWj9v6WhQr11w"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_gllNE2t-EeWj9v6WhQr11w"/>
             </children>
-            <element xmi:type="realtimestatechart:Region" href="../demonstrator.fujaba#_MOTNoJvFEeKe1dmyo6HznA"/>
+            <element xmi:type="realtimestatechart:Region" href="../cooperatingballplayingrobots.muml#_MOTNoJvFEeKe1dmyo6HznA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glkmBmt-EeWj9v6WhQr11w"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_gllNFGt-EeWj9v6WhQr11w" type="3042" fontName="Segoe UI" lineColor="0">
@@ -131,7 +131,7 @@
               <styles xmi:type="notation:SortingStyle" xmi:id="_gll0IWt-EeWj9v6WhQr11w"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_gll0Imt-EeWj9v6WhQr11w"/>
             </children>
-            <element xmi:type="realtimestatechart:Region" href="../demonstrator.fujaba#_wDtxwJvFEeKe1dmyo6HznA"/>
+            <element xmi:type="realtimestatechart:Region" href="../cooperatingballplayingrobots.muml#_wDtxwJvFEeKe1dmyo6HznA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gllNFWt-EeWj9v6WhQr11w"/>
           </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_glcqMWt-EeWj9v6WhQr11w"/>
@@ -145,13 +145,13 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_glcqN2t-EeWj9v6WhQr11w"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_glcqOGt-EeWj9v6WhQr11w"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../demonstrator.fujaba#_ObmBEZvEEeKe1dmyo6HznA"/>
+        <element xmi:type="realtimestatechart:State" href="../cooperatingballplayingrobots.muml#_ObmBEZvEEeKe1dmyo6HznA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glcDIWt-EeWj9v6WhQr11w" x="-72" y="60" width="1479" height="918"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../demonstrator.fujaba#_ObmBEJvEEeKe1dmyo6HznA"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../cooperatingballplayingrobots.muml#_ObmBEJvEEeKe1dmyo6HznA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glLkcWt-EeWj9v6WhQr11w" height="1045"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_fq7isWt-EeWj9v6WhQr11w"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../demonstrator.fujaba#_ObmBEJvEEeKe1dmyo6HznA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../cooperatingballplayingrobots.muml#_ObmBEJvEEeKe1dmyo6HznA"/>
 </notation:Diagram>

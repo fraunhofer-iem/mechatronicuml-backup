@@ -6,9 +6,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_VzduUWt-EeWj9v6WhQr11w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_VzduUmt-EeWj9v6WhQr11w"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../demonstrator.fujaba#_sSeAUJ0bEeKe1dmyo6HznA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VzNPoWt-EeWj9v6WhQr11w"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../cooperatingballplayingrobots.muml#_sSeAUJ0bEeKe1dmyo6HznA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VzNPoWt-EeWj9v6WhQr11w" x="30" y="15"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_Vy1cMWt-EeWj9v6WhQr11w"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../demonstrator.fujaba#_rIvYIJ0bEeKe1dmyo6HznA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../cooperatingballplayingrobots.muml#_rIvYIJ0bEeKe1dmyo6HznA"/>
 </notation:Diagram>
