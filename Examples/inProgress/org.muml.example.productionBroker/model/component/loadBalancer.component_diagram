@@ -9,24 +9,14 @@
       <children xmi:type="notation:DecorationNode" xmi:id="_Y_IWoNxcEeW-N_z6XJQq2w" type="5025">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Y_IWodxcEeW-N_z6XJQq2w" y="5"/>
       </children>
-      <element xmi:type="component:DiscretePort" href="../loadBalancer.muml#_Y-2CwNxcEeW-N_z6XJQq2w"/>
+      <element xmi:type="component:DiscretePort" href="../productionBroker.muml#_Y-2CwNxcEeW-N_z6XJQq2w"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y_HIgdxcEeW-N_z6XJQq2w"/>
     </children>
-    <element xmi:type="component:StaticAtomicComponent" href="../loadBalancer.muml#_vwAi4NxbEeW-N_z6XJQq2w"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../productionBroker.muml#_vwAi4NxbEeW-N_z6XJQq2w"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vwPMYdxbEeW-N_z6XJQq2w" x="84" y="72" width="193" height="109"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_OzzyINxcEeW-N_z6XJQq2w" type="2006" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Oz0ZMNxcEeW-N_z6XJQq2w" type="5028"/>
-    <children xmi:type="notation:Shape" xmi:id="_ZkSSINxcEeW-N_z6XJQq2w" type="3010" fontName="Segoe UI" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_ZkS5MNxcEeW-N_z6XJQq2w" type="5012">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZkS5MdxcEeW-N_z6XJQq2w" y="5"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_ZkS5MtxcEeW-N_z6XJQq2w" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZkS5M9xcEeW-N_z6XJQq2w" y="5"/>
-      </children>
-      <element xmi:type="component:DiscretePort" href="../loadBalancer.muml#_ZkPO0NxcEeW-N_z6XJQq2w"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZkSSIdxcEeW-N_z6XJQq2w" x="181" y="48"/>
-    </children>
     <children xmi:type="notation:Shape" xmi:id="_i6UQkNxgEeW-N_z6XJQq2w" type="3010" fontName="Segoe UI" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_i6UQktxgEeW-N_z6XJQq2w" type="5012">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_i6U3oNxgEeW-N_z6XJQq2w" y="5"/>
@@ -34,11 +24,11 @@
       <children xmi:type="notation:DecorationNode" xmi:id="_i6U3odxgEeW-N_z6XJQq2w" type="5025">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_i6U3otxgEeW-N_z6XJQq2w" y="5"/>
       </children>
-      <element xmi:type="component:DiscretePort" href="../loadBalancer.muml#_i6J4gNxgEeW-N_z6XJQq2w"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6UQkdxgEeW-N_z6XJQq2w"/>
+      <element xmi:type="component:DiscretePort" href="../productionBroker.muml#_i6J4gNxgEeW-N_z6XJQq2w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6UQkdxgEeW-N_z6XJQq2w" x="108" y="-12"/>
     </children>
-    <element xmi:type="component:StaticAtomicComponent" href="../loadBalancer.muml#_Ozg3MNxcEeW-N_z6XJQq2w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OzzyIdxcEeW-N_z6XJQq2w" x="84" y="228" width="193" height="109"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../productionBroker.muml#_Ozg3MNxcEeW-N_z6XJQq2w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OzzyIdxcEeW-N_z6XJQq2w" x="132" y="324" width="193" height="109"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_QVdLENxcEeW-N_z6XJQq2w" type="2006" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_QVdyINxcEeW-N_z6XJQq2w" type="5028"/>
@@ -49,12 +39,12 @@
       <children xmi:type="notation:DecorationNode" xmi:id="_bmTNMNxcEeW-N_z6XJQq2w" type="5025">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_bmTNMdxcEeW-N_z6XJQq2w" y="5"/>
       </children>
-      <element xmi:type="component:DiscretePort" href="../loadBalancer.muml#_blyP0NxcEeW-N_z6XJQq2w"/>
+      <element xmi:type="component:DiscretePort" href="../productionBroker.muml#_blyP0NxcEeW-N_z6XJQq2w"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bmSmIdxcEeW-N_z6XJQq2w"/>
     </children>
-    <element xmi:type="component:StaticAtomicComponent" href="../loadBalancer.muml#_QVSL8NxcEeW-N_z6XJQq2w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QVdLEdxcEeW-N_z6XJQq2w" x="396" y="72" width="169" height="97"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../productionBroker.muml#_QVSL8NxcEeW-N_z6XJQq2w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QVdLEdxcEeW-N_z6XJQq2w" x="408" y="84" width="169" height="97"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_u8hQcdxbEeW-N_z6XJQq2w"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../loadBalancer.muml#_soLPRNxbEeW-N_z6XJQq2w"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_soLPRNxbEeW-N_z6XJQq2w"/>
 </notation:Diagram>

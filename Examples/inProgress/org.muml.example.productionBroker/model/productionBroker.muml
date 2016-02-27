@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_soKoMNxbEeW-N_z6XJQq2w">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:behavior="http://www.fujaba.de/muml/behavior/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_soKoMNxbEeW-N_z6XJQq2w">
   <categories xmi:id="_soKoMdxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_soLPQNxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ytRK8NxrEeW-N_z6XJQq2w" name="ReciepeGenerator">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ytRK8NxrEeW-N_z6XJQq2w" name="ReciepeGenerator" behavioralElement="_QVSL8NxcEeW-N_z6XJQq2w">
       <variables xmi:id="_NJMasNxtEeW-N_z6XJQq2w" name="produceIngredientID">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int16"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_PbIBENxtEeW-N_z6XJQq2w" value="1"/>
+      </variables>
+      <variables xmi:id="_CY5c4NyZEeW-N_z6XJQq2w" name="amount">
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_HafugNyZEeW-N_z6XJQq2w" value="1"/>
       </variables>
       <states xmi:id="_ytRK8dxrEeW-N_z6XJQq2w" name="init" initial="true">
         <embeddedRegions xmi:id="_VOaq0NxsEeW-N_z6XJQq2w" priority="1">
@@ -26,7 +30,17 @@
                 </bound>
               </clockConstraints>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_vN2BQNxsEeW-N_z6XJQq2w">
-                <message xmi:id="_vbxvkNxsEeW-N_z6XJQq2w" instanceOf="_fAYHYNxcEeW-N_z6XJQq2w"/>
+                <message xmi:id="_vbxvkNxsEeW-N_z6XJQq2w" instanceOf="_fAYHYNxcEeW-N_z6XJQq2w">
+                  <parameterBinding xmi:id="_xknK4NyZEeW-N_z6XJQq2w" parameter="_b0doMNxgEeW-N_z6XJQq2w">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yxqM0NyZEeW-N_z6XJQq2w" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
+                  </parameterBinding>
+                  <parameterBinding xmi:id="_zEr2gNyZEeW-N_z6XJQq2w" parameter="_Zoh8INxgEeW-N_z6XJQq2w">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_1bwbkNyZEeW-N_z6XJQq2w" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                  </parameterBinding>
+                  <parameterBinding xmi:id="_1x_KQNyZEeW-N_z6XJQq2w" parameter="_YGhW0NxgEeW-N_z6XJQq2w">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bqiQNyZEeW-N_z6XJQq2w" typedNamedElement="_yIKdUNxsEeW-N_z6XJQq2w"/>
+                  </parameterBinding>
+                </message>
               </events>
               <action xmi:id="_4qK08NxwEeW-N_z6XJQq2w" name="increaseCurrentOrderID">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_EM3cENxxEeW-N_z6XJQq2w">
@@ -46,7 +60,53 @@
         </embeddedRegions>
         <embeddedRegions xmi:id="_FWXXkNxtEeW-N_z6XJQq2w" priority="2">
           <embeddedStatechart xmi:id="_FWX-oNxtEeW-N_z6XJQq2w" name="internalBehavior">
-            <states xmi:id="_FWX-odxtEeW-N_z6XJQq2w" name="init" initial="true"/>
+            <transitions xmi:id="_NrmgMNyZEeW-N_z6XJQq2w" priority="1" target="_L4XoANyZEeW-N_z6XJQq2w" source="_FWX-odxtEeW-N_z6XJQq2w" clockResets="_fslZYNyZEeW-N_z6XJQq2w">
+              <clockConstraints xmi:id="_opCXANyZEeW-N_z6XJQq2w" clock="_fslZYNyZEeW-N_z6XJQq2w" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_piZn8NyZEeW-N_z6XJQq2w">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_qvXxYNyZEeW-N_z6XJQq2w" value="5"/>
+                </bound>
+              </clockConstraints>
+              <action xmi:id="_YM7J4NyZEeW-N_z6XJQq2w" name="setHighAmount">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_bxGbQNyZEeW-N_z6XJQq2w">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_bxGbQdyZEeW-N_z6XJQq2w" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_bxGbQtyZEeW-N_z6XJQq2w" value="2"/>
+                    <lhs_typedNamedElementExpression xmi:id="_bxGbQ9yZEeW-N_z6XJQq2w" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_QbktcNyZEeW-N_z6XJQq2w" priority="1" target="_FWX-odxtEeW-N_z6XJQq2w" source="_L4XoANyZEeW-N_z6XJQq2w" clockResets="_fslZYNyZEeW-N_z6XJQq2w">
+              <clockConstraints xmi:id="_sOYtENyZEeW-N_z6XJQq2w" clock="_fslZYNyZEeW-N_z6XJQq2w" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_tDoTANyZEeW-N_z6XJQq2w">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_tokzINyZEeW-N_z6XJQq2w" value="2"/>
+                </bound>
+              </clockConstraints>
+              <action xmi:id="_ROL2INyZEeW-N_z6XJQq2w" name="setSmallAmount">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_Xlc6MNyZEeW-N_z6XJQq2w">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Xlc6MdyZEeW-N_z6XJQq2w" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Xlc6MtyZEeW-N_z6XJQq2w" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_Xlc6M9yZEeW-N_z6XJQq2w" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_FWX-odxtEeW-N_z6XJQq2w" name="smallAmount" outgoingTransitions="_NrmgMNyZEeW-N_z6XJQq2w" incomingTransitions="_QbktcNyZEeW-N_z6XJQq2w" initial="true"/>
+            <states xmi:id="_L4XoANyZEeW-N_z6XJQq2w" name="highAmount" outgoingTransitions="_QbktcNyZEeW-N_z6XJQq2w" incomingTransitions="_NrmgMNyZEeW-N_z6XJQq2w"/>
+            <clocks xmi:id="_fslZYNyZEeW-N_z6XJQq2w" name="loadClock"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_TDt-8NyaEeW-N_z6XJQq2w" name="broker" behavioralElement="_Ozg3MNxcEeW-N_z6XJQq2w">
+      <states xmi:id="_TDt-8dyaEeW-N_z6XJQq2w" name="init" initial="true">
+        <embeddedRegions xmi:id="_pHIy0NyaEeW-N_z6XJQq2w" priority="1">
+          <embeddedStatechart xmi:id="_pHVnINyaEeW-N_z6XJQq2w" name="getOrderStatechart" behavioralElement="_i6J4gNxgEeW-N_z6XJQq2w">
+            <transitions xmi:id="_yovr8NyaEeW-N_z6XJQq2w" priority="1" target="_pHVnIdyaEeW-N_z6XJQq2w" source="_pHVnIdyaEeW-N_z6XJQq2w">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="__L1ZENyaEeW-N_z6XJQq2w" kind="TRIGGER">
+                <message xmi:id="__hA-4NyaEeW-N_z6XJQq2w" instanceOf="_fAYHYNxcEeW-N_z6XJQq2w"/>
+              </events>
+            </transitions>
+            <states xmi:id="_pHVnIdyaEeW-N_z6XJQq2w" name="init" outgoingTransitions="_yovr8NyaEeW-N_z6XJQq2w" incomingTransitions="_yovr8NyaEeW-N_z6XJQq2w" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
@@ -99,28 +159,22 @@
   <categories xmi:id="_soLPQ9xbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
   <categories xmi:id="_soLPRNxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_vwAi4NxbEeW-N_z6XJQq2w" name="ProductionStation">
-      <ports xsi:type="component:DiscretePort" xmi:id="_Y-2CwNxcEeW-N_z6XJQq2w" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _4KzLoNxgEeW-N_z6XJQq2w _dtJysNxhEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w _wPSRINxhEeW-N_z6XJQq2w" receiverMessageTypes="_wPSRINxhEeW-N_z6XJQq2w">
+      <ports xsi:type="component:DiscretePort" xmi:id="_Y-2CwNxcEeW-N_z6XJQq2w" name="getOrder" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _4KzLoNxgEeW-N_z6XJQq2w _dtJysNxhEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w _wPSRINxhEeW-N_z6XJQq2w" receiverMessageTypes="_wPSRINxhEeW-N_z6XJQq2w">
         <cardinality xmi:id="_Y-8JYNxcEeW-N_z6XJQq2w">
           <lowerBound xmi:id="_Y-8wcNxcEeW-N_z6XJQq2w"/>
           <upperBound xmi:id="_Y_Bo8NxcEeW-N_z6XJQq2w"/>
         </cardinality>
       </ports>
     </modelElements>
-    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_Ozg3MNxcEeW-N_z6XJQq2w" name="Broker">
-      <ports xsi:type="component:DiscretePort" xmi:id="_ZkPO0NxcEeW-N_z6XJQq2w" senderMessageTypes="_fAYHYNxcEeW-N_z6XJQq2w">
-        <cardinality xmi:id="_ZkP14NxcEeW-N_z6XJQq2w">
-          <lowerBound xmi:id="_ZkQc8NxcEeW-N_z6XJQq2w"/>
-          <upperBound xmi:id="_ZkQc8dxcEeW-N_z6XJQq2w"/>
-        </cardinality>
-      </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_i6J4gNxgEeW-N_z6XJQq2w" receiverMessageTypes="_fAYHYNxcEeW-N_z6XJQq2w">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_Ozg3MNxcEeW-N_z6XJQq2w" name="Broker" behavior="_TDt-8NyaEeW-N_z6XJQq2w">
+      <ports xsi:type="component:DiscretePort" xmi:id="_i6J4gNxgEeW-N_z6XJQq2w" name="getOrder" behavior="_pHVnINyaEeW-N_z6XJQq2w" receiverMessageTypes="_fAYHYNxcEeW-N_z6XJQq2w">
         <cardinality xmi:id="_i6R0UNxgEeW-N_z6XJQq2w">
           <lowerBound xmi:id="_i6SbYNxgEeW-N_z6XJQq2w"/>
           <upperBound xmi:id="_i6SbYdxgEeW-N_z6XJQq2w"/>
         </cardinality>
       </ports>
     </modelElements>
-    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_QVSL8NxcEeW-N_z6XJQq2w" name="RecipeGenerator">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_QVSL8NxcEeW-N_z6XJQq2w" name="RecipeGenerator" behavior="_ytRK8NxrEeW-N_z6XJQq2w">
       <ports xsi:type="component:DiscretePort" xmi:id="_blyP0NxcEeW-N_z6XJQq2w" name="provideOrder" behavior="_VObR4NxsEeW-N_z6XJQq2w" senderMessageTypes="_fAYHYNxcEeW-N_z6XJQq2w">
         <cardinality xmi:id="_bmPi0NxcEeW-N_z6XJQq2w">
           <lowerBound xmi:id="_bmQJ4NxcEeW-N_z6XJQq2w"/>
@@ -130,4 +184,20 @@
     </modelElements>
   </categories>
   <categories xmi:id="_soLPRdxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern"/>
+  <categories xmi:id="_A42REN02EeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.behavior.category" name="behavior">
+    <modelElements xsi:type="behavior:OperationRepository" xmi:id="_BnkYQN02EeW-N_z6XJQq2w" name="DatabaseOperationRepository">
+      <operations xmi:id="_EgH5wN02EeW-N_z6XJQq2w" name="storeOrder">
+        <parameters xmi:id="_G6XHkN02EeW-N_z6XJQq2w" name="orderID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#uint64"/>
+        </parameters>
+        <parameters xmi:id="_Jp-vgN02EeW-N_z6XJQq2w" name="ingredientID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int16"/>
+        </parameters>
+        <parameters xmi:id="_RJIBoN02EeW-N_z6XJQq2w" name="amount">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+      </operations>
+    </modelElements>
+  </categories>
 </modelinstance:RootNode>
