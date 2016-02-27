@@ -154,7 +154,28 @@ int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 		return rc;
 	}
 	return rc;
+}
 
+int defineProductionStationForOrder(unqlite *pDb, int orderID, int productionStationID)
+{
+	int rc;
+
+	char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
+			+ sizeof(":productionStation")];
+	char productionStationBuffer[sizeof("productionStationID:") + sizeof(int)];
+
+	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
+	sprintf(productionStationBuffer, "productionStationID:%d", productionStationID);
+
+	/*Store some records*/
+	rc = unqlite_kv_store(pDb, orderIDProductionStationBuffer, -1, productionStationBuffer,
+			sizeof(productionStationBuffer));  // test => 'Hello World'
+	if (rc != UNQLITE_OK)
+	{
+		// Insertion fail, extract database error log and exit
+		return rc;
+	}
+	return rc;
 }
 
 int deleteOrder(unqlite *pDb, int orderID)
@@ -166,25 +187,36 @@ int deleteOrder(unqlite *pDb, int orderID)
 			+ sizeof(":incredient")];
 	char orderIDamountBuffer[sizeof("orderID:") + sizeof(int)
 			+ sizeof(":amount")];
+	char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
+				+ sizeof(":productionStation")];
 
 	sprintf(orderIDincredientBuffer, "orderID:%d:incredient", orderID);
 	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
+	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
 
-	/*Store some records*/
-	rc = unqlite_kv_delete(pDb, orderIDincredientBuffer, -1); // test => 'Hello World'
+	/*Delete some records*/
+	rc = unqlite_kv_delete(pDb, orderIDincredientBuffer, -1);
 	if (rc != UNQLITE_OK)
 	{
 		// Insertion fail, extract database error log and exit
-		printf("Fehlerhaftes Loeschen");
+		printf("Delete Error for %s\n",orderIDincredientBuffer);
 		return rc;
 	}
-	else
-	{
-		printf("Loeschen sollte geklappt haben");
-	}
-	rc = unqlite_kv_delete(pDb, "orderIDamountBuffer", -1); // test => 'Hello World'
+
+	rc = unqlite_kv_delete(pDb, orderIDamountBuffer, -1);
 	if (rc != UNQLITE_OK)
 	{
+		printf("Delete Error for %s\n",orderIDamountBuffer);
+
+		// Insertion fail, extract database error log and exit
+		return rc;
+	}
+
+	rc = unqlite_kv_delete(pDb, orderIDProductionStationBuffer, -1);
+	if (rc != UNQLITE_OK)
+	{
+		printf("Delete Error for %s\n",orderIDProductionStationBuffer);
+
 		// Insertion fail, extract database error log and exit
 		return rc;
 	}

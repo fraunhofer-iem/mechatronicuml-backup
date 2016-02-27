@@ -13,11 +13,51 @@
         <element xmi:type="behavior:Operation" href="../productionBroker.muml#_EgH5wN02EeW-N_z6XJQq2w"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EgUuEd02EeW-N_z6XJQq2w"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_AscVgN1yEeW-N_z6XJQq2w" type="3001" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Asc8kN1yEeW-N_z6XJQq2w" type="5002"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_Asc8kd1yEeW-N_z6XJQq2w" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Asc8kt1yEeW-N_z6XJQq2w" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Asc8k91yEeW-N_z6XJQq2w"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Asc8lN1yEeW-N_z6XJQq2w"/>
+        </children>
+        <element xmi:type="behavior:Operation" href="../productionBroker.muml#_AsRWYN1yEeW-N_z6XJQq2w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AscVgd1yEeW-N_z6XJQq2w"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_NRWAgN1yEeW-N_z6XJQq2w" type="3001" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_NRWAgt1yEeW-N_z6XJQq2w" type="5002"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_NRWAg91yEeW-N_z6XJQq2w" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_NRWAhN1yEeW-N_z6XJQq2w" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NRWAhd1yEeW-N_z6XJQq2w"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NRWAht1yEeW-N_z6XJQq2w"/>
+        </children>
+        <element xmi:type="behavior:Operation" href="../productionBroker.muml#_NRLBYN1yEeW-N_z6XJQq2w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NRWAgd1yEeW-N_z6XJQq2w"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Uvd-8N1yEeW-N_z6XJQq2w" type="3001" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Uvd-8t1yEeW-N_z6XJQq2w" type="5002"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_Uvd-891yEeW-N_z6XJQq2w" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Uvd-9N1yEeW-N_z6XJQq2w" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Uvd-9d1yEeW-N_z6XJQq2w"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Uvd-9t1yEeW-N_z6XJQq2w"/>
+        </children>
+        <element xmi:type="behavior:Operation" href="../productionBroker.muml#_Uvcw0N1yEeW-N_z6XJQq2w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uvd-8d1yEeW-N_z6XJQq2w"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_C8lWsN1zEeW-N_z6XJQq2w" type="3001" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_C8l9wN1zEeW-N_z6XJQq2w" type="5002"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_C8l9wd1zEeW-N_z6XJQq2w" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_C8l9wt1zEeW-N_z6XJQq2w" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_C8l9w91zEeW-N_z6XJQq2w"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_C8l9xN1zEeW-N_z6XJQq2w"/>
+        </children>
+        <element xmi:type="behavior:Operation" href="../productionBroker.muml#_C8a-oN1zEeW-N_z6XJQq2w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C8lWsd1zEeW-N_z6XJQq2w"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Bn-n8t02EeW-N_z6XJQq2w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Bn-n8902EeW-N_z6XJQq2w"/>
     </children>
     <element xmi:type="behavior:OperationRepository" href="../productionBroker.muml#_BnkYQN02EeW-N_z6XJQq2w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bn9Z0d02EeW-N_z6XJQq2w" x="48" y="60" width="421" height="205"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bn9Z0d02EeW-N_z6XJQq2w" x="48" y="60" width="469" height="205"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_A424IN02EeW-N_z6XJQq2w"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_A42REN02EeW-N_z6XJQq2w"/>

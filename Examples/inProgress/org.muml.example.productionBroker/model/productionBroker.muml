@@ -5,7 +5,7 @@
   <categories xmi:id="_soLPQNxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ytRK8NxrEeW-N_z6XJQq2w" name="ReciepeGenerator" behavioralElement="_QVSL8NxcEeW-N_z6XJQq2w">
       <variables xmi:id="_NJMasNxtEeW-N_z6XJQq2w" name="produceIngredientID">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int16"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_PbIBENxtEeW-N_z6XJQq2w" value="1"/>
       </variables>
       <variables xmi:id="_CY5c4NyZEeW-N_z6XJQq2w" name="amount">
@@ -16,7 +16,7 @@
         <embeddedRegions xmi:id="_VOaq0NxsEeW-N_z6XJQq2w" priority="1">
           <embeddedStatechart xmi:id="_VObR4NxsEeW-N_z6XJQq2w" name="reciepeSender" behavioralElement="_blyP0NxcEeW-N_z6XJQq2w">
             <variables xmi:id="_yIKdUNxsEeW-N_z6XJQq2w" name="currentOrderID">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#uint64"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_15bvgNxsEeW-N_z6XJQq2w" value="1"/>
             </variables>
             <variables xmi:id="_ScbSENxxEeW-N_z6XJQq2w" name="speed">
@@ -117,10 +117,10 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ev5bYNxcEeW-N_z6XJQq2w" name="Messages">
       <messageTypes xmi:id="_fAYHYNxcEeW-N_z6XJQq2w" name="simpleOrder">
         <parameters xmi:id="_YGhW0NxgEeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#uint64"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_Zoh8INxgEeW-N_z6XJQq2w" name="ingredientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int16"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_b0doMNxgEeW-N_z6XJQq2w" name="amount">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
@@ -128,22 +128,22 @@
       </messageTypes>
       <messageTypes xmi:id="_wsJowNxgEeW-N_z6XJQq2w" name="doneOrder">
         <parameters xmi:id="_yhpx0NxgEeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#uint64"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_4KzLoNxgEeW-N_z6XJQq2w" name="cancelOrder">
         <parameters xmi:id="_5ELDoNxgEeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#uint64"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_dtJysNxhEeW-N_z6XJQq2w" name="failOrder">
         <parameters xmi:id="_eflVMNxhEeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#uint64"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_UTgXMNxrEeW-N_z6XJQq2w" name="getOrder">
         <parameters xmi:id="_WVF0cNxrEeW-N_z6XJQq2w" name="ingredientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int16"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
@@ -186,17 +186,44 @@
   <categories xmi:id="_soLPRdxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern"/>
   <categories xmi:id="_A42REN02EeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.behavior.category" name="behavior">
     <modelElements xsi:type="behavior:OperationRepository" xmi:id="_BnkYQN02EeW-N_z6XJQq2w" name="DatabaseOperationRepository">
-      <operations xmi:id="_EgH5wN02EeW-N_z6XJQq2w" name="storeOrder">
+      <operations xmi:id="_EgH5wN02EeW-N_z6XJQq2w" name="insertOrder">
         <parameters xmi:id="_G6XHkN02EeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#uint64"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_Jp-vgN02EeW-N_z6XJQq2w" name="ingredientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int16"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_RJIBoN02EeW-N_z6XJQq2w" name="amount">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_AsRWYN1yEeW-N_z6XJQq2w" name="deleteOrder">
+        <parameters xmi:id="_GAOjUN1yEeW-N_z6XJQq2w" name="orderID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_NRLBYN1yEeW-N_z6XJQq2w" name="getOrderAmount">
+        <parameters xmi:id="_R_DFwN1yEeW-N_z6XJQq2w" name="orderID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_Uvcw0N1yEeW-N_z6XJQq2w" name="getOrderIngredient">
+        <parameters xmi:id="_Wp0LwN1yEeW-N_z6XJQq2w" name="orderID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_C8a-oN1zEeW-N_z6XJQq2w" name="defineProductionStationForOrder">
+        <parameters xmi:id="_FVPQIN1zEeW-N_z6XJQq2w" name="orderID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <parameters xmi:id="_G15KkN1zEeW-N_z6XJQq2w" name="productionStation">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </operations>
     </modelElements>
   </categories>
