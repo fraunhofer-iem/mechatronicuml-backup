@@ -97,9 +97,9 @@ int main(int argc, char *argv[])
 	unqlite_kv_cursor *pCur; /* Cursor handle */
 	//int i,
 	int rc;
-	int orderID = 5;
-	int incredientID = 3;
-	int amount = 2;
+	int orderID = 55655;
+	int incredientID = 3556;
+	int amount = 266;
 	size_t nBytes;  //Data length
 	char *zBuf;     //Dynamically allocated buffer
 
@@ -116,69 +116,6 @@ int main(int argc, char *argv[])
 	getOrderIncredientID(pDb, orderID);
 	getOrderAmount(pDb, orderID);
 
-//	/* Allocate a new cursor instance */
-//	rc = unqlite_kv_cursor_init(pDb,&pCur);
-//	if( rc != UNQLITE_OK ){
-//		Fatal(0,"Out of memory");
-//	}
-//	/* Point to the first record */
-//	unqlite_kv_cursor_first_entry(pCur);
-//
-//	//Extract data size first
-//	rc = unqlite_kv_fetch(pDb,"orderID:5:incredient",-1,NULL,&nBytes);
-//	if( rc != UNQLITE_OK ){
-//	  //return;
-//	}
-//
-//	//Allocate a buffer big enough to hold the record content
-//	zBuf = (char *)malloc(nBytes);
-//	if( zBuf == NULL ){
-//		//return;
-//	}
-//	printf ("size:%d\n\t",nBytes);
-//
-//
-//	//Copy record content in our buffer
-//	unqlite_kv_fetch(pDb,"orderID:5:incredient",-1,zBuf,&nBytes);
-//
-//	//Play with zBuf...
-//	if( rc != UNQLITE_OK ){
-//		 printf ("fehler");
-//	}
-//	//Play with zBuf...
-//	 printf ("zBuf:%s", zBuf);
-//
-/////test for deleting data
-//	 rc = deleteOrder(pDb, orderID);
-//
-//	//Extract data size first
-//	rc = unqlite_kv_fetch(pDb,"orderID:5:incredient",-1,NULL,&nBytes);
-//	if( rc != UNQLITE_OK ){
-//	  //return;
-//	}
-//
-//	//Allocate a buffer big enough to hold the record content
-//	zBuf = (char *)malloc(nBytes);
-//	if( zBuf == NULL ){
-//		//return;
-//	}
-//
-//
-//	//Copy record content in our buffer
-//	unqlite_kv_fetch(pDb,"orderID:5:incredient",-1,zBuf,&nBytes);
-//
-//	//Play with zBuf...
-//	if( rc != UNQLITE_OK ){
-//		 printf ("fehler");
-//	}
-//	//Play with zBuf...
-//	 printf ("SecondzBuf:%s", zBuf);
-//
-//
-//	free(zBuf);
-//
-//	/* Finally, Release our cursor */
-//	unqlite_kv_cursor_release(pDb,pCur);
 
 	/* Auto-commit the transaction and close our database */
 	unqlite_close(pDb);
@@ -222,6 +159,7 @@ int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 
 int deleteOrder(unqlite *pDb, int orderID)
 {
+	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
 	int rc;
 
 	char orderIDincredientBuffer[sizeof("orderID:") + sizeof(int)
@@ -256,6 +194,8 @@ int deleteOrder(unqlite *pDb, int orderID)
 
 int getOrderIncredientID(unqlite *pDb, int orderID)
 {
+	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
+
 	int rc;
 	size_t nBytes;  //Data length
 	char *zBuf;     //Dynamically allocated buffer
@@ -286,13 +226,8 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 	{
 		printf("Fehlerhaftes Lesen");
 	}
-	//Copy record content in our buffer
+	//Read Database and Copy record content in our buffer
 	rc = unqlite_kv_fetch(pDb, orderIDincredientBuffer, -1, zBuf, &nBytes);
-	//Play with zBuf...
-	if (rc != UNQLITE_OK)
-	{
-		printf("fehlerT\n");
-	}
 	const char ch = ':';
 	char *ret;
 	ret = strchr(zBuf, ch);
@@ -309,44 +244,44 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 
 int getOrderAmount(unqlite *pDb, int orderID)
 {
+	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
 	int rc;
 	size_t nBytes;  //Data length
 	char *zBuf;     //Dynamically allocated buffer
 
+	//construct key for noSQL Database
 	char orderIDamountBuffer[sizeof("orderID:")+sizeof(int)+sizeof(":amount")];
-
 	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 
-	/*Get some records*/
+	/*Get amount for the orderID record*/
 	rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, NULL, &nBytes);
 	if (rc != UNQLITE_OK)
 	{
 		// Insertion fail, extract database error log and exit
-		printf("Fehlerhaftes Lesen");
+		printf("No Record Found\n");
 		return rc;
 	}
 	else
 	{
-		printf("Lesen sollte geklappt haben");
+		printf("Record Found for OrderID:%d\n",orderID);
 	}
 
 	//Allocate a buffer big enough to hold the record content
 	zBuf = (char *) malloc(nBytes);
 	if (zBuf == NULL)
 	{
-		printf("Fehlerhaftes Lesen");
+		printf("No Record Found\n");
 	}
 	//Copy record content in our buffer
 	rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, zBuf, &nBytes);
-	//Play with zBuf...
-	if (rc != UNQLITE_OK)
-	{
-		printf("fehlerT\n");
-	}
+	//Find Position of ":"
 	const char ch = ':';
 	char *ret;
+	//remove all characters before ":"
 	ret = strchr(zBuf, ch);
+	//remove first character which should be ":"
 	memmove(ret, ret + 1, strlen(ret));
+	// convert character that reprents the amount for  the orderID into int
 	int amount = atoi(ret);
 	printf("Amount:%d\n", amount);
 
