@@ -58,7 +58,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_56ihN-p8EeSdp6KdWPaGDw"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../patterns.muml#_56gE8Op8EeSdp6KdWPaGDw"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_56h6Iep8EeSdp6KdWPaGDw" x="416" y="2" width="313" height="100"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_56h6Iep8EeSdp6KdWPaGDw" x="395" y="2" width="325" height="100"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_xq0twOp8EeSdp6KdWPaGDw"/>
