@@ -8,21 +8,21 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_5MbYctv3EeWk7OzKNRMDBQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_5MbYc9v3EeWk7OzKNRMDBQ" lineColor="0"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.muml#_7M6QIM0PEeKgKa329oIpmg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5MbYdNv3EeWk7OzKNRMDBQ" x="565" y="99"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5MbYdNv3EeWk7OzKNRMDBQ" x="400" y="24"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_5MbYdtv3EeWk7OzKNRMDBQ" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_5MbYeNv3EeWk7OzKNRMDBQ" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_5MbYedv3EeWk7OzKNRMDBQ" x="14" y="-60"/>
         </children>
         <element xmi:type="protocol:Role" href="../SectionEntry.muml#_7NW8EM0PEeKgKa329oIpmg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5MbYd9v3EeWk7OzKNRMDBQ" x="311" y="159"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5MbYd9v3EeWk7OzKNRMDBQ" x="146" y="84"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_5Mb_gNv3EeWk7OzKNRMDBQ" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_5Mb_gtv3EeWk7OzKNRMDBQ" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_5Mb_g9v3EeWk7OzKNRMDBQ" x="-38" y="-45"/>
         </children>
         <element xmi:type="protocol:Role" href="../SectionEntry.muml#_7NW8FM0PEeKgKa329oIpmg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_gdv3EeWk7OzKNRMDBQ" x="933" y="159"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_gdv3EeWk7OzKNRMDBQ" x="768" y="84"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_5Mb_hNv3EeWk7OzKNRMDBQ" type="3013">
         <children xmi:type="notation:DecorationNode" xmi:id="_5Mb_idv3EeWk7OzKNRMDBQ" type="5018"/>
@@ -36,7 +36,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_5Mb_htv3EeWk7OzKNRMDBQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_5Mb_h9v3EeWk7OzKNRMDBQ" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../SectionEntry.muml#_fiKVcM0REeKgKa329oIpmg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_iNv3EeWk7OzKNRMDBQ" x="190" y="189"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_iNv3EeWk7OzKNRMDBQ" x="25" y="114"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_5Mb_j9v3EeWk7OzKNRMDBQ" type="3013">
         <children xmi:type="notation:DecorationNode" xmi:id="_5Mb_lNv3EeWk7OzKNRMDBQ" type="5018"/>
@@ -50,7 +50,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_5Mb_kdv3EeWk7OzKNRMDBQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_5Mb_ktv3EeWk7OzKNRMDBQ" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../SectionEntry.muml#_b60bUM0REeKgKa329oIpmg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_k9v3EeWk7OzKNRMDBQ" x="670" y="189"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_k9v3EeWk7OzKNRMDBQ" x="505" y="114"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_5Mb_mtv3EeWk7OzKNRMDBQ" type="3014">
         <children xmi:type="notation:DecorationNode" xmi:id="_5Mb_n9v3EeWk7OzKNRMDBQ" type="5020"/>
@@ -59,7 +59,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_5Mb_nNv3EeWk7OzKNRMDBQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_5Mb_ndv3EeWk7OzKNRMDBQ" lineColor="0"/>
         <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../SectionEntry.muml#_7NW8Gc0PEeKgKa329oIpmg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_ntv3EeWk7OzKNRMDBQ" x="475" y="189"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Mb_ntv3EeWk7OzKNRMDBQ" x="310" y="114"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.muml#_7M6QIM0PEeKgKa329oIpmg"/>

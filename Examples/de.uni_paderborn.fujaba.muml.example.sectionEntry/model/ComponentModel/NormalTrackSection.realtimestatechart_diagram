@@ -469,11 +469,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_AqW57sxYEeKo8fvz0BZxMg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_QLRrkcO8EeKtesZp-51dtg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AqW54cxYEeKo8fvz0BZxMg" width="687" height="1679"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AqW54cxYEeKo8fvz0BZxMg" width="687" height="1832"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_QLRrkMO8EeKtesZp-51dtg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QNkxocO8EeKtesZp-51dtg" x="24" y="24" width="745" height="1753"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QNkxocO8EeKtesZp-51dtg" x="24" y="24" width="745" height="1927"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_QLRrk8O8EeKtesZp-51dtg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_QLRrkMO8EeKtesZp-51dtg"/>

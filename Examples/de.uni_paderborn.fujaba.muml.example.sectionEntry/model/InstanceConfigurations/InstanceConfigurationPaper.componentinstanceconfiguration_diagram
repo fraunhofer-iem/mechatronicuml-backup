@@ -117,7 +117,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5l_91c3tEeKRVKSK8yvkGg" x="168" y="85"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="../SectionEntry.muml#_enlFAM3sEeKRVKSK8yvkGg"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5l2z6s3tEeKRVKSK8yvkGg" x="105" y="15" width="277" height="97"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5l2z6s3tEeKRVKSK8yvkGg" x="108" y="15" width="277" height="97"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_5l2z7M3tEeKRVKSK8yvkGg" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_5l2z7s3tEeKRVKSK8yvkGg" type="5028"/>
@@ -143,7 +143,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xFjcwv8vEeKbsOX7BPqNBQ" x="120" y="85"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="../SectionEntry.muml#_fKF8MM3sEeKRVKSK8yvkGg"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5l2z7c3tEeKRVKSK8yvkGg" x="105" y="195" width="253" height="97"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5l2z7c3tEeKRVKSK8yvkGg" x="108" y="195" width="253" height="97"/>
           </children>
         </children>
         <element xmi:type="instance:ComponentInstanceConfiguration" href="../SectionEntry.muml#_d3hhEM3sEeKRVKSK8yvkGg"/>
@@ -167,7 +167,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zZSZ8v8vEeKbsOX7BPqNBQ" x="240" y="409"/>
     </children>
     <element xmi:type="instance:StructuredComponentInstance" href="../SectionEntry.muml#_briKoM3sEeKRVKSK8yvkGg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5l2z4c3tEeKRVKSK8yvkGg" x="624" y="204" width="445" height="421"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5l2z4c3tEeKRVKSK8yvkGg" x="624" y="204" width="547" height="421"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_qiFhc83nEeKxKMJSVpn_4A"/>
   <element xmi:type="instance:ComponentInstanceConfiguration" href="../SectionEntry.muml#_qiFhcc3nEeKxKMJSVpn_4A"/>

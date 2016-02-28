@@ -53,7 +53,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_rFb_0M0bEeKxKMJSVpn_4A"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TMHMQ821EeKxKMJSVpn_4A" x="72" y="36" width="493" height="217"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TMHMQ821EeKxKMJSVpn_4A" x="72" y="36" width="589" height="265"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_rFlw0c0bEeKxKMJSVpn_4A"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_rFb_0M0bEeKxKMJSVpn_4A"/>

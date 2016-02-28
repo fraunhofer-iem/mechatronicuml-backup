@@ -44,11 +44,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_c_iqr820EeKxKMJSVpn_4A"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_c_iqoM20EeKxKMJSVpn_4A"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c_iqos20EeKxKMJSVpn_4A" x="290" y="22" height="61"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c_iqos20EeKxKMJSVpn_4A" x="335" y="22" height="61"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_fCWBYM0bEeKxKMJSVpn_4A"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hLgtUc0bEeKxKMJSVpn_4A" x="60" y="48" width="457" height="217"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hLgtUc0bEeKxKMJSVpn_4A" x="60" y="48" width="571" height="268"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_fCfyYc0bEeKxKMJSVpn_4A"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_fCWBYM0bEeKxKMJSVpn_4A"/>

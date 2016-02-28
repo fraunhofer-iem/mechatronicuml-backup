@@ -351,11 +351,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_svBCTsxWEeKo8fvz0BZxMg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_HF1xEcO8EeKtesZp-51dtg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_svBCQcxWEeKo8fvz0BZxMg" x="2" y="10" width="711" height="1160"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_svBCQcxWEeKo8fvz0BZxMg" x="2" y="10" width="748" height="1118"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_HF1xEMO8EeKtesZp-51dtg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HIJeMcO8EeKtesZp-51dtg" x="36" y="48" width="781" height="1249"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HIJeMcO8EeKtesZp-51dtg" x="36" y="48" width="781" height="1213"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_HF2YIMO8EeKtesZp-51dtg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_HF1xEMO8EeKtesZp-51dtg"/>

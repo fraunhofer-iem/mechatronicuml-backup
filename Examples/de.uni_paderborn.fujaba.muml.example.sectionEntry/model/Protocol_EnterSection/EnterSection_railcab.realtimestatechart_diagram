@@ -23,7 +23,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_YWOuGsOsEeKtesZp-51dtg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_YPyu4cOsEeKtesZp-51dtg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YWM44cOsEeKtesZp-51dtg" x="62" y="10"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YWM44cOsEeKtesZp-51dtg" x="77" y="16"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="__EHoQMO5EeKtesZp-51dtg" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="__EHoQsO5EeKtesZp-51dtg" type="5060"/>
@@ -86,7 +86,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_DQVKBcO6EeKtesZp-51dtg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_DQStwMO6EeKtesZp-51dtg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DQT74cO6EeKtesZp-51dtg" x="425" y="151" width="133"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DQT74cO6EeKtesZp-51dtg" x="425" y="151" width="163"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_EQBFYMO6EeKtesZp-51dtg" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_EQBFYsO6EeKtesZp-51dtg" type="5060"/>
@@ -128,7 +128,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_FX5TcsO6EeKtesZp-51dtg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_FX2QIMO6EeKtesZp-51dtg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FX4FUcO6EeKtesZp-51dtg" x="461" y="367" width="61"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FX4FUcO6EeKtesZp-51dtg" x="437" y="376" width="157"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_LQ54wMO7EeKtesZp-51dtg" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_LQ54wsO7EeKtesZp-51dtg" type="5060"/>
