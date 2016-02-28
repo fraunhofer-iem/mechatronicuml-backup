@@ -22,7 +22,7 @@
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_S4NmMJe6EeKVX6r_GEFobQ" name="MainProcessing" behavior="_ObmBEJvEEeKe1dmyo6HznA">
-      <ports xsi:type="component:DiscretePort" xmi:id="_iwyccJ0gEeKe1dmyo6HznA" name="BAT_Info_To_OtherRobot" behavior="_RPg6MJvEEeKe1dmyo6HznA" senderMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" receiverMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" refinedRole="_OfsBEJ3sEeKiuKmEjvlIFQ">
+      <ports xsi:type="component:DiscretePort" xmi:id="_iwyccJ0gEeKe1dmyo6HznA" name="BAT_Info_To_OtherRobot" behavior="_RPg6MJvEEeKe1dmyo6HznA" senderMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" receiverMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g">
         <cardinality xmi:id="_iw2G0J0gEeKe1dmyo6HznA">
           <lowerBound xmi:id="_a45H4Gv-EeW66qqCAwhr8A"/>
           <upperBound xmi:id="_a45H4Wv-EeW66qqCAwhr8A"/>
@@ -104,7 +104,7 @@
       <ports xsi:type="component:ContinuousPort" xmi:id="_kvzKAJ0kEeKe1dmyo6HznA" connectors="_xVA9EJ0vEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
       <ports xsi:type="component:ContinuousPort" xmi:id="_m3VeQJ0kEeKe1dmyo6HznA" connectors="_w5v9YJ0vEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
       <ports xsi:type="component:ContinuousPort" xmi:id="_pSEbUJ0kEeKe1dmyo6HznA" connectors="_wgYbIJ0vEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <ports xsi:type="component:DiscretePort" xmi:id="_2tKugJ0kEeKe1dmyo6HznA" connectors="_qZUVAKK7EeKHT8i8WqTL9g" name="BAT_Information_To_OtherRobot" senderMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" receiverMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" refinedRole="_OfsBEJ3sEeKiuKmEjvlIFQ">
+      <ports xsi:type="component:DiscretePort" xmi:id="_2tKugJ0kEeKe1dmyo6HznA" connectors="_qZUVAKK7EeKHT8i8WqTL9g" name="BAT_Information_To_OtherRobot" senderMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" receiverMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g">
         <cardinality xmi:id="_2tL8oJ0kEeKe1dmyo6HznA">
           <lowerBound xmi:id="_ggb0oGv9EeW66qqCAwhr8A"/>
           <upperBound xmi:id="_ggb0oWv9EeW66qqCAwhr8A"/>
