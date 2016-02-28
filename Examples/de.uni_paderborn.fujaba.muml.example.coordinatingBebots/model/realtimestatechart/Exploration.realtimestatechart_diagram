@@ -285,7 +285,7 @@
                                   <styles xmi:type="notation:FilteringStyle" xmi:id="_Pj8kvnn5EeOXC9Mz8u7bDw"/>
                                 </children>
                                 <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_PjuiQHn5EeOXC9Mz8u7bDw"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pj8ksXn5EeOXC9Mz8u7bDw" x="6" y="5" width="265" height="127"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pj8ksXn5EeOXC9Mz8u7bDw" x="6" y="5" width="265" height="146"/>
                               </children>
                               <children xmi:type="notation:Shape" xmi:id="_TbRbkHn5EeOXC9Mz8u7bDw" type="3032" fontName="Segoe UI" lineColor="0">
                                 <children xmi:type="notation:DecorationNode" xmi:id="_TbSCoHn5EeOXC9Mz8u7bDw" type="5060"/>
@@ -353,7 +353,7 @@
                                   <styles xmi:type="notation:FilteringStyle" xmi:id="_V611Unn5EeOXC9Mz8u7bDw"/>
                                 </children>
                                 <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_V60nMHn5EeOXC9Mz8u7bDw"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V61OQXn5EeOXC9Mz8u7bDw" x="162" y="177"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V61OQXn5EeOXC9Mz8u7bDw" x="165" y="195"/>
                               </children>
                             </children>
                             <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_Pjt7MHn5EeOXC9Mz8u7bDw"/>
@@ -377,7 +377,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_ISE5knn5EeOXC9Mz8u7bDw"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_IRzz0Hn5EeOXC9Mz8u7bDw"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ISESgXn5EeOXC9Mz8u7bDw" x="20" y="11" width="589" height="432"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ISESgXn5EeOXC9Mz8u7bDw" x="20" y="11" width="589" height="480"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_IRylsHn5EeOXC9Mz8u7bDw"/>
@@ -401,11 +401,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_yWZrSHneEeOMI__GjCU6rg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_CWA4MXYyEeOftqkRKcg6BA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yWZEMXneEeOMI__GjCU6rg" width="675" height="1367"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yWZEMXneEeOMI__GjCU6rg" width="675" height="1526"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_CWA4MHYyEeOftqkRKcg6BA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yWHXYXneEeOMI__GjCU6rg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yWHXYXneEeOMI__GjCU6rg" height="1606"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_tDyiIXneEeOMI__GjCU6rg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_CWA4MHYyEeOftqkRKcg6BA"/>

@@ -281,11 +281,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_iw5W64UfEeOAU7Vdi0NG2Q"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_cKpboYUfEeOAU7Vdi0NG2Q"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iw4v0YUfEeOAU7Vdi0NG2Q" width="819" height="1091"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iw4v0YUfEeOAU7Vdi0NG2Q" width="819" height="1241"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_cKo0kIUfEeOAU7Vdi0NG2Q"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iwr7gYUfEeOAU7Vdi0NG2Q" width="864"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iwr7gYUfEeOAU7Vdi0NG2Q" width="864" height="1351"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_iSBCgYUfEeOAU7Vdi0NG2Q"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_cKo0kIUfEeOAU7Vdi0NG2Q"/>

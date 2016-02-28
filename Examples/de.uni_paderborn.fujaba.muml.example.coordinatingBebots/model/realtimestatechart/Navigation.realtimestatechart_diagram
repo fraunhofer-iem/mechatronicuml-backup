@@ -349,11 +349,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_Qqvca3nzEeOXC9Mz8u7bDw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_lDQxgXnvEeOZ_7LaW_t4Xg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QqtnMXnzEeOXC9Mz8u7bDw" width="867" height="1271"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QqtnMXnzEeOXC9Mz8u7bDw" width="867" height="1361"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_lDQxgHnvEeOZ_7LaW_t4Xg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QpxzEXnzEeOXC9Mz8u7bDw" width="912" height="1356"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QpxzEXnzEeOXC9Mz8u7bDw" width="912" height="1471"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_GmgXUXnzEeOXC9Mz8u7bDw"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_lDQxgHnvEeOZ_7LaW_t4Xg"/>

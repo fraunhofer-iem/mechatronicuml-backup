@@ -95,7 +95,7 @@
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_ttO4A4_oEeO8WOt6Vdn98w" x="-74" y="-24"/>
                       </children>
                       <element xmi:type="instance:HybridPortInstance" href="../coordinatingBebots.muml#_Uu39FY_oEeOuIPTkIG0q2Q"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ttO4AY_oEeO8WOt6Vdn98w" x="-12" y="15"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ttO4AY_oEeO8WOt6Vdn98w" x="-12" y="3"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_ttPfEo_oEeO8WOt6Vdn98w" type="3032" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_ttQGII_oEeO8WOt6Vdn98w" type="5044">
@@ -138,13 +138,13 @@
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Txo54ZACEeOrO6sHkw-_kQ" x="166" y="139"/>
                     </children>
                     <element xmi:type="instance:AtomicComponentInstance" href="../coordinatingBebots.muml#_Uu39FI_oEeOuIPTkIG0q2Q"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tshGUo_oEeO8WOt6Vdn98w" x="117" y="63" width="239" height="157"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tshGUo_oEeO8WOt6Vdn98w" x="150" y="63" width="206" height="157"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_tshtYY_oEeO8WOt6Vdn98w" type="3024" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_tshtY4_oEeO8WOt6Vdn98w" type="5028"/>
                     <children xmi:type="notation:Shape" xmi:id="_tt8CoI_oEeO8WOt6Vdn98w" type="3032" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_tt8Coo_oEeO8WOt6Vdn98w" type="5044">
-                        <layoutConstraint xmi:type="notation:Location" xmi:id="_tt8Co4_oEeO8WOt6Vdn98w" y="5"/>
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_tt8Co4_oEeO8WOt6Vdn98w" x="23" y="21"/>
                       </children>
                       <element xmi:type="instance:DiscreteSinglePortInstance" href="../coordinatingBebots.muml#_Uu39G4_oEeOuIPTkIG0q2Q"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tt8CoY_oEeO8WOt6Vdn98w" x="409" y="84"/>
@@ -154,7 +154,7 @@
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_tt9QwY_oEeO8WOt6Vdn98w" x="36" y="-12"/>
                       </children>
                       <element xmi:type="instance:DiscreteSinglePortInstance" href="../coordinatingBebots.muml#_Uu39HY_oEeOuIPTkIG0q2Q"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tt8ptY_oEeO8WOt6Vdn98w" x="180" y="-12"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tt8ptY_oEeO8WOt6Vdn98w" x="210" y="-12"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_R5vM8J1oEeSGUPaRXN92yA" type="3033" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_R5vM8p1oEeSGUPaRXN92yA" type="5045">
@@ -169,23 +169,23 @@
                         <styles xmi:type="notation:FilteringStyle" xmi:id="_R5vM9p1oEeSGUPaRXN92yA"/>
                       </children>
                       <element xmi:type="instance:DiscreteMultiPortInstance" href="../coordinatingBebots.muml#_DjeSAJ1oEeSGUPaRXN92yA"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R5vM8Z1oEeSGUPaRXN92yA"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R5vM8Z1oEeSGUPaRXN92yA" x="165" y="151"/>
                     </children>
                     <element xmi:type="instance:AtomicComponentInstance" href="../coordinatingBebots.muml#_Uu39Go_oEeOuIPTkIG0q2Q"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tshtYo_oEeO8WOt6Vdn98w" x="115" y="306" width="277" height="169"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tshtYo_oEeO8WOt6Vdn98w" x="75" y="306" width="317" height="137"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_tsiUcI_oEeO8WOt6Vdn98w" type="3024" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_tsiUco_oEeO8WOt6Vdn98w" type="5028"/>
                     <children xmi:type="notation:Shape" xmi:id="_tueOII_oEeO8WOt6Vdn98w" type="3032" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_tue1MY_oEeO8WOt6Vdn98w" type="5044">
-                        <layoutConstraint xmi:type="notation:Location" xmi:id="_tue1Mo_oEeO8WOt6Vdn98w" y="5"/>
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_tue1Mo_oEeO8WOt6Vdn98w" x="-33" y="30"/>
                       </children>
                       <element xmi:type="instance:DiscreteSinglePortInstance" href="../coordinatingBebots.muml#_Uu39H4_oEeOuIPTkIG0q2Q"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tue1MI_oEeO8WOt6Vdn98w" x="-12" y="60"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tue1MI_oEeO8WOt6Vdn98w" x="-12" y="39"/>
                     </children>
                     <children xmi:type="notation:Shape" xmi:id="_tufcQI_oEeO8WOt6Vdn98w" type="3032" fontName="Segoe UI" lineColor="0">
                       <children xmi:type="notation:DecorationNode" xmi:id="_tufcQo_oEeO8WOt6Vdn98w" type="5044">
-                        <layoutConstraint xmi:type="notation:Location" xmi:id="_tufcQ4_oEeO8WOt6Vdn98w" y="5"/>
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_tufcQ4_oEeO8WOt6Vdn98w" x="30" y="-24"/>
                       </children>
                       <element xmi:type="instance:DiscreteSinglePortInstance" href="../coordinatingBebots.muml#_Uu39II_oEeOuIPTkIG0q2Q"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tufcQY_oEeO8WOt6Vdn98w" x="60" y="-12"/>
@@ -223,13 +223,13 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_Uy8kso_oEeOuIPTkIG0q2Q" type="3032" fontName="Segoe UI" lineColor="0">
               <children xmi:type="notation:DecorationNode" xmi:id="_Uy9LwI_oEeOuIPTkIG0q2Q" type="5044">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_Uy9LwY_oEeOuIPTkIG0q2Q" x="39" y="24"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Uy9LwY_oEeOuIPTkIG0q2Q" x="53" y="-18"/>
               </children>
               <element xmi:type="instance:DiscreteSinglePortInstance" href="../coordinatingBebots.muml#_Uu39Do_oEeOuIPTkIG0q2Q"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uy8ks4_oEeOuIPTkIG0q2Q" x="262" y="592"/>
             </children>
             <element xmi:type="instance:StructuredComponentInstance" href="../coordinatingBebots.muml#_Uu39Co_oEeOuIPTkIG0q2Q"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UwqFsY_oEeOuIPTkIG0q2Q" x="404" y="42" width="742" height="573"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UwqFsY_oEeOuIPTkIG0q2Q" x="357" y="42" width="789" height="573"/>
           </children>
         </children>
         <element xmi:type="instance:ComponentInstanceConfiguration" href="../coordinatingBebots.muml#_Uu39AI_oEeOuIPTkIG0q2Q"/>
@@ -436,7 +436,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p-AiU4_qEeO8WOt6Vdn98w" x="-12" y="468"/>
             </children>
             <element xmi:type="instance:StructuredComponentInstance" href="../coordinatingBebots.muml#_p5sqGo_qEeO8WOt6Vdn98w"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p7jEMo_qEeO8WOt6Vdn98w" x="417" y="51" width="768" height="588"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p7jEMo_qEeO8WOt6Vdn98w" x="417" y="51" width="768" height="538"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_yChe4OKKEeOeEuqrct640A" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_yCiF8OKKEeOeEuqrct640A" type="5028"/>
@@ -486,7 +486,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p7KpsY_qEeO8WOt6Vdn98w" x="672" y="-12"/>
     </children>
     <element xmi:type="instance:StructuredComponentInstance" href="../coordinatingBebots.muml#_l3IMgI_qEeO8WOt6Vdn98w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l3O6MY_qEeO8WOt6Vdn98w" x="60" y="840" width="1296" height="729"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l3O6MY_qEeO8WOt6Vdn98w" x="60" y="840" width="1231" height="676"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_JpzGAY_oEeOuIPTkIG0q2Q"/>
   <element xmi:type="instance:ComponentInstanceConfiguration" href="../coordinatingBebots.muml#_Jpye8I_oEeOuIPTkIG0q2Q"/>

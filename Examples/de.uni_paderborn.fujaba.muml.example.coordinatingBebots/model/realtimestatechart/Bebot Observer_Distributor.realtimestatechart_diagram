@@ -441,7 +441,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_nbpBXnnzEeOXC9Mz8u7bDw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_HNyEoXnxEeOXC9Mz8u7bDw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nbpBUXnzEeOXC9Mz8u7bDw" x="26" y="-2" width="1094" height="1679"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nbpBUXnzEeOXC9Mz8u7bDw" x="26" y="-2" width="1094" height="1751"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_HNyEoHnxEeOXC9Mz8u7bDw"/>
@@ -480,7 +480,8 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_OT3YcX-BEeOPg9LcIM5sBg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../coordinatingBebots.muml#_H-z5A3nxEeOXC9Mz8u7bDw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OT3Ycn-BEeOPg9LcIM5sBg" points="[-38, 43, -112, -108]$[-136, 157, -210, 6]$[8, 157, -66, 6]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OT3Ycn-BEeOPg9LcIM5sBg" points="[0, 9, -236, -105]$[0, 114, -236, 0]$[160, 114, -76, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iBQTIN44EeWxqaf1neq2vg" id="(0.145985401459854,0.90625)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_OVM1MH-BEeOPg9LcIM5sBg" type="4003" source="_OGr4E3-BEeOPg9LcIM5sBg" target="_OGr4In-BEeOPg9LcIM5sBg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_OVM1M3-BEeOPg9LcIM5sBg" type="6005">
