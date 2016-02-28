@@ -52,20 +52,6 @@
         <element xmi:type="connector:MessageBuffer" href="../cooperatingballplayingrobots.muml#_wkNbQGvyEeWg8pm-i8KXGA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WUUm3dwbEeWVGefPVpopOA" x="25" y="54"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_WUUm5NwbEeWVGefPVpopOA" type="3013">
-        <children xmi:type="notation:DecorationNode" xmi:id="_WUUm6dwbEeWVGefPVpopOA" type="5018"/>
-        <children xmi:type="notation:DecorationNode" xmi:id="_WUUm6twbEeWVGefPVpopOA" type="5019"/>
-        <children xmi:type="notation:DecorationNode" xmi:id="_WUUm69wbEeWVGefPVpopOA" type="5025"/>
-        <children xmi:type="notation:DecorationNode" xmi:id="_WUUm7NwbEeWVGefPVpopOA" type="7009">
-          <styles xmi:type="notation:SortingStyle" xmi:id="_WUUm7dwbEeWVGefPVpopOA"/>
-          <styles xmi:type="notation:FilteringStyle" xmi:id="_WUUm7twbEeWVGefPVpopOA"/>
-        </children>
-        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WUUm5dwbEeWVGefPVpopOA"/>
-        <styles xmi:type="notation:FontStyle" xmi:id="_WUUm5twbEeWVGefPVpopOA" fontName="Segoe UI"/>
-        <styles xmi:type="notation:LineStyle" xmi:id="_WUUm59wbEeWVGefPVpopOA" lineColor="0"/>
-        <element xmi:type="connector:MessageBuffer" href="../cooperatingballplayingrobots.muml#_n0ylYKcyEeKFNPHtfiMz7g"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WUUm6NwbEeWVGefPVpopOA" x="580" y="24"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_WUUm79wbEeWVGefPVpopOA" type="3013">
         <children xmi:type="notation:DecorationNode" xmi:id="_WUUm9NwbEeWVGefPVpopOA" type="5018"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_WUUm9dwbEeWVGefPVpopOA" type="5019"/>
