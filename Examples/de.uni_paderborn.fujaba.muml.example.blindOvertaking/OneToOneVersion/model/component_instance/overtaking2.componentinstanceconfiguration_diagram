@@ -22,7 +22,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7yMFU06EeORybsjuqdyww" x="96" y="-12"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="../overtaking.muml#_P7AI8U06EeORybsjuqdyww"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7R1wU06EeORybsjuqdyww" x="489" y="142" width="253" height="54"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7R1wU06EeORybsjuqdyww" x="603" y="142" width="340" height="54"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_P7R1w006EeORybsjuqdyww" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_P7R1xU06EeORybsjuqdyww" type="5028"/>
@@ -67,7 +67,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9_hVcVIIEeO7W7GKdRsMmA" x="120" y="61"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="../overtaking.muml#_P7AI-E06EeORybsjuqdyww"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7R1x006EeORybsjuqdyww" x="537" y="3" width="241" height="56"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7R1x006EeORybsjuqdyww" x="648" y="3" width="241" height="56"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_P7R1yU06EeORybsjuqdyww" type="3024" fontName="Segoe UI" fillColor="12632256" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_P7R1y006EeORybsjuqdyww" type="5028"/>
@@ -103,7 +103,7 @@
           <children xmi:type="notation:Shape" xmi:id="_tEF-IPuFEeOGDaaDpg1QtA" type="3035" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_tEGlMPuFEeOGDaaDpg1QtA" type="5047"/>
             <element xmi:type="instance:CoordinationProtocolInstance" href="../overtaking.muml#_tDoEEPuFEeOGDaaDpg1QtA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tEF-IfuFEeOGDaaDpg1QtA" x="345" y="207"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tEF-IfuFEeOGDaaDpg1QtA" x="378" y="192"/>
           </children>
         </children>
         <element xmi:type="instance:ComponentInstanceConfiguration" href="../overtaking.muml#_P7AI8E06EeORybsjuqdyww"/>
@@ -113,7 +113,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OBr24k06EeORybsjuqdyww"/>
     </children>
     <element xmi:type="instance:StructuredComponentInstance" href="../overtaking.muml#_OBbYME06EeORybsjuqdyww"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OBozkU06EeORybsjuqdyww" x="12" y="36" width="817" height="325"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OBozkU06EeORybsjuqdyww" x="12" y="36" width="1159" height="325"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_NdGjIU06EeORybsjuqdyww"/>
   <element xmi:type="instance:ComponentInstanceConfiguration" href="../overtaking.muml#_NdEG4E06EeORybsjuqdyww"/>

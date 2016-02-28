@@ -178,7 +178,7 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_9Zq0YEhaEeOWZs6RcsWoZw" name="yellowSW_Component" behavioralElement="_0IDksEfOEeO56fW-RvmTLw">
-      <states xmi:id="_9Zq0YUhaEeOWZs6RcsWoZw" name="yellowSW_Component_Main" initial="true">
+      <states xmi:id="_9Zq0YUhaEeOWZs6RcsWoZw" name="YellowSW_Component_Main" initial="true">
         <embeddedRegions xmi:id="_X6qm0EhbEeOJnpqrtjndJA" priority="1">
           <embeddedStatechart xmi:id="_X6rN4EhbEeOJnpqrtjndJA" name="overtakee" behavioralElement="_1JdXUEfOEeO56fW-RvmTLw">
             <variables xmi:id="_diwjIFNQEeONi4ykyD_5PA" name="localVelocity">
@@ -228,7 +228,7 @@
                       <message xmi:id="_X6rN5khbEeOJnpqrtjndJA" instanceOf="__4UyUITBEeKO9r0VL65xcg"/>
                     </events>
                   </transitions>
-                  <states xmi:id="_X6rN_UhbEeOJnpqrtjndJA" name="Init" outgoingTransitions="_X6rN4UhbEeOJnpqrtjndJA" incomingTransitions="_X6rN5EhbEeOJnpqrtjndJA" initial="true"/>
+                  <states xmi:id="_X6rN_UhbEeOJnpqrtjndJA" name="Idle" outgoingTransitions="_X6rN4UhbEeOJnpqrtjndJA" incomingTransitions="_X6rN5EhbEeOJnpqrtjndJA" initial="true"/>
                   <states xmi:id="_X6rN_khbEeOJnpqrtjndJA" name="Evaluating" outgoingTransitions="_X6rN5EhbEeOJnpqrtjndJA _X6rN_EhbEeOJnpqrtjndJA" incomingTransitions="_X6rN4UhbEeOJnpqrtjndJA _X6rN-0hbEeOJnpqrtjndJA">
                     <entryEvent xmi:id="_X6rN_0hbEeOJnpqrtjndJA" clockResets="_X6rOA0hbEeOJnpqrtjndJA"/>
                     <invariants xmi:id="_X6rOAEhbEeOJnpqrtjndJA" clock="_X6rOA0hbEeOJnpqrtjndJA">
@@ -265,7 +265,7 @@
       <variables xmi:id="_mle-0M87EeW344JiqAKLMQ" name="speed">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
       </variables>
-      <states xmi:id="_cpa08UhbEeOJnpqrtjndJA" name="redSW_Component_Main" initial="true">
+      <states xmi:id="_cpa08UhbEeOJnpqrtjndJA" name="RedSW_Component_Main" initial="true">
         <embeddedRegions xmi:id="_lRNxMEhbEeOJnpqrtjndJA" priority="1">
           <embeddedStatechart xmi:id="_lRNxMUhbEeOJnpqrtjndJA" name="overtaker" behavioralElement="___LHMEfPEeOKy6HrV27eJQ">
             <transitions xmi:id="_lRNxOEhbEeOJnpqrtjndJA" priority="1" target="_lRNxQEhbEeOJnpqrtjndJA" source="_lROYWUhbEeOJnpqrtjndJA"/>
@@ -285,19 +285,19 @@
                   </transitions>
                   <transitions xmi:id="_lRNxREhbEeOJnpqrtjndJA" priority="1" target="_lROYR0hbEeOJnpqrtjndJA" source="_lROYRkhbEeOJnpqrtjndJA">
                     <relativeDeadline xmi:id="_lRNxRUhbEeOJnpqrtjndJA">
-                      <upperBound xmi:id="_lROYQEhbEeOJnpqrtjndJA" unit="SECONDS">
-                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_lROYQUhbEeOJnpqrtjndJA" value="5"/>
+                      <upperBound xmi:id="_lROYQEhbEeOJnpqrtjndJA" unit="MILLISECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_6ZpXIN40EeWxqaf1neq2vg" value="4500"/>
                       </upperBound>
-                      <lowerBound xmi:id="_lROYQkhbEeOJnpqrtjndJA" unit="SECONDS">
-                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_lROYQ0hbEeOJnpqrtjndJA" value="5"/>
+                      <lowerBound xmi:id="_lROYQkhbEeOJnpqrtjndJA" unit="MILLISECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_5UY_QN40EeWxqaf1neq2vg" value="1500"/>
                       </lowerBound>
                     </relativeDeadline>
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_lROYREhbEeOJnpqrtjndJA">
                       <message xmi:id="_lROYRUhbEeOJnpqrtjndJA" instanceOf="_mYhlsCqaEeO22YgZcbz7_A"/>
                     </events>
                   </transitions>
-                  <states xmi:id="_lROYRkhbEeOJnpqrtjndJA" name="init" outgoingTransitions="_lRNxREhbEeOJnpqrtjndJA" initial="true"/>
-                  <states xmi:id="_lROYR0hbEeOJnpqrtjndJA" name="changed" outgoingTransitions="_lRNxQ0hbEeOJnpqrtjndJA" incomingTransitions="_lRNxREhbEeOJnpqrtjndJA"/>
+                  <states xmi:id="_lROYRkhbEeOJnpqrtjndJA" name="Init" outgoingTransitions="_lRNxREhbEeOJnpqrtjndJA" initial="true"/>
+                  <states xmi:id="_lROYR0hbEeOJnpqrtjndJA" name="Changed" outgoingTransitions="_lRNxQ0hbEeOJnpqrtjndJA" incomingTransitions="_lRNxREhbEeOJnpqrtjndJA"/>
                 </embeddedStatechart>
               </embeddedRegions>
               <entryEvent xmi:id="_lROYSEhbEeOJnpqrtjndJA" clockResets="_lROYWkhbEeOJnpqrtjndJA">
@@ -312,7 +312,7 @@
               </entryEvent>
               <invariants xmi:id="_lROYSUhbEeOJnpqrtjndJA" clock="_lROYWkhbEeOJnpqrtjndJA">
                 <bound xmi:id="_lROYSkhbEeOJnpqrtjndJA" unit="SECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_lROYS0hbEeOJnpqrtjndJA" value="10"/>
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_NdZ78N41EeWxqaf1neq2vg" value="20"/>
                 </bound>
               </invariants>
               <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_lROYTEhbEeOJnpqrtjndJA" name="exexit" outgoingTransitions="_lRNxPUhbEeOJnpqrtjndJA" incomingTransitions="_lRNxQ0hbEeOJnpqrtjndJA"/>
@@ -357,8 +357,8 @@
                       </bound>
                     </clockConstraints>
                   </transitions>
-                  <states xmi:id="_lROYU0hbEeOJnpqrtjndJA" name="init" outgoingTransitions="_lRNxMkhbEeOJnpqrtjndJA" incomingTransitions="_lRNxOUhbEeOJnpqrtjndJA _n87EAFOUEeONi4ykyD_5PA" initial="true"/>
-                  <states xmi:id="_lROYVEhbEeOJnpqrtjndJA" name="requested" outgoingTransitions="_dtkFMFKxEeOAaYuu2aiwSg _lRNxOUhbEeOJnpqrtjndJA _lROYUEhbEeOJnpqrtjndJA" incomingTransitions="_lRNxMkhbEeOJnpqrtjndJA">
+                  <states xmi:id="_lROYU0hbEeOJnpqrtjndJA" name="Idle" outgoingTransitions="_lRNxMkhbEeOJnpqrtjndJA" incomingTransitions="_lRNxOUhbEeOJnpqrtjndJA _n87EAFOUEeONi4ykyD_5PA" initial="true"/>
+                  <states xmi:id="_lROYVEhbEeOJnpqrtjndJA" name="WaitForAnswer" outgoingTransitions="_dtkFMFKxEeOAaYuu2aiwSg _lRNxOUhbEeOJnpqrtjndJA _lROYUEhbEeOJnpqrtjndJA" incomingTransitions="_lRNxMkhbEeOJnpqrtjndJA">
                     <entryEvent xmi:id="_lROYVUhbEeOJnpqrtjndJA" clockResets="_lROYWkhbEeOJnpqrtjndJA"/>
                     <invariants xmi:id="_lROYVkhbEeOJnpqrtjndJA" clock="_lROYWkhbEeOJnpqrtjndJA">
                       <bound xmi:id="_lROYV0hbEeOJnpqrtjndJA" unit="SECONDS">
@@ -667,7 +667,7 @@
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="__xnlMFIIEeO7W7GKdRsMmA" type="_75Je0FIIEeO7W7GKdRsMmA" connectorEndpointInstances="_9_cc8FIIEeO7W7GKdRsMmA _P7AI9k06EeORybsjuqdyww"/>
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_AWJOkFIJEeO7W7GKdRsMmA" type="_5B7aEFIIEeO7W7GKdRsMmA" connectorEndpointInstances="_9_eSIFIIEeO7W7GKdRsMmA _P7AI8006EeORybsjuqdyww"/>
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_tDdE8PuFEeOGDaaDpg1QtA" type="_jK4tYOaJEeOcEJZBbuTvIA" connectorEndpointInstances="_P7AI9006EeORybsjuqdyww _P7AI8k06EeORybsjuqdyww"/>
-          <coordinationProtocolInstances xmi:id="_tDoEEPuFEeOGDaaDpg1QtA" name="Overtaking" portInstances="_P7AI8k06EeORybsjuqdyww _P7AI9006EeORybsjuqdyww" coordinationProtocolPart="_jLIlAOaJEeOcEJZBbuTvIA" coordinationProtocol="_GPaQMITCEeKO9r0VL65xcg"/>
+          <coordinationProtocolInstances xmi:id="_tDoEEPuFEeOGDaaDpg1QtA" name="overtaking" portInstances="_P7AI8k06EeORybsjuqdyww _P7AI9006EeORybsjuqdyww" coordinationProtocolPart="_jLIlAOaJEeOcEJZBbuTvIA" coordinationProtocol="_GPaQMITCEeKO9r0VL65xcg"/>
         </embeddedCIC>
       </componentInstances>
     </modelElements>
