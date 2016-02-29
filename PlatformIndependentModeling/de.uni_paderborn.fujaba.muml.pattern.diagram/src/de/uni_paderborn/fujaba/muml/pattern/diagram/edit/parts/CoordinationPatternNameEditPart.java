@@ -523,7 +523,7 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart impleme
 	* @generated
 	*/
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**

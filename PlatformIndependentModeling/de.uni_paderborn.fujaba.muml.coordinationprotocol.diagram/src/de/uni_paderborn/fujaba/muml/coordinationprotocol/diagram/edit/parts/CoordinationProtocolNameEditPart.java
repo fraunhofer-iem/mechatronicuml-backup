@@ -536,7 +536,7 @@ public class CoordinationProtocolNameEditPart extends CompartmentEditPart implem
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**

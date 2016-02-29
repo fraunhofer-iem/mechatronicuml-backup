@@ -29,6 +29,9 @@
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
               grabExcessVerticalSpace="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              style="BOLD"/>
         </children>
         <template
             x="4"/>

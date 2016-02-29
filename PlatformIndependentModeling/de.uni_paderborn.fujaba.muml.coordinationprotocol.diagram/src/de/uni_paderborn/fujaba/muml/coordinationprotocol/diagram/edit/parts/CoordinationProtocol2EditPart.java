@@ -41,7 +41,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 
 /**
@@ -375,6 +377,8 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 
 			fFigureCoordinationProtocolNameFigure.setText("");
 
+			fFigureCoordinationProtocolNameFigure.setFont(FFIGURECOORDINATIONPROTOCOLNAMEFIGURE_FONT);
+
 			GridData constraintFFigureCoordinationProtocolNameFigure = new GridData();
 			constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = GridData.CENTER;
 			constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = GridData.CENTER;
@@ -400,6 +404,12 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	static final Color THIS_BACK = new Color(null, 173, 216, 230);
+
+	/**
+	* @generated
+	*/
+	static final Font FFIGURECOORDINATIONPROTOCOLNAMEFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated

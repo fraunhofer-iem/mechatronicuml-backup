@@ -29,7 +29,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 
 /**
@@ -370,6 +372,8 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 
 			fFigurePatternNameLabel.setText("");
 
+			fFigurePatternNameLabel.setFont(FFIGUREPATTERNNAMELABEL_FONT);
+
 			GridData constraintFFigurePatternNameLabel = new GridData();
 			constraintFFigurePatternNameLabel.verticalAlignment = GridData.CENTER;
 			constraintFFigurePatternNameLabel.horizontalAlignment = GridData.CENTER;
@@ -395,6 +399,12 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	static final Color THIS_BACK = new Color(null, 251, 215, 187);
+
+	/**
+	* @generated
+	*/
+	static final Font FFIGUREPATTERNNAMELABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated
