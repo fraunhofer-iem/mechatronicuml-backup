@@ -29,7 +29,18 @@ mapping DiscreteInteractionEndpoint :: transform() : EObject {
 	}
 }
 
-
+mapping ParameterBinding :: transform() : EObject {
+	
+	init {
+		result := self.map create();
+		
+		var resultingBinding := result.oclAsType(ParameterBinding);
+		resultingBinding.parameter := self.parameter;
+		resultingBinding.value := self.value.map transform().oclAsType(core::expressions::Expression);
+		resultingBinding.annotation := self.annotation.map transform().oclAsType(EAnnotation);
+		resultingBinding.extension := self.extension.map transform().oclAsType(core::Extension);		
+	}
+}
 
 mapping DataType :: transform() : EObject {
 	init{

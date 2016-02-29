@@ -32,13 +32,13 @@ main()
 		
 		
 	// not debug:
-	//variablesToParameter := input.rootObjects()[Variable];	
-	//theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
+	variablesToParameter := input.rootObjects()[Variable];	
+	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
 	
 		
 	// debug:	
-	variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
-	theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
+	//variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
+	//theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
 	
 		
 	// check input
@@ -119,6 +119,12 @@ mapping Variable :: transform() : EObject {
 			}
 			else {
 				result := self.map create();
+				result.oclAsType(Variable).initializeExpression := self.initializeExpression.map transform().oclAsType(core::expressions::Expression);
+				result.oclAsType(Variable).dataType := self.dataType;
+				var element := self.oclAsType(EObject);	
+				element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element, f));
+				};
 			}
 			
 		}	
