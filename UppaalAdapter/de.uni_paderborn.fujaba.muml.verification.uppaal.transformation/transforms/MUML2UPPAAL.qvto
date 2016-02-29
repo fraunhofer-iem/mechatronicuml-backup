@@ -771,7 +771,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 				var sourceID := self.connectorEndpointInstances->first().oclAsType(DiscretePortInstance).getID();
 				var targetID := self.connectorEndpointInstances->last().oclAsType(DiscretePortInstance).getID();
 				
-				// here, we declare a bidirectional connector. TODO create unidirectional connector only if required by the protocol, see ticket #1457
+				// here, we declare a bidirectional connector. TODO create unidirectional connector only if required by the protocol see ticket #1457
 				
 				result += object TemplateDeclaration {
 					
@@ -1359,6 +1359,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		declaration += messageTypes()->map createSendFunctionDeclaration();
 		
 		declaration += discretePortInstances->map createConsumeFunctionDeclaration();
+		
+		declaration += map createClearConnectorFunctionDeclaration();
 		
 		declaration += map createDiscardFunctionDeclaration();
 		

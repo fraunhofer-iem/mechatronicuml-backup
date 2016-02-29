@@ -493,6 +493,9 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 		function := map createDiscardFunction()
 	}
 	
+	mapping createClearConnectorFunctionDeclaration() : FunctionDeclaration {
+		function := map createClearConnectorFunction();
+	}
 	
 	mapping createGetNumElementsInBufferFunctionDeclaration() : FunctionDeclaration {
 		function := map createGetNumElementsInBufferFunction();
@@ -1161,8 +1164,48 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 				text := true.repr()
 			}
 				
-		}		
+		};	
 		
+	 		 									
+	 	//releaseId(tmp.mId);
+		update += object FunctionCallExpression{
+			function := map createReleaseIdFunction();
+			argument += object ScopedIdentifierExpression {
+				identifier := object IdentifierExpression {
+					identifier := map createMessageKindVariable();
+				};
+
+				scope := object IdentifierExpression {
+					identifier := map createTmpVariable();
+				}
+			};
+		};
+	 		
+	 	-- clearConnector(tmp.mId, tmp.mType);
+		update += object FunctionCallExpression {
+			function := map createClearConnectorFunction();
+			argument +=  object ScopedIdentifierExpression {
+				identifier := object IdentifierExpression {
+					identifier := map createMessageTypeMessageIdVariable();
+				};
+
+				scope := object IdentifierExpression {
+					identifier := map createTmpVariable();
+				}
+			};
+			
+			argument +=  object ScopedIdentifierExpression {
+				identifier := object IdentifierExpression {
+					identifier := map createMessageKindVariable();
+				};
+
+				scope := object IdentifierExpression {
+					identifier := map createTmpVariable();
+				}
+			};
+		};
+		
+			
 	}
 	
 	mapping createBufferAcceptEdge(portInstances : OrderedSet(DiscretePortInstance)) : Edge {

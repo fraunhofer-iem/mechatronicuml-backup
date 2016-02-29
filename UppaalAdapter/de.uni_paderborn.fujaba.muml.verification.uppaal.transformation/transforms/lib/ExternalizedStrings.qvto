@@ -29,3 +29,4 @@ property bufferOverflowStrategyParameterID = 'bufferOverflowStrategy';
 property bufferParameterID = 'buffer';
 property messageParameterID = 'message';
 property connectorOverflowVariableID = 'connectorOverflow';
+property clearConnectorFunctionID = 'clearConnector';

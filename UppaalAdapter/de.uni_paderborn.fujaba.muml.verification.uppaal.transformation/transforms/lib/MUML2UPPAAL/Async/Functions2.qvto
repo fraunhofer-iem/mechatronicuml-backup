@@ -20,93 +20,20 @@ modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 
-	mapping createClearConnectorFunction() : Function {
+mapping createClearConnectorFunction() : Function {
 		
-		// create return type
-		returnType := object TypeReference {
-			
-			referredType := VOID
-			
-		}; 
-		
-		// create function parameters	
-		name := clearConnectorFunctionID;
-		
-		var id : Variable := object Variable {
-			name := 'id';
-		};
-		
-		
+		name := 'clearConnector';
 		parameter += object Parameter{
 			variableDeclaration := object DataVariableDeclaration {
 				typeDefinition := object TypeReference{
 				
 					referredType := map createMessageIdType();
 				};
-				variable += id;
-			};			
-		};
-		
-		var messageTypeToDiscard := object Variable {
-			name := 'messageTypeToDiscard';	
-		};
-		
-		parameter += object Parameter{
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference{
-				
-					referredType := map createMessageKindType();
-				};
-				variable += messageTypeToDiscard;
-			};			
-		};
-		
-		block := object Block {
-				
-		
-			//releaseId(id);
-			statement += object ExpressionStatement{
-				expression := object FunctionCallExpression{
-					function := map createReleaseIdFunction();
-					argument += object IdentifierExpression{
-						identifier := id;
-					};
-				};
-			};				
-			
-			--if(message.mType == muml_m){
-			--	removemuml_mArguments(messageToDiscard); 
-	 		--	}
-	 		-- ..	
-			messageTypes()->forEach(mType) {
-						
-						statement += object IfStatement {
-							ifExpression := object CompareExpression {
-								firstExpr := object IdentifierExpression {
-									identifier := messageTypeToDiscard
-								};
-								
-								secondExpr := object IdentifierExpression {
-									identifier := mType.resolveoneIn(MessageType::createMessageKindConstant, Variable);
-								};
-								operator := CompareOperator::EQUAL;
-							};
-							
-							thenStatement := object ExpressionStatement {
-								expression := object FunctionCallExpression {
-									function := mType.map createRemoveForMessageTypeFunction();
-									argument += object IdentifierExpression {
-											identifier := id;
-									};									
-								};	
-							};
-						};
-					};
-		
-		};
+			}
+		}
 	}
 
-
+	
 	mapping createRequestIdFunction() : Function {
 		
 		name := 'requestId';
@@ -540,6 +467,9 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 		
 	}
 	
+	
+	
+	 
 	
 	mapping MessageType :: createAddForMessageTypeFunction() : Function {
 		
@@ -2690,17 +2620,33 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 				};
 			};
 			
-			-- clearConnector(messageToDiscard, messageTypeToDiscard);
-	 		statement += object ExpressionStatement {
-		 		expression := object FunctionCallExpression {
-						function := map createClearConnectorFunction();
-						argument += object IdentifierExpression {
-							identifier := messageToDiscard;
+			--if(message.mType == muml_m){
+			--	removemuml_mArguments(messageToDiscard); 
+	 		--	}
+	 		-- ..
+			messageTypes()->forEach(mType) {
+						
+						statement += object IfStatement {
+							ifExpression := object CompareExpression {
+								firstExpr := object IdentifierExpression {
+									identifier := messageTypeToDiscard
+								};
+								
+								secondExpr := object IdentifierExpression {
+									identifier := mType.resolveoneIn(MessageType::createMessageKindConstant, Variable);
+								};
+								operator := CompareOperator::EQUAL;
+							};
+							
+							thenStatement := object ExpressionStatement {
+								expression := object FunctionCallExpression {
+									function := mType.map createRemoveForMessageTypeFunction();
+									argument += object IdentifierExpression {
+											identifier := messageToDiscard;
+									};									
+								};	
+							};
 						};
-						argument += object IdentifierExpression {
-							identifier := messageTypeToDiscard;
 					};
-				};									
-	 		};		
 		};
 	};
