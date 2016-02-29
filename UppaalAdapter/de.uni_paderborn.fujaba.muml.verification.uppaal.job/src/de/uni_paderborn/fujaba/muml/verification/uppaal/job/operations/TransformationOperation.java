@@ -160,7 +160,7 @@ public class TransformationOperation implements IWorkspaceRunnable {
 					for (EObject obj : extent.getContents()) {
 						diagnostic = Diagnostician.INSTANCE.validate(obj);
 						status = BasicDiagnostic.toIStatus(diagnostic);
-						if(!status.isOK()) {
+						if(!(status.isOK() || status.getSeverity() ==  IStatus.WARNING)) {
 							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
 							throw new CoreException(status);
 						}
