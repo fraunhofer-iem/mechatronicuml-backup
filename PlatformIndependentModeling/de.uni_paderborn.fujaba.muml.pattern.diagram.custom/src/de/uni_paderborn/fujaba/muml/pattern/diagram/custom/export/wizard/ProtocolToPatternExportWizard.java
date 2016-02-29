@@ -4,11 +4,9 @@ import java.io.IOException;
 import java.util.Collections;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.jface.text.Assert;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 
@@ -39,27 +37,20 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 	public void addPages() {
 		// TODO Auto-generated method stub
 		super.addPages();
-		page1 = new ProtocolToPatternExportWizardPage1("SelectProtocol", toolkit, this.getResourceSet(), this.initialSelection);
+	
 		page2 = new ProtocolToPatternExportWizardPage2("SelectVariablesThatShouldBeTransformedToParameters", toolkit);
+		page1 = new ProtocolToPatternExportWizardPage1("SelectProtocol", toolkit, this.getResourceSet(), this.initialSelection, page2);
 		this.addPage(page1);
 		this.addPage(page2);
-		page1.addResourceChangeListener(page2);
-		page1.addSelectionListenerOfTreeViewer(new ICheckStateListener() {			
-			@Override
-			public void checkStateChanged(CheckStateChangedEvent event) {
-				// TODO Auto-generated method stub
-				if(event.getElement() instanceof CoordinationProtocol) {
-					page2.refresh((CoordinationProtocol)event.getElement());	
-				}
-			}
-		});
+		
+		
 	}
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
 		super.init(workbench, currentSelection);
 		setWindowTitle("Transform CoordinationProtocol to CoordinationPattern");
 		setDefaultPageImageDescriptor(IDEWorkbenchPlugin
-				.getIDEImageDescriptor("wizban/exportzip_wiz.png"));//$NON-NLS-1$
+				.getIDEImageDescriptor("wizban/exportzip_wiz.png"));//$NON-NLS-1$	
 	}
 	
 	@Override
@@ -86,21 +77,11 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}			
-			PatternToProtocolTransformation.createDiagrams(getShell(), newPattern);
+			
 			return true;
 		}
 		return false;
 	}
 
 
-//		
-//	@Override
-//	public IWizardPage getNextPage(IWizardPage page) {
-//		// TODO Auto-generated method stub
-//		IWizardPage next = super.getNextPage(page);
-//		CoordinationProtocol selectedElement = (CoordinationProtocol)page1.getSourceElements()[0];
-//		if (next == page2)
-//			page2.refresh(selectedElement);
-//		return next;
-//	}
 }

@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -19,7 +18,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -88,7 +86,7 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				// TODO Auto-generated method stub
-				System.out.println("Check changed");
+				
 				validatePage();
 			}
 		});
@@ -97,7 +95,7 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				// TODO Auto-generated method stub
-				System.out.println("Selection changed");
+				
 				validatePage();
 			}
 		});
@@ -117,7 +115,7 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 	}
 
 	
-	public void refresh(CoordinationProtocol protocol) {
+	public void refresh(Resource currentResource, CoordinationProtocol protocol) {
 
 		AdapterFactory adapterFactory = null;
 		EditingDomain editingDomain = AdapterFactoryEditingDomain
@@ -174,7 +172,9 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 				}
 			} });
 			
-		} else {
+		}
+		
+		else {
 			treeViewer.setContentProvider(NullContentProvider.DEFAULT);
 			treeViewer.setInput(null);
 		}
