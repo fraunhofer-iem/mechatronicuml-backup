@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -87,14 +88,25 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 				buf.append("null");
 			}
 			buf.append(' ');
-			switch (cc.getOperator()) {
-			case EQUAL: 			buf.append('='); break;
-			case LESS: 				buf.append('<'); break;
-			case LESS_OR_EQUAL: 	buf.append('≤'); break; 
-			case GREATER_OR_EQUAL: 	buf.append('≥'); break;
-			case GREATER:			buf.append('>'); break;
-			case UNEQUAL:			buf.append('≠'); break;
-			case REGULAR_EXPRESSION:buf.append("regexp"); break; 
+			
+			// I wrote the following helper program to find out bytes of UTF-8 characters:
+//			public static void main(String[] args) throws UnsupportedEncodingException {
+//				for (byte c : "x".getBytes()) {
+//					System.out.println((int)(byte)c);
+//				}
+//			}
+			try {
+				switch (cc.getOperator()) {
+				case EQUAL: 			buf.append('='); break;
+				case LESS: 				buf.append('<'); break;
+				case LESS_OR_EQUAL: 	buf.append(new String(new byte[] { -30, -119, -92}, "UTF-8")); break; 
+				case GREATER_OR_EQUAL: 	buf.append(new String(new byte[] { -30, -119, -91}, "UTF-8")); break;
+				case GREATER:			buf.append('>'); break;
+				case UNEQUAL:			buf.append(new String(new byte[] { -30, -119, -96}, "UTF-8")); break;
+				case REGULAR_EXPRESSION:buf.append("regexp"); break; 
+				}
+			} catch (UnsupportedEncodingException e) {
+			} finally {				
 			}
 			buf.append(' ');
 			if (cc.getBound() != null) {
