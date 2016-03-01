@@ -469,18 +469,24 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 	
 
 	
-mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex,_initial: Boolean): State {
+mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex): State {
 		
+		name := state.name;
+		
+		result.initial := true;
+		
+		containerRegion.states += result;		
+}
+
+
+mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex, _initial : Boolean): State {
+		// only used in SingleReceive schema
 		name := state.name;
 		
 		result.initial := _initial;
 		
-		containerRegion.states += result;	
-		
-		
+		containerRegion.states += result;		
 }
-
-	
 
 	
 mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : State {

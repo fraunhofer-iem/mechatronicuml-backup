@@ -462,16 +462,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		clocks += sourceRealtimeStatechart.subRoleSpecificClocks.map transform().oclAsType(Clock);
 				
 	}
-// all schema except SingleReceive use this transition
-mapping Transition :: Transition2TransitionFromSourceToTarget(container : RealtimeStatechart) : Transition 
-	when {self.usesAnySchema() and not self.usesUniReceiveSchema()}
-	{		
-		priority := 1;
-		
-		target :=  self.map Transition2StateSubrole(container, self.source,true);
-		
-		source := self.map Transition2StateSubrole(container, self.target, false);
-}
+
 
 mapping State :: States2StatesCoordinator(context:OclAny) : State {
 		

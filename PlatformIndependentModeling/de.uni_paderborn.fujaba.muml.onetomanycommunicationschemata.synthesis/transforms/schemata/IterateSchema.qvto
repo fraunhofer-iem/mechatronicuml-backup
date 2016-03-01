@@ -77,7 +77,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		
 		priority := 1; 
 		
-		source := self.map Transition2StateSubrole(region,self.source, true);
+		source := self.map Transition2StateSubrole(region, self.source);
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
@@ -117,7 +117,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 	
 mapping Transition :: Iterate2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 		
-		source := self.map Transition2StateSubrole(region,self.source, true);
+		source := self.map Transition2StateSubrole(region, self.source);
 		
 		target := self.map Schema2SubroleIntermediateState(context,1);
 		
@@ -138,7 +138,7 @@ mapping Transition :: Iterate2IdleToIntermediate2SubroleRegion(context: OclAny, 
 	
 	priority := 3;
 	
-	source := self.map Transition2StateSubrole(region,self.source, true);
+	source := self.map Transition2StateSubrole(region, self.source);
 		
 	target := self.map Schema2SubroleIntermediateState(context,2);
 	
@@ -233,7 +233,7 @@ mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 	
 		priority := 2;
 		
-		target := self.map Transition2StateSubrole(region,self.target, false);
+		target := self.map Transition2StateSubrole(region, self.source);
 		
 		source := self.map Schema2SubroleIntermediateState(context,2);	
 		
@@ -251,7 +251,7 @@ mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region
 	
 		priority := 1;
 		
-		target := self.map Transition2StateSubrole(region,self.target, false);
+		target := self.map Transition2StateSubrole(region, self.source);
 		
 		source := self.map Schema2SubroleIntermediateState(context,2);		
 		
@@ -279,7 +279,7 @@ mapping Transition :: Iterate2SourceRegionSubrole(context:OclAny, region:Realtim
 		
 		priority := self.priority;
 		
-		parentState := self.map Transition2StateSubrole(region,self.source, true).oclAsType(State);
+		parentState := self.map Transition2StateSubrole(region, self.source).oclAsType(State);
 		
 		embeddedStatechart := self.map Iterate2SourceEmbeddedRTSCSubrole(context, region);
 					
