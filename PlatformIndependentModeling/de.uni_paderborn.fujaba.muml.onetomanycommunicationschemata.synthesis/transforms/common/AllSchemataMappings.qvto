@@ -68,6 +68,8 @@ mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, stateID :
 				
 		parentStatechart := self.map RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart));		
 					
+		result.urgent := true;
+		
 	}
 
 //@author: sthiele2 -- creates a clock for in order to disassamble a deadline at a schema-specifying-transition
@@ -469,9 +471,9 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 	
 
 	
-mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex): State {
+mapping Transition :: Transition2SourceStateSubrole(inout containerRegion : RealtimeStatechart): State{
 		
-		name := state.name;
+		name := self.source.name;
 		
 		result.initial := true;
 		
@@ -479,11 +481,11 @@ mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeSt
 }
 
 
-mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex, _initial : Boolean): State {
+mapping Transition :: Transition2TargetStateSubrole(inout containerRegion : RealtimeStatechart): State when {self.usesUniReceiveSchema()}{
 		// only used in SingleReceive schema
-		name := state.name;
+		name := self.target.name;
 		
-		result.initial := _initial;
+		result.initial := false;
 		
 		containerRegion.states += result;		
 }

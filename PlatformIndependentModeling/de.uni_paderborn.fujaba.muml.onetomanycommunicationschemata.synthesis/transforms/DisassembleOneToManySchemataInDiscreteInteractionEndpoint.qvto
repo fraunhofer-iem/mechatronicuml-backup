@@ -354,11 +354,11 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 		};
 		
 		// add the source and target of the schema transition to the subrole schema realtimestatechart
-		states += self.map Transition2StateSubrole(region, self.source,true);		
+		states += self.map Transition2SourceStateSubrole(region);		
 		 
-		states += self.map Transition2StateSubrole(region, self.target,false);		
+		 // only used in uniReceive schema
+		states += self.map Transition2TargetStateSubrole(region);				
 		
-		transitions += self.map Transition2TransitionFromSourceToTarget(region);
 		
 		--transitions with LoadBalancing
 		transitions += self.map LoadBalancing2TransSendSyncFirstSubrole(context, region);
@@ -584,15 +584,15 @@ mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny) : R
 
 
 
-mapping Transition::Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex,_initial: Boolean):State {
-		name := state.name;
+mapping Transition::Transition2SourceStateSubrole(inout containerRegion : RealtimeStatechart):State {
+		name := self.source.name;
 		
 		result.initial := _initial;
 		
 		containerRegion.states += result;
 		
 		if(_initial) { 
-		--embedded Regions for transfer schemata
+			--embedded Regions for transfer schemata
 			embeddedRegions += self->asSet()->select(t|t.usesMulticastSchema() and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2SourceRegionSubrole(result, containerRegion);
 			embeddedRegions += self->asSet()->select(t|t.usesUnicastSchema() and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2SourceRegionSubrole(result, containerRegion);	
 			embeddedRegions += self->asSet()->select(t|t.usesUniReceiveSchema()).map SingleReceive2SourceRegionSubrole(result, containerRegion);	

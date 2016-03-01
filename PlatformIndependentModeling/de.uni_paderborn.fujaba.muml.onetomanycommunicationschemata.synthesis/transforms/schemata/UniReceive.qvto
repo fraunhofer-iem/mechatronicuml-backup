@@ -135,7 +135,7 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(parentSta
 
 		priority := (self.priority);
 		
-		source := self.map Transition2StateSubrole(region,self.source, true);		
+		source := self.map Transition2SourceStateSubrole(region);		
 		
 		target := self.map Schema2SubroleIntermediateState(parentStatechart,1);
 	
@@ -151,9 +151,9 @@ mapping Transition :: SingleReceive2Transition1TargetToSourceSubrole(parentState
 	
 		priority := 2;
 		
-		target := self.map Transition2StateSubrole(region,self.source, true);
+		target := self.map Transition2SourceStateSubrole(region);
 		
-		source := self.map Transition2StateSubrole(region,self.target, false);
+		source := self.map Transition2TargetStateSubrole(region);
 		
 		synchronization := self. createSynchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -168,9 +168,9 @@ mapping Transition :: SingleReceive2Transition2TargetToSourceSubrole(context:Ocl
 	
 		priority := 1;
 		
-		target := self.map Transition2StateSubrole(region,self.source, true);
+		target := self.map Transition2SourceStateSubrole(region);
 		
-		source := self.map Transition2StateSubrole(region,self.target, false);
+		source := self.map Transition2TargetStateSubrole(region);
 		
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 				
@@ -185,7 +185,7 @@ mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole
 	
 		priority := 1;
 		
-		target := self.map Transition2StateSubrole(region,self.target, false);
+		target := self.map Transition2TargetStateSubrole(region);
 		
 		source := self.map Schema2SubroleIntermediateState(context,1);	
 	
@@ -197,7 +197,7 @@ mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:R
 		
 		priority := self.priority;
 		
-		parentState := self.map Transition2StateSubrole(region,self.source, true);
+		parentState := self.map Transition2SourceStateSubrole(region);
 		
 		embeddedStatechart := self.map SingleReceive2SourceEmbeddedRTSCSubrole(context, region);					
 	}
@@ -248,7 +248,7 @@ mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(
 		
 		target := self.map SingleReceive2StateExitPoint();
 		
-		self.map SingleReceive2StateExitPoint().state := self.map Transition2StateSubrole(region,self.source, true);	
+		self.map SingleReceive2StateExitPoint().state := self.map Transition2SourceStateSubrole(region);	
 		
 		if(not self.guard.oclIsUndefined() and not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
 		{

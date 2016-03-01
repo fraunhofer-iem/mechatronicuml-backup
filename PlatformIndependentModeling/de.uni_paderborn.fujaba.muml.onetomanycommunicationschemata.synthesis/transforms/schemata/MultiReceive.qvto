@@ -68,7 +68,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subro
 	
 		priority := 2;
 		
-		source := self.map Transition2StateSubrole(region, self.source);
+		source := self.map Transition2SourceStateSubrole(region);
 		
 		target := self.map Schema2SubroleIntermediateState(context, 1);
 		
@@ -86,7 +86,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediate2Subrole(co
 		
 		priority := 1;
 		
-		source := self.map Transition2StateSubrole(region, self.source);
+		source := self.map Transition2SourceStateSubrole(region);
 		
 		target := self.map Schema2SubroleIntermediateState(context, 2);		
 		
@@ -135,7 +135,7 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context 
 		
 		source := self.map Schema2SubroleIntermediateState(context,2);
 		
-		target := self.map Transition2StateSubrole(region, self.source);
+		target := self.map Transition2SourceStateSubrole(region);
 		
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 	
@@ -151,7 +151,7 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate2ToTarget(context 
 		
 		source := self.map Schema2SubroleIntermediateState(context,2);
 		
-		target := self.map Transition2StateSubrole(region, self.source);
+		target := self.map Transition2SourceStateSubrole(region);
 		
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 			
