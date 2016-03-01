@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.tether;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
@@ -18,6 +19,8 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		extends
 		de.uni_paderborn.fujaba.common.edit.policies.tether.TetherConnectionEditPolicy
 		implements NotificationListener {
+	
+	public static int CONNECTION_LENGTH = 60; // 60px
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -88,7 +91,7 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 
 	/**
 	 * Adapted the start position so that the connection points next to the
-	 * label and is a little bit longer, as required for our concrete syntax for Ports.
+	 * label and has the length CONNETION_LENGTH.
 	 */
 	protected Point getNewStartPoint() {
 		Point startRef = getStartRefPoint();
@@ -104,9 +107,10 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		if (startRef.x > endRef.x) {
 			startPos.x += r.width;
 		}
-		startPos.translate(startPos.getDifference(endRef).getScaled(0.5));
-
-		return startPos;
+		
+		Dimension diff = startPos.getDifference(endRef);
+		double length = Math.sqrt(diff.width*diff.width + diff.height*diff.height);
+		return endRef.translate(diff.getScaled(CONNECTION_LENGTH / length));
 	}
 
 	@Override
@@ -117,6 +121,4 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		((WrappingLabel) getHostFigure()).setTextUnderline(true);
 	}
 	
-	
-
 }
