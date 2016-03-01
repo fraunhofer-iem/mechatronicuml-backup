@@ -106,7 +106,11 @@
         <children
             xsi:type="gmfgraph:Label"
             name="StatechartNameLabel"
-            text=""/>
+            text="">
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              style="ITALIC"/>
+        </children>
         <children
             xsi:type="gmfgraph:Label"
             name="StatechartVariablesLabel"

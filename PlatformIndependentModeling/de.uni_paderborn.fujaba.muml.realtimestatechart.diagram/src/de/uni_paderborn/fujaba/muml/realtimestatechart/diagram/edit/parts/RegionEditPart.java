@@ -85,6 +85,24 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) {
+			setBackgroundColor(
+					((de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
+							.getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -492,6 +510,8 @@ public class RegionEditPart extends ShapeNodeEditPart {
 
 			fFigureStatechartNameLabel.setText("");
 
+			fFigureStatechartNameLabel.setFont(FFIGURESTATECHARTNAMELABEL_FONT);
+
 			statechartTitleAreaFigure1.add(fFigureStatechartNameLabel);
 
 			fFigureStatechartVariablesLabel = new WrappingLabel();
@@ -596,6 +616,12 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		}
 
 	}
+
+	/**
+	* @generated
+	*/
+	static final Font FFIGURESTATECHARTNAMELABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.ITALIC);
 
 	/**
 	 * @generated

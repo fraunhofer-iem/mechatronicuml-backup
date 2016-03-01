@@ -38,7 +38,10 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -71,6 +74,24 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			part = part.getParent();
 		}
 		return hosts;
+	}
+
+	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) {
+			setBackgroundColor(
+					((de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
+							.getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
 	}
 
 	/**
@@ -427,6 +448,8 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 
 			fFigureStatechartNameLabel.setText("");
 
+			fFigureStatechartNameLabel.setFont(FFIGURESTATECHARTNAMELABEL_FONT);
+
 			statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);
 
 			fFigureStatechartVariablesLabel = new WrappingLabel();
@@ -493,5 +516,11 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 		}
 
 	}
+
+	/**
+	* @generated
+	*/
+	static final Font FFIGURESTATECHARTNAMELABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.ITALIC);
 
 }
