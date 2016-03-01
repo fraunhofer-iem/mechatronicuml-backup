@@ -587,7 +587,7 @@ mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny) : R
 mapping Transition::Transition2SourceStateSubrole(inout containerRegion : RealtimeStatechart):State {
 		name := self.source.name;
 		
-		result.initial := _initial;
+		result.initial := true;
 		
 		containerRegion.states += result;
 		
