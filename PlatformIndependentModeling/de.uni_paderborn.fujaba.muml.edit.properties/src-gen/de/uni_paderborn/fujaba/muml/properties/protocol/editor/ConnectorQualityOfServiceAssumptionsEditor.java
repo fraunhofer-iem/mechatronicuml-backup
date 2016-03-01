@@ -37,10 +37,10 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
-					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
+					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
-					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
+					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -58,10 +58,10 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
-					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
+					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
-					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
+					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -73,6 +73,22 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMaxMessageDelay_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMaxMessageDelay_property_tab_generalTab_Editor() {
+		if (this.editorMaxMessageDelay_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getConnectorQualityOfServiceAssumptions_MaxMessageDelay();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The maximal time a message needs from the sender to the receiver using this connector.");
+
+			this.editorMaxMessageDelay_property_tab_generalTab = editor;
+		}
+		return this.editorMaxMessageDelay_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMinMessageDelay_property_tab_generalTab;
@@ -122,22 +138,6 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		return this.editorMinMessageDelay_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMaxMessageDelay_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMaxMessageDelay_property_tab_generalTab_Editor() {
-		if (this.editorMaxMessageDelay_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-					.getConnectorQualityOfServiceAssumptions_MaxMessageDelay();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"The maximal time a message needs from the sender to the receiver using this connector.");
-
-			this.editorMaxMessageDelay_property_tab_generalTab = editor;
-		}
-		return this.editorMaxMessageDelay_property_tab_generalTab;
-	}
-
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessageLossPossible_property_tab_generalTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessageLossPossible_property_tab_generalTab_Editor() {
 		if (this.editorMessageLossPossible_property_tab_generalTab == null) {
@@ -177,6 +177,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 					.getExtendableElement_Extension();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
+
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
 
 			this.editorExtension_property_tab_extensionsTab = editor;
 		}

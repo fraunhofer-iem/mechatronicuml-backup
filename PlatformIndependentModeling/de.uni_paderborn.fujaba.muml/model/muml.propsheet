@@ -751,16 +751,16 @@
     </classes>
     <classes xmi:id="_VZS1tcwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZS1uMwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZS1ucwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZS1tswbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
         <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZS1t8wbEeSjx7OWZCcdLw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZS1uMwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
-        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZS1ucwbEeSjx7OWZCcdLw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZS1uswbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
@@ -768,7 +768,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_VZS1u8wbEeSjx7OWZCcdLw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZS1vMwbEeSjx7OWZCcdLw" title="Booleans" properties="_VZS1uswbEeSjx7OWZCcdLw"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZS1vcwbEeSjx7OWZCcdLw" title="Message Delay" properties="_VZS1tswbEeSjx7OWZCcdLw _VZS1uMwbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZS1vcwbEeSjx7OWZCcdLw" title="Message Delay" properties="_VZS1uMwbEeSjx7OWZCcdLw _VZS1tswbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
     </classes>
   </packages>

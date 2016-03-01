@@ -104,6 +104,8 @@ public class ClockConstraintEditor extends de.uni_paderborn.fujaba.properties.ru
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
+
 			this.editorExtension_property_tab_extensionsTab = editor;
 		}
 		return this.editorExtension_property_tab_extensionsTab;
