@@ -2,8 +2,6 @@ brakeByWireAllocationSpecification {
 	
 	-- include our library with predefined OCL constraints
 	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
-	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/RTA.ocl'
-	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/EDF.ocl'
 	
 	constraint requiredResource rta {
 		lhs lval;
