@@ -24,8 +24,9 @@ public class ExamplesTestSuite {
 	public static void init() {
 
 		MtctlStandaloneSetup.doSetup();
-		ModelinstancePackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
+		ModelinstancePackage.eINSTANCE.eClass();
+
 		MumlPackage.eINSTANCE.eClass();
 		MtctlPackage.eINSTANCE.eClass();
 		ActionlanguagePackage.eINSTANCE.eClass();
