@@ -177,7 +177,7 @@ public class UppaalTest {
 			job.schedule();
 			job.join();
 			System.err.println(job.getResult());
-			assertEquals(1, IStatus.OK);
+			assertEquals(job.getResult(), IStatus.OK);
 			/*
 			 * IFolder sourceFolder =
 			 * project.getFolder(configuration.getName()); Process myProcess =
