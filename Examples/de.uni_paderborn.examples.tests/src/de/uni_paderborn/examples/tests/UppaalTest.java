@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -183,7 +184,7 @@ public class UppaalTest {
 			job.schedule();
 			job.join();
 			System.err.println(job.getResult());
-			assertEquals(job.getResult(), IStatus.OK);
+			Assert.assertTrue(job.getResult().isOK());
 			/*
 			 * IFolder sourceFolder =
 			 * project.getFolder(configuration.getName()); Process myProcess =
