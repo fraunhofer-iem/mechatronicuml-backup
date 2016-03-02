@@ -37,11 +37,11 @@ import de.uni_paderborn.fujaba.tests.TestUtilities;
 @RunWith(Parameterized.class)
 public class ModelicaTest {
 	private File project;
-	
+
 	public ModelicaTest(File project) {
 		this.project = project;
 	}
-	
+
 	// Check all muml/fujaba files in that project, see getProjects()
 	@Test
 	public void Codegen() throws Exception {
@@ -54,7 +54,7 @@ public class ModelicaTest {
 	}
 
 	// Find all projects and use them as constructor parameter
-	@Parameters(name="{0}")
+	@Parameters(name = "{0}")
 	public static Collection<Object[]> getProjects() {
 		List<Object[]> projects = new ArrayList<Object[]>();
 		for (File directory : findWorkspaceLocation().listFiles()) {
@@ -71,7 +71,7 @@ public class ModelicaTest {
 					}
 				}
 				// END REMOVE ME
-				
+
 				if (Platform.getBundle(directory.getName()) != null) {
 					projects.add(new Object[] { directory });
 				}
@@ -82,7 +82,7 @@ public class ModelicaTest {
 
 	private void checkFiles(File directory, FilenameFilter filenameFilter) throws Exception {
 		for (File file : directory.listFiles()) {
-			if (file.isDirectory() && !".".equals(file.getName()) && ! "..".equals(file.getName())) {
+			if (file.isDirectory() && !".".equals(file.getName()) && !"..".equals(file.getName())) {
 				checkFiles(file, filenameFilter);
 			} else if (file.isFile() && filenameFilter.accept(directory, file.getName())) {
 				checkModelFile(URI.createFileURI(file.getAbsolutePath()));
@@ -94,9 +94,9 @@ public class ModelicaTest {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = TestUtilities.loadResource(resourceSet, uri);
 		EcoreUtil.resolveAll(resourceSet);
-//		currently always complains; deactivated.
-//		XXX investigate further!
-//		validateResource(resource);
+		// currently always complains; deactivated.
+		// XXX investigate further!
+		// validateResource(resource);
 		for (EObject element : resource.getContents()) {
 			codegenModelica(element);
 		}
@@ -106,8 +106,7 @@ public class ModelicaTest {
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
 		for (EObject contents : resource.getContents()) {
 			Map<Object, Object> context = new HashMap<Object, Object>();
-			if (!Diagnostician.INSTANCE.validate(contents, diagnostics,
-					context)) {
+			if (!Diagnostician.INSTANCE.validate(contents, diagnostics, context)) {
 				throw new Exception(resource.getURI().toString() + " is not valid. ERROR: " + diagnostics.getMessage());
 			}
 		}
@@ -117,7 +116,8 @@ public class ModelicaTest {
 		if (element instanceof ComponentInstanceConfiguration) {
 			codegenModelicaCIC((ComponentInstanceConfiguration) element);
 			// prevent children from being processed.
-			// we only want to process root cic, no child cics within structuredcomponentinstances.
+			// we only want to process root cic, no child cics within
+			// structuredcomponentinstances.
 			return;
 		}
 		for (EObject child : element.eContents()) {
@@ -127,17 +127,27 @@ public class ModelicaTest {
 
 	private void codegenModelicaCIC(ComponentInstanceConfiguration configuration) throws Exception {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("modelica");
-		project.delete(true, new NullProgressMonitor());
+		if (project.exists()) {
+			if (!project.isOpen()) {
+				project.open(new NullProgressMonitor());
+			}
+			project.delete(true, new NullProgressMonitor());
+		}
 		project.create(new NullProgressMonitor());
+		if (!project.isOpen()) {
+			project.open(new NullProgressMonitor());
+		}
 		try {
 			IFolder f = project.getFolder("gen-folder");
 			f.create(true, true, new NullProgressMonitor());
 
-			de.uni_paderborn.fujaba.modelica.m2t.ui.common.Generator.generateCode(configuration, f, new NullProgressMonitor());
+			de.uni_paderborn.fujaba.modelica.m2t.ui.common.Generator.generateCode(configuration, f,
+					new NullProgressMonitor());
 			IFolder sourceFolder = f.getFolder(configuration.getName());
-			Process myProcess = new ProcessBuilder("./data/jenkins/modelica/moparser", "-a", "-r").directory(new File(sourceFolder.getRawLocation().makeAbsolute().toOSString())).start();
+			Process myProcess = new ProcessBuilder("./data/jenkins/modelica/moparser", "-a", "-r")
+					.directory(new File(sourceFolder.getRawLocation().makeAbsolute().toOSString())).start();
 			myProcess.waitFor(60, TimeUnit.SECONDS);
-			
+
 			if (myProcess.exitValue() != 0) {
 				StringBuffer buffer = new StringBuffer();
 				buffer.append('[');
@@ -149,7 +159,7 @@ public class ModelicaTest {
 					buffer.append(line);
 				}
 				throw new Exception(buffer.toString());
-		}
+			}
 		} finally {
 			project.delete(true, new NullProgressMonitor());
 		}
