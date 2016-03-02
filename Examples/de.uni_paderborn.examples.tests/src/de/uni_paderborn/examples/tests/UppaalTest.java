@@ -117,7 +117,7 @@ public class UppaalTest {
 		// XXX investigate further!
 		// validateResource(resource);
 		for (EObject element : resource.getContents()) {
-			codegen(element);
+			uppaaalModelChecking(element);
 		}
 	}
 
@@ -131,7 +131,7 @@ public class UppaalTest {
 		}
 	}
 
-	private void codegen(EObject element) throws Exception {
+	private void uppaaalModelChecking(EObject element) throws Exception {
 		if (element instanceof CoordinationProtocol && shouldValidateProtoc((CoordinationProtocol) element)) {
 			uppaalCheck((CoordinationProtocol) element);
 			// prevent children from being processed.
@@ -140,7 +140,7 @@ public class UppaalTest {
 			return;
 		}
 		for (EObject child : element.eContents()) {
-			codegen(child);
+			uppaaalModelChecking(child);
 		}
 	}
 
