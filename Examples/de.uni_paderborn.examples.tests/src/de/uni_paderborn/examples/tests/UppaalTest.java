@@ -52,6 +52,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.StateSpaceReduction;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
+import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionFactory;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 @RunWith(Parameterized.class)
@@ -186,7 +187,7 @@ public class UppaalTest {
 			if(usesMultiRole) {
 				options.setRoleMultiplicity(1);
 			}
-						
+					
 			
 			// create verifying properties
 			PropertyRepository repo = MtctlFactory.eINSTANCE.createPropertyRepository();
@@ -213,9 +214,12 @@ public class UppaalTest {
 			
 			repo.getProperties().add(prop);
 			
+			// add ElementToVerifyExtension
+			protocol.getExtensions().add(VerificationExtensionFactory.eINSTANCE.createElementToVerifyExtension());			
+			
 			System.err.println("testing:" + protocol.getName());
-			// MtctlXtextPropertyEditor
-
+			// MtctlXtextPropertyEditor			
+			
 			final boolean exportAsXml = false;
 			final Options uppaalOptions = options;
 			final URI destination = URI.createPlatformResourceURI(project.getFullPath().toString(), true);
