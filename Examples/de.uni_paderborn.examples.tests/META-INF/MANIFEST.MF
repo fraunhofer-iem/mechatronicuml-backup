@@ -70,4 +70,9 @@ Require-Bundle: org.junit,
  de.uni_paderborn.fujaba.muml.pattern.diagram;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.pattern.diagram.custom;bundle-version="0.5.0",
  de.uni_paderborn.fujaba.muml.realtimestatechart.diagram;bundle-version="0.5.0",
- de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom;bundle-version="0.5.0"
+ de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.modelica.graphviz;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.modelica.m2t;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.modelica.m2t.transform;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.modelica.m2t.transform.edit;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.modelica.m2t.ui;bundle-version="1.0.0"

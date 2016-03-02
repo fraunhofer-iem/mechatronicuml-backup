@@ -2,6 +2,7 @@ package de.uni_paderborn.examples.tests;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.ocl.pivot.Model;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -16,7 +17,8 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
 
 @RunWith(Suite.class)
 @SuiteClasses({ // CodegenTest.class,
-		UppaalTest.class })
+		UppaalTest.class,
+		ModelicaTest.class})
 public class ExamplesTestSuite {
 	// empty
 
