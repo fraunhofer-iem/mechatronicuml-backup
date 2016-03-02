@@ -1,0 +1,40 @@
+library ModelcopyLibrary;
+
+import de.uni_paderborn.fujaba.modelcopy.qvto._library.ModelcopyBlackbox;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping Element::transform() : Element {
+	init {
+		var dst := result.oclAsType(EObject);
+		var src = self.oclAsType(EObject);
+		var type := src.eClass();
+		 if (dst.oclIsUndefined()) { -- support transformations supplying their own result
+			var factory := type.ePackage.eFactoryInstance;
+			dst := factory.create(type);
+			result := dst;
+		}
+	}
+	var t := type;
+	t.eAllReferences->select(modifiable())->forEach(r) {
+		-- process modifiable reference r
+		var values := getValues(src, r);
+		
+		-- we only copy the elements that are in the same resource as we are.
+		-- the others are referenced as original
+		--var copies = values[Element].map transform();
+  		var copies := values[EObject]->select(v | v.eResource() = src.eResource()).map transform()[EObject]
+  			->union(values[EObject]->select(v | v.eResource() <> src.eResource()));
+  		
+  		setValues(dst, r, copies);
+	};
+	t.eAllAttributes->select(modifiable())->forEach(a) {
+		-- process modifiable attribute a
+		var values := getValues(src, a);
+  		setValues(dst, a, values);
+	};
+}
+
+query EStructuralFeature::modifiable() : Boolean {
+	return self.changeable and not self._derived;
+}
