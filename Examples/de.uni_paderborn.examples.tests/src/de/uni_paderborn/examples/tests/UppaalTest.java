@@ -32,8 +32,10 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalModelJob;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.VerifyForResultsJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyChoiceProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyResultAcceptor;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
@@ -52,6 +54,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.StateSpaceReduction;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionFactory;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
 
@@ -231,18 +234,58 @@ public class UppaalTest {
 					.appendFileExtension("requirements");
 
 			// Start the job
-			Job job = new Muml2UppaalModelJob(verifiableElement, targetURI, targetURIRequirements,
-					new VerificationOptionsProvider() {
-						@Override
-						public boolean prepareOptionsProvider(VerifiableElement element) {
-							return true;
-						}
+			
+			
+			
+			Job job = new VerifyForResultsJob( protocol, new VerificationOptionsProvider() {
+				
+				@Override
+				public boolean prepareOptionsProvider(VerifiableElement element) {
+					// TODO Auto-generated method stub
+					return true;
+				}
+				
+				@Override
+				public Options getOptions() {
+					// TODO Auto-generated method stub
+					return uppaalOptions;
+				}
+			},
+			new VerificationPropertyChoiceProvider() {
+				
+				@Override
+				public boolean preparePropertyChoiceProvider(VerifiableElement element) {
+					// TODO Auto-generated method stub
+					return true;
+				}
+				
+				@Override
+				public boolean isChosen(Property property) {
+					// TODO Auto-generated method stub
+					return true;
+				}
+			},
+			new VerificationPropertyResultAcceptor() {			
 
-						@Override
-						public de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options getOptions() {
-							return uppaalOptions;
-						}
-					});
+				@Override
+				public void acceptResult(PropertyResultRepository result) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+					
+//					new Muml2UppaalModelJob(verifiableElement, targetURI, targetURIRequirements,
+//					new VerificationOptionsProvider() {
+//						@Override
+//						public boolean prepareOptionsProvider(VerifiableElement element) {
+//							return true;
+//						}
+//
+//						@Override
+//						public de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options getOptions() {
+//							return uppaalOptions;
+//						}
+//					});
 			job.schedule();
 			job.join();
 			System.err.println(job.getResult());
