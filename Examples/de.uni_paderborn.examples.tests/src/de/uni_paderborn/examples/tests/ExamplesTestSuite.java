@@ -5,7 +5,9 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
 
@@ -19,7 +21,8 @@ public class ExamplesTestSuite {
 	public static void init() {
 
 		MtctlStandaloneSetup.doSetup();
-
+		CorePackage.eINSTANCE.eClass();
+		MumlPackage.eINSTANCE.eClass();
 		// Set path to the UPPAAL verifyta tool.
 		IPreferenceStore preferenceStore = VerificationPreferencesPlugin.getDefault().getPreferenceStore();
 		preferenceStore.setValue(VerificationPreferencesPlugin.VERIFYTA_KEY,
