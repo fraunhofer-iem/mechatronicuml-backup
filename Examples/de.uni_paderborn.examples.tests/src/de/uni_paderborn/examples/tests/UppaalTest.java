@@ -1,7 +1,5 @@
 package de.uni_paderborn.examples.tests;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
@@ -12,7 +10,6 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.jobs.Job;
@@ -33,6 +30,8 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalModelJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
@@ -122,7 +121,7 @@ public class UppaalTest {
 	}
 
 	private void codegen(EObject element) throws Exception {
-		if (element instanceof CoordinationProtocol) {
+		if (element instanceof CoordinationProtocol && shouldValidateProtoc((CoordinationProtocol) element)) {
 			uppaalCheck((CoordinationProtocol) element);
 			// prevent children from being processed.
 			// we only want to process root cic, no child cics within
@@ -133,8 +132,16 @@ public class UppaalTest {
 			codegen(child);
 		}
 	}
-	
-	
+
+	private boolean shouldValidateProtoc(CoordinationProtocol proto) {
+		for(Role role : proto.getRoles()){
+			if(role.getBehavior() instanceof RealtimeStatechart && ((RealtimeStatechart)role.getBehavior()).isUsesOneToManyCommunicationSchemata()){
+				return false;
+			}
+		}
+		return true;
+	}
+
 	private void uppaalCheck(CoordinationProtocol protocol) throws Exception {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("uppaal");
 		if (project.exists()) {
@@ -155,12 +162,12 @@ public class UppaalTest {
 			options.setTraceOptions(TraceOptions.NONE);
 
 			PropertyRepository repo = MtctlFactory.eINSTANCE.createPropertyRepository();
-			System.err.println("testing:"+protocol.getName());
+			System.err.println("testing:" + protocol.getName());
 			// MtctlXtextPropertyEditor
 
 			final boolean exportAsXml = false;
 			final Options uppaalOptions = options;
-			final URI destination = URI.createPlatformResourceURI(project.getFullPath().toString(),true);
+			final URI destination = URI.createPlatformResourceURI(project.getFullPath().toString(), true);
 			final VerifiableElement verifiableElement = protocol;
 
 			URI targetURI = destination.appendSegment(((NamedElement) verifiableElement).getName())
