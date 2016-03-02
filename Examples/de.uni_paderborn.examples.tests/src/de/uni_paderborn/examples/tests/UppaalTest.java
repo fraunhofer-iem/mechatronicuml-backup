@@ -134,7 +134,7 @@ public class UppaalTest {
 		}
 	}
 	
-	@Test
+	
 	private void uppaalCheck(CoordinationProtocol protocol) throws Exception {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("uppaal");
 		project.delete(true, new NullProgressMonitor());
