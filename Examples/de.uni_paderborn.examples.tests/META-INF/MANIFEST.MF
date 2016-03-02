@@ -24,4 +24,5 @@ Require-Bundle: org.junit,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
  de.uni_paderborn.fujaba.muml.verification.uppaal.job,
  de.uni_paderborn.fujaba.muml.verification.preferences,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.transformation;bundle-version="0.5.0"
