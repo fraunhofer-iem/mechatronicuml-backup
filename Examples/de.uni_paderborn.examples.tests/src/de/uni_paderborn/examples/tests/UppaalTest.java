@@ -136,9 +136,16 @@ public class UppaalTest {
 	
 	private void uppaalCheck(CoordinationProtocol protocol) throws Exception {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("uppaal");
-		project.delete(true, new NullProgressMonitor());
+		if (project.exists()) {
+			if (!project.isOpen()) {
+				project.open(new NullProgressMonitor());
+			}
+			project.delete(true, new NullProgressMonitor());
+		}
 		project.create(new NullProgressMonitor());
-
+		if (!project.isOpen()) {
+			project.open(new NullProgressMonitor());
+		}
 		try {
 
 			CoordinationProtocolOptions options;
@@ -152,7 +159,7 @@ public class UppaalTest {
 
 			final boolean exportAsXml = false;
 			final Options uppaalOptions = options;
-			final URI destination = URI.createURI(project.getFullPath().toString());
+			final URI destination = URI.createPlatformResourceURI(project.getFullPath().toString(),true);
 			final VerifiableElement verifiableElement = protocol;
 
 			URI targetURI = destination.appendSegment(((NamedElement) verifiableElement).getName())
