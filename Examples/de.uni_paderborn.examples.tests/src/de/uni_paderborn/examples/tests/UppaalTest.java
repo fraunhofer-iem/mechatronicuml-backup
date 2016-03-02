@@ -35,7 +35,18 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalModelJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.EFExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.ExistenceQuantExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.CoordinationProtocolOptions;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
@@ -162,6 +173,37 @@ public class UppaalTest {
 			options.setTraceOptions(TraceOptions.NONE);
 
 			PropertyRepository repo = MtctlFactory.eINSTANCE.createPropertyRepository();
+			
+			
+			Property prop = MtctlFactory.eINSTANCE.createProperty();
+			ExistenceQuantExpr eqe = QuantifiersFactory.eINSTANCE.createExistenceQuantExpr();
+			EFExpr efe = QuantifiersFactory.eINSTANCE.createEFExpr();
+			StateActiveExpr sae = PredicatesFactory.eINSTANCE.createStateActiveExpr();
+			MumlElemExpr mee = ComparablesFactory.eINSTANCE.createMumlElemExpr();
+			
+			
+			
+			
+			StateSetExpr sse = SetsFactory.eINSTANCE.createStateSetExpr();
+			
+			BoundVariable bv = QuantifiersFactory.eINSTANCE.createBoundVariable();
+			bv.setName("s");
+			bv.setSet(sse);			
+			eqe.setVar(bv);
+			
+			
+			
+			prop.setExpression(eqe);
+			eqe.setFormula(efe);
+			efe.setExpr(sae);
+			sae.setState(mee);
+			mee.setElem(bv);
+			
+			repo.getProperties().add(prop);
+			
+			
+			
+			
 			System.err.println("testing:" + protocol.getName());
 			// MtctlXtextPropertyEditor
 
