@@ -7,9 +7,12 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.MumlPackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
 
 @RunWith(Suite.class)
 @SuiteClasses({ //CodegenTest.class,
@@ -21,8 +24,12 @@ public class ExamplesTestSuite {
 	public static void init() {
 
 		MtctlStandaloneSetup.doSetup();
+		ModelinstancePackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 		MumlPackage.eINSTANCE.eClass();
+		MtctlPackage.eINSTANCE.eClass();
+		ActionlanguagePackage.eINSTANCE.eClass();
+	
 		// Set path to the UPPAAL verifyta tool.
 		IPreferenceStore preferenceStore = VerificationPreferencesPlugin.getDefault().getPreferenceStore();
 		preferenceStore.setValue(VerificationPreferencesPlugin.VERIFYTA_KEY,
