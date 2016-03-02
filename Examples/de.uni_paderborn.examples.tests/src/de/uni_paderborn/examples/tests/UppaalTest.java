@@ -217,9 +217,19 @@ public class UppaalTest {
 			
 			repo.getProperties().add(prop);
 			
+			
+			// only check our property, remove all other properties
+			while(protocol.getVerificationConstraintRepositories().isEmpty()) {
+				protocol.getVerificationConstraintRepositories().remove(0);
+			}
+			
+			protocol.getVerificationConstraintRepositories().add(repo);
+			
 			// add ElementToVerifyExtension
 			protocol.getExtensions().add(VerificationExtensionFactory.eINSTANCE.createElementToVerifyExtension());			
 			
+			
+		
 			System.err.println("testing:" + protocol.getName());
 			// MtctlXtextPropertyEditor			
 			
