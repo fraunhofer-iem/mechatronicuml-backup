@@ -50,6 +50,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.CoordinationProtocolOptions;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.options.StateSpaceReduction;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
 
@@ -166,12 +167,28 @@ public class UppaalTest {
 			project.open(new NullProgressMonitor());
 		}
 		try {
-
+			
+			
+			// create uppaal model checking options
 			CoordinationProtocolOptions options;
 
 			options = OptionsFactory.eINSTANCE.createCoordinationProtocolOptions();
 			options.setTraceOptions(TraceOptions.NONE);
-
+			options.setConnectorOutBufferSize(8);
+			
+			options.setHashTableSize(7);
+			options.setStateSpaceReduction(StateSpaceReduction.CONSERVATIVE);
+			
+			boolean usesMultiRole = false;
+			for(Role role : protocol.getRoles()) {
+				usesMultiRole = usesMultiRole || role.isMultiRole();
+			}
+			if(usesMultiRole) {
+				options.setRoleMultiplicity(1);
+			}
+						
+			
+			// create verifying properties
 			PropertyRepository repo = MtctlFactory.eINSTANCE.createPropertyRepository();
 			
 			
@@ -179,10 +196,7 @@ public class UppaalTest {
 			ExistenceQuantExpr eqe = QuantifiersFactory.eINSTANCE.createExistenceQuantExpr();
 			EFExpr efe = QuantifiersFactory.eINSTANCE.createEFExpr();
 			StateActiveExpr sae = PredicatesFactory.eINSTANCE.createStateActiveExpr();
-			MumlElemExpr mee = ComparablesFactory.eINSTANCE.createMumlElemExpr();
-			
-			
-			
+			MumlElemExpr mee = ComparablesFactory.eINSTANCE.createMumlElemExpr();	
 			
 			StateSetExpr sse = SetsFactory.eINSTANCE.createStateSetExpr();
 			
@@ -191,8 +205,6 @@ public class UppaalTest {
 			bv.setSet(sse);			
 			eqe.setVar(bv);
 			
-			
-			
 			prop.setExpression(eqe);
 			eqe.setFormula(efe);
 			efe.setExpr(sae);
@@ -200,9 +212,6 @@ public class UppaalTest {
 			mee.setElem(bv);
 			
 			repo.getProperties().add(prop);
-			
-			
-			
 			
 			System.err.println("testing:" + protocol.getName());
 			// MtctlXtextPropertyEditor
