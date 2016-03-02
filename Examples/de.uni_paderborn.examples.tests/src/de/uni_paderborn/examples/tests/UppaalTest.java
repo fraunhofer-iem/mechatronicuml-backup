@@ -219,10 +219,7 @@ public class UppaalTest {
 			
 			
 			// only check our property, remove all other properties
-			while(protocol.getVerificationConstraintRepositories().isEmpty()) {
-				protocol.getVerificationConstraintRepositories().remove(0);
-			}
-			
+			protocol.getVerificationConstraintRepositories().clear();
 			protocol.getVerificationConstraintRepositories().add(repo);
 			
 			// add ElementToVerifyExtension
