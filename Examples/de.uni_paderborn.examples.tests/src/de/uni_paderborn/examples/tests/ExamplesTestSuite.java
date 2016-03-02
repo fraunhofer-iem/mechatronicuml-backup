@@ -3,6 +3,7 @@ package de.uni_paderborn.examples.tests;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ocl.OCL;
 import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.ecore.delegate.OCLInvocationDelegateFactory;
