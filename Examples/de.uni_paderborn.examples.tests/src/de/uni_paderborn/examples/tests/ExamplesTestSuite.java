@@ -22,6 +22,7 @@ import org.storydriven.core.CorePackage;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
 
 @RunWith(Suite.class)
 @SuiteClasses({ // CodegenTest.class,
@@ -29,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 public class ExamplesTestSuite {
 	// empty
 
-	@BeforeClass
+	@BeforeClass 
 	public static void init() {
 		OCL OCL_ENV = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
 
