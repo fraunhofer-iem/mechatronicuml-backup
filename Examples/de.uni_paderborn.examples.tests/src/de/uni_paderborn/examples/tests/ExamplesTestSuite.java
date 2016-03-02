@@ -10,7 +10,8 @@ import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPrefere
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
 
 @RunWith(Suite.class)
-@SuiteClasses({ CodegenTest.class, UppaalTest.class })
+@SuiteClasses({ //CodegenTest.class,
+	UppaalTest.class })
 public class ExamplesTestSuite {
 	// empty
 

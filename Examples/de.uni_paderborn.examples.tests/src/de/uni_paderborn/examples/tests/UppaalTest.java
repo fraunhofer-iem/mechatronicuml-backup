@@ -143,7 +143,7 @@ public class UppaalTest {
 			options.setTraceOptions(TraceOptions.NONE);
 
 			PropertyRepository repo = MtctlFactory.eINSTANCE.createPropertyRepository();
-			System.out.println("testing:"+protocol.getName());
+			System.err.println("testing:"+protocol.getName());
 			// MtctlXtextPropertyEditor
 
 			final boolean exportAsXml = false;
@@ -171,7 +171,7 @@ public class UppaalTest {
 					});
 			job.schedule();
 			job.join();
-			System.out.println(job.getResult());
+			System.err.println(job.getResult());
 			return;
 
 			/*
