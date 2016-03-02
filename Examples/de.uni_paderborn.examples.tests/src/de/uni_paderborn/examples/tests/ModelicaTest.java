@@ -144,7 +144,7 @@ public class ModelicaTest {
 			de.uni_paderborn.fujaba.modelica.m2t.ui.common.Generator.generateCode(configuration, f,
 					new NullProgressMonitor());
 			IFolder sourceFolder = f;
-			Process myProcess = new ProcessBuilder("/data/jenkins/modelica/moparser", "-a", "-r" , new File(sourceFolder.getRawLocation().makeAbsolute().toOSString()).toString() ).start();
+			Process myProcess = new ProcessBuilder("/data/jenkins/modelica/moparser","-v 3.1", "-a", "-r" , new File(sourceFolder.getRawLocation().makeAbsolute().toOSString()).toString() ).start();
 			myProcess.waitFor(60, TimeUnit.SECONDS);
 
 			if (myProcess.exitValue() != 0) {
