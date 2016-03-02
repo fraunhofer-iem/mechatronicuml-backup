@@ -41,7 +41,6 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
-import junit.framework.Assert;
 
 @RunWith(Parameterized.class)
 public class UppaalTest {
@@ -170,7 +169,7 @@ public class UppaalTest {
 						}
 
 						@Override
-						public Options getOptions() {
+						public de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options getOptions() {
 							return uppaalOptions;
 						}
 					});
