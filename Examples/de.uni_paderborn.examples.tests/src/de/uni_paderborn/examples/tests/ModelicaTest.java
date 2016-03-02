@@ -130,7 +130,8 @@ public class ModelicaTest {
 		project.delete(true, new NullProgressMonitor());
 		project.create(new NullProgressMonitor());
 		try {
-			IFolder f = project.getFolder("");
+			IFolder f = project.getFolder("gen-folder");
+			f.create(true, true, new NullProgressMonitor());
 
 			de.uni_paderborn.fujaba.modelica.m2t.ui.common.Generator.generateCode(configuration, f, new NullProgressMonitor());
 			IFolder sourceFolder = f.getFolder(configuration.getName());
@@ -141,7 +142,7 @@ public class ModelicaTest {
 				StringBuffer buffer = new StringBuffer();
 				buffer.append('[');
 				buffer.append(configuration.getName());
-				buffer.append("]: Code generation failed. ERROR:\n");
+				buffer.append("]: Modelica generation failed. ERROR:\n");
 				BufferedReader br = new BufferedReader(new InputStreamReader(myProcess.getErrorStream()));
 				String line;
 				while (null != (line = br.readLine())) {
