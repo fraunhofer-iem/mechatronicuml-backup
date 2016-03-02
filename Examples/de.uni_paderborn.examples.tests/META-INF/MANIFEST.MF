@@ -17,4 +17,11 @@ Require-Bundle: org.junit,
  de.uni_paderborn.fujaba.muml.example.railcab.profileTypes;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.example.sectionEntry;bundle-version="0.5.0",
  de.uni_paderborn.fujaba.muml.example.blindOvertaking;bundle-version="0.5.0",
- de.uni_paderborn.fujaba.tests;bundle-version="0.5.0"
+ de.uni_paderborn.fujaba.tests;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.options,
+ de.uni_paderborn.uppaal.job,
+ de.uni_paderborn.uppaal,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.job,
+ de.uni_paderborn.fujaba.muml.verification.preferences,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests
