@@ -1,5 +1,7 @@
 package de.uni_paderborn.examples.tests;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.jobs.Job;
@@ -38,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
+import junit.framework.Assert;
 
 @RunWith(Parameterized.class)
 public class UppaalTest {
@@ -129,7 +133,8 @@ public class UppaalTest {
 			codegen(child);
 		}
 	}
-
+	
+	@Test
 	private void uppaalCheck(CoordinationProtocol protocol) throws Exception {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("uppaal");
 		project.delete(true, new NullProgressMonitor());
@@ -172,8 +177,7 @@ public class UppaalTest {
 			job.schedule();
 			job.join();
 			System.err.println(job.getResult());
-			return;
-
+			assertEquals(1, IStatus.OK);
 			/*
 			 * IFolder sourceFolder =
 			 * project.getFolder(configuration.getName()); Process myProcess =
