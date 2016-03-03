@@ -54,6 +54,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.StateSpaceReduction;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResult;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionFactory;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
@@ -277,7 +278,9 @@ public class UppaalTest {
 				@Override
 				public void acceptResult(PropertyResultRepository result) {
 					// TODO Auto-generated method stub
-					
+					for(PropertyResult propertyResult : result.getResults()) {
+						Assert.assertTrue(propertyResult.isFulfilled());
+					}
 				}
 			});
 					
