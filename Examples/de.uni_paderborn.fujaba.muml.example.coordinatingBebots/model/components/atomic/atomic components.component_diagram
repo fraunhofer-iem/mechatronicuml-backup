@@ -39,23 +39,23 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_R-ZUkHYtEeOftqkRKcg6BA" type="5028"/>
     <children xmi:type="notation:Shape" xmi:id="_SQlkYHnpEeOMI__GjCU6rg" type="3010" fontName="Segoe UI" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_SQmLcHnpEeOMI__GjCU6rg" type="5012">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_SQmLcXnpEeOMI__GjCU6rg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SQmLcXnpEeOMI__GjCU6rg" x="-105" y="44"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_SQmLcnnpEeOMI__GjCU6rg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_SQmLc3npEeOMI__GjCU6rg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SQmLc3npEeOMI__GjCU6rg" x="-30" y="44"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../coordinatingBebots.muml#_SQe2sHnpEeOMI__GjCU6rg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SQlkYXnpEeOMI__GjCU6rg" x="120" y="97"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_GMlKgHnqEeOZ_7LaW_t4Xg" type="3010" fontName="Segoe UI" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_GMlxkHnqEeOZ_7LaW_t4Xg" type="5012">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_GMlxkXnqEeOZ_7LaW_t4Xg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GMlxkXnqEeOZ_7LaW_t4Xg" x="-63" y="-15"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_GMlxknnqEeOZ_7LaW_t4Xg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_GMlxk3nqEeOZ_7LaW_t4Xg" x="-48" y="47"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GMlxk3nqEeOZ_7LaW_t4Xg" x="-198" y="30"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../coordinatingBebots.muml#_GMZkUHnqEeOZ_7LaW_t4Xg"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GMlKgXnqEeOZ_7LaW_t4Xg" x="72" y="145"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GMlKgXnqEeOZ_7LaW_t4Xg" x="-12" y="90"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_ttDrIHnqEeOZ_7LaW_t4Xg" type="3013" fontName="Segoe UI" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_ttESMHnqEeOZ_7LaW_t4Xg" type="5024">
@@ -95,10 +95,10 @@
     </children>
     <children xmi:type="notation:Shape" xmi:id="_A2hdEHnwEeOZ_7LaW_t4Xg" type="3010" fontName="Segoe UI" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_A2iEIHnwEeOZ_7LaW_t4Xg" type="5012">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_A2iEIXnwEeOZ_7LaW_t4Xg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_A2iEIXnwEeOZ_7LaW_t4Xg" x="35" y="30"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_A2iEInnwEeOZ_7LaW_t4Xg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_A2iEI3nwEeOZ_7LaW_t4Xg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_A2iEI3nwEeOZ_7LaW_t4Xg" x="35" y="-30"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../coordinatingBebots.muml#_A2ZhQHnwEeOZ_7LaW_t4Xg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A2hdEXnwEeOZ_7LaW_t4Xg" x="145" y="45"/>
@@ -220,7 +220,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_BNBo44pUEeO5z8p7Nc67Sg" y="5"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_BNBo5IpUEeO5z8p7Nc67Sg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_BNBo5YpUEeO5z8p7Nc67Sg" x="36" y="-39"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_BNBo5YpUEeO5z8p7Nc67Sg" x="36" y="-24"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../coordinatingBebots.muml#_BM9-gIpUEeO5z8p7Nc67Sg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BNBo4YpUEeO5z8p7Nc67Sg" x="324" y="84"/>

@@ -3,6 +3,7 @@ encoding//model/component_instance_configuration/default.componentinstanceconfig
 encoding//model/components/atomic/atomic\ components.component_diagram=UTF-8
 encoding//model/components/structured/structured.component_diagram=UTF-8
 encoding//model/coordinatingBebots.muml=UTF-8
+encoding//model/instance/instanceconfiguration.componentinstanceconfiguration_diagram=UTF-8
 encoding//model/protocol/AllPositionsTransmission.coordinationprotocol_diagram=UTF-8
 encoding//model/protocol/Delegation.coordinationprotocol_diagram=UTF-8
 encoding//model/protocol/Distribution.coordinationprotocol_diagram=UTF-8
@@ -14,8 +15,8 @@ encoding//model/protocol/behavior\ statecharts/Delegation/master.realtimestatech
 encoding//model/protocol/behavior\ statecharts/Delegation/slave.realtimestatechart_diagram=UTF-8
 encoding//model/protocol/behavior\ statecharts/Distribution/client.realtimestatechart_diagram=UTF-8
 encoding//model/protocol/behavior\ statecharts/Distribution/distributor.realtimestatechart_diagram=UTF-8
+encoding//model/protocol/behavior\ statecharts/Position\ Transmission/PositionTransmission_SenderImpl.realtimestatechart_diagram=UTF-8
 encoding//model/protocol/behavior\ statecharts/Position\ Transmission/receiver.realtimestatechart_diagram=UTF-8
-encoding//model/protocol/behavior\ statecharts/Position\ Transmission/sender.realtimestatechart_diagram=UTF-8
 encoding//model/realtimestatechart/Bebot\ Observer\ Client.realtimestatechart_diagram=UTF-8
 encoding//model/realtimestatechart/Bebot\ Observer_Distributor.realtimestatechart_diagram=UTF-8
 encoding//model/realtimestatechart/Collision\ Control.realtimestatechart_diagram=UTF-8

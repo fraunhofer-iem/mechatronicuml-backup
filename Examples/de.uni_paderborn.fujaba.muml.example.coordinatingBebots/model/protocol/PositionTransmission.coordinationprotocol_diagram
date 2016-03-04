@@ -8,7 +8,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_H_BJ8tA6EeWxwcLCz5WDyg" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_H_BJ89A6EeWxwcLCz5WDyg" lineColor="0"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../coordinatingBebots.muml#_bjqsAF6PEeOU6dzb6wKMjg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H_BJ9NA6EeWxwcLCz5WDyg" x="175" y="24"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H_BJ9NA6EeWxwcLCz5WDyg" x="190" y="54"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_H_BJ9tA6EeWxwcLCz5WDyg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_H_BJ-NA6EeWxwcLCz5WDyg" type="5006">

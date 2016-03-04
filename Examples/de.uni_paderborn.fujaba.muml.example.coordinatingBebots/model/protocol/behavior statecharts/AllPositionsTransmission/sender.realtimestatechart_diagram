@@ -33,7 +33,7 @@
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_zpT1MHYbEeOftqkRKcg6BA"/>
   <edges xmi:type="notation:Connector" xmi:id="_0DT0IHYcEeOftqkRKcg6BA" type="4003" source="_zw6SAHYbEeOftqkRKcg6BA" target="_zw6SAHYbEeOftqkRKcg6BA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_0DT0I3YcEeOftqkRKcg6BA" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_0DT0JHYcEeOftqkRKcg6BA" x="20" y="-291"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_0DT0JHYcEeOftqkRKcg6BA" x="45" y="-365"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_0DT0JXYcEeOftqkRKcg6BA" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_0DT0JnYcEeOftqkRKcg6BA" x="-10" y="20"/>
