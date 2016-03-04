@@ -1,7 +1,3 @@
--- Comment by bingo:
--- Problem: Mapping "EClass::transform() : EClass" is not executed.
--- I would expect that all EClasses get the name "test", which they don't.
-
 import ModelcopyLibrary;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
