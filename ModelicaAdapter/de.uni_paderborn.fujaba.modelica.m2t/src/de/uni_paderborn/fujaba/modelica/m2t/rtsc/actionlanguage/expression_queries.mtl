@@ -93,6 +93,21 @@
 /]
 
 [**
+ * Returns the assign operator.
+ * @param expression the assignment expression
+*/]
+[query public getIncrementDecrementOperator(expression : Assignment) : String =
+	if expression.incrementDecrementOperator = IncrementDecrementOperator::INCREMENT then
+		'+'
+	else if expression.incrementDecrementOperator = IncrementDecrementOperator::DECREMENT then
+		'-'
+	else
+		'unsupported'
+	endif
+	endif
+/]
+
+[**
  * Returns the rtsc which contains the trigger message expression's
  * transition (that is the transition which contains the expression).
  * @param expression the trigger message expression 

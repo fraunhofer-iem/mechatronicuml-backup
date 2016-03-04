@@ -367,13 +367,27 @@
 [/template]
 
 [**
- * Generates an Assignment
+ * Generates an Assignment (general case)
  * @param expression the expression
  * @param usePre use pre construct for rhs variables (and for guards)
  * @param fqname a fully qualified name or the empty string
 */]
-[template public generateExpression(expression : Assignment, usePre : Boolean, fqname : String)]
+[template public generateExpression(expression : Assignment, usePre : Boolean, fqname : String)
+	? (not expression.rhs_assignExpression.oclIsUndefined())
+]
 [generateExpression(expression.lhs_typedNamedElementExpression, false, fqname) /] := [generateExpression(expression.rhs_assignExpression, usePre, fqname) /];
+[/template]
+
+[**
+ * Generates an Assignment (increment/decrement case)
+ * @param expression the expression
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : Assignment, usePre : Boolean, fqname : String)
+	? (expression.rhs_assignExpression.oclIsUndefined())
+]
+[generateExpression(expression.lhs_typedNamedElementExpression, false, fqname) /] := [generateExpression(expression.lhs_typedNamedElementExpression, usePre, fqname) /] [expression.getIncrementDecrementOperator()/] 1;
 [/template]
 
 [**
