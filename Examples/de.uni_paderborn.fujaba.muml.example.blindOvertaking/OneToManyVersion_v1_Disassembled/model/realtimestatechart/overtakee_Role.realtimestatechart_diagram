@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_t1J5ENPyEeW0oNW54uyJfQ" type="Real-Time Statechart" name="overtakee_Role.realtimestatechart_diagram" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_t1J5EdPyEeW0oNW54uyJfQ"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking.muml#_liNIQITDEeKO9r0VL65xcg"/>
-</notation:Diagram>
