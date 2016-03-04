@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="ModelCopy Technology Update-Site">
-      
-   </description>
-   <feature url="features/de.upb.modelcopy.feature_0.1.0.201603041657.jar" id="de.upb.modelcopy.feature" version="0.1.0.201603041657">
-      <category name="de.upb.modelcopy"/>
-   </feature>
    <category-def name="de.upb.modelcopy" label="ModelCopy"/>
 </site>
