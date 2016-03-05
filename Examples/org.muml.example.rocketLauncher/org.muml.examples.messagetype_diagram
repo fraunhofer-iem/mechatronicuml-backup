@@ -6,9 +6,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_jMg5MsjrEeW0gpRI-mS_yA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_jMg5M8jrEeW0gpRI-mS_yA"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="org.muml.examples.muml#_jLAdUMjrEeW0gpRI-mS_yA"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="rocketlauncher.muml#_jLAdUMjrEeW0gpRI-mS_yA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jMdO0cjrEeW0gpRI-mS_yA" x="284" y="156"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_iYyWMcjrEeW0gpRI-mS_yA"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="org.muml.examples.muml#_IaAgBMjrEeW0gpRI-mS_yA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="rocketlauncher.muml#_IaAgBMjrEeW0gpRI-mS_yA"/>
 </notation:Diagram>

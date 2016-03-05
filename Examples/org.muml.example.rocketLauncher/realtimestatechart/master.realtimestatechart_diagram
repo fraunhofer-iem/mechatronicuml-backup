@@ -22,15 +22,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_fTOonMjtEeW0gpRI-mS_yA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_fTOoncjtEeW0gpRI-mS_yA"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../org.muml.examples.muml#_d6psEcjtEeW0gpRI-mS_yA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fTOokMjtEeW0gpRI-mS_yA" x="226" y="42"/>
+        <element xmi:type="realtimestatechart:State" href="../rocketlauncher.muml#_d6psEcjtEeW0gpRI-mS_yA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fTOokMjtEeW0gpRI-mS_yA" x="80" y="35"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../org.muml.examples.muml#_d6psEMjtEeW0gpRI-mS_yA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fTFeocjtEeW0gpRI-mS_yA" width="673" height="385"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../rocketlauncher.muml#_d6psEMjtEeW0gpRI-mS_yA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fTFeocjtEeW0gpRI-mS_yA" width="316" height="256"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_d77eccjtEeW0gpRI-mS_yA"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../org.muml.examples.muml#_d6psEMjtEeW0gpRI-mS_yA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../rocketlauncher.muml#_d6psEMjtEeW0gpRI-mS_yA"/>
   <edges xmi:type="notation:Connector" xmi:id="_hc8HEMjtEeW0gpRI-mS_yA" type="4003" source="_fTOBgMjtEeW0gpRI-mS_yA" target="_fTOBgMjtEeW0gpRI-mS_yA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_hc8uIMjtEeW0gpRI-mS_yA" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_hc8uIcjtEeW0gpRI-mS_yA" y="-20"/>
@@ -39,7 +39,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_hc8uI8jtEeW0gpRI-mS_yA" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_hc8HEcjtEeW0gpRI-mS_yA" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../org.muml.examples.muml#_hcCIIMjtEeW0gpRI-mS_yA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hc8HEsjtEeW0gpRI-mS_yA" points="[25, 30, 25, 30]$[25, 30, 25, 30]"/>
+    <element xmi:type="realtimestatechart:Transition" href="../rocketlauncher.muml#_hcCIIMjtEeW0gpRI-mS_yA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hc8HEsjtEeW0gpRI-mS_yA" points="[57, 0, 57, 0]$[119, 0, 119, 0]$[119, 72, 119, 72]$[0, 72, 0, 72]$[0, 33, 0, 33]"/>
   </edges>
 </notation:Diagram>
