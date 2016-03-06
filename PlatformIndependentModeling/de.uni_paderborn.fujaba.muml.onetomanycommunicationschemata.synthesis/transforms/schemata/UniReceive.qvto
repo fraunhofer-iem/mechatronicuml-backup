@@ -70,8 +70,13 @@ mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny
 		source := self.map RegionState(context,  "Idle", true);
 		
 		target := self.map RegionState(context,  "Requesting", false);
-		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty())
-			urgent := false;			
+		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
+			urgent := false;
+		}
+		else {
+			urgent := self.urgent;
+		};		
 		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);	
 	
 		guard := self.guard.map transform(result).oclAsType(Expression);

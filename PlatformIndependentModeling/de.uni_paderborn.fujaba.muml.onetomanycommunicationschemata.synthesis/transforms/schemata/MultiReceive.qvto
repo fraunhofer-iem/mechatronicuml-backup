@@ -29,8 +29,13 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 		target := self.map Schema2CoordinatorIntermediateState(context, 1,multiReceiveDLCName);
 		
 		guard := self.guard.map transform(result).oclAsType(Expression);
-		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
-			urgent := false;		
+		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
+			urgent := false;
+		}
+		else {
+			urgent := self.urgent;
+		};	
 		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);	
 	
 		synchronization := self. createSynchronization( multiReceiceChannelName,SynchronizationKind::SEND  ,PositionSelectorKind::FIRST);
