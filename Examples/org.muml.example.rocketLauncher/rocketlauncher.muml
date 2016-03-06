@@ -310,7 +310,7 @@
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_-15PBMj2EeWzrcBaL-cniQ" name="verifier1" connectorInstances="_-15PE8j2EeWzrcBaL-cniQ" type="_gPXyoMjrEeW0gpRI-mS_yA"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_-15PBcj2EeWzrcBaL-cniQ" name="code" connectorInstances="_-15PEcj2EeWzrcBaL-cniQ" type="_W1YkcMjrEeW0gpRI-mS_yA"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PBsj2EeWzrcBaL-cniQ" name="LaunchVerifier" componentType="_curTEMjrEeW0gpRI-mS_yA" componentPart="_YGfmDMj2EeWzrcBaL-cniQ">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PBsj2EeWzrcBaL-cniQ" name="LaunchVerifierInstance" componentType="_curTEMjrEeW0gpRI-mS_yA" componentPart="_YGfmDMj2EeWzrcBaL-cniQ">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_-15PB8j2EeWzrcBaL-cniQ" name="peer21" connectorInstances="_-15PFMj2EeWzrcBaL-cniQ" type="_tnYVkMjrEeW0gpRI-mS_yA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_-15PCMj2EeWzrcBaL-cniQ" name="peer11" connectorInstances="_-15PE8j2EeWzrcBaL-cniQ" type="_e6xXMMjrEeW0gpRI-mS_yA"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_-15PCcj2EeWzrcBaL-cniQ" name="verifiedLaunch" connectorInstances="_-15PEsj2EeWzrcBaL-cniQ" type="_M0m3gMj1EeWzrcBaL-cniQ"/>
