@@ -113,7 +113,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		 t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()
 		) with log ("Unicast must define a condition!");		
 		
-		name := self.name + "Impl";
+		name := self.name;
 		
 		// **select non subrolespecific elements
 		clocks += self.clocks.map transform().oclAsType(Clock);
@@ -193,7 +193,13 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 	
 mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeStatechart {		
 		
-		result.name := self.name;
+		
+		if(context.oclIsTypeOf(RealtimeStatechart) and context.oclAsType(RealtimeStatechart) = context.oclAsType(RealtimeStatechart).getHighestParentStatechart()) {
+			result.name := "coordinator"; // name the highest statechart of the coordinator region 'coordinator', see #1478
+		} else {
+			result.name := self.name;	
+		};		
+		
 		var region : RealtimeStatechart := result;
 		
 		if(self = currentRealtimeStatechart){	
