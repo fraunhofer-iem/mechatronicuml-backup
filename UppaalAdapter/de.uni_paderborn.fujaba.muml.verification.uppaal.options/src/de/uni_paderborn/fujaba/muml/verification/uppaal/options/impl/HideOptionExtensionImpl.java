@@ -19,10 +19,10 @@ import org.storydriven.core.impl.ExtensionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.impl.HideOptionExtensionImpl#getOption <em>Option</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

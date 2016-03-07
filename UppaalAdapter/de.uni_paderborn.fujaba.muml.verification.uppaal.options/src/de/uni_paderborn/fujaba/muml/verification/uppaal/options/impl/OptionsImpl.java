@@ -21,13 +21,13 @@ import org.storydriven.core.impl.ExtendableElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.impl.OptionsImpl#getConnectorOutBufferSize <em>Connector Out Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.impl.OptionsImpl#getHashTableSize <em>Hash Table Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.impl.OptionsImpl#getStateSpaceReduction <em>State Space Reduction</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.impl.OptionsImpl#getTraceOptions <em>Trace Options</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -40,7 +40,7 @@ public class OptionsImpl extends ExtendableElementImpl implements Options {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CONNECTOR_OUT_BUFFER_SIZE_EDEFAULT = 16;
+	protected static final int CONNECTOR_OUT_BUFFER_SIZE_EDEFAULT = 5;
 
 	/**
 	 * The cached value of the '{@link #getConnectorOutBufferSize() <em>Connector Out Buffer Size</em>}' attribute.

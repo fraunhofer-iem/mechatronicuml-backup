@@ -10,10 +10,10 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.options;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.CoordinationProtocolOptions#getRoleMultiplicity <em>Role Multiplicity</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage#getCoordinationProtocolOptions()
  * @model

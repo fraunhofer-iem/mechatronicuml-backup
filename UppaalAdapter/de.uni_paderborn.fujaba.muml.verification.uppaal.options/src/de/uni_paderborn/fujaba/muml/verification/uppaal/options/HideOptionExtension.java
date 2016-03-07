@@ -15,10 +15,10 @@ import org.storydriven.core.Extension;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.HideOptionExtension#getOption <em>Option</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage#getHideOptionExtension()
  * @model

@@ -306,7 +306,7 @@ public class OptionsPackageImpl extends EPackageImpl implements OptionsPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(optionsEClass, Options.class, "Options", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOptions_ConnectorOutBufferSize(), ecorePackage.getEInt(), "connectorOutBufferSize", "16", 0, 1, Options.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptions_ConnectorOutBufferSize(), ecorePackage.getEInt(), "connectorOutBufferSize", "5", 0, 1, Options.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOptions_HashTableSize(), ecorePackage.getEInt(), "hashTableSize", "27", 1, 1, Options.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOptions_StateSpaceReduction(), this.getStateSpaceReduction(), "stateSpaceReduction", "conservative", 0, 1, Options.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOptions_TraceOptions(), this.getTraceOptions(), "traceOptions", "some", 0, 1, Options.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

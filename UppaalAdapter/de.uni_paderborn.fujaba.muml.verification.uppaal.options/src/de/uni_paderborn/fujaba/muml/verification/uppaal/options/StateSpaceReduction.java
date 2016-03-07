@@ -126,6 +126,8 @@ public enum StateSpaceReduction implements Enumerator {
 	 * Returns the '<em><b>State Space Reduction</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static StateSpaceReduction get(String literal) {
@@ -142,6 +144,8 @@ public enum StateSpaceReduction implements Enumerator {
 	 * Returns the '<em><b>State Space Reduction</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static StateSpaceReduction getByName(String name) {
@@ -158,6 +162,8 @@ public enum StateSpaceReduction implements Enumerator {
 	 * Returns the '<em><b>State Space Reduction</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static StateSpaceReduction get(int value) {

@@ -11,13 +11,13 @@ import org.storydriven.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options#getConnectorOutBufferSize <em>Connector Out Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options#getHashTableSize <em>Hash Table Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options#getStateSpaceReduction <em>State Space Reduction</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options#getTraceOptions <em>Trace Options</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage#getOptions()
  * @model
@@ -26,7 +26,7 @@ import org.storydriven.core.ExtendableElement;
 public interface Options extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Connector Out Buffer Size</b></em>' attribute.
-	 * The default value is <code>"16"</code>.
+	 * The default value is <code>"5"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -35,7 +35,7 @@ public interface Options extends ExtendableElement {
 	 * @return the value of the '<em>Connector Out Buffer Size</em>' attribute.
 	 * @see #setConnectorOutBufferSize(int)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage#getOptions_ConnectorOutBufferSize()
-	 * @model default="16"
+	 * @model default="5"
 	 * @generated
 	 */
 	int getConnectorOutBufferSize();
