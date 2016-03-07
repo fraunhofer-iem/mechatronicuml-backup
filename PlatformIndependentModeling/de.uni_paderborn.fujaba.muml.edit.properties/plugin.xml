@@ -36,6 +36,21 @@
              id="property.tab.descriptionAspects"
              afterTab="property.tab.constraint"
              label="Description Aspects"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.condition"
+             afterTab="property.tab.general"
+             label="Condition"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.effect"
+             afterTab="property.tab.condition"
+             label="Effect"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.deadline"
+             afterTab="property.tab.effect"
+             label="Deadline"/>
           
       </propertyTabs>
   </extension>
@@ -59,6 +74,33 @@
             filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_descriptionAspectsTabElementFilter"
             id="property.tab.descriptionAspects"
             tab="property.tab.descriptionAspects">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_conditionTabElementFilter"
+            id="property.tab.condition"
+            tab="property.tab.condition">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_effectTabElementFilter"
+            id="property.tab.effect"
+            tab="property.tab.effect">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_deadlineTabElementFilter"
+            id="property.tab.deadline"
+            tab="property.tab.deadline">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>

@@ -61,6 +61,12 @@ public class ContinuousPortEditor extends de.uni_paderborn.fujaba.properties.run
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,

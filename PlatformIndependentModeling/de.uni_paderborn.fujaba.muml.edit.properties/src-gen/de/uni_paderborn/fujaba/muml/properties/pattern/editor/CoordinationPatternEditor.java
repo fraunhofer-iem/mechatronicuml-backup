@@ -62,6 +62,12 @@ public class CoordinationPatternEditor extends de.uni_paderborn.fujaba.propertie
 
 			addPropertyEditor(createEditorDescriptionAspects_property_tab_descriptionAspectsTab_Editor(), false);
 
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorVerificationConstraintRepositories_property_tab_generalTab_Editor(), false);

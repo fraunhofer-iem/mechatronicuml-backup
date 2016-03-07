@@ -44,6 +44,12 @@ public class OperationEditor extends de.uni_paderborn.fujaba.properties.runtime.
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);

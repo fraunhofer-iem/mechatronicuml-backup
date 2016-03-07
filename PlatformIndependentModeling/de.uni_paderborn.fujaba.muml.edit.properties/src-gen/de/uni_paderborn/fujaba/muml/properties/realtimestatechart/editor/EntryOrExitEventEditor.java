@@ -25,29 +25,27 @@ public abstract class EntryOrExitEventEditor
 
 			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorClockResets_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorClockResets_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorClockResets_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorClockResets_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
