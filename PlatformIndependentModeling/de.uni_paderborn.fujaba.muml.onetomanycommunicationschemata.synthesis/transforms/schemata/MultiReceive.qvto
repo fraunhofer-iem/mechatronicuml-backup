@@ -114,7 +114,7 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate1ToIntermediate2Su
 		
 		events += self.triggerMessageEvent.map transform(result).oclAsType(AsynchronousMessageEvent);
 		
-		action := self.triggerMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::MultiReceive).failureAction.map transform(result).oclAsType(Action);
+		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.map transform(result).oclAsType(Action);
 }
 
 // @author: sthiele2 -- creates a second transition in the subrole region from the intermediate state 1 source to the intermediate state 2
@@ -128,7 +128,7 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Su
 		
 		target := self.map Schema2SubroleIntermediateState(context,2);
 		
-		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.map transform(result).oclAsType(Action);
+		action := self.triggerMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::MultiReceive).failureAction.map transform(result).oclAsType(Action);	
 }	
 
 // @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state
