@@ -65,9 +65,5 @@ mapping DataType :: transform() : EObject {
 	}
 }
 
-mapping MessageType :: transform() : EObject {
-	init {
-		result := self;
-	}
-}
+
 

@@ -115,11 +115,7 @@ mapping RealtimeStatechart::create():EObject{
 		}
 	}
 	
-mapping MessageTypeRepository::create():EObject{
-init{
-	result:=new MessageTypeRepository().oclAsType(EObject);
-	}
-}
+
 
 
 mapping PrimitiveDataType::transform(): EObject {

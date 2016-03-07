@@ -69,4 +69,9 @@ mapping RoleConnector :: transform() : EObject {
 	};
 }
 
+mapping MessageTypeRepository::create():EObject{
+init{
+	result:=new MessageTypeRepository().oclAsType(EObject);
+	}
+}
 
