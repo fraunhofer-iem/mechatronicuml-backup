@@ -62,21 +62,24 @@ public class ValidateAction extends Action {
 		IWorkbenchPart workbenchPart = page.getActivePart();
 		if (workbenchPart instanceof IDiagramWorkbenchPart) {
 			final IDiagramWorkbenchPart part = (IDiagramWorkbenchPart) workbenchPart;
-			try {
-				new WorkspaceModifyDelegatingOperation(
-						new IRunnableWithProgress() {
-
-							public void run(IProgressMonitor monitor)
-									throws InterruptedException,
-									InvocationTargetException {
-								runValidation(part.getDiagramEditPart(),
-										part.getDiagram());
-							}
-						}).run(new NullProgressMonitor());
-			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-						.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
-			}
+			runValidation(part.getDiagramEditPart(), part.getDiagram());
+			
+			// FIX: deactivated
+			// Executing as workspace modifying operation makes problems with SaveModel.
+			// Because SaveModel creates a file and sets its contents, which in turn opens a new
+			// workspace modifying operation. This then leads to a deadlock.
+//			try {
+//				
+//				new WorkspaceModifyDelegatingOperation(new IRunnableWithProgress() {
+//
+//					public void run(IProgressMonitor monitor) throws InterruptedException, InvocationTargetException {
+//						runValidation(part.getDiagramEditPart(), part.getDiagram());
+//					}
+//				}).run(new NullProgressMonitor());
+//			} catch (Exception e) {
+//				de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.getInstance()
+//						.logError("Validation action failed", e); //$NON-NLS-1$
+//			}
 		}
 	}
 
@@ -87,21 +90,17 @@ public class ValidateAction extends Action {
 		try {
 			if (de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
 					.openDiagram(view.eResource())) {
-				IEditorPart editorPart = PlatformUI.getWorkbench()
-						.getActiveWorkbenchWindow().getActivePage()
+				IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 						.getActiveEditor();
 				if (editorPart instanceof IDiagramWorkbenchPart) {
-					runValidation(
-							((IDiagramWorkbenchPart) editorPart)
-									.getDiagramEditPart(),
-							view);
+					runValidation(((IDiagramWorkbenchPart) editorPart).getDiagramEditPart(), view);
 				} else {
 					runNonUIValidation(view);
 				}
 			}
 		} catch (Exception e) {
-			de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.getInstance()
+					.logError("Validation action failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -109,8 +108,8 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	public static void runNonUIValidation(View view) {
-		DiagramEditPart diagramEditPart = OffscreenEditPartFactory
-				.getInstance().createDiagramEditPart(view.getDiagram());
+		DiagramEditPart diagramEditPart = OffscreenEditPartFactory.getInstance()
+				.createDiagramEditPart(view.getDiagram());
 		runValidation(diagramEditPart, view);
 	}
 
@@ -120,8 +119,7 @@ public class ValidateAction extends Action {
 	public static void runValidation(DiagramEditPart diagramEditPart, View view) {
 		final DiagramEditPart fpart = diagramEditPart;
 		final View fview = view;
-		TransactionalEditingDomain txDomain = TransactionUtil
-				.getEditingDomain(view);
+		TransactionalEditingDomain txDomain = TransactionUtil.getEditingDomain(view);
 		de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageValidationProvider
 				.runWithConstraints(txDomain, new Runnable() {
 
@@ -150,30 +148,28 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	private static void validate(DiagramEditPart diagramEditPart, View view) {
-		IFile target = view.eResource() != null ? WorkspaceSynchronizer
-				.getFile(view.eResource()) : null;
+		IFile target = view.eResource() != null ? WorkspaceSynchronizer.getFile(view.eResource()) : null;
 		if (target != null) {
 			de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageMarkerNavigationProvider
 					.deleteMarkers(target);
 		}
 		Diagnostic diagnostic = runEMFValidator(view);
 		createMarkers(target, diagnostic, diagramEditPart);
-		
+
 		// Cancel if there were already validation errors by now.
-		if (diagnostic.getSeverity() == Diagnostic.ERROR)
-		{
+		if (diagnostic.getSeverity() == Diagnostic.ERROR) {
 			return;
 		}
-		
-		IBatchValidator validator = (IBatchValidator) ModelValidationService
-				.getInstance().newValidator(EvaluationMode.BATCH);
+
+		IBatchValidator validator = (IBatchValidator) ModelValidationService.getInstance()
+				.newValidator(EvaluationMode.BATCH);
 		validator.setIncludeLiveConstraints(true);
 		if (view.isSetElement() && view.getElement() != null) {
 			// TODO somehow handle exceptions
 			de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.ValidationRunnable validation = new ValidationRunnable(
 					view, validator);
-			ValidationRunnable.runWithShell(validation, PlatformUI
-					.getWorkbench().getActiveWorkbenchWindow().getShell());
+			ValidationRunnable.runWithShell(validation,
+					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
 
 			IStatus status = validation.getStatus();
 			assert status != null;
@@ -183,27 +179,23 @@ public class ValidateAction extends Action {
 	}
 
 	/**
-	 * @generated
-	 */
-	private static void createMarkers(IFile target,
-			org.eclipse.core.runtime.IStatus validationStatus,
-			DiagramEditPart diagramEditPart) {
+	* @generated
+	*/
+	private static void createMarkers(IFile target, IStatus validationStatus, DiagramEditPart diagramEditPart) {
 		if (validationStatus.isOK()) {
 			return;
 		}
-		final org.eclipse.core.runtime.IStatus rootStatus = validationStatus;
+		final IStatus rootStatus = validationStatus;
 		List allStatuses = new ArrayList();
 		de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap(
-				diagramEditPart.getDiagramView(), collectTargetElements(
-						rootStatus, new HashSet<EObject>(), allStatuses));
+				diagramEditPart.getDiagramView(),
+				collectTargetElements(rootStatus, new HashSet<EObject>(), allStatuses));
 		for (Iterator it = allStatuses.iterator(); it.hasNext();) {
 			IConstraintStatus nextStatus = (IConstraintStatus) it.next();
 			View view = de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-					.findView(diagramEditPart, nextStatus.getTarget(),
-							element2ViewMap);
-			addMarker(diagramEditPart.getViewer(), target, view.eResource()
-					.getURIFragment(view), EMFCoreUtil.getQualifiedName(
-					nextStatus.getTarget(), true), nextStatus.getMessage(),
+					.findView(diagramEditPart, nextStatus.getTarget(), element2ViewMap);
+			addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
+					EMFCoreUtil.getQualifiedName(nextStatus.getTarget(), true), nextStatus.getMessage(),
 					nextStatus.getSeverity());
 		}
 	}
@@ -211,31 +203,24 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void createMarkers(IFile target,
-			Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
+	private static void createMarkers(IFile target, Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
 		if (emfValidationStatus.getSeverity() == Diagnostic.OK) {
 			return;
 		}
 		final Diagnostic rootStatus = emfValidationStatus;
 		List allDiagnostics = new ArrayList();
 		de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap(
-				diagramEditPart.getDiagramView(), collectTargetElements(
-						rootStatus, new HashSet<EObject>(), allDiagnostics));
-		for (Iterator it = emfValidationStatus.getChildren().iterator(); it
-				.hasNext();) {
+				diagramEditPart.getDiagramView(),
+				collectTargetElements(rootStatus, new HashSet<EObject>(), allDiagnostics));
+		for (Iterator it = emfValidationStatus.getChildren().iterator(); it.hasNext();) {
 			Diagnostic nextDiagnostic = (Diagnostic) it.next();
 			List data = nextDiagnostic.getData();
-			if (data != null && !data.isEmpty()
-					&& data.get(0) instanceof EObject) {
+			if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
 				EObject element = (EObject) data.get(0);
 				View view = de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
 						.findView(diagramEditPart, element, element2ViewMap);
-				addMarker(
-						diagramEditPart.getViewer(),
-						target,
-						view.eResource().getURIFragment(view),
-						EMFCoreUtil.getQualifiedName(element, true),
-						nextDiagnostic.getMessage(),
+				addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
+						EMFCoreUtil.getQualifiedName(element, true), nextDiagnostic.getMessage(),
 						diagnosticToStatusSeverity(nextDiagnostic.getSeverity()));
 			}
 		}
@@ -244,9 +229,8 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void addMarker(EditPartViewer viewer, IFile target,
-			String elementId, String location, String message,
-			int statusSeverity) {
+	private static void addMarker(EditPartViewer viewer, IFile target, String elementId, String location,
+			String message, int statusSeverity) {
 		if (target == null) {
 			return;
 		}
@@ -259,34 +243,30 @@ public class ValidateAction extends Action {
 	 */
 	private static int diagnosticToStatusSeverity(int diagnosticSeverity) {
 		if (diagnosticSeverity == Diagnostic.OK) {
-			return org.eclipse.core.runtime.IStatus.OK;
+			return IStatus.OK;
 		} else if (diagnosticSeverity == Diagnostic.INFO) {
-			return org.eclipse.core.runtime.IStatus.INFO;
+			return IStatus.INFO;
 		} else if (diagnosticSeverity == Diagnostic.WARNING) {
-			return org.eclipse.core.runtime.IStatus.WARNING;
-		} else if (diagnosticSeverity == Diagnostic.ERROR
-				|| diagnosticSeverity == Diagnostic.CANCEL) {
-			return org.eclipse.core.runtime.IStatus.ERROR;
+			return IStatus.WARNING;
+		} else if (diagnosticSeverity == Diagnostic.ERROR || diagnosticSeverity == Diagnostic.CANCEL) {
+			return IStatus.ERROR;
 		}
-		return org.eclipse.core.runtime.IStatus.INFO;
+		return IStatus.INFO;
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Set<EObject> collectTargetElements(
-			org.eclipse.core.runtime.IStatus status,
-			Set<EObject> targetElementCollector, List allConstraintStatuses) {
+	* @generated
+	*/
+	private static Set<EObject> collectTargetElements(IStatus status, Set<EObject> targetElementCollector,
+			List allConstraintStatuses) {
 		if (status instanceof IConstraintStatus) {
-			targetElementCollector
-					.add(((IConstraintStatus) status).getTarget());
+			targetElementCollector.add(((IConstraintStatus) status).getTarget());
 			allConstraintStatuses.add(status);
 		}
 		if (status.isMultiStatus()) {
-			org.eclipse.core.runtime.IStatus[] children = status.getChildren();
+			IStatus[] children = status.getChildren();
 			for (int i = 0; i < children.length; i++) {
-				collectTargetElements(children[i], targetElementCollector,
-						allConstraintStatuses);
+				collectTargetElements(children[i], targetElementCollector, allConstraintStatuses);
 			}
 		}
 		return targetElementCollector;
@@ -295,8 +275,8 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static Set<EObject> collectTargetElements(Diagnostic diagnostic,
-			Set<EObject> targetElementCollector, List allDiagnostics) {
+	private static Set<EObject> collectTargetElements(Diagnostic diagnostic, Set<EObject> targetElementCollector,
+			List allDiagnostics) {
 		List data = diagnostic.getData();
 		EObject target = null;
 		if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
@@ -304,12 +284,9 @@ public class ValidateAction extends Action {
 			targetElementCollector.add(target);
 			allDiagnostics.add(diagnostic);
 		}
-		if (diagnostic.getChildren() != null
-				&& !diagnostic.getChildren().isEmpty()) {
-			for (Iterator it = diagnostic.getChildren().iterator(); it
-					.hasNext();) {
-				collectTargetElements((Diagnostic) it.next(),
-						targetElementCollector, allDiagnostics);
+		if (diagnostic.getChildren() != null && !diagnostic.getChildren().isEmpty()) {
+			for (Iterator it = diagnostic.getChildren().iterator(); it.hasNext();) {
+				collectTargetElements((Diagnostic) it.next(), targetElementCollector, allDiagnostics);
 			}
 		}
 		return targetElementCollector;
