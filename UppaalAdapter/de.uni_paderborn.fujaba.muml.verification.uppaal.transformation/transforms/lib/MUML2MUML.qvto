@@ -1200,8 +1200,63 @@ helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
 	endif;			
 }
 
-mapping muml::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : muml::protocol::AbstractCoordinationSpecification disjuncts muml::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol;
+mapping muml::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : muml::protocol::AbstractCoordinationSpecification disjuncts muml::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol, muml::pattern::AbstractCoordinationPattern::AbstractCoordinationPattern2AbstractCoordinationPattern;
       	
+      	
+mapping muml::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern2AbstractCoordinationPattern(): muml::pattern::AbstractCoordinationPattern 
+ disjuncts muml::pattern::CoordinationPatternVariant::CoordinationPatternVariant2CoordinationPatternVariant, muml::pattern::CoordinationPattern::CoordinationPattern2CoordinationPattern;  	
+      	
+      	
+mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPattern() : muml::pattern::CoordinationPattern {
+		name := self.name;
+		_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	
+    	verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+    	roles := self.roles.map Role2Role();
+    	roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+    	
+    	adaptedFromPattern := self.adaptedFromPattern.map AbstractCoordinationPattern2AbstractCoordinationPattern();    	
+    	
+    	// skip verified configuration
+    	
+    	patternParameters := self.patternParameters.map Parameter2Parameter();	
+    	
+    	descriptionAspects := self.descriptionAspects.map DescriptionAspects2DescriptionAspects();
+    	
+}  	
+
+
+mapping muml::pattern::DescriptionAspects :: DescriptionAspects2DescriptionAspects() : muml::pattern::DescriptionAspects {
+		overview := self.overview;
+		context := self.context;
+		problem := self.problem;
+		solution := self.solution;
+		structure := self.structure;
+		behavior := self.behavior;
+		examples := self.examples;
+		consequences := self.consequences;
+		combineability := self.combineability;
+		variants := self.variants;
+		alternatives := self.alternatives;
+		verification_properties := self.verification_properties
+}
+mapping muml::pattern::CoordinationPatternVariant :: CoordinationPatternVariant2CoordinationPatternVariant() : muml::pattern::CoordinationPatternVariant {
+			name := self.name;
+		_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	
+    	verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+    	roles := self.roles.map Role2Role();
+    	roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+    	
+    	adaptedFromPattern := self.adaptedFromPattern.map AbstractCoordinationPattern2AbstractCoordinationPattern();    	
+    	
+    	// skip verified configuration
+    	
+    	patternParameters := self.patternParameters.map Parameter2Parameter();	
+}
+
 mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : muml::protocol::CoordinationProtocol{
     	_name := self._name;
     	_comment := self._comment;
