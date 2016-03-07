@@ -140,6 +140,9 @@ public class CodegenTest {
 			C99SourceCodeExport export = new C99SourceCodeExport();
 			export.generateSourceCode(configuration, project, new NullProgressMonitor());
 			IFolder sourceFolder = project.getFolder(configuration.getName());
+			if (sourceFolder.exists()) {
+				sourceFolder.delete(true, new NullProgressMonitor());
+			}
 			Process myProcess = new ProcessBuilder("make", "all")
 					.directory(new File(sourceFolder.getRawLocation().makeAbsolute().toOSString())).start();
 			myProcess.waitFor(60, TimeUnit.SECONDS);
