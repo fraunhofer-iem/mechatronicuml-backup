@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
-encoding//model/behavior/loadBalancer.operationrepository_diagram=UTF-8
+encoding//model/behavior/productionBroker.operationrepository_diagram=UTF-8
 encoding//model/component/loadBalancer.component_diagram=UTF-8
+encoding//model/instance/productionBroker.componentinstanceconfiguration_diagram=UTF-8
 encoding//model/msgtype/messages.messagetype_diagram=UTF-8
 encoding//model/productionBroker.muml=UTF-8
 encoding//model/realtimestatechart/broker.realtimestatechart_diagram=UTF-8

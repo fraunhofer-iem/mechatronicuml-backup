@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_AZkiwOVHEeWTk8L1nP577g" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_BgHUEOVHEeWTk8L1nP577g" type="2015" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BgIiMOVHEeWTk8L1nP577g" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BgIiMeVHEeWTk8L1nP577g" type="7012">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_BgIiMuVHEeWTk8L1nP577g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_BgIiM-VHEeWTk8L1nP577g"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="../productionBroker.muml#_BfisUOVHEeWTk8L1nP577g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgHUEeVHEeWTk8L1nP577g" x="216" y="192"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_AZlJ0OVHEeWTk8L1nP577g"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="../productionBroker.muml#_AZXucOVHEeWTk8L1nP577g"/>
+  <edges xmi:type="notation:Connector" xmi:id="_Cvc1AOVHEeWTk8L1nP577g" type="4001" source="_CvClUOVHEeWTk8L1nP577g" target="_CujdIOVHEeWTk8L1nP577g" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Cvc1AeVHEeWTk8L1nP577g" fontName="Segoe UI"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../productionBroker.muml#_ClUopeVHEeWTk8L1nP577g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Cvc1AuVHEeWTk8L1nP577g" points="[-12, -2, 84, 8]$[-84, -9, 12, 1]"/>
+  </edges>
+</notation:Diagram>
