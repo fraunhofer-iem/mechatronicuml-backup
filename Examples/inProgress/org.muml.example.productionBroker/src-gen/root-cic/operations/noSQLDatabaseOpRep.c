@@ -24,6 +24,7 @@ static const char zBanner[] =
 int32_T noSQLDatabase_noSQLDatabaseInsertOrder(int32_T orderID, int32_T incredientID, int32_T amount){
 
 /** Start of user code noSQLDatabase_noSQLDatabaseInsertOrder **/ 
+
 	int32_T ret = 0;
 	ret = insertOrder(pDb, orderID, incredientID, amount);
 	return ret;

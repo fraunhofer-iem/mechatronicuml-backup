@@ -176,7 +176,7 @@
 					noSQLDatabase_noSQLDatabaseInsertOrder(msg->_orderID,
 							msg->_ingredientID, msg->_amount);
 		
-					stateChart->testLatestOrderID++;
+					stateChart->testLatestOrderID = msg->_orderID;
 		
 					;
 		
