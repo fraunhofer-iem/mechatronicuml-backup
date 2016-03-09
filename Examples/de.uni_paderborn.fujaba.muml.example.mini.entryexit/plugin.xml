@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="de.uni_paderborn.fujaba.muml.example.ui.EntryExitCreationWizard"
+            name="Entry / Exit Points Example"
+            projectName="de.uni_paderborn.fujaba.muml.example.mini.entryexit"
+            projectPageDescription="Create project containing the Entry / Exit Points Example"
+            projectPageTitle="Entry / Exit Points Example">
+         <source bundle="de.uni_paderborn.fujaba.muml.example.mini.entryexit" path="data" />
+         <description>
+            Create the Entry / Exit Points Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

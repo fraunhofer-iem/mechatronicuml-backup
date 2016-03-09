@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="org.muml.example.CooperatingBallPlayingRobotsCreationWizard"
+            name="Cooperating Ball Playing Delta Robots Example"
+            projectName="org.muml.example.CooperatingBallPlayingRobots"
+            projectPageDescription="Create project containing the Cooperating Ball Playing Delta Robots Example"
+            projectPageTitle="Cooperating Ball Playing Delta Robots Example">
+         <source bundle="org.muml.example.CooperatingBallPlayingRobots" path="data" />
+         <description>
+            Create the Cooperating Ball Playing Delta Robots Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

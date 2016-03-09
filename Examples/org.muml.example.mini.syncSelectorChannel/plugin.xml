@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="org.muml.example.mini.syncSelectorChannelCreationWizard"
+            name="RTSC with Synchronization Selector Expression Example"
+            projectName="org.muml.example.mini.syncSelectorChannel"
+            projectPageDescription="Create project containing the RTSC with Synchronization Selector Expression Example"
+            projectPageTitle="RTSC with Synchronization Selector Expression Example">
+         <source bundle="org.muml.example.mini.syncSelectorChannel" path="data" />
+         <description>
+            Create the RTSC with Synchronization Selector Expression Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

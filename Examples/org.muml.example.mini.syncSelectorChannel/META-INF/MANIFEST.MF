@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML RTSC with Synchronization Selector Expression Example
-Bundle-SymbolicName: org.muml.example.mini.syncSelectorChannel
+Bundle-SymbolicName: org.muml.example.mini.syncSelectorChannel;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.uni_paderborn.fujaba.muml.example.ui;bundle-version="0.5.0"

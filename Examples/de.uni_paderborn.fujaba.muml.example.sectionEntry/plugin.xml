@@ -12,7 +12,7 @@
             projectName="de.uni_paderborn.fujaba.muml.example.sectionEntry"
             projectPageDescription="Create a plug-in containing the Section Entry example models"
             projectPageTitle="Section Entry Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.sectionEntry" path="model" />
+         <source bundle="de.uni_paderborn.fujaba.muml.example.sectionEntry" path="data" />
          <description>
             Create the Models of the Section Entry Example
          </description>

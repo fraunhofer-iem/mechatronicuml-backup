@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="org.muml.example.BrakeByWireCreationWizard"
+            name="Brake By Wire Example"
+            projectName="org.muml.example.BrakeByWire"
+            projectPageDescription="Create project containing the Brake By Wire Example"
+            projectPageTitle="Brake By Wire Example">
+         <source bundle="org.muml.example.BrakeByWire" path="data" />
+         <description>
+            Create the Brake By Wire Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

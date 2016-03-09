@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="org.muml.example.blinkingLEDCreationWizard"
+            name="Blinking LED Example"
+            projectName="org.muml.example.blinkingLED"
+            projectPageDescription="Create project containing the Blinking LED Example"
+            projectPageTitle="Blinking LED Example">
+         <source bundle="org.muml.example.blinkingLED" path="data" />
+         <description>
+            Create the Blinking LED Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

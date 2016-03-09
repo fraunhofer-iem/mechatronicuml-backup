@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="de.uni_paderborn.fujaba.muml.example.ui.SimpleRTSCCreationWizard"
+            name="Realtime Statechart Example"
+            projectName="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC"
+            projectPageDescription="Create project containing the Realtime Statechart Example"
+            projectPageTitle="Realtime Statechart Example">
+         <source bundle="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC" path="data" />
+         <description>
+            Create the Realtime Statechart Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="de.uni_paderborn.fujaba.muml.coordinationpatternlibCreationWizard"
+            name="Coordination Pattern Library"
+            projectName="de.uni_paderborn.fujaba.muml.coordinationpatternlib"
+            projectPageDescription="Create project containing the Coordination Pattern Library"
+            projectPageTitle="Coordination Pattern Library">
+         <source bundle="de.uni_paderborn.fujaba.muml.coordinationpatternlib" path="data" />
+         <description>
+            Create the Coordination Pattern Library
+         </description>
+      </wizard>
+   </extension>
+</plugin>

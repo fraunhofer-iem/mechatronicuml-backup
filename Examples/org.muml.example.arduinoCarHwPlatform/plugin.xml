@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="org.muml.example.arduinoCarHwPlatformCreationWizard"
+            name="Arduino Car Example"
+            projectName="org.muml.example.arduinoCarHwPlatform"
+            projectPageDescription="Create project containing the Arduino Car Example"
+            projectPageTitle="Arduino Car Example">
+         <source bundle="org.muml.example.arduinoCarHwPlatform" path="data" />
+         <description>
+            Create the Arduino Car Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>
