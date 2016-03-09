@@ -27,10 +27,10 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Loss", "Message Loss",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Loss",
 					createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Delay", "Message Delay",
@@ -60,10 +60,10 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Loss", "Message Loss",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Loss",
 					createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Delay", "Message Delay",

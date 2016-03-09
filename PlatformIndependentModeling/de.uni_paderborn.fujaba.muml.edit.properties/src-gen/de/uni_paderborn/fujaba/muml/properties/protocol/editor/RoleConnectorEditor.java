@@ -25,8 +25,6 @@ public class RoleConnectorEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorCoordinationProtocol_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorConnectorQualityOfServiceAssumptions_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -47,8 +45,6 @@ public class RoleConnectorEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorCoordinationProtocol_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorConnectorQualityOfServiceAssumptions_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -61,21 +57,6 @@ public class RoleConnectorEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocol_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationProtocol_property_tab_generalTab_Editor() {
-		if (this.editorCoordinationProtocol_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-					.getRoleConnector_CoordinationProtocol();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The coordination protocol this role connector is part of.");
-
-			this.editorCoordinationProtocol_property_tab_generalTab = editor;
-		}
-		return this.editorCoordinationProtocol_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorQualityOfServiceAssumptions_property_tab_generalTab;

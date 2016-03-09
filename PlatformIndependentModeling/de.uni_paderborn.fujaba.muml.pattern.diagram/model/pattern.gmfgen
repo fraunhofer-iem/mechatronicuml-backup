@@ -1522,7 +1522,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="de.uni_paderborn.fujaba.muml.properties.tabs.Description_AspectsTabElementFilter"/>
+          className="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_descriptionAspectsTabElementFilter"/>
     </tabs>
   </propertySheet>
   <domainGenModel

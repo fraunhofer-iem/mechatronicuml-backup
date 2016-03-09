@@ -51,8 +51,6 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 			addPropertyEditor(createEditorCoordinatorBehavior_property_tab_behaviorTab_Editor(), false);
 
-			addPropertyEditor(createEditorCoordinationProtocol_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -89,8 +87,6 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorCoordinationProtocol_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -109,21 +105,6 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocol_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationProtocol_property_tab_generalTab_Editor() {
-		if (this.editorCoordinationProtocol_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-					.getRole_CoordinationProtocol();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The coordination protocol this role belongs to.");
-
-			this.editorCoordinationProtocol_property_tab_generalTab = editor;
-		}
-		return this.editorCoordinationProtocol_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;

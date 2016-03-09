@@ -213,7 +213,7 @@
          <propertySection
             id="property.section.descriptionAspects" 
             tab="property.tab.descriptionAspects"
-            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Description_AspectsTabElementFilter"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_descriptionAspectsTabElementFilter"
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>

@@ -29,11 +29,7 @@ public class OperationRepositoryEditor extends de.uni_paderborn.fujaba.propertie
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorOperations_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorOperations_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -55,11 +51,7 @@ public class OperationRepositoryEditor extends de.uni_paderborn.fujaba.propertie
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorOperations_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorOperations_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
