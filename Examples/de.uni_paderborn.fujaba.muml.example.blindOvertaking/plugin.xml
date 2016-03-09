@@ -12,7 +12,7 @@
             projectName="de.uni_paderborn.fujaba.muml.example.blindOvertaking"
             projectPageDescription="Create a plug-in containing the Blind Overtaking example models"
             projectPageTitle="Blind Overtaking Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.blindOvertaking" path="model" />
+         <source bundle="de.uni_paderborn.fujaba.muml.example.blindOvertaking" path="data" />
          <description>
             Create the Models of the Blind Overtaking Example
          </description>
