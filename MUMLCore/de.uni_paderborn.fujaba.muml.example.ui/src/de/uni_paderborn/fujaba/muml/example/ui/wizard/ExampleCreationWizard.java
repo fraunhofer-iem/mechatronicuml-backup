@@ -232,7 +232,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	private void createProjectContents(File sourceFile,
 			File targetProjectFolderFile, IProgressMonitor monitor)
 			throws InterruptedException, IOException {
-		if (sourceFile.isFile() && sourceFile.getPath().endsWith("zip")) {
+		if (sourceFile.isFile() && (sourceFile.getPath().endsWith("zip") || sourceFile.getPath().endsWith("jar"))) {
 
 			ZipFile zipFile = new ZipFile(sourceFile.getPath());
 
