@@ -49,7 +49,14 @@ int getOrderIncredientID(unqlite *pDb, int orderID);
 int getOrderAmount(unqlite *pDb, int orderID);
 
 
-
+/*
+ * Banner.
+ */
+static const char zBanner[] =
+{ "============================================================\n"
+		"UnQLite Key/Value Store Intro                              \n"
+		"                                         http://unqlite.org/\n"
+		"============================================================\n" };
 /*
  * Extract the database error log and exit.
  */
@@ -84,6 +91,36 @@ static void Fatal(unqlite *pDb, const char *zMsg)
 static int DataConsumerCallback(const void *pData, unsigned int nDatalen,
 		void *pUserData /* Unused */);
 
+int main(int argc, char *argv[])
+{
+	unqlite *pDb; /* Database handle */
+	unqlite_kv_cursor *pCur; /* Cursor handle */
+	//int i,
+	int rc;
+	int orderID = 55655;
+	int incredientID = 3556;
+	int amount = 266;
+	size_t nBytes;  //Data length
+	char *zBuf;     //Dynamically allocated buffer
+
+	puts(zBanner);
+
+	/* Open our database*/
+	rc = unqlite_open(&pDb, "testMe.db", UNQLITE_OPEN_CREATE);
+	if (rc != UNQLITE_OK)
+	{
+		Fatal(0, "Out of memory");
+	}
+
+	rc = insertOrder(pDb, orderID, incredientID, amount);
+	getOrderIncredientID(pDb, orderID);
+	getOrderAmount(pDb, orderID);
+
+
+	/* Auto-commit the transaction and close our database */
+	unqlite_close(pDb);
+	return 0;
+}
 
 int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 {
