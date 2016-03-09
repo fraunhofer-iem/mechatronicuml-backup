@@ -1,7 +1,7 @@
 RTSC = recipeGeneratorReciepeGeneratorStateChart.o brokerBrokerStateChart.o 
 COMP = recipeGeneratorComponent.o brokerComponent.o  
 OPR = noSQLDatabaseOpRep.o 
-LIB =  port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o unqlite.o
+LIB =  port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o unqlite.o database.o
 MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 CC = gcc
 CFLAGS = -c
@@ -40,6 +40,8 @@ noSQLDatabaseOpRep.o: operations/noSQLDatabaseOpRep.c
 	$(CC) $(CFLAGS) operations/noSQLDatabaseOpRep.c
 unqlite.o: database/unqlite.c
 	$(CC) $(CFLAGS) database/unqlite.c
+database.o: database/database.c
+	$(CC) $(CFLAGS) database/database.c
 
 clean:
 	rm -rf *o app

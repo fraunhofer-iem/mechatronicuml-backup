@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../database/unqlite.h"
+#include "../database/database.h"
 
 
 
@@ -25,7 +25,7 @@ int32_T noSQLDatabase_noSQLDatabaseInsertOrder(int32_T orderID, int32_T incredie
 
 /** Start of user code noSQLDatabase_noSQLDatabaseInsertOrder **/ 
 	int32_T ret = 0;
-	//ret = insertOrder(pDb, orderID, incredientID, amount);
+	ret = insertOrder(pDb, orderID, incredientID, amount);
 	return ret;
 /**End of user code**/
 
@@ -37,7 +37,7 @@ int32_T noSQLDatabase_noSQLDatabaseDeleteOrder(int32_T orderID){
 
 /** Start of user code noSQLDatabase_noSQLDatabaseDeleteOrder **/ 
 	int32_T ret = 0;
-	//ret = deleteOrder(pDb, orderID);
+	ret = deleteOrder(pDb, orderID);
 	return ret;
 /**End of user code**/
 
