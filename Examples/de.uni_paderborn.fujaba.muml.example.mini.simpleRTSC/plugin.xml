@@ -8,13 +8,13 @@
             class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
             id="de.uni_paderborn.fujaba.muml.example.ui.SimpleRTSCCreationWizard"
-            name="Realtime Statechart Example"
+            name="RTSC (Realtime Statechart) Example"
             projectName="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC"
-            projectPageDescription="Create project containing the Realtime Statechart Example"
-            projectPageTitle="Realtime Statechart Example">
+            projectPageDescription="Create project containing the RTSC (Realtime Statechart) Example"
+            projectPageTitle="RTSC (Realtime Statechart) Example">
          <source bundle="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC" path="data" />
          <description>
-            Create the Realtime Statechart Example
+            Create the RTSC (Realtime Statechart) Example
          </description>
       </wizard>
    </extension>
