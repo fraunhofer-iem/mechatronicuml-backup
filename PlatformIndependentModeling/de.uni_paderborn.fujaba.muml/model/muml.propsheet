@@ -55,7 +55,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_VZJEu8wbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZJrwMwbEeSjx7OWZCcdLw" title="Booleans" properties="_VZJEuswbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZJrwMwbEeSjx7OWZCcdLw" title="Natural Number" properties="_VZJEuMwbEeSjx7OWZCcdLw _VZJEuswbEeSjx7OWZCcdLw"/>
     </classes>
     <classes xmi:id="_VZJrwcwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/valuetype/Range"/>
@@ -89,15 +89,15 @@
     <genPackage href="muml.genmodel#//muml/realtimestatechart"/>
     <classes xmi:id="_VZJrzMwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/realtimestatechart/Deadline"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZJrzcwbEeSjx7OWZCcdLw">
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/upperBound"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZJrzswbEeSjx7OWZCcdLw"/>
-      </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZKS0MwbEeSjx7OWZCcdLw" tooltip="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZKS0cwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZJrzcwbEeSjx7OWZCcdLw">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/upperBound"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZJrzswbEeSjx7OWZCcdLw"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_VZKS0swbEeSjx7OWZCcdLw" superClasses="_VZJrzMwbEeSjx7OWZCcdLw">
@@ -107,6 +107,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZKS1MwbEeSjx7OWZCcdLw"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:BaseInsertPoint" baseClass="_VZJrzMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes xmi:id="_VZKS1cwbEeSjx7OWZCcdLw" superClasses="_VZJrzMwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/realtimestatechart/RelativeDeadline"/>

@@ -21,12 +21,13 @@ public class NaturalNumberEditor extends de.uni_paderborn.fujaba.properties.runt
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorValue_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Natural Number", "Natural Number",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
+					createEditorValue_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
 					createEditorInfinity_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -47,12 +48,13 @@ public class NaturalNumberEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorValue_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Natural Number", "Natural Number",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
+					createEditorValue_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
 					createEditorInfinity_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
