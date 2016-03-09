@@ -41,9 +41,11 @@ public class TransitionEditor extends de.uni_paderborn.fujaba.properties.runtime
 
 			addPropertyEditor(createEditorSource_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorStatechart_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorClockResets_property_tab_effectTab_Editor(), false);
+
+			addPropertyEditor(createEditorAbsoluteDeadlines_property_tab_deadlineTab_Editor(), false);
+
+			addPropertyEditor(createEditorRelativeDeadline_property_tab_deadlineTab_Editor(), false);
 
 			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
@@ -55,15 +57,6 @@ public class TransitionEditor extends de.uni_paderborn.fujaba.properties.runtime
 
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorUrgent_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Deadlines", "Deadlines",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Deadlines",
-					createEditorAbsoluteDeadlines_property_tab_deadlineTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Deadlines",
-					createEditorRelativeDeadline_property_tab_deadlineTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -89,14 +82,9 @@ public class TransitionEditor extends de.uni_paderborn.fujaba.properties.runtime
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Deadlines", "Deadlines",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorAbsoluteDeadlines_property_tab_deadlineTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Deadlines",
-					createEditorAbsoluteDeadlines_property_tab_deadlineTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Deadlines",
-					createEditorRelativeDeadline_property_tab_deadlineTab_Editor(), false);
+			addPropertyEditor(createEditorRelativeDeadline_property_tab_deadlineTab_Editor(), false);
 
 		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
 
@@ -111,8 +99,6 @@ public class TransitionEditor extends de.uni_paderborn.fujaba.properties.runtime
 			addPropertyEditor(createEditorTarget_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorSource_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorStatechart_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -306,52 +292,6 @@ public class TransitionEditor extends de.uni_paderborn.fujaba.properties.runtime
 			this.editorSource_property_tab_generalTab = editor;
 		}
 		return this.editorSource_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStatechart_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorStatechart_property_tab_generalTab_Editor() {
-		if (this.editorStatechart_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getTransition_Statechart();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
-				}
-			}
-
-			editor.setTooltipMessage("The realtime statechart that this transition locically belongs to.");
-
-			this.editorStatechart_property_tab_generalTab = editor;
-		}
-		return this.editorStatechart_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClockResets_property_tab_effectTab;

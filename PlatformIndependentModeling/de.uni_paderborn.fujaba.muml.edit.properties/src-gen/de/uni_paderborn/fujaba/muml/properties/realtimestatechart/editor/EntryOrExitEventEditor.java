@@ -25,9 +25,9 @@ public abstract class EntryOrExitEventEditor
 
 			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClockResets_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorClockResets_property_tab_effectTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -36,6 +36,10 @@ public abstract class EntryOrExitEventEditor
 		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
 
 		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+			addPropertyEditor(createEditorClockResets_property_tab_effectTab_Editor(), false);
+
+			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
@@ -49,10 +53,6 @@ public abstract class EntryOrExitEventEditor
 
 			addPropertyEditor(createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClockResets_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
@@ -61,9 +61,9 @@ public abstract class EntryOrExitEventEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClockResets_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClockResets_property_tab_generalTab_Editor() {
-		if (this.editorClockResets_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClockResets_property_tab_effectTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClockResets_property_tab_effectTab_Editor() {
+		if (this.editorClockResets_property_tab_effectTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEntryOrExitEvent_ClockResets();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -71,14 +71,14 @@ public abstract class EntryOrExitEventEditor
 
 			editor.setTooltipMessage("The clock resets of this action");
 
-			this.editorClockResets_property_tab_generalTab = editor;
+			this.editorClockResets_property_tab_effectTab = editor;
 		}
-		return this.editorClockResets_property_tab_generalTab;
+		return this.editorClockResets_property_tab_effectTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_generalTab_Editor() {
-		if (this.editorAction_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_effectTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_effectTab_Editor() {
+		if (this.editorAction_property_tab_effectTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEntryOrExitEvent_Action();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -86,9 +86,9 @@ public abstract class EntryOrExitEventEditor
 
 			editor.setTooltipMessage("Each entry or exit event can have one or more actions.");
 
-			this.editorAction_property_tab_generalTab = editor;
+			this.editorAction_property_tab_effectTab = editor;
 		}
-		return this.editorAction_property_tab_generalTab;
+		return this.editorAction_property_tab_effectTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_property_tab_generalTab;

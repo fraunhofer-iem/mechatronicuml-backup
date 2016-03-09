@@ -25,11 +25,7 @@ public class MessageEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 			addPropertyEditor(createEditorInstanceOf_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorParameterBinding_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorParameterBinding_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -51,11 +47,7 @@ public class MessageEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 			addPropertyEditor(createEditorInstanceOf_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorParameterBinding_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorParameterBinding_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 

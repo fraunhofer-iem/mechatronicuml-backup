@@ -23,9 +23,9 @@ public abstract class ReceivingOneToManyCommunicationSchemaEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorCondition_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorCondition_property_tab_conditionTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -33,7 +33,11 @@ public abstract class ReceivingOneToManyCommunicationSchemaEditor
 
 		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
 
+			addPropertyEditor(createEditorCondition_property_tab_conditionTab_Editor(), false);
+
 		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
@@ -45,10 +49,6 @@ public abstract class ReceivingOneToManyCommunicationSchemaEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorCondition_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
@@ -57,9 +57,9 @@ public abstract class ReceivingOneToManyCommunicationSchemaEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCondition_property_tab_generalTab_Editor() {
-		if (this.editorCondition_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_property_tab_conditionTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCondition_property_tab_conditionTab_Editor() {
+		if (this.editorCondition_property_tab_conditionTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 					.getOneToManyCommunicationSchema_Condition();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
@@ -67,14 +67,14 @@ public abstract class ReceivingOneToManyCommunicationSchemaEditor
 
 			editor.setTooltipMessage("A subrole only sends or receives a message if it satisfies this condition.");
 
-			this.editorCondition_property_tab_generalTab = editor;
+			this.editorCondition_property_tab_conditionTab = editor;
 		}
-		return this.editorCondition_property_tab_generalTab;
+		return this.editorCondition_property_tab_conditionTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_generalTab_Editor() {
-		if (this.editorAction_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_effectTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_effectTab_Editor() {
+		if (this.editorAction_property_tab_effectTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 					.getOneToManyCommunicationSchema_Action();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
@@ -83,9 +83,9 @@ public abstract class ReceivingOneToManyCommunicationSchemaEditor
 			editor.setTooltipMessage(
 					"The action a subrole performs when sending or receiving a message with communication schema.");
 
-			this.editorAction_property_tab_generalTab = editor;
+			this.editorAction_property_tab_effectTab = editor;
 		}
-		return this.editorAction_property_tab_generalTab;
+		return this.editorAction_property_tab_effectTab;
 	}
 
 }

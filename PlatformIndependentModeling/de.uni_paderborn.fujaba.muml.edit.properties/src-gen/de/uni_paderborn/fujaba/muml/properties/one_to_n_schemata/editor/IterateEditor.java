@@ -21,15 +21,15 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorCondition_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorCondition_property_tab_conditionTab_Editor(), false);
 
-			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorTerminationCondition_property_tab_conditionTab_Editor(), false);
 
-			addPropertyEditor(createEditorStartFromFirst_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorTerminationCondition_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
 			addPropertyEditor(createEditorDelay_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorStartFromFirst_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -37,7 +37,13 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
 
+			addPropertyEditor(createEditorCondition_property_tab_conditionTab_Editor(), false);
+
+			addPropertyEditor(createEditorTerminationCondition_property_tab_conditionTab_Editor(), false);
+
 		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
@@ -49,15 +55,9 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorCondition_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorAction_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorDelay_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorStartFromFirst_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorTerminationCondition_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorDelay_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -65,6 +65,52 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTerminationCondition_property_tab_conditionTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTerminationCondition_property_tab_conditionTab_Editor() {
+		if (this.editorTerminationCondition_property_tab_conditionTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
+					.getIterate_TerminationCondition();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The condition under which the iteration terminates.");
+
+			this.editorTerminationCondition_property_tab_conditionTab = editor;
+		}
+		return this.editorTerminationCondition_property_tab_conditionTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_effectTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_effectTab_Editor() {
+		if (this.editorAction_property_tab_effectTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
+					.getOneToManyCommunicationSchema_Action();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The action a subrole performs when sending or receiving a message with communication schema.");
+
+			this.editorAction_property_tab_effectTab = editor;
+		}
+		return this.editorAction_property_tab_effectTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDelay_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDelay_property_tab_generalTab_Editor() {
+		if (this.editorDelay_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
+					.getIterate_Delay();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The delay between two iterations.");
+
+			this.editorDelay_property_tab_generalTab = editor;
+		}
+		return this.editorDelay_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStartFromFirst_property_tab_generalTab;
@@ -83,39 +129,9 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 		return this.editorStartFromFirst_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTerminationCondition_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTerminationCondition_property_tab_generalTab_Editor() {
-		if (this.editorTerminationCondition_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-					.getIterate_TerminationCondition();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The condition under which the iteration terminates.");
-
-			this.editorTerminationCondition_property_tab_generalTab = editor;
-		}
-		return this.editorTerminationCondition_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDelay_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDelay_property_tab_generalTab_Editor() {
-		if (this.editorDelay_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-					.getIterate_Delay();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The delay between two iterations.");
-
-			this.editorDelay_property_tab_generalTab = editor;
-		}
-		return this.editorDelay_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCondition_property_tab_generalTab_Editor() {
-		if (this.editorCondition_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_property_tab_conditionTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCondition_property_tab_conditionTab_Editor() {
+		if (this.editorCondition_property_tab_conditionTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 					.getOneToManyCommunicationSchema_Condition();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
@@ -123,25 +139,9 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 			editor.setTooltipMessage("A subrole only sends or receives a message if it satisfies this condition.");
 
-			this.editorCondition_property_tab_generalTab = editor;
+			this.editorCondition_property_tab_conditionTab = editor;
 		}
-		return this.editorCondition_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_property_tab_generalTab_Editor() {
-		if (this.editorAction_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-					.getOneToManyCommunicationSchema_Action();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"The action a subrole performs when sending or receiving a message with communication schema.");
-
-			this.editorAction_property_tab_generalTab = editor;
-		}
-		return this.editorAction_property_tab_generalTab;
+		return this.editorCondition_property_tab_conditionTab;
 	}
 
 	//
@@ -168,9 +168,9 @@ public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.condition", "property.tab.effect",
+					"property.tab.general", "property.tab.general", "property.tab.condition", "property.tab.effect",
+					"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -27,10 +27,6 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentState_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorEmbeddedStatechart_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -51,10 +47,6 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentState_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorEmbeddedStatechart_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -65,36 +57,6 @@ public class RegionEditor extends de.uni_paderborn.fujaba.properties.runtime.edi
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentState_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentState_property_tab_generalTab_Editor() {
-		if (this.editorParentState_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getRegion_ParentState();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The state this region is embedded.");
-
-			this.editorParentState_property_tab_generalTab = editor;
-		}
-		return this.editorParentState_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedStatechart_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedStatechart_property_tab_generalTab_Editor() {
-		if (this.editorEmbeddedStatechart_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getRegion_EmbeddedStatechart();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The realtime statechart this region embeds.");
-
-			this.editorEmbeddedStatechart_property_tab_generalTab = editor;
-		}
-		return this.editorEmbeddedStatechart_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
