@@ -8,13 +8,13 @@
             class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
             id="de.uni_paderborn.fujaba.muml.example.ui.SectionEntryCreationWizard"
-            name="Section Entry"
+            name="RailCab Section Entry Example"
             projectName="de.uni_paderborn.fujaba.muml.example.sectionEntry"
-            projectPageDescription="Create a plug-in containing the Section Entry example models"
-            projectPageTitle="Section Entry Example">
+            projectPageDescription="Create a plug-in containing the RailCab Section Entry Example"
+            projectPageTitle="RailCab Section Entry Example">
          <source bundle="de.uni_paderborn.fujaba.muml.example.sectionEntry" path="data" />
          <description>
-            Create the Models of the Section Entry Example
+            Create the Models of the RailCab Section Entry Example
          </description>
       </wizard>
    </extension>
