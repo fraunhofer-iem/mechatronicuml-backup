@@ -45,4 +45,13 @@
 	    </iterate>
      </definition>
   </extension>
+
+  <extension
+        point="org.eclipse.ui.views">
+     <category
+           id="de.uni_paderborn.fujaba.muml.views"
+           name="MechatronicUML">
+     </category>
+  </extension>
+  
 </plugin>
