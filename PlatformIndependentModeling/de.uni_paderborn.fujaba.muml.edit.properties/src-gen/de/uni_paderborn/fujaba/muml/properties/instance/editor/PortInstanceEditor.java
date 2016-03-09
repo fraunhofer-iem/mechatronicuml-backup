@@ -33,8 +33,6 @@ public abstract class PortInstanceEditor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -57,8 +55,6 @@ public abstract class PortInstanceEditor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -71,21 +67,6 @@ public abstract class PortInstanceEditor
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentInstance_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentInstance_property_tab_generalTab_Editor() {
-		if (this.editorComponentInstance_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-					.getPortInstance_ComponentInstance();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The component instance this port instance belongs to.");
-
-			this.editorComponentInstance_property_tab_generalTab = editor;
-		}
-		return this.editorComponentInstance_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;

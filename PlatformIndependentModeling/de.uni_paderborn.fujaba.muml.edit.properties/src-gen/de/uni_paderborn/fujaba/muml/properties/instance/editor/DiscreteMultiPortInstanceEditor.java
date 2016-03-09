@@ -37,12 +37,6 @@ public class DiscreteMultiPortInstanceEditor
 
 			addPropertyEditor(createEditorLast_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSubInteractionEndpointInstances_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -52,8 +46,6 @@ public class DiscreteMultiPortInstanceEditor
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
@@ -91,17 +83,9 @@ public class DiscreteMultiPortInstanceEditor
 
 			addPropertyEditor(createEditorLast_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSubInteractionEndpointInstances_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
@@ -131,22 +115,6 @@ public class DiscreteMultiPortInstanceEditor
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubInteractionEndpointInstances_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubInteractionEndpointInstances_property_tab_generalTab_Editor() {
-		if (this.editorSubInteractionEndpointInstances_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are\nrepresented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding \nDiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality.");
-
-			this.editorSubInteractionEndpointInstances_property_tab_generalTab = editor;
-		}
-		return this.editorSubInteractionEndpointInstances_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFirst_property_tab_generalTab;
@@ -252,21 +220,6 @@ public class DiscreteMultiPortInstanceEditor
 			this.editorName_property_tab_generalTab = editor;
 		}
 		return this.editorName_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentInstance_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentInstance_property_tab_generalTab_Editor() {
-		if (this.editorComponentInstance_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-					.getPortInstance_ComponentInstance();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The component instance this port instance belongs to.");
-
-			this.editorComponentInstance_property_tab_generalTab = editor;
-		}
-		return this.editorComponentInstance_property_tab_generalTab;
 	}
 
 	//

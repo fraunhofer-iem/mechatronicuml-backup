@@ -499,22 +499,19 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZPLXcwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPLXswbEeSjx7OWZCcdLw">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/portInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZPLX8wbEeSjx7OWZCcdLw"/>
-      </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPyYMwbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZPyYcwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPyYswbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPyYswbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/parentCIC"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZPyY8wbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZPyZMwbEeSjx7OWZCcdLw" title="Lists" properties="_VZPLXswbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPLXswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/portInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
     <classes xmi:id="_VZPyZcwbEeSjx7OWZCcdLw" superClasses="_VZXuOMwbEeSjx7OWZCcdLw">
@@ -522,10 +519,9 @@
     </classes>
     <classes xmi:id="_VZPyZswbEeSjx7OWZCcdLw" superClasses="_VZXuMswbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/instance/PortInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPyZ8wbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPyZ8wbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/PortInstance/componentInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZPyaMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_VZPyacwbEeSjx7OWZCcdLw" superClasses="_VZPyZcwbEeSjx7OWZCcdLw">
@@ -536,30 +532,25 @@
     </classes>
     <classes xmi:id="_VZPya8wbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPybMwbEeSjx7OWZCcdLw">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/componentInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZPybcwbEeSjx7OWZCcdLw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPybswbEeSjx7OWZCcdLw">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZPyb8wbEeSjx7OWZCcdLw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZQZcMwbEeSjx7OWZCcdLw" tooltip="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZQZcMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZQZccwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZQZcswbEeSjx7OWZCcdLw" title="Lists" properties="_VZPybMwbEeSjx7OWZCcdLw _VZPybswbEeSjx7OWZCcdLw"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPybMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/componentInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZPybswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
       <superClasses href="#_VZTcwMwbEeSjx7OWZCcdLw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
     <classes xmi:id="_VZQZc8wbEeSjx7OWZCcdLw" superClasses="_VZPyZswbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/instance/ContinuousPortInstance"/>
@@ -578,10 +569,9 @@
     </classes>
     <classes xmi:id="_VZQZeMwbEeSjx7OWZCcdLw" superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/instance/StructuredComponentInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZQZecwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZQZecwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/StructuredComponentInstance/embeddedCIC"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZQZeswbEeSjx7OWZCcdLw"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_VZQZe8wbEeSjx7OWZCcdLw" superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
@@ -589,22 +579,18 @@
     </classes>
     <classes xmi:id="_VZRAgMwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/instance/CoordinationProtocolInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZRAgcwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZRAgcwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/portInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZRAgswbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZRAg8wbEeSjx7OWZCcdLw" tooltip="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZRAg8wbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZRAhMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZRAhcwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZRAhcwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZRAhswbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZRAh8wbEeSjx7OWZCcdLw" title="Lists" properties="_VZRAgcwbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
@@ -1117,10 +1103,9 @@
     </classes>
     <classes xmi:id="_VZY8UMwbEeSjx7OWZCcdLw" superClasses="_VZYVTswbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZY8UcwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZY8UcwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZY8UswbEeSjx7OWZCcdLw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZY8U8wbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/next"/>
@@ -1135,10 +1120,9 @@
     </classes>
     <classes xmi:id="_VZY8V8wbEeSjx7OWZCcdLw" superClasses="_VZYVTswbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZY8WMwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZY8WMwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZY8WcwbEeSjx7OWZCcdLw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZY8WswbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/first"/>
@@ -1150,7 +1134,6 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZY8XcwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZY8XswbEeSjx7OWZCcdLw" title="Lists" properties="_VZY8WMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes xmi:id="_VZY8X8wbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/connector/MessageBuffer"/>

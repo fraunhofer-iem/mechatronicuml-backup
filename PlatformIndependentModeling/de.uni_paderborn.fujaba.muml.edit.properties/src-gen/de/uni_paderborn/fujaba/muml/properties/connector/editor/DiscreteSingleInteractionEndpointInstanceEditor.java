@@ -33,8 +33,6 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorMultiInteractionEndpointInstance_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorNext_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorPrevious_property_tab_generalTab_Editor(), false);
@@ -61,8 +59,6 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorMultiInteractionEndpointInstance_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorNext_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorPrevious_property_tab_generalTab_Editor(), false);
@@ -79,22 +75,6 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMultiInteractionEndpointInstance_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMultiInteractionEndpointInstance_property_tab_generalTab_Editor() {
-		if (this.editorMultiInteractionEndpointInstance_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"If this is an instance of a multi discrete interaction endpoint, refers to the corresponding multi instance.");
-
-			this.editorMultiInteractionEndpointInstance_property_tab_generalTab = editor;
-		}
-		return this.editorMultiInteractionEndpointInstance_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNext_property_tab_generalTab;
