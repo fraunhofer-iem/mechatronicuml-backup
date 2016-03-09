@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: MechatronicUML SectionEntry Example
+Bundle-Name: MechatronicUML RailCab SectionEntry Example
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.sectionEntry;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
