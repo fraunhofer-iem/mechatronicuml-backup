@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
   <rm:locator searchPathRef="workspace" failOnError="false"/>
-  <rm:locator searchPathRef="mini-subfolder" failOnError="false"/>
   
   <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
 
@@ -13,13 +12,5 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  
-  <rm:searchPath name="mini-subfolder">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
-      <rm:uri format="file:///{0}/org.muml.example.mini/{1}/">
-        <bc:propertyRef key="workspace.root"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
+
 </rm:rmap>

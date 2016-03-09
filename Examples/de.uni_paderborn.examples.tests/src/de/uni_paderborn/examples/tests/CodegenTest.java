@@ -58,19 +58,6 @@ public class CodegenTest {
 		List<Object[]> projects = new ArrayList<Object[]>();
 		for (File directory : findWorkspaceLocation().listFiles()) {
 			if (directory.isDirectory()) {
-
-				// XXX BEGIN REMOVE ME
-				if (directory.getName().equals("org.muml.example.mini")) {
-					for (File mini : directory.listFiles()) {
-						if (mini.isDirectory()) {
-							if (Platform.getBundle(mini.getName()) != null) {
-								projects.add(new Object[] { mini });
-							}
-						}
-					}
-				}
-				// END REMOVE ME
-
 				if (Platform.getBundle(directory.getName()) != null) {
 					projects.add(new Object[] { directory });
 				}
