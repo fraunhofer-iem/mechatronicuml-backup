@@ -128,12 +128,12 @@ public class NaturalNumberItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		NaturalNumber naturalNumber = (NaturalNumber)object;
-		return getString("_UI_NaturalNumber_type") + " " + naturalNumber.getValue();
+		return getString("_UI_NaturalNumber_type") + " " + naturalNumber.toString();
 	}
 
 	/**
