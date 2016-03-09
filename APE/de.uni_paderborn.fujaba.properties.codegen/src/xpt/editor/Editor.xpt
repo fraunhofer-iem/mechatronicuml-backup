@@ -206,7 +206,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 			}
 
 		};
-		if (filter != null) {
+		if (filter != null && expression != null) {
 			«editorVar».addVisibilityFilter(filter);
 		}
 	}
