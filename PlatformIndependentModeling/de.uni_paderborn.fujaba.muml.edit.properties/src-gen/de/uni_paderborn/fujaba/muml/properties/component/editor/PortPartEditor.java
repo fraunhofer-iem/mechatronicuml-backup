@@ -25,17 +25,7 @@ public class PortPartEditor extends de.uni_paderborn.fujaba.properties.runtime.e
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectors_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorPortType_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorCoordinationProtocolPart_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -47,19 +37,15 @@ public class PortPartEditor extends de.uni_paderborn.fujaba.properties.runtime.e
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectors_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorPortType_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorCoordinationProtocolPart_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -86,53 +72,6 @@ public class PortPartEditor extends de.uni_paderborn.fujaba.properties.runtime.e
 			this.editorPortType_property_tab_generalTab = editor;
 		}
 		return this.editorPortType_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentPart_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentPart_property_tab_generalTab_Editor() {
-		if (this.editorComponentPart_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getPortPart_ComponentPart();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"The component part that contains this PortPart. The port reference by the \nportType reference needs to be contained in the component that is referenced\nby this reference.");
-
-			this.editorComponentPart_property_tab_generalTab = editor;
-		}
-		return this.editorComponentPart_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocolPart_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationProtocolPart_property_tab_generalTab_Editor() {
-		if (this.editorCoordinationProtocolPart_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getPortPart_CoordinationProtocolPart();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"If the port type refines a role, this part refers to the enclosing coordination protocol.");
-
-			this.editorCoordinationProtocolPart_property_tab_generalTab = editor;
-		}
-		return this.editorCoordinationProtocolPart_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectors_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectors_property_tab_generalTab_Editor() {
-		if (this.editorConnectors_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getConnectorEndpoint_Connectors();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The connectors attached to this endpoint.");
-
-			this.editorConnectors_property_tab_generalTab = editor;
-		}
-		return this.editorConnectors_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;

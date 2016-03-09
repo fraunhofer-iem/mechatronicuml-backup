@@ -39,11 +39,7 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorComponentType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentComponent_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorPortParts_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -55,6 +51,12 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
@@ -63,11 +65,7 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorComponentType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentComponent_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorPortParts_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -104,21 +102,6 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 		return this.editorComponentType_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentComponent_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentComponent_property_tab_generalTab_Editor() {
-		if (this.editorParentComponent_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getComponentPart_ParentComponent();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The structured component type containing this component part.");
-
-			this.editorParentComponent_property_tab_generalTab = editor;
-		}
-		return this.editorParentComponent_property_tab_generalTab;
-	}
-
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCardinality_property_tab_generalTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCardinality_property_tab_generalTab_Editor() {
 		if (this.editorCardinality_property_tab_generalTab == null) {
@@ -133,21 +116,6 @@ public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runt
 			this.editorCardinality_property_tab_generalTab = editor;
 		}
 		return this.editorCardinality_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortParts_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortParts_property_tab_generalTab_Editor() {
-		if (this.editorPortParts_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getComponentPart_PortParts();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The ports of this part.");
-
-			this.editorPortParts_property_tab_generalTab = editor;
-		}
-		return this.editorPortParts_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;

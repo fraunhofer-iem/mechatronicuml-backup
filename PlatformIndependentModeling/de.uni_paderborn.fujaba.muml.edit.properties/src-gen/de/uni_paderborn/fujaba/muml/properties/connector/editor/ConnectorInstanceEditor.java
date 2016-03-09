@@ -29,12 +29,6 @@ public abstract class ConnectorInstanceEditor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorEndpointInstances_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -45,15 +39,15 @@ public abstract class ConnectorInstanceEditor
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorEndpointInstances_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -81,21 +75,6 @@ public abstract class ConnectorInstanceEditor
 			this.editorType_property_tab_generalTab = editor;
 		}
 		return this.editorType_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorEndpointInstances_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectorEndpointInstances_property_tab_generalTab_Editor() {
-		if (this.editorConnectorEndpointInstances_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getConnectorInstance_ConnectorEndpointInstances();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The connector endpoint instances connected by this connector instance.");
-
-			this.editorConnectorEndpointInstances_property_tab_generalTab = editor;
-		}
-		return this.editorConnectorEndpointInstances_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;

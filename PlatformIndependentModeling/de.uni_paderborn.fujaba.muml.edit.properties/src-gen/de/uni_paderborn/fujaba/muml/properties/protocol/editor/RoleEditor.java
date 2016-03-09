@@ -29,35 +29,27 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorBehavior_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorBehavior_property_tab_behaviorTab_Editor(), false);
 
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorConnectors_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorSenderMessageTypes_property_tab_messageTab_Editor(), false);
+
+			addPropertyEditor(createEditorReceiverMessageTypes_property_tab_messageTab_Editor(), false);
+
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorSubroleBehavior_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorReceiverMessageBuffer_property_tab_messageTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addPropertyEditor(createEditorSubroleBehavior_property_tab_behaviorTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSenderMessageTypes_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorReceiverMessageTypes_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorReceiverMessageBuffer_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorCoordinatorBehavior_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinatorBehavior_property_tab_behaviorTab_Editor(), false);
 
 			addPropertyEditor(createEditorCoordinationProtocol_property_tab_generalTab_Editor(), false);
 
@@ -71,33 +63,31 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+			addPropertyEditor(createEditorSenderMessageTypes_property_tab_messageTab_Editor(), false);
+
+			addPropertyEditor(createEditorReceiverMessageTypes_property_tab_messageTab_Editor(), false);
+
+			addPropertyEditor(createEditorReceiverMessageBuffer_property_tab_messageTab_Editor(), false);
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
+			addPropertyEditor(createEditorBehavior_property_tab_behaviorTab_Editor(), false);
+
+			addPropertyEditor(createEditorSubroleBehavior_property_tab_behaviorTab_Editor(), false);
+
+			addPropertyEditor(createEditorCoordinatorBehavior_property_tab_behaviorTab_Editor(), false);
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorBehavior_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorConnectors_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorSubroleBehavior_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSenderMessageTypes_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorReceiverMessageTypes_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorReceiverMessageBuffer_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorCoordinatorBehavior_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorCoordinationProtocol_property_tab_generalTab_Editor(), false);
 
@@ -194,9 +184,9 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 		return this.editorName_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSenderMessageTypes_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSenderMessageTypes_property_tab_generalTab_Editor() {
-		if (this.editorSenderMessageTypes_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSenderMessageTypes_property_tab_messageTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSenderMessageTypes_property_tab_messageTab_Editor() {
+		if (this.editorSenderMessageTypes_property_tab_messageTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteInteractionEndpoint_SenderMessageTypes();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -205,14 +195,14 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 			editor.setTooltipMessage(
 					"The sender message interface defines which messages this discrete port specification sends.");
 
-			this.editorSenderMessageTypes_property_tab_generalTab = editor;
+			this.editorSenderMessageTypes_property_tab_messageTab = editor;
 		}
-		return this.editorSenderMessageTypes_property_tab_generalTab;
+		return this.editorSenderMessageTypes_property_tab_messageTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReceiverMessageTypes_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReceiverMessageTypes_property_tab_generalTab_Editor() {
-		if (this.editorReceiverMessageTypes_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReceiverMessageTypes_property_tab_messageTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReceiverMessageTypes_property_tab_messageTab_Editor() {
+		if (this.editorReceiverMessageTypes_property_tab_messageTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteInteractionEndpoint_ReceiverMessageTypes();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -221,9 +211,9 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 			editor.setTooltipMessage(
 					"The receiver message interface defines which messages this discrete port specification receives.");
 
-			this.editorReceiverMessageTypes_property_tab_generalTab = editor;
+			this.editorReceiverMessageTypes_property_tab_messageTab = editor;
 		}
-		return this.editorReceiverMessageTypes_property_tab_generalTab;
+		return this.editorReceiverMessageTypes_property_tab_messageTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCardinality_property_tab_generalTab;
@@ -242,9 +232,9 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 		return this.editorCardinality_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReceiverMessageBuffer_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReceiverMessageBuffer_property_tab_generalTab_Editor() {
-		if (this.editorReceiverMessageBuffer_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReceiverMessageBuffer_property_tab_messageTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReceiverMessageBuffer_property_tab_messageTab_Editor() {
+		if (this.editorReceiverMessageBuffer_property_tab_messageTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteInteractionEndpoint_ReceiverMessageBuffer();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
@@ -253,14 +243,14 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 			editor.setTooltipMessage(
 					"A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.");
 
-			this.editorReceiverMessageBuffer_property_tab_generalTab = editor;
+			this.editorReceiverMessageBuffer_property_tab_messageTab = editor;
 		}
-		return this.editorReceiverMessageBuffer_property_tab_generalTab;
+		return this.editorReceiverMessageBuffer_property_tab_messageTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubroleBehavior_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubroleBehavior_property_tab_generalTab_Editor() {
-		if (this.editorSubroleBehavior_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubroleBehavior_property_tab_behaviorTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubroleBehavior_property_tab_behaviorTab_Editor() {
+		if (this.editorSubroleBehavior_property_tab_behaviorTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteInteractionEndpoint_SubroleBehavior();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -269,14 +259,14 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 			editor.setTooltipMessage(
 					"If this port is a multi-port, this reference points to the real-time statechart that\ncontains the subrole behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
 
-			this.editorSubroleBehavior_property_tab_generalTab = editor;
+			this.editorSubroleBehavior_property_tab_behaviorTab = editor;
 		}
-		return this.editorSubroleBehavior_property_tab_generalTab;
+		return this.editorSubroleBehavior_property_tab_behaviorTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinatorBehavior_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinatorBehavior_property_tab_generalTab_Editor() {
-		if (this.editorCoordinatorBehavior_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinatorBehavior_property_tab_behaviorTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinatorBehavior_property_tab_behaviorTab_Editor() {
+		if (this.editorCoordinatorBehavior_property_tab_behaviorTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getDiscreteInteractionEndpoint_CoordinatorBehavior();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -285,14 +275,14 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 			editor.setTooltipMessage(
 					"If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
 
-			this.editorCoordinatorBehavior_property_tab_generalTab = editor;
+			this.editorCoordinatorBehavior_property_tab_behaviorTab = editor;
 		}
-		return this.editorCoordinatorBehavior_property_tab_generalTab;
+		return this.editorCoordinatorBehavior_property_tab_behaviorTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavior_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavior_property_tab_generalTab_Editor() {
-		if (this.editorBehavior_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavior_property_tab_behaviorTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavior_property_tab_behaviorTab_Editor() {
+		if (this.editorBehavior_property_tab_behaviorTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavioralElement_Behavior();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -300,24 +290,9 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 			editor.setTooltipMessage("The behavior of this behavioral element.");
 
-			this.editorBehavior_property_tab_generalTab = editor;
+			this.editorBehavior_property_tab_behaviorTab = editor;
 		}
-		return this.editorBehavior_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectors_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectors_property_tab_generalTab_Editor() {
-		if (this.editorConnectors_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getConnectorEndpoint_Connectors();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The connectors attached to this endpoint.");
-
-			this.editorConnectors_property_tab_generalTab = editor;
-		}
-		return this.editorConnectors_property_tab_generalTab;
+		return this.editorBehavior_property_tab_behaviorTab;
 	}
 
 	//
@@ -344,9 +319,9 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general"}).contains(tab);
+					"property.tab.extensions", "property.tab.general", "property.tab.message", "property.tab.message",
+					"property.tab.general", "property.tab.message", "property.tab.behavior", "property.tab.behavior",
+					"property.tab.behavior", "property.tab.general"}).contains(tab);
 		}
 	}
 

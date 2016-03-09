@@ -39,19 +39,7 @@ public abstract class StructuredComponentEditor
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPorts_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorComponentKind_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectors_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorEmbeddedComponentParts_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorCoordinationProtocolParts_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -63,25 +51,19 @@ public abstract class StructuredComponentEditor
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPorts_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorComponentKind_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectors_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorEmbeddedComponentParts_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorCoordinationProtocolParts_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -101,69 +83,6 @@ public abstract class StructuredComponentEditor
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectors_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectors_property_tab_generalTab_Editor() {
-		if (this.editorConnectors_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getStructuredComponent_Connectors();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"The connectors this structured component contains. These can either be delegations or assemblies.");
-
-			this.editorConnectors_property_tab_generalTab = editor;
-		}
-		return this.editorConnectors_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedComponentParts_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedComponentParts_property_tab_generalTab_Editor() {
-		if (this.editorEmbeddedComponentParts_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getStructuredComponent_EmbeddedComponentParts();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The component parts this structured component contains.");
-
-			this.editorEmbeddedComponentParts_property_tab_generalTab = editor;
-		}
-		return this.editorEmbeddedComponentParts_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocolParts_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationProtocolParts_property_tab_generalTab_Editor() {
-		if (this.editorCoordinationProtocolParts_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getStructuredComponent_CoordinationProtocolParts();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent.");
-
-			this.editorCoordinationProtocolParts_property_tab_generalTab = editor;
-		}
-		return this.editorCoordinationProtocolParts_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPorts_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPorts_property_tab_generalTab_Editor() {
-		if (this.editorPorts_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getComponent_Ports();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"The ports of a component represent the interaction points between the component and its environment.");
-
-			this.editorPorts_property_tab_generalTab = editor;
-		}
-		return this.editorPorts_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentKind_property_tab_generalTab;

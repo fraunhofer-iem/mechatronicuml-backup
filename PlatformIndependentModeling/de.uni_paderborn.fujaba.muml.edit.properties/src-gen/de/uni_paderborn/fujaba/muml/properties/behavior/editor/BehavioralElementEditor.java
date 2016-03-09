@@ -23,7 +23,7 @@ public abstract class BehavioralElementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorBehavior_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorBehavior_property_tab_behaviorTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -35,9 +35,15 @@ public abstract class BehavioralElementEditor
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
-		} else if ("property.tab.general".equals(tab)) { // Tab General
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
 
-			addPropertyEditor(createEditorBehavior_property_tab_generalTab_Editor(), false);
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
+			addPropertyEditor(createEditorBehavior_property_tab_behaviorTab_Editor(), false);
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -47,9 +53,9 @@ public abstract class BehavioralElementEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavior_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavior_property_tab_generalTab_Editor() {
-		if (this.editorBehavior_property_tab_generalTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavior_property_tab_behaviorTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavior_property_tab_behaviorTab_Editor() {
+		if (this.editorBehavior_property_tab_behaviorTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavioralElement_Behavior();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
@@ -57,9 +63,9 @@ public abstract class BehavioralElementEditor
 
 			editor.setTooltipMessage("The behavior of this behavioral element.");
 
-			this.editorBehavior_property_tab_generalTab = editor;
+			this.editorBehavior_property_tab_behaviorTab = editor;
 		}
-		return this.editorBehavior_property_tab_generalTab;
+		return this.editorBehavior_property_tab_behaviorTab;
 	}
 
 }

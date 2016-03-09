@@ -25,12 +25,6 @@ public abstract class PortEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectors_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -38,8 +32,6 @@ public abstract class PortEditor extends de.uni_paderborn.fujaba.properties.runt
 			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponent_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -51,17 +43,15 @@ public abstract class PortEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
 
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectors_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponent_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -79,68 +69,6 @@ public abstract class PortEditor extends de.uni_paderborn.fujaba.properties.runt
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponent_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponent_property_tab_generalTab_Editor() {
-		if (this.editorComponent_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getPort_Component();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression("false", feature, getEClass());
-				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addVisibilityFilter(filter);
-				}
-			}
-
-			editor.setTooltipMessage(
-					"The component, this port belongs to. Theoretically the bounds\nshould be 1..1, but that would prevent the possibility for\nComponentPart.portsDerived to be a containment reference\n(see ComponentPart.portsDerived)");
-
-			this.editorComponent_property_tab_generalTab = editor;
-		}
-		return this.editorComponent_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectors_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectors_property_tab_generalTab_Editor() {
-		if (this.editorConnectors_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getConnectorEndpoint_Connectors();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The connectors attached to this endpoint.");
-
-			this.editorConnectors_property_tab_generalTab = editor;
-		}
-		return this.editorConnectors_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;

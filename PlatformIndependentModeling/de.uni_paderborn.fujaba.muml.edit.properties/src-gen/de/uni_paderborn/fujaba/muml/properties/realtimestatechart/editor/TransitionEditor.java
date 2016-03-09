@@ -98,6 +98,12 @@ public class TransitionEditor extends de.uni_paderborn.fujaba.properties.runtime
 			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Deadlines",
 					createEditorRelativeDeadline_property_tab_deadlineTab_Editor(), false);
 
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
