@@ -136,7 +136,7 @@
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_ytRK8NxrEeW-N_z6XJQq2w"/>
   <edges xmi:type="notation:Connector" xmi:id="_YJHhYNxsEeW-N_z6XJQq2w" type="4003" source="_VOmRANxsEeW-N_z6XJQq2w" target="_VOmRANxsEeW-N_z6XJQq2w" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_YJIIcNxsEeW-N_z6XJQq2w" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_YJIIcdxsEeW-N_z6XJQq2w" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_YJIIcdxsEeW-N_z6XJQq2w" x="-64" y="-377"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_YJIIctxsEeW-N_z6XJQq2w" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_YJIIc9xsEeW-N_z6XJQq2w" x="-10" y="20"/>

@@ -17,7 +17,7 @@
           <embeddedStatechart xmi:id="_VObR4NxsEeW-N_z6XJQq2w" name="reciepeSender" behavioralElement="_blyP0NxcEeW-N_z6XJQq2w">
             <variables xmi:id="_yIKdUNxsEeW-N_z6XJQq2w" name="currentOrderID">
               <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
-              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_15bvgNxsEeW-N_z6XJQq2w" value="1"/>
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_YTSGoOYHEeWZloxZLJnVmA" value="0"/>
             </variables>
             <variables xmi:id="_ScbSENxxEeW-N_z6XJQq2w" name="speed">
               <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
