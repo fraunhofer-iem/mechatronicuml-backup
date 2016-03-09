@@ -595,7 +595,7 @@ while ([generateExpression(expression.loopTest,  fqname) /]){
  * @param fqname a fully qualified name or the empty string
 */]
 [template public generateExpression(expression : OperationCall , fqname : String)]
-[expression.operation.getMethodName()/](stateChart[for (pBinding:ParameterBinding | expression.parameterBinding)], [pBinding.getValue()/][/for])[/template]
+[expression.operation.getMethodName()/]([if (not expression.operation.isRepositoryOperation())]stateChart [if (expression.operation.parameters->size() > 0)],[/if][/if][for (pBinding:ParameterBinding | expression.parameterBinding) separator(', ')] [pBinding.getValue()/][/for]);[/template]
 
 [template public generateExpression(expression : Expression , fqname : String)]
 unexpected expression class: [expression.eClass().name /]

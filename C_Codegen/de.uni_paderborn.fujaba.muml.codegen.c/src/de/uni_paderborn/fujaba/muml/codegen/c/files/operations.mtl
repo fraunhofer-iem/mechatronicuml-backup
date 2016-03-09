@@ -21,53 +21,21 @@
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
-
-[generateOperationHeader(CIs, path, useSubDir)/]
-[generateOperationClass(CIs, path, useSubDir)/]
-
-[/template]
-
-
-[**
- * The documentation of the template generateOperationFile.
- * @param anAbsoluteDeadline
- */]
-[template public generateOperationHeader(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
-
 [file (path+getFileName4Operations(true, useSubDir), false, 'UTF-8')]
-[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet())]
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
 #ifdef __cplusplus
   extern "C" {
 #endif
+[let rootNode : RootNode = CIs->any(true).eContainer().eContainer().eContainer().oclAsType(RootNode)]
+[for (opRep: OperationRepository | rootNode.eAllContents(OperationRepository))]
+	[comment generate separate files for each repository /]	
+	[generateOperationRepositoryHeader(opRep, path, useSubDir)/]
+	[generateOperationRepositoryClass(opRep, path, useSubDir)/]
 
-	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
-	#include "[if (useSubDir)]../types/[/if]customTypes.h"
-	[for (atomic : AtomicComponent | atomics)]
-	[let rtsc : RealtimeStatechart = atomic.behavior]
-	typedef struct [rtsc.getClassName()/] [rtsc.getClassName()/];
-	[/let]
-	[/for]
+	[comment generate includes for each repository into the operations.h /]
+	#include "[opRep.getFileName(true, false)/]"
 
-
-
-[for (atomic : AtomicComponent | atomics)]
-
-// Operations of RTSC of component [atomic.getName()/]
-[let rtsc : RealtimeStatechart = atomic.behavior.oclAsType(RealtimeStatechart)]
-[let allOperations : Set(Operation) = rtsc.eAllContents(Operation)->asSet()]
-			
-		[for (operation : Operation | allOperations)]
-		/**
-		 * @brief Implementation stub of operation [operation.name/]
- 		 * @details This function shall contain the implementation of the operation [operation.name/].
-		 * [for (p: Parameter | operation.parameters)]@param [p.getName()/] [/for]
-		 */
-		[operation.returnType.getTypeName()/] [operation.getName()/]([rtsc.getClassName()/]* stateChart[for (p: Parameter | operation.parameters)], [p.dataType.getTypeName()/] [p.getName()/][/for]);
-[/for]
-[/let]
-[/let]
 [/for]
 [/let]
 
@@ -76,44 +44,68 @@
 #endif
 #endif /*OPERATIONS_H_ */
 [/file]
+
+[/template]
+
+
+
+
+[**
+ * The documentation of the template generateOperationFile.
+ * @param anAbsoluteDeadline
+ */]
+[template public generateOperationRepositoryHeader(opRep : OperationRepository, path : String, useSubDir: Boolean)]
+
+[file (path+getFileName(opRep, true, useSubDir), false, 'UTF-8')]
+#ifndef [opRep.getName().toUpper()/]_H_
+#define [opRep.getName().toUpper()/]_H_
+#ifdef __cplusplus
+  extern "C" {
+#endif
+
+	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
+	#include "[if (useSubDir)]../types/[/if]customTypes.h"
+
+
+			
+		[for (operation : Operation | opRep.operations)]
+		/**
+		 * @brief Implementation stub of operation [operation.name/]
+ 		 * @details This function shall contain the implementation of the operation [operation.name/].
+		 * [for (p: Parameter | operation.parameters)]@param [p.getName()/] [/for]
+		 */
+		[operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator(', ')][p.dataType.getTypeName()/] [p.getName()/][/for]);
+[/for]
+
+
+#ifdef __cplusplus
+  }
+#endif
+#endif /*[opRep.getName().toUpper()/]_H_ */
+[/file]
 [/template]
 
 [**
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationClass(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
+[template public generateOperationRepositoryClass(opRep: OperationRepository, path : String, useSubDir: Boolean)]
 
-[file (path+getFileName4Operations(false, useSubDir), false, 'UTF-8')]
-[let atomics : Set(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet()->union(CIs->selectByKind(AtomicComponentInstance).componentType->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)->asSet())]
+[file (path+getFileName(opRep, false, useSubDir), false, 'UTF-8')]
 
 #include "operations.h"
-	[for (atomic : AtomicComponent | atomics)]
-	[let rtsc : RealtimeStatechart = atomic.behavior]
-	#include "../[getFileName(atomic, true, useSubDir)/]"
-	[/let]
-	[/for]
+/** [protected ('User includes **/')] 
 
-
-
-/** [protected ('user includes **/')] 
 
 /**[/protected]**/
+[for (operation : Operation | opRep.operations)]
 
-
-
-[for (atomic : AtomicComponent | atomics)]
-
-// Operations of RTSC of component [atomic.getName()/]
-[let rtsc : RealtimeStatechart = atomic.behavior.oclAsType(RealtimeStatechart)]
-[let allOperations : Set(Operation) = rtsc.eAllContents(Operation)->asSet()]
-[for (operation : Operation | allOperations)]
-
-[operation.returnType.getTypeName()/] [operation.getName()/]([rtsc.getClassName()/]* stateChart[for (p: Parameter | operation.parameters)], [p.dataType.getTypeName()/] [p.getName()/][/for]){
+[operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]){
 
 [if (operation.implementations->at(1).oclIsUndefined())]
 /** [protected (operation.getName()+' **/')] 
-//add your implementation here
+//@TODO: add your implementation here
+#warning Missing implemenation of repository operation '[operation.getName()/]'
 	[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
 	//default return value
 	[operation.returnType.getTypeName()/] ret = [operation.returnType.getDefaultValue()/];
@@ -135,10 +127,7 @@
 
 
 [/for]
-[/let]
-[/let]
-[/for]
-[/let]
+
 
 [/file]
 [/template]

@@ -17,6 +17,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::middlewareQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
+[import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::operation_queries]
 
 
 [**
@@ -45,6 +46,8 @@
 		[exit(component, rtsc)/]		
 			
 		[isInState(component, rtsc)/]
+
+		[generateRTSCOperations(component, rtsc)/]
 
 	[/file]
 [/template]
@@ -671,7 +674,7 @@ if (0){
 
 
 [template private getOperationMethodCall (opCall : OperationCall) post(cdtbeautifier())]
-[opCall.operation.getMethodName()/](stateChart[for (pBinding:ParameterBinding | opCall.parameterBinding)], [pBinding.getValue()/][/for])
+[opCall.operation.getMethodName()/]([if (not opCall.operation.isRepositoryOperation())]stateChart[if (operation.parameters->size() >0)],[/if][/if][for (pBinding:ParameterBinding | opCall.parameterBinding)separator (', ')][pBinding.getValue()/][/for])
 [/template]
 
 [template private getRegionVariables (rtsc: RealtimeStatechart, state : State) post(cdtbeautifier())]
@@ -685,5 +688,47 @@ if (0){
 	[/if]
 [/template]
 
+[template public generateRTSCOperations(component : Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
+[comment generate operation declarations for the RTSC/]
+//implementations for RTSC internal operations
+
+[let allOperation : Set(Operation) = rtsc.eAllContents(Operation)->asSet()]
+[for (operation : Operation | allOperation)]
+
+
+[operation.returnType.getTypeName()/] [operation.getName()/]([if (not operation.isRepositoryOperation())][rtsc.getClassName()/]* stateChart[if (operation.parameters->size() >0)],[/if][/if][for (p: Parameter | operation.parameters)separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]){
+
+[if (operation.implementations->at(1).oclIsUndefined())]
+
+
+
+//@TODO: add your implementation here
+#warning Missing implemenation of RTSC operation '[operation.getName()/]'
+	[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
+	//default return value
+	[operation.returnType.getTypeName()/] ret = [operation.returnType.getDefaultValue()/];
+	return ret;
+	[/if]
+
+
+
+[else]
+ /** auto generated implementation **/
+[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
+	[operation.returnType.getTypeName()/] [operation.getOperationOutputVariableName()/] = [operation.returnType.getDefaultValue()/];
+[/if]
+	[generateExpression(operation.implementations->at(1),'')/]
+[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
+	return [operation.getOperationOutputVariableName()/];
+[/if]
+[/if]
+
+}
+
+
+[/for]
+[/let]
+	
+[/template]
 
 

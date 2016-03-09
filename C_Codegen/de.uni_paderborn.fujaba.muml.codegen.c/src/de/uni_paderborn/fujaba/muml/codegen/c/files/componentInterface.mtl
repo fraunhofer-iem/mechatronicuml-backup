@@ -15,6 +15,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
+[import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::operation_queries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::RealtimeStatechart]
 
 
@@ -71,8 +72,25 @@
 	[exit(rtsc)/]
 			
 	[isInState(rtsc)/]
-	[/let]	
+	
+
+[comment generate operation declarations for the RTSC/]
+//RTSC internal operations
+[let allOperation : Set(Operation) = rtsc.eAllContents(Operation)->asSet()]
+[for (operation : Operation | allOperation)]
+
+
+[operation.returnType.getTypeName()/] [operation.getName()/]([rtsc.getClassName()/]* stateChart[for (p: Parameter | operation.parameters)], [p.dataType.getTypeName()/] [p.getName()/][/for]);
+
+[/for]
+[/let]
+
+
+
+
+	[/let]
 [/if]
+
 
 
 

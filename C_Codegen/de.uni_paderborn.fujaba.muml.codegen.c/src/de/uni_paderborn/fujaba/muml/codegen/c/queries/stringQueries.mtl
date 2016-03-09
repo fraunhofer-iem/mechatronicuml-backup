@@ -48,6 +48,10 @@ endif
 [query public getTypeName (msgT: MessageType) : String = 
 msgT.getName() + msgT.repository.getName() +'Message'/]
 
+[query public getName(oRep : OperationRepository) : String = 
+oRep.getQualifiedName() /]
+
+
 [query public getBufferName (mb : MessageBuffer, pi : DiscretePortInstance) : String = 
 getName(mb.name) +pi.getName()+ pi.componentInstance.getName() /]
 
@@ -103,9 +107,28 @@ getName(mb.name) +pi.getName()+ pi.componentInstance.getName() /]
 if (op.oclIsUndefined()) then
 '#error null value '
 else
-	getQualifiedName(op).toLowerFirst()	
+	op.getContainingRepositoryName() + getQualifiedName(op).toLowerFirst()	
 endif
 /]
+
+[query public isRepositoryOperation(op : Operation) : Boolean =
+let rootNode:RootNode = op.getRootNode() in
+if (rootNode.eAllContents(OperationRepository).operations->includes(op)) then
+		true
+	else
+		false
+	endif
+ /]
+
+
+[query public getContainingRepositoryName(op : Operation) : String = 
+	if (op.isRepositoryOperation()) then
+		op.eContainer().oclAsType(OperationRepository).getName()+'_'
+	else
+		''
+	endif
+ /]
+
 
 [query public getName(parameter : Parameter) : String = 
 if (parameter.oclIsUndefined()) then
@@ -218,6 +241,25 @@ else
 	+
 	if (header) then
 		'_Interface.h'
+	else
+		'.c'
+	endif
+endif
+
+/]
+
+[**
+ * @param component
+*/]
+[query public getFileName(opRep : OperationRepository, header : Boolean, useSubDir : Boolean) : String = 
+if (opRep.oclIsUndefined()) then
+'#error null value '
+else
+	if useSubDir then 'operations/' else '' endif + 
+		getClassName(opRep).toLowerFirst()
+	+
+	if (header) then
+		'.h'
 	else
 		'.c'
 	endif
@@ -407,6 +449,10 @@ endif
 */]
 [query public getClassName(component : Component) : String =
 	getName(component).toUpperFirst() + 'Component' 
+/]
+
+[query public getClassName(opRep : OperationRepository) : String =
+	getName(opRep).toUpperFirst() + 'OpRep' 
 /]
 
 [query public getClassName(componentPart : ComponentPart) : String =

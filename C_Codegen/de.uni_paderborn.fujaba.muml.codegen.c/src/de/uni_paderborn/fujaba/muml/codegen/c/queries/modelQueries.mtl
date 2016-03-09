@@ -312,3 +312,17 @@ CIs->collect(portInstances)->asOrderedSet()->filter(DiscretePortInstance) /]
 [query public getTimeUnitFactor(timeValue : TimeValue) : Real =
 	invoke('de.uni_paderborn.fujaba.muml.codegen.c.helper.TimeHelper', 'getFactor(de.uni_paderborn.fujaba.muml.valuetype.TimeValue)',Sequence{timeValue})
 /]
+
+[query public getRootNode(obj : OclAny) : RootNode =
+if (obj.oclIsKindOf(RootNode) or obj = null) then
+	obj
+else
+	getRootNode(obj.eContainer())
+endif
+ /]
+
+[query public getContainingRepository(op : Operation) : OclAny = 
+let rootNode:RootNode = op.getRootNode() in
+	rootNode.eAllContents(OperationRepository).operations->asSet()
+ /]
+
