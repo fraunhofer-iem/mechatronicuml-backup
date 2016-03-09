@@ -30,14 +30,6 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.sectionEntry.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="de.uni_paderborn.fujaba.muml.example.blindOvertaking.feature"
-         version="0.0.0"/>
-
-   <includes
          id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
          version="0.0.0"/>
 
@@ -61,10 +53,6 @@ the Eclipse framework.
 
    <includes
          id="de.uni_paderborn.uppaal.sdk.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="de.uni_paderborn.fujaba.muml.example.coordinatingBebots.feature"
          version="0.0.0"/>
 
    <includes
@@ -143,9 +131,6 @@ the Eclipse framework.
          id="de.uni_paderborn.fujaba.muml.storydiagrams.source.feature"
          version="0.0.0"/>
 
-   <includes
-         id="de.uni_paderborn.fujaba.muml.example.railcab.feature"
-         version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.muml.psm.feature"
@@ -221,6 +206,70 @@ the Eclipse framework.
 
    <includes
          id="de.uni_paderborn.fujaba.modelcopy.source.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.coordinationpatternlib.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.blindOvertaking.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.coordinatingBebots.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.mini.entryexit.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.mini.messages.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.mini.operations.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.mini.syncChannel.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.railcab.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.sectionEntry.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.example.arduinoCarHwPlatform.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.example.blinkingLED.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.example.BrakeByWire.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.example.CooperatingBallPlayingRobots.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.example.mini.syncSelectorChannel.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.example.rocketLauncher.feature"
          version="0.0.0"/>
 
 </feature>
