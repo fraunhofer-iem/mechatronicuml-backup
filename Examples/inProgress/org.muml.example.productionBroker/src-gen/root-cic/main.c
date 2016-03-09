@@ -5,7 +5,7 @@
 //including all files for used Components
 #include "components/recipeGeneratorComponent_Interface.h"
 #include "components/brokerComponent_Interface.h"
-
+#define DEBUG 1
 
 //variables for component instances
 
