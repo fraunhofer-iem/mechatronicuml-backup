@@ -3,9 +3,9 @@
 
 #include "lib/Debug.h"
 //including all files for used Components
-#include "components/recipeGeneratorComponent_Interface.h"
 #include "components/brokerComponent_Interface.h"
-#define DEBUG 1
+#include "components/recipeGeneratorComponent_Interface.h"
+
 
 //variables for component instances
 

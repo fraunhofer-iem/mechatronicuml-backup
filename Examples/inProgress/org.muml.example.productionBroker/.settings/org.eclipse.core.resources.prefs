@@ -5,4 +5,5 @@ encoding//model/instance/productionBroker.componentinstanceconfiguration_diagram
 encoding//model/msgtype/messages.messagetype_diagram=UTF-8
 encoding//model/productionBroker.muml=UTF-8
 encoding//model/realtimestatechart/broker.realtimestatechart_diagram=UTF-8
+encoding//model/realtimestatechart/productionStation.realtimestatechart_diagram=UTF-8
 encoding//model/realtimestatechart/reciepeGenerator.realtimestatechart_diagram=UTF-8

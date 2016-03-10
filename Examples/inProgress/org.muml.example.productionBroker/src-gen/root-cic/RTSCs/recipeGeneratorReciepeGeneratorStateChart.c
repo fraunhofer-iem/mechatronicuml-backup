@@ -318,6 +318,19 @@
 		}
 		
 		
+		void RecipeGeneratorProvideOrderReciepeSenderStateChart_exit(
+				RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
+			switch (stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender) {
+			case STATE_RECIPEGENERATORPROVIDEORDERINIT:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender =
+					RECIPEGENERATORRECIEPEGENERATOR_INACTIVE;
+		}
 		void RecipeGeneratorInitInternalBehaviorStateChart_exit(
 				RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
 			switch (stateChart->currentStateOfRecipeGeneratorInitInternalBehavior) {
@@ -335,27 +348,14 @@
 			stateChart->currentStateOfRecipeGeneratorInitInternalBehavior =
 					RECIPEGENERATORRECIEPEGENERATOR_INACTIVE;
 		}
-		void RecipeGeneratorProvideOrderReciepeSenderStateChart_exit(
-				RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
-			switch (stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender) {
-			case STATE_RECIPEGENERATORPROVIDEORDERINIT:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender =
-					RECIPEGENERATORRECIEPEGENERATOR_INACTIVE;
-		}
 				
 			
 		bool_t RecipeGeneratorReciepeGeneratorStateChart_isInState(
 				RecipeGeneratorReciepeGeneratorStateChart* stateChart,
 				RecipeGeneratorReciepeGeneratorState state) {
-			return (stateChart->currentStateOfRecipeGeneratorInitInternalBehavior
+			return (stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender
 					== state
-					|| stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender
+					|| stateChart->currentStateOfRecipeGeneratorInitInternalBehavior
 							== state);
 		
 		}
