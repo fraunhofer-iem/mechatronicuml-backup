@@ -30,6 +30,7 @@ typedef struct Middleware {
 //Create components
 	struct	BrokerComponent* brokerComponent; /**< The ComponentInstance: Broker of Type: BrokerComponent*/
 	struct	RecipeGeneratorComponent* recipeGeneratorComponent; /**< The ComponentInstance: RecipeGenerator of Type: RecipeGeneratorComponent*/
+	struct	ProductionStationComponent* productionStationComponent; /**< The ComponentInstance: ProductionStation of Type: ProductionStationComponent*/
 
 //intern NetworkInterface	
 NetworkInterface* intern;  /**< Pointer to the internal NetworkInterface */

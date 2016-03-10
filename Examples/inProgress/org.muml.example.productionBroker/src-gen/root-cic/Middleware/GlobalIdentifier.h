@@ -6,8 +6,14 @@
  * 			 These GlobalIdentifiers are equal for all ECUs
  */
 		//Define MessageType IDs
-			#define MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE 1 /**< Global Identifier: For the Message-Type: simpleOrder */
+			#define MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE 1 /**< Global Identifier: For the Message-Type: doneOrder */
+			#define MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE 2 /**< Global Identifier: For the Message-Type: getOrder */
+			#define MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE 3 /**< Global Identifier: For the Message-Type: simpleOrder */
+			#define MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE 4 /**< Global Identifier: For the Message-Type: orderForPS */
+			#define MESSAGE_MESSAGESFAILORDERMESSAGESMESSAGE 5 /**< Global Identifier: For the Message-Type: failOrder */
 
 		//Define Port IDs
 			#define PORT_BROKERBROKERGETORDER1 1 /**< Global Identifier: For the Discrete-Port-Instance: getOrder1 */
-			#define PORT_RECIPEGENERATORRECIPEGENERATORPROVIDEORDER1 2 /**< Global Identifier: For the Discrete-Port-Instance: provideOrder1 */
+			#define PORT_BROKERBROKERBROKERFORPS 2 /**< Global Identifier: For the Discrete-Port-Instance: brokerForPS */
+			#define PORT_RECIPEGENERATORRECIPEGENERATORPROVIDEORDER1 3 /**< Global Identifier: For the Discrete-Port-Instance: provideOrder1 */
+			#define PORT_PRODUCTIONSTATIONPRODUCTIONSTATIONGETORDER1 4 /**< Global Identifier: For the Discrete-Port-Instance: getOrder1 */

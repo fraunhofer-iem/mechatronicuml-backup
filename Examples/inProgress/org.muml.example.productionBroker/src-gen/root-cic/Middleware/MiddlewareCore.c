@@ -2,6 +2,7 @@
 //import all needed ComponentHeaders
 #include "../components/brokerComponent_Interface.h"
 #include "../components/recipeGeneratorComponent_Interface.h"
+#include "../components/productionStationComponent_Interface.h"
 
 /*
  * create a new middleware instance
@@ -47,6 +48,7 @@ bool_t Middleware_destroy(void){
 		//destroy all components
 	BrokerComponent_destroy(mw->brokerComponent);
 	RecipeGeneratorComponent_destroy(mw->recipeGeneratorComponent);
+	ProductionStationComponent_destroy(mw->productionStationComponent);
 
 //destroy all network interfaces
 	NetworkInterface_destroy(mw->intern);
@@ -72,8 +74,20 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	
 	//choose right function to create the bytearray (which is actually a chararray).
 	switch(id){
+	case MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesDoneOrderMessagesMessage_write_delimited_to((MessagesDoneOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
+	case MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesGetOrderMessagesMessage_write_delimited_to((MessagesGetOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
 	case MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE:
 			nwMsg->_mumlMsg_len = MessagesSimpleOrderMessagesMessage_write_delimited_to((MessagesSimpleOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
+	case MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesOrderForPSMessagesMessage_write_delimited_to((MessagesOrderForPSMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
+	case MESSAGE_MESSAGESFAILORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesFailOrderMessagesMessage_write_delimited_to((MessagesFailOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
 		default:
 			nwMsg->_mumlMsg_len = 0;
@@ -127,8 +141,14 @@ Port* MW_getPortforIdentifier(PortID portID){
 case PORT_BROKERBROKERGETORDER1:
 	return mw->brokerComponent->getOrderPort;
 	break;
+case PORT_BROKERBROKERBROKERFORPS:
+	return mw->brokerComponent->brokerForPSPortPort;
+	break;
 case PORT_RECIPEGENERATORRECIPEGENERATORPROVIDEORDER1:
 	return mw->recipeGeneratorComponent->provideOrderPort;
+	break;
+case PORT_PRODUCTIONSTATIONPRODUCTIONSTATIONGETORDER1:
+	return mw->productionStationComponent->getOrderPort;
 	break;
         default:
             return NULL;
@@ -146,8 +166,14 @@ switch (portID) {
 		case PORT_BROKERBROKERGETORDER1:
 		return PORT_RECIPEGENERATORRECIPEGENERATORPROVIDEORDER1;
 		break;
+		case PORT_BROKERBROKERBROKERFORPS:
+		return PORT_PRODUCTIONSTATIONPRODUCTIONSTATIONGETORDER1;
+		break;
 		case PORT_RECIPEGENERATORRECIPEGENERATORPROVIDEORDER1:
 		return PORT_BROKERBROKERGETORDER1;
+		break;
+		case PORT_PRODUCTIONSTATIONPRODUCTIONSTATIONGETORDER1:
+		return PORT_BROKERBROKERBROKERFORPS;
 		break;
         default:
             return -1;

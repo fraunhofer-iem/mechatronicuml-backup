@@ -127,7 +127,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_nM5JheanEeWyd6JHVas6Kw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../productionBroker.muml#_nMdEoOanEeWyd6JHVas6Kw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nM3UUeanEeWyd6JHVas6Kw" x="50" y="5" width="505" height="397"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nM3UUeanEeWyd6JHVas6Kw" x="50" y="5" width="505" height="457"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_6Dss4OamEeWyd6JHVas6Kw"/>

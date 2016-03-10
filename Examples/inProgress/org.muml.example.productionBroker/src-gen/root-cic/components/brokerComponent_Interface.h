@@ -49,6 +49,7 @@
 						BrokerBrokerStateChart* stateChart;	/**< The BrokerBrokerStateChart of the Component Broker */
 				
 							Port* getOrderPort; /**< A Pointer to the Component's Port: getOrder */
+							Port* brokerForPSPortPort; /**< A Pointer to the Component's Port: brokerForPSPort */
 			
 						
 					
@@ -98,6 +99,14 @@
 					 * @return A Pointer to the Port getOrder of the struct BrokerComponent
 					 */
 					Port* BrokerComponent_getgetOrder(BrokerComponent* component);
+			/**
+					 * @brief Get the Port: brokerForPSPort of an Instance of the Component: Broker
+					 * @details The Pointer BrokerComponent::brokerForPSPortPort is returned
+					 * 
+					 * @param component The specific Instance BrokerComponent  of the Component: Broker whose Port shall be returned
+					 * @return A Pointer to the Port brokerForPSPort of the struct BrokerComponent
+					 */
+					Port* BrokerComponent_getbrokerForPSPort(BrokerComponent* component);
 		
 			
 
@@ -117,8 +126,10 @@
 			STATE_BROKERINIT /**< Represents the State: STATE_BROKERINIT of the Realtime-StateChart: BrokerBroker */
 			,
 					STATE_BROKERGETORDERINIT /**< Represents the State: STATE_BROKERGETORDERINIT of the Realtime-StateChart: BrokerGetOrderGetOrderStatechart */
-			,		STATE_BROKERGETORDERSTOREORDERS /**< Represents the State: STATE_BROKERGETORDERSTOREORDERS of the Realtime-StateChart: BrokerGetOrderGetOrderStatechart */
-			,		STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS /**< Represents the State: STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS of the Realtime-StateChart: BrokerGetOrderGetOrderStatechart */	
+			,		STATE_BROKERGETORDERMANAGEORDERS /**< Represents the State: STATE_BROKERGETORDERMANAGEORDERS of the Realtime-StateChart: BrokerGetOrderGetOrderStatechart */
+			,		STATE_BROKERBROKERFORPSPORTINIT /**< Represents the State: STATE_BROKERBROKERFORPSPORTINIT of the Realtime-StateChart: BrokerBrokerForPSPortOrderBrokerforPsRTSC */
+			,		STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST /**< Represents the State: STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST of the Realtime-StateChart: BrokerBrokerForPSPortOrderBrokerforPsRTSC */
+			,		STATE_BROKERBROKERFORPSPORTRESET /**< Represents the State: STATE_BROKERBROKERFORPSPORTRESET of the Realtime-StateChart: BrokerBrokerForPSPortOrderBrokerforPsRTSC */	
 		}BrokerBrokerState;
 	
 	
@@ -134,15 +145,22 @@
 						BrokerBrokerState currentStateOfBrokerBroker;/**< The current State of the Realtime-StateChart: BrokerBroker */
 	
 				BrokerBrokerState currentStateOfBrokerGetOrderGetOrderStatechart;/**< Represents the state of region: BrokerGetOrderGetOrderStatechart */
+				BrokerBrokerState currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC;/**< Represents the state of region: BrokerBrokerForPSPortOrderBrokerforPsRTSC */
 	
 			bool_t BrokerBroker_isExecutable;/**< Execution Verifier of RTSC: BrokerBroker. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 				bool_t BrokerGetOrderGetOrderStatechart_isExecutable;/**< Execution Verifier of RTSC: BrokerGetOrderGetOrderStatechart. This variable is used to ensure that a RTSC is executed only once per execution cycle */
+				bool_t BrokerBrokerForPSPortOrderBrokerforPsRTSC_isExecutable;/**< Execution Verifier of RTSC: BrokerBrokerForPSPortOrderBrokerforPsRTSC. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 		
 	
 	
 		
 	
+				int32_T testLatestOrderIDGlobal; /**< The Realtime-StateChart Variable: testLatestOrderIDGlobal of Type: int32; */
 				int32_T testLatestOrderID; /**< The Realtime-StateChart Variable: testLatestOrderID of Type: int32; */
+				int32_T currentPsID; /**< The Realtime-StateChart Variable: currentPsID of Type: int32; */
+				int32_T provideOrderID; /**< The Realtime-StateChart Variable: provideOrderID of Type: int32; */
+				int32_T provideAmount; /**< The Realtime-StateChart Variable: provideAmount of Type: int32; */
+				int32_T provideIncredientID; /**< The Realtime-StateChart Variable: provideIncredientID of Type: int32; */
 	
 	
 	
@@ -176,6 +194,14 @@
 	
 		void initializeBrokerGetOrderGetOrderStatechartRegion(BrokerBrokerStateChart* stateChart);
 	/**
+	 * @brief Initializes the Region: BrokerBrokerForPSPortOrderBrokerforPsRTSC of the Realtime-StateChart: BrokerBroker
+	 * @details The Member BrokerBrokerStateChart::currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC is initialized
+	 * 
+	 * @param stateChart The specific BrokerBrokerStateChart whose Region shall be initialized
+	 */
+	
+		void initializeBrokerBrokerForPSPortOrderBrokerforPsRTSCRegion(BrokerBrokerStateChart* stateChart);
+	/**
 	 * @brief Destroys the Realtime-StateChart: BrokerBroker
 	 * @details Frees the Memory for the struct BrokerBrokerStateChart
 	 * 
@@ -189,6 +215,14 @@
 	 */	
 		void BrokerBrokerStateChart_processStep(BrokerBrokerStateChart* rtsc);
 
+	/**
+	 * @brief Leaves the Region: orderBrokerforPsRTSC of the Realtime-StateChart: BrokerBroker
+	 * @details This method is called, whenever a the Region: orderBrokerforPsRTSC is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific BrokerBrokerStateChart whose Region: orderBrokerforPsRTSC shall be exit
+	 */
+		void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(BrokerBrokerStateChart* rtsc);
 	/**
 	 * @brief Leaves the Region: getOrderStatechart of the Realtime-StateChart: BrokerBroker
 	 * @details This method is called, whenever a the Region: getOrderStatechart is left.

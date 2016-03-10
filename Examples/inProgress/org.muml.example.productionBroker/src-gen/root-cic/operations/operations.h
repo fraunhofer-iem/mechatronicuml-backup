@@ -10,6 +10,13 @@
 
 	#include "noSQLDatabaseOpRep.h"
 
+	
+	
+	
+	
+
+	#include "iDManagementOpRep.h"
+
 
 #ifdef __cplusplus
   }

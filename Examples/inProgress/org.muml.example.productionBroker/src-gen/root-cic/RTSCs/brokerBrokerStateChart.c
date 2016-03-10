@@ -19,6 +19,27 @@
 			stateChart->BrokerGetOrderGetOrderStatechart_isExecutable = true;
 		
 		}
+		void initializeBrokerBrokerForPSPortOrderBrokerforPsRTSCRegion(
+				BrokerBrokerStateChart* stateChart) {
+		
+			stateChart->currentPsID = -1;
+		
+			stateChart->provideOrderID = -1;
+		
+			stateChart->provideAmount = -1;
+		
+			stateChart->provideIncredientID = -1;
+		
+			stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
+					STATE_BROKERBROKERFORPSPORTINIT;
+		
+			// execute entry actions
+		
+			// nothing to do
+		
+			stateChart->BrokerBrokerForPSPortOrderBrokerforPsRTSC_isExecutable = true;
+		
+		}
 		
 		void BrokerBrokerStateChart_initialize(BrokerBrokerStateChart* stateChart) {
 			//initialize clocks
@@ -26,6 +47,7 @@
 			//initialize hybrid ports
 		
 			//initialize variables of the root statechart
+			stateChart->testLatestOrderIDGlobal = -1;
 		
 			//initialize init state
 			stateChart->currentStateOfBrokerBroker = STATE_BROKERINIT;
@@ -35,6 +57,7 @@
 			// nothing to do
 		
 			initializeBrokerGetOrderGetOrderStatechartRegion(stateChart);
+			initializeBrokerBrokerForPSPortOrderBrokerforPsRTSCRegion(stateChart);
 		}
 		
 		
@@ -92,9 +115,9 @@
 					//release all created sent events
 					// change the state
 					stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
-							STATE_BROKERGETORDERSTOREORDERS;
+							STATE_BROKERGETORDERMANAGEORDERS;
 		#ifdef DEBUG
-					printDebugInformation("currentStateOfBrokerGetOrderGetOrderStatechart switched state to STATE_BROKERGETORDERSTOREORDERS" );
+					printDebugInformation("currentStateOfBrokerGetOrderGetOrderStatechart switched state to STATE_BROKERGETORDERMANAGEORDERS" );
 		#endif		
 		
 					// execute entry actions
@@ -105,43 +128,8 @@
 		
 				}
 				break;
-			case STATE_BROKERGETORDERSTOREORDERS:
-				if (
-		
-				stateChart->testLatestOrderID > 10
-		
-				) {
-		
-					// execute exit actions
-		
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-		
-					// nothing to do
-		
-					// nothing to do			
-		
-					//release all created received events
-		
-					//release all created sent events
-		
-					// change the state
-		
-					stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
-							STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS;
-		
-		#ifdef DEBUG
-		
-					printDebugInformation("currentStateOfBrokerGetOrderGetOrderStatechart switched state to STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS" );
-		
-		#endif		
-		
-					// execute entry actions
-		
-					// nothing to do
-		
-				} else if (Port_doesMessageExist(
+			case STATE_BROKERGETORDERMANAGEORDERS:
+				if (Port_doesMessageExist(
 						BrokerComponent_getgetOrder(stateChart->parentComponent),
 						MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE)
 		
@@ -176,7 +164,7 @@
 					noSQLDatabase_noSQLDatabaseInsertOrder(msg->_orderID,
 							msg->_ingredientID, msg->_amount);
 		
-					stateChart->testLatestOrderID = msg->_orderID;
+					stateChart->testLatestOrderIDGlobal = msg->_orderID;
 		
 					;
 		
@@ -193,56 +181,11 @@
 					// change the state
 		
 					stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
-							STATE_BROKERGETORDERSTOREORDERS;
+							STATE_BROKERGETORDERMANAGEORDERS;
 		
 		#ifdef DEBUG
 		
-					printDebugInformation("currentStateOfBrokerGetOrderGetOrderStatechart switched state to STATE_BROKERGETORDERSTOREORDERS" );
-		
-		#endif		
-		
-					// execute entry actions
-		
-					// nothing to do
-		
-				} else {
-		
-				}
-				break;
-			case STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS:
-				if (
-		
-				stateChart->testLatestOrderID >= 1
-		
-				) {
-		
-					// execute exit actions
-		
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-		
-					noSQLDatabase_noSQLDatabaseDeleteOrder(
-							stateChart->testLatestOrderID);
-		
-					stateChart->testLatestOrderID = stateChart->testLatestOrderID - 1;
-		
-					;
-		
-					// nothing to do			
-		
-					//release all created received events
-		
-					//release all created sent events
-		
-					// change the state
-		
-					stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
-							STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS;
-		
-		#ifdef DEBUG
-		
-					printDebugInformation("currentStateOfBrokerGetOrderGetOrderStatechart switched state to STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS" );
+					printDebugInformation("currentStateOfBrokerGetOrderGetOrderStatechart switched state to STATE_BROKERGETORDERMANAGEORDERS" );
 		
 		#endif		
 		
@@ -260,10 +203,247 @@
 			stateChart->BrokerGetOrderGetOrderStatechart_isExecutable = false;
 		}
 		
+		void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_processStep(
+		
+		BrokerBrokerStateChart* stateChart) {
+		
+			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
+		
+			case STATE_BROKERBROKERFORPSPORTINIT:
+		
+				if (Port_doesMessageExist(
+		
+				BrokerComponent_getbrokerForPSPort(stateChart->parentComponent),
+		
+				MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE)
+		
+				) {
+		
+					MiddlewareMessage* mwMsg = Port_receiveMessage(
+		
+					BrokerComponent_getbrokerForPSPort(
+		
+					stateChart->parentComponent),
+		
+					MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE);
+		
+					struct MessagesGetOrderMessagesMessage * msg =
+		
+					(MessagesGetOrderMessagesMessage*) malloc(
+		
+					sizeof(struct MessagesGetOrderMessagesMessage));
+		
+					MessagesGetOrderMessagesMessage_read_delimited_from(mwMsg->_mumlMsg,
+		
+					msg, 0);
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("Broker received message of typeMessagesGetOrderMessagesMessage");
+		
+		#endif
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					stateChart->currentPsID = msg->_psID;
+		
+					stateChart->provideOrderID = stateChart->testLatestOrderIDGlobal;
+		
+					;
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					free(msg);
+		
+					free(mwMsg);
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
+		
+					STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST;
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC switched state to STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST" );
+		
+		#endif		
+		
+					// execute entry actions
+		
+					stateChart->provideAmount =
+		
+					noSQLDatabase_noSQLDatabaseGetOrderAmount(
+		
+					stateChart->provideOrderID);
+		
+					;
+		
+					stateChart->provideIncredientID =
+		
+					noSQLDatabase_noSQLDatabaseGetOrderIncredientID(
+		
+					stateChart->provideOrderID);
+		
+					;
+		
+					;
+		
+				} else {
+		
+				}
+		
+				break;
+		
+			case STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST:
+		
+				if (1
+		
+				) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					// nothing to do
+		
+					//create new Parameter struct for MessagesOrderForPSMessagesMessage
+		
+					struct MessagesOrderForPSMessagesMessage * msg =
+		
+					(MessagesOrderForPSMessagesMessage*) malloc(
+		
+					sizeof(struct MessagesOrderForPSMessagesMessage));
+		
+					msg->_receiverPsID = stateChart->currentPsID;
+		
+					msg->_orderID = stateChart->provideOrderID;
+		
+					msg->_incredientID = stateChart->provideIncredientID;
+		
+					msg->_amount = stateChart->provideAmount;
+		
+					//send Message
+		
+					MW_sendMessage(
+		
+					MW_getTargetPortIDforIdentifier(
+		
+					stateChart->parentComponent->brokerForPSPortPort->ID),
+		
+					MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE, msg);
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("Broker sent message of type MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE");
+		
+		#endif		
+		
+					//release all created received events
+		
+					//release all created sent events
+		
+					free(msg);
+		
+					// change the state
+		
+					stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
+		
+					STATE_BROKERBROKERFORPSPORTRESET;
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC switched state to STATE_BROKERBROKERFORPSPORTRESET" );
+		
+		#endif		
+		
+					// execute entry actions
+		
+					// nothing to do
+		
+				} else {
+		
+				}
+		
+				break;
+		
+			case STATE_BROKERBROKERFORPSPORTRESET:
+		
+				if (1
+		
+				) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					stateChart->provideOrderID = -1;
+		
+					stateChart->currentPsID = -1;
+		
+					stateChart->provideAmount = -1;
+		
+					stateChart->provideIncredientID = -1;
+		
+					;
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
+		
+					STATE_BROKERBROKERFORPSPORTINIT;
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC switched state to STATE_BROKERBROKERFORPSPORTINIT" );
+		
+		#endif		
+		
+					// execute entry actions
+		
+					// nothing to do
+		
+				} else {
+		
+				}
+		
+				break;
+		
+			default:
+		
+				break;
+		
+			}
+		
+			stateChart->BrokerBrokerForPSPortOrderBrokerforPsRTSC_isExecutable = false;
+		
+		}
+		
 		void BrokerBrokerStateChart_processStep(BrokerBrokerStateChart* stateChart) {
 			switch (stateChart->currentStateOfBrokerBroker) {
 			case STATE_BROKERINIT:
 		
+				if (stateChart->BrokerBrokerForPSPortOrderBrokerforPsRTSC_isExecutable)
+					BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_processStep(
+							stateChart);
 				if (stateChart->BrokerGetOrderGetOrderStatechart_isExecutable)
 					BrokerGetOrderGetOrderStatechartStateChart_processStep(stateChart);
 		
@@ -275,6 +455,27 @@
 		}
 		
 		
+		void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(
+				BrokerBrokerStateChart* stateChart) {
+			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
+			case STATE_BROKERBROKERFORPSPORTINIT:
+				// nothing to do
+		
+				break;
+			case STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST:
+				// nothing to do
+		
+				break;
+			case STATE_BROKERBROKERFORPSPORTRESET:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
+					BROKERBROKER_INACTIVE;
+		}
 		void BrokerGetOrderGetOrderStatechartStateChart_exit(
 				BrokerBrokerStateChart* stateChart) {
 			switch (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart) {
@@ -282,11 +483,7 @@
 				// nothing to do
 		
 				break;
-			case STATE_BROKERGETORDERSTOREORDERS:
-				// nothing to do
-		
-				break;
-			case STATE_BROKERGETORDERTESTSTATEFORDELETINGALLORDERS:
+			case STATE_BROKERGETORDERMANAGEORDERS:
 				// nothing to do
 		
 				break;
@@ -300,7 +497,10 @@
 			
 		bool_t BrokerBrokerStateChart_isInState(BrokerBrokerStateChart* stateChart,
 				BrokerBrokerState state) {
-			return (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart == state);
+			return (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC
+					== state
+					|| stateChart->currentStateOfBrokerGetOrderGetOrderStatechart
+							== state);
 		
 		}
 		

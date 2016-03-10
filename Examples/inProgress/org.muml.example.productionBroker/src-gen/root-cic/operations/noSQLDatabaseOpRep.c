@@ -53,6 +53,7 @@ int32_T noSQLDatabase_noSQLDatabaseGetOrderIncredientID(int32_T orderID){
 #warning Missing implemenation of repository operation 'noSQLDatabase_noSQLDatabaseGetOrderIncredientID'
 	//default return value
 	int32_T ret = 0;
+	ret = getOrderIncredientID(pDb, orderID);
 	return ret;
 /**End of user code**/
 
@@ -67,6 +68,7 @@ int32_T noSQLDatabase_noSQLDatabaseGetOrderAmount(int32_T orderID){
 #warning Missing implemenation of repository operation 'noSQLDatabase_noSQLDatabaseGetOrderAmount'
 	//default return value
 	int32_T ret = 0;
+	ret = getOrderAmount(pDb, orderID);
 	return ret;
 /**End of user code**/
 
