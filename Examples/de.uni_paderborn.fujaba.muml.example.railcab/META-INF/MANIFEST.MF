@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %Plugin.name
+Bundle-Name: RailCab Example
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.railcab;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: %Plugin.providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Require-Bundle: de.uni_paderborn.fujaba.muml.example.ui;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.5.0",
  de.uni_paderborn.fujaba.muml.reconfiguration;bundle-version="0.5.0",

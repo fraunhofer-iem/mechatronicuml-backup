@@ -5,3 +5,4 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.mini.entryexit;singlet
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: de.uni_paderborn.fujaba.muml.example.ui;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
