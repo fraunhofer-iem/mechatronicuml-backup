@@ -714,18 +714,18 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_M9HjseeIEeWOa7qYE7foIg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_G2hZCOeIEeWOa7qYE7foIg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_M9HjsueIEeWOa7qYE7foIg" points="[24, 24, 14, 14]$[-13, -13, -23, -23]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_M9HjsueIEeWOa7qYE7foIg" points="[156, -7, 348, -91]$[325, -7, 517, -91]$[313, 77, 505, -7]$[-36, 77, 156, -7]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_M9hMUOeIEeWOa7qYE7foIg" type="4003" source="_ME3GD-eIEeWOa7qYE7foIg" target="_ME3tEOeIEeWOa7qYE7foIg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_M9hzYOeIEeWOa7qYE7foIg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_M9hzYeeIEeWOa7qYE7foIg" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_M9hzYeeIEeWOa7qYE7foIg" x="-96" y="-17"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_M9hzYueIEeWOa7qYE7foIg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_M9hzY-eIEeWOa7qYE7foIg" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_M9hMUeeIEeWOa7qYE7foIg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_G2hZEueIEeWOa7qYE7foIg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_M9hMUueIEeWOa7qYE7foIg" points="[24, 24, 14, 14]$[-13, -13, -23, -23]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_M9hMUueIEeWOa7qYE7foIg" points="[28, 24, 220, -60]$[49, 41, 241, -43]$[-62, 61, 130, -23]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_M-L6sOeIEeWOa7qYE7foIg" type="4003" source="_ME3tEOeIEeWOa7qYE7foIg" target="_ME3GAOeIEeWOa7qYE7foIg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_M-L6s-eIEeWOa7qYE7foIg" type="6005">
