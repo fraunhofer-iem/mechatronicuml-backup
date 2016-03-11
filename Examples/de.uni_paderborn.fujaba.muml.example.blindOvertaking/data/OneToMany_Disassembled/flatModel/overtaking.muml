@@ -137,8 +137,8 @@
             <transitions xmi:id="_G2hY5ueIEeWOa7qYE7foIg" priority="1" target="_G2hY-OeIEeWOa7qYE7foIg" source="_G2hY-ueIEeWOa7qYE7foIg">
               <synchronization xmi:id="_G2hY5-eIEeWOa7qYE7foIg" syncChannel="_G2hZfOeIEeWOa7qYE7foIg" kind="RECEIVE"/>
             </transitions>
-            <states xmi:id="_G2hY_OeIEeWOa7qYE7foIg" name="Intermediate_Node_for_StateConnectionPoint_exit3" outgoingTransitions="_G2gx2ueIEeWOa7qYE7foIg" incomingTransitions="_G2gx2eeIEeWOa7qYE7foIg" urgent="true"/>
-            <states xmi:id="_G2hY_ueIEeWOa7qYE7foIg" name="Intermediate_Node_for_StateConnectionPoint_exit3_Intermediate_1_NoOvertaking_4" outgoingTransitions="_G2gx3ueIEeWOa7qYE7foIg" incomingTransitions="_G2gx2ueIEeWOa7qYE7foIg"/>
+            <states xmi:id="_G2hY_OeIEeWOa7qYE7foIg" name="Intermediate_Node3" outgoingTransitions="_G2gx2ueIEeWOa7qYE7foIg" incomingTransitions="_G2gx2eeIEeWOa7qYE7foIg" urgent="true"/>
+            <states xmi:id="_G2hY_ueIEeWOa7qYE7foIg" name="Intermediate2" outgoingTransitions="_G2gx3ueIEeWOa7qYE7foIg" incomingTransitions="_G2gx2ueIEeWOa7qYE7foIg"/>
             <states xmi:id="_G2gx7OeIEeWOa7qYE7foIg" name="Changed" outgoingTransitions="_G2gx2eeIEeWOa7qYE7foIg" incomingTransitions="_G2gx6OeIEeWOa7qYE7foIg">
               <invariants xmi:id="_fLCTYOeNEeWOa7qYE7foIg" clock="_G2hZf-eIEeWOa7qYE7foIg">
                 <bound xmi:id="_fh0bsOeNEeWOa7qYE7foIg" unit="SECONDS">
@@ -192,7 +192,7 @@
                 </bound>
               </invariants>
             </states>
-            <states xmi:id="_G2hY-ueIEeWOa7qYE7foIg" name="WaitingForAnswer_Intermediate_1_AnalyzeResult_3" outgoingTransitions="_G2hY5ueIEeWOa7qYE7foIg" incomingTransitions="_G2hY4ueIEeWOa7qYE7foIg"/>
+            <states xmi:id="_G2hY-ueIEeWOa7qYE7foIg" name="Intermediate_1" outgoingTransitions="_G2hY5ueIEeWOa7qYE7foIg" incomingTransitions="_G2hY4ueIEeWOa7qYE7foIg"/>
             <clocks xmi:id="_NNmvYOeLEeWOa7qYE7foIg" name="DLC_multicast_1"/>
           </embeddedStatechart>
         </embeddedRegions>
@@ -352,7 +352,7 @@
                     </guard>
                   </transitions>
                   <states xmi:id="_G2hZYOeIEeWOa7qYE7foIg" name="Intermediate_Node_for_StateConnectionPoint_exit3" outgoingTransitions="_G2hZSeeIEeWOa7qYE7foIg" incomingTransitions="_G2hZT-eIEeWOa7qYE7foIg _G2hZWeeIEeWOa7qYE7foIg" initial="true"/>
-                  <states xmi:id="_G2hZYeeIEeWOa7qYE7foIg" name="Intermediate_Node_for_StateConnectionPoint_exit3_Intermediate_1_NoOvertaking" outgoingTransitions="_G2hZWeeIEeWOa7qYE7foIg _G2hZT-eIEeWOa7qYE7foIg" incomingTransitions="_G2hZSeeIEeWOa7qYE7foIg" urgent="true"/>
+                  <states xmi:id="_G2hZYeeIEeWOa7qYE7foIg" name="Intermediate_Node1" outgoingTransitions="_G2hZWeeIEeWOa7qYE7foIg _G2hZT-eIEeWOa7qYE7foIg" incomingTransitions="_G2hZSeeIEeWOa7qYE7foIg" urgent="true"/>
                 </embeddedStatechart>
               </embeddedRegions>
               <embeddedRegions xmi:id="_G2hZYueIEeWOa7qYE7foIg" priority="5">
