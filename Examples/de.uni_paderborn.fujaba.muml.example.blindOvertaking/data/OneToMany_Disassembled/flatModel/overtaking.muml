@@ -174,7 +174,7 @@
               </invariants>
             </states>
             <states xmi:id="_G2hY6OeIEeWOa7qYE7foIg" name="Idle" outgoingTransitions="_G2gx_-eIEeWOa7qYE7foIg" incomingTransitions="_G2gx_OeIEeWOa7qYE7foIg _G2gx3ueIEeWOa7qYE7foIg" initial="true"/>
-            <states xmi:id="_G2hY-OeIEeWOa7qYE7foIg" name="AnalyzeResult" outgoingTransitions="_G2gx-ueIEeWOa7qYE7foIg _G2gx_OeIEeWOa7qYE7foIg" incomingTransitions="_G2hY5ueIEeWOa7qYE7foIg"/>
+            <states xmi:id="_G2hY-OeIEeWOa7qYE7foIg" name="AnalyzeResult" outgoingTransitions="_G2gx-ueIEeWOa7qYE7foIg _G2gx_OeIEeWOa7qYE7foIg" incomingTransitions="_G2hY5ueIEeWOa7qYE7foIg" urgent="true"/>
             <states xmi:id="_G2hY-eeIEeWOa7qYE7foIg" name="Idle_Intermediate_1_WaitingForAnswer_2" outgoingTransitions="_G2hY4OeIEeWOa7qYE7foIg" incomingTransitions="_G2gx_-eIEeWOa7qYE7foIg"/>
             <states xmi:id="_G2hY6ueIEeWOa7qYE7foIg" name="WaitingForAnswer" outgoingTransitions="_G2hY4ueIEeWOa7qYE7foIg" incomingTransitions="_G2hY4OeIEeWOa7qYE7foIg">
               <entryEvent xmi:id="_G2hY6-eIEeWOa7qYE7foIg" clockResets="_G2hZf-eIEeWOa7qYE7foIg">
