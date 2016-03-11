@@ -39,7 +39,14 @@
         </events>
       </transitions>
       <transitions xmi:id="_BYHAoDpJEeO6g-KU3zBcDg" priority="2" target="_H6YLwCqbEeO22YgZcbz7_A" source="_nk3jkITDEeKO9r0VL65xcg" urgent="false">
-        <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_YN12wM8uEeWiNvKFA70SzQ" typedNamedElement="_FxEZcM8uEeWiNvKFA70SzQ"/>
+        <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_HkM5EOeaEeWOa7qYE7foIg" typedNamedElement="_FxEZcM8uEeWiNvKFA70SzQ"/>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_R3vlcOeaEeWOa7qYE7foIg">
+          <message xmi:id="_SRwn8OeaEeWOa7qYE7foIg" instanceOf="_R2wRUNPuEeW0oNW54uyJfQ">
+            <parameterBinding xmi:id="_Tc6McOeaEeWOa7qYE7foIg" parameter="_S_6RwNPuEeW0oNW54uyJfQ">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_UmwJYOeaEeWOa7qYE7foIg" value="true"/>
+            </parameterBinding>
+          </message>
+        </events>
       </transitions>
       <transitions xmi:id="_jmN6sOeMEeWOa7qYE7foIg" priority="3" target="_nk3jkITDEeKO9r0VL65xcg" source="_H6YLwCqbEeO22YgZcbz7_A">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_lAkY0OeMEeWOa7qYE7foIg" kind="TRIGGER">
