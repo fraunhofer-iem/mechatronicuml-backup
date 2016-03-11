@@ -168,7 +168,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_m7mIWNyaEeW-N_z6XJQq2w"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../productionBroker.muml#_TDt-8dyaEeW-N_z6XJQq2w"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m7lhQdyaEeW-N_z6XJQq2w" width="1179" height="527"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m7lhQdyaEeW-N_z6XJQq2w" x="-60" y="60" width="1179" height="527"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_TDt-8NyaEeW-N_z6XJQq2w"/>
@@ -178,7 +178,7 @@
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_TDt-8NyaEeW-N_z6XJQq2w"/>
   <edges xmi:type="notation:Connector" xmi:id="_ypbocNyaEeW-N_z6XJQq2w" type="4003" source="_-CL8AOVDEeWIXPb_21drrw" target="_-CL8AOVDEeWIXPb_21drrw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_ypboc9yaEeW-N_z6XJQq2w" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_ypbodNyaEeW-N_z6XJQq2w" x="-251" y="67"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ypbodNyaEeW-N_z6XJQq2w" x="-10" y="-91"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_ypboddyaEeW-N_z6XJQq2w" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_ypbodtyaEeW-N_z6XJQq2w" x="-10" y="20"/>

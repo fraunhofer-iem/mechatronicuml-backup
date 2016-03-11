@@ -111,7 +111,6 @@ int32_T noSQLDatabase_noSQLDatabaseDefineProductionStationForOrder(int32_T order
 
 /** Start of user code noSQLDatabase_noSQLDatabaseDefineProductionStationForOrder **/ 
 //@TODO: add your implementation here
-#warning Missing implemenation of repository operation 'noSQLDatabase_noSQLDatabaseDefineProductionStationForOrder'
 	//default return value
 	int32_T ret = 0;
 	ret = defineProductionStationForOrder(pDb, orderID, productionStationID);

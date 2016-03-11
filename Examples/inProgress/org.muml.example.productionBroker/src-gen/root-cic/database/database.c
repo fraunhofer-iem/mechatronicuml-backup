@@ -138,6 +138,11 @@ int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 		return rc;
 
 	}
+	else
+	{
+		printf("Insert Successful for order id %d\n",orderID);
+
+	}
 	return rc;
 }
 
@@ -159,6 +164,11 @@ int defineProductionStationForOrder(unqlite *pDb, int orderID, int productionSta
 	{
 		// Insertion fail, extract database error log and exit
 		return rc;
+	}
+	else
+	{
+		printf("Insert Successful Production Station for order id %d\n",orderID);
+
 	}
 	return rc;
 }

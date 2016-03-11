@@ -25,7 +25,7 @@
             </variables>
             <transitions xmi:id="_YIhEcNxsEeW-N_z6XJQq2w" priority="1" target="_VOb48NxsEeW-N_z6XJQq2w" source="_VOb48NxsEeW-N_z6XJQq2w" clockResets="_FdYowNxxEeW-N_z6XJQq2w">
               <clockConstraints xmi:id="_W8RhgNxxEeW-N_z6XJQq2w" clock="_FdYowNxxEeW-N_z6XJQq2w" operator="GREATER_OR_EQUAL">
-                <bound xmi:id="_X3nvcNxxEeW-N_z6XJQq2w">
+                <bound xmi:id="_X3nvcNxxEeW-N_z6XJQq2w" unit="SECONDS">
                   <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Zl-HoNxxEeW-N_z6XJQq2w" typedNamedElement="_ScbSENxxEeW-N_z6XJQq2w"/>
                 </bound>
               </clockConstraints>
@@ -175,6 +175,10 @@
               </initializeExpression>
             </variables>
             <transitions xmi:id="_TfQKIOa7EeWyd6JHVas6Kw" priority="1" target="_SwPvEOa7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_P3ZzsOb9EeWyd6JHVas6Kw" operator="GREATER">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_P3Zzseb9EeWyd6JHVas6Kw" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_P3Zzsub9EeWyd6JHVas6Kw" value="0"/>
+              </guard>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_oOzF4Oa8EeWyd6JHVas6Kw" kind="TRIGGER">
                 <message xmi:id="_pBKW8Oa8EeWyd6JHVas6Kw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
               </events>
@@ -208,6 +212,18 @@
                   </parameterBinding>
                 </message>
               </events>
+              <action xmi:id="_JMkd8Ob-EeWyd6JHVas6Kw" name="defineProductionStationForOrder">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_YhJbQOb-EeWyd6JHVas6Kw">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_YhJbQeb-EeWyd6JHVas6Kw" operation="_5o24cOb9EeWyd6JHVas6Kw">
+                    <parameterBinding xmi:id="_YhJbQub-EeWyd6JHVas6Kw" parameter="_9RcvwOb9EeWyd6JHVas6Kw">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_YhJbQ-b-EeWyd6JHVas6Kw" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                    </parameterBinding>
+                    <parameterBinding xmi:id="_YhJbROb-EeWyd6JHVas6Kw" parameter="_A3cmEOb-EeWyd6JHVas6Kw">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_YhJbReb-EeWyd6JHVas6Kw" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                    </parameterBinding>
+                  </expressions>
+                </expressions>
+              </action>
             </transitions>
             <transitions xmi:id="_J9HvwOa_EeWyd6JHVas6Kw" priority="1" target="_QFnU0ea7EeWyd6JHVas6Kw" source="_GB-v4Oa_EeWyd6JHVas6Kw">
               <action xmi:id="_Mw434Oa_EeWyd6JHVas6Kw" name="resetToInitialValues">
@@ -311,10 +327,10 @@
             </transitions>
             <transitions xmi:id="_MpP4cOa3EeWyd6JHVas6Kw" priority="1" target="_JvqcMOa3EeWyd6JHVas6Kw" source="_sp6L0OanEeWyd6JHVas6Kw">
               <action xmi:id="_alz58Oa3EeWyd6JHVas6Kw" name="getID">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_e3z6oOa3EeWyd6JHVas6Kw">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_e3z6oea3EeWyd6JHVas6Kw" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_e3z6oua3EeWyd6JHVas6Kw" operation="_ExXWMOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_e3z6o-a3EeWyd6JHVas6Kw" typedNamedElement="_UXWMkOa3EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_fvdL8ObFEeWyd6JHVas6Kw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fvdL8ebFEeWyd6JHVas6Kw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_fvdL8ubFEeWyd6JHVas6Kw" operation="_ExXWMOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_fvdL8-bFEeWyd6JHVas6Kw" typedNamedElement="_UXWMkOa3EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -582,6 +598,15 @@
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_oqnyUORjEeW6HsQsL2ADFA" name="createDatabase">
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_5o24cOb9EeWyd6JHVas6Kw" name="defineProductionStationForOrder">
+        <parameters xmi:id="_9RcvwOb9EeWyd6JHVas6Kw" name="orderID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <parameters xmi:id="_A3cmEOb-EeWyd6JHVas6Kw" name="productionStationID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
       </operations>
     </modelElements>

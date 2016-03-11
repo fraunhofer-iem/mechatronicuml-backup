@@ -109,6 +109,10 @@ int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 		// Insertion fail, extract database error log and exit
 		return rc;
 	}
+	else
+	{
+		printf("Insert Successful IncredientBuffer:%s\n",orderIDincredientBuffer);
+	}
 	rc = unqlite_kv_store(pDb, orderIDamountBuffer, -1, amountBuffer,
 			sizeof(amountBuffer));  // test => 'Hello World'
 	if (rc != UNQLITE_OK)
@@ -137,6 +141,11 @@ int defineProductionStationForOrder(unqlite *pDb, int orderID, int productionSta
 	{
 		// Insertion fail, extract database error log and exit
 		return rc;
+	}
+	else
+	{
+		printf("Insert Successful %s\n",orderIDProductionStationBuffer);
+
 	}
 	return rc;
 }

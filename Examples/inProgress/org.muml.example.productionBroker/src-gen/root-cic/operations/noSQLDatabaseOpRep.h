@@ -39,6 +39,12 @@
 		 * 
 		 */
 		int32_T noSQLDatabase_noSQLDatabaseCreateDatabase();
+		/**
+		 * @brief Implementation stub of operation defineProductionStationForOrder
+ 		 * @details This function shall contain the implementation of the operation defineProductionStationForOrder.
+		 * @param orderID @param productionStationID 
+		 */
+		int32_T noSQLDatabase_noSQLDatabaseDefineProductionStationForOrder(int32_T orderID, int32_T productionStationID);
 
 
 #ifdef __cplusplus
