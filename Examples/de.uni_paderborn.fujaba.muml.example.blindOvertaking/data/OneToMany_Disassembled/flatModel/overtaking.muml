@@ -137,19 +137,28 @@
             <transitions xmi:id="_G2hY5ueIEeWOa7qYE7foIg" priority="1" target="_G2hY-OeIEeWOa7qYE7foIg" source="_G2hY-ueIEeWOa7qYE7foIg">
               <synchronization xmi:id="_G2hY5-eIEeWOa7qYE7foIg" syncChannel="_G2hZfOeIEeWOa7qYE7foIg" kind="RECEIVE"/>
             </transitions>
-            <states xmi:id="_G2hY_OeIEeWOa7qYE7foIg" name="Intermediate_Node_for_StateConnectionPoint_exit3" outgoingTransitions="_G2gx2ueIEeWOa7qYE7foIg" incomingTransitions="_G2gx2eeIEeWOa7qYE7foIg" urgent="true">
-              <entryEvent xmi:id="_G2hY_eeIEeWOa7qYE7foIg"/>
-            </states>
+            <states xmi:id="_G2hY_OeIEeWOa7qYE7foIg" name="Intermediate_Node_for_StateConnectionPoint_exit3" outgoingTransitions="_G2gx2ueIEeWOa7qYE7foIg" incomingTransitions="_G2gx2eeIEeWOa7qYE7foIg" urgent="true"/>
             <states xmi:id="_G2hY_ueIEeWOa7qYE7foIg" name="Intermediate_Node_for_StateConnectionPoint_exit3_Intermediate_1_NoOvertaking_4" outgoingTransitions="_G2gx3ueIEeWOa7qYE7foIg" incomingTransitions="_G2gx2ueIEeWOa7qYE7foIg"/>
-            <states xmi:id="_G2gx7OeIEeWOa7qYE7foIg" name="Changed" outgoingTransitions="_G2gx2eeIEeWOa7qYE7foIg" incomingTransitions="_G2gx6OeIEeWOa7qYE7foIg"/>
+            <states xmi:id="_G2gx7OeIEeWOa7qYE7foIg" name="Changed" outgoingTransitions="_G2gx2eeIEeWOa7qYE7foIg" incomingTransitions="_G2gx6OeIEeWOa7qYE7foIg">
+              <invariants xmi:id="_fLCTYOeNEeWOa7qYE7foIg" clock="_G2hZf-eIEeWOa7qYE7foIg">
+                <bound xmi:id="_fh0bsOeNEeWOa7qYE7foIg" unit="SECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_f8dwUOeNEeWOa7qYE7foIg" value="20"/>
+                </bound>
+              </invariants>
+            </states>
             <states xmi:id="_G2gx7eeIEeWOa7qYE7foIg" name="Init_Intermediate_1_Changed_1" outgoingTransitions="_G2gx6OeIEeWOa7qYE7foIg" incomingTransitions="_G2gx5OeIEeWOa7qYE7foIg">
               <invariants xmi:id="_QRORYOeLEeWOa7qYE7foIg" clock="_NNmvYOeLEeWOa7qYE7foIg">
                 <bound xmi:id="_QvL_wOeLEeWOa7qYE7foIg">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_RXIwkOeLEeWOa7qYE7foIg" value="4500"/>
                 </bound>
               </invariants>
+              <invariants xmi:id="_dF5y4OeNEeWOa7qYE7foIg" clock="_G2hZf-eIEeWOa7qYE7foIg">
+                <bound xmi:id="_dfqWsOeNEeWOa7qYE7foIg" unit="SECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_d9ilgOeNEeWOa7qYE7foIg" value="20"/>
+                </bound>
+              </invariants>
             </states>
-            <states xmi:id="_G2gx6ueIEeWOa7qYE7foIg" name="Init" outgoingTransitions="_G2gx5OeIEeWOa7qYE7foIg" incomingTransitions="_G2gx-ueIEeWOa7qYE7foIg" initial="true">
+            <states xmi:id="_G2gx6ueIEeWOa7qYE7foIg" name="Init" outgoingTransitions="_G2gx5OeIEeWOa7qYE7foIg" incomingTransitions="_G2gx-ueIEeWOa7qYE7foIg">
               <entryEvent xmi:id="_G2gx6-eIEeWOa7qYE7foIg" clockResets="_NNmvYOeLEeWOa7qYE7foIg _G2hZf-eIEeWOa7qYE7foIg"/>
               <invariants xmi:id="_CMrYkOeLEeWOa7qYE7foIg" clock="_G2hZf-eIEeWOa7qYE7foIg">
                 <bound xmi:id="_CzBm4OeLEeWOa7qYE7foIg" unit="SECONDS">
@@ -157,9 +166,7 @@
                 </bound>
               </invariants>
             </states>
-            <states xmi:id="_G2hY6OeIEeWOa7qYE7foIg" name="Idle" outgoingTransitions="_G2gx_-eIEeWOa7qYE7foIg" incomingTransitions="_G2gx_OeIEeWOa7qYE7foIg _G2gx3ueIEeWOa7qYE7foIg">
-              <entryEvent xmi:id="_G2hY6eeIEeWOa7qYE7foIg"/>
-            </states>
+            <states xmi:id="_G2hY6OeIEeWOa7qYE7foIg" name="Idle" outgoingTransitions="_G2gx_-eIEeWOa7qYE7foIg" incomingTransitions="_G2gx_OeIEeWOa7qYE7foIg _G2gx3ueIEeWOa7qYE7foIg" initial="true"/>
             <states xmi:id="_G2hY-OeIEeWOa7qYE7foIg" name="AnalyzeResult" outgoingTransitions="_G2gx-ueIEeWOa7qYE7foIg _G2gx_OeIEeWOa7qYE7foIg" incomingTransitions="_G2hY5ueIEeWOa7qYE7foIg"/>
             <states xmi:id="_G2hY-eeIEeWOa7qYE7foIg" name="Idle_Intermediate_1_WaitingForAnswer_2" outgoingTransitions="_G2hY4OeIEeWOa7qYE7foIg" incomingTransitions="_G2gx_-eIEeWOa7qYE7foIg"/>
             <states xmi:id="_G2hY6ueIEeWOa7qYE7foIg" name="WaitingForAnswer" outgoingTransitions="_G2hY4ueIEeWOa7qYE7foIg" incomingTransitions="_G2hY4OeIEeWOa7qYE7foIg">
