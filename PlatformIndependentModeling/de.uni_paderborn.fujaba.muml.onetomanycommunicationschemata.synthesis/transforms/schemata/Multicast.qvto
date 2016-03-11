@@ -73,8 +73,13 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 		
 		synchronization := self. createSynchronization(  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 		
-		if(not self.clockConstraints->isEmpty())
+		if(not self.clockConstraints->isEmpty()) {
 			urgent := false;
+		}
+		else {
+			urgent := self.urgent;
+		};
+		
 		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);
 		
 		guard := self.guard.map transform(result).oclAsType(Expression);
