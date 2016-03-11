@@ -11,92 +11,7 @@ A[] not connectorOverflow
 /*
  there is no transition that can never be fired
 */
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_39
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_27
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_21
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_30
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_37
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_coordinator_65_7_2.INTERMEDIATE_16
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_28 or muml_subrole_78_8_subport_0.INTERMEDIATE_29
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_24
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_21
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_41
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_43
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_26
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_22
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_23
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_20
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_25
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_39
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_38
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_31
 
 /*
  there is no transition that can never be fired
@@ -106,17 +21,7 @@ E<> muml_coordinator_65_7_2.INTERMEDIATE_13
 /*
  there is no transition that can never be fired
 */
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_40
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_18
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_43
+E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_36
 
 /*
  there is no transition that can never be fired
@@ -126,7 +31,7 @@ E<> muml_coordinator_65_7_2.INTERMEDIATE_11
 /*
  there is no transition that can never be fired
 */
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_38
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_23
 
 /*
  there is no transition that can never be fired
@@ -136,7 +41,7 @@ E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_40
 /*
  there is no transition that can never be fired
 */
-E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_36
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_26
 
 /*
  there is no transition that can never be fired
@@ -146,82 +51,12 @@ E<> muml_subrole_78_8_subport_0.INTERMEDIATE_27
 /*
  there is no transition that can never be fired
 */
-E<> muml_coordinator_65_7_2.INTERMEDIATE_8
+E<> muml_coordinator_65_7_2.INTERMEDIATE_17
 
 /*
  there is no transition that can never be fired
 */
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_23
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_coordinator_65_7_2.INTERMEDIATE_9
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_42
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_32 or muml_subrole_78_8_subport_1.INTERMEDIATE_33
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_26
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_20
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_25
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_24
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_coordinator_65_7_2.INTERMEDIATE_14
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_22
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_31
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_coordinator_65_7_2.INTERMEDIATE_10
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_37
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_31
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_36
+E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_39
 
 /*
  there is no transition that can never be fired
@@ -231,17 +66,7 @@ E<> muml_coordinator_65_7_2.INTERMEDIATE_15
 /*
  there is no transition that can never be fired
 */
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_18
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_42
-
-/*
- there is no transition that can never be fired
-*/
-E<> muml_coordinator_65_7_2.INTERMEDIATE_17
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_32 or muml_subrole_78_8_subport_0.INTERMEDIATE_33
 
 /*
  there is no transition that can never be fired
@@ -251,12 +76,32 @@ E<> muml_coordinator_65_7_2.INTERMEDIATE_7
 /*
  there is no transition that can never be fired
 */
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_19
+E<> muml_coordinator_65_7_2.INTERMEDIATE_16
 
 /*
  there is no transition that can never be fired
 */
-E<> muml_subrole_78_8_subport_1.INTERMEDIATE_28 or muml_subrole_78_8_subport_1.INTERMEDIATE_29
+E<> muml_coordinator_65_7_2.INTERMEDIATE_8
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_27
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_21
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_42
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_25
 
 /*
  there is no transition that can never be fired
@@ -266,7 +111,17 @@ E<> muml_coordinator_65_7_2.INTERMEDIATE_12
 /*
  there is no transition that can never be fired
 */
-E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_41
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_18
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_24
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_43
 
 /*
  there is no transition that can never be fired
@@ -276,102 +131,172 @@ E<> muml_subrole_78_8_subport_1.INTERMEDIATE_19
 /*
  there is no transition that can never be fired
 */
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_22
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_43
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_18
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_26
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_20
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_28 or muml_subrole_78_8_subport_1.INTERMEDIATE_29
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_21
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_20
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_23
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_coordinator_65_7_2.INTERMEDIATE_14
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_39
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_31
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_22
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_41
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_25
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_40
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_coordinator_65_7_2.INTERMEDIATE_10
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_30
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_41
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_37
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_38
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_42
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_4.INTERMEDIATE_37
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_19
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_1.INTERMEDIATE_32 or muml_subrole_78_8_subport_1.INTERMEDIATE_33
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_coordinator_65_7_2.INTERMEDIATE_9
+
+/*
+ there is no transition that can never be fired
+*/
 E<> muml_subrole_78_8_subport_0.INTERMEDIATE_30
 
 /*
  there is no transition that can never be fired
 */
-E<> muml_subrole_78_8_subport_0.INTERMEDIATE_32 or muml_subrole_78_8_subport_0.INTERMEDIATE_33
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_28 or muml_subrole_78_8_subport_0.INTERMEDIATE_29
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_subrole_78_8_subport_0.INTERMEDIATE_24
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_38
+
+/*
+ there is no transition that can never be fired
+*/
+E<> muml_overtakee_Role_101_14_3.INTERMEDIATE_36
 
 /*
  there is no state that can never be active
 */
-E<> muml_coordinator_65_7_2.muml_Intermediate_1_76_ACTIVE_IN_muml_coordinator_65
+E<> muml_coordinator_65_7_2.muml_Init_70_ACTIVE_IN_muml_coordinator_65
 
 /*
  there is no state that can never be active
 */
-E<> muml_overtakee_Role_101_14_4.muml_NoBraking_103_ACTIVE_IN_muml_overtakee_Role_101
-
-/*
- there is no state that can never be active
-*/
-E<> muml_coordinator_65_7_2.muml_Idle_Intermediate_1_WaitingForAnswer_2_73_ACTIVE_IN_muml_coordinator_65
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_0.muml_WaitingForAnswer_Intermediate_2_AnalyzeResult_82_ACTIVE_IN_muml_subrole_78
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_0.muml_WaitingForAnswer_83_ACTIVE_IN_muml_subrole_78
-
-/*
- there is no state that can never be active
-*/
-E<> muml_OvertakeeCompRTSC_99_16_component_2.muml_Initial_100_ACTIVE_IN_muml_OvertakeeCompRTSC_99
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_0.muml_Init_Intermediate_1_Changed_84_ACTIVE_IN_muml_subrole_78
-
-/*
- there is no state that can never be active
-*/
-E<> muml_overtakee_Role_101_14_4.muml_EvaluatingRequest_106_ACTIVE_IN_muml_overtakee_Role_101
+E<> muml_coordinator_65_7_2.muml_Intermediate2_67_ACTIVE_IN_muml_coordinator_65
 
 /*
  there is no state that can never be active
 */
 E<> muml_subrole_78_8_subport_1.muml_WaitingForAnswer_Intermediate_2_AnalyzeResult_82_ACTIVE_IN_muml_subrole_78
-
-/*
- there is no state that can never be active
-*/
-E<> muml_overtakee_Role_101_14_3.muml_Idle_105_ACTIVE_IN_muml_overtakee_Role_101
-
-/*
- there is no state that can never be active
-*/
-E<> muml_overtakee_Role_101_14_3.muml_BrakingAllowed_104_ACTIVE_IN_muml_overtakee_Role_101
-
-/*
- there is no state that can never be active
-*/
-E<> muml_OvertakeeCompRTSC_99_16_component_1.muml_Initial_100_ACTIVE_IN_muml_OvertakeeCompRTSC_99
-
-/*
- there is no state that can never be active
-*/
-E<> muml_coordinator_65_7_2.muml_WaitingForAnswer_74_ACTIVE_IN_muml_coordinator_65
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_0.muml_Idle_Intermediate_1_WaitingForAnswer_86_ACTIVE_IN_muml_subrole_78
-
-/*
- there is no state that can never be active
-*/
-E<> muml_coordinator_65_7_2.muml_Intermediate_Node3_66_ACTIVE_IN_muml_coordinator_65
-
-/*
- there is no state that can never be active
-*/
-E<> muml_overtakee_Role_101_14_3.muml_NoBraking_103_ACTIVE_IN_muml_overtakee_Role_101
-
-/*
- there is no state that can never be active
-*/
-E<> muml_coordinator_65_7_2.muml_Changed_68_ACTIVE_IN_muml_coordinator_65
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_1.muml_WaitingForAnswer_Intermediate_1_AnalyzeResult_81_ACTIVE_IN_muml_subrole_78
 
 /*
  there is no state that can never be active
@@ -386,37 +311,12 @@ E<> muml_coordinator_65_7_2.muml_AnalyzeResult_72_ACTIVE_IN_muml_coordinator_65
 /*
  there is no state that can never be active
 */
-E<> muml_subrole_78_8_subport_1.muml_Idle_Intermediate_1_WaitingForAnswer_86_ACTIVE_IN_muml_subrole_78
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_0.muml_WaitingForAnswer_Intermediate_1_AnalyzeResult_81_ACTIVE_IN_muml_subrole_78
-
-/*
- there is no state that can never be active
-*/
-E<> muml_overtakee_Role_101_14_4.muml_Idle_105_ACTIVE_IN_muml_overtakee_Role_101
-
-/*
- there is no state that can never be active
-*/
-E<> muml_coordinator_65_7_2.muml_Init_70_ACTIVE_IN_muml_coordinator_65
-
-/*
- there is no state that can never be active
-*/
 E<> muml_overtaker_Role_61_6_2.muml_Main_64_ACTIVE_IN_muml_overtaker_Role_61
 
 /*
  there is no state that can never be active
 */
-E<> muml_overtakee_Role_101_14_4.muml_BrakingAllowed_104_ACTIVE_IN_muml_overtakee_Role_101
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_0.muml_Intermediate_Node1_85_ACTIVE_IN_muml_subrole_78
+E<> muml_coordinator_65_7_2.muml_WaitingForAnswer_74_ACTIVE_IN_muml_coordinator_65
 
 /*
  there is no state that can never be active
@@ -426,12 +326,7 @@ E<> muml_OvertakerCompRTSC_59_13_component_0.muml_Initial_60_ACTIVE_IN_muml_Over
 /*
  there is no state that can never be active
 */
-E<> muml_overtakee_Role_101_14_3.muml_EvaluatingRequest_106_ACTIVE_IN_muml_overtakee_Role_101
-
-/*
- there is no state that can never be active
-*/
-E<> muml_subrole_78_8_subport_1.muml_Intermediate_Node1_85_ACTIVE_IN_muml_subrole_78
+E<> muml_subrole_78_8_subport_0.muml_Init_Intermediate_1_Changed_84_ACTIVE_IN_muml_subrole_78
 
 /*
  there is no state that can never be active
@@ -441,7 +336,107 @@ E<> muml_subrole_78_8_subport_1.muml_Init_Intermediate_1_Changed_84_ACTIVE_IN_mu
 /*
  there is no state that can never be active
 */
-E<> muml_coordinator_65_7_2.muml_Intermediate2_67_ACTIVE_IN_muml_coordinator_65
+E<> muml_overtakee_Role_101_14_3.muml_Idle_105_ACTIVE_IN_muml_overtakee_Role_101
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_subrole_78_8_subport_1.muml_WaitingForAnswer_Intermediate_1_AnalyzeResult_81_ACTIVE_IN_muml_subrole_78
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_subrole_78_8_subport_0.muml_WaitingForAnswer_Intermediate_2_AnalyzeResult_82_ACTIVE_IN_muml_subrole_78
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_OvertakeeCompRTSC_99_16_component_1.muml_Initial_100_ACTIVE_IN_muml_OvertakeeCompRTSC_99
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_OvertakeeCompRTSC_99_16_component_2.muml_Initial_100_ACTIVE_IN_muml_OvertakeeCompRTSC_99
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_subrole_78_8_subport_0.muml_Intermediate_Node1_85_ACTIVE_IN_muml_subrole_78
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_subrole_78_8_subport_0.muml_WaitingForAnswer_Intermediate_1_AnalyzeResult_81_ACTIVE_IN_muml_subrole_78
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_coordinator_65_7_2.muml_Intermediate_Node3_66_ACTIVE_IN_muml_coordinator_65
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_subrole_78_8_subport_1.muml_Intermediate_Node1_85_ACTIVE_IN_muml_subrole_78
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_coordinator_65_7_2.muml_Intermediate_1_76_ACTIVE_IN_muml_coordinator_65
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_coordinator_65_7_2.muml_Changed_68_ACTIVE_IN_muml_coordinator_65
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_overtakee_Role_101_14_3.muml_EvaluatingRequest_106_ACTIVE_IN_muml_overtakee_Role_101
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_subrole_78_8_subport_1.muml_WaitingForAnswer_83_ACTIVE_IN_muml_subrole_78
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_overtakee_Role_101_14_4.muml_NoBraking_103_ACTIVE_IN_muml_overtakee_Role_101
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_subrole_78_8_subport_0.muml_Idle_Intermediate_1_WaitingForAnswer_86_ACTIVE_IN_muml_subrole_78
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_overtakee_Role_101_14_3.muml_BrakingAllowed_104_ACTIVE_IN_muml_overtakee_Role_101
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_coordinator_65_7_2.muml_Idle_Intermediate_1_WaitingForAnswer_2_73_ACTIVE_IN_muml_coordinator_65
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_overtakee_Role_101_14_3.muml_NoBraking_103_ACTIVE_IN_muml_overtakee_Role_101
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_overtakee_Role_101_14_4.muml_Idle_105_ACTIVE_IN_muml_overtakee_Role_101
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_overtakee_Role_101_14_4.muml_BrakingAllowed_104_ACTIVE_IN_muml_overtakee_Role_101
+
+/*
+ there is no state that can never be active
+*/
+E<> muml_overtakee_Role_101_14_4.muml_EvaluatingRequest_106_ACTIVE_IN_muml_overtakee_Role_101
 
 /*
  there is no state that can never be active
@@ -451,52 +446,12 @@ E<> muml_coordinator_65_7_2.muml_Idle_71_ACTIVE_IN_muml_coordinator_65
 /*
  there is no state that can never be active
 */
-E<> muml_subrole_78_8_subport_1.muml_WaitingForAnswer_83_ACTIVE_IN_muml_subrole_78
+E<> muml_subrole_78_8_subport_1.muml_Idle_Intermediate_1_WaitingForAnswer_86_ACTIVE_IN_muml_subrole_78
 
 /*
- there is no message type that cannot possibly arrive in a buffer
+ there is no state that can never be active
 */
-E<> checkMessageInBuffer(buffers[1][0], muml_answer_49)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[3][0], muml_request_47)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[4][0], muml_finished_45)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[0][0], muml_request_47)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[1][0], muml_laneChanged_46)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[3][0], muml_answer_49)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[0][0], muml_answer_49)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[4][0], muml_answer_49)
-
-/*
- there is no message type that cannot possibly arrive in a buffer
-*/
-E<> checkMessageInBuffer(buffers[3][0], muml_finished_45)
+E<> muml_subrole_78_8_subport_0.muml_WaitingForAnswer_83_ACTIVE_IN_muml_subrole_78
 
 /*
  there is no message type that cannot possibly arrive in a buffer
@@ -506,27 +461,47 @@ E<> checkMessageInBuffer(buffers[1][0], muml_request_47)
 /*
  there is no message type that cannot possibly arrive in a buffer
 */
-E<> checkMessageInBuffer(buffers[0][0], muml_laneChanged_46)
+E<> checkMessageInBuffer(buffers[0][0], muml_answer_45)
 
 /*
  there is no message type that cannot possibly arrive in a buffer
 */
-E<> checkMessageInBuffer(buffers[1][0], muml_finished_45)
+E<> checkMessageInBuffer(buffers[0][0], muml_finished_50)
 
 /*
  there is no message type that cannot possibly arrive in a buffer
 */
-E<> checkMessageInBuffer(buffers[0][0], muml_finished_45)
+E<> checkMessageInBuffer(buffers[0][0], muml_request_47)
 
 /*
  there is no message type that cannot possibly arrive in a buffer
 */
-E<> checkMessageInBuffer(buffers[3][0], muml_laneChanged_46)
+E<> checkMessageInBuffer(buffers[3][0], muml_finished_50)
 
 /*
  there is no message type that cannot possibly arrive in a buffer
 */
-E<> checkMessageInBuffer(buffers[4][0], muml_laneChanged_46)
+E<> checkMessageInBuffer(buffers[1][0], muml_answer_45)
+
+/*
+ there is no message type that cannot possibly arrive in a buffer
+*/
+E<> checkMessageInBuffer(buffers[1][0], muml_laneChanged_44)
+
+/*
+ there is no message type that cannot possibly arrive in a buffer
+*/
+E<> checkMessageInBuffer(buffers[4][0], muml_finished_50)
+
+/*
+ there is no message type that cannot possibly arrive in a buffer
+*/
+E<> checkMessageInBuffer(buffers[3][0], muml_request_47)
+
+/*
+ there is no message type that cannot possibly arrive in a buffer
+*/
+E<> checkMessageInBuffer(buffers[3][0], muml_laneChanged_44)
 
 /*
  there is no message type that cannot possibly arrive in a buffer
@@ -534,19 +509,29 @@ E<> checkMessageInBuffer(buffers[4][0], muml_laneChanged_46)
 E<> checkMessageInBuffer(buffers[4][0], muml_request_47)
 
 /*
- there is no message type that cannot possibly be in transit
+ there is no message type that cannot possibly arrive in a buffer
 */
-E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_answer_49)
+E<> checkMessageInBuffer(buffers[0][0], muml_laneChanged_44)
 
 /*
- there is no message type that cannot possibly be in transit
+ there is no message type that cannot possibly arrive in a buffer
 */
-E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_finished_45)
+E<> checkMessageInBuffer(buffers[3][0], muml_answer_45)
 
 /*
- there is no message type that cannot possibly be in transit
+ there is no message type that cannot possibly arrive in a buffer
 */
-E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_laneChanged_46)
+E<> checkMessageInBuffer(buffers[4][0], muml_laneChanged_44)
+
+/*
+ there is no message type that cannot possibly arrive in a buffer
+*/
+E<> checkMessageInBuffer(buffers[1][0], muml_finished_50)
+
+/*
+ there is no message type that cannot possibly arrive in a buffer
+*/
+E<> checkMessageInBuffer(buffers[4][0], muml_answer_45)
 
 /*
  there is no message type that cannot possibly be in transit
@@ -554,14 +539,19 @@ E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_l
 E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_request_47)
 
 /*
- there is no buffer that is always empty
+ there is no message type that cannot possibly be in transit
 */
-E<> getNumberOfElementsInBuffer(buffers[4][0]) >= 1
+E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_finished_50)
 
 /*
- there is no buffer that is always empty
+ there is no message type that cannot possibly be in transit
 */
-E<> getNumberOfElementsInBuffer(buffers[3][0]) >= 1
+E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_answer_45)
+
+/*
+ there is no message type that cannot possibly be in transit
+*/
+E<> exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_laneChanged_44)
 
 /*
  there is no buffer that is always empty
@@ -571,5 +561,15 @@ E<> getNumberOfElementsInBuffer(buffers[1][0]) >= 1
 /*
  there is no buffer that is always empty
 */
+E<> getNumberOfElementsInBuffer(buffers[3][0]) >= 1
+
+/*
+ there is no buffer that is always empty
+*/
 E<> getNumberOfElementsInBuffer(buffers[0][0]) >= 1
+
+/*
+ there is no buffer that is always empty
+*/
+E<> getNumberOfElementsInBuffer(buffers[4][0]) >= 1
 
