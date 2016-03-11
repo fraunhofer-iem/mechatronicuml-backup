@@ -140,7 +140,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_9bKU4eeLEeWOa7qYE7foIg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_BYHAoDpJEeO6g-KU3zBcDg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9bKU4ueLEeWOa7qYE7foIg" points="[-72, -49, 101, 69]$[-163, -111, 10, 7]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9bKU4ueLEeWOa7qYE7foIg" points="[133, -4, -657, 33]$[480, -13, -310, 24]$[744, -34, -46, 3]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eQhBUOeMEeWOa7qYE7foIg" id="(0.6052631578947368,0.7666666666666667)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_9fyWMOeLEeWOa7qYE7foIg" type="4003" source="_9Q1UMOeLEeWOa7qYE7foIg" target="_9Q17TueLEeWOa7qYE7foIg" lineColor="0">
