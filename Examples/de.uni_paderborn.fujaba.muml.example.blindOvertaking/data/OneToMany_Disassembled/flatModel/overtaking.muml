@@ -221,16 +221,6 @@
                 </expressions>
               </action>
             </transitions>
-            <transitions xmi:id="_G2hZEueIEeWOa7qYE7foIg" priority="2" target="_G2hZK-eIEeWOa7qYE7foIg" source="_G2hZKueIEeWOa7qYE7foIg">
-              <action xmi:id="_G2hZE-eIEeWOa7qYE7foIg" name="allAccept:=false">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_G2hZFOeIEeWOa7qYE7foIg">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_G2hZFeeIEeWOa7qYE7foIg" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_G2hZFueIEeWOa7qYE7foIg" value="false"/>
-                    <lhs_typedNamedElementExpression xmi:id="_G2hZF-eIEeWOa7qYE7foIg" typedNamedElement="_G2gx0-eIEeWOa7qYE7foIg"/>
-                  </expressions>
-                </expressions>
-              </action>
-            </transitions>
             <transitions xmi:id="_G2hZGOeIEeWOa7qYE7foIg" priority="1" target="_G2hZKeeIEeWOa7qYE7foIg" source="_G2hZK-eIEeWOa7qYE7foIg">
               <synchronization xmi:id="_G2hZGeeIEeWOa7qYE7foIg" syncChannel="_G2hZfOeIEeWOa7qYE7foIg"/>
               <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_G2hZGueIEeWOa7qYE7foIg" operator="EQUAL">
@@ -384,8 +374,8 @@
                 </message>
               </events>
             </transitions>
-            <states xmi:id="_G2hZKueIEeWOa7qYE7foIg" name="WaitingForAnswer_Intermediate_1_AnalyzeResult" outgoingTransitions="_G2hZCOeIEeWOa7qYE7foIg _G2hZEueIEeWOa7qYE7foIg" incomingTransitions="_G2hZBOeIEeWOa7qYE7foIg" urgent="true"/>
-            <states xmi:id="_G2hZK-eIEeWOa7qYE7foIg" name="WaitingForAnswer_Intermediate_2_AnalyzeResult" outgoingTransitions="_G2hZGOeIEeWOa7qYE7foIg _G2hZH-eIEeWOa7qYE7foIg" incomingTransitions="_G2hZCOeIEeWOa7qYE7foIg _G2hZEueIEeWOa7qYE7foIg" urgent="true"/>
+            <states xmi:id="_G2hZKueIEeWOa7qYE7foIg" name="WaitingForAnswer_Intermediate_1_AnalyzeResult" outgoingTransitions="_G2hZCOeIEeWOa7qYE7foIg" incomingTransitions="_G2hZBOeIEeWOa7qYE7foIg" urgent="true"/>
+            <states xmi:id="_G2hZK-eIEeWOa7qYE7foIg" name="WaitingForAnswer_Intermediate_2_AnalyzeResult" outgoingTransitions="_G2hZGOeIEeWOa7qYE7foIg _G2hZH-eIEeWOa7qYE7foIg" incomingTransitions="_G2hZCOeIEeWOa7qYE7foIg" urgent="true"/>
             <states xmi:id="_G2hZKeeIEeWOa7qYE7foIg" name="WaitingForAnswer" outgoingTransitions="_G2hZZOeIEeWOa7qYE7foIg _G2hZSeeIEeWOa7qYE7foIg _G2hZLueIEeWOa7qYE7foIg _G2hZBOeIEeWOa7qYE7foIg" incomingTransitions="_G2hZGOeIEeWOa7qYE7foIg _G2hZH-eIEeWOa7qYE7foIg _G2hZNOeIEeWOa7qYE7foIg _G2hZPueIEeWOa7qYE7foIg _G2hZT-eIEeWOa7qYE7foIg _G2hZWeeIEeWOa7qYE7foIg _G2hZcueIEeWOa7qYE7foIg _G2hZbOeIEeWOa7qYE7foIg" initial="true"/>
             <states xmi:id="_G2hZRueIEeWOa7qYE7foIg" name="Init_Intermediate_1_Changed" outgoingTransitions="_G2hZPueIEeWOa7qYE7foIg _G2hZNOeIEeWOa7qYE7foIg" incomingTransitions="_G2hZLueIEeWOa7qYE7foIg" urgent="true"/>
             <states xmi:id="_G2hZYeeIEeWOa7qYE7foIg" name="Intermediate_Node1" outgoingTransitions="_G2hZWeeIEeWOa7qYE7foIg _G2hZT-eIEeWOa7qYE7foIg" incomingTransitions="_G2hZSeeIEeWOa7qYE7foIg" urgent="true"/>

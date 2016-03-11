@@ -103,7 +103,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_9U7KAeeLEeWOa7qYE7foIg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../overtaking.muml#_tkWZwITDEeKO9r0VL65xcg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9U7KAueLEeWOa7qYE7foIg" points="[-32, -13, 832, 296]$[-224, -90, 640, 219]$[-452, -162, 412, 147]$[-832, -298, 32, 11]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9U7KAueLEeWOa7qYE7foIg" points="[-32, -13, 832, 284]$[-224, -86, 640, 211]$[-452, -154, 412, 143]$[-668, -210, 196, 87]$[-832, -283, 32, 14]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_N57NYOeMEeWOa7qYE7foIg" id="(0.42105263157894735,0.9)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WWg_MOeMEeWOa7qYE7foIg" id="(0.2,0.75)"/>
   </edges>
