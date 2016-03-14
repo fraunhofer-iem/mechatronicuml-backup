@@ -5,23 +5,23 @@
 
 //the following message types are not generated, because they have no parameters
 
-//protobuf definition for message type MessagesSimpleOrder
-message MessagesSimpleOrderMessagesMessage{
-	optional int32 orderID = 1;
-	optional int32 ingredientID = 2;
-	optional int32 amount = 3;
-}
-//protobuf definition for message type MessagesFailOrder
-message MessagesFailOrderMessagesMessage{
+//protobuf definition for message type MessagesDoneOrder
+message MessagesDoneOrderMessagesMessage{
 	optional int32 orderID = 1;
 }
 //protobuf definition for message type MessagesGetOrder
 message MessagesGetOrderMessagesMessage{
 	optional int32 psID = 1;
 }
-//protobuf definition for message type MessagesDoneOrder
-message MessagesDoneOrderMessagesMessage{
+//protobuf definition for message type MessagesFailOrder
+message MessagesFailOrderMessagesMessage{
 	optional int32 orderID = 1;
+}
+//protobuf definition for message type MessagesSimpleOrder
+message MessagesSimpleOrderMessagesMessage{
+	optional int32 orderID = 1;
+	optional int32 ingredientID = 2;
+	optional int32 amount = 3;
 }
 //protobuf definition for message type MessagesOrderForPS
 message MessagesOrderForPSMessagesMessage{

@@ -149,7 +149,7 @@
 				int32_T processedOrderID; /**< The Realtime-StateChart Variable: processedOrderID of Type: int32; */
 				int32_T incomingOrderPsID; /**< The Realtime-StateChart Variable: incomingOrderPsID of Type: int32; */
 				int32_T incredientID; /**< The Realtime-StateChart Variable: incredientID of Type: int32; */
-	
+				int32_T numberOfGetOrderMessage;
 	
 	
 			

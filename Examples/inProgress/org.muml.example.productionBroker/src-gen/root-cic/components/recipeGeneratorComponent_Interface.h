@@ -150,6 +150,7 @@
 				int32_T amount; /**< The Realtime-StateChart Variable: amount of Type: int32; */
 				int32_T currentOrderID; /**< The Realtime-StateChart Variable: currentOrderID of Type: int32; */
 				int32_T speed; /**< The Realtime-StateChart Variable: speed of Type: int32; */
+
 	
 	
 	
@@ -205,14 +206,6 @@
 		void RecipeGeneratorReciepeGeneratorStateChart_processStep(RecipeGeneratorReciepeGeneratorStateChart* rtsc);
 
 	/**
-	 * @brief Leaves the Region: internalBehavior of the Realtime-StateChart: RecipeGeneratorReciepeGenerator
-	 * @details This method is called, whenever a the Region: internalBehavior is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RecipeGeneratorReciepeGeneratorStateChart whose Region: internalBehavior shall be exit
-	 */
-		void RecipeGeneratorInitInternalBehaviorStateChart_exit(RecipeGeneratorReciepeGeneratorStateChart* rtsc);
-	/**
 	 * @brief Leaves the Region: reciepeSender of the Realtime-StateChart: RecipeGeneratorReciepeGenerator
 	 * @details This method is called, whenever a the Region: reciepeSender is left.
 	 * 			The correct State is set and all Exit-Events are executed.
@@ -220,6 +213,14 @@
 	 * @param rtsc The specific RecipeGeneratorReciepeGeneratorStateChart whose Region: reciepeSender shall be exit
 	 */
 		void RecipeGeneratorProvideOrderReciepeSenderStateChart_exit(RecipeGeneratorReciepeGeneratorStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: internalBehavior of the Realtime-StateChart: RecipeGeneratorReciepeGenerator
+	 * @details This method is called, whenever a the Region: internalBehavior is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RecipeGeneratorReciepeGeneratorStateChart whose Region: internalBehavior shall be exit
+	 */
+		void RecipeGeneratorInitInternalBehaviorStateChart_exit(RecipeGeneratorReciepeGeneratorStateChart* rtsc);
 			
 	/**
 	 * @brief Returns wether the Realtime-StateChart: RecipeGeneratorReciepeGenerator is in a specific State

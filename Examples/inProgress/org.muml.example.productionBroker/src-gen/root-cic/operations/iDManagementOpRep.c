@@ -11,7 +11,7 @@ int32_T IDManagement_iDManagementGetID(){
 //@TODO: add your implementation here
 #warning Missing implemenation of repository operation 'IDManagement_iDManagementGetID'
 	//default return value
-	int32_T ret = 0;
+	int32_T ret = 5;
 	return ret;
 /**End of user code**/
 

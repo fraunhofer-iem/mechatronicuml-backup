@@ -210,7 +210,7 @@
 			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
 		
 			case STATE_BROKERBROKERFORPSPORTINIT:
-		
+				printf("reached state init at broaker %d\n",stateChart->testLatestOrderIDGlobal);
 				if (Port_doesMessageExist(
 		
 				BrokerComponent_getbrokerForPSPort(stateChart->parentComponent),
@@ -220,6 +220,7 @@
 				&& stateChart->testLatestOrderIDGlobal > 0
 		
 				) {
+					printf("fire getOrder at broaker\n");
 		
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
 		
@@ -459,23 +460,6 @@
 		}
 		
 		
-		void BrokerGetOrderGetOrderStatechartStateChart_exit(
-				BrokerBrokerStateChart* stateChart) {
-			switch (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart) {
-			case STATE_BROKERGETORDERINIT:
-				// nothing to do
-		
-				break;
-			case STATE_BROKERGETORDERMANAGEORDERS:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
-					BROKERBROKER_INACTIVE;
-		}
 		void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(
 				BrokerBrokerStateChart* stateChart) {
 			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
@@ -497,12 +481,30 @@
 			stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
 					BROKERBROKER_INACTIVE;
 		}
+		void BrokerGetOrderGetOrderStatechartStateChart_exit(
+				BrokerBrokerStateChart* stateChart) {
+			switch (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart) {
+			case STATE_BROKERGETORDERINIT:
+				// nothing to do
+		
+				break;
+			case STATE_BROKERGETORDERMANAGEORDERS:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
+					BROKERBROKER_INACTIVE;
+		}
 				
 			
 		bool_t BrokerBrokerStateChart_isInState(BrokerBrokerStateChart* stateChart,
 				BrokerBrokerState state) {
-			return (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart == state
-					|| stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC
+			return (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC
+					== state
+					|| stateChart->currentStateOfBrokerGetOrderGetOrderStatechart
 							== state);
 		
 		}

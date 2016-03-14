@@ -14,7 +14,7 @@
 		
 			stateChart->processedOrderID = -1;
 		
-			stateChart->incomingOrderPsID = stateChart->incomingOrderPsID = 0;
+			stateChart->incomingOrderPsID = stateChart->incomingOrderPsID = -1;
 			;
 		
 			stateChart->incredientID = -1;
@@ -133,7 +133,8 @@
 				if (1
 		
 				) {
-		
+					stateChart->numberOfGetOrderMessage ++;
+					printf("send message get Order %d\n",stateChart->numberOfGetOrderMessage);
 					// execute exit actions
 		
 					// nothing to do
@@ -302,13 +303,21 @@
 				}
 				break;
 			case STATE_PRODUCTIONSTATIONGETORDERPROCESSORDER:
+				//printf("PRODUCTIONSTATIONGETORDERPROCESSORDER is reached: amount is %f\n",stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
+
 				if (
 		
 				Clock_getTime(
 						stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock)
 						>= stateChart->amount * 1000.0
 		
-						) {
+				&&
+		
+				stateChart->amount > 0
+		
+				) {
+					printf("transition fires\n");
+
 		
 					// execute exit actions
 		

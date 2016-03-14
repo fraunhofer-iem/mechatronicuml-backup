@@ -301,6 +301,273 @@ unsigned long Message_get_delimited_size(void *_buffer, int offset) {
  * Message: Messages.proto, line 9
  *******************************************************************/
 
+void MessagesDoneOrderMessagesMessage_clear(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage) {
+	_memset(_MessagesDoneOrderMessagesMessage, 0, sizeof(struct MessagesDoneOrderMessagesMessage));
+}
+
+void MessagesDoneOrderMessagesMessage_init_optional_attributes(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage) {
+	_MessagesDoneOrderMessagesMessage->_orderID = 0;
+	
+}
+
+int MessagesDoneOrderMessagesMessage_is_default_message(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage) {
+    return _MessagesDoneOrderMessagesMessage->_orderID == 0
+    ;
+}
+
+int MessagesDoneOrderMessagesMessage_write(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset) {
+	/* Write content of each message element.*/
+	/* Write the optional attribute only if it is different than the default value. */
+	if(_MessagesDoneOrderMessagesMessage->_orderID != 0) {
+		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
+	    if (_MessagesDoneOrderMessagesMessage->_orderID >= 0)
+	        offset = write_raw_varint32(_MessagesDoneOrderMessagesMessage->_orderID, _buffer, offset);
+	    else
+	        offset = write_raw_varint64(_MessagesDoneOrderMessagesMessage->_orderID, _buffer, offset);	    
+	}
+	
+	return offset;
+}
+
+int MessagesDoneOrderMessagesMessage_write_with_tag(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset, int tag) {
+	/* Write tag.*/
+	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
+	/* Write content.*/
+	offset = MessagesDoneOrderMessagesMessage_write_delimited_to(_MessagesDoneOrderMessagesMessage, _buffer, offset);
+	
+	return offset;
+}
+
+int MessagesDoneOrderMessagesMessage_write_delimited_to(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset) {
+	int i, shift, new_offset, size;
+	
+	new_offset = MessagesDoneOrderMessagesMessage_write(_MessagesDoneOrderMessagesMessage, _buffer, offset);
+	size = new_offset - offset;
+	shift = (size > 127) ? 2 : 1;
+	for (i = new_offset - 1; i >= offset; -- i)
+	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
+	
+	write_raw_varint32((unsigned long) size, _buffer, offset);         
+	    
+	return new_offset + shift;
+}
+
+int MessagesDoneOrderMessagesMessage_read(void *_buffer, struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, int offset, int limit) {
+	unsigned int i = 0;
+	unsigned long long value = i;
+	unsigned long tag = value;
+	
+	/* Reset all attributes to 0 in advance. */
+	MessagesDoneOrderMessagesMessage_clear(_MessagesDoneOrderMessagesMessage);
+	/* Assign the optional attributes. */
+	MessagesDoneOrderMessagesMessage_init_optional_attributes(_MessagesDoneOrderMessagesMessage);
+	
+	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
+	while(offset < limit) {
+	    offset = read_raw_varint32(&tag, _buffer, offset);
+		tag = tag>>3;
+	    switch(tag){
+	        /* tag of: _MessagesDoneOrderMessagesMessage._orderID */
+	        case 1 :
+	        	offset = read_raw_varint32(&tag, _buffer, offset);
+	        	_MessagesDoneOrderMessagesMessage->_orderID = (signed long)tag;
+	        	break;
+	    }
+	}
+	
+	return offset;
+}
+
+int MessagesDoneOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, int offset) {
+	unsigned long size;
+	
+	offset = read_raw_varint32(&size, _buffer, offset);
+	MessagesDoneOrderMessagesMessage_read(_buffer, _MessagesDoneOrderMessagesMessage, offset, size + offset);
+	
+	return offset + size;
+}
+/*******************************************************************
+ * Message: Messages.proto, line 13
+ *******************************************************************/
+
+void MessagesGetOrderMessagesMessage_clear(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage) {
+	_memset(_MessagesGetOrderMessagesMessage, 0, sizeof(struct MessagesGetOrderMessagesMessage));
+}
+
+void MessagesGetOrderMessagesMessage_init_optional_attributes(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage) {
+	_MessagesGetOrderMessagesMessage->_psID = 0;
+	
+}
+
+int MessagesGetOrderMessagesMessage_is_default_message(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage) {
+    return _MessagesGetOrderMessagesMessage->_psID == 0
+    ;
+}
+
+int MessagesGetOrderMessagesMessage_write(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset) {
+	/* Write content of each message element.*/
+	/* Write the optional attribute only if it is different than the default value. */
+	if(_MessagesGetOrderMessagesMessage->_psID != 0) {
+		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
+	    if (_MessagesGetOrderMessagesMessage->_psID >= 0)
+	        offset = write_raw_varint32(_MessagesGetOrderMessagesMessage->_psID, _buffer, offset);
+	    else
+	        offset = write_raw_varint64(_MessagesGetOrderMessagesMessage->_psID, _buffer, offset);	    
+	}
+	
+	return offset;
+}
+
+int MessagesGetOrderMessagesMessage_write_with_tag(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset, int tag) {
+	/* Write tag.*/
+	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
+	/* Write content.*/
+	offset = MessagesGetOrderMessagesMessage_write_delimited_to(_MessagesGetOrderMessagesMessage, _buffer, offset);
+	
+	return offset;
+}
+
+int MessagesGetOrderMessagesMessage_write_delimited_to(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset) {
+	int i, shift, new_offset, size;
+	
+	new_offset = MessagesGetOrderMessagesMessage_write(_MessagesGetOrderMessagesMessage, _buffer, offset);
+	size = new_offset - offset;
+	shift = (size > 127) ? 2 : 1;
+	for (i = new_offset - 1; i >= offset; -- i)
+	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
+	
+	write_raw_varint32((unsigned long) size, _buffer, offset);         
+	    
+	return new_offset + shift;
+}
+
+int MessagesGetOrderMessagesMessage_read(void *_buffer, struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, int offset, int limit) {
+	unsigned int i = 0;
+	unsigned long long value = i;
+	unsigned long tag = value;
+	
+	/* Reset all attributes to 0 in advance. */
+	MessagesGetOrderMessagesMessage_clear(_MessagesGetOrderMessagesMessage);
+	/* Assign the optional attributes. */
+	MessagesGetOrderMessagesMessage_init_optional_attributes(_MessagesGetOrderMessagesMessage);
+	
+	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
+	while(offset < limit) {
+	    offset = read_raw_varint32(&tag, _buffer, offset);
+		tag = tag>>3;
+	    switch(tag){
+	        /* tag of: _MessagesGetOrderMessagesMessage._psID */
+	        case 1 :
+	        	offset = read_raw_varint32(&tag, _buffer, offset);
+	        	_MessagesGetOrderMessagesMessage->_psID = (signed long)tag;
+	        	break;
+	    }
+	}
+	
+	return offset;
+}
+
+int MessagesGetOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, int offset) {
+	unsigned long size;
+	
+	offset = read_raw_varint32(&size, _buffer, offset);
+	MessagesGetOrderMessagesMessage_read(_buffer, _MessagesGetOrderMessagesMessage, offset, size + offset);
+	
+	return offset + size;
+}
+/*******************************************************************
+ * Message: Messages.proto, line 17
+ *******************************************************************/
+
+void MessagesFailOrderMessagesMessage_clear(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage) {
+	_memset(_MessagesFailOrderMessagesMessage, 0, sizeof(struct MessagesFailOrderMessagesMessage));
+}
+
+void MessagesFailOrderMessagesMessage_init_optional_attributes(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage) {
+	_MessagesFailOrderMessagesMessage->_orderID = 0;
+	
+}
+
+int MessagesFailOrderMessagesMessage_is_default_message(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage) {
+    return _MessagesFailOrderMessagesMessage->_orderID == 0
+    ;
+}
+
+int MessagesFailOrderMessagesMessage_write(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, void *_buffer, int offset) {
+	/* Write content of each message element.*/
+	/* Write the optional attribute only if it is different than the default value. */
+	if(_MessagesFailOrderMessagesMessage->_orderID != 0) {
+		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
+	    if (_MessagesFailOrderMessagesMessage->_orderID >= 0)
+	        offset = write_raw_varint32(_MessagesFailOrderMessagesMessage->_orderID, _buffer, offset);
+	    else
+	        offset = write_raw_varint64(_MessagesFailOrderMessagesMessage->_orderID, _buffer, offset);	    
+	}
+	
+	return offset;
+}
+
+int MessagesFailOrderMessagesMessage_write_with_tag(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, void *_buffer, int offset, int tag) {
+	/* Write tag.*/
+	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
+	/* Write content.*/
+	offset = MessagesFailOrderMessagesMessage_write_delimited_to(_MessagesFailOrderMessagesMessage, _buffer, offset);
+	
+	return offset;
+}
+
+int MessagesFailOrderMessagesMessage_write_delimited_to(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, void *_buffer, int offset) {
+	int i, shift, new_offset, size;
+	
+	new_offset = MessagesFailOrderMessagesMessage_write(_MessagesFailOrderMessagesMessage, _buffer, offset);
+	size = new_offset - offset;
+	shift = (size > 127) ? 2 : 1;
+	for (i = new_offset - 1; i >= offset; -- i)
+	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
+	
+	write_raw_varint32((unsigned long) size, _buffer, offset);         
+	    
+	return new_offset + shift;
+}
+
+int MessagesFailOrderMessagesMessage_read(void *_buffer, struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, int offset, int limit) {
+	unsigned int i = 0;
+	unsigned long long value = i;
+	unsigned long tag = value;
+	
+	/* Reset all attributes to 0 in advance. */
+	MessagesFailOrderMessagesMessage_clear(_MessagesFailOrderMessagesMessage);
+	/* Assign the optional attributes. */
+	MessagesFailOrderMessagesMessage_init_optional_attributes(_MessagesFailOrderMessagesMessage);
+	
+	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
+	while(offset < limit) {
+	    offset = read_raw_varint32(&tag, _buffer, offset);
+		tag = tag>>3;
+	    switch(tag){
+	        /* tag of: _MessagesFailOrderMessagesMessage._orderID */
+	        case 1 :
+	        	offset = read_raw_varint32(&tag, _buffer, offset);
+	        	_MessagesFailOrderMessagesMessage->_orderID = (signed long)tag;
+	        	break;
+	    }
+	}
+	
+	return offset;
+}
+
+int MessagesFailOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, int offset) {
+	unsigned long size;
+	
+	offset = read_raw_varint32(&size, _buffer, offset);
+	MessagesFailOrderMessagesMessage_read(_buffer, _MessagesFailOrderMessagesMessage, offset, size + offset);
+	
+	return offset + size;
+}
+/*******************************************************************
+ * Message: Messages.proto, line 21
+ *******************************************************************/
+
 void MessagesSimpleOrderMessagesMessage_clear(struct MessagesSimpleOrderMessagesMessage *_MessagesSimpleOrderMessagesMessage) {
 	_memset(_MessagesSimpleOrderMessagesMessage, 0, sizeof(struct MessagesSimpleOrderMessagesMessage));
 }
@@ -419,273 +686,6 @@ int MessagesSimpleOrderMessagesMessage_read_delimited_from(void *_buffer, struct
 	
 	offset = read_raw_varint32(&size, _buffer, offset);
 	MessagesSimpleOrderMessagesMessage_read(_buffer, _MessagesSimpleOrderMessagesMessage, offset, size + offset);
-	
-	return offset + size;
-}
-/*******************************************************************
- * Message: Messages.proto, line 15
- *******************************************************************/
-
-void MessagesFailOrderMessagesMessage_clear(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage) {
-	_memset(_MessagesFailOrderMessagesMessage, 0, sizeof(struct MessagesFailOrderMessagesMessage));
-}
-
-void MessagesFailOrderMessagesMessage_init_optional_attributes(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage) {
-	_MessagesFailOrderMessagesMessage->_orderID = 0;
-	
-}
-
-int MessagesFailOrderMessagesMessage_is_default_message(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage) {
-    return _MessagesFailOrderMessagesMessage->_orderID == 0
-    ;
-}
-
-int MessagesFailOrderMessagesMessage_write(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, void *_buffer, int offset) {
-	/* Write content of each message element.*/
-	/* Write the optional attribute only if it is different than the default value. */
-	if(_MessagesFailOrderMessagesMessage->_orderID != 0) {
-		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
-	    if (_MessagesFailOrderMessagesMessage->_orderID >= 0)
-	        offset = write_raw_varint32(_MessagesFailOrderMessagesMessage->_orderID, _buffer, offset);
-	    else
-	        offset = write_raw_varint64(_MessagesFailOrderMessagesMessage->_orderID, _buffer, offset);	    
-	}
-	
-	return offset;
-}
-
-int MessagesFailOrderMessagesMessage_write_with_tag(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, void *_buffer, int offset, int tag) {
-	/* Write tag.*/
-	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
-	/* Write content.*/
-	offset = MessagesFailOrderMessagesMessage_write_delimited_to(_MessagesFailOrderMessagesMessage, _buffer, offset);
-	
-	return offset;
-}
-
-int MessagesFailOrderMessagesMessage_write_delimited_to(struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, void *_buffer, int offset) {
-	int i, shift, new_offset, size;
-	
-	new_offset = MessagesFailOrderMessagesMessage_write(_MessagesFailOrderMessagesMessage, _buffer, offset);
-	size = new_offset - offset;
-	shift = (size > 127) ? 2 : 1;
-	for (i = new_offset - 1; i >= offset; -- i)
-	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
-	
-	write_raw_varint32((unsigned long) size, _buffer, offset);         
-	    
-	return new_offset + shift;
-}
-
-int MessagesFailOrderMessagesMessage_read(void *_buffer, struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, int offset, int limit) {
-	unsigned int i = 0;
-	unsigned long long value = i;
-	unsigned long tag = value;
-	
-	/* Reset all attributes to 0 in advance. */
-	MessagesFailOrderMessagesMessage_clear(_MessagesFailOrderMessagesMessage);
-	/* Assign the optional attributes. */
-	MessagesFailOrderMessagesMessage_init_optional_attributes(_MessagesFailOrderMessagesMessage);
-	
-	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
-	while(offset < limit) {
-	    offset = read_raw_varint32(&tag, _buffer, offset);
-		tag = tag>>3;
-	    switch(tag){
-	        /* tag of: _MessagesFailOrderMessagesMessage._orderID */
-	        case 1 :
-	        	offset = read_raw_varint32(&tag, _buffer, offset);
-	        	_MessagesFailOrderMessagesMessage->_orderID = (signed long)tag;
-	        	break;
-	    }
-	}
-	
-	return offset;
-}
-
-int MessagesFailOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesFailOrderMessagesMessage *_MessagesFailOrderMessagesMessage, int offset) {
-	unsigned long size;
-	
-	offset = read_raw_varint32(&size, _buffer, offset);
-	MessagesFailOrderMessagesMessage_read(_buffer, _MessagesFailOrderMessagesMessage, offset, size + offset);
-	
-	return offset + size;
-}
-/*******************************************************************
- * Message: Messages.proto, line 19
- *******************************************************************/
-
-void MessagesGetOrderMessagesMessage_clear(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage) {
-	_memset(_MessagesGetOrderMessagesMessage, 0, sizeof(struct MessagesGetOrderMessagesMessage));
-}
-
-void MessagesGetOrderMessagesMessage_init_optional_attributes(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage) {
-	_MessagesGetOrderMessagesMessage->_psID = 0;
-	
-}
-
-int MessagesGetOrderMessagesMessage_is_default_message(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage) {
-    return _MessagesGetOrderMessagesMessage->_psID == 0
-    ;
-}
-
-int MessagesGetOrderMessagesMessage_write(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset) {
-	/* Write content of each message element.*/
-	/* Write the optional attribute only if it is different than the default value. */
-	if(_MessagesGetOrderMessagesMessage->_psID != 0) {
-		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
-	    if (_MessagesGetOrderMessagesMessage->_psID >= 0)
-	        offset = write_raw_varint32(_MessagesGetOrderMessagesMessage->_psID, _buffer, offset);
-	    else
-	        offset = write_raw_varint64(_MessagesGetOrderMessagesMessage->_psID, _buffer, offset);	    
-	}
-	
-	return offset;
-}
-
-int MessagesGetOrderMessagesMessage_write_with_tag(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset, int tag) {
-	/* Write tag.*/
-	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
-	/* Write content.*/
-	offset = MessagesGetOrderMessagesMessage_write_delimited_to(_MessagesGetOrderMessagesMessage, _buffer, offset);
-	
-	return offset;
-}
-
-int MessagesGetOrderMessagesMessage_write_delimited_to(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset) {
-	int i, shift, new_offset, size;
-	
-	new_offset = MessagesGetOrderMessagesMessage_write(_MessagesGetOrderMessagesMessage, _buffer, offset);
-	size = new_offset - offset;
-	shift = (size > 127) ? 2 : 1;
-	for (i = new_offset - 1; i >= offset; -- i)
-	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
-	
-	write_raw_varint32((unsigned long) size, _buffer, offset);         
-	    
-	return new_offset + shift;
-}
-
-int MessagesGetOrderMessagesMessage_read(void *_buffer, struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, int offset, int limit) {
-	unsigned int i = 0;
-	unsigned long long value = i;
-	unsigned long tag = value;
-	
-	/* Reset all attributes to 0 in advance. */
-	MessagesGetOrderMessagesMessage_clear(_MessagesGetOrderMessagesMessage);
-	/* Assign the optional attributes. */
-	MessagesGetOrderMessagesMessage_init_optional_attributes(_MessagesGetOrderMessagesMessage);
-	
-	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
-	while(offset < limit) {
-	    offset = read_raw_varint32(&tag, _buffer, offset);
-		tag = tag>>3;
-	    switch(tag){
-	        /* tag of: _MessagesGetOrderMessagesMessage._psID */
-	        case 1 :
-	        	offset = read_raw_varint32(&tag, _buffer, offset);
-	        	_MessagesGetOrderMessagesMessage->_psID = (signed long)tag;
-	        	break;
-	    }
-	}
-	
-	return offset;
-}
-
-int MessagesGetOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, int offset) {
-	unsigned long size;
-	
-	offset = read_raw_varint32(&size, _buffer, offset);
-	MessagesGetOrderMessagesMessage_read(_buffer, _MessagesGetOrderMessagesMessage, offset, size + offset);
-	
-	return offset + size;
-}
-/*******************************************************************
- * Message: Messages.proto, line 23
- *******************************************************************/
-
-void MessagesDoneOrderMessagesMessage_clear(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage) {
-	_memset(_MessagesDoneOrderMessagesMessage, 0, sizeof(struct MessagesDoneOrderMessagesMessage));
-}
-
-void MessagesDoneOrderMessagesMessage_init_optional_attributes(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage) {
-	_MessagesDoneOrderMessagesMessage->_orderID = 0;
-	
-}
-
-int MessagesDoneOrderMessagesMessage_is_default_message(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage) {
-    return _MessagesDoneOrderMessagesMessage->_orderID == 0
-    ;
-}
-
-int MessagesDoneOrderMessagesMessage_write(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset) {
-	/* Write content of each message element.*/
-	/* Write the optional attribute only if it is different than the default value. */
-	if(_MessagesDoneOrderMessagesMessage->_orderID != 0) {
-		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
-	    if (_MessagesDoneOrderMessagesMessage->_orderID >= 0)
-	        offset = write_raw_varint32(_MessagesDoneOrderMessagesMessage->_orderID, _buffer, offset);
-	    else
-	        offset = write_raw_varint64(_MessagesDoneOrderMessagesMessage->_orderID, _buffer, offset);	    
-	}
-	
-	return offset;
-}
-
-int MessagesDoneOrderMessagesMessage_write_with_tag(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset, int tag) {
-	/* Write tag.*/
-	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
-	/* Write content.*/
-	offset = MessagesDoneOrderMessagesMessage_write_delimited_to(_MessagesDoneOrderMessagesMessage, _buffer, offset);
-	
-	return offset;
-}
-
-int MessagesDoneOrderMessagesMessage_write_delimited_to(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset) {
-	int i, shift, new_offset, size;
-	
-	new_offset = MessagesDoneOrderMessagesMessage_write(_MessagesDoneOrderMessagesMessage, _buffer, offset);
-	size = new_offset - offset;
-	shift = (size > 127) ? 2 : 1;
-	for (i = new_offset - 1; i >= offset; -- i)
-	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
-	
-	write_raw_varint32((unsigned long) size, _buffer, offset);         
-	    
-	return new_offset + shift;
-}
-
-int MessagesDoneOrderMessagesMessage_read(void *_buffer, struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, int offset, int limit) {
-	unsigned int i = 0;
-	unsigned long long value = i;
-	unsigned long tag = value;
-	
-	/* Reset all attributes to 0 in advance. */
-	MessagesDoneOrderMessagesMessage_clear(_MessagesDoneOrderMessagesMessage);
-	/* Assign the optional attributes. */
-	MessagesDoneOrderMessagesMessage_init_optional_attributes(_MessagesDoneOrderMessagesMessage);
-	
-	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
-	while(offset < limit) {
-	    offset = read_raw_varint32(&tag, _buffer, offset);
-		tag = tag>>3;
-	    switch(tag){
-	        /* tag of: _MessagesDoneOrderMessagesMessage._orderID */
-	        case 1 :
-	        	offset = read_raw_varint32(&tag, _buffer, offset);
-	        	_MessagesDoneOrderMessagesMessage->_orderID = (signed long)tag;
-	        	break;
-	    }
-	}
-	
-	return offset;
-}
-
-int MessagesDoneOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, int offset) {
-	unsigned long size;
-	
-	offset = read_raw_varint32(&size, _buffer, offset);
-	MessagesDoneOrderMessagesMessage_read(_buffer, _MessagesDoneOrderMessagesMessage, offset, size + offset);
 	
 	return offset + size;
 }
