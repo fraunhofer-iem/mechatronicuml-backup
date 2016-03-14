@@ -66,6 +66,9 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.connector.MessageBuffer owner = (de.uni_paderborn.fujaba.muml.connector.MessageBuffer) getElementToEdit();
 		owner.getGmfMessageTypes().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers.getInstance()
+				.init_MessageType_3009(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

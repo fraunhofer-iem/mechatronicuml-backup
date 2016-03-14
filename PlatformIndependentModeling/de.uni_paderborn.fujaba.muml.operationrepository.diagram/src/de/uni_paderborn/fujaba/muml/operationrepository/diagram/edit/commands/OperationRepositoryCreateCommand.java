@@ -54,6 +54,9 @@ public class OperationRepositoryCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.ElementInitializers.getInstance()
+				.init_OperationRepository_2001(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

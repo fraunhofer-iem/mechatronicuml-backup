@@ -66,6 +66,9 @@ public class StateCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) getElementToEdit();
 		owner.getStates().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.ElementInitializers.getInstance()
+				.init_State_3032(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

@@ -59,14 +59,14 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getOperationLabel_5005Parser() {
-		return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.OperationLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.OperationLabelExpressionLabelParser5005();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getParameterLabel_5001Parser() {
-		return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.ParameterLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.ParameterLabelExpressionLabelParser5001();
 	}
 
 	/**

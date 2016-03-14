@@ -71,6 +71,17 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.20">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5060"
@@ -357,6 +368,17 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/channels"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/channels"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.21">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/SynchronizationChannel"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5054"
@@ -557,6 +579,12 @@
               </initializers>
             </newElementInitializers>
           </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.22">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
@@ -595,6 +623,17 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.23">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/EntryPoint"/>
+        </modelElementInitializer>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -633,6 +672,17 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.24">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ExitPoint"/>
+        </modelElementInitializer>
       </modelFacet>
     </childNodes>
     <topLevelNodes
@@ -656,6 +706,17 @@
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.19">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5061"
@@ -1281,6 +1342,18 @@
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="-- Deactivated because StateEntryPoint has been deleted and logic changed.&#xA;&#xA;-- not (self.oclIsKindOf(EntryPoint) and (not oppositeEnd.oclIsKindOf(State))) and&#xA;-- not (self.oclIsKindOf(ExitPoint) and (not oppositeEnd.oclIsKindOf(State)))&#xA;true"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1288,6 +1361,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
+        className="EntryEventLabelExpressionLabelParser5050"
         viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/EntryEvent"/>
@@ -1295,6 +1369,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
+        className="DoEventLabelExpressionLabelParser5051"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/DoEvent"/>
@@ -1302,6 +1377,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
+        className="ExitEventLabelExpressionLabelParser5052"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ExitEvent"/>
@@ -1309,6 +1385,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        className="ClockConstraintLabelExpressionLabelParser5053"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ClockConstraint"/>
@@ -1316,6 +1393,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
+        className="SynchronizationChannelLabelExpressionLabelParser5054"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/SynchronizationChannel"/>
@@ -1323,6 +1401,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.0/@modelFacet"
+        className="RegionLabelExpressionLabelParser5063"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region"/>
@@ -1333,6 +1412,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
+        className="RegionLabelExpressionLabelParser5065"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region"/>
@@ -1340,6 +1420,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
+        className="RealtimeStatechartLabelExpressionLabelParser5062"
         viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
@@ -1347,6 +1428,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.0/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6005"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition"/>
@@ -1354,6 +1436,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6006"
         viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition"/>

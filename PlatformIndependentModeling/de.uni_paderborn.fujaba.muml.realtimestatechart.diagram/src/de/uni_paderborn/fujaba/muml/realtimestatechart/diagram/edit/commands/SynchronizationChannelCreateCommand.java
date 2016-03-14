@@ -66,6 +66,9 @@ public class SynchronizationChannelCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) getElementToEdit();
 		owner.getChannels().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.ElementInitializers.getInstance()
+				.init_SynchronizationChannel_3037(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

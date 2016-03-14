@@ -54,6 +54,9 @@ public class ParameterCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.behavior.Operation owner = (de.uni_paderborn.fujaba.muml.behavior.Operation) getElementToEdit();
 		owner.getParameters().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.ElementInitializers.getInstance()
+				.init_Parameter_3002(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

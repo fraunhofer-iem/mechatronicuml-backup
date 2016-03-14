@@ -35,39 +35,44 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ComponentPartLabelExpressionLabelParser5017 extends ExpressionLabelParserBase {
+public class HybridPortLabelExpressionLabelParser5024 extends ExpressionLabelParserBase {
 	/**
-	 * @generated
-	 */
-	public ComponentPartLabelExpressionLabelParser5017() {
+	* @generated
+	*/
+	public HybridPortLabelExpressionLabelParser5024() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	protected String getExpressionBody() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory.getExpression(7,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE.getComponentPart(), null).body();
+		return de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory.getExpression(3,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE.getHybridPort(), null).body();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getEditString(IAdaptable element, int flags) {
-		return getPrintString(element, flags);
+		EObject target = (EObject) element.getAdapter(EObject.class);
+		Object result = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory.getExpression(4,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE.getHybridPort(), null)
+				.evaluate(target);
+		return String.valueOf(result);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
@@ -88,23 +93,23 @@ public class ComponentPartLabelExpressionLabelParser5017 extends ExpressionLabel
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
@@ -112,8 +117,8 @@ public class ComponentPartLabelExpressionLabelParser5017 extends ExpressionLabel
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	//
 	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
 	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {

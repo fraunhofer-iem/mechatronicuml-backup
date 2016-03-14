@@ -24,6 +24,43 @@ public class ElementInitializers {
 	}
 
 	/**
+	* @generated
+	*/
+	public void init_RealtimeStatechart_2007(
+			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(19,
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getRealtimeStatechart(),
+							null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	public void init_State_3032(de.uni_paderborn.fujaba.muml.realtimestatechart.State instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(20,
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(),
+							null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	public void init_DoEvent_3034(de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent instance) {
@@ -39,6 +76,25 @@ public class ElementInitializers {
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
 
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	public void init_SynchronizationChannel_3037(
+			de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(21,
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getSynchronizationChannel(),
+							null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -118,6 +174,49 @@ public class ElementInitializers {
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setInitial(((Boolean) value_0_0_1).booleanValue());
 
+			Object value_1 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(22,
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getRealtimeStatechart(),
+							null)
+					.evaluate(instance);
+			instance.setName((String) value_1);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	public void init_EntryPoint_3040(de.uni_paderborn.fujaba.muml.realtimestatechart.EntryPoint instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(23,
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getEntryPoint(),
+							null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	public void init_ExitPoint_3041(de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(24,
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getExitPoint(),
+							null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

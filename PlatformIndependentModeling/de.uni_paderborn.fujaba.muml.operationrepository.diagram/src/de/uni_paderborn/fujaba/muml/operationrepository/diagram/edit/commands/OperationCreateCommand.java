@@ -54,6 +54,9 @@ public class OperationCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.behavior.OperationRepository owner = (de.uni_paderborn.fujaba.muml.behavior.OperationRepository) getElementToEdit();
 		owner.getOperations().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.ElementInitializers.getInstance()
+				.init_Operation_3001(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

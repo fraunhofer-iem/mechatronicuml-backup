@@ -70,6 +70,9 @@ public class ComponentInstanceConfigurationCreateCommand extends EditElementComm
 		de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance owner = (de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance) getElementToEdit();
 		owner.setEmbeddedCIC(newElement);
 
+		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.ElementInitializers.getInstance()
+				.init_ComponentInstanceConfiguration_3023(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

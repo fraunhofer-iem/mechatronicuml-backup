@@ -89,7 +89,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getDiscretePortLabel_5025Parser() {
-		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortLabelExpressionLabelParser5025();
 	}
 
 	/**
@@ -114,14 +114,14 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	* @generated
 	*/
 	private IParser getHybridPortLabel_5024Parser() {
-		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.HybridPortLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.HybridPortLabelExpressionLabelParser5024();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentPartLabel_5017Parser() {
-		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.ComponentPartLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.ComponentPartLabelExpressionLabelParser5017();
 	}
 
 	/**
@@ -147,7 +147,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolPartLabel_5026Parser() {
-		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.CoordinationProtocolPartLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.CoordinationProtocolPartLabelExpressionLabelParser5026();
 	}
 
 	/**
