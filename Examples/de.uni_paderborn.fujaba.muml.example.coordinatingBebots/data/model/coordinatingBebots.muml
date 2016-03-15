@@ -751,10 +751,6 @@
       <states xmi:id="_U9V4wWmGEeOlIqc8khLIew" name="Main" initial="true">
         <embeddedRegions xmi:id="_mYT60GmGEeOlIqc8khLIew" priority="1">
           <embeddedStatechart xmi:id="_mYdr0GmGEeOlIqc8khLIew" name="coordinator">
-            <variables xmi:id="_v0mC4LrPEeSUTO04IKA8nA" name="rcvAllowed">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
-              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_130woLrPEeSUTO04IKA8nA" value="false"/>
-            </variables>
             <transitions xmi:id="_iXbC0GmHEeOlIqc8khLIew" priority="1" target="_mYe58GmGEeOlIqc8khLIew" source="_amvUwGmHEeOlIqc8khLIew">
               <synchronization xmi:id="_rHJSYGmPEeOlIqc8khLIew" syncChannel="_9SCEkGmGEeOlIqc8khLIew" kind="RECEIVE"/>
             </transitions>
