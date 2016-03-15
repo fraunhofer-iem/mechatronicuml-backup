@@ -57,6 +57,7 @@ helper createPatternFromProtocol()
 	var newPattern : CoordinationPattern :=theProtocol.map CoordinationProtocol2CoordinationPattern();	
 	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode);	
 	//patternCategory.modelElements +=newPattern;
+	newPattern.verificationConstraintRepositories+= theProtocol.verificationConstraintRepositories.map transform().oclAsType(muml::constraint::VerificationConstraintRepository);
 }
 
 mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : muml::pattern::CoordinationPattern
