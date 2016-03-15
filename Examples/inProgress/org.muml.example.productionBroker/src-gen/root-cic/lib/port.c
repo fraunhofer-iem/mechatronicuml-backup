@@ -41,8 +41,8 @@ bool_t Port_addMessage(Port* port, MiddlewareMessage* msg) {
 	//add message to buffer
 	if (buf != NULL) {
 		if (MessageBuffer_enqueue(buf, msg)) {
-			printf("buffer of port %d received msg of type %d\n", (int) port->ID,(int) msg->_msgID);
-					fflush(stdout);
+			//printf("buffer of port %d received msg of type %d\n", (int) port->ID,(int) msg->_msgID);
+			//		fflush(stdout);
 			return true;
 		}
 
