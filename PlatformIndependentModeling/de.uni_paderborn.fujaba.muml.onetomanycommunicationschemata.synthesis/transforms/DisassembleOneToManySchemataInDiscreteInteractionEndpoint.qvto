@@ -311,11 +311,32 @@ mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeSt
 		result.embeddedStatechart := self.map RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart);		
 }
 
-mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart) : RealtimeStatechart {
+mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart) : RealtimeStatechart when {self.usesAnySchema()} {
 		
 		schemaCount := schemaCount + 1;
 		
-		name := "subrole_schema_statechart" + schemaCount.toString();
+		
+		
+		// use the channels' name for the statechart names. #1478
+		if(self.usesLoadBalancingSchema()) {			
+			name := "subrole_schema_" + self.map Schema2Channel(loadBalancing,true, self).name;
+		};
+		if(self.usesUniReceiveSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(singleReceive,true, self).name;
+		};
+		if(self.usesIterateSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(iterate,true, self).name;
+		};
+		if(self.usesMulticastSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(multicast,true, self).name;
+		};
+		if(self.usesUnicastSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(unicast,true, self).name;
+		};
+		if(self.usesMultiReceiveSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(multiReceiceChannelName,true, self).name;
+		};
+		
 		
 		var region : RealtimeStatechart := result;		
 		var context = sourceRealtimeStatechart;
