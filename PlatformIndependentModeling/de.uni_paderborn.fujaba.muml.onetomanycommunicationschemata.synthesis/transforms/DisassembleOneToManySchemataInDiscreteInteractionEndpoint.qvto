@@ -193,8 +193,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 	
 mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeStatechart {		
 		
-		
-		if(context.oclIsTypeOf(RealtimeStatechart) and context.oclAsType(RealtimeStatechart) = context.oclAsType(RealtimeStatechart).getHighestParentStatechart()) {
+		if(self = context) {
 			result.name := "coordinator"; // name the highest statechart of the coordinator region 'coordinator', see #1478
 		} else {
 			result.name := self.name;	
