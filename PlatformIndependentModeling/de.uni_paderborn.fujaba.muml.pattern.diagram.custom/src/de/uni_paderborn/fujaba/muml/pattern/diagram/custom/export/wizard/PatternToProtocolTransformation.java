@@ -1,11 +1,11 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
-import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -25,8 +24,11 @@ import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.m2m.qvt.oml.util.Log;
+import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.swt.widgets.Shell;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
@@ -64,10 +66,19 @@ public class PatternToProtocolTransformation {
 		ModelExtent outputExtent =  new BasicModelExtent();
 		
 		
+		Log log = new WriterLog(new OutputStreamWriter(System.out));
+		
+		ExecutionContextImpl context = new ExecutionContextImpl();		
+		Date d = new Date(System.currentTimeMillis());	
+		String s = d.toString().replaceAll("\\s", "-");
+		s = s.replaceAll(":", "-");
+		context.setConfigProperty("timeStamp", s);
+		context.setLog(log);
+		
 		final TransformationExecutor transformationExecutor = Activator.getInstance().getTransformationExecutor(Activator.TRANSFORM_PROTOCOL_TO_PATTERN,false);
 		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
 				transformationExecutor,new BasicModelExtent(Arrays
-						.asList(input)), outputExtent);
+						.asList(input)), outputExtent, context);
 
 		if (command.canExecute())
 			editingDomain.getCommandStack().execute(command);
@@ -93,6 +104,15 @@ public class PatternToProtocolTransformation {
 		
 		ModelExtent outputExtent =  new BasicModelExtent();
 	
+		Log log = new WriterLog(new OutputStreamWriter(System.out));
+		
+		ExecutionContextImpl context = new ExecutionContextImpl();		
+		Date d = new Date(System.currentTimeMillis());	
+		String s = d.toString().replaceAll("\\s", "-");
+		s = s.replaceAll(":", "-");
+		context.setConfigProperty("timeStamp", s);
+		context.setLog(log);
+		
 		// Load QVTO script PatternToProtocol
 		final TransformationExecutor transformationExecutor = Activator
 				.getInstance().getTransformationExecutor(
@@ -100,7 +120,7 @@ public class PatternToProtocolTransformation {
 
 		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
 				transformationExecutor, new BasicModelExtent(Arrays
-						.asList(input)),outputExtent);
+						.asList(input)),outputExtent,context);
 
 		if (command.canExecute())
 			editingDomain.getCommandStack().execute(command);
@@ -129,6 +149,14 @@ public class PatternToProtocolTransformation {
 		
 		ModelExtent outputExtent =  new BasicModelExtent();
 	
+		Log log = new WriterLog(new OutputStreamWriter(System.out));
+		
+		ExecutionContextImpl context = new ExecutionContextImpl();		
+	
+		// add empty timeStamp
+		context.setConfigProperty("timeStamp", "");
+		context.setLog(log);
+		
 		// Load QVTO script PatternToProtocol
 		final TransformationExecutor transformationExecutor = Activator
 				.getInstance().getTransformationExecutor(
@@ -139,7 +167,7 @@ public class PatternToProtocolTransformation {
 						.asList(input)));
 		modelExtents.add(outputExtent);
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents);
+				transformationExecutor, modelExtents,context);
 
 		if (command.canExecute())
 			editingDomain.getCommandStack().execute(command);
