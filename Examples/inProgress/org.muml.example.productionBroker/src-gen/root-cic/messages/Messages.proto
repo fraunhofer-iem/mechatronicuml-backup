@@ -5,16 +5,6 @@
 
 //the following message types are not generated, because they have no parameters
 
-//protobuf definition for message type MessagesDoneOrder
-message MessagesDoneOrderMessagesMessage{
-	optional int32 orderID = 1;
-}
-//protobuf definition for message type MessagesSimpleOrder
-message MessagesSimpleOrderMessagesMessage{
-	optional int32 orderID = 1;
-	optional int32 ingredientID = 2;
-	optional int32 amount = 3;
-}
 //protobuf definition for message type MessagesGetOrder
 message MessagesGetOrderMessagesMessage{
 	optional int32 psID = 1;
@@ -29,6 +19,16 @@ message MessagesOrderForPSMessagesMessage{
 //protobuf definition for message type MessagesNoOrder
 message MessagesNoOrderMessagesMessage{
 	optional int32 receiverPsID = 1;
+}
+//protobuf definition for message type MessagesSimpleOrder
+message MessagesSimpleOrderMessagesMessage{
+	optional int32 orderID = 1;
+	optional int32 ingredientID = 2;
+	optional int32 amount = 3;
+}
+//protobuf definition for message type MessagesDoneOrder
+message MessagesDoneOrderMessagesMessage{
+	optional int32 orderID = 1;
 }
 
 //message for QoS-props. This could be an optional parameter for the interface-methods between application layer and middleware

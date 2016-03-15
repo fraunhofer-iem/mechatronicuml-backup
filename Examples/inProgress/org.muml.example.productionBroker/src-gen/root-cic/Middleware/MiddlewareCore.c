@@ -74,12 +74,6 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	
 	//choose right function to create the bytearray (which is actually a chararray).
 	switch(id){
-	case MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE:
-			nwMsg->_mumlMsg_len = MessagesDoneOrderMessagesMessage_write_delimited_to((MessagesDoneOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
-			break;
-	case MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE:
-			nwMsg->_mumlMsg_len = MessagesSimpleOrderMessagesMessage_write_delimited_to((MessagesSimpleOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
-			break;
 	case MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE:
 			nwMsg->_mumlMsg_len = MessagesGetOrderMessagesMessage_write_delimited_to((MessagesGetOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
@@ -88,6 +82,12 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 			break;
 	case MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE:
 			nwMsg->_mumlMsg_len = MessagesNoOrderMessagesMessage_write_delimited_to((MessagesNoOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
+	case MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesSimpleOrderMessagesMessage_write_delimited_to((MessagesSimpleOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
+	case MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesDoneOrderMessagesMessage_write_delimited_to((MessagesDoneOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
 		default:
 			nwMsg->_mumlMsg_len = 0;

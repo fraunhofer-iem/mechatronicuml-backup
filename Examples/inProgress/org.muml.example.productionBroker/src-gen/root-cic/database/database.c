@@ -224,6 +224,57 @@ int deleteOrder(unqlite *pDb, int orderID)
 
 }
 
+int searchOrder(unqlite *pDb, int orderID)
+{
+	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
+	int rc;
+	size_t nBytes;  //Data length
+
+	//construct key for noSQL Database
+
+
+
+	char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
+				+ sizeof(":productionStation")];
+	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
+
+	/*Get orderId without ProductionStation*/
+	int foundOrderWithoutProductionStation = 0;
+	while(orderID>0  && foundOrderWithoutProductionStation == 0)
+	{
+		rc = getOrderAmount(pDb,orderID);
+		if(rc < UNQLITE_OK)
+		{
+			printf("No Valid OrderID%d\n",orderID);
+			orderID --;
+		}
+		else{
+
+			rc = unqlite_kv_fetch(pDb, orderIDProductionStationBuffer, -1, NULL, &nBytes);
+			if (rc == UNQLITE_OK)
+			{
+				// Insertion fail, extract database error log and exit
+				printf("Production Station for OrderID %d Found\n", orderID);
+				orderID --;
+			}
+			else
+			{
+				foundOrderWithoutProductionStation = 1;
+				printf("Valid Record Without PS for OrderID:%d found\n",orderID);
+				return orderID;
+			}
+
+		}
+
+
+	}
+
+		printf("No Record at all without ProductionStation\n");
+		return -1;
+
+}
+
+
 int getOrderIncredientID(unqlite *pDb, int orderID)
 {
 	//TODO ABfangen, wenn es die ORDERID NICHT GIBT

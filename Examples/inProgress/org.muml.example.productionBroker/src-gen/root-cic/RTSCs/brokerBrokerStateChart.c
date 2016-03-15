@@ -321,7 +321,11 @@
 		
 					stateChart->currentPsID = msg->_psID;
 		
-					stateChart->provideOrderID = stateChart->testLatestOrderIDGlobal;
+					stateChart->provideOrderID = noSQLDatabase_noSQLDatabaseSearchOrder(
+		
+					stateChart->testLatestOrderIDGlobal);
+		
+					;
 		
 					;
 		
@@ -591,23 +595,6 @@
 		}
 		
 		
-		void BrokerGetOrderGetOrderStatechartStateChart_exit(
-				BrokerBrokerStateChart* stateChart) {
-			switch (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart) {
-			case STATE_BROKERGETORDERINIT:
-				// nothing to do
-		
-				break;
-			case STATE_BROKERGETORDERMANAGEORDERS:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
-					BROKERBROKER_INACTIVE;
-		}
 		void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(
 				BrokerBrokerStateChart* stateChart) {
 			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
@@ -629,12 +616,30 @@
 			stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
 					BROKERBROKER_INACTIVE;
 		}
+		void BrokerGetOrderGetOrderStatechartStateChart_exit(
+				BrokerBrokerStateChart* stateChart) {
+			switch (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart) {
+			case STATE_BROKERGETORDERINIT:
+				// nothing to do
+		
+				break;
+			case STATE_BROKERGETORDERMANAGEORDERS:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
+					BROKERBROKER_INACTIVE;
+		}
 				
 			
 		bool_t BrokerBrokerStateChart_isInState(BrokerBrokerStateChart* stateChart,
 				BrokerBrokerState state) {
-			return (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart == state
-					|| stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC
+			return (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC
+					== state
+					|| stateChart->currentStateOfBrokerGetOrderGetOrderStatechart
 							== state);
 		
 		}

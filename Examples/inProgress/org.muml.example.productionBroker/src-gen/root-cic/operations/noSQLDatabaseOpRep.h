@@ -45,6 +45,12 @@
 		 * @param orderID @param productionStationID 
 		 */
 		int32_T noSQLDatabase_noSQLDatabaseDefineProductionStationForOrder(int32_T orderID, int32_T productionStationID);
+		/**
+		 * @brief Implementation stub of operation searchOrder
+ 		 * @details This function shall contain the implementation of the operation searchOrder.
+		 * @param orderID 
+		 */
+		int32_T noSQLDatabase_noSQLDatabaseSearchOrder(int32_T orderID);
 
 
 #ifdef __cplusplus

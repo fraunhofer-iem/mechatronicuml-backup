@@ -122,4 +122,19 @@ int32_T noSQLDatabase_noSQLDatabaseDefineProductionStationForOrder(int32_T order
 
 
 
+int32_T noSQLDatabase_noSQLDatabaseSearchOrder(int32_T orderID){
+
+/** Start of user code noSQLDatabase_noSQLDatabaseSearchOrder **/ 
+//@TODO: add your implementation here
+#warning Missing implemenation of repository operation 'noSQLDatabase_noSQLDatabaseSearchOrder'
+	//default return value
+	int32_T ret = 0;
+	ret = searchOrder(pDb, orderID);
+	return ret;
+/**End of user code**/
+
+}
+
+
+
 

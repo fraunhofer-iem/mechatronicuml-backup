@@ -183,14 +183,18 @@
                 <message xmi:id="_pBKW8Oa8EeWyd6JHVas6Kw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_wosJAOa8EeWyd6JHVas6Kw" name="processGetOrderRequest">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_gXW1IOrFEeWdNs1s2t99bw">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_gXW1IerFEeWdNs1s2t99bw" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_gXW1IurFEeWdNs1s2t99bw" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_gXW1I-rFEeWdNs1s2t99bw" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_2CRd4OrPEeWdNs1s2t99bw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2CRd4erPEeWdNs1s2t99bw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_2CRd4urPEeWdNs1s2t99bw" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_2CRd4-rPEeWdNs1s2t99bw" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_gXW1JOrFEeWdNs1s2t99bw" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_gXW1JerFEeWdNs1s2t99bw" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_gXW1JurFEeWdNs1s2t99bw" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2CRd5OrPEeWdNs1s2t99bw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_2CRd5erPEeWdNs1s2t99bw" operation="_m40ygOrPEeWdNs1s2t99bw">
+                      <parameterBinding xmi:id="_2CRd5urPEeWdNs1s2t99bw" parameter="_o7ueYOrPEeWdNs1s2t99bw">
+                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2CRd5-rPEeWdNs1s2t99bw" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                      </parameterBinding>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_2CRd6OrPEeWdNs1s2t99bw" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -719,6 +723,12 @@
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_A3cmEOb-EeWyd6JHVas6Kw" name="productionStationID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_m40ygOrPEeWdNs1s2t99bw" name="searchOrder">
+        <parameters xmi:id="_o7ueYOrPEeWdNs1s2t99bw" name="orderID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>

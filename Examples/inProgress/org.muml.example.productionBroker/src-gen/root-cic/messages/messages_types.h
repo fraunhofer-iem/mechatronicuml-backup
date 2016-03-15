@@ -9,14 +9,6 @@
 #include "Messages.h"
 
  /**
-  * @brief The typedef for the Message Type: MessagesDoneOrder, whose struct is generated via protobuf
-  */
-typedef struct MessagesDoneOrderMessagesMessage MessagesDoneOrderMessagesMessage;
- /**
-  * @brief The typedef for the Message Type: MessagesSimpleOrder, whose struct is generated via protobuf
-  */
-typedef struct MessagesSimpleOrderMessagesMessage MessagesSimpleOrderMessagesMessage;
- /**
   * @brief The typedef for the Message Type: MessagesGetOrder, whose struct is generated via protobuf
   */
 typedef struct MessagesGetOrderMessagesMessage MessagesGetOrderMessagesMessage;
@@ -28,4 +20,12 @@ typedef struct MessagesOrderForPSMessagesMessage MessagesOrderForPSMessagesMessa
   * @brief The typedef for the Message Type: MessagesNoOrder, whose struct is generated via protobuf
   */
 typedef struct MessagesNoOrderMessagesMessage MessagesNoOrderMessagesMessage;
+ /**
+  * @brief The typedef for the Message Type: MessagesSimpleOrder, whose struct is generated via protobuf
+  */
+typedef struct MessagesSimpleOrderMessagesMessage MessagesSimpleOrderMessagesMessage;
+ /**
+  * @brief The typedef for the Message Type: MessagesDoneOrder, whose struct is generated via protobuf
+  */
+typedef struct MessagesDoneOrderMessagesMessage MessagesDoneOrderMessagesMessage;
 #endif /* MESSAGE_TYPES_H */
