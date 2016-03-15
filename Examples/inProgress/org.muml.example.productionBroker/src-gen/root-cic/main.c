@@ -29,20 +29,14 @@ int main(){
 						
 								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
 									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE;
-									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
-									messageIDsOfbufferOfbrokerComponent[2] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
 								MessageBuffer* doneOrderBufferbrokerForPSBroker = MessageBuffer_create(5,false,1,messageIDsOfbufferOfbrokerComponent);
 			
 								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
-									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE;
-									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
-									messageIDsOfbufferOfbrokerComponent[2] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
-								MessageBuffer* noOrderBufferbrokerForPSBroker = MessageBuffer_create(1,false,1,messageIDsOfbufferOfbrokerComponent);
+									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
+									MessageBuffer* noOrderBufferbrokerForPSBroker = MessageBuffer_create(1,false,1,messageIDsOfbufferOfbrokerComponent);
 			
 								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
-									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE;
-									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
-									messageIDsOfbufferOfbrokerComponent[2] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
+									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
 								MessageBuffer* getOrderBufferbrokerForPSBroker = MessageBuffer_create(5,false,1,messageIDsOfbufferOfbrokerComponent);
 			
 							MessageBuffer** allBuffersOfBrokerbrokerForPSPort = (MessageBuffer**) malloc(3*sizeof(MessageBuffer*));

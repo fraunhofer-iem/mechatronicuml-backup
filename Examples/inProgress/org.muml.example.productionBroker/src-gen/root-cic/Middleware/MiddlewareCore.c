@@ -79,6 +79,7 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 			break;
 	case MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE:
 			nwMsg->_mumlMsg_len = MessagesGetOrderMessagesMessage_write_delimited_to((MessagesGetOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			fprintf(stdout,"send get ORDER\n");
 			break;
 	case MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE:
 			nwMsg->_mumlMsg_len = MessagesNoOrderMessagesMessage_write_delimited_to((MessagesNoOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
@@ -95,13 +96,17 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	}
 	Port *p = MW_getPortforIdentifier(targetPort);
 	if (p != NULL){
+		fprintf(stdout,"call add message\n");
 		Port_addMessage(p, nwMsg);
 		
 		
 		return true;
 	}
 	else
+	{
+		fprintf(stdout,"FEHLER\n");
 		return false;
+	}
 
 
 }
