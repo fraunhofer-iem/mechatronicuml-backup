@@ -39,7 +39,7 @@ MessageID * messageIDsOfbufferOf[aci.getVariableName()/];
 				[comment create port property objects/]
 				[for (msgBuffer : MessageBuffer | port.receiverMessageBuffer)]
 					messageIDsOfbufferOf[aci.getVariableName()/] = (MessageID*) calloc([msgBuffer.messageType->size()/],sizeof(MessageID));
-					[for (msgType: MessageType| port.receiverMessageTypes)]
+					[for (msgType: MessageType| msgBuffer.messageType)]
 						messageIDsOfbufferOf[aci.getVariableName()/]['['/][i-1/][']'/] = [msgType.getIdentifierVariableName()/];
 					[/for]
 					MessageBuffer* [getBufferName(msgBuffer, portInst)/] = MessageBuffer_create([msgBuffer.getSizeOfMessageBuffer()/],[if (msgBuffer.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)]false[else]true[/if],[msgBuffer.messageType->size()/],messageIDsOfbufferOf[aci.getVariableName()/]);
