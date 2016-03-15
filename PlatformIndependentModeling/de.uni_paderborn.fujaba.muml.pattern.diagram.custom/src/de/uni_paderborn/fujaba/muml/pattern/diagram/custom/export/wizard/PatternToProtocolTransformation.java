@@ -4,8 +4,10 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.List;
 
@@ -71,10 +73,8 @@ public class PatternToProtocolTransformation {
 		Log log = new WriterLog(new OutputStreamWriter(System.out));
 		
 		ExecutionContextImpl context = new ExecutionContextImpl();		
-		Date d = new Date(System.currentTimeMillis());	
-		String s = d.toString().replaceAll("\\s", "-");
-		s = s.replaceAll(":", "-");
-		context.setConfigProperty("timeStamp", s);
+		
+		context.setConfigProperty("timeStamp", getTimeStamp());
 		context.setLog(log);
 		
 		final TransformationExecutor transformationExecutor = Activator.getInstance().getTransformationExecutor(Activator.TRANSFORM_PROTOCOL_TO_PATTERN,false);
@@ -109,10 +109,8 @@ public class PatternToProtocolTransformation {
 		Log log = new WriterLog(new OutputStreamWriter(System.out));
 		
 		ExecutionContextImpl context = new ExecutionContextImpl();		
-		Date d = new Date(System.currentTimeMillis());	
-		String s = d.toString().replaceAll("\\s", "-");
-		s = s.replaceAll(":", "-");
-		context.setConfigProperty("timeStamp", s);
+		
+		context.setConfigProperty("timeStamp", getTimeStamp());
 		context.setLog(log);
 		
 		// Load QVTO script PatternToProtocol
@@ -288,6 +286,21 @@ public class PatternToProtocolTransformation {
 			}
 		}
 		return null;
+	}
+	
+	public static String getTimeStamp(){
+	
+		String s = "_";
+		
+		Calendar c = new GregorianCalendar();
+		c.setTimeInMillis(System.currentTimeMillis());
+		s+=c.get(Calendar.YEAR);
+		s+= c.get(Calendar.MONTH);
+		s+= c.get(Calendar.DAY_OF_MONTH);
+		s+= c.get(Calendar.HOUR_OF_DAY);
+		s+= c.get(Calendar.MINUTE);
+		s+= c.get(Calendar.SECOND);
+		return s;
 	}
 	// Example Code for saving the input before executing the transformation. Important for debugging
 	/*
