@@ -14,10 +14,12 @@
 		
 			stateChart->processedOrderID = -1;
 		
-			stateChart->incomingOrderPsID = stateChart->incomingOrderPsID = -1;
+			stateChart->incomingOrderPsID = stateChart->incomingOrderPsID = 0;
 			;
 		
 			stateChart->incredientID = -1;
+		
+			stateChart->evaluateOrderFailed = false;
 		
 			stateChart->currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC =
 					STATE_PRODUCTIONSTATIONGETORDERINIT;
@@ -123,25 +125,35 @@
 		
 					stateChart->processedOrderID = -1;
 		
+					stateChart->incomingOrderPsID = -1;
+		
 					;
+		
+					Clock_reset(
+							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
 				} else {
 		
 				}
 				break;
 			case STATE_PRODUCTIONSTATIONGETORDERIDLE:
-				if (1
+				if (
 		
-				) {
-					stateChart->numberOfGetOrderMessage ++;
-					printf("send message get Order %d\n",stateChart->numberOfGetOrderMessage);
+				Clock_getTime(
+						stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock)
+						>= 500 * 1.0
+		
+						) {
+		
 					// execute exit actions
 		
 					// nothing to do
 		
 					// Transition Effects (incl. clock resets)
 		
-					// nothing to do
+					stateChart->evaluateOrderFailed = false;
+		
+					;
 		
 					//create new Parameter struct for MessagesGetOrderMessagesMessage
 		
@@ -192,7 +204,122 @@
 				}
 				break;
 			case STATE_PRODUCTIONSTATIONGETORDEREVALUATEORDER:
-				if (
+				if (Port_doesMessageExist(
+						ProductionStationComponent_getgetOrder(
+								stateChart->parentComponent),
+						MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE)
+		
+						) {
+					MiddlewareMessage* mwMsg = Port_receiveMessage(
+		
+					ProductionStationComponent_getgetOrder(stateChart->parentComponent),
+		
+					MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE);
+		
+					struct MessagesNoOrderMessagesMessage * msg =
+		
+					(MessagesNoOrderMessagesMessage*) malloc(
+		
+					sizeof(struct MessagesNoOrderMessagesMessage));
+		
+					MessagesNoOrderMessagesMessage_read_delimited_from(mwMsg->_mumlMsg,
+							msg, 0);
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("ProductionStation received message of typeMessagesNoOrderMessagesMessage");
+		
+		#endif
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					stateChart->incomingOrderPsID = msg->_receiverPsID;
+		
+					if (stateChart->incomingOrderPsID == stateChart->ID) {
+		
+						stateChart->evaluateOrderFailed = true;
+		
+					}
+		
+					;
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					free(msg);
+		
+					free(mwMsg);
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC =
+							STATE_PRODUCTIONSTATIONGETORDEREVALUATEORDER;
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC switched state to STATE_PRODUCTIONSTATIONGETORDEREVALUATEORDER" );
+		
+		#endif		
+		
+					// execute entry actions
+		
+					// nothing to do
+		
+				} else if (
+		
+				stateChart->incomingOrderPsID == stateChart->ID
+						&& stateChart->evaluateOrderFailed == true
+		
+						) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC =
+							STATE_PRODUCTIONSTATIONGETORDERIDLE;
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC switched state to STATE_PRODUCTIONSTATIONGETORDERIDLE" );
+		
+		#endif		
+		
+					// execute entry actions
+		
+					stateChart->amount = -1;
+		
+					stateChart->incredientID = -1;
+		
+					stateChart->processedOrderID = -1;
+		
+					stateChart->incomingOrderPsID = -1;
+		
+					;
+		
+					Clock_reset(
+							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
+		
+				} else if (
 		
 				stateChart->incomingOrderPsID == stateChart->ID
 		
@@ -303,21 +430,13 @@
 				}
 				break;
 			case STATE_PRODUCTIONSTATIONGETORDERPROCESSORDER:
-				//printf("PRODUCTIONSTATIONGETORDERPROCESSORDER is reached: amount is %f\n",stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
-
 				if (
 		
 				Clock_getTime(
 						stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock)
 						>= stateChart->amount * 1000.0
 		
-				&&
-		
-				stateChart->amount > 0
-		
-				) {
-					printf("transition fires\n");
-
+						) {
 		
 					// execute exit actions
 		
@@ -375,7 +494,12 @@
 		
 					stateChart->processedOrderID = -1;
 		
+					stateChart->incomingOrderPsID = -1;
+		
 					;
+		
+					Clock_reset(
+							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
 				} else {
 		

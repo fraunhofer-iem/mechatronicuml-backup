@@ -1,7 +1,7 @@
-RTSC = brokerBrokerStateChart.o productionStationPorductionStationRTSCStateChart.o recipeGeneratorReciepeGeneratorStateChart.o 
-COMP = brokerComponent.o productionStationComponent.o recipeGeneratorComponent.o  
+RTSC = productionStationPorductionStationRTSCStateChart.o recipeGeneratorReciepeGeneratorStateChart.o brokerBrokerStateChart.o 
+COMP = productionStationComponent.o recipeGeneratorComponent.o brokerComponent.o  
 OPR = noSQLDatabaseOpRep.o iDManagementOpRep.o 
-LIB =  port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o database.o unqlite.o
+LIB =  port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o unqlite.o database.o
 MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 CC = gcc
 CFLAGS = -c
@@ -10,18 +10,18 @@ protobuf: messages/Messages.proto
 	java -jar messages/protoc-1.0M4.jar -I=messages --c_out=messages Messages.proto
 app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) $(OPR) 
 	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) $(OPR) -o app
-brokerBrokerStateChart.o: RTSCs/brokerBrokerStateChart.c
-	$(CC) $(CFLAGS) RTSCs/brokerBrokerStateChart.c
 productionStationPorductionStationRTSCStateChart.o: RTSCs/productionStationPorductionStationRTSCStateChart.c
 	$(CC) $(CFLAGS) RTSCs/productionStationPorductionStationRTSCStateChart.c
 recipeGeneratorReciepeGeneratorStateChart.o: RTSCs/recipeGeneratorReciepeGeneratorStateChart.c
 	$(CC) $(CFLAGS) RTSCs/recipeGeneratorReciepeGeneratorStateChart.c
-brokerComponent.o: components/brokerComponent.c
-	$(CC) $(CFLAGS) components/brokerComponent.c
+brokerBrokerStateChart.o: RTSCs/brokerBrokerStateChart.c
+	$(CC) $(CFLAGS) RTSCs/brokerBrokerStateChart.c
 productionStationComponent.o: components/productionStationComponent.c
 	$(CC) $(CFLAGS) components/productionStationComponent.c
 recipeGeneratorComponent.o: components/recipeGeneratorComponent.c
 	$(CC) $(CFLAGS) components/recipeGeneratorComponent.c
+brokerComponent.o: components/brokerComponent.c
+	$(CC) $(CFLAGS) components/brokerComponent.c
 port.o: lib/port.c
 	$(CC) $(CFLAGS) lib/port.c
 Debug.o: lib/Debug.c

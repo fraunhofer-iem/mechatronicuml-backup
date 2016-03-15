@@ -210,7 +210,7 @@
 			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
 		
 			case STATE_BROKERBROKERFORPSPORTINIT:
-				printf("reached state init at broaker %d\n",stateChart->testLatestOrderIDGlobal);
+		
 				if (Port_doesMessageExist(
 		
 				BrokerComponent_getbrokerForPSPort(stateChart->parentComponent),
@@ -220,7 +220,6 @@
 				&& stateChart->testLatestOrderIDGlobal > 0
 		
 				) {
-					printf("fire getOrder at broaker\n");
 		
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
 		
@@ -306,7 +305,69 @@
 		
 			case STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST:
 		
-				if (1
+				if (
+		
+				stateChart->provideAmount == -1 || stateChart->provideIncredientID == -1
+		
+				) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					// nothing to do
+		
+					//create new Parameter struct for MessagesNoOrderMessagesMessage
+		
+					struct MessagesNoOrderMessagesMessage * msg =
+		
+					(MessagesNoOrderMessagesMessage*) malloc(
+		
+					sizeof(struct MessagesNoOrderMessagesMessage));
+		
+					msg->_receiverPsID = stateChart->currentPsID;
+		
+					//send Message
+		
+					MW_sendMessage(
+		
+					MW_getTargetPortIDforIdentifier(
+		
+					stateChart->parentComponent->brokerForPSPortPort->ID),
+		
+					MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE, msg);
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("Broker sent message of type MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE");
+		
+		#endif		
+		
+					//release all created received events
+		
+					//release all created sent events
+		
+					free(msg);
+		
+					// change the state
+		
+					stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
+		
+					STATE_BROKERBROKERFORPSPORTRESET;
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC switched state to STATE_BROKERBROKERFORPSPORTRESET" );
+		
+		#endif		
+		
+					// execute entry actions
+		
+					// nothing to do
+		
+				} else if (1
 		
 				) {
 		

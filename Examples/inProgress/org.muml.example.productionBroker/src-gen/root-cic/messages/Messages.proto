@@ -9,13 +9,13 @@
 message MessagesDoneOrderMessagesMessage{
 	optional int32 orderID = 1;
 }
+//protobuf definition for message type MessagesNoOrder
+message MessagesNoOrderMessagesMessage{
+	optional int32 receiverPsID = 1;
+}
 //protobuf definition for message type MessagesGetOrder
 message MessagesGetOrderMessagesMessage{
 	optional int32 psID = 1;
-}
-//protobuf definition for message type MessagesFailOrder
-message MessagesFailOrderMessagesMessage{
-	optional int32 orderID = 1;
 }
 //protobuf definition for message type MessagesSimpleOrder
 message MessagesSimpleOrderMessagesMessage{

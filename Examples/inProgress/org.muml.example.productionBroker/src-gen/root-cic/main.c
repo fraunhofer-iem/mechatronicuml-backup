@@ -3,9 +3,9 @@
 
 #include "lib/Debug.h"
 //including all files for used Components
-#include "components/productionStationComponent_Interface.h"
 #include "components/brokerComponent_Interface.h"
 #include "components/recipeGeneratorComponent_Interface.h"
+#include "components/productionStationComponent_Interface.h"
 
 
 //variables for component instances
@@ -29,7 +29,7 @@ int main(){
 						
 								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(3,sizeof(MessageID));
 									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE;
-									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESFAILORDERMESSAGESMESSAGE;
+									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
 									messageIDsOfbufferOfbrokerComponent[2] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
 								MessageBuffer* orderBufferbrokerForPSBroker = MessageBuffer_create(1000,false,3,messageIDsOfbufferOfbrokerComponent);
 			
@@ -52,9 +52,10 @@ int main(){
 			MessageID * messageIDsOfbufferOfproductionStationComponent;
 					//create instance ProductionStation of type ProductionStationComponent
 					 mw->productionStationComponent = ProductionStationComponent_create();
-								messageIDsOfbufferOfproductionStationComponent = (MessageID*) calloc(1,sizeof(MessageID));
+								messageIDsOfbufferOfproductionStationComponent = (MessageID*) calloc(2,sizeof(MessageID));
 									messageIDsOfbufferOfproductionStationComponent[0] = MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE;
-								MessageBuffer* OrderForPSBuffergetOrder1ProductionStation = MessageBuffer_create(100,true,1,messageIDsOfbufferOfproductionStationComponent);
+									messageIDsOfbufferOfproductionStationComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
+								MessageBuffer* OrderForPSBuffergetOrder1ProductionStation = MessageBuffer_create(100,true,2,messageIDsOfbufferOfproductionStationComponent);
 			
 							MessageBuffer** allBuffersOfProductionStationgetOrder = (MessageBuffer**) malloc(1*sizeof(MessageBuffer*));
 							allBuffersOfProductionStationgetOrder[0] = OrderForPSBuffergetOrder1ProductionStation;

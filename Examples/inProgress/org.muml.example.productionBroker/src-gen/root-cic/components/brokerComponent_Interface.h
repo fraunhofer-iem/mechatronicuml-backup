@@ -7,6 +7,7 @@
  */
 		#ifndef BROKERCOMPONENT_INTERFACE_H_
 		#define BROKERCOMPONENT_INTERFACE_H_
+#define DEBUG 1
 
 #ifdef __cplusplus
   extern "C" {

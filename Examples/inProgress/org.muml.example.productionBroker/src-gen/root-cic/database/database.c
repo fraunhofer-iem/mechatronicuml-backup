@@ -135,13 +135,14 @@ int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 	{
 		// Insertion fail, extract database error log and exit
 		printf("fail");
+		fflush(stdout);
 		return rc;
 
 	}
 	else
 	{
 		printf("Insert Successful for order id %d\n",orderID);
-
+		fflush(stdout);
 	}
 	return rc;
 }
@@ -168,6 +169,7 @@ int defineProductionStationForOrder(unqlite *pDb, int orderID, int productionSta
 	else
 	{
 		printf("Insert Successful Production Station for order id %d\n",orderID);
+		fflush(stdout);
 
 	}
 	return rc;
@@ -195,6 +197,7 @@ int deleteOrder(unqlite *pDb, int orderID)
 	{
 		// Insertion fail, extract database error log and exit
 		printf("Delete Error for %s\n",orderIDincredientBuffer);
+		fflush(stdout);
 		return rc;
 	}
 
@@ -202,7 +205,7 @@ int deleteOrder(unqlite *pDb, int orderID)
 	if (rc != UNQLITE_OK)
 	{
 		printf("Delete Error for %s\n",orderIDamountBuffer);
-
+		fflush(stdout);
 		// Insertion fail, extract database error log and exit
 		return rc;
 	}
@@ -211,7 +214,7 @@ int deleteOrder(unqlite *pDb, int orderID)
 	if (rc != UNQLITE_OK)
 	{
 		printf("Delete Error for %s\n",orderIDProductionStationBuffer);
-
+		fflush(stdout);
 		// Insertion fail, extract database error log and exit
 		return rc;
 	}
@@ -240,11 +243,13 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 	{
 		// Insertion fail, extract database error log and exit
 		printf("Fehlerhaftes Lesen");
+		fflush(stdout);
 		return rc;
 	}
 	else
 	{
 		printf("Lesen sollte geklappt haben");
+		fflush(stdout);
 	}
 
 	//Allocate a buffer big enough to hold the record content
@@ -252,6 +257,7 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 	if (zBuf == NULL)
 	{
 		printf("Fehlerhaftes Lesen");
+		fflush(stdout);
 	}
 	//Read Database and Copy record content in our buffer
 	rc = unqlite_kv_fetch(pDb, orderIDincredientBuffer, -1, zBuf, &nBytes);
@@ -261,7 +267,7 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 	memmove(ret, ret + 1, strlen(ret));
 	int incredientID = atoi(ret);
 	printf("IncredientID:%d\n", incredientID);
-
+	fflush(stdout);
 	free(zBuf);
 
 	return incredientID;
@@ -286,11 +292,13 @@ int getOrderAmount(unqlite *pDb, int orderID)
 	{
 		// Insertion fail, extract database error log and exit
 		printf("No Record Found\n");
-		return rc;
+		fflush(stdout);
+		return -1;
 	}
 	else
 	{
 		printf("Record Found for OrderID:%d\n",orderID);
+		fflush(stdout);
 	}
 
 	//Allocate a buffer big enough to hold the record content
@@ -298,6 +306,7 @@ int getOrderAmount(unqlite *pDb, int orderID)
 	if (zBuf == NULL)
 	{
 		printf("No Record Found\n");
+		fflush(stdout);
 	}
 	//Copy record content in our buffer
 	rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, zBuf, &nBytes);
@@ -311,6 +320,7 @@ int getOrderAmount(unqlite *pDb, int orderID)
 	// convert character that reprents the amount for  the orderID into int
 	int amount = atoi(ret);
 	printf("Amount:%d\n", amount);
+	fflush(stdout);
 
 	free(zBuf);
 

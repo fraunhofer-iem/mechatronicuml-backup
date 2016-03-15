@@ -13,13 +13,13 @@
   */
 typedef struct MessagesDoneOrderMessagesMessage MessagesDoneOrderMessagesMessage;
  /**
+  * @brief The typedef for the Message Type: MessagesNoOrder, whose struct is generated via protobuf
+  */
+typedef struct MessagesNoOrderMessagesMessage MessagesNoOrderMessagesMessage;
+ /**
   * @brief The typedef for the Message Type: MessagesGetOrder, whose struct is generated via protobuf
   */
 typedef struct MessagesGetOrderMessagesMessage MessagesGetOrderMessagesMessage;
- /**
-  * @brief The typedef for the Message Type: MessagesFailOrder, whose struct is generated via protobuf
-  */
-typedef struct MessagesFailOrderMessagesMessage MessagesFailOrderMessagesMessage;
  /**
   * @brief The typedef for the Message Type: MessagesSimpleOrder, whose struct is generated via protobuf
   */

@@ -150,7 +150,6 @@
 				int32_T amount; /**< The Realtime-StateChart Variable: amount of Type: int32; */
 				int32_T currentOrderID; /**< The Realtime-StateChart Variable: currentOrderID of Type: int32; */
 				int32_T speed; /**< The Realtime-StateChart Variable: speed of Type: int32; */
-
 	
 	
 	

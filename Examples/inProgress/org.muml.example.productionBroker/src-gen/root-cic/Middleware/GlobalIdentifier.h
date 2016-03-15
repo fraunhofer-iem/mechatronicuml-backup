@@ -7,8 +7,8 @@
  */
 		//Define MessageType IDs
 			#define MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE 1 /**< Global Identifier: For the Message-Type: doneOrder */
-			#define MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE 2 /**< Global Identifier: For the Message-Type: getOrder */
-			#define MESSAGE_MESSAGESFAILORDERMESSAGESMESSAGE 3 /**< Global Identifier: For the Message-Type: failOrder */
+			#define MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE 2 /**< Global Identifier: For the Message-Type: noOrder */
+			#define MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE 3 /**< Global Identifier: For the Message-Type: getOrder */
 			#define MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE 4 /**< Global Identifier: For the Message-Type: simpleOrder */
 			#define MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE 5 /**< Global Identifier: For the Message-Type: orderForPS */
 
