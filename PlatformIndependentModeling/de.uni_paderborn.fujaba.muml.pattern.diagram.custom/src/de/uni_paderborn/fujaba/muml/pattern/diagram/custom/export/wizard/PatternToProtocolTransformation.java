@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -38,6 +39,7 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
@@ -223,13 +225,22 @@ public class PatternToProtocolTransformation {
 						+ " and the corresponding realtimestatecharts!";
 
 				// set the elements whose diagrams should be created
-				final Collection<EObject> elements = new ArrayList<EObject>();
+				final Collection<EObject> elements = new HashSet<EObject>();
 				elements.add(newCoordinationSpecification);
 				for (Role role : newCoordinationSpecification.getRoles()) {
 					RealtimeStatechart rtsc = (RealtimeStatechart) role.getBehavior();
 					if (rtsc != null)
+					{
 						elements.add(rtsc);
+						for(MessageType mType : role.getReceiverMessageTypes()) {
+							elements.add(mType.getRepository());
+						}
+						for(MessageType mType : role.getSenderMessageTypes()) {
+							elements.add(mType.getRepository());
+						}					
+					}					
 				}
+				
 		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 
 		// run diagram creation

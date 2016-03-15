@@ -78,6 +78,9 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 				e.printStackTrace();
 			}			
 			
+			
+			PatternToProtocolTransformation.createDiagrams(this.getShell(), newPattern);
+			
 			return true;
 		}
 		return false;
