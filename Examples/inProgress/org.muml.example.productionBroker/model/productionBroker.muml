@@ -175,22 +175,22 @@
               </initializeExpression>
             </variables>
             <transitions xmi:id="_TfQKIOa7EeWyd6JHVas6Kw" priority="1" target="_SwPvEOa7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw">
-              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_P3ZzsOb9EeWyd6JHVas6Kw" operator="GREATER">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_P3Zzseb9EeWyd6JHVas6Kw" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
-                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_P3Zzsub9EeWyd6JHVas6Kw" value="0"/>
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_npEfUOqxEeWdNs1s2t99bw" operator="GREATER">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_npEfUeqxEeWdNs1s2t99bw" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_npEfUuqxEeWdNs1s2t99bw" value="0"/>
               </guard>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_oOzF4Oa8EeWyd6JHVas6Kw" kind="TRIGGER">
                 <message xmi:id="_pBKW8Oa8EeWyd6JHVas6Kw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_wosJAOa8EeWyd6JHVas6Kw" name="processGetOrderRequest">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_2qhhkOqLEeWBDM2lagzQHQ">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2qhhkeqLEeWBDM2lagzQHQ" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_2qhhkuqLEeWBDM2lagzQHQ" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_2qhhk-qLEeWBDM2lagzQHQ" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_sUEO0OqxEeWdNs1s2t99bw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_sUEO0eqxEeWdNs1s2t99bw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_sUEO0uqxEeWdNs1s2t99bw" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_sUEO0-qxEeWdNs1s2t99bw" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2qhhlOqLEeWBDM2lagzQHQ" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2qhhleqLEeWBDM2lagzQHQ" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_2qhhluqLEeWBDM2lagzQHQ" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_sUEO1OqxEeWdNs1s2t99bw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sUEO1eqxEeWdNs1s2t99bw" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_sUEO1uqxEeWdNs1s2t99bw" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -593,8 +593,11 @@
           <lowerBound xmi:id="_Y-8wcNxcEeW-N_z6XJQq2w"/>
           <upperBound xmi:id="_Y_Bo8NxcEeW-N_z6XJQq2w"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_FGdnAOa4EeWyd6JHVas6Kw" name="OrderForPSBuffer" messageType="_P-BxAOa5EeWyd6JHVas6Kw _dtJysNxhEeW-N_z6XJQq2w" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
-          <bufferSize xmi:id="_myBtQOa5EeWyd6JHVas6Kw" value="100"/>
+        <receiverMessageBuffer xmi:id="_FGdnAOa4EeWyd6JHVas6Kw" name="OrderForPSBuffer" messageType="_P-BxAOa5EeWyd6JHVas6Kw" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+          <bufferSize xmi:id="_7mVmYOquEeWdNs1s2t99bw" value="2"/>
+        </receiverMessageBuffer>
+        <receiverMessageBuffer xmi:id="_0EzHkOquEeWdNs1s2t99bw" name="noOrderBuffer" messageType="_dtJysNxhEeW-N_z6XJQq2w">
+          <bufferSize xmi:id="_32URYOquEeWdNs1s2t99bw" value="2"/>
         </receiverMessageBuffer>
       </ports>
     </modelElements>
@@ -613,8 +616,14 @@
           <lowerBound xmi:id="_njzdkea7EeWyd6JHVas6Kw"/>
           <upperBound xmi:id="_nj0EoOa7EeWyd6JHVas6Kw"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_tOsj0Oa7EeWyd6JHVas6Kw" name="orderBuffer" messageType="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w _dtJysNxhEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_xlPtUOa7EeWyd6JHVas6Kw" value="1000"/>
+        <receiverMessageBuffer xmi:id="_tOsj0Oa7EeWyd6JHVas6Kw" name="doneOrderBuffer" messageType="_wsJowNxgEeW-N_z6XJQq2w">
+          <bufferSize xmi:id="_sInUIOquEeWdNs1s2t99bw" value="5"/>
+        </receiverMessageBuffer>
+        <receiverMessageBuffer xmi:id="_nuaZsOquEeWdNs1s2t99bw" name="noOrderBuffer" messageType="_dtJysNxhEeW-N_z6XJQq2w">
+          <bufferSize xmi:id="_pIgZIOquEeWdNs1s2t99bw"/>
+        </receiverMessageBuffer>
+        <receiverMessageBuffer xmi:id="_siMRwOquEeWdNs1s2t99bw" name="getOrderBuffer" messageType="_UTgXMNxrEeW-N_z6XJQq2w">
+          <bufferSize xmi:id="_uAUcoOquEeWdNs1s2t99bw" value="5"/>
         </receiverMessageBuffer>
       </ports>
     </modelElements>

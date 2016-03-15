@@ -3,9 +3,9 @@
 
 #include "lib/Debug.h"
 //including all files for used Components
-#include "components/brokerComponent_Interface.h"
 #include "components/recipeGeneratorComponent_Interface.h"
 #include "components/productionStationComponent_Interface.h"
+#include "components/brokerComponent_Interface.h"
 
 
 //variables for component instances
@@ -27,16 +27,30 @@ int main(){
 				
 							mw->brokerComponent->getOrderPort = Port_create(PORT_BROKERBROKERGETORDER1, 1, allBuffersOfBrokergetOrder);
 						
-								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(3,sizeof(MessageID));
+								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
 									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE;
 									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
 									messageIDsOfbufferOfbrokerComponent[2] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
-								MessageBuffer* orderBufferbrokerForPSBroker = MessageBuffer_create(1000,false,3,messageIDsOfbufferOfbrokerComponent);
+								MessageBuffer* doneOrderBufferbrokerForPSBroker = MessageBuffer_create(5,false,1,messageIDsOfbufferOfbrokerComponent);
 			
-							MessageBuffer** allBuffersOfBrokerbrokerForPSPort = (MessageBuffer**) malloc(1*sizeof(MessageBuffer*));
-							allBuffersOfBrokerbrokerForPSPort[0] = orderBufferbrokerForPSBroker;
+								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
+									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE;
+									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
+									messageIDsOfbufferOfbrokerComponent[2] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
+								MessageBuffer* noOrderBufferbrokerForPSBroker = MessageBuffer_create(1,false,1,messageIDsOfbufferOfbrokerComponent);
+			
+								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
+									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE;
+									messageIDsOfbufferOfbrokerComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
+									messageIDsOfbufferOfbrokerComponent[2] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
+								MessageBuffer* getOrderBufferbrokerForPSBroker = MessageBuffer_create(5,false,1,messageIDsOfbufferOfbrokerComponent);
+			
+							MessageBuffer** allBuffersOfBrokerbrokerForPSPort = (MessageBuffer**) malloc(3*sizeof(MessageBuffer*));
+							allBuffersOfBrokerbrokerForPSPort[0] = doneOrderBufferbrokerForPSBroker;
+							allBuffersOfBrokerbrokerForPSPort[1] = noOrderBufferbrokerForPSBroker;
+							allBuffersOfBrokerbrokerForPSPort[2] = getOrderBufferbrokerForPSBroker;
 				
-							mw->brokerComponent->brokerForPSPortPort = Port_create(PORT_BROKERBROKERBROKERFORPS, 1, allBuffersOfBrokerbrokerForPSPort);
+							mw->brokerComponent->brokerForPSPortPort = Port_create(PORT_BROKERBROKERBROKERFORPS, 3, allBuffersOfBrokerbrokerForPSPort);
 						
 					//create behavior for component brokerComponent
 					mw->brokerComponent->stateChart = BrokerBrokerStateChart_create(mw->brokerComponent);
@@ -52,15 +66,21 @@ int main(){
 			MessageID * messageIDsOfbufferOfproductionStationComponent;
 					//create instance ProductionStation of type ProductionStationComponent
 					 mw->productionStationComponent = ProductionStationComponent_create();
-								messageIDsOfbufferOfproductionStationComponent = (MessageID*) calloc(2,sizeof(MessageID));
+								messageIDsOfbufferOfproductionStationComponent = (MessageID*) calloc(1,sizeof(MessageID));
 									messageIDsOfbufferOfproductionStationComponent[0] = MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE;
 									messageIDsOfbufferOfproductionStationComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
-								MessageBuffer* OrderForPSBuffergetOrder1ProductionStation = MessageBuffer_create(100,true,2,messageIDsOfbufferOfproductionStationComponent);
+								MessageBuffer* OrderForPSBuffergetOrder1ProductionStation = MessageBuffer_create(2,true,1,messageIDsOfbufferOfproductionStationComponent);
 			
-							MessageBuffer** allBuffersOfProductionStationgetOrder = (MessageBuffer**) malloc(1*sizeof(MessageBuffer*));
+								messageIDsOfbufferOfproductionStationComponent = (MessageID*) calloc(1,sizeof(MessageID));
+									messageIDsOfbufferOfproductionStationComponent[0] = MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE;
+									messageIDsOfbufferOfproductionStationComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
+								MessageBuffer* noOrderBuffergetOrder1ProductionStation = MessageBuffer_create(2,false,1,messageIDsOfbufferOfproductionStationComponent);
+			
+							MessageBuffer** allBuffersOfProductionStationgetOrder = (MessageBuffer**) malloc(2*sizeof(MessageBuffer*));
 							allBuffersOfProductionStationgetOrder[0] = OrderForPSBuffergetOrder1ProductionStation;
+							allBuffersOfProductionStationgetOrder[1] = noOrderBuffergetOrder1ProductionStation;
 				
-							mw->productionStationComponent->getOrderPort = Port_create(PORT_PRODUCTIONSTATIONPRODUCTIONSTATIONGETORDER1, 1, allBuffersOfProductionStationgetOrder);
+							mw->productionStationComponent->getOrderPort = Port_create(PORT_PRODUCTIONSTATIONPRODUCTIONSTATIONGETORDER1, 2, allBuffersOfProductionStationgetOrder);
 						
 					//create behavior for component productionStationComponent
 					mw->productionStationComponent->stateChart = ProductionStationPorductionStationRTSCStateChart_create(mw->productionStationComponent);
