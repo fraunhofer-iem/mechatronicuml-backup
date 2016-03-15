@@ -119,7 +119,8 @@
 					STATE_PRODUCTIONSTATIONGETORDERINIT /**< Represents the State: STATE_PRODUCTIONSTATIONGETORDERINIT of the Realtime-StateChart: ProductionStationGetOrderParameterizedGetOrderRTSC */
 			,		STATE_PRODUCTIONSTATIONGETORDERIDLE /**< Represents the State: STATE_PRODUCTIONSTATIONGETORDERIDLE of the Realtime-StateChart: ProductionStationGetOrderParameterizedGetOrderRTSC */
 			,		STATE_PRODUCTIONSTATIONGETORDEREVALUATEORDER /**< Represents the State: STATE_PRODUCTIONSTATIONGETORDEREVALUATEORDER of the Realtime-StateChart: ProductionStationGetOrderParameterizedGetOrderRTSC */
-			,		STATE_PRODUCTIONSTATIONGETORDERPROCESSORDER /**< Represents the State: STATE_PRODUCTIONSTATIONGETORDERPROCESSORDER of the Realtime-StateChart: ProductionStationGetOrderParameterizedGetOrderRTSC */	
+			,		STATE_PRODUCTIONSTATIONGETORDERPROCESSORDER /**< Represents the State: STATE_PRODUCTIONSTATIONGETORDERPROCESSORDER of the Realtime-StateChart: ProductionStationGetOrderParameterizedGetOrderRTSC */
+			,		STATE_PRODUCTIONSTATIONGETORDERSEMANTICBREAK /**< Represents the State: STATE_PRODUCTIONSTATIONGETORDERSEMANTICBREAK of the Realtime-StateChart: ProductionStationGetOrderParameterizedGetOrderRTSC */	
 		}ProductionStationPorductionStationRTSCState;
 	
 	

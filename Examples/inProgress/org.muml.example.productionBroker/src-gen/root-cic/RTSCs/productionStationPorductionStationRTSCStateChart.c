@@ -397,6 +397,8 @@
 		
 						stateChart->incredientID = msg->_incredientID;
 		
+						stateChart->processedOrderID = msg->_orderID;
+		
 					}
 		
 					;
@@ -479,6 +481,44 @@
 					// change the state
 		
 					stateChart->currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC =
+							STATE_PRODUCTIONSTATIONGETORDERSEMANTICBREAK;
+		
+		#ifdef DEBUG
+		
+					printDebugInformation("currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC switched state to STATE_PRODUCTIONSTATIONGETORDERSEMANTICBREAK" );
+		
+		#endif		
+		
+					// execute entry actions
+		
+					// nothing to do
+		
+				} else {
+		
+				}
+				break;
+			case STATE_PRODUCTIONSTATIONGETORDERSEMANTICBREAK:
+				if (1
+		
+				) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC =
 							STATE_PRODUCTIONSTATIONGETORDERIDLE;
 		
 		#ifdef DEBUG
@@ -546,6 +586,10 @@
 		
 				break;
 			case STATE_PRODUCTIONSTATIONGETORDERPROCESSORDER:
+				// nothing to do
+		
+				break;
+			case STATE_PRODUCTIONSTATIONGETORDERSEMANTICBREAK:
 				// nothing to do
 		
 				break;

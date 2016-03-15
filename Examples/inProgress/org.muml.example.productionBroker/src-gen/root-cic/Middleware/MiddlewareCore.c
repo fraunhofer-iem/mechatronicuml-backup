@@ -74,21 +74,20 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	
 	//choose right function to create the bytearray (which is actually a chararray).
 	switch(id){
-	case MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE:
-			nwMsg->_mumlMsg_len = MessagesOrderForPSMessagesMessage_write_delimited_to((MessagesOrderForPSMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
-			break;
-	case MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE:
-			nwMsg->_mumlMsg_len = MessagesGetOrderMessagesMessage_write_delimited_to((MessagesGetOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
-			//fprintf(stdout,"send get ORDER\n");
-			break;
-	case MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE:
-			nwMsg->_mumlMsg_len = MessagesNoOrderMessagesMessage_write_delimited_to((MessagesNoOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+	case MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesDoneOrderMessagesMessage_write_delimited_to((MessagesDoneOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
 	case MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE:
 			nwMsg->_mumlMsg_len = MessagesSimpleOrderMessagesMessage_write_delimited_to((MessagesSimpleOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
-	case MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE:
-			nwMsg->_mumlMsg_len = MessagesDoneOrderMessagesMessage_write_delimited_to((MessagesDoneOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+	case MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesGetOrderMessagesMessage_write_delimited_to((MessagesGetOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
+	case MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesOrderForPSMessagesMessage_write_delimited_to((MessagesOrderForPSMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
+			break;
+	case MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE:
+			nwMsg->_mumlMsg_len = MessagesNoOrderMessagesMessage_write_delimited_to((MessagesNoOrderMessagesMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
 		default:
 			nwMsg->_mumlMsg_len = 0;
@@ -96,17 +95,13 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	}
 	Port *p = MW_getPortforIdentifier(targetPort);
 	if (p != NULL){
-		//fprintf(stdout,"call add message\n");
 		Port_addMessage(p, nwMsg);
 		
 		
 		return true;
 	}
 	else
-	{
-		//fprintf(stdout,"FEHLER\n");
 		return false;
-	}
 
 
 }

@@ -200,6 +200,8 @@ int deleteOrder(unqlite *pDb, int orderID)
 		fflush(stdout);
 		return rc;
 	}
+	else
+		fprintf(stdout,"Delete Success for %s\n",orderIDincredientBuffer);
 
 	rc = unqlite_kv_delete(pDb, orderIDamountBuffer, -1);
 	if (rc != UNQLITE_OK)
@@ -242,7 +244,7 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 	if (rc != UNQLITE_OK)
 	{
 		// Insertion fail, extract database error log and exit
-		printf("Fehlerhaftes Lesen");
+		printf("Fehlerhaftes Lesen: %d\n",rc);
 		fflush(stdout);
 		return rc;
 	}
@@ -256,7 +258,7 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 	zBuf = (char *) malloc(nBytes);
 	if (zBuf == NULL)
 	{
-		printf("Fehlerhaftes Lesen");
+		printf("Fehlerhaftes Lesen: %d\n",rc);
 		fflush(stdout);
 	}
 	//Read Database and Copy record content in our buffer

@@ -33,7 +33,7 @@ int main(){
 			
 								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
 									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
-									MessageBuffer* noOrderBufferbrokerForPSBroker = MessageBuffer_create(1,false,1,messageIDsOfbufferOfbrokerComponent);
+									MessageBuffer* noOrderBufferbrokerForPSBroker = MessageBuffer_create(5,false,1,messageIDsOfbufferOfbrokerComponent);
 			
 								messageIDsOfbufferOfbrokerComponent = (MessageID*) calloc(1,sizeof(MessageID));
 									messageIDsOfbufferOfbrokerComponent[0] = MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE;
@@ -62,12 +62,10 @@ int main(){
 					 mw->productionStationComponent = ProductionStationComponent_create();
 								messageIDsOfbufferOfproductionStationComponent = (MessageID*) calloc(1,sizeof(MessageID));
 									messageIDsOfbufferOfproductionStationComponent[0] = MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE;
-									messageIDsOfbufferOfproductionStationComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
-								MessageBuffer* OrderForPSBuffergetOrder1ProductionStation = MessageBuffer_create(2,true,1,messageIDsOfbufferOfproductionStationComponent);
+									MessageBuffer* OrderForPSBuffergetOrder1ProductionStation = MessageBuffer_create(2,true,1,messageIDsOfbufferOfproductionStationComponent);
 			
 								messageIDsOfbufferOfproductionStationComponent = (MessageID*) calloc(1,sizeof(MessageID));
-									messageIDsOfbufferOfproductionStationComponent[0] = MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE;
-									messageIDsOfbufferOfproductionStationComponent[1] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
+									messageIDsOfbufferOfproductionStationComponent[0] = MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE;
 								MessageBuffer* noOrderBuffergetOrder1ProductionStation = MessageBuffer_create(2,false,1,messageIDsOfbufferOfproductionStationComponent);
 			
 							MessageBuffer** allBuffersOfProductionStationgetOrder = (MessageBuffer**) malloc(2*sizeof(MessageBuffer*));

@@ -47,29 +47,26 @@ int Message_can_read_delimited_from(void *_buffer, int offset, unsigned int leng
  * Message: Messages.proto, line 9
  *******************************************************************/
 
-/* Maximum size of a serialized MessagesOrderForPSMessagesMessage-message, useful for buffer allocation. */
-#define MAX_MessagesOrderForPSMessagesMessage_SIZE 50
+/* Maximum size of a serialized MessagesDoneOrderMessagesMessage-message, useful for buffer allocation. */
+#define MAX_MessagesDoneOrderMessagesMessage_SIZE 14
 
-/* Structure that holds a deserialized MessagesOrderForPSMessagesMessage-message. */
-struct MessagesOrderForPSMessagesMessage {
-    signed long _receiverPsID;
+/* Structure that holds a deserialized MessagesDoneOrderMessagesMessage-message. */
+struct MessagesDoneOrderMessagesMessage {
     signed long _orderID;
-    signed long _incredientID;
-    signed long _amount;
 };
 
 /*
  * Serialize a Person-message into the given buffer at offset and return
  * new offset for optional next message.
  */
-int MessagesOrderForPSMessagesMessage_write_delimited_to(struct MessagesOrderForPSMessagesMessage *_MessagesOrderForPSMessagesMessage, void *_buffer, int offset);
+int MessagesDoneOrderMessagesMessage_write_delimited_to(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset);
 
 /*
  * Serialize a Person-message together with its tag into the given buffer 
  * at offset and return new offset for optional next message.
  * Is useful if a Person-message is embedded in another message.
  */
-int MessagesOrderForPSMessagesMessage_write_with_tag(struct MessagesOrderForPSMessagesMessage *_MessagesOrderForPSMessagesMessage, void *_buffer, int offset, int tag);
+int MessagesDoneOrderMessagesMessage_write_with_tag(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset, int tag);
 
 /*
  * Deserialize a Person-message from the given buffer at offset and return
@@ -77,79 +74,11 @@ int MessagesOrderForPSMessagesMessage_write_with_tag(struct MessagesOrderForPSMe
  *
  * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
  */
-int MessagesOrderForPSMessagesMessage_read_delimited_from(void *_buffer, struct MessagesOrderForPSMessagesMessage *_MessagesOrderForPSMessagesMessage, int offset);
+int MessagesDoneOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, int offset);
 
 
 /*******************************************************************
- * Message: Messages.proto, line 16
- *******************************************************************/
-
-/* Maximum size of a serialized MessagesGetOrderMessagesMessage-message, useful for buffer allocation. */
-#define MAX_MessagesGetOrderMessagesMessage_SIZE 14
-
-/* Structure that holds a deserialized MessagesGetOrderMessagesMessage-message. */
-struct MessagesGetOrderMessagesMessage {
-    signed long _psID;
-};
-
-/*
- * Serialize a Person-message into the given buffer at offset and return
- * new offset for optional next message.
- */
-int MessagesGetOrderMessagesMessage_write_delimited_to(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset);
-
-/*
- * Serialize a Person-message together with its tag into the given buffer 
- * at offset and return new offset for optional next message.
- * Is useful if a Person-message is embedded in another message.
- */
-int MessagesGetOrderMessagesMessage_write_with_tag(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset, int tag);
-
-/*
- * Deserialize a Person-message from the given buffer at offset and return
- * new offset for optional next message.
- *
- * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
- */
-int MessagesGetOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, int offset);
-
-
-/*******************************************************************
- * Message: Messages.proto, line 20
- *******************************************************************/
-
-/* Maximum size of a serialized MessagesNoOrderMessagesMessage-message, useful for buffer allocation. */
-#define MAX_MessagesNoOrderMessagesMessage_SIZE 14
-
-/* Structure that holds a deserialized MessagesNoOrderMessagesMessage-message. */
-struct MessagesNoOrderMessagesMessage {
-    signed long _receiverPsID;
-};
-
-/*
- * Serialize a Person-message into the given buffer at offset and return
- * new offset for optional next message.
- */
-int MessagesNoOrderMessagesMessage_write_delimited_to(struct MessagesNoOrderMessagesMessage *_MessagesNoOrderMessagesMessage, void *_buffer, int offset);
-
-/*
- * Serialize a Person-message together with its tag into the given buffer 
- * at offset and return new offset for optional next message.
- * Is useful if a Person-message is embedded in another message.
- */
-int MessagesNoOrderMessagesMessage_write_with_tag(struct MessagesNoOrderMessagesMessage *_MessagesNoOrderMessagesMessage, void *_buffer, int offset, int tag);
-
-/*
- * Deserialize a Person-message from the given buffer at offset and return
- * new offset for optional next message.
- *
- * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
- */
-int MessagesNoOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesNoOrderMessagesMessage *_MessagesNoOrderMessagesMessage, int offset);
-
-
-/*******************************************************************
- * Message: Messages.proto, line 24
+ * Message: Messages.proto, line 13
  *******************************************************************/
 
 /* Maximum size of a serialized MessagesSimpleOrderMessagesMessage-message, useful for buffer allocation. */
@@ -185,29 +114,29 @@ int MessagesSimpleOrderMessagesMessage_read_delimited_from(void *_buffer, struct
 
 
 /*******************************************************************
- * Message: Messages.proto, line 30
+ * Message: Messages.proto, line 19
  *******************************************************************/
 
-/* Maximum size of a serialized MessagesDoneOrderMessagesMessage-message, useful for buffer allocation. */
-#define MAX_MessagesDoneOrderMessagesMessage_SIZE 14
+/* Maximum size of a serialized MessagesGetOrderMessagesMessage-message, useful for buffer allocation. */
+#define MAX_MessagesGetOrderMessagesMessage_SIZE 14
 
-/* Structure that holds a deserialized MessagesDoneOrderMessagesMessage-message. */
-struct MessagesDoneOrderMessagesMessage {
-    signed long _orderID;
+/* Structure that holds a deserialized MessagesGetOrderMessagesMessage-message. */
+struct MessagesGetOrderMessagesMessage {
+    signed long _psID;
 };
 
 /*
  * Serialize a Person-message into the given buffer at offset and return
  * new offset for optional next message.
  */
-int MessagesDoneOrderMessagesMessage_write_delimited_to(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset);
+int MessagesGetOrderMessagesMessage_write_delimited_to(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset);
 
 /*
  * Serialize a Person-message together with its tag into the given buffer 
  * at offset and return new offset for optional next message.
  * Is useful if a Person-message is embedded in another message.
  */
-int MessagesDoneOrderMessagesMessage_write_with_tag(struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, void *_buffer, int offset, int tag);
+int MessagesGetOrderMessagesMessage_write_with_tag(struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, void *_buffer, int offset, int tag);
 
 /*
  * Deserialize a Person-message from the given buffer at offset and return
@@ -215,7 +144,78 @@ int MessagesDoneOrderMessagesMessage_write_with_tag(struct MessagesDoneOrderMess
  *
  * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
  */
-int MessagesDoneOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesDoneOrderMessagesMessage *_MessagesDoneOrderMessagesMessage, int offset);
+int MessagesGetOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesGetOrderMessagesMessage *_MessagesGetOrderMessagesMessage, int offset);
+
+
+/*******************************************************************
+ * Message: Messages.proto, line 23
+ *******************************************************************/
+
+/* Maximum size of a serialized MessagesOrderForPSMessagesMessage-message, useful for buffer allocation. */
+#define MAX_MessagesOrderForPSMessagesMessage_SIZE 50
+
+/* Structure that holds a deserialized MessagesOrderForPSMessagesMessage-message. */
+struct MessagesOrderForPSMessagesMessage {
+    signed long _receiverPsID;
+    signed long _orderID;
+    signed long _incredientID;
+    signed long _amount;
+};
+
+/*
+ * Serialize a Person-message into the given buffer at offset and return
+ * new offset for optional next message.
+ */
+int MessagesOrderForPSMessagesMessage_write_delimited_to(struct MessagesOrderForPSMessagesMessage *_MessagesOrderForPSMessagesMessage, void *_buffer, int offset);
+
+/*
+ * Serialize a Person-message together with its tag into the given buffer 
+ * at offset and return new offset for optional next message.
+ * Is useful if a Person-message is embedded in another message.
+ */
+int MessagesOrderForPSMessagesMessage_write_with_tag(struct MessagesOrderForPSMessagesMessage *_MessagesOrderForPSMessagesMessage, void *_buffer, int offset, int tag);
+
+/*
+ * Deserialize a Person-message from the given buffer at offset and return
+ * new offset for optional next message.
+ *
+ * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
+ */
+int MessagesOrderForPSMessagesMessage_read_delimited_from(void *_buffer, struct MessagesOrderForPSMessagesMessage *_MessagesOrderForPSMessagesMessage, int offset);
+
+
+/*******************************************************************
+ * Message: Messages.proto, line 30
+ *******************************************************************/
+
+/* Maximum size of a serialized MessagesNoOrderMessagesMessage-message, useful for buffer allocation. */
+#define MAX_MessagesNoOrderMessagesMessage_SIZE 14
+
+/* Structure that holds a deserialized MessagesNoOrderMessagesMessage-message. */
+struct MessagesNoOrderMessagesMessage {
+    signed long _receiverPsID;
+};
+
+/*
+ * Serialize a Person-message into the given buffer at offset and return
+ * new offset for optional next message.
+ */
+int MessagesNoOrderMessagesMessage_write_delimited_to(struct MessagesNoOrderMessagesMessage *_MessagesNoOrderMessagesMessage, void *_buffer, int offset);
+
+/*
+ * Serialize a Person-message together with its tag into the given buffer 
+ * at offset and return new offset for optional next message.
+ * Is useful if a Person-message is embedded in another message.
+ */
+int MessagesNoOrderMessagesMessage_write_with_tag(struct MessagesNoOrderMessagesMessage *_MessagesNoOrderMessagesMessage, void *_buffer, int offset, int tag);
+
+/*
+ * Deserialize a Person-message from the given buffer at offset and return
+ * new offset for optional next message.
+ *
+ * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
+ */
+int MessagesNoOrderMessagesMessage_read_delimited_from(void *_buffer, struct MessagesNoOrderMessagesMessage *_MessagesNoOrderMessagesMessage, int offset);
 
 
 /*******************************************************************
