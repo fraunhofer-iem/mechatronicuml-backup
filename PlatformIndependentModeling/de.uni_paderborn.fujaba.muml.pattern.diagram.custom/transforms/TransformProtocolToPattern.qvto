@@ -23,6 +23,8 @@ property variablesToParameter : Set(Variable);
 property theProtocol : CoordinationProtocol;
 property theRootNode : RootNode;
 
+
+
 main()
 { 	
 	
@@ -59,7 +61,7 @@ helper createPatternFromProtocol()
 
 mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : muml::pattern::CoordinationPattern
 {
-	result.name := self.name;
+	result.name := self.name + timeStamp;
 	result.comment := self.comment;
 	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
 	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
@@ -98,7 +100,9 @@ mapping muml::realtimestatechart::RealtimeStatechart :: transform() : EObject{
 			
     	var resultingRTSC : RealtimeStatechart := result.oclAsType(muml::realtimestatechart::RealtimeStatechart);
     	
-    	resultingRTSC._name := self._name;
+    	
+    	
+    	resultingRTSC._name := self._name + timeStamp;
     	resultingRTSC._comment := self._comment;
     	resultingRTSC._annotation := self._annotation.map transform().oclAsType(EAnnotation);
     	resultingRTSC._extension := self._extension.map transform().oclAsType(core::Extension);

@@ -76,7 +76,7 @@ main()
 
 mapping muml::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol @output
 {	
-	result.name := self.name + "_intermediate";
+	result.name := self.name + timeStamp;
 	result.comment := self.comment;
 	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
 	

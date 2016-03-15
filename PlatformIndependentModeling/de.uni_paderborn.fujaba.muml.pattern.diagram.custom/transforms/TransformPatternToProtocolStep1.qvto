@@ -57,7 +57,7 @@ helper createProtocol(pattern : AbstractCoordinationPattern)
 
 mapping muml::pattern::AbstractCoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol
 {	
-	result.name := self.name;
+	result.name := self.name + timeStamp;
 	result.comment := self.comment;
 	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
 	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
