@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
 import java.io.OutputStreamWriter;
 import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -290,17 +291,12 @@ public class PatternToProtocolTransformation {
 	
 	public static String getTimeStamp(){
 	
-		String s = "_";
-		
+		String s = "_";	
 		Calendar c = new GregorianCalendar();
 		c.setTimeInMillis(System.currentTimeMillis());
-		s+=c.get(Calendar.YEAR);
-		s+= c.get(Calendar.MONTH);
-		s+= c.get(Calendar.DAY_OF_MONTH);
-		s+= c.get(Calendar.HOUR_OF_DAY);
-		s+= c.get(Calendar.MINUTE);
-		s+= c.get(Calendar.SECOND);
-		return s;
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+		String formatted = format1.format(c.getTime());
+		return s + formatted;
 	}
 	// Example Code for saving the input before executing the transformation. Important for debugging
 	/*
