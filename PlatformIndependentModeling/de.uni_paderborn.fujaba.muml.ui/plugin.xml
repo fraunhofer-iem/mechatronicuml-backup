@@ -127,6 +127,25 @@
                </and>
             </visibleWhen>
          </command>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.createBufferForMsgType"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.createBufferForMsgType"
+               label="Create MessageBuffer for every ReceiverMessageType"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension
@@ -171,6 +190,13 @@
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
             name="Embed As Parts">
       </command>
+       <command
+             categoryId="de.uni_paderborn.fujaba"
+             defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.discreteInteractionEndpoint.CreateMessageBufferForEveryReceiverMessageTypeHandler"
+             description="Create a MessageBuffer for every Receiver MessageType"
+             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.createBufferForMsgType"
+             name="Create MessageBuffer for every receiver message type">
+       </command>
    </extension>
    
 </plugin>

@@ -1,0 +1,31 @@
+transformation CreateMessageBufferEveryReceiverMessageType(inout input : MumlPackage);
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+
+
+main() {
+
+	var inputEndpoint : DiscreteInteractionEndpoint := input.rootObjects()[DiscreteInteractionEndpoint]->any(true);
+	assert fatal (not inputEndpoint.oclIsUndefined()) with log ("The input must contain a DiscreteInteractionEndpoint!");
+	
+	// if there is no buffer for the messagetype yet, create new buffer
+	inputEndpoint.receiverMessageTypes->select(mt|not inputEndpoint.receiverMessageBuffer.messageType->includes(mt))-> forEach(mt) {
+					
+		var buffer : MessageBuffer := object MessageBuffer{		
+			name := "buffer_for_" + mt.name;
+			bufferSize := object NaturalNumber {
+				value := 1;				
+			};
+			messageType += mt;		
+		};
+		inputEndpoint.receiverMessageBuffer += buffer;
+	};
+}
