@@ -82,7 +82,7 @@
 
 
 
- <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
+ <extension point="org.muml.ape.runtime.propertyEditors">
     <propertyEditors>
     
        <propertyEditor
@@ -120,7 +120,7 @@
 
 
  <extension
-       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+       point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
           contributor="org.storydriven.core.properties.metamodel.MetamodelContributor">
     </metamodel>
@@ -128,7 +128,7 @@
 
 
  <extension
-       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+       point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
           contributor="org.storydriven.core.properties.constraint.CreationConstraintContributor">
     </constraint>

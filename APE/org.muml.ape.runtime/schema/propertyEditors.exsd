@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.uni_paderborn.fujaba.properties.runtime" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.muml.ape.runtime" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.uni_paderborn.fujaba.properties.runtime" id="propertyEditors" name="Property Editor"/>
+         <meta.schema plugin="org.muml.ape.runtime" id="propertyEditors" name="Property Editor"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]

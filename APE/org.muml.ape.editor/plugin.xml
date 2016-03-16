@@ -130,7 +130,7 @@
 	
 	<!-- Fix for #1173: [Propsheet Editor] GenFeatures are shown as "GenFeature" without name -->
     <extension
-          point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+          point="org.muml.ape.runtime.metamodelContributor">
        <metamodel
              contributor="de.uni_paderborn.fujaba.properties.presentation.GenmodelMetamodelContributor">
        </metamodel>
