@@ -14,9 +14,13 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.dialogs.IPageChangeProvider;
+import org.eclipse.jface.dialogs.IPageChangedListener;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.dialogs.PageChangedEvent;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.wizard.IWizardContainer;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
@@ -31,12 +35,13 @@ import org.eclipse.ui.ide.IDE;
 import de.uni_paderborn.fujaba.export.ExportPlugin;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
+import de.uni_paderborn.fujaba.export.pages.IActivatableWizardPage;
 
-public abstract class AbstractFujabaExportWizard extends Wizard implements IExportWizard {
+public abstract class AbstractFujabaExportWizard extends Wizard implements IExportWizard, org.eclipse.jface.dialogs.IPageChangedListener {
     protected FormToolkit toolkit = new FormToolkit(Display.getDefault());
 	protected EditingDomain editingDomain;
 	protected IStructuredSelection initialSelection;
-
+	protected IActivatableWizardPage activePage;
     /**
      * Creates a wizard for exporting workspace resources to a zip file.
      */
@@ -49,11 +54,25 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IExpo
 		}
         setDialogSettings(section);
     }	
-
+    
 
 	@Override
 	public void dispose() {
 		super.dispose();
+		setContainer(null); // make sure we unregister from IPageChangeProvider.
+	}
+
+	@Override
+	public void setContainer(IWizardContainer wizardContainer) {
+		if (this.getContainer() != wizardContainer) {
+			if (this.getContainer() instanceof IPageChangeProvider) {
+				((IPageChangeProvider) this.getContainer()).removePageChangedListener(this);
+			}
+			super.setContainer(wizardContainer);
+			if (this.getContainer() instanceof IPageChangeProvider) {
+				((IPageChangeProvider) this.getContainer()).addPageChangedListener(this);
+			}
+		}
 	}
 
 	/* (non-Javadoc)
@@ -219,8 +238,6 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IExpo
 		return editingDomain;
 	}
 	
-
-	
 	public AdapterFactory getAdapterFactory() {
 		EditingDomain editingDomain = getEditingDomain();
 		if (editingDomain instanceof AdapterFactoryEditingDomain) {
@@ -228,6 +245,26 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IExpo
 		}
 		return null;
 	}
+
+	@Override
+	public void pageChanged(PageChangedEvent event) {
+		// deactivate old page
+		if (this.activePage != null) {
+			this.activePage.deactivate();
+		}
+		
+		// set new page
+		this.activePage = null;
+		if (event.getSelectedPage() instanceof IActivatableWizardPage) {
+			this.activePage = (IActivatableWizardPage) event.getSelectedPage();
+		}
+		
+		// activate new page
+		if (this.activePage != null) {
+			this.activePage.activate();
+		}
+	}
+
 }
 
 

@@ -34,7 +34,6 @@ import org.eclipse.jface.viewers.TreeViewerFocusCellManager;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
@@ -59,7 +58,7 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 import de.uni_paderborn.fujaba.export.ExportPlugin;
 
 
-public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IWizardPage {
+public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IActivatableWizardPage {
 	protected Button buttonOverwrite;
 	protected FormToolkit toolkit;
 	protected TreeViewer treeViewer;
@@ -479,5 +478,15 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 	
 	public URI getDestinationURI() {
 		return URI.createURI(getDestinationValue()); 
+	}
+	
+	@Override
+	public void activate() {
+		// default implementation: do nothing.
+	}
+	
+	@Override
+	public void deactivate() {
+		// default implementation: do nothing.
 	}
 }

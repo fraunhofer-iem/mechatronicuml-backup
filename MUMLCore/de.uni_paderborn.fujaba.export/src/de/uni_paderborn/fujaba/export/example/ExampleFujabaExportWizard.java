@@ -39,6 +39,10 @@ public class ExampleFujabaExportWizard extends AbstractFujabaExportWizard {
 		sourcePage = new AbstractFujabaExportSourcePage("source", toolkit, getResourceSet(), initialSelection) {
 
 			@Override
+			public void activate() {
+			}
+			
+			@Override
 			public String wizardPageGetSourceFileExtension() {
 				return "muml";
 			}
@@ -52,6 +56,7 @@ public class ExampleFujabaExportWizard extends AbstractFujabaExportWizard {
 			public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
 				return ElementSelectionMode.ELEMENT_SELECTION_MODE_SINGLE;
 			}
+
 			
 		};
 		addPage(sourcePage);
@@ -59,6 +64,10 @@ public class ExampleFujabaExportWizard extends AbstractFujabaExportWizard {
 		// Target page
 		targetPage = new AbstractFujabaExportTargetPage("target", toolkit) {
 
+			@Override
+			public void activate() {
+			}
+			
 			@Override
 			public boolean wizardPageSupportsOverwriteOption() {
 				return true;
