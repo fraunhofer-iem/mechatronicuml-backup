@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.properties.feature"
+      id="org.muml.ape.feature"
       label="Advanced Properties Eclipse (APE)"
       version="0.5.0.qualifier"
       provider-name="%providerName">

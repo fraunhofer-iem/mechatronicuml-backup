@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
  org.eclipse.emf.edit.ui;bundle-version="[2.8.0,3.0.0)";visibility:=reexport,
  org.eclipse.emf.ecore.editor;bundle-version="2.8.0",
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.300"
-Bundle-Version: 2.8.0.qualifier
+Bundle-Version: 0.5.0.qualifier
 Export-Package: org.eclipse.emf.ecore.presentation
 Ant-Version: Apache Ant 1.8.2
 Bundle-ClassPath: .

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.ape.sdk.feature"
+      id="org.muml.ape.sdk.feature"
       label="APE SDK"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -18,11 +18,11 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.feature"
+         id="org.muml.ape.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.source.feature"
+         id="org.muml.ape.sdk.feature"
          version="0.0.0"/>
 
 </feature>

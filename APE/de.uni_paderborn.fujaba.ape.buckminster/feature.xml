@@ -17,19 +17,19 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.feature"
+         id="org.muml.ape.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.emf.ecore.improved.feature"
+         id="org.muml.ape.ecore.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.migrator.feature"
+         id="org.muml.ape.migrator.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.ape.sdk.feature"
+         id="org.muml.ape.sdk.feature"
          version="0.0.0"/>
 
 </feature>

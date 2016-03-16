@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.properties.migrator.feature"
+      id="org.muml.migrator.feature"
       label="APE Propsheet Migration Feature"
       version="0.5.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
@@ -26,7 +26,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </license>
 
    <requires>
-      <import feature="de.uni_paderborn.fujaba.properties.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
       <import feature="de.uni_paderborn.fujaba.ecore.migration.feature" version="0.1.0.qualifier"/>
    </requires>
 
