@@ -876,9 +876,10 @@
     <genPackage href="muml.genmodel#//muml/component"/>
     <classes xmi:id="_VZUq7cwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/component/Component"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZUq7swbEeSjx7OWZCcdLw" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZUq7swbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/component/Component/ports"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZVR8cwbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/component/Component/componentKind"/>

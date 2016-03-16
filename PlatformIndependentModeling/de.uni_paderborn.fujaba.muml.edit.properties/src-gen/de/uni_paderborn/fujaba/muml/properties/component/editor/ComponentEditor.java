@@ -37,6 +37,8 @@ public abstract class ComponentEditor extends de.uni_paderborn.fujaba.properties
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorPorts_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorComponentKind_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -61,6 +63,8 @@ public abstract class ComponentEditor extends de.uni_paderborn.fujaba.properties
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorPorts_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorComponentKind_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -81,6 +85,22 @@ public abstract class ComponentEditor extends de.uni_paderborn.fujaba.properties
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPorts_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPorts_property_tab_generalTab_Editor() {
+		if (this.editorPorts_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getComponent_Ports();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The ports of a component represent the interaction points between the component and its environment.");
+
+			this.editorPorts_property_tab_generalTab = editor;
+		}
+		return this.editorPorts_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentKind_property_tab_generalTab;
