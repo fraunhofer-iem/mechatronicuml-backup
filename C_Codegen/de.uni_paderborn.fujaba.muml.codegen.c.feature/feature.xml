@@ -39,7 +39,7 @@
       <import plugin="org.eclipse.acceleo.profiler" version="3.2.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.codegen.c.beautifier" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.properties"/>
+      <import plugin="org.muml.ape"/>
       <import plugin="org.eclipse.acceleo.common" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.model" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.profiler" version="3.3.0" match="greaterOrEqual"/>

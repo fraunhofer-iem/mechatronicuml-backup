@@ -38,7 +38,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.feature"
+         id="org.muml.ape.feature"
          version="0.0.0"
          name=""/>
 
@@ -141,7 +141,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.properties.migrator.feature"
+         id="org.muml.ape.migrator.feature"
          version="0.0.0"/>
 
    <includes

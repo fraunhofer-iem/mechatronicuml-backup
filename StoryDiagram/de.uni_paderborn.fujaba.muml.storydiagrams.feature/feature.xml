@@ -136,7 +136,7 @@
       <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.properties.runtime"/>
+      <import plugin="org.muml.ape.runtime"/>
       <import plugin="org.storydriven.core.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>

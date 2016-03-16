@@ -26,7 +26,7 @@
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.uml2.common.edit"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="de.uni_paderborn.fujaba.properties.runtime"/>
+      <import plugin="org.muml.ape.runtime"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.jface.text" version="3.7.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>

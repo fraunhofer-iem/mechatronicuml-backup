@@ -37,7 +37,7 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.compare"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.properties.runtime" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.ape.runtime" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.ui"/>

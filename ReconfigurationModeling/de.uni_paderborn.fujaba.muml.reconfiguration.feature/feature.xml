@@ -54,7 +54,7 @@
       <import plugin="org.storydriven.storydiagrams.edit"/>
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
-      <import plugin="de.uni_paderborn.fujaba.properties.runtime"/>
+      <import plugin="org.muml.ape.runtime"/>
       <import plugin="org.storydriven.core.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentstorypattern.edit" version="0.4.0" match="greaterOrEqual"/>
