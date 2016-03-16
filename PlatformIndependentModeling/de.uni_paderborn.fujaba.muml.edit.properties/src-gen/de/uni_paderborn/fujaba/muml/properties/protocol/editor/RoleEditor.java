@@ -45,11 +45,11 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorReceiverMessageBuffer_property_tab_messageTab_Editor(), false);
-
 			addPropertyEditor(createEditorSubroleBehavior_property_tab_behaviorTab_Editor(), false);
 
 			addPropertyEditor(createEditorCoordinatorBehavior_property_tab_behaviorTab_Editor(), false);
+
+			addPropertyEditor(createEditorReceiverMessageBuffer_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -69,8 +69,6 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 			addPropertyEditor(createEditorReceiverMessageTypes_property_tab_messageTab_Editor(), false);
 
-			addPropertyEditor(createEditorReceiverMessageBuffer_property_tab_messageTab_Editor(), false);
-
 		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 			addPropertyEditor(createEditorBehavior_property_tab_behaviorTab_Editor(), false);
@@ -86,6 +84,8 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorCardinality_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorReceiverMessageBuffer_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -105,6 +105,22 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReceiverMessageBuffer_property_tab_generalTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReceiverMessageBuffer_property_tab_generalTab_Editor() {
+		if (this.editorReceiverMessageBuffer_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+					.getDiscreteInteractionEndpoint_ReceiverMessageBuffer();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.");
+
+			this.editorReceiverMessageBuffer_property_tab_generalTab = editor;
+		}
+		return this.editorReceiverMessageBuffer_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -213,22 +229,6 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 		return this.editorCardinality_property_tab_generalTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReceiverMessageBuffer_property_tab_messageTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReceiverMessageBuffer_property_tab_messageTab_Editor() {
-		if (this.editorReceiverMessageBuffer_property_tab_messageTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getDiscreteInteractionEndpoint_ReceiverMessageBuffer();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.");
-
-			this.editorReceiverMessageBuffer_property_tab_messageTab = editor;
-		}
-		return this.editorReceiverMessageBuffer_property_tab_messageTab;
-	}
-
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubroleBehavior_property_tab_behaviorTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubroleBehavior_property_tab_behaviorTab_Editor() {
 		if (this.editorSubroleBehavior_property_tab_behaviorTab == null) {
@@ -299,10 +299,11 @@ public class RoleEditor extends de.uni_paderborn.fujaba.properties.runtime.edito
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general", "property.tab.message", "property.tab.message",
-					"property.tab.general", "property.tab.message", "property.tab.behavior", "property.tab.behavior",
-					"property.tab.behavior", "property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions", "property.tab.general",
+					"property.tab.message", "property.tab.message", "property.tab.general", "property.tab.message",
+					"property.tab.behavior", "property.tab.behavior", "property.tab.behavior", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

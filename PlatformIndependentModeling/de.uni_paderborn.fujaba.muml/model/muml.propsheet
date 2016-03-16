@@ -709,6 +709,11 @@
         <genFeature href="muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes xmi:id="_VZS1sMwbEeSjx7OWZCcdLw" superClasses="_VZXHMMwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/protocol/RoleConnector"/>
