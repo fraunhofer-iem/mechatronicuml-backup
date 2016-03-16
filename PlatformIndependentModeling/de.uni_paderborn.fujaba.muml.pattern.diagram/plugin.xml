@@ -168,8 +168,23 @@
           <propertyTab
           			 category="domain"
              afterTab="property.tab.general"
+             id="property.tab.message"
+             label="%tab.message"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.behavior"
+             label="%tab.behavior"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
              id="property.tab.descriptionAspects"
              label="%tab.descriptionAspects"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.documentation"
+             label="%tab.documentation"/>
       </propertyTabs>
    </extension>
 
@@ -211,9 +226,27 @@
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
+            id="property.section.message" 
+            tab="property.tab.message"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_messageTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
+            id="property.section.behavior" 
+            tab="property.tab.behavior"
+            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_behaviorTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
             id="property.section.descriptionAspects" 
             tab="property.tab.descriptionAspects"
             filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_descriptionAspectsTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
+            id="property.section.documentation" 
+            tab="property.tab.documentation"
+            filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>

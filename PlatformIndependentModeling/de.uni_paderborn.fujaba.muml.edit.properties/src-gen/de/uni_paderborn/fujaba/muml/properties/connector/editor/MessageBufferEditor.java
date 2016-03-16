@@ -31,15 +31,9 @@ public class MessageBufferEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorBufferSize_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorDiscreteInteractionEndpoint_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorMessageType_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorBufferOverflowAvoidanceStrategy_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorMessageType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -63,15 +57,9 @@ public class MessageBufferEditor extends de.uni_paderborn.fujaba.properties.runt
 
 			addPropertyEditor(createEditorBufferSize_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorDiscreteInteractionEndpoint_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorMessageType_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorBufferOverflowAvoidanceStrategy_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorMessageType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -115,22 +103,6 @@ public class MessageBufferEditor extends de.uni_paderborn.fujaba.properties.runt
 			this.editorMessageType_property_tab_generalTab = editor;
 		}
 		return this.editorMessageType_property_tab_generalTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDiscreteInteractionEndpoint_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDiscreteInteractionEndpoint_property_tab_generalTab_Editor() {
-		if (this.editorDiscreteInteractionEndpoint_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getMessageBuffer_DiscreteInteractionEndpoint();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"The role that contains this message buffer. The lower bound is 0, but semantically has to be 1. This is due to the derived containment feature CoordinationProtocol.gmfMessageBuffers.");
-
-			this.editorDiscreteInteractionEndpoint_property_tab_generalTab = editor;
-		}
-		return this.editorDiscreteInteractionEndpoint_property_tab_generalTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBufferOverflowAvoidanceStrategy_property_tab_generalTab;

@@ -36,12 +36,11 @@
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZEzRcwbEeSjx7OWZCcdLw" initializeOCLExpression="">
         <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZEzRswbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
         <creationConstraint xmi:id="_VZEzR8wbEeSjx7OWZCcdLw">
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_VZEzSMwbEeSjx7OWZCcdLw" expression="isValidEClass(eclass)"/>
         </creationConstraint>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZEzScwbEeSjx7OWZCcdLw" title="Lists" properties="_VZEzRcwbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

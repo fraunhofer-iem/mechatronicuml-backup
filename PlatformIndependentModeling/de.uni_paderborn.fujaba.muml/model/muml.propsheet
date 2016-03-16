@@ -709,9 +709,8 @@
         <genFeature href="muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.6">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -1152,17 +1151,15 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZZjYswbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZZjY8wbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZZjY8wbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/discreteInteractionEndpoint"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZZjZMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZZjZcwbEeSjx7OWZCcdLw">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/bufferOverflowAvoidanceStrategy"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_VZZjZswbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZZjZ8wbEeSjx7OWZCcdLw" title="Lists" properties="_VZZjYcwbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
