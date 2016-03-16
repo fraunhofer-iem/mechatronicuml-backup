@@ -22,7 +22,7 @@
          version="0.0.0"/>
 
    <includes
-         id="org.muml.ape.sdk.feature"
+         id="org.muml.ape.source.feature"
          version="0.0.0"/>
 
 </feature>
