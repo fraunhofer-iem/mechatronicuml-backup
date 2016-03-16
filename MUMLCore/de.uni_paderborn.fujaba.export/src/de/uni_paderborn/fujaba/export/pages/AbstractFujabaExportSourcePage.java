@@ -323,7 +323,6 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 
 	// default implementation
 	public ISelection wizardPageGetDefaultSelection(Resource resource) {
-		if (this.selection == null) {
 			TreeIterator<EObject> it = resource.getAllContents();
 			while (it.hasNext()) {
 				EObject element = it.next();
@@ -331,8 +330,6 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 					this.selection = new StructuredSelection(element);
 				}
 			}
-		}
-
 		return this.selection;
 	}
 
