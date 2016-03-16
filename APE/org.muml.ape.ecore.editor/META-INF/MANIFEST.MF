@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bundle-SymbolicName: org.eclipse.emf.ecore.improved.editor;singleton:=true
+Bundle-SymbolicName: org.muml.ape.ecore.editor;singleton:=true
 Eclipse-LazyStart: true
 Bundle-Activator: org.eclipse.emf.ecore.presentation.ImprovedEcoreEditorPlugin$Implementation
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",

@@ -7,7 +7,7 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;bundle-version="2.10.1",
- de.uni_paderborn.fujaba.properties.runtime;bundle-version="0.5.0",
+ org.muml.ape.runtime;bundle-version="0.5.0",
  org.eclipse.emf.transaction,
  org.eclipse.ui.workbench,
  org.eclipse.e4.ui.model.workbench;bundle-version="1.1.0",

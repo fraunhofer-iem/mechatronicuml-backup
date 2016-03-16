@@ -31,7 +31,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.properties.migrator"
+         id="org.muml.ape.migrator"
          download-size="0"
          install-size="0"
          version="0.0.0"

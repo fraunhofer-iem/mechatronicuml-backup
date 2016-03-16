@@ -6,7 +6,7 @@ Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.ui,
  org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.properties.runtime,
+ org.muml.ape.runtime,
  de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD,
  de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit,
  org.eclipse.emf.edit,

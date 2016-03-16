@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
-Bundle-SymbolicName: org.eclipse.emf.ecore.improved.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.ape.ecore.edit.properties;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.properties.runtime,
+ org.muml.ape.runtime,
  org.eclipse.emf.edit,
  org.eclipse.ui,
  org.eclipse.emf.ecore.edit
