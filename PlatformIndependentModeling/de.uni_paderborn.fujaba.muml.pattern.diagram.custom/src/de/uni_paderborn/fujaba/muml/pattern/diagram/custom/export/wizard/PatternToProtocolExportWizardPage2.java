@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.jface.viewers.CheckStateChangedEvent;
-import org.eclipse.jface.viewers.ICheckStateListener;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -21,12 +17,13 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.common.LiteralExpression;
 
-import de.uni_paderborn.fujaba.export.listeners.ResourceChangeListener;
+import de.uni_paderborn.fujaba.export.pages.IActivatableWizardPage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
 
 
@@ -38,17 +35,19 @@ import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
  *
  */
 public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
-		implements IWizardPage {
+		implements IActivatableWizardPage {
 
 	Label selectionLabel;
 	FormToolkit toolkit;
 	HashMap<Parameter, Text> parameterToTextMapping;
+	PatternToProtocolExportWizardPage1 page1;
 
 	public PatternToProtocolExportWizardPage2(String pageName,
-			FormToolkit toolkit) {
+			FormToolkit toolkit, PatternToProtocolExportWizardPage1 page1) {
 		super(pageName);
 		this.toolkit = toolkit;		
 		this.setTitle("Set or Modify the parameter bindings");	
+		this.page1 = page1;
 	}
 	
 	@Override
@@ -187,5 +186,19 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 	protected boolean allowNewContainerName() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void activate() {			
+		
+		this.refresh(page1.getSelectedPattern(), page1.getSelectedVerifiedConfiguration());		
+		
+		
+	}
+
+	@Override
+	public void deactivate() {
+		// TODO Auto-generated method stub
+		
 	}
 }

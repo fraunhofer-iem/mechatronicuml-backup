@@ -12,7 +12,6 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -23,7 +22,7 @@ import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
-import de.uni_paderborn.fujaba.export.listeners.ResourceChangeListener;
+import de.uni_paderborn.fujaba.export.pages.IActivatableWizardPage;
 import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
 import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
@@ -36,27 +35,28 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
-public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
-		implements IWizardPage, ResourceChangeListener {
+public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage implements IActivatableWizardPage {
 
 	CheckboxTreeViewer treeViewer;
 	FormToolkit toolkit;
 	Resource currentResource;
+	ProtocolToPatternExportWizardPage1 page1;
 
-	protected ProtocolToPatternExportWizardPage2(String pageName,
-			FormToolkit toolkit) {
+	protected ProtocolToPatternExportWizardPage2(String pageName, FormToolkit toolkit,
+			ProtocolToPatternExportWizardPage1 page1) {
 		super(pageName);
 		this.toolkit = toolkit;
 		// TODO Auto-generated constructor stub
 		setTitle("Variable Selection");
-		setDescription("Select the variables that should become parameters of the generated CoordinationPattern. This step is optional.");
+		setDescription(
+				"Select the variables that should become parameters of the generated CoordinationPattern. This step is optional.");
+		this.page1 = page1;
 	}
 
 	@Override
 	public void createControl(Composite parent) {
 		// TODO Auto-generated method stub
-		int sectionStyle = Section.TITLE_BAR | Section.CLIENT_INDENT
-				| Section.EXPANDED;
+		int sectionStyle = Section.TITLE_BAR | Section.CLIENT_INDENT | Section.EXPANDED;
 		Section section = toolkit.createSection(parent, sectionStyle);
 		section.setText("Select Variables that should become Parameters");
 
@@ -69,33 +69,32 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.minimumHeight = 200;
 		tree.setLayoutData(gridData);
-//		tree.addListener(SWT.EraseItem, new Listener() {
-//			public void handleEvent(Event event) {
-//				if ((event.detail & SWT.SELECTED) != 0 && true) {
-//					// event.detail &= ~SWT.SELECTED;
-//				}
-//			}
-//		});
-		
+		// tree.addListener(SWT.EraseItem, new Listener() {
+		// public void handleEvent(Event event) {
+		// if ((event.detail & SWT.SELECTED) != 0 && true) {
+		// // event.detail &= ~SWT.SELECTED;
+		// }
+		// }
+		// });
+
 		parent.layout(true, true);
 
-		
 		treeViewer = new CheckboxTreeViewer(tree);
 		treeViewer.addCheckStateListener(new ICheckStateListener() {
-			
+
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				// TODO Auto-generated method stub
-				
+
 				validatePage();
 			}
 		});
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
-			
+
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				// TODO Auto-generated method stub
-				
+
 				validatePage();
 			}
 		});
@@ -114,98 +113,88 @@ public class ProtocolToPatternExportWizardPage2 extends WizardDataTransferPage
 		return false;
 	}
 
-	
+	@Override
+	public void activate() {
+		currentResource = page1.getResource();
+		this.refresh(currentResource, page1.getSelectedProtocol());
+	}
+
 	public void refresh(Resource currentResource, CoordinationProtocol protocol) {
 
 		AdapterFactory adapterFactory = null;
-		EditingDomain editingDomain = AdapterFactoryEditingDomain
-				.getEditingDomainFor(protocol);
+		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(protocol);
 		if (editingDomain instanceof AdapterFactoryEditingDomain) {
-			adapterFactory = ((AdapterFactoryEditingDomain) editingDomain)
-					.getAdapterFactory();
+			adapterFactory = ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
 		}
 		final CoordinationProtocol protocol2 = protocol;
 		if (adapterFactory != null) {
-			treeViewer.setContentProvider(new AdapterFactoryContentProvider(
-					adapterFactory));
-			treeViewer.setLabelProvider(new GreyedAdapterFactoryLabelProvider(
-					adapterFactory) {
+			treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+			treeViewer.setLabelProvider(new GreyedAdapterFactoryLabelProvider(adapterFactory) {
 				@Override
 				public boolean isEnabled(Object object) {
 					// TODO Auto-generated method stub
 					return object instanceof Variable;
 				}
 			});
-			
+
 			treeViewer.setInput(currentResource);
 
 			treeViewer.setFilters(new ViewerFilter[] { new ViewerFilter() {
 
 				@Override
-				public boolean select(Viewer viewer, Object parentElement,
-						Object element) {
+				public boolean select(Viewer viewer, Object parentElement, Object element) {
 					// TODO Auto-generated method stub
 					if (element instanceof RootNode)
 						return true;
 					if (element instanceof ModelElementCategory
-							&& ((ModelElementCategory) element).getKey()
-									.contains("realtime"))
+							&& ((ModelElementCategory) element).getKey().contains("realtime"))
 						return true;
 					if (element instanceof RealtimeStatechart) {
 						RealtimeStatechart rtsc = (RealtimeStatechart) element;
-						BehavioralElement behaviorialElement = rtsc
-								.getPortOrRoleStatechart()
-								.getBehavioralElement();
-						return (behaviorialElement != null
-								&& behaviorialElement instanceof Role
-								&& ((Role) behaviorialElement)
-										.getCoordinationProtocol() != null && ((Role) behaviorialElement)
-								.getCoordinationProtocol().equals(protocol2));
+						BehavioralElement behaviorialElement = rtsc.getPortOrRoleStatechart().getBehavioralElement();
+						return (behaviorialElement != null && behaviorialElement instanceof Role
+								&& ((Role) behaviorialElement).getCoordinationProtocol() != null
+								&& ((Role) behaviorialElement).getCoordinationProtocol().equals(protocol2));
 					}
-					if (element instanceof Variable
-							|| element instanceof Region
-							|| element instanceof State
-							&& !((State) element).isSimple())
+					if (element instanceof Variable || element instanceof Region
+							|| element instanceof State && !((State) element).isSimple())
 						return true;
 
 					return false;
 				}
 			} });
-			
+
 		}
-		
+
 		else {
 			treeViewer.setContentProvider(NullContentProvider.DEFAULT);
 			treeViewer.setInput(null);
 		}
 	}
 
-	public Object[] getCheckedVariables()
-	{
+	public Object[] getCheckedVariables() {
 		return treeViewer.getCheckedElements();
 	}
-	
-	@Override
-	public void handleResourceChange(Resource newResource) {
-		// TODO Auto-generated method stub
-		currentResource = newResource;
-	}
+
 	public void validatePage() {
-		
+
 		String errorMessage = null;
-		for(Object element : treeViewer.getCheckedElements())
-		{
-			if(!(element instanceof Variable))
+		for (Object element : treeViewer.getCheckedElements()) {
+			if (!(element instanceof Variable))
 				errorMessage = "Select only Variables!";
-		}		
+		}
 		setErrorMessage(errorMessage);
 		setPageComplete(errorMessage == null);
 	}
-	
 
 	@Override
 	public boolean isPageComplete() {
 		// TODO Auto-generated method stub
 		return super.isPageComplete() && this.isCurrentPage();
+	}
+
+	@Override
+	public void deactivate() {
+
 	}
 }

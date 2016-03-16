@@ -24,19 +24,30 @@ import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
 public class PatternVerificationWizardPage1 extends
 		AbstractPatternVerificationWizardPage {
 
-	public PatternVerificationWizardPage1(String pageName, String pageTitle,
-			String pageDescription, AbstractCoordinationPattern pattern,
-			FormToolkit toolkit,ICheckStateListener treeViewerListener) {
-		super(pageName, pageTitle, pageDescription, pattern, toolkit);
-		// TODO Auto-generated constructor stub
-		this.treeViewerListener = treeViewerListener;
-	}
+	
 
 	
 
-	CheckboxTreeViewer treeViewer;
-	ICheckStateListener treeViewerListener;
+	public PatternVerificationWizardPage1(String pageName, String pageTitle, String pageDescription,
+			AbstractCoordinationPattern pattern, FormToolkit toolkit) {
+		super(pageName, pageTitle, pageDescription, pattern, toolkit);
+		// TODO Auto-generated constructor stub
+	}
 
+
+
+
+	CheckboxTreeViewer treeViewer;
+	
+	public VerifiedConfiguration getSelectedVerifiedConfiguration() {
+		
+		for (Object element : treeViewer.getCheckedElements()) {
+			if (element instanceof VerifiedConfiguration)
+				return (VerifiedConfiguration) element;
+		}
+		return null;
+	}
+	
 	
 	@Override
 	public void createControl(Composite parent) {
@@ -80,7 +91,7 @@ public class PatternVerificationWizardPage1 extends
 			}
 		});
 		treeViewer.setCheckedElements(new Object[] {});
-		treeViewer.addCheckStateListener(treeViewerListener);
+		
 
 		treeViewer.setInput(pattern);
 		treeViewer.addFilter(new ViewerFilter() {
@@ -94,5 +105,7 @@ public class PatternVerificationWizardPage1 extends
 		});
 		this.setControl(section);
 	}
+
+
 
 }

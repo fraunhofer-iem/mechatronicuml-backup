@@ -36,10 +36,9 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 	@Override
 	public void addPages() {
 		// TODO Auto-generated method stub
-		super.addPages();
-	
-		page2 = new ProtocolToPatternExportWizardPage2("SelectVariablesThatShouldBeTransformedToParameters", toolkit);
-		page1 = new ProtocolToPatternExportWizardPage1("SelectProtocol", toolkit, this.getResourceSet(), this.initialSelection, page2);
+		super.addPages();	
+		page1 = new ProtocolToPatternExportWizardPage1("SelectProtocol", toolkit, this.getResourceSet(), this.initialSelection);
+		page2 = new ProtocolToPatternExportWizardPage2("SelectVariablesThatShouldBeTransformedToParameters", toolkit, page1);
 		this.addPage(page1);
 		this.addPage(page2);
 		

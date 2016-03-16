@@ -156,6 +156,24 @@ public class PatternToProtocolExportWizardPage1 extends
 	}
 
 	@Override
+	protected void resourceChanged() {
+		super.resourceChanged();
+//		treeViewer.addFilter(new ViewerFilter() {
+//			@Override
+//			public boolean select(Viewer viewer,
+//					Object parentElement, Object element) {
+//				// TODO Auto-generated method stub
+//				if (element instanceof AbstractCoordinationPattern
+//						|| element instanceof VerifiedConfiguration
+//						|| element instanceof RootNode
+//						|| (element instanceof ModelElementCategory && ((ModelElementCategory) element)
+//								.getName().contains("pattern")))
+//					return true;
+//				return false;
+//			}
+//		});
+	}
+	@Override
 	public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
 		return ElementSelectionMode.ELEMENT_SELECTION_MODE_MULTI;
 	}
@@ -165,21 +183,14 @@ public class PatternToProtocolExportWizardPage1 extends
 		@Override public void setResource(Resource resource)
 		{
 			super.setResource(resource);
-			treeViewer.addFilter(new ViewerFilter() {
-				@Override
-				public boolean select(Viewer viewer,
-						Object parentElement, Object element) {
-					// TODO Auto-generated method stub
-					if (element instanceof AbstractCoordinationPattern
-							|| element instanceof VerifiedConfiguration
-							|| element instanceof RootNode
-							|| (element instanceof ModelElementCategory && ((ModelElementCategory) element)
-									.getName().contains("pattern")))
-						return true;
-					return false;
-				}
-			});
+			
 		}
+	}
+
+	@Override
+	public void activate() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

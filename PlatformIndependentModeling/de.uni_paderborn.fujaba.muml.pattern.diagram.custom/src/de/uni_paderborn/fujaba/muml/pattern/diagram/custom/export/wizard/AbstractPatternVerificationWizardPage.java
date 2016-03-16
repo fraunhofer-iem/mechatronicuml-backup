@@ -1,13 +1,13 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
+import de.uni_paderborn.fujaba.export.pages.IActivatableWizardPage;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 
 public abstract class AbstractPatternVerificationWizardPage 
-	extends WizardPage implements IWizardPage{
+	extends WizardPage implements IActivatableWizardPage{
 	AbstractCoordinationPattern pattern;
 	FormToolkit toolkit;
 	
@@ -20,6 +20,14 @@ public abstract class AbstractPatternVerificationWizardPage
 		this.setTitle(pageTitle);
 	}
 	
+	@Override
+	public void deactivate() {
+		// do nothing
+	}
 	
+	@Override 
+	public void activate() {
+		// do nothing
+	}
 	
 }

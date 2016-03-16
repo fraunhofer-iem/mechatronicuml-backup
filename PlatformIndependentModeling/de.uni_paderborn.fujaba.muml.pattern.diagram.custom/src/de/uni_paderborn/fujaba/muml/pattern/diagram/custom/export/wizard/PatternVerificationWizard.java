@@ -24,8 +24,8 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 	PatternVerificationWizardPage2 p2;
 	CoordinationProtocol protocolFromSelectedPattern;
 
-	
-	public void init(IWorkbench workbench, IStructuredSelection currentSelection, AbstractCoordinationPattern selectedPattern) {
+	public void init(IWorkbench workbench, IStructuredSelection currentSelection,
+			AbstractCoordinationPattern selectedPattern) {
 		// TODO Auto-generated method stub
 		super.init(workbench, currentSelection);
 		this.selectedPattern = selectedPattern;
@@ -42,19 +42,18 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 	public void addPages() {
 		// TODO Auto-generated method stub
 		super.addPages();
-		p2 = new PatternVerificationWizardPage2(
-				"SelectVerifiedConfiguration",
-				"Step 2: Manual definition of a verified configuration",
-				"On this page you can alter the values of the chosen VerifiedConfiguration or define your own configuration. "
-						+ "If your configuration is complete, press the Finish-Button in order to start the Model Checking.",
-				selectedPattern, toolkit);
-		PatternVerificationWizardPage1 p1 = new PatternVerificationWizardPage1(
-				"DefineVerifiedConfiguration",
+
+		PatternVerificationWizardPage1 p1 = new PatternVerificationWizardPage1("DefineVerifiedConfiguration",
 				"Step 1: Choose a verified configuration",
 				"On this page you can select a VerifiedConfiguration for the parameters. The chosen configuration is used by the Uppaal Model Checking."
 						+ "If you do not want to chooes a verified configuration, you can also define a configuration manually on the next page.",
 
-				selectedPattern, toolkit, p2);
+				selectedPattern, toolkit);
+		p2 = new PatternVerificationWizardPage2("SelectVerifiedConfiguration",
+				"Step 2: Manual definition of a verified configuration",
+				"On this page you can alter the values of the chosen VerifiedConfiguration or define your own configuration. "
+						+ "If your configuration is complete, press the Finish-Button in order to start the Model Checking.",
+				selectedPattern, toolkit, p1);
 
 		this.addPage(p1);
 		this.addPage(p2);
@@ -70,9 +69,8 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 			}
 		};
 	}
-	
-	public CoordinationProtocol getTransformedCoordinationProtocolFromCoordinationPattern()
-	{
+
+	public CoordinationProtocol getTransformedCoordinationProtocolFromCoordinationPattern() {
 		return this.protocolFromSelectedPattern;
 	}
 
@@ -80,35 +78,33 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 	public boolean performFinish() {
 		// TODO Auto-generated method stub
 		super.performFinish();
-		
-		for (ParameterBinding binding : p2.getBindings()) {			
+
+		for (ParameterBinding binding : p2.getBindings()) {
 			Expression value = binding.getValue();
 
-			if (!(value instanceof LiteralExpression)
-					|| ((LiteralExpression) value).getValue().equals("")) {
-				ErrorDialog dialog = new ErrorDialog(
-						this.getShell(),
-						"ERROR when validating the Parameter Bindings",
-						null,
-						new org.eclipse.core.runtime.Status(IStatus.ERROR,
-								Activator.ID,
+			if (!(value instanceof LiteralExpression) || ((LiteralExpression) value).getValue().equals("")) {
+				ErrorDialog dialog = new ErrorDialog(this.getShell(), "ERROR when validating the Parameter Bindings",
+						null, new org.eclipse.core.runtime.Status(IStatus.ERROR, Activator.ID,
 								"Each Parameter Binding must bind a value to its Parameter!"),
 						IStatus.ERROR);
 				dialog.open();
 				return false;
 			}
 		}
-		//PatternToProtocolTransformation.saveInput(selectedPattern, (RootNode)selectedPattern.eContainer().eContainer(), p2.getBindings(), editingDomain);
+		// PatternToProtocolTransformation.saveInput(selectedPattern,
+		// (RootNode)selectedPattern.eContainer().eContainer(),
+		// p2.getBindings(), editingDomain);
 		this.startUppaalModelChecking();
 		return true;
 	}
 
 	public void startUppaalModelChecking() {
-		protocolFromSelectedPattern = PatternToProtocolTransformation				
-				.transformPatternToProtocolVerification(selectedPattern,
-						(RootNode) selectedPattern.eContainer().eContainer(),
-						p2.getBindings(), editingDomain);		
-		//PatternToProtocolTransformation.TransformPatternToProtocolStep2(selectedPattern, protocolFromSelectedPattern, (RootNode)protocolFromSelectedPattern.eContainer().eContainer(), editingDomain);
+		protocolFromSelectedPattern = PatternToProtocolTransformation.transformPatternToProtocolVerification(
+				selectedPattern, (RootNode) selectedPattern.eContainer().eContainer(), p2.getBindings(), editingDomain);
+		// PatternToProtocolTransformation.TransformPatternToProtocolStep2(selectedPattern,
+		// protocolFromSelectedPattern,
+		// (RootNode)protocolFromSelectedPattern.eContainer().eContainer(),
+		// editingDomain);
 	}
 
 }
