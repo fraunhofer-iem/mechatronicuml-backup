@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:behavior="http://www.fujaba.de/muml/behavior/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_soKoMNxbEeW-N_z6XJQq2w">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:behavior="http://www.fujaba.de/muml/behavior/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.1/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_soKoMNxbEeW-N_z6XJQq2w">
   <categories xmi:id="_soKoMdxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_soLPQNxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ytRK8NxrEeW-N_z6XJQq2w" name="ReciepeGenerator" behavioralElement="_QVSL8NxcEeW-N_z6XJQq2w">
@@ -888,7 +888,100 @@
     </modelElements>
   </categories>
   <categories xmi:id="_9cdRYOVGEeWTk8L1nP577g" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
-    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_9cd4cOVGEeWTk8L1nP577g"/>
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_ozx8oOwqEeWTKqLnMSJAUw" name="Platform">
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_pSG3YOwqEeWTKqLnMSJAUw" name="rpi" resourceType="_2uYW-ewnEeWTKqLnMSJAUw">
+        <cardinality xmi:id="_pSQBUOwqEeWTKqLnMSJAUw">
+          <lowerBound xmi:id="_zGb4MOwqEeWTKqLnMSJAUw"/>
+          <upperBound xmi:id="_zGe7gOwqEeWTKqLnMSJAUw"/>
+        </cardinality>
+        <hwPortParts xmi:id="_qce_0OwqEeWTKqLnMSJAUw" hwport="_2uYW-uwnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_qckfYOwqEeWTKqLnMSJAUw" hwport="_2uYW--wnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_qcm7oOwqEeWTKqLnMSJAUw" connectors="_22pacOwqEeWTKqLnMSJAUw" hwport="_2uYW_OwnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_qcoJwOwqEeWTKqLnMSJAUw" hwport="_2uYW_ewnEeWTKqLnMSJAUw"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_rMLXYOwqEeWTKqLnMSJAUw" name="router" resourceType="_xjvL0OwpEeWTKqLnMSJAUw">
+        <cardinality xmi:id="_rMPo0OwqEeWTKqLnMSJAUw">
+          <lowerBound xmi:id="_ysK-EOwqEeWTKqLnMSJAUw"/>
+          <upperBound xmi:id="_ysOBYOwqEeWTKqLnMSJAUw"/>
+        </cardinality>
+        <hwPortParts xmi:id="_sVkoYOwqEeWTKqLnMSJAUw" connectors="_0TJi8OwqEeWTKqLnMSJAUw" hwport="_ydLVQOwpEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_sVrWEOwqEeWTKqLnMSJAUw" connectors="_2AoYcOwqEeWTKqLnMSJAUw" hwport="_ydQ00OwpEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_sVskMOwqEeWTKqLnMSJAUw" connectors="_22pacOwqEeWTKqLnMSJAUw" hwport="_ydSqAOwpEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_sVuZYOwqEeWTKqLnMSJAUw" hwport="_ydVGQOwpEeWTKqLnMSJAUw"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_tDRb4OwqEeWTKqLnMSJAUw" name="mx" resourceType="_2uYW7uwnEeWTKqLnMSJAUw">
+        <cardinality xmi:id="_tDVtUOwqEeWTKqLnMSJAUw">
+          <lowerBound xmi:id="_ujEasOwqEeWTKqLnMSJAUw"/>
+          <upperBound xmi:id="_ujIFEOwqEeWTKqLnMSJAUw"/>
+        </cardinality>
+        <hwPortParts xmi:id="_vI_LMOwqEeWTKqLnMSJAUw" connectors="_2AoYcOwqEeWTKqLnMSJAUw" hwport="_2uYW7-wnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_vJF44OwqEeWTKqLnMSJAUw" hwport="_2uYW8OwnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_vJHuEOwqEeWTKqLnMSJAUw" hwport="_2uYW8ewnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_vJKKUOwqEeWTKqLnMSJAUw" hwport="_2uYW8uwnEeWTKqLnMSJAUw"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_wigi4OwqEeWTKqLnMSJAUw" name="cx" resourceType="_2uYXF-wnEeWTKqLnMSJAUw">
+        <cardinality xmi:id="_wikNQOwqEeWTKqLnMSJAUw">
+          <lowerBound xmi:id="_yUVs4OwqEeWTKqLnMSJAUw"/>
+          <upperBound xmi:id="_yUZ-UOwqEeWTKqLnMSJAUw"/>
+        </cardinality>
+        <hwPortParts xmi:id="_xG0J0OwqEeWTKqLnMSJAUw" hwport="_2uYXGOwnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_xG6QcOwqEeWTKqLnMSJAUw" connectors="_0TJi8OwqEeWTKqLnMSJAUw" hwport="_2uYXGewnEeWTKqLnMSJAUw"/>
+        <hwPortParts xmi:id="_xG8FoOwqEeWTKqLnMSJAUw" hwport="_2uYXGuwnEeWTKqLnMSJAUw"/>
+      </embeddedPlatformParts>
+      <networkConnectors xmi:id="_0TJi8OwqEeWTKqLnMSJAUw" connectorEndpoints="_xG6QcOwqEeWTKqLnMSJAUw _sVkoYOwqEeWTKqLnMSJAUw"/>
+      <networkConnectors xmi:id="_2AoYcOwqEeWTKqLnMSJAUw" connectorEndpoints="_vI_LMOwqEeWTKqLnMSJAUw _sVrWEOwqEeWTKqLnMSJAUw"/>
+      <networkConnectors xmi:id="_22pacOwqEeWTKqLnMSJAUw" connectorEndpoints="_qcm7oOwqEeWTKqLnMSJAUw _sVskMOwqEeWTKqLnMSJAUw"/>
+    </modelElements>
+    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_5Apz4OwqEeWTKqLnMSJAUw">
+      <hwplatformInstances xmi:id="_5xZ7YOwqEeWTKqLnMSJAUw" name="Platform.0" hwplatformType="_ozx8oOwqEeWTKqLnMSJAUw">
+        <embeddedHPIC xmi:id="_6TU8sOwqEeWTKqLnMSJAUw">
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6Tq68OwqEeWTKqLnMSJAUw" name="cx.0.1" resourceType="_2uYWu-wnEeWTKqLnMSJAUw">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6Tq68ewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_6TZOIOwqEeWTKqLnMSJAUw" type="_xG6QcOwqEeWTKqLnMSJAUw" communicationResource="_2uYWvOwnEeWTKqLnMSJAUw"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6Tq68uwqEeWTKqLnMSJAUw" name="Intel Core i7" resourceType="_2uYWyOwnEeWTKqLnMSJAUw">
+              <frequency xmi:id="_6Tq68-wqEeWTKqLnMSJAUw" value="1.7" unit="GHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_6Tq69OwqEeWTKqLnMSJAUw" name="ddr3" resourceType="_2uYWyuwnEeWTKqLnMSJAUw">
+              <memorySize xmi:id="_6Tq69ewqEeWTKqLnMSJAUw" value="16.0" unit="GByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_6Tq69uwqEeWTKqLnMSJAUw" name="mram" resourceType="_2uYWy-wnEeWTKqLnMSJAUw">
+              <memorySize xmi:id="_6Tq69-wqEeWTKqLnMSJAUw" value="128.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriAOwqEeWTKqLnMSJAUw" name="rpi.0.1" resourceType="_2uXvsOwnEeWTKqLnMSJAUw">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriAewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_6TXY8OwqEeWTKqLnMSJAUw" type="_qcm7oOwqEeWTKqLnMSJAUw" communicationResource="_2uXvuewnEeWTKqLnMSJAUw"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_6TriAuwqEeWTKqLnMSJAUw" name="DDR2" resourceType="_2uXvw-wnEeWTKqLnMSJAUw">
+              <memorySize xmi:id="_6TriA-wqEeWTKqLnMSJAUw" value="1.0" unit="GByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6TriBOwqEeWTKqLnMSJAUw" name="ARM Cortex-A7" resourceType="_2uXvwewnEeWTKqLnMSJAUw">
+              <frequency xmi:id="_6TriBewqEeWTKqLnMSJAUw" value="900.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriBuwqEeWTKqLnMSJAUw" name="mx.0.1" resourceType="_2uXv4-wnEeWTKqLnMSJAUw">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriB-wqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_6TZ1MOwqEeWTKqLnMSJAUw" type="_vI_LMOwqEeWTKqLnMSJAUw" communicationResource="_2uXv5OwnEeWTKqLnMSJAUw"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6TriCOwqEeWTKqLnMSJAUw" name="Freescale i.MX6" resourceType="_2uXv9OwnEeWTKqLnMSJAUw">
+              <frequency xmi:id="_6TriCewqEeWTKqLnMSJAUw" value="800.0"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_6TriCuwqEeWTKqLnMSJAUw" name="nvram" resourceType="_2uYWoewnEeWTKqLnMSJAUw">
+              <memorySize xmi:id="_6TriC-wqEeWTKqLnMSJAUw" value="128.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_6TriDOwqEeWTKqLnMSJAUw" name="ddr3.ram" resourceType="_2uYWoOwnEeWTKqLnMSJAUw">
+              <memorySize xmi:id="_6TriDewqEeWTKqLnMSJAUw" value="2.0" unit="GByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriDuwqEeWTKqLnMSJAUw" name="router.0.1" resourceType="_eBU8IOwpEeWTKqLnMSJAUw">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriD-wqEeWTKqLnMSJAUw" name="et4" connectorInstances="_6TZ1MOwqEeWTKqLnMSJAUw" type="_sVrWEOwqEeWTKqLnMSJAUw" communicationResource="_sS91wOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEOwqEeWTKqLnMSJAUw" name="et2" connectorInstances="_6TZOIOwqEeWTKqLnMSJAUw" type="_sVkoYOwqEeWTKqLnMSJAUw" communicationResource="_our2sOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEewqEeWTKqLnMSJAUw" name="et1" connectorInstances="_6TXY8OwqEeWTKqLnMSJAUw" type="_sVskMOwqEeWTKqLnMSJAUw" communicationResource="_hmiIQOwpEeWTKqLnMSJAUw"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6TriEuwqEeWTKqLnMSJAUw" name="cpu" resourceType="_la2ucOwpEeWTKqLnMSJAUw">
+              <frequency xmi:id="_6TriE-wqEeWTKqLnMSJAUw"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <networkConnectorInstances xmi:id="_6TXY8OwqEeWTKqLnMSJAUw" type="_22pacOwqEeWTKqLnMSJAUw" connectorEndpointInstances="_6TriAewqEeWTKqLnMSJAUw _6TriEewqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances xmi:id="_6TZOIOwqEeWTKqLnMSJAUw" type="_0TJi8OwqEeWTKqLnMSJAUw" connectorEndpointInstances="_6TriEOwqEeWTKqLnMSJAUw _6Tq68ewqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances xmi:id="_6TZ1MOwqEeWTKqLnMSJAUw" type="_2AoYcOwqEeWTKqLnMSJAUw" connectorEndpointInstances="_6TriD-wqEeWTKqLnMSJAUw _6TriB-wqEeWTKqLnMSJAUw"/>
+        </embeddedHPIC>
+      </hwplatformInstances>
+    </modelElements>
   </categories>
   <categories xmi:id="_67RWMOwZEeWlhO2DleCuFA" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation">
     <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_67RWMewZEeWlhO2DleCuFA" cic="_AZXucOVHEeWTk8L1nP577g">
@@ -920,8 +1013,8 @@
         </communicationResources>
         <communicationResources xmi:id="_2uXvn-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
           <cardinality xmi:id="_2uXvoOwnEeWTKqLnMSJAUw">
-            <lowerBound xmi:id="_2uXvoewnEeWTKqLnMSJAUw" value="0"/>
-            <upperBound xmi:id="_2uXvouwnEeWTKqLnMSJAUw"/>
+            <lowerBound xmi:id="_NvcMkOwqEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_NvrdIOwqEeWTKqLnMSJAUw"/>
           </cardinality>
         </communicationResources>
         <communicationResources xmi:id="_2uXvo-wnEeWTKqLnMSJAUw" name="wifi" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
@@ -958,7 +1051,7 @@
             <upperBound xmi:id="_2uXvuOwnEeWTKqLnMSJAUw" value="4"/>
           </cardinality>
         </communicationResources>
-        <communicationResources xmi:id="_2uXvuewnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+        <communicationResources xmi:id="_2uXvuewnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
           <cardinality xmi:id="_2uXvuuwnEeWTKqLnMSJAUw">
             <lowerBound xmi:id="_2uXvu-wnEeWTKqLnMSJAUw"/>
             <upperBound xmi:id="_2uXvvOwnEeWTKqLnMSJAUw"/>
@@ -976,10 +1069,10 @@
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXvw-wnEeWTKqLnMSJAUw" name="DDR2"/>
       </resources>
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXvxOwnEeWTKqLnMSJAUw" name="emPC-A500">
-        <communicationResources xmi:id="_2uXvxewnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+        <communicationResources xmi:id="_2uXvxewnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
           <cardinality xmi:id="_2uXvxuwnEeWTKqLnMSJAUw">
-            <lowerBound xmi:id="_2uXvx-wnEeWTKqLnMSJAUw" value="2"/>
-            <upperBound xmi:id="_2uXvyOwnEeWTKqLnMSJAUw" value="2"/>
+            <lowerBound xmi:id="_IkHXMOwqEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_IkKagOwqEeWTKqLnMSJAUw"/>
           </cardinality>
         </communicationResources>
         <communicationResources xmi:id="_2uXvyewnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
@@ -1002,10 +1095,10 @@
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXv1ewnEeWTKqLnMSJAUw" name="nvram"/>
       </resources>
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXv1uwnEeWTKqLnMSJAUw" name="emPC-CX+">
-        <communicationResources xmi:id="_2uXv1-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW2ewnEeWTKqLnMSJAUw">
+        <communicationResources xmi:id="_2uXv1-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
           <cardinality xmi:id="_2uXv2OwnEeWTKqLnMSJAUw">
-            <lowerBound xmi:id="_2uXv2ewnEeWTKqLnMSJAUw" value="2"/>
-            <upperBound xmi:id="_2uXv2uwnEeWTKqLnMSJAUw" value="2"/>
+            <lowerBound xmi:id="_QZbtoOwqEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_QZew8OwqEeWTKqLnMSJAUw"/>
           </cardinality>
         </communicationResources>
         <communicationResources xmi:id="_2uXv2-wnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW2-wnEeWTKqLnMSJAUw">
@@ -1021,10 +1114,10 @@
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXv4uwnEeWTKqLnMSJAUw" name="mram"/>
       </resources>
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXv4-wnEeWTKqLnMSJAUw" name="emPC-A/iMX6">
-        <communicationResources xmi:id="_2uXv5OwnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+        <communicationResources xmi:id="_2uXv5OwnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
           <cardinality xmi:id="_2uXv5ewnEeWTKqLnMSJAUw">
-            <lowerBound xmi:id="_2uXv5uwnEeWTKqLnMSJAUw" value="2"/>
-            <upperBound xmi:id="_2uXv5-wnEeWTKqLnMSJAUw" value="2"/>
+            <lowerBound xmi:id="_Rl3rkOwqEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_Rl6u4OwqEeWTKqLnMSJAUw"/>
           </cardinality>
         </communicationResources>
         <communicationResources xmi:id="_2uXv6OwnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
@@ -1052,10 +1145,10 @@
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWoewnEeWTKqLnMSJAUw" name="nvram"/>
       </resources>
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uYWouwnEeWTKqLnMSJAUw" name="emPC-X">
-        <communicationResources xmi:id="_2uYWo-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+        <communicationResources xmi:id="_2uYWo-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
           <cardinality xmi:id="_2uYWpOwnEeWTKqLnMSJAUw">
-            <lowerBound xmi:id="_2uYWpewnEeWTKqLnMSJAUw" value="2"/>
-            <upperBound xmi:id="_2uYWpuwnEeWTKqLnMSJAUw" value="2"/>
+            <lowerBound xmi:id="_TJSmIOwqEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_TJWQgOwqEeWTKqLnMSJAUw"/>
           </cardinality>
         </communicationResources>
         <communicationResources xmi:id="_2uYWp-wnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
@@ -1089,10 +1182,10 @@
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWuuwnEeWTKqLnMSJAUw" name="ram"/>
       </resources>
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uYWu-wnEeWTKqLnMSJAUw" name="emPC-CX+/ET">
-        <communicationResources xmi:id="_2uYWvOwnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+        <communicationResources xmi:id="_2uYWvOwnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
           <cardinality xmi:id="_2uYWvewnEeWTKqLnMSJAUw">
-            <lowerBound xmi:id="_2uYWvuwnEeWTKqLnMSJAUw" value="2"/>
-            <upperBound xmi:id="_2uYWv-wnEeWTKqLnMSJAUw" value="2"/>
+            <lowerBound xmi:id="_VxSjIOwqEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_VxW0kOwqEeWTKqLnMSJAUw"/>
           </cardinality>
         </communicationResources>
         <communicationResources xmi:id="_2uYWwOwnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
@@ -1112,6 +1205,35 @@
         </embeddedAtomicResources>
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWyuwnEeWTKqLnMSJAUw" name="ddr3"/>
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWy-wnEeWTKqLnMSJAUw" name="mram"/>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_eBU8IOwpEeWTKqLnMSJAUw" name="router">
+        <communicationResources xmi:id="_hmiIQOwpEeWTKqLnMSJAUw" name="et1" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_jbT4kOwpEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_kBoRsOwpEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_kBpf0OwpEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_our2sOwpEeWTKqLnMSJAUw" name="et2" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_ouvhEOwpEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_ouvhEewpEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_ouwIIOwpEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_qXTaUOwpEeWTKqLnMSJAUw" name="et3" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_qXdLUOwpEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_qXdyYOwpEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_qXdyYewpEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_sS91wOwpEeWTKqLnMSJAUw" name="et4" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_sTBgIOwpEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_sTCHMOwpEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_sTCHMewpEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_la2ucOwpEeWTKqLnMSJAUw" name="cpu">
+          <nbCores xmi:id="_la9cIOwpEeWTKqLnMSJAUw"/>
+        </embeddedAtomicResources>
       </resources>
       <protocols xmi:id="_2uYWzOwnEeWTKqLnMSJAUw" name="Protocols">
         <communicationProtocols xsi:type="hwresource:BusProtocol" xmi:id="_2uYWzewnEeWTKqLnMSJAUw" name="CAN">
@@ -1254,6 +1376,15 @@
         </embeddedAtomicResourceInstances>
         <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXL-wnEeWTKqLnMSJAUw" name="ram" resourceType="_2uYWuuwnEeWTKqLnMSJAUw">
           <memorySize xmi:id="_2uYXMOwnEeWTKqLnMSJAUw" value="4.0" unit="Bit"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_xjvL0OwpEeWTKqLnMSJAUw" name="router" resourceType="_eBU8IOwpEeWTKqLnMSJAUw">
+        <hwports xmi:id="_ydLVQOwpEeWTKqLnMSJAUw" name="et2" communicationResource="_our2sOwpEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_ydQ00OwpEeWTKqLnMSJAUw" name="et4" communicationResource="_sS91wOwpEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_ydSqAOwpEeWTKqLnMSJAUw" name="et1" communicationResource="_hmiIQOwpEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_ydVGQOwpEeWTKqLnMSJAUw" name="et3" communicationResource="_qXTaUOwpEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_ydEAgOwpEeWTKqLnMSJAUw" name="cpu" resourceType="_la2ucOwpEeWTKqLnMSJAUw">
+          <frequency xmi:id="_ydEAgewpEeWTKqLnMSJAUw"/>
         </embeddedAtomicResourceInstances>
       </resourceInstances>
     </modelElements>
