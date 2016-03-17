@@ -87,7 +87,7 @@
    </extension>
 
    <extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+         point="org.muml.core.modelinstance.modelelementcategory">
       <category
             key="de.uni_paderborn.fujaba.muml.psm.allocation.category"
             name="allocation">
