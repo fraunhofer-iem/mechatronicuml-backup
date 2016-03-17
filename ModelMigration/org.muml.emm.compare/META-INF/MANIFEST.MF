@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EMF Migration Compare
-Bundle-SymbolicName: de.uni_paderborn.fujaba.ecore.migration.compare
+Bundle-SymbolicName: org.muml.emm.compare
 Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.ecore.migration.compare.ComparePlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.compare,
  org.eclipse.emf.edit,
- de.uni_paderborn.fujaba.ecore.migration
+ org.muml.emm
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.ecore.migration.compare

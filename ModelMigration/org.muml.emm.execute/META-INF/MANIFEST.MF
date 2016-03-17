@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EMF Migration Execute
-Bundle-SymbolicName: de.uni_paderborn.fujaba.ecore.migration.execute;singleton:=true
+Bundle-SymbolicName: org.muml.emm.execute;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.ecore.migration.execute.ExecutePlugin
 Require-Bundle: org.eclipse.ui,
@@ -9,9 +9,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.core.resources,
- de.uni_paderborn.fujaba.ecore.migration,
+ org.muml.emm,
  org.eclipse.ocl.ecore,
- de.uni_paderborn.fujaba.ecore.migration.release
+ org.muml.emm.release
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.ecore.migration.execute

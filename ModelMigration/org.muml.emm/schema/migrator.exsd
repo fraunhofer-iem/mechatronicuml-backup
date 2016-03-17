@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.uni_paderborn.fujaba.ecore.migration" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.muml.emm" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.uni_paderborn.fujaba.ecore.migration" id="migrator" name="Migrator"/>
+         <meta.schema plugin="org.muml.emm" id="migrator" name="Migrator"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
