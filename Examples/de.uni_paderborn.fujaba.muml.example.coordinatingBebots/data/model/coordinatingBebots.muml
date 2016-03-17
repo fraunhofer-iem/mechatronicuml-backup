@@ -3176,10 +3176,18 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_voJbquHmEeWH0NNpDdcZWA">
                 <message xmi:id="_voJbq-HmEeWH0NNpDdcZWA" instanceOf="_zGbf0LjxEeOZIIv29ABAIA">
                   <parameterBinding xmi:id="_voJbrOHmEeWH0NNpDdcZWA" parameter="_0YXo0LjxEeOZIIv29ABAIA">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_voJbreHmEeWH0NNpDdcZWA" value="1"/>
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ZF1LUOxREeWd1Nv24GHnqw" typedNamedElement="_voJbkeHmEeWH0NNpDdcZWA">
+                      <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_ZF1LUexREeWd1Nv24GHnqw">
+                        <index xsi:type="sdcec:LiteralExpression" xmi:id="_ZF1LUuxREeWd1Nv24GHnqw" value="0"/>
+                      </elementAccessors>
+                    </value>
                   </parameterBinding>
                   <parameterBinding xmi:id="_voJbruHmEeWH0NNpDdcZWA" parameter="_1gThQLjxEeOZIIv29ABAIA">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_voJbr-HmEeWH0NNpDdcZWA" value="1"/>
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_aHkVIOxREeWd1Nv24GHnqw" typedNamedElement="_voJbkeHmEeWH0NNpDdcZWA">
+                      <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_aHkVIexREeWd1Nv24GHnqw">
+                        <index xsi:type="sdcec:LiteralExpression" xmi:id="_aHkVIuxREeWd1Nv24GHnqw" value="1"/>
+                      </elementAccessors>
+                    </value>
                   </parameterBinding>
                 </message>
               </events>

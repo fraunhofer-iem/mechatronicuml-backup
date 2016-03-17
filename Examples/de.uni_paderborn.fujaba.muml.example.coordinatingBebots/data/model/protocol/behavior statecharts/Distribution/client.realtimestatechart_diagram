@@ -151,11 +151,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_nubGSGmTEeOlIqc8khLIew"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.muml#_ntLJEWmTEeOlIqc8khLIew"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nuafMWmTEeOlIqc8khLIew" x="38" y="-10" width="757" height="661"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nuafMWmTEeOlIqc8khLIew" x="38" y="-10" width="835" height="787"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_ntLJEGmTEeOlIqc8khLIew"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nuR8UWmTEeOlIqc8khLIew" width="841" height="736"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nuR8UWmTEeOlIqc8khLIew" width="973" height="919"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_ntLJE2mTEeOlIqc8khLIew"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_ntLJEGmTEeOlIqc8khLIew"/>
