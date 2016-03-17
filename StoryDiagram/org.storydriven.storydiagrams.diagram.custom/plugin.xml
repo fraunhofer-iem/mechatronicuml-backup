@@ -635,7 +635,7 @@
 	   </menuContribution>
 	</extension>
 
-    <extension point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+    <extension point="org.muml.core.modelinstance.modelelementcategory">
       <category
             key="org.storydriven.storydiagrams.category"
             name="storydiagrams">
@@ -646,7 +646,7 @@
       </category>
    </extension>
 
-   <extension point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+   <extension point="org.muml.core.modelinstance.ui.diagraminformation">
       <editor
             preferencesHint="org.storydriven.storydiagrams.diagram"
             editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"

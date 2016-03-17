@@ -89,7 +89,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	private Map<String, List<IPropertyEditorFactory>> propertyEditorFactoriesMap = null;
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.properties.runtime"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.muml.ape.runtime"; //$NON-NLS-1$
 
 	public static final String PROPERTY_EDITOR__EXTENSION_POINT_ID = PLUGIN_ID
 			+ ".propertyEditors"; //$NON-NLS-1$

@@ -90,7 +90,7 @@
 
 	
 	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+         point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
             key="org.storydriven.storydiagrams.activities.category"
@@ -106,7 +106,7 @@
 
 	
 	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+         point="org.muml.core.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"

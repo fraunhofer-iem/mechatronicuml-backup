@@ -18,7 +18,7 @@ import de.uni_paderborn.fujaba.common.editingdomain.initialize.IEditingDomainIni
 public class EditingDomainPlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.common.editingdomain"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.muml.core.common.editingdomain"; //$NON-NLS-1$
 	
 	public static final String EXTENSION_POINT_EDITING_DOMAIN_INITIALIZER = PLUGIN_ID  + ".editingDomainInitializer";
 

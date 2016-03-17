@@ -22,7 +22,7 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
 
 public class ModelElementCategoryRegistry {
 
-	private static final String EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.modelinstance.modelelementcategory";
+	private static final String EXTENSION_POINT_ID = "org.muml.core.modelinstance.modelelementcategory";
 
 	// struct-like datatype that stores two Strings describing a class
 	private class QualifiedClassName {

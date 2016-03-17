@@ -50,8 +50,8 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 
 	public static final String FUJABA_MODEL_EXTENSION = "muml";
 
-	public static final String DIAGRAM_INFORMATION_EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation";
-	public static final String MODEL_INITIALIZER_EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer";
+	public static final String DIAGRAM_INFORMATION_EXTENSION_POINT_ID = "org.muml.core.modelinstance.ui.diagraminformation";
+	public static final String MODEL_INITIALIZER_EXTENSION_POINT_ID = "org.muml.core.modelinstance.ui.modelinitializer";
 
 	private Map<String, IDiagramInformation> editorIdToDiagramInformation;
 

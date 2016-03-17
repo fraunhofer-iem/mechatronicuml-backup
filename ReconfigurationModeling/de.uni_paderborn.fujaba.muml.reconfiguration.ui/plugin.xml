@@ -132,7 +132,7 @@
       </menuContribution>
    </extension>
    <extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+         point="org.muml.core.modelinstance.modelelementcategory">
       <category
             key="de.uni_paderborn.fujaba.muml.components.category"
             name="component">
@@ -379,7 +379,7 @@
           </metamodel>
        </extension>
        <extension
-             point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+             point="org.muml.core.modelinstance.ui.diagraminformation">
           <editor
                 editorId="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"
                 editorName="Component Editor"

@@ -129,7 +129,7 @@ Contributors:
 
 	
 	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+         point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
             key="de.uni_paderborn.fujaba.muml.components.category"
@@ -152,7 +152,7 @@ Contributors:
 
 	
 	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+         point="org.muml.core.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.component.diagram"

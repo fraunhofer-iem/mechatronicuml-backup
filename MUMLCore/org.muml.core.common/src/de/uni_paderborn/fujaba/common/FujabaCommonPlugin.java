@@ -31,11 +31,11 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.elementinitializer.IElementIni
 public class FujabaCommonPlugin implements BundleActivator {
 
 	// The IDs of your extension points
-	private static final String CUSTOM_ITEM_PROVIDER_ADAPTER_FACTORIES_EXTENSION_POINT = "de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories";
+	private static final String CUSTOM_ITEM_PROVIDER_ADAPTER_FACTORIES_EXTENSION_POINT = "org.muml.core.common.customItemProviderAdapterFactories";
 	
-	private static final String ELEMENT_INITIALIZER_EXTENSION_POINT = "de.uni_paderborn.fujaba.common.elementInitializer";
+	private static final String ELEMENT_INITIALIZER_EXTENSION_POINT = "org.muml.core.common.elementInitializer";
 
-	public static final String ID = "de.uni_paderborn.fujaba.common";
+	public static final String ID = "org.muml.core.common";
 
 
 	private static FujabaCommonPlugin instance;

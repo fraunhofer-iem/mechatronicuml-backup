@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.ecore.migration.Migrator;
  * The activator class controls the plug-in life cycle
  */
 public class ExecutePlugin extends AbstractUIPlugin {
-	public static final String MIGRATOR_EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.ecore.migration.migrator";
+	public static final String MIGRATOR_EXTENSION_POINT_ID = "org.muml.emm.migrator";
 	
 	private static List<URI> migrators = null;
 

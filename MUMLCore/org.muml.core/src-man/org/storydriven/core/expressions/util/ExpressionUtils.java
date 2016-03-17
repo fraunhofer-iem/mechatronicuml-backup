@@ -9,7 +9,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 
 public class ExpressionUtils {
-	public static final String EXPRESSION_LANGUAGES_EXTENSION_POINT_ID = "org.storydriven.core.expressionLanguagesExtension";
+	public static final String EXPRESSION_LANGUAGES_EXTENSION_POINT_ID = "org.muml.core.expressionLanguagesExtension";
 
 	public static final String EXPRESSION_LANGUAGES_EXPRESSION_LANGUAGE_ATTRIBUTE_NAME = "expressionLanguage";
 	public static final String EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME = "version";

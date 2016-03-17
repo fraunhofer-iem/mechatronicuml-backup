@@ -7,7 +7,7 @@ import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.widgets.Composite;
 
 public interface IExpressionEditor {
-	String ID_EXTENSION = "org.storydriven.core.ui.expressionEditor"; //$NON-NLS-1$
+	String ID_EXTENSION = "org.muml.core.ui.expressionEditor"; //$NON-NLS-1$
 	String ID_ATTRIBUTE_CLASS = "class"; //$NON-NLS-1$;
 	String ID_ATTRIBUTE_LANGUAGE = "language"; //$NON-NLS-1$;
 	String ID_ATTRIBUTE_VERSION = "version"; //$NON-NLS-1$;
