@@ -50,7 +50,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_2sqRZtA5EeWxwcLCz5WDyg" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_2sqRZ9A5EeWxwcLCz5WDyg" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../coordinatingBebots.muml#_vaVHMGmBEeOlIqc8khLIew"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2sqRaNA5EeWxwcLCz5WDyg" x="130" y="204"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2sqRaNA5EeWxwcLCz5WDyg" x="85" y="210"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_2sq4Y9A5EeWxwcLCz5WDyg" type="3013">
         <children xmi:type="notation:DecorationNode" xmi:id="_2sq4aNA5EeWxwcLCz5WDyg" type="5018"/>

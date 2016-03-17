@@ -23,7 +23,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_PSmXXnYaEeOftqkRKcg6BA"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.muml#_PLDk4XYaEeOftqkRKcg6BA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PSmXUXYaEeOftqkRKcg6BA" x="26" y="10" width="166" height="133"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PSmXUXYaEeOftqkRKcg6BA" x="26" y="10" width="247" height="149"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_PLDk4HYaEeOftqkRKcg6BA"/>

@@ -2309,7 +2309,7 @@
             <states xmi:id="__9Vqw-rNEeW8Ua6WvGcBqg" name="Main" initial="true">
               <embeddedRegions xmi:id="__9VqxOrNEeW8Ua6WvGcBqg" priority="1">
                 <embeddedStatechart xmi:id="__9VqxerNEeW8Ua6WvGcBqg" name="coordinator">
-                  <transitions xmi:id="__9VqxurNEeW8Ua6WvGcBqg" priority="1" target="__9Vq1erNEeW8Ua6WvGcBqg" source="__9Vq7-rNEeW8Ua6WvGcBqg">
+                  <transitions xmi:id="__9VqxurNEeW8Ua6WvGcBqg" priority="1" target="_TYSiQOxoEeWd1Nv24GHnqw" source="__9Vq7-rNEeW8Ua6WvGcBqg">
                     <synchronization xmi:id="__9Vqx-rNEeW8Ua6WvGcBqg" syncChannel="__9VrY-rNEeW8Ua6WvGcBqg" kind="RECEIVE"/>
                   </transitions>
                   <transitions xmi:id="__9VqyOrNEeW8Ua6WvGcBqg" priority="1" target="__9Vq7-rNEeW8Ua6WvGcBqg" source="__9Vq8OrNEeW8Ua6WvGcBqg">
@@ -2335,7 +2335,10 @@
                     </clockConstraints>
                     <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_B25_AOrPEeW8Ua6WvGcBqg" typedNamedElement="_HJCvgJf2EeO7D-mq8kOy2A"/>
                   </transitions>
-                  <states xmi:id="__9Vq1erNEeW8Ua6WvGcBqg" name="Waiting" outgoingTransitions="__9VqzurNEeW8Ua6WvGcBqg" incomingTransitions="__9VqxurNEeW8Ua6WvGcBqg" initial="true">
+                  <transitions xmi:id="_XANrMOxoEeWd1Nv24GHnqw" priority="1" target="__9Vq1erNEeW8Ua6WvGcBqg" source="_TYSiQOxoEeWd1Nv24GHnqw">
+                    <synchronization xmi:id="_YNzfsOxoEeWd1Nv24GHnqw" syncChannel="_B2U1QIUJEeOAU7Vdi0NG2Q"/>
+                  </transitions>
+                  <states xmi:id="__9Vq1erNEeW8Ua6WvGcBqg" name="Waiting" outgoingTransitions="__9VqzurNEeW8Ua6WvGcBqg" incomingTransitions="_XANrMOxoEeWd1Nv24GHnqw" initial="true">
                     <exitEvent xmi:id="__9Vq1urNEeW8Ua6WvGcBqg">
                       <action xmi:id="__9Vq1-rNEeW8Ua6WvGcBqg" name="posArray[0][0] := myPos[0]; posArray[0][1] := myPos[1];">
                         <expressions xsi:type="actionlanguage:Block" xmi:id="__9Vq2OrNEeW8Ua6WvGcBqg">
@@ -2382,6 +2385,7 @@
                   <states xmi:id="__9Vq7-rNEeW8Ua6WvGcBqg" name="Sending" outgoingTransitions="__9VqxurNEeW8Ua6WvGcBqg" incomingTransitions="__9VqyOrNEeW8Ua6WvGcBqg"/>
                   <states xmi:id="__9Vq8OrNEeW8Ua6WvGcBqg" name="All_Received" outgoingTransitions="__9VqyOrNEeW8Ua6WvGcBqg" incomingTransitions="__9VqzOrNEeW8Ua6WvGcBqg" urgent="true"/>
                   <states xmi:id="__9Vq8erNEeW8Ua6WvGcBqg" name="Receiving" outgoingTransitions="__9VqzOrNEeW8Ua6WvGcBqg" incomingTransitions="__9VqzurNEeW8Ua6WvGcBqg"/>
+                  <states xmi:id="_TYSiQOxoEeWd1Nv24GHnqw" name="EvaluatePosData" outgoingTransitions="_XANrMOxoEeWd1Nv24GHnqw" incomingTransitions="__9VqxurNEeW8Ua6WvGcBqg"/>
                   <clocks xmi:id="__9Vq8urNEeW8Ua6WvGcBqg" name="c"/>
                 </embeddedStatechart>
               </embeddedRegions>
@@ -2680,7 +2684,7 @@
                 </expressions>
               </action>
             </transitions>
-            <transitions xmi:id="_InN8xnnxEeOXC9Mz8u7bDw" priority="2" target="_InN8z3nxEeOXC9Mz8u7bDw" source="_InN8znnxEeOXC9Mz8u7bDw">
+            <transitions xmi:id="_InN8xnnxEeOXC9Mz8u7bDw" priority="2" target="_InN8z3nxEeOXC9Mz8u7bDw" source="_InN8znnxEeOXC9Mz8u7bDw" urgent="false">
               <clockConstraints xmi:id="_InN8x3nxEeOXC9Mz8u7bDw" clock="_InN80HnxEeOXC9Mz8u7bDw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_InN8yHnxEeOXC9Mz8u7bDw" unit="MILLISECONDS">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_InN8yXnxEeOXC9Mz8u7bDw" value="100"/>

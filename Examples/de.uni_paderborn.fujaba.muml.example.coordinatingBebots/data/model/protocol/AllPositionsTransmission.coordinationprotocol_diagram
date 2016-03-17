@@ -49,7 +49,7 @@
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../coordinatingBebots.muml#_Txr9cF6PEeOU6dzb6wKMjg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rOtnUdA5EeWxwcLCz5WDyg" width="1081" height="271"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rOtnUdA5EeWxwcLCz5WDyg" width="1081" height="487"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_rOtAQdA5EeWxwcLCz5WDyg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../coordinatingBebots.muml#_VrQD8F6LEeOogaHLhp186w"/>
