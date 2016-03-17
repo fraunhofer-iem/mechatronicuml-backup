@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:behavior="http://www.fujaba.de/muml/behavior/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_soKoMNxbEeW-N_z6XJQq2w">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:behavior="http://www.fujaba.de/muml/behavior/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_soKoMNxbEeW-N_z6XJQq2w">
   <categories xmi:id="_soKoMdxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
   <categories xmi:id="_soLPQNxbEeW-N_z6XJQq2w" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ytRK8NxrEeW-N_z6XJQq2w" name="ReciepeGenerator" behavioralElement="_QVSL8NxcEeW-N_z6XJQq2w">
@@ -896,6 +896,366 @@
     </modelElements>
   </categories>
   <categories xmi:id="_pyk6cOwaEeWlhO2DleCuFA" key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category" name="hwresource">
-    <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_pyn9wOwaEeWlhO2DleCuFA"/>
+    <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_2uXvkOwnEeWTKqLnMSJAUw">
+      <resources xsi:type="hwresource:Device" xmi:id="_2uXvkewnEeWTKqLnMSJAUw" name="ConnectedTemperatureSensor">
+        <communicationResources xmi:id="_2uXvkuwnEeWTKqLnMSJAUw" name="canOpen" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvk-wnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvlOwnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXvlewnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXvluwnEeWTKqLnMSJAUw" name="PLC">
+        <communicationResources xmi:id="_2uXvl-wnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvmOwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvmewnEeWTKqLnMSJAUw" value="0"/>
+            <upperBound xmi:id="_2uXvmuwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvm-wnEeWTKqLnMSJAUw" name="eCat" protocol="_2uYW0ewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvnOwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvnewnEeWTKqLnMSJAUw" value="0"/>
+            <upperBound xmi:id="_2uXvnuwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvn-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvoOwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvoewnEeWTKqLnMSJAUw" value="0"/>
+            <upperBound xmi:id="_2uXvouwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvo-wnEeWTKqLnMSJAUw" name="wifi" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvpOwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvpewnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXvpuwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uXvp-wnEeWTKqLnMSJAUw" name="P1">
+          <nbCores xmi:id="_2uXvqOwnEeWTKqLnMSJAUw"/>
+        </embeddedAtomicResources>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXvqewnEeWTKqLnMSJAUw" name="Cloud">
+        <communicationResources xmi:id="_2uXvquwnEeWTKqLnMSJAUw" name="Internet" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvq-wnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvrOwnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXvrewnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uXvruwnEeWTKqLnMSJAUw" name="ServerProc">
+          <nbCores xmi:id="_2uXvr-wnEeWTKqLnMSJAUw" value="4"/>
+        </embeddedAtomicResources>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXvsOwnEeWTKqLnMSJAUw" name="emPC-A/RPI">
+        <communicationResources xmi:id="_2uXvsewnEeWTKqLnMSJAUw" name="hdmiPort" protocol="_2uYW1ewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvsuwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvs-wnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXvtOwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvtewnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvtuwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvt-wnEeWTKqLnMSJAUw" value="4"/>
+            <upperBound xmi:id="_2uXvuOwnEeWTKqLnMSJAUw" value="4"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvuewnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvuuwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvu-wnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXvvOwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvvewnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvvuwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvv-wnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXvwOwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uXvwewnEeWTKqLnMSJAUw" name="ARM Cortex-A7" family="ARM">
+          <nbCores xmi:id="_2uXvwuwnEeWTKqLnMSJAUw" value="4"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXvw-wnEeWTKqLnMSJAUw" name="DDR2"/>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXvxOwnEeWTKqLnMSJAUw" name="emPC-A500">
+        <communicationResources xmi:id="_2uXvxewnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvxuwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvx-wnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uXvyOwnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvyewnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvyuwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvy-wnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXvzOwnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXvzewnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXvzuwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXvz-wnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uXv0OwnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uXv0ewnEeWTKqLnMSJAUw" name="Freescale i.MX515" family="ARM">
+          <nbCores xmi:id="_2uXv0uwnEeWTKqLnMSJAUw"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXv0-wnEeWTKqLnMSJAUw" name="ddr2-ram"/>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXv1OwnEeWTKqLnMSJAUw" name="bootFlash" memoryType="FLASH"/>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXv1ewnEeWTKqLnMSJAUw" name="nvram"/>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXv1uwnEeWTKqLnMSJAUw" name="emPC-CX+">
+        <communicationResources xmi:id="_2uXv1-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW2ewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXv2OwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXv2ewnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uXv2uwnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXv2-wnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW2-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXv3OwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXv3ewnEeWTKqLnMSJAUw" value="4"/>
+            <upperBound xmi:id="_2uXv3uwnEeWTKqLnMSJAUw" value="4"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uXv3-wnEeWTKqLnMSJAUw" name="Intel Core i7-3517UE">
+          <nbCores xmi:id="_2uXv4OwnEeWTKqLnMSJAUw" value="2"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXv4ewnEeWTKqLnMSJAUw" name="ddr3"/>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uXv4uwnEeWTKqLnMSJAUw" name="mram"/>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uXv4-wnEeWTKqLnMSJAUw" name="emPC-A/iMX6">
+        <communicationResources xmi:id="_2uXv5OwnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXv5ewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXv5uwnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uXv5-wnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXv6OwnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXv6ewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXv6uwnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uXv6-wnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXv7OwnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXv7ewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXv7uwnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uXv7-wnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uXv8OwnEeWTKqLnMSJAUw" name="wifi" protocol="_2uYWz-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uXv8ewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uXv8uwnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uXv8-wnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uXv9OwnEeWTKqLnMSJAUw" name="Freescale i.MX6" family="ARM">
+          <nbCores xmi:id="_2uXv9ewnEeWTKqLnMSJAUw" value="2"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWoOwnEeWTKqLnMSJAUw" name="ddr3.ram"/>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWoewnEeWTKqLnMSJAUw" name="nvram"/>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uYWouwnEeWTKqLnMSJAUw" name="emPC-X">
+        <communicationResources xmi:id="_2uYWo-wnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uYWpOwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uYWpewnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uYWpuwnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uYWp-wnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uYWqOwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uYWqewnEeWTKqLnMSJAUw" value="3"/>
+            <upperBound xmi:id="_2uYWquwnEeWTKqLnMSJAUw" value="3"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uYWq-wnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uYWrOwnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uYWrewnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uYWruwnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uYWr-wnEeWTKqLnMSJAUw" name="Intel Atom E3825">
+          <nbCores xmi:id="_2uYWsOwnEeWTKqLnMSJAUw" value="2"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWsewnEeWTKqLnMSJAUw" name="ddr3"/>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWsuwnEeWTKqLnMSJAUw" name="nvram"/>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uYWs-wnEeWTKqLnMSJAUw" name="emPC-CXR">
+        <communicationResources xmi:id="_2uYWtOwnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uYWtewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uYWtuwnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uYWt-wnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uYWuOwnEeWTKqLnMSJAUw" name="Intel Core i7">
+          <nbCores xmi:id="_2uYWuewnEeWTKqLnMSJAUw" value="2"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWuuwnEeWTKqLnMSJAUw" name="ram"/>
+      </resources>
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_2uYWu-wnEeWTKqLnMSJAUw" name="emPC-CX+/ET">
+        <communicationResources xmi:id="_2uYWvOwnEeWTKqLnMSJAUw" name="ethernet" protocol="_2uYW1-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uYWvewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uYWvuwnEeWTKqLnMSJAUw" value="2"/>
+            <upperBound xmi:id="_2uYWv-wnEeWTKqLnMSJAUw" value="2"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uYWwOwnEeWTKqLnMSJAUw" name="usb" protocol="_2uYW0-wnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uYWwewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uYWwuwnEeWTKqLnMSJAUw" value="4"/>
+            <upperBound xmi:id="_2uYWw-wnEeWTKqLnMSJAUw" value="4"/>
+          </cardinality>
+        </communicationResources>
+        <communicationResources xmi:id="_2uYWxOwnEeWTKqLnMSJAUw" name="can" protocol="_2uYWzewnEeWTKqLnMSJAUw">
+          <cardinality xmi:id="_2uYWxewnEeWTKqLnMSJAUw">
+            <lowerBound xmi:id="_2uYWxuwnEeWTKqLnMSJAUw"/>
+            <upperBound xmi:id="_2uYWx-wnEeWTKqLnMSJAUw"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_2uYWyOwnEeWTKqLnMSJAUw" name="Intel Core i7">
+          <nbCores xmi:id="_2uYWyewnEeWTKqLnMSJAUw" value="2"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWyuwnEeWTKqLnMSJAUw" name="ddr3"/>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_2uYWy-wnEeWTKqLnMSJAUw" name="mram"/>
+      </resources>
+      <protocols xmi:id="_2uYWzOwnEeWTKqLnMSJAUw" name="Protocols">
+        <communicationProtocols xsi:type="hwresource:BusProtocol" xmi:id="_2uYWzewnEeWTKqLnMSJAUw" name="CAN">
+          <bandwidth xmi:id="_2uYWzuwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_2uYWz-wnEeWTKqLnMSJAUw" name="TCP" linkProtocol="ETHERCAT">
+          <bandwidth xmi:id="_2uYW0OwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_2uYW0ewnEeWTKqLnMSJAUw" name="eCAD" linkProtocol="WIFI">
+          <bandwidth xmi:id="_2uYW0uwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:BusProtocol" xmi:id="_2uYW0-wnEeWTKqLnMSJAUw" name="USB2.0" busProtocol="USB">
+          <bandwidth xmi:id="_2uYW1OwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:BusProtocol" xmi:id="_2uYW1ewnEeWTKqLnMSJAUw" name="HDMI" busProtocol="I2C">
+          <bandwidth xmi:id="_2uYW1uwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_2uYW1-wnEeWTKqLnMSJAUw" name="Ethernet100">
+          <bandwidth xmi:id="_2uYW2OwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_2uYW2ewnEeWTKqLnMSJAUw" name="Ethernet1000">
+          <bandwidth xmi:id="_2uYW2uwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:BusProtocol" xmi:id="_2uYW2-wnEeWTKqLnMSJAUw" name="USB3.0" busProtocol="USB">
+          <bandwidth xmi:id="_2uYW3OwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+      </protocols>
+    </modelElements>
+    <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_2uYW3ewnEeWTKqLnMSJAUw">
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYW3uwnEeWTKqLnMSJAUw" name="plc1" resourceType="_2uXvluwnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYW3-wnEeWTKqLnMSJAUw" name="can" communicationResource="_2uXvl-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW4OwnEeWTKqLnMSJAUw" name="eCat" communicationResource="_2uXvm-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW4ewnEeWTKqLnMSJAUw" name="wifi" communicationResource="_2uXvo-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW4uwnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uXvn-wnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYW4-wnEeWTKqLnMSJAUw" name="P1" resourceType="_2uXvp-wnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYW5OwnEeWTKqLnMSJAUw" value="1.0" unit="GHz"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYW5ewnEeWTKqLnMSJAUw" name="plc2" resourceType="_2uXvluwnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYW5uwnEeWTKqLnMSJAUw" name="can" communicationResource="_2uXvl-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW5-wnEeWTKqLnMSJAUw" name="eCat" communicationResource="_2uXvm-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW6OwnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uXvn-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW6ewnEeWTKqLnMSJAUw" name="wifi" communicationResource="_2uXvo-wnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYW6uwnEeWTKqLnMSJAUw" name="P1" resourceType="_2uXvp-wnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYW6-wnEeWTKqLnMSJAUw" value="512.0" unit="MHz"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_2uYW7OwnEeWTKqLnMSJAUw" name="temperature" resourceType="_2uXvkewnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYW7ewnEeWTKqLnMSJAUw" name="canOpen" communicationResource="_2uXvkuwnEeWTKqLnMSJAUw"/>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYW7uwnEeWTKqLnMSJAUw" name="A/iMX6" resourceType="_2uXv4-wnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYW7-wnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uXv5OwnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW8OwnEeWTKqLnMSJAUw" name="can" communicationResource="_2uXv7OwnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW8ewnEeWTKqLnMSJAUw" name="usb" communicationResource="_2uXv6OwnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW8uwnEeWTKqLnMSJAUw" name="wifi" communicationResource="_2uXv8OwnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYW8-wnEeWTKqLnMSJAUw" name="Freescale i.MX6" resourceType="_2uXv9OwnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYW9OwnEeWTKqLnMSJAUw" value="800.0"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYW9ewnEeWTKqLnMSJAUw" name="nvram" resourceType="_2uYWoewnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYW9uwnEeWTKqLnMSJAUw" value="128.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYW9-wnEeWTKqLnMSJAUw" name="ddr3.ram" resourceType="_2uYWoOwnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYW-OwnEeWTKqLnMSJAUw" value="2.0" unit="GByte"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYW-ewnEeWTKqLnMSJAUw" name="A/RPI" resourceType="_2uXvsOwnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYW-uwnEeWTKqLnMSJAUw" name="usb" communicationResource="_2uXvtewnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW--wnEeWTKqLnMSJAUw" name="can" communicationResource="_2uXvvewnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW_OwnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uXvuewnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYW_ewnEeWTKqLnMSJAUw" name="hdmiPort" communicationResource="_2uXvsewnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYW_uwnEeWTKqLnMSJAUw" name="DDR2" resourceType="_2uXvw-wnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYW_-wnEeWTKqLnMSJAUw" value="1.0" unit="GByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYXAOwnEeWTKqLnMSJAUw" name="ARM Cortex-A7" resourceType="_2uXvwewnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYXAewnEeWTKqLnMSJAUw" value="900.0" unit="MHz"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYXAuwnEeWTKqLnMSJAUw" name="A500" resourceType="_2uXvxOwnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYXA-wnEeWTKqLnMSJAUw" name="usb" communicationResource="_2uXvzewnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYXBOwnEeWTKqLnMSJAUw" name="can" communicationResource="_2uXvyewnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYXBewnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uXvxewnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXBuwnEeWTKqLnMSJAUw" name="nvram" resourceType="_2uXv1ewnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXB-wnEeWTKqLnMSJAUw" value="32.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXCOwnEeWTKqLnMSJAUw" name="ddr2-ram" resourceType="_2uXv0-wnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXCewnEeWTKqLnMSJAUw" value="128.0" unit="MByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXCuwnEeWTKqLnMSJAUw" name="bootFlash" resourceType="_2uXv1OwnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXC-wnEeWTKqLnMSJAUw" value="36.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYXDOwnEeWTKqLnMSJAUw" name="Freescale i.MX515" resourceType="_2uXv0ewnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYXDewnEeWTKqLnMSJAUw" value="600.0" unit="MHz"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYXDuwnEeWTKqLnMSJAUw" name="CX+" resourceType="_2uXv1uwnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYXD-wnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uXv1-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYXEOwnEeWTKqLnMSJAUw" name="usb" communicationResource="_2uXv2-wnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXEewnEeWTKqLnMSJAUw" name="ddr3" resourceType="_2uXv4ewnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXEuwnEeWTKqLnMSJAUw" value="8.0" unit="GByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXE-wnEeWTKqLnMSJAUw" name="mram" resourceType="_2uXv4uwnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXFOwnEeWTKqLnMSJAUw" value="128.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYXFewnEeWTKqLnMSJAUw" name="Intel Core i7-3517UE" resourceType="_2uXv3-wnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYXFuwnEeWTKqLnMSJAUw" value="1.7" unit="GHz"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYXF-wnEeWTKqLnMSJAUw" name="CX+/ET" resourceType="_2uYWu-wnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYXGOwnEeWTKqLnMSJAUw" name="can" communicationResource="_2uYWxOwnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYXGewnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uYWvOwnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYXGuwnEeWTKqLnMSJAUw" name="usb" communicationResource="_2uYWwOwnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYXG-wnEeWTKqLnMSJAUw" name="Intel Core i7" resourceType="_2uYWyOwnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYXHOwnEeWTKqLnMSJAUw" value="1.7" unit="GHz"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXHewnEeWTKqLnMSJAUw" name="ddr3" resourceType="_2uYWyuwnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXHuwnEeWTKqLnMSJAUw" value="16.0" unit="GByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXH-wnEeWTKqLnMSJAUw" name="mram" resourceType="_2uYWy-wnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXIOwnEeWTKqLnMSJAUw" value="128.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYXIewnEeWTKqLnMSJAUw" name="X" resourceType="_2uYWouwnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYXIuwnEeWTKqLnMSJAUw" name="can" communicationResource="_2uYWq-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYXI-wnEeWTKqLnMSJAUw" name="ethernet" communicationResource="_2uYWo-wnEeWTKqLnMSJAUw"/>
+        <hwports xmi:id="_2uYXJOwnEeWTKqLnMSJAUw" name="usb" communicationResource="_2uYWp-wnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXJewnEeWTKqLnMSJAUw" name="ddr3" resourceType="_2uYWsewnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXJuwnEeWTKqLnMSJAUw" value="2.0" unit="GByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYXJ-wnEeWTKqLnMSJAUw" name="Intel Atom E3825" resourceType="_2uYWr-wnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYXKOwnEeWTKqLnMSJAUw" value="1.33" unit="GHz"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXKewnEeWTKqLnMSJAUw" name="nvram" resourceType="_2uYWsuwnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXKuwnEeWTKqLnMSJAUw" value="128.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2uYXK-wnEeWTKqLnMSJAUw" name="S1" resourceType="_2uYWs-wnEeWTKqLnMSJAUw">
+        <hwports xmi:id="_2uYXLOwnEeWTKqLnMSJAUw" name="can" communicationResource="_2uYWtOwnEeWTKqLnMSJAUw"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2uYXLewnEeWTKqLnMSJAUw" name="Intel Core i7" resourceType="_2uYWuOwnEeWTKqLnMSJAUw">
+          <frequency xmi:id="_2uYXLuwnEeWTKqLnMSJAUw" value="1.7" unit="GHz"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2uYXL-wnEeWTKqLnMSJAUw" name="ram" resourceType="_2uYWuuwnEeWTKqLnMSJAUw">
+          <memorySize xmi:id="_2uYXMOwnEeWTKqLnMSJAUw" value="4.0" unit="Bit"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+    </modelElements>
   </categories>
 </modelinstance:RootNode>
