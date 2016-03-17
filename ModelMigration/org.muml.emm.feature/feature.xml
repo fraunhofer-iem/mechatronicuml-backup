@@ -28,74 +28,74 @@
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import feature="org.eclipse.ocl"/>
-      <import feature="org.eclipse.emf.compare"/>
+      <import feature="org.eclipse.emf.compare"/> 
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration"
+         id="org.muml.emm"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.compare"
+         id="org.muml.emm.compare"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.edit"
+         id="org.muml.emm.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.editor"
+         id="org.muml.emm.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.execute"
+         id="org.muml.emm.execute"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.ui"
+         id="org.muml.emm.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.release"
+         id="org.muml.emm.release"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.release.edit"
+         id="org.muml.emm.release.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.release.editor"
+         id="org.muml.emm.release.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.migrator"
+         id="org.muml.emm.migrator"
          download-size="0"
          install-size="0"
          version="0.0.0"
