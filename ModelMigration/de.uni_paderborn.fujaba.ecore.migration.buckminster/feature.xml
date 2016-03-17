@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.ecore.migration.feature"
+         id="org.muml.emm.feature"
          version="0.0.0"/>
 
    <requires>
@@ -25,7 +25,7 @@
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.ecore.migration.tests"
+         id="org.muml.emm.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
