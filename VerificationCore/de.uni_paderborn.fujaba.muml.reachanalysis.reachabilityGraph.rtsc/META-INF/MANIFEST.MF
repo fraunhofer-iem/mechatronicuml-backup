@@ -9,7 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.impl
-Require-Bundle: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph;visibility:=reexport,
+Require-Bundle: org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.udbm;bundle-version="0.3.0"
 Bundle-ActivationPolicy: lazy

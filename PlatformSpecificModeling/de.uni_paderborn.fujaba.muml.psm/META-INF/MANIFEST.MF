@@ -40,9 +40,9 @@ Export-Package: de.uni_paderborn.fujaba.muml.psm,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.actionlanguage;visibility:=reexport,
- org.storydriven.core;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.hardware;visibility:=reexport,
  de.uni_paderborn.fujaba.muml;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.swplatform;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0"
+ org.muml.core.modelinstance;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy

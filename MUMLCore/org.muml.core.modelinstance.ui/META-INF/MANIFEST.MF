@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba New-Wizard
-Bundle-SymbolicName: de.uni_paderborn.fujaba.modelinstance.ui;singleton:=true
+Bundle-SymbolicName: org.muml.core.modelinstance.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
- de.uni_paderborn.fujaba.modelinstance;bundle-version="0.3.1",
- org.storydriven.core,
- de.uni_paderborn.fujaba.common;bundle-version="0.4.0",
+ org.muml.core.modelinstance;bundle-version="0.3.1",
+ org.muml.core,
+ org.muml.core.common;bundle-version="0.4.0",
  org.eclipse.ui.ide
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

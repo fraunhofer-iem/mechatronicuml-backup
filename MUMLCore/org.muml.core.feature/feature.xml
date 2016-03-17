@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.core.feature"
+      id="org.muml.core.feature"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -31,15 +31,15 @@
       <import plugin="org.eclipse.jface.text" version="3.7.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.storydriven.core.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
@@ -48,102 +48,102 @@
       <import plugin="org.eclipse.core.resources" version="3.7.101" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.300" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.edit.properties" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.edit.properties" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.edit.properties" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance.edit.properties" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="de.uni_paderborn.fujaba.common" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.common" version="0.4.0" match="greaterOrEqual"/>
       <import feature="org.muml.emm.feature" version="0.1.0"/>
       <import plugin="org.muml.emm"/>
    </requires>
 
    <plugin
-         id="org.storydriven.core"
+         id="org.muml.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.core.edit"
+         id="org.muml.core.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.core.edit.properties"
+         id="org.muml.core.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.core.ui"
+         id="org.muml.core.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.common"
+         id="org.muml.core.common"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelinstance"
+         id="org.muml.core.modelinstance"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelinstance.edit"
+         id="org.muml.core.modelinstance.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelinstance.edit.properties"
+         id="org.muml.core.modelinstance.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelinstance.editor"
+         id="org.muml.core.modelinstance.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelinstance.ui"
+         id="org.muml.core.modelinstance.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.preferences"
+         id="org.muml.core.preferences"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.core"
+         id="org.muml.core.reachanalysis.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph"
+         id="org.muml.core.reachanalysis.reachabilitygraph"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -171,21 +171,21 @@
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.export"
+         id="org.muml.core.export"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.core.ocl"
+         id="org.muml.core.ocl"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.example.ui"
+         id="org.muml.core.example.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -199,14 +199,14 @@
          unpack="false"/>
 -->
    <plugin
-         id="org.storydriven.core.migrator"
+         id="org.muml.core.migrator"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.common.editingdomain"
+         id="org.muml.core.common.editingdomain"
          download-size="0"
          install-size="0"
          version="0.0.0"

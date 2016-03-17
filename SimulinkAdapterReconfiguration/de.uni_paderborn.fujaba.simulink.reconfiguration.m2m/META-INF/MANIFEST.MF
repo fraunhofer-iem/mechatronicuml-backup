@@ -19,4 +19,4 @@ Import-Package: de.uni_paderborn.fujaba.modelinstance,
  org.storydriven.core,
  org.storydriven.storydiagrams.activities
 Require-Bundle: de.upb.swt.qvt.tgg.interpreter,
- de.uni_paderborn.fujaba.muml.reachanalysis.core;bundle-version="0.4.0"
+ org.muml.core.reachanalysis.core;bundle-version="0.4.0"

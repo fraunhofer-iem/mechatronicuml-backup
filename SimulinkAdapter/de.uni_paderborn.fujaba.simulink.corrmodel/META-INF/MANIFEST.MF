@@ -18,9 +18,9 @@ Export-Package: fujaba2simulink,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.storydriven.core;visibility:=reexport;bundle-version="1.0.1",
- de.uni_paderborn.fujaba.simulink.model;visibility:=reexport;bundle-version="0.4.0",
+ org.muml.core;bundle-version="1.0.1";visibility:=reexport,
+ de.uni_paderborn.fujaba.simulink.model;bundle-version="0.4.0";visibility:=reexport,
  org.eclipse.ui;bundle-version="3.7.0",
- de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
+ org.muml.core.modelinstance;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy

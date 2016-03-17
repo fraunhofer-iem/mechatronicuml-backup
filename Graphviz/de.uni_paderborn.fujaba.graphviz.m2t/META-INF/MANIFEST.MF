@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.model,
  org.eclipse.acceleo.profiler,
  org.eclipse.acceleo.engine,
- org.storydriven.core;bundle-version="1.0.1"
+ org.muml.core;bundle-version="1.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

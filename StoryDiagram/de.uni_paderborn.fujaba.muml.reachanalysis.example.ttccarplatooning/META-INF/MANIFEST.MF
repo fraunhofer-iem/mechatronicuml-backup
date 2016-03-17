@@ -13,10 +13,10 @@ Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatoon
  de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph;visibility:=reexport,
+ org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.reachanalysis.core;bundle-version="0.4.0",
+ org.muml.core.reachanalysis.core;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.reachanalysis.sdm;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.modelinstance;bundle-version="0.3.1",
+ org.muml.core.modelinstance;bundle-version="0.3.1",
  org.junit;bundle-version="4.10.0"
 Bundle-ActivationPolicy: lazy

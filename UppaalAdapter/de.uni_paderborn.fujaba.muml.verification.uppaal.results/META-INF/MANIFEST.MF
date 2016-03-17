@@ -12,7 +12,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.results,
  de.uni_paderborn.fujaba.muml.verification.uppaal.results.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.storydriven.core;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.4.0";visibility:=reexport,
  de.uni_paderborn.fujaba.muml;visibility:=reexport
 Bundle-ActivationPolicy: lazy

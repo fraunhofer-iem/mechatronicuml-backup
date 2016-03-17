@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.storydriven.core.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.muml.core.ui" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.storydriven.core.ui" id="expressionEditor" name="Expression Editor"/>
+         <meta.schema plugin="org.muml.core.ui" id="expressionEditor" name="Expression Editor"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]

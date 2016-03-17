@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.core.feature"
+         id="org.muml.core.feature"
          version="0.0.0"/>
 
    <includes
@@ -25,7 +25,7 @@
          version="0.0.0"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.tests"
+         id="org.muml.core.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"

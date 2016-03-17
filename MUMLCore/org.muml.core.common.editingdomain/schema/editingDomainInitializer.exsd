@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.uni_paderborn.fujaba.common.editingdomain" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.muml.core.common.editingdomain" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.uni_paderborn.fujaba.common.editingdomain" id="editingDomainInitializer" name="EditingDomainInitializer"/>
+         <meta.schema plugin="org.muml.core.common.editingdomain" id="editingDomainInitializer" name="EditingDomainInitializer"/>
       </appinfo>
       <documentation>
          Initializes an Editing Domain right after it was created.

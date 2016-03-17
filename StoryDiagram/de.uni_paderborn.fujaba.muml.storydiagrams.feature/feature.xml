@@ -36,16 +36,16 @@
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="de.mdelab.sdm.interpreter.core.eclipse" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph"/>
+      <import plugin="org.muml.core.reachanalysis.reachabilitygraph"/>
       <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.core" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.reachanalysis.core" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.sdm" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.junit" version="4.10.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core"/>
+      <import plugin="org.muml.core.reachanalysis.reachabilitygraph" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.interpreter.eclipse" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.diagram.interpreter" version="1.0.1" match="greaterOrEqual"/>
@@ -69,9 +69,9 @@
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
-      <import plugin="de.uni_paderborn.fujaba.common"/>
-      <import plugin="org.storydriven.core.edit"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.common"/>
+      <import plugin="org.muml.core.edit"/>
+      <import plugin="org.muml.core.modelinstance.ui" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.tooling.runtime"/>
@@ -79,13 +79,13 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.editor" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
       <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
-      <import plugin="org.storydriven.core" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.uml2.common"/>
       <import plugin="org.storydriven.storydiagrams" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.edit" version="0.3.0" match="greaterOrEqual"/>
@@ -95,12 +95,12 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.diagram" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.ui" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.ui" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.upb.swt.core" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.upb.swt.core.ui" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.upb.swt.core.ui.properties" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.ui" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance.ui" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.interpreter.core" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.interpreter.eclipse" version="0.3.0" match="greaterOrEqual"/>
@@ -119,7 +119,7 @@
       <import plugin="org.eclipse.ocl.ecore" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.6.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.uml2.common.edit"/>
-      <import plugin="org.storydriven.core" version="1.0.0" match="compatible"/>
+      <import plugin="org.muml.core" version="1.0.0" match="compatible"/>
       <import plugin="org.storydriven.storydiagrams" version="1.0.0" match="compatible"/>
       <import plugin="org.antlr.runtime" version="3.2.0" match="compatible"/>
       <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
@@ -130,14 +130,14 @@
       <import plugin="org.eclipse.xtext.ui" version="2.2.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.ui.shared" version="2.2.0" match="compatible"/>
       <import plugin="org.storydriven.storydiagrams.expressions" version="1.0.0" match="compatible"/>
-      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.interpreter.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.muml.ape.runtime"/>
-      <import plugin="org.storydriven.core.edit.properties"/>
+      <import plugin="org.muml.core.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
    </requires>

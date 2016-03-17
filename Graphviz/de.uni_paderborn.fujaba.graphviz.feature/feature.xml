@@ -20,9 +20,9 @@
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.common" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.common" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.annotation" version="1.1.0" match="compatible"/>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.util"/>
@@ -31,7 +31,7 @@
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="org.muml.core.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.ocl"/>

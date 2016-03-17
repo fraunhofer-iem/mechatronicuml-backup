@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.uni_paderborn.fujaba.common" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.muml.core.common" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.uni_paderborn.fujaba.common" id="elementInitializer" name="Element Initializer"/>
+         <meta.schema plugin="org.muml.core.common" id="elementInitializer" name="Element Initializer"/>
       </appinfo>
       <documentation>
          This extension point provides initialization for elements that are created using the ExtensibleCreationDialog.

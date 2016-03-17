@@ -103,7 +103,7 @@
 
   <!-- make sure that the "types" modelelementcategory is accepted as valid -->
   <extension
-          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+          point="org.muml.core.modelinstance.modelelementcategory">
       <category
               key="de.uni_paderborn.fujaba.muml.types.category"
               name="types">
@@ -115,14 +115,14 @@
   </extension>
   
   <extension
-       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+       point="org.muml.core.modelinstance.ui.modelinitializer">
       <initializer
           initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
       </initializer>
   </extension>
   
   <extension
-       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+       point="org.muml.core.modelinstance.ui.modelinitializer">
       <initializer
           initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.DefaultCategoriesInitializer">
       </initializer>
@@ -156,13 +156,13 @@
    
    <!-- Initialization for ClockConstraints using the CreationDialog -->
    <extension
-         point="de.uni_paderborn.fujaba.common.elementInitializer">
+         point="org.muml.core.common.elementInitializer">
          <initializer
                initializer="de.uni_paderborn.fujaba.muml.common.elementinitializer.ClockConstraintElementInitializer"
                qualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint"/>
    </extension>
    <extension
-         point="de.uni_paderborn.fujaba.common.editingdomain.editingDomainInitializer">
+         point="org.muml.core.common.editingdomain.editingDomainInitializer">
       <initializer
             ref="de.uni_paderborn.fujaba.muml.common.editingdomain.PIMEditingDomainInitializer">
       </initializer>

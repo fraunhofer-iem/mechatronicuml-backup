@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.ui,
  de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram;bundle-version="0.4.0",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.7.0",
  de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.4.0"
+ org.muml.core.modelinstance.ui;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Name: %pluginName

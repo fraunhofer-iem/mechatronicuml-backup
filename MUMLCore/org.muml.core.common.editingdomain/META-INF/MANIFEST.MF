@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Shared Editingdomain Registry
-Bundle-SymbolicName: de.uni_paderborn.fujaba.common.editingdomain;singleton:=true
+Bundle-SymbolicName: org.muml.core.common.editingdomain;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.common.editingdomain.EditingDomainPlugin
 Require-Bundle: org.eclipse.ui,

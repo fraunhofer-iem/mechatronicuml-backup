@@ -3,8 +3,8 @@
 	
 	<!-- Paths to metamodels -->
 	<property name="muml" value="de.uni_paderborn.fujaba.muml/model/muml.ecore" />
-	<property name="modelinstance" value="de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore" />
-	<property name="sdmcore" value="org.storydriven.core/model/core.ecore" />
+	<property name="modelinstance" value="org.muml.core.modelinstance/model/modelinstance.ecore" />
+	<property name="sdmcore" value="org.muml.core/model/core.ecore" />
 	<property name="actionlanguage" value="de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" />
 
 	<!-- set up EMF for standalone execution -->

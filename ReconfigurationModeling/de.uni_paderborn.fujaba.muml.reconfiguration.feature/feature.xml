@@ -20,16 +20,16 @@
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.storydriven.core"/>
+      <import plugin="org.muml.core"/>
       <import plugin="de.uni_paderborn.fujaba.muml"/>
       <import plugin="org.storydriven.storydiagrams"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentstorypattern" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.editor"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
-      <import plugin="de.uni_paderborn.fujaba.common"/>
+      <import plugin="org.muml.core.common"/>
       <import plugin="de.uni_paderborn.fujaba.muml.common"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui"/>
+      <import plugin="org.muml.core.modelinstance.ui"/>
       <import plugin="org.eclipse.ocl.ecore"/>
       <import plugin="org.eclipse.gmf.tooling.runtime"/>
       <import plugin="org.eclipse.core.resources"/>
@@ -48,23 +48,23 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
       <import plugin="org.eclipse.draw2d"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="org.muml.core.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
       <import plugin="org.storydriven.storydiagrams.edit"/>
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
       <import plugin="org.muml.ape.runtime"/>
-      <import plugin="org.storydriven.core.edit.properties"/>
+      <import plugin="org.muml.core.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentstorypattern.edit" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.ui" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.ui" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.upb.swt.core.ui.properties" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.common" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui"/>
       <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties" version="0.4.0" match="greaterOrEqual"/>
@@ -79,13 +79,13 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.component.diagram.custom" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance.ui" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.component.diagram"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.1.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram.sdm.transforms" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.core" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.reachanalysis.core" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.reachanalysis.reachabilitygraph" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.sdm" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd"/>

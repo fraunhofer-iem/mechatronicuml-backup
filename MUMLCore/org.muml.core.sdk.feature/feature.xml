@@ -18,9 +18,9 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.core.feature"
+         id="org.muml.core.feature"
          version="0.0.0"/>
  <includes
-         id="de.uni_paderborn.fujaba.core.source.feature"
+         id="org.muml.core.source.feature"
          version="0.0.0"/>
 </feature>

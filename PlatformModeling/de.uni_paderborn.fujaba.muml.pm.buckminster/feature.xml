@@ -30,7 +30,7 @@
       <import plugin="org.junit" version="4.11.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl" version="3.4.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.hardware" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.3.100" match="greaterOrEqual"/>

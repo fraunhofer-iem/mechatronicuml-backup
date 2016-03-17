@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.1",
  org.eclipse.gmf.runtime.diagram.ui,
  de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.modelinstance.ui,
+ org.muml.core.modelinstance.ui,
  de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation" name="DiagramInformation" schema="schema/diagraminformation.exsd"/>
-   <extension-point id="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer" name="Modelinitializer" schema="schema/modelinitializer.exsd"/>
+   <extension-point id="diagraminformation" name="DiagramInformation" schema="schema/diagraminformation.exsd"/>
+   <extension-point id="modelinitializer" name="Modelinitializer" schema="schema/modelinitializer.exsd"/>
   <extension point="org.eclipse.ui.newWizards" >
     <category name="MechatronicUML" id="de.uni_paderborn.fujaba" />
     <category name="Diagrams" id="de.uni_paderborn.fujaba.diagrams"

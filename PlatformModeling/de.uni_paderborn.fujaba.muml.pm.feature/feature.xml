@@ -36,8 +36,8 @@
       <import plugin="org.eclipse.equinox.registry"/>
       <import plugin="org.eclipse.xtext.ui"/>
       <import plugin="org.eclipse.ui.ide" version="3.9.2" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin

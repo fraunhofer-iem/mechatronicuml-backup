@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.gmf.runtime.emf.commands.core,
  org.eclipse.xtext,
- de.uni_paderborn.fujaba.modelinstance.ui,
+ org.muml.core.modelinstance.ui,
  org.eclipse.gmf.runtime.diagram.ui.render,
  org.eclipse.ui.ide;bundle-version="3.7.0"
 Bundle-Vendor: %Bundle-Vendor

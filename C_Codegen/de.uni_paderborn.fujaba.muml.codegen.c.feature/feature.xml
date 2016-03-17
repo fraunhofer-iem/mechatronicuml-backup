@@ -30,7 +30,7 @@
       <import plugin="org.eclipse.acceleo.model" version="3.2.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.engine" version="3.2.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.gmf.runtime.notation"/>
@@ -46,7 +46,7 @@
       <import plugin="org.eclipse.acceleo.engine" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.codegen.c" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.cdt.core" version="5.4.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.export" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.export" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.psm" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.common"/>

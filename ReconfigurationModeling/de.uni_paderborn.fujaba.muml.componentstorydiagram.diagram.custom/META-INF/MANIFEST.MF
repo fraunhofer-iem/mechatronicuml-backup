@@ -7,7 +7,7 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.cus
 Require-Bundle: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0",
  org.eclipse.emf.edit.ui;bundle-version="2.7.0",
- org.storydriven.core.ui;bundle-version="0.1.0",
+ org.muml.core.ui;bundle-version="0.1.0",
  de.upb.swt.core.ui.properties;bundle-version="0.1.0",
  de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0"

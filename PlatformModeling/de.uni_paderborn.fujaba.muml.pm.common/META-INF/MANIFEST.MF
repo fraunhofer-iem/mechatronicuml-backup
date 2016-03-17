@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.jface;bundle-version="3.9.1",
  org.eclipse.equinox.registry,
  org.eclipse.xtext.ui,
  org.eclipse.ui.ide;bundle-version="3.9.2",
- de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
- org.storydriven.core;bundle-version="1.0.1"
+ org.muml.core.modelinstance;bundle-version="0.4.0",
+ org.muml.core;bundle-version="1.0.1"
 Export-Package: de.uni_paderborn.fujaba.muml.pm.common.xtext
 Bundle-ActivationPolicy: lazy

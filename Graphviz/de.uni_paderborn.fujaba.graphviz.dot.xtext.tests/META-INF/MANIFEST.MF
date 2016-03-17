@@ -11,7 +11,7 @@ Require-Bundle: de.uni_paderborn.fujaba.graphviz.dot.xtext,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
  de.uni_paderborn.fujaba.graphviz;bundle-version="0.1.0",
- org.storydriven.core;bundle-version="1.0.1"
+ org.muml.core;bundle-version="1.0.1"
 Import-Package: org.apache.log4j,
  org.junit;version="4.5.0",
  org.junit.runner;version="4.5.0",

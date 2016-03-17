@@ -13,9 +13,9 @@ Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gta
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph;visibility:=reexport,
+ org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;visibility:=reexport,
- org.storydriven.core;bundle-version="1.0.0",
+ org.muml.core;bundle-version="1.0.0",
  org.storydriven.storydiagrams;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.verification.fotctl;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton;bundle-version="0.4.0"

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.storydriven.core" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.muml.core" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.storydriven.core" id="expressionLanguage" name="Expression Language"/>
+         <meta.schema plugin="org.muml.core" id="expressionLanguage" name="Expression Language"/>
       </appinfo>
       <documentation>
          Plugins can extend this extension point to register a new expression language with the story diagram meta model.
