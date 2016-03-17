@@ -129,14 +129,14 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_y44TcOwhEeWTKqLnMSJAUw" type="4003" source="_um8kMOwhEeWTKqLnMSJAUw" target="_xAyJYOwhEeWTKqLnMSJAUw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_y44Tc-whEeWTKqLnMSJAUw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_y44TdOwhEeWTKqLnMSJAUw" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_y44TdOwhEeWTKqLnMSJAUw" x="39" y="21"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_y44TdewhEeWTKqLnMSJAUw" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_y44TduwhEeWTKqLnMSJAUw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_y44TcewhEeWTKqLnMSJAUw" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_y4uicOwhEeWTKqLnMSJAUw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_y44TcuwhEeWTKqLnMSJAUw" points="[14, 20, -52, -75]$[62, 81, -4, -14]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_y44TcuwhEeWTKqLnMSJAUw" points="[-3, 22, -69, -73]$[-11, 82, -77, -13]$[37, 90, -29, -5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y5L1cOwhEeWTKqLnMSJAUw" id="(0.8556701030927835,0.639344262295082)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y5L1cewhEeWTKqLnMSJAUw" id="(0.3972602739726027,0.14432989690721648)"/>
   </edges>
@@ -179,7 +179,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_9xvTYOwhEeWTKqLnMSJAUw" type="4003" source="_xAyJYOwhEeWTKqLnMSJAUw" target="_um8kMOwhEeWTKqLnMSJAUw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_9xvTY-whEeWTKqLnMSJAUw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_9xvTZOwhEeWTKqLnMSJAUw" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9xvTZOwhEeWTKqLnMSJAUw" x="22" y="34"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_9xvTZewhEeWTKqLnMSJAUw" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9xvTZuwhEeWTKqLnMSJAUw" x="-10" y="20"/>

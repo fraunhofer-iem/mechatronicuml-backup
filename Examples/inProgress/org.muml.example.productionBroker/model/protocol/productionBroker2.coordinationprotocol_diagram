@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_Jx8JUOw3EeWTKqLnMSJAUw" type="Coordination Protocol" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_KUhR8Ow3EeWTKqLnMSJAUw" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_KUhR8uw3EeWTKqLnMSJAUw" type="7005">
+      <children xmi:type="notation:Node" xmi:id="_KUigEOw3EeWTKqLnMSJAUw" type="3015">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KUigFew3EeWTKqLnMSJAUw" type="5023"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_KUigEew3EeWTKqLnMSJAUw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_KUigEuw3EeWTKqLnMSJAUw" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_KUigE-w3EeWTKqLnMSJAUw" lineColor="0"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../productionBroker.muml#_KUXg8Ow3EeWTKqLnMSJAUw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KUigFOw3EeWTKqLnMSJAUw" x="156" y="-6"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KUjHIOw3EeWTKqLnMSJAUw" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KUjHIuw3EeWTKqLnMSJAUw" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_KUjHI-w3EeWTKqLnMSJAUw" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../productionBroker.muml#_KUakQOw3EeWTKqLnMSJAUw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KUjHIew3EeWTKqLnMSJAUw" y="138"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KUjHJOw3EeWTKqLnMSJAUw" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KUjHJuw3EeWTKqLnMSJAUw" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_KUjHJ-w3EeWTKqLnMSJAUw" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../productionBroker.muml#_KUakROw3EeWTKqLnMSJAUw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KUjHJew3EeWTKqLnMSJAUw" x="324" y="138"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_KUjHKOw3EeWTKqLnMSJAUw" type="3014">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KUjHLew3EeWTKqLnMSJAUw" type="5020"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_KUjHLuw3EeWTKqLnMSJAUw" type="5021"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_KUjHKew3EeWTKqLnMSJAUw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_KUjHKuw3EeWTKqLnMSJAUw" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_KUjHK-w3EeWTKqLnMSJAUw" lineColor="0"/>
+        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../productionBroker.muml#_KUbyYOw3EeWTKqLnMSJAUw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KUjHLOw3EeWTKqLnMSJAUw" x="96" y="174"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../productionBroker.muml#_KUXg8Ow3EeWTKqLnMSJAUw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KUhR8ew3EeWTKqLnMSJAUw" x="132" y="60" width="565" height="337"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Jx8JUew3EeWTKqLnMSJAUw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_soLPQdxbEeW-N_z6XJQq2w"/>
+</notation:Diagram>
