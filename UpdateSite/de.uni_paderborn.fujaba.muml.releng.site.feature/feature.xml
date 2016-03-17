@@ -145,11 +145,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.ecore.migration.feature"
+         id="org.muml.emm.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.ecore.migration.source.feature"
+         id="org.muml.emm.source.feature"
          version="0.0.0"/>
 
    <includes

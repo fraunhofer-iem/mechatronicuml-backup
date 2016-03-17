@@ -20,7 +20,7 @@
    <requires>
       <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.5.0.qualifier"/>
       <import feature="de.uni_paderborn.fujaba.core.feature" version="0.5.0.qualifier"/>
-      <import feature="de.uni_paderborn.fujaba.ecore.migration.feature" version="0.1.0.201507131051"/>
+      <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
    </requires>
 
    <plugin

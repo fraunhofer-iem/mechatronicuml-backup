@@ -3,7 +3,7 @@
 <plugin>
 
    <extension
-         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+         point="org.muml.emm.migrator">
       <Migrator
             file="model/hardware-1.0-to-1.1.migrator">
       </Migrator>

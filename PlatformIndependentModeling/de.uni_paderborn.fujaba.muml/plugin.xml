@@ -21,7 +21,7 @@
       </artefact>
    </extension>
    <extension
-         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+         point="org.muml.emm.migrator">
       <Migrator
             file="model/muml.migrator">
       </Migrator>

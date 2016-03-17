@@ -10,7 +10,7 @@
 <plugin>
 
    <extension
-         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+         point="org.muml.emm.migrator">
       <Migrator
             file="model/modelinstance.migrator">
       </Migrator>

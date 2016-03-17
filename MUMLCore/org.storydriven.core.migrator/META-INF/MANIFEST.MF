@@ -4,4 +4,4 @@ Bundle-Name: org.storydriven.core.migrator
 Bundle-SymbolicName: org.storydriven.core.migrator; singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
- de.uni_paderborn.fujaba.ecore.migration;bundle-version="0.1.0"
+ org.muml.emm;bundle-version="0.1.0"

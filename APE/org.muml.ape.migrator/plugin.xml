@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="de.uni_paderborn.fujaba.ecore.migration.migrator">
+         point="org.muml.emm.migrator">
       <Migrator
             file="model/properties.migrator">
       </Migrator>

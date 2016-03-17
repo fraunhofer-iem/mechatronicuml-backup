@@ -54,8 +54,8 @@
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="de.uni_paderborn.fujaba.common" version="0.4.0" match="greaterOrEqual"/>
-      <import feature="de.uni_paderborn.fujaba.ecore.migration.feature" version="0.1.0.201507131051"/>
-      <import plugin="de.uni_paderborn.fujaba.ecore.migration"/>
+      <import feature="org.muml.emm.feature" version="0.1.0.201507131051"/>
+      <import plugin="org.muml.emm"/>
    </requires>
 
    <plugin

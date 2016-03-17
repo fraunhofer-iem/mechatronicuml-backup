@@ -14,7 +14,7 @@ Require-Bundle: de.uni_paderborn.fujaba.common;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.storydriven.core;visibility:=reexport,
- de.uni_paderborn.fujaba.ecore.migration;bundle-version="0.1.0"
+ org.muml.emm;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml,
  de.uni_paderborn.fujaba.muml.impl,
