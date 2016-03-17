@@ -44,7 +44,7 @@ import de.uni_paderborn.fujaba.ecore.migration.Migrator;
 public class ComparePlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.ecore.migration.compare"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.muml.emm.compare"; //$NON-NLS-1$
 
 	// The shared instance
 	private static ComparePlugin plugin;
