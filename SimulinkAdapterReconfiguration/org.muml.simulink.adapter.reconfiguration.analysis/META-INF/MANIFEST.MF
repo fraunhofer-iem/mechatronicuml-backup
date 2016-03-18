@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Analysis
-Bundle-SymbolicName: de.uni_paderborn.fujaba.simulink.reconfiguration.analysis
+Bundle-SymbolicName: org.muml.simulink.adapter.reconfiguration.analysis
 Bundle-Version: 1.0.0.qualifier
 Export-Package: de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.inter,
  de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre,
