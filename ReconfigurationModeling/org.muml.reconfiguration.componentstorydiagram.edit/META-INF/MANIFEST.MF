@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentstorydiagram.edit;singleton:=true
+Bundle-SymbolicName: org.muml.reconfiguration.componentstorydiagram.edit;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.provider.ComponentStoryDiagramEditPlugin$Implementation
@@ -10,7 +10,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.provider
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.componentstorydiagram;visibility:=reexport,
+ org.muml.reconfiguration.componentstorydiagram;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,

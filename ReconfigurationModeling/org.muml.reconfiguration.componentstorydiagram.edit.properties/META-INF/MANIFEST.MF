@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ComponentStoryDiagram Tabbed Properties
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentstorydiagram.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.reconfiguration.componentstorydiagram.edit.properties;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.muml.pim.edit,
  org.eclipse.emf.ecore,
@@ -14,7 +14,7 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.core.edit.properties,
  org.muml.pim.actionlanguage.xtext.ui,
  org.muml.pim.common,
- de.uni_paderborn.fujaba.muml.componentstorydiagram,
+ org.muml.reconfiguration.componentstorydiagram,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.edit,
  de.uni_paderborn.fujaba.muml.reconfiguration,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit,

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration.ui;singleton:=true
+Bundle-SymbolicName: org.muml.reconfiguration.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.reconfiguration.ui.Activator
 Bundle-Vendor: %providerName
@@ -14,7 +14,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.reconfiguration;bundle-version="0.3
  org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
  org.muml.pim.component.diagram,
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.1.0",
- de.uni_paderborn.fujaba.muml.componentstorydiagram;bundle-version="0.4.0",
+ org.muml.reconfiguration.componentstorydiagram;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.componentstorydiagram.sdm.transforms;bundle-version="1.0.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
  org.muml.core.reachanalysis.reachabilitygraph;bundle-version="0.4.0",

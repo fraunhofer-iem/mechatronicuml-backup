@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.reconfigurationmodeling.buckminster"
+      id="org.muml.reconfiguration.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.reconfiguration.feature"
+         id="org.muml.reconfiguration.feature"
          version="0.0.0"/>
 
    <requires>
@@ -26,12 +26,12 @@
       <import plugin="org.junit" version="3.8.2" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.reconfiguration.componentstorydiagram" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.tests" version="0.3.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reconfiguration.tests"
+         id="org.muml.reconfiguration.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
