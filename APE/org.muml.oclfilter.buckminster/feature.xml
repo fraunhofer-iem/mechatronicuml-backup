@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.emf.codegen.oclfilter.buckminster"
+      id="org.muml.oclfilter.buckminster"
       label="Buckminster"
       version="0.5.0.qualifier">
 
