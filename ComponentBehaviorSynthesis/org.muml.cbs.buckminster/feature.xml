@@ -17,18 +17,18 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.componentbehaviorsynthesis.feature"
+         id="org.muml.cbs.feature"
          version="0.0.0"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.tests"
+         id="org.muml.cbs.dependencylanguage.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.tests"
+         id="org.muml.cbs.dependencylanguage.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"

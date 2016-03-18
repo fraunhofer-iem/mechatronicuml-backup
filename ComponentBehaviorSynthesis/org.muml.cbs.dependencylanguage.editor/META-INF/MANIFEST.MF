@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.dependencylanguage.editor;singleton:=true
+Bundle-SymbolicName: org.muml.cbs.dependencylanguage.editor;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.dependencylanguage.presentation.DependencylanguageEditorPlugin$Implementation
@@ -11,7 +11,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.dependencylanguage.edit;visibility:=reexport,
+ org.muml.cbs.dependencylanguage.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,

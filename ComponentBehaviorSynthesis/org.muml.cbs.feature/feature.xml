@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.componentbehaviorsynthesis.feature"
+      id="org.muml.cbs.feature"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -34,7 +34,7 @@
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.cbs.dependencylanguage" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.2.0" match="greaterOrEqual"/>
@@ -64,108 +64,108 @@
       <import plugin="org.eclipse.compare"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.cbs.dependencylanguage.xtext.ui.xtfo" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.actionlanguage.xtext.ui"/>
       <import plugin="org.muml.core.common"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.jface.text"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.cbs.dependencylanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage"
+         id="org.muml.cbs.dependencylanguage"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.edit"
+         id="org.muml.cbs.dependencylanguage.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.edit.properties"
+         id="org.muml.cbs.dependencylanguage.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.editor"
+         id="org.muml.cbs.dependencylanguage.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis"
+         id="org.muml.cbs.dependencylanguage.synthesis"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.jobs"
+         id="org.muml.cbs.dependencylanguage.synthesis.jobs"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox"
+         id="org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui"
+         id="org.muml.cbs.dependencylanguage.synthesis.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.tests"
+         id="org.muml.cbs.dependencylanguage.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.ui"
+         id="org.muml.cbs.dependencylanguage.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext"
+         id="org.muml.cbs.dependencylanguage.xtext"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.tests"
+         id="org.muml.cbs.dependencylanguage.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui"
+         id="org.muml.cbs.dependencylanguage.xtext.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo"
+         id="org.muml.cbs.dependencylanguage.xtext.ui.xtfo"
          download-size="0"
          install-size="0"
          version="0.0.0"
