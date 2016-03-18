@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.modelcopy.qvto.library.test</name>
+	<name>org.muml.modelcopy.qvto.library.test</name>
 	<comment></comment>
 	<projects>
 		<project>de.uni_paderborn.fujaba.modelcopy.qvto.library</project>
