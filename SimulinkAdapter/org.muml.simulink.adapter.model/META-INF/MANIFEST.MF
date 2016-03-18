@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MATLAB/Simulink SimulinkEMF Model
-Bundle-SymbolicName: de.uni_paderborn.fujaba.simulink.model;singleton:=true
+Bundle-SymbolicName: org.muml.simulink.adapter.model;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group,
