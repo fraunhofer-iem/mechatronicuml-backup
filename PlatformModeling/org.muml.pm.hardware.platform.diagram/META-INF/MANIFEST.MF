@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.platform.diagram; singleton:=true
+Bundle-SymbolicName: org.muml.pm.hardware.platform.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.ui.navigator,
@@ -10,9 +10,9 @@ Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.gmf.tooling.runtime;visibility:=reexport,
  org.muml.pim.common;bundle-version="0.4.0";visibility:=reexport,
  org.muml.core.modelinstance.ui;bundle-version="0.4.0";visibility:=reexport,
- de.uni_paderborn.fujaba.muml.hardware.edit;bundle-version="1.0.0";visibility:=reexport,
+ org.muml.pm.hardware.edit;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf.ecore.editor,
- de.uni_paderborn.fujaba.muml.hardware.common;bundle-version="1.0.0",
+ org.muml.pm.hardware.common;bundle-version="1.0.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.muml.ape.runtime;bundle-version="0.4.0";visibility:=reexport,
@@ -37,7 +37,7 @@ Require-Bundle: org.eclipse.core.expressions,
  org.muml.core.common;visibility:=reexport,
  org.muml.core.edit.properties;visibility:=reexport,
  org.muml.pim.edit.properties;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.hardware;visibility:=reexport,
+ org.muml.pm.hardware;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,

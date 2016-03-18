@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.hardware.platform.diagram</name>
+	<name>org.muml.pm.hardware.platform.diagram</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -40,11 +40,4 @@
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>model/PostReconcileLibrary.qvto</name>
-			<type>1</type>
-			<locationURI>$%7BWORKSPACE_LOC%7D/org.muml.core.common/transformations/PostReconcileLibrary.qvto</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

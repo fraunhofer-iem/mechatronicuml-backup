@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.muml.hardwareplatform.feature"
+      id="org.muml.pm.hardware.feature"
       label="Hardware Platform Modeling Feature"
       version="1.0.0.qualifier">
 
@@ -76,91 +76,91 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware"
+         id="org.muml.pm.hardware"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.edit"
+         id="org.muml.pm.hardware.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.common"
+         id="org.muml.pm.hardware.common"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram"
+         id="org.muml.pm.hardware.platform.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom"
+         id="org.muml.pm.hardware.platform.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"
+         id="org.muml.pm.hardware.resourceinstance.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom"
+         id="org.muml.pm.hardware.resourceinstance.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.edit.properties"
+         id="org.muml.pm.hardware.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram"
+         id="org.muml.pm.hardware.platforminstance.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom"
+         id="org.muml.pm.hardware.platforminstance.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram"
+         id="org.muml.pm.hardware.resource.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom"
+         id="org.muml.pm.hardware.resource.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.migrator"
+         id="org.muml.pm.hardware.migrator"
          download-size="0"
          install-size="0"
          version="0.0.0"

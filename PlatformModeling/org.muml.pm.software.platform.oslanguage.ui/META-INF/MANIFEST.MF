@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Version: 0.5.0.qualifier
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.swplatform.oslanguage.ui;singleton:=true
+Bundle-SymbolicName: org.muml.pm.software.platform.oslanguage.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
@@ -16,9 +16,9 @@ Require-Bundle: org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.muml.pim.actionlanguage.xtext;bundle-version="0.4.0",
  org.muml.pim.actionlanguage.xtext.ui;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.pm.common;bundle-version="1.0.0",
+ org.muml.pm.common;bundle-version="1.0.0",
  org.eclipse.xtext.xbase.lib,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage;bundle-version="0.4.0",
+ org.muml.pm.software.platform.oslanguage;bundle-version="0.4.0",
  org.eclipse.compare;bundle-version="3.5.500"
 Import-Package: de.uni_paderborn.fujaba.modelinstance,
  org.apache.log4j,

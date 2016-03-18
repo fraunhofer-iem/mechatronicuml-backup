@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.tests;singleton:=true
+Bundle-SymbolicName: org.muml.pm.hardware.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -21,7 +21,7 @@ Require-Bundle: org.junit;bundle-version="4.11.0";visibility:=reexport,
  org.muml.pim;bundle-version="0.4.0";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.hardware;bundle-version="1.0.0";visibility:=reexport,
+ org.muml.pm.hardware;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.ocl.ecore;bundle-version="3.3.100",
  org.eclipse.gmf;bundle-version="1.7.0",
  org.eclipse.gmf.bridge;bundle-version="1.3.1",

@@ -54,10 +54,10 @@ Require-Bundle: org.eclipse.ocl.ecore,
  org.muml.pim.actionlanguage.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.hardware;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.hardware.edit;visibility:=reexport,
+ org.muml.pm.hardware;visibility:=reexport,
+ org.muml.pm.hardware.edit;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.pim.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.swplatform;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.swplatform.edit;visibility:=reexport
+ org.muml.pm.software.platform;visibility:=reexport,
+ org.muml.pm.software.platform.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

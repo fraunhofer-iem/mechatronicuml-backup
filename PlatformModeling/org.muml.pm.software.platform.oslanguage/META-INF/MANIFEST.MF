@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Version: 0.5.0.qualifier
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.swplatform.oslanguage;singleton:=true
+Bundle-SymbolicName: org.muml.pm.software.platform.oslanguage;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
- de.uni_paderborn.fujaba.muml.swplatform;bundle-version="0.1.0",
+ org.muml.pm.software.platform;bundle-version="0.1.0",
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib

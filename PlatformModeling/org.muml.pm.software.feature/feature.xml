@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.swplatform.feature"
+      id="org.muml.pm.software.feature"
       label="Software Platform Modeling Feature"
       version="1.0.0.qualifier">
 
@@ -8,9 +8,8 @@
       Software Platform Modeling Feature
    </description>
 
-  
    <copyright>
-Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
+      Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -18,7 +17,7 @@ http://www.eclipse.org/legal/epl-v10.html
    </copyright>
 
    <license url="license.html">
-Fujaba Licence Agreement
+      Fujaba Licence Agreement
 July 21, 2012
 
 This feature is free software; you can redistribute and/or modify it under the terms of the Eclipse Public License (EPL) as published by the Eclipse Foundation. You can access the full text of the license agreement under http://www.eclipse.org/legal/epl-v10.html
@@ -40,7 +39,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.antlr.runtime"/>
       <import plugin="org.eclipse.xtext.common.types"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.swplatform" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pm.software.platform" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.xtext.ui"/>
@@ -52,34 +51,34 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
       <import plugin="org.eclipse.xtext.common.types.ui"/>
       <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
       <import plugin="org.muml.pim.actionlanguage.xtext.ui" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.pm.common" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.swplatform.oslanguage" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pm.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pm.software.platform.oslanguage" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.compare" version="3.5.501" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.swplatform"
+         id="org.muml.pm.software.platform"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.swplatform.edit"
+         id="org.muml.pm.software.platform.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.swplatform.oslanguage"
+         id="org.muml.pm.software.platform.oslanguage"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.swplatform.oslanguage.ui"
+         id="org.muml.pm.software.platform.oslanguage.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

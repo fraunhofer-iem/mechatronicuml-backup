@@ -1,16 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Platform Instance Diagram Custom Plugin
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom;singleton:=true
+Bundle-SymbolicName: org.muml.pm.hardware.platforminstance.diagram.custom;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: 
  Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram;bundle-version="1.0.0",
+Require-Bundle: org.muml.pm.hardware.platforminstance.diagram;bundle-version="1.0.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
- de.uni_paderborn.fujaba.muml.hardware.common,
+ org.muml.pm.hardware.common,
  org.eclipse.gmf.runtime.diagram.ui.properties,
- de.uni_paderborn.fujaba.muml.hardware,
+ org.muml.pm.hardware,
  org.eclipse.gmf.runtime.diagram.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.part.Activator

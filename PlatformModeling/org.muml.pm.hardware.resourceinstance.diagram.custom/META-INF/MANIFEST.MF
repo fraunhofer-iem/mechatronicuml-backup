@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Resource Instance Diagram Custom
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom;singleton:=true
+Bundle-SymbolicName: org.muml.pm.hardware.resourceinstance.diagram.custom;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: 
  oftware Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
 Require-Bundle: org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
- de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram;bundle-version="1.0.0",
+ org.muml.pm.hardware.resourceinstance.diagram;bundle-version="1.0.0",
  org.eclipse.gmf.runtime.diagram.ui,
- de.uni_paderborn.fujaba.muml.hardware.common
+ org.muml.pm.hardware.common
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.part.Activator

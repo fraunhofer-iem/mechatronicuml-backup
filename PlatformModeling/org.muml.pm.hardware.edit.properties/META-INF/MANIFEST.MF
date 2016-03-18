@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML PSM Tabbed Properties
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.pm.hardware.edit.properties;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.muml.pim.edit,
  org.muml.pim,
@@ -15,9 +15,9 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.core.edit.properties,
  org.muml.pim.actionlanguage.xtext.ui,
  org.muml.pim.common,
- de.uni_paderborn.fujaba.muml.hardware.common,
- de.uni_paderborn.fujaba.muml.hardware,
- de.uni_paderborn.fujaba.muml.hardware.edit,
+ org.muml.pm.hardware.common,
+ org.muml.pm.hardware,
+ org.muml.pm.hardware.edit,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
