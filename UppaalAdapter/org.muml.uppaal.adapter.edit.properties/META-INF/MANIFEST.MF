@@ -1,16 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Mtctl Properties
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.mtctl.edit.properties;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
  org.muml.ape.runtime,
  org.eclipse.emf.edit,
  org.eclipse.ui,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui
+ org.muml.uppaal.adapter.mtctl.edit,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.uppaal.adapter.mtctl.xtext.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.constraint,

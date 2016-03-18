@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.extension.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.extension.edit.properties;singleton:=true
 Bundle-Version: 0.1
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.ui,
  org.eclipse.core.runtime,
  org.muml.ape.runtime,
- de.uni_paderborn.fujaba.muml.verification.extension,
- de.uni_paderborn.fujaba.muml.verification.extension.edit,
+ org.muml.uppaal.adapter.extension,
+ org.muml.uppaal.adapter.extension.edit,
  org.eclipse.emf.edit
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

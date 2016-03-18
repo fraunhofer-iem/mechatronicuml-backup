@@ -3,14 +3,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Bundle-Version: 0.5.0.qualifier
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests; singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.mtctl.xtext.tests;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui,
+Require-Bundle: org.muml.uppaal.adapter.mtctl.xtext,
+ org.muml.uppaal.adapter.mtctl.xtext.ui,
  org.eclipse.core.runtime,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
+ org.muml.uppaal.adapter.mtctl,
  org.muml.pim;bundle-version="0.4.0",
  org.eclipse.xtext.xbase.lib,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional

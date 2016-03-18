@@ -1,25 +1,25 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.ui;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.eclipse.gmf.runtime.diagram.ui,
  org.muml.pim.coordinationprotocol.diagram;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.verification.uppaal.job;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.job;bundle-version="0.4.0",
  org.muml.uppaal.trace,
  org.eclipse.jface,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.uppaal.adapter.mtctl.xtext.ui;bundle-version="0.4.0",
  org.muml.ape.runtime,
- de.uni_paderborn.fujaba.muml.verification.uppaal.options.edit.properties,
- de.uni_paderborn.fujaba.muml.verification.uppaal.options,
+ org.muml.uppaal.adapter.options.edit.properties,
+ org.muml.uppaal.adapter.options,
  org.eclipse.xtext.ui;bundle-version="2.4.3",
- de.uni_paderborn.fujaba.muml.verification.uppaal.results,
+ org.muml.uppaal.adapter.results,
  org.eclipse.m2m.qvt.oml,
  org.muml.pim,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.mtctl.english;bundle-version="0.4.0",
  org.muml.core.export;bundle-version="0.4.0",
  org.muml.pim.pattern.diagram.custom;bundle-version="0.5.0"
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.ui

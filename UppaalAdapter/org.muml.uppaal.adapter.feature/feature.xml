@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.verification.uppaal.feature"
+      id="org.muml.uppaal.adapter.feature"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -24,140 +24,139 @@
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.blackbox"
+         id="org.muml.uppaal.adapter.blackbox"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.cmd"
+         id="org.muml.uppaal.adapter.cmd"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.job"
+         id="org.muml.uppaal.adapter.job"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui"
+         id="org.muml.uppaal.adapter.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation"
+         id="org.muml.uppaal.adapter.transformation"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
+         id="org.muml.uppaal.adapter.mtctl"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit"
+         id="org.muml.uppaal.adapter.mtctl.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties"
+         id="org.muml.uppaal.adapter.mtctl.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext"
+         id="org.muml.uppaal.adapter.mtctl.xtext"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests"
+         id="org.muml.uppaal.adapter.mtctl.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui"
+         id="org.muml.uppaal.adapter.mtctl.xtext.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.options"
+         id="org.muml.uppaal.adapter.options"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.options.edit"
+         id="org.muml.uppaal.adapter.options.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.options.edit.properties"
+         id="org.muml.uppaal.adapter.options.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english"
+         id="org.muml.uppaal.adapter.mtctl.english"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.results"
+         id="org.muml.uppaal.adapter.results"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.results.edit"
+         id="org.muml.uppaal.adapter.results.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.extension"
+         id="org.muml.uppaal.adapter.extension"
+         download-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.uppaal.adapter.extension.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.extension.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.extension.edit.properties"
+         id="org.muml.uppaal.adapter.extension.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"

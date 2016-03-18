@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.transformation;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.transformation;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Vendor: 
  %providerName
@@ -11,10 +11,10 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.uppaal;bundle-version="0.4.0",
  org.muml.pim;bundle-version="0.3.2",
  org.muml.pim.actionlanguage;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.verification.uppaal.blackbox;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.blackbox;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;bundle-version="0.4.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.0.v20140506-0739",
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.2.0",
- de.uni_paderborn.fujaba.muml.verification.extension;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.extension;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.mtctl;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;bundle-version="0.4.0"

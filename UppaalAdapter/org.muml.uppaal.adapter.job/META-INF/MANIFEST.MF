@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.job;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.job;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
@@ -24,10 +24,10 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  org.muml.uppaal.requirements,
  de.uni_paderborn.fujaba.muml.runtime,
  de.uni_paderborn.fujaba.udbm,
- de.uni_paderborn.fujaba.muml.verification.extension,
+ org.muml.uppaal.adapter.extension,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
- de.uni_paderborn.fujaba.muml.verification.uppaal.results,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.uppaal.adapter.results,
  org.muml.graphviz.blackbox;resolution:=optional,
  org.muml.graphviz;resolution:=optional,
  org.muml.uppaal.job;bundle-version="0.5.0"
