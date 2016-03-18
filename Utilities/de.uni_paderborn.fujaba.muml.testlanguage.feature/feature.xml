@@ -22,7 +22,7 @@
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.validation" version="1.7.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.testlanguage" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.gmf.runtime.notation" version="1.8.0" match="greaterOrEqual"/>
@@ -54,8 +54,8 @@
       <import plugin="org.eclipse.ocl.ecore"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.custom" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.testlanguage.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.testlanguage.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.validate" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common.ui"/>
@@ -66,18 +66,18 @@
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.emf.compare" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml"/>
-      <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.job" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.verification.uppaal.job" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.uppaal" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.uppaal.requirements" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.uppaal.trace"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.results" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.extension" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.verification.uppaal.results" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.verification.uppaal.mtctl.xtext"/>
+      <import plugin="org.muml.pim.verification.extension" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.verification.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.uppaal.job"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
       <import feature="de.uni_paderborn.fujaba.muml.verification.uppaal.feature" version="0.5.0.qualifier"/>
    </requires>
 

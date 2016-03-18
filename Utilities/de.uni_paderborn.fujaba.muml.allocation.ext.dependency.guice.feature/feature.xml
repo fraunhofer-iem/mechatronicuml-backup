@@ -220,9 +220,9 @@ For more information about guice, see https://github.com/google/guice
    </license>
 
    <requires>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava" version="16.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.allocation.ext.dependency.javax.inject" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.allocation.ext.dependency.aopalliance" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.allocation.ext.dependency.guava" version="16.0.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin

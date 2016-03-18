@@ -37,9 +37,9 @@
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="de.mdelab.sdm.interpreter.core.eclipse" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.reachanalysis.reachabilitygraph"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.reachanalysis.reachabilityGraph.sdm" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.reachanalysis.core" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.sdm" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.reachanalysis.sdm" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.junit" version="4.10.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core"/>
@@ -72,10 +72,10 @@
       <import plugin="org.muml.core.common"/>
       <import plugin="org.muml.core.edit"/>
       <import plugin="org.muml.core.modelinstance.ui" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.verification.sdd.basicsdd" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.verification.sdd.basicsdd.edit" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.tooling.runtime"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.verification.sdd.basicsdd.diagram" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.editor" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
@@ -138,8 +138,8 @@
       <import plugin="org.eclipse.jface.text" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.muml.ape.runtime"/>
       <import plugin="org.muml.core.edit.properties"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
+      <import plugin="org.muml.pim.edit"/>
+      <import plugin="org.muml.pim.edit.properties"/>
    </requires>
 
    <plugin

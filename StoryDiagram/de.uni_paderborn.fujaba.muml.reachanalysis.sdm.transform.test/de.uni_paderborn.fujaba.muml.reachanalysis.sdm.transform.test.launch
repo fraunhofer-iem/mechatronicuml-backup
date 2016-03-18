@@ -41,7 +41,7 @@
 <setEntry value="de.uni_paderborn.fujaba.core.buckminster:default"/>
 <setEntry value="de.uni_paderborn.fujaba.core.feature:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.pim.buckminster:default"/>
-<setEntry value="de.uni_paderborn.fujaba.muml.pim.feature:default"/>
+<setEntry value="org.muml.pim.feature:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.pm.buckminster:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.pm.feature:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.releng.site.experimental.feature:default"/>

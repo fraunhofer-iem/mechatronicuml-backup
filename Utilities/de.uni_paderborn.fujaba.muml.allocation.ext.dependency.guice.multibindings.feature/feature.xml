@@ -220,10 +220,10 @@ For more information about guice-multibindings, see https://github.com/google/gu
    </license>
 
    <requires>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava" version="16.0.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.allocation.ext.dependency.aopalliance" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.allocation.ext.dependency.javax.inject" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.allocation.ext.dependency.guava" version="16.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.allocation.ext.dependency.guice" version="4.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

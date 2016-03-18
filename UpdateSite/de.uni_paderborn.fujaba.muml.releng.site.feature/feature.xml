@@ -22,7 +22,7 @@ the Eclipse framework.
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.pim.feature"
+         id="org.muml.pim.feature"
          version="0.0.0"/>
 
    <includes
@@ -64,7 +64,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.core.sdk.feature"
+         id="org.muml.core.sdk.feature"
          version="0.0.0"/>
 
    <includes

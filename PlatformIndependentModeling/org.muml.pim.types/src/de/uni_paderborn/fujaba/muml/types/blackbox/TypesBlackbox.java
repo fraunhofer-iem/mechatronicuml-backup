@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 public class TypesBlackbox {
 	
 	public static URI PREDEFINED_TYPES_URI = URI
-			.createURI("platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes");
+			.createURI("platform:/plugin/org.muml.pim.types/model/predefined.mumltypes");
 
 	/**
 	 * Find Predefined Type with specified name by loading the predefined types
@@ -61,11 +61,10 @@ public class TypesBlackbox {
 		Assert.isLegal(resourceSet != null,
 				"[Predefined Types] Transformation Input must be contained in ResourceSet.");
 
-		Resource resource = resourceSet.getResource(
-				URI.createURI("platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes"), true);
+		Resource resource = resourceSet.getResource(PREDEFINED_TYPES_URI, true);
 
 		// This relies on the fact that the unique-identifier in the xmi file is equal to the name.
-		// Please ensure this is always the case in de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes.
+		// Please ensure this is always the case in our "predefined.mumltypes" file.
 		return (PrimitiveDataType) resource.getEObject(name);
 	}
 

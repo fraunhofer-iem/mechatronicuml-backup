@@ -30,7 +30,7 @@ public class PredefinedTypesResourceFactory implements Resource.Factory {
 	 */
 	@Deprecated
 	public static URI PREDEFINED_TYPES_URI = URI
-			.createURI("platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes");
+			.createURI("platform:/plugin/org.muml.pim.types/model/predefined.mumltypes");
 
 	private static Resource PREDEFINED_TYPES_RESOURCE = null;
 
