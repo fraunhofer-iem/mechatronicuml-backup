@@ -14,6 +14,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.reconfiguration;visibility:=reexport,
+ org.muml.reconfiguration;visibility:=reexport,
  org.storydriven.storydiagrams;visibility:=reexport
 Bundle-ActivationPolicy: lazy

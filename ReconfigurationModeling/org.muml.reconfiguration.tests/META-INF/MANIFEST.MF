@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.ui,
  org.storydriven.storydiagrams;bundle-version="1.0.1",
  org.muml.pim;bundle-version="0.4.0",
  org.muml.reconfiguration.componentstorydiagram;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0",
+ org.muml.reconfiguration.componentstorypattern;bundle-version="0.4.0",
  org.muml.core.modelinstance;bundle-version="0.4.0",
  org.muml.core.tests;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy

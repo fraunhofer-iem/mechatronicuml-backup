@@ -6,14 +6,14 @@ Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
  org.muml.ape.runtime,
- de.uni_paderborn.fujaba.muml.componentstorypattern,
+ org.muml.reconfiguration.componentstorypattern,
  org.eclipse.emf.edit,
- de.uni_paderborn.fujaba.muml.componentstorypattern.edit,
+ org.muml.reconfiguration.componentstorypattern.edit,
  org.eclipse.ui,
  org.muml.core.edit,
  org.muml.core.edit.properties,
- de.uni_paderborn.fujaba.muml.reconfiguration.edit,
- de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties,
+ org.muml.reconfiguration.edit,
+ org.muml.reconfiguration.edit.properties,
  org.muml.pim.edit,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy

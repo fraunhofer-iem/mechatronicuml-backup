@@ -15,10 +15,10 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.pim.actionlanguage.xtext.ui,
  org.muml.pim.common,
  org.muml.reconfiguration.componentstorydiagram,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.edit,
- de.uni_paderborn.fujaba.muml.reconfiguration,
- de.uni_paderborn.fujaba.muml.reconfiguration.edit,
- de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties,
+ org.muml.reconfiguration.componentstorydiagram.edit,
+ org.muml.reconfiguration,
+ org.muml.reconfiguration.edit,
+ org.muml.reconfiguration.edit.properties,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

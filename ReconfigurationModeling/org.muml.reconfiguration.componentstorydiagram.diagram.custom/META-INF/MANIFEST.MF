@@ -4,12 +4,12 @@ Bundle-Name: Custom
 Bundle-SymbolicName: org.muml.reconfiguration.componentstorydiagram.diagram.custom;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.Activator
-Require-Bundle: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram,
+Require-Bundle: org.muml.reconfiguration.componentstorydiagram.diagram,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0",
  org.eclipse.emf.edit.ui;bundle-version="2.7.0",
  org.muml.core.ui;bundle-version="0.1.0",
  de.upb.swt.core.ui.properties;bundle-version="0.1.0",
- de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0",
+ org.muml.reconfiguration.componentstorypattern;bundle-version="0.4.0",
  org.muml.pim.common;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
