@@ -294,7 +294,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_cKo0kIUfEeOAU7Vdi0NG2Q"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iwr7gYUfEeOAU7Vdi0NG2Q" width="840" height="1366"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iwr7gYUfEeOAU7Vdi0NG2Q" x="144" y="144" width="840" height="1366"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_iSBCgYUfEeOAU7Vdi0NG2Q"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_cKo0kIUfEeOAU7Vdi0NG2Q"/>
@@ -345,7 +345,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_P0Vb0OrSEeW8Ua6WvGcBqg" type="4003" source="_PoKBAOrSEeW8Ua6WvGcBqg" target="_PoKBAOrSEeW8Ua6WvGcBqg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_P0WC4OrSEeW8Ua6WvGcBqg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_P0WC4erSEeW8Ua6WvGcBqg" x="-111" y="-93"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_P0WC4erSEeW8Ua6WvGcBqg" x="-270" y="-104"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_P0WC4urSEeW8Ua6WvGcBqg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_P0WC4-rSEeW8Ua6WvGcBqg" x="-10" y="20"/>
