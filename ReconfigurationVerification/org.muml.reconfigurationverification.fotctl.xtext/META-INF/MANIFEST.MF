@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: de.uni_paderborn.fujaba.muml.verification.fotctl.xtext
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.fotctl.xtext; singleton:=true
+Bundle-SymbolicName: org.muml.reconfigurationverification.fotctl.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
  org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
- de.uni_paderborn.fujaba.muml.verification.fotctl,
+ org.muml.reconfigurationverification.fotctl,
  org.eclipse.xtext.util,
  org.antlr.runtime,
  org.muml.core;bundle-version="1.0.0"

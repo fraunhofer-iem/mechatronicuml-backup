@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.timedstorydiagram.editor;singleton:=true
+Bundle-SymbolicName: org.muml.reconfigurationverification.timedstorydiagram.editor;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.timedstorydiagram.presentation.TimedStoryDiagramsEditorPlugin$Implementation
@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.timedstorydiagram.edit;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.timedstorydiagram;bundle-version="1.0.0",
+ org.muml.reconfigurationverification.timedstorydiagram.edit;bundle-version="1.0.0",
+ org.muml.reconfigurationverification.timedstorydiagram;bundle-version="1.0.0",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

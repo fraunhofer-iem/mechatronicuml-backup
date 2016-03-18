@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm</name>
+	<name>org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm</name>
 	<comment></comment>
 	<projects>
 	</projects>

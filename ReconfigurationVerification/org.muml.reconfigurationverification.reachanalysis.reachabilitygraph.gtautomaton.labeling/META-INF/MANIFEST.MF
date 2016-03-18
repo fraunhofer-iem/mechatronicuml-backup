@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling;singleton:=true
+Bundle-SymbolicName: org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -17,8 +17,8 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;visibility:=reexport,
  org.muml.core;bundle-version="1.0.0",
  org.storydriven.storydiagrams;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.verification.fotctl;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton;bundle-version="0.4.0"
+ org.muml.reconfigurationverification.fotctl;bundle-version="1.0.0",
+ org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: org.junit;version="4.8.2",
  org.junit.runner,

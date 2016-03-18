@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton;singleton:=true
+Bundle-SymbolicName: org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.timedstorydiagram;visibility:=reexport,
+ org.muml.reconfigurationverification.timedstorydiagram;visibility:=reexport,
  org.muml.core;bundle-version="1.0.0",
  org.storydriven.storydiagrams;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

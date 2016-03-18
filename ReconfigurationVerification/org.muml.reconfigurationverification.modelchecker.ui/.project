@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.verification.modelchecker.ui</name>
+	<name>org.muml.reconfigurationverification.modelchecker.ui</name>
 	<comment></comment>
 	<projects>
 	</projects>
