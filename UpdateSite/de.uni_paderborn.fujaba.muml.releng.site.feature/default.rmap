@@ -3,7 +3,7 @@
 <rm:locator searchPathRef="default" failOnError="false"/>
 <rm:locator searchPathRef="APE" failOnError="false"/>
 <rm:locator searchPathRef="ModelMigration" failOnError="false"/>
-<rm:locator searchPathRef="MUMLCore" failOnError="false"/>
+<rm:locator searchPathRef="Core" failOnError="false"/>
 <rm:locator searchPathRef="PlatformIndependentModeling" failOnError="false"/>
 <rm:locator searchPathRef="VerificationCore" failOnError="false"/>
 <rm:locator searchPathRef="Uppaal" failOnError="false"/>
@@ -38,9 +38,9 @@
     </rm:provider>
 </rm:searchPath>
 
-<rm:searchPath name="MUMLCore">
+<rm:searchPath name="Core">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
-      <rm:uri format="file:///data/jenkins/jobs/MUMLCore/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
