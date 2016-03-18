@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: uppaal.project.design
-Bundle-SymbolicName: de.uni_paderborn.uppaal.project.design;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.project.design;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: uppaal.project.design.Activator
 Require-Bundle: org.eclipse.ui,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.uppaal.sdk.feature"
+      id="org.muml.uppaal.sdk.feature"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -18,10 +18,10 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.uppaal.feature"
+         id="org.muml.uppaal.feature"
          version="0.0.0"/>
    <includes
-         id="de.uni_paderborn.uppaal.source.feature"
+         id="org.muml.uppaal.source.feature"
          version="0.0.0"/>
          
    <requires>
@@ -32,7 +32,7 @@
       <import plugin="org.eclipse.core.resources" version="3.8.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide" version="3.6.2" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.uppaal" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.emf.mwe.core" version="1.1.1" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.logging" version="1.0.4" match="greaterOrEqual"/>
@@ -48,7 +48,7 @@
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.xtext.common.types"/>
-      <import plugin="de.uni_paderborn.uppaal" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.eclipse.xtext.ui"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>

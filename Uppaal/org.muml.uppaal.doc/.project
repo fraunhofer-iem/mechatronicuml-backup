@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.uppaal.doc</name>
+	<name>org.muml.uppaal.doc</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -18,7 +18,7 @@
 		<link>
 			<name>.tex</name>
 			<type>1</type>
-			<location>D:/MiKTeX/tex/latex/tools/.tex</location>
+			<location>/local_ssd/bingo/eclipse/D::/MiKTeX/tex/latex/tools/.tex</location>
 		</link>
 	</linkedResources>
 </projectDescription>

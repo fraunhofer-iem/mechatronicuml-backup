@@ -145,7 +145,7 @@
    <extension point="org.eclipse.emf.ecore.uri_mapping">
      <mapping
            source="http://www.uni-paderborn.de/uppaal/stdlib/0.4.0"
-           target="platform:/plugin/de.uni_paderborn.uppaal/model/stdlib.xmi">
+           target="platform:/plugin/org.muml.uppaal/model/stdlib.xmi">
      </mapping>
   </extension>
   

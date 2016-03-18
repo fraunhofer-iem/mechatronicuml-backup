@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.uppaal.requirements;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.requirements;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -13,5 +13,5 @@ Export-Package: de.uni_paderborn.uppaal.requirements,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- de.uni_paderborn.uppaal;visibility:=reexport
+ org.muml.uppaal;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.uppaal.buckminster"
+      id="org.muml.uppaal.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
@@ -17,11 +17,11 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.uppaal.feature"
+         id="org.muml.uppaal.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.uppaal.sdk.feature"
+         id="org.muml.uppaal.feature.sdk.feature"
          version="0.0.0"/>
 
 </feature>

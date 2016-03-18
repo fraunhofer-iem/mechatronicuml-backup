@@ -1,23 +1,23 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.uppaal.ui;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.eclipse.gmf.runtime.diagram.ui,
- de.uni_paderborn.uppaal.trace,
+ org.muml.uppaal.trace,
  org.eclipse.jface,
  org.muml.ape.runtime,
  org.muml.core.export;bundle-version="0.4.0",
- de.uni_paderborn.uppaal,
+ org.muml.uppaal,
  org.muml.core.common,
  org.muml.graphviz;resolution:=optional,
  org.muml.graphviz.blackbox;resolution:=optional,
- de.uni_paderborn.uppaal.serialization,
+ org.muml.uppaal.serialization,
  org.muml.core,
  org.eclipse.core.filesystem,
- de.uni_paderborn.uppaal.job;bundle-version="0.5.0"
+ org.muml.uppaal.job;bundle-version="0.5.0"
 Export-Package: de.uni_paderborn.uppaal.ui.wizard
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
