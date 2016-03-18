@@ -4,6 +4,7 @@
 <rm:locator searchPathRef="APE" failOnError="false"/>
 <rm:locator searchPathRef="ModelMigration" failOnError="false"/>
 <rm:locator searchPathRef="Core" failOnError="false"/>
+<rm:locator searchPathRef="ModelCopy" failOnError="false"/>
 <rm:locator searchPathRef="PlatformIndependentModeling" failOnError="false"/>
 <rm:locator searchPathRef="VerificationCore" failOnError="false"/>
 <rm:locator searchPathRef="Uppaal" failOnError="false"/>
@@ -45,6 +46,13 @@
     </rm:provider>
 </rm:searchPath>
 
+
+<rm:searchPath name="ModelCopy">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
+      <rm:uri format="file:///data/jenkins/jobs/ModelCopy/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+</rm:searchPath>
 
 <rm:searchPath name="ModelMigration">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
