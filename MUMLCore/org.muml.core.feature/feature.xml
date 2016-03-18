@@ -40,14 +40,9 @@
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.muml.core.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.7.101" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.300" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit.properties" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.edit.properties" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance.edit.properties" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
@@ -190,14 +185,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-<!--
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.browser"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
--->
+
    <plugin
          id="org.muml.core.migrator"
          download-size="0"
