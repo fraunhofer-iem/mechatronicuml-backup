@@ -21,7 +21,7 @@
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.core.sdk.feature"
+         id="org.muml.core.sdk.feature"
          version="0.0.0"/>
 
    <plugin
