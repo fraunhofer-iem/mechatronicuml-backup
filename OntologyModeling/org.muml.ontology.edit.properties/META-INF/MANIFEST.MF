@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.pim.common,
  org.eclipse.core.resources,
  org.eclipse.jface,
- de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi
+ org.muml.external.ontology.owlapi
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.ontology.properties.metamodel, de.uni_paderborn.fujaba.muml.ontology.properties.constraint,
