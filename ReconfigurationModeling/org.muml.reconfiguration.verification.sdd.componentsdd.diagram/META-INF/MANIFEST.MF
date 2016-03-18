@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram; singleton:=true
+Bundle-SymbolicName: org.muml.reconfiguration.verification.sdd.componentSDD.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 Require-Bundle: org.eclipse.ui,
