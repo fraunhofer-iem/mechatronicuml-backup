@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.testlanguage.diagram; singleton:=true
+Bundle-SymbolicName: org.muml.testlanguage.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
@@ -34,18 +34,18 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.gmf.tooling.runtime;visibility:=reexport,
  org.eclipse.draw2d;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.testlanguage;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.testlanguage.edit;visibility:=reexport,
+ org.muml.testlanguage;visibility:=reexport,
+ org.muml.testlanguage.edit;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gmf.runtime.notation;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.testlanguage.specification;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.testlanguage.specification.edit;visibility:=reexport,
+ org.muml.testlanguage.specification;visibility:=reexport,
+ org.muml.testlanguage.specification.edit;visibility:=reexport,
  org.eclipse.emf.transaction,
  org.eclipse.gmf.runtime.diagram.ui.printing,
  org.eclipse.gmf.runtime.diagram.ui.printing.render,
- de.uni_paderborn.fujaba.muml.testlanguage.custom;bundle-version="1.0.0"
+ org.muml.testlanguage.custom;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

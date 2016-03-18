@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.testlanguage.editor;singleton:=true
+Bundle-SymbolicName: org.muml.testlanguage.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageEditorPlugin$Implementation
@@ -11,9 +11,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.uni_paderborn.fujaba.muml.testlanguage.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.testlanguage.edit;visibility:=reexport,
+ org.muml.testlanguage.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.testlanguage.specification.edit;visibility:=reexport
+ org.muml.testlanguage.specification.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

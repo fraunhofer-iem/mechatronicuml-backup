@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.testlanguage.feature"
+      id="org.muml.testlanguage.feature"
       label="Feature"
       version="1.0.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany">
@@ -22,7 +22,7 @@
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.validation" version="1.7.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.testlanguage" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.gmf.runtime.notation" version="1.8.0" match="greaterOrEqual"/>
@@ -54,8 +54,8 @@
       <import plugin="org.eclipse.ocl.ecore"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.custom" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.testlanguage.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.testlanguage.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.validate" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common.ui"/>
@@ -77,61 +77,61 @@
       <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.uppaal.job"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
       <import feature="de.uni_paderborn.fujaba.muml.verification.uppaal.feature" version="0.5.0.qualifier"/>
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage"
+         id="org.muml.testlanguage"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage.custom"
+         id="org.muml.testlanguage.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage.diagram"
+         id="org.muml.testlanguage.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.custom"
+         id="org.muml.testlanguage.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage.edit"
+         id="org.muml.testlanguage.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage.editor"
+         id="org.muml.testlanguage.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage.specification"
+         id="org.muml.testlanguage.specification"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.testlanguage.specification.edit"
+         id="org.muml.testlanguage.specification.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"

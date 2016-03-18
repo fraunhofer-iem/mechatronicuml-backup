@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: TestLanguagePlugin
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.testlanguage;singleton:=true
+Bundle-SymbolicName: org.muml.testlanguage;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -12,6 +12,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.testlanguage,
  de.uni_paderborn.fujaba.muml.testlanguage.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.testlanguage.specification;visibility:=reexport,
+ org.muml.testlanguage.specification;visibility:=reexport,
  org.eclipse.emf.validation;bundle-version="1.7.0"
 Bundle-ActivationPolicy: lazy
