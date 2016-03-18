@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.ontology.feature"
+         id="org.muml.ontology.feature"
          version="0.0.0"/>
 
 </feature>

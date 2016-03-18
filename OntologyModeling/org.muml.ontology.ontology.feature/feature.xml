@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.ontology.feature"
+      id="org.muml.ontology.feature"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -23,28 +23,28 @@
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.ontology"
+         id="org.muml.ontology"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.ontology.edit"
+         id="org.muml.ontology.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.ontology.edit.properties"
+         id="org.muml.ontology.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.ontology.owl"
+         id="org.muml.ontology.owl"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

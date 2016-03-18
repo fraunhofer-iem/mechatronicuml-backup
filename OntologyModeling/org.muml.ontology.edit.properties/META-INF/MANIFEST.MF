@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ontology Properties
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.ontology.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.ontology.edit.properties;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
@@ -11,8 +11,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core,
  org.muml.core.modelinstance,
  org.muml.pim,
- de.uni_paderborn.fujaba.muml.ontology.edit,
- de.uni_paderborn.fujaba.muml.ontology,
+ org.muml.ontology.edit,
+ org.muml.ontology,
  org.muml.core.edit,
  org.muml.core.edit.properties,
  org.muml.pim.edit,
