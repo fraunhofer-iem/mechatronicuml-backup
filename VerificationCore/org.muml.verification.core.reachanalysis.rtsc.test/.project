@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.test</name>
+	<name>org.muml.verification.core.reachanalysis.rtsc.test</name>
 	<comment></comment>
 	<projects>
 	</projects>

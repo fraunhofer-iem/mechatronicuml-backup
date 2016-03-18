@@ -14,7 +14,7 @@ Require-Bundle: org.muml.reconfigurationverification.reachanalysis.gtautomaton;b
  org.muml.reconfigurationverification.reachanalysis.tsdm.transform;bundle-version="0.4.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
  org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.3.1",
+ org.muml.verification.core.runtime;bundle-version="0.3.1",
  org.junit;bundle-version="4.10.0"
 Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.test
 Bundle-Vendor: %providerName

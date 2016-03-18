@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML ReachabilityAnalysis ReachabilityGraph RTCP
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;singleton:=true
+Bundle-SymbolicName: org.muml.verification.core.reachanalysis.reachabilitygraph.cic;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group,
@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.runtime;visibility:=reexport,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc;visibility:=reexport,
+ org.muml.verification.core.runtime;visibility:=reexport,
  org.muml.udbm;bundle-version="0.3.0"
 Bundle-ActivationPolicy: lazy

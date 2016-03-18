@@ -15,7 +15,7 @@ Require-Bundle: org.muml.reconfigurationverification.reachanalysis.reachabilityg
  org.storydriven.storydiagrams;bundle-version="1.0.0",
  org.storydriven.storydiagrams.interpreter.eclipse;bundle-version="1.0.0",
  org.storydriven.storydiagrams.diagram.interpreter;bundle-version="1.0.1",
- de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.3.1",
+ org.muml.verification.core.runtime;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper;bundle-version="0.4.0"
 Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton,
  de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.export
