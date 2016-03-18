@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.model.gen.modelica.sdk.feature</name>
+	<name>org.muml.modelica.adapter.sdk.feature</name>
 	<comment></comment>
 	<projects>
 	</projects>

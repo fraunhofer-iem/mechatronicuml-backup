@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="generate" name="de.uni_paderborn.fujaba.modelica.m2t">
+<project default="generate" name="org.muml.modelica.adapter.m2t">
     <property name="ECLIPSE_HOME" value="../../../eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="de.uni_paderborn.fujaba.modelica.m2t.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.modelica.m2t/bin"/>
+    <path id="org.muml.modelica.adapter.m2t.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/org.muml.modelica.adapter.m2t/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.11.1.v20150903-1804.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.annotation_1.2.0.v201401042248.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.inject_1.0.0.v20091030.jar"/>
@@ -46,23 +46,23 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.m2m.qvt.oml.ecore.imperativeocl_3.3.100.v20150601-1926.jar"/>
     </path>
 
-    <path id="de.uni_paderborn.fujaba.modelica.m2t.classpath">
-        <path refid="de.uni_paderborn.fujaba.modelica.m2t.libraryclasspath"/>
+    <path id="org.muml.modelica.adapter.m2t.classpath">
+        <path refid="org.muml.modelica.adapter.m2t.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="de.uni_paderborn.fujaba.modelica.m2t.libraryclasspath.alljars">
-        <pathelement location="../de.uni_paderborn.fujaba.modelica.m2t/bin"/>
+    <path id="org.muml.modelica.adapter.m2t.libraryclasspath.alljars">
+        <pathelement location="../org.muml.modelica.adapter.m2t/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="de.uni_paderborn.fujaba.modelica.m2t.classpath.alljars">
-        <path refid="de.uni_paderborn.fujaba.modelica.m2t.libraryclasspath.alljars"/>
+    <path id="org.muml.modelica.adapter.m2t.classpath.alljars">
+        <path refid="org.muml.modelica.adapter.m2t.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="generate">
-        <java classname="de.uni_paderborn.fujaba.modelica.m2t.main.Generate" classpathref="de.uni_paderborn.fujaba.modelica.m2t.classpath">
+        <java classname="de.uni_paderborn.fujaba.modelica.m2t.main.Generate" classpathref="org.muml.modelica.adapter.m2t.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -73,7 +73,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generate.alljars">
-        <java classname="de.uni_paderborn.fujaba.modelica.m2t.main.Generate" classpathref="de.uni_paderborn.fujaba.modelica.m2t.classpath">
+        <java classname="de.uni_paderborn.fujaba.modelica.m2t.main.Generate" classpathref="org.muml.modelica.adapter.m2t.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

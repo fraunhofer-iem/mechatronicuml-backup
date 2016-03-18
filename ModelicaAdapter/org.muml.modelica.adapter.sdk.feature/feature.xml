@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.model.gen.modelica.sdk.feature"
+      id="org.muml.modelica.adapter.sdk.feature"
       label="MechatronicUML Modelica Adapter SDK"
       version="0.5.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
@@ -29,12 +29,13 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
+         id="org.muml.modelica.adapter.feature"
          version="0.0.0"/>
+
    <includes
-         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.source.feature"
+         id="org.muml.modelica.adapter.source.feature"
          version="0.0.0"/>
-         
+
    <requires>
       <import feature="org.muml.core.sdk.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.pim.sdk.feature" version="0.5.0.qualifier"/>

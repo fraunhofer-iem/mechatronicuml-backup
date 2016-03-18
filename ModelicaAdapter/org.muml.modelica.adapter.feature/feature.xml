@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
+      id="org.muml.modelica.adapter.feature"
       label="MechatronicUML Modelica Adapter"
       version="0.5.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
@@ -10,7 +10,7 @@
    </description>
 
    <copyright>
-Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+      Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ http://www.eclipse.org/legal/epl-v10.html
    </copyright>
 
    <license url="license.html">
-Fujaba Licence Agreement
+      Fujaba Licence Agreement
 July 21, 2012
 
 This feature is free software; you can redistribute and/or modify it under the terms of the Eclipse Public License (EPL)
@@ -45,10 +45,10 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       <import plugin="org.eclipse.acceleo.engine" version="3.2.2" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.parser" version="3.2.2" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelica.m2t.transform" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.modelica.adapter.m2t.transform" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.runtime"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project"/>
-      <import plugin="de.uni_paderborn.fujaba.graphviz.blackbox" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.graphviz.blackbox" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.resources"/>
@@ -61,34 +61,34 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelica.m2t"
+         id="org.muml.modelica.adapter.m2t"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelica.m2t.ui"
+         id="org.muml.modelica.adapter.m2t.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelica.graphviz"
+         id="org.muml.modelica.adapter.graphviz"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelica.m2t.transform"
+         id="org.muml.modelica.adapter.m2t.transform"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelica.m2t.transform.edit"
+         id="org.muml.modelica.adapter.m2t.transform.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
