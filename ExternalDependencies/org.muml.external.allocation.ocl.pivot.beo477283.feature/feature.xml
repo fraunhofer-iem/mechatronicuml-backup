@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.ocl.pivot.beo477283.feature"
+      id="org.muml.external.allocation.ocl.pivot.beo477283.feature"
       label="Beo477283"
       version="1.0.1.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University">

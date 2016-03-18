@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava.feature</name>
+	<name>org.muml.external.allocation.guava.feature</name>
 	<comment></comment>
 	<projects>
 	</projects>

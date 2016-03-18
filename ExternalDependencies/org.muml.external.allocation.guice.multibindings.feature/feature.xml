@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings.feature"
+      id="org.muml.external.allocation.guice.multibindings.feature"
       label="guice-multibindings external dependency"
       version="4.0.0.beta5_qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
@@ -220,14 +220,14 @@ For more information about guice-multibindings, see https://github.com/google/gu
    </license>
 
    <requires>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava" version="16.0.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.allocation.aopalliance" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.allocation.javax.inject" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.allocation.guava" version="16.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.allocation.guice" version="4.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings"
+         id="org.muml.external.allocation.guice.multibindings"
          download-size="0"
          install-size="0"
          version="0.0.0"

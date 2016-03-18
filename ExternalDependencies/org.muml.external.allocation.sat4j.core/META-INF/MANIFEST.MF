@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.core
+Bundle-SymbolicName: org.muml.external.allocation.sat4j.core
 Bundle-Version: 2.3.3
 Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)

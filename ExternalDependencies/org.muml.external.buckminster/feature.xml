@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.ext.dependency.buckminster"
+      id="org.muml.external.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
@@ -17,55 +17,55 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance.feature"
+         id="org.muml.external.allocation.aopalliance.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava.feature"
+         id="org.muml.external.allocation.guava.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.feature"
+         id="org.muml.external.allocation.guice.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings.feature"
+         id="org.muml.external.allocation.guice.multibindings.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject.feature"
+         id="org.muml.external.allocation.javax.inject.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.opt4j.feature"
+         id="org.muml.external.allocation.opt4j.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.core.feature"
+         id="org.muml.external.allocation.sat4j.core.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.pb.feature"
+         id="org.muml.external.allocation.sat4j.pb.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi.feature"
+         id="org.muml.external.ontology.owlapi.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.unitontology.feature"
+         id="org.muml.external.ontology.unitontology.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.modelcopy.feature"
+         id="org.muml.modelcopy.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.ocl.pivot.beo477283.feature"
+         id="org.muml.external.allocation.ocl.pivot.beo477283.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.testlanguage.feature"
+         id="org.muml.testlanguage.feature"
          version="0.0.0"/>
 
 </feature>

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Guice
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice
+Bundle-SymbolicName: org.muml.external.allocation.guice
 Bundle-Version: 4.0.0.beta5
 Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
@@ -19,6 +19,6 @@ Export-Package: com.google.inject,
  com.google.inject.spi,
  com.google.inject.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava;bundle-version="16.0.1"
+Require-Bundle: org.muml.external.allocation.javax.inject;bundle-version="1.0.0",
+ org.muml.external.allocation.aopalliance;bundle-version="1.0.0",
+ org.muml.external.allocation.guava;bundle-version="16.0.1"

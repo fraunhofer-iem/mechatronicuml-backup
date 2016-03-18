@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi.feature"
+      id="org.muml.external.ontology.owlapi.feature"
       label="owlapi external dependency"
       version="4.0.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
@@ -220,7 +220,7 @@ http://sourceforge.net/projects/owlapi/
    </license>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi"
+         id="org.muml.external.ontology.owlapi"
          download-size="0"
          install-size="0"
          version="0.0.0"
