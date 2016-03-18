@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Reconfiguration Tabbed Properties
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties; singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
+Require-Bundle: org.muml.pim.edit,
  org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
  org.muml.pim,
@@ -16,7 +16,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  org.muml.pim.common,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit,
  de.uni_paderborn.fujaba.muml.reconfiguration,
- de.uni_paderborn.fujaba.muml.edit.properties,
+ org.muml.pim.edit.properties,
  org.storydriven.storydiagrams.edit,
  org.storydriven.storydiagrams.edit.properties
 Bundle-ActivationPolicy: lazy

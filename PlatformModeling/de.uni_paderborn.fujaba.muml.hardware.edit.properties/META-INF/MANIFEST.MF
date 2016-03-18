@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML PSM Tabbed Properties
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.edit.properties; singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
+Require-Bundle: org.muml.pim.edit,
  org.muml.pim,
  org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
@@ -18,7 +18,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  de.uni_paderborn.fujaba.muml.hardware.common,
  de.uni_paderborn.fujaba.muml.hardware,
  de.uni_paderborn.fujaba.muml.hardware.edit,
- de.uni_paderborn.fujaba.muml.edit.properties
+ org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.hardware.properties.metamodel, de.uni_paderborn.fujaba.muml.hardware.properties.constraint,

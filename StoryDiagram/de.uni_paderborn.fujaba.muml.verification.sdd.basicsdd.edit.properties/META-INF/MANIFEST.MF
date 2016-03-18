@@ -12,8 +12,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit,
  de.uni_paderborn.fujaba.muml.verification.sdd.edit,
  de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties,
- de.uni_paderborn.fujaba.muml.edit,
- de.uni_paderborn.fujaba.muml.edit.properties,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties,
  org.muml.core.edit,
  org.muml.core.edit.properties
 Bundle-ActivationPolicy: lazy

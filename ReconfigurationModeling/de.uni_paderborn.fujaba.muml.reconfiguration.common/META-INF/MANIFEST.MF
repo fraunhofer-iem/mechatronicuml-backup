@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Component Story Diagram Common Plugin
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration.common;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Require-Bundle: de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
+Require-Bundle: org.muml.pim.edit;bundle-version="0.3.1",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
  org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.2",
  org.muml.pim.common;bundle-version="0.3.1",

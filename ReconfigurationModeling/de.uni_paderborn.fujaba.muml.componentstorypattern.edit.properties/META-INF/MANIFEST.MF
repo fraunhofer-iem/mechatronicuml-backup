@@ -14,8 +14,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core.edit.properties,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties,
- de.uni_paderborn.fujaba.muml.edit,
- de.uni_paderborn.fujaba.muml.edit.properties
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.componentstorypattern.properties.metamodel, de.uni_paderborn.fujaba.muml.componentstorypattern.properties.constraint,

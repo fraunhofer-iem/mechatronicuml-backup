@@ -12,8 +12,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.storydriven.storydiagrams,
  org.muml.core.edit,
  org.muml.core.edit.properties,
- de.uni_paderborn.fujaba.muml.edit,
- de.uni_paderborn.fujaba.muml.edit.properties,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties,
  org.muml.pim.actionlanguage.xtext.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
