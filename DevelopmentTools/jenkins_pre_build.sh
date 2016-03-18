@@ -40,7 +40,7 @@ function junit_test(){
 }
 
 function manage_copyright_license_vendor(){
-	wget https://svn-serv.cs.upb.de/mechatronicuml/trunk/MUMLUtilities/PropertiesCheck.java
+	wget https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/PropertiesCheck.java
 	javac  PropertiesCheck.java
 	find $PWD -name "MANIFEST.MF" |while read fname
 	do
