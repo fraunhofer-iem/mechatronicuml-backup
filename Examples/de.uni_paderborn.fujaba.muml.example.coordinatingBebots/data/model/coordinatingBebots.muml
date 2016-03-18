@@ -218,8 +218,8 @@
       </verificationConstraintRepositories>
       <roles xmi:id="_LuCQEF6PEeOU6dzb6wKMjg" connectors="_LuF6cV6PEeOU6dzb6wKMjg" behavior="_t60ZEGl9EeOlIqc8khLIew" name="master" senderMessageTypes="_FVawYGmAEeOlIqc8khLIew" receiverMessageTypes="_TjIMQGmAEeOlIqc8khLIew _VRXPsGmAEeOlIqc8khLIew">
         <cardinality xmi:id="_LuC3IF6PEeOU6dzb6wKMjg">
-          <lowerBound xmi:id="_HddhsLq8EeS_yNxpQx27dg"/>
-          <upperBound xmi:id="_Hddhsbq8EeS_yNxpQx27dg"/>
+          <lowerBound xmi:id="_-yEKEOz0EeWd1Nv24GHnqw"/>
+          <upperBound xmi:id="_-yExIOz0EeWd1Nv24GHnqw"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_mvjIYGmBEeOlIqc8khLIew" name="buffer1" messageType="_TjIMQGmAEeOlIqc8khLIew">
           <bufferSize xmi:id="_1QhegGmBEeOlIqc8khLIew"/>
@@ -240,10 +240,10 @@
       <roleConnector xmi:id="_LuF6cV6PEeOU6dzb6wKMjg" connectorEndpoints="_LuCQEF6PEeOU6dzb6wKMjg _LuEsUF6PEeOU6dzb6wKMjg">
         <connectorQualityOfServiceAssumptions xmi:id="_LuHvoF6PEeOU6dzb6wKMjg" comment="">
           <minMessageDelay xmi:id="_z5YnwF6REeOU6dzb6wKMjg" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_9k4QoLz4EeSyj6tO7QPfkQ" value="5"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_F0jFoO0GEeWd1Nv24GHnqw" value="0"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_pbnL4F6SEeOU6dzb6wKMjg" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_9-jU4Lz4EeSyj6tO7QPfkQ" value="5"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_hn9-sO0FEeWd1Nv24GHnqw" value="0"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
@@ -352,10 +352,10 @@
       <roleConnector xmi:id="_TxvAwV6PEeOU6dzb6wKMjg" connectorEndpoints="_TxtyoF6PEeOU6dzb6wKMjg _TxuZs16PEeOU6dzb6wKMjg">
         <connectorQualityOfServiceAssumptions xmi:id="_Txvn0F6PEeOU6dzb6wKMjg" comment="">
           <minMessageDelay xmi:id="_lG7UYHYcEeOftqkRKcg6BA" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_GyJ_sLzREeSQ16cML_AZjQ" value="5"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_Bj698O0GEeWd1Nv24GHnqw" value="0"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_mem5AHYcEeOftqkRKcg6BA" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_HVcS8LzREeSQ16cML_AZjQ" value="5"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_jl_KkO0FEeWd1Nv24GHnqw" value="0"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
@@ -467,7 +467,7 @@
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_34kooKX3EeOtUJ-H8DmtEA" value="0"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_B6aOMHYaEeOftqkRKcg6BA" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_ViAQwOH0EeWH0NNpDdcZWA" value="1"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_e9k1AO0FEeWd1Nv24GHnqw" value="0"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
@@ -582,7 +582,7 @@
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_9ju0oKX3EeOtUJ-H8DmtEA" value="0"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_PfFQkGmXEeOU79FQup_1NQ" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-JfNEKX3EeOtUJ-H8DmtEA" value="0"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_vlvzEO0DEeWd1Nv24GHnqw" value="5"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
@@ -1442,70 +1442,70 @@
           <message xmi:id="_yHIIwLELEeOUhpWh5pWHvw" instanceOf="_wrj_ILEKEeOUhpWh5pWHvw"/>
         </events>
         <action xmi:id="_vZK34HYqEeOftqkRKcg6BA" name="array := allPositions.array;">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_nWdZQNvzEeWk7OzKNRMDBQ">
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nWdZQdvzEeWk7OzKNRMDBQ" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nWdZQtvzEeWk7OzKNRMDBQ" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_yMeYQLEKEeOUhpWh5pWHvw"/>
-              <lhs_typedNamedElementExpression xmi:id="_nWdZQ9vzEeWk7OzKNRMDBQ" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZRNvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZRdvzEeWk7OzKNRMDBQ" value="0"/>
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_zcCdQO0FEeWd1Nv24GHnqw">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_zcCdQe0FEeWd1Nv24GHnqw" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_zcCdQu0FEeWd1Nv24GHnqw" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_yMeYQLEKEeOUhpWh5pWHvw"/>
+              <lhs_typedNamedElementExpression xmi:id="_zcCdQ-0FEeWd1Nv24GHnqw" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdRO0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdRe0FEeWd1Nv24GHnqw" value="0"/>
                 </elementAccessors>
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZRtvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZR9vzEeWk7OzKNRMDBQ" value="0"/>
-                </elementAccessors>
-              </lhs_typedNamedElementExpression>
-            </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nWdZSNvzEeWk7OzKNRMDBQ" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nWdZSdvzEeWk7OzKNRMDBQ" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_zkmBwLEKEeOUhpWh5pWHvw"/>
-              <lhs_typedNamedElementExpression xmi:id="_nWdZStvzEeWk7OzKNRMDBQ" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZS9vzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZTNvzEeWk7OzKNRMDBQ" value="0"/>
-                </elementAccessors>
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZTdvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZTtvzEeWk7OzKNRMDBQ" value="1"/>
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdRu0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdR-0FEeWd1Nv24GHnqw" value="0"/>
                 </elementAccessors>
               </lhs_typedNamedElementExpression>
             </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nWdZT9vzEeWk7OzKNRMDBQ" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nWdZUNvzEeWk7OzKNRMDBQ" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_0-OHILEKEeOUhpWh5pWHvw"/>
-              <lhs_typedNamedElementExpression xmi:id="_nWdZUdvzEeWk7OzKNRMDBQ" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZUtvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZU9vzEeWk7OzKNRMDBQ" value="1"/>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_zcCdSO0FEeWd1Nv24GHnqw" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_zcCdSe0FEeWd1Nv24GHnqw" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_zkmBwLEKEeOUhpWh5pWHvw"/>
+              <lhs_typedNamedElementExpression xmi:id="_zcCdSu0FEeWd1Nv24GHnqw" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdS-0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdTO0FEeWd1Nv24GHnqw" value="0"/>
                 </elementAccessors>
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZVNvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZVdvzEeWk7OzKNRMDBQ" value="0"/>
-                </elementAccessors>
-              </lhs_typedNamedElementExpression>
-            </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nWdZVtvzEeWk7OzKNRMDBQ" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nWdZV9vzEeWk7OzKNRMDBQ" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_2HJeELEKEeOUhpWh5pWHvw"/>
-              <lhs_typedNamedElementExpression xmi:id="_nWdZWNvzEeWk7OzKNRMDBQ" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZWdvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZWtvzEeWk7OzKNRMDBQ" value="1"/>
-                </elementAccessors>
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZW9vzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZXNvzEeWk7OzKNRMDBQ" value="1"/>
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdTe0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdTu0FEeWd1Nv24GHnqw" value="1"/>
                 </elementAccessors>
               </lhs_typedNamedElementExpression>
             </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nWdZXdvzEeWk7OzKNRMDBQ" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nWdZXtvzEeWk7OzKNRMDBQ" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_3iHAMLEKEeOUhpWh5pWHvw"/>
-              <lhs_typedNamedElementExpression xmi:id="_nWdZX9vzEeWk7OzKNRMDBQ" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZYNvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZYdvzEeWk7OzKNRMDBQ" value="2"/>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_zcCdT-0FEeWd1Nv24GHnqw" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_zcCdUO0FEeWd1Nv24GHnqw" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_0-OHILEKEeOUhpWh5pWHvw"/>
+              <lhs_typedNamedElementExpression xmi:id="_zcCdUe0FEeWd1Nv24GHnqw" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdUu0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdU-0FEeWd1Nv24GHnqw" value="1"/>
                 </elementAccessors>
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZYtvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZY9vzEeWk7OzKNRMDBQ" value="0"/>
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdVO0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdVe0FEeWd1Nv24GHnqw" value="0"/>
                 </elementAccessors>
               </lhs_typedNamedElementExpression>
             </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nWdZZNvzEeWk7OzKNRMDBQ" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nWdZZdvzEeWk7OzKNRMDBQ" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_4-KHcLEKEeOUhpWh5pWHvw"/>
-              <lhs_typedNamedElementExpression xmi:id="_nWdZZtvzEeWk7OzKNRMDBQ" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZZ9vzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZaNvzEeWk7OzKNRMDBQ" value="2"/>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_zcCdVu0FEeWd1Nv24GHnqw" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_zcCdV-0FEeWd1Nv24GHnqw" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_2HJeELEKEeOUhpWh5pWHvw"/>
+              <lhs_typedNamedElementExpression xmi:id="_zcCdWO0FEeWd1Nv24GHnqw" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdWe0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdWu0FEeWd1Nv24GHnqw" value="1"/>
                 </elementAccessors>
-                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_nWdZadvzEeWk7OzKNRMDBQ">
-                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_nWdZatvzEeWk7OzKNRMDBQ" value="1"/>
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdW-0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdXO0FEeWd1Nv24GHnqw" value="1"/>
+                </elementAccessors>
+              </lhs_typedNamedElementExpression>
+            </expressions>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_zcCdXe0FEeWd1Nv24GHnqw" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_zcCdXu0FEeWd1Nv24GHnqw" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_3iHAMLEKEeOUhpWh5pWHvw"/>
+              <lhs_typedNamedElementExpression xmi:id="_zcCdX-0FEeWd1Nv24GHnqw" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdYO0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdYe0FEeWd1Nv24GHnqw" value="2"/>
+                </elementAccessors>
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdYu0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdY-0FEeWd1Nv24GHnqw" value="0"/>
+                </elementAccessors>
+              </lhs_typedNamedElementExpression>
+            </expressions>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_zcCdZO0FEeWd1Nv24GHnqw" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_zcCdZe0FEeWd1Nv24GHnqw" messageType="_wrj_ILEKEeOUhpWh5pWHvw" parameter="_4-KHcLEKEeOUhpWh5pWHvw"/>
+              <lhs_typedNamedElementExpression xmi:id="_zcCdZu0FEeWd1Nv24GHnqw" typedNamedElement="_qjM6EKXjEeOtUJ-H8DmtEA">
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdZ-0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdaO0FEeWd1Nv24GHnqw" value="2"/>
+                </elementAccessors>
+                <elementAccessors xsi:type="actionlanguage:ArrayIndexExpression" xmi:id="_zcCdae0FEeWd1Nv24GHnqw">
+                  <index xsi:type="sdcec:LiteralExpression" xmi:id="_zcCdau0FEeWd1Nv24GHnqw" value="1"/>
                 </elementAccessors>
               </lhs_typedNamedElementExpression>
             </expressions>
@@ -3457,7 +3457,7 @@
           <upperBound xmi:id="_wrYJ4ONHEeOeEuqrct640A"/>
         </cardinality>
         <portParts xmi:id="_viAMkIHXEeOaAZpBzLRsyA" connectors="_657TwIUcEeOAU7Vdi0NG2Q" portType="_gPn-gHYtEeOftqkRKcg6BA" coordinationProtocolPart="_LHDiwJ1pEeSGUPaRXN92yA"/>
-        <portParts xmi:id="_viAzoIHXEeOaAZpBzLRsyA" connectors="_A7nHAITpEeOadtwXfqPguw" portType="_qI1p4HYuEeOftqkRKcg6BA" coordinationProtocolPart="_VjogIN7NEeWGzuyhtlFG0g"/>
+        <portParts xmi:id="_viAzoIHXEeOaAZpBzLRsyA" connectors="_A7nHAITpEeOadtwXfqPguw" portType="_qI1p4HYuEeOftqkRKcg6BA" coordinationProtocolPart="_jm-cUOz1EeWd1Nv24GHnqw"/>
         <portParts xmi:id="_viAzoYHXEeOaAZpBzLRsyA" connectors="_z9UroIToEeOadtwXfqPguw" portType="_oYvv0HYvEeOftqkRKcg6BA" coordinationProtocolPart="_LHDiwp1pEeSGUPaRXN92yA"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_QzL5YIHYEeOaAZpBzLRsyA" name="nav" componentType="_R-VqMHYtEeOftqkRKcg6BA">
@@ -3466,7 +3466,7 @@
           <upperBound xmi:id="_CX-jAOKOEeOeEuqrct640A"/>
         </cardinality>
         <portParts xmi:id="_T1E9EIHYEeOaAZpBzLRsyA" connectors="_657TwIUcEeOAU7Vdi0NG2Q" portType="_SQe2sHnpEeOMI__GjCU6rg" coordinationProtocolPart="_LHDiwJ1pEeSGUPaRXN92yA"/>
-        <portParts xmi:id="_T1FkIIHYEeOaAZpBzLRsyA" connectors="_vn_qIIToEeOadtwXfqPguw _A7nHAITpEeOadtwXfqPguw" portType="_GMZkUHnqEeOZ_7LaW_t4Xg" coordinationProtocolPart="_VjogIN7NEeWGzuyhtlFG0g"/>
+        <portParts xmi:id="_T1FkIIHYEeOaAZpBzLRsyA" connectors="_vn_qIIToEeOadtwXfqPguw _A7nHAITpEeOadtwXfqPguw" portType="_GMZkUHnqEeOZ_7LaW_t4Xg" coordinationProtocolPart="_jm-cUOz1EeWd1Nv24GHnqw"/>
         <portParts xmi:id="_T1FkIYHYEeOaAZpBzLRsyA" connectors="_t504IIToEeOadtwXfqPguw" portType="_ttB18HnqEeOZ_7LaW_t4Xg"/>
         <portParts xmi:id="_T1FkIoHYEeOaAZpBzLRsyA" connectors="_vIJFYIToEeOadtwXfqPguw" portType="_wYwcYHnqEeOZ_7LaW_t4Xg"/>
         <portParts xmi:id="_T1GLMIHYEeOaAZpBzLRsyA" connectors="_uk1kAIToEeOadtwXfqPguw" portType="_1oJSYHnqEeOZ_7LaW_t4Xg"/>
@@ -3476,7 +3476,7 @@
           <lowerBound xmi:id="_D07CIOKOEeOeEuqrct640A" value="0"/>
           <upperBound xmi:id="_D07pMOKOEeOeEuqrct640A"/>
         </cardinality>
-        <portParts xmi:id="_W2mNUIHYEeOaAZpBzLRsyA" connectors="_vn_qIIToEeOadtwXfqPguw" portType="_KeW6AHnwEeOZ_7LaW_t4Xg" coordinationProtocolPart="_VjogIN7NEeWGzuyhtlFG0g"/>
+        <portParts xmi:id="_W2mNUIHYEeOaAZpBzLRsyA" connectors="_vn_qIIToEeOadtwXfqPguw" portType="_KeW6AHnwEeOZ_7LaW_t4Xg" coordinationProtocolPart="_jm-cUOz1EeWd1Nv24GHnqw"/>
         <portParts xmi:id="_W2mNUYHYEeOaAZpBzLRsyA" connectors="_1PJf4IToEeOadtwXfqPguw" portType="_OA83AHnwEeOZ_7LaW_t4Xg" coordinationProtocolPart="_LHDiw51pEeSGUPaRXN92yA"/>
         <portParts xmi:id="_W2m0YIHYEeOaAZpBzLRsyA" connectors="__WyeQIToEeOadtwXfqPguw" portType="_9LF3sHnwEeOXC9Mz8u7bDw"/>
       </embeddedComponentParts>
@@ -3500,7 +3500,7 @@
       <coordinationProtocolParts xmi:id="_LHDiwJ1pEeSGUPaRXN92yA" coordinationProtocol="_Z9xpEF6LEeOogaHLhp186w" portParts="_viAMkIHXEeOaAZpBzLRsyA _T1E9EIHYEeOaAZpBzLRsyA"/>
       <coordinationProtocolParts xmi:id="_LHDiwp1pEeSGUPaRXN92yA" coordinationProtocol="_Lt9XkF6PEeOU6dzb6wKMjg" portParts="_viAzoYHXEeOaAZpBzLRsyA _es-6wIHYEeOaAZpBzLRsyA"/>
       <coordinationProtocolParts xmi:id="_LHDiw51pEeSGUPaRXN92yA" coordinationProtocol="_Txr9cF6PEeOU6dzb6wKMjg" portParts="_W2mNUYHYEeOaAZpBzLRsyA _es-6wYHYEeOaAZpBzLRsyA"/>
-      <coordinationProtocolParts xmi:id="_VjogIN7NEeWGzuyhtlFG0g" coordinationProtocol="_bjqsAF6PEeOU6dzb6wKMjg" portParts="_W2mNUIHYEeOaAZpBzLRsyA _T1FkIIHYEeOaAZpBzLRsyA _viAzoIHXEeOaAZpBzLRsyA"/>
+      <coordinationProtocolParts xmi:id="_jm-cUOz1EeWd1Nv24GHnqw" coordinationProtocol="_bjqsAF6PEeOU6dzb6wKMjg" portParts="_T1FkIIHYEeOaAZpBzLRsyA _viAzoIHXEeOaAZpBzLRsyA _W2mNUIHYEeOaAZpBzLRsyA"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_sLfRkITpEeOadtwXfqPguw" name="Bebot_Distributor" componentKind="hybrid component">
       <ports xsi:type="component:DiscretePort" xmi:id="_EoNCoITrEeOadtwXfqPguw" connectors="_lOdjIITrEeOadtwXfqPguw" name="distributor" senderMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" receiverMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" refinedRole="_mO9KAF6PEeOU6dzb6wKMjg">
@@ -3612,7 +3612,7 @@
           <upperBound xmi:id="_aoh80eKOEeOeEuqrct640A"/>
         </cardinality>
         <portParts xmi:id="_Vn2HcIp5EeOFVcInix1dwQ" connectors="__s6rwIp5EeOFVcInix1dwQ" portType="_gPn-gHYtEeOftqkRKcg6BA" coordinationProtocolPart="_LLQGQJ1pEeSGUPaRXN92yA"/>
-        <portParts xmi:id="_Vn2HcYp5EeOFVcInix1dwQ" connectors="_CB5mIIp6EeOFVcInix1dwQ" portType="_qI1p4HYuEeOftqkRKcg6BA" coordinationProtocolPart="_VlKKIN7NEeWGzuyhtlFG0g"/>
+        <portParts xmi:id="_Vn2HcYp5EeOFVcInix1dwQ" connectors="_CB5mIIp6EeOFVcInix1dwQ" portType="_qI1p4HYuEeOftqkRKcg6BA" coordinationProtocolPart="_jpngoOz1EeWd1Nv24GHnqw"/>
         <portParts xmi:id="_Vn2Hcop5EeOFVcInix1dwQ" connectors="_-uVjoIp5EeOFVcInix1dwQ" portType="_oYvv0HYvEeOftqkRKcg6BA" coordinationProtocolPart="_LLQGQp1pEeSGUPaRXN92yA"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_YVfZcIp5EeOFVcInix1dwQ" name="cc" componentType="_TrDDoHYtEeOftqkRKcg6BA">
@@ -3629,7 +3629,7 @@
           <upperBound xmi:id="_cX5BoeKOEeOeEuqrct640A"/>
         </cardinality>
         <portParts xmi:id="_jfMRwIp5EeOFVcInix1dwQ" connectors="__s6rwIp5EeOFVcInix1dwQ" portType="_SQe2sHnpEeOMI__GjCU6rg" coordinationProtocolPart="_LLQGQJ1pEeSGUPaRXN92yA"/>
-        <portParts xmi:id="_jfMRwYp5EeOFVcInix1dwQ" connectors="_A5QjEIp6EeOFVcInix1dwQ _CB5mIIp6EeOFVcInix1dwQ" portType="_GMZkUHnqEeOZ_7LaW_t4Xg" coordinationProtocolPart="_VlKKIN7NEeWGzuyhtlFG0g"/>
+        <portParts xmi:id="_jfMRwYp5EeOFVcInix1dwQ" connectors="_A5QjEIp6EeOFVcInix1dwQ _CB5mIIp6EeOFVcInix1dwQ" portType="_GMZkUHnqEeOZ_7LaW_t4Xg" coordinationProtocolPart="_jpngoOz1EeWd1Nv24GHnqw"/>
         <portParts xmi:id="_jfMRwop5EeOFVcInix1dwQ" connectors="_qEKlMIp6EeOFVcInix1dwQ" portType="_ttB18HnqEeOZ_7LaW_t4Xg"/>
         <portParts xmi:id="_jfMRw4p5EeOFVcInix1dwQ" connectors="_qsNcoIp6EeOFVcInix1dwQ" portType="_wYwcYHnqEeOZ_7LaW_t4Xg"/>
         <portParts xmi:id="_jfM40Ip5EeOFVcInix1dwQ" connectors="_rOecMIp6EeOFVcInix1dwQ" portType="_1oJSYHnqEeOZ_7LaW_t4Xg"/>
@@ -3640,7 +3640,7 @@
           <upperBound xmi:id="_RBkCkOKOEeOeEuqrct640A"/>
         </cardinality>
         <portParts xmi:id="_rxGdkIp5EeOFVcInix1dwQ" connectors="_D84sIIp6EeOFVcInix1dwQ" portType="_x75BIIpTEeO5z8p7Nc67Sg" coordinationProtocolPart="_LLQGQ51pEeSGUPaRXN92yA"/>
-        <portParts xmi:id="_rxHEoIp5EeOFVcInix1dwQ" connectors="_A5QjEIp6EeOFVcInix1dwQ" portType="_7Xq_EIpTEeO5z8p7Nc67Sg" coordinationProtocolPart="_VlKKIN7NEeWGzuyhtlFG0g"/>
+        <portParts xmi:id="_rxHEoIp5EeOFVcInix1dwQ" connectors="_A5QjEIp6EeOFVcInix1dwQ" portType="_7Xq_EIpTEeO5z8p7Nc67Sg" coordinationProtocolPart="_jpngoOz1EeWd1Nv24GHnqw"/>
         <portParts xmi:id="_rxHEoYp5EeOFVcInix1dwQ" connectors="_156EIIp6EeOFVcInix1dwQ" portType="_BM9-gIpUEeO5z8p7Nc67Sg"/>
       </embeddedComponentParts>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_-uVjoIp5EeOFVcInix1dwQ" connectorEndpoints="_Vn2Hcop5EeOFVcInix1dwQ _eFtroIp5EeOFVcInix1dwQ"/>
@@ -3652,10 +3652,10 @@
       <connectors xsi:type="component:DelegationConnector" xmi:id="_qsNcoIp6EeOFVcInix1dwQ" connectorEndpoints="_jfMRw4p5EeOFVcInix1dwQ _OzDkcIp6EeOFVcInix1dwQ"/>
       <connectors xsi:type="component:DelegationConnector" xmi:id="_rOecMIp6EeOFVcInix1dwQ" connectorEndpoints="_ReP_YIp6EeOFVcInix1dwQ _jfM40Ip5EeOFVcInix1dwQ"/>
       <connectors xsi:type="component:DelegationConnector" xmi:id="_156EIIp6EeOFVcInix1dwQ" connectorEndpoints="_rxHEoYp5EeOFVcInix1dwQ _sdgbIIp6EeOFVcInix1dwQ"/>
+      <coordinationProtocolParts xmi:id="_LLQGQJ1pEeSGUPaRXN92yA" coordinationProtocol="_Z9xpEF6LEeOogaHLhp186w" portParts="_Vn2HcIp5EeOFVcInix1dwQ _jfMRwIp5EeOFVcInix1dwQ"/>
       <coordinationProtocolParts xmi:id="_LLQGQp1pEeSGUPaRXN92yA" coordinationProtocol="_Lt9XkF6PEeOU6dzb6wKMjg" portParts="_Vn2Hcop5EeOFVcInix1dwQ _eFtroIp5EeOFVcInix1dwQ"/>
       <coordinationProtocolParts xmi:id="_LLQGQ51pEeSGUPaRXN92yA" coordinationProtocol="_Txr9cF6PEeOU6dzb6wKMjg" portParts="_eFuSsIp5EeOFVcInix1dwQ _rxGdkIp5EeOFVcInix1dwQ"/>
-      <coordinationProtocolParts xmi:id="_LLQGQJ1pEeSGUPaRXN92yA" coordinationProtocol="_Z9xpEF6LEeOogaHLhp186w" portParts="_Vn2HcIp5EeOFVcInix1dwQ _jfMRwIp5EeOFVcInix1dwQ"/>
-      <coordinationProtocolParts xmi:id="_VlKKIN7NEeWGzuyhtlFG0g" coordinationProtocol="_bjqsAF6PEeOU6dzb6wKMjg" portParts="_Vn2HcYp5EeOFVcInix1dwQ _jfMRwYp5EeOFVcInix1dwQ _rxHEoIp5EeOFVcInix1dwQ"/>
+      <coordinationProtocolParts xmi:id="_jpngoOz1EeWd1Nv24GHnqw" coordinationProtocol="_bjqsAF6PEeOU6dzb6wKMjg" portParts="_Vn2HcYp5EeOFVcInix1dwQ _jfMRwYp5EeOFVcInix1dwQ _rxHEoIp5EeOFVcInix1dwQ"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_94lx8Ip6EeOFVcInix1dwQ" name="Bebot_Client" componentKind="hybrid component">
       <ports xsi:type="component:DiscretePort" xmi:id="_ha1tAIp8EeOFVcInix1dwQ" connectors="_nducgIp8EeOFVcInix1dwQ" name="client" senderMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" receiverMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" refinedRole="_mO9xE16PEeOU6dzb6wKMjg">

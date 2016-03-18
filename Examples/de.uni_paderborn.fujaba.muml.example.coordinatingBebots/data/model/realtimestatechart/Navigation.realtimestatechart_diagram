@@ -72,7 +72,7 @@
                                   <styles xmi:type="notation:FilteringStyle" xmi:id="_Yuhw_ee3EeW4yKrXBBnAYg"/>
                                 </children>
                                 <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_WHmx_ue3EeW4yKrXBBnAYg"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yuhw8Oe3EeW4yKrXBBnAYg" x="482" y="28"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yuhw8Oe3EeW4yKrXBBnAYg" x="452" y="110"/>
                               </children>
                             </children>
                             <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_WHmK5ee3EeW4yKrXBBnAYg"/>
@@ -161,7 +161,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_Yuc4bue3EeW4yKrXBBnAYg"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_WHmK4-e3EeW4yKrXBBnAYg"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yuc4Yee3EeW4yKrXBBnAYg" width="789" height="522"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yuc4Yee3EeW4yKrXBBnAYg" y="-41" width="789" height="612"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../coordinatingBebots.muml#_WHmK4ee3EeW4yKrXBBnAYg"/>
@@ -287,7 +287,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_c2HRcnoREeOfObvls0kdgA"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../coordinatingBebots.muml#_c2Bx4HoREeOfObvls0kdgA"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c2GDUXoREeOfObvls0kdgA" x="548" y="124" width="253" height="95"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c2GDUXoREeOfObvls0kdgA" x="464" y="87" width="253" height="95"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_NN7fQJlYEeOTS9kdRoYKHA" type="3032" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_NN7fQplYEeOTS9kdRoYKHA" type="5060"/>
@@ -405,14 +405,14 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Y06FsOe3EeW4yKrXBBnAYg" type="4003" source="_Yuhw4Oe3EeW4yKrXBBnAYg" target="_Yuhw7-e3EeW4yKrXBBnAYg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Y06swOe3EeW4yKrXBBnAYg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Y06swee3EeW4yKrXBBnAYg" x="-28" y="-17"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Y06swee3EeW4yKrXBBnAYg" x="8" y="-27"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_Y06swue3EeW4yKrXBBnAYg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Y06sw-e3EeW4yKrXBBnAYg" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Y06Fsee3EeW4yKrXBBnAYg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../coordinatingBebots.muml#_WHmx8Oe3EeW4yKrXBBnAYg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y06Fsue3EeW4yKrXBBnAYg" points="[67, 22, -434, 27]$[128, 44, -373, 49]$[428, 55, -73, 60]$[488, 44, -13, 49]$[494, 19, -7, 24]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y06Fsue3EeW4yKrXBBnAYg" points="[89, 45, -403, -25]$[125, 63, -367, -7]$[309, 94, -183, 24]$[363, 86, -129, 16]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Y6iMkOe3EeW4yKrXBBnAYg" type="4003" source="_Yuhw7-e3EeW4yKrXBBnAYg" target="_Yuhw4Oe3EeW4yKrXBBnAYg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Y6izoOe3EeW4yKrXBBnAYg" type="6005">
@@ -423,7 +423,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Y6iMkee3EeW4yKrXBBnAYg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../coordinatingBebots.muml#_WHmx9-e3EeW4yKrXBBnAYg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y6iMkue3EeW4yKrXBBnAYg" points="[-30, 24, -1, 1]$[25, -20, 54, -43]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y6iMkue3EeW4yKrXBBnAYg" points="[0, -29, 492, 41]$[0, -137, 492, -67]$[-403, -82, 89, -12]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Y6wPAOe3EeW4yKrXBBnAYg" type="4003" source="_Y0OwQOe3EeW4yKrXBBnAYg" target="_Y0PXXOe3EeW4yKrXBBnAYg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Y6wPA-e3EeW4yKrXBBnAYg" type="6005">
