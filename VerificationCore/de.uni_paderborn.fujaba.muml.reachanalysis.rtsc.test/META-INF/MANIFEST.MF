@@ -7,12 +7,12 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.test.Activator
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;bundle-version="0.4.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.udbm.java;bundle-version="0.1.0",
+ org.muml.udbm.java;bundle-version="0.1.0",
  org.eclipse.ui;bundle-version="3.7.0",
  org.eclipse.ocl.ecore;bundle-version="3.1.2",
  de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.reachanalysis.rtsc;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.udbm;bundle-version="0.3.0",
+ org.muml.udbm;bundle-version="0.3.0",
  org.junit;bundle-version="4.10.0",
  de.uni_paderborn.fujaba.muml.actionlanguage.interpreter;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy

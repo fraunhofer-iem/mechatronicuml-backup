@@ -19,5 +19,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.runtime;visibility:=reexport,
- de.uni_paderborn.fujaba.udbm;bundle-version="0.3.0"
+ org.muml.udbm;bundle-version="0.3.0"
 Bundle-ActivationPolicy: lazy
