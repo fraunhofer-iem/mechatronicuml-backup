@@ -17,6 +17,6 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.psm.api.transformation.blackbox;bun
  org.muml.core.export,
  org.eclipse.core.resources,
  org.eclipse.core.jobs,
- de.uni_paderborn.fujaba.modelcopy.qvto.library;bundle-version="1.0.0",
+ org.muml.modelcopy.qvto.library;bundle-version="1.0.0",
  org.muml.pim.types;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
