@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.graphviz.edit;singleton:=true
+Bundle-SymbolicName: org.muml.graphviz.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.graphviz.provider.GraphvizEditPlugin$Implementation
@@ -14,7 +14,7 @@ Export-Package: de.uni_paderborn.fujaba.graphviz.common.provider,
  de.uni_paderborn.fujaba.graphviz.provider,
  de.uni_paderborn.fujaba.graphviz.util.provider
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.graphviz;visibility:=reexport,
+ org.muml.graphviz;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
