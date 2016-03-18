@@ -40,7 +40,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.antlr.runtime"/>
       <import plugin="org.eclipse.xtext.common.types"/>
-      <import plugin="org.muml.pim.swplatform" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.swplatform" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.xtext.ui"/>
@@ -52,8 +52,8 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
       <import plugin="org.eclipse.xtext.common.types.ui"/>
       <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
       <import plugin="org.muml.pim.actionlanguage.xtext.ui" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.pm.common" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.swplatform.oslanguage" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.pm.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.swplatform.oslanguage" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.compare" version="3.5.501" match="greaterOrEqual"/>
    </requires>
 

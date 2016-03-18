@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.emf.codegen.oclfilter.feature"
+         id="org.muml.oclfilter.feature"
          version="0.0.0"/>
 
 </feature>

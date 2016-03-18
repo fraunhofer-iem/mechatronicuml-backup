@@ -26,7 +26,7 @@
       <import plugin="org.junit" version="3.8.2" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.componentstorydiagram" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.tests" version="0.3.1" match="greaterOrEqual"/>
    </requires>
 

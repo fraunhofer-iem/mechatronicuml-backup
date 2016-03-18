@@ -26,7 +26,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.pim.sdk.feature"
+         id="org.pim.sdk.feature"
          version="0.0.0"/>
 
    <includes
@@ -60,7 +60,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.core.feature"
+         id="org.muml.core.feature"
          version="0.0.0"/>
 
    <includes

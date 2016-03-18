@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.pim.sdk.feature"
+      id="org.muml.pim.sdk.feature"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -21,7 +21,7 @@
          id="org.muml.pim.feature"
          version="0.0.0"/>
    <includes
-         id="de.uni_paderborn.fujaba.muml.pim.source.feature"
+         id="org.muml.pim.source.feature"
          version="0.0.0"/>
 
    <requires>

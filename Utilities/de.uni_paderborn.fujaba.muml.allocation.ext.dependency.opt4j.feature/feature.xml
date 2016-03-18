@@ -48,10 +48,10 @@ SOFTWARE.
    </license>
 
    <requires>
-      <import plugin="org.muml.pim.allocation.ext.dependency.guice" version="4.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.allocation.ext.dependency.guice.multibindings" version="4.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.allocation.ext.dependency.sat4j.core" version="2.3.3" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.allocation.ext.dependency.sat4j.pb" version="2.3.3" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.core" version="2.3.3" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.pb" version="2.3.3" match="greaterOrEqual"/>
    </requires>
 
    <plugin

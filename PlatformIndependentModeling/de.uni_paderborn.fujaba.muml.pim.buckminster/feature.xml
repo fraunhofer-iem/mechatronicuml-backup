@@ -17,7 +17,7 @@
    </license>
    
    <includes
-         id="de.uni_paderborn.fujaba.muml.pim.sdk.feature"
+         id="org.muml.pim.sdk.feature"
          version="0.0.0"/>
 
    <includes
@@ -40,11 +40,11 @@
       <import plugin="org.eclipse.gmf.codegen"/>
       <import plugin="org.eclipse.gmf.validate"/>
       <import plugin="org.apache.commons.io" version="2.0.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.tests"
+         id="org.muml.pim.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
