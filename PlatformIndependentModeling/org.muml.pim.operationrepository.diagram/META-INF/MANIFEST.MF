@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.operationrepository.diagram; singleton:=true
+Bundle-SymbolicName: org.muml.pim.operationrepository.diagram;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
 Require-Bundle: org.eclipse.ui,
@@ -28,8 +28,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.gmf.tooling.runtime;visibility:=reexport,
  org.eclipse.draw2d;visibility:=reexport,
- de.uni_paderborn.fujaba.muml;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.edit;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
+ org.muml.pim.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
  org.muml.core.modelinstance;visibility:=reexport,
@@ -38,12 +38,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gef;visibility:=reexport,
  org.muml.core.modelinstance.ui;visibility:=reexport,
  org.muml.core.common;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.common;visibility:=reexport,
+ org.muml.pim.common;visibility:=reexport,
  org.eclipse.emf.ecore.editor;bundle-version="2.10.0",
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.muml.ape.runtime;visibility:=reexport,
  org.muml.core.edit.properties;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport,
+ org.muml.pim.edit.properties;visibility:=reexport,
  org.muml.core.common.editingdomain;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

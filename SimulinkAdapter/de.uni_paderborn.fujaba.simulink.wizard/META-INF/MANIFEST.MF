@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.ui,
  org.muml.core;visibility:=reexport,
  de.uni_paderborn.fujaba.simulink.m2t;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.actionLanguage.matlab.generator;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.4.0"
+ org.muml.pim;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: de.uni_paderborn.fujaba.modelinstance,

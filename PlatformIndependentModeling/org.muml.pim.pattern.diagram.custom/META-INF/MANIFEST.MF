@@ -10,18 +10,18 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
  org.eclipse.ui.workbench,
- de.uni_paderborn.fujaba.muml.common,
+ org.muml.pim.common,
  org.muml.core.export;bundle-version="0.4.0",
  org.muml.core.modelinstance,
  org.eclipse.emf.common,
  org.muml.core,
- de.uni_paderborn.fujaba.muml.pattern.diagram;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml,
+ org.muml.pim.pattern.diagram;bundle-version="1.0.0",
+ org.muml.pim,
  org.eclipse.emf.common.ui,
  org.eclipse.swt,
  org.eclipse.jface,
  de.uni_paderborn.fujaba.modelcopy.qvto.library;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.coordinationspecification.common;bundle-version="0.5.0"
+ org.muml.pim.coordinationspecification.common;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

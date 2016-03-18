@@ -6,7 +6,7 @@ Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.eclipse.gmf.runtime.diagram.ui,
- de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram;bundle-version="0.3.1",
+ org.muml.pim.coordinationprotocol.diagram;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.verification.uppaal.job;bundle-version="0.4.0",
  de.uni_paderborn.uppaal.trace,
  org.eclipse.jface,
@@ -18,7 +18,7 @@ Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.eclipse.xtext.ui;bundle-version="2.4.3",
  de.uni_paderborn.fujaba.muml.verification.uppaal.results,
  org.eclipse.m2m.qvt.oml,
- de.uni_paderborn.fujaba.muml,
+ org.muml.pim,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english;bundle-version="0.4.0",
  org.muml.core.export;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.pattern.diagram.custom;bundle-version="0.5.0"

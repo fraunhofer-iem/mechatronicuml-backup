@@ -9,6 +9,6 @@ Require-Bundle: org.eclipse.xtend.lib,
  org.eclipse.xtext.xbase.lib,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0"
+ org.muml.pim.common;bundle-version="0.4.0"
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english
 

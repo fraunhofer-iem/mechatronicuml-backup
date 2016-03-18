@@ -10,7 +10,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram,
  org.muml.core.ui;bundle-version="0.1.0",
  de.upb.swt.core.ui.properties;bundle-version="0.1.0",
  de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0"
+ org.muml.pim.common;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util

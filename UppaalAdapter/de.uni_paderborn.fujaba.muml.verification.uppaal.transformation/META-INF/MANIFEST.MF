@@ -9,8 +9,8 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.uppaal;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.3.2",
- de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1",
+ org.muml.pim;bundle-version="0.3.2",
+ org.muml.pim.actionlanguage;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.verification.uppaal.blackbox;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;bundle-version="0.4.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.0.v20140506-0739",

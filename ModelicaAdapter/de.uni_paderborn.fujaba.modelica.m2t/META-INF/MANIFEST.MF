@@ -6,8 +6,8 @@ Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.modelica.m2t.Activator
 Bundle-Vendor: Fraunhofer IPT-EM, Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml,
- de.uni_paderborn.fujaba.muml.actionlanguage,
+ org.muml.pim,
+ org.muml.pim.actionlanguage,
  org.muml.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,

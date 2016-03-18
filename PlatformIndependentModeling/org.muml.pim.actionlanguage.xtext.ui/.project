@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</name>
+	<name>org.muml.pim.actionlanguage.xtext.ui</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -29,7 +29,6 @@
 				</dictionary>
 			</arguments>
 		</buildCommand>
-		
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.m2m.qvt.oml.project.QVTONature</nature>

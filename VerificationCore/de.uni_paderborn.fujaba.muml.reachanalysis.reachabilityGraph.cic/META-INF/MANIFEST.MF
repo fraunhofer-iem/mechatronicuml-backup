@@ -15,7 +15,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
- de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.runtime;visibility:=reexport,

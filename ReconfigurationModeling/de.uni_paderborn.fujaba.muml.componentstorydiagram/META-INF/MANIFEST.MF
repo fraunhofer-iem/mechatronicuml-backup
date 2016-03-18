@@ -13,7 +13,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
- de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.reconfiguration;visibility:=reexport,
  org.storydriven.storydiagrams;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0";visibility:=reexport

@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ScopeProvider">
+         point="org.muml.pim.actionlanguage.xtext.ScopeProvider">
       <provider
             class="de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext.CSDExecutableExtensionFactory:de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext.CSDLanguageScopeProvider">
       </provider>

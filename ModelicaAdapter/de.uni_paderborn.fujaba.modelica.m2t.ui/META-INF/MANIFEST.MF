@@ -18,7 +18,7 @@ Require-Bundle: org.eclipse.ui,
  org.muml.core.modelinstance.ui;bundle-version="0.4.0",
  org.muml.core.export;bundle-version="0.5.0",
  org.muml.core.common;bundle-version="0.5.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.5.0"
+ org.muml.pim;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

@@ -15,5 +15,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.ontology.owl;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.ontology.ext.dependency.unitontology;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.5.0"
+ org.muml.pim;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy

@@ -8,8 +8,8 @@ Bundle-Vendor:
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
+ org.muml.pim;bundle-version="0.4.0",
+ org.muml.pim.actionlanguage;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.dependencylanguage;bundle-version="0.4.0",
  org.muml.core.modelinstance;bundle-version="0.4.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.0",

@@ -1,21 +1,21 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ActionLanguage Tabbed Properties
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionlanguage.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.pim.actionlanguage.edit.properties;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml,
+ org.muml.pim,
  org.eclipse.emf.edit,
  org.muml.ape.runtime,
  org.eclipse.ui,
  org.muml.core.edit,
  org.muml.core.edit.properties,
- de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui,
- de.uni_paderborn.fujaba.muml.common,
- de.uni_paderborn.fujaba.muml.actionlanguage.edit,
- de.uni_paderborn.fujaba.muml.actionlanguage,
+ org.muml.pim.actionlanguage.xtext.ui,
+ org.muml.pim.common,
+ org.muml.pim.actionlanguage.edit,
+ org.muml.pim.actionlanguage,
  de.uni_paderborn.fujaba.muml.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

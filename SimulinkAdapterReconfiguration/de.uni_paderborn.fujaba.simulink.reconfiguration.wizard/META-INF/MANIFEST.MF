@@ -4,7 +4,7 @@ Bundle-Name: Wizard
 Bundle-SymbolicName: de.uni_paderborn.fujaba.simulink.reconfiguration.wizard;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
- de.uni_paderborn.fujaba.muml,
+ org.muml.pim,
  de.uni_paderborn.fujaba.simulink.wizard;bundle-version="0.3.2",
  de.uni_paderborn.fujaba.simulink.m2t;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.simulink.reconfiguration.m2m;bundle-version="1.0.0",

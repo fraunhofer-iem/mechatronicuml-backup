@@ -21,6 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core.edit;visibility:=reexport,
  org.muml.core.modelinstance;visibility:=reexport,
  org.muml.core.modelinstance.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

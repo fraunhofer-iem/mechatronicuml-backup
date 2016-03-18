@@ -18,9 +18,9 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.codegen.c.beautifier;bundle-version="0.4.0",
  org.storydriven.core;bundle-version="1.0.1",
  de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
+ org.muml.pim;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.hardware;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
+ org.muml.pim.actionlanguage;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.swplatform;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.psm;bundle-version="0.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

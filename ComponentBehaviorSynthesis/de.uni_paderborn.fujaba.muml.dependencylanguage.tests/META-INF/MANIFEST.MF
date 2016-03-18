@@ -10,9 +10,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.tests
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.dependencylanguage;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.actionlanguage;visibility:=reexport,
+ org.muml.pim.actionlanguage;visibility:=reexport,
  org.muml.core;visibility:=reexport,
- de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
