@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="org.muml.simulink.feature"
+         id="org.muml.simulink.adapter.feature"
          version="0.0.0"/>
 
 </feature>
