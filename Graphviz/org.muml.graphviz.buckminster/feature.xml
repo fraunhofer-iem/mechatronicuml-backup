@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.graphviz.feature"
+         id="org.muml.graphviz.feature"
          version="0.0.0"/>
 
    <plugin
