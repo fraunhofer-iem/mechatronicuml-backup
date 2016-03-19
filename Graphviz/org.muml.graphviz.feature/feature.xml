@@ -17,40 +17,6 @@
       %copyright
    </license>
 
-   <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.common" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jdt.annotation" version="1.1.0" match="compatible"/>
-      <import plugin="org.eclipse.xtext"/>
-      <import plugin="org.eclipse.xtext.util"/>
-      <import plugin="org.antlr.runtime"/>
-      <import plugin="org.eclipse.xtext.common.types"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.xtext.xbase.lib"/>
-      <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.muml.core.edit"/>
-      <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.ocl"/>
-      <import plugin="org.eclipse.ocl.ecore"/>
-      <import plugin="org.eclipse.acceleo.common"/>
-      <import plugin="org.eclipse.acceleo.model"/>
-      <import plugin="org.eclipse.acceleo.profiler"/>
-      <import plugin="org.eclipse.acceleo.engine"/>
-      <import plugin="org.eclipse.xtext.ui"/>
-      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.ui.shared"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.xtext.builder"/>
-      <import plugin="org.eclipse.xtext.common.types.ui"/>
-      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
-      <import plugin="org.eclipse.compare"/>
-   </requires>
-
    <plugin
          id="de.uni_paderborn.fujaba.graphviz"
          download-size="0"
