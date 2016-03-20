@@ -21,14 +21,14 @@
          version="0.0.0"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.graphviz.dot.xtext.tests"
+         id="org.muml.graphviz.dot.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.graphviz.plain.xtext.tests"
+         id="org.muml.graphviz.plain.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
