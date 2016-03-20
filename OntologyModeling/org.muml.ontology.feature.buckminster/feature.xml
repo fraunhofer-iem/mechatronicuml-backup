@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.ontology.feature.buckminster"
+      id="org.muml.ontology.feature.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
