@@ -57,10 +57,6 @@
          version="0.0.0"/>
 
    <includes
-         id="org.muml.modelcopy.feature"
-         version="0.0.0"/>
-
-   <includes
          id="org.muml.external.allocation.ocl.pivot.beo477283.feature"
          version="0.0.0"/>
 
