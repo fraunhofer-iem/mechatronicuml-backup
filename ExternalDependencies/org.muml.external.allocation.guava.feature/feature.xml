@@ -220,7 +220,7 @@ For more information about guava, see https://code.google.com/p/guava-libraries/
    </license>
 
    <plugin
-         id="org.muml.external.allocationguava"
+         id="org.muml.external.allocation.guava"
          download-size="0"
          install-size="0"
          version="0.0.0"
