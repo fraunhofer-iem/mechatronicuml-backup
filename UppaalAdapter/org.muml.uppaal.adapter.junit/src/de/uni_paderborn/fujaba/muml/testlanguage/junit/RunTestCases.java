@@ -1,20 +1,28 @@
 package de.uni_paderborn.fujaba.muml.testlanguage.junit;
 
+import java.util.Collection;
+import java.util.LinkedList;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
+import junit.framework.TestCase;
 
 @RunWith(Parameterized.class)
 public class RunTestCases {
 	
 	// XXX: Note by bingo:
-	// Removed because of cyclic dependency between UpaalAdapter and TestLanguage.
+	// Deactivated because of cyclic dependency between UppaalAdapter and TestLanguage.
+	// Also removed TestLanguage from Dependent Plugin List in Manifest, to get jenkins compiling again.
 	
-//
-//	private static LinkedList<Object[]> cases = null;
-//
-//	@Parameterized.Parameters(name = "{index}: {1}")
-//	public static Collection<Object[]> getTestCases() {
-//		cases = new LinkedList<Object[]>();
+
+	private static LinkedList<Object[]> cases = null;
+
+	@Parameterized.Parameters(name = "{index}: {1}")
+	public static Collection<Object[]> getTestCases() {
+		cases = new LinkedList<Object[]>();
 //
 // 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_AllPositionsTransmission/bebots_AllPositionsTransmission.testlanguage");
 // 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_Delegation/bebots_Delegation.testlanguage");
@@ -30,23 +38,23 @@ public class RunTestCases {
 //// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_Convoy/railcab_Convoy.testlanguage");
 // 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_EnterSection/railcab_EnterSection.testlanguage");
 // 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_NextSectionFree/railcab_NextSectionFree.testlanguage");
-//
-//		return cases;
-//	}
-//
-//	private static void addCase(String path) {
-//		System.out.println("ADD" + path);
-//		URI uri = URI.createURI(path);
-//		cases.add(new Object[] { path, uri.segment(uri.segmentCount() - 1) });
-//	}
-//
-//	private String path;
-//	private TestCase testCase;
-//	private Resource resource;
-//
-//	public RunTestCases(String path, String fileName) {
-//		this.path = path;
-//	}
+
+		return cases;
+	}
+
+	private static void addCase(String path) {
+		System.out.println("ADD" + path);
+		URI uri = URI.createURI(path);
+		cases.add(new Object[] { path, uri.segment(uri.segmentCount() - 1) });
+	}
+
+	private String path;
+	private TestCase testCase;
+	private Resource resource;
+
+	public RunTestCases(String path, String fileName) {
+		this.path = path;
+	}
 //
 //	@Before
 //	public void setup() throws Exception {
