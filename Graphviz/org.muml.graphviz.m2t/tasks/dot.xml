@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="dot" name="org.muml.graphviz.m2t">
-    <property name="ECLIPSE_HOME" value="../../../eclipse"/>
+    <property name="ECLIPSE_HOME" value="../../../../../opt/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->

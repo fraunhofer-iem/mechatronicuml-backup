@@ -18,7 +18,7 @@ Require-Bundle: org.muml.graphviz.plain.xtext;visibility:=reexport,
  org.eclipse.compare
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.quickfix,
  de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.contentassist,
  de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.contentassist.antlr,
