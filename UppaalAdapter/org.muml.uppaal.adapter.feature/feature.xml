@@ -97,30 +97,8 @@
          id="org.muml.uppaal.adapter.mtctl.xtext.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.adapter.options"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.adapter.options.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.adapter.options.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
+         version="0.0.0"/>
+  
    <plugin
          id="org.muml.uppaal.adapter.mtctl.english"
          download-size="0"

@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
-Bundle-SymbolicName: org.muml.uppaal.adapter.options.edit.properties;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.options.edit.properties;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
- org.muml.uppaal.adapter.options.edit,
+ org.muml.uppaal.options.edit,
  org.muml.ape.runtime,
  org.eclipse.emf.edit,
  org.eclipse.ui,
- org.muml.uppaal.adapter.options
+ org.muml.uppaal.options
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.constraint,

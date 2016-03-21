@@ -49,7 +49,7 @@
       <import plugin="org.eclipse.xtext.common.types.ui"/>
       <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
       <import plugin="org.eclipse.compare"/>
-      <import feature="de.uni_paderborn.fujaba.graphviz.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.graphviz.feature" version="0.5.0.qualifier"/>
       <import plugin="org.muml.graphviz"/>
       <import plugin="org.muml.graphviz.blackbox"/>
    </requires>
@@ -133,6 +133,27 @@
 
    <plugin
          id="org.muml.uppaal.cmd"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.uppaal.options"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.uppaal.options.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.uppaal.options.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
