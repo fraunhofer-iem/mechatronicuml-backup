@@ -27,6 +27,7 @@ public class GraphvizPlainFormatter extends AbstractDeclarativeFormatter {
   @Extension
   private GraphvizPlainGrammarAccess _graphvizPlainGrammarAccess;
   
+  @Override
   protected void configureFormatting(final FormattingConfig c) {
     List<Pair<Keyword, Keyword>> _findKeywordPairs = this._graphvizPlainGrammarAccess.findKeywordPairs("{", "}");
     for (final Pair<Keyword, Keyword> pair : _findKeywordPairs) {
