@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="org.muml.ontology.ontology.feature"
+         id="org.muml.ontology.feature"
          version="0.0.0"/>
 
 </feature>
