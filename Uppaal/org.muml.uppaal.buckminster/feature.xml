@@ -21,7 +21,7 @@
          version="0.0.0"/>
 
    <includes
-         id="org.muml.uppaal.feature.sdk.feature"
+         id="org.muml.uppaal.sdk.feature"
          version="0.0.0"/>
 
 </feature>
