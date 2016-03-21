@@ -1267,7 +1267,8 @@ public class UppaalSerialization {
     _builder.append(") ");
     {
       Statement _statement = it.getStatement();
-      if ((!(_statement instanceof Block))) {
+      boolean _not = (!(_statement instanceof Block));
+      if (_not) {
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
       }
@@ -1292,7 +1293,8 @@ public class UppaalSerialization {
     _builder.append(") ");
     {
       Statement _statement = it.getStatement();
-      if ((!(_statement instanceof Block))) {
+      boolean _not = (!(_statement instanceof Block));
+      if (_not) {
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
       }
@@ -1312,7 +1314,8 @@ public class UppaalSerialization {
     _builder.append(") ");
     {
       Statement _statement = it.getStatement();
-      if ((!(_statement instanceof Block))) {
+      boolean _not = (!(_statement instanceof Block));
+      if (_not) {
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
       }
@@ -1346,7 +1349,8 @@ public class UppaalSerialization {
     _builder.append(") ");
     {
       Statement _thenStatement = it.getThenStatement();
-      if ((!(_thenStatement instanceof Block))) {
+      boolean _not = (!(_thenStatement instanceof Block));
+      if (_not) {
         _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
       }
@@ -1363,7 +1367,8 @@ public class UppaalSerialization {
         _builder.append("else ");
         {
           Statement _elseStatement_1 = it.getElseStatement();
-          if ((!(_elseStatement_1 instanceof Block))) {
+          boolean _not_1 = (!(_elseStatement_1 instanceof Block));
+          if (_not_1) {
             _builder.newLineIfNotEmpty();
             _builder.append("\t");
           }

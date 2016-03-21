@@ -50,12 +50,20 @@ public class UppaalPropertySerialization extends UppaalSerialization {
       for(final Property i : _elvis) {
         _builder.newLineIfNotEmpty();
         {
+          boolean _and = false;
           String _comment = i.getComment();
-          boolean _notEquals = (!Objects.equal(_comment, "\"no comment provided\""));
-          if (_notEquals) {
+          boolean _notEquals = (!Objects.equal(_comment, null));
+          if (!_notEquals) {
+            _and = false;
+          } else {
             String _comment_1 = i.getComment();
-            CharSequence _comment_2 = this.comment(_comment_1);
-            _builder.append(_comment_2, "");
+            boolean _notEquals_1 = (!Objects.equal(_comment_1, "\"no comment provided\""));
+            _and = _notEquals_1;
+          }
+          if (_and) {
+            String _comment_2 = i.getComment();
+            CharSequence _comment_3 = this.comment(_comment_2);
+            _builder.append(_comment_3, "");
           }
         }
         _builder.newLineIfNotEmpty();
@@ -72,8 +80,9 @@ public class UppaalPropertySerialization extends UppaalSerialization {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/*");
     _builder.newLine();
+    _builder.append(" ");
     String _replace = s.replace("*/", "* /");
-    _builder.append(_replace, "");
+    _builder.append(_replace, " ");
     _builder.newLineIfNotEmpty();
     _builder.append("*/");
     return _builder;
@@ -112,6 +121,7 @@ public class UppaalPropertySerialization extends UppaalSerialization {
     return _builder;
   }
   
+  @Override
   public int precedence(final Expression it) {
     boolean _matched = false;
     if (!_matched) {
@@ -163,6 +173,7 @@ public class UppaalPropertySerialization extends UppaalSerialization {
     return _switchResult;
   }
   
+  @Override
   public String comparison(final CompareOperator op) {
     String _switchResult = null;
     if (op != null) {
