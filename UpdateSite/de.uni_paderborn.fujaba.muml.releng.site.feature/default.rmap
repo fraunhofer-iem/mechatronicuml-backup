@@ -14,7 +14,7 @@
 <rm:locator searchPathRef="SimulinkAdapter" failOnError="false"/>
 <rm:locator searchPathRef="TestLanguage" failOnError="false"/>
 <rm:locator searchPathRef="UDBM" failOnError="false"/>
-<rm:locator searchPathRef="C_Codegen" failOnError="false"/>
+<rm:locator searchPathRef="Codegen_C" failOnError="false"/>
 <rm:locator searchPathRef="StoryDiagram" failOnError="false"/>
 <rm:locator searchPathRef="ReconfigurationModeling" failOnError="false"/>
 <rm:locator searchPathRef="Examples" failOnError="false"/>
@@ -127,9 +127,9 @@
     </rm:provider>
 </rm:searchPath>  
 
-<rm:searchPath name="C_Codegen">
+<rm:searchPath name="Codegen_C">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
-      <rm:uri format="file:///data/jenkins/jobs/C_Codegen/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/Codegen_C/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath> 
