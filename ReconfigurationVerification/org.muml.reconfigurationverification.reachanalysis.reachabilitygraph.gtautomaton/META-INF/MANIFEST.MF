@@ -13,8 +13,8 @@ Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gta
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;visibility:=reexport,
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;visibility:=reexport,
  org.muml.reconfigurationverification.timedstorydiagram;visibility:=reexport,
  org.muml.core;bundle-version="1.0.0",
- org.storydriven.storydiagrams;bundle-version="1.0.0"
+ org.muml.storydiagram;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

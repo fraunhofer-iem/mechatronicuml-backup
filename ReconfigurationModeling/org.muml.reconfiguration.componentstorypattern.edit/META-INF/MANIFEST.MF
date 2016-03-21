@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.ocl.ecore,
  org.muml.pim.edit;visibility:=reexport,
  org.muml.reconfiguration;visibility:=reexport,
  org.muml.reconfiguration.edit;visibility:=reexport,
- org.storydriven.storydiagrams;visibility:=reexport,
- org.storydriven.storydiagrams.edit;visibility:=reexport,
+ org.muml.storydiagram;visibility:=reexport,
+ org.muml.storydiagram.edit;visibility:=reexport,
  org.muml.reconfiguration.verification.sdd.componentsdd;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy

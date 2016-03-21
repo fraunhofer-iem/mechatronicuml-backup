@@ -15,5 +15,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.reconfiguration;visibility:=reexport,
- org.storydriven.storydiagrams;visibility:=reexport
+ org.muml.storydiagram;visibility:=reexport
 Bundle-ActivationPolicy: lazy

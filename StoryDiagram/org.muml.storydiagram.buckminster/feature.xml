@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.storydiagram.buckminster"
+      id="org.muml.storydiagram.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
@@ -17,25 +17,25 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.storydiagrams.feature"
+         id="org.muml.storydiagram.feature"
          version="0.0.0"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.interpreter.tests"
+         id="org.muml.storydiagram.interpreter.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.sdm.test"
+         id="org.muml.storydiagram.reachanalysis.sdm.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.sdm.transform.test"
+         id="org.muml.storydiagram.reachanalysis.sdm.transform.test"
          download-size="0"
          install-size="0"
          version="0.0.0"

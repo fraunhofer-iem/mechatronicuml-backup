@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.mdelab.sdm.interpreter.core.executionTrace.editor</name>
+	<name>org.muml.storydiagram.interpreter.core.executiontrace.editor</name>
 	<comment></comment>
 	<projects>
 	</projects>

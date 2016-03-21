@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.storydiagrams.feature"
+      id="org.muml.storydiagram.feature"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -25,9 +25,9 @@
       <import plugin="org.eclipse.osgi" version="3.6.2" match="greaterOrEqual"/>
       <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.change" version="2.5.1" match="greaterOrEqual"/>
-      <import plugin="de.mdelab.sdm.interpreter.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.mdelab.resourceSetSynchronizer" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.mdelab.sdm.interpreter.core.debug" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.interpreter.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.resourcesetsynchronizer" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.interpreter.core.debug" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
@@ -35,20 +35,20 @@
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="greaterOrEqual"/>
-      <import plugin="de.mdelab.sdm.interpreter.core.eclipse" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.interpreter.core.eclipse" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.reachanalysis.reachabilitygraph"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.reachanalysis.core" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.sdm" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.reachanalysis.sdm" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.junit" version="4.10.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core"/>
       <import plugin="org.muml.core.reachanalysis.reachabilitygraph" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="org.muml.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.interpreter.eclipse" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram.interpreter" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.interpreter.eclipse" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.diagram.interpreter" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.views"/>
@@ -72,41 +72,41 @@
       <import plugin="org.muml.core.common"/>
       <import plugin="org.muml.core.edit"/>
       <import plugin="org.muml.core.modelinstance.ui" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.verification.sdd.basicsdd" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.verification.sdd.basicsdd.edit" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.tooling.runtime"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.verification.sdd.basicsdd.diagram" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.editor" version="2.6.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
       <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
       <import plugin="org.muml.core" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.uml2.common"/>
-      <import plugin="org.storydriven.storydiagrams" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.edit" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.editor" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.edit" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.editor" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.diagram" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.ui" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.upb.swt.core" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.upb.swt.core.ui" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="de.upb.swt.core.ui.properties" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance.ui" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams" version="0.2.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.interpreter.core" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.interpreter.eclipse" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram" version="0.2.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.interpreter.core" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.interpreter.eclipse" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="0.2.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram" version="0.2.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.diagram.custom" version="0.2.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.diagram" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.common.core" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.common.ui" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.core" version="1.4.1" match="greaterOrEqual"/>
@@ -115,24 +115,24 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface" version="3.6.1" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.diagram.custom" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.6.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.uml2.common.edit"/>
       <import plugin="org.muml.core" version="1.0.0" match="compatible"/>
-      <import plugin="org.storydriven.storydiagrams" version="1.0.0" match="compatible"/>
+      <import plugin="org.muml.storydiagram" version="1.0.0" match="compatible"/>
       <import plugin="org.antlr.runtime" version="3.2.0" match="compatible"/>
       <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.util" version="2.0.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore" version="2.10.1" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.expressions.common" version="1.0.0" match="compatible"/>
+      <import plugin="org.muml.storydiagram.expressions.common" version="1.0.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.builder" version="2.2.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.ui" version="2.2.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.ui.shared" version="2.2.0" match="compatible"/>
-      <import plugin="org.storydriven.storydiagrams.expressions" version="1.0.0" match="compatible"/>
+      <import plugin="org.muml.storydiagram.expressions" version="1.0.0" match="compatible"/>
       <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.interpreter.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram.interpreter.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.7.0" match="greaterOrEqual"/>
@@ -143,258 +143,251 @@
    </requires>
 
    <plugin
-         id="de.mdelab.resourceSetSynchronizer"
+         id="org.muml.storydiagram.resourcesetsynchronizer"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.core"
+         id="org.muml.storydiagram.interpreter.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.core.debug"
+         id="org.muml.storydiagram.interpreter.core.debug"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.core.debug.client"
+         id="org.muml.storydiagram.interpreter.core.debug.client"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.core.eclipse"
+         id="org.muml.storydiagram.interpreter.core.eclipse"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.core.executionTrace"
+         id="org.muml.storydiagram.interpreter.core.executionTrace"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.core.executionTrace.edit"
+         id="org.muml.storydiagram.interpreter.core.executiontrace.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.core.executionTrace.editor"
+         id="org.muml.storydiagram.interpreter.core.executiontrace.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.mdelab.sdm.interpreter.ocl"
+         id="org.muml.storydiagram.interpreter.ocl"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning"
+         id="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm"
+         id="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper"
+         id="org.muml.storydiagram.reachanalysis.sdm"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.sdm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.reachanalysis.sdm.transform"
+         id="org.muml.storydiagram.reachanalysis.sdm.transform"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd"
+         id="org.muml.storydiagram.verification.sdd"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd"
+         id="org.muml.storydiagram.verification.sdd.basicsdd"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram"
+         id="org.muml.storydiagram.verification.sdd.basicsdd.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.custom"
+         id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit"
+         id="org.muml.storydiagram.verification.sdd.basicsdd.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.edit"
+         id="org.muml.storydiagram.verification.sdd.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams"
+         id="org.muml.storydiagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.diagram"
+         id="org.muml.storydiagram.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.diagram.custom"
+         id="org.muml.storydiagram.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.diagram.interpreter"
+         id="org.muml.storydiagram.diagram.interpreter"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.diagram.ocl"
+         id="org.muml.storydiagram.diagram.ocl"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.edit"
+         id="org.muml.storydiagram.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.editor"
+         id="org.muml.storydiagram.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.expressions"
+         id="org.muml.storydiagram.expressions"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.expressions.common"
+         id="org.muml.storydiagram.expressions.common"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.expressions.common.ui"
+         id="org.muml.storydiagram.expressions.common.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.expressions.ui"
+         id="org.muml.storydiagram.expressions.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.interpreter.core"
+         id="org.muml.storydiagram.interpreter.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.interpreter.eclipse"
+         id="org.muml.storydiagram.interpreter.eclipse"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.ui"
+         id="org.muml.storydiagram.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties"
+         id="org.muml.storydiagram.verification.sdd.basicsdd.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties"
+         id="org.muml.storydiagram.verification.sdd.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.edit.properties"
+         id="org.muml.storydiagram.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"

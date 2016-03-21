@@ -17,7 +17,7 @@
 <booleanAttribute key="includeOptional" value="true"/>
 <stringAttribute key="location" value="${workspace_loc}/../junit-workspace"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/de.uni_paderborn.fujaba.muml.reachanalysis.sdm.transform.test"/>
+<listEntry value="/org.muml.storydiagram.reachanalysis.sdm.transform.test"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
@@ -26,13 +26,13 @@
 <booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
 <stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
-<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc}"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value=""/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="de.uni_paderborn.fujaba.muml.reachanalysis.sdm.transform.test"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.muml.storydiagram.reachanalysis.sdm.transform.test"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.6 -XX:MaxPermSize=256m -Xms40m -Xmx512m"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc}"/>
 <stringAttribute key="pde.version" value="3.3"/>
 <stringAttribute key="product" value="org.eclipse.buckminster.cmdline.product"/>
 <booleanAttribute key="run_in_ui_thread" value="false"/>
@@ -41,7 +41,6 @@
 <setEntry value="de.uni_paderborn.fujaba.core.buckminster:default"/>
 <setEntry value="de.uni_paderborn.fujaba.core.feature:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.pim.buckminster:default"/>
-<setEntry value="org.muml.pim.feature:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.pm.buckminster:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.pm.feature:default"/>
 <setEntry value="de.uni_paderborn.fujaba.muml.releng.site.experimental.feature:default"/>
@@ -348,6 +347,7 @@
 <setEntry value="org.eclipse.xtext.xbase:default"/>
 <setEntry value="org.eclipse.xtext.xtext.ui.source:default"/>
 <setEntry value="org.eclipse.xtext.xtext.ui:default"/>
+<setEntry value="org.muml.pim.feature:default"/>
 <setEntry value="org.polarion.eclipse.team.svn.connector.svnkit17:default"/>
 <setEntry value="org.polarion.eclipse.team.svn.connector:default"/>
 </setAttribute>

@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
  org.muml.reconfigurationverification.reachanalysis.gtautomaton;bundle-version="0.4.0",
  org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;bundle-version="0.4.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.reachanalysis.sdm;bundle-version="0.4.0",
+ org.muml.storydiagram.reachanalysis.sdm;bundle-version="0.4.0",
  org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling;bundle-version="1.0.0",
  org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.kronos.generator;bundle-version="1.0.0",
  org.muml.reconfigurationverification.kronos.cmd;bundle-version="1.0.0"

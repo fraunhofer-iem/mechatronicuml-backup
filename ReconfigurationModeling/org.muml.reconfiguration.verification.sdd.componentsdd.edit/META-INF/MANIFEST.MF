@@ -23,8 +23,8 @@ Require-Bundle: org.eclipse.ocl.ecore,
  org.muml.pim.edit;visibility:=reexport,
  org.muml.reconfiguration;visibility:=reexport,
  org.muml.reconfiguration.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.verification.sdd;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.verification.sdd.edit;visibility:=reexport,
- org.storydriven.storydiagrams;visibility:=reexport,
- org.storydriven.storydiagrams.edit;visibility:=reexport
+ org.muml.storydiagram.verification.sdd;visibility:=reexport,
+ org.muml.storydiagram.verification.sdd.edit;visibility:=reexport,
+ org.muml.storydiagram;visibility:=reexport,
+ org.muml.storydiagram.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

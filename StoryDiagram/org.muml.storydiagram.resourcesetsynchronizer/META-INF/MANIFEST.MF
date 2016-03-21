@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MDELab ResourceSetSynchronizer
-Bundle-SymbolicName: de.mdelab.resourceSetSynchronizer;singleton:=true
+Bundle-SymbolicName: org.muml.storydiagram.resourcesetsynchronizer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.net4j;bundle-version="3.0.1",

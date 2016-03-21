@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MDELab SDM Interpreter Core
-Bundle-SymbolicName: de.mdelab.sdm.interpreter.core
+Bundle-SymbolicName: org.muml.storydiagram.interpreter.core
 Bundle-Version: 1.0.0.qualifier
 Export-Package: de.mdelab.sdm.interpreter.core,
  de.mdelab.sdm.interpreter.core.expressions,

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: StoryDiagram Interpreter Tests
-Bundle-SymbolicName: org.storydriven.storydiagrams.interpreter.tests
+Bundle-SymbolicName: org.muml.storydiagram.interpreter.tests
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

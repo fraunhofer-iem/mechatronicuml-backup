@@ -17,8 +17,8 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.reconfiguration.edit,
  org.muml.reconfiguration,
  org.muml.pim.edit.properties,
- org.storydriven.storydiagrams.edit,
- org.storydriven.storydiagrams.edit.properties
+ org.muml.storydiagram.edit,
+ org.muml.storydiagram.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamodel, de.uni_paderborn.fujaba.muml.reconfiguration.properties.constraint,

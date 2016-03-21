@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper</name>
+	<name>org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper</name>
 	<comment></comment>
 	<projects>
 	</projects>

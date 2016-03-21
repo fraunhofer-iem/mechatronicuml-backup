@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram; singleton:=true
+Bundle-SymbolicName: org.muml.storydiagram.verification.sdd.basicsdd.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorPlugin
@@ -38,8 +38,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.verification.sdd;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.verification.sdd.edit;visibility:=reexport,
+ org.muml.storydiagram.verification.sdd;visibility:=reexport,
+ org.muml.storydiagram.verification.sdd.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
@@ -48,11 +48,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core.common,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
- org.storydriven.storydiagrams;visibility:=reexport,
- org.storydriven.storydiagrams.edit;visibility:=reexport,
+ org.muml.storydiagram;visibility:=reexport,
+ org.muml.storydiagram.edit;visibility:=reexport,
  org.muml.core.modelinstance.ui;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit;bundle-version="0.4.0",
+ org.muml.storydiagram.verification.sdd.basicsdd;bundle-version="0.4.0",
+ org.muml.storydiagram.verification.sdd.basicsdd.edit;bundle-version="0.4.0",
  org.eclipse.gmf.tooling.runtime;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

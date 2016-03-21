@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: SDM Expressions Common
 Bundle-Vendor: www.storydriven.org
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.storydriven.storydiagrams.expressions.common; singleton:=true
+Bundle-SymbolicName: org.muml.storydiagram.expressions.common;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.10.1",
  org.eclipse.xtext.generator;bundle-version="[2.0.0,3.0.0)";resolution:=optional,

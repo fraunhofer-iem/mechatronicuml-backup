@@ -18,8 +18,8 @@ Require-Bundle: org.muml.reconfiguration;bundle-version="0.3.1",
  org.muml.reconfiguration.componentstorydiagram.sdm.transforms;bundle-version="1.0.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
  org.muml.core.reachanalysis.reachabilitygraph;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.reachanalysis.sdm;bundle-version="0.4.0"
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;bundle-version="0.4.0",
+ org.muml.storydiagram.reachanalysis.sdm;bundle-version="0.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts,

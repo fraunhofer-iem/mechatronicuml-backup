@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Localization: plugin
 Bundle-Vendor: %providerName
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.storydriven.storydiagrams;singleton:=true
+Bundle-SymbolicName: org.muml.storydiagram;singleton:=true
 Bundle-Version: 1.0.1.qualifier
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
