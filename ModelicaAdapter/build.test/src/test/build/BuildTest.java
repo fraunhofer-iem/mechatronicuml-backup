@@ -1,6 +1,7 @@
 package test.build;
 
 import org.eclipse.core.internal.resources.WorkspaceRoot;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
@@ -19,6 +20,12 @@ public class BuildTest {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		
+		//close the metamodel for building acceleo project
+		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
+		project.close(progressMonitor);
+		project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
+		project.close(progressMonitor);
 		root.accept(new IResourceVisitor() {
 
 			@Override
