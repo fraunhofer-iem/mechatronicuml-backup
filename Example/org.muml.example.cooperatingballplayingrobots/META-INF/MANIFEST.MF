@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Cooperating Ball Playing Delta Robots Example
-Bundle-SymbolicName: org.muml.example.CooperatingBallPlayingRobots;singleton:=true
+Bundle-SymbolicName: org.muml.example.cooperatingballplayingrobots;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.muml.core.example.ui;bundle-version="0.5.0",
  org.muml.pim.actionlanguage;bundle-version="0.5.0"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.example.arduinoCarHwPlatform.feature"
+      id="org.muml.example.arduinocarhwplatform.feature"
       label="MechatronicUML Arduino Car Example"
       version="0.5.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
@@ -32,7 +32,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </requires>
 
    <plugin
-         id="org.muml.example.arduinoCarHwPlatform"
+         id="org.muml.example.arduinocarhwplatform"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

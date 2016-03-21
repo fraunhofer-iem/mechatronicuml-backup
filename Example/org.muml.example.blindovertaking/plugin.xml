@@ -9,7 +9,7 @@
             icon="images/muml.png"
             id="de.uni_paderborn.fujaba.muml.example.ui.BlindOvertakingCreationWizard"
             name="Blind Overtaking"
-            projectName="de.uni_paderborn.fujaba.muml.example.blindOvertaking"
+            projectName="org.muml.example.blindovertaking"
             projectPageDescription="Create a plug-in containing the Blind Overtaking example models"
             projectPageTitle="Blind Overtaking Example">
          <source bundle="de.uni_paderborn.fujaba.muml.example.blindOvertaking" path="data" />

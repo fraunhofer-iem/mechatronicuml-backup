@@ -9,10 +9,10 @@
             icon="images/muml.png"
             id="org.muml.example.CooperatingBallPlayingRobotsCreationWizard"
             name="Cooperating Ball Playing Delta Robots Example"
-            projectName="org.muml.example.CooperatingBallPlayingRobots"
+            projectName="org.muml.example.cooperatingballplayingrobots"
             projectPageDescription="Create project containing the Cooperating Ball Playing Delta Robots Example"
             projectPageTitle="Cooperating Ball Playing Delta Robots Example">
-         <source bundle="org.muml.example.CooperatingBallPlayingRobots" path="data" />
+         <source bundle="org.muml.example.cooperatingballplayingrobots" path="data" />
          <description>
             Create the Cooperating Ball Playing Delta Robots Example
          </description>

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Coordination Pattern Library Example
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.coordinationpatternlib;singleton:=true
+Bundle-SymbolicName: org.muml.example.coordinationpatternlib;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.muml.core.example.ui;bundle-version="0.5.0",
  org.muml.pim.actionlanguage;bundle-version="0.5.0"

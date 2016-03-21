@@ -9,7 +9,7 @@
             icon="images/muml.png"
             id="org.muml.example.arduinoCarHwPlatformCreationWizard"
             name="Arduino Car Example"
-            projectName="org.muml.example.arduinoCarHwPlatform"
+            projectName="org.muml.example.arduinocarhwplatform"
             projectPageDescription="Create project containing the Arduino Car Example"
             projectPageTitle="Arduino Car Example">
          <source bundle="org.muml.example.arduinoCarHwPlatform" path="data" />

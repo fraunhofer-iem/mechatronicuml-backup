@@ -9,10 +9,10 @@
             icon="images/muml.png"
             id="de.uni_paderborn.fujaba.muml.example.ui.CoordinatingBebotsCreationWizard"
             name="Coordinating Bebots"
-            projectName="de.uni_paderborn.fujaba.muml.example.coordinatingBebots"
+            projectName="org.muml.example.coordinatingbebots"
             projectPageDescription="Create a plug-in containing the Coordinating Bebots example models"
             projectPageTitle="Coordinating Bebots Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.coordinatingBebots" path="data" />
+         <source bundle="org.muml.example.coordinatingbebots" path="data" />
          <description>
             Create the Models of the Coordinating Bebots Example
          </description>

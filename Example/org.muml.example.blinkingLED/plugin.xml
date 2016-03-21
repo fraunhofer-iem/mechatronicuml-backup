@@ -9,10 +9,10 @@
             icon="images/muml.png"
             id="org.muml.example.blinkingLEDCreationWizard"
             name="Blinking LED Example"
-            projectName="org.muml.example.blinkingLED"
+            projectName="org.muml.example.blinkingled"
             projectPageDescription="Create project containing the Blinking LED Example"
             projectPageTitle="Blinking LED Example">
-         <source bundle="org.muml.example.blinkingLED" path="data" />
+         <source bundle="org.muml.example.blinkingled" path="data" />
          <description>
             Create the Blinking LED Example
          </description>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.example.BrakeByWire.feature"
+      id="org.muml.example.brakebywire.feature"
       label="MechatronicUML Brake By Wire Example"
       version="0.5.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
@@ -32,7 +32,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </requires>
 
    <plugin
-         id="org.muml.example.BrakeByWire"
+         id="org.muml.example.brakebywire"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

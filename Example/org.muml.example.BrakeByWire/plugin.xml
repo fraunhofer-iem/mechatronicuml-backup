@@ -9,10 +9,10 @@
             icon="images/muml.png"
             id="org.muml.example.BrakeByWireCreationWizard"
             name="Brake By Wire Example"
-            projectName="org.muml.example.BrakeByWire"
+            projectName="org.muml.example.brakebywire"
             projectPageDescription="Create project containing the Brake By Wire Example"
             projectPageTitle="Brake By Wire Example">
-         <source bundle="org.muml.example.BrakeByWire" path="data" />
+         <source bundle="org.muml.example.brakebywire" path="data" />
          <description>
             Create the Brake By Wire Example
          </description>

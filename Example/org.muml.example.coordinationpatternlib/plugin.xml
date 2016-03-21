@@ -9,10 +9,10 @@
             icon="images/muml.png"
             id="de.uni_paderborn.fujaba.muml.coordinationpatternlibCreationWizard"
             name="Coordination Pattern Library"
-            projectName="de.uni_paderborn.fujaba.muml.coordinationpatternlib"
+            projectName="org.muml.example.coordinationpatternlib"
             projectPageDescription="Create project containing the Coordination Pattern Library"
             projectPageTitle="Coordination Pattern Library">
-         <source bundle="de.uni_paderborn.fujaba.muml.coordinationpatternlib" path="data" />
+         <source bundle="org.muml.example.coordinationpatternlib" path="data" />
          <description>
             Create the Coordination Pattern Library
          </description>
