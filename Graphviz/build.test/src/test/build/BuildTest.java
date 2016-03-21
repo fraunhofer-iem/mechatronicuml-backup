@@ -31,6 +31,11 @@ public class BuildTest {
 		project = root.getProject("org.muml.graphviz.dot.xtext.ui");
 		project.close(progressMonitor);
 		
+		
+		project = root.getProject("org.muml.graphviz.plain.xtext");
+		project.close(progressMonitor);
+		
+		
 		project = root.getProject("org.muml.graphviz.plain.xtext.ui");
 		project.close(progressMonitor);
 		
@@ -39,6 +44,10 @@ public class BuildTest {
 		project.close(progressMonitor);
 		
 		project = root.getProject("org.muml.graphviz.dot.xtext.tests");
+		project.close(progressMonitor);
+		
+
+		project = root.getProject("org.muml.graphviz.blackbox");
 		project.close(progressMonitor);
 		
 		root.accept(new IResourceVisitor() {
