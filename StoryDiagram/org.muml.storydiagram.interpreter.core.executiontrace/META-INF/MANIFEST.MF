@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Metamodel and Adapter for ExecutionTraces of Story Diagrams
-Bundle-SymbolicName: org.muml.storydiagram.interpreter.core.executionTrace;singleton:=true
+Bundle-SymbolicName: org.muml.storydiagram.interpreter.core.executiontrace;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: MDELab.de
