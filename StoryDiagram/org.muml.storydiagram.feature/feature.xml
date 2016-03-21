@@ -352,7 +352,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.storydiagram.interpreter.core"
+         id="org.muml.storydiagram.interpreter.core.mdelab"
          download-size="0"
          install-size="0"
          version="0.0.0"
