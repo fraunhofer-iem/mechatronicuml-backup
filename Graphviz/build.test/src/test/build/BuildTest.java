@@ -61,6 +61,7 @@ public class BuildTest {
 			}
 		});
 		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		root.refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		workspace.save(true, progressMonitor);
 	}
 
