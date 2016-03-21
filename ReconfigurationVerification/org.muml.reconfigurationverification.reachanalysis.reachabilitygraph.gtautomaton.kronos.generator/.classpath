@@ -5,8 +5,8 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton/model"/>
-	<classpathentry kind="lib" path="/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling/model"/>
+	<classpathentry kind="lib" path="/org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton/model"/>
+	<classpathentry kind="lib" path="/org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling/model"/>
 	<classpathentry kind="lib" path="/org.muml.core/model"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
