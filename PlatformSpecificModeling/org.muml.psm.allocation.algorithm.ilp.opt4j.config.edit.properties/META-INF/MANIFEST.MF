@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.edit.properties; singleton:=true
+Bundle-SymbolicName: org.muml.psm.allocation.algorithm.ilp.opt4j.config.edit.properties;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.edit,
+ org.muml.psm.allocation.algorithm.ilp.opt4j.config.edit,
  org.muml.ape.runtime,
  org.eclipse.emf.edit,
  org.eclipse.ui,
- de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config
+ org.muml.psm.allocation.algorithm.ilp.opt4j.config
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.metamodel, de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.constraint,
