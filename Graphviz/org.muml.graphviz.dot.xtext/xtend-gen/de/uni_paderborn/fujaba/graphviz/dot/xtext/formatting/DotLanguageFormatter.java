@@ -27,6 +27,7 @@ public class DotLanguageFormatter extends AbstractDeclarativeFormatter {
   @Extension
   private DotLanguageGrammarAccess _dotLanguageGrammarAccess;
   
+  @Override
   protected void configureFormatting(final FormattingConfig c) {
     List<Pair<Keyword, Keyword>> _findKeywordPairs = this._dotLanguageGrammarAccess.findKeywordPairs("{", "}");
     for (final Pair<Keyword, Keyword> pair : _findKeywordPairs) {
