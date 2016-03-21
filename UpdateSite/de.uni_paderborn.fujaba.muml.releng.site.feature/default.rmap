@@ -17,7 +17,7 @@
 <rm:locator searchPathRef="Codegen_C" failOnError="false"/>
 <rm:locator searchPathRef="StoryDiagram" failOnError="false"/>
 <rm:locator searchPathRef="ReconfigurationModeling" failOnError="false"/>
-<rm:locator searchPathRef="Examples" failOnError="false"/>
+<rm:locator searchPathRef="Example" failOnError="false"/>
 <rm:locator searchPathRef="Graphviz" failOnError="false"/>
 <rm:locator searchPathRef="ComponentBehaviorSynthesis" failOnError="false"/>
 <rm:locator searchPathRef="PlatformSpecificModeling" failOnError="false"/>
@@ -155,9 +155,9 @@
    </rm:provider>
 </rm:searchPath> 
 
-<rm:searchPath name="Examples">
+<rm:searchPath name="Example">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
-      <rm:uri format="file:///data/jenkins/jobs/Examples/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/Example/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
 </rm:searchPath> 
