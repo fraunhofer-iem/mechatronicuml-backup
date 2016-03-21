@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./sat4j.core.rmap">
-    <cq:rootRequest name="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.core.feature" componentType="eclipse.feature"/>
+    <cq:rootRequest name="org.muml.external.sat4j.core.feature" componentType="eclipse.feature"/>
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
