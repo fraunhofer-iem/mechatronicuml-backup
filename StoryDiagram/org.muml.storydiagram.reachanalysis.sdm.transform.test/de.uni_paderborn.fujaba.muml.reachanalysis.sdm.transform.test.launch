@@ -51,7 +51,7 @@
 <setEntry value="de.uni_paderborn.fujaba.properties.feature:default"/>
 <setEntry value="de.uni_paderborn.fujaba.udbm.feature:default"/>
 <setEntry value="de.uni_paderborn.storydiagram.buckminster:default"/>
-<setEntry value="de.uni_paderborn.udbm.buckminster:default"/>
+<setEntry value="org.muml.udbm.buckminster:default"/>
 <setEntry value="de.uni_paderborn.uppaal.buckminster:default"/>
 <setEntry value="de.uni_paderborn.uppaal.feature:default"/>
 <setEntry value="org.eclipse.acceleo:default"/>
