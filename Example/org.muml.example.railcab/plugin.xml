@@ -5,16 +5,16 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.example.ui.RailCabCreationWizard"
+            id="org.muml.example.ui.RailCabCreationWizard"
             name="%muml.example.railcab.name"
             projectName="%muml.example.railcab.projectName"
             projectPageDescription="%muml.example.railcab.projectPage.desc"
             projectPageTitle="%muml.example.railcab.projectPage.title">
              <source
-             	bundle = "%bundle@de.uni_paderborn.fujaba.muml.example.railcab"
-            	path = "%folder@de.uni_paderborn.fujaba.muml.example.railcab"
+             	bundle = "%bundle@org.muml.example.railcab"
+            	path = "%folder@org.muml.example.railcab"
             	/>
              <description>
                 %muml.example.railcab.desc

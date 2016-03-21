@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="org.muml.example.arduinoCarHwPlatformCreationWizard"
+            id="org.muml.example.arduinocarhwplatformcreationWizard"
             name="Arduino Car Example"
             projectName="org.muml.example.arduinocarhwplatform"
             projectPageDescription="Create project containing the Arduino Car Example"
             projectPageTitle="Arduino Car Example">
-         <source bundle="org.muml.example.arduinoCarHwPlatform" path="data" />
+         <source bundle="org.muml.example.arduinocarhwplatform" path="data" />
          <description>
             Create the Arduino Car Example
          </description>

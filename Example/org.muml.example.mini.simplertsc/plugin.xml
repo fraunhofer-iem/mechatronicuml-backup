@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.example.ui.SimpleRTSCCreationWizard"
+            id="org.muml.example.ui.SimpleRTSCCreationWizard"
             name="RTSC (Realtime Statechart) Example"
-            projectName="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC"
+            projectName="org.muml.example.mini.simplertsc"
             projectPageDescription="Create project containing the RTSC (Realtime Statechart) Example"
             projectPageTitle="RTSC (Realtime Statechart) Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC" path="data" />
+         <source bundle="org.muml.example.mini.simplertsc" path="data" />
          <description>
             Create the RTSC (Realtime Statechart) Example
          </description>

@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
             id="org.muml.example.rocketLauncherCreationWizard"
             name="Authorized Rocket Launcher Example"
-            projectName="org.muml.example.rocketLauncher"
+            projectName="org.muml.example.rocketlauncher"
             projectPageDescription="Create project containing the Authorized Rocket Launcher Example"
             projectPageTitle="Authorized Rocket Launcher Example">
-         <source bundle="org.muml.example.rocketLauncher" path="data" />
+         <source bundle="org.muml.example.rocketlauncher" path="data" />
          <description>
             Create the Authorized Rocket Launcher Example
          </description>

@@ -32,7 +32,7 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </requires>
 
    <plugin
-         id="org.muml.example.rocketLauncher"
+         id="org.muml.example.rocketlauncher"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

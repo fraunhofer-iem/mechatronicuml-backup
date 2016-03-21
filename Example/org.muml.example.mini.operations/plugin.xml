@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.example.ui.OperationsCreationWizard"
+            id="org.muml.example.ui.OperationsCreationWizard"
             name="RTSC with Operations Example"
-            projectName="de.uni_paderborn.fujaba.muml.example.mini.operations"
+            projectName="org.muml.example.mini.operations"
             projectPageDescription="Create project containing the RTSC with Operations Example"
             projectPageTitle="Message Passing Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.mini.operations" path="data" />
+         <source bundle="org.muml.example.mini.operations" path="data" />
          <description>
             Create the RTSC with Operations Example
          </description>

@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.example.ui.BlindOvertakingCreationWizard"
+            id="org.muml.example.ui.BlindOvertakingCreationWizard"
             name="Blind Overtaking"
             projectName="org.muml.example.blindovertaking"
             projectPageDescription="Create a plug-in containing the Blind Overtaking example models"
             projectPageTitle="Blind Overtaking Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.blindOvertaking" path="data" />
+         <source bundle="org.muml.example.blindOvertaking" path="data" />
          <description>
             Create the Models of the Blind Overtaking Example
          </description>

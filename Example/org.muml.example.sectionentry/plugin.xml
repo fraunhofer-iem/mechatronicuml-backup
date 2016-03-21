@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.example.ui.SectionEntryCreationWizard"
+            id="org.muml.example.ui.SectionEntryCreationWizard"
             name="RailCab Section Entry Example"
-            projectName="de.uni_paderborn.fujaba.muml.example.sectionEntry"
+            projectName="org.muml.example.sectionEntry"
             projectPageDescription="Create a plug-in containing the RailCab Section Entry Example"
             projectPageTitle="RailCab Section Entry Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.sectionEntry" path="data" />
+         <source bundle="org.muml.example.sectionEntry" path="data" />
          <description>
             Create the Models of the RailCab Section Entry Example
          </description>

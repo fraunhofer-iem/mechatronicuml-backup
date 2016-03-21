@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.example.ui.SyncChannelCreationWizard"
+            id="org.muml.example.ui.SyncChannelCreationWizard"
             name="RTSC with Synchronization Channels Example"
-            projectName="de.uni_paderborn.fujaba.muml.example.mini.syncChannel"
+            projectName="org.muml.example.mini.syncchannel"
             projectPageDescription="Create project containing the RTSC with Synchronization Channels Example"
             projectPageTitle="RTSC with Synchronization Channels Example">
-         <source bundle="de.uni_paderborn.fujaba.muml.example.mini.syncChannel" path="data" />
+         <source bundle="org.muml.example.mini.syncchannel" path="data" />
          <description>
             Create the RTSC with Synchronization Channels Example
          </description>

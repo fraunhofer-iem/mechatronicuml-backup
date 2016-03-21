@@ -5,9 +5,9 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.example.ui.CoordinatingBebotsCreationWizard"
+            id="org.muml.example.ui.CoordinatingBebotsCreationWizard"
             name="Coordinating Bebots"
             projectName="org.muml.example.coordinatingbebots"
             projectPageDescription="Create a plug-in containing the Coordinating Bebots example models"

@@ -5,14 +5,14 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
-            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
             id="org.muml.example.mini.syncSelectorChannelCreationWizard"
             name="RTSC with Synchronization Selector Expression Example"
-            projectName="org.muml.example.mini.syncSelectorChannel"
+            projectName="org.muml.example.mini.syncselectorchannel"
             projectPageDescription="Create project containing the RTSC with Synchronization Selector Expression Example"
             projectPageTitle="RTSC with Synchronization Selector Expression Example">
-         <source bundle="org.muml.example.mini.syncSelectorChannel" path="data" />
+         <source bundle="org.muml.example.mini.syncselectorchannel" path="data" />
          <description>
             Create the RTSC with Synchronization Selector Expression Example
          </description>
