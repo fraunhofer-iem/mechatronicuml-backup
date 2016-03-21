@@ -24,6 +24,23 @@ public class BuildTest {
 		project.close(progressMonitor);
 		project = root.getProject("org.muml.graphviz.edit");
 		project.close(progressMonitor);
+		
+		project = root.getProject("org.muml.graphviz.dot.xtext");
+		project.close(progressMonitor);
+		
+		project = root.getProject("org.muml.graphviz.dot.xtext.ui");
+		project.close(progressMonitor);
+		
+		project = root.getProject("org.muml.graphviz.plain.xtext.ui");
+		project.close(progressMonitor);
+		
+		
+		project = root.getProject("org.muml.graphviz.plain.xtext.tests");
+		project.close(progressMonitor);
+		
+		project = root.getProject("org.muml.graphviz.dot.xtext.tests");
+		project.close(progressMonitor);
+		
 		root.accept(new IResourceVisitor() {
 
 			@Override
