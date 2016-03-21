@@ -4,11 +4,8 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import junit.framework.TestCase;
 
 @RunWith(Parameterized.class)
 public class RunTestCases {
@@ -49,8 +46,8 @@ public class RunTestCases {
 	}
 
 	private String path;
-	private TestCase testCase;
-	private Resource resource;
+//	private TestCase testCase;
+//	private Resource resource;
 
 	public RunTestCases(String path, String fileName) {
 		this.path = path;
