@@ -25,10 +25,13 @@ public class BuildTest {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-
+		
 		// close the metamodel for building acceleo project
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
 		assertTrue(project.exists());
+		workspace.save(true, progressMonitor);
+
+		
 		project.close(progressMonitor);
 	//	project.close(progressMonitor);
 	//	project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
