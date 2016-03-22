@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.releng.site.feature"
+      id="org.muml.muml.releng.site.feature"
       label="MechatronicUML"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -30,11 +30,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
+         id="org.muml.modelica.adapter.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.sdk.feature"
+         id="org.muml.modelica.adapter.sdk.feature"
          version="0.0.0"/>
 
    <includes
@@ -48,11 +48,11 @@ the Eclipse framework.
          name=""/>
 
    <includes
-         id="de.uni_paderborn.uppaal.feature"
+         id="org.muml.uppaal.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.uppaal.sdk.feature"
+         id="org.muml.uppaal.sdk.feature"
          version="0.0.0"/>
 
    <includes
@@ -68,76 +68,76 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.pm.feature"
+         id="org.muml.pm.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.pm.sdk.feature"
+         id="org.muml.pm.sdk.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.codegen.c.feature"
+         id="org.muml.codegen.c.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.codegen.c.source.feature"
+         id="org.muml.codegen.c.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.core.feature"
+         id="org.muml.verification.core.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.core.sdk.feature"
+         id="org.muml.verification.core.sdk.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.feature"
+         id="org.muml.verification.uppaal.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.sdk.feature"
+         id="org.muml.verification.uppaal.sdk.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.udbm.feature"
+         id="org.muml.udbm.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.udbm.source.feature"
+         id="org.muml.udbm.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.graphviz.feature"
+         id="org.muml.graphviz.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.graphviz.source.feature"
+         id="org.muml.graphviz.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.reconfiguration.feature"
+         id="org.muml.muml.reconfiguration.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.reconfiguration.source.feature"
+         id="org.muml.muml.reconfiguration.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.storydiagrams.feature"
+         id="org.muml.muml.storydiagrams.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.storydiagrams.source.feature"
+         id="org.muml.muml.storydiagrams.source.feature"
          version="0.0.0"/>
 
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.psm.feature"
+         id="org.muml.muml.psm.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.psm.sdk.feature"
+         id="org.muml.muml.psm.sdk.feature"
          version="0.0.0"/>
 
    <includes
@@ -153,99 +153,99 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance.feature"
+         id="org.muml.muml.allocation.ext.dependency.aopalliance.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava.feature"
+         id="org.muml.muml.allocation.ext.dependency.guava.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.feature"
+         id="org.muml.muml.allocation.ext.dependency.guice.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings.feature"
+         id="org.muml.muml.allocation.ext.dependency.guice.multibindings.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject.feature"
+         id="org.muml.muml.allocation.ext.dependency.javax.inject.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.opt4j.feature"
+         id="org.muml.muml.allocation.ext.dependency.opt4j.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.core.feature"
+         id="org.muml.muml.allocation.ext.dependency.sat4j.core.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.pb.feature"
+         id="org.muml.muml.allocation.ext.dependency.sat4j.pb.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.ontology.feature"
+         id="org.muml.muml.ontology.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.ontology.source.feature"
+         id="org.muml.muml.ontology.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi.feature"
+         id="org.muml.muml.ontology.ext.dependency.owlapi.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.unitontology.feature"
+         id="org.muml.muml.ontology.ext.dependency.unitontology.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.modelcopy.feature"
+         id="org.muml.modelcopy.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.modelcopy.source.feature"
+         id="org.muml.modelcopy.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.coordinationpatternlib.feature"
+         id="org.muml.muml.coordinationpatternlib.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.blindOvertaking.feature"
+         id="org.muml.muml.example.blindOvertaking.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.coordinatingBebots.feature"
+         id="org.muml.muml.example.coordinatingBebots.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.mini.entryexit.feature"
+         id="org.muml.muml.example.mini.entryexit.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.mini.messages.feature"
+         id="org.muml.muml.example.mini.messages.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.mini.operations.feature"
+         id="org.muml.muml.example.mini.operations.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.mini.simpleRTSC.feature"
+         id="org.muml.muml.example.mini.simpleRTSC.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.mini.syncChannel.feature"
+         id="org.muml.muml.example.mini.syncChannel.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.railcab.feature"
+         id="org.muml.muml.example.railcab.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.example.sectionEntry.feature"
+         id="org.muml.muml.example.sectionEntry.feature"
          version="0.0.0"/>
 
    <includes
