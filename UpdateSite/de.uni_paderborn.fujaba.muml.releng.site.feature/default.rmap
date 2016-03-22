@@ -18,9 +18,9 @@
 <rm:locator searchPathRef="StoryDiagram" failOnError="false"/>
 <rm:locator searchPathRef="ReconfigurationModeling" failOnError="false"/>
 <rm:locator searchPathRef="Example" failOnError="false"/>
-<rm:locator searchPathRef="Graphviz" failOnError="false"/>
 <rm:locator searchPathRef="GraphvizMetamodel" failOnError="false"/>
 <rm:locator searchPathRef="GraphvizTransformation" failOnError="false"/>
+<rm:locator searchPathRef="Graphviz" failOnError="false"/>
 <rm:locator searchPathRef="ComponentBehaviorSynthesis" failOnError="false"/>
 <rm:locator searchPathRef="PlatformSpecificModeling" failOnError="false"/>
 <rm:locator searchPathRef="ExternalDependencies" failOnError="false"/>
