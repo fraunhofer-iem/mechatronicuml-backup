@@ -213,11 +213,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.blindOvertaking.feature"
+         id="org.muml.example.blindovertaking.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.coordinatingBebots.feature"
+         id="org.muml.example.coordinatingbebots.feature"
          version="0.0.0"/>
 
    <includes
@@ -233,11 +233,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.mini.simpleRTSC.feature"
+         id="org.muml.example.mini.simplertsc.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.mini.syncChannel.feature"
+         id="org.muml.example.mini.syncchannel.feature"
          version="0.0.0"/>
 
    <includes
@@ -245,11 +245,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.sectionEntry.feature"
+         id="org.muml.example.sectionentry.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.arduinoCarHwPlatform.feature"
+         id="org.muml.example.arduinocarhwplatform.feature"
          version="0.0.0"/>
 
    <includes
@@ -261,7 +261,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.CooperatingBallPlayingRobots.feature"
+         id="org.muml.example.cooperatingballplayingrobots.feature"
          version="0.0.0"/>
 
    <includes
@@ -269,7 +269,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.rocketLauncher.feature"
+         id="org.muml.example.rocketlauncher.feature"
          version="0.0.0"/>
 
 </feature>
