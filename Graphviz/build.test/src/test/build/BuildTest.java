@@ -16,12 +16,14 @@ import org.junit.Test;
 public class BuildTest {
 
 	@Test
-	public void test() throws CoreException {
+	public void test()  {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject("org.muml.graphviz");
-		project.close(progressMonitor);
+		try {
+			project.close(progressMonitor);
+	
 		project = root.getProject("org.muml.graphviz.edit");
 		project.close(progressMonitor);
 
@@ -46,32 +48,62 @@ public class BuildTest {
 		project = root.getProject("org.muml.graphviz.blackbox");
 		project.close(progressMonitor);
 
-		root.accept(new IResourceVisitor() {
+		
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println("Failed to close Project");
+		}
+		
+		try {
+			root.accept(new IResourceVisitor() {
 
-			@Override
-			public boolean visit(IResource resource) throws CoreException {
-				System.out.println(resource.getName());
-				if (resource instanceof WorkspaceRoot)
-					return true;
-				return false;
-			}
-		});
-		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-
-		root.accept(new IResourceVisitor() {
-
-			@Override
-			public boolean visit(IResource resource) throws CoreException {
-				if (resource instanceof WorkspaceRoot)
-					return true;
-				else if (resource instanceof IProject) {
-					((IProject) resource).open(progressMonitor);
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					System.out.println(resource.getName());
+					if (resource instanceof WorkspaceRoot)
+						return true;
+					return false;
 				}
-				return false;
-			}
-		});
+			});
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println("Failed to Build");
+		}
 
-		workspace.save(true, progressMonitor);
+		try {
+			root.accept(new IResourceVisitor() {
+
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					if (resource instanceof WorkspaceRoot)
+						return true;
+					else if (resource instanceof IProject) {
+						((IProject) resource).open(progressMonitor);
+					}
+					return false;
+				}
+			});
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println("Failed to Open");
+		}
+
+		try {
+			workspace.save(true, progressMonitor);
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println("Failed to Save");
+		}
 	}
 
 }
