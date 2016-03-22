@@ -124,11 +124,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.storydiagrams.feature"
+         id="org.muml.storydiagram.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.storydiagrams.source.feature"
+         id="org.muml.storydiagram.source.feature"
          version="0.0.0"/>
 
 
