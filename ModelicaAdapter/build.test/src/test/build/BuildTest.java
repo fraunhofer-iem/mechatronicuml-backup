@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.junit.Test;
 import org.junit.runners.Parameterized.Parameters;
 
@@ -38,11 +39,20 @@ public class BuildTest {
 
 		// close the metamodel for building acceleo project
 	//	IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
-		IProjectDescription description = ResourcesPlugin.getWorkspace().loadProjectDescription(  new Path(findWorkspaceLocation().getAbsolutePath()+"org.muml.modelica.adapter.m2t"+"/.project"));
-		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
-		project.create(description, null);
-		project.open(null);
-		assertTrue(project.exists());
+		
+		
+		for (File directory : findWorkspaceLocation().listFiles()) {
+			if (directory.isDirectory()) {
+				if (Platform.getBundle(directory.getName()) != null) {
+					System.out.println(directory.getAbsolutePath());
+				}
+			}
+		}
+	////	IProjectDescription description = ResourcesPlugin.getWorkspace().loadProjectDescription(  new Path(findWorkspaceLocation().getAbsolutePath()+"org.muml.modelica.adapter.m2t"+"/.project"));
+	// project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
+	//	project.create(description, null);
+	//	project.open(null);
+	//	assertTrue(project.exists());
 		//project.close(progressMonitor);
 		// project.close(progressMonitor);
 		// project.close(progressMonitor);
@@ -60,7 +70,6 @@ public class BuildTest {
 		});
 
 		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-		project.open(progressMonitor);
 		workspace.save(true, progressMonitor);
 	}
 
