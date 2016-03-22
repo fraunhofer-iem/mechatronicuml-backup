@@ -29,7 +29,7 @@
       <import feature="org.muml.emm.feature" version="0.1.0.201507131051"/>
       <import feature="org.muml.core.sdk.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.pim.sdk.feature" version="0.5.0.qualifier"/>
-      <import feature="org.muml.uppaal.adapter.sdk.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.uppaal.sdk.feature" version="0.5.0.qualifier"/>
    </requires>
 
 </feature>
