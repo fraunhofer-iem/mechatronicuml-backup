@@ -43,11 +43,12 @@ public class BuildTest {
 				return false;
 			}
 		});
-		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		
 		workspace.save(true, progressMonitor);
 
+		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+
 		project.open(progressMonitor);
-		root.refreshLocal(IWorkspaceRoot.DEPTH_INFINITE, progressMonitor);
 		workspace.save(true, progressMonitor);
 	}
 
