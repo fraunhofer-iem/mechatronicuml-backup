@@ -29,14 +29,7 @@ public class BuildTest {
 		// close the metamodel for building acceleo project
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
 		assertTrue(project.exists());
-		project.accept(new IResourceVisitor() {
-			
-			@Override
-			public boolean visit(IResource resource) throws CoreException {
-				System.out.println(resource.getName());
-				return true;
-			}
-		});
+		project.delete(true, progressMonitor);
 	//	project.close(progressMonitor);
 		project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
 	//	project.close(progressMonitor);
