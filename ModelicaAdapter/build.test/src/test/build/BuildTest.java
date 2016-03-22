@@ -1,6 +1,9 @@
 package test.build;
 
+import java.io.File;
+
 import org.eclipse.core.internal.resources.WorkspaceRoot;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
@@ -23,6 +26,8 @@ public class BuildTest {
 
 		// close the metamodel for building acceleo project
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
+		File file  = new File(project.getLocationURI());
+	//	file.s
 	//	project.close(progressMonitor);
 		project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
 	//	project.close(progressMonitor);
