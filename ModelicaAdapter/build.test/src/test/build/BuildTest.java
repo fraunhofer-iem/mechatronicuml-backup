@@ -30,10 +30,9 @@ public class BuildTest {
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
 
 		assertTrue(project.exists());
-
-	//	project.close(progressMonitor);
+		project.delete(IResource.NEVER_DELETE_PROJECT_CONTENT, progressMonitor);
 		// project.close(progressMonitor);
-		// project =
+		// project.close(progressMonitor);
 		// root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
 		// project.close(progressMonitor);
 		root.accept(new IResourceVisitor() {
