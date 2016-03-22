@@ -1,5 +1,7 @@
 package test.build;
 
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 
 import org.eclipse.core.internal.resources.WorkspaceRoot;
@@ -26,8 +28,15 @@ public class BuildTest {
 
 		// close the metamodel for building acceleo project
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
-		File file  = new File(project.getLocationURI()+"test.txt");
-	//	file.s
+		assertTrue(project.exists());
+		project.accept(new IResourceVisitor() {
+			
+			@Override
+			public boolean visit(IResource resource) throws CoreException {
+				System.out.println(resource.getName());
+				return true;
+			}
+		});
 	//	project.close(progressMonitor);
 		project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
 	//	project.close(progressMonitor);
