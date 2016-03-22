@@ -253,11 +253,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.blinkingLED.feature"
+         id="org.muml.example.blinkingled.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.example.BrakeByWire.feature"
+         id="org.muml.example.brakebywire.feature"
          version="0.0.0"/>
 
    <includes
