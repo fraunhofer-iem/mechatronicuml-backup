@@ -153,35 +153,35 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.aopalliance.feature"
+         id="org.muml.external.allocation.aopalliance.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.guava.feature"
+         id="org.muml.external.allocation.guava.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.guice.feature"
+         id="org.muml.external.allocation.guice.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.guice.multibindings.feature"
+         id="org.muml.external.allocation.guice.multibindings.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.javax.inject.feature"
+         id="org.muml.external.allocation.javax.inject.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.opt4j.feature"
+         id="org.muml.external.allocation.opt4j.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.sat4j.core.feature"
+         id="org.muml.external.allocation.sat4j.core.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.allocation.dependency.sat4j.pb.feature"
+         id="org.muml.external.allocation.sat4j.pb.feature"
          version="0.0.0"/>
 
    <includes
