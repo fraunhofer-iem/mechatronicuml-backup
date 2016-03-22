@@ -19,6 +19,8 @@
 <rm:locator searchPathRef="ReconfigurationModeling" failOnError="false"/>
 <rm:locator searchPathRef="Example" failOnError="false"/>
 <rm:locator searchPathRef="Graphviz" failOnError="false"/>
+<rm:locator searchPathRef="GraphvizMetamodel" failOnError="false"/>
+<rm:locator searchPathRef="GraphvizTransformation" failOnError="false"/>
 <rm:locator searchPathRef="ComponentBehaviorSynthesis" failOnError="false"/>
 <rm:locator searchPathRef="PlatformSpecificModeling" failOnError="false"/>
 <rm:locator searchPathRef="ExternalDependencies" failOnError="false"/>
@@ -176,6 +178,21 @@
       </rm:uri>
   </rm:provider>
 </rm:searchPath>
+
+<rm:searchPath name="GraphvizMetamodel">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
+      <rm:uri format="file:///data/jenkins/jobs/GraphvizMetamodel/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+  </rm:provider>
+</rm:searchPath>
+
+<rm:searchPath name="GraphvizTransformation">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
+      <rm:uri format="file:///data/jenkins/jobs/GraphvizTransformation/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+  </rm:provider>
+</rm:searchPath>
+
 
 
 <rm:searchPath name="PlatformSpecificModeling">
