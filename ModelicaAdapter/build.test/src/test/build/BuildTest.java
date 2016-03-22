@@ -26,7 +26,7 @@ public class BuildTest {
 
 		// close the metamodel for building acceleo project
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
-		File file  = new File(project.getLocationURI());
+		File file  = new File(project.getLocationURI()+"test.txt");
 	//	file.s
 	//	project.close(progressMonitor);
 		project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
