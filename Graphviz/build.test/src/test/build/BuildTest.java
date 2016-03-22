@@ -24,44 +24,53 @@ public class BuildTest {
 		project.close(progressMonitor);
 		project = root.getProject("org.muml.graphviz.edit");
 		project.close(progressMonitor);
-		
+
 		project = root.getProject("org.muml.graphviz.dot.xtext");
 		project.close(progressMonitor);
-		
+
 		project = root.getProject("org.muml.graphviz.dot.xtext.ui");
 		project.close(progressMonitor);
-		
-		
+
 		project = root.getProject("org.muml.graphviz.plain.xtext");
 		project.close(progressMonitor);
-		
-		
+
 		project = root.getProject("org.muml.graphviz.plain.xtext.ui");
 		project.close(progressMonitor);
-		
-		
+
 		project = root.getProject("org.muml.graphviz.plain.xtext.tests");
 		project.close(progressMonitor);
-		
+
 		project = root.getProject("org.muml.graphviz.dot.xtext.tests");
 		project.close(progressMonitor);
-		
 
 		project = root.getProject("org.muml.graphviz.blackbox");
 		project.close(progressMonitor);
-		
+
 		root.accept(new IResourceVisitor() {
 
 			@Override
 			public boolean visit(IResource resource) throws CoreException {
 				System.out.println(resource.getName());
-				if(resource instanceof WorkspaceRoot)
-				return true;
-			return false;
+				if (resource instanceof WorkspaceRoot)
+					return true;
+				return false;
 			}
 		});
 		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-		root.refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
+
+		root.accept(new IResourceVisitor() {
+
+			@Override
+			public boolean visit(IResource resource) throws CoreException {
+				if (resource instanceof WorkspaceRoot)
+					return true;
+				else if (resource instanceof IProject) {
+					((IProject) resource).open(progressMonitor);
+				}
+				return false;
+			}
+		});
+
 		workspace.save(true, progressMonitor);
 	}
 
