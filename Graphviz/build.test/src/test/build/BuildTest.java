@@ -21,39 +21,39 @@ public class BuildTest {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject("org.muml.graphviz");
-		try {
-			project.close(progressMonitor);
-	
-		project = root.getProject("org.muml.graphviz.edit");
-		project.close(progressMonitor);
+//		try {
+//			project.close(progressMonitor);
+//	
+//		project = root.getProject("org.muml.graphviz.edit");
+//		project.close(progressMonitor);
+//
+//		project = root.getProject("org.muml.graphviz.dot.xtext");
+//		project.close(progressMonitor);
+//
+//		project = root.getProject("org.muml.graphviz.dot.xtext.ui");
+//		project.close(progressMonitor);
+//
+//		project = root.getProject("org.muml.graphviz.plain.xtext");
+//		project.close(progressMonitor);
+//
+//		project = root.getProject("org.muml.graphviz.plain.xtext.ui");
+//		project.close(progressMonitor);
+//
+//		project = root.getProject("org.muml.graphviz.plain.xtext.tests");
+//		project.close(progressMonitor);
+//
+//		project = root.getProject("org.muml.graphviz.dot.xtext.tests");
+//		project.close(progressMonitor);
+//
+//		project = root.getProject("org.muml.graphviz.blackbox");
+//		project.close(progressMonitor);
 
-		project = root.getProject("org.muml.graphviz.dot.xtext");
-		project.close(progressMonitor);
-
-		project = root.getProject("org.muml.graphviz.dot.xtext.ui");
-		project.close(progressMonitor);
-
-		project = root.getProject("org.muml.graphviz.plain.xtext");
-		project.close(progressMonitor);
-
-		project = root.getProject("org.muml.graphviz.plain.xtext.ui");
-		project.close(progressMonitor);
-
-		project = root.getProject("org.muml.graphviz.plain.xtext.tests");
-		project.close(progressMonitor);
-
-		project = root.getProject("org.muml.graphviz.dot.xtext.tests");
-		project.close(progressMonitor);
-
-		project = root.getProject("org.muml.graphviz.blackbox");
-		project.close(progressMonitor);
-
-		
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.err.println("Failed to close Project");
-		}
+//		
+//		} catch (CoreException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			System.err.println("Failed to close Project");
+//		}
 		
 		try {
 			root.accept(new IResourceVisitor() {
@@ -78,24 +78,24 @@ public class BuildTest {
 			System.err.println("Failed to Build");
 		}
 
-		try {
-			root.accept(new IResourceVisitor() {
-
-				@Override
-				public boolean visit(IResource resource) throws CoreException {
-					if (resource instanceof WorkspaceRoot)
-						return true;
-					else if (resource instanceof IProject) {
-						((IProject) resource).open(progressMonitor);
-					}
-					return false;
-				}
-			});
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.err.println("Failed to Open");
-		}
+//		try {
+//			root.accept(new IResourceVisitor() {
+//
+//				@Override
+//				public boolean visit(IResource resource) throws CoreException {
+//					if (resource instanceof WorkspaceRoot)
+//						return true;
+//					else if (resource instanceof IProject) {
+//						((IProject) resource).open(progressMonitor);
+//					}
+//					return false;
+//				}
+//			});
+//		} catch (CoreException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			System.err.println("Failed to Open");
+//		}
 
 		try {
 			workspace.save(true, progressMonitor);
