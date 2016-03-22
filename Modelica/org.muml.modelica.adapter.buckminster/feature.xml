@@ -38,11 +38,4 @@
       <import plugin="org.muml.graphviz.plain.xtext.ui"/>
    </requires>
 
-   <plugin
-         id="build.test"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
 </feature>
