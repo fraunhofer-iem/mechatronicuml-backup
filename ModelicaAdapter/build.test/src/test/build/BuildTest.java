@@ -25,17 +25,17 @@ public class BuildTest {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		
+
 		// close the metamodel for building acceleo project
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
-		assertTrue(project.exists());
-		workspace.save(true, progressMonitor);
 
-		
-		project.close(progressMonitor);
+		assertTrue(project.exists());
+
 	//	project.close(progressMonitor);
-	//	project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
-	//	project.close(progressMonitor);
+		// project.close(progressMonitor);
+		// project =
+		// root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
+		// project.close(progressMonitor);
 		root.accept(new IResourceVisitor() {
 
 			@Override
@@ -46,11 +46,8 @@ public class BuildTest {
 				return false;
 			}
 		});
-		
-		workspace.save(true, progressMonitor);
 
 		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-
 		project.open(progressMonitor);
 		workspace.save(true, progressMonitor);
 	}
