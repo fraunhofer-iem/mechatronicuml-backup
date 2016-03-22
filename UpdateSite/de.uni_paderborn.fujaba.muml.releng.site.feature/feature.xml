@@ -26,7 +26,7 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.pim.sdk.feature"
+         id="org.muml.pim.sdk.feature"
          version="0.0.0"/>
 
    <includes
