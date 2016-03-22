@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.muml.releng.site.feature"
+      id="org.muml.releng.site.feature"
       label="MechatronicUML"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -116,28 +116,28 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.reconfiguration.feature"
+         id="org.muml.reconfiguration.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.reconfiguration.source.feature"
+         id="org.muml.reconfiguration.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.storydiagrams.feature"
+         id="org.muml.storydiagrams.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.storydiagrams.source.feature"
+         id="org.muml.storydiagrams.source.feature"
          version="0.0.0"/>
 
 
    <includes
-         id="org.muml.muml.psm.feature"
+         id="org.muml.psm.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.psm.sdk.feature"
+         id="org.muml.psm.sdk.feature"
          version="0.0.0"/>
 
    <includes
@@ -153,51 +153,51 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.aopalliance.feature"
+         id="org.muml.external.allocation.dependency.aopalliance.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.guava.feature"
+         id="org.muml.external.allocation.dependency.guava.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.guice.feature"
+         id="org.muml.external.allocation.dependency.guice.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.guice.multibindings.feature"
+         id="org.muml.external.allocation.dependency.guice.multibindings.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.javax.inject.feature"
+         id="org.muml.external.allocation.dependency.javax.inject.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.opt4j.feature"
+         id="org.muml.external.allocation.dependency.opt4j.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.sat4j.core.feature"
+         id="org.muml.external.allocation.dependency.sat4j.core.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.allocation.ext.dependency.sat4j.pb.feature"
+         id="org.muml.external.allocation.dependency.sat4j.pb.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.ontology.feature"
+         id="org.muml.ontology.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.ontology.source.feature"
+         id="org.muml.ontology.source.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.ontology.ext.dependency.owlapi.feature"
+         id="org.muml.external.owlapi.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.ontology.ext.dependency.unitontology.feature"
+         id="org.muml.external.unitontology.feature"
          version="0.0.0"/>
 
    <includes
@@ -209,43 +209,43 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.coordinationpatternlib.feature"
+         id="org.muml.coordinationpatternlib.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.blindOvertaking.feature"
+         id="org.muml.example.blindOvertaking.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.coordinatingBebots.feature"
+         id="org.muml.example.coordinatingBebots.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.mini.entryexit.feature"
+         id="org.muml.example.mini.entryexit.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.mini.messages.feature"
+         id="org.muml.example.mini.messages.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.mini.operations.feature"
+         id="org.muml.example.mini.operations.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.mini.simpleRTSC.feature"
+         id="org.muml.example.mini.simpleRTSC.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.mini.syncChannel.feature"
+         id="org.muml.example.mini.syncChannel.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.railcab.feature"
+         id="org.muml.example.railcab.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.muml.example.sectionEntry.feature"
+         id="org.muml.example.sectionEntry.feature"
          version="0.0.0"/>
 
    <includes
