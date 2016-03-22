@@ -7,6 +7,7 @@ import java.io.File;
 import org.eclipse.core.internal.resources.WorkspaceRoot;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
@@ -16,9 +17,18 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameters;
 
 public class BuildTest {
+	
+	
+	
+	private static File findWorkspaceLocation() {
+		return new File("."); // This requires that the launch configuration
+								// sets ${workspace_loc} as working directory!
+	}
 
 	@Test
 	public void test() throws CoreException {
@@ -27,10 +37,13 @@ public class BuildTest {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
 		// close the metamodel for building acceleo project
-		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
-
+	//	IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
+		IProjectDescription description = ResourcesPlugin.getWorkspace().loadProjectDescription(  new Path(findWorkspaceLocation().getAbsolutePath()+"org.muml.modelica.adapter.m2t"+"/.project"));
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
+		project.create(description, null);
+		project.open(null);
 		assertTrue(project.exists());
-		project.delete(IResource.NEVER_DELETE_PROJECT_CONTENT, progressMonitor);
+		//project.close(progressMonitor);
 		// project.close(progressMonitor);
 		// project.close(progressMonitor);
 		// root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
