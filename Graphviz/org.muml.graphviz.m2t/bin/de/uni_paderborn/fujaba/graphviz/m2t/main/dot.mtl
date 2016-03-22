@@ -1,0 +1,112 @@
+[comment encoding = UTF-8 /]
+[module dot('http://www.fujaba.de/graphviz/dot/0.1.0')]
+
+
+[template public generateDot(graph : DotGraph) ? (graph.parentGraph.oclIsUndefined())]
+[comment @main/]
+[file ('test.dot', false, 'UTF-8')]
+[generateGraph(graph)/]
+[/file]
+[/template]
+
+[query public getGraphKind(graph : DotGraph) : String =
+	if graph.parentGraph.oclIsUndefined() then
+		if graph.directedGraph then
+			'digraph'
+		else
+			'graph'
+		endif
+	else
+		'subgraph cluster' + if not graph.id.oclIsUndefined() then '_' + graph.id else '' endif
+	endif
+/]
+
+[template public generateGraph(graph : DotGraph)]
+[graph.getGraphKind()/] {
+[generateGlobalSettings('graph', graph.graphSettings)/]
+[generateGlobalSettings('node', graph.nodeSettings)/]
+[generateGlobalSettings('edge', graph.edgeSettings)/]
+[generateNodes(graph.getNodes())/]
+[generateEdges(graph)/]
+[generateSubGraphs(graph.subgraphs)/]
+}
+[/template]
+
+[query private getNodes(graph : DotGraph) : Set(DotNode) =
+	graph.nodes->select(oclIsKindOf(DotNode))->collect(oclAsType(DotNode))->asSet()
+/]
+
+[query private getEdges(graph : DotGraph) : Set(DotEdge) =
+	graph.edges->select(oclIsKindOf(DotEdge))->collect(oclAsType(DotEdge))->asSet()
+/]
+
+[template public generateGlobalSettings(kind : String, settings : OrderedSet(Setting))
+	? (settings->notEmpty())
+]
+	[kind/] [generateSettings(settings)/]
+[/template]
+
+[template public generateNodes(nodeSet : Set(DotNode))
+	? (nodeSet->notEmpty())
+]
+[for (node : DotNode | nodeSet)]
+[generateNode(node)/]
+[/for]
+[/template]
+
+[template public generateNode(node : DotNode)]
+	"[node.name/]" [generateSettings(node.settings)/]
+[/template]
+
+[query public getEdgeOp(graph : DotGraph) : String =
+	if graph.getRootGraph().directedGraph then
+		'->'
+	else
+		'--'
+	endif
+/]
+
+[query private getRootGraph(graph : DotGraph) : DotGraph =
+	graph->asSet()->closure(g |
+		if g.parentGraph.oclIsUndefined() then
+			g
+		else
+			g.parentGraph endif
+	)->any(parentGraph.oclIsUndefined())
+/]
+
+[template public generateEdges(graph : DotGraph)
+	? (graph.getEdges()->notEmpty())
+]
+[for (edge : DotEdge | graph.getEdges())]
+[generateEdge(edge, graph.getEdgeOp())/]
+[/for]
+[/template]
+
+[template public generateEdge(edge : DotEdge, edgeOp : String)]
+	"[edge.getSource().name/]" [edgeOp/] "[edge.getTarget().name/]" [generateSettings(edge.settings)/]
+[/template]
+
+[query private getSource(edge : DotEdge) : DotNode =
+	-- this type cast is application specific
+	edge.source.oclAsType(DotNode)
+/]
+
+[query private getTarget(edge : DotEdge) : DotNode =
+	-- this type cast is application specific
+	edge.target.oclAsType(DotNode)
+/]
+
+[template public generateSubGraphs(subGraphSet : OrderedSet(DotGraph))
+	? (subGraphSet->notEmpty())
+]
+[for (graph : DotGraph | subGraphSet)]
+	[generateGraph(graph)/]
+[/for]
+[/template]
+
+[template public generateSettings(settings : OrderedSet(Setting))
+	? (settings->notEmpty())
+]
+[for (setting : Setting | settings) before('[') separator(', ') after(']')][setting.attribute/]=[setting.value/][/for]
+[/template]
