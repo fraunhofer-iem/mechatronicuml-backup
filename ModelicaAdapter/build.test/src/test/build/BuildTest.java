@@ -23,9 +23,9 @@ public class BuildTest {
 		
 		//close the metamodel for building acceleo project
 		IProject project = root.getProject("org.muml.modelica.adapter.m2t.transform");
-//		project.close(progressMonitor);
-//		project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
-//		project.close(progressMonitor);
+		project.close(progressMonitor);
+		project = root.getProject("org.muml.modelica.adapter.m2t.transform.edit");
+		project.close(progressMonitor);
 		root.accept(new IResourceVisitor() {
 
 			@Override
@@ -37,7 +37,7 @@ public class BuildTest {
 			}
 		});
 		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-		workspace.save(true, progressMonitor);
+		workspace.save(false, progressMonitor);
 	}
 
 }
