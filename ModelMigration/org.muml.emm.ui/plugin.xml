@@ -4,12 +4,12 @@
  
    <extension point="org.eclipse.ui.commands">
       <command
-            defaultHandler="de.uni_paderborn.fujaba.ecore.migration.ui.MigrateHandler"
+            defaultHandler="org.muml.emm.ui.MigrateHandler"
             id="emf.migrator.ui.migrate"
             name="Migrate">
       </command>
         <command
-            defaultHandler="de.uni_paderborn.fujaba.ecore.migration.ui.CreateMigrationHandler"
+            defaultHandler="org.muml.emm.ui.CreateMigrationHandler"
             id="emf.migrator.ui.create"
             name="Create Migration">
       </command>

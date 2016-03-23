@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.fujaba.ecore.migration,
- de.uni_paderborn.fujaba.ecore.migration.impl,
- de.uni_paderborn.fujaba.ecore.migration.util
+Export-Package: org.muml.emm,
+ org.muml.emm.impl,
+ org.muml.emm.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.emm.release;visibility:=reexport

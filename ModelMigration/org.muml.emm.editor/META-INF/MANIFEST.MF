@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.emm.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.ecore.migration.presentation.MigrationEditorPlugin$Implementation
+Bundle-Activator: org.muml.emm.presentation.MigrationEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.fujaba.ecore.migration.presentation
+Export-Package: org.muml.emm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.muml.emm.edit;visibility:=reexport,

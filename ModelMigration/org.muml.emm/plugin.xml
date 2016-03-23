@@ -7,7 +7,7 @@
       <!-- @generated migration -->
       <package
             uri="http://migration/0.1"
-            class="de.uni_paderborn.fujaba.ecore.migration.MigrationPackage"
+            class="org.muml.emm.MigrationPackage"
             genModel="model/migration.genmodel"/>
    </extension>
 

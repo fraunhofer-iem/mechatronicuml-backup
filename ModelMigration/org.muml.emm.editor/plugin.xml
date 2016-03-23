@@ -14,7 +14,7 @@
       <wizard
             id="migration.presentation.MigrationModelWizardID"
             name="%_UI_MigrationModelWizard_label"
-            class="de.uni_paderborn.fujaba.ecore.migration.presentation.MigrationModelWizard"
+            class="org.muml.emm.presentation.MigrationModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/MigrationModelFile.gif">
          <description>%_UI_MigrationModelWizard_description</description>
@@ -29,8 +29,8 @@
             name="%_UI_MigrationEditor_label"
             icon="icons/full/obj16/MigrationModelFile.gif"
             extensions="migrator"
-            class="de.uni_paderborn.fujaba.ecore.migration.presentation.MigrationEditor"
-            contributorClass="de.uni_paderborn.fujaba.ecore.migration.presentation.MigrationActionBarContributor">
+            class="org.muml.emm.presentation.MigrationEditor"
+            contributorClass="org.muml.emm.presentation.MigrationActionBarContributor">
       </editor>
    </extension>
 

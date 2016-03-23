@@ -14,7 +14,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseModelWizardID"
             name="%_UI_ReleaseModelWizard_label"
-            class="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseModelWizard"
+            class="org.muml.emm.release.presentation.ReleaseModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ReleaseModelFile.gif">
          <description>%_UI_ReleaseModelWizard_description</description>
@@ -29,8 +29,8 @@
             name="%_UI_ReleaseEditor_label"
             icon="icons/full/obj16/ReleaseModelFile.gif"
             extensions="release"
-            class="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseEditor"
-            contributorClass="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseActionBarContributor">
+            class="org.muml.emm.release.presentation.ReleaseEditor"
+            contributorClass="org.muml.emm.release.presentation.ReleaseActionBarContributor">
       </editor>
    </extension>
 
