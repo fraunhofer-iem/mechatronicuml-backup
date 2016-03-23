@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.prope
 /**
  * @generated
  */
-public class Opt4jConfigurationEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -67,12 +67,12 @@ public class Opt4jConfigurationEditor extends de.uni_paderborn.fujaba.properties
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
 		if (this.editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_PopulationSize();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
 			editor.setTooltipMessage("The size of the EA population.");
@@ -82,12 +82,12 @@ public class Opt4jConfigurationEditor extends de.uni_paderborn.fujaba.properties
 		return this.editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
 		if (this.editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_Generations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
 			editor.setTooltipMessage("The number of generations (a.k.a. number of iterations).");
@@ -97,12 +97,12 @@ public class Opt4jConfigurationEditor extends de.uni_paderborn.fujaba.properties
 		return this.editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
 		if (this.editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_Parents();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
 			editor.setTooltipMessage("The number of parents that are used for mating.");
@@ -112,12 +112,12 @@ public class Opt4jConfigurationEditor extends de.uni_paderborn.fujaba.properties
 		return this.editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
 		if (this.editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_Offspring();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
 			editor.setTooltipMessage("The number of new individuals per generation.");
@@ -127,12 +127,12 @@ public class Opt4jConfigurationEditor extends de.uni_paderborn.fujaba.properties
 		return this.editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
 		if (this.editorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_NoDominatedSolutions();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
@@ -161,9 +161,9 @@ public class Opt4jConfigurationEditor extends de.uni_paderborn.fujaba.properties
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new Opt4jConfigurationEditor(tab);
 		}
 
