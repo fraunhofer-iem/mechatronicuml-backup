@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor;
 /**
  * @generated
  */
-public class CodeGenAllocationEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class CodeGenAllocationEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -54,9 +54,9 @@ public class CodeGenAllocationEditor extends de.uni_paderborn.fujaba.properties.
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new CodeGenAllocationEditor(tab);
 		}
 

@@ -4,7 +4,7 @@ package org.storydriven.storydiagrams.properties.calls.editor;
 /**
  * @generated
  */
-public abstract class InvocationEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public abstract class InvocationEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -39,12 +39,12 @@ public abstract class InvocationEditor extends de.uni_paderborn.fujaba.propertie
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCallee_property_tab_generalTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCallee_property_tab_generalTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCallee_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCallee_property_tab_generalTab_Editor() {
 		if (this.editorCallee_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.calls.CallsPackage.eINSTANCE
 					.getInvocation_Callee();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
 			this.editorCallee_property_tab_generalTab = editor;

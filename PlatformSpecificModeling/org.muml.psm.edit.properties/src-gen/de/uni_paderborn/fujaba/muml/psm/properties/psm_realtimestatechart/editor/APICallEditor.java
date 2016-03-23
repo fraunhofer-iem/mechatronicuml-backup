@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.psm.properties.psm_realtimestatechart.edito
 /**
  * @generated
  */
-public class APICallEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class APICallEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -43,12 +43,12 @@ public class APICallEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorApiCallSignature_property_tab_psmTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorApiCallSignature_property_tab_psmTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorApiCallSignature_property_tab_psmTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorApiCallSignature_property_tab_psmTab_Editor() {
 		if (this.editorApiCallSignature_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.eINSTANCE
 					.getAPICall_ApiCallSignature();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
 			this.editorApiCallSignature_property_tab_psmTab = editor;
@@ -72,9 +72,9 @@ public class APICallEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new APICallEditor(tab);
 		}
 

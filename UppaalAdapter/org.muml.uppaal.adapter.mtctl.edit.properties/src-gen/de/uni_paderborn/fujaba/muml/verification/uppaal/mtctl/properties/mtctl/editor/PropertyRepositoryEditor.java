@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.mtctl.
 /**
  * @generated
  */
-public class PropertyRepositoryEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class PropertyRepositoryEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -31,12 +31,12 @@ public class PropertyRepositoryEditor extends de.uni_paderborn.fujaba.properties
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorProperties_MtctlTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorProperties_MtctlTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorProperties_MtctlTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorProperties_MtctlTab_Editor() {
 		if (this.editorProperties_MtctlTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage.eINSTANCE
 					.getPropertyRepository_Properties();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor(
 					adapterFactory, feature);
 
 			this.editorProperties_MtctlTab = editor;
@@ -61,9 +61,9 @@ public class PropertyRepositoryEditor extends de.uni_paderborn.fujaba.properties
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new PropertyRepositoryEditor(tab);
 		}
 

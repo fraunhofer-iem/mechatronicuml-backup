@@ -4,8 +4,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor;
+import org.muml.ape.runtime.editors.OCLPropertyEditor;
 
 public class CustomOCLPropertyEditor extends OCLPropertyEditor {
 

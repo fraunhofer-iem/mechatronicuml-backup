@@ -9,13 +9,13 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.muml.ape.runtime.editors.ObjectPropertyEditor;
 
 import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
-import de.uni_paderborn.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 
 public class MUML2UppaalExportTargetPage extends AbstractFujabaExportTargetPage {
 

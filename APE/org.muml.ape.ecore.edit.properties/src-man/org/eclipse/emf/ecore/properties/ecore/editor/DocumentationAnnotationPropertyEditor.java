@@ -10,8 +10,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
-
-import de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor;
+import org.muml.ape.runtime.editors.TextPropertyEditor;
 
 public class DocumentationAnnotationPropertyEditor extends TextPropertyEditor {
 

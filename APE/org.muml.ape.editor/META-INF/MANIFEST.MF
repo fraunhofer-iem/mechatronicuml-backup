@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.ape.editor;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.properties.presentation.PropertiesEditorPlugin$Implementation
+Bundle-Activator: org.muml.ape.presentation.PropertiesEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.properties.presentation
+Export-Package: org.muml.ape.presentation
 Require-Bundle: org.muml.ape.edit;visibility:=reexport,
  org.muml.ape.reconcile;bundle-version="0.4.0",
  org.muml.ape.codegen;bundle-version="0.4.0",

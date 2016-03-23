@@ -22,12 +22,12 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.muml.ape.runtime.RuntimePlugin;
+import org.muml.ape.runtime.wizard.PropertiesWizard;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer;
-import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
-import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertiesWizard;
 
 public class OpenTypeDialogCommand extends AbstractHandler {
 

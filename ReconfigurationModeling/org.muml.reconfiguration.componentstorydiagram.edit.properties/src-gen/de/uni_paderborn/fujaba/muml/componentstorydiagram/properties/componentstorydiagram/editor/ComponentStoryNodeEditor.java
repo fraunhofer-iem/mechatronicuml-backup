@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.components
  */
 public class ComponentStoryNodeEditor
 		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -75,12 +75,12 @@ public class ComponentStoryNodeEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorForEach_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createForEach_GeneralTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorForEach_GeneralTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createForEach_GeneralTab_Editor() {
 		if (this.editorForEach_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 					.getComponentStoryNode_ForEach();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
 			this.editorForEach_GeneralTab = editor;
@@ -109,9 +109,9 @@ public class ComponentStoryNodeEditor
 	 */
 	public static class Factory
 			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new ComponentStoryNodeEditor(tab);
 		}

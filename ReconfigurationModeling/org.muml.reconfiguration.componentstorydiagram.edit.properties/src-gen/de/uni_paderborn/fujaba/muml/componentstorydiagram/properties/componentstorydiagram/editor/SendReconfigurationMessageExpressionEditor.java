@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.components
  */
 public class SendReconfigurationMessageExpressionEditor
 		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -51,12 +51,12 @@ public class SendReconfigurationMessageExpressionEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurationMessageType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createReconfigurationMessageType_GeneralTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurationMessageType_GeneralTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createReconfigurationMessageType_GeneralTab_Editor() {
 		if (this.editorReconfigurationMessageType_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 					.getSendReconfigurationMessageExpression_ReconfigurationMessageType();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
 			this.editorReconfigurationMessageType_GeneralTab = editor;
@@ -64,12 +64,12 @@ public class SendReconfigurationMessageExpressionEditor
 		return this.editorReconfigurationMessageType_GeneralTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameterBindings_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createParameterBindings_GeneralTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameterBindings_GeneralTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createParameterBindings_GeneralTab_Editor() {
 		if (this.editorParameterBindings_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 					.getSendReconfigurationMessageExpression_ParameterBindings();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			this.editorParameterBindings_GeneralTab = editor;
@@ -98,9 +98,9 @@ public class SendReconfigurationMessageExpressionEditor
 	 */
 	public static class Factory
 			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new SendReconfigurationMessageExpressionEditor(tab);
 		}

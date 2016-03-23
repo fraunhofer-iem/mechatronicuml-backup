@@ -4,7 +4,7 @@ package org.eclipse.emf.ecore.properties.ecore.editor;
 /**
  * @generated
  */
-public class EObjectEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class EObjectEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -48,9 +48,9 @@ public class EObjectEditor extends de.uni_paderborn.fujaba.properties.runtime.ed
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new EObjectEditor(tab);
 		}
 

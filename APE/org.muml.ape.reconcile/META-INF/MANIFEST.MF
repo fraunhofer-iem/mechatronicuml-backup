@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba Properties Reconciler
 Bundle-SymbolicName: org.muml.ape.reconcile
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.properties.reconcile.PropertiesReconcilePlugin
+Bundle-Activator: org.muml.ape.reconcile.PropertiesReconcilePlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0";visibility:=reexport,
@@ -12,5 +12,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.properties.reconcile
+Export-Package: org.muml.ape.reconcile
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

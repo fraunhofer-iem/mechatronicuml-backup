@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba Properties Runtime
 Bundle-SymbolicName: org.muml.ape.runtime;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+Bundle-Activator: org.muml.ape.runtime.RuntimePlugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.300";visibility:=reexport,
  org.eclipse.emf.edit.ui,
@@ -18,12 +18,12 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.examples.xtext.base.ui;bundle-version="3.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.properties.runtime,
- de.uni_paderborn.fujaba.properties.runtime.constraint,
- de.uni_paderborn.fujaba.properties.runtime.editors,
- de.uni_paderborn.fujaba.properties.runtime.factory,
- de.uni_paderborn.fujaba.properties.runtime.filter,
- de.uni_paderborn.fujaba.properties.runtime.metamodel,
- de.uni_paderborn.fujaba.properties.runtime.sections,
- de.uni_paderborn.fujaba.properties.runtime.wizard
+Export-Package: org.muml.ape.runtime,
+ org.muml.ape.runtime.constraint,
+ org.muml.ape.runtime.editors,
+ org.muml.ape.runtime.factory,
+ org.muml.ape.runtime.filter,
+ org.muml.ape.runtime.metamodel,
+ org.muml.ape.runtime.sections,
+ org.muml.ape.runtime.wizard
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

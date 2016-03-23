@@ -20,13 +20,13 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.muml.ape.runtime.RuntimePlugin;
+import org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 import org.semanticweb.owlapi.model.IRI;
 
 import de.uni_paderborn.fujaba.muml.ontology.OntologyExtension;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog.OntologyDialog;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog.OntologyDialogFactory;
-import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
-import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 
 public class OntologyPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {

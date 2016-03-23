@@ -13,6 +13,6 @@ Require-Bundle: org.eclipse.jdt.core;bundle-version="3.5.0",
  org.eclipse.core.resources;bundle-version="3.7.101"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: de.uni_paderborn.fujaba.properties.codegen.PropertiesCodegenPlugin
-Export-Package: de.uni_paderborn.fujaba.properties.codegen
+Bundle-Activator: org.muml.ape.codegen.PropertiesCodegenPlugin
+Export-Package: org.muml.ape.codegen
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

@@ -45,14 +45,14 @@ public class SinglePortVariableEditor
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPositionConstraints_GeneralTab_Editor() {
+	protected org.muml.ape.runtime.editors.IPropertyEditor createPositionConstraints_GeneralTab_Editor() {
 		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 				.getSinglePortVariable_PositionConstraints();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+		final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 				adapterFactory, feature);
 
 		{
-			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 					.createOCLExpression(
 							"-- only show this editor if SinglePortVariable is \"embedded\" in MultiPortVariable\nif \n	self.eContainer().oclIsUndefined() or not (self.eContainer().oclIsTypeOf(ComponentVariable) or self.eContainer().oclIsKindOf(PartVariable))\nthen\n	false\nelse\n	if\n		self.eContainer().oclIsTypeOf(ComponentVariable)\n	then\n		let container: ComponentVariable = self.eContainer().oclAsType(ComponentVariable) in\n		if\n			container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))\n		then\n			true\n		else\n			false\n		endif\n			\n	else \n		if\n			self.eContainer().oclIsKindOf(PartVariable)\n		then\n			let container: PartVariable = self.eContainer().oclAsType(PartVariable) in\n			if\n				container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))\n			then\n				true\n			else\n				false\n			endif\n			\n		else\n			false\n		endif\n	endif\n\nendif",
 							feature, getEClass());
@@ -64,7 +64,7 @@ public class SinglePortVariableEditor
 							editor.updateVisibility(true, true);
 						}
 					});
-			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
 					.createQuery(expression);
 			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
@@ -105,9 +105,9 @@ public class SinglePortVariableEditor
 	 */
 	public static class Factory
 			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new SinglePortVariableEditor(tab);
 		}

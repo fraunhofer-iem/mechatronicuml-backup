@@ -35,8 +35,8 @@
             name="%_UI_PropertiesEditor_label"
             icon="icons/full/obj16/PropertiesModelFile.gif"
             extensions="propsheet"
-            class="de.uni_paderborn.fujaba.properties.presentation.PropertiesEditor"
-            contributorClass="de.uni_paderborn.fujaba.properties.presentation.PropertiesActionBarContributor">
+            class="org.muml.ape.presentation.PropertiesEditor"
+            contributorClass="org.muml.ape.presentation.PropertiesActionBarContributor">
       </editor>
    </extension>
    
@@ -111,7 +111,7 @@
     <extension point="org.eclipse.ui.commands">
 		<command
 			description="Initialize Propsheet"
-			defaultHandler="de.uni_paderborn.fujaba.properties.presentation.InitializePropsheetHandler"
+			defaultHandler="org.muml.ape.presentation.InitializePropsheetHandler"
 			id="de.uni_paderborn.fujaba.properties.initializePropsheet"
 			name="%initDiagramActionLabel">
 		</command>
@@ -121,7 +121,7 @@
     <extension point="org.eclipse.ui.commands">
 		<command
 			description="Generate Propsheet"
-			defaultHandler="de.uni_paderborn.fujaba.properties.presentation.GeneratePropertiesHandler"
+			defaultHandler="org.muml.ape.presentation.GeneratePropertiesHandler"
 			id="de.uni_paderborn.fujaba.properties.generateProperties"
 			name="%initDiagramActionLabel">
 		</command>
@@ -132,7 +132,7 @@
     <extension
           point="org.muml.ape.runtime.metamodelContributor">
        <metamodel
-             contributor="de.uni_paderborn.fujaba.properties.presentation.GenmodelMetamodelContributor">
+             contributor="org.muml.ape.presentation.GenmodelMetamodelContributor">
        </metamodel>
     </extension>
 

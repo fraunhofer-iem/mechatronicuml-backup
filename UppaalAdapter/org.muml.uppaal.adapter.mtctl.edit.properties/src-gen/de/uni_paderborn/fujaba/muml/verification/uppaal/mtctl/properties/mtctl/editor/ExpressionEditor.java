@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.mtctl.
 /**
  * @generated
  */
-public abstract class ExpressionEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public abstract class ExpressionEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated

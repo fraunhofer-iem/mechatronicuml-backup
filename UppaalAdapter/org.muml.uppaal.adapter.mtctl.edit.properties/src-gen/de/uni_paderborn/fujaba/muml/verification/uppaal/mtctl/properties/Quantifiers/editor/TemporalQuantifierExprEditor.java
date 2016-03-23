@@ -6,7 +6,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quanti
  */
 public abstract class TemporalQuantifierExprEditor
 		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated

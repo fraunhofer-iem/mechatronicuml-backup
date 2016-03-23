@@ -11,14 +11,14 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.widgets.Composite;
+import org.muml.ape.runtime.editors.ObjectPropertyEditor;
+import org.muml.ape.runtime.wizard.PropertyEditorWizardPage;
 
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.HideOptionExtension;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
-import de.uni_paderborn.fujaba.properties.runtime.editors.ObjectPropertyEditor;
-import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertyEditorWizardPage;
 
 public class OptionsWizardPage extends PropertyEditorWizardPage {	
 	Options options = null;

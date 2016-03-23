@@ -4,7 +4,7 @@ package org.storydriven.storydiagrams.properties.templates.editor;
 /**
  * @generated
  */
-public class TemplateSignatureEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class TemplateSignatureEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -50,9 +50,9 @@ public class TemplateSignatureEditor extends de.uni_paderborn.fujaba.properties.
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new TemplateSignatureEditor(tab);
 		}
 

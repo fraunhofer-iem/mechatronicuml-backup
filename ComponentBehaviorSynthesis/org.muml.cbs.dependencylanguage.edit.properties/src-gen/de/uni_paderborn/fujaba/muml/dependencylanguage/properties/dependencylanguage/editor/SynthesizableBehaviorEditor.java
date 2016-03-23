@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.dependencylanguage.properties.dependencylan
  */
 public class SynthesizableBehaviorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -36,12 +36,12 @@ public class SynthesizableBehaviorEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDependencyModel_DependenciesTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createDependencyModel_DependenciesTab_Editor() {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDependencyModel_DependenciesTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createDependencyModel_DependenciesTab_Editor() {
 		if (this.editorDependencyModel_DependenciesTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage.eINSTANCE
 					.getSynthesizableBehavior_DependencyModel();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.DependencyModelLanguageXtextPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.DependencyModelLanguageXtextPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("Container for all Dependency of one Atomic Component, Input for the XText Editor.");
@@ -72,9 +72,9 @@ public class SynthesizableBehaviorEditor
 	 */
 	public static class Factory
 			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new SynthesizableBehaviorEditor(tab);
 		}

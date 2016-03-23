@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.properties,
- de.uni_paderborn.fujaba.properties.impl,
- de.uni_paderborn.fujaba.properties.util
+Export-Package: org.muml.ape,
+ org.muml.ape.impl,
+ org.muml.ape.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;bundle-version="2.9.2";visibility:=reexport,
  org.eclipse.emf.codegen.ecore;visibility:=reexport,

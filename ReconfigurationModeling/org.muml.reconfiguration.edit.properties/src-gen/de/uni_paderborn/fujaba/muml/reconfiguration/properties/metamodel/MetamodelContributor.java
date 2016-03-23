@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamodel;
 
 public class MetamodelContributor
 		implements
-			de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor {
+			org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated

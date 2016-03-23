@@ -40,13 +40,13 @@ public class PropertiesUtil {
 		org.eclipse.core.runtime.IConfigurationElement[] elements = org.eclipse.core.runtime.Platform
 				.getExtensionRegistry()
 				.getConfigurationElementsFor(
-						de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.METAMODEL_CONTRIBUTOR__EXTENSION_POINT_ID);
+						org.muml.ape.runtime.RuntimePlugin.METAMODEL_CONTRIBUTOR__EXTENSION_POINT_ID);
 		for (org.eclipse.core.runtime.IConfigurationElement element : elements) {
 			try {
 				Object object = element
 						.createExecutableExtension("contributor");
-				if (object instanceof de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor) {
-					de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor contributor = (de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor) object;
+				if (object instanceof org.muml.ape.runtime.metamodel.IMetamodelContributor) {
+					org.muml.ape.runtime.metamodel.IMetamodelContributor contributor = (org.muml.ape.runtime.metamodel.IMetamodelContributor) object;
 					java.util.List<org.eclipse.emf.common.notify.AdapterFactory> contributedFactories = contributor
 							.getItemProviderFactories();
 					if (contributedFactories != null) {

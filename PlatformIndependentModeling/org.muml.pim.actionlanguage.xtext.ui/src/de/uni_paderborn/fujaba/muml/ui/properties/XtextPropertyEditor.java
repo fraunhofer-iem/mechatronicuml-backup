@@ -3,11 +3,11 @@ package de.uni_paderborn.fujaba.muml.ui.properties;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.muml.ape.runtime.editors.AbstractSingleFeatureXtextPropertyEditor;
 
 import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;
-import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractSingleFeatureXtextPropertyEditor;
 
 public class XtextPropertyEditor extends
 		AbstractSingleFeatureXtextPropertyEditor { 

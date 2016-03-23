@@ -3,7 +3,7 @@
 <plugin>
    <extension point="org.eclipse.emf.codegen.ecore.generatorAdapters">
       <adapterFactory
-            class="de.uni_paderborn.emf.codegen.oclfilter.generator.OCLGeneratorAdapterFactory"
+            class="org.muml.oclfilter.generator.OCLGeneratorAdapterFactory"
             modelPackage="http://www.eclipse.org/emf/2002/GenModel">
       </adapterFactory>
 

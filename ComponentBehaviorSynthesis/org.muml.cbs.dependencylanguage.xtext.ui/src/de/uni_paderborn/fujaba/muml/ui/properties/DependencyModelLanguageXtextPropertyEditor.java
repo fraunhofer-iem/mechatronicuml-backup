@@ -30,6 +30,8 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
 import org.eclipse.xtext.ui.editor.model.XtextDocument;
+import org.muml.ape.runtime.RuntimePlugin;
+import org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 
 import com.google.inject.Injector;
 
@@ -37,8 +39,6 @@ import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.DependencyModelLanguageResource;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo.EmbeddedXtextEditor;
 import de.uni_paderborn.fujaba.muml.ui.internal.DependencyModelLanguageActivator;
-import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
-import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 
 public class DependencyModelLanguageXtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {

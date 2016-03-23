@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.ui.properties;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.muml.ape.runtime.editors.AbstractManyFeatureXtextPropertyEditor;
 
 import com.google.inject.Injector;
 
@@ -16,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlFactoryI
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlPackageImpl;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.internal.MtctlActivator;
-import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractManyFeatureXtextPropertyEditor;
 
 /**
  * Manages the use of the mtctl xtext editor in properties (see base class)

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: EMF Codegenerator OCL Filter Extensions
 Bundle-SymbolicName: org.muml.oclfilter;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.emf.codegen.oclfilter.OCLFilterPlugin
+Bundle-Activator: org.muml.oclfilter.OCLFilterPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.codegen.ecore,
@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ocl.ecore;bundle-version="3.3.100"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.emf.codegen.oclfilter,
- de.uni_paderborn.emf.codegen.oclfilter.descriptor,
- de.uni_paderborn.emf.codegen.oclfilter.generator
+Export-Package: org.muml.oclfilter,
+ org.muml.oclfilter.descriptor,
+ org.muml.oclfilter.generator
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

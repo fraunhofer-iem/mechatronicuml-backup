@@ -19,10 +19,10 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 
 public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	protected Label label;

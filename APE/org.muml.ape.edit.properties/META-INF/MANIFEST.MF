@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.properties.properties.metamodel, de.uni_paderborn.fujaba.properties.properties.constraint,
- de.uni_paderborn.fujaba.properties.properties.properties.editor,
- de.uni_paderborn.fujaba.properties.properties.tabs
+Export-Package: org.muml.ape.properties.constraint,
+ org.muml.ape.properties.metamodel,
+ org.muml.ape.properties.properties.editor,
+ org.muml.ape.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

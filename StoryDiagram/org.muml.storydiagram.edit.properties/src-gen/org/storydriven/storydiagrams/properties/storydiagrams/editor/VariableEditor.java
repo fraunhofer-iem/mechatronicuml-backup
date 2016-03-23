@@ -4,7 +4,7 @@ package org.storydriven.storydiagrams.properties.storydiagrams.editor;
 /**
  * @generated
  */
-public abstract class VariableEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public abstract class VariableEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
