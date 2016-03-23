@@ -1,6 +1,5 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.uni_paderborn.fujaba.graphviz.m2t
 Bundle-SymbolicName: org.muml.graphviz.adapter;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.graphviz.m2t.Activator
