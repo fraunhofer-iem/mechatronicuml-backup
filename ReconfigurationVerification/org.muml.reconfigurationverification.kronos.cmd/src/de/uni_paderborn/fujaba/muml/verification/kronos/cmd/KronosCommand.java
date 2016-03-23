@@ -7,10 +7,10 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import de.uni_paderborn.cmd.Option;
-import de.uni_paderborn.cmd.OptionArgument;
-import de.uni_paderborn.cmd.Parameter;
-import de.uni_paderborn.cmd.PathCommand;
+import de.uni_paderborn.fujaba.common.cmd.Option;
+import de.uni_paderborn.fujaba.common.cmd.OptionArgument;
+import de.uni_paderborn.fujaba.common.cmd.Parameter;
+import de.uni_paderborn.fujaba.common.cmd.PathCommand;
 import de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.MCRegistry;
 import de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.preferences.PreferenceConstants;
 

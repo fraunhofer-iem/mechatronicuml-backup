@@ -7,7 +7,8 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.kronos.cmd.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.reconfigurationverification.modelchecker.ui;bundle-version="1.0.0",
  org.muml.uppaal.cmd;bundle-version="0.4.0",
- org.eclipse.ui
+ org.eclipse.ui,
+ org.muml.core.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.uni_paderborn.fujaba.muml.verification.kronos.cmd
