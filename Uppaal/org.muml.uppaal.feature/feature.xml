@@ -52,6 +52,8 @@
       <import feature="org.muml.graphviz.feature" version="0.5.0.qualifier"/>
       <import plugin="org.muml.graphviz"/>
       <import plugin="org.muml.graphviz.blackbox"/>
+      <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
+      <import plugin="org.muml.ape.runtime"/>
    </requires>
 
    <plugin
