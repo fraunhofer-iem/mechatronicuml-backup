@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.external.allocation.javax.inject.feature"
+      id="org.muml.external.javax.inject.feature"
       label="javax.inject external dependency"
       version="1.0.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
@@ -220,7 +220,7 @@ For more information about javax.inject, see https://code.google.com/p/atinject
    </license>
 
    <plugin
-         id="org.muml.external.allocation.javax.inject"
+         id="org.muml.external.javax.inject"
          download-size="0"
          install-size="0"
          version="0.0.0"

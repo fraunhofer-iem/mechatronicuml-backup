@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Guava
-Bundle-SymbolicName: org.muml.external.allocation.guava
+Bundle-SymbolicName: org.muml.external.guava
 Bundle-Version: 16.0.1
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

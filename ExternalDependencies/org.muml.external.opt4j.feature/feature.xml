@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.external.allocation.opt4j.feature"
+      id="org.muml.external.opt4j.feature"
       label="opt4j external dependency"
       version="3.1.3.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
@@ -48,14 +48,14 @@ SOFTWARE.
    </license>
 
    <requires>
-      <import plugin="org.muml.external.allocation.guice" version="4.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.external.allocation.guice.multibindings" version="4.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.external.allocation.sat4j.core" version="2.3.3" match="greaterOrEqual"/>
-      <import plugin="org.muml.external.allocation.sat4j.pb" version="2.3.3" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.guice" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.guice.multibindings" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.sat4j.core" version="2.3.3" match="greaterOrEqual"/>
+      <import plugin="org.muml.external.sat4j.pb" version="2.3.3" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="org.muml.external.allocation.opt4j"
+         id="org.muml.external.opt4j"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.external.allocation.guava.feature"
+      id="org.muml.external.guava.feature"
       label="guava external dependency"
       version="16.0.1.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
@@ -220,7 +220,7 @@ For more information about guava, see https://code.google.com/p/guava-libraries/
    </license>
 
    <plugin
-         id="org.muml.external.allocation.guava"
+         id="org.muml.external.guava"
          download-size="0"
          install-size="0"
          version="0.0.0"

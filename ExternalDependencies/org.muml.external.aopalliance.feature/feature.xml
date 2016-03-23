@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.external.allocation.aopalliance.feature"
+      id="org.muml.external.aopalliance.feature"
       label="aopalliance external dependency"
       version="1.0.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
@@ -20,7 +20,7 @@ For more information about aopalliance, see http://sourceforge.net/projects/aopa
    </license>
 
    <plugin
-         id="org.muml.external.allocation.aopalliance"
+         id="org.muml.external.aopalliance"
          download-size="0"
          install-size="0"
          version="0.0.0"

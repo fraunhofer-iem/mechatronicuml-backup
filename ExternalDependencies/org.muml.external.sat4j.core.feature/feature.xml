@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.external.allocation.sat4j.core.feature"
+      id="org.muml.external.sat4j.core.feature"
       label="sat4j.core external dependency"
       version="2.3.3.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
@@ -59,7 +59,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    </license>
 
    <plugin
-         id="org.muml.external.allocation.sat4j.core"
+         id="org.muml.external.sat4j.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
