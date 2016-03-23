@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-Activator: de.uni_paderborn.fujaba.muml.example.railcab.profiletypes.Activator
+Bundle-Activator: org.muml.example.railcab.profiletypes.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.ui,
  org.muml.pim;visibility:=reexport,
  org.muml.verification.core.runtime;bundle-version="0.4.0";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.example.railcab.profiles,
- de.uni_paderborn.fujaba.muml.example.railcab.profiles.impl,
- de.uni_paderborn.fujaba.muml.example.railcab.profiles.util
+Export-Package: org.muml.example.railcab.profiles,
+ org.muml.example.railcab.profiles.impl,
+ org.muml.example.railcab.profiles.util
 Bundle-ActivationPolicy: lazy

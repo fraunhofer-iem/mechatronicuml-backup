@@ -7,7 +7,7 @@
       <!-- @generated ConvoyCoordinationStructTypes -->
       <package
             uri="http://www.fujaba.de/muml/examples/profiles/0.3.2"
-            class="de.uni_paderborn.fujaba.muml.example.railcab.profiles.ProfilesPackage"
+            class="org.muml.example.railcab.profiles.ProfilesPackage"
             genModel="model/ConvoyCoordinationStructTypes.genmodel"/>
    </extension>
 

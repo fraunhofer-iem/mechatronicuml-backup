@@ -7,10 +7,10 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning,
- de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.impl,
- de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.test,
- de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.util
+Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.test,
+ org.muml.example.storydiagram.reachanalysis.ttccarplatooning,
+ org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl,
+ org.muml.example.storydiagram.reachanalysis.ttccarplatooning.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,

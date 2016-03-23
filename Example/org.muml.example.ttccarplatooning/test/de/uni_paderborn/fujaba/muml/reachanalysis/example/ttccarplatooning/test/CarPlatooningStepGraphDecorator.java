@@ -1,9 +1,9 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.test;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Carprocess;
+import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Message;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.Carprocess;
-import de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.Message;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export.ApplicationSpecificGraphDecorator;
 
