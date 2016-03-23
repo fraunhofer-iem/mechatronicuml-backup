@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.graphviz.transformation.buckminster"
+      id="org.muml.graphviz.adapter.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
@@ -16,7 +16,6 @@
       [Enter License Description here.]
    </license>
 
-
    <plugin
          id="build.test"
          download-size="0"
@@ -25,7 +24,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.graphviz.m2t"
+         id="org.muml.graphviz.adapter"
          download-size="0"
          install-size="0"
          version="0.0.0"
