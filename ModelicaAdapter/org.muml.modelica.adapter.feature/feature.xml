@@ -45,7 +45,7 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       <import plugin="org.eclipse.acceleo.engine" version="3.2.2" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.parser" version="3.2.2" match="greaterOrEqual"/>
-      <import plugin="org.muml.modelica.adapter.m2t.transform" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.modelica.transform" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.runtime"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project"/>
       <import plugin="org.muml.graphviz.blackbox" version="1.0.0" match="greaterOrEqual"/>
@@ -61,34 +61,27 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    </requires>
 
    <plugin
-         id="org.muml.modelica.adapter.m2t"
+         id="org.muml.modelica.adapter"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.modelica.adapter.m2t.ui"
+         id="org.muml.modelica.adapter.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.modelica.adapter.graphviz"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.modelica.adapter.m2t.transform"
+         id="org.muml.modelica.transform"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="org.muml.modelica.adapter.m2t.transform.edit"
+         id="org.muml.modelica.transform.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
