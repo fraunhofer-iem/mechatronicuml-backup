@@ -203,9 +203,9 @@
   </rm:provider>
 </rm:searchPath>
 
-<rm:searchPath name="GraphvizTransformation">
+<rm:searchPath name="GraphvizAdapter">
    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
-      <rm:uri format="file:///data/jenkins/jobs/GraphvizTransformation/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/GraphvizAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
   </rm:provider>
 </rm:searchPath>
