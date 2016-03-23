@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import org.muml.codegen.c.ui.export.C99SourceCodeExport;
 
-import de.uni_paderborn.fujaba.muml.codegen.c.ui.export.C99SourceCodeExport;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
 

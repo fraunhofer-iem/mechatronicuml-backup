@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.ui.commands
+Export-Package: org.muml.cbs.dependencylanguage.ui.commands
 Require-Bundle: org.eclipse.ui.workbench,
  org.eclipse.jface,
  org.eclipse.emf.transaction,

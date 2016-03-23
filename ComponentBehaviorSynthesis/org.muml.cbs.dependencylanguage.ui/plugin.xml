@@ -50,7 +50,7 @@
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.dependencylanguage.ui.commands.CreateSynthesizableBehaviorCommand"
+           defaultHandler="org.muml.cbs.dependencylanguage.ui.commands.CreateSynthesizableBehaviorCommand"
            description="Create Synthesizable Behavior"
            id="de.uni_paderborn.fujaba.muml.dependencylanguage.commands.CreateSynthesizableBehavior"
            name="Create Synthesizable Behavior">

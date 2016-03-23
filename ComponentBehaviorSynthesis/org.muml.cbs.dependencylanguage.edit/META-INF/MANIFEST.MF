@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.cbs.dependencylanguage.edit;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.dependencylanguage.provider.DependencylanguageEditPlugin$Implementation
+Bundle-Activator: org.muml.cbs.dependencylanguage.provider.DependencylanguageEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.provider
+Export-Package: org.muml.cbs.dependencylanguage.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.cbs.dependencylanguage;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

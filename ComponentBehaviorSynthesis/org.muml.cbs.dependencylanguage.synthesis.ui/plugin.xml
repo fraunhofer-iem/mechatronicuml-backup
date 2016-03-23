@@ -45,7 +45,7 @@
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui.InitialSynthesisCommand"
+           defaultHandler="org.muml.cbs.dependencylanguage.synthesis.ui.InitialSynthesisCommand"
            description="Intially synthesize the component's behavior"
            id="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui.commands.InitialSynthesis"
            name="Synthesize Intra-Behavior">

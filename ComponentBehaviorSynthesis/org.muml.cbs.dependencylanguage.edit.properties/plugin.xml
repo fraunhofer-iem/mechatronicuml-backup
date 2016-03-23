@@ -42,7 +42,7 @@
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.tabs.DependenciesTabElementFilter"
+            filter="org.muml.cbs.dependencylanguage.properties.tabs.DependenciesTabElementFilter"
             id="de.uni_paderborn.fujaba.muml.dependencylanguage"
             tab="de.uni_paderborn.fujaba.muml.dependencylanguage">
              <input
@@ -59,7 +59,7 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.dependencylanguage.editor.SynthesizableBehaviorEditor$Factory"
+             factory="org.muml.cbs.dependencylanguage.properties.dependencylanguage.editor.SynthesizableBehaviorEditor$Factory"
              type="http://www.fujaba.de/muml/dependencylanguage/0.4.0#SynthesizableBehavior">
        </propertyEditor>
     
@@ -70,7 +70,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.cbs.dependencylanguage.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -78,7 +78,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.cbs.dependencylanguage.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

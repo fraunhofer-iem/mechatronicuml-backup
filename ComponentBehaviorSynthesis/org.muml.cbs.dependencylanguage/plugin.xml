@@ -10,7 +10,7 @@
       <!-- @generated dependencylanguage -->
       <package
             uri="http://www.fujaba.de/muml/dependencylanguage/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage"
+            class="org.muml.cbs.dependencylanguage.DependencylanguagePackage"
             genModel="model/dependencylanguage.genmodel"/>
    </extension>
 	

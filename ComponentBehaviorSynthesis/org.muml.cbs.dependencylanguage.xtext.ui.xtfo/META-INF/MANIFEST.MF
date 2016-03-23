@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.cbs.dependencylanguage.xtext.ui.xtfo
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo.Activator
+Bundle-Activator: org.muml.cbs.dependencylanguage.xtext.ui.xtfo.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.common,
@@ -16,4 +16,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %providerName
-Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo
+Export-Package: org.muml.cbs.dependencylanguage.xtext.ui.xtfo

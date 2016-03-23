@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage,
- de.uni_paderborn.fujaba.muml.dependencylanguage.impl,
- de.uni_paderborn.fujaba.muml.dependencylanguage.util
+Export-Package: org.muml.cbs.dependencylanguage,
+ org.muml.cbs.dependencylanguage.impl,
+ org.muml.cbs.dependencylanguage.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.pim.actionlanguage;bundle-version="0.4.0";visibility:=reexport,

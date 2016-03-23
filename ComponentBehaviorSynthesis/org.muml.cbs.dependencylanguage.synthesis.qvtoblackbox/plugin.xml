@@ -8,7 +8,7 @@
             name="XTextSerializerLibUnit"
             namespace="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox">
          <library
-               class="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox.XTextSerializerBlackbox"
+               class="org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox.XTextSerializerBlackbox"
                name="XTextSerializerLibrary">
             <metamodel
                   nsURI="http://www.eclipse.org/emf/2002/Ecore">

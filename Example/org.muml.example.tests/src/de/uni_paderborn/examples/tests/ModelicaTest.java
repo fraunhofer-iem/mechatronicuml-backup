@@ -29,8 +29,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import de.uni_paderborn.fujaba.modelica.m2t.ui.common.Generator;
-import de.uni_paderborn.fujaba.muml.codegen.c.ui.export.C99SourceCodeExport;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
 

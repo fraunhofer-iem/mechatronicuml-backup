@@ -1,8 +1,6 @@
 package de.uni_paderborn.examples.tests;
 
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.ocl.pivot.Model;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
