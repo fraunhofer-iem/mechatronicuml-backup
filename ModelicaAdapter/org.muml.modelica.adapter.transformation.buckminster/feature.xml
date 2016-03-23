@@ -38,14 +38,14 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.modelica.adapter.m2t"
+         id="org.muml.modelica.adapter"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.modelica.adapter.m2t.ui"
+         id="org.muml.modelica.adapter.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
