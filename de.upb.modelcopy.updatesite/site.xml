@@ -4,4 +4,5 @@
       <category name="de.upb.modelcopy"/>
    </feature>
    <category-def name="de.upb.modelcopy" label="ModelCopy"/>
+   <url><discovery label="QVTo Build Site (3.6 nightly)" url="http://download.eclipse.org/mmt/qvto/updates/nightly/3.6.0"/></url>
 </site>
