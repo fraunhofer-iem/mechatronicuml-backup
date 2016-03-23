@@ -10,7 +10,7 @@
 <rm:locator searchPathRef="Uppaal" failOnError="false"/>
 <rm:locator searchPathRef="UppaalAdapter" failOnError="false"/>
 <rm:locator searchPathRef="PlatformModeling" failOnError="false"/>
-<rm:locator searchPathRef="ModelicaMetamodel" failOnError="false"/>
+<rm:locator searchPathRef="ModelicaTransform" failOnError="false"/>
 <rm:locator searchPathRef="ModelicaAdapter" failOnError="false"/>
 <rm:locator searchPathRef="Modelica" failOnError="false"/>
 <rm:locator searchPathRef="SimulinkAdapter" failOnError="false"/>
@@ -117,9 +117,9 @@
     </rm:provider>
 </rm:searchPath>
 
-<rm:searchPath name="ModelicaMetamodel">
+<rm:searchPath name="ModelicaTransform">
    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
- 	<rm:uri format="file:///data/jenkins/jobs/ModelicaMetamodel/lastSuccessful/archive/targetPlatform/">
+ 	<rm:uri format="file:///data/jenkins/jobs/ModelicaTransform/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
