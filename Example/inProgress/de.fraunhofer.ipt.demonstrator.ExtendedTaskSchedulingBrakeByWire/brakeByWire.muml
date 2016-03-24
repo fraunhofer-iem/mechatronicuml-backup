@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:connector="http://www.fujaba.de/muml/connector/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.1/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:properties="http://www.fujaba.de/muml/psm/properties/0.4.0/" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_P_fLIMvpEeSqLp1EdST_nQ">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:connector="http://www.fujaba.de/muml/connector/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.1/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:properties="http://www.fujaba.de/muml/psm/properties/0.4.0/" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_P_fLIMvpEeSqLp1EdST_nQ">
   <categories xmi:id="_P_fLIcvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLIsvpEeSqLp1EdST_nQ" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLI8vpEeSqLp1EdST_nQ" name="BOOLEAN" primitiveType="BOOLEAN"/>
@@ -148,6 +148,20 @@
             <extension xsi:type="properties:RequiredMemory" xmi:id="_Ua7BwO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
               <requiredMemory xmi:id="_dX48wO5xEeSE6ppup-xcFg" value="1024.0" unit="KByte"/>
             </extension>
+            <extension xsi:type="properties:WCET" xmi:id="_EG72cPGqEeWOcYMHPDh0Bg">
+              <wcet xmi:id="_EG72cfGqEeWOcYMHPDh0Bg">
+                <value xsi:type="sdcec:LiteralExpression" xmi:id="_FIzjIPGqEeWOcYMHPDh0Bg" value="5"/>
+              </wcet>
+            </extension>
+            <extension xsi:type="properties:Scheduling" xmi:id="_yK7R8PGrEeWOcYMHPDh0Bg">
+              <deadline xmi:id="_yK7R8fGrEeWOcYMHPDh0Bg">
+                <value xsi:type="sdcec:LiteralExpression" xmi:id="_yK7R8vGrEeWOcYMHPDh0Bg" value="50"/>
+              </deadline>
+              <period xmi:id="_yK7R8_GrEeWOcYMHPDh0Bg">
+                <value xsi:type="sdcec:LiteralExpression" xmi:id="_yK7R9PGrEeWOcYMHPDh0Bg" value="50"/>
+              </period>
+              <priority xmi:id="_yK7R9fGrEeWOcYMHPDh0Bg"/>
+            </extension>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hIum5EeSyWM-b9FAU_g" name="wheelSpin1" connectorInstances="_Fd9hXOm5EeSyWM-b9FAU_g" type="_Caj_YOmqEeSsPdK-DtuwOA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hI-m5EeSyWM-b9FAU_g" name="brakePedalForce1" connectorInstances="_Fd9hX-m5EeSyWM-b9FAU_g" type="_CrySQOmqEeSsPdK-DtuwOA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hJOm5EeSyWM-b9FAU_g" name="calliperForce1" connectorInstances="_Fd9hXem5EeSyWM-b9FAU_g" type="_CAercOmqEeSsPdK-DtuwOA"/>
@@ -155,6 +169,20 @@
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hJem5EeSyWM-b9FAU_g" name="sc9" componentType="_cQep8OmpEeSsPdK-DtuwOA" componentPart="_UH2YIOm4EeSE4Zrj1GnMCg">
             <extension xsi:type="properties:RequiredMemory" xmi:id="_oeJfgO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
               <requiredMemory xmi:id="_oeJfge5xEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
+            </extension>
+            <extension xsi:type="properties:WCET" xmi:id="_L8338PGqEeWOcYMHPDh0Bg">
+              <wcet xmi:id="_L8338fGqEeWOcYMHPDh0Bg">
+                <value xsi:type="sdcec:LiteralExpression" xmi:id="_Nd3JkPGqEeWOcYMHPDh0Bg" value="4"/>
+              </wcet>
+            </extension>
+            <extension xsi:type="properties:Scheduling" xmi:id="_3G1yUPGrEeWOcYMHPDh0Bg">
+              <deadline xmi:id="_3G1yUfGrEeWOcYMHPDh0Bg">
+                <value xsi:type="sdcec:LiteralExpression" xmi:id="_3G1yUvGrEeWOcYMHPDh0Bg" value="50"/>
+              </deadline>
+              <period xmi:id="_3G1yU_GrEeWOcYMHPDh0Bg">
+                <value xsi:type="sdcec:LiteralExpression" xmi:id="_3G1yVPGrEeWOcYMHPDh0Bg" value="50"/>
+              </period>
+              <priority xmi:id="_3G1yVfGrEeWOcYMHPDh0Bg"/>
             </extension>
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hJum5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hXum5EeSyWM-b9FAU_g" type="_5MOnkOmpEeSsPdK-DtuwOA"/>
           </componentInstances>
@@ -167,17 +195,17 @@
                 </extension>
                 <extension xsi:type="properties:WCET" xmi:id="_Dlmb0F-uEeW4INbV3FCJ3Q">
                   <wcet xmi:id="_EC4tYF-xEeWKp-kFHvdVmA">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_qIwPMF_HEeWDu-GifoSYBQ" value="3"/>
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_HzjkEPGoEeWOcYMHPDh0Bg" value="2"/>
                   </wcet>
                 </extension>
-                <extension xsi:type="properties:Scheduling" xmi:id="_FaYzMF-uEeW4INbV3FCJ3Q">
-                  <deadline xmi:id="_oJcBoF-tEeW4INbV3FCJ3Q">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_rdso4F_HEeWDu-GifoSYBQ" value="3"/>
+                <extension xsi:type="properties:Scheduling" xmi:id="_plGEkPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_plGEkfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_plGEkvGrEeWOcYMHPDh0Bg" value="50"/>
                   </deadline>
-                  <period xmi:id="_Vm26IMwnEeSqLp1EdST_nQ" unit="MILLISECONDS">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_sV4OEF_HEeWDu-GifoSYBQ" value="30"/>
+                  <period xmi:id="_plGEk_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_plGElPGrEeWOcYMHPDh0Bg" value="50"/>
                   </period>
-                  <priority xmi:id="_sV6qUF_HEeWDu-GifoSYBQ" value="3"/>
+                  <priority xmi:id="_plGElfGrEeWOcYMHPDh0Bg"/>
                 </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hK-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_-G_RYOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
@@ -187,17 +215,17 @@
                 </extension>
                 <extension xsi:type="properties:WCET" xmi:id="_kgPtYF-tEeW4INbV3FCJ3Q">
                   <wcet xmi:id="_cbo-8F_HEeWDu-GifoSYBQ">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_Kp8G0F_mEeWi9upR5fMQEw" value="44"/>
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_sNr0QPGnEeWOcYMHPDh0Bg" value="12"/>
                   </wcet>
                 </extension>
-                <extension xsi:type="properties:Scheduling" xmi:id="_tAQmoF-tEeW4INbV3FCJ3Q">
-                  <deadline xmi:id="_VGlc8F_HEeWDu-GifoSYBQ">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_W_WkUF_mEeWi9upR5fMQEw" value="2"/>
+                <extension xsi:type="properties:Scheduling" xmi:id="_mQ9aUPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_mQ9aUfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_mQ9aUvGrEeWOcYMHPDh0Bg" value="50"/>
                   </deadline>
-                  <period xmi:id="_ZZ5sQF_HEeWDu-GifoSYBQ">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_YSm78F_mEeWi9upR5fMQEw" value="4"/>
+                  <period xmi:id="_mQ9aU_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_nQVMoPGrEeWOcYMHPDh0Bg" value="50"/>
                   </period>
-                  <priority xmi:id="_bAhEwF_HEeWDu-GifoSYBQ"/>
+                  <priority xmi:id="_mQ9aVfGrEeWOcYMHPDh0Bg"/>
                 </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hLem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hO-m5EeSyWM-b9FAU_g" type="_9Est8OmpEeSsPdK-DtuwOA"/>
               </componentInstances>
@@ -207,17 +235,17 @@
                 </extension>
                 <extension xsi:type="properties:WCET" xmi:id="_61QnkF-tEeW4INbV3FCJ3Q">
                   <wcet xmi:id="_j3dQQF_HEeWDu-GifoSYBQ">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_kWVkoF_HEeWDu-GifoSYBQ" value="2"/>
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_AACkcPGoEeWOcYMHPDh0Bg" value="10"/>
                   </wcet>
                 </extension>
-                <extension xsi:type="properties:Scheduling" xmi:id="_-dercF-tEeW4INbV3FCJ3Q">
-                  <deadline xmi:id="_jZ6PwMwmEeSqLp1EdST_nQ" unit="MILLISECONDS">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_n_vUQF_HEeWDu-GifoSYBQ" value="2"/>
+                <extension xsi:type="properties:Scheduling" xmi:id="_oCgQcPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_oCgQcfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_oCgQcvGrEeWOcYMHPDh0Bg" value="50"/>
                   </deadline>
-                  <period xmi:id="_7bnc8F-tEeW4INbV3FCJ3Q">
-                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_oul-UF_HEeWDu-GifoSYBQ" value="20"/>
+                  <period xmi:id="_oCgQc_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_oCgQdPGrEeWOcYMHPDh0Bg" value="50"/>
                   </period>
-                  <priority xmi:id="_ouoakF_HEeWDu-GifoSYBQ" value="2"/>
+                  <priority xmi:id="_oCgQdfGrEeWOcYMHPDh0Bg"/>
                 </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hL-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_6i11MOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
@@ -225,11 +253,39 @@
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_kXLNoO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_kXLNoe5yEeSE6ppup-xcFg" value="256.0" unit="KByte"/>
                 </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_MfmccPGoEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_MfmccfGoEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_N1yzUPGoEeWOcYMHPDh0Bg" value="5"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_wLSVcPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_wLSVcfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_wLSVcvGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_wLSVc_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_wLSVdPGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_wLSVdfGrEeWOcYMHPDh0Bg"/>
+                </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hMem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOem5EeSyWM-b9FAU_g" type="_8BMpkOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hMum5EeSyWM-b9FAU_g" name="sc4" componentType="_ViMNAOmpEeSsPdK-DtuwOA" componentPart="_sNMu4Om1EeSE4Zrj1GnMCg">
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_lmoDUO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_lmoDUe5yEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
+                </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_JvSQ8PGoEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_JvSQ8fGoEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_LRit4PGoEeWOcYMHPDh0Bg" value="20"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_snmzUPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_snmzUfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_snmzUvGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_snmzU_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_snmzVPGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_snmzVfGrEeWOcYMHPDh0Bg"/>
                 </extension>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hM-m5EeSyWM-b9FAU_g" name="c2" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_TngzkOmqEeSsPdK-DtuwOA"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNOm5EeSyWM-b9FAU_g" name="c3" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_ULIeAOmqEeSsPdK-DtuwOA"/>
@@ -251,17 +307,59 @@
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_oMBi0O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_oMBi0e5zEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
                 </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_TM360PGqEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_TM360fGqEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_TM360vGqEeWOcYMHPDh0Bg" value="10"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_6aRR8PGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_6aRR8fGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_6aRR8vGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_6aRR8_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_6aRR9PGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_6aRR9fGrEeWOcYMHPDh0Bg"/>
+                </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hQem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hS-m5EeSyWM-b9FAU_g" type="_8VN8UOmqEeSE4Zrj1GnMCg"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hQum5EeSyWM-b9FAU_g" name="sc11" componentType="_eEj2sOmpEeSsPdK-DtuwOA" componentPart="_cCDgium2EeSE4Zrj1GnMCg">
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_vHdD4O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_vHdD4e5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
                 </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_RQTgcPGqEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_RQTgcfGqEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_ShHoEPGqEeWOcYMHPDh0Bg" value="10"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_5dT6cPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_5dT6cfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_5dT6cvGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_5dT6c_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_5dT6dPGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_5dT6dfGrEeWOcYMHPDh0Bg"/>
+                </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hQ-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hTum5EeSyWM-b9FAU_g" type="_3QBZkOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hROm5EeSyWM-b9FAU_g" name="sc10" componentType="_f1qn8OmpEeSsPdK-DtuwOA" componentPart="_cCDgj-m2EeSE4Zrj1GnMCg">
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_y6sE8O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_y6sE8e5zEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
+                </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_O0SJ8PGqEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_O0SJ8fGqEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_RAI9gPGqEeWOcYMHPDh0Bg" value="6"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_4SK9APGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_4SK9AfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_4SK9AvGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_4SK9A_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_4SK9BPGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_4SK9BfGrEeWOcYMHPDh0Bg"/>
                 </extension>
                 <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hRem5EeSyWM-b9FAU_g" name="D11" connectorInstances="_dbCLQPpBEeS5tqGzVBMV0A" type="_FGbTQOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hRum5EeSyWM-b9FAU_g" name="H1" connectorInstances="_Fd9hS-m5EeSyWM-b9FAU_g" type="_Atm44OmrEeSE4Zrj1GnMCg"/>
@@ -271,6 +369,20 @@
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hSem5EeSyWM-b9FAU_g" name="sc13" componentType="_mV1wYOmpEeSsPdK-DtuwOA" componentPart="_cCDglOm2EeSE4Zrj1GnMCg">
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_2K54gO5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_2K54ge5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
+                </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_UikicPGqEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_UikicfGqEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_Ve3LkPGqEeWOcYMHPDh0Bg" value="4"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_7sg88PGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_7sg88fGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_7sg88vGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_7sg88_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_7sg89PGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_7sg89fGrEeWOcYMHPDh0Bg"/>
                 </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hSum5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hTOm5EeSyWM-b9FAU_g" type="_1caG4OmpEeSsPdK-DtuwOA"/>
               </componentInstances>
@@ -287,6 +399,20 @@
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_62Q0YO5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_62Q0Ye5zEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
                 </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_JRq18PGqEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_JRq18fGqEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_KnVoYPGqEeWOcYMHPDh0Bg" value="8"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_1bENAPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_1bENAfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_1bENAvGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_1bENA_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_1bENBPGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_1bENBfGrEeWOcYMHPDh0Bg"/>
+                </extension>
                 <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hVOm5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hW-m5EeSyWM-b9FAU_g" type="_LH1cEOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hVem5EeSyWM-b9FAU_g" name="H1" connectorInstances="_Fd9hWem5EeSyWM-b9FAU_g" type="_Iy9PYOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hVum5EeSyWM-b9FAU_g" name="H2" connectorInstances="_Fd9hWum5EeSyWM-b9FAU_g" type="_JKgMsOmrEeSE4Zrj1GnMCg"/>
@@ -294,6 +420,20 @@
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hV-m5EeSyWM-b9FAU_g" name="sc7" componentType="_rrXDkOmpEeSsPdK-DtuwOA" componentPart="_W8bOCum3EeSE4Zrj1GnMCg">
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_9iw24O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_9iw24e5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
+                </extension>
+                <extension xsi:type="properties:WCET" xmi:id="_Gl_S0PGqEeWOcYMHPDh0Bg">
+                  <wcet xmi:id="_Gl_S0fGqEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_IEw98PGqEeWOcYMHPDh0Bg" value="12"/>
+                  </wcet>
+                </extension>
+                <extension xsi:type="properties:Scheduling" xmi:id="_0g_xcPGrEeWOcYMHPDh0Bg">
+                  <deadline xmi:id="_0g_xcfGrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_0g_xcvGrEeWOcYMHPDh0Bg" value="50"/>
+                  </deadline>
+                  <period xmi:id="_0g_xc_GrEeWOcYMHPDh0Bg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_0g_xdPGrEeWOcYMHPDh0Bg" value="50"/>
+                  </period>
+                  <priority xmi:id="_0g_xdfGrEeWOcYMHPDh0Bg"/>
                 </extension>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hWOm5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hWum5EeSyWM-b9FAU_g" type="_uNawoOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
@@ -1135,5 +1275,25 @@
       </hwplatformInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_ZpEDICPlEeSlOpyqq3LJMw" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation"/>
+  <categories xmi:id="_ZpEDICPlEeSlOpyqq3LJMw" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation">
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_EmB7UPGsEeWOcYMHPDh0Bg" cic="_C02w4Om5EeSyWM-b9FAU_g" hpic="_YyqUcPjtEeSrLMFBH0QA8A">
+      <allocations xmi:id="_EmB7UfGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hROm5EeSyWM-b9FAU_g" resourceInstance="_j8UJdfjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7UvGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hQum5EeSyWM-b9FAU_g" resourceInstance="_lOoF5vjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7U_GsEeWOcYMHPDh0Bg" componentInstance="_Fd9hQOm5EeSyWM-b9FAU_g" resourceInstance="_lOoF5vjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7VPGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hSem5EeSyWM-b9FAU_g" resourceInstance="_lOoF5vjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7VfGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hPem5EeSyWM-b9FAU_g" resourceInstance="_j8UJh_jtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7VvGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hLOm5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7V_GsEeWOcYMHPDh0Bg" componentInstance="_Fd9hLum5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7WPGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hKum5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7WfGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hMum5EeSyWM-b9FAU_g" resourceInstance="_kt5XcfjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7WvGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hMOm5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7W_GsEeWOcYMHPDh0Bg" componentInstance="_Fd9hJ-m5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7XPGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hIem5EeSyWM-b9FAU_g" resourceInstance="_j8UJfvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7XfGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hJem5EeSyWM-b9FAU_g" resourceInstance="_lOoF5vjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7XvGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hV-m5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7X_GsEeWOcYMHPDh0Bg" componentInstance="_Fd9hU-m5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7YPGsEeWOcYMHPDh0Bg" componentInstance="_Fd9hT-m5EeSyWM-b9FAU_g" resourceInstance="_kt5XZvjtEeSrLMFBH0QA8A"/>
+      <allocations xmi:id="_EmB7YfGsEeWOcYMHPDh0Bg" componentInstance="_ERz3EOm5EeSyWM-b9FAU_g" resourceInstance="_j8UJh_jtEeSrLMFBH0QA8A"/>
+    </modelElements>
+  </categories>
 </modelinstance:RootNode>
