@@ -19,8 +19,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
 /**

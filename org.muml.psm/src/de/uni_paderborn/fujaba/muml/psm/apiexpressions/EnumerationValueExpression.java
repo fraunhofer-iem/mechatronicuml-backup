@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.apiexpressions;
 
-import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
+import org.muml.core.expressions.Expression;
 
-import org.storydriven.core.expressions.Expression;
+import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
 
 /**
  * <!-- begin-user-doc -->

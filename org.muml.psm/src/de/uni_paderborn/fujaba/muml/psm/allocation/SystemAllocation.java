@@ -5,8 +5,7 @@ package de.uni_paderborn.fujaba.muml.psm.allocation;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.core.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

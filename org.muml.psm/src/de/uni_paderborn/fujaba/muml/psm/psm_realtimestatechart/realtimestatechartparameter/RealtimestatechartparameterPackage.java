@@ -5,8 +5,7 @@ package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatecha
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
