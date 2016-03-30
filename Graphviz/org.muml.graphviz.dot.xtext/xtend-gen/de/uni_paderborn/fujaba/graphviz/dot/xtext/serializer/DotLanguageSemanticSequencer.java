@@ -3,6 +3,8 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.serializer;
 
+import de.uni_paderborn.fujaba.graphviz.dot.xtext.serializer.AbstractDotLanguageSemanticSequencer;
+
 @SuppressWarnings("all")
 public class DotLanguageSemanticSequencer extends AbstractDotLanguageSemanticSequencer {
 }

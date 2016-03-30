@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.tests;
 
+import com.google.inject.Inject;
 import java.io.InputStream;
 import java.util.Map;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.resource.IResourceFactory;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-
-import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class ParseHelperWithLoadException<T extends EObject> extends ParseHelper<T> {

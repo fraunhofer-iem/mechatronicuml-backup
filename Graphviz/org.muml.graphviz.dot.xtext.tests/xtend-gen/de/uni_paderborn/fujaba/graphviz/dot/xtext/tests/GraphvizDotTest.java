@@ -1,5 +1,12 @@
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.tests;
 
+import com.google.inject.Inject;
+import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
+import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
+import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
+import de.uni_paderborn.fujaba.graphviz.dot.Setting;
+import de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguageInjectorProvider;
+import de.uni_paderborn.fujaba.graphviz.dot.xtext.tests.ParseHelperWithLoadException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
@@ -8,14 +15,6 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import com.google.inject.Inject;
-
-import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
-import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
-import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
-import de.uni_paderborn.fujaba.graphviz.dot.Setting;
-import de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguageInjectorProvider;
 
 @RunWith(XtextRunner.class)
 @InjectWith(DotLanguageInjectorProvider.class)

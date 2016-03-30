@@ -3,11 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Analysis
 Bundle-SymbolicName: org.muml.simulink.adapter.reconfiguration.analysis
 Bundle-Version: 1.0.0.qualifier
-Export-Package: de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.inter,
- de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre,
- de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.normalization,
- de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach,
- de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach.state
+Export-Package: org.muml.simulink.adapter.reconfiguration.analysis.inter,
+ org.muml.simulink.adapter.reconfiguration.analysis.pre,
+ org.muml.simulink.adapter.reconfiguration.analysis.pre.normalization,
+ org.muml.simulink.adapter.reconfiguration.analysis.pre.reach,
+ org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.state
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.9.1",
  org.muml.core;bundle-version="1.0.1",
  org.muml.storydiagram;bundle-version="1.0.1",

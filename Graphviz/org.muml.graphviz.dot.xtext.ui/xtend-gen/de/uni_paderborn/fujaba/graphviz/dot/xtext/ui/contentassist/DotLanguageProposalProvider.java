@@ -3,6 +3,8 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist;
 
+import de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist.AbstractDotLanguageProposalProvider;
+
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */

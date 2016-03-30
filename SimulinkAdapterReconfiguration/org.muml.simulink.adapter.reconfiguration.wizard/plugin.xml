@@ -6,7 +6,7 @@
          name="Reconfiguration MUML to MATLAB/Simulink Transformation"
          point="org.eclipse.ui.exportWizards">
       <wizard
-            class="de.uni_paderborn.fujaba.simulink.reconfiguration.wizard.ReconfigurationWizard"
+            class="org.muml.simulink.adapter.reconfiguration.wizard.ReconfigurationWizard"
             id="de.uni_paderborn.fujaba.simulink.reconfiguration.wizard.transformation"
             name="Rekonfiguration MUML to MATLAB/Simulink Transformation">
          <selection
