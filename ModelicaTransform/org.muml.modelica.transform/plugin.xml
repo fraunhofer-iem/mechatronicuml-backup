@@ -9,7 +9,7 @@
       <!-- @generated transform -->
       <package
             uri="http://www.fujaba.de/modelica/m2t/transform/0.4.0"
-            class="de.uni_paderborn.fujaba.modelica.m2t.transform.TransformPackage"
+            class="org.muml.modelica.transform.TransformPackage"
             genModel="model/transform.genmodel"/>
    </extension>
 

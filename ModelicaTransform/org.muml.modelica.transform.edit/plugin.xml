@@ -9,7 +9,7 @@
       <!-- @generated transform -->
       <factory
             uri="http://www.fujaba.de/modelica/m2t/transform/0.4.0"
-            class="de.uni_paderborn.fujaba.modelica.m2t.transform.provider.TransformItemProviderAdapterFactory"
+            class="org.muml.modelica.transform.provider.TransformItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

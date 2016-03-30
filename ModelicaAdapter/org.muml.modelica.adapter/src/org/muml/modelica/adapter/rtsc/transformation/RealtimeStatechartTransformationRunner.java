@@ -8,9 +8,9 @@ import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.modelica.adapter.transformation.QVToTransformationRunner;
+import org.muml.modelica.transform.RealtimeStatechartTransformationRootObject;
+import org.muml.modelica.transform.TransformFactory;
 
-import de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject;
-import de.uni_paderborn.fujaba.modelica.m2t.transform.TransformFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 
 public class RealtimeStatechartTransformationRunner {
