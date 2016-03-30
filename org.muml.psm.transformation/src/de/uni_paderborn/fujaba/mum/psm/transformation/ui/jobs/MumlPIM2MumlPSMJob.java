@@ -16,8 +16,8 @@ import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository;
 
 public class MumlPIM2MumlPSMJob extends Job {

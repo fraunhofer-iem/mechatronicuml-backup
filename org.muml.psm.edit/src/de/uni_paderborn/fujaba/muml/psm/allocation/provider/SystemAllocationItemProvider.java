@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
+import org.muml.core.provider.ExtendableElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation} object.

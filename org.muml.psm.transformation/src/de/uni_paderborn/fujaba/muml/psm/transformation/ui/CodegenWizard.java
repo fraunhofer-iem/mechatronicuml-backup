@@ -12,15 +12,15 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.CancelIndicator;
+import org.muml.core.export.operation.AbstractFujabaExportOperation;
+import org.muml.core.export.operation.IFujabaExportOperation;
+import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
+import org.muml.core.export.pages.AbstractFujabaExportTargetPage;
+import org.muml.core.export.pages.ElementSelectionMode;
+import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 
 import com.google.inject.Injector;
 
-import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
-import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
-import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.CodegenFlatHierarchyJob;
 import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.MumlPIM2MumlPSMJob;
 import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.MumlPSM2CodegenJob;

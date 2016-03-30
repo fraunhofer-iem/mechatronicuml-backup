@@ -118,9 +118,9 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
-import org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
-import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
-import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
+import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
+import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.muml.core.provider.CoreItemProviderAdapterFactory;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory;

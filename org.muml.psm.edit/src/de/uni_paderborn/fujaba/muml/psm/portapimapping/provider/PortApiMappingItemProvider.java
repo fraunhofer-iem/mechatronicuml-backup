@@ -30,7 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.provider.CommentableElementItemProvider;
+import org.muml.core.provider.CommentableElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping} object.
