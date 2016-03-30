@@ -4,8 +4,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
-
-import de.uni_paderborn.fujaba.simulink.wizard.TransformationWizard;
+import org.muml.simulink.adapter.wizard.TransformationWizard;
 
 /**
  * Wizard to configure the transformation for reconfigurable models

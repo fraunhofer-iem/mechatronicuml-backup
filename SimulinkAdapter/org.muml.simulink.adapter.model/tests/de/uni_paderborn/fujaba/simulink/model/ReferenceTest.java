@@ -5,6 +5,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.muml.simulink.adapter.model.InPortBlock;
+import org.muml.simulink.adapter.model.LibraryReference;
+import org.muml.simulink.adapter.model.OutPortBlock;
+import org.muml.simulink.adapter.model.SimulinkFactory;
+import org.muml.simulink.adapter.model.SubSystem;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

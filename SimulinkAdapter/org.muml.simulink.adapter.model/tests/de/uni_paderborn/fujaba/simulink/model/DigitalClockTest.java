@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.simulink.model;
 
 import org.junit.Test;
+import org.muml.simulink.adapter.model.DigitalClock;
+import org.muml.simulink.adapter.model.SimulinkFactory;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

@@ -11,29 +11,29 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.simulink.model.SimulinkPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink"/>
+      <package class="org.muml.simulink.adapter.model.SimulinkPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.stateflow"/>
+      <package class="org.muml.simulink.adapter.model.stateflow.StateflowPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.stateflow"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.simulink.model.msglib.MsglibPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib"/>
+      <package class="org.muml.simulink.adapter.model.msglib.MsglibPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.simulink.model.msglib.buffer.BufferPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib.buffer"/>
+      <package class="org.muml.simulink.adapter.model.msglib.buffer.BufferPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib.buffer"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Simulink -->
       <package
             uri="de.uni_paderborn.fujaba.simulink.model.reconfiguration"
-            class="de.uni_paderborn.fujaba.simulink.model.reconfiguration.ReconfigurationPackage"
+            class="org.muml.simulink.adapter.model.reconfiguration.ReconfigurationPackage"
             genModel="model/Simulink.genmodel"/>
    </extension>
 
@@ -41,7 +41,7 @@
       <!-- @generated Simulink -->
       <parser
             type="reconfiguration"
-            class="de.uni_paderborn.fujaba.simulink.model.reconfiguration.util.ReconfigurationResourceFactoryImpl"/>
+            class="org.muml.simulink.adapter.model.reconfiguration.util.ReconfigurationResourceFactoryImpl"/>
    </extension>
 
 </plugin>

@@ -5,27 +5,27 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 
-import de.uni_paderborn.fujaba.simulink.model.Block;
-import de.uni_paderborn.fujaba.simulink.model.ChartBlock;
-import de.uni_paderborn.fujaba.simulink.model.DataType;
-import de.uni_paderborn.fujaba.simulink.model.EnablePort;
-import de.uni_paderborn.fujaba.simulink.model.InPortBlock;
-import de.uni_paderborn.fujaba.simulink.model.LibraryReference;
-import de.uni_paderborn.fujaba.simulink.model.Line;
-import de.uni_paderborn.fujaba.simulink.model.OutPortBlock;
-import de.uni_paderborn.fujaba.simulink.model.Parameter;
-import de.uni_paderborn.fujaba.simulink.model.PortBlock;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkContainer;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkFactory;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkFile;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkModel;
-import de.uni_paderborn.fujaba.simulink.model.SubSystem;
-import de.uni_paderborn.fujaba.simulink.model.reconfiguration.MultiTargetControl;
-import de.uni_paderborn.fujaba.simulink.model.reconfiguration.MultiSourceControl;
-import de.uni_paderborn.fujaba.simulink.model.reconfiguration.ReconfigurationFactory;
-import de.uni_paderborn.fujaba.simulink.model.stateflow.Data;
-import de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowFactory;
+import org.muml.simulink.adapter.model.Block;
+import org.muml.simulink.adapter.model.ChartBlock;
+import org.muml.simulink.adapter.model.DataType;
+import org.muml.simulink.adapter.model.EnablePort;
+import org.muml.simulink.adapter.model.InPortBlock;
+import org.muml.simulink.adapter.model.LibraryReference;
+import org.muml.simulink.adapter.model.Line;
+import org.muml.simulink.adapter.model.OutPortBlock;
+import org.muml.simulink.adapter.model.Parameter;
+import org.muml.simulink.adapter.model.PortBlock;
+import org.muml.simulink.adapter.model.SimulinkContainer;
+import org.muml.simulink.adapter.model.SimulinkFactory;
+import org.muml.simulink.adapter.model.SimulinkFile;
+import org.muml.simulink.adapter.model.SimulinkLibrary;
+import org.muml.simulink.adapter.model.SimulinkModel;
+import org.muml.simulink.adapter.model.SubSystem;
+import org.muml.simulink.adapter.model.reconfiguration.MultiSourceControl;
+import org.muml.simulink.adapter.model.reconfiguration.MultiTargetControl;
+import org.muml.simulink.adapter.model.reconfiguration.ReconfigurationFactory;
+import org.muml.simulink.adapter.model.stateflow.Data;
+import org.muml.simulink.adapter.model.stateflow.StateflowFactory;
 
 /**
  * Modify the Simulink model:

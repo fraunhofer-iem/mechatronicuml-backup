@@ -25,12 +25,12 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.9.1",
  de.upb.swt.qvt.tgg.interpreter;bundle-version="0.5.1",
  org.muml.simulink.adapter.wizard;bundle-version="0.4.0",
  org.muml.reconfiguration
-Import-Package: de.uni_paderborn.fujaba.muml.actionLanguage.matlab.generator,
- org.apache.commons.logging;version="1.0.4",
+Import-Package: org.apache.commons.logging;version="1.0.4",
  org.eclipse.emf.diffmerge.api,
  org.eclipse.emf.diffmerge.api.diff,
  org.eclipse.emf.diffmerge.api.scopes,
  org.eclipse.emf.diffmerge.diffdata.impl,
  org.eclipse.emf.diffmerge.gmf,
  org.eclipse.emf.diffmerge.impl.policies,
- org.eclipse.emf.diffmerge.impl.scopes
+ org.eclipse.emf.diffmerge.impl.scopes,
+ org.muml.simulink.adapter.actionlanguage.matlab.generator

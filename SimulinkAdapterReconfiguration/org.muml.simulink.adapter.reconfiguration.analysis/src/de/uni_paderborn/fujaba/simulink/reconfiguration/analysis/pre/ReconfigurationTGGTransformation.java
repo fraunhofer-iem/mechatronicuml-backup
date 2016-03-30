@@ -2,8 +2,8 @@ package de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.muml.simulink.adapter.wizard.transformation.TGGTransformation;
 
-import de.uni_paderborn.fujaba.simulink.wizard.transformation.TGGTransformation;
 import de.upb.swt.qvt.tgg.TripleGraphGrammar;
 import de.upb.swt.qvt.tgg.interpreterconfiguration.util.InterpreterconfigurationUtil;
 

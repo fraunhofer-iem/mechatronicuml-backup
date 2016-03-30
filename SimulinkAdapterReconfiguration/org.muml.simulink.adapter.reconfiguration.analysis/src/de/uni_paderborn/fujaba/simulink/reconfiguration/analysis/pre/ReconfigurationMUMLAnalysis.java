@@ -77,10 +77,9 @@ import org.muml.pim.valuetype.TimeValue;
 import org.muml.reconfiguration.Manager;
 import org.muml.reconfiguration.ReconfigurableStructuredComponent;
 import org.muml.reconfiguration.ReconfigurationPort;
-
-import de.uni_paderborn.fujaba.muml.actionLanguage.matlab.generator.ExpressionTransformation;
-import de.uni_paderborn.fujaba.simulink.model.msglib.LinkLayer;
-import de.uni_paderborn.fujaba.simulink.model.msglib.MsglibFactory;
+import org.muml.simulink.adapter.actionlanguage.matlab.generator.ExpressionTransformation;
+import org.muml.simulink.adapter.model.msglib.LinkLayer;
+import org.muml.simulink.adapter.model.msglib.MsglibFactory;
 
 
 /**

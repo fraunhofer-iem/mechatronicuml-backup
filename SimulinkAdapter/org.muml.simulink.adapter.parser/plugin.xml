@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.importWizards">
       <wizard
-            class="de.uni_paderborn.fujaba.simulink.parser.ui.ImportWizard"
+            class="org.muml.simulink.adapter.parser.ui.ImportWizard"
             icon="icons/sample.gif"
             id="de.uni_paderborn.fujaba.simulink.parser.ui.importWizard"
             name="Simulink Model Import Wizard">

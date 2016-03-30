@@ -18,7 +18,7 @@
          </menu>
          <action
                label="MechatronicUML analysis"
-               class="de.uni_paderborn.fujaba.simulink.wizard.popup.actions.MUMLAnalysisAction"
+               class="org.muml.simulink.adapter.wizard.popup.actions.MUMLAnalysisAction"
                menubarPath="trans_wizard.menu1/group1"
                enablesFor="1"
                id="trans_wizard.newAction">
@@ -37,7 +37,7 @@
             </separator>
          </menu>
          <action
-               class="de.uni_paderborn.fujaba.simulink.wizard.popup.actions.PostTransformationModificationAction"
+               class="org.muml.simulink.adapter.wizard.popup.actions.PostTransformationModificationAction"
                enablesFor="1"
                id="trans_wizard.newAction2"
                label="Layout Simulink model"
@@ -50,7 +50,7 @@
          name="MUML to MATLAB/Simulink Transformation"
          point="org.eclipse.ui.exportWizards">
       <wizard
-            class="de.uni_paderborn.fujaba.simulink.wizard.TransformationWizard"
+            class="org.muml.simulink.adapter.wizard.TransformationWizard"
             id="de.uni_paderborn.fujaba.simulink.wizard.transformation"
             name="MUML to MATLAB/Simulink Transformation">
          <selection

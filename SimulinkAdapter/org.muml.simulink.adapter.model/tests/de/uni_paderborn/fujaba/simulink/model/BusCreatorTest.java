@@ -3,6 +3,10 @@ package de.uni_paderborn.fujaba.simulink.model;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.muml.simulink.adapter.model.Bus;
+import org.muml.simulink.adapter.model.BusCreator;
+import org.muml.simulink.adapter.model.Line;
+import org.muml.simulink.adapter.model.SimulinkFactory;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

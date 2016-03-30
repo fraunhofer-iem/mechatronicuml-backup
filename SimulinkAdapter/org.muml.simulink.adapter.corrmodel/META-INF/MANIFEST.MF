@@ -9,12 +9,12 @@ Bundle-Vendor: Software Engineering Group,
  University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: fujaba2simulink,
- fujaba2simulink.behavior_model,
- fujaba2simulink.behavior_model.impl,
- fujaba2simulink.behavior_model.util,
- fujaba2simulink.impl,
- fujaba2simulink.util
+Export-Package: org.muml.simulink.adapter.corrmodel.fujaba2simulink,
+ org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model,
+ org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model.impl,
+ org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model.util,
+ org.muml.simulink.adapter.corrmodel.fujaba2simulink.impl,
+ org.muml.simulink.adapter.corrmodel.fujaba2simulink.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

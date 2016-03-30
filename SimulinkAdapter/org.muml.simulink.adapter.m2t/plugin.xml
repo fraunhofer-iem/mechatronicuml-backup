@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.exportWizards">
       <wizard
-            class="de.uni_paderborn.fujaba.simulink.m2t.ui.ExportWizard"
+            class="org.muml.simulink.adapter.m2t.ui.ExportWizard"
             id="de.uni_paderborn.fujaba.simulink.m2t.wizard"
             name="Simulink Model Export Wizard">
          <selection

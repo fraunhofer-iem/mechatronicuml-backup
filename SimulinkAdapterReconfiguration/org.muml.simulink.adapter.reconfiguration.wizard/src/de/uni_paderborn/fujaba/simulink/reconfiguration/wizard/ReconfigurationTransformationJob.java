@@ -13,19 +13,19 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.simulink.adapter.m2t.SimulinkWriter;
+import org.muml.simulink.adapter.m2t.graphviz.GraphVizStateflowLayouter;
+import org.muml.simulink.adapter.model.SimulinkContainer;
+import org.muml.simulink.adapter.model.SimulinkLibrary;
+import org.muml.simulink.adapter.model.SimulinkModel;
+import org.muml.simulink.adapter.wizard.TransformationJob;
+import org.muml.simulink.adapter.wizard.transformation.PostTransformationModification;
 
-import de.uni_paderborn.fujaba.simulink.m2t.SimulinkWriter;
-import de.uni_paderborn.fujaba.simulink.m2t.graphviz.GraphVizStateflowLayouter;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkContainer;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary;
-import de.uni_paderborn.fujaba.simulink.model.SimulinkModel;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.inter.SimulinkReconfiguration;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.ReconfigurationMUMLAnalysis;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.ReconfigurationPreTransformation;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.ReconfigurationTGGTransformation;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach.ReachAnalysis;
-import de.uni_paderborn.fujaba.simulink.wizard.TransformationJob;
-import de.uni_paderborn.fujaba.simulink.wizard.transformation.PostTransformationModification;
 
 /**
  * Executes the transformation for reconfigurable models
