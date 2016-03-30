@@ -1,6 +1,7 @@
 package build.execution;
 
 import org.eclipse.ui.IStartup;
+import org.eclipse.ui.PlatformUI;
 
 public class Startup implements IStartup {
 
@@ -9,6 +10,7 @@ public class Startup implements IStartup {
 		// TODO Auto-generated method stub
 		BuildExecution build = new BuildExecution();
 		build.test();
+		PlatformUI.getWorkbench().close();
 	}
 
 }
