@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph,
- de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.impl,
- de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.util
+Export-Package: org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm,
+ org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.impl,
+ org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,

@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.fujaba.de/reachabilityGraph/gtautomaton/labeling/0.1.0"
-            class="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.LabelingPackage"
+            class="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingPackage"
             genModel="model/Labeling.genmodel"/>
    </extension>
 

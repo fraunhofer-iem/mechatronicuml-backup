@@ -6,6 +6,8 @@ import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.InitialNode;
@@ -13,9 +15,6 @@ import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
-
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedActivityNode;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedStoryDiagram;
 
 public class DestroyObjectVariableTest extends TransformationTest {
 	

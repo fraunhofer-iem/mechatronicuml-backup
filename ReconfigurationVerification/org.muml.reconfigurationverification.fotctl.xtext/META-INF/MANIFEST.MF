@@ -19,11 +19,11 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.fujaba.muml.verification,
- de.uni_paderborn.fujaba.muml.verification.services,
- de.uni_paderborn.fujaba.muml.verification.parseTreeConstruction,
- de.uni_paderborn.fujaba.muml.verification.parser.antlr,
- de.uni_paderborn.fujaba.muml.verification.parser.antlr.internal,
- de.uni_paderborn.fujaba.muml.verification.validation,
- de.uni_paderborn.fujaba.muml.verification.scoping,
- de.uni_paderborn.fujaba.muml.verification.formatting
+Export-Package: org.muml.reconfigurationverification.fotctl.xtext,
+ org.muml.reconfigurationverification.fotctl.xtext.formatting,
+ org.muml.reconfigurationverification.fotctl.xtext.parseTreeConstruction,
+ org.muml.reconfigurationverification.fotctl.xtext.parser.antlr,
+ org.muml.reconfigurationverification.fotctl.xtext.parser.antlr.internal,
+ org.muml.reconfigurationverification.fotctl.xtext.scoping,
+ org.muml.reconfigurationverification.fotctl.xtext.services,
+ org.muml.reconfigurationverification.fotctl.xtext.validation

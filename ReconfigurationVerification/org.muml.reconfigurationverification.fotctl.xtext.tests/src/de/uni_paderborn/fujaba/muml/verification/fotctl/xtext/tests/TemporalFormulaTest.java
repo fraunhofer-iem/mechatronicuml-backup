@@ -12,19 +12,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Before;
 import org.junit.Test;
-
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLFormula;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLSpec;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.NodeLabelPredicate;
-import de.uni_paderborn.fujaba.muml.verification.tctl.BinaryFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.BinaryTemporalFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.ComparisonOperator;
-import de.uni_paderborn.fujaba.muml.verification.tctl.FormulaDefinition;
-import de.uni_paderborn.fujaba.muml.verification.tctl.NotFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.TemporalFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.TemporalOperator;
-import de.uni_paderborn.fujaba.muml.verification.tctl.UnaryFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.UnaryTemporalFormula;
+import org.muml.reconfigurationverification.tctl.BinaryFormula;
+import org.muml.reconfigurationverification.tctl.BinaryTemporalFormula;
+import org.muml.reconfigurationverification.tctl.ComparisonOperator;
+import org.muml.reconfigurationverification.tctl.FormulaDefinition;
+import org.muml.reconfigurationverification.tctl.TemporalFormula;
+import org.muml.reconfigurationverification.tctl.TemporalOperator;
+import org.muml.reconfigurationverification.tctl.UnaryFormula;
+import org.muml.reconfigurationverification.tctl.UnaryTemporalFormula;
 
 public class TemporalFormulaTest {
 

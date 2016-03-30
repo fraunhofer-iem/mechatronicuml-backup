@@ -11,7 +11,7 @@
       <!-- @generated TimedStoryDiagrams -->
       <package
             uri="http://www.fujaba.de/timedstorydiagram/0.1.0"
-            class="de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage"
+            class="org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage"
             genModel="model/TimedStoryDiagrams.genmodel"/>
    </extension>
 

@@ -28,7 +28,7 @@
         point="org.eclipse.ui.commands">
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.ui.commands.TimedMCCommand"
+           defaultHandler="org.muml.reconfigurationverification.timedmodelchecking.ui.commands.TimedMCCommand"
            description="TMC"
            id="de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.ui.commands.TimedMCCommand"
            name="TMC">

@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.preferences.MCRegistryPreferencePage"
+            class="org.muml.reconfigurationverification.modelchecker.ui.preferences.MCRegistryPreferencePage"
             id="de.uni_paderborn.fujaba.muml.verification.modelchecker.registry.ui.preferences.MCRegistryPreferencePage"
             name="Model Checker Registry">
       </page>
@@ -13,7 +13,7 @@
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.preferences.PreferenceInitializer">
+            class="org.muml.reconfigurationverification.modelchecker.ui.preferences.PreferenceInitializer">
       </initializer>
    </extension>
 

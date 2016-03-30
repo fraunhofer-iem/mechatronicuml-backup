@@ -17,6 +17,6 @@ Require-Bundle: org.muml.reconfigurationverification.reachanalysis.reachabilityg
  org.muml.storydiagram.diagram.interpreter;bundle-version="1.0.1",
  org.muml.verification.core.runtime;bundle-version="0.3.1",
  org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper;bundle-version="0.4.0"
-Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton,
- de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.export
+Export-Package: org.muml.reconfigurationverification.reachanalysis.gtautomaton,
+ org.muml.reconfigurationverification.reachanalysis.gtautomaton.export
 Bundle-Vendor: %providerName

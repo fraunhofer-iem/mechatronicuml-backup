@@ -19,17 +19,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.reachanalysis.core.HashLevel;
+import org.muml.reconfigurationverification.reachanalysis.gtautomaton.GtAutomatonComputation;
+import org.muml.reconfigurationverification.reachanalysis.gtautomaton.GtAutomatonComputationStatistics;
+import org.muml.reconfigurationverification.reachanalysis.gtautomaton.export.GtAutomatonExporter;
+import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 
 import railcab.RailCab;
 import railcab.RailcabFactory;
 import railcab.SectionControl;
-import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation;
-import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputationStatistics;
-import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.export.GtAutomatonExporter;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
-import de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.TsdmhelperPackage;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedGraphTransformationSystem;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage;
 
 public class ComputeGtAutomatonForSimpleRailCab {
 	private int railCabCount = 3;

@@ -12,17 +12,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Before;
 import org.junit.Test;
-
-import de.uni_paderborn.fujaba.muml.verification.fotctl.Constant;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.EdgeLabelPredicate;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.EdgeLabelPredicateDecl;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLFormula;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLSpec;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.NodeLabelPredicate;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.NodeLabelPredicateDecl;
-import de.uni_paderborn.fujaba.muml.verification.tctl.AtomicFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.FormulaDefinition;
-import de.uni_paderborn.fujaba.muml.verification.tctl.Term;
+import org.muml.reconfigurationverification.tctl.AtomicFormula;
+import org.muml.reconfigurationverification.tctl.FormulaDefinition;
+import org.muml.reconfigurationverification.tctl.Term;
 
 public class PredicateTest {
 	

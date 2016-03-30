@@ -17,7 +17,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.timedstorydiagram.presentation.TimedstorydiagramModelWizardID"
             name="%_UI_TimedstorydiagramModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.timedstorydiagram.presentation.TimedstorydiagramModelWizard"
+            class="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/TimedstorydiagramModelFile.gif">
          <description>%_UI_TimedstorydiagramModelWizard_description</description>
@@ -31,8 +31,8 @@
             name="%_UI_TimedstorydiagramEditor_label"
             icon="icons/full/obj16/TimedstorydiagramModelFile.gif"
             extensions="timedstorydiagram"
-            class="de.uni_paderborn.fujaba.muml.timedstorydiagram.presentation.TimedstorydiagramEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.timedstorydiagram.presentation.TimedstorydiagramActionBarContributor">
+            class="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramEditor"
+            contributorClass="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramActionBarContributor">
       </editor>
    </extension>
 

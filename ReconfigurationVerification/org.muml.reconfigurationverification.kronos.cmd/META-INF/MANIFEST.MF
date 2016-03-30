@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Kronos
 Bundle-SymbolicName: org.muml.reconfigurationverification.kronos.cmd
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.kronos.cmd.Activator
+Bundle-Activator: org.muml.reconfigurationverification.kronos.cmd.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.reconfigurationverification.modelchecker.ui;bundle-version="1.0.0",
  org.muml.uppaal.cmd;bundle-version="0.4.0",
@@ -11,4 +11,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.fujaba.muml.verification.kronos.cmd
+Export-Package: org.muml.reconfigurationverification.kronos.cmd

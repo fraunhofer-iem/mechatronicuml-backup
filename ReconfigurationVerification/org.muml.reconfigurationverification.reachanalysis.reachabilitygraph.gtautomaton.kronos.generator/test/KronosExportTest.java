@@ -1,17 +1,16 @@
 import org.junit.Before;
 import org.junit.Test;
 import org.muml.core.expressions.common.ComparingOperator;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomaton;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomatonClockConstraint;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomatonTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtStepGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtautomatonFactory;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.kronos.generator.KronosAutomatonWriter;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.AtomicPropositionMapping;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.LabelingFactory;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.ClockInstance;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramFactory;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonFactory;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.kronos.generator.KronosAutomatonWriter;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingFactory;
+import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramFactory;
 
 
 public class KronosExportTest {

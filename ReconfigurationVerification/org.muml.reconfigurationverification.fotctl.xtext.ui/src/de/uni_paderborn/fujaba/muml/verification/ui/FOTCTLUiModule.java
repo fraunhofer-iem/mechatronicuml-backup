@@ -8,7 +8,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 /**
  * Use this class to register components to be used within the IDE.
  */
-public class FOTCTLUiModule extends de.uni_paderborn.fujaba.muml.verification.ui.AbstractFOTCTLUiModule {
+public class FOTCTLUiModule extends org.muml.reconfigurationverification.fotctl.xtext.ui.AbstractFOTCTLUiModule {
 	public FOTCTLUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}

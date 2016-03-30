@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.fujaba.de/muml/verification/fotctl/0.1.0"
-            class="de.uni_paderborn.fujaba.muml.verification.fotctl.FotctlPackage"
+            class="org.muml.reconfigurationverification.fotctl.FotctlPackage"
             genModel="model/FOTCTL.genmodel"/>
    </extension>
 

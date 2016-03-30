@@ -23,7 +23,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.storydiagram.diagram.interpreter;bundle-version="1.0.1",
  org.muml.storydiagram.interpreter.core
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform,
- de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper,
- de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.impl,
- de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.util
+Export-Package: org.muml.reconfigurationverification.timedstorychart.transform,
+ org.muml.reconfigurationverification.timedstorychart.transform.helper,
+ org.muml.reconfigurationverification.timedstorychart.transform.helper.impl,
+ org.muml.reconfigurationverification.timedstorychart.transform.helper.util

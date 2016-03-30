@@ -3,11 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MC Registry
 Bundle-SymbolicName: org.muml.reconfigurationverification.modelchecker.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.MCRegistry
+Bundle-Activator: org.muml.reconfigurationverification.modelchecker.ui.MCRegistry
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.fujaba.muml.verification.modelchecker.ui,
- de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.preferences
+Export-Package: org.muml.reconfigurationverification.modelchecker.ui,
+ org.muml.reconfigurationverification.modelchecker.ui.preferences

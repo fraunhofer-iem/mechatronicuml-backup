@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.tests;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -12,19 +12,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLFormula;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLSpec;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.NodeLabelPredicate;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.QuantifiedFormula;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.Quantifier;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.Variable;
-import de.uni_paderborn.fujaba.muml.verification.tctl.BinaryFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.BinaryLogicFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.FormulaDefinition;
-import de.uni_paderborn.fujaba.muml.verification.tctl.Term;
-import de.uni_paderborn.fujaba.muml.verification.tctl.UnaryFormula;
+import org.muml.reconfigurationverification.tctl.BinaryFormula;
+import org.muml.reconfigurationverification.tctl.BinaryLogicFormula;
+import org.muml.reconfigurationverification.tctl.FormulaDefinition;
+import org.muml.reconfigurationverification.tctl.Term;
+import org.muml.reconfigurationverification.tctl.UnaryFormula;
 
 public class QuantifiedFormulaTest {
 

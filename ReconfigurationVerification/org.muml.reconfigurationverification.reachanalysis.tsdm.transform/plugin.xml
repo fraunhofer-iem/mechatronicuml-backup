@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
-            class="de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.TsdmhelperPackage"
+            class="org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage"
             genModel="model/TimedSDMReachabilityAnalysisHelper.genmodel"
             uri="http://www.fujaba.de/reachAnalysis/tsdm/helper/0.1.0">
       </package>

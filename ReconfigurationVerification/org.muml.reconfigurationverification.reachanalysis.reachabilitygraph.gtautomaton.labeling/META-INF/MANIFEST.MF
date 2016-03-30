@@ -7,10 +7,10 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.computation,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.impl,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.util
+Export-Package: org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling,
+ org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.computation,
+ org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.impl,
+ org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,

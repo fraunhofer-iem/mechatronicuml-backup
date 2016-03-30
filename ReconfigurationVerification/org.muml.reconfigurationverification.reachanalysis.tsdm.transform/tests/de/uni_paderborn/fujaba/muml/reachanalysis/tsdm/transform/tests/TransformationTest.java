@@ -25,6 +25,10 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.junit.Before;
 import org.junit.Test;
+import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.ActivityNode;
@@ -36,11 +40,6 @@ import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.TsdmhelperPackage;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedActivityNode;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedGraphTransformationSystem;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage;
 
 
 public abstract class TransformationTest {

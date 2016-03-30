@@ -12,16 +12,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Before;
 import org.junit.Test;
-
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLFormula;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLSpec;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.NodeLabelPredicate;
-import de.uni_paderborn.fujaba.muml.verification.tctl.BinaryFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.BinaryLogicFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.BinaryLogicOperator;
-import de.uni_paderborn.fujaba.muml.verification.tctl.FormulaDefinition;
-import de.uni_paderborn.fujaba.muml.verification.tctl.NotFormula;
-import de.uni_paderborn.fujaba.muml.verification.tctl.UnaryFormula;
+import org.muml.reconfigurationverification.tctl.BinaryFormula;
+import org.muml.reconfigurationverification.tctl.BinaryLogicFormula;
+import org.muml.reconfigurationverification.tctl.BinaryLogicOperator;
+import org.muml.reconfigurationverification.tctl.FormulaDefinition;
+import org.muml.reconfigurationverification.tctl.NotFormula;
+import org.muml.reconfigurationverification.tctl.UnaryFormula;
 
 public class LogicFormulaTest {
 	

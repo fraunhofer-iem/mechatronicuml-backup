@@ -3,7 +3,7 @@
 */
 package de.uni_paderborn.fujaba.muml.verification.ui.contentassist;
 
-import de.uni_paderborn.fujaba.muml.verification.ui.contentassist.AbstractFOTCTLProposalProvider;
+import org.muml.reconfigurationverification.fotctl.xtext.ui.contentassist.AbstractFOTCTLProposalProvider;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */

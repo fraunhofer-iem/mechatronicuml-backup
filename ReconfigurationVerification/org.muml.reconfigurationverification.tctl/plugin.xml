@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.fujaba.de/muml/verification/tctl/0.1.0"
-            class="de.uni_paderborn.fujaba.muml.verification.tctl.TctlPackage"
+            class="org.muml.reconfigurationverification.tctl.TctlPackage"
             genModel="model/TCTL.genmodel"/>
    </extension>
 

@@ -21,24 +21,24 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.reconfigurationverification.fotctl.ConstantSymbolDecl;
+import org.muml.reconfigurationverification.fotctl.FoTCTLFormula;
+import org.muml.reconfigurationverification.fotctl.FoTCTLSpec;
+import org.muml.reconfigurationverification.fotctl.FotctlFactory;
+import org.muml.reconfigurationverification.fotctl.FotctlPackage;
+import org.muml.reconfigurationverification.reachanalysis.gtautomaton.GtAutomatonComputation;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.kronos.generator.KronosAutomatonWriter;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.computation.MuComputation;
+import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 
 import railcab.RailCab;
 import railcab.RailcabFactory;
 import railcab.SectionControl;
-import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomaton;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtStepGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.kronos.generator.KronosAutomatonWriter;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.AtomicPropositionMapping;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.computation.MuComputation;
-import de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.TsdmhelperPackage;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedGraphTransformationSystem;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.ConstantSymbolDecl;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLFormula;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLSpec;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FotctlFactory;
-import de.uni_paderborn.fujaba.muml.verification.fotctl.FotctlPackage;
 
 public class RailcabEvaluation {
 	

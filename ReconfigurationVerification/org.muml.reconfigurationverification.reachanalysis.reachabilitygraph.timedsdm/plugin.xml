@@ -7,7 +7,7 @@
       <!-- @generated TimedSDMReachabilityAnalysis -->
       <package
             uri="http://de/uni_paderborn/fujaba/umlrt/reachanalysis/time/timedsdm/reachabilityGraph"
-            class="de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.ReachabilityGraphPackage"
+            class="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage"
             genModel="model/TimedSDMReachabilityAnalysis.genmodel"/>
    </extension>
 

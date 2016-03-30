@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.reconfigurationverification.timedstorydiagram.edit;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.timedstorydiagram.provider.TimedStoryDiagramsEditPlugin$Implementation
+Bundle-Activator: org.muml.reconfigurationverification.timedstorydiagram.provider.TimedStoryDiagramsEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.timedstorydiagram.provider
+Export-Package: org.muml.reconfigurationverification.timedstorydiagram.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,

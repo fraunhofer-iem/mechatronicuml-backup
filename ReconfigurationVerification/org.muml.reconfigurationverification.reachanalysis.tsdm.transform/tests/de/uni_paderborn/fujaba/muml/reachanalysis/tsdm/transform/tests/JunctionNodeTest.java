@@ -8,15 +8,14 @@ import java.util.HashSet;
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
 import org.muml.core.expressions.TextualExpression;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
+import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.JunctionNode;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
-
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedActivityNode;
-import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedStoryDiagram;
 
 public class JunctionNodeTest extends TransformationTest {
 

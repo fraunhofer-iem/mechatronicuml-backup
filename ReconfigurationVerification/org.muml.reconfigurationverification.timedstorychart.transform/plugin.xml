@@ -7,7 +7,7 @@
       <!-- @generated TSCTransformationHelper -->
       <package
             uri="http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0"
-            class="de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage"
+            class="org.muml.reconfigurationverification.timedstorychart.transform.helper.HelperPackage"
             genModel="model/TSCTransformationHelper.genmodel"/>
    </extension>
 

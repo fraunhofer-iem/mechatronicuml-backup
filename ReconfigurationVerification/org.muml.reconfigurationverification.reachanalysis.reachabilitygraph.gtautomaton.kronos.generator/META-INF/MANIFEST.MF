@@ -25,4 +25,4 @@ Require-Bundle: org.eclipse.jdt.core;bundle-version="3.5.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
  org.muml.core;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.kronos.generator
+Export-Package: org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.kronos.generator
