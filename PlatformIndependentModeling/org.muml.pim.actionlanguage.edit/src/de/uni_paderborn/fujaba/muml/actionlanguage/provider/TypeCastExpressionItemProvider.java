@@ -38,7 +38,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.provider.ExpressionItemProvider;
+import org.muml.core.expressions.provider.ExpressionItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression} object.

@@ -78,11 +78,11 @@ public class ReconfigurationExecutionPortEditPart extends BorderedBorderItemEdit
 
 		installEditPolicy(
 				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
 
@@ -98,7 +98,7 @@ public class ReconfigurationExecutionPortEditPart extends BorderedBorderItemEdit
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-					return new org.muml.common.edit.policies.BorderItemSelectionEditPolicy();
+					return new org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);

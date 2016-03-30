@@ -9,9 +9,9 @@ import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
+import org.muml.core.export.operation.IFujabaExportOperation;
+import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 
-import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;

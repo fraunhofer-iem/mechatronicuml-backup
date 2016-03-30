@@ -21,7 +21,7 @@ import org.eclipse.ui.IWorkbench;
  */
 public class ComponentStoryDiagramCreationWizard
 		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+		org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated

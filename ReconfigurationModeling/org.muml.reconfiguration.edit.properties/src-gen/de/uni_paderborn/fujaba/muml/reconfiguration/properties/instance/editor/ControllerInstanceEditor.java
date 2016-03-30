@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.instance.editor;
  */
 public abstract class ControllerInstanceEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			org.muml.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated

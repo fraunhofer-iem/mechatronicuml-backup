@@ -29,9 +29,9 @@ import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
-import org.muml.common.cmd.Command;
-import org.muml.common.cmd.PathArgument;
-import org.muml.common.cmd.Process;
+import org.muml.core.common.cmd.Command;
+import org.muml.core.common.cmd.PathArgument;
+import org.muml.core.common.cmd.Process;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;

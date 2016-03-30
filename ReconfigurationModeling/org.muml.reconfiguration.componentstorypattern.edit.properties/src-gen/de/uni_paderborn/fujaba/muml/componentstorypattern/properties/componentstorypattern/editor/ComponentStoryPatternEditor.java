@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.properties.components
  */
 public class ComponentStoryPatternEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.muml.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated

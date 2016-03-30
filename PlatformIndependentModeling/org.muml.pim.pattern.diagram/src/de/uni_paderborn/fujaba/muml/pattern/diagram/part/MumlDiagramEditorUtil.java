@@ -138,7 +138,7 @@ public class MumlDiagramEditorUtil {
 				Collections.EMPTY_LIST) {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				de.uni_paderborn.fujaba.modelinstance.ModelElementCategory model = createInitialModel();
+				org.muml.core.modelinstance.ModelElementCategory model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService.createDiagram(model,
@@ -181,8 +181,8 @@ public class MumlDiagramEditorUtil {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private static de.uni_paderborn.fujaba.modelinstance.ModelElementCategory createInitialModel() {
-		return de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory.eINSTANCE.createModelElementCategory();
+	private static org.muml.core.modelinstance.ModelElementCategory createInitialModel() {
+		return org.muml.core.modelinstance.ModelinstanceFactory.eINSTANCE.createModelElementCategory();
 	}
 
 	/**
@@ -191,7 +191,7 @@ public class MumlDiagramEditorUtil {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private static void attachModelToResource(de.uni_paderborn.fujaba.modelinstance.ModelElementCategory model,
+	private static void attachModelToResource(org.muml.core.modelinstance.ModelElementCategory model,
 			Resource resource) {
 		resource.getContents().add(model);
 	}

@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.elementinitializer;
 
 import org.eclipse.emf.ecore.EObject;
-import org.muml.common.emf.edit.ui.elementinitializer.IElementInitializer;
+import org.muml.core.common.emf.edit.ui.elementinitializer.IElementInitializer;
 import org.muml.core.expressions.common.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;

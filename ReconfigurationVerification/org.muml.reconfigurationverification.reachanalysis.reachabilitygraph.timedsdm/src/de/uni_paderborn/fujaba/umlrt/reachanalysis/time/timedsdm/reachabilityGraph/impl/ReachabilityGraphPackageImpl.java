@@ -223,7 +223,7 @@ public class ReachabilityGraphPackageImpl extends EPackageImpl implements Reacha
 		// Obtain other dependent packages
 		SdmPackage theSdmPackage = (SdmPackage)EPackage.Registry.INSTANCE.getEPackage(SdmPackage.eNS_URI);
 		TimedstorydiagramPackage theTimedstorydiagramPackage = (TimedstorydiagramPackage)EPackage.Registry.INSTANCE.getEPackage(TimedstorydiagramPackage.eNS_URI);
-		de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage theReachabilityGraphPackage_1 = (de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage.eNS_URI);
+		org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage theReachabilityGraphPackage_1 = (org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage.eNS_URI);
 
 		// Create type parameters
 

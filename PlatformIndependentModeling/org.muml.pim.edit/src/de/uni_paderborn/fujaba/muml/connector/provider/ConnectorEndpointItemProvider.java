@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.CommentableElementItemProvider;
+import org.muml.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;

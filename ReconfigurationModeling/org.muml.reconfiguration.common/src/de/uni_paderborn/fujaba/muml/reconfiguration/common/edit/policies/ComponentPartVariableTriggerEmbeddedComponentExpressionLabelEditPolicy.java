@@ -8,7 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
 
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;

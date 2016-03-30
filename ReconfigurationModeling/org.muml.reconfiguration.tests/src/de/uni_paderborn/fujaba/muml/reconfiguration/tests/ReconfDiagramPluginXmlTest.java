@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramP
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 
 @RunWith(Parameterized.class)
-public class ReconfDiagramPluginXmlTest extends de.uni_paderborn.fujaba.tests.DiagramPluginXmlTest{
+public class ReconfDiagramPluginXmlTest extends org.muml.core.tests.DiagramPluginXmlTest{
 
 	
 	public ReconfDiagramPluginXmlTest(String[] pluginNames) {

@@ -11,8 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
 
 /**
  * <!-- begin-user-doc -->

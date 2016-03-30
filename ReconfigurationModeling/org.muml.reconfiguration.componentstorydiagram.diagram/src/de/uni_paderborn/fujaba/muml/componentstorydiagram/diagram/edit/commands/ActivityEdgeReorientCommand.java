@@ -71,9 +71,9 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistActivityEdge_4001(container,
@@ -82,7 +82,7 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorActivityEdge_4001(container,
 							getNewSource(), target, sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}
@@ -101,9 +101,9 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistActivityEdge_4001(container,
@@ -112,7 +112,7 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorActivityEdge_4001(container,
 							source, getNewTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}

@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
 
 /**
  * Visitor for the ReachGraphWalker

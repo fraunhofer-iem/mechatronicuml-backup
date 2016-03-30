@@ -10,7 +10,7 @@
 
     <wizard
            category="de.uni_paderborn.fujaba"
-           class="de.uni_paderborn.fujaba.modelinstance.ui.model.FujabaModelNewWizard"
+           class="org.muml.core.modelinstance.ui.model.FujabaModelNewWizard"
            icon="icons/muml.png"
            id="de.uni_paderborn.fujaba.muml.modelwizard.FujabaNewModelWizardID"
            name="MechatronicUML Model">
@@ -78,7 +78,7 @@
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateModelFileCommand"
+           defaultHandler="org.muml.core.modelinstance.ui.handlers.CreateModelFileCommand"
            description="Create new MechatronicUML Model"
            id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
            name="Create new MechatronicUML Model">
@@ -114,7 +114,7 @@
   <extension point="org.eclipse.ui.commands">
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationCommand"
+           defaultHandler="org.muml.core.modelinstance.ui.batch.BatchDiagramCreationCommand"
            description="Batch Diagram Creation Wizard"
            id="de.uni_paderborn.fujaba.core.ui.command.batchdiagramcreation"
            name="Batch Diagram Creation">

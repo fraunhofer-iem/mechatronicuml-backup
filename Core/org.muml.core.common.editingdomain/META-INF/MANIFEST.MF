@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Shared Editingdomain Registry
 Bundle-SymbolicName: org.muml.core.common.editingdomain;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.common.editingdomain.EditingDomainPlugin
+Bundle-Activator: org.muml.common.editingdomain.EditingDomainPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;bundle-version="2.11.0",
@@ -18,6 +18,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.8.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.common.editingdomain,
- de.uni_paderborn.fujaba.common.editingdomain.initialize,
- de.uni_paderborn.fujaba.common.editingdomain.registry
+Export-Package: org.muml.common.editingdomain,
+ org.muml.common.editingdomain.initialize,
+ org.muml.common.editingdomain.registry

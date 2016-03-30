@@ -13,7 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
+import org.muml.core.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.verification.tctl.ComparisonOperator;
 import de.uni_paderborn.fujaba.muml.verification.tctl.TctlPackage;

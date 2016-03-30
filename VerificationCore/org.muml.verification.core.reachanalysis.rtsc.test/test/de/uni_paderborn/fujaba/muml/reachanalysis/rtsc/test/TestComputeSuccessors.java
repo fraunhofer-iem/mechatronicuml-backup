@@ -17,8 +17,8 @@ import org.junit.Test;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;

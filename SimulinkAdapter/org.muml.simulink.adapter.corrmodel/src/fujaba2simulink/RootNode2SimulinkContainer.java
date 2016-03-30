@@ -7,8 +7,8 @@
 package fujaba2simulink;
 
 import org.eclipse.emf.common.util.EList;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.simulink.model.Bus;
 import de.uni_paderborn.fujaba.simulink.model.SimulinkContainer;
 import de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary;

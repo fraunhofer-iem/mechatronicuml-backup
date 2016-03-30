@@ -6,7 +6,7 @@
  */
 package fujaba2simulink;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelElementCategory;
 
 /**
  * <!-- begin-user-doc -->

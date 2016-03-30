@@ -12,11 +12,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;bundle-version="1.0.0";visibility:=reexport,
  org.muml.emm;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin
-Export-Package: de.uni_paderborn.fujaba.modelinstance,
- de.uni_paderborn.fujaba.modelinstance.impl,
- de.uni_paderborn.fujaba.modelinstance.categories,
- de.uni_paderborn.fujaba.modelinstance.util
+Bundle-Activator: org.muml.core.modelinstance.ModelInstancePlugin
+Export-Package: org.muml.core.modelinstance,
+ org.muml.core.modelinstance.categories,
+ org.muml.core.modelinstance.impl,
+ org.muml.core.modelinstance.util
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn,
  Technische Universität Darmstadt,
  University of Kassel,

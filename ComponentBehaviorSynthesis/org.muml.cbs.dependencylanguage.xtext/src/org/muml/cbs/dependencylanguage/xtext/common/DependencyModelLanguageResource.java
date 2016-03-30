@@ -22,7 +22,7 @@ import org.muml.cbs.dependencylanguage.Effect;
 import org.muml.cbs.dependencylanguage.Event;
 import org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguageStandaloneSetup;
 import org.muml.cbs.dependencylanguage.xtext.scoping.DependencyModelLanguageScopeProviderFactory;
-import org.muml.common.xtext.ILoadResult;
+import org.muml.core.common.xtext.ILoadResult;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;

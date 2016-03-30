@@ -4,10 +4,9 @@ package org.storydriven.storydiagrams.diagram.custom.dialogs;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditor;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlugin;
-
-import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * A CreationWizard for Activity diagrams. It implements the abstract creation

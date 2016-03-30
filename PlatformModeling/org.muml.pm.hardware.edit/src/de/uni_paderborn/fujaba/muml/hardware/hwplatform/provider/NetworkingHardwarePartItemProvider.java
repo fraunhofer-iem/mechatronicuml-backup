@@ -9,7 +9,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
+import org.muml.core.provider.ExtendableElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart} object.

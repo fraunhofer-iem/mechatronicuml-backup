@@ -18,12 +18,12 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.WizardExportResourcesPage;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
+import org.muml.core.export.operation.AbstractFujabaExportOperation;
+import org.muml.core.export.operation.IFujabaExportOperation;
+import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
+import org.muml.core.export.pages.ElementSelectionMode;
+import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 
-import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
-import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
-import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.uppaal.NTA;
 import de.uni_paderborn.uppaal.job.UppaalXMLSynthesisOperation;
 import de.uni_paderborn.uppaal.requirements.PropertyRepository;

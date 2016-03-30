@@ -25,12 +25,12 @@ import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.core.reachanalysis.core.ReachabilityComputationStatistics;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
 import org.storydriven.storydiagrams.activities.Activity;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.core.ReachabilityComputationStatistics;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomaton;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomatonClockConstraint;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomatonTransition;

@@ -24,9 +24,8 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
-
-import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
-import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
+import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
 
 /**
  * 

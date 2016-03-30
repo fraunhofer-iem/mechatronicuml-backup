@@ -11,11 +11,11 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
+import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ActionTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscPackage;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraph;
@@ -205,13 +205,13 @@ public class RtscAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph <em>Reachability Graph</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph <em>Reachability Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph
+	 * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph
 	 * @generated
 	 */
 	public Adapter createReachabilityGraphAdapter() {
@@ -219,13 +219,13 @@ public class RtscAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState <em>State</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState
+	 * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState
 	 * @generated
 	 */
 	public Adapter createReachabilityGraphStateAdapter() {
@@ -233,13 +233,13 @@ public class RtscAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition <em>Transition</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition
+	 * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
 	 * @generated
 	 */
 	public Adapter createReachabilityGraphTransitionAdapter() {
@@ -247,13 +247,13 @@ public class RtscAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ActionTransition <em>Action Transition</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.reachanalysis.reachabilitygraph.ActionTransition <em>Action Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ActionTransition
+	 * @see org.muml.core.reachanalysis.reachabilitygraph.ActionTransition
 	 * @generated
 	 */
 	public Adapter createActionTransitionAdapter() {

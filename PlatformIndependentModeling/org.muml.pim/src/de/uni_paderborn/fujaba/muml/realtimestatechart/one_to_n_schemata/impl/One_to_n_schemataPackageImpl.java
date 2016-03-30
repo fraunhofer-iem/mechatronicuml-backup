@@ -12,8 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
-
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 
 import de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl;
@@ -80,6 +78,7 @@ import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.expressions.ExpressionsPackage;
+import org.muml.core.modelinstance.ModelinstancePackage;
 
 /**
  * <!-- begin-user-doc -->

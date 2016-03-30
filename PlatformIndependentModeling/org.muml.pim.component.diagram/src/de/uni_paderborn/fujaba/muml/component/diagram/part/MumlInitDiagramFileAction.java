@@ -35,7 +35,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
  * @generated
  */
 public class MumlInitDiagramFileAction
-		extends de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+		extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	/**
 	 * @generated
@@ -68,7 +68,7 @@ public class MumlInitDiagramFileAction
 				ResourceSet resourceSet = new ResourceSetImpl();
 				URI uri = URI.createPlatformResourceURI(filePath.append(fileName).toString(), true);
 				Resource resource = resourceSet.createResource(uri);
-				EObject model = de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory.eINSTANCE
+				EObject model = org.muml.core.modelinstance.ModelinstanceFactory.eINSTANCE
 						.createModelElementCategory();
 				resource.getContents().add(model);
 				try {

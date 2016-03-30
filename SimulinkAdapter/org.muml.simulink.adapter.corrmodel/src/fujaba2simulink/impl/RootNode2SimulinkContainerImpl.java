@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.simulink.model.Bus;
 import de.uni_paderborn.fujaba.simulink.model.SimulinkContainer;
 import de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary;

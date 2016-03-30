@@ -83,9 +83,9 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector)) {
 			return false;
 		}
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(getNewSource(),
@@ -93,7 +93,7 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(getNewSource(),
 							getOldTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -107,9 +107,9 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions)) {
 			return false;
 		}
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(getOldSource(),
@@ -117,7 +117,7 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(getOldSource(),
 							getNewTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;

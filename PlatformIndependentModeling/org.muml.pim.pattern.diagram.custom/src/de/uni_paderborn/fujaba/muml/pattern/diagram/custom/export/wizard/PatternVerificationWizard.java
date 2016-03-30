@@ -6,13 +6,13 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.muml.core.export.operation.AbstractFujabaExportOperation;
+import org.muml.core.export.operation.IFujabaExportOperation;
+import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;

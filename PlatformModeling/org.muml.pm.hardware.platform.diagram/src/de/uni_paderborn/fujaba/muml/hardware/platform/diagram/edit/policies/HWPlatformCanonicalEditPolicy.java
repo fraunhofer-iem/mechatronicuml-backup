@@ -33,7 +33,7 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
  * @generated
  */
 public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy
-		implements org.muml.common.edit.policies.IDiagramCanonicalEditPolicy {
+		implements org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy {
 
 	private boolean canonicalNodes = true;
 

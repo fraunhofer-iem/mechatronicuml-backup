@@ -7,8 +7,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import de.uni_paderborn.fujaba.gmf.tests.GMFMapTest;
+import org.muml.core.tests.gmf.GMFMapTest;
 
 @RunWith(Parameterized.class)
 public class PimGMFMapTest extends GMFMapTest {

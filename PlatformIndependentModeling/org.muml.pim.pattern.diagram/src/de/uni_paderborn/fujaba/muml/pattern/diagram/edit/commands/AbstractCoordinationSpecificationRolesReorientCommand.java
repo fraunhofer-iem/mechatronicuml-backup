@@ -70,9 +70,9 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification)) {
 			return false;
 		}
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistAbstractCoordinationSpecificationRoles_4002(getNewSource(),
@@ -80,7 +80,7 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorAbstractCoordinationSpecificationRoles_4002(getNewSource(),
 							getOldTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -94,9 +94,9 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.Role)) {
 			return false;
 		}
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistAbstractCoordinationSpecificationRoles_4002(getOldSource(),
@@ -104,7 +104,7 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorAbstractCoordinationSpecificationRoles_4002(getOldSource(),
 							getNewTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;

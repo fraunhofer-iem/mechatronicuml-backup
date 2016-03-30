@@ -10,7 +10,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
-import org.muml.common.edit.commands.StoringExecuteQvtoTransformationCommand;
+import org.muml.core.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;

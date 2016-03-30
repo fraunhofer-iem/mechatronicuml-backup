@@ -19,7 +19,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
-import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts.CustomComponentPartEditPart;

@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.modelinstance.ui.initializer.IModelInitializer;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
 
 public class HWPlatformDiagramInitializer implements IModelInitializer {

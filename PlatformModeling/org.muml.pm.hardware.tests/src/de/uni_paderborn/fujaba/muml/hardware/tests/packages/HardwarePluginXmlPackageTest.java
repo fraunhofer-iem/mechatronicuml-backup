@@ -6,8 +6,7 @@ import java.util.Collections;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import de.uni_paderborn.fujaba.tests.packages.PluginXmlPackageTest;
+import org.muml.core.tests.packages.PluginXmlPackageTest;
 
 @RunWith(Parameterized.class)
 public class HardwarePluginXmlPackageTest extends PluginXmlPackageTest {

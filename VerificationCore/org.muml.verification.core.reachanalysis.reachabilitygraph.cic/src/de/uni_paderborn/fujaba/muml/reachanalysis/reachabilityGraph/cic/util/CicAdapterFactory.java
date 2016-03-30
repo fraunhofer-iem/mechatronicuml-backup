@@ -12,8 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.util;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
-
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.*;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
@@ -25,6 +23,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,13 +146,13 @@ public class CicAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState <em>State</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState
+	 * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState
 	 * @generated
 	 */
 	public Adapter createReachabilityGraphStateAdapter() {

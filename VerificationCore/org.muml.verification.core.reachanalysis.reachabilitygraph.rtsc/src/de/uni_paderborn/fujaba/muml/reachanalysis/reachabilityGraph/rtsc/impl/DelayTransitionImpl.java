@@ -7,8 +7,8 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphTransitionImpl;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.impl.ReachabilityGraphTransitionImpl;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscPackage;
 

@@ -3,7 +3,8 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.test;
 import java.util.Collection;
 import java.util.HashSet;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+
 import de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.RTSCReachabilityComputation;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;

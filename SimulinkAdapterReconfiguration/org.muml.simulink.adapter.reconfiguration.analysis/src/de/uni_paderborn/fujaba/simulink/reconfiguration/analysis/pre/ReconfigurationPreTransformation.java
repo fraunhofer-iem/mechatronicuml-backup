@@ -6,9 +6,9 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;

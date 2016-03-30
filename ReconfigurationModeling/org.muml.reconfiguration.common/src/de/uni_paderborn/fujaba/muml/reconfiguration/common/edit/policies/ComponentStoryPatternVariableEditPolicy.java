@@ -12,8 +12,8 @@ import org.eclipse.gmf.runtime.notation.LineType;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
-import org.muml.common.edit.policies.EditPolicyUtils;
-import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.core.common.edit.policies.EditPolicyUtils;
+import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 

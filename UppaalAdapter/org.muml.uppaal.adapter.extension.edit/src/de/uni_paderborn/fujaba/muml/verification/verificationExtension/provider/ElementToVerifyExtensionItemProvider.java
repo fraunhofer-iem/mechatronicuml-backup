@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.ExtensionItemProvider;
+import org.muml.core.provider.ExtensionItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.verificationExtension.ElementToVerifyExtension} object.

@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.provider.CommentableElementItemProvider;
+import org.muml.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.verification.tctl.TCTLFormula;
 import de.uni_paderborn.fujaba.muml.verification.tctl.TctlFactory;

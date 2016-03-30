@@ -100,7 +100,9 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
-
+import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
+import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.muml.core.provider.CoreItemProviderAdapterFactory;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -208,12 +210,6 @@ import de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFacto
 import de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
-import org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
-
-import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
-
-import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
 
 /**

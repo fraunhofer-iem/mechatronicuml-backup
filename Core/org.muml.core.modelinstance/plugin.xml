@@ -21,23 +21,23 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       
-      <package class="de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage" genModel="model/modelinstance.genmodel" uri="http://www.fujaba.de/modelinstance/0.4.0"/>
+      <package class="org.muml.core.modelinstance.ModelinstancePackage" genModel="model/modelinstance.genmodel" uri="http://www.fujaba.de/modelinstance/0.4.0"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated modelinstance -->
       <package
             uri="http://www.fujaba.de/modelinstance/0.4.0"
-            class="de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage"
+            class="org.muml.core.modelinstance.ModelinstancePackage"
             genModel="model/modelinstance.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <parser class="de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="muml"/>
+      <parser class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl" type="muml"/>
    </extension>
 
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <parser class="de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba"/>
+      <parser class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba"/>
    </extension>
 </plugin>

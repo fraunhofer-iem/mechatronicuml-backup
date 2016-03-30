@@ -7,8 +7,8 @@
 package de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphTransitionImpl;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.impl.ReachabilityGraphTransitionImpl;
 import de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.ReachabilityGraphPackage;
 import de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.TimedGTSDelayTransition;
 

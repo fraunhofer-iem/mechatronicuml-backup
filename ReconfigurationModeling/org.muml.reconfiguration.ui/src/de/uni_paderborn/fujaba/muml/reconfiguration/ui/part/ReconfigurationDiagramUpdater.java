@@ -51,7 +51,7 @@ public class ReconfigurationDiagramUpdater {
 			return Collections.emptyList();
 
 		}
-		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory modelElement = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) view
+		org.muml.core.modelinstance.ModelElementCategory modelElement = (org.muml.core.modelinstance.ModelElementCategory) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getModelElements().iterator(); it

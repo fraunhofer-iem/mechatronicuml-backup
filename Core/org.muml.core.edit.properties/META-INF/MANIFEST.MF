@@ -12,9 +12,10 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.core.properties.metamodel, org.storydriven.core.properties.constraint,
- org.storydriven.core.properties.core.editor,
- org.storydriven.core.properties.expressions.editor,
- org.storydriven.core.properties.common.editor,
- org.storydriven.core.properties.tabs
+Export-Package: org.muml.core.properties.common.editor,
+ org.muml.core.properties.constraint,
+ org.muml.core.properties.core.editor,
+ org.muml.core.properties.expressions.editor,
+ org.muml.core.properties.metamodel,
+ org.muml.core.properties.tabs
 Bundle-Vendor: SDM

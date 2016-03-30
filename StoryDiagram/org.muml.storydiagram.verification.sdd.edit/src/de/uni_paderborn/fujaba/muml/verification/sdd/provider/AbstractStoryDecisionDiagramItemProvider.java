@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.provider.NamedElementItemProvider;
+import org.muml.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram;
 import de.uni_paderborn.fujaba.muml.verification.sdd.SDDFactory;

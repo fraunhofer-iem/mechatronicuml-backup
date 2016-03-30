@@ -14,10 +14,10 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
+import org.muml.core.export.pages.IActivatableWizardPage;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.expressions.common.LiteralExpression;
 
-import de.uni_paderborn.fujaba.export.pages.IActivatableWizardPage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;

@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.impl.EcoreFactoryImpl;
 import org.junit.Before;
 import org.junit.Test;
+import org.muml.core.reachanalysis.core.ReachabilityComputation;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.core.ReachabilityComputation;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SdmFactory;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;

@@ -88,9 +88,9 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 		}
 		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationConnectorInstance_4002(container, getLink(), getNewSource(),
@@ -98,7 +98,7 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorDelegationConnectorInstance_4002(container, getNewSource(), target,
 							sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -125,9 +125,9 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 		}
 		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationConnectorInstance_4002(container, getLink(), source,
@@ -135,7 +135,7 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorDelegationConnectorInstance_4002(container, source, getNewTarget(),
 							sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;

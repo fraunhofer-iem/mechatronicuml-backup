@@ -3,8 +3,8 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.misc;
 import java.util.Collections;
 import java.util.List;
 
-import org.muml.common.cmd.Option;
-import org.muml.common.cmd.OptionArgument;
+import org.muml.core.common.cmd.Option;
+import org.muml.core.common.cmd.OptionArgument;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.VerifyTACommand;
 

@@ -2,9 +2,9 @@ package de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach;
 
 import java.util.HashSet;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
 
 /**
  * Visits all states/transitions of a ReachabilityGraph by

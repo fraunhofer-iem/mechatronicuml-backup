@@ -7,8 +7,8 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;
 
 import org.eclipse.emf.common.util.EList;
+import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ActionTransition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 /**

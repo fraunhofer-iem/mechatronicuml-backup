@@ -64,9 +64,9 @@ public class PortPartCoordinationProtocolPartCreateCommand extends EditElementCo
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
@@ -74,7 +74,7 @@ public class PortPartCoordinationProtocolPartCreateCommand extends EditElementCo
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
 					.getErrorPortPartCoordinationProtocolPart_4004(getSource(), getTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}

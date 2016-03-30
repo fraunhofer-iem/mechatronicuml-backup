@@ -2,8 +2,7 @@ package de.uni_paderborn.fujaba.muml.common.naming;
 
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelElementCategory;
 
 /**
  * Main class for computing QualifiedNames for EObjects and superclass of all concrete implementations

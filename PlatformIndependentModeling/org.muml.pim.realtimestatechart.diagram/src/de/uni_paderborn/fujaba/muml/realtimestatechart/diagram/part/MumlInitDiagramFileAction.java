@@ -36,7 +36,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
  * @generated
  */
 public class MumlInitDiagramFileAction
-		extends de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+		extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	/**
 	 * @generated

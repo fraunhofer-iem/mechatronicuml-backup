@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.timedstorydiagram.provider;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-import org.storydriven.core.provider.CoreEditPlugin;
+import org.muml.core.provider.CoreEditPlugin;
 import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
 
 /**

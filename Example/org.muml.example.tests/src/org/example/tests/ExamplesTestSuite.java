@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.muml.core.CorePackage;
+import org.muml.core.modelinstance.ModelinstancePackage;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
@@ -22,7 +22,6 @@ public class ExamplesTestSuite {
 
 	@BeforeClass 
 	public static void init() {
-
 
 	 MtctlStandaloneSetup.doSetup();
 		CorePackage.eINSTANCE.eClass();

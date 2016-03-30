@@ -10,8 +10,8 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.muml.ape.runtime.editors.ObjectPropertyEditor;
+import org.muml.core.export.pages.AbstractFujabaExportTargetPage;
 
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;

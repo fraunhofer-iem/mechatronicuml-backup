@@ -7,8 +7,8 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.common.descriptor.DefaultChainedPropertyDescriptor;
-import org.muml.common.descriptor.IChainedPropertyDescriptor;
+import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
+import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
 
 public class EnumerationPropertyDescriptor extends
 		DefaultChainedPropertyDescriptor {

@@ -19,9 +19,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.common.descriptor.DefaultChainedPropertyDescriptor;
-import org.muml.common.descriptor.IChainedPropertyDescriptor;
 import org.muml.core.CorePackage;
+import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
+import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;

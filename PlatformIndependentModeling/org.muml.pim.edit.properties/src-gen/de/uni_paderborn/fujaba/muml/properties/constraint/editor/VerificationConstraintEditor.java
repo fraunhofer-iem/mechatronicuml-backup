@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
  */
 public abstract class VerificationConstraintEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			org.muml.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated

@@ -51,7 +51,7 @@ public class CoordinationPatternVariantCreateCommand extends EditElementCommand 
 		de.uni_paderborn.fujaba.muml.pattern.CoordinationPatternVariant newElement = de.uni_paderborn.fujaba.muml.pattern.PatternFactory.eINSTANCE
 				.createCoordinationPatternVariant();
 
-		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.pattern.diagram.providers.ElementInitializers.getInstance()

@@ -1,7 +1,8 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.sdm;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.core.ReachabilityComputationStatistics;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
+import org.muml.core.reachanalysis.core.ReachabilityComputationStatistics;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMReachabilityGraph;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
 

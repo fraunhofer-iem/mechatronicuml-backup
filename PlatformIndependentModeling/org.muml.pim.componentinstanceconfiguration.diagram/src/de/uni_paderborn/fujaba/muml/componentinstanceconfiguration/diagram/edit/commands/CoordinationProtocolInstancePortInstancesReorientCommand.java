@@ -82,9 +82,9 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance)) {
 			return false;
 		}
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistCoordinationProtocolInstancePortInstances_4003(getNewSource(),
@@ -92,7 +92,7 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorCoordinationProtocolInstancePortInstances_4003(getNewSource(),
 							getOldTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -106,9 +106,9 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.instance.PortInstance)) {
 			return false;
 		}
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistCoordinationProtocolInstancePortInstances_4003(getOldSource(),
@@ -116,7 +116,7 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorCoordinationProtocolInstancePortInstances_4003(getOldSource(),
 							getNewTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;

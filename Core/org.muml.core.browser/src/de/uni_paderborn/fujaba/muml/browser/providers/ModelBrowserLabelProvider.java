@@ -27,8 +27,8 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 public class ModelBrowserLabelProvider extends LabelProvider implements IColorProvider,

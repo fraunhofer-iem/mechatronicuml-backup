@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.muml.common.validator.MumlValidator;
+import org.muml.core.common.validator.MumlValidator;
 
 import de.uni_paderborn.fujaba.muml.valuetype.*;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;

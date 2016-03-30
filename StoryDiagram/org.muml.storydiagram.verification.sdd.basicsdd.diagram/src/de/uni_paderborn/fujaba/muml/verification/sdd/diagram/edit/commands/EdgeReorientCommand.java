@@ -69,9 +69,9 @@ public class EdgeReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistEdge_4001(container, getLink(),
@@ -79,7 +79,7 @@ public class EdgeReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorEdge_4001(container,
 							getNewSource(), target, sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}
@@ -100,9 +100,9 @@ public class EdgeReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistEdge_4001(container, getLink(),
@@ -110,7 +110,7 @@ public class EdgeReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorEdge_4001(container, source,
 							getNewTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}

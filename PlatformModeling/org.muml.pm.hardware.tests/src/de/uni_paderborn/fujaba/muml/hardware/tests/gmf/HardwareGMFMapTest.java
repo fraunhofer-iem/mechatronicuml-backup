@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.CorePackage;
+import org.muml.core.tests.gmf.GMFMapTest;
 
-import de.uni_paderborn.fujaba.gmf.tests.GMFMapTest;
 import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
 

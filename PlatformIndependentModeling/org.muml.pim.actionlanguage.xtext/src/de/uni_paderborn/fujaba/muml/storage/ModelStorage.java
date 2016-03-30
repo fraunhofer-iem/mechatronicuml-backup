@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.muml.common.xtext.ILoadResult;
+import org.muml.core.common.xtext.ILoadResult;
 import org.muml.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;

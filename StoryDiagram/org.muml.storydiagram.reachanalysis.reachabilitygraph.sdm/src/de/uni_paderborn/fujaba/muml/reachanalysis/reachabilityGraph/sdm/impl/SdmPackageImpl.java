@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.GraphTransformationSystem;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMReachabilityGraph;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;

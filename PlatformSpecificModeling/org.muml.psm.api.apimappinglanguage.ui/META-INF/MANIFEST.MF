@@ -21,9 +21,9 @@ Require-Bundle: org.muml.psm.api.apimappinglanguage;visibility:=reexport,
  org.muml.pm.common;bundle-version="1.0.0",
  org.muml.psm;bundle-version="0.1.0",
  org.eclipse.xtext.xbase.lib
-Import-Package: de.uni_paderborn.fujaba.modelinstance,
- org.apache.log4j,
- org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib,
+ org.muml.core.modelinstance
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui.quickfix,
  de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui.contentassist,

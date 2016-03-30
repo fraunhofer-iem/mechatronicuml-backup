@@ -35,10 +35,10 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.muml.common.FujabaCommonPlugin;
-import org.muml.common.edit.commands.StoringExecuteQvtoTransformationCommand;
+import org.muml.core.common.FujabaCommonPlugin;
+import org.muml.core.common.edit.commands.StoringExecuteQvtoTransformationCommand;
+import org.muml.core.modelinstance.ui.batch.BatchDiagramCreationWizard;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;

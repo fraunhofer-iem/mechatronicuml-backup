@@ -7,8 +7,7 @@ import java.util.Collection;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import de.uni_paderborn.fujaba.tests.ValidateMetamodelsTest;
+import org.muml.core.tests.ValidateMetamodelsTest;
 
 @RunWith(Parameterized.class)
 public class HardwareValidateMetamodelsTest extends ValidateMetamodelsTest {

@@ -13,9 +13,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.CorePackage;
-
-import de.uni_paderborn.fujaba.tests.MetamodelTest;
-import de.uni_paderborn.fujaba.tests.TestUtilities;
+import org.muml.core.tests.MetamodelTest;
+import org.muml.core.tests.TestUtilities;
 
 @RunWith(Parameterized.class)
 public class ILPMetamodelTest extends MetamodelTest {

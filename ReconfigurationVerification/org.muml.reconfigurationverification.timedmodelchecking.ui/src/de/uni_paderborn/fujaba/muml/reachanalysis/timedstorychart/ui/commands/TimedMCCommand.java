@@ -18,9 +18,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.muml.core.reachanalysis.core.export.GraphVizExportFileTypes;
 
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.reachanalysis.core.export.GraphVizExportFileTypes;
 import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation;
 import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.export.GtAutomatonExporter;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomaton;

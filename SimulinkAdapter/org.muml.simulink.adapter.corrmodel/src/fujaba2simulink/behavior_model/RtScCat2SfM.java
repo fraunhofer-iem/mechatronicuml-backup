@@ -6,7 +6,8 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelElementCategory;
+
 import de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

@@ -11,10 +11,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.Saveable;
 import org.eclipse.ui.navigator.SaveablesProvider;
-
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomain;
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainSaveable;
+import org.muml.common.editingdomain.registry.MumlEditingDomain;
+import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
+import org.muml.common.editingdomain.registry.MumlEditingDomainSaveable;
 
 public class ModelBrowserSaveablesProvider extends SaveablesProvider implements MumlEditingDomainRegistry.Listener, MumlEditingDomainSaveable.Listener {
 

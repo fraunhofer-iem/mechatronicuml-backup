@@ -82,9 +82,9 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 		}
 		de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container = (de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistMultiPortOrderConstraint_4004(
@@ -94,7 +94,7 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 					.getLinkConstraints()
 					.getErrorMultiPortOrderConstraint_4004(container,
 							getNewSource(), target, sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}
@@ -115,9 +115,9 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 		}
 		de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container = (de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistMultiPortOrderConstraint_4004(
@@ -127,7 +127,7 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 					.getLinkConstraints()
 					.getErrorMultiPortOrderConstraint_4004(container, source,
 							getNewTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}

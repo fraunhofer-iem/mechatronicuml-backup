@@ -33,7 +33,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
  * @generated
  */
 public class HardwareInitDiagramFileAction
-		extends de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+		extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	/**
 	* @generated

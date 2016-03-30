@@ -12,10 +12,10 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.muml.core.reachanalysis.core.export.GraphVizExportFileTypes;
 
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.reachanalysis.core.export.GraphVizExportFileTypes;
 import de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.export.RTSCExporter;
 import de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.Verification;
 import de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.export.TestAutomatonGraphDecorator;

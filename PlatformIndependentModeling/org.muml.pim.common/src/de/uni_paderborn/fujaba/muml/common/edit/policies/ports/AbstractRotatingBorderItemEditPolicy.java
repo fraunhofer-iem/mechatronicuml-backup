@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.notation.View;
-import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
 
 /**
  * This class contains all the behavior for rotated border items.

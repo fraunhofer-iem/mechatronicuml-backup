@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.core.reachanalysis.reachabilitygraph.impl.ActionTransitionImpl;
 import org.storydriven.storydiagrams.activities.Activity;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.impl.ActionTransitionImpl;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SdmPackage;
 

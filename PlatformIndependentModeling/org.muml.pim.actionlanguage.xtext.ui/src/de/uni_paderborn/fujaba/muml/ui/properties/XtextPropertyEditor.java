@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.muml.ape.runtime.editors.AbstractSingleFeatureXtextPropertyEditor;
-import org.muml.common.xtext.ILoadResult;
+import org.muml.core.common.xtext.ILoadResult;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;

@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.common.adapter.DerivedAttributeAdapter;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
+import org.muml.core.common.adapter.DerivedAttributeAdapter;
 import org.muml.core.expressions.Expression;
 import org.muml.core.util.ExtendableElementOperations;
 

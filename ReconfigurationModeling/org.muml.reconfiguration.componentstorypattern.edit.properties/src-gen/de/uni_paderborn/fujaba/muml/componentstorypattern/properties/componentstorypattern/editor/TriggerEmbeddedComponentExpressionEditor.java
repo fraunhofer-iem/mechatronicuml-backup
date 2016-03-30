@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.properties.components
  */
 public abstract class TriggerEmbeddedComponentExpressionEditor
 		extends
-			org.storydriven.core.properties.expressions.editor.ExpressionEditor {
+			org.muml.core.properties.expressions.editor.ExpressionEditor {
 
 	/**
 	 * @generated

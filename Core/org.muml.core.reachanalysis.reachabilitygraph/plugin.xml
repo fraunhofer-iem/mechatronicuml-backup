@@ -2,12 +2,12 @@
 <?eclipse version="3.0"?><!--
 --><plugin>
 <extension point="org.eclipse.emf.ecore.generated_package">
-      <package class="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage" genModel="model/ReachabilityAnalysisCore.genmodel" uri="http://www.fujaba.de/reachabilityGraph/0.1.0"/>
+      <package class="org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage" genModel="model/ReachabilityAnalysisCore.genmodel" uri="http://www.fujaba.de/reachabilityGraph/0.1.0"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage" genModel="model/ReachabilityAnalysisCore.genmodel" uri="http://www.fujaba.de/reachabilityGraph/0.4.0"/>
+      <package class="org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage" genModel="model/ReachabilityAnalysisCore.genmodel" uri="http://www.fujaba.de/reachabilityGraph/0.4.0"/>
    </extension>
 
 </plugin>

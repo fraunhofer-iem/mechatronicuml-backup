@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Export Mechanism
 Bundle-SymbolicName: org.muml.core.export;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.export.ExportPlugin
+Bundle-Activator: org.muml.core.export.ExportPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.workbench,
@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Export-Package: de.uni_paderborn.fujaba.export.operation,
- de.uni_paderborn.fujaba.export.pages,
- de.uni_paderborn.fujaba.export.providers,
- de.uni_paderborn.fujaba.export.wizard
+Export-Package: org.muml.core.export.operation,
+ org.muml.core.export.pages,
+ org.muml.core.export.providers,
+ org.muml.core.export.wizard

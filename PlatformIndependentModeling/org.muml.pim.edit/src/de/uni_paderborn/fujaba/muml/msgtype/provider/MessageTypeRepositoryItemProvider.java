@@ -19,9 +19,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
+import org.muml.core.provider.NamedElementItemProvider;
+import org.muml.core.provider.RepositoryItemProvider;
 
-import org.storydriven.core.provider.RepositoryItemProvider;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypeFactory;

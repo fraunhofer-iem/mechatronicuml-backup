@@ -40,8 +40,8 @@
             id="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditorID"
             name="%_UI_ModelinstanceEditor_label"
             icon="icons/full/obj16/muml.png"
-            class="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditor"
-            contributorClass="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceActionBarContributor">
+            class="org.muml.core.modelinstance.presentation.ModelinstanceEditor"
+            contributorClass="org.muml.core.modelinstance.presentation.ModelinstanceActionBarContributor">
          <contentTypeBinding contentTypeId="de.uni_paderborn.fujaba.modelinstance.editor.model"/>
       </editor>
    </extension>

@@ -28,8 +28,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
-
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
+import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
 public class EditCommandsFactory implements IPropertyListener {
 	

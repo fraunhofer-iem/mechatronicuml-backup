@@ -3,10 +3,11 @@ package de.uni_paderborn.fujaba.muml.verification.refinement.testautomata;
 import java.util.HashSet;
 import java.util.List;
 
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
+
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;
 import de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.RTSCReachabilityComputation;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;

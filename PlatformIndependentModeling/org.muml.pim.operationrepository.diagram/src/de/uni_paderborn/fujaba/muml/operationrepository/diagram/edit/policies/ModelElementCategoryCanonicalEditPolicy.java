@@ -39,7 +39,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
-		implements org.muml.common.edit.policies.IDiagramCanonicalEditPolicy {
+		implements org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -97,7 +97,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+		return org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
 				.getModelElementCategory_ModelElements();
 	}
 

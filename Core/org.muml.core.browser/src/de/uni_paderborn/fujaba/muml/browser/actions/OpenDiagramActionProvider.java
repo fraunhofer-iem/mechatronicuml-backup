@@ -30,8 +30,8 @@ import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
+import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
 public class OpenDiagramActionProvider extends CommonActionProvider {

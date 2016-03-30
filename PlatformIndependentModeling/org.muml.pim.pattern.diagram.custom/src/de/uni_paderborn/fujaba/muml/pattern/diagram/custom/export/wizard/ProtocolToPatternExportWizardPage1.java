@@ -10,9 +10,9 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
+import org.muml.core.export.pages.ElementSelectionMode;
 
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
-import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 

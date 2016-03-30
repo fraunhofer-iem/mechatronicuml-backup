@@ -298,7 +298,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (de.uni_paderborn.fujaba.common.editingdomain.initialize.IEditingDomainInitializer init : de.uni_paderborn.fujaba.common.editingdomain.EditingDomainPlugin
+		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin
 				.getEditingDomainInitializers()) {
 			init.initialize(getEditingDomain());
 		}

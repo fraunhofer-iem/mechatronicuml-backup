@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.ExtendableElement;
+import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ActionTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphState;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.GraphTransformationSystem;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMReachabilityGraph;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;

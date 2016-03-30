@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.common.algorithm.BreadthFirstSearchAlgorithm;
-import org.muml.common.algorithm.ISearchVisitor;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
+import org.muml.core.common.algorithm.BreadthFirstSearchAlgorithm;
+import org.muml.core.common.algorithm.ISearchVisitor;
 import org.muml.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;

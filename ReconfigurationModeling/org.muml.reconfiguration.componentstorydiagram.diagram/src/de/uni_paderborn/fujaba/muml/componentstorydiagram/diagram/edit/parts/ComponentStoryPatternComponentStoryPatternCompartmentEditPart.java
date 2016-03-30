@@ -107,7 +107,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart
 				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartmentCanonicalEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
-				new org.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
+				new org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 	}
 
 	/**

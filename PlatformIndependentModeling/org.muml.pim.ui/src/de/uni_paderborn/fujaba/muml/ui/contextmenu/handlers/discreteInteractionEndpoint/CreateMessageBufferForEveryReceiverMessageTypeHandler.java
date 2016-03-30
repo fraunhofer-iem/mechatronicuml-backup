@@ -19,8 +19,8 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.muml.common.edit.commands.ExecuteQvtoTransformationCommand;
-import org.muml.common.edit.commands.StoringExecuteQvtoTransformationCommand;
+import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
+import org.muml.core.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;

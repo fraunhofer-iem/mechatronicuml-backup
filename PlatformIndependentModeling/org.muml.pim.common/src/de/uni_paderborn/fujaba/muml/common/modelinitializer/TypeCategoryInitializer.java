@@ -1,11 +1,11 @@
 package de.uni_paderborn.fujaba.muml.common.modelinitializer;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
+import org.muml.core.modelinstance.ui.initializer.IModelInitializer;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
 import de.uni_paderborn.fujaba.muml.types.TypesFactory;

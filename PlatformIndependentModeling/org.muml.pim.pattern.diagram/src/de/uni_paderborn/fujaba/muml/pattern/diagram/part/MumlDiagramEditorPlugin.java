@@ -17,10 +17,10 @@ import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
+import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.muml.core.provider.CoreItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
-import org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
-import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
-import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
 /**
  * @generated
@@ -122,9 +122,9 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	* @generated
 	*/
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = org.muml.common.FujabaCommonPlugin.getInstance()
+		List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance()
 				.getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = org.muml.common.FujabaCommonPlugin.getInstance()
+		List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance()
 				.getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority
@@ -148,7 +148,7 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
+		factories.add(new org.muml.core.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

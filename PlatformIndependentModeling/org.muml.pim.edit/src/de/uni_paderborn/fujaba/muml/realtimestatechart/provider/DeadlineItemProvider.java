@@ -24,8 +24,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.common.descriptor.DefaultChainedPropertyDescriptor;
-import org.muml.common.descriptor.IChainedPropertyDescriptor;
+import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
+import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline;

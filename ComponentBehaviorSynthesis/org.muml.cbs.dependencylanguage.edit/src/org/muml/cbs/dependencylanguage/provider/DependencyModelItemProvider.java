@@ -24,7 +24,7 @@ import org.muml.cbs.dependencylanguage.DependencyModel;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.CommentableElementItemProvider;
+import org.muml.core.provider.CommentableElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.DependencyModel} object.

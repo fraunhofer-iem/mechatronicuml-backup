@@ -85,4 +85,5 @@ Require-Bundle: org.junit,
  org.muml.graphviz.adapter;bundle-version="1.0.0",
  org.muml.graphviz.plain.xtext;bundle-version="1.0.0",
  org.muml.graphviz.plain.xtext.tests;bundle-version="1.0.0",
- org.muml.graphviz.plain.xtext.ui;bundle-version="1.0.0"
+ org.muml.graphviz.plain.xtext.ui;bundle-version="1.0.0",
+ org.muml.core.modelinstance

@@ -21,8 +21,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.simulink.wizard.NameAnalysis;
 import de.uni_paderborn.fujaba.simulink.wizard.TransformationWizard;
 import de.uni_paderborn.fujaba.simulink.wizard.editors.FujabaSelectionEditor;

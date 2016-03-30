@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba New-Wizard
 Bundle-SymbolicName: org.muml.core.modelinstance.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin
+Bundle-Activator: org.muml.core.modelinstance.ui.FujabaNewwizardPlugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
  org.muml.core.modelinstance;bundle-version="0.3.1",
@@ -12,11 +12,11 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.ui.ide
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.modelinstance.ui,
- de.uni_paderborn.fujaba.modelinstance.ui.batch,
- de.uni_paderborn.fujaba.modelinstance.ui.commands,
- de.uni_paderborn.fujaba.modelinstance.ui.diagrams,
- de.uni_paderborn.fujaba.modelinstance.ui.diagrams.pages,
- de.uni_paderborn.fujaba.modelinstance.ui.handlers,
- de.uni_paderborn.fujaba.modelinstance.ui.initializer
+Export-Package: org.muml.core.modelinstance.ui,
+ org.muml.core.modelinstance.ui.batch,
+ org.muml.core.modelinstance.ui.commands,
+ org.muml.core.modelinstance.ui.diagrams,
+ org.muml.core.modelinstance.ui.diagrams.pages,
+ org.muml.core.modelinstance.ui.handlers,
+ org.muml.core.modelinstance.ui.initializer
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH

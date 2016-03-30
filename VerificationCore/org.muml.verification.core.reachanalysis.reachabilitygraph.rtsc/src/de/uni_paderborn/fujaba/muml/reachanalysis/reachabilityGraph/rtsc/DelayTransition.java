@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphTransition;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
 
 /**
  * <!-- begin-user-doc -->

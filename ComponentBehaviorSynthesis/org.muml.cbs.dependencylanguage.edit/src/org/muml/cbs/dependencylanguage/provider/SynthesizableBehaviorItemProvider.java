@@ -28,7 +28,7 @@ import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.ExtensionItemProvider;
+import org.muml.core.provider.ExtensionItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.SynthesizableBehavior} object.

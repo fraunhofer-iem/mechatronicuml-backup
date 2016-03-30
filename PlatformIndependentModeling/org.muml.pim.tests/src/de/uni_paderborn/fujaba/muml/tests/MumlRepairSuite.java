@@ -1,8 +1,7 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
 import org.junit.BeforeClass;
-
-import de.uni_paderborn.fujaba.tests.RepairingState;
+import org.muml.core.tests.RepairingState;
 
 public class MumlRepairSuite extends MumlTestSuite {
 	

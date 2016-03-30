@@ -51,7 +51,7 @@ public class MessageTypeRepositoryCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository newElement = de.uni_paderborn.fujaba.muml.msgtype.MsgtypeFactory.eINSTANCE
 				.createMessageTypeRepository();
 
-		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.ElementInitializers.getInstance()

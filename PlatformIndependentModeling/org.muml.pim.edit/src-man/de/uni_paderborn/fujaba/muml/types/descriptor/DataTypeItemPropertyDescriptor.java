@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.types.descriptor;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.common.descriptor.DefaultChainedPropertyDescriptor;
+import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 
 public class DataTypeItemPropertyDescriptor extends DefaultChainedPropertyDescriptor {
 

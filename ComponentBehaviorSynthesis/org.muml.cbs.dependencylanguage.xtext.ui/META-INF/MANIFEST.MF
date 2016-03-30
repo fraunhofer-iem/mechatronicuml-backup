@@ -25,7 +25,7 @@ Require-Bundle: org.muml.cbs.dependencylanguage.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
- org.muml.common.xtext
+ org.muml.core.common.xtext
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.cbs.dependencylanguage.xtext.ui.contentassist,
  org.muml.cbs.dependencylanguage.xtext.ui.contentassist.antlr,

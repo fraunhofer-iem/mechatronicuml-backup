@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.impl,
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.util
+Export-Package: org.muml.core.reachanalysis.reachabilitygraph,
+ org.muml.core.reachanalysis.reachabilitygraph.impl,
+ org.muml.core.reachanalysis.reachabilitygraph.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport

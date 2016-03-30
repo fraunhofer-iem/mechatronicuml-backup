@@ -3,9 +3,9 @@ package de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach.stat
 import org.muml.core.ExtendableElement;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.TextualExpression;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;

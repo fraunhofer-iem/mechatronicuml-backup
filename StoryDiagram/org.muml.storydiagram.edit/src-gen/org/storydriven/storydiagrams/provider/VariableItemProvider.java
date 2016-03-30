@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.TypedElementItemProvider;
+import org.muml.core.provider.TypedElementItemProvider;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.Variable;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;

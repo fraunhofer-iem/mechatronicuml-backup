@@ -21,7 +21,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.provider.NamedElementItemProvider;
+import org.muml.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;

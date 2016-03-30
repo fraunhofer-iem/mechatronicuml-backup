@@ -4,8 +4,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.muml.ape.runtime.editors.AbstractManyFeatureXtextPropertyEditor;
-import org.muml.common.xtext.AbstractLanguageResource;
-import org.muml.common.xtext.ILoadResult;
+import org.muml.core.common.xtext.AbstractLanguageResource;
+import org.muml.core.common.xtext.ILoadResult;
 
 import com.google.inject.Injector;
 

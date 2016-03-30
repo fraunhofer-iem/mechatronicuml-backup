@@ -32,11 +32,11 @@ public class HardwarePropertySection extends DefaultPropertySection implements I
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = org.muml.common.FujabaCommonPlugin
+			List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
 					.getInstance().getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID,
 							true);
-			List<AdapterFactory> negativePriorityFactories = org.muml.common.FujabaCommonPlugin
+			List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
 					.getInstance().getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID,
 							false);

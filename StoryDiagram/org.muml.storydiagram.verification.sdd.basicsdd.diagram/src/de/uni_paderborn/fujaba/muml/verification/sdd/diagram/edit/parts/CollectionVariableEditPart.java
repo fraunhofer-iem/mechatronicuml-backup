@@ -107,11 +107,11 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 
 		installEditPolicy(
 				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
-				org.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
 

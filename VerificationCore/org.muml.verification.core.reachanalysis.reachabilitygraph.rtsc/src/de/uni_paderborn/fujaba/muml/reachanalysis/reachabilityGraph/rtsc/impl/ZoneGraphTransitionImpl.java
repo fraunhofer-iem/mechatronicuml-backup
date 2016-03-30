@@ -11,8 +11,8 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.muml.core.reachanalysis.reachabilitygraph.impl.ActionTransitionImpl;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.impl.ActionTransitionImpl;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscPackage;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphTransition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;

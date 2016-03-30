@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.LineStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.swt.graphics.Color;
-import org.muml.common.edit.policies.EditPolicyUtils;
+import org.muml.core.common.edit.policies.EditPolicyUtils;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;

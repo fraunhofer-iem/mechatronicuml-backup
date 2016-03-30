@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.instance.editor;
  */
 public class ManagerInstanceEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.muml.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated

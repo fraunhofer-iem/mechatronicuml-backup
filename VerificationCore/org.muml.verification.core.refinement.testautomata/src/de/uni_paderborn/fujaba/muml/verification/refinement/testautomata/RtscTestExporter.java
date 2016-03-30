@@ -21,14 +21,14 @@ import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocument
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
-import org.muml.common.DiagramEditorUtil;
-import org.muml.common.Messages;
 import org.muml.core.ExtendableElement;
+import org.muml.core.common.DiagramEditorUtil;
+import org.muml.core.common.Messages;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
+import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 
 public class RtscTestExporter {

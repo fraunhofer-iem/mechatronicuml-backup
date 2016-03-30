@@ -12,13 +12,11 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.provider;
 
-import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.storydriven.core.provider.CoreEditPlugin;
+import org.muml.core.modelinstance.provider.ModelinstanceEditPlugin;
+import org.muml.core.provider.CoreEditPlugin;
 
 /**
  * This is the central singleton for the Muml edit plugin.

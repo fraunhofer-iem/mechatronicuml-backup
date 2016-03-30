@@ -216,7 +216,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GTS_DELAY_TRANSITION__ANNOTATION = de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__ANNOTATION;
+	int TIMED_GTS_DELAY_TRANSITION__ANNOTATION = org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -225,7 +225,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GTS_DELAY_TRANSITION__EXTENSION = de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__EXTENSION;
+	int TIMED_GTS_DELAY_TRANSITION__EXTENSION = org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -234,7 +234,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GTS_DELAY_TRANSITION__SOURCE = de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__SOURCE;
+	int TIMED_GTS_DELAY_TRANSITION__SOURCE = org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -243,7 +243,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GTS_DELAY_TRANSITION__TARGET = de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__TARGET;
+	int TIMED_GTS_DELAY_TRANSITION__TARGET = org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Reachability Graph</b></em>' container reference.
@@ -252,7 +252,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GTS_DELAY_TRANSITION__REACHABILITY_GRAPH = de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__REACHABILITY_GRAPH;
+	int TIMED_GTS_DELAY_TRANSITION__REACHABILITY_GRAPH = org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__REACHABILITY_GRAPH;
 
 	/**
 	 * The number of structural features of the '<em>Timed GTS Delay Transition</em>' class.
@@ -261,7 +261,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GTS_DELAY_TRANSITION_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION_FEATURE_COUNT + 0;
+	int TIMED_GTS_DELAY_TRANSITION_FEATURE_COUNT = org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION_FEATURE_COUNT + 0;
 
 
 	/**

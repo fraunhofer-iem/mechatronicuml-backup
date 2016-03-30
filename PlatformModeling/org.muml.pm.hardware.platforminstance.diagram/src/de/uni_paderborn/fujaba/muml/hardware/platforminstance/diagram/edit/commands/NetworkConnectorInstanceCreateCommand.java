@@ -44,9 +44,9 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 					.getSourceView(getRequest());
-			View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 					.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
@@ -75,9 +75,9 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateNetworkConnectorInstance_4012(getContainer(), getSource(), getTarget(),
@@ -85,7 +85,7 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorNetworkConnectorInstance_4012(getContainer(), getSource(),
 							getTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}

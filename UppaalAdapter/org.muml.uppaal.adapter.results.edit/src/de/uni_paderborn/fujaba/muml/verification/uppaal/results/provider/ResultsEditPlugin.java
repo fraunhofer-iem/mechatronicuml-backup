@@ -9,8 +9,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEdit
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.storydriven.core.provider.CoreEditPlugin;
+import org.muml.core.provider.CoreEditPlugin;
 
 /**
  * This is the central singleton for the Results edit plugin.

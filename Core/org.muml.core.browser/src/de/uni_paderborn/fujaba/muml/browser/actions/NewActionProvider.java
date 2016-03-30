@@ -32,8 +32,7 @@ import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.wizards.IWizardCategory;
 import org.eclipse.ui.wizards.IWizardRegistry;
-
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
+import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
 public class NewActionProvider extends CommonActionProvider {
 	private static final String FULL_EXAMPLES_WIZARD_CATEGORY = "org.eclipse.ui.Examples"; //$NON-NLS-1$

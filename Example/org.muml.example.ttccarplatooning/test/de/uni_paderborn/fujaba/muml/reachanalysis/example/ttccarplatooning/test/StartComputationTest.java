@@ -13,15 +13,15 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Test;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
+import org.muml.core.reachanalysis.core.HashLevel;
 import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Environment;
 import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.State;
 import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Statechart;
 import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.TtccarplatooningFactory;
 import org.storydriven.storydiagrams.activities.Activity;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.reachanalysis.core.HashLevel;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputationStatistics;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export.SDMReachabilityGraphExporter;

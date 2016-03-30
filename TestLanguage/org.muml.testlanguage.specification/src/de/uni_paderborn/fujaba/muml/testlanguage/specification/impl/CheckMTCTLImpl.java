@@ -31,16 +31,16 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.RootNode;
+import org.muml.core.modelinstance.impl.ModelElementCategoryImpl;
+import org.muml.core.modelinstance.impl.ModelinstanceFactoryImpl;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl;
-import de.uni_paderborn.fujaba.modelinstance.impl.ModelinstanceFactoryImpl;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.CheckMTCTL;

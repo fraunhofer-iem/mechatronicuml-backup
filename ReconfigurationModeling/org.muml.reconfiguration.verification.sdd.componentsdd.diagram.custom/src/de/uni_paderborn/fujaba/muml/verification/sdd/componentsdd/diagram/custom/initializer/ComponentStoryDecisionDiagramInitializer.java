@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.custom.initializer;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.modelinstance.ui.initializer.IModelInitializer;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
 
 

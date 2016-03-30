@@ -25,7 +25,7 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivat
 Import-Package: org.apache.log4j;version="1.2.15",
  org.eclipse.core.expressions,
  org.eclipse.ui.navigator,
- org.muml.common.xtext
+ org.muml.core.common.xtext
 Export-Package: de.uni_paderborn.fujaba.muml.ui,
  de.uni_paderborn.fujaba.muml.ui.contentassist,
  de.uni_paderborn.fujaba.muml.ui.contentassist.antlr,

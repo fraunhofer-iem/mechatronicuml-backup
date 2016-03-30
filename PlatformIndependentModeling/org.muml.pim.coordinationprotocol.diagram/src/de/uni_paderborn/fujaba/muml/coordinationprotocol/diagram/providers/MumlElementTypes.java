@@ -154,7 +154,7 @@ public class MumlElementTypes {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
 			elements.put(ModelElementCategory_1000,
-					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
+					org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(CoordinationProtocol_2005,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getCoordinationProtocol());

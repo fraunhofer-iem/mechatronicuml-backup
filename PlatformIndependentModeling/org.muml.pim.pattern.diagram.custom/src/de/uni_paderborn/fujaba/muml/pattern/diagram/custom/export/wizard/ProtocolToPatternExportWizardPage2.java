@@ -21,12 +21,12 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
+import org.muml.core.export.pages.IActivatableWizardPage;
+import org.muml.core.export.providers.GreyedAdapterFactoryLabelProvider;
+import org.muml.core.export.providers.NullContentProvider;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.export.pages.IActivatableWizardPage;
-import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
-import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;

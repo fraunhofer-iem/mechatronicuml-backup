@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
+import org.muml.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;

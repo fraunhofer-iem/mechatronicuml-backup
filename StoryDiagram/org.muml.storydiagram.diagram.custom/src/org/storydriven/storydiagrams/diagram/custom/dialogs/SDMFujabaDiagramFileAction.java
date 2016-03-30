@@ -10,7 +10,7 @@ import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorUtil
  * @generated
  */
 public class SDMFujabaDiagramFileAction extends
-		de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+		org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	@Override
 	public void setCharset(IFile diagramFile) {

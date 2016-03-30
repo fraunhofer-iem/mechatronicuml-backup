@@ -49,9 +49,9 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.navigator.SaveablesProvider;
+import org.muml.common.editingdomain.registry.MumlEditingDomain;
+import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomain;
-import de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
@@ -60,7 +60,7 @@ import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 //    can check if there is a Diagram file open in the ResourceSet!
 // -> Use generated XXXNavigatorActionProvider
 
-public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider implements de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry.Listener, IAdaptable {
+public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider implements org.muml.common.editingdomain.registry.MumlEditingDomainRegistry.Listener, IAdaptable {
 	
 	private Viewer viewer;
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();

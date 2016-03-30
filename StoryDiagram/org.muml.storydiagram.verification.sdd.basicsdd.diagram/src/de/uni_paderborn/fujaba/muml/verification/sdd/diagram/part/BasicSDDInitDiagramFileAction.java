@@ -8,7 +8,7 @@ import org.eclipse.core.runtime.IPath;
  */
 public class BasicSDDInitDiagramFileAction
 		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+		org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	/**
 	 * @generated

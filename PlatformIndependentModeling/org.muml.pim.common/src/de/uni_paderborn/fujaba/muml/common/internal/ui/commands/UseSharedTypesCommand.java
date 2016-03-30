@@ -29,9 +29,9 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer;
 import de.uni_paderborn.fujaba.muml.types.PredefinedTypesResourceFactory;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;

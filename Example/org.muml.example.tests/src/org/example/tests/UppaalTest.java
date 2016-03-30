@@ -27,6 +27,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.NamedElement;
+import org.muml.core.tests.TestUtilities;
 
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
@@ -57,7 +58,6 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResult;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionFactory;
-import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 @RunWith(Parameterized.class)
 public class UppaalTest {

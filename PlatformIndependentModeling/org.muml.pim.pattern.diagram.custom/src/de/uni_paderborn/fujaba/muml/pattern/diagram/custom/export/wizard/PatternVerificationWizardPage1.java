@@ -15,8 +15,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
+import org.muml.core.export.providers.GreyedAdapterFactoryLabelProvider;
 
-import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
 

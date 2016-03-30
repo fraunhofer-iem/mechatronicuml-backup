@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.cmd;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.muml.common.cmd.PathCommand;
+import org.muml.core.common.cmd.PathCommand;
 
 import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
 

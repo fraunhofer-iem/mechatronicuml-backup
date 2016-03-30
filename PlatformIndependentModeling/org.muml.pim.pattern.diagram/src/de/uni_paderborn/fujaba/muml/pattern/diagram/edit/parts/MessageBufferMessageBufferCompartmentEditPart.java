@@ -106,8 +106,8 @@ public class MessageBufferMessageBufferCompartmentEditPart extends ListCompartme
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MessageBufferMessageBufferCompartmentCanonicalEditPolicy());
 
-		installEditPolicy(org.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
-				new org.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				new org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 
 	}
 

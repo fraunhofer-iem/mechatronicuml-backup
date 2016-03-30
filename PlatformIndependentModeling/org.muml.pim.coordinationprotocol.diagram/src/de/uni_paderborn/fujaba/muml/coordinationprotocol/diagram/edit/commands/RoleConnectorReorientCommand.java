@@ -89,9 +89,9 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
@@ -99,7 +99,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
 					.getErrorRoleConnector_4006(container, getNewSource(), target, sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -127,9 +127,9 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getLink()
 				.eContainer();
-		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
@@ -137,7 +137,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
 					.getErrorRoleConnector_4006(container, source, getNewTarget(), sourceView, targetView);
-			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;

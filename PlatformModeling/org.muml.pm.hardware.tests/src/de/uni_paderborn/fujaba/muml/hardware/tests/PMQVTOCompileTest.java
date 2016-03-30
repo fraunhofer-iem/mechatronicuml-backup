@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.hardware.tests;
 
 import java.net.URL;
 
-import de.uni_paderborn.fujaba.tests.QVTOCompileErrorTest;
+import org.muml.core.tests.QVTOCompileErrorTest;
 
 public class PMQVTOCompileTest extends QVTOCompileErrorTest {
 	

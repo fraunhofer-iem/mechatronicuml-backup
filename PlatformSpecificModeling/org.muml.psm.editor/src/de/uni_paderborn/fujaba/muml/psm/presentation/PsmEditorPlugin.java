@@ -13,8 +13,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.storydriven.core.provider.CoreEditPlugin;
+import org.muml.core.provider.CoreEditPlugin;
 
 /**
  * This is the central singleton for the Psm editor plugin.

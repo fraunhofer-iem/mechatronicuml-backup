@@ -19,8 +19,8 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.TextualExpression;
-import org.storydriven.core.ui.IExpressionEditor;
-import org.storydriven.core.ui.util.ExpressionEditorUtil;
+import org.muml.core.ui.IExpressionEditor;
+import org.muml.core.ui.util.ExpressionEditorUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.BoundUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 

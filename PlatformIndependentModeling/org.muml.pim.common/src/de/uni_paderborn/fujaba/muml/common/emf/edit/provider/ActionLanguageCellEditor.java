@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.widgets.Composite;
-import org.muml.common.xtext.ILoadResult;
+import org.muml.core.common.xtext.ILoadResult;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 

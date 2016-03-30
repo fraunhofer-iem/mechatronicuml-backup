@@ -8,7 +8,7 @@ import org.eclipse.ui.IWorkbench;
  * @generated
  */
 public class HardwareCreationWizard
-		extends de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+		extends org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated

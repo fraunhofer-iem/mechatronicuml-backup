@@ -28,9 +28,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import org.muml.core.tests.TestUtilities;
 
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 @RunWith(Parameterized.class)
 public class ModelicaTest {

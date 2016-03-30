@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.core.export.ApplicationSpecificDecorator;
+import org.muml.core.reachanalysis.core.export.ApplicationSpecificDecorator;
+
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
 

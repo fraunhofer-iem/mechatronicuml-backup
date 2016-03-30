@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  org.eclipse.m2m.qvt.oml
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Export-Package: de.uni_paderborn.fujaba.gmf.tests,
- de.uni_paderborn.fujaba.tests,
- de.uni_paderborn.fujaba.tests.packages,
- de.uni_paderborn.fujaba.tests.resource
+Export-Package: org.muml.core.tests,
+ org.muml.core.tests.gmf,
+ org.muml.core.tests.packages,
+ org.muml.core.tests.resource

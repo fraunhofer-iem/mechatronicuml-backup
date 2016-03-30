@@ -2,8 +2,8 @@ package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.muml.core.export.pages.IActivatableWizardPage;
 
-import de.uni_paderborn.fujaba.export.pages.IActivatableWizardPage;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 
 public abstract class AbstractPatternVerificationWizardPage 

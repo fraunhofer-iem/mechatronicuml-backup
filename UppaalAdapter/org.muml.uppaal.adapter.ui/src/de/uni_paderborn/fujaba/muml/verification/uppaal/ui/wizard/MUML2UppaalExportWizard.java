@@ -10,12 +10,12 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.muml.core.NamedElement;
+import org.muml.core.export.operation.AbstractFujabaExportOperation;
+import org.muml.core.export.operation.IFujabaExportOperation;
+import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
+import org.muml.core.export.pages.ElementSelectionMode;
+import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 
-import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
-import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
-import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalModelJob;

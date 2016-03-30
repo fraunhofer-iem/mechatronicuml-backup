@@ -39,7 +39,7 @@ public class ReconfigurableAtomicComponentCreateCommand extends EditElementComma
 		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent newElement = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory.eINSTANCE
 				.createReconfigurableAtomicComponent();
 
-		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);

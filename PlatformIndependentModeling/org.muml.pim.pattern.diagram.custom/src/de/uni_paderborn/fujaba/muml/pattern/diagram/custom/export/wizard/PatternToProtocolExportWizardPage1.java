@@ -11,11 +11,11 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
+import org.muml.core.export.pages.ElementSelectionMode;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
 
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
-import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.VerifiedConfiguration;
 

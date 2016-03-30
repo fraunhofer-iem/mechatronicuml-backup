@@ -34,12 +34,12 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.swt.widgets.Shell;
-import org.muml.common.edit.commands.ExecuteQvtoTransformationCommand;
-import org.muml.common.edit.commands.StoringExecuteQvtoTransformationCommand;
+import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
+import org.muml.core.common.edit.commands.StoringExecuteQvtoTransformationCommand;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
+import org.muml.core.modelinstance.ui.batch.BatchDiagramCreationWizard;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;

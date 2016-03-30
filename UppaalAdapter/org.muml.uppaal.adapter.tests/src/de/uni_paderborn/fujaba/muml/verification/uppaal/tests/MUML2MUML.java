@@ -20,9 +20,7 @@ import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-//import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2MumlJob;
+import org.muml.core.modelinstance.RootNode;
 
 @RunWith(value = Parameterized.class)
 public class MUML2MUML extends Model2Model {

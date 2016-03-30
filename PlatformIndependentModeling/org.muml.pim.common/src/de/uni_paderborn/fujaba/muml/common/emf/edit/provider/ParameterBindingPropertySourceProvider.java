@@ -18,7 +18,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
-import org.muml.common.descriptor.AbstractItemPropertyDescriptor;
+import org.muml.core.common.descriptor.AbstractItemPropertyDescriptor;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.expressions.common.LiteralExpression;

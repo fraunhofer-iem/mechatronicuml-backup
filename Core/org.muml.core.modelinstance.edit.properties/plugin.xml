@@ -33,12 +33,12 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.modelinstance.properties.modelinstance.editor.RootNodeEditor$Factory"
+             factory="org.muml.core.modelinstance.properties.modelinstance.editor.RootNodeEditor$Factory"
              type="http://www.fujaba.de/modelinstance/0.4.0#RootNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.modelinstance.properties.modelinstance.editor.ModelElementCategoryEditor$Factory"
+             factory="org.muml.core.modelinstance.properties.modelinstance.editor.ModelElementCategoryEditor$Factory"
              type="http://www.fujaba.de/modelinstance/0.4.0#ModelElementCategory">
        </propertyEditor>
     
@@ -49,7 +49,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.modelinstance.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.core.modelinstance.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -57,7 +57,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.modelinstance.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.core.modelinstance.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

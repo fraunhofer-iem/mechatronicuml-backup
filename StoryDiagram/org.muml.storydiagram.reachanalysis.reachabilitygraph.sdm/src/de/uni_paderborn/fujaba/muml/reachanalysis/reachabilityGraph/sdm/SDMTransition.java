@@ -8,9 +8,8 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;
 
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 import org.storydriven.storydiagrams.activities.Activity;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ActionTransition;
 
 /**
  * <!-- begin-user-doc -->

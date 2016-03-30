@@ -8,8 +8,7 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;
+import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
 
 /**
  * <!-- begin-user-doc -->

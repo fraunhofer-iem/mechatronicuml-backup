@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 
 public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		extends
-		org.muml.common.edit.policies.tether.TetherConnectionEditPolicy
+		org.muml.core.common.edit.policies.tether.TetherConnectionEditPolicy
 		implements NotificationListener {
 	
 	public static int CONNECTION_LENGTH = 60; // 60px

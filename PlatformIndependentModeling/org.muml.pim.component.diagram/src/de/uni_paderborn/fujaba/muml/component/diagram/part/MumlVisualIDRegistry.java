@@ -92,9 +92,9 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory()
+		if (org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory()
 				.isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) domainElement)) {
+				&& isDiagram((org.muml.core.modelinstance.ModelElementCategory) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -311,7 +311,7 @@ public class MumlVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(de.uni_paderborn.fujaba.modelinstance.ModelElementCategory element) {
+	private static boolean isDiagram(org.muml.core.modelinstance.ModelElementCategory element) {
 		return true;
 	}
 
