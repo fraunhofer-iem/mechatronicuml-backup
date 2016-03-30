@@ -11,7 +11,6 @@
 <booleanAttribute key="clearwslog" value="false"/>
 <stringAttribute key="configLocation" value="${workspace_loc}"/>
 <booleanAttribute key="default" value="true"/>
-<booleanAttribute key="default_auto_start" value="true"/>
 <stringAttribute key="deselected_workspace_plugins" value="build.test*1.0.0.qualifier,build.test*1.0.0.qualifier"/>
 <booleanAttribute key="includeOptional" value="true"/>
 <stringAttribute key="location" value="${workspace_loc}"/>
