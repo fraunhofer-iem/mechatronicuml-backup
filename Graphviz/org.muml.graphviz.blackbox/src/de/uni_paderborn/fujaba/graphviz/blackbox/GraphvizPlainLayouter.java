@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.graphviz.blackbox;
 
 import org.eclipse.jdt.annotation.NonNull;
+import org.muml.common.xtext.ILanguageResource;
 
-import de.uni_paderborn.fujaba.common.xtext.ILanguageResource;
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
 import de.uni_paderborn.fujaba.graphviz.plain.xtext.resource.PlainLanguageResource;

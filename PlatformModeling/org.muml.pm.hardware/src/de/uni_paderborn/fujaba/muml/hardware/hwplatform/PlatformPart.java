@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

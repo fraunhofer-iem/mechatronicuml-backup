@@ -71,9 +71,9 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint)) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDiscreteInteractionEndpointReceiverMessageBuffer_4003(getNewSource(),
@@ -81,7 +81,7 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(getNewSource(),
 							getOldTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -95,9 +95,9 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer)) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDiscreteInteractionEndpointReceiverMessageBuffer_4003(getOldSource(),
@@ -105,7 +105,7 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4003(getOldSource(),
 							getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;

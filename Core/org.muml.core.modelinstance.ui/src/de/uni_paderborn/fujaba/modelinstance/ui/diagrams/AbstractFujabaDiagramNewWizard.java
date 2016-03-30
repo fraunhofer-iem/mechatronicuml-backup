@@ -34,10 +34,10 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.muml.common.DiagramEditorUtil;
+import org.muml.common.Messages;
+import org.muml.common.ui.ResourceLocationProvider;
 
-import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
-import de.uni_paderborn.fujaba.common.Messages;
-import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.modelinstance.ui.commands.CreateDiagramCommand;

@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import org.storydriven.core.Extension;
+import org.muml.core.Extension;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 

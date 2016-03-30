@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.expressions.pathExpressions.ExplicitPathDescription;
 import org.storydriven.storydiagrams.expressions.pathExpressions.ImplicitPathDescription;
 import org.storydriven.storydiagrams.expressions.pathExpressions.ImplicitPathKind;

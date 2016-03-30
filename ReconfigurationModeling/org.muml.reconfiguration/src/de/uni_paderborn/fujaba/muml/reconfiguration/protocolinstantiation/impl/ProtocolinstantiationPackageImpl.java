@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;

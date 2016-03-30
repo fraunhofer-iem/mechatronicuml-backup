@@ -34,9 +34,9 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.swt.widgets.Shell;
+import org.muml.common.edit.commands.ExecuteQvtoTransformationCommand;
+import org.muml.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 
-import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
-import de.uni_paderborn.fujaba.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;

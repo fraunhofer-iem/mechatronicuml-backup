@@ -3,7 +3,7 @@ package org.storydriven.storydiagrams.interpreter.facade;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 
 import de.mdelab.sdm.interpreter.core.facade.IInstanceFacade;

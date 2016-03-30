@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.HashToStateList;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.ReachabilityGraph;

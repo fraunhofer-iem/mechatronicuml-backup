@@ -8,8 +8,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

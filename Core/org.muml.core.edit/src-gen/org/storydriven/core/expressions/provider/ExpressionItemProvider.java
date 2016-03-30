@@ -18,12 +18,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.CoreEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.expressions.Expression} object.
+ * This is the item provider adapter for a {@link org.muml.core.expressions.Expression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

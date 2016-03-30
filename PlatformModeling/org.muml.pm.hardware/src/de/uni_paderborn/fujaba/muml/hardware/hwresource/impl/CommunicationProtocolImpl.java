@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.storydriven.core.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

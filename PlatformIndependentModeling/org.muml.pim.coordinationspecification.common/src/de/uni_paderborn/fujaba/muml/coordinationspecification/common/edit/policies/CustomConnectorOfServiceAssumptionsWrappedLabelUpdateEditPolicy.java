@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies;
 import org.eclipse.emf.common.notify.Notification;
+import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 
-import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 /**

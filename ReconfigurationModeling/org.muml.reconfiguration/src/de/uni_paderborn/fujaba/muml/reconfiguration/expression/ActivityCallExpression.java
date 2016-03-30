@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.expression;
 
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.calls.Invocation;
 

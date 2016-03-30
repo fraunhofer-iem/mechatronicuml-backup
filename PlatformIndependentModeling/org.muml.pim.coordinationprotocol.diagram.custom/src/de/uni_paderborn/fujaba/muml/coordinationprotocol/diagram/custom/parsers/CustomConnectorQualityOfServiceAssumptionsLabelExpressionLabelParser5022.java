@@ -2,8 +2,8 @@ package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.parsers
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021;

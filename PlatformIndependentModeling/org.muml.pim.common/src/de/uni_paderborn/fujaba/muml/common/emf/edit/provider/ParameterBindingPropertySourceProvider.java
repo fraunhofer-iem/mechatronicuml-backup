@@ -18,11 +18,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.common.LiteralExpression;
+import org.muml.common.descriptor.AbstractItemPropertyDescriptor;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.LiteralExpression;
 
-import de.uni_paderborn.fujaba.common.descriptor.AbstractItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;

@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.common.descriptor.DefaultChainedPropertyDescriptor;
+import org.muml.common.descriptor.IChainedPropertyDescriptor;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
@@ -109,7 +109,7 @@ public class EntryOrExitEventItemProvider
 						getResourceLocator(),
 						"Action Name",
 						"The Name of the Action",
-				org.storydriven.core.CorePackage.Literals.NAMED_ELEMENT__NAME,
+				org.muml.core.CorePackage.Literals.NAMED_ELEMENT__NAME,
 						true,
 						false,
 						false,

@@ -35,10 +35,9 @@ import org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 import org.muml.cbs.dependencylanguage.xtext.common.DependencyModelLanguageResource;
 import org.muml.cbs.dependencylanguage.xtext.ui.internal.DependencyModelLanguageActivator;
 import org.muml.cbs.dependencylanguage.xtext.ui.xtfo.EmbeddedXtextEditor;
+import org.muml.common.xtext.ILoadResult;
 
 import com.google.inject.Injector;
-
-import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 
 public class DependencyModelLanguageXtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {

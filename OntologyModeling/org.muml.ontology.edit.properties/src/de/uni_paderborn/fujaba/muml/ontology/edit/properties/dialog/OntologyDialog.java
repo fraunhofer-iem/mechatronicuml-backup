@@ -26,12 +26,12 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
+import org.muml.common.ui.FileSelector;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLOntology;
 
-import de.uni_paderborn.fujaba.common.ui.FileSelector;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.parser.OWLOntologyUtil;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.providers.OntologyLabelProvider;
 

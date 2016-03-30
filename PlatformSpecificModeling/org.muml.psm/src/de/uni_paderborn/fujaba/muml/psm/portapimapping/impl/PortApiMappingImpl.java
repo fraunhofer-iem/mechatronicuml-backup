@@ -17,10 +17,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.storydriven.core.expressions.Expression;
-
-import org.storydriven.core.impl.CommentableElementImpl;
+import org.muml.core.expressions.Expression;
+import org.muml.core.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

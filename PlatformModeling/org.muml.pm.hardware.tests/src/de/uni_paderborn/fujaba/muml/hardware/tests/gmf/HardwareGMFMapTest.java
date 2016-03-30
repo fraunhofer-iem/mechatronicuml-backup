@@ -8,7 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 
 import de.uni_paderborn.fujaba.gmf.tests.GMFMapTest;
 import de.uni_paderborn.fujaba.muml.MumlPackage;

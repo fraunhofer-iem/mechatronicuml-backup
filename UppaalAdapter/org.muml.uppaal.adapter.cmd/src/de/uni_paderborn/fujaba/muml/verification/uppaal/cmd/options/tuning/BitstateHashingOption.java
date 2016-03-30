@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.tuning;
 
-import de.uni_paderborn.fujaba.common.cmd.Option;
+import org.muml.common.cmd.Option;
+
 import de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.VerifyTACommand;
 
 public class BitstateHashingOption extends Option<VerifyTACommand> {

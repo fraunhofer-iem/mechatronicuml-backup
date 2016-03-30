@@ -13,7 +13,7 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;

@@ -12,7 +12,7 @@
  */
 package de.uni_paderborn.fujaba.muml.ontology;
 
-import org.storydriven.core.Extension;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

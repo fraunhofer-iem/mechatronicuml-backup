@@ -6,7 +6,7 @@
  */
 package org.storydriven.storydiagrams.expressions.pathbridge;
 
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpression;
 
 /**

@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.Extension;
+import org.muml.core.Extension;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
 

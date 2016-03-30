@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.storydriven.core.expressions.util.ExpressionsAdapterFactory;
+import org.muml.core.expressions.util.ExpressionsAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -76,7 +76,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.TextualExpression} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.core.expressions.TextualExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,7 +84,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	protected TextualExpressionItemProvider textualExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.TextualExpression}.
+	 * This creates an adapter for a {@link org.muml.core.expressions.TextualExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT

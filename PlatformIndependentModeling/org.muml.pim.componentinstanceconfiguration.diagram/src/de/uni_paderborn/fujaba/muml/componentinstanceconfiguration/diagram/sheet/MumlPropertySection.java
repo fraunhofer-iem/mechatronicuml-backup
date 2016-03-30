@@ -44,11 +44,11 @@ public class MumlPropertySection extends DefaultPropertySection implements IProp
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+			List<AdapterFactory> positivePriorityFactories = org.muml.common.FujabaCommonPlugin
 					.getInstance().getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.ID,
 							true);
-			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+			List<AdapterFactory> negativePriorityFactories = org.muml.common.FujabaCommonPlugin
 					.getInstance().getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.ID,
 							false);

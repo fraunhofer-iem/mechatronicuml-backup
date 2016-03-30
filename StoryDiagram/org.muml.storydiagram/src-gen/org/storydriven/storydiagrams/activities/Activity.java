@@ -7,7 +7,7 @@
 package org.storydriven.storydiagrams.activities;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 import org.storydriven.storydiagrams.calls.Callable;
 
 /**

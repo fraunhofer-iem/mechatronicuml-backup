@@ -24,7 +24,7 @@ import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
-import org.storydriven.core.expressions.common.LiteralExpression;
+import org.muml.core.expressions.common.LiteralExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.core.ReachabilityComputationStatistics;

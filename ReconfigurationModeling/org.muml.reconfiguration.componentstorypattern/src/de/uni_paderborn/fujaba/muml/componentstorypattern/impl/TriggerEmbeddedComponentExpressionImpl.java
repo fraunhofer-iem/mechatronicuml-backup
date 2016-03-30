@@ -3,7 +3,7 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.storydriven.core.expressions.impl.ExpressionImpl;
+import org.muml.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;

@@ -13,7 +13,7 @@
 package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.storydriven.core.expressions.impl.ExpressionImpl;
+import org.muml.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression;

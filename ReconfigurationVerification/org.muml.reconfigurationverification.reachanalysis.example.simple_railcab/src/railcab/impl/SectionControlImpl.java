@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.core.impl.NamedElementImpl;
 
-import org.storydriven.core.impl.NamedElementImpl;
 import railcab.RailCab;
 import railcab.RailcabPackage;
 import railcab.SectionControl;

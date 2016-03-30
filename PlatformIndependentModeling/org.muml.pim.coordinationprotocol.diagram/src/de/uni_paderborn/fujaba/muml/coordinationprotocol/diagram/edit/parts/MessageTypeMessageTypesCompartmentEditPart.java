@@ -118,12 +118,12 @@ public class MessageTypeMessageTypesCompartmentEditPart extends ListCompartmentE
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MessageTypeMessageTypesCompartmentCanonicalEditPolicy());
 
-		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
-				new de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
+		installEditPolicy(org.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				new org.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 
 		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE,
-				new de.uni_paderborn.fujaba.common.edit.policies.compartment.HorizontalCompartmentEditPolicy());
+				org.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE,
+				new org.muml.common.edit.policies.compartment.HorizontalCompartmentEditPolicy());
 
 	}
 

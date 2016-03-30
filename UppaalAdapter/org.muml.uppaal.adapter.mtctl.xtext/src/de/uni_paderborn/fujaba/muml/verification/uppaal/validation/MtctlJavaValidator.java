@@ -6,7 +6,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.validation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.validation.Check;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 import com.google.inject.Inject;
 

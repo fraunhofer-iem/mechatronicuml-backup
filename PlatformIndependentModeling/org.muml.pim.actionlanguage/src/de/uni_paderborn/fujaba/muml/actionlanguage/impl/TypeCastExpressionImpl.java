@@ -17,8 +17,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.impl.ExpressionImpl;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression;

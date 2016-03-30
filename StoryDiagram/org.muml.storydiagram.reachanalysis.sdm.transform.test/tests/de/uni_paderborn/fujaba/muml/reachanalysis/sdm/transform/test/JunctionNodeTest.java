@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;

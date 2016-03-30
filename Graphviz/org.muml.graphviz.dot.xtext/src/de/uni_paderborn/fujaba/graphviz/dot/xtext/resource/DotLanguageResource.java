@@ -1,10 +1,10 @@
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.resource;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.common.xtext.AbstractLanguageResource;
 
 import com.google.inject.Injector;
 
-import de.uni_paderborn.fujaba.common.xtext.AbstractLanguageResource;
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
 import de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguageStandaloneSetup;
 

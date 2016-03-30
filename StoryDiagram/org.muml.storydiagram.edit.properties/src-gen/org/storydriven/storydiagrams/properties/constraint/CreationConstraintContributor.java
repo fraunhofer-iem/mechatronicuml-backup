@@ -10,9 +10,9 @@ public class CreationConstraintContributor
 		{
 			final org.eclipse.emf.ecore.EClass myClass = org.storydriven.storydiagrams.activities.ActivitiesPackage.eINSTANCE
 					.getOperationExtension();
-			final org.eclipse.emf.ecore.EReference opposite = org.storydriven.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EReference opposite = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
-			final org.eclipse.emf.ecore.EClass oppositeClass = org.storydriven.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 					.createOCLExpression("false", opposite, oppositeClass);
@@ -37,9 +37,9 @@ public class CreationConstraintContributor
 		{
 			final org.eclipse.emf.ecore.EClass myClass = org.storydriven.storydiagrams.calls.CallsPackage.eINSTANCE
 					.getParameterExtension();
-			final org.eclipse.emf.ecore.EReference opposite = org.storydriven.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EReference opposite = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
-			final org.eclipse.emf.ecore.EClass oppositeClass = org.storydriven.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 					.createOCLExpression("false", opposite, oppositeClass);

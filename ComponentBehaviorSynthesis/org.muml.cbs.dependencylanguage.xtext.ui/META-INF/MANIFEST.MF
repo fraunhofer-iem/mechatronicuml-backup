@@ -23,9 +23,9 @@ Require-Bundle: org.muml.cbs.dependencylanguage.xtext;visibility:=reexport,
  org.muml.cbs.dependencylanguage.xtext.ui.xtfo;bundle-version="0.4.0",
  org.muml.pim.actionlanguage.xtext.ui,
  org.eclipse.xtext.xbase.lib
-Import-Package: de.uni_paderborn.fujaba.common.xtext,
- org.apache.log4j,
- org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib,
+ org.muml.common.xtext
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.cbs.dependencylanguage.xtext.ui.contentassist,
  org.muml.cbs.dependencylanguage.xtext.ui.contentassist.antlr,

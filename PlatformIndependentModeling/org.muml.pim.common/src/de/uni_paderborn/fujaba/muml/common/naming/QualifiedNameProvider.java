@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.naming;
 
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 

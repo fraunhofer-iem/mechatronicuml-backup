@@ -16,9 +16,9 @@ import java.util.Collection;
 
 import java.util.concurrent.TimeUnit;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.common.CommonExpressionsPackage;
-import org.storydriven.core.expressions.common.LiteralExpression;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.LiteralExpression;
 
 /**
  * @generated

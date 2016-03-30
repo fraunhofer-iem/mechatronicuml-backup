@@ -16,7 +16,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 

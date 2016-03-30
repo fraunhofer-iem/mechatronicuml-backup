@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-import org.storydriven.core.util.ExtensionOperations;
+import org.muml.core.util.ExtensionOperations;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.OperationExtension;
 

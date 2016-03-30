@@ -5,7 +5,7 @@ import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.verification.fotctl.FoTCTLFormula;
 import de.uni_paderborn.fujaba.muml.verification.fotctl.QuantifiedFormula;

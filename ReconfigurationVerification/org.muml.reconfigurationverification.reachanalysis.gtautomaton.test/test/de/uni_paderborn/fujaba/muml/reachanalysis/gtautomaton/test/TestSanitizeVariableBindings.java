@@ -2,10 +2,11 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.test;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.LiteralExpression;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;

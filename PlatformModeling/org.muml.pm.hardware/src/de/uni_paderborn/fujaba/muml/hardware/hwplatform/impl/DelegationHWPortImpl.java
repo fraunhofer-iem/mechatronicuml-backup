@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
+import org.muml.core.CorePackage;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

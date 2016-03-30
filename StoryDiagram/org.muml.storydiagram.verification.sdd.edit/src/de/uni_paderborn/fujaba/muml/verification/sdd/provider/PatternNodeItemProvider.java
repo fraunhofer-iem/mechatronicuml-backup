@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
 import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;

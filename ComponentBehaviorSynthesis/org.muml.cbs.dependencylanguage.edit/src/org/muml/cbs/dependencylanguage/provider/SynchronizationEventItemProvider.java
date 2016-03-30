@@ -23,9 +23,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.SynchronizationEvent;
-import org.storydriven.core.expressions.ExpressionsFactory;
-
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.SynchronizationEvent} object.

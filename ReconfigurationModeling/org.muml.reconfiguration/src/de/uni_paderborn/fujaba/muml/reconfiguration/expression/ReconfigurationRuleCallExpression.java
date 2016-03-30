@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.expression;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;

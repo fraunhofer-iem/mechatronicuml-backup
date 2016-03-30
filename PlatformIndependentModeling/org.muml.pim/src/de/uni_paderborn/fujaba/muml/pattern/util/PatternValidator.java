@@ -20,7 +20,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import org.muml.common.validator.MumlValidator;
+
 import de.uni_paderborn.fujaba.muml.pattern.*;
 import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;

@@ -6,11 +6,11 @@ import java.util.List;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.muml.common.cmd.Option;
+import org.muml.common.cmd.OptionArgument;
+import org.muml.common.cmd.Parameter;
+import org.muml.common.cmd.PathCommand;
 
-import de.uni_paderborn.fujaba.common.cmd.Option;
-import de.uni_paderborn.fujaba.common.cmd.OptionArgument;
-import de.uni_paderborn.fujaba.common.cmd.Parameter;
-import de.uni_paderborn.fujaba.common.cmd.PathCommand;
 import de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.MCRegistry;
 import de.uni_paderborn.fujaba.muml.verification.modelchecker.ui.preferences.PreferenceConstants;
 

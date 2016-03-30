@@ -115,11 +115,11 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 
 		installEditPolicy(
 				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+				new org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
+				org.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new org.muml.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
 
@@ -134,7 +134,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 				switch (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-					return new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy();
+					return new org.muml.common.edit.policies.BorderItemSelectionEditPolicy();
 				case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
@@ -273,7 +273,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart) {
 			// bug-fix: allows the free positioning of external Labels
-			de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator(
+			org.muml.common.figures.CustomExternalLabelBorderItemLocator locator = new org.muml.common.figures.CustomExternalLabelBorderItemLocator(
 					getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);

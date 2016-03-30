@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import org.storydriven.core.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

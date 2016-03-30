@@ -3,7 +3,7 @@ package org.storydriven.storydiagrams.interpreter.facade;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.ActivityNode;

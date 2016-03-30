@@ -3,7 +3,7 @@ package org.storydriven.storydiagrams.interpreter.facade;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.StatementNode;

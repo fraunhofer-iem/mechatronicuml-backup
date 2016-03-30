@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.verification.fotctl.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.verification.fotctl.EdgeLabelPredicateDecl;
 import de.uni_paderborn.fujaba.muml.verification.fotctl.FotctlPackage;

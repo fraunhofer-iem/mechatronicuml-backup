@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.util.CoreUtil;
+import org.muml.core.util.CoreUtil;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
 

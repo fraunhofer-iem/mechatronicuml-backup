@@ -12,11 +12,11 @@ import org.eclipse.gmf.runtime.notation.LineType;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
+import org.muml.common.edit.policies.EditPolicyUtils;
+import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
-import de.uni_paderborn.fujaba.common.edit.policies.EditPolicyUtils;
-import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 

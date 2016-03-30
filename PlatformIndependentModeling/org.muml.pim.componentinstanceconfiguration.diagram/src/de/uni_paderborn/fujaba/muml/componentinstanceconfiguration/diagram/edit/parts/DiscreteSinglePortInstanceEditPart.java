@@ -76,7 +76,7 @@ public class DiscreteSinglePortInstanceEditPart extends AbstractBorderedShapeEdi
 	@Override
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+				org.muml.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
 		if (backgroundColorPolicy instanceof de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) {
 			setBackgroundColor(
 					((de.uni_paderborn.fujaba.muml.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
@@ -119,10 +119,10 @@ public class DiscreteSinglePortInstanceEditPart extends AbstractBorderedShapeEdi
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+				new org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new org.muml.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
 
@@ -138,7 +138,7 @@ public class DiscreteSinglePortInstanceEditPart extends AbstractBorderedShapeEdi
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-					return new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy();
+					return new org.muml.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -179,7 +179,7 @@ public class DiscreteSinglePortInstanceEditPart extends AbstractBorderedShapeEdi
 		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart
 				|| borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel7EditPart) {
 			// bug-fix: allows the free positioning of external Labels
-			de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator(
+			org.muml.common.figures.CustomExternalLabelBorderItemLocator locator = new org.muml.common.figures.CustomExternalLabelBorderItemLocator(
 					getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
@@ -195,8 +195,8 @@ public class DiscreteSinglePortInstanceEditPart extends AbstractBorderedShapeEdi
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
-						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				org.muml.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}

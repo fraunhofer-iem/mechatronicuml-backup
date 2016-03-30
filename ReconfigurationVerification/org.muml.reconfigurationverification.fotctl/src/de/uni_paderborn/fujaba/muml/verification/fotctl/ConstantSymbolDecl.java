@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.fotctl;
 
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

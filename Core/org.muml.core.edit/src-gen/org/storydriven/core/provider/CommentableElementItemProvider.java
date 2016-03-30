@@ -20,11 +20,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
+import org.muml.core.CommentableElement;
+import org.muml.core.CorePackage;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.CommentableElement} object.
+ * This is the item provider adapter for a {@link org.muml.core.CommentableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

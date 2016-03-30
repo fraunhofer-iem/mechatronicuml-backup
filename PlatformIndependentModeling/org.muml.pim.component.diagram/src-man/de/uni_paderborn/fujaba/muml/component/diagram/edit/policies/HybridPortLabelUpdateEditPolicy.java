@@ -2,8 +2,8 @@ package de.uni_paderborn.fujaba.muml.component.diagram.edit.policies;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 
-import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;

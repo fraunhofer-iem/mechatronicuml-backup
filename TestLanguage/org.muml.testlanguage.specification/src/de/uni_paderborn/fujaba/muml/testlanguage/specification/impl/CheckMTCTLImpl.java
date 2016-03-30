@@ -29,8 +29,8 @@ import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;

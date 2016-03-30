@@ -6,7 +6,7 @@
  */
 package org.storydriven.storydiagrams.calls.expressions;
 
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.calls.ParameterExtension;
 
 /**

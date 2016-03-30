@@ -6,7 +6,7 @@
  */
 package fujaba2simulink.behavior_model;
 
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;

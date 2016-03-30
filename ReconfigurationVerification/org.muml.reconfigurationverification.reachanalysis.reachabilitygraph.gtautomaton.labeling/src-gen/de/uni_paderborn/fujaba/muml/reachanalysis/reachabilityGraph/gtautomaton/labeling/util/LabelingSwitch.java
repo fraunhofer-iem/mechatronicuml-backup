@@ -9,8 +9,8 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.AtomicPropositionMapping;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling.LabelingPackage;

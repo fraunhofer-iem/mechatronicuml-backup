@@ -6,8 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

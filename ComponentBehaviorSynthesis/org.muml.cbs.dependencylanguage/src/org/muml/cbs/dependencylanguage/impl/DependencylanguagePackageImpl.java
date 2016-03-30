@@ -47,9 +47,9 @@ import org.muml.cbs.dependencylanguage.SynchronizationEvent;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
 import org.muml.cbs.dependencylanguage.TransitionEvent;
 import org.muml.cbs.dependencylanguage.TriggerMessage;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.expressions.ExpressionsPackage;
-import org.storydriven.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.CorePackage;
+import org.muml.core.expressions.ExpressionsPackage;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;

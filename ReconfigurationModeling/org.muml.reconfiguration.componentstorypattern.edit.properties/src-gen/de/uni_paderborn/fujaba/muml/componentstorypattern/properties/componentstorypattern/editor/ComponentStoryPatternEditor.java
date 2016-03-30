@@ -42,7 +42,7 @@ public class ComponentStoryPatternEditor
 	 * @generated
 	 */
 	protected org.muml.ape.runtime.editors.IPropertyEditor createComment_DocumentationTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
 				.getCommentableElement_Comment();
 		final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 				adapterFactory, feature, true);

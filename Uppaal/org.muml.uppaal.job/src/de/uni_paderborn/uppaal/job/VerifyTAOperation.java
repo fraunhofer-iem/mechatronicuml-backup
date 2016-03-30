@@ -29,14 +29,14 @@ import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
+import org.muml.common.cmd.Command;
+import org.muml.common.cmd.PathArgument;
+import org.muml.common.cmd.Process;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;
 import com.google.inject.name.Names;
 
-import de.uni_paderborn.fujaba.common.cmd.Command;
-import de.uni_paderborn.fujaba.common.cmd.PathArgument;
-import de.uni_paderborn.fujaba.common.cmd.Process;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.uppaal.NTA;
 import de.uni_paderborn.uppaal.cmd.VerifyTACommand;

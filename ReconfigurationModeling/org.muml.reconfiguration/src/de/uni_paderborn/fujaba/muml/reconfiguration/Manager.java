@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.CommentableElement;
+import org.muml.core.CommentableElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 

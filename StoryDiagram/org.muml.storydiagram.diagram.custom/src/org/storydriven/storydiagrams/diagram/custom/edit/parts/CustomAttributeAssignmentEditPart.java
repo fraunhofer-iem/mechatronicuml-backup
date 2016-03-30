@@ -2,7 +2,7 @@ package org.storydriven.storydiagrams.diagram.custom.edit.parts;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;

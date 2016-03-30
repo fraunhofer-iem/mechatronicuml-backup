@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.storydriven.core.expressions.common.util.CommonExpressionsAdapterFactory;
+import org.muml.core.expressions.common.util.CommonExpressionsAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -76,7 +76,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.UnaryExpression} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.core.expressions.common.UnaryExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,7 +84,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	protected UnaryExpressionItemProvider unaryExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.UnaryExpression}.
+	 * This creates an adapter for a {@link org.muml.core.expressions.common.UnaryExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -100,7 +100,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.ComparisonExpression} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.core.expressions.common.ComparisonExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -108,7 +108,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	protected ComparisonExpressionItemProvider comparisonExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.ComparisonExpression}.
+	 * This creates an adapter for a {@link org.muml.core.expressions.common.ComparisonExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -124,7 +124,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.ArithmeticExpression} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.core.expressions.common.ArithmeticExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +132,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	protected ArithmeticExpressionItemProvider arithmeticExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.ArithmeticExpression}.
+	 * This creates an adapter for a {@link org.muml.core.expressions.common.ArithmeticExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -148,7 +148,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.LogicalExpression} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.core.expressions.common.LogicalExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -156,7 +156,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	protected LogicalExpressionItemProvider logicalExpressionItemProvider;
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.LiteralExpression} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.core.expressions.common.LiteralExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -164,7 +164,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	protected LiteralExpressionItemProvider literalExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.LiteralExpression}.
+	 * This creates an adapter for a {@link org.muml.core.expressions.common.LiteralExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT

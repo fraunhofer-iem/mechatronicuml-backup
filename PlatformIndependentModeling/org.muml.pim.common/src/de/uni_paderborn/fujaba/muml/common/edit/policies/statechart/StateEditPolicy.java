@@ -18,8 +18,8 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 
-import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;

@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.cbs.dependencylanguage.Condition;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.HybridClockCondition;
-import org.storydriven.core.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 

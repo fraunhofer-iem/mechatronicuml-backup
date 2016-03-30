@@ -15,11 +15,11 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.muml.common.ui.ExtensibleModelSelectionPage;
+import org.muml.common.ui.ModelSelectionPageExtension;
+import org.muml.common.ui.PredefinedModelExtension;
+import org.muml.common.ui.ResourceLocationProvider;
 
-import de.uni_paderborn.fujaba.common.ui.ExtensibleModelSelectionPage;
-import de.uni_paderborn.fujaba.common.ui.ModelSelectionPageExtension;
-import de.uni_paderborn.fujaba.common.ui.PredefinedModelExtension;
-import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;

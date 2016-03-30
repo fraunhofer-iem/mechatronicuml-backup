@@ -3,11 +3,12 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
 
+import org.muml.core.NamedElement;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

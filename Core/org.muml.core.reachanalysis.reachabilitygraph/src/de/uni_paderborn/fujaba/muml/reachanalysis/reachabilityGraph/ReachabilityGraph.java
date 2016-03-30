@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
-import org.storydriven.core.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

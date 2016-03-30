@@ -20,12 +20,12 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.expressions.common.ComparingOperator;
+import org.muml.common.descriptor.DefaultChainedPropertyDescriptor;
+import org.muml.common.descriptor.IChainedPropertyDescriptor;
+import org.muml.core.CorePackage;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
@@ -177,8 +177,8 @@ public class ClockConstraintItemProvider extends ExtendableElementItemProvider {
 					public Collection<?> getChoiceOfValues(Object object) {
 						if (object instanceof EObject && ((EObject) object).eContainer() instanceof State) {
 							List<Enumerator> enumerators = new ArrayList<Enumerator>();
-							enumerators.add(org.storydriven.core.expressions.common.ComparingOperator.LESS);
-							enumerators.add(org.storydriven.core.expressions.common.ComparingOperator.LESS_OR_EQUAL);
+							enumerators.add(org.muml.core.expressions.common.ComparingOperator.LESS);
+							enumerators.add(org.muml.core.expressions.common.ComparingOperator.LESS_OR_EQUAL);
 							return enumerators;
 						}
 						return super.getChoiceOfValues(object);

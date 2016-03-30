@@ -2,8 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
+import org.muml.core.CommentableElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.component.Port;
 

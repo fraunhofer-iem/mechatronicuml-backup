@@ -36,8 +36,8 @@ import org.eclipse.ocl.options.ProblemOption;
 import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.muml.common.validator.MumlValidator;
 
-import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.tests.resource.IResourceVisitor;
 import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 

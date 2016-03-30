@@ -49,12 +49,12 @@ public class ComponentStoryDiagramPropertySection extends
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+			List<AdapterFactory> positivePriorityFactories = org.muml.common.FujabaCommonPlugin
 					.getInstance()
 					.getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID,
 							true);
-			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+			List<AdapterFactory> negativePriorityFactories = org.muml.common.FujabaCommonPlugin
 					.getInstance()
 					.getCustomItemProviderAdapterFactories(
 							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID,

@@ -4,7 +4,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers.ParameterLabelExpressionLabelParser;
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;

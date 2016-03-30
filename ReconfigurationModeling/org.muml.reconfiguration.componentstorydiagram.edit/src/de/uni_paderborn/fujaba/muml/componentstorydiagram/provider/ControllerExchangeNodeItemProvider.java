@@ -14,10 +14,10 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.common.descriptor.DefaultChainedPropertyDescriptor;
+import org.muml.common.descriptor.IChainedPropertyDescriptor;
 import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvider;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;

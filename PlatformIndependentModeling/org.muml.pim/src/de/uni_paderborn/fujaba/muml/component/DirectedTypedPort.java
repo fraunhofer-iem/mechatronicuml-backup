@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.component;
 
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 

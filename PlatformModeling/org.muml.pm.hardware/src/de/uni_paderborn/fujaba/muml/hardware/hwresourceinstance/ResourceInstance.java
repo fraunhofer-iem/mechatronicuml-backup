@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

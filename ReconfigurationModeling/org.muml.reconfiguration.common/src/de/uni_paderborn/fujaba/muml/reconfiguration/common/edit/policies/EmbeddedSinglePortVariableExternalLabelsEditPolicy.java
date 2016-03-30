@@ -15,9 +15,9 @@ import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
-import org.storydriven.core.impl.CorePackageImpl;
+import org.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.core.impl.CorePackageImpl;
 
-import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;

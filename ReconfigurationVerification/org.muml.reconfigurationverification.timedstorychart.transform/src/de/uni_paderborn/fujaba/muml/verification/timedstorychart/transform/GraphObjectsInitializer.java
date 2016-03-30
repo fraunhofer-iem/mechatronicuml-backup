@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform;
 
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.LiteralExpression;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.protocol.Role;

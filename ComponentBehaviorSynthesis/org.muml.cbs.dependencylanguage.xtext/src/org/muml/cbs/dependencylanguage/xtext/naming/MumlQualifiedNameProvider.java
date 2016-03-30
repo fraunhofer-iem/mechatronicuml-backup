@@ -4,7 +4,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;

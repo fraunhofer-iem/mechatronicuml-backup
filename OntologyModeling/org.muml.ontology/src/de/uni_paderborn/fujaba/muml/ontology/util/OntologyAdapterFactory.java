@@ -20,9 +20,8 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,13 +126,13 @@ public class OntologyAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.core.ExtendableElement
+	 * @see org.muml.core.ExtendableElement
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
@@ -141,13 +140,13 @@ public class OntologyAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.Extension <em>Extension</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.Extension <em>Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.core.Extension
+	 * @see org.muml.core.Extension
 	 * @generated
 	 */
 	public Adapter createExtensionAdapter() {

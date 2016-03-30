@@ -3,7 +3,7 @@ package org.storydriven.storydiagrams.interpreter.patternmatcher;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 

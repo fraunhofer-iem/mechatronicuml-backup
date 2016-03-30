@@ -11,9 +11,9 @@ package org.storydriven.storydiagrams.expressions.pathbridge.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.CommentableElement;
+import org.muml.core.ExtendableElement;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.expressions.pathbridge.PathExpressionBridge;
 import org.storydriven.storydiagrams.expressions.pathbridge.PathbridgePackage;
 

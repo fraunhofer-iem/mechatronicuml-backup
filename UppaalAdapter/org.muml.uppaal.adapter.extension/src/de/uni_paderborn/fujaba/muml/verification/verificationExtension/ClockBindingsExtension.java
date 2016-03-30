@@ -13,8 +13,7 @@
 package de.uni_paderborn.fujaba.muml.verification.verificationExtension;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.core.Extension;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

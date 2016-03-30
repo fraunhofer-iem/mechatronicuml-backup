@@ -20,9 +20,9 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.ui.PartInitException;
+import org.muml.common.DiagramEditorUtil;
+import org.muml.common.Messages;
 
-import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
-import de.uni_paderborn.fujaba.common.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
 import de.uni_paderborn.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;

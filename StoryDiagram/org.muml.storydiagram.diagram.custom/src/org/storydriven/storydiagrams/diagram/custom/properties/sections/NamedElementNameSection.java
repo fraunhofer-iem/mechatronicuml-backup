@@ -1,7 +1,7 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.core.CorePackage;
+import org.muml.core.CorePackage;
 
 import de.upb.swt.core.ui.properties.sections.AbstractTextSection;
 

@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.actionlanguage;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 
@@ -64,7 +64,7 @@ public interface AttributeExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Indices</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
+	 * The list contents are of type {@link org.muml.core.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Indices</em>' reference list isn't clear,

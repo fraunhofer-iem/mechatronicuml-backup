@@ -6,7 +6,7 @@
  */
 package org.storydriven.storydiagrams;
 
-import org.storydriven.core.TypedElement;
+import org.muml.core.TypedElement;
 
 /**
  * <!-- begin-user-doc -->

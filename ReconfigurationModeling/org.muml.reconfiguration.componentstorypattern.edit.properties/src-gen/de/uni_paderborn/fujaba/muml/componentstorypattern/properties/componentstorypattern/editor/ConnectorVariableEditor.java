@@ -147,7 +147,7 @@ public abstract class ConnectorVariableEditor
 	 * @generated
 	 */
 	protected org.muml.ape.runtime.editors.IPropertyEditor createName_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
 				.getNamedElement_Name();
 		final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 				adapterFactory, feature, false);

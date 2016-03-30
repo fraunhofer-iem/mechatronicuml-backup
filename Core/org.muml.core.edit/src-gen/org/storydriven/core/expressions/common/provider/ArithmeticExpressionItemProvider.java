@@ -20,11 +20,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.expressions.common.ArithmeticExpression;
-import org.storydriven.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.ArithmeticExpression;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.expressions.common.ArithmeticExpression} object.
+ * This is the item provider adapter for a {@link org.muml.core.expressions.common.ArithmeticExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

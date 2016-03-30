@@ -6,7 +6,7 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton
 import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.expressions.common.UnaryOperator;
+import org.muml.core.expressions.common.UnaryOperator;
 
 import de.uni_paderborn.fujaba.muml.verification.fotctl.ConstantSymbolDecl;
 import de.uni_paderborn.fujaba.muml.verification.fotctl.QuantifiedFormula;

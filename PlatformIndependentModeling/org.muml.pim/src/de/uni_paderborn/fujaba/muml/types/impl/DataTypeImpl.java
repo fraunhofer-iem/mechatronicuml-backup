@@ -9,9 +9,9 @@ package de.uni_paderborn.fujaba.muml.types.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.muml.core.CommentableElement;
+import org.muml.core.CorePackage;
+import org.muml.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;

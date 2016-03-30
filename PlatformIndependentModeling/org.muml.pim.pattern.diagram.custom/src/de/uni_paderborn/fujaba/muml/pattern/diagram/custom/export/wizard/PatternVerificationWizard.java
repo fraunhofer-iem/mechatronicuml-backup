@@ -6,8 +6,8 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.LiteralExpression;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;

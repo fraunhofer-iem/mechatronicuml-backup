@@ -9,8 +9,8 @@ package de.uni_paderborn.fujaba.muml.verification.tctl.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
+import org.muml.core.CorePackage;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.verification.tctl.AtomicProposition;
 import de.uni_paderborn.fujaba.muml.verification.tctl.TctlPackage;

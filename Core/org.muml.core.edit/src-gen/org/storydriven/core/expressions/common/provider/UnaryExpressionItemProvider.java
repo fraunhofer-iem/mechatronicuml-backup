@@ -22,15 +22,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.common.CommonExpressionsPackage;
-import org.storydriven.core.expressions.common.UnaryExpression;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.UnaryExpression;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import org.storydriven.core.provider.CoreEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.expressions.common.UnaryExpression} object.
+ * This is the item provider adapter for a {@link org.muml.core.expressions.common.UnaryExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

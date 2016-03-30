@@ -1,6 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.storydriven.core.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomaton;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomatonClockConstraint;

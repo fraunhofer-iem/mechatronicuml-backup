@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.core.CorePackage;
 
-import org.storydriven.core.CorePackage;
 import railcab.RailCab;
 import railcab.RailcabFactory;
 import railcab.RailcabPackage;

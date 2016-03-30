@@ -25,8 +25,8 @@ import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.part.IPage;
+import org.muml.common.DiagramEditorUtil;
 
-import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository;
 

@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.CorePackage;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;

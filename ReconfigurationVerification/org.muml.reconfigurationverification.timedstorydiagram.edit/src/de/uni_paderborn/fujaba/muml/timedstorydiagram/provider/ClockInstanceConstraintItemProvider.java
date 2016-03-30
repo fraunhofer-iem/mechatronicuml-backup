@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.timedstorydiagram.ClockInstanceConstraint;
 import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage;

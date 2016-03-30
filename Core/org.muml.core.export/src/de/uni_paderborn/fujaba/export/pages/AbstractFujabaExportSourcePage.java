@@ -31,10 +31,10 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
+import org.muml.common.ui.ExtensibleModelSelectionPage;
+import org.muml.common.ui.ModelSelectionPageExtension;
+import org.muml.common.ui.ResourceLocationProvider;
 
-import de.uni_paderborn.fujaba.common.ui.ExtensibleModelSelectionPage;
-import de.uni_paderborn.fujaba.common.ui.ModelSelectionPageExtension;
-import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
 import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
 import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
 

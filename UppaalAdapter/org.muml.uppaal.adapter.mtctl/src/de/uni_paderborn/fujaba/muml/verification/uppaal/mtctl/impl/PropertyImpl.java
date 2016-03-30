@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.impl.CommentableElementImpl;
+import org.muml.core.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

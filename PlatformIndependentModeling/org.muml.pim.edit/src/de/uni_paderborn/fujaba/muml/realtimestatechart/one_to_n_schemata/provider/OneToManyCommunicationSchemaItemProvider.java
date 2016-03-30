@@ -39,10 +39,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.storydriven.core.expressions.ExpressionsFactory;
-
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema} object.

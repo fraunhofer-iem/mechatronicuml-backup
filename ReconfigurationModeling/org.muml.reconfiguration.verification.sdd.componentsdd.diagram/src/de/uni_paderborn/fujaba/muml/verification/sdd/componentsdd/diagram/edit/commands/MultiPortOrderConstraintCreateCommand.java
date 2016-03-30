@@ -57,9 +57,9 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+			View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 					.getSourceView(getRequest());
-			View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+			View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 					.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
@@ -88,9 +88,9 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateMultiPortOrderConstraint_4004(
@@ -100,7 +100,7 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 					.getLinkConstraints()
 					.getErrorMultiPortOrderConstraint_4004(getContainer(),
 							getSource(), getTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+			org.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,
 							errorMessage);
 			return false;

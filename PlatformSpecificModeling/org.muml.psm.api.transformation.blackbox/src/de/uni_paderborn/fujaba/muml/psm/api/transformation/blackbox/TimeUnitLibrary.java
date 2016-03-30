@@ -2,10 +2,10 @@ package de.uni_paderborn.fujaba.muml.psm.api.transformation.blackbox;
 
 import java.util.concurrent.TimeUnit;
 
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.common.LiteralExpression;
-import org.storydriven.core.expressions.common.impl.CommonExpressionsFactoryImpl;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.core.expressions.common.impl.CommonExpressionsFactoryImpl;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;

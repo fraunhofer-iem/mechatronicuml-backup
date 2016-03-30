@@ -14,9 +14,10 @@ import org.eclipse.xpand2.Generator;
 import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.expression.AbstractExpressionsUsingWorkflowComponent.GlobalVarDef;
 import org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.ExtendableElement;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.TextualExpression;
+
 //______________________________________________________________________________________
 import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;

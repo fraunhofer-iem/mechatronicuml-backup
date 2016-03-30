@@ -88,9 +88,9 @@ public class AssemblyConnectorInstanceReorientCommand extends EditElementCommand
 		}
 		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistAssemblyConnectorInstance_4001(container, getLink(), getNewSource(),
@@ -98,7 +98,7 @@ public class AssemblyConnectorInstanceReorientCommand extends EditElementCommand
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
 					.getErrorAssemblyConnectorInstance_4001(container, getNewSource(), target, sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -125,9 +125,9 @@ public class AssemblyConnectorInstanceReorientCommand extends EditElementCommand
 		}
 		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = org.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistAssemblyConnectorInstance_4001(container, getLink(), source,
@@ -135,7 +135,7 @@ public class AssemblyConnectorInstanceReorientCommand extends EditElementCommand
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
 					.getErrorAssemblyConnectorInstance_4001(container, source, getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			org.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;

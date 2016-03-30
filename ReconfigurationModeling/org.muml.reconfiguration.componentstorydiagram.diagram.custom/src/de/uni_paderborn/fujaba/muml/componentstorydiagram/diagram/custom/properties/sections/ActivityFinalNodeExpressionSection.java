@@ -3,9 +3,9 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.proper
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;

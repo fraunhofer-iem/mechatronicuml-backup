@@ -22,11 +22,11 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.ExtendableElement;
+import org.muml.core.CorePackage;
+import org.muml.core.ExtendableElement;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.ExtendableElement} object.
+ * This is the item provider adapter for a {@link org.muml.core.ExtendableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

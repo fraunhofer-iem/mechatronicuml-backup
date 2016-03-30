@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
-import org.storydriven.core.NamedElement;
-import org.storydriven.core.util.ExtendableElementOperations;
+import org.muml.core.CorePackage;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
+import org.muml.core.NamedElement;
+import org.muml.core.util.ExtendableElementOperations;
 
 import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
 import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNodeType;

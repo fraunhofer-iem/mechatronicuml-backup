@@ -7,7 +7,7 @@
 package org.storydriven.storydiagrams.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.storydriven.core.impl.TypedElementImpl;
+import org.muml.core.impl.TypedElementImpl;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.Variable;
 

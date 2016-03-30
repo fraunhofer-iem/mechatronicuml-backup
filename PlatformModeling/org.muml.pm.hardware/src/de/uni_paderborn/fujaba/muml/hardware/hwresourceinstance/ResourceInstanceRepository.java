@@ -3,8 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.core.CommentableElement;
+import org.muml.core.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

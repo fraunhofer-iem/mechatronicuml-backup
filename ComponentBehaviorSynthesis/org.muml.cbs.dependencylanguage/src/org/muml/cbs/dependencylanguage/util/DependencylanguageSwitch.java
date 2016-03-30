@@ -6,10 +6,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.cbs.dependencylanguage.*;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.CommentableElement;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
+import org.muml.core.expressions.Expression;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;

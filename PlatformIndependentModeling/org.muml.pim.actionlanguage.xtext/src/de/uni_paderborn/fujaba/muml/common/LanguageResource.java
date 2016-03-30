@@ -2,12 +2,12 @@ package de.uni_paderborn.fujaba.muml.common;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.storydriven.core.expressions.Expression;
+import org.muml.common.xtext.AbstractLanguageResource;
+import org.muml.common.xtext.ILoadResult;
+import org.muml.core.expressions.Expression;
 
 import com.google.inject.Injector;
 
-import de.uni_paderborn.fujaba.common.xtext.AbstractLanguageResource;
-import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.ActionLanguageStandaloneSetup;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 

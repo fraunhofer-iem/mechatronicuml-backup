@@ -7,8 +7,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.Hwplatforminstan
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkingHardwareInstance;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.storydriven.core.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

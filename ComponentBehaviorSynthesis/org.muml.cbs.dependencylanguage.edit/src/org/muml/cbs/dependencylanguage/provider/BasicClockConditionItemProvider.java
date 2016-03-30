@@ -21,9 +21,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.cbs.dependencylanguage.BasicClockCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
-import org.storydriven.core.CorePackage;
-
-import org.storydriven.core.expressions.common.ComparingOperator;
+import org.muml.core.CorePackage;
+import org.muml.core.expressions.common.ComparingOperator;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.BasicClockCondition} object.

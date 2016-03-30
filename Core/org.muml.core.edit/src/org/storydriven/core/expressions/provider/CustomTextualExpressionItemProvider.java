@@ -1,7 +1,7 @@
 package org.storydriven.core.expressions.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.expressions.TextualExpression;
 
 public class CustomTextualExpressionItemProvider extends TextualExpressionItemProvider {
 	public CustomTextualExpressionItemProvider(AdapterFactory af) {

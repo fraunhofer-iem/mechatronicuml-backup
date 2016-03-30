@@ -3,8 +3,8 @@
 package de.uni_paderborn.fujaba.muml.connector;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
+import org.muml.core.CommentableElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;

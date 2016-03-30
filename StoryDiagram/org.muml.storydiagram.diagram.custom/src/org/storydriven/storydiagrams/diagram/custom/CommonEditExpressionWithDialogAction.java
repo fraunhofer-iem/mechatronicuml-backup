@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.ui.action.AbstractActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 public abstract class CommonEditExpressionWithDialogAction extends AbstractActionDelegate implements 
 	IObjectActionDelegate{

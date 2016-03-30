@@ -9,8 +9,8 @@ package de.uni_paderborn.fujaba.muml.behavior.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
+import org.muml.core.CommentableElement;
+import org.muml.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;

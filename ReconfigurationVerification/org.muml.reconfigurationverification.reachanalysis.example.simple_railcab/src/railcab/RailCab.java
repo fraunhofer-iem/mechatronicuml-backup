@@ -7,8 +7,8 @@
 package railcab;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

@@ -21,11 +21,11 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.TypedElement;
+import org.muml.core.CorePackage;
+import org.muml.core.TypedElement;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.TypedElement} object.
+ * This is the item provider adapter for a {@link org.muml.core.TypedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

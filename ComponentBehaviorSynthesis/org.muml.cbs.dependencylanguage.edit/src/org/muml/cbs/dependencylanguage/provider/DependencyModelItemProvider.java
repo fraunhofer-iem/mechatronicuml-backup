@@ -23,8 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.DependencyModel;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.storydriven.core.CorePackage;
-
+import org.muml.core.CorePackage;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
 /**

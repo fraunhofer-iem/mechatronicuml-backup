@@ -13,8 +13,7 @@
 package de.uni_paderborn.fujaba.muml.behavior;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.core.Repository;
+import org.muml.core.Repository;
 
 /**
  * <!-- begin-user-doc -->

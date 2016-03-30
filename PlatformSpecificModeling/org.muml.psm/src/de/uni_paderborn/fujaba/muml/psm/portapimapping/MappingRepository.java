@@ -5,9 +5,8 @@ package de.uni_paderborn.fujaba.muml.psm.portapimapping;
 import de.uni_paderborn.fujaba.muml.psm.Import;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
+import org.muml.core.CommentableElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

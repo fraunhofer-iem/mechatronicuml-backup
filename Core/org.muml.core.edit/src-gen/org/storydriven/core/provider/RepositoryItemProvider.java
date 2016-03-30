@@ -16,11 +16,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.Repository;
+import org.muml.core.CorePackage;
+import org.muml.core.Repository;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.Repository} object.
+ * This is the item provider adapter for a {@link org.muml.core.Repository} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

@@ -32,8 +32,8 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.junit.Before;
 import org.junit.Test;
-import org.storydriven.core.NamedElement;
-import org.storydriven.core.expressions.common.ComparingOperator;
+import org.muml.core.NamedElement;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.core.ReachabilityComputation;

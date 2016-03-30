@@ -2,9 +2,9 @@ package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.StatementNode;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractExpressionSection;
 

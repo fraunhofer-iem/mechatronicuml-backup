@@ -3,7 +3,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.storydriven.core.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ControllerInstance;
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage;

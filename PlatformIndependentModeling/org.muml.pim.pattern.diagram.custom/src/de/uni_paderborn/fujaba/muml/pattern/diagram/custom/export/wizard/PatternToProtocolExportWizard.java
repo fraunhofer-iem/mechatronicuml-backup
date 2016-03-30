@@ -17,8 +17,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.LiteralExpression;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;

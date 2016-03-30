@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach.state;
 
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.TextualExpression;
+import org.muml.core.ExtendableElement;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;

@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.timedstorydiagram;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 import org.storydriven.storydiagrams.activities.Activity;
 
 /**

@@ -147,9 +147,9 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+		List<AdapterFactory> positivePriorityFactories = org.muml.common.FujabaCommonPlugin
 				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+		List<AdapterFactory> negativePriorityFactories = org.muml.common.FujabaCommonPlugin
 				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority

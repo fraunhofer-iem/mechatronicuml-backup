@@ -4,11 +4,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.muml.ape.runtime.editors.AbstractManyFeatureXtextPropertyEditor;
+import org.muml.common.xtext.AbstractLanguageResource;
+import org.muml.common.xtext.ILoadResult;
 
 import com.google.inject.Injector;
 
-import de.uni_paderborn.fujaba.common.xtext.AbstractLanguageResource;
-import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;

@@ -1,7 +1,7 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.storydriven.storydiagrams.patterns.Constraint;
 import org.storydriven.storydiagrams.ui.properties.AbstractExtendedExpressionSection;
 

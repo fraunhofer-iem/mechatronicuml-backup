@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.TextualExpression;
-import org.storydriven.core.expressions.common.ComparingOperator;
-import org.storydriven.core.expressions.common.LiteralExpression;
+import org.muml.core.ExtendableElement;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.TextualExpression;
+import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;

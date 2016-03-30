@@ -4,17 +4,17 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.TextualExpression;
-import org.storydriven.core.expressions.common.ArithmeticExpression;
-import org.storydriven.core.expressions.common.ArithmeticOperator;
-import org.storydriven.core.expressions.common.ComparingOperator;
-import org.storydriven.core.expressions.common.ComparisonExpression;
-import org.storydriven.core.expressions.common.LiteralExpression;
-import org.storydriven.core.expressions.common.LogicOperator;
-import org.storydriven.core.expressions.common.LogicalExpression;
-import org.storydriven.core.expressions.common.UnaryExpression;
-import org.storydriven.core.expressions.common.UnaryOperator;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.TextualExpression;
+import org.muml.core.expressions.common.ArithmeticExpression;
+import org.muml.core.expressions.common.ArithmeticOperator;
+import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparisonExpression;
+import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.core.expressions.common.LogicOperator;
+import org.muml.core.expressions.common.LogicalExpression;
+import org.muml.core.expressions.common.UnaryExpression;
+import org.muml.core.expressions.common.UnaryOperator;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;

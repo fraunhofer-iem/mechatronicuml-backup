@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.verification.tctl.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.storydriven.core.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.verification.tctl.TctlPackage;
 import de.uni_paderborn.fujaba.muml.verification.tctl.Term;

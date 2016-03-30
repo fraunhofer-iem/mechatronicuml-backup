@@ -12,9 +12,9 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
 
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import org.muml.core.expressions.Expression;
 
-import org.storydriven.core.expressions.Expression;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

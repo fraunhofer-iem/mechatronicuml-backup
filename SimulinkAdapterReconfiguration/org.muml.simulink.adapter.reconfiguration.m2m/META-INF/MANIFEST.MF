@@ -16,7 +16,7 @@ Import-Package: de.uni_paderborn.fujaba.modelinstance,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.resource,
  org.eclipse.emf.ecore.resource.impl,
- org.storydriven.core,
+ org.muml.core,
  org.storydriven.storydiagrams.activities
 Require-Bundle: de.upb.swt.qvt.tgg.interpreter,
  org.muml.core.reachanalysis.core;bundle-version="0.4.0"

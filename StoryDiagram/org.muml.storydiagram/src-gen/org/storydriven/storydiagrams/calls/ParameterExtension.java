@@ -7,7 +7,7 @@
 package org.storydriven.storydiagrams.calls;
 
 import org.eclipse.emf.ecore.EParameter;
-import org.storydriven.core.Extension;
+import org.muml.core.Extension;
 import org.storydriven.storydiagrams.Variable;
 
 /**
@@ -36,7 +36,7 @@ public interface ParameterExtension extends Variable, Extension {
 	 * <p>
 	 * This feature redefines the following features:
 	 * <ul>
-	 *   <li>'{@link org.storydriven.core.Extension#getModelBase() <em>Model Base</em>}'</li>
+	 *   <li>'{@link org.muml.core.Extension#getModelBase() <em>Model Base</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->

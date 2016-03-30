@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.verification.fotctl;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

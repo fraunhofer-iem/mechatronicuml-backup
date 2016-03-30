@@ -16,8 +16,7 @@ import de.uni_paderborn.fujaba.muml.verification.verificationExtension.ElementTo
 import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.storydriven.core.impl.ExtensionImpl;
+import org.muml.core.impl.ExtensionImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -3,7 +3,7 @@
 package org.muml.cbs.dependencylanguage;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.types.DataType;
 

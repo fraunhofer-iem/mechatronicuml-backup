@@ -6,7 +6,7 @@
  */
 package org.storydriven.storydiagrams.patterns;
 
-import org.storydriven.core.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

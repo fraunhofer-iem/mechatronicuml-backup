@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.AuxiliaryClockCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.storydriven.core.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.AuxiliaryClockCondition} object.

@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.cbs.dependencylanguage.AssignmentDirection;
 import org.muml.cbs.dependencylanguage.DataAssignmentEffect;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
-import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.util.ExtendableElementOperations;
+import org.muml.core.CommentableElement;
+import org.muml.core.CorePackage;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
+import org.muml.core.expressions.Expression;
+import org.muml.core.util.ExtendableElementOperations;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;

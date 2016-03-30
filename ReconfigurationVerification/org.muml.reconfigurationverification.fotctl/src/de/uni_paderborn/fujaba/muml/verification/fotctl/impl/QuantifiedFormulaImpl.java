@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
+import org.muml.core.CorePackage;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.verification.fotctl.FotctlPackage;
 import de.uni_paderborn.fujaba.muml.verification.fotctl.QuantifiedFormula;

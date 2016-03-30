@@ -2,10 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
+import org.muml.core.Extension;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-import org.storydriven.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

@@ -11,7 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
-import org.storydriven.core.Extension;
+import org.muml.core.Extension;
 import org.storydriven.storydiagrams.calls.Callable;
 
 /**
@@ -42,7 +42,7 @@ public interface OperationExtension extends Extension, Callable {
 	 * <p>
 	 * This feature redefines the following features:
 	 * <ul>
-	 *   <li>'{@link org.storydriven.core.Extension#getBase() <em>Base</em>}'</li>
+	 *   <li>'{@link org.muml.core.Extension#getBase() <em>Base</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->

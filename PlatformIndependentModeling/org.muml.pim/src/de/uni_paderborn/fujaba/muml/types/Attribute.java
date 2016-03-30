@@ -12,9 +12,10 @@
  */
 package de.uni_paderborn.fujaba.muml.types;
 
+import org.muml.core.CommentableElement;
+import org.muml.core.NamedElement;
+
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

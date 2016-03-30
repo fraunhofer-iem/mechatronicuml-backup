@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresource;
 
+import org.muml.core.CommentableElement;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
-
-import org.storydriven.core.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

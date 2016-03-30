@@ -10,8 +10,8 @@ import de.uni_paderborn.fujaba.muml.verification.sdd.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.NamedElement;
+import org.muml.core.ExtendableElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram;
 import de.uni_paderborn.fujaba.muml.verification.sdd.Edge;

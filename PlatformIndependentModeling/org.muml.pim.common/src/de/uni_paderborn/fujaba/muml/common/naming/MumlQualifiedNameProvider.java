@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.NamedElement;
+import org.muml.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;

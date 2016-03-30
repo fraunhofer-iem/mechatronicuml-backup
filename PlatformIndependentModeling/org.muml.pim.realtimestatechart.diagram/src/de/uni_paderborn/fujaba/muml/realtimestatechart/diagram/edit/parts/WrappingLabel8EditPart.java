@@ -149,7 +149,7 @@ public class WrappingLabel8EditPart extends LabelEditPart implements ITextAwareE
 
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.WRAPPING_LABEL_MULTI_LINE_ROLE,
-				new de.uni_paderborn.fujaba.common.edit.policies.WrappingLabelMultiLineEditPolicy());
+				new org.muml.common.edit.policies.WrappingLabelMultiLineEditPolicy());
 
 	}
 

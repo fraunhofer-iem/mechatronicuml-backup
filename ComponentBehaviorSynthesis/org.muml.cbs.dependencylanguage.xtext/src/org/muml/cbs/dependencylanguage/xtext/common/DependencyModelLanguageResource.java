@@ -22,12 +22,11 @@ import org.muml.cbs.dependencylanguage.Effect;
 import org.muml.cbs.dependencylanguage.Event;
 import org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguageStandaloneSetup;
 import org.muml.cbs.dependencylanguage.xtext.scoping.DependencyModelLanguageScopeProviderFactory;
+import org.muml.common.xtext.ILoadResult;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;
 import com.google.inject.name.Names;
-
-import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 
 public class DependencyModelLanguageResource {
 	private static Injector injector = null;

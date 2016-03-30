@@ -152,7 +152,7 @@ public interface ObjectVariable extends AbstractVariable {
 	 * <p>
 	 * This feature subsets the following features:
 	 * <ul>
-	 *   <li>'{@link org.storydriven.core.TypedElement#getType() <em>Type</em>}'</li>
+	 *   <li>'{@link org.muml.core.TypedElement#getType() <em>Type</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
