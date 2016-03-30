@@ -20,7 +20,7 @@
       <!-- @generated ontology -->
       <factory
             uri="http://www.fujaba.de/muml/ontology/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.ontology.provider.OntologyItemProviderAdapterFactory"
+            class="org.muml.ontology.provider.OntologyItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
