@@ -14,12 +14,11 @@ import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.componentstorypattern.PartVariable;
 import org.muml.reconfiguration.componentstorypattern.PortVariable;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.Edge;
-import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
-import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.Node;
+import org.muml.storydiagram.verification.sdd.PatternNode;
 
 /**
  * Tmp Workaround class to support setting of ParameterBinding values in CSD and

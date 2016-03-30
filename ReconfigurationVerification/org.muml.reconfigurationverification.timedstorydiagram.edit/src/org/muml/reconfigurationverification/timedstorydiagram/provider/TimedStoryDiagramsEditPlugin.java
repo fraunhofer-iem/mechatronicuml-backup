@@ -10,7 +10,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
-import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
+import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
  * This is the central singleton for the TimedStoryDiagrams edit plugin.

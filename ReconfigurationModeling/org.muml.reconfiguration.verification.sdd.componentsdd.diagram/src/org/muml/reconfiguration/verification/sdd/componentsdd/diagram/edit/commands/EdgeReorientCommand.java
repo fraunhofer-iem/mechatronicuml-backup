@@ -55,7 +55,7 @@ public class EdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Edge) {
+		if (false == getElementToEdit() instanceof org.muml.storydiagram.verification.sdd.Edge) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -71,15 +71,15 @@ public class EdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Node && newEnd instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Node)) {
+		if (!(oldEnd instanceof org.muml.storydiagram.verification.sdd.Node && newEnd instanceof org.muml.storydiagram.verification.sdd.Node)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.verification.sdd.Node target = getLink()
+		org.muml.storydiagram.verification.sdd.Node target = getLink()
 				.getTargetNode();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram)) {
+		if (!(getLink().eContainer() instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) getLink()
+		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getLink()
 				.eContainer();
 		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -102,15 +102,15 @@ public class EdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Node && newEnd instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Node)) {
+		if (!(oldEnd instanceof org.muml.storydiagram.verification.sdd.Node && newEnd instanceof org.muml.storydiagram.verification.sdd.Node)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.verification.sdd.Node source = getLink()
+		org.muml.storydiagram.verification.sdd.Node source = getLink()
 				.getSourceNode();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram)) {
+		if (!(getLink().eContainer() instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) getLink()
+		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getLink()
 				.eContainer();
 		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -170,36 +170,36 @@ public class EdgeReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.Edge getLink() {
-		return (de.uni_paderborn.fujaba.muml.verification.sdd.Edge) getElementToEdit();
+	protected org.muml.storydiagram.verification.sdd.Edge getLink() {
+		return (org.muml.storydiagram.verification.sdd.Edge) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.Node getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.verification.sdd.Node) oldEnd;
+	protected org.muml.storydiagram.verification.sdd.Node getOldSource() {
+		return (org.muml.storydiagram.verification.sdd.Node) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.Node getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.verification.sdd.Node) newEnd;
+	protected org.muml.storydiagram.verification.sdd.Node getNewSource() {
+		return (org.muml.storydiagram.verification.sdd.Node) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.Node getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.verification.sdd.Node) oldEnd;
+	protected org.muml.storydiagram.verification.sdd.Node getOldTarget() {
+		return (org.muml.storydiagram.verification.sdd.Node) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.Node getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.verification.sdd.Node) newEnd;
+	protected org.muml.storydiagram.verification.sdd.Node getNewTarget() {
+		return (org.muml.storydiagram.verification.sdd.Node) newEnd;
 	}
 
 	/**

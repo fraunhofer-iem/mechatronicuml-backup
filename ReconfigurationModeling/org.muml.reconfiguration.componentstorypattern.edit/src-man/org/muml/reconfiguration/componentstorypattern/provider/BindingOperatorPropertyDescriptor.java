@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.muml.reconfiguration.componentstorypattern.MultiPortVariable;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.muml.storydiagram.patterns.BindingOperator;
 
 public class BindingOperatorPropertyDescriptor extends ItemPropertyDescriptor {
 	public BindingOperatorPropertyDescriptor(AdapterFactory adapterFactory,

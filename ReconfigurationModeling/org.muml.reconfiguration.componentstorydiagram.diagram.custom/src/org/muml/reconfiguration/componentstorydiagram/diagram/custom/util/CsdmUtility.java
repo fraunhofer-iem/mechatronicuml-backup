@@ -12,9 +12,9 @@ import org.muml.pim.component.ComponentPart;
 import org.muml.pim.component.Port;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVariable;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.EdgeGuard;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.EdgeGuard;
+import org.muml.storydiagram.patterns.BindingOperator;
 
 public class CsdmUtility {
 

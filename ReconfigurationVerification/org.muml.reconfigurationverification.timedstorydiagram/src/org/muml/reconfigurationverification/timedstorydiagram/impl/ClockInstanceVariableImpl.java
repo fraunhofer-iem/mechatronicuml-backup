@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceVariable;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.patterns.impl.ObjectVariableImpl;
+import org.muml.storydiagram.patterns.impl.ObjectVariableImpl;
 
 /**
  * <!-- begin-user-doc -->

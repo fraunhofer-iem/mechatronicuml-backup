@@ -11,7 +11,7 @@ Require-Bundle: org.muml.storydiagram.expressions.common;bundle-version="[1.0.0,
  org.eclipse.xtext.ui.shared;bundle-version="[2.2.0,3.0.0)"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.storydiagrams.expressions.common.ui.contentassist.antlr,
- org.storydriven.storydiagrams.expressions.common.ui.internal,
- org.storydriven.storydiagrams.expressions.common.ui.contentassist
-Bundle-Activator: org.storydriven.storydiagrams.expressions.common.ui.internal.ExpressionsActivator
+Export-Package: org.muml.storydiagram.expressions.common.ui.contentassist,
+ org.muml.storydiagram.expressions.common.ui.contentassist.antlr,
+ org.muml.storydiagram.expressions.common.ui.internal
+Bundle-Activator: org.muml.storydiagram.expressions.common.ui.internal.ExpressionsActivator

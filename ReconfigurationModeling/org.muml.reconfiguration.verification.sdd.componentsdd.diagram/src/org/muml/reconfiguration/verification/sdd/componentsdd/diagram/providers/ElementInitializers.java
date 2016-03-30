@@ -12,9 +12,9 @@
  */
 package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers;
 
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
-import org.storydriven.storydiagrams.patterns.BindingState;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.muml.storydiagram.patterns.BindingSemantics;
+import org.muml.storydiagram.patterns.BindingState;
+import org.muml.storydiagram.patterns.PatternsPackage;
 
 /**
  * @generated

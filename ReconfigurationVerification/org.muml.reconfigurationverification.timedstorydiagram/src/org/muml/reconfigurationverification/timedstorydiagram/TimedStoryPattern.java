@@ -6,7 +6,7 @@
  */
 package org.muml.reconfigurationverification.timedstorydiagram;
 
-import org.storydriven.storydiagrams.patterns.StoryPattern;
+import org.muml.storydiagram.patterns.StoryPattern;
 
 /**
  * <!-- begin-user-doc -->

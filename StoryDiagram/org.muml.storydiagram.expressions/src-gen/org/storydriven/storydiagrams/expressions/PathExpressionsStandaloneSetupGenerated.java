@@ -23,7 +23,7 @@ public class PathExpressionsStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public Injector createInjector() {
-		return Guice.createInjector(new org.storydriven.storydiagrams.expressions.PathExpressionsRuntimeModule());
+		return Guice.createInjector(new org.muml.storydiagram.expressions.PathExpressionsRuntimeModule());
 	}
 	
 	public void register(Injector injector) {

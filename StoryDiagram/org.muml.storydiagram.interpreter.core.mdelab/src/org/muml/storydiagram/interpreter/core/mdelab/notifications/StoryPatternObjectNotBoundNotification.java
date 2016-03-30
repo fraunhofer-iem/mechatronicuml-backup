@@ -1,0 +1,36 @@
+package org.muml.storydiagram.interpreter.core.mdelab.notifications;
+
+import org.muml.storydiagram.interpreter.core.mdelab.variables.VariablesScope;
+
+/**
+ * 
+ * @author Stephan Hildebrandt
+ * 
+ * @param <StoryPatternObject>
+ * @param <Classifier>
+ */
+public class StoryPatternObjectNotBoundNotification<StoryPatternObject, Classifier> extends InterpreterNotification<Classifier>
+{
+	private final StoryPatternObject	storyPatternObject;
+
+	public StoryPatternObjectNotBoundNotification(VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
+			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier, StoryPatternObject storyPatternObject)
+	{
+		super(NotificationTypeEnum.STORY_PATTERN_OBJECT_NOT_BOUND, variablesScope, notifier);
+
+		assert storyPatternObject != null;
+
+		this.storyPatternObject = storyPatternObject;
+	}
+
+	public StoryPatternObject getStoryPatternObject()
+	{
+		return this.storyPatternObject;
+	}
+
+	@Override
+	public Object getMainStoryDiagramElement()
+	{
+		return this.getStoryPatternObject();
+	}
+}

@@ -20,11 +20,10 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Environment;
 import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.State;
 import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Statechart;
 import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.TtccarplatooningFactory;
-import org.storydriven.storydiagrams.activities.Activity;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputationStatistics;
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export.SDMReachabilityGraphExporter;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation;
+import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputationStatistics;
+import org.muml.storydiagram.reachanalysis.sdm.export.SDMReachabilityGraphExporter;
 
 public class StartComputationTest {
 

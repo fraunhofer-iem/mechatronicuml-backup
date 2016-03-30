@@ -2,11 +2,11 @@ package org.muml.reconfiguration.componentstorydiagram.diagram.custom.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.InitialNode;
-import org.storydriven.storydiagrams.activities.OperationExtension;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.InitialNode;
+import org.muml.storydiagram.activities.OperationExtension;
 
 public final class ActivityUtil {
 	private ActivityUtil() {

@@ -20,11 +20,10 @@ import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddFactory;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
-import de.uni_paderborn.fujaba.muml.verification.sdd.provider.AbstractStoryDecisionDiagramItemProvider;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
+import org.muml.storydiagram.verification.sdd.provider.AbstractStoryDecisionDiagramItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram} object.

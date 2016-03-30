@@ -255,7 +255,7 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getLeafNode_2002Text(View view) {
-		de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode domainModelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode) view
+		org.muml.storydiagram.verification.sdd.LeafNode domainModelElement = (org.muml.storydiagram.verification.sdd.LeafNode) view
 				.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.isValue());
@@ -504,7 +504,7 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getEdge_4001Text(View view) {
-		de.uni_paderborn.fujaba.muml.verification.sdd.Edge domainModelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.Edge) view
+		org.muml.storydiagram.verification.sdd.Edge domainModelElement = (org.muml.storydiagram.verification.sdd.Edge) view
 				.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.getType());

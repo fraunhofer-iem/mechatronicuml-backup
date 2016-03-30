@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl;
+import org.muml.storydiagram.activities.impl.ModifyingStoryNodeImpl;
 
 /**
  * <!-- begin-user-doc -->

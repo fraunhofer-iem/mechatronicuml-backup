@@ -4,16 +4,16 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.storydiagram.verification.sdd.basicsdd.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorPlugin
+Bundle-Activator: org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.commands,
- de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part,
- de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers,
- de.uni_paderborn.fujaba.muml.verification.sdd.diagram.parsers,
- de.uni_paderborn.fujaba.muml.verification.sdd.diagram.sheet
+Export-Package: org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.commands,
+ org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts,
+ org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies,
+ org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers,
+ org.muml.storydiagram.verification.sdd.basicsdd.diagram.part,
+ org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers,
+ org.muml.storydiagram.verification.sdd.basicsdd.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

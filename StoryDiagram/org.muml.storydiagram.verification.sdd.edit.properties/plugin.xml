@@ -33,12 +33,12 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.properties.sdd.editor.EdgeEditor$Factory"
+             factory="org.muml.storydiagram.verification.sdd.properties.sdd.editor.EdgeEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/0.4.0#Edge">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.properties.sdd.editor.LeafNodeEditor$Factory"
+             factory="org.muml.storydiagram.verification.sdd.properties.sdd.editor.LeafNodeEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/0.4.0#LeafNode">
        </propertyEditor>
     
@@ -49,7 +49,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.storydiagram.verification.sdd.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -57,7 +57,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.storydiagram.verification.sdd.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

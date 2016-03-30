@@ -18,8 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.impl.SDMTransitionImpl;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.SDMTransitionImpl;
 
 /**
  * <!-- begin-user-doc -->

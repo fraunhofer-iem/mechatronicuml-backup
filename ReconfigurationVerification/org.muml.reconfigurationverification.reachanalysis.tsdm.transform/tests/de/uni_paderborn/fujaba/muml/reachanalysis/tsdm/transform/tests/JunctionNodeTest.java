@@ -10,12 +10,12 @@ import org.junit.Test;
 import org.muml.core.expressions.TextualExpression;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.EdgeGuard;
-import org.storydriven.storydiagrams.activities.InitialNode;
-import org.storydriven.storydiagrams.activities.JunctionNode;
-import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.EdgeGuard;
+import org.muml.storydiagram.activities.InitialNode;
+import org.muml.storydiagram.activities.JunctionNode;
+import org.muml.storydiagram.patterns.AbstractVariable;
 
 public class JunctionNodeTest extends TransformationTest {
 

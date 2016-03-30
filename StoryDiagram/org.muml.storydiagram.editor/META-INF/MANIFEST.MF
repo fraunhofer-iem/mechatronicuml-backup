@@ -7,9 +7,9 @@ Bundle-SymbolicName: org.muml.storydiagram.editor;singleton:=true
 Bundle-Version: 1.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: org.storydriven.storydiagrams.presentation.StorydiagramsEditorPlugin$Implementation
+Bundle-Activator: org.muml.storydiagram.presentation.StorydiagramsEditorPlugin$Implementation
 Require-Bundle: org.eclipse.core.resources;visibility:=reexport,
  org.muml.storydiagram.edit;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
-Export-Package: org.storydriven.storydiagrams.presentation
+Export-Package: org.muml.storydiagram.presentation

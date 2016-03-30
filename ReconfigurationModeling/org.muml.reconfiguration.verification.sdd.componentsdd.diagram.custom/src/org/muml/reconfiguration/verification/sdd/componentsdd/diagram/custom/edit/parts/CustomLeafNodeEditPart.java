@@ -9,8 +9,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode;
+import org.muml.storydiagram.verification.sdd.LeafNode;
 
 
 public class CustomLeafNodeEditPart extends org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart {

@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.reconfiguration.componentstorydiagram.diagram.custom.util.CsdmUtility;
 import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeGuardEditPart;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityEdge;
 
 public class CustomActivityEdgeGuardEditPart extends ActivityEdgeGuardEditPart {
 

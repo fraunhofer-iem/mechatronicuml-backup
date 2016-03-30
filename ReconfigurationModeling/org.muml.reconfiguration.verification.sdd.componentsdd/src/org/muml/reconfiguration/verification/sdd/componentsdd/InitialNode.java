@@ -12,8 +12,8 @@
  */
 package org.muml.reconfiguration.verification.sdd.componentsdd;
 
-import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.storydiagram.verification.sdd.Node;
 
 /**
  * <!-- begin-user-doc -->

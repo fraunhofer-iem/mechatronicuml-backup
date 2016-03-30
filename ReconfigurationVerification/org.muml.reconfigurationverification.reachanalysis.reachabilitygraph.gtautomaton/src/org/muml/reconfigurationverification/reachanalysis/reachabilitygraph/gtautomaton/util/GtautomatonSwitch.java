@@ -24,10 +24,9 @@ import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtau
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMReachabilityGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
  * <!-- begin-user-doc -->

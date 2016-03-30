@@ -10,8 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.impl.PatternNodeImpl;
+import org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl;
 
 /**
  * <!-- begin-user-doc -->

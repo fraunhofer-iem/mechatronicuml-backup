@@ -51,7 +51,7 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransfor
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramFactory;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramsPackage;
 
 public class TestRuleApplications {
 	

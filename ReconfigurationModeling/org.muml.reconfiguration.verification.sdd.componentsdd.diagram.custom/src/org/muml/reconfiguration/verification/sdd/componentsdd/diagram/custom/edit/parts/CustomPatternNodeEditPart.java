@@ -9,8 +9,7 @@ import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
+import org.muml.storydiagram.verification.sdd.PatternNode;
 
 
 public class CustomPatternNodeEditPart extends ComponentStoryPatternNodeEditPart {

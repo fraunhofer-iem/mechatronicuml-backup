@@ -16,8 +16,7 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedGTSDelayTransition;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
  * <!-- begin-user-doc -->
@@ -176,13 +175,13 @@ public class ReachabilityGraphAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph <em>Step Graph</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph <em>Step Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph
+	 * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph
 	 * @generated
 	 */
 	public Adapter createStepGraphAdapter() {

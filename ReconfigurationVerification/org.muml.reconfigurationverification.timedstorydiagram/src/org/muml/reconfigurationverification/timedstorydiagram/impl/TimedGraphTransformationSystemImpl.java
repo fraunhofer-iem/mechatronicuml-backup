@@ -22,7 +22,7 @@ import org.muml.reconfigurationverification.timedstorydiagram.InvariantStoryDiag
 import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.activities.Activity;
+import org.muml.storydiagram.activities.Activity;
 
 /**
  * <!-- begin-user-doc -->

@@ -33,12 +33,12 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.basicSDD.editor.StoryDecisionDiagramEditor$Factory"
+             factory="org.muml.storydiagram.verification.sdd.basicsdd.properties.basicSDD.editor.StoryDecisionDiagramEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0#StoryDecisionDiagram">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.basicSDD.editor.StoryPatternNodeEditor$Factory"
+             factory="org.muml.storydiagram.verification.sdd.basicsdd.properties.basicSDD.editor.StoryPatternNodeEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0#StoryPatternNode">
        </propertyEditor>
     
@@ -49,7 +49,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.storydiagram.verification.sdd.basicsdd.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -57,7 +57,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.storydiagram.verification.sdd.basicsdd.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

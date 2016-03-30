@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.core.CorePackage;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
+import org.muml.storydiagram.patterns.PatternsPackage;
 
 /**
  * <!-- begin-user-doc -->

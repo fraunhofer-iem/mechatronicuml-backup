@@ -9,7 +9,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.muml.reconfiguration.componentstorypattern.ComponentVariable;
-import org.storydriven.storydiagrams.patterns.BindingState;
+import org.muml.storydiagram.patterns.BindingState;
 
 public class BindingStatePropertyDescriptor extends ItemPropertyDescriptor {
 

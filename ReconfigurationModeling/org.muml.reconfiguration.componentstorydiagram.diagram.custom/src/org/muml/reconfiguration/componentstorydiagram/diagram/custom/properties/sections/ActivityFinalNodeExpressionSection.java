@@ -7,9 +7,9 @@ import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.TextualExpression;
 import org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.AbstractExpressionSection;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
-import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityFinalNode;
+import org.muml.storydiagram.diagram.custom.util.ActivityUtil;
 
 public class ActivityFinalNodeExpressionSection extends AbstractExpressionSection {
 

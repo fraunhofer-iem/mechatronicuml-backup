@@ -1,8 +1,7 @@
 package org.muml.reconfigurationverification.reachanalysis.gtautomaton;
 
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputationStatistics;
+import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputationStatistics;
 
 public class GtAutomatonComputationStatistics extends
 		SDMReachabilityComputationStatistics {

@@ -9,9 +9,9 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityNode;
 
 /**
  * @generated

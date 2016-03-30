@@ -337,9 +337,9 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateEdge_4001(
-				de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container,
-				de.uni_paderborn.fujaba.muml.verification.sdd.Node source,
-				de.uni_paderborn.fujaba.muml.verification.sdd.Node target,
+				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
+				org.muml.storydiagram.verification.sdd.Node source,
+				org.muml.storydiagram.verification.sdd.Node target,
 				View sourceView, View targetView) {
 			return canExistEdge_4001(container, null, source, target,
 					sourceView, targetView);
@@ -385,10 +385,10 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistEdge_4001(
-				de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container,
-				de.uni_paderborn.fujaba.muml.verification.sdd.Edge linkInstance,
-				de.uni_paderborn.fujaba.muml.verification.sdd.Node source,
-				de.uni_paderborn.fujaba.muml.verification.sdd.Node target,
+				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
+				org.muml.storydiagram.verification.sdd.Edge linkInstance,
+				org.muml.storydiagram.verification.sdd.Node source,
+				org.muml.storydiagram.verification.sdd.Node target,
 				View sourceView, View targetView) {
 			return true;
 		}
@@ -397,9 +397,9 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorEdge_4001(
-				de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container,
-				de.uni_paderborn.fujaba.muml.verification.sdd.Node source,
-				de.uni_paderborn.fujaba.muml.verification.sdd.Node target,
+				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
+				org.muml.storydiagram.verification.sdd.Node source,
+				org.muml.storydiagram.verification.sdd.Node target,
 				View sourceView, View targetView) {
 			return null;
 		}

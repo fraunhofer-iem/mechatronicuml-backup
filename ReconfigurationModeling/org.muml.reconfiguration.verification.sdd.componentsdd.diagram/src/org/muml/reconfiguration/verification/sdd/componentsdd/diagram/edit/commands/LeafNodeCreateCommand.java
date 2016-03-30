@@ -62,10 +62,10 @@ public class LeafNodeCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode newElement = de.uni_paderborn.fujaba.muml.verification.sdd.SDDFactory.eINSTANCE
+		org.muml.storydiagram.verification.sdd.LeafNode newElement = org.muml.storydiagram.verification.sdd.SDDFactory.eINSTANCE
 				.createLeafNode();
 
-		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram owner = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
+		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram owner = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
 		owner.getNodes().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -78,7 +78,7 @@ public class LeafNodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode newElement,
+			org.muml.storydiagram.verification.sdd.LeafNode newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

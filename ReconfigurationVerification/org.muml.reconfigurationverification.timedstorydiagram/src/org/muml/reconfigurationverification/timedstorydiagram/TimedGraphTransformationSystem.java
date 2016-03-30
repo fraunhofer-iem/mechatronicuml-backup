@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.NamedElement;
-import org.storydriven.storydiagrams.activities.Activity;
+import org.muml.storydiagram.activities.Activity;
 
 /**
  * <!-- begin-user-doc -->
@@ -137,7 +137,7 @@ public interface TimedGraphTransformationSystem extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Helper Story Diagrams</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.storydiagrams.activities.Activity}.
+	 * The list contents are of type {@link org.muml.storydiagram.activities.Activity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

@@ -21,8 +21,8 @@ import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.TextualExpression;
 import org.muml.core.ui.IExpressionEditor;
 import org.muml.core.ui.util.ExpressionEditorUtil;
-import org.storydriven.storydiagrams.diagram.custom.util.BoundUtil;
-import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
+import org.muml.storydiagram.diagram.custom.util.BoundUtil;
+import org.muml.storydiagram.diagram.custom.util.EcoreTextUtil;
 
 import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;
 

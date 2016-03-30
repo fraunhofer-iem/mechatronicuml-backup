@@ -35,9 +35,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityNode;
 
 /**
  * @generated

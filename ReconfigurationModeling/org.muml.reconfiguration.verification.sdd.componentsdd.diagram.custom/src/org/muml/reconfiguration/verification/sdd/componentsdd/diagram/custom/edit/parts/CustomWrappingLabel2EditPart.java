@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
 import org.muml.reconfiguration.componentstorypattern.PartVariable;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel2EditPart;
-import org.storydriven.storydiagrams.patterns.BindingState;
+import org.muml.storydiagram.patterns.BindingState;
 
 public class CustomWrappingLabel2EditPart extends WrappingLabel2EditPart {
 

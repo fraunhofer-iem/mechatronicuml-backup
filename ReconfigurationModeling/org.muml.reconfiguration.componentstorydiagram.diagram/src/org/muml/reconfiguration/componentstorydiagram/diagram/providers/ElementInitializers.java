@@ -1,14 +1,14 @@
 package org.muml.reconfiguration.componentstorydiagram.diagram.providers;
 
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
-import org.storydriven.storydiagrams.activities.InitialNode;
-import org.storydriven.storydiagrams.activities.JunctionNode;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
-import org.storydriven.storydiagrams.patterns.BindingState;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityFinalNode;
+import org.muml.storydiagram.activities.InitialNode;
+import org.muml.storydiagram.activities.JunctionNode;
+import org.muml.storydiagram.patterns.BindingOperator;
+import org.muml.storydiagram.patterns.BindingSemantics;
+import org.muml.storydiagram.patterns.BindingState;
+import org.muml.storydiagram.patterns.PatternsPackage;
 
 /**
  * @generated

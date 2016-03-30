@@ -43,7 +43,7 @@ public class EdgeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container;
+	private final org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container;
 
 	/**
 	 * @generated
@@ -51,7 +51,7 @@ public class EdgeCreateCommand extends EditElementCommand {
 	public EdgeCreateCommand(CreateRelationshipRequest request, EObject source,
 			EObject target) {
 		super(request.getLabel(), null, request);
-		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container = null;
+		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
@@ -74,11 +74,11 @@ public class EdgeCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Node) {
+				&& false == source instanceof org.muml.storydiagram.verification.sdd.Node) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Node) {
+				&& false == target instanceof org.muml.storydiagram.verification.sdd.Node) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -116,7 +116,7 @@ public class EdgeCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.verification.sdd.Edge newElement = de.uni_paderborn.fujaba.muml.verification.sdd.SDDFactory.eINSTANCE
+		org.muml.storydiagram.verification.sdd.Edge newElement = org.muml.storydiagram.verification.sdd.SDDFactory.eINSTANCE
 				.createEdge();
 		getContainer().getEdges().add(newElement);
 		newElement.setSourceNode(getSource());
@@ -131,7 +131,7 @@ public class EdgeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.verification.sdd.Edge newElement,
+			org.muml.storydiagram.verification.sdd.Edge newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -162,21 +162,21 @@ public class EdgeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.Node getSource() {
-		return (de.uni_paderborn.fujaba.muml.verification.sdd.Node) source;
+	protected org.muml.storydiagram.verification.sdd.Node getSource() {
+		return (org.muml.storydiagram.verification.sdd.Node) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.Node getTarget() {
-		return (de.uni_paderborn.fujaba.muml.verification.sdd.Node) target;
+	protected org.muml.storydiagram.verification.sdd.Node getTarget() {
+		return (org.muml.storydiagram.verification.sdd.Node) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram getContainer() {
+	public org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram getContainer() {
 		return container;
 	}
 
@@ -185,15 +185,15 @@ public class EdgeCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram deduceContainer(
+	private static org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram deduceContainer(
 			EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) {
-				return (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) element;
+			if (element instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) {
+				return (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) element;
 			}
 		}
 		return null;
@@ -204,12 +204,12 @@ public class EdgeCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram deduceContainerUsingViews(
+	private static org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram deduceContainerUsingViews(
 			View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view
 				.eContainer()) {
-			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) {
-				return (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) view
+			if (view.getElement() instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) {
+				return (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) view
 						.getElement();
 			}
 		}

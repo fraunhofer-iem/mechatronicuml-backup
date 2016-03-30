@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd,
- de.uni_paderborn.fujaba.muml.verification.sdd.impl,
- de.uni_paderborn.fujaba.muml.verification.sdd.util
+Export-Package: org.muml.storydiagram.verification.sdd,
+ org.muml.storydiagram.verification.sdd.impl,
+ org.muml.storydiagram.verification.sdd.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;bundle-version="1.0.0";visibility:=reexport,

@@ -3,8 +3,7 @@
 package org.muml.reconfiguration.verification.sdd.componentsdd;
 
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
+import org.muml.storydiagram.verification.sdd.PatternNode;
 
 /**
  * <!-- begin-user-doc -->

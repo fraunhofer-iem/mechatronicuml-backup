@@ -12,13 +12,13 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.InitialNode;
-import org.storydriven.storydiagrams.activities.JunctionNode;
+import org.muml.storydiagram.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityFinalNode;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.InitialNode;
+import org.muml.storydiagram.activities.JunctionNode;
 
 /**
  * @generated

@@ -13,7 +13,7 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
 
 /**
  * @generated

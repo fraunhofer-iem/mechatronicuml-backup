@@ -16,7 +16,7 @@ import org.muml.reconfiguration.expression.ActivityCallExpression;
 import org.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
 import org.muml.reconfiguration.expression.ExpressionPackage;
 import org.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
-import org.storydriven.storydiagrams.calls.Invocation;
+import org.muml.storydiagram.calls.Invocation;
 
 /**
  * <!-- begin-user-doc -->

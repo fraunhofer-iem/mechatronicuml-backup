@@ -15,8 +15,7 @@ import org.muml.core.CorePackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingFactory;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingPackage;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SdmPackage;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
 
 /**
  * <!-- begin-user-doc -->

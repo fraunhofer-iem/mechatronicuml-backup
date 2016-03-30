@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.reconfiguration.componentstorydiagram.diagram.custom.util.TextUtil;
 import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel4EditPart;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.muml.storydiagram.activities.ActivityFinalNode;
 
 public class CustomWrappingLabel4EditPart extends WrappingLabel4EditPart {
 

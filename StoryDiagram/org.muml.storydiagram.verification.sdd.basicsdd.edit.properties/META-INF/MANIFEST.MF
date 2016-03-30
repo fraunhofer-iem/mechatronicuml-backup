@@ -18,6 +18,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.constraint,
- de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.basicSDD.editor
+Export-Package: org.muml.storydiagram.verification.sdd.basicsdd.properties.basicSDD.editor,
+ org.muml.storydiagram.verification.sdd.basicsdd.properties.constraint,
+ org.muml.storydiagram.verification.sdd.basicsdd.properties.metamodel
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

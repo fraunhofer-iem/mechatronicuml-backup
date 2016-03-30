@@ -20,8 +20,7 @@ import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.StructuralCondition;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.impl.AbstractStoryDecisionDiagramImpl;
+import org.muml.storydiagram.verification.sdd.impl.AbstractStoryDecisionDiagramImpl;
 
 /**
  * <!-- begin-user-doc -->

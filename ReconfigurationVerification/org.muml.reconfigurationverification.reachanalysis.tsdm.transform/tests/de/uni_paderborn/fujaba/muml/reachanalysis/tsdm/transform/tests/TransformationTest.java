@@ -29,17 +29,17 @@ import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhel
 import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.EdgeGuard;
-import org.storydriven.storydiagrams.activities.InitialNode;
-import org.storydriven.storydiagrams.activities.StoryNode;
-import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
-import org.storydriven.storydiagrams.patterns.AbstractVariable;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
-import org.storydriven.storydiagrams.patterns.ObjectVariable;
-import org.storydriven.storydiagrams.patterns.StoryPattern;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityFinalNode;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.EdgeGuard;
+import org.muml.storydiagram.activities.InitialNode;
+import org.muml.storydiagram.activities.StoryNode;
+import org.muml.storydiagram.patterns.AbstractLinkVariable;
+import org.muml.storydiagram.patterns.AbstractVariable;
+import org.muml.storydiagram.patterns.BindingOperator;
+import org.muml.storydiagram.patterns.ObjectVariable;
+import org.muml.storydiagram.patterns.StoryPattern;
 
 
 public abstract class TransformationTest {

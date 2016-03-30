@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?><!--
 --><plugin>
 <extension point="org.eclipse.emf.ecore.generated_package">
-      <package class="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SdmPackage" genModel="model/SDMReachabilityAnalysis.genmodel" uri="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0"/>
+      <package class="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage" genModel="model/SDMReachabilityAnalysis.genmodel" uri="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0"/>
    </extension>
 
 null

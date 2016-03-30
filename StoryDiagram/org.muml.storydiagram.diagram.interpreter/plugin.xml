@@ -14,7 +14,7 @@
 <plugin>
 	<extension point="org.eclipse.ui.commands">
 		<command
-			defaultHandler="org.storydriven.storydiagrams.diagram.interpreter.handlers.StartInterpreterHandler"
+			defaultHandler="org.muml.storydiagram.diagram.interpreter.handlers.StartInterpreterHandler"
 			id="com.aljoschability.modeling.sdm.experiments.interprete"
 			name="Interpret Activity..."/>
 	</extension>

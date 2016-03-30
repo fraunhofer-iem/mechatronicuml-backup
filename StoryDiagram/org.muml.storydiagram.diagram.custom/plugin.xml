@@ -35,7 +35,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeContribution"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.ActivityFinalNodeToggleFlowCommand"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.ActivityFinalNodeToggleFlowCommand"
                id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeToggleFlowCommand"
                label="Toggle end flow Attribute"
                tooltip="This will toggle they isKey Attribute of the Attribute.">
@@ -46,7 +46,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.ModifyingStoryNodeContribution"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
                id="org.storydriven.storydiagrams.diagram.custom.ModifyingStoryNodeToogleForEachCommand"
                label="Toggle forEach"
                tooltip="This will toggle the for each attribute of the story node.">
@@ -57,7 +57,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.MatchingStoryNodeContribution"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
                id="org.storydriven.storydiagrams.diagram.custom.MatchingStoryNodeToogleForEachCommand"
                label="Toggle forEach"
                tooltip="This will toggle the for each attribute of the story node.">
@@ -76,7 +76,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialog"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.EditExpressionWithDialogAction"
+               class="org.muml.storydiagram.diagram.custom.EditExpressionWithDialogAction"
                id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialog"
                label="Edit Expressions"
                tooltip="This will toggle whether the storynode is matching or modifying">
@@ -87,7 +87,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.EditAttributeAssignmentWithDialogAction"
+               class="org.muml.storydiagram.diagram.custom.EditAttributeAssignmentWithDialogAction"
                id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
                label="Edit Attribute Assignment"
                tooltip="This will toggle whether the storynode is matching or modifying">
@@ -105,7 +105,7 @@
             </separator>
          </menu>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.FINALLY"
                label="finally"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -113,7 +113,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.BOOL"
                label="bool"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -121,7 +121,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.END"
                label="end"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -129,7 +129,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.FAILURE"
                label="failure"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -137,7 +137,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.EACH_TIME"
                label="each time"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -145,7 +145,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.SUCCESS"
                label="success"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -153,7 +153,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.NONE"
                label="none"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -161,7 +161,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.ELSE"
                label="else"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -169,7 +169,7 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.EXCEPTION"
                label="exception"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
@@ -182,7 +182,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.ActivityEdgeGuardExpressionContribution"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.EditActivityEdgeGuardExpressionWithDialogAction"
+               class="org.muml.storydiagram.diagram.custom.EditActivityEdgeGuardExpressionWithDialogAction"
                id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardExpressionEdit"
                label="Edit Guard Expression"
                tooltip="This will toggle they isKey Attribute of the Attribute.">
@@ -193,7 +193,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.StatementNodeEditExpression"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.EditStatementExpressionWithDialogAction"
+               class="org.muml.storydiagram.diagram.custom.EditStatementExpressionWithDialogAction"
                id="org.storydriven.storydiagrams.diagram.custom.StatementNodeEditExpression"
                label="Edit Statement Expression"
                tooltip="This will toggle they isKey Attribute of the Attribute.">
@@ -204,7 +204,7 @@
             id="org.storydriven.storydiagrams.diagram.custom.expressions.ActivityFinalNodeReturnExpression"
             objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.EditActivityFinalNodeReturnExpressionAction"
+               class="org.muml.storydiagram.diagram.custom.EditActivityFinalNodeReturnExpressionAction"
                id="org.storydriven.storydiagrams.diagram.custom.expressions.EditActivityFinalNodeReturnExpression"
                label="Edit Return Value Expression"
                tooltip="This will toggle whether the storynode is matching or modifying">
@@ -215,7 +215,7 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
             contributorId="org.storydriven.storydiagrams.diagram"
-            labelProvider="org.storydriven.storydiagrams.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
+            labelProvider="org.muml.storydiagram.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory
                category="diagram">
@@ -248,202 +248,202 @@
       <propertySections
             contributorId="org.storydriven.storydiagrams.diagram">
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.name"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="Activity.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityPreconditionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityPreconditionSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.precondition"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="Activity.precondition"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityParametersSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityParametersSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.parameters"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityTypeModelSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityTypeModelSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.typeModel"
                tab="types">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.name"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeCalleeSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityCallNodeCalleeSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.callee"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.callee"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeInArgumentsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityCallNodeInArgumentsSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.in"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.in"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeOutArgumentsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityCallNodeOutArgumentsSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.out"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StoryNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StoryNodeFilter"
                id="StoryNode.name"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="StoryNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StoryNodeBindingSemanticsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StoryNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.StoryNodeBindingSemanticsSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StoryNodeFilter"
                id="StoryNode.bindingSemantics"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="StoryNode.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StoryNodeForEachSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StoryNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.StoryNodeForEachSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StoryNodeFilter"
                id="StoryNode.forEach"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StoryNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StoryNodeFilter"
                id="StoryNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StatementNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StatementNodeFilter"
                id="StatementNode.name"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="StatementNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StatementNodeExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StatementNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.StatementNodeExpressionSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StatementNodeFilter"
                id="StatementNode.expression"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StatementNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StatementNodeFilter"
                id="StatementNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StructuredNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StructuredNodeFilter"
                id="StructuredNode.name"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StructuredNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.StructuredNodeFilter"
                id="StructuredNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeEdgeGuardSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityEdgeEdgeGuardSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityEdgeFilter"
                id="ActivityEdge.guard"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityEdge.guard"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityEdgeGuardExpressionSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityEdgeFilter"
                id="ActivityEdge.expression"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InitialNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.InitialNodeFilter"
                id="InitialNode.name"
                tab="documentation">
          </propertySection>
          <propertySection
                afterSection="InitialNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InitialNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.InitialNodeFilter"
                id="InitialNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.JunctionNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.JunctionNodeFilter"
                id="JunctionNode.name"
                tab="documentation">
          </propertySection>
          <propertySection
                afterSection="JunctionNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.JunctionNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.JunctionNodeFilter"
                id="JunctionNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityFinalNodeSuccessSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityFinalNodeSuccessSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.success"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityFinalNode.success"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.expression"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.name"
                tab="documentation">
          </propertySection>
          <propertySection
                afterSection="ActivityFinalNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.FlowFinalNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.FlowFinalNodeFilter"
                id="FlowFinalNode.name"
                tab="documentation">
          </propertySection>
          <propertySection
                afterSection="FlowFinalNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.FlowFinalNodeFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.FlowFinalNodeFilter"
                id="FlowFinalNode.comment"
                tab="documentation">
          </propertySection>
@@ -455,142 +455,142 @@
       <propertySections
             contributorId="org.storydriven.storydiagrams.diagram">
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.name"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ObjectVariableClassifierSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ObjectVariableClassifierSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.classifier"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.classifier"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ObjectVariableBindingSemanticsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ObjectVariableBindingSemanticsSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.bindingSemantics"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.classifier"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractVariableBindingStateSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractVariableBindingStateSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.bindingState"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ObjectVariableBindingOperatorSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ObjectVariableBindingOperatorSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.bindingOperator"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.bindingOperator"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CollectionVariableUniqueSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.CollectionVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CollectionVariableUniqueSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.CollectionVariableFilter"
                id="CollectionVariable.unique"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="CollectionVariable.unique"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CollectionVariableAtLeastOneSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.CollectionVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.CollectionVariableAtLeastOneSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.CollectionVariableFilter"
                id="CollectionVariable.atLeastOne"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PrimitiveVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.PrimitiveVariableFilter"
                id="PrimitiveVariable.name"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="PrimitiveVariable.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.PrimitiveVariableClassifierSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PrimitiveVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.PrimitiveVariableClassifierSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.PrimitiveVariableFilter"
                id="PrimitiveVariable.classifier"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="PrimitiveVariable.classifier"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractVariableBindingStateSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PrimitiveVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractVariableBindingStateSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.PrimitiveVariableFilter"
                id="PrimitiveVariable.bindingState"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.LinkVariableTargetEndSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.LinkVariableTargetEndSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.LinkVariableFilter"
                id="LinkVariable.targetEnd"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="LinkVariable.targetEnd"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.LinkVariableFilter"
                id="LinkVariable.bindingSemantics"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="LinkVariable.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.LinkVariableFilter"
                id="LinkVariable.bindingOperator"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InclusionLinkFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.InclusionLinkFilter"
                id="InclusionLink.bindingSemantics"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="InclusionLink.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InclusionLinkFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.InclusionLinkFilter"
                id="InclusionLink.bindingOperator"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.PathFilter"
                id="Path.bindingSemantics"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="Path.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.PathFilter"
                id="Path.bindingOperator"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="Path.bindingOperator"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.PathExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.PathExpressionSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.PathFilter"
                id="Path.expression"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AttributeAssignmentAttributeSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.AttributeAssignmentFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AttributeAssignmentAttributeSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.AttributeAssignmentFilter"
                id="AttributeAssignment.attribute"
                tab="general">
          </propertySection>
          <propertySection
                afterSection="AttributeAssignment.attribute"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AttributeAssignmentExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.AttributeAssignmentFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.AttributeAssignmentExpressionSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.AttributeAssignmentFilter"
                id="AttributeAssignment.expression"
                tab="general">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ConstraintExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ConstraintFilter"
+               class="org.muml.storydiagram.diagram.custom.properties.sections.ConstraintExpressionSection"
+               filter="org.muml.storydiagram.diagram.custom.properties.filters.ConstraintFilter"
                id="Constraint.expression"
                tab="general">
          </propertySection>
@@ -601,7 +601,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize Story Diagram"
-			defaultHandler="org.storydriven.storydiagrams.diagram.custom.dialogs.SDMFujabaDiagramFileAction"
+			defaultHandler="org.muml.storydiagram.diagram.custom.dialogs.SDMFujabaDiagramFileAction"
 			id="org.storydriven.storydiagrams.diagram.createDiagram"
 			name="Initialize Story Diagram">
 		</command>
@@ -610,7 +610,7 @@
    <extension id="creation-wizard" point="org.eclipse.ui.newWizards">
       <wizard
             category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-            class="org.storydriven.storydiagrams.diagram.custom.dialogs.CustomActivityDiagramCreationWizard"
+            class="org.muml.storydiagram.diagram.custom.dialogs.CustomActivityDiagramCreationWizard"
             id="sdmcreationwizard"
             name="Activity Diagram">
          <description>

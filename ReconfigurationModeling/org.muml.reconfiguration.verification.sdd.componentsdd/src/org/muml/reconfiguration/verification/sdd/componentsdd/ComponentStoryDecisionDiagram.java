@@ -3,8 +3,7 @@
 package org.muml.reconfiguration.verification.sdd.componentsdd;
 
 import org.muml.reconfiguration.StructuralCondition;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
 
 /**
  * <!-- begin-user-doc -->

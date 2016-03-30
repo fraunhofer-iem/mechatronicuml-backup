@@ -80,13 +80,13 @@ public abstract class AbstractPathExpressionsRuntimeModule extends DefaultRuntim
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.JavaValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.storydriven.storydiagrams.expressions.validation.PathExpressionsJavaValidator> bindPathExpressionsJavaValidator() {
-		return org.storydriven.storydiagrams.expressions.validation.PathExpressionsJavaValidator.class;
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.muml.storydiagram.expressions.validation.PathExpressionsJavaValidator> bindPathExpressionsJavaValidator() {
+		return org.muml.storydiagram.expressions.validation.PathExpressionsJavaValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
-		return org.storydriven.storydiagrams.expressions.scoping.PathExpressionsScopeProvider.class;
+		return org.muml.storydiagram.expressions.scoping.PathExpressionsScopeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
@@ -131,7 +131,7 @@ public abstract class AbstractPathExpressionsRuntimeModule extends DefaultRuntim
 
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
-		return org.storydriven.storydiagrams.expressions.formatting.PathExpressionsFormatter.class;
+		return org.muml.storydiagram.expressions.formatting.PathExpressionsFormatter.class;
 	}
 
 }

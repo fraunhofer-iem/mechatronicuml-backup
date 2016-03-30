@@ -11,9 +11,9 @@ Require-Bundle: org.muml.storydiagram.interpreter.core.mdelab;bundle-version="1.
  org.muml.storydiagram;bundle-version="1.0.1";visibility:=reexport,
  org.muml.storydiagram.expressions,
  org.eclipse.emf.ecore
-Export-Package: org.storydriven.storydiagrams.interpreter,
- org.storydriven.storydiagrams.interpreter.calls,
- org.storydriven.storydiagrams.interpreter.expressions,
- org.storydriven.storydiagrams.interpreter.facade,
- org.storydriven.storydiagrams.interpreter.notifications,
- org.storydriven.storydiagrams.interpreter.patternmatcher
+Export-Package: org.muml.storydiagram.interpreter.core,
+ org.muml.storydiagram.interpreter.core.calls,
+ org.muml.storydiagram.interpreter.core.expressions,
+ org.muml.storydiagram.interpreter.core.facade,
+ org.muml.storydiagram.interpreter.core.notifications,
+ org.muml.storydiagram.interpreter.core.patternmatcher

@@ -7,8 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
 
 /**
  * <!-- begin-user-doc -->

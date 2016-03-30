@@ -176,7 +176,7 @@ public class ComponentSDDElementTypes {
 
 			elements.put(
 					LeafNode_2002,
-					de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+					org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 							.getLeafNode());
 
 			elements.put(
@@ -231,7 +231,7 @@ public class ComponentSDDElementTypes {
 
 			elements.put(
 					Edge_4001,
-					de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+					org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 							.getEdge());
 
 			elements.put(

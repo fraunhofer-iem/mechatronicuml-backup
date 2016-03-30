@@ -74,7 +74,7 @@ public class ComponentStoryDecisionDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+		return org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 				.getAbstractStoryDecisionDiagram_Nodes();
 	}
 

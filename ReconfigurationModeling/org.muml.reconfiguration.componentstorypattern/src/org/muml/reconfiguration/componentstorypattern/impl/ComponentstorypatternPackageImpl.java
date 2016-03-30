@@ -35,7 +35,7 @@ import org.muml.reconfiguration.componentstorypattern.PortVariable;
 import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
 import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentExpression;
 import org.muml.reconfiguration.componentstorypattern.util.ComponentstorypatternValidator;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.muml.storydiagram.patterns.PatternsPackage;
 
 /**
  * <!-- begin-user-doc -->

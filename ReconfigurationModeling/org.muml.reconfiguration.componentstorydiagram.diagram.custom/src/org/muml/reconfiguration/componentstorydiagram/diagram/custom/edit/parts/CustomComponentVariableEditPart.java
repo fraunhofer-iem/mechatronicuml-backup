@@ -18,8 +18,8 @@ import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.Comp
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern;
 import org.muml.reconfiguration.componentstorypattern.ComponentVariable;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityNode;
 
 public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
 

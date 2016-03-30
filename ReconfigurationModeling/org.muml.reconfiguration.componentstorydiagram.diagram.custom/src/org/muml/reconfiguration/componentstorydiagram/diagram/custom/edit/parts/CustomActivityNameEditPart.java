@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.componentstorydiagram.diagram.custom.util.CsdmUtility;
 import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityNameEditPart;
-import org.storydriven.storydiagrams.activities.Activity;
+import org.muml.storydiagram.activities.Activity;
 
 public class CustomActivityNameEditPart extends ActivityNameEditPart {
 

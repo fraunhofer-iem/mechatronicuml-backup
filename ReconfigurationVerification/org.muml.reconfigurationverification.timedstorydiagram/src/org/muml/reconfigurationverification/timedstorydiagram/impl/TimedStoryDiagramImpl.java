@@ -21,7 +21,7 @@ import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConst
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceVariable;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.activities.impl.ActivityImpl;
+import org.muml.storydiagram.activities.impl.ActivityImpl;
 
 /**
  * <!-- begin-user-doc -->

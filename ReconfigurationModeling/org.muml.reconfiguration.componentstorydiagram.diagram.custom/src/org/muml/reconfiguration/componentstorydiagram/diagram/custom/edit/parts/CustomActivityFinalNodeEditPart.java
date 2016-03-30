@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.reconfiguration.componentstorydiagram.diagram.custom.util.TextUtil;
 import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.muml.storydiagram.activities.ActivityFinalNode;
 
 public class CustomActivityFinalNodeEditPart extends ActivityFinalNodeEditPart {
 

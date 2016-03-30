@@ -7,7 +7,7 @@ Bundle-SymbolicName: org.muml.storydiagram.edit;singleton:=true
 Bundle-Version: 1.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin$Implementation
+Bundle-Activator: org.muml.storydiagram.provider.StorydiagramsEditPlugin$Implementation
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.storydiagram;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
@@ -16,11 +16,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.uml2.common.edit;visibility:=reexport
-Export-Package: org.storydriven.storydiagrams.activities.expressions.provider,
- org.storydriven.storydiagrams.activities.provider,
- org.storydriven.storydiagrams.calls.expressions.provider,
- org.storydriven.storydiagrams.calls.provider,
- org.storydriven.storydiagrams.patterns.expressions.provider,
- org.storydriven.storydiagrams.patterns.provider,
- org.storydriven.storydiagrams.provider,
- org.storydriven.storydiagrams.templates.provider
+Export-Package: org.muml.storydiagram.activities.expressions.provider,
+ org.muml.storydiagram.activities.provider,
+ org.muml.storydiagram.calls.expressions.provider,
+ org.muml.storydiagram.calls.provider,
+ org.muml.storydiagram.patterns.expressions.provider,
+ org.muml.storydiagram.patterns.provider,
+ org.muml.storydiagram.provider,
+ org.muml.storydiagram.templates.provider

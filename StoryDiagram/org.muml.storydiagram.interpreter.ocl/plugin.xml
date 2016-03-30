@@ -3,7 +3,7 @@
 <plugin>
 	<extension point="org.muml.storydiagram.interpreter.core.eclipse.expressionInterpreterExtension">
 		<expressionInterpreter
-			expressionInterpreterClass="de.mdelab.sdm.interpreter.ocl.OCLExpressionInterpreter"
+			expressionInterpreterClass="org.muml.storydiagram.interpreter.ocl.OCLExpressionInterpreter"
 			expressionLanguage="OCL"
 			expressionLanguageVersion="1.0"/>
 	</extension>

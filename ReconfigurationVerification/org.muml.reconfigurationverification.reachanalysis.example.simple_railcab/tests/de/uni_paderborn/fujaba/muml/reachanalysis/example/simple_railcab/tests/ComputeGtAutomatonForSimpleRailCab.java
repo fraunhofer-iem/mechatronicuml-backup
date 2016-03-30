@@ -25,11 +25,11 @@ import org.muml.reconfigurationverification.reachanalysis.gtautomaton.export.GtA
 import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
+import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation;
 
 import railcab.RailCab;
 import railcab.RailcabFactory;
 import railcab.SectionControl;
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
 
 public class ComputeGtAutomatonForSimpleRailCab {
 	private int railCabCount = 3;

@@ -46,18 +46,18 @@ import org.muml.reconfigurationverification.timedstorydiagram.InvariantStoryDiag
 import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.activities.Activity;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmFactory;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SuccessorStepGraphs;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.BoolWrapper;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.DoubleWrapper;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.IntWrapper;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.LongWrapper;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.StringWrapper;
+import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SdmFactory;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SuccessorStepGraphs;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper.BoolWrapper;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper.DoubleWrapper;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper.IntWrapper;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper.LongWrapper;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper.StringWrapper;
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
 
 /*TODO:

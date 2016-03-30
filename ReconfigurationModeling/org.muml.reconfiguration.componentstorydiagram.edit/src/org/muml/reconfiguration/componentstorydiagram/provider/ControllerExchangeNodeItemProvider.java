@@ -23,7 +23,7 @@ import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
 import org.muml.reconfiguration.componentstorydiagram.ControllerExchangeNode;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory;
-import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvider;
+import org.muml.storydiagram.activities.provider.ActivityNodeItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.componentstorydiagram.ControllerExchangeNode} object.

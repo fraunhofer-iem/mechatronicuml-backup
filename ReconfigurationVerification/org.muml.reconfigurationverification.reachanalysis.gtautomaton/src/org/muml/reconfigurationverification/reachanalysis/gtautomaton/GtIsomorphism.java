@@ -2,8 +2,7 @@ package org.muml.reconfigurationverification.reachanalysis.gtautomaton;
 
 import org.eclipse.emf.ecore.EObject;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.Isomorphism;
+import org.muml.storydiagram.reachanalysis.sdm.Isomorphism;
 
 
 public class GtIsomorphism extends Isomorphism{

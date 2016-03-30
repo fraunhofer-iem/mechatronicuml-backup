@@ -21,8 +21,8 @@ import org.muml.core.provider.NamedElementItemProvider;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.Signature;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.Signature} object.

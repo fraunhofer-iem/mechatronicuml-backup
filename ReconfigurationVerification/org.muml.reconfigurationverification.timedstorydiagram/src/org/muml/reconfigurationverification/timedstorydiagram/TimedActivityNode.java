@@ -6,7 +6,7 @@
  */
 package org.muml.reconfigurationverification.timedstorydiagram;
 
-import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
+import org.muml.storydiagram.activities.ModifyingStoryNode;
 
 /**
  * <!-- begin-user-doc -->

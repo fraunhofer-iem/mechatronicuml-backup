@@ -21,7 +21,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
 
 /**
  * @generated

@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.InitialNode;
-import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.InitialNode;
+import org.muml.storydiagram.patterns.AbstractVariable;
 
 public class TwoEmptyNodesTest extends TransformationTest {
 	

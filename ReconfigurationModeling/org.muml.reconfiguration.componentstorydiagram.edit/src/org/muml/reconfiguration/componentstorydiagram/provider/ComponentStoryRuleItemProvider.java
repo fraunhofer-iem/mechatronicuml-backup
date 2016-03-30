@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
 import org.muml.reconfiguration.provider.ReconfigurationRuleItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.muml.storydiagram.activities.ActivitiesFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule} object.

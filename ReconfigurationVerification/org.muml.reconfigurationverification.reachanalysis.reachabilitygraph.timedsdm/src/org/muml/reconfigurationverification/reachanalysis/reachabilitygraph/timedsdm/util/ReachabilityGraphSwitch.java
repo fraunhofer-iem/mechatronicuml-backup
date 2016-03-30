@@ -15,8 +15,7 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedGTSDelayTransition;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
  * <!-- begin-user-doc -->

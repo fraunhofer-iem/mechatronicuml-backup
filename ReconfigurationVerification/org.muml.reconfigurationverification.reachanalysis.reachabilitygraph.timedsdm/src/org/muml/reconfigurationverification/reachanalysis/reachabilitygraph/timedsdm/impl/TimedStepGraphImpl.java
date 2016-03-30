@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.util.EObjectEList;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphImpl;
 
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.impl.StepGraphImpl;
 import de.uni_paderborn.fujaba.udbm.Federation;
 
 /**

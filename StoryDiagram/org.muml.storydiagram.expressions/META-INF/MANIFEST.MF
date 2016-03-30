@@ -13,16 +13,16 @@ Require-Bundle: org.muml.core;bundle-version="[1.0.0,2.0.0)";visibility:=reexpor
  org.eclipse.xtext.generator;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
  org.eclipse.xtext.util;bundle-version="[2.0.0,3.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.storydiagrams.expressions,
+Export-Package: org.muml.storydiagram.expressions,
+ org.muml.storydiagram.expressions.formatting,
+ org.muml.storydiagram.expressions.pathbridge,
+ org.muml.storydiagram.expressions.scoping,
+ org.muml.storydiagram.expressions.validation,
  org.storydriven.storydiagrams.expressions.parseTreeConstruction,
  org.storydriven.storydiagrams.expressions.parser.antlr,
  org.storydriven.storydiagrams.expressions.parser.antlr.internal,
  org.storydriven.storydiagrams.expressions.pathExpressions,
  org.storydriven.storydiagrams.expressions.pathExpressions.impl,
  org.storydriven.storydiagrams.expressions.pathExpressions.util,
- org.storydriven.storydiagrams.expressions.pathbridge,
- org.storydriven.storydiagrams.expressions.services,
- org.storydriven.storydiagrams.expressions.validation,
- org.storydriven.storydiagrams.expressions.scoping,
- org.storydriven.storydiagrams.expressions.formatting
+ org.storydriven.storydiagrams.expressions.services
 

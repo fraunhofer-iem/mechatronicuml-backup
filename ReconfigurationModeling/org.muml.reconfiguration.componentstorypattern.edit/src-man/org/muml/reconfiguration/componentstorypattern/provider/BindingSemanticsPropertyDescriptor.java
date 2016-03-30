@@ -15,7 +15,7 @@ import org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVaria
 import org.muml.reconfiguration.componentstorypattern.ComponentVariable;
 import org.muml.reconfiguration.componentstorypattern.MultiPortVariable;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
+import org.muml.storydiagram.patterns.BindingSemantics;
 
 public class BindingSemanticsPropertyDescriptor extends ItemPropertyDescriptor {
 	public BindingSemanticsPropertyDescriptor(AdapterFactory adapterFactory,

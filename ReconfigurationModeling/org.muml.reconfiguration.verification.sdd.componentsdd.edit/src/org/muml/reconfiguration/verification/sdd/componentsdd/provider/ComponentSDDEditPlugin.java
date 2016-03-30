@@ -9,9 +9,8 @@ import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.reconfiguration.componentstorypattern.provider.ComponentStoryPatternEditPlugin;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.provider.SDDEditPlugin;
+import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
+import org.muml.storydiagram.verification.sdd.provider.SDDEditPlugin;
 
 /**
  * This is the central singleton for the ComponentSDD edit plugin.

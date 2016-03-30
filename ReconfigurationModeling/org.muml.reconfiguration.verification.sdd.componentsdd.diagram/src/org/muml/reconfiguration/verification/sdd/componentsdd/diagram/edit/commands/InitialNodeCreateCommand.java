@@ -65,7 +65,7 @@ public class InitialNodeCreateCommand extends EditElementCommand {
 		org.muml.reconfiguration.verification.sdd.componentsdd.InitialNode newElement = org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddFactory.eINSTANCE
 				.createInitialNode();
 
-		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram owner = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
+		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram owner = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
 		owner.getNodes().add(newElement);
 
 		doConfigure(newElement, monitor, info);

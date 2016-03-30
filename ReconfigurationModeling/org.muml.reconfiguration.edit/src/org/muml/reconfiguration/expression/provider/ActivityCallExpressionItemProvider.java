@@ -22,9 +22,9 @@ import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.reconfiguration.expression.ActivityCallExpression;
 import org.muml.reconfiguration.expression.ExpressionPackage;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.storydriven.storydiagrams.calls.CallsPackage;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
+import org.muml.storydiagram.calls.CallsPackage;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.expression.ActivityCallExpression} object.

@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.timedstorydiagram;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.muml.storydiagram.patterns.ObjectVariable;
 
 /**
  * <!-- begin-user-doc -->

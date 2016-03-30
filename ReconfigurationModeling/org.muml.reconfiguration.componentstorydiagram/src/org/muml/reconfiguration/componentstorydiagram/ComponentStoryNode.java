@@ -3,7 +3,7 @@
 package org.muml.reconfiguration.componentstorydiagram;
 
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern;
-import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.muml.storydiagram.activities.ActivityNode;
 
 /**
  * <!-- begin-user-doc -->

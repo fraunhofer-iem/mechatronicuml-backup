@@ -12,4 +12,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.storydiagram.diagram.custom;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.diagram.custom.util
+Export-Package: org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom.util

@@ -4,9 +4,9 @@ package org.muml.reconfiguration.componentstorypattern;
 
 import org.muml.core.CommentableElement;
 import org.muml.core.NamedElement;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
-import org.storydriven.storydiagrams.patterns.BindingState;
+import org.muml.storydiagram.patterns.BindingOperator;
+import org.muml.storydiagram.patterns.BindingSemantics;
+import org.muml.storydiagram.patterns.BindingState;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	/**
 	 * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
 	 * The default value is <code>"MANDATORY"</code>.
-	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.BindingSemantics}.
+	 * The literals are from the enumeration {@link org.muml.storydiagram.patterns.BindingSemantics}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Binding Semantics</em>' attribute isn't clear,
@@ -38,7 +38,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Binding Semantics</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingSemantics
+	 * @see org.muml.storydiagram.patterns.BindingSemantics
 	 * @see #setBindingSemantics(BindingSemantics)
 	 * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPatternVariable_BindingSemantics()
 	 * @model default="MANDATORY"
@@ -51,7 +51,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Binding Semantics</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingSemantics
+	 * @see org.muml.storydiagram.patterns.BindingSemantics
 	 * @see #getBindingSemantics()
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	/**
 	 * Returns the value of the '<em><b>Binding Operator</b></em>' attribute.
 	 * The default value is <code>"CHECK_ONLY"</code>.
-	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.BindingOperator}.
+	 * The literals are from the enumeration {@link org.muml.storydiagram.patterns.BindingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Binding Operator</em>' attribute isn't clear,
@@ -68,7 +68,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Binding Operator</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingOperator
+	 * @see org.muml.storydiagram.patterns.BindingOperator
 	 * @see #setBindingOperator(BindingOperator)
 	 * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPatternVariable_BindingOperator()
 	 * @model default="CHECK_ONLY"
@@ -81,7 +81,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Binding Operator</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingOperator
+	 * @see org.muml.storydiagram.patterns.BindingOperator
 	 * @see #getBindingOperator()
 	 * @generated
 	 */
@@ -90,7 +90,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	/**
 	 * Returns the value of the '<em><b>Binding State</b></em>' attribute.
 	 * The default value is <code>"UNBOUND"</code>.
-	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.BindingState}.
+	 * The literals are from the enumeration {@link org.muml.storydiagram.patterns.BindingState}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Binding State</em>' attribute isn't clear,
@@ -98,7 +98,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Binding State</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingState
+	 * @see org.muml.storydiagram.patterns.BindingState
 	 * @see #setBindingState(BindingState)
 	 * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPatternVariable_BindingState()
 	 * @model default="UNBOUND"
@@ -111,7 +111,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Binding State</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingState
+	 * @see org.muml.storydiagram.patterns.BindingState
 	 * @see #getBindingState()
 	 * @generated
 	 */

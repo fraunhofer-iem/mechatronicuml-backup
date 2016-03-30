@@ -12,10 +12,9 @@ import org.muml.core.expressions.Expression;
 import org.muml.reconfiguration.StructuralCondition;
 import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentExpression;
 import org.muml.reconfiguration.verification.sdd.componentsdd.*;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram;
-import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
-import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.Node;
+import org.muml.storydiagram.verification.sdd.PatternNode;
 
 /**
  * <!-- begin-user-doc -->

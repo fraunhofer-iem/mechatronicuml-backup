@@ -126,14 +126,14 @@ import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAd
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
 import org.muml.reconfigurationverification.timedstorydiagram.provider.TimedstorydiagramItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
+import org.muml.storydiagram.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
+import org.muml.storydiagram.activities.provider.ActivitiesItemProviderAdapterFactory;
+import org.muml.storydiagram.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
+import org.muml.storydiagram.calls.provider.CallsItemProviderAdapterFactory;
+import org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
+import org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory;
+import org.muml.storydiagram.provider.StorydiagramsItemProviderAdapterFactory;
+import org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory;
 
 
 /**

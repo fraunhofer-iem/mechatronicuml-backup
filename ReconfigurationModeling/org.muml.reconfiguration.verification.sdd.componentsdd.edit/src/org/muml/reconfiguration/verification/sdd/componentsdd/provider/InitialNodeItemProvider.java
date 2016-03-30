@@ -13,8 +13,6 @@
 package org.muml.reconfiguration.verification.sdd.componentsdd.provider;
 
 
-import de.uni_paderborn.fujaba.muml.verification.sdd.provider.NodeItemProvider;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -24,6 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.muml.storydiagram.verification.sdd.provider.NodeItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.verification.sdd.componentsdd.InitialNode} object.

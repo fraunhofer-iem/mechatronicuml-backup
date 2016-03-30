@@ -29,10 +29,9 @@ import org.muml.reconfiguration.ReconfigurableComponent;
 import org.muml.reconfiguration.ReconfigurableStructuredComponent;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart;
-import org.storydriven.storydiagrams.activities.Activity;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export.SDMReachabilityGraphExporter;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation;
+import org.muml.storydiagram.reachanalysis.sdm.export.SDMReachabilityGraphExporter;
 
 public class ComputePossibleConfigurationsHandler extends AbstractHandler {
 

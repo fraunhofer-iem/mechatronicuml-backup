@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.timedstorydiagram;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.storydiagrams.activities.Activity;
+import org.muml.storydiagram.activities.Activity;
 
 /**
  * <!-- begin-user-doc -->

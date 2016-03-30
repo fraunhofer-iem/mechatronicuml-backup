@@ -16,10 +16,9 @@ import org.muml.core.CorePackage;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.provider.PatternNodeItemProvider;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
+import org.muml.storydiagram.verification.sdd.provider.PatternNodeItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode} object.

@@ -25,10 +25,9 @@ import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtau
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMReachabilityGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
  * <!-- begin-user-doc -->
@@ -311,13 +310,13 @@ public class GtautomatonAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMReachabilityGraph <em>SDM Reachability Graph</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph <em>SDM Reachability Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMReachabilityGraph
+	 * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph
 	 * @generated
 	 */
 	public Adapter createSDMReachabilityGraphAdapter() {
@@ -339,13 +338,13 @@ public class GtautomatonAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph <em>Step Graph</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph <em>Step Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph
+	 * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph
 	 * @generated
 	 */
 	public Adapter createStepGraphAdapter() {
@@ -381,13 +380,13 @@ public class GtautomatonAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition <em>SDM Transition</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition <em>SDM Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition
+	 * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition
 	 * @generated
 	 */
 	public Adapter createSDMTransitionAdapter() {

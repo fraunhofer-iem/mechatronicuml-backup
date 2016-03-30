@@ -17,7 +17,7 @@ import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPacka
 import org.muml.reconfiguration.componentstorydiagram.ControllerExchangeNode;
 import org.muml.reconfiguration.componentstorydiagram.SendReconfigurationMessageExpression;
 import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentExpression;
-import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.muml.storydiagram.activities.ActivityNode;
 
 /**
  * <!-- begin-user-doc -->
@@ -252,13 +252,13 @@ public class ComponentstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.ActivityNode <em>Activity Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.activities.ActivityNode <em>Activity Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.ActivityNode
+	 * @see org.muml.storydiagram.activities.ActivityNode
 	 * @generated
 	 */
 	public Adapter createActivityNodeAdapter() {

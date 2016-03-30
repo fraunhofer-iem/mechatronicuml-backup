@@ -17,8 +17,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.muml.core.impl.ExtensionImpl;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingPackage;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
  * <!-- begin-user-doc -->

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint;
 import org.muml.reconfigurationverification.timedstorydiagram.InvariantStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.activities.impl.ActivityImpl;
+import org.muml.storydiagram.activities.impl.ActivityImpl;
 
 /**
  * <!-- begin-user-doc -->

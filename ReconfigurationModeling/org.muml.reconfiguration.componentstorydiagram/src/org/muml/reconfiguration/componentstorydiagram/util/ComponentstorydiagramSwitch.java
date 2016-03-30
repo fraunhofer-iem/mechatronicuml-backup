@@ -16,7 +16,7 @@ import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPacka
 import org.muml.reconfiguration.componentstorydiagram.ControllerExchangeNode;
 import org.muml.reconfiguration.componentstorydiagram.SendReconfigurationMessageExpression;
 import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentExpression;
-import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.muml.storydiagram.activities.ActivityNode;
 
 /**
  * <!-- begin-user-doc -->

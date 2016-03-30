@@ -65,7 +65,7 @@ public class ComponentStoryPatternNodeCreateCommand extends EditElementCommand {
 		org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode newElement = org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddFactory.eINSTANCE
 				.createComponentStoryPatternNode();
 
-		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram owner = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
+		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram owner = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
 		owner.getNodes().add(newElement);
 
 		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ElementInitializers

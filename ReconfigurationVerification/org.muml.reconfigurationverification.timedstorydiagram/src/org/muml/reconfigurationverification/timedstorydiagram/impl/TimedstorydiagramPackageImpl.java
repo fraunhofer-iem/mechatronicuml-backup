@@ -27,9 +27,9 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramFactory;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 import org.muml.reconfigurationverification.timedstorydiagram.util.TimedstorydiagramValidator;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
+import org.muml.storydiagram.patterns.PatternsPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -20,7 +20,7 @@ import org.muml.reconfiguration.componentstorydiagram.ControllerExchangeNode;
 import org.muml.reconfiguration.componentstorydiagram.SendReconfigurationMessageExpression;
 import org.muml.reconfiguration.componentstorydiagram.util.ComponentstorydiagramValidator;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
 
 /**
  * <!-- begin-user-doc -->

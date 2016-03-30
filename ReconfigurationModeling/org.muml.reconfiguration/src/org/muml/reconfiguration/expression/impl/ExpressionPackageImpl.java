@@ -35,9 +35,9 @@ import org.muml.reconfiguration.reconfInstance.ReconfInstancePackage;
 import org.muml.reconfiguration.reconfInstance.impl.ReconfInstancePackageImpl;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import org.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.calls.CallsPackage;
+import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
+import org.muml.storydiagram.calls.CallsPackage;
 
 /**
  * <!-- begin-user-doc -->

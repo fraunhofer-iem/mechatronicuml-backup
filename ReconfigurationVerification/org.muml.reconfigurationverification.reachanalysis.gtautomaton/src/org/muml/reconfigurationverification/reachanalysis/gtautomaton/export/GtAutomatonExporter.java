@@ -5,10 +5,9 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export.SDMReachabilityGraphExporter;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.sdm.export.SDMReachabilityGraphExporter;
 
 public class GtAutomatonExporter extends SDMReachabilityGraphExporter{
 

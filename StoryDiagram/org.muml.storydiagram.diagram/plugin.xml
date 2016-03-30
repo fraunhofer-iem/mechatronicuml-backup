@@ -33,9 +33,9 @@
          icon="icons/obj16/ActivitiesDiagramFile.gif"
          extensions="storydiagrams_diagram"
          default="true"
-         class="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditor"
-         matchingStrategy="org.storydriven.storydiagrams.diagram.part.StorydiagramsMatchingStrategy"
-         contributorClass="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramActionBarContributor">
+         class="org.muml.storydiagram.diagram.part.StorydiagramsDiagramEditor"
+         matchingStrategy="org.muml.storydiagram.diagram.part.StorydiagramsMatchingStrategy"
+         contributorClass="org.muml.storydiagram.diagram.part.StorydiagramsDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -55,7 +55,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/ActivitiesDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
-  	     class="org.storydriven.storydiagrams.diagram.part.StorydiagramsCreationWizard"
+  	     class="org.muml.storydiagram.diagram.part.StorydiagramsCreationWizard"
   	     id="org.storydriven.storydiagrams.diagram.part.StorydiagramsCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -69,7 +69,7 @@
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
-               class="org.storydriven.storydiagrams.diagram.part.StorydiagramsInitDiagramFileAction"
+               class="org.muml.storydiagram.diagram.part.StorydiagramsInitDiagramFileAction"
                menubarPath="additions"
                enablesFor="1"
                id="org.storydriven.storydiagrams.diagram.InitDiagramAction">
@@ -133,7 +133,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="org.storydriven.storydiagrams.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.storydiagram.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -141,31 +141,31 @@
       <page
             id="org.storydriven.storydiagrams.diagram.general"
             name="%prefpage.org.storydriven.storydiagrams.diagram.general"
-            class="org.storydriven.storydiagrams.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.storydiagram.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.storydriven.storydiagrams.diagram.appearance"
             name="%prefpage.org.storydriven.storydiagrams.diagram.appearance"
             category="org.storydriven.storydiagrams.diagram.general"
-            class="org.storydriven.storydiagrams.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.storydiagram.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.storydriven.storydiagrams.diagram.connections"
             name="%prefpage.org.storydriven.storydiagrams.diagram.connections"
             category="org.storydriven.storydiagrams.diagram.general"
-            class="org.storydriven.storydiagrams.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.storydiagram.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.storydriven.storydiagrams.diagram.printing"
             name="%prefpage.org.storydriven.storydiagrams.diagram.printing"
             category="org.storydriven.storydiagrams.diagram.general"
-            class="org.storydriven.storydiagrams.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.storydiagram.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.storydriven.storydiagrams.diagram.rulersAndGrid"
             name="%prefpage.org.storydriven.storydiagrams.diagram.rulersAndGrid"
             category="org.storydriven.storydiagrams.diagram.general"
-            class="org.storydriven.storydiagrams.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.storydiagram.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -173,7 +173,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="org.storydriven.storydiagrams.diagram"
-            labelProvider="org.storydriven.storydiagrams.diagram.sheet.StorydiagramsSheetLabelProvider">
+            labelProvider="org.muml.storydiagram.diagram.sheet.StorydiagramsSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -224,10 +224,10 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="org.storydriven.storydiagrams.diagram.sheet.StorydiagramsPropertySection">
+            class="org.muml.storydiagram.diagram.sheet.StorydiagramsPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
+            <input type="org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
@@ -267,82 +267,82 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityEditPart">
+      <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart" id="Activity_1000"/>
          <context elements="Activity_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityCallNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityCallNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart" id="ActivityCallNode_2001"/>
          <context elements="ActivityCallNode_2001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfStatementNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfStatementNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart" id="StatementNode_2002"/>
          <context elements="StatementNode_2002"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfModifyingStoryNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfModifyingStoryNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart" id="ModifyingStoryNode_2003"/>
          <context elements="ModifyingStoryNode_2003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfMatchingStoryNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfMatchingStoryNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart" id="MatchingStoryNode_2004"/>
          <context elements="MatchingStoryNode_2004"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfInitialNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfInitialNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2005"/>
          <context elements="InitialNode_2005"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfJunctionNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfJunctionNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_2006"/>
          <context elements="JunctionNode_2006"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2007"/>
          <context elements="FlowFinalNode_2007"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2008"/>
          <context elements="ActivityFinalNode_2008"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfStoryPatternEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfStoryPatternEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart" id="StoryPattern_3001"/>
          <context elements="StoryPattern_3001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfCollectionVariableEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfCollectionVariableEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart" id="CollectionVariable_3002"/>
          <context elements="CollectionVariable_3002"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfAttributeAssignmentEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfAttributeAssignmentEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart" id="AttributeAssignment_3003"/>
          <context elements="AttributeAssignment_3003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfConstraintEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfConstraintEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart" id="Constraint_3004"/>
          <context elements="Constraint_3004"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfObjectVariableEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfObjectVariableEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart" id="ObjectVariable_3005"/>
          <context elements="ObjectVariable_3005"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfConstraint2EditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfConstraint2EditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart" id="Constraint_3006"/>
          <context elements="Constraint_3006"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfMatchingPatternEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfMatchingPatternEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart" id="MatchingPattern_3007"/>
          <context elements="MatchingPattern_3007"/>
@@ -352,14 +352,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="org.storydriven.storydiagrams.diagram.providers.StorydiagramsIconProvider">
+      <IconProvider class="org.muml.storydiagram.diagram.providers.StorydiagramsIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="org.storydriven.storydiagrams.diagram.providers.StorydiagramsParserProvider">
+      <ParserProvider class="org.muml.storydiagram.diagram.providers.StorydiagramsParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -372,7 +372,7 @@
                name="%metatype.name.Activity_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Activity"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.ActivityEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -382,7 +382,7 @@
                name="%metatype.name.ActivityCallNode_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityCallNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityCallNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.ActivityCallNodeEditHelper">
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
@@ -392,7 +392,7 @@
                name="%metatype.name.StatementNode_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StatementNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.StatementNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.StatementNodeEditHelper">
             <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
@@ -402,7 +402,7 @@
                name="%metatype.name.ModifyingStoryNode_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ModifyingStoryNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ModifyingStoryNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.ModifyingStoryNodeEditHelper">
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
@@ -412,7 +412,7 @@
                name="%metatype.name.MatchingStoryNode_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MatchingStoryNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.MatchingStoryNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.MatchingStoryNodeEditHelper">
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
@@ -422,7 +422,7 @@
                name="%metatype.name.InitialNode_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InitialNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.InitialNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.InitialNodeEditHelper">
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
@@ -432,7 +432,7 @@
                name="%metatype.name.JunctionNode_2006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="JunctionNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.JunctionNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.JunctionNodeEditHelper">
             <param name="semanticHint" value="2006"/>
          </metamodelType>
       </metamodel>
@@ -442,7 +442,7 @@
                name="%metatype.name.FlowFinalNode_2007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="FlowFinalNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.FlowFinalNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.FlowFinalNodeEditHelper">
             <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
@@ -452,7 +452,7 @@
                name="%metatype.name.ActivityFinalNode_2008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityFinalNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityFinalNodeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.ActivityFinalNodeEditHelper">
             <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
@@ -462,7 +462,7 @@
                name="%metatype.name.StoryPattern_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StoryPattern"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.StoryPatternEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.StoryPatternEditHelper">
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
@@ -472,7 +472,7 @@
                name="%metatype.name.CollectionVariable_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CollectionVariable"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.CollectionVariableEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.CollectionVariableEditHelper">
             <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
@@ -482,7 +482,7 @@
                name="%metatype.name.AttributeAssignment_3003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AttributeAssignment"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.AttributeAssignmentEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.AttributeAssignmentEditHelper">
             <param name="semanticHint" value="3003"/>
          </metamodelType>
       </metamodel>
@@ -492,7 +492,7 @@
                name="%metatype.name.Constraint_3004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Constraint"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ConstraintEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.ConstraintEditHelper">
             <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
@@ -502,7 +502,7 @@
                name="%metatype.name.ObjectVariable_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ObjectVariable"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ObjectVariableEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.ObjectVariableEditHelper">
             <param name="semanticHint" value="3005"/>
          </metamodelType>
       </metamodel>
@@ -521,7 +521,7 @@
                name="%metatype.name.MatchingPattern_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MatchingPattern"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.MatchingPatternEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.MatchingPatternEditHelper">
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
@@ -531,7 +531,7 @@
                name="%metatype.name.ActivityEdge_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityEdge"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityEdgeEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.ActivityEdgeEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
@@ -541,7 +541,7 @@
                name="%metatype.name.LinkVariable_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="LinkVariable"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.LinkVariableEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.LinkVariableEditHelper">
             <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
@@ -551,7 +551,7 @@
                name="%metatype.name.InclusionLink_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InclusionLink"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.InclusionLinkEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.InclusionLinkEditHelper">
             <param name="semanticHint" value="4003"/>
          </metamodelType>
       </metamodel>
@@ -561,7 +561,7 @@
                name="%metatype.name.MaybeLink_4004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MaybeLink"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.MaybeLinkEditHelper">
+               edithelper="org.muml.storydiagram.diagram.edit.helpers.MaybeLinkEditHelper">
             <param name="semanticHint" value="4004"/>
          </metamodelType>
       </metamodel>
@@ -607,7 +607,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="org.storydriven.storydiagrams.diagram"
            properties="isURIEditorInput"
-           class="org.storydriven.storydiagrams.diagram.part.StorydiagramsUriEditorInputTester">
+           class="org.muml.storydiagram.diagram.part.StorydiagramsUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -633,8 +633,8 @@
             id="org.storydriven.storydiagrams.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorContentProvider" 
-            labelProvider="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorLabelProvider"
+            contentProvider="org.muml.storydiagram.diagram.navigator.StorydiagramsNavigatorContentProvider" 
+            labelProvider="org.muml.storydiagram.diagram.navigator.StorydiagramsNavigatorLabelProvider"
             icon="icons/obj16/ActivitiesDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -643,24 +643,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="storydiagrams_diagram"/>
                </and>
-               <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
+               <instanceof value="org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
+         	   <instanceof value="org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="org.storydriven.storydiagrams.diagram.navigatorSorter" 
-               class="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorSorter">
+               class="org.muml.storydiagram.diagram.navigator.StorydiagramsNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="storydiagrams_diagram"/>
                   </and>
-                  <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
+                  <instanceof value="org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -669,8 +669,8 @@
             id="org.storydriven.storydiagrams.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsDomainNavigatorContentProvider" 
-            labelProvider="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsDomainNavigatorLabelProvider"
+            contentProvider="org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorContentProvider" 
+            labelProvider="org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorLabelProvider"
             icon="icons/obj16/ActivitiesDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -679,19 +679,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsDomainNavigatorItem"/>
+               <instanceof value="org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsDomainNavigatorItem"/>
+            <instanceof value="org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="org.storydriven.storydiagrams.diagram.navigatorActionProvider"
-            class="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorActionProvider">
+            class="org.muml.storydiagram.diagram.navigator.StorydiagramsNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
+               <instanceof value="org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -701,7 +701,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="org.storydriven.storydiagrams.diagram.navigatorLinkHelper"
-            class="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorLinkHelper">
+            class="org.muml.storydiagram.diagram.navigator.StorydiagramsNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -709,7 +709,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
+            <instanceof value="org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -717,7 +717,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramUpdateCommand"
+         defaultHandler="org.muml.storydiagram.diagram.part.StorydiagramsDiagramUpdateCommand"
          description="%update.diagram.description"
          id="org.storydriven.storydiagrams.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -744,7 +744,7 @@
                <and>
                   <with variable="activePartId"><equals value="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart"/>
+                     <instanceof value="org.muml.storydiagram.diagram.edit.parts.ActivityEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -757,7 +757,7 @@
       <command id="org.storydriven.storydiagrams.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
-         defaultHandler="org.storydriven.storydiagrams.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.storydiagram.diagram.part.LoadResourceAction"/>
    </extension>
 
 <extension point="org.eclipse.ui.handlers" id="menu-handlers">

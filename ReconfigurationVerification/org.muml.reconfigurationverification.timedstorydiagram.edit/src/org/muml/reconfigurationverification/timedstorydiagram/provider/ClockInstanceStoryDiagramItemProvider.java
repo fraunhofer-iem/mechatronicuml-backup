@@ -21,8 +21,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramFactory;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.activities.provider.ActivityItemProvider;
+import org.muml.storydiagram.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.provider.ActivityItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram} object.

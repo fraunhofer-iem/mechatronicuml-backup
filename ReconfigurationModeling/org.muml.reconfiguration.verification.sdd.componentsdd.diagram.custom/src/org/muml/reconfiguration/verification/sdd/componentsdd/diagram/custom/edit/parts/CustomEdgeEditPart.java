@@ -4,9 +4,8 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.Edge;
-import de.uni_paderborn.fujaba.muml.verification.sdd.EdgeType;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.EdgeType;
 
 
 

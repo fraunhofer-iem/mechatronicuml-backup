@@ -9,8 +9,8 @@ import org.junit.runners.Parameterized.Parameters;
 import org.muml.pim.MumlPackage;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
+import org.muml.storydiagram.StorydiagramsPackage;
 import org.junit.runners.Parameterized;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 @RunWith(Parameterized.class)
 public class ReconfDiagramPluginXmlTest extends org.muml.core.tests.DiagramPluginXmlTest{

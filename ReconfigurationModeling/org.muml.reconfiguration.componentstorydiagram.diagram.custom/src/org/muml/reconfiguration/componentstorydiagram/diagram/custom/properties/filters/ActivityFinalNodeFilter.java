@@ -1,8 +1,8 @@
 package org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.filters;
 
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
-import org.storydriven.storydiagrams.activities.FlowFinalNode;
+import org.muml.storydiagram.activities.ActivityFinalNode;
+import org.muml.storydiagram.activities.FlowFinalNode;
 
 import de.upb.swt.core.ui.properties.filters.AbstractFilter;
 

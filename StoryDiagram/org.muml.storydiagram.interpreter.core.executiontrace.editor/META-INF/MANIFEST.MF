@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.storydiagram.interpreter.core.executiontrace.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceEditorPlugin$Implementation
+Bundle-Activator: org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutionTraceEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.mdelab.sdm.interpreter.core.executionTrace.presentation
+Export-Package: org.muml.storydiagram.interpreter.core.executiontrace.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.muml.storydiagram.interpreter.core.executiontrace.edit;visibility:=reexport,

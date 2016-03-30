@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
 
 /**
  * This registry is used to determine which type of visual object should be

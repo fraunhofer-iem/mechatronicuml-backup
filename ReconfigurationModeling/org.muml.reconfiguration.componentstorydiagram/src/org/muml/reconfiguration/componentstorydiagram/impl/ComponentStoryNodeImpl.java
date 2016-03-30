@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryNode;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern;
-import org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl;
+import org.muml.storydiagram.activities.impl.ActivityNodeImpl;
 
 /**
  * <!-- begin-user-doc -->

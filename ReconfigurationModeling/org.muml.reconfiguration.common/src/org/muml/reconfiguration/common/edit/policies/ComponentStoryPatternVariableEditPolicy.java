@@ -16,8 +16,8 @@ import org.muml.core.common.edit.policies.EditPolicyUtils;
 import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVariable;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
+import org.muml.storydiagram.patterns.BindingOperator;
+import org.muml.storydiagram.patterns.BindingSemantics;
 
 /**
  * This edit policy updates the visualization of a

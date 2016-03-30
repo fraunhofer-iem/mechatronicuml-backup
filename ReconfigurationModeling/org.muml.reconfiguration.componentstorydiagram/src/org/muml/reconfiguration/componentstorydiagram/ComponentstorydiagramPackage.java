@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.muml.storydiagram.activities.ActivitiesPackage;
 
 /**
  * <!-- begin-user-doc -->

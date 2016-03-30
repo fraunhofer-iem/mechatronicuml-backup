@@ -38,7 +38,7 @@ import org.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPacka
 import org.muml.reconfiguration.protocolinstantiation.impl.ProtocolinstantiationPackageImpl;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import org.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramsPackage;
 
 /**
  * <!-- begin-user-doc -->

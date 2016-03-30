@@ -26,8 +26,8 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.ReconfigurationPort;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ReconfigurationPort} object.

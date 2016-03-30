@@ -12,11 +12,10 @@
  */
 package org.muml.reconfiguration.verification.sdd.componentsdd.impl;
 
-import de.uni_paderborn.fujaba.muml.verification.sdd.impl.NodeImpl;
-
 import org.eclipse.emf.ecore.EClass;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage;
 import org.muml.reconfiguration.verification.sdd.componentsdd.InitialNode;
+import org.muml.storydiagram.verification.sdd.impl.NodeImpl;
 
 /**
  * <!-- begin-user-doc -->

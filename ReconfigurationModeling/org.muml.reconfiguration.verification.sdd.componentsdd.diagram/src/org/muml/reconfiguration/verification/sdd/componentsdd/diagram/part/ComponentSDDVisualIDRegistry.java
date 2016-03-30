@@ -137,7 +137,7 @@ public class ComponentSDDVisualIDRegistry {
 							domainElement.eClass())) {
 				return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+			if (org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 					.getLeafNode().isSuperTypeOf(domainElement.eClass())) {
 				return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID;
 			}
@@ -442,7 +442,7 @@ public class ComponentSDDVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+		if (org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 				.getEdge().isSuperTypeOf(domainElement.eClass())) {
 			return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID;
 		}

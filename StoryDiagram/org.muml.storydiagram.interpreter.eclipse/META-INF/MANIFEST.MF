@@ -15,4 +15,4 @@ Require-Bundle: org.muml.storydiagram.interpreter.core.mdelab;visibility:=reexpo
  org.muml.storydiagram.expressions.common.ui;bundle-version="1.0.0",
  org.muml.storydiagram.expressions.ui;bundle-version="1.0.0",
  org.muml.storydiagram.interpreter.core;bundle-version="1.0.1"
-Export-Package: org.storydriven.storydiagrams.interpreter.eclipse
+Export-Package: org.muml.storydiagram.interpreter.eclipse

@@ -24,15 +24,15 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransfor
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.Variable;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
-import org.storydriven.storydiagrams.activities.StoryNode;
-import org.storydriven.storydiagrams.calls.Callable;
-import org.storydriven.storydiagrams.patterns.AbstractVariable;
-import org.storydriven.storydiagrams.patterns.ObjectVariable;
-import org.storydriven.storydiagrams.patterns.StoryPattern;
+import org.muml.storydiagram.Variable;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.ModifyingStoryNode;
+import org.muml.storydiagram.activities.StoryNode;
+import org.muml.storydiagram.calls.Callable;
+import org.muml.storydiagram.patterns.AbstractVariable;
+import org.muml.storydiagram.patterns.ObjectVariable;
+import org.muml.storydiagram.patterns.StoryPattern;
 
 /**
  * <!-- begin-user-doc -->
@@ -367,13 +367,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.calls.Callable <em>Callable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.calls.Callable <em>Callable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.calls.Callable
+	 * @see org.muml.storydiagram.calls.Callable
 	 * @generated
 	 */
 	public Adapter createCallableAdapter() {
@@ -381,13 +381,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.Activity <em>Activity</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.activities.Activity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.Activity
+	 * @see org.muml.storydiagram.activities.Activity
 	 * @generated
 	 */
 	public Adapter createActivityAdapter() {
@@ -409,13 +409,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.Variable <em>Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.Variable
+	 * @see org.muml.storydiagram.Variable
 	 * @generated
 	 */
 	public Adapter createVariableAdapter() {
@@ -423,13 +423,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.AbstractVariable <em>Abstract Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.patterns.AbstractVariable <em>Abstract Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.AbstractVariable
+	 * @see org.muml.storydiagram.patterns.AbstractVariable
 	 * @generated
 	 */
 	public Adapter createAbstractVariableAdapter() {
@@ -437,13 +437,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.ObjectVariable <em>Object Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.patterns.ObjectVariable <em>Object Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.ObjectVariable
+	 * @see org.muml.storydiagram.patterns.ObjectVariable
 	 * @generated
 	 */
 	public Adapter createObjectVariableAdapter() {
@@ -451,13 +451,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.StoryPattern <em>Story Pattern</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.patterns.StoryPattern <em>Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.StoryPattern
+	 * @see org.muml.storydiagram.patterns.StoryPattern
 	 * @generated
 	 */
 	public Adapter createStoryPatternAdapter() {
@@ -465,13 +465,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.ActivityNode <em>Activity Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.activities.ActivityNode <em>Activity Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.ActivityNode
+	 * @see org.muml.storydiagram.activities.ActivityNode
 	 * @generated
 	 */
 	public Adapter createActivityNodeAdapter() {
@@ -479,13 +479,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.StoryNode <em>Story Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.activities.StoryNode <em>Story Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.StoryNode
+	 * @see org.muml.storydiagram.activities.StoryNode
 	 * @generated
 	 */
 	public Adapter createStoryNodeAdapter() {
@@ -493,13 +493,13 @@ public class TimedstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.ModifyingStoryNode <em>Modifying Story Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.activities.ModifyingStoryNode <em>Modifying Story Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.ModifyingStoryNode
+	 * @see org.muml.storydiagram.activities.ModifyingStoryNode
 	 * @generated
 	 */
 	public Adapter createModifyingStoryNodeAdapter() {

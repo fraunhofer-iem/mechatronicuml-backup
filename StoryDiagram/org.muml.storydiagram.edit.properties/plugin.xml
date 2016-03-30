@@ -33,157 +33,157 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.ExceptionVariableEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.ExceptionVariableEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#ExceptionVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.ActivityEdgeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityEdgeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#ActivityEdge">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.ActivityEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#Activity">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.OperationExtensionEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.OperationExtensionEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#OperationExtension">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.MatchingStoryNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.MatchingStoryNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#MatchingStoryNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.StructuredNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.StructuredNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#StructuredNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.JunctionNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.JunctionNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#JunctionNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.InitialNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.InitialNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#InitialNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.StatementNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.StatementNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#StatementNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.ActivityFinalNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityFinalNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#ActivityFinalNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.ActivityCallNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityCallNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#ActivityCallNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.ModifyingStoryNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.ModifyingStoryNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#ModifyingStoryNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.activities.editor.FlowFinalNodeEditor$Factory"
+             factory="org.muml.storydiagram.properties.activities.editor.FlowFinalNodeEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/activities/0.2.1#FlowFinalNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.calls.editor.ParameterBindingEditor$Factory"
+             factory="org.muml.storydiagram.properties.calls.editor.ParameterBindingEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/calls/0.2.0#ParameterBinding">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.calls.editor.OpaqueCallableEditor$Factory"
+             factory="org.muml.storydiagram.properties.calls.editor.OpaqueCallableEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/calls/0.2.0#OpaqueCallable">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.calls.editor.ParameterExtensionEditor$Factory"
+             factory="org.muml.storydiagram.properties.calls.editor.ParameterExtensionEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/calls/0.2.0#ParameterExtension">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.ObjectVariableEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.ObjectVariableEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#ObjectVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.ConstraintEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.ConstraintEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#Constraint">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.LinkConstraintEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.LinkConstraintEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#LinkConstraint">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.AttributeAssignmentEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.AttributeAssignmentEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#AttributeAssignment">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.CollectionVariableEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.CollectionVariableEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#CollectionVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.PrimitiveVariableEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.PrimitiveVariableEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#PrimitiveVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.PathEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.PathEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#Path">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.LinkVariableEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.LinkVariableEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#LinkVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.InclusionLinkEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.InclusionLinkEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#InclusionLink">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.MatchingPatternEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.MatchingPatternEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#MatchingPattern">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.MaybeLinkEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.MaybeLinkEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#MaybeLink">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.patterns.editor.StoryPatternEditor$Factory"
+             factory="org.muml.storydiagram.properties.patterns.editor.StoryPatternEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/patterns/0.2.1#StoryPattern">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.templates.editor.TemplateBindingEditor$Factory"
+             factory="org.muml.storydiagram.properties.templates.editor.TemplateBindingEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/templates/0.2.0#TemplateBinding">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.templates.editor.PropertyBindingEditor$Factory"
+             factory="org.muml.storydiagram.properties.templates.editor.PropertyBindingEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/templates/0.2.0#PropertyBinding">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.storydriven.storydiagrams.properties.templates.editor.TemplateSignatureEditor$Factory"
+             factory="org.muml.storydiagram.properties.templates.editor.TemplateSignatureEditor$Factory"
              type="http://www.storydriven.org/storydiagrams/templates/0.2.0#TemplateSignature">
        </propertyEditor>
     
@@ -194,7 +194,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="org.storydriven.storydiagrams.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.storydiagram.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -202,7 +202,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="org.storydriven.storydiagrams.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.storydiagram.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

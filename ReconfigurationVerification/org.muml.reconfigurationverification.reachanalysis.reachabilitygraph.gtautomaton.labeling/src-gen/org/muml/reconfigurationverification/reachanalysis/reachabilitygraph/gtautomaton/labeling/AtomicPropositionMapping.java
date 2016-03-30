@@ -8,8 +8,7 @@ package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gta
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.Extension;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
  * <!-- begin-user-doc -->

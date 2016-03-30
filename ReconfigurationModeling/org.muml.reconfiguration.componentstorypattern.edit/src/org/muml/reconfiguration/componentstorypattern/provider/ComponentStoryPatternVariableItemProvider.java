@@ -22,8 +22,8 @@ import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPacka
 import org.muml.reconfiguration.componentstorypattern.provider.BindingOperatorPropertyDescriptor;
 import org.muml.reconfiguration.componentstorypattern.provider.BindingSemanticsPropertyDescriptor;
 import org.muml.reconfiguration.componentstorypattern.provider.BindingStatePropertyDescriptor;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVariable} object.

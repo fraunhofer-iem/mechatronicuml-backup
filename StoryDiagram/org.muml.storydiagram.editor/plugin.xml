@@ -19,7 +19,7 @@
       <wizard
             id="org.storydriven.storydiagrams.patterns.presentation.PatternsModelWizardID"
             name="%_UI_StorydiagramsModelWizard_label"
-            class="org.storydriven.storydiagrams.presentation.StorydiagramsModelWizard"
+            class="org.muml.storydiagram.presentation.StorydiagramsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/StorydiagramsModelFile.gif">
          <description>%_UI_StorydiagramsModelWizard_description</description>
@@ -33,8 +33,8 @@
             name="%_UI_StorydiagramsEditor_label"
             icon="icons/full/obj16/StorydiagramsModelFile.gif"
             extensions="sdm"
-            class="org.storydriven.storydiagrams.presentation.StorydiagramsEditor"
-            contributorClass="org.storydriven.storydiagrams.presentation.StorydiagramsActionBarContributor">
+            class="org.muml.storydiagram.presentation.StorydiagramsEditor"
+            contributorClass="org.muml.storydiagram.presentation.StorydiagramsActionBarContributor">
       </editor>
    </extension>
 </plugin>

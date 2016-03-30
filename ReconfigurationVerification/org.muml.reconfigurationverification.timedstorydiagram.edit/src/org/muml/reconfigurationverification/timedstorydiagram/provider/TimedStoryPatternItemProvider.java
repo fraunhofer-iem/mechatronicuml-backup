@@ -25,8 +25,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramFactory;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
-import org.storydriven.storydiagrams.patterns.provider.StoryPatternItemProvider;
+import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.patterns.provider.StoryPatternItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern} object.

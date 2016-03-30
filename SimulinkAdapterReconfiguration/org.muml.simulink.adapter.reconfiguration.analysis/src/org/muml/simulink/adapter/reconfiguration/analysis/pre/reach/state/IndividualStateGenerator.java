@@ -27,10 +27,9 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.ControlSignal;
 import org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.ReachGraphVisitor;
-import org.storydriven.storydiagrams.activities.Activity;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.SDMTransition;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.StepGraph;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
  * Generates the content of the 'state_space' region in the state RTSC.

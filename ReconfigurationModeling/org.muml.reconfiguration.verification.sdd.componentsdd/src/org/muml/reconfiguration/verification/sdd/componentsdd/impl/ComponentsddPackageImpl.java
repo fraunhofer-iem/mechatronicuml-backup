@@ -19,8 +19,7 @@ import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackag
 import org.muml.reconfiguration.verification.sdd.componentsdd.EvaluateComponentSDDExpression;
 import org.muml.reconfiguration.verification.sdd.componentsdd.InitialNode;
 import org.muml.reconfiguration.verification.sdd.componentsdd.util.ComponentsddValidator;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
 
 /**
  * <!-- begin-user-doc -->

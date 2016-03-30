@@ -71,7 +71,7 @@ public class ComponentSDDDiagramUpdater {
 				.getElement();
 		LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor> result = new LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getNodes().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node childElement = (de.uni_paderborn.fujaba.muml.verification.sdd.Node) it
+			org.muml.storydiagram.verification.sdd.Node childElement = (org.muml.storydiagram.verification.sdd.Node) it
 					.next();
 			int visualID = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -651,7 +651,7 @@ public class ComponentSDDDiagramUpdater {
 	 */
 	public static List<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getLeafNode_2002IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode modelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode) view
+		org.muml.storydiagram.verification.sdd.LeafNode modelElement = (org.muml.storydiagram.verification.sdd.LeafNode) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -848,7 +848,7 @@ public class ComponentSDDDiagramUpdater {
 	 */
 	public static List<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getLeafNode_2002OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode modelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode) view
+		org.muml.storydiagram.verification.sdd.LeafNode modelElement = (org.muml.storydiagram.verification.sdd.LeafNode) view
 				.getElement();
 		LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Edge_4001(modelElement));
@@ -1003,22 +1003,22 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getContainedTypeModelFacetLinks_Edge_4001(
-			de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container) {
+			org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container) {
 		LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
 		for (Iterator<?> links = container.getEdges().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Edge) {
+			if (false == linkObject instanceof org.muml.storydiagram.verification.sdd.Edge) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.verification.sdd.Edge link = (de.uni_paderborn.fujaba.muml.verification.sdd.Edge) linkObject;
+			org.muml.storydiagram.verification.sdd.Edge link = (org.muml.storydiagram.verification.sdd.Edge) linkObject;
 			if (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID != org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node dst = link
+			org.muml.storydiagram.verification.sdd.Node dst = link
 					.getTargetNode();
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node src = link
+			org.muml.storydiagram.verification.sdd.Node src = link
 					.getSourceNode();
 			result.add(new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor(
 					src,
@@ -1145,24 +1145,24 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getIncomingTypeModelFacetLinks_Edge_4001(
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node target,
+			org.muml.storydiagram.verification.sdd.Node target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 					.getEdge_TargetNode()
-					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Edge) {
+					|| false == setting.getEObject() instanceof org.muml.storydiagram.verification.sdd.Edge) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.verification.sdd.Edge link = (de.uni_paderborn.fujaba.muml.verification.sdd.Edge) setting
+			org.muml.storydiagram.verification.sdd.Edge link = (org.muml.storydiagram.verification.sdd.Edge) setting
 					.getEObject();
 			if (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID != org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node src = link
+			org.muml.storydiagram.verification.sdd.Node src = link
 					.getSourceNode();
 			result.add(new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor(
 					src,
@@ -1285,15 +1285,15 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getOutgoingTypeModelFacetLinks_Edge_4001(
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node source) {
-		de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container = null;
+			org.muml.storydiagram.verification.sdd.Node source) {
+		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) {
-				container = (de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram) element;
+			if (element instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) {
+				container = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) element;
 			}
 		}
 		if (container == null) {
@@ -1303,17 +1303,17 @@ public class ComponentSDDDiagramUpdater {
 		for (Iterator<?> links = container.getEdges().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.verification.sdd.Edge) {
+			if (false == linkObject instanceof org.muml.storydiagram.verification.sdd.Edge) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.verification.sdd.Edge link = (de.uni_paderborn.fujaba.muml.verification.sdd.Edge) linkObject;
+			org.muml.storydiagram.verification.sdd.Edge link = (org.muml.storydiagram.verification.sdd.Edge) linkObject;
 			if (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID != org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node dst = link
+			org.muml.storydiagram.verification.sdd.Node dst = link
 					.getTargetNode();
-			de.uni_paderborn.fujaba.muml.verification.sdd.Node src = link
+			org.muml.storydiagram.verification.sdd.Node src = link
 					.getSourceNode();
 			if (src != source) {
 				continue;

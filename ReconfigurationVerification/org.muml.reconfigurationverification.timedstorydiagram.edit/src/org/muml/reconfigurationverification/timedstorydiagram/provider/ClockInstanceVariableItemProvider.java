@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceVariable;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.patterns.provider.ObjectVariableItemProvider;
+import org.muml.storydiagram.patterns.provider.ObjectVariableItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceVariable} object.

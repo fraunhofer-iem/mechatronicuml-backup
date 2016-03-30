@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.fujaba.de/muml/verification/sdd/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage"
+            class="org.muml.storydiagram.verification.sdd.SDDPackage"
             genModel="model/sdd.genmodel"/>
    </extension>
 

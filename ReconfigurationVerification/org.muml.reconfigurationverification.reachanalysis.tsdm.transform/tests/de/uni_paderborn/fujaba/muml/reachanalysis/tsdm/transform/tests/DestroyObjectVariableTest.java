@@ -8,13 +8,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
-import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.InitialNode;
-import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
-import org.storydriven.storydiagrams.patterns.AbstractVariable;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
-import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.muml.storydiagram.activities.ActivityEdge;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.InitialNode;
+import org.muml.storydiagram.patterns.AbstractLinkVariable;
+import org.muml.storydiagram.patterns.AbstractVariable;
+import org.muml.storydiagram.patterns.BindingOperator;
+import org.muml.storydiagram.patterns.ObjectVariable;
 
 public class DestroyObjectVariableTest extends TransformationTest {
 	

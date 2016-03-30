@@ -23,15 +23,15 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransfor
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.Variable;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
-import org.storydriven.storydiagrams.activities.StoryNode;
-import org.storydriven.storydiagrams.calls.Callable;
-import org.storydriven.storydiagrams.patterns.AbstractVariable;
-import org.storydriven.storydiagrams.patterns.ObjectVariable;
-import org.storydriven.storydiagrams.patterns.StoryPattern;
+import org.muml.storydiagram.Variable;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.ModifyingStoryNode;
+import org.muml.storydiagram.activities.StoryNode;
+import org.muml.storydiagram.calls.Callable;
+import org.muml.storydiagram.patterns.AbstractVariable;
+import org.muml.storydiagram.patterns.ObjectVariable;
+import org.muml.storydiagram.patterns.StoryPattern;
 
 /**
  * <!-- begin-user-doc -->

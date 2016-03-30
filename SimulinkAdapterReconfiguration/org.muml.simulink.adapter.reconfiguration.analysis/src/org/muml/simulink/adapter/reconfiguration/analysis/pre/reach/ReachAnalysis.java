@@ -19,14 +19,13 @@ import org.muml.pim.instance.StructuredComponentInstance;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.state.IndividualStateGenerator;
 import org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.state.StateGenerator;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
-import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
-import org.storydriven.storydiagrams.patterns.BindingState;
-import org.storydriven.storydiagrams.patterns.LinkVariable;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.activities.ActivityNode;
+import org.muml.storydiagram.activities.ModifyingStoryNode;
+import org.muml.storydiagram.patterns.AbstractLinkVariable;
+import org.muml.storydiagram.patterns.BindingState;
+import org.muml.storydiagram.patterns.LinkVariable;
+import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation;
 
 /**
  * The Reachability Analysis. Performs the following tasks for all instances:

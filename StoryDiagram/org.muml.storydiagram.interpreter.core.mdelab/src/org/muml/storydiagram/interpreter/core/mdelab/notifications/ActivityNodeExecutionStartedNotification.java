@@ -1,0 +1,37 @@
+package org.muml.storydiagram.interpreter.core.mdelab.notifications;
+
+import org.muml.storydiagram.interpreter.core.mdelab.variables.VariablesScope;
+
+/**
+ * Execution of an activity node has started.
+ * 
+ * @author Stephan Hildebrandt
+ * 
+ * @param <ActivityNode>
+ * @param <Classifier>
+ */
+public class ActivityNodeExecutionStartedNotification<ActivityNode, Classifier> extends InterpreterNotification<Classifier>
+{
+	private final ActivityNode	activityNode;
+
+	public ActivityNodeExecutionStartedNotification(VariablesScope<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			Notifier<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> notifier, ActivityNode activityNode)
+	{
+		super(NotificationTypeEnum.ACTIVITY_NODE_EXECUTION_STARTED, variablesScope, notifier);
+
+		assert activityNode != null;
+
+		this.activityNode = activityNode;
+	}
+
+	public ActivityNode getActivityNode()
+	{
+		return this.activityNode;
+	}
+
+	@Override
+	public Object getMainStoryDiagramElement()
+	{
+		return this.getActivityNode();
+	}
+}

@@ -12,8 +12,6 @@
  */
 package org.muml.reconfiguration.verification.sdd.componentsdd.util;
 
-import de.uni_paderborn.fujaba.muml.verification.sdd.util.SDDValidator;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -24,6 +22,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.reconfiguration.verification.sdd.componentsdd.*;
+import org.muml.storydiagram.verification.sdd.util.SDDValidator;
 
 /**
  * <!-- begin-user-doc -->

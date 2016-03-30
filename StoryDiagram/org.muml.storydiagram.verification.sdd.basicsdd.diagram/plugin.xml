@@ -28,9 +28,9 @@
          icon="icons/obj16/SDDDiagramFile.gif"
          extensions="basicsdd_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramActionBarContributor">
+         class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditor"
+         matchingStrategy="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDMatchingStrategy"
+         contributorClass="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramActionBarContributor">
       </editor>
    	</extension>
    	<extension point="org.eclipse.ui.contexts" id="ui-context">
@@ -49,7 +49,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/SDDDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
-  	     class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDCreationWizard"
+  	     class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -64,7 +64,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramUpdateCommand"
+         defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -121,7 +121,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDMarkerNavigationProvider">
+      <MarkerNavigationProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -136,7 +136,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDValidationDecoratorProvider">
+      <decoratorProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDValidationDecoratorProvider">
          <Priority name="Medium"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -145,7 +145,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -153,31 +153,31 @@
       <page
             id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.appearance"
             category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.connections"
             category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.printing"
             category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -185,7 +185,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.sheet.BasicSDDSheetLabelProvider">
+            labelProvider="org.muml.storydiagram.verification.sdd.basicsdd.diagram.sheet.BasicSDDSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -236,10 +236,10 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.sheet.BasicSDDPropertySection">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.sheet.BasicSDDPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
+            <input type="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
@@ -281,47 +281,47 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryDecisionDiagramEditPart">
+      <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryDecisionDiagramEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.StoryDecisionDiagramEditPart" id="StoryDecisionDiagram_1000"/>
          <context elements="StoryDecisionDiagram_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryPatternNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryPatternNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.StoryPatternNodeEditPart" id="StoryPatternNode_2003"/>
          <context elements="StoryPatternNode_2003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfLeafNodeEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfLeafNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.LeafNodeEditPart" id="LeafNode_2004"/>
          <context elements="LeafNode_2004"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryPatternEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryPatternEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.StoryPatternEditPart" id="StoryPattern_3011"/>
          <context elements="StoryPattern_3011"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfCollectionVariableEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfCollectionVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.CollectionVariableEditPart" id="CollectionVariable_3006"/>
          <context elements="CollectionVariable_3006"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfAttributeAssignmentEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfAttributeAssignmentEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.AttributeAssignmentEditPart" id="AttributeAssignment_3007"/>
          <context elements="AttributeAssignment_3007"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfConstraintEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfConstraintEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.ConstraintEditPart" id="Constraint_3008"/>
          <context elements="Constraint_3008"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfObjectVariableEditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfObjectVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.ObjectVariableEditPart" id="ObjectVariable_3009"/>
          <context elements="ObjectVariable_3009"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfConstraint2EditPart">
+            <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfConstraint2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.Constraint2EditPart" id="Constraint_3010"/>
          <context elements="Constraint_3010"/>
@@ -331,14 +331,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDIconProvider">
+      <IconProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDParserProvider">
+      <ParserProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -351,7 +351,7 @@
                name="%metatype.name.StoryDecisionDiagram_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StoryDecisionDiagram"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.StoryDecisionDiagramEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.StoryDecisionDiagramEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -361,7 +361,7 @@
                name="%metatype.name.StoryPatternNode_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StoryPatternNode"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.StoryPatternNodeEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.StoryPatternNodeEditHelper">
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
@@ -371,7 +371,7 @@
                name="%metatype.name.LeafNode_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="LeafNode"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.LeafNodeEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.LeafNodeEditHelper">
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
@@ -381,7 +381,7 @@
                name="%metatype.name.StoryPattern_3011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StoryPattern"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.StoryPatternEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.StoryPatternEditHelper">
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
@@ -391,7 +391,7 @@
                name="%metatype.name.CollectionVariable_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CollectionVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.CollectionVariableEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.CollectionVariableEditHelper">
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
@@ -401,7 +401,7 @@
                name="%metatype.name.AttributeAssignment_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AttributeAssignment"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.AttributeAssignmentEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.AttributeAssignmentEditHelper">
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
@@ -411,7 +411,7 @@
                name="%metatype.name.Constraint_3008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Constraint"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.ConstraintEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.ConstraintEditHelper">
             <param name="semanticHint" value="3008"/>
          </metamodelType>
       </metamodel>
@@ -421,7 +421,7 @@
                name="%metatype.name.ObjectVariable_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ObjectVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.ObjectVariableEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.ObjectVariableEditHelper">
             <param name="semanticHint" value="3009"/>
          </metamodelType>
       </metamodel>
@@ -440,7 +440,7 @@
                name="%metatype.name.Edge_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Edge"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.EdgeEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.EdgeEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
@@ -450,7 +450,7 @@
                name="%metatype.name.LinkVariable_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="LinkVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.helpers.LinkVariableEditHelper">
+               edithelper="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.helpers.LinkVariableEditHelper">
             <param name="semanticHint" value="4003"/>
          </metamodelType>
       </metamodel>
@@ -487,7 +487,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDUriEditorInputTester">
+           class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -513,8 +513,8 @@
             id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDNavigatorLabelProvider"
+            contentProvider="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorContentProvider" 
+            labelProvider="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorLabelProvider"
             icon="icons/obj16/SDDDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -523,24 +523,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="basicsdd_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
+               <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
+         	   <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDNavigatorSorter">
+               class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="basicsdd_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
+                  <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -549,8 +549,8 @@
             id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDDomainNavigatorLabelProvider"
+            contentProvider="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorContentProvider" 
+            labelProvider="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorLabelProvider"
             icon="icons/obj16/SDDDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -559,19 +559,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="basicsdd"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDDomainNavigatorItem"/>
+               <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDDomainNavigatorItem"/>
+            <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDNavigatorActionProvider">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
+               <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -581,7 +581,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDNavigatorLinkHelper">
+            class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -589,7 +589,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
+            <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -599,7 +599,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.LoadResourceAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
@@ -628,7 +628,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.StoryDecisionDiagramEditPart"/>
+                     <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -658,7 +658,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDInitDiagramFileAction"
+			defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDInitDiagramFileAction"
 			id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>

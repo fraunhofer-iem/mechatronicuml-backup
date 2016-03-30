@@ -17,10 +17,11 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.pim.actionlanguage.xtext.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.storydiagrams.properties.metamodel, org.storydriven.storydiagrams.properties.constraint,
- org.storydriven.storydiagrams.properties.storydiagrams.editor,
- org.storydriven.storydiagrams.properties.activities.editor,
- org.storydriven.storydiagrams.properties.calls.editor,
- org.storydriven.storydiagrams.properties.patterns.editor,
- org.storydriven.storydiagrams.properties.templates.editor
+Export-Package: org.muml.storydiagram.properties.activities.editor,
+ org.muml.storydiagram.properties.calls.editor,
+ org.muml.storydiagram.properties.constraint,
+ org.muml.storydiagram.properties.metamodel,
+ org.muml.storydiagram.properties.patterns.editor,
+ org.muml.storydiagram.properties.storydiagrams.editor,
+ org.muml.storydiagram.properties.templates.editor
 Bundle-Vendor: 

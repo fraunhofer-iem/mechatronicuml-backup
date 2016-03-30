@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.storydriven.storydiagrams.patterns.impl.StoryPatternImpl;
+import org.muml.storydiagram.patterns.impl.StoryPatternImpl;
 
 /**
  * <!-- begin-user-doc -->

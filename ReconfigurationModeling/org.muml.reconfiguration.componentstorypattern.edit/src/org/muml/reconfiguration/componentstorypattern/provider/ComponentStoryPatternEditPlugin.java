@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
+import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
  * This is the central singleton for the ComponentStoryPattern edit plugin.

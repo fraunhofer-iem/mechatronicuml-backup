@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.reconfiguration.expression.ActivityCallExpression;
 import org.muml.reconfiguration.expression.ExpressionPackage;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.calls.Callable;
-import org.storydriven.storydiagrams.calls.CallsPackage;
-import org.storydriven.storydiagrams.calls.Invocation;
-import org.storydriven.storydiagrams.calls.ParameterBinding;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.calls.Callable;
+import org.muml.storydiagram.calls.CallsPackage;
+import org.muml.storydiagram.calls.Invocation;
+import org.muml.storydiagram.calls.ParameterBinding;
 
 /**
  * <!-- begin-user-doc -->

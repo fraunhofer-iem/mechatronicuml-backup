@@ -10,9 +10,9 @@ import org.muml.core.CorePackage;
 import org.muml.core.impl.NamedElementImpl;
 import org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVariable;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
-import org.storydriven.storydiagrams.patterns.BindingOperator;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
-import org.storydriven.storydiagrams.patterns.BindingState;
+import org.muml.storydiagram.patterns.BindingOperator;
+import org.muml.storydiagram.patterns.BindingSemantics;
+import org.muml.storydiagram.patterns.BindingState;
 
 /**
  * <!-- begin-user-doc -->
