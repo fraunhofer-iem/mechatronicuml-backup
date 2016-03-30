@@ -23,9 +23,9 @@
          icon="icons/obj16/TestLanguageDiagramFile.gif"
          extensions="testlanguage_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramActionBarContributor">
+         class="org.muml.testlanguage.diagram.part.TestLanguageDiagramEditor"
+         matchingStrategy="org.muml.testlanguage.diagram.part.TestLanguageMatchingStrategy"
+         contributorClass="org.muml.testlanguage.diagram.part.TestLanguageDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -45,7 +45,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/TestLanguageDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
-  	     class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageCreationWizard"
+  	     class="org.muml.testlanguage.diagram.part.TestLanguageCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -59,7 +59,7 @@
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
-               class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageInitDiagramFileAction"
+               class="org.muml.testlanguage.diagram.part.TestLanguageInitDiagramFileAction"
                menubarPath="additions"
                enablesFor="1"
                id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.InitDiagramAction">
@@ -123,7 +123,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.testlanguage.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -131,31 +131,31 @@
       <page
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.testlanguage.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.testlanguage.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.muml.testlanguage.diagram.appearance"
             category="de.uni_paderborn.fujaba.muml.testlanguage.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.testlanguage.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.muml.testlanguage.diagram.connections"
             category="de.uni_paderborn.fujaba.muml.testlanguage.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.testlanguage.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.muml.testlanguage.diagram.printing"
             category="de.uni_paderborn.fujaba.muml.testlanguage.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.testlanguage.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.muml.testlanguage.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.muml.testlanguage.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.testlanguage.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -163,7 +163,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.testlanguage.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.testlanguage.diagram.sheet.TestLanguageSheetLabelProvider">
+            labelProvider="org.muml.testlanguage.diagram.sheet.TestLanguageSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -214,10 +214,10 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.sheet.TestLanguagePropertySection">
+            class="org.muml.testlanguage.diagram.sheet.TestLanguagePropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
+            <input type="org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
@@ -258,12 +258,12 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="false"?>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.assistants.TestLanguageModelingAssistantProviderOfInputEditPart">
+            <modelingAssistantProvider class="org.muml.testlanguage.diagram.providers.assistants.TestLanguageModelingAssistantProviderOfInputEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.parts.InputEditPart" id="Input_3001"/>
          <context elements="Input_3001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.assistants.TestLanguageModelingAssistantProviderOfOutputEditPart">
+            <modelingAssistantProvider class="org.muml.testlanguage.diagram.providers.assistants.TestLanguageModelingAssistantProviderOfOutputEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.parts.OutputEditPart" id="Output_3002"/>
          <context elements="Output_3002"/>
@@ -274,7 +274,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageIconProvider">
+      <IconProvider class="org.muml.testlanguage.diagram.providers.TestLanguageIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
@@ -288,7 +288,7 @@
                name="%metatype.name.TestCase_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="TestCase"
-               edithelper="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.helpers.TestCaseEditHelper">
+               edithelper="org.muml.testlanguage.diagram.edit.helpers.TestCaseEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -298,7 +298,7 @@
                name="%metatype.name.Node_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Node"
-               edithelper="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.helpers.NodeEditHelper">
+               edithelper="org.muml.testlanguage.diagram.edit.helpers.NodeEditHelper">
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
@@ -308,7 +308,7 @@
                name="%metatype.name.Input_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Input"
-               edithelper="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.helpers.InputEditHelper">
+               edithelper="org.muml.testlanguage.diagram.edit.helpers.InputEditHelper">
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
@@ -318,7 +318,7 @@
                name="%metatype.name.Output_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Output"
-               edithelper="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.helpers.OutputEditHelper">
+               edithelper="org.muml.testlanguage.diagram.edit.helpers.OutputEditHelper">
             <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
@@ -358,7 +358,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.muml.testlanguage.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageUriEditorInputTester">
+           class="org.muml.testlanguage.diagram.part.TestLanguageUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -384,8 +384,8 @@
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageNavigatorLabelProvider"
+            contentProvider="org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorContentProvider" 
+            labelProvider="org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorLabelProvider"
             icon="icons/obj16/TestLanguageDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -394,24 +394,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="testlanguage_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
+               <instanceof value="org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
+         	   <instanceof value="org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageNavigatorSorter">
+               class="org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="testlanguage_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
+                  <instanceof value="org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -420,8 +420,8 @@
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorLabelProvider"
+            contentProvider="org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorContentProvider" 
+            labelProvider="org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorLabelProvider"
             icon="icons/obj16/TestLanguageDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -430,19 +430,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="testlanguage"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem"/>
+               <instanceof value="org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem"/>
+            <instanceof value="org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageNavigatorActionProvider">
+            class="org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
+               <instanceof value="org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -452,7 +452,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageNavigatorLinkHelper">
+            class="org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -460,7 +460,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
+            <instanceof value="org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -468,7 +468,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramUpdateCommand"
+         defaultHandler="org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -495,7 +495,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.parts.TestCaseEditPart"/>
+                     <instanceof value="org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -509,7 +509,7 @@
       <command id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.testlanguage.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
@@ -517,7 +517,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageMarkerNavigationProvider">
+      <MarkerNavigationProvider class="org.muml.testlanguage.diagram.providers.TestLanguageMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.testlanguage.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -530,7 +530,7 @@
       <persistent value="true"/>
    </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageValidationDecoratorProvider">
+      <decoratorProvider class="org.muml.testlanguage.diagram.providers.TestLanguageValidationDecoratorProvider">
          <Priority name="Medium"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -538,7 +538,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageParserProvider">
+      <ParserProvider class="org.muml.testlanguage.diagram.providers.TestLanguageParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>

@@ -14,7 +14,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageModelWizardID"
             name="%_UI_TestLanguageModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageModelWizard"
+            class="org.muml.testlanguage.presentation.TestLanguageModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/TestLanguageModelFile.gif">
          <description>%_UI_TestLanguageModelWizard_description</description>
@@ -29,8 +29,8 @@
             name="%_UI_TestLanguageEditor_label"
             icon="icons/full/obj16/TestLanguageModelFile.gif"
             extensions="testlanguage"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageActionBarContributor">
+            class="org.muml.testlanguage.presentation.TestLanguageEditor"
+            contributorClass="org.muml.testlanguage.presentation.TestLanguageActionBarContributor">
       </editor>
    </extension>
 

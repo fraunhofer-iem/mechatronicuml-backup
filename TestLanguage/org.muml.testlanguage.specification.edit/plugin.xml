@@ -3,13 +3,13 @@
 --><plugin>
 <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated specification -->
-      <factory class="de.uni_paderborn.fujaba.muml.testlanguage.specification.provider.SpecificationItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
+      <factory class="org.muml.testlanguage.specification.provider.SpecificationItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <?emfgen generated="true"?>
       <!-- @generated specification -->
-      <factory class="de.uni_paderborn.fujaba.muml.testlanguage.specification.provider.SpecificationItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
+      <factory class="org.muml.testlanguage.specification.provider.SpecificationItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
    </extension>
 
 </plugin>

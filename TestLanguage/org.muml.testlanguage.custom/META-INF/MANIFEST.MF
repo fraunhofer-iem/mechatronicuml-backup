@@ -13,4 +13,4 @@ Require-Bundle: org.muml.testlanguage;bundle-version="0.1.0",
  org.eclipse.emf.validation.ui,
  org.eclipse.swt
 Import-Package: org.eclipse.core.runtime
-Export-Package: de.uni_paderborn.fujaba.muml.testlanguage.custom.validation
+Export-Package: org.muml.testlanguage.custom.validation

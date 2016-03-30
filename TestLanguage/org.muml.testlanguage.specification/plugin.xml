@@ -3,13 +3,13 @@
 --><plugin>
 <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated specification -->
-      <package class="de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationPackage" genModel="model/specification.genmodel" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
+      <package class="org.muml.testlanguage.specification.SpecificationPackage" genModel="model/specification.genmodel" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
       <!-- @generated specification -->
-      <package class="de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationPackage" genModel="model/specification.genmodel" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
+      <package class="org.muml.testlanguage.specification.SpecificationPackage" genModel="model/specification.genmodel" uri="http://de/uni_paderborn/fujaba/muml/testlanguage/specification"/>
    </extension>
 
 </plugin>

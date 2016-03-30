@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.testlanguage.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageEditorPlugin$Implementation
+Bundle-Activator: org.muml.testlanguage.presentation.TestLanguageEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.fujaba.muml.testlanguage.presentation
+Export-Package: org.muml.testlanguage.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.muml.testlanguage.edit;visibility:=reexport,

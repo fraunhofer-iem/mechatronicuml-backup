@@ -15,7 +15,7 @@
       <propertySections
             contributorId="de.uni_paderborn.fujaba.muml.testlanguage.diagram">
          <propertySection
-               class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.custom.sheet.TestLanguagePropertySectionOverride"
+               class="org.muml.testlanguage.diagram.custom.sheet.TestLanguagePropertySectionOverride"
                id="property.section.specification"
                tab="property.tab.TestLanguageSpecification">
             <input
@@ -45,7 +45,7 @@
    <extension
          point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
       <modelingAssistantProvider
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.custom.providers.assistants.NodeEditPartModelingAssistantProvider">
+            class="org.muml.testlanguage.diagram.custom.providers.assistants.NodeEditPartModelingAssistantProvider">
          <Priority
                name="Medium">
          </Priority>
@@ -58,7 +58,7 @@
          </object>
       </modelingAssistantProvider>
       <modelingAssistantProvider
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.custom.providers.assistants.TestCaseEditPartModelingAssistantProvider">
+            class="org.muml.testlanguage.diagram.custom.providers.assistants.TestCaseEditPartModelingAssistantProvider">
          <Priority
                name="Medium">
          </Priority>

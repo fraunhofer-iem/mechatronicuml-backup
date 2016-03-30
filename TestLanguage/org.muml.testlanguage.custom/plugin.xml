@@ -17,7 +17,7 @@
          <constraints
                categories="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints">
             <constraint
-                  class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.NodeExecutionConstraint"
+                  class="org.muml.testlanguage.custom.validation.NodeExecutionConstraint"
                   id="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.NodeExecutionConstraint"
                   isEnabledByDefault="true"
                   lang="Java"
@@ -36,7 +36,7 @@
                </target>
             </constraint>
             <constraint
-                  class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.InputPortConstraint"
+                  class="org.muml.testlanguage.custom.validation.InputPortConstraint"
                   id="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.OptionalInputs"
                   isEnabledByDefault="true"
                   lang="Java"
@@ -63,7 +63,7 @@
             default="true"
             id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
          <selector
-               class="de.uni_paderborn.fujaba.muml.testlanguage.custom.ClientSelector">
+               class="org.muml.testlanguage.custom.ClientSelector">
          </selector>
       </clientContext>
       <binding
@@ -76,14 +76,14 @@
    <extension
          point="org.eclipse.emf.validation.traversal">
       <traversalStrategy
-            class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.TestLanguageTopologicalTraversalStrategy"
+            class="org.muml.testlanguage.custom.validation.TestLanguageTopologicalTraversalStrategy"
             namespaceUri="http://de/uni_paderborn/fujaba/muml/testlanguage">
       </traversalStrategy>
    </extension>
    <extension
          point="org.eclipse.emf.validation.validationListeners">
       <listener
-            class="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.MarkerListener">
+            class="org.muml.testlanguage.custom.validation.MarkerListener">
          <clientContext
                id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
          </clientContext>

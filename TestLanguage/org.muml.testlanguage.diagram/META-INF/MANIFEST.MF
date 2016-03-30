@@ -4,13 +4,13 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.testlanguage.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
+Bundle-Activator: org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.testlanguage.diagram.part,
- de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers,
- de.uni_paderborn.fujaba.muml.testlanguage.diagram.sheet
+Export-Package: org.muml.testlanguage.diagram.edit.parts,
+ org.muml.testlanguage.diagram.part,
+ org.muml.testlanguage.diagram.providers,
+ org.muml.testlanguage.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

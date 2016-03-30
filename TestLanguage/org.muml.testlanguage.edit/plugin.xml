@@ -5,7 +5,7 @@
       <!-- @generated testlanguage -->
       <factory
             uri="http://de/uni_paderborn/fujaba/muml/testlanguage"
-            class="de.uni_paderborn.fujaba.muml.testlanguage.provider.TestLanguageItemProviderAdapterFactory"
+            class="org.muml.testlanguage.provider.TestLanguageItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

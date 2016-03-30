@@ -22,9 +22,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import de.uni_paderborn.fujaba.muml.testlanguage.TestCase;
-import de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.URIConversion;
+import org.muml.testlanguage.TestCase;
+import org.muml.testlanguage.specification.custom.URIConversion;
 
 @RunWith(Parameterized.class)
 public class RunTestCases {

@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.fujaba.muml.testlanguage,
- de.uni_paderborn.fujaba.muml.testlanguage.impl,
- de.uni_paderborn.fujaba.muml.testlanguage.util
+Export-Package: org.muml.testlanguage,
+ org.muml.testlanguage.impl,
+ org.muml.testlanguage.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.testlanguage.specification;visibility:=reexport,
