@@ -20,7 +20,7 @@ public class BuildTest {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		IProject project = root.getProject("org.muml.graphviz");
+	//	IProject project = root.getProject("org.muml.graphviz");
 //		try {
 //			project.close(progressMonitor);
 //	
