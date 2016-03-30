@@ -267,7 +267,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * The meta object id for the '<em>Federation Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.udbm.Federation
+	 * @see org.muml.udbm.Federation
 	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.impl.ReachabilityGraphPackageImpl#getFederationObject()
 	 * @generated
 	 */
@@ -317,11 +317,11 @@ public interface ReachabilityGraphPackage extends EPackage {
 	EClass getTimedGTSDelayTransition();
 
 	/**
-	 * Returns the meta object for data type '{@link de.uni_paderborn.fujaba.udbm.Federation <em>Federation Object</em>}'.
+	 * Returns the meta object for data type '{@link org.muml.udbm.Federation <em>Federation Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Federation Object</em>'.
-	 * @see de.uni_paderborn.fujaba.udbm.Federation
+	 * @see org.muml.udbm.Federation
 	 * @model instanceClass="de.uni_paderborn.fujaba.udbm.Federation" serializeable="false"
 	 * @generated
 	 */
@@ -389,7 +389,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 		 * The meta object literal for the '<em>Federation Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.udbm.Federation
+		 * @see org.muml.udbm.Federation
 		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.impl.ReachabilityGraphPackageImpl#getFederationObject()
 		 * @generated
 		 */

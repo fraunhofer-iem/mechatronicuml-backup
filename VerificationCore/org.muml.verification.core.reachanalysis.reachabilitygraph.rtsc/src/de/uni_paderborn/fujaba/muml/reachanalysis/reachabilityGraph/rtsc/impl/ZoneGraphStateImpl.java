@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphStateImpl;
+import org.muml.udbm.Federation;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscPackage;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
-import de.uni_paderborn.fujaba.udbm.Federation;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,9 +6,9 @@ import java.util.HashSet;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.pim.realtimestatechart.ClockConstraint;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.udbm.Federation;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.RTSCReachabilityComputation;
-import de.uni_paderborn.fujaba.udbm.Federation;
 
 public class TestableRTSCReachabilityComputation extends
 		RTSCReachabilityComputation {
@@ -41,7 +41,7 @@ public class TestableRTSCReachabilityComputation extends
 
 	public ReachabilityGraphState delay(
 			ReachabilityGraphState state,
-			Collection<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants,
+			Collection<org.muml.udbm.ClockConstraint> invariants,
 			boolean urgent, Collection<Federation> federations) {
 		return super.delay(state, invariants, urgent, federations);
 	}

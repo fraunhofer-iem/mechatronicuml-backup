@@ -17,14 +17,14 @@ import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.Transition;
+import org.muml.udbm.Federation;
+import org.muml.udbm.FederationFactory;
+import org.muml.udbm.UDBMClock;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscFactory;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
-import de.uni_paderborn.fujaba.udbm.Federation;
-import de.uni_paderborn.fujaba.udbm.FederationFactory;
-import de.uni_paderborn.fujaba.udbm.UDBMClock;
 
 public class TestComputeHashValue extends AbstractRTSCTest{
 	private RuntimeFactory runtimefactory;
@@ -53,7 +53,7 @@ public class TestComputeHashValue extends AbstractRTSCTest{
 
 	private UDBMClock cu1, cu2;
 
-	HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants,
+	HashSet<org.muml.udbm.ClockConstraint> invariants,
 			invariants2;
 
 	@Before

@@ -8,4 +8,4 @@ Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.muml.udbm;bundle-version="0.3.0",
  org.junit;bundle-version="4.10.0"
-Export-Package: de.uni_paderborn.fujaba.udbm.test
+Export-Package: org.muml.udbm.test

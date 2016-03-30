@@ -6,5 +6,5 @@ Bundle-SymbolicName: org.muml.udbm.java;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.muml.udbm;bundle-version="0.3.0"
-Export-Package: de.uni_paderborn.fujaba.udbm.java
+Export-Package: org.muml.udbm.java
 Bundle-Vendor: %providerName

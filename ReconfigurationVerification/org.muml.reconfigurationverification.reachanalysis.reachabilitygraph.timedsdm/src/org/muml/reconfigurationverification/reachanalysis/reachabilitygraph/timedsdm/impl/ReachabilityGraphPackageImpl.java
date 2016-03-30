@@ -18,8 +18,7 @@ import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.time
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
-
-import de.uni_paderborn.fujaba.udbm.Federation;
+import org.muml.udbm.Federation;
 
 /**
  * <!-- begin-user-doc -->

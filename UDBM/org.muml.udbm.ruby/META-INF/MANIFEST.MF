@@ -6,4 +6,4 @@ Bundle-Version: 0.2.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %providerName
 Require-Bundle: org.muml.udbm;bundle-version="0.3.0"
-Export-Package: de.uni_paderborn.fujaba.udbm.ruby
+Export-Package: org.muml.udbm.ruby

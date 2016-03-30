@@ -16,14 +16,14 @@ import org.junit.Test;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.State;
+import org.muml.udbm.Federation;
+import org.muml.udbm.FederationFactory;
+import org.muml.udbm.UDBMClock;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscFactory;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
-import de.uni_paderborn.fujaba.udbm.Federation;
-import de.uni_paderborn.fujaba.udbm.FederationFactory;
-import de.uni_paderborn.fujaba.udbm.UDBMClock;
 
 
 public class TestIsIsomorphic extends AbstractRTSCTest{

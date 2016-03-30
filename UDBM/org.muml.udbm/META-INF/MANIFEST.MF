@@ -6,5 +6,5 @@ Bundle-SymbolicName: org.muml.udbm;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %providerName
-Export-Package: de.uni_paderborn.fujaba.udbm,
- de.uni_paderborn.fujaba.udbm.clockconstraint
+Export-Package: org.muml.udbm,
+ org.muml.udbm.clockconstraint

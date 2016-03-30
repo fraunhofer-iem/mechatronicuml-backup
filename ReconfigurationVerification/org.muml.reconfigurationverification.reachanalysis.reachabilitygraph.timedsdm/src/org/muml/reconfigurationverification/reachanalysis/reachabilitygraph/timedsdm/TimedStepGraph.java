@@ -9,8 +9,7 @@ package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.tim
 import org.eclipse.emf.common.util.EList;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
-
-import de.uni_paderborn.fujaba.udbm.Federation;
+import org.muml.udbm.Federation;
 
 /**
  * <!-- begin-user-doc -->

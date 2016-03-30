@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.test;
 
-import de.uni_paderborn.fujaba.udbm.FederationFactory;
-import de.uni_paderborn.fujaba.udbm.java.JavaFederationFactory;
+import org.muml.udbm.FederationFactory;
+import org.muml.udbm.java.JavaFederationFactory;
 
 public abstract class AbstractRTSCTest {
 

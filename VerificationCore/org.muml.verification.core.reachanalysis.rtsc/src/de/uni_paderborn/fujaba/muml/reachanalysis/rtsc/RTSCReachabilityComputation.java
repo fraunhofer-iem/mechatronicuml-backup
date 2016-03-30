@@ -36,6 +36,13 @@ import org.muml.pim.types.PrimitiveDataType;
 import org.muml.pim.types.PrimitiveTypes;
 import org.muml.pim.types.TypesFactory;
 import org.muml.pim.valuetype.TimeValue;
+import org.muml.udbm.DifferenceClockConstraint;
+import org.muml.udbm.Federation;
+import org.muml.udbm.FederationFactory;
+import org.muml.udbm.SimpleClockConstraint;
+import org.muml.udbm.UDBMClock;
+import org.muml.udbm.clockconstraint.RelationalOperator;
+import org.muml.udbm.java.JavaFederationFactory;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.ActionLanguageInterpreter;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.IncompatibleTypeException;
@@ -48,13 +55,6 @@ import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGra
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
-import de.uni_paderborn.fujaba.udbm.DifferenceClockConstraint;
-import de.uni_paderborn.fujaba.udbm.Federation;
-import de.uni_paderborn.fujaba.udbm.FederationFactory;
-import de.uni_paderborn.fujaba.udbm.SimpleClockConstraint;
-import de.uni_paderborn.fujaba.udbm.UDBMClock;
-import de.uni_paderborn.fujaba.udbm.clockconstraint.RelationalOperator;
-import de.uni_paderborn.fujaba.udbm.java.JavaFederationFactory;
 
 public class RTSCReachabilityComputation extends ReachabilityComputation {
 
@@ -148,7 +148,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 *         {@link Federation} null if source state is reached by delay
 	 */
 	protected ReachabilityGraphState delay(ReachabilityGraphState state,
-			Collection<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants, boolean urgent,
+			Collection<org.muml.udbm.ClockConstraint> invariants, boolean urgent,
 			Collection<Federation> federations) {
 
 		// check if state is a TimedState, otherwise no delay is possible
@@ -434,7 +434,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 								// create Federation with conjugated clock
 								// constraints for performing the delay in this
 								// case
-								HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> cConSet = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
+								HashSet<org.muml.udbm.ClockConstraint> cConSet = new HashSet<org.muml.udbm.ClockConstraint>();
 
 								DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
 								((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
@@ -525,7 +525,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 					// if outgoing urgent tau transition was found, get its
 					// clock constraints for performing the delay in this case
-					HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> cConSet = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
+					HashSet<org.muml.udbm.ClockConstraint> cConSet = new HashSet<org.muml.udbm.ClockConstraint>();
 
 					for (ClockConstraint cCon : transition.getClockConstraints()) {
 						UDBMClock clockForCC = clockMapping.get(cCon.getClock());
@@ -838,7 +838,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 			// compute invariants of old locations
-			HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
+			HashSet<org.muml.udbm.ClockConstraint> invariants = new HashSet<org.muml.udbm.ClockConstraint>();
 			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) state).getLocations()) {
 				for (ClockConstraint cCon : ((State) rtscInstance.getActiveVertex()).getInvariants()) {
 					UDBMClock clockForCC = clockMapping.get(cCon.getClock());

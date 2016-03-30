@@ -33,12 +33,12 @@ import org.muml.pim.types.PrimitiveTypes;
 import org.muml.pim.types.TypesFactory;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.pim.valuetype.ValuetypeFactory;
+import org.muml.udbm.ClockZone;
+import org.muml.udbm.Federation;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
-import de.uni_paderborn.fujaba.udbm.ClockZone;
-import de.uni_paderborn.fujaba.udbm.Federation;
 
 public class TestComputeSuccessors extends AbstractRTSCTest {
 

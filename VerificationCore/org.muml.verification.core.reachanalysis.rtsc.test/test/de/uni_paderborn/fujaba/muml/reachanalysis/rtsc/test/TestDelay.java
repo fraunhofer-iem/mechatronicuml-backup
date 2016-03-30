@@ -16,17 +16,17 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.State;
+import org.muml.udbm.Federation;
+import org.muml.udbm.FederationFactory;
+import org.muml.udbm.SimpleClockConstraint;
+import org.muml.udbm.UDBMClock;
+import org.muml.udbm.clockconstraint.RelationalOperator;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscFactory;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
-import de.uni_paderborn.fujaba.udbm.Federation;
-import de.uni_paderborn.fujaba.udbm.FederationFactory;
-import de.uni_paderborn.fujaba.udbm.SimpleClockConstraint;
-import de.uni_paderborn.fujaba.udbm.UDBMClock;
-import de.uni_paderborn.fujaba.udbm.clockconstraint.RelationalOperator;
 
 public class TestDelay extends AbstractRTSCTest{
 
@@ -59,7 +59,7 @@ public class TestDelay extends AbstractRTSCTest{
 
 	private UDBMClock cu1, cu2;
 
-	HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants, invariants2;
+	HashSet<org.muml.udbm.ClockConstraint> invariants, invariants2;
 
 	@Before
 	public void setUp() {
@@ -155,7 +155,7 @@ public class TestDelay extends AbstractRTSCTest{
 	public void testCZeroInv() {
 		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
+		invariants = new HashSet<org.muml.udbm.ClockConstraint>();
 
 		// create invariant(s)
 		SimpleClockConstraint constraint = new SimpleClockConstraint(cu1,
@@ -197,7 +197,7 @@ public class TestDelay extends AbstractRTSCTest{
 	public void testCNotZero() {
 		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
+		invariants = new HashSet<org.muml.udbm.ClockConstraint>();
 
 		// create invariant(s)
 		SimpleClockConstraint constraint = new SimpleClockConstraint(cu1,
@@ -240,8 +240,8 @@ public class TestDelay extends AbstractRTSCTest{
 	public void testCNotZeroInv() {
 		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
-		invariants2 = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
+		invariants = new HashSet<org.muml.udbm.ClockConstraint>();
+		invariants2 = new HashSet<org.muml.udbm.ClockConstraint>();
 
 		// create invariant(s)
 		SimpleClockConstraint constraint = new SimpleClockConstraint(cu1,
