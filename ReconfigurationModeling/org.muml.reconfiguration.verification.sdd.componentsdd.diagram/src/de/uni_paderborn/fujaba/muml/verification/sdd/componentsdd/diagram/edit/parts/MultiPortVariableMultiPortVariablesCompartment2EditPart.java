@@ -127,7 +127,7 @@ public class MultiPortVariableMultiPortVariablesCompartment2EditPart extends
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies.MultiPortVariableMultiPortVariablesCompartment2CanonicalEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
 				new org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 	}
 

@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.graphviz.plain;
 
-import de.uni_paderborn.fujaba.graphviz.common.Edge;
-
-import de.uni_paderborn.fujaba.graphviz.util.Point;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.graphviz.common.Edge;
+import de.uni_paderborn.fujaba.graphviz.util.Point;
 
 /**
  * <!-- begin-user-doc -->

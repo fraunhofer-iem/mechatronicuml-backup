@@ -14,8 +14,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.muml.core.ExtendableElement;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.RootNode;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class SelectInstanceConfigurationPage extends WizardPage{
 	

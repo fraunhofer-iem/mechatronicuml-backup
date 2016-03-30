@@ -6,8 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.core.CorePackage;
-
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import org.muml.pim.instance.InstancePackage;
 
 /**
  * <!-- begin-user-doc -->

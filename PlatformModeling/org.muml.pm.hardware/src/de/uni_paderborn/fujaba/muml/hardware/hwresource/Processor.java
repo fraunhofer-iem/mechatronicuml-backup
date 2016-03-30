@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresource;
 
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

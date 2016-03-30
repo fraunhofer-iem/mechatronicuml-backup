@@ -32,7 +32,7 @@ public class ReconfigurableStructuredComponentCompartmentEditPart extends
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StaticStructuredComponentComponentCompartmentEditPart_title;
+		return org.muml.pim.component.diagram.part.Messages.StaticStructuredComponentComponentCompartmentEditPart_title;
 	}
 
 	/**

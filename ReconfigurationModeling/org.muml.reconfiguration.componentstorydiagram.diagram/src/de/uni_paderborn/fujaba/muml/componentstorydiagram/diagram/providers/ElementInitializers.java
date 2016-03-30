@@ -269,7 +269,7 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getAssemblyVariable(), null).evaluate(
 							instance);
-			instance.setType((de.uni_paderborn.fujaba.muml.component.AssemblyConnector) value_0);
+			instance.setType((org.muml.pim.component.AssemblyConnector) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -288,7 +288,7 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getDelegationVariable(), null).evaluate(
 							instance);
-			instance.setType((de.uni_paderborn.fujaba.muml.component.DelegationConnector) value_0);
+			instance.setType((org.muml.pim.component.DelegationConnector) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

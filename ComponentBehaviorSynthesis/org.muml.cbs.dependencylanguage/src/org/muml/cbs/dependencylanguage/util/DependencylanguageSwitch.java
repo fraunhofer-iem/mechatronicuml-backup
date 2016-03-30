@@ -10,10 +10,9 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
 import org.muml.core.expressions.Expression;
-
-import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
+import org.muml.pim.actionlanguage.Assignment;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.realtimestatechart.ClockConstraint;
 
 /**
  * <!-- begin-user-doc -->

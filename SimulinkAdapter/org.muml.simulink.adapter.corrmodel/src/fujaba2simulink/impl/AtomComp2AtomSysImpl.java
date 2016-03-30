@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.component.Component;
 
-import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.simulink.model.InPortBlock;
 import de.uni_paderborn.fujaba.simulink.model.SubSystem;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Chart;

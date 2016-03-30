@@ -7,9 +7,8 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype;
 
 import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+import org.muml.pim.types.DataType;
+import org.muml.pim.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->

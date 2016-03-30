@@ -104,6 +104,17 @@ import org.muml.cbs.dependencylanguage.provider.DependencylanguageItemProviderAd
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
+import org.muml.pim.actionlanguage.provider.ActionlanguageItemProviderAdapterFactory;
+import org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory;
+import org.muml.pim.component.provider.ComponentItemProviderAdapterFactory;
+import org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory;
+import org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory;
+import org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory;
+import org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory;
+import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
+import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
+import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
+import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -156,29 +167,6 @@ import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
-
-import de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory;
-
-import de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory;
-
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 

@@ -13,6 +13,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;visibility:=reexport,
  org.muml.emm;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage,
- de.uni_paderborn.fujaba.muml.actionlanguage.impl,
- de.uni_paderborn.fujaba.muml.actionlanguage.util
+Export-Package: org.muml.pim.actionlanguage,
+ org.muml.pim.actionlanguage.impl,
+ org.muml.pim.actionlanguage.util

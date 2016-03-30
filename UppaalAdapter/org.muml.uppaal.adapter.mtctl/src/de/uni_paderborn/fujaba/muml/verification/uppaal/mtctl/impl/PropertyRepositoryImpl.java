@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl;
 
-import de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintRepositoryImpl;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
@@ -13,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.constraint.impl.VerificationConstraintRepositoryImpl;
 
 /**
  * <!-- begin-user-doc -->

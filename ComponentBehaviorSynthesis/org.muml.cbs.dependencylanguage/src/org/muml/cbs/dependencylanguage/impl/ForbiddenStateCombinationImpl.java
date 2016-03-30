@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.ForbiddenStateCombination;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.State;
 
 /**
  * <!-- begin-user-doc -->

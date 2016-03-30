@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
+import org.muml.pim.actionlanguage.Assignment;
 
 /**
  * <!-- begin-user-doc -->

@@ -8,8 +8,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.CommentableElement;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import org.muml.pim.behavior.BehavioralElement;
 
 
 /**

@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
+import org.muml.pim.realtimestatechart.ClockConstraint;
 
 /**
  * <!-- begin-user-doc -->

@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.tests.DiagramPluginXmlTest;
-
-import de.uni_paderborn.fujaba.muml.MumlPackage;
+import org.muml.pim.MumlPackage;
 
 @RunWith(Parameterized.class)
 public class HardwareDiagramPluginXmlTest extends DiagramPluginXmlTest {

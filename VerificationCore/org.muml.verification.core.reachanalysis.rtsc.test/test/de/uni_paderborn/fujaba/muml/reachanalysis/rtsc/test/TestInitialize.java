@@ -16,24 +16,24 @@ import org.junit.Before;
 import org.junit.Test;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.pim.realtimestatechart.AbsoluteDeadline;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.ClockConstraint;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.types.DataType;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.PrimitiveTypes;
+import org.muml.pim.types.TypesFactory;
+import org.muml.pim.valuetype.TimeValue;
+import org.muml.pim.valuetype.ValuetypeFactory;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.ActionLanguageInterpreter;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.IncompatibleTypeException;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.UnsupportedModellingElementException;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.VariableNotInitializedException;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.types.TypesFactory;
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 public class TestInitialize {
 

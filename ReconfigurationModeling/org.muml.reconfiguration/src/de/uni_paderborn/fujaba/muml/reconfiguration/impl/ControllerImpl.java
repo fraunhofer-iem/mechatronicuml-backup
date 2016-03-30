@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
 import org.muml.core.impl.NamedElementImpl;
+import org.muml.pim.behavior.Behavior;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.BehavioralElement;
 
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;

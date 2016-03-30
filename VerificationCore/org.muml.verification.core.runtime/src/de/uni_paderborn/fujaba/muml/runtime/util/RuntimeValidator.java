@@ -12,10 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.util;
 
-import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
-
-import de.uni_paderborn.fujaba.muml.instance.util.InstanceValidator;
-
 import de.uni_paderborn.fujaba.muml.runtime.*;
 
 import java.util.Map;
@@ -27,6 +23,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.muml.pim.connector.util.ConnectorValidator;
+import org.muml.pim.instance.util.InstanceValidator;
 
 /**
  * <!-- begin-user-doc -->

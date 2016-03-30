@@ -14,26 +14,26 @@ import org.muml.core.expressions.common.ComparisonExpression;
 import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.core.expressions.common.LogicOperator;
 import org.muml.core.expressions.common.LogicalExpression;
+import org.muml.pim.actionlanguage.ActionlanguageFactory;
+import org.muml.pim.actionlanguage.Assignment;
+import org.muml.pim.actionlanguage.Block;
+import org.muml.pim.actionlanguage.ElseIfStatement;
+import org.muml.pim.actionlanguage.IfStatement;
+import org.muml.pim.actionlanguage.LocalVariableDeclarationStatement;
+import org.muml.pim.actionlanguage.TypedNamedElementExpression;
+import org.muml.pim.behavior.BehaviorFactory;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.types.DataType;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.PrimitiveTypes;
+import org.muml.pim.types.TypesFactory;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ElseIfStatement;
-import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
-import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
-import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.ActionLanguageInterpreter;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.IncompatibleTypeException;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.UnsupportedModellingElementException;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.VariableNotInitializedException;
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
-import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 
 public class TestSimpleExpressions {
 

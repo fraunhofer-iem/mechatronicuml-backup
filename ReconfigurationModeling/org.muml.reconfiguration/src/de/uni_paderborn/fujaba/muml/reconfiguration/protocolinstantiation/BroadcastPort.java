@@ -2,8 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation;
 
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.component.Port;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
 
 /**
  * <!-- begin-user-doc -->

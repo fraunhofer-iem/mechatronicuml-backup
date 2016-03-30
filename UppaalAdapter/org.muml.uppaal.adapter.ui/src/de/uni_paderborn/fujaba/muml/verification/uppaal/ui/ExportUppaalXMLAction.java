@@ -18,11 +18,11 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.pattern.AbstractCoordinationPattern;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.Role;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalXMLJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;

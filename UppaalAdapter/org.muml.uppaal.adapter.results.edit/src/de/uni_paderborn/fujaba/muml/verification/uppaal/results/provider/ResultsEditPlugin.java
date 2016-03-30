@@ -2,14 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.results.provider;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.component.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the Results edit plugin.

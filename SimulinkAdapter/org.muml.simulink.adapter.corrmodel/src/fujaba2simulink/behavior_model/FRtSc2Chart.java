@@ -7,8 +7,8 @@
 package fujaba2simulink.behavior_model;
 
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Chart;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.State;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Transition;

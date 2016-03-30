@@ -17,5 +17,5 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers;
  */
 public class ExecutorEditHelper
 		extends
-		de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper {
+		org.muml.pim.component.diagram.edit.helpers.MumlBaseEditHelper {
 }

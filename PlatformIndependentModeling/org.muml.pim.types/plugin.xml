@@ -3,7 +3,7 @@
 <plugin>
 	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
    		<unit name="TypesBlackbox" namespace="de.uni_paderborn.fujaba.muml.types._library">
-    		<library name="TypesBlackboxLib" class="de.uni_paderborn.fujaba.muml.types.blackbox.TypesBlackbox">
+    		<library name="TypesBlackboxLib" class="org.muml.pim.types.blackbox.TypesBlackbox">
     			<metamodel nsURI="http://www.fujaba.de/muml/types/0.4.0"/>
     		</library>
 		</unit>

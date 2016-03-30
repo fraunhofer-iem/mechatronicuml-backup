@@ -2,13 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
-
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationConstraint;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-
-import de.uni_paderborn.fujaba.muml.types.impl.DataTypeImpl;
 
 import java.util.Collection;
 
@@ -24,6 +20,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.realtimestatechart.Message;
+import org.muml.pim.types.impl.DataTypeImpl;
 
 /**
  * <!-- begin-user-doc -->

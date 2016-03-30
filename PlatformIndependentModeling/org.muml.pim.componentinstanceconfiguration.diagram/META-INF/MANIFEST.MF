@@ -4,15 +4,15 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.pim.componentinstanceconfiguration.diagram;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+Bundle-Activator: org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.commands,
- de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers,
- de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part,
- de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers
+Export-Package: org.muml.pim.componentinstanceconfiguration.diagram.edit.commands,
+ org.muml.pim.componentinstanceconfiguration.diagram.edit.parts,
+ org.muml.pim.componentinstanceconfiguration.diagram.edit.policies,
+ org.muml.pim.componentinstanceconfiguration.diagram.parsers,
+ org.muml.pim.componentinstanceconfiguration.diagram.part,
+ org.muml.pim.componentinstanceconfiguration.diagram.providers
 Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.ui.navigator,
  org.eclipse.ui.navigator.resources,

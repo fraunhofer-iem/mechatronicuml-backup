@@ -10,11 +10,11 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.muml.core.NamedElement;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.constraint.VerificationConstraintRepository;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.Role;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyChoiceProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;

@@ -2,14 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.TimeParameter;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,6 +13,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.TypedNamedElement;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

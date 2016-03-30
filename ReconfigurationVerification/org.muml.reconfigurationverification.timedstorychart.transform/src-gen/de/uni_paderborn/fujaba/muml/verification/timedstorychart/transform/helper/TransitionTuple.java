@@ -3,8 +3,7 @@
 package de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper;
 
 import org.eclipse.emf.ecore.EObject;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Transition;
 
 /**
  * <!-- begin-user-doc -->

@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
 import org.muml.core.impl.NamedElementImpl;
+import org.muml.pim.component.Port;
 
-import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 

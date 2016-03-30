@@ -7,9 +7,8 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,7 +167,7 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 
 	/**
 	 * Returns the value of the '<em><b>Return Values</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
+	 * The list contents are of type {@link org.muml.pim.behavior.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Values</em>' containment reference list isn't clear,

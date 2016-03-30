@@ -2,23 +2,19 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.impl;
 
-import de.uni_paderborn.fujaba.graphviz.common.impl.NodeImpl;
-
-import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
-import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
-import de.uni_paderborn.fujaba.graphviz.dot.Setting;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.uni_paderborn.fujaba.graphviz.common.impl.NodeImpl;
+import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
+import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
+import de.uni_paderborn.fujaba.graphviz.dot.Setting;
 
 /**
  * <!-- begin-user-doc -->

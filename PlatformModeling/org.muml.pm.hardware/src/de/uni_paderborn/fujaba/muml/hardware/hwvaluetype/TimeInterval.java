@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype;
 
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
-
 import java.util.concurrent.TimeUnit;
+
+import org.muml.pim.valuetype.Range;
 
 /**
  * <!-- begin-user-doc -->

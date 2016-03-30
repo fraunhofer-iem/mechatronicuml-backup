@@ -6,8 +6,9 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.Region;
+
 import de.uni_paderborn.fujaba.simulink.model.stateflow.State;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

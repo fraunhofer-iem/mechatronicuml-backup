@@ -1,0 +1,54 @@
+package org.muml.pim.common.modelinitializer;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.EObject;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
+import org.muml.core.modelinstance.ui.initializer.IModelInitializer;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.PrimitiveTypes;
+import org.muml.pim.types.TypesFactory;
+
+public class DefaultCategoriesInitializer implements IModelInitializer {
+
+	@Override
+	public boolean supports(EObject object) {
+		return object instanceof RootNode;
+	}
+
+	@Override
+	public void initialize(EObject element) {
+		RootNode rootNode = (RootNode) element; // cast is okay, because supports() checked it.
+		
+		Map<String, String> map = new HashMap<String, String>();
+		// we have a dedicated initializer for the type category
+		// map.put("de.uni_paderborn.fujaba.muml.types.category", "types");
+		map.put("de.uni_paderborn.fujaba.muml.protocol.category", "protocol");
+		map.put("de.uni_paderborn.fujaba.muml.components.category", "component");
+		map.put("de.uni_paderborn.fujaba.muml.realtimestatechart.category", "realtimestatechart");
+		map.put("de.uni_paderborn.fujaba.muml.messagetype.category", "msgtype");
+		map.put("de.uni_paderborn.fujaba.muml.instance.category", "instance");
+		map.put("de.uni_paderborn.fujaba.muml.pattern.category", "pattern");
+		
+		for (String key : map.keySet()) {
+			boolean found = false;
+			for (ModelElementCategory category : rootNode.getCategories()) {
+				if (key.equals(category.getKey())) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				ModelElementCategory category = ModelinstanceFactory.eINSTANCE
+						.createModelElementCategory();
+				category.setKey(key);
+				category.setName(map.get(key));
+				rootNode.getCategories().add(category);
+			}
+		}
+	}
+
+}

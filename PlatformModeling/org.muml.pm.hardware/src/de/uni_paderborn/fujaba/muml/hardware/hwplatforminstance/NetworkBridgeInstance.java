@@ -3,10 +3,9 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge;
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.connector.ConnectorEndpointInstance;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.NamedElement;
+import org.muml.pim.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->

@@ -27,8 +27,7 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
-
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy;
+import org.muml.pim.component.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy;
 
 public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementCategoryCanonicalEditPolicy {
 
@@ -52,7 +51,7 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -70,10 +69,10 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 		// i.e. if there are few views to reference same EObject, only last one
 		// to answer isOrphaned == true will be used for the domain element
 		// representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<org.muml.pim.component.diagram.part.MumlNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor next = descriptorsIterator.next();
-			String hint = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			org.muml.pim.component.diagram.part.MumlNodeDescriptor next = descriptorsIterator.next();
+			String hint = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both
 																	// semanticElement
@@ -114,8 +113,8 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor next : childDescriptors) {
-			String hint = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+		for (org.muml.pim.component.diagram.part.MumlNodeDescriptor next : childDescriptors) {
+			String hint = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
@@ -174,12 +173,12 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
+		Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
 		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			int diagramLinkVisualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
 				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
@@ -191,9 +190,9 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 				EObject diagramLinkObject = nextDiagramLink.getElement();
 				EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 				EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-				for (Iterator<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+				for (Iterator<org.muml.pim.component.diagram.part.MumlLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 						.iterator(); linkDescriptorsIterator.hasNext();) {
-					de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+					org.muml.pim.component.diagram.part.MumlLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
 							.next();
 					if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 							&& diagramLinkSrc == nextLinkDescriptor.getSource()
@@ -210,14 +209,14 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 		return createConnections(linkDescriptors, domain2NotationMap);
 	}
 
-	private Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> collectAllLinks(
+	private Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> collectAllLinks(
 			View view, Domain2Notation domain2NotationMap) {
-		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.getModelID(view))) {
+		if (!org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
+				.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
-		switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
+		LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor>();
+		switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID: {
 			domain2NotationMap.putView(view.getElement(), view);
@@ -233,9 +232,9 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 			break;
 		}
 
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getStaticStructuredComponent_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
@@ -278,15 +277,15 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 			break;
 		}
 
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getModelElementCategory_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 			}
 			domain2NotationMap.putView(view.getElement(), view);
@@ -300,65 +299,65 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 			break;
 		}
 
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getDiscretePort_3010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getContinuousPort_3011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getHybridPort_3013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getComponentPart_3012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getPortPart_3022ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getCoordinationProtocolPart_3016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getAssemblyConnector_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID: {
+		case org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
 						.getDelegationConnector_4002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
@@ -376,10 +375,10 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 	}
 
 	private Collection<IAdaptable> createConnections(
-			Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> linkDescriptors,
+			Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		for (org.muml.pim.component.diagram.part.MumlLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
 			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
@@ -411,8 +410,8 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getVisualID(view);
-		return visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID
+		return visualID == org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID
+				|| visualID == org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID
 				|| visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID
 				|| visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID;
 	}
@@ -422,22 +421,22 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+			List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID,
-						de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID,
+						org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID,
+						org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID,
 						de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID,
 						de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
 						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(childElement,
+					result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(childElement,
 							visualID));
 					continue;
 				}
@@ -447,7 +446,7 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends ModelElementC
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+		return org.muml.pim.component.diagram.part.MumlDiagramUpdater
 				.getModelElementCategory_1000SemanticChildren(viewObject);
 
 	}

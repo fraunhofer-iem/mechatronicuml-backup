@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.realtimestatechart.Action;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.ExitEvent;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
 import fujaba2simulink.behavior_model.Behavior_modelPackage;
 import fujaba2simulink.behavior_model.ScExit2sfExit;
 import fujaba2simulink.impl.AbstractContainerCorrespondenceNodeImpl;

@@ -4,23 +4,23 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.ComponentPart;
+import org.muml.pim.component.Port;
+import org.muml.pim.component.PortPart;
+import org.muml.pim.component.StructuredComponent;
+import org.muml.pim.instance.AtomicComponentInstance;
+import org.muml.pim.instance.InstanceFactory;
+import org.muml.pim.instance.StructuredComponentInstance;
+import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.ValuetypeFactory;
 
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
-import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.component.PortPart;
-import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
-import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 /**
  * Generates a State for a given instance

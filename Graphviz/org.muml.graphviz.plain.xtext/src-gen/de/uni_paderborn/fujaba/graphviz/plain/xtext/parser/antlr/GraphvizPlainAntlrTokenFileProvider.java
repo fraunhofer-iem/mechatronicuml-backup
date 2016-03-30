@@ -4,6 +4,7 @@
 package de.uni_paderborn.fujaba.graphviz.plain.xtext.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class GraphvizPlainAntlrTokenFileProvider implements IAntlrTokenFileProvider {

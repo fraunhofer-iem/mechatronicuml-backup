@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.simulink.model.BusCreator;
 import de.uni_paderborn.fujaba.simulink.model.BusSelector;
 import de.uni_paderborn.fujaba.simulink.model.InPortBlock;

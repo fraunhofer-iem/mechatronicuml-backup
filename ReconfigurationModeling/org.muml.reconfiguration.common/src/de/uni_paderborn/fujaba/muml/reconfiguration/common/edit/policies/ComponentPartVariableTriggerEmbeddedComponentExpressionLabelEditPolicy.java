@@ -9,12 +9,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pim.component.Component;
+import org.muml.pim.component.Port;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;

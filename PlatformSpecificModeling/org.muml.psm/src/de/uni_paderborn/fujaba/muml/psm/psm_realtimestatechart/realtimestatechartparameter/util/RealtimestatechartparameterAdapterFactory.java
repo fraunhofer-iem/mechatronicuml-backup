@@ -2,10 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -17,6 +13,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.TypedNamedElement;
+import org.muml.pim.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -215,13 +214,13 @@ public class RealtimestatechartparameterAdapterFactory extends AdapterFactoryImp
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.Operation <em>Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.Operation
+	 * @see org.muml.pim.behavior.Operation
 	 * @generated
 	 */
 	public Adapter createOperationAdapter() {
@@ -229,13 +228,13 @@ public class RealtimestatechartparameterAdapterFactory extends AdapterFactoryImp
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement <em>Typed Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.TypedNamedElement <em>Typed Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement
+	 * @see org.muml.pim.behavior.TypedNamedElement
 	 * @generated
 	 */
 	public Adapter createTypedNamedElementAdapter() {
@@ -243,13 +242,13 @@ public class RealtimestatechartparameterAdapterFactory extends AdapterFactoryImp
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.Variable <em>Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.Variable
+	 * @see org.muml.pim.behavior.Variable
 	 * @generated
 	 */
 	public Adapter createVariableAdapter() {

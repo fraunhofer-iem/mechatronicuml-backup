@@ -36,8 +36,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
-
-import de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlViewProvider;
+import org.muml.pim.component.diagram.providers.MumlViewProvider;
 
 public class ReconfigurationViewProvider extends MumlViewProvider implements
 		IViewProvider {
@@ -88,8 +87,8 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				}
 			} else {
 			
-				if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-						.equals(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+				if (!org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
+						.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 								.getModelID(op.getContainerView()))) {
 					return false; // foreign diagram
 				}
@@ -100,14 +99,14 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart.VISUAL_ID:
 					
 					if (domainElement == null
@@ -127,11 +126,11 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID == visualID
+				|| org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID == visualID
+				|| org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == visualID
+				|| org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID == visualID
+				|| org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID == visualID
+				|| org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart.VISUAL_ID == visualID
@@ -192,7 +191,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 			PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
-		switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+		switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 				.getVisualID(elementTypeHint)) {
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortDelegationConnectorEditPart.VISUAL_ID:
 			return createReconfigurationPortDelegationConnector_4076(
@@ -217,10 +216,10 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		final EObject domainElement = getSemanticElement(semanticAdapter);
 		final int visualID;
 		if (semanticHint == null) {
-			visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(containerView, domainElement);
 		} else {
-			visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getVisualID(semanticHint);
 		}
 		switch (visualID) {
@@ -257,13 +256,13 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 			return createExecutor_2077(domainElement, containerView, index,
 					persisted, preferencesHint);
 
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return super.createDiscretePort_3010(domainElement, containerView, index,
 					persisted, preferencesHint);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 			return super.createContinuousPort_3011(domainElement, containerView, index,
 					persisted, preferencesHint);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return super.createHybridPort_3013(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart.VISUAL_ID:
@@ -316,8 +315,8 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5028 = createLabel(
 				node,
-				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
+				org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+						.getType(org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -363,7 +362,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		Node label5021 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
+						.getType(org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
 
 		createCompartment(
 				node,
@@ -416,7 +415,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		Node label5028 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
+						.getType(org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
 		return node;
 	}
 	
@@ -812,15 +811,15 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 	// copied from
 	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	private void stampShortcut(View containerView, Node target) {
-		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+		if (!org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
+				.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 						.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE
 					.createEAnnotation();
 			shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
 			shortcutAnnotation
 					.getDetails()
-					.put("modelID", de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID); //$NON-NLS-1$
+					.put("modelID", org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID); //$NON-NLS-1$
 			target.getEAnnotations().add(shortcutAnnotation);
 		}
 	}

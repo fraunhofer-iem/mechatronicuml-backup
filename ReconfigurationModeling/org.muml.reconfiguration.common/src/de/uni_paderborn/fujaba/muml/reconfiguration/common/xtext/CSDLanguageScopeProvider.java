@@ -6,16 +6,16 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pim.actionlanguage.xtext.scoping.ActionLanguageScopeProvider;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.behavior.TypedNamedElement;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
-import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProvider;
 import de.uni_paderborn.fujaba.muml.verification.sdd.Edge;
 import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
 import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;

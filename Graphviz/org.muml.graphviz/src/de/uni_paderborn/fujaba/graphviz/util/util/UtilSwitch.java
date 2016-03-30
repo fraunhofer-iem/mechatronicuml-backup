@@ -2,12 +2,12 @@
  */
 package de.uni_paderborn.fujaba.graphviz.util.util;
 
-import de.uni_paderborn.fujaba.graphviz.util.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import de.uni_paderborn.fujaba.graphviz.util.Point;
+import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
 
 /**
  * <!-- begin-user-doc -->

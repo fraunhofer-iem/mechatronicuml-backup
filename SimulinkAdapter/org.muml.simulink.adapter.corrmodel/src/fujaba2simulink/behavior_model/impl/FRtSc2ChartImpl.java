@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Chart;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.State;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Transition;

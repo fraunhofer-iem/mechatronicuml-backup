@@ -3,8 +3,8 @@
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd;
 
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.behavior.ParameterBinding;
 
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
 
 /**
@@ -54,7 +54,7 @@ public interface EvaluateComponentSDDExpression extends TriggerEmbeddedComponent
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Bindings</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding}.
+	 * The list contents are of type {@link org.muml.pim.behavior.ParameterBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameter Bindings</em>' containment reference list isn't clear,

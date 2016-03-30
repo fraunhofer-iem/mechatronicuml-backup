@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.swplatform;
 
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import org.muml.pim.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

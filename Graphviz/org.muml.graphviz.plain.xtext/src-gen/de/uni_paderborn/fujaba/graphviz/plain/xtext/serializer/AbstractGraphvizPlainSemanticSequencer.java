@@ -1,7 +1,13 @@
 package de.uni_paderborn.fujaba.graphviz.plain.xtext.serializer;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
+import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+
 import com.google.inject.Inject;
-import com.google.inject.Provider;
+
 import de.uni_paderborn.fujaba.graphviz.plain.PlainEdge;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
@@ -9,17 +15,6 @@ import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
 import de.uni_paderborn.fujaba.graphviz.plain.xtext.services.GraphvizPlainGrammarAccess;
 import de.uni_paderborn.fujaba.graphviz.util.Point;
 import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
-import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public abstract class AbstractGraphvizPlainSemanticSequencer extends AbstractDelegatingSemanticSequencer {

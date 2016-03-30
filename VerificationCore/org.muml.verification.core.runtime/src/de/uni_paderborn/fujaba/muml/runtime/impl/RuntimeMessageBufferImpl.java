@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,6 +14,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.impl.ExtendableElementImpl;
+import org.muml.pim.connector.MessageBuffer;
 
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;

@@ -176,7 +176,7 @@ public class FadingComponentPartVariableEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_GeneralTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createDataType_GeneralTab_Editor() {
 		if (this.editorDataType_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getTypedNamedElement_DataType();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);

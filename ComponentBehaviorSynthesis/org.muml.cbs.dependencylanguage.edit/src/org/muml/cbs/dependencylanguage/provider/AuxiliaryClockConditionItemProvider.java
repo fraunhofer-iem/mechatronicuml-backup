@@ -3,8 +3,6 @@
 package org.muml.cbs.dependencylanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,6 +24,7 @@ import org.muml.cbs.dependencylanguage.AuxiliaryClockCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.pim.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.AuxiliaryClockCondition} object.

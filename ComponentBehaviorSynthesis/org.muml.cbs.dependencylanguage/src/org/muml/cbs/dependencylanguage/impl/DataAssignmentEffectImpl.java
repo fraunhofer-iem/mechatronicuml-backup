@@ -24,12 +24,11 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
 import org.muml.core.expressions.Expression;
 import org.muml.core.util.ExtendableElementOperations;
-
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
-import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
-import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
+import org.muml.pim.actionlanguage.ActionlanguagePackage;
+import org.muml.pim.actionlanguage.AssignOperator;
+import org.muml.pim.actionlanguage.Assignment;
+import org.muml.pim.actionlanguage.IncrementDecrementOperator;
+import org.muml.pim.actionlanguage.TypedNamedElementExpression;
 
 /**
  * <!-- begin-user-doc -->

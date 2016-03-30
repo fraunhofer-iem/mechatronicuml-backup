@@ -9,8 +9,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.muml.modelica.adapter.main.Generate;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class Generator {
 	

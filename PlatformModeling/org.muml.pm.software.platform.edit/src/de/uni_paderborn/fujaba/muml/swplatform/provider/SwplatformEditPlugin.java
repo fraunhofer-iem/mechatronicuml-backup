@@ -2,12 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.swplatform.provider;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.component.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the Swplatform edit plugin.

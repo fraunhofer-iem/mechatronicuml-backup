@@ -350,8 +350,8 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateAssemblyVariable_4002(
 				de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				org.muml.pim.connector.ConnectorEndpoint source,
+				org.muml.pim.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return canExistAssemblyVariable_4002(container, null, source,
 					target, sourceView, targetView);
@@ -362,8 +362,8 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateDelegationVariable_4003(
 				de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				org.muml.pim.connector.ConnectorEndpoint source,
+				org.muml.pim.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return canExistDelegationVariable_4003(container, null, source,
 					target, sourceView, targetView);
@@ -410,8 +410,8 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canExistAssemblyVariable_4002(
 				de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable linkInstance,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				org.muml.pim.connector.ConnectorEndpoint source,
+				org.muml.pim.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -420,7 +420,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -430,7 +430,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									18,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
@@ -445,7 +445,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -455,7 +455,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									19,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -478,8 +478,8 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorAssemblyVariable_4002(
 				de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				org.muml.pim.connector.ConnectorEndpoint source,
+				org.muml.pim.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -488,7 +488,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -498,7 +498,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									18,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
@@ -525,7 +525,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -535,7 +535,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									19,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -571,8 +571,8 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canExistDelegationVariable_4003(
 				de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable linkInstance,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				org.muml.pim.connector.ConnectorEndpoint source,
+				org.muml.pim.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -581,7 +581,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -591,7 +591,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									21,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
@@ -606,7 +606,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -616,7 +616,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									22,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -639,8 +639,8 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorDelegationVariable_4003(
 				de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				org.muml.pim.connector.ConnectorEndpoint source,
+				org.muml.pim.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -649,7 +649,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -659,7 +659,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									21,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
@@ -686,7 +686,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -696,7 +696,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
 									22,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									org.muml.pim.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 

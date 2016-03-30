@@ -3,8 +3,6 @@
 package org.muml.modelica.transform.provider;
 
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RegionItemProvider;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -24,6 +22,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.modelica.transform.RegionInstance;
 import org.muml.modelica.transform.TransformPackage;
+import org.muml.pim.realtimestatechart.provider.RegionItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.modelica.transform.RegionInstance} object.

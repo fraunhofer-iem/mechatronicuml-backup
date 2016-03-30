@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.protocol.Role;
+import org.muml.pim.protocol.Role;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport;
 
 import org.eclipse.draw2d.PositionConstants;
+import org.muml.pim.common.edit.policies.ports.AbstractRotatingBorderItemEditPolicy;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.AbstractRotatingBorderItemEditPolicy;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.VisualPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;

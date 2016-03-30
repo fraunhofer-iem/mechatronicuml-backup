@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.graphviz.plain.xtext.validation;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.emf.ecore.EPackage;
 
 public class AbstractGraphvizPlainValidator extends org.eclipse.xtext.validation.AbstractDeclarativeValidator {

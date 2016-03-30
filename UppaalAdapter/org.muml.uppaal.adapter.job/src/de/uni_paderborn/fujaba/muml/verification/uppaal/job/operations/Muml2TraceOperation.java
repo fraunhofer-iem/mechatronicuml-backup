@@ -14,10 +14,10 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.constraint.VerificationConstraintRepository;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraph;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyChoiceProvider;

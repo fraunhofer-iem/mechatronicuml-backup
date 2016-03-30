@@ -71,7 +71,7 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint && newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -80,7 +80,7 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
+		org.muml.pim.connector.ConnectorEndpoint target = (org.muml.pim.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable)) {
 			return false;
@@ -110,7 +110,7 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint && newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -119,7 +119,7 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
+		org.muml.pim.connector.ConnectorEndpoint source = (org.muml.pim.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable)) {
 			return false;
@@ -201,29 +201,29 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) oldEnd;
+	protected org.muml.pim.connector.ConnectorEndpoint getOldSource() {
+		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) newEnd;
+	protected org.muml.pim.connector.ConnectorEndpoint getNewSource() {
+		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) oldEnd;
+	protected org.muml.pim.connector.ConnectorEndpoint getOldTarget() {
+		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) newEnd;
+	protected org.muml.pim.connector.ConnectorEndpoint getNewTarget() {
+		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**

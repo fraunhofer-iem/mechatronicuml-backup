@@ -3,11 +3,11 @@ package de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parsers;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pim.valuetype.Cardinality;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.parsers.GeneralPlatformParser;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser5047;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * A customized LabelParser which parses the {@link Cardinality} and sets the
@@ -26,13 +26,13 @@ public class CustomResourcePartCardinalityExpressionLabelParser5032
 		try {
 			lowerBound = GeneralPlatformParser.getLowerBound(newString);
 			upperBound = GeneralPlatformParser.getUpperBound(newString);
-			Cardinality cardinality = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			Cardinality cardinality = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createCardinality();
 			cardinality
-					.setLowerBound(de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.setLowerBound(org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 							.createNaturalNumber());
 			cardinality
-					.setUpperBound(de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.setUpperBound(org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 							.createNaturalNumber());
 			cardinality.getLowerBound().setValue(lowerBound);
 			cardinality.getUpperBound().setValue(upperBound);

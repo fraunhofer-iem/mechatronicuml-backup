@@ -2,12 +2,11 @@
  */
 package de.uni_paderborn.fujaba.graphviz.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import de.uni_paderborn.fujaba.graphviz.DummyClassForAcceleoWillBeDeleted;
 import de.uni_paderborn.fujaba.graphviz.GraphvizPackage;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -29,6 +29,7 @@ import org.muml.core.reachanalysis.core.ReachabilityComputationStatistics;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
+import org.muml.pim.types.PrimitiveDataType;
 import org.storydriven.storydiagrams.activities.Activity;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomaton;
@@ -58,7 +59,6 @@ import de.uni_paderborn.fujaba.muml.timedstorydiagram.InvariantStoryDiagram;
 import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedGraphTransformationSystem;
 import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedStoryDiagram;
 import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 
 /*TODO:
  *  - generate identifiers for unchangeable nodes -> generate once and use for all nodes

@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorEndpointInstanceItemProvider;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -14,6 +13,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.muml.pim.connector.provider.ConnectorEndpointInstanceItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance} object.

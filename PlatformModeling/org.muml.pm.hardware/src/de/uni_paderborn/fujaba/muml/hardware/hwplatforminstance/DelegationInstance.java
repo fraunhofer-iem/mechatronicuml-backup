@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
+import org.muml.pim.connector.ConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->

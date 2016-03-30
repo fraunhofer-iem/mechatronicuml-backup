@@ -10,8 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
-
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.DiscretePortItemSemanticEditPolicy;
+import org.muml.pim.component.diagram.edit.policies.DiscretePortItemSemanticEditPolicy;
 
 /**
  * @generated

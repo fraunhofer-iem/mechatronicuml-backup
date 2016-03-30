@@ -18,11 +18,11 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.provider.StructuredComponentItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.provider.StructuredComponentItemProvider;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;

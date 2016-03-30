@@ -10,12 +10,12 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider;
 import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.component.ComponentPart;
+import org.muml.pim.component.PortPart;
+import org.muml.pim.component.diagram.custom.edit.parts.CustomPortPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.component.PortPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts.CustomPortPartEditPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryCanonicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryItemSemanticEditPolicy;
 
@@ -35,7 +35,7 @@ public class ReconfigurationEditPolicyProvider extends AbstractProvider
 			}
 			if (element instanceof PortPart) {
 				ep.installEditPolicy(
-						de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+						org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 						new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomPortPartEditPolicy());
 			}
 

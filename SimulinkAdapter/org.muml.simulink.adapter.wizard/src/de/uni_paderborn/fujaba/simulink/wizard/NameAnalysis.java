@@ -5,15 +5,14 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.component.Component;
+import org.muml.pim.component.Port;
+import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
 
 public class NameAnalysis 
 {	

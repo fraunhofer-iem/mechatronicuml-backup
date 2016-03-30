@@ -13,9 +13,9 @@ import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.widgets.Composite;
 import org.muml.ape.runtime.editors.ObjectPropertyEditor;
 import org.muml.ape.runtime.wizard.PropertyEditorWizardPage;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.protocol.CoordinationProtocol;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.HideOptionExtension;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;

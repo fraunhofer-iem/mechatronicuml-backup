@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.types.DataType;
+import org.muml.pim.types.StructureDataType;
 
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
-import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -195,13 +195,13 @@ public class StructdatatypeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.types.DataType <em>Data Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.types.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.types.DataType
+	 * @see org.muml.pim.types.DataType
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
@@ -209,13 +209,13 @@ public class StructdatatypeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.types.StructureDataType <em>Structure Data Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.types.StructureDataType <em>Structure Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.types.StructureDataType
+	 * @see org.muml.pim.types.StructureDataType
 	 * @generated
 	 */
 	public Adapter createStructureDataTypeAdapter() {

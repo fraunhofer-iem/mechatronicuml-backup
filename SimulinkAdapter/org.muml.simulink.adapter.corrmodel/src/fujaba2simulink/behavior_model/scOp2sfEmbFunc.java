@@ -9,8 +9,8 @@ package fujaba2simulink.behavior_model;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EAnnotation;
+import org.muml.pim.behavior.Operation;
 
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

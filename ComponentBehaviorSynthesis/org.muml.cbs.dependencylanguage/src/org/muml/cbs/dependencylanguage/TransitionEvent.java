@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Transition;
 
 /**
  * <!-- begin-user-doc -->

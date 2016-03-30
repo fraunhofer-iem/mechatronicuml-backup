@@ -1,8 +1,7 @@
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.serializer;
 
-import com.google.inject.Inject;
-import de.uni_paderborn.fujaba.graphviz.dot.xtext.services.DotLanguageGrammarAccess;
 import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
@@ -13,6 +12,10 @@ import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
+
+import com.google.inject.Inject;
+
+import de.uni_paderborn.fujaba.graphviz.dot.xtext.services.DotLanguageGrammarAccess;
 
 @SuppressWarnings("all")
 public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSyntacticSequencer {

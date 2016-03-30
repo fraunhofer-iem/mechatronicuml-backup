@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.muml.core.ExtendableElement;
-
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

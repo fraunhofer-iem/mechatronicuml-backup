@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,6 +16,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.CommentableElementItemProvider;
 import org.muml.core.provider.NamedElementItemProvider;
+import org.muml.pim.behavior.BehaviorPackage;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 

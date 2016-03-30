@@ -3,8 +3,6 @@
 package org.muml.cbs.dependencylanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.provider.ClockConstraintItemProvider;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -23,6 +21,7 @@ import org.muml.cbs.dependencylanguage.BasicClockCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.pim.realtimestatechart.provider.ClockConstraintItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.BasicClockCondition} object.

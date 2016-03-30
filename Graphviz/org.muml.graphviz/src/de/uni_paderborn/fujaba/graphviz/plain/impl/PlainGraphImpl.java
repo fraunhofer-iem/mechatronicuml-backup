@@ -2,20 +2,17 @@
  */
 package de.uni_paderborn.fujaba.graphviz.plain.impl;
 
-import de.uni_paderborn.fujaba.graphviz.common.impl.GraphImpl;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 
+import de.uni_paderborn.fujaba.graphviz.common.impl.GraphImpl;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainEdge;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 
 /**
  * <!-- begin-user-doc -->

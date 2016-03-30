@@ -9,8 +9,8 @@ package fujaba2simulink.behavior_model;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EAnnotation;
+import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Action;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

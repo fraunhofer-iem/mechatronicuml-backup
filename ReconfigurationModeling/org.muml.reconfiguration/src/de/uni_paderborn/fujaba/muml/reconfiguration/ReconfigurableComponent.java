@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.component.Component;
+import org.muml.pim.component.Component;
 
 /**
  * <!-- begin-user-doc -->

@@ -8,17 +8,18 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.component.Component;
+import org.muml.pim.component.Port;
+import org.muml.pim.component.PortConnector;
+import org.muml.pim.component.StructuredComponent;
+import org.muml.pim.connector.Connector;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.types.DataType;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.component.PortConnector;
-import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
-import de.uni_paderborn.fujaba.muml.connector.Connector;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
@@ -48,7 +49,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
 import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

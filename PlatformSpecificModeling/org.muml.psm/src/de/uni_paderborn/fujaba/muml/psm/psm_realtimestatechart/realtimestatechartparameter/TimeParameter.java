@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter;
 
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import org.muml.pim.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->

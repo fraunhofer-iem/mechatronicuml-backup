@@ -9,9 +9,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.MessageEvent;
 import org.muml.cbs.dependencylanguage.MessageEventKind;
-
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

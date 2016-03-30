@@ -6,7 +6,8 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.Clock;
+
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Action;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

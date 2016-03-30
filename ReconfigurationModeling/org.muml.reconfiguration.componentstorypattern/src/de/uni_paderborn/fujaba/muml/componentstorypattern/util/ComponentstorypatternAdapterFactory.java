@@ -10,8 +10,10 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.behavior.TypedNamedElement;
+import org.muml.pim.connector.Connector;
+import org.muml.pim.connector.ConnectorEndpoint;
 
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
@@ -29,8 +31,6 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
-import de.uni_paderborn.fujaba.muml.connector.Connector;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -449,13 +449,13 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint <em>Endpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.ConnectorEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint
+	 * @see org.muml.pim.connector.ConnectorEndpoint
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointAdapter() {
@@ -463,13 +463,13 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement <em>Typed Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.TypedNamedElement <em>Typed Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement
+	 * @see org.muml.pim.behavior.TypedNamedElement
 	 * @generated
 	 */
 	public Adapter createTypedNamedElementAdapter() {
@@ -477,13 +477,13 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.Connector <em>Connector</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.Connector
+	 * @see org.muml.pim.connector.Connector
 	 * @generated
 	 */
 	public Adapter createConnectorAdapter() {

@@ -146,20 +146,20 @@ public class ResourceInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory());
 		factories.add(
-				new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+				new org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories.add(
-				new de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
-		factories.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
+				new org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.types.provider.TypesItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.component.provider.ComponentItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

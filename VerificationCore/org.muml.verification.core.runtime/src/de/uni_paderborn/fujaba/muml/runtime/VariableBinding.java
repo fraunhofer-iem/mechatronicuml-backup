@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.runtime;
 
 import org.muml.core.ExtendableElement;
-
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import org.muml.pim.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->

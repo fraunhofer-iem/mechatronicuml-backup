@@ -8,8 +8,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage;
 import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.PreTransformationHelper;
 

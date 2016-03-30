@@ -4,19 +4,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.pim.behavior.BehaviorFactory;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.PrimitiveTypes;
+import org.muml.pim.types.TypesFactory;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtStepGraph;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtautomatonFactory;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 
 public class TestSanitizeVariableBindings {
 

@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.graphviz.common;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

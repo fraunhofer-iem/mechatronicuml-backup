@@ -4,8 +4,6 @@ package de.uni_paderborn.fujaba.muml.swplatform.util;
 
 import de.uni_paderborn.fujaba.muml.swplatform.*;
 
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -13,6 +11,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

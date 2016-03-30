@@ -3,10 +3,6 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.muml.instance.provider.AtomicComponentInstanceItemProvider;
-
 import de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstanceFactory;
@@ -22,6 +18,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.instance.provider.AtomicComponentInstanceItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 
 import org.storydriven.storydiagrams.calls.CallsFactory;

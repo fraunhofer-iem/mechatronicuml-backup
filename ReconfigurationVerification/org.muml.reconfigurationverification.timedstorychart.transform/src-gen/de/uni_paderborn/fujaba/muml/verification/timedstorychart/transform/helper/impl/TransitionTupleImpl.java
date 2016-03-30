@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.muml.pim.realtimestatechart.Transition;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage;
 import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TransitionTuple;
 

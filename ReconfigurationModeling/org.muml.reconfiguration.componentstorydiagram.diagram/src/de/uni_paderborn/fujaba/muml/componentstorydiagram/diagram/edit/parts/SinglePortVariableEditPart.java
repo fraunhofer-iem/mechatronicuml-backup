@@ -88,10 +88,10 @@ public class SinglePortVariableEditPart extends ShapeNodeEditPart {
 				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.SinglePortVariableItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EditPolicyRoles.EMBEDDED_SINGLE_PORT_VARIABLES_LABEL_ROLE,
@@ -139,14 +139,14 @@ public class SinglePortVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure();
+		return primaryShape = new org.muml.pim.common.figures.CustomPortFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure getPrimaryShape() {
-		return (de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure) primaryShape;
+	public org.muml.pim.common.figures.CustomPortFigure getPrimaryShape() {
+		return (org.muml.pim.common.figures.CustomPortFigure) primaryShape;
 	}
 
 	/**

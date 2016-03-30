@@ -9,15 +9,15 @@ import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractScopeProvider;
+import org.muml.pim.common.naming.MumlQualifiedNameProvider;
+import org.muml.pim.common.naming.QualifiedNameProvider;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.constraint.VerificationConstraintRepository;
 
 import com.google.common.base.Function;
 
-import de.uni_paderborn.fujaba.muml.common.naming.MumlQualifiedNameProvider;
-import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap;

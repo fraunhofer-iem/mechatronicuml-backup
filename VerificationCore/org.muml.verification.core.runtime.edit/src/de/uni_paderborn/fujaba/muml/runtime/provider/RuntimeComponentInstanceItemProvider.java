@@ -22,9 +22,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.instance.provider.ComponentInstanceItemProvider;
 
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.instance.provider.ComponentInstanceItemProvider;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;

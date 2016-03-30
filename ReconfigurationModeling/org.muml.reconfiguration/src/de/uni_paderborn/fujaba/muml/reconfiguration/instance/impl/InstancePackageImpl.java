@@ -7,15 +7,17 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.constraint.ConstraintPackage;
+import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.types.TypesPackage;
+import org.muml.pim.valuetype.ValuetypePackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ExpressionPackageImpl;
@@ -38,8 +40,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.Protoc
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.ProtocolinstantiationPackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
-import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -181,7 +181,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Initialize simple dependencies
 		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE.eClass();
+		org.muml.pim.instance.InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
 		MsgtypePackage.eINSTANCE.eClass();
@@ -495,7 +495,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		org.muml.pim.instance.InstancePackage theInstancePackage_1 = (org.muml.pim.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.pim.instance.InstancePackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);

@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.cbs.dependencylanguage.ClockResetEffect;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.Clock;
 
 /**
  * <!-- begin-user-doc -->

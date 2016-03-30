@@ -6,8 +6,6 @@ import de.uni_paderborn.fujaba.muml.swplatform.EnumerationDataType;
 import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
-import de.uni_paderborn.fujaba.muml.types.impl.DataTypeImpl;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.types.impl.DataTypeImpl;
 
 /**
  * <!-- begin-user-doc -->

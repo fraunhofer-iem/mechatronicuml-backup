@@ -3,10 +3,9 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import org.muml.pim.behavior.TypedNamedElement;
+import org.muml.pim.component.Port;
+import org.muml.pim.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->

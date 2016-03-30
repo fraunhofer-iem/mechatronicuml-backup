@@ -6,7 +6,8 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
+import org.muml.pim.realtimestatechart.Action;
+
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 
 /**

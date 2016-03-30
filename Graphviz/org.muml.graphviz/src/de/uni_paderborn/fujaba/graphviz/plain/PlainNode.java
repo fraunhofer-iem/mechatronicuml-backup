@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.graphviz.plain;
 
 import de.uni_paderborn.fujaba.graphviz.common.Node;
-
 import de.uni_paderborn.fujaba.graphviz.util.Point;
 
 /**

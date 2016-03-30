@@ -5,16 +5,15 @@ import java.util.List;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.ui.PlatformUI;
-
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import org.muml.pim.component.DiscretePort;
+import org.muml.pim.connector.MessageBuffer;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.Transition;
 
 public class RefinementParameterSelection {
 	private Refinement[] refinementParameters;

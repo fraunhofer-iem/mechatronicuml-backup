@@ -11,10 +11,9 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
 import org.muml.core.expressions.Expression;
-
-import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
+import org.muml.pim.actionlanguage.Assignment;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.realtimestatechart.ClockConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -743,13 +742,13 @@ public class DependencylanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.BehavioralElement <em>Behavioral Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.BehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.BehavioralElement
+	 * @see org.muml.pim.behavior.BehavioralElement
 	 * @generated
 	 */
 	public Adapter createBehavioralElementAdapter() {
@@ -785,13 +784,13 @@ public class DependencylanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.Assignment <em>Assignment</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.actionlanguage.Assignment <em>Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.Assignment
+	 * @see org.muml.pim.actionlanguage.Assignment
 	 * @generated
 	 */
 	public Adapter createAssignmentAdapter() {
@@ -799,13 +798,13 @@ public class DependencylanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint
+	 * @see org.muml.pim.realtimestatechart.ClockConstraint
 	 * @generated
 	 */
 	public Adapter createClockConstraintAdapter() {

@@ -6,7 +6,8 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryPoint;
+import org.muml.pim.realtimestatechart.EntryPoint;
+
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Transition;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 
@@ -65,12 +66,12 @@ public interface ScStEnPoint2sfTrans extends AbstractContainerCorrespondenceNode
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc In Trans</em>' reference.
-	 * @see #setScInTrans(de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)
+	 * @see #setScInTrans(org.muml.pim.realtimestatechart.Transition)
 	 * @see fujaba2simulink.behavior_model.Behavior_modelPackage#getScStEnPoint2sfTrans_ScInTrans()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.muml.realtimestatechart.Transition getScInTrans();
+	org.muml.pim.realtimestatechart.Transition getScInTrans();
 
 	/**
 	 * Sets the value of the '{@link fujaba2simulink.behavior_model.ScStEnPoint2sfTrans#getScInTrans <em>Sc In Trans</em>}' reference.
@@ -80,7 +81,7 @@ public interface ScStEnPoint2sfTrans extends AbstractContainerCorrespondenceNode
 	 * @see #getScInTrans()
 	 * @generated
 	 */
-	void setScInTrans(de.uni_paderborn.fujaba.muml.realtimestatechart.Transition value);
+	void setScInTrans(org.muml.pim.realtimestatechart.Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Out Trans</b></em>' reference.
@@ -91,12 +92,12 @@ public interface ScStEnPoint2sfTrans extends AbstractContainerCorrespondenceNode
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc Out Trans</em>' reference.
-	 * @see #setScOutTrans(de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)
+	 * @see #setScOutTrans(org.muml.pim.realtimestatechart.Transition)
 	 * @see fujaba2simulink.behavior_model.Behavior_modelPackage#getScStEnPoint2sfTrans_ScOutTrans()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.muml.realtimestatechart.Transition getScOutTrans();
+	org.muml.pim.realtimestatechart.Transition getScOutTrans();
 
 	/**
 	 * Sets the value of the '{@link fujaba2simulink.behavior_model.ScStEnPoint2sfTrans#getScOutTrans <em>Sc Out Trans</em>}' reference.
@@ -106,7 +107,7 @@ public interface ScStEnPoint2sfTrans extends AbstractContainerCorrespondenceNode
 	 * @see #getScOutTrans()
 	 * @generated
 	 */
-	void setScOutTrans(de.uni_paderborn.fujaba.muml.realtimestatechart.Transition value);
+	void setScOutTrans(org.muml.pim.realtimestatechart.Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc State Entry P</b></em>' reference.

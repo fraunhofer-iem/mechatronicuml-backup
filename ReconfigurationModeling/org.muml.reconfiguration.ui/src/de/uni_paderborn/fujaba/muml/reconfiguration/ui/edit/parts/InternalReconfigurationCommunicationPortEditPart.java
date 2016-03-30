@@ -26,8 +26,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-
-import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
+import org.muml.pim.common.figures.CustomPortFigure;
 
 /**
  * @generated
@@ -68,11 +67,11 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurationPortItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomPortTypeEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.OPEN_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
+				new org.muml.pim.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -81,7 +80,7 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -94,10 +93,10 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+				switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 					return new org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -123,7 +122,7 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		primaryShape = new de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure();
+		primaryShape = new org.muml.pim.common.figures.CustomPortFigure();
 		//see de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure
 		//creates in/out triangles
 		((CustomPortFigure)primaryShape).getFigureInOutPolygon().setVisible(true);
@@ -134,8 +133,8 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure getPrimaryShape() {
-		return (de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure) primaryShape;
+	public org.muml.pim.common.figures.CustomPortFigure getPrimaryShape() {
+		return (org.muml.pim.common.figures.CustomPortFigure) primaryShape;
 	}
 
 	/**
@@ -143,8 +142,8 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 */
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart
-				|| borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart) {
+		if (borderItemEditPart instanceof org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart
+				|| borderItemEditPart instanceof org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
@@ -243,8 +242,8 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+				.getType(org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -252,8 +251,8 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
-		types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		return types;
 	}
 
@@ -263,29 +262,29 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	public List<IElementType> getMARelTypesOnSourceAndTarget(
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.HybridPortEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.PortPartEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.HybridPortEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.PortPartEditPart) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
 		return types;
 	}
@@ -295,16 +294,16 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
-		} else if (relationshipType == de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		} else if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
 		}
 		return types;
 	}
@@ -314,8 +313,8 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
-		types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		return types;
 	}
 
@@ -324,16 +323,16 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
-		} else if (relationshipType == de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		} else if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
+			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
 		}
 		return types;
 	}

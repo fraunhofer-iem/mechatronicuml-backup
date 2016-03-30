@@ -3,9 +3,8 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import org.muml.pim.behavior.TypedNamedElement;
+import org.muml.pim.component.ComponentPart;
 
 /**
  * <!-- begin-user-doc -->

@@ -60,10 +60,10 @@ public class NetworkConnectorCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+		if (source != null && false == source instanceof org.muml.pim.connector.ConnectorEndpoint) {
 			return false;
 		}
-		if (target != null && false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+		if (target != null && false == target instanceof org.muml.pim.connector.ConnectorEndpoint) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -136,15 +136,15 @@ public class NetworkConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getSource() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) source;
+	protected org.muml.pim.connector.ConnectorEndpoint getSource() {
+		return (org.muml.pim.connector.ConnectorEndpoint) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getTarget() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) target;
+	protected org.muml.pim.connector.ConnectorEndpoint getTarget() {
+		return (org.muml.pim.connector.ConnectorEndpoint) target;
 	}
 
 	/**

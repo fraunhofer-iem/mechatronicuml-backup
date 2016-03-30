@@ -3,8 +3,7 @@
 package org.muml.cbs.dependencylanguage;
 
 import org.muml.core.Extension;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import org.muml.pim.behavior.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

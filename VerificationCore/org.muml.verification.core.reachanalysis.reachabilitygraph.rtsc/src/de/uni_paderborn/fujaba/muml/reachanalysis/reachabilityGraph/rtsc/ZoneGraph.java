@@ -8,8 +8,7 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.Clock;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 public interface ZoneGraph extends ReachabilityGraph {
 	/**
 	 * Returns the value of the '<em><b>Clocks</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Clock}.
+	 * The list contents are of type {@link org.muml.pim.realtimestatechart.Clock}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Clocks</em>' reference list isn't clear,

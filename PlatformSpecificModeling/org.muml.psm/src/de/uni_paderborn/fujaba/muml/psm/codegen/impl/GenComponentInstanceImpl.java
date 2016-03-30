@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance;
@@ -26,6 +24,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.instance.ComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

@@ -317,8 +317,8 @@ public class ManagerEditPart extends AbstractBorderedShapeEditPart {
 
 	// TODO
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+				.getType(org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
 	}
 
 	/**

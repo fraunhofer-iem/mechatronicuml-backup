@@ -11,7 +11,7 @@ public class ActionLanguageUiInjectorProvider implements IInjectorProvider {
 	
 	@Override
 	public Injector getInjector() {
-		return de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator.getInstance().getInjector("de.uni_paderborn.fujaba.muml.ActionLanguage");
+		return org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator.getInstance().getInjector("de.uni_paderborn.fujaba.muml.ActionLanguage");
 	}
 	
 }

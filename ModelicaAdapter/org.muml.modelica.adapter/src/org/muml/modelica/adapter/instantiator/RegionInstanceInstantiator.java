@@ -10,8 +10,7 @@ import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.muml.modelica.transform.Map;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class RegionInstanceInstantiator {
 	public Map instantiate(ComponentInstanceConfiguration cic) {

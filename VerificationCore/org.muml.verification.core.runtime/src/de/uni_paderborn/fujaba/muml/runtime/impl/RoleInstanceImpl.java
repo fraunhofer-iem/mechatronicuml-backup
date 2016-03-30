@@ -8,8 +8,8 @@ package de.uni_paderborn.fujaba.muml.runtime.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.muml.pim.protocol.Role;
 
-import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.runtime.RoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;

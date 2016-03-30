@@ -1,10 +1,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.scoping;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pim.common.naming.MumlQualifiedNameProvider;
+import org.muml.pim.common.naming.QualifiedName;
+import org.muml.pim.common.naming.QualifiedNameProvider;
 
-import de.uni_paderborn.fujaba.muml.common.naming.MumlQualifiedNameProvider;
-import de.uni_paderborn.fujaba.muml.common.naming.QualifiedName;
-import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
 
 /**

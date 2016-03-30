@@ -1,6 +1,6 @@
 package de.uni_paderborn.fujaba.muml.actionlanguage.interpreter;
 
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
+import org.muml.pim.behavior.TypedNamedElement;
 
 public class LocalVariableAndParameterBinding {
 	private TypedNamedElement typedNamedElement;

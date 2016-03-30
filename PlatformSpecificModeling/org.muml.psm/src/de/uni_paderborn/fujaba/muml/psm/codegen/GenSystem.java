@@ -3,10 +3,11 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 /**
  * <!-- begin-user-doc -->

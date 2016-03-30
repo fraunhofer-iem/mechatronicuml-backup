@@ -42,7 +42,7 @@
       <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"
-		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.AssemblyConnectorInstanceEditHelperAdvice"
+		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.AssemblyConnectorInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
       </metamodel>
@@ -52,7 +52,7 @@
       <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"
-		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteSinglePortInstanceEditHelperAdvice"
+		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteSinglePortInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
       </metamodel>
@@ -62,7 +62,7 @@
       <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"
-		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteMultiPortInstanceEditHelperAdvice"
+		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteMultiPortInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
       </metamodel>
@@ -70,7 +70,7 @@
    
    
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.providers.CustomMumlParserProvider">
+      <ParserProvider class="org.muml.pim.componentinstanceconfiguration.diagram.custom.providers.CustomMumlParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
    </extension>
@@ -84,7 +84,7 @@
    <extension
        point="org.muml.core.modelinstance.ui.modelinitializer">
       <initializer
-          initializer="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.initializer.ComponentInstanceConfigurationInitializer">
+          initializer="org.muml.pim.componentinstanceconfiguration.diagram.custom.initializer.ComponentInstanceConfigurationInitializer">
       </initializer>
    </extension>
 </plugin>

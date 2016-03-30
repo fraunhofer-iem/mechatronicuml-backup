@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Event;
 import fujaba2simulink.behavior_model.Behavior_modelPackage;
 import fujaba2simulink.behavior_model.ScSyncChannel2sfSignal;

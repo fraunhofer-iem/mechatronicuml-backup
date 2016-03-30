@@ -5,12 +5,12 @@ import org.muml.core.reachanalysis.core.export.ApplicationSpecificDecorator;
 import org.muml.core.reachanalysis.core.export.GraphVizExport;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Vertex;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphTransition;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
 

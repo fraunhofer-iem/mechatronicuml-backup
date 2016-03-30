@@ -9,17 +9,18 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.component.Component;
+import org.muml.pim.component.Port;
+import org.muml.pim.component.PortConnector;
+import org.muml.pim.component.StructuredComponent;
+import org.muml.pim.connector.Connector;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.types.DataType;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.component.PortConnector;
-import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
-import de.uni_paderborn.fujaba.muml.connector.Connector;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
@@ -49,7 +50,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
 import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -784,13 +784,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.types.DataType <em>Data Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.types.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.types.DataType
+	 * @see org.muml.pim.types.DataType
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
@@ -798,13 +798,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.Component <em>Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.component.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.component.Component
+	 * @see org.muml.pim.component.Component
 	 * @generated
 	 */
 	public Adapter createComponentAdapter() {
@@ -812,13 +812,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.BehavioralElement <em>Behavioral Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.BehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.BehavioralElement
+	 * @see org.muml.pim.behavior.BehavioralElement
 	 * @generated
 	 */
 	public Adapter createBehavioralElementAdapter() {
@@ -826,13 +826,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement <em>Verifiable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.constraint.VerifiableElement <em>Verifiable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement
+	 * @see org.muml.pim.constraint.VerifiableElement
 	 * @generated
 	 */
 	public Adapter createVerifiableElementAdapter() {
@@ -840,13 +840,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.AtomicComponent <em>Atomic Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.component.AtomicComponent <em>Atomic Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.component.AtomicComponent
+	 * @see org.muml.pim.component.AtomicComponent
 	 * @generated
 	 */
 	public Adapter createAtomicComponentAdapter() {
@@ -854,13 +854,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent <em>Structured Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.component.StructuredComponent <em>Structured Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.component.StructuredComponent
+	 * @see org.muml.pim.component.StructuredComponent
 	 * @generated
 	 */
 	public Adapter createStructuredComponentAdapter() {
@@ -868,13 +868,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint <em>Endpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.ConnectorEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint
+	 * @see org.muml.pim.connector.ConnectorEndpoint
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointAdapter() {
@@ -882,13 +882,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.Port <em>Port</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.component.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.component.Port
+	 * @see org.muml.pim.component.Port
 	 * @generated
 	 */
 	public Adapter createPortAdapter() {
@@ -896,13 +896,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.DiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint
+	 * @see org.muml.pim.connector.DiscreteInteractionEndpoint
 	 * @generated
 	 */
 	public Adapter createDiscreteInteractionEndpointAdapter() {
@@ -910,13 +910,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.Connector <em>Connector</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.Connector
+	 * @see org.muml.pim.connector.Connector
 	 * @generated
 	 */
 	public Adapter createConnectorAdapter() {
@@ -924,13 +924,13 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.PortConnector <em>Port Connector</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.component.PortConnector <em>Port Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.component.PortConnector
+	 * @see org.muml.pim.component.PortConnector
 	 * @generated
 	 */
 	public Adapter createPortConnectorAdapter() {

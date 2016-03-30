@@ -14,20 +14,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.behavior.Behavior;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.component.impl.PortImpl;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.connector.MessageBuffer;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.valuetype.Cardinality;
 
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.component.impl.PortImpl;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPortKind;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPortSpecification;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->

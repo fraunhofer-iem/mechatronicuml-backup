@@ -106,7 +106,7 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 					// case
 					// de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 					// case
@@ -314,8 +314,8 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 
 	// TODO
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+				.getType(org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
 	}
 
 	/**

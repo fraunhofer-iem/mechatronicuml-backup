@@ -2,10 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.component.HybridPort;
-
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.component.HybridPort;
 
 /**
  * <!-- begin-user-doc -->

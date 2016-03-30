@@ -73,27 +73,27 @@ public class ElementInitializers {
 							.getCommunicationResource(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
-			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			org.muml.pim.valuetype.Cardinality newInstance_1_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createCardinality();
 			instance.setCardinality(newInstance_1_0);
-			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_1_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			org.muml.pim.valuetype.NaturalNumber newInstance_1_0_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_1_0.setLowerBound(newInstance_1_0_0_0);
 			Object value_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 					.getExpression(1,
-							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_1_0_0_0);
 
 			value_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression
 					.performCast(value_1_0_0_0_0, EcorePackage.eINSTANCE.getELong());
 			newInstance_1_0_0_0.setValue(((Long) value_1_0_0_0_0).longValue());
 
-			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_1_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			org.muml.pim.valuetype.NaturalNumber newInstance_1_0_1_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_1_0.setUpperBound(newInstance_1_0_1_0);
 			Object value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 					.getExpression(2,
-							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_1_0_1_0);
 
 			value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression
@@ -112,27 +112,27 @@ public class ElementInitializers {
 	public void init_CommunicationResource_3012(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			org.muml.pim.valuetype.Cardinality newInstance_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createCardinality();
 			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			org.muml.pim.valuetype.NaturalNumber newInstance_0_0_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 					.getExpression(6,
-							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_0_0);
 
 			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression
 					.performCast(value_0_0_0_0_0, EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
 
-			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			org.muml.pim.valuetype.NaturalNumber newInstance_0_0_1_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 					.getExpression(7,
-							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_1_0);
 
 			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression
@@ -172,12 +172,12 @@ public class ElementInitializers {
 	 */
 	public void init_Processor_3014(de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+			org.muml.pim.valuetype.NaturalNumber newInstance_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
 			instance.setNbCores(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 					.getExpression(14,
-							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0);
 
 			value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression

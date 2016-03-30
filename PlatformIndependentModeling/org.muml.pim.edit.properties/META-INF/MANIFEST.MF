@@ -16,18 +16,19 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.pim.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.properties.metamodel, de.uni_paderborn.fujaba.muml.properties.constraint,
- de.uni_paderborn.fujaba.muml.properties.valuetype.editor,
- de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor,
- de.uni_paderborn.fujaba.muml.properties.instance.editor,
- de.uni_paderborn.fujaba.muml.properties.msgtype.editor,
- de.uni_paderborn.fujaba.muml.properties.types.editor,
- de.uni_paderborn.fujaba.muml.properties.protocol.editor,
- de.uni_paderborn.fujaba.muml.properties.constraint.editor,
- de.uni_paderborn.fujaba.muml.properties.behavior.editor,
- de.uni_paderborn.fujaba.muml.properties.component.editor,
- de.uni_paderborn.fujaba.muml.properties.connector.editor,
- de.uni_paderborn.fujaba.muml.properties.pattern.editor,
- de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor,
- de.uni_paderborn.fujaba.muml.properties.tabs
+Export-Package: org.muml.pim.properties.behavior.editor,
+ org.muml.pim.properties.component.editor,
+ org.muml.pim.properties.connector.editor,
+ org.muml.pim.properties.constraint,
+ org.muml.pim.properties.constraint.editor,
+ org.muml.pim.properties.instance.editor,
+ org.muml.pim.properties.metamodel,
+ org.muml.pim.properties.msgtype.editor,
+ org.muml.pim.properties.one_to_n_schemata.editor,
+ org.muml.pim.properties.pattern.editor,
+ org.muml.pim.properties.protocol.editor,
+ org.muml.pim.properties.realtimestatechart.editor,
+ org.muml.pim.properties.tabs,
+ org.muml.pim.properties.types.editor,
+ org.muml.pim.properties.valuetype.editor
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

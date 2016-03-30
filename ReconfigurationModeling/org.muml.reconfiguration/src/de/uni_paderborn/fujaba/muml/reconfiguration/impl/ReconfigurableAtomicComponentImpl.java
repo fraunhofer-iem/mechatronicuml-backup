@@ -7,7 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import de.uni_paderborn.fujaba.muml.component.impl.AtomicComponentImpl;
+import org.muml.pim.component.impl.AtomicComponentImpl;
+
 import de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry;

@@ -2,8 +2,7 @@ package org.muml.cbs.qvtoblackbox;
 
 import org.eclipse.emf.ecore.EObject;
 import org.muml.cbs.dependencylanguage.xtext.common.DependencyModelLanguageResource;
-
-import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 
 public class XTextSerializerBlackbox {
 		public String serializeActionLanguage(EObject obj){

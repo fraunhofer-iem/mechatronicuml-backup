@@ -5,17 +5,16 @@ import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
 import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.component.StaticAtomicComponent;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
+import org.muml.pim.realtimestatechart.Transition;
 
 public class MumlQualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider{
 

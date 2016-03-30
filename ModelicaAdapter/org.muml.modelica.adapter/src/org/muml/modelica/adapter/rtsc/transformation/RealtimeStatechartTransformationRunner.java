@@ -10,8 +10,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.modelica.adapter.transformation.QVToTransformationRunner;
 import org.muml.modelica.transform.RealtimeStatechartTransformationRootObject;
 import org.muml.modelica.transform.TransformFactory;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RealtimeStatechartTransformationRunner {
 	public static ModelExtent createModelExtent(RealtimeStatechart rtsc) {

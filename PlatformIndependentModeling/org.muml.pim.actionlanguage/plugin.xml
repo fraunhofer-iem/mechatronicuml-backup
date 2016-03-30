@@ -12,14 +12,14 @@
    
    <extension point="org.eclipse.emf.ecore.generated_package">
       
-      <package class="de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage" genModel="model/actionlanguage.genmodel" uri="http://www.fujaba.de/muml/actionlanguage/0.4.0"/>
+      <package class="org.muml.pim.actionlanguage.ActionlanguagePackage" genModel="model/actionlanguage.genmodel" uri="http://www.fujaba.de/muml/actionlanguage/0.4.0"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated actionlanguage -->
       <package
             uri="http://www.fujaba.de/muml/actionlanguage/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage"
+            class="org.muml.pim.actionlanguage.ActionlanguagePackage"
             genModel="model/actionlanguage.genmodel"/>
    </extension>
 

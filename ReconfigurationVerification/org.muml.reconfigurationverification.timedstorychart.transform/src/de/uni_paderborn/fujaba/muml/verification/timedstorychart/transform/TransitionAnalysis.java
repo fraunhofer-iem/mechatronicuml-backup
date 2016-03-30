@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.Synchronization;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
+import org.muml.pim.realtimestatechart.SynchronizationKind;
+import org.muml.pim.realtimestatechart.Transition;
 
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationKind;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperFactory;
 import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TransitionTuple;
 

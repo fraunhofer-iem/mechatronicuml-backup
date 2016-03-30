@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.instance.editor;
  */
 public class ReconfigurationPortInstanceEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointInstanceEditor {
+			org.muml.pim.properties.connector.editor.DiscreteInteractionEndpointInstanceEditor {
 
 	/**
 	 * @generated
@@ -42,7 +42,7 @@ public class ReconfigurationPortInstanceEditor
 	 * @generated
 	 */
 	protected org.muml.ape.runtime.editors.IPropertyEditor createComponentInstance_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
 				.getPortInstance_ComponentInstance();
 		final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.jdt.annotation.NonNull;
-import org.muml.common.xtext.ILanguageResource;
-import org.muml.common.xtext.ILoadResult;
+import org.muml.core.common.xtext.ILanguageResource;
+import org.muml.core.common.xtext.ILoadResult;
 
 
 public abstract class AbstractGraphvizLayouter<I, O> {

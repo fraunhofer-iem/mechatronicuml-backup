@@ -3,8 +3,6 @@
 package org.muml.cbs.dependencylanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -25,6 +23,7 @@ import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.SynchronizationEvent;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.pim.actionlanguage.ActionlanguageFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.SynchronizationEvent} object.

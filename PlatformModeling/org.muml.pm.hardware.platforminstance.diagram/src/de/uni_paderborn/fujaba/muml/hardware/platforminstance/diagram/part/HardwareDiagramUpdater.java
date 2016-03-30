@@ -782,16 +782,16 @@ public class HardwareDiagramUpdater {
 			}
 			List targets = link.getConnectorEndpointInstances();
 			Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) theTarget;
+			org.muml.pim.connector.ConnectorEndpointInstance dst = (org.muml.pim.connector.ConnectorEndpointInstance) theTarget;
 			List sources = link.getConnectorEndpointInstances();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) theSource;
+			org.muml.pim.connector.ConnectorEndpointInstance src = (org.muml.pim.connector.ConnectorEndpointInstance) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor(
 					src, dst, link,
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012,
@@ -804,12 +804,12 @@ public class HardwareDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getIncomingTypeModelFacetLinks_NetworkConnectorInstance_4012(
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+			org.muml.pim.connector.ConnectorEndpointInstance target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != org.muml.pim.connector.ConnectorPackage.eINSTANCE
 					.getConnectorInstance_ConnectorEndpointInstances()
 					|| false == setting
 							.getEObject() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance) {
@@ -823,10 +823,10 @@ public class HardwareDiagramUpdater {
 			}
 			List sources = link.getConnectorEndpointInstances();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) theSource;
+			org.muml.pim.connector.ConnectorEndpointInstance src = (org.muml.pim.connector.ConnectorEndpointInstance) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor(
 					src, target, link,
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012,
@@ -839,7 +839,7 @@ public class HardwareDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getOutgoingTypeModelFacetLinks_NetworkConnectorInstance_4012(
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source) {
+			org.muml.pim.connector.ConnectorEndpointInstance source) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -865,16 +865,16 @@ public class HardwareDiagramUpdater {
 			}
 			List targets = link.getConnectorEndpointInstances();
 			Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) theTarget;
+			org.muml.pim.connector.ConnectorEndpointInstance dst = (org.muml.pim.connector.ConnectorEndpointInstance) theTarget;
 			List sources = link.getConnectorEndpointInstances();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) theSource;
+			org.muml.pim.connector.ConnectorEndpointInstance src = (org.muml.pim.connector.ConnectorEndpointInstance) theSource;
 			if (src != source) {
 				continue;
 			}

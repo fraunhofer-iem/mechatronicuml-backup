@@ -13,9 +13,8 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.muml.cbs.jobs.InitialSynthesisJob;
-
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.protocol.CoordinationProtocol;
 
 public class InitialSynthesisCommand extends AbstractHandler {
 

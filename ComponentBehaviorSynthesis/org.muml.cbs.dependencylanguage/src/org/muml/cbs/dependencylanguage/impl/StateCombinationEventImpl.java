@@ -12,8 +12,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.StateCombinationEvent;
 import org.muml.cbs.dependencylanguage.StateEventKind;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.State;
 
 /**
  * <!-- begin-user-doc -->

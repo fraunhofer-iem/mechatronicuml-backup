@@ -19,6 +19,7 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.properties.metamodel, de.uni_paderborn.fujaba.muml.actionlanguage.properties.constraint,
- de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor
+Export-Package: org.muml.pim.actionlanguage.properties.actionlanguage.editor,
+ org.muml.pim.actionlanguage.properties.constraint,
+ org.muml.pim.actionlanguage.properties.metamodel
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

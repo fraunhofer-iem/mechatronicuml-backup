@@ -2,11 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.realtimestatechart.Message;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

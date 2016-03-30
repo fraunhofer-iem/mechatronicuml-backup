@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.runtime;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
+import org.muml.pim.connector.ConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->

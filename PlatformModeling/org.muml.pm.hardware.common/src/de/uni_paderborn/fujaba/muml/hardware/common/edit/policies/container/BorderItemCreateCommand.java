@@ -16,8 +16,7 @@ import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.EntryPointImpl;
+import org.muml.pim.realtimestatechart.impl.EntryPointImpl;
 
 public class BorderItemCreateCommand extends CreateCommand {
 	Point location;

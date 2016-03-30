@@ -18,7 +18,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Import-Package: org.eclipse.m2m.qvt.oml
-Bundle-Activator: de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator
-Export-Package: de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts,
- de.uni_paderborn.fujaba.muml.component.diagram.custom.part,
- de.uni_paderborn.fujaba.muml.component.diagram.custom.providers
+Bundle-Activator: org.muml.pim.component.diagram.custom.part.Activator
+Export-Package: org.muml.pim.component.diagram.custom.edit.parts,
+ org.muml.pim.component.diagram.custom.part,
+ org.muml.pim.component.diagram.custom.providers

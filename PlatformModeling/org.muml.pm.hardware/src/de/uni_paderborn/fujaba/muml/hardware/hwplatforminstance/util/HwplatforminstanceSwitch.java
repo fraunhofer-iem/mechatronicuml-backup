@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.util;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.*;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import org.eclipse.emf.ecore.EObject;
@@ -12,6 +10,8 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.ConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->

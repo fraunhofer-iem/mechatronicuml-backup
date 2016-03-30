@@ -8,8 +8,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.TransitionEvent;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Transition;
 
 /**
  * <!-- begin-user-doc -->

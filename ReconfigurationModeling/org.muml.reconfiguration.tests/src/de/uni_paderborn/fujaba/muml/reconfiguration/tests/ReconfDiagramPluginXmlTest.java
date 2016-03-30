@@ -6,10 +6,10 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
+import org.muml.pim.MumlPackage;
 import org.junit.runners.Parameterized;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 
-import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 

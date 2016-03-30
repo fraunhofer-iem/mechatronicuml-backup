@@ -2,14 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.APICallParameter;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 import java.util.Collection;
 
@@ -26,6 +20,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

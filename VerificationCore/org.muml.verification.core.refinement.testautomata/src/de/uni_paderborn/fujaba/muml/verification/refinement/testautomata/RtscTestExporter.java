@@ -28,8 +28,7 @@ import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RtscTestExporter {
 

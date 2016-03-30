@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.realtimestatechart.ExitPoint;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Transition;
 import fujaba2simulink.behavior_model.Behavior_modelPackage;
 import fujaba2simulink.behavior_model.ScStExPoint2sfTrans;
@@ -53,7 +53,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Transition scOutTrans;
+	protected org.muml.pim.realtimestatechart.Transition scOutTrans;
 
 	/**
 	 * The cached value of the '{@link #getScInTrans() <em>Sc In Trans</em>}' reference.
@@ -63,7 +63,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Transition scInTrans;
+	protected org.muml.pim.realtimestatechart.Transition scInTrans;
 
 	/**
 	 * The cached value of the '{@link #getScStExPoint() <em>Sc St Ex Point</em>}' reference.
@@ -137,10 +137,10 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimestatechart.Transition getScOutTrans() {
+	public org.muml.pim.realtimestatechart.Transition getScOutTrans() {
 		if (scOutTrans != null && scOutTrans.eIsProxy()) {
 			InternalEObject oldScOutTrans = (InternalEObject)scOutTrans;
-			scOutTrans = (de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)eResolveProxy(oldScOutTrans);
+			scOutTrans = (org.muml.pim.realtimestatechart.Transition)eResolveProxy(oldScOutTrans);
 			if (scOutTrans != oldScOutTrans) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_OUT_TRANS, oldScOutTrans, scOutTrans));
@@ -154,7 +154,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimestatechart.Transition basicGetScOutTrans() {
+	public org.muml.pim.realtimestatechart.Transition basicGetScOutTrans() {
 		return scOutTrans;
 	}
 
@@ -163,8 +163,8 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setScOutTrans(de.uni_paderborn.fujaba.muml.realtimestatechart.Transition newScOutTrans) {
-		de.uni_paderborn.fujaba.muml.realtimestatechart.Transition oldScOutTrans = scOutTrans;
+	public void setScOutTrans(org.muml.pim.realtimestatechart.Transition newScOutTrans) {
+		org.muml.pim.realtimestatechart.Transition oldScOutTrans = scOutTrans;
 		scOutTrans = newScOutTrans;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_OUT_TRANS, oldScOutTrans, scOutTrans));
@@ -175,10 +175,10 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimestatechart.Transition getScInTrans() {
+	public org.muml.pim.realtimestatechart.Transition getScInTrans() {
 		if (scInTrans != null && scInTrans.eIsProxy()) {
 			InternalEObject oldScInTrans = (InternalEObject)scInTrans;
-			scInTrans = (de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)eResolveProxy(oldScInTrans);
+			scInTrans = (org.muml.pim.realtimestatechart.Transition)eResolveProxy(oldScInTrans);
 			if (scInTrans != oldScInTrans) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_IN_TRANS, oldScInTrans, scInTrans));
@@ -192,7 +192,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimestatechart.Transition basicGetScInTrans() {
+	public org.muml.pim.realtimestatechart.Transition basicGetScInTrans() {
 		return scInTrans;
 	}
 
@@ -201,8 +201,8 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setScInTrans(de.uni_paderborn.fujaba.muml.realtimestatechart.Transition newScInTrans) {
-		de.uni_paderborn.fujaba.muml.realtimestatechart.Transition oldScInTrans = scInTrans;
+	public void setScInTrans(org.muml.pim.realtimestatechart.Transition newScInTrans) {
+		org.muml.pim.realtimestatechart.Transition oldScInTrans = scInTrans;
 		scInTrans = newScInTrans;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_IN_TRANS, oldScInTrans, scInTrans));
@@ -282,10 +282,10 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 				setSfTrans((Transition)newValue);
 				return;
 			case Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_OUT_TRANS:
-				setScOutTrans((de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)newValue);
+				setScOutTrans((org.muml.pim.realtimestatechart.Transition)newValue);
 				return;
 			case Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_IN_TRANS:
-				setScInTrans((de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)newValue);
+				setScInTrans((org.muml.pim.realtimestatechart.Transition)newValue);
 				return;
 			case Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_ST_EX_POINT:
 				setScStExPoint((ExitPoint)newValue);
@@ -306,10 +306,10 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 				setSfTrans((Transition)null);
 				return;
 			case Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_OUT_TRANS:
-				setScOutTrans((de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)null);
+				setScOutTrans((org.muml.pim.realtimestatechart.Transition)null);
 				return;
 			case Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_IN_TRANS:
-				setScInTrans((de.uni_paderborn.fujaba.muml.realtimestatechart.Transition)null);
+				setScInTrans((org.muml.pim.realtimestatechart.Transition)null);
 				return;
 			case Behavior_modelPackage.SC_ST_EX_POINT2SF_TRANS__SC_ST_EX_POINT:
 				setScStExPoint((ExitPoint)null);

@@ -2,12 +2,12 @@
  */
 package de.uni_paderborn.fujaba.graphviz.plain;
 
-import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
 
 /**
  * <!-- begin-user-doc -->

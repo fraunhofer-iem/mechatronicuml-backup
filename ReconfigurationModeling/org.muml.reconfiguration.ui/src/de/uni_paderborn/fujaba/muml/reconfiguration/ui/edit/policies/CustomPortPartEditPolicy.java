@@ -1,9 +1,8 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies;
 
 import org.eclipse.emf.ecore.EObject;
-
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.Port;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.Port;
 
 public class CustomPortPartEditPolicy extends CustomPortTypeEditPolicy {
 	@Override

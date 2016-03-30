@@ -3,10 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.provider;
 
 
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.muml.instance.provider.AtomicComponentInstanceItemProvider;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
@@ -29,6 +25,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.instance.provider.AtomicComponentInstanceItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance} object.

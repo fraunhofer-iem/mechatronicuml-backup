@@ -8,8 +8,6 @@ import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestate
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,6 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl;
 
 /**
  * <!-- begin-user-doc -->

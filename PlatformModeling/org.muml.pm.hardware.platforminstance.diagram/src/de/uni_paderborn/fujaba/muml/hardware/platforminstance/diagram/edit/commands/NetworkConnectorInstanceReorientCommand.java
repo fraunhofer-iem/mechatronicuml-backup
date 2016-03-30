@@ -59,8 +59,8 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
-				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance
+				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -69,7 +69,7 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		  return false;
 		}
 		*/
-		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
+		org.muml.pim.connector.ConnectorEndpointInstance target = (org.muml.pim.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink()
 				.eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
@@ -97,8 +97,8 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
-				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance
+				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -107,7 +107,7 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		  return false;
 		}
 		*/
-		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
+		org.muml.pim.connector.ConnectorEndpointInstance source = (org.muml.pim.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink()
 				.eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
@@ -185,29 +185,29 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) oldEnd;
+	protected org.muml.pim.connector.ConnectorEndpointInstance getOldSource() {
+		return (org.muml.pim.connector.ConnectorEndpointInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) newEnd;
+	protected org.muml.pim.connector.ConnectorEndpointInstance getNewSource() {
+		return (org.muml.pim.connector.ConnectorEndpointInstance) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) oldEnd;
+	protected org.muml.pim.connector.ConnectorEndpointInstance getOldTarget() {
+		return (org.muml.pim.connector.ConnectorEndpointInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) newEnd;
+	protected org.muml.pim.connector.ConnectorEndpointInstance getNewTarget() {
+		return (org.muml.pim.connector.ConnectorEndpointInstance) newEnd;
 	}
 
 	/**

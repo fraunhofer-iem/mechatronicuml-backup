@@ -6,8 +6,9 @@
  */
 package fujaba2simulink;
 
-import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import org.muml.pim.component.Component;
+import org.muml.pim.instance.ComponentInstance;
+
 import de.uni_paderborn.fujaba.simulink.model.LibraryReference;
 
 /**

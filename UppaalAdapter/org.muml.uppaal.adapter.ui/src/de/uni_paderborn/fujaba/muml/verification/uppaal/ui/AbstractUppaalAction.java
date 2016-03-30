@@ -15,14 +15,13 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
-
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
-import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.PatternVerificationWizard;
-import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.pattern.AbstractCoordinationPattern;
+import org.muml.pim.pattern.diagram.custom.export.wizard.PatternVerificationWizard;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public abstract class AbstractUppaalAction extends AbstractHandler {
 

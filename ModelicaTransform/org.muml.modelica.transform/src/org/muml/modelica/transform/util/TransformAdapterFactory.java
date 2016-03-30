@@ -2,9 +2,6 @@
  */
 package org.muml.modelica.transform.util;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -14,6 +11,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.modelica.transform.*;
+import org.muml.pim.realtimestatechart.PrioritizedElement;
+import org.muml.pim.realtimestatechart.Region;
 
 /**
  * <!-- begin-user-doc -->
@@ -244,13 +243,13 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement <em>Prioritized Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.realtimestatechart.PrioritizedElement <em>Prioritized Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement
+	 * @see org.muml.pim.realtimestatechart.PrioritizedElement
 	 * @generated
 	 */
 	public Adapter createPrioritizedElementAdapter() {
@@ -258,13 +257,13 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region <em>Region</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.realtimestatechart.Region <em>Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region
+	 * @see org.muml.pim.realtimestatechart.Region
 	 * @generated
 	 */
 	public Adapter createRegionAdapter() {

@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.util;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.*;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import org.eclipse.emf.common.notify.Adapter;
@@ -13,6 +11,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.ConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -315,13 +315,13 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance <em>Endpoint Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.ConnectorEndpointInstance <em>Endpoint Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
+	 * @see org.muml.pim.connector.ConnectorEndpointInstance
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointInstanceAdapter() {
@@ -329,13 +329,13 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorInstance <em>Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.ConnectorInstance <em>Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorInstance
+	 * @see org.muml.pim.connector.ConnectorInstance
 	 * @generated
 	 */
 	public Adapter createConnectorInstanceAdapter() {

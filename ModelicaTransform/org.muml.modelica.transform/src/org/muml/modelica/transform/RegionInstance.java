@@ -2,7 +2,7 @@
  */
 package org.muml.modelica.transform;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.Region;
 
 /**
  * <!-- begin-user-doc -->

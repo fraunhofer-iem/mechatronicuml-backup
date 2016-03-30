@@ -10,8 +10,8 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.CorePackage;
 import org.muml.core.tests.gmf.GMFMapTest;
+import org.muml.pim.MumlPackage;
 
-import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
 
 @RunWith(Parameterized.class)

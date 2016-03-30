@@ -15,9 +15,9 @@ import org.muml.core.export.operation.IFujabaExportOperation;
 import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
 import org.muml.core.export.pages.ElementSelectionMode;
 import org.muml.core.export.wizard.AbstractFujabaExportWizard;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.protocol.CoordinationProtocol;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalModelJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;

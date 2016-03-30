@@ -8,7 +8,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.pim;bundle-version="0.5.0",
  org.eclipse.m2m.qvt.oml
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: de.uni_paderborn.fujaba.muml.types.Activator
-Export-Package: de.uni_paderborn.fujaba.muml.types,
- de.uni_paderborn.fujaba.muml.types.blackbox
+Bundle-Activator: org.muml.pim.types.Activator
+Export-Package: org.muml.pim.types,
+ org.muml.pim.types.blackbox
 Bundle-Vendor: %providerName

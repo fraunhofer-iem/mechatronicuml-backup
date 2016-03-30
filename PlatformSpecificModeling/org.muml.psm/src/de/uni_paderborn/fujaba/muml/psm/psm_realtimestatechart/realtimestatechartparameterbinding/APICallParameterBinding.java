@@ -3,8 +3,7 @@
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding;
 
 import org.muml.core.expressions.Expression;
-
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
+import org.muml.pim.behavior.Operation;
 
 /**
  * <!-- begin-user-doc -->

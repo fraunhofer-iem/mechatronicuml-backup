@@ -4,10 +4,10 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.pim.realtimestatechart.ClockConstraint;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.RTSCReachabilityComputation;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.udbm.Federation;
 
 public class TestableRTSCReachabilityComputation extends

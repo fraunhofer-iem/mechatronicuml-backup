@@ -7,20 +7,20 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.validation.Check;
 import org.muml.core.NamedElement;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.common.naming.QualifiedNameProvider;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.component.DiscretePort;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.MessageBuffer;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.Transition;
 
 import com.google.inject.Inject;
 
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
@@ -97,7 +97,7 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 			
 		if (expr instanceof MumlElemExpr) {
 			EObject elem = ((MumlElemExpr) expr).getElem();
-			if (elem instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.State)
+			if (elem instanceof org.muml.pim.realtimestatechart.State)
 				return Type.STATE;
 			if (elem instanceof Transition)
 				return Type.TRANSITION;

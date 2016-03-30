@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.graphviz.plain.xtext.resource;
 
 import org.eclipse.emf.ecore.EObject;
-import org.muml.common.xtext.AbstractLanguageResource;
+import org.muml.core.common.xtext.AbstractLanguageResource;
 
 import com.google.inject.Injector;
 

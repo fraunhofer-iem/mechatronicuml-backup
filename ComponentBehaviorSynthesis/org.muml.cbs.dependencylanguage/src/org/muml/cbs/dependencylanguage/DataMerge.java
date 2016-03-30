@@ -3,9 +3,8 @@
 package org.muml.cbs.dependencylanguage;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.component.HybridPort;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.component.HybridPort;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.component.HybridPort;
 public interface DataMerge extends Dependency {
 	/**
 	 * Returns the value of the '<em><b>Variables</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Variable}.
+	 * The list contents are of type {@link org.muml.pim.behavior.Variable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Variables</em>' reference list isn't clear,

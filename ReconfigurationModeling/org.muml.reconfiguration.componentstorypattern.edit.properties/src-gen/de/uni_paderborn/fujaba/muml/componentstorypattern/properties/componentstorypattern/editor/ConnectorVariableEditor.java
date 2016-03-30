@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.properties.components
  */
 public abstract class ConnectorVariableEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor {
+			org.muml.pim.properties.connector.editor.ConnectorEditor {
 
 	/**
 	 * @generated

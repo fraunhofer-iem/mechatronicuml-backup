@@ -6,8 +6,6 @@ package de.uni_paderborn.fujaba.muml.swplatform.provider;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 import de.uni_paderborn.fujaba.muml.swplatform.TimeConstraint;
 
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -18,6 +16,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.swplatform.TimeConstraint} object.

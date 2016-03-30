@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot;
 
-import de.uni_paderborn.fujaba.graphviz.common.Edge;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.graphviz.common.Edge;
 
 /**
  * <!-- begin-user-doc -->

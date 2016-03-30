@@ -114,7 +114,7 @@ public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartm
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentCanonicalEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
 				new org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 	}
 

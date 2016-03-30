@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.ExtendableElement;
+import org.muml.pim.connector.MessageBuffer;
 
 /**
  * <!-- begin-user-doc -->

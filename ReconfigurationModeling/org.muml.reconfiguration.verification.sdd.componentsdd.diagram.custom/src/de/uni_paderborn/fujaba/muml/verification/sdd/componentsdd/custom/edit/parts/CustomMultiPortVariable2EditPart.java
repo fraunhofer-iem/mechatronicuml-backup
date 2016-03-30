@@ -2,11 +2,8 @@ package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.custom.edit.p
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.behavior.BehaviorPackage;
 
-
-
-
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;

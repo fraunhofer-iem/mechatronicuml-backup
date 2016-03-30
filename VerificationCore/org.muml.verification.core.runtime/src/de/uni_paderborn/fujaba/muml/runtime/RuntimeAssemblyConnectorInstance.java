@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
+import org.muml.pim.instance.AssemblyConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->

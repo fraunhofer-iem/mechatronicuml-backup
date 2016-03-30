@@ -6,8 +6,9 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.msgtype.MessageType;
+
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Data;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

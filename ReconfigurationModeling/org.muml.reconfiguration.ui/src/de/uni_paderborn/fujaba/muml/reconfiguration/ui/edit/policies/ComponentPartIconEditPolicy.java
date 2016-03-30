@@ -20,11 +20,11 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.pim.component.ComponentPart;
+import org.muml.pim.component.diagram.custom.edit.parts.CustomComponentPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.ComponentMultiFigure;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts.CustomComponentPartEditPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.ComponentMultiFigure;
 import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
 
 public class ComponentPartIconEditPolicy extends NotifyingGraphicalEditPolicy {

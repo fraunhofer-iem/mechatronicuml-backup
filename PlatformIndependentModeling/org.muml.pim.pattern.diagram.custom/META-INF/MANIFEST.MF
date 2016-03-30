@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: CoordinationPatternl Diagram-Editor (Customizations)
 Bundle-SymbolicName: org.muml.pim.pattern.diagram.custom;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator
+Bundle-Activator: org.muml.pim.pattern.diagram.custom.part.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.0",
@@ -25,4 +25,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Export-Package: de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard
+Export-Package: org.muml.pim.pattern.diagram.custom.export.wizard

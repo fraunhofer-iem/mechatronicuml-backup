@@ -4,8 +4,7 @@ package org.muml.cbs.dependencylanguage;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.expressions.Expression;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

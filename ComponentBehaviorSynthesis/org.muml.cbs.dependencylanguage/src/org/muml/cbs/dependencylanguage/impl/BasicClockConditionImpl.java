@@ -5,8 +5,7 @@ package org.muml.cbs.dependencylanguage.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.muml.cbs.dependencylanguage.BasicClockCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.ClockConstraintImpl;
+import org.muml.pim.realtimestatechart.impl.ClockConstraintImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,6 +1,6 @@
 package org.muml.modelica.adapter.rtsc.transformation;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RealtimeStatechartNormalizations {
 	public static void normalize(RealtimeStatechart rtsc) {

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.properties.components
  */
 public abstract class PartVariableEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
+			org.muml.pim.properties.behavior.editor.TypedNamedElementEditor {
 
 	/**
 	 * @generated

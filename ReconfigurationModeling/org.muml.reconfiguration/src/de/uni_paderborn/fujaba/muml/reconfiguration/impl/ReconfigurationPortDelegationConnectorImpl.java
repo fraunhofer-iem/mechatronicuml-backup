@@ -3,8 +3,8 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.muml.pim.component.impl.PortConnectorImpl;
 
-import de.uni_paderborn.fujaba.muml.component.impl.PortConnectorImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
 

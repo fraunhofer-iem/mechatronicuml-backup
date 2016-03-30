@@ -7,10 +7,10 @@
 package fujaba2simulink.behavior_model;
 
 import org.muml.core.expressions.Expression;
+import org.muml.pim.realtimestatechart.Action;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.ExitEvent;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 
 /**

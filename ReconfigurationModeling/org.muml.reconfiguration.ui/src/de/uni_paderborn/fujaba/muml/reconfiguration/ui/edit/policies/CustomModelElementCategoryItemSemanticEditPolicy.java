@@ -2,8 +2,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy;
+import org.muml.pim.component.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy;
 
 public class CustomModelElementCategoryItemSemanticEditPolicy extends ModelElementCategoryItemSemanticEditPolicy{
 	

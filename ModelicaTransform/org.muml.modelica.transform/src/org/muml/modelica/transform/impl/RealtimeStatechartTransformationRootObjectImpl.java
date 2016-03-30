@@ -2,11 +2,10 @@
  */
 package org.muml.modelica.transform.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-
 import org.eclipse.emf.ecore.EClass;
 import org.muml.modelica.transform.RealtimeStatechartTransformationRootObject;
 import org.muml.modelica.transform.TransformPackage;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

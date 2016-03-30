@@ -4,9 +4,8 @@ package de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.help
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-
-import de.uni_paderborn.fujaba.muml.connector.Connector;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import org.muml.pim.connector.Connector;
+import org.muml.pim.realtimestatechart.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +70,7 @@ public interface TSCTransformationInput extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>No Sync Transitions</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition}.
+	 * The list contents are of type {@link org.muml.pim.realtimestatechart.Transition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>No Sync Transitions</em>' reference list isn't clear,

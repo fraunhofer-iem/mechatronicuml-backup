@@ -2,10 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusInstance;
@@ -24,19 +20,24 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.Hwresourceinstan
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.HwresourceinstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.HwvaluetypePackageImpl;
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.constraint.ConstraintPackage;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.types.TypesPackage;
+import org.muml.pim.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

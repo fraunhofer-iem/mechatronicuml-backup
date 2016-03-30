@@ -2,12 +2,12 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.core.CorePackage;
+import org.muml.pim.connector.ConnectorPackage;
 
 /**
  * <!-- begin-user-doc -->

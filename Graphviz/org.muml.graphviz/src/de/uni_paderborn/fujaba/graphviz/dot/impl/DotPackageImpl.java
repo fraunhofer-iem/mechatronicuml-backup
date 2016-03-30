@@ -2,37 +2,30 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.impl;
 
-import de.uni_paderborn.fujaba.graphviz.GraphvizPackage;
-
-import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
-
-import de.uni_paderborn.fujaba.graphviz.common.impl.CommonPackageImpl;
-
-import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
-import de.uni_paderborn.fujaba.graphviz.dot.DotFactory;
-import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
-import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
-import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
-import de.uni_paderborn.fujaba.graphviz.dot.Setting;
-
-import de.uni_paderborn.fujaba.graphviz.impl.GraphvizPackageImpl;
-
-import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
-
-import de.uni_paderborn.fujaba.graphviz.plain.impl.PlainPackageImpl;
-
-import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
-
-import de.uni_paderborn.fujaba.graphviz.util.impl.UtilPackageImpl;
+import static de.uni_paderborn.fujaba.graphviz.dot.DotPackage.SETTING;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
+
+import de.uni_paderborn.fujaba.graphviz.GraphvizPackage;
+import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
+import de.uni_paderborn.fujaba.graphviz.common.impl.CommonPackageImpl;
+import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
+import de.uni_paderborn.fujaba.graphviz.dot.DotFactory;
+import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
+import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
+import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
+import de.uni_paderborn.fujaba.graphviz.dot.Setting;
+import de.uni_paderborn.fujaba.graphviz.impl.GraphvizPackageImpl;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
+import de.uni_paderborn.fujaba.graphviz.plain.impl.PlainPackageImpl;
+import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
+import de.uni_paderborn.fujaba.graphviz.util.impl.UtilPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

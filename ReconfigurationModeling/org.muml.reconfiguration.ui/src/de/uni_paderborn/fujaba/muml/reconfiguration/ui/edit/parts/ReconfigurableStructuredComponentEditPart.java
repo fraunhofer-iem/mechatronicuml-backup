@@ -90,7 +90,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -103,10 +103,10 @@ public class ReconfigurableStructuredComponentEditPart extends
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+				switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+				case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID:
@@ -149,8 +149,8 @@ public class ReconfigurableStructuredComponentEditPart extends
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) childEditPart)
+		if (childEditPart instanceof org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
+			((org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
@@ -169,21 +169,21 @@ public class ReconfigurableStructuredComponentEditPart extends
 					.getFigure(), 0);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
+		if (childEditPart instanceof org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
+					.add(((org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
+		if (childEditPart instanceof org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
+					.add(((org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
@@ -224,7 +224,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
+		if (childEditPart instanceof org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
@@ -266,17 +266,17 @@ public class ReconfigurableStructuredComponentEditPart extends
 		}
 
 		
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
+		if (childEditPart instanceof org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
+					.remove(((org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
+		if (childEditPart instanceof org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
+					.remove(((org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
@@ -415,8 +415,8 @@ public class ReconfigurableStructuredComponentEditPart extends
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+				.getType(org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
 	}
 
 	/**

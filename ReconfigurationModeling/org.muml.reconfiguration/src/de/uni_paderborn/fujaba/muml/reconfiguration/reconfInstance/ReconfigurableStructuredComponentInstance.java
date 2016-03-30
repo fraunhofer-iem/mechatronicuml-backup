@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance;
 
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
+import org.muml.pim.instance.StructuredComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

@@ -3,10 +3,10 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram;
 
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pim.msgtype.MessageType;
 
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface SendReconfigurationMessageExpression extends TriggerEmbeddedCom
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Bindings</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding}.
+	 * The list contents are of type {@link org.muml.pim.behavior.ParameterBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameter Bindings</em>' containment reference list isn't clear,

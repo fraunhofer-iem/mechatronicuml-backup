@@ -8,8 +8,7 @@ package de.uni_paderborn.fujaba.muml.runtime;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

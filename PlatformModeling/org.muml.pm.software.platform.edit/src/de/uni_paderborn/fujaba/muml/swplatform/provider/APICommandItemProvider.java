@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.swplatform.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-
 import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformFactory;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
@@ -25,6 +23,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.NamedElementItemProvider;
+import org.muml.pim.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.swplatform.APICommand} object.

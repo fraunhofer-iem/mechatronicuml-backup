@@ -9,8 +9,8 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.core.runtime.jobs.Job;
 import org.muml.core.reachanalysis.core.export.ReachabilityGraphExporter;
+import org.muml.pim.constraint.VerifiableElement;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraph;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.graphviz.CICGraphvizExport;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;

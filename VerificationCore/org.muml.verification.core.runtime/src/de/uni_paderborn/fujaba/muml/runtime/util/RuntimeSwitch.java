@@ -12,19 +12,20 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.ConnectorInstance;
+import org.muml.pim.connector.DiscreteInteractionEndpointInstance;
+import org.muml.pim.connector.DiscreteMultiInteractionEndpointInstance;
+import org.muml.pim.connector.DiscreteSingleInteractionEndpointInstance;
+import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.instance.DiscreteMultiPortInstance;
+import org.muml.pim.instance.DiscretePortInstance;
+import org.muml.pim.instance.DiscreteSinglePortInstance;
+import org.muml.pim.instance.PortConnectorInstance;
+import org.muml.pim.instance.PortInstance;
+import org.muml.pim.types.DataType;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
-import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
-import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.*;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
@@ -45,7 +46,6 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

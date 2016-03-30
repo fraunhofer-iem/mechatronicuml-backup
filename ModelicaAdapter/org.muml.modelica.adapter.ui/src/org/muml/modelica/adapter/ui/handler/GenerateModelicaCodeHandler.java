@@ -28,8 +28,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.muml.modelica.adapter.ui.Activator;
 import org.muml.modelica.adapter.ui.common.Generator;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class GenerateModelicaCodeHandler extends AbstractHandler {
 

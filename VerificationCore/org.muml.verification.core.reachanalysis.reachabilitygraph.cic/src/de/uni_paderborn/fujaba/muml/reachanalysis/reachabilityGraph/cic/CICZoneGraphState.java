@@ -12,7 +12,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 

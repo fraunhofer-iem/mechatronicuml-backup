@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.provider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageEditPlugin;
-import de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.swplatform.provider.SwplatformEditPlugin;
@@ -12,6 +10,8 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin;
+import org.muml.pim.constraint.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the Psm edit plugin.

@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml;
 
 import org.eclipse.xtext.junit4.GlobalRegistries;
 import org.eclipse.xtext.junit4.GlobalRegistries.GlobalStateMemento;
+import org.muml.pim.actionlanguage.xtext.ActionLanguageStandaloneSetup;
 import org.eclipse.xtext.junit4.IInjectorProvider;
 import org.eclipse.xtext.junit4.IRegistryConfigurator;
 

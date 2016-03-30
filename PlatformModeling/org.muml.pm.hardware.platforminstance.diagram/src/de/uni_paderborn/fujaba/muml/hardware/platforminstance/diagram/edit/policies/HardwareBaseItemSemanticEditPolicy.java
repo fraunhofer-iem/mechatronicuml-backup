@@ -308,8 +308,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateNetworkConnectorInstance_4012(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target, View sourceView,
+				org.muml.pim.connector.ConnectorEndpointInstance source,
+				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
 				View targetView) {
 			return canExistNetworkConnectorInstance_4012(container, null, source, target, sourceView, targetView);
 		}
@@ -320,8 +320,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canExistNetworkConnectorInstance_4012(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance linkInstance,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target, View sourceView,
+				org.muml.pim.connector.ConnectorEndpointInstance source,
+				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
 				View targetView) {
 			return true;
 		}
@@ -331,8 +331,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorNetworkConnectorInstance_4012(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target, View sourceView,
+				org.muml.pim.connector.ConnectorEndpointInstance source,
+				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
 				View targetView) {
 			return null;
 		}

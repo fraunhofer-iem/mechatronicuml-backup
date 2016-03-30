@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.instance.editor;
  */
 public class ReconfigurableStructuredComponentInstanceEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.instance.editor.StructuredComponentInstanceEditor {
+			org.muml.pim.properties.instance.editor.StructuredComponentInstanceEditor {
 
 	/**
 	 * @generated

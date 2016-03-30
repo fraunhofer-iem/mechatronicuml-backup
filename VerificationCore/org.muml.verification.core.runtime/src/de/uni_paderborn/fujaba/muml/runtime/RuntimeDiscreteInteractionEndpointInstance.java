@@ -2,8 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.types.DataType;
+import org.muml.pim.connector.DiscreteInteractionEndpointInstance;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

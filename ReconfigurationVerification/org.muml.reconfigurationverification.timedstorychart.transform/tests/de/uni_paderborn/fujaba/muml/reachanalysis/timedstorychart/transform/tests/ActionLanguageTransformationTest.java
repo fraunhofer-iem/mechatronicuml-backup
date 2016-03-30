@@ -35,6 +35,25 @@ import org.muml.core.expressions.common.LogicalExpression;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.pim.actionlanguage.ActionlanguageFactory;
+import org.muml.pim.actionlanguage.AssignOperator;
+import org.muml.pim.actionlanguage.Assignment;
+import org.muml.pim.actionlanguage.Block;
+import org.muml.pim.actionlanguage.DoWhileLoop;
+import org.muml.pim.actionlanguage.ForLoop;
+import org.muml.pim.actionlanguage.IfStatement;
+import org.muml.pim.actionlanguage.IncrementDecrementOperator;
+import org.muml.pim.actionlanguage.TypedNamedElementExpression;
+import org.muml.pim.actionlanguage.WhileLoop;
+import org.muml.pim.behavior.BehaviorFactory;
+import org.muml.pim.realtimestatechart.Action;
+import org.muml.pim.realtimestatechart.EntryEvent;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.PrimitiveTypes;
+import org.muml.pim.types.TypesFactory;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
@@ -50,27 +69,8 @@ import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.eclipse.EclipseExpressionInterpreterManager;
 import de.mdelab.sdm.interpreter.core.notifications.NotificationEmitter;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
-import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
-import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
-import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
-import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
-import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
-import de.uni_paderborn.fujaba.muml.actionlanguage.WhileLoop;
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 
 public class ActionLanguageTransformationTest {
 	
@@ -82,15 +82,15 @@ public class ActionLanguageTransformationTest {
 
 	private ModelElementCategory typesCategory;
 
-	private de.uni_paderborn.fujaba.muml.behavior.Variable counter;
+	private org.muml.pim.behavior.Variable counter;
 
-	private de.uni_paderborn.fujaba.muml.behavior.Variable a;
+	private org.muml.pim.behavior.Variable a;
 
-	private de.uni_paderborn.fujaba.muml.behavior.Variable b;
+	private org.muml.pim.behavior.Variable b;
 
-	private de.uni_paderborn.fujaba.muml.behavior.Variable c;
+	private org.muml.pim.behavior.Variable c;
 
-	private de.uni_paderborn.fujaba.muml.behavior.Variable d;
+	private org.muml.pim.behavior.Variable d;
 
 	@Before
 	public void setUp() throws Exception {

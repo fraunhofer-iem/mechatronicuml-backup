@@ -2,7 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorEndpoint;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 
 /**

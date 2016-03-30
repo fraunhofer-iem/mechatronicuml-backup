@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ContinuousPortExpression;
 
@@ -14,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.pim.instance.ContinuousPortInstance;
 
 /**
  * <!-- begin-user-doc -->

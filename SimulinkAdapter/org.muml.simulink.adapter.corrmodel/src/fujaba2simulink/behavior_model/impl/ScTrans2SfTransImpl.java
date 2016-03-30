@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.Transition;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import fujaba2simulink.behavior_model.Behavior_modelPackage;
 import fujaba2simulink.behavior_model.ScTrans2SfTrans;
 import fujaba2simulink.impl.AbstractContainerCorrespondenceNodeImpl;

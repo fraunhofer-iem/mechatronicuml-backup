@@ -5,27 +5,26 @@ import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.TextualExpression;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.RootNode;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryPoint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
+import org.muml.pim.behavior.BehaviorFactory;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.realtimestatechart.Action;
+import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
+import org.muml.pim.realtimestatechart.EntryEvent;
+import org.muml.pim.realtimestatechart.EntryPoint;
+import org.muml.pim.realtimestatechart.EventKind;
+import org.muml.pim.realtimestatechart.ExitPoint;
+import org.muml.pim.realtimestatechart.Message;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.StateConnectionPoint;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.types.DataType;
+import org.muml.pim.types.PrimitiveTypes;
 
 /**
  * Generator for the behavior of a State. Generates a RTSC.

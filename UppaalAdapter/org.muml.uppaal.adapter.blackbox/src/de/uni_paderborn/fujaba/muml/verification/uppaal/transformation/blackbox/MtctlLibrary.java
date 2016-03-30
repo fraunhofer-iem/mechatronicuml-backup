@@ -4,11 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pim.connector.MessageBuffer;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.common.MtctlModelElementProvider;
 

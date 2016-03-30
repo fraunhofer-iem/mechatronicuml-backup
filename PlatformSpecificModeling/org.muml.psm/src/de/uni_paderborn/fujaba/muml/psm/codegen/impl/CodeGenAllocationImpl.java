@@ -3,9 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 
@@ -17,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 /**
  * <!-- begin-user-doc -->

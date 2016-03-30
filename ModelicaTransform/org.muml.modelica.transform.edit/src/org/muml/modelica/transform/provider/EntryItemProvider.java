@@ -3,8 +3,6 @@
 package org.muml.modelica.transform.provider;
 
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.modelica.transform.Entry;
 import org.muml.modelica.transform.TransformPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.modelica.transform.Entry} object.

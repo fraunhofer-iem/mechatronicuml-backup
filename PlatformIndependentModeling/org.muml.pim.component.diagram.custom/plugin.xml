@@ -7,7 +7,7 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers.EmbedAsPartsGraphicalHandler"
+            defaultHandler="org.muml.pim.component.diagram.custom.edit.handlers.EmbedAsPartsGraphicalHandler"
             description="Embeds Atomic Components as Component Parts in a new Structured Component."
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts.editorcmd"
             name="Embed As Parts">
@@ -32,7 +32,7 @@
    
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.component.diagram.custom.providers.CustomMumlParserProvider">
+      <ParserProvider class="org.muml.pim.component.diagram.custom.providers.CustomMumlParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
    </extension>

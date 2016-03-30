@@ -7,9 +7,9 @@
 package fujaba2simulink.behavior_model;
 
 import org.muml.core.expressions.Expression;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.EntryEvent;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Action;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 
@@ -95,12 +95,12 @@ public interface ScEntry2sfEntry extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc Entry Action</em>' reference.
-	 * @see #setScEntryAction(de.uni_paderborn.fujaba.muml.realtimestatechart.Action)
+	 * @see #setScEntryAction(org.muml.pim.realtimestatechart.Action)
 	 * @see fujaba2simulink.behavior_model.Behavior_modelPackage#getScEntry2sfEntry_ScEntryAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.muml.realtimestatechart.Action getScEntryAction();
+	org.muml.pim.realtimestatechart.Action getScEntryAction();
 
 	/**
 	 * Sets the value of the '{@link fujaba2simulink.behavior_model.ScEntry2sfEntry#getScEntryAction <em>Sc Entry Action</em>}' reference.
@@ -110,7 +110,7 @@ public interface ScEntry2sfEntry extends AbstractContainerCorrespondenceNode {
 	 * @see #getScEntryAction()
 	 * @generated
 	 */
-	void setScEntryAction(de.uni_paderborn.fujaba.muml.realtimestatechart.Action value);
+	void setScEntryAction(org.muml.pim.realtimestatechart.Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Expr</b></em>' reference.

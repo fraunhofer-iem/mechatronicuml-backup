@@ -4,13 +4,13 @@ Bundle-Name: MechatronicUML ActionLanguage Edit-Support
 Bundle-SymbolicName: org.muml.pim.actionlanguage.edit;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageEditPlugin$Implementation
+Bundle-Activator: org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin$Implementation
 Bundle-Vendor: Software Engineering Group,
  Heinz Nixdorf Institute,
  University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.provider
+Export-Package: org.muml.pim.actionlanguage.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.pim.actionlanguage;bundle-version="0.3.1";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

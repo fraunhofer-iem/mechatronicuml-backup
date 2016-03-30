@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
+import org.muml.pim.instance.DiscreteMultiPortInstance;
 
 /**
  * <!-- begin-user-doc -->

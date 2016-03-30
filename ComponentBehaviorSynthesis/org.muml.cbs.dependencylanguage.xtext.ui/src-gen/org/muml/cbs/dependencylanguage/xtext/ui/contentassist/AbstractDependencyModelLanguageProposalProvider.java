@@ -9,12 +9,12 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 
 /**
- * Represents a generated, default implementation of superclass {@link de.uni_paderborn.fujaba.muml.ui.contentassist.ActionLanguageProposalProvider}.
+ * Represents a generated, default implementation of superclass {@link org.muml.pim.actionlanguage.xtext.ui.contentassist.ActionLanguageProposalProvider}.
  * Methods are dynamically dispatched on the first parameter, i.e., you can override them 
  * with a more concrete subtype. 
  */
 @SuppressWarnings("all")
-public class AbstractDependencyModelLanguageProposalProvider extends de.uni_paderborn.fujaba.muml.ui.contentassist.ActionLanguageProposalProvider {
+public class AbstractDependencyModelLanguageProposalProvider extends org.muml.pim.actionlanguage.xtext.ui.contentassist.ActionLanguageProposalProvider {
 		
 	public void completeDependencyModel_Comment(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)((Alternatives)assignment.getTerminal()).getElements().get(0)), context, acceptor);

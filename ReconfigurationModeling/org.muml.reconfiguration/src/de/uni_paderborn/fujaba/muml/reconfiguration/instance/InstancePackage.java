@@ -77,7 +77,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__ANNOTATION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__ANNOTATION;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__ANNOTATION = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -86,7 +86,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__EXTENSION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__EXTENSION;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__EXTENSION = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -95,7 +95,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__NAME = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__NAME;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__NAME = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' reference.
@@ -104,7 +104,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__COMPONENT_TYPE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__COMPONENT_TYPE = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
@@ -113,7 +113,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__PORT_INSTANCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__PORT_INSTANCES = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Component Part</b></em>' reference.
@@ -122,7 +122,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__COMPONENT_PART = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__COMPONENT_PART = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
 	 * The feature id for the '<em><b>Parent CIC</b></em>' container reference.
@@ -131,7 +131,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__PARENT_CIC = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__PARENT_CIC;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__PARENT_CIC = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__PARENT_CIC;
 
 	/**
 	 * The feature id for the '<em><b>Top Level</b></em>' attribute.
@@ -140,7 +140,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__TOP_LEVEL = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__TOP_LEVEL = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Reconfigurable Component Instance</em>' class.
@@ -149,7 +149,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 0;
+	int RECONFIGURABLE_COMPONENT_INSTANCE_FEATURE_COUNT = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -158,7 +158,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ECLASS;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ECLASS = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -167,7 +167,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___EIS_PROXY = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___EIS_PROXY;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___EIS_PROXY = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -176,7 +176,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ERESOURCE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ERESOURCE;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ERESOURCE = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -185,7 +185,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTAINER = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ECONTAINER;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTAINER = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -194,7 +194,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTAINING_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ECONTAINING_FEATURE;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTAINING_FEATURE = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -203,7 +203,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ECONTAINMENT_FEATURE;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -212,7 +212,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ECONTENTS;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ECONTENTS = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -221,7 +221,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___EALL_CONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___EALL_CONTENTS;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___EALL_CONTENTS = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -230,7 +230,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ECROSS_REFERENCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ECROSS_REFERENCES;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ECROSS_REFERENCES = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -239,7 +239,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -248,7 +248,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -257,7 +257,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -266,7 +266,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -275,7 +275,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -284,7 +284,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -293,7 +293,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -302,7 +302,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -311,7 +311,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___GET_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___GET_ANNOTATION__STRING;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___GET_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -320,7 +320,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int RECONFIGURABLE_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Reconfigurable Component Instance</em>' class.
@@ -329,7 +329,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE_OPERATION_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.COMPONENT_INSTANCE_OPERATION_COUNT + 0;
+	int RECONFIGURABLE_COMPONENT_INSTANCE_OPERATION_COUNT = org.muml.pim.instance.InstancePackage.COMPONENT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.instance.impl.ReconfigurationPortInstanceImpl <em>Reconfiguration Port Instance</em>}' class.
@@ -348,7 +348,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__ANNOTATION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__ANNOTATION;
+	int RECONFIGURATION_PORT_INSTANCE__ANNOTATION = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -357,7 +357,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__EXTENSION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__EXTENSION;
+	int RECONFIGURATION_PORT_INSTANCE__EXTENSION = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -366,7 +366,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__NAME = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__NAME;
+	int RECONFIGURATION_PORT_INSTANCE__NAME = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -375,7 +375,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__COMMENT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__COMMENT;
+	int RECONFIGURATION_PORT_INSTANCE__COMMENT = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
@@ -384,7 +384,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__CONNECTOR_INSTANCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int RECONFIGURATION_PORT_INSTANCE__CONNECTOR_INSTANCES = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -393,7 +393,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__TYPE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__TYPE;
+	int RECONFIGURATION_PORT_INSTANCE__TYPE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
@@ -402,7 +402,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__PORT_TYPE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__PORT_TYPE;
+	int RECONFIGURATION_PORT_INSTANCE__PORT_TYPE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__PORT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
@@ -411,7 +411,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__COMPONENT_INSTANCE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE;
+	int RECONFIGURATION_PORT_INSTANCE__COMPONENT_INSTANCE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
@@ -420,7 +420,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
+	int RECONFIGURATION_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Port Part</b></em>' reference.
@@ -429,7 +429,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__PORT_PART = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE__PORT_PART;
+	int RECONFIGURATION_PORT_INSTANCE__PORT_PART = org.muml.pim.instance.InstancePackage.PORT_INSTANCE__PORT_PART;
 
 	/**
 	 * The number of structural features of the '<em>Reconfiguration Port Instance</em>' class.
@@ -438,7 +438,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE_FEATURE_COUNT + 0;
+	int RECONFIGURATION_PORT_INSTANCE_FEATURE_COUNT = org.muml.pim.instance.InstancePackage.PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -447,7 +447,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ECLASS;
+	int RECONFIGURATION_PORT_INSTANCE___ECLASS = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -456,7 +456,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___EIS_PROXY = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___EIS_PROXY;
+	int RECONFIGURATION_PORT_INSTANCE___EIS_PROXY = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -465,7 +465,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ERESOURCE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ERESOURCE;
+	int RECONFIGURATION_PORT_INSTANCE___ERESOURCE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -474,7 +474,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ECONTAINER = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ECONTAINER;
+	int RECONFIGURATION_PORT_INSTANCE___ECONTAINER = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -483,7 +483,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ECONTAINING_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ECONTAINING_FEATURE;
+	int RECONFIGURATION_PORT_INSTANCE___ECONTAINING_FEATURE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -492,7 +492,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ECONTAINMENT_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ECONTAINMENT_FEATURE;
+	int RECONFIGURATION_PORT_INSTANCE___ECONTAINMENT_FEATURE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -501,7 +501,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ECONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ECONTENTS;
+	int RECONFIGURATION_PORT_INSTANCE___ECONTENTS = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -510,7 +510,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___EALL_CONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___EALL_CONTENTS;
+	int RECONFIGURATION_PORT_INSTANCE___EALL_CONTENTS = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -519,7 +519,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ECROSS_REFERENCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ECROSS_REFERENCES;
+	int RECONFIGURATION_PORT_INSTANCE___ECROSS_REFERENCES = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -528,7 +528,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___EGET__ESTRUCTURALFEATURE;
+	int RECONFIGURATION_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -537,7 +537,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int RECONFIGURATION_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -546,7 +546,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int RECONFIGURATION_PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -555,7 +555,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+	int RECONFIGURATION_PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -564,7 +564,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+	int RECONFIGURATION_PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -573,7 +573,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___EINVOKE__EOPERATION_ELIST = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___EINVOKE__EOPERATION_ELIST;
+	int RECONFIGURATION_PORT_INSTANCE___EINVOKE__EOPERATION_ELIST = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -582,7 +582,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___GET_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___GET_EXTENSION__ECLASS;
+	int RECONFIGURATION_PORT_INSTANCE___GET_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -591,7 +591,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___PROVIDE_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+	int RECONFIGURATION_PORT_INSTANCE___PROVIDE_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -600,7 +600,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___GET_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___GET_ANNOTATION__STRING;
+	int RECONFIGURATION_PORT_INSTANCE___GET_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -609,7 +609,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE___PROVIDE_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int RECONFIGURATION_PORT_INSTANCE___PROVIDE_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.PORT_INSTANCE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Reconfiguration Port Instance</em>' class.
@@ -618,7 +618,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE_OPERATION_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.PORT_INSTANCE_OPERATION_COUNT + 0;
+	int RECONFIGURATION_PORT_INSTANCE_OPERATION_COUNT = org.muml.pim.instance.InstancePackage.PORT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.instance.impl.ReconfigurationMessagePortInstanceImpl <em>Reconfiguration Message Port Instance</em>}' class.
@@ -2679,7 +2679,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__ANNOTATION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__ANNOTATION;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__ANNOTATION = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -2688,7 +2688,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__EXTENSION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__EXTENSION;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__EXTENSION = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2697,7 +2697,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__NAME = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__NAME;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__NAME = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' reference.
@@ -2706,7 +2706,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__COMPONENT_TYPE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__COMPONENT_TYPE;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__COMPONENT_TYPE = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__COMPONENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
@@ -2715,7 +2715,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__PORT_INSTANCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__PORT_INSTANCES;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__PORT_INSTANCES = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__PORT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Component Part</b></em>' reference.
@@ -2724,7 +2724,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__COMPONENT_PART = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__COMPONENT_PART;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__COMPONENT_PART = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
 	 * The feature id for the '<em><b>Parent CIC</b></em>' container reference.
@@ -2733,7 +2733,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__PARENT_CIC = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__PARENT_CIC;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__PARENT_CIC = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__PARENT_CIC;
 
 	/**
 	 * The feature id for the '<em><b>Top Level</b></em>' attribute.
@@ -2742,7 +2742,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Reconfigurable Atomic Component Instance</em>' class.
@@ -2751,7 +2751,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 0;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2760,7 +2760,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECLASS;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECLASS = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -2769,7 +2769,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EIS_PROXY = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EIS_PROXY;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EIS_PROXY = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -2778,7 +2778,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ERESOURCE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ERESOURCE;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ERESOURCE = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -2787,7 +2787,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTAINER = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTAINER;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTAINER = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -2796,7 +2796,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTAINING_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTAINING_FEATURE;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTAINING_FEATURE = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -2805,7 +2805,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -2814,7 +2814,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTENTS;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECONTENTS = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -2823,7 +2823,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EALL_CONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EALL_CONTENTS;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EALL_CONTENTS = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -2832,7 +2832,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECROSS_REFERENCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECROSS_REFERENCES;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ECROSS_REFERENCES = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2841,7 +2841,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2850,7 +2850,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -2859,7 +2859,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -2868,7 +2868,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -2877,7 +2877,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -2886,7 +2886,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2895,7 +2895,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2904,7 +2904,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2913,7 +2913,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___GET_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___GET_ANNOTATION__STRING;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___GET_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2922,7 +2922,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Reconfigurable Atomic Component Instance</em>' class.
@@ -2931,7 +2931,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE_OPERATION_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE_OPERATION_COUNT + 0;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE_OPERATION_COUNT = org.muml.pim.instance.InstancePackage.ATOMIC_COMPONENT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.instance.impl.ReconfigurableStructuredComponentInstanceImpl <em>Reconfigurable Structured Component Instance</em>}' class.
@@ -2950,7 +2950,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__ANNOTATION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__ANNOTATION;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__ANNOTATION = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -2959,7 +2959,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__EXTENSION = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EXTENSION;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__EXTENSION = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2968,7 +2968,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__NAME = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__NAME;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__NAME = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' reference.
@@ -2977,7 +2977,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__COMPONENT_TYPE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__COMPONENT_TYPE;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__COMPONENT_TYPE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__COMPONENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
@@ -2986,7 +2986,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__PORT_INSTANCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__PORT_INSTANCES;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__PORT_INSTANCES = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__PORT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Component Part</b></em>' reference.
@@ -2995,7 +2995,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__COMPONENT_PART = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__COMPONENT_PART;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__COMPONENT_PART = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
 	 * The feature id for the '<em><b>Parent CIC</b></em>' container reference.
@@ -3004,7 +3004,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__PARENT_CIC = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__PARENT_CIC;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__PARENT_CIC = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__PARENT_CIC;
 
 	/**
 	 * The feature id for the '<em><b>Top Level</b></em>' attribute.
@@ -3013,7 +3013,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__TOP_LEVEL = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__TOP_LEVEL;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__TOP_LEVEL = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__TOP_LEVEL;
 
 	/**
 	 * The feature id for the '<em><b>Embedded CIC</b></em>' containment reference.
@@ -3022,7 +3022,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC;
 
 	/**
 	 * The feature id for the '<em><b>Controller Instance</b></em>' reference.
@@ -3031,7 +3031,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE_FEATURE_COUNT + 0;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Reconfigurable Structured Component Instance</em>' class.
@@ -3040,7 +3040,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE_FEATURE_COUNT + 1;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE_FEATURE_COUNT = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3049,7 +3049,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECLASS;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECLASS = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -3058,7 +3058,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EIS_PROXY = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EIS_PROXY;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EIS_PROXY = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -3067,7 +3067,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ERESOURCE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ERESOURCE;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ERESOURCE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -3076,7 +3076,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTAINER = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTAINER;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTAINER = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -3085,7 +3085,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTAINING_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTAINING_FEATURE;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTAINING_FEATURE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -3094,7 +3094,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -3103,7 +3103,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTENTS;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECONTENTS = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -3112,7 +3112,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EALL_CONTENTS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EALL_CONTENTS;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EALL_CONTENTS = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -3121,7 +3121,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECROSS_REFERENCES = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECROSS_REFERENCES;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ECROSS_REFERENCES = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3130,7 +3130,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3139,7 +3139,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3148,7 +3148,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3157,7 +3157,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3166,7 +3166,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3175,7 +3175,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3184,7 +3184,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3193,7 +3193,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3202,7 +3202,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___GET_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___GET_ANNOTATION__STRING;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___GET_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3211,7 +3211,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Reconfigurable Structured Component Instance</em>' class.
@@ -3220,7 +3220,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE_OPERATION_COUNT = de.uni_paderborn.fujaba.muml.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE_OPERATION_COUNT + 0;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE_OPERATION_COUNT = org.muml.pim.instance.InstancePackage.STRUCTURED_COMPONENT_INSTANCE_OPERATION_COUNT + 0;
 
 
 	/**

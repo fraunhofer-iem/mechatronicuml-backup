@@ -4,14 +4,13 @@ package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.util;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.*;
 
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pim.valuetype.Range;
 
 /**
  * <!-- begin-user-doc -->
@@ -166,13 +165,13 @@ public class HwvaluetypeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.valuetype.Range <em>Range</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.valuetype.Range <em>Range</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range
+	 * @see org.muml.pim.valuetype.Range
 	 * @generated
 	 */
 	public Adapter createRangeAdapter() {

@@ -2,13 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.swplatform;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.CommentableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +59,7 @@ public interface APICommand extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
+	 * The list contents are of type {@link org.muml.pim.behavior.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

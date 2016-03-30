@@ -1,23 +1,24 @@
 package de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach.state;
 
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
-import de.uni_paderborn.fujaba.muml.component.ComponentKind;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypeFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.ComponentKind;
+import org.muml.pim.component.DiscretePort;
+import org.muml.pim.component.Port;
+import org.muml.pim.instance.AtomicComponentInstance;
+import org.muml.pim.instance.DiscretePortInstance;
+import org.muml.pim.instance.InstanceFactory;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.msgtype.MsgtypeFactory;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.ValuetypeFactory;
+
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 /**
  * Generator for the structure of a State. Generates both types and instances.

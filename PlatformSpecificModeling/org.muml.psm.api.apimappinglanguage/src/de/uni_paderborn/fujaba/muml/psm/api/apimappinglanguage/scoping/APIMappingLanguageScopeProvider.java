@@ -14,15 +14,15 @@ import org.eclipse.xtext.scoping.Scopes;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.instance.ContinuousPortInstance;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.types.DataType;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.APICallExpression;
 import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
 import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * This class contains custom scoping description.
@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * 
  */
 public class APIMappingLanguageScopeProvider extends
-		de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProvider {
+		org.muml.pim.actionlanguage.xtext.scoping.ActionLanguageScopeProvider {
 	private static final String OS_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.os.category";
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
 	private static final String INSTANCE_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.instance.category";

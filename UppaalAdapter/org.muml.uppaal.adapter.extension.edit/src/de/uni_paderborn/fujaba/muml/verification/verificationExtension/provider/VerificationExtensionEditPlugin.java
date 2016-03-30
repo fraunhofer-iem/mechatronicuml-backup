@@ -12,12 +12,11 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.verificationExtension.provider;
 
-import de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.constraint.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the VerificationExtension edit plugin.

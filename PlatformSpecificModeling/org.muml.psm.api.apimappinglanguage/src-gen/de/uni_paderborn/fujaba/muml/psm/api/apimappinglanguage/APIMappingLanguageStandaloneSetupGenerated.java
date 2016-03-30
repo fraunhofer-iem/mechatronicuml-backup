@@ -18,7 +18,7 @@ public class APIMappingLanguageStandaloneSetupGenerated implements ISetup {
 
 	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
-		de.uni_paderborn.fujaba.muml.ActionLanguageStandaloneSetup.doSetup();
+		org.muml.pim.actionlanguage.xtext.ActionLanguageStandaloneSetup.doSetup();
 
 		Injector injector = createInjector();
 		register(injector);

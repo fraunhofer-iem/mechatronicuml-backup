@@ -40,7 +40,7 @@ public final class HardwareEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
-		     de.uni_paderborn.fujaba.muml.constraint.provider.MumlEditPlugin.INSTANCE,
+		     org.muml.pim.constraint.provider.MumlEditPlugin.INSTANCE,
 		   });
 	}
 

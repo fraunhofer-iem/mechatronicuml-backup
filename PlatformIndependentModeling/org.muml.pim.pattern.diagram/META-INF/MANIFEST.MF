@@ -4,15 +4,15 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.pim.pattern.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
+Bundle-Activator: org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.pattern.diagram.edit.helpers,
- de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.pattern.diagram.parsers,
- de.uni_paderborn.fujaba.muml.pattern.diagram.part,
- de.uni_paderborn.fujaba.muml.pattern.diagram.providers
+Export-Package: org.muml.pim.pattern.diagram.edit.helpers,
+ org.muml.pim.pattern.diagram.edit.parts,
+ org.muml.pim.pattern.diagram.edit.policies,
+ org.muml.pim.pattern.diagram.parsers,
+ org.muml.pim.pattern.diagram.part,
+ org.muml.pim.pattern.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

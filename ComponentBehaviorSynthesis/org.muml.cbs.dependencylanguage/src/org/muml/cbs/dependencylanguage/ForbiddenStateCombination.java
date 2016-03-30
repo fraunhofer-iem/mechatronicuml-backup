@@ -3,8 +3,7 @@
 package org.muml.cbs.dependencylanguage;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.State;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 public interface ForbiddenStateCombination extends Dependency {
 	/**
 	 * Returns the value of the '<em><b>States</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.State}.
+	 * The list contents are of type {@link org.muml.pim.realtimestatechart.State}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>States</em>' reference list isn't clear,

@@ -2,26 +2,6 @@
  */
 package org.muml.modelica.transform.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -40,6 +20,16 @@ import org.muml.modelica.transform.Root;
 import org.muml.modelica.transform.TransformFactory;
 import org.muml.modelica.transform.TransformPackage;
 import org.muml.modelica.transform.TransformationRootObject;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.constraint.ConstraintPackage;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.types.TypesPackage;
+import org.muml.pim.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

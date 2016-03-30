@@ -4,11 +4,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.swt.widgets.Shell;
 import org.muml.ontology.edit.properties.parser.OWLOntologyUtil;
 import org.muml.ontology.edit.properties.providers.OntologyClassTreeContentProvider;
-
-import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.component.PortPart;
+import org.muml.pim.component.Component;
+import org.muml.pim.component.ComponentPart;
+import org.muml.pim.component.Port;
+import org.muml.pim.component.PortPart;
 
 /**
  * Factory Pattern to create different Ontology Dialogs

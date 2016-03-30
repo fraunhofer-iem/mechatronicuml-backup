@@ -7,7 +7,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.common.adapter.DerivedAttributeAdapter;
 import org.muml.core.impl.NamedElementImpl;
+import org.muml.pim.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->

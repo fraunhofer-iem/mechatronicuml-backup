@@ -2,12 +2,12 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;
 
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.muml.core.CorePackage;
+import org.muml.pim.constraint.ConstraintPackage;
 
 /**
  * <!-- begin-user-doc -->

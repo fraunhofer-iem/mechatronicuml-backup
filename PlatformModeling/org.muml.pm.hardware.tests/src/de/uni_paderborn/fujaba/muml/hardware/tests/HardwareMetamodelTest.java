@@ -15,8 +15,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.CorePackage;
 import org.muml.core.tests.MetamodelTest;
 import org.muml.core.tests.TestUtilities;
-
-import de.uni_paderborn.fujaba.muml.MumlPackage;
+import org.muml.pim.MumlPackage;
 
 @RunWith(Parameterized.class)
 public class HardwareMetamodelTest extends MetamodelTest {

@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.simulink.m2t.SimulinkWriter;
 import de.uni_paderborn.fujaba.simulink.m2t.graphviz.GraphVizStateflowLayouter;
 import de.uni_paderborn.fujaba.simulink.model.SimulinkContainer;

@@ -3,12 +3,8 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
-
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-
-import de.uni_paderborn.fujaba.muml.types.provider.DataTypeItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,6 +19,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.types.provider.DataTypeItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 
 import org.storydriven.storydiagrams.calls.CallsFactory;

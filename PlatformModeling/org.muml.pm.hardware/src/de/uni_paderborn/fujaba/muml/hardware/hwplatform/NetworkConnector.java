@@ -3,11 +3,11 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
-import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.connector.Connector;
 
 /**
  * <!-- begin-user-doc -->

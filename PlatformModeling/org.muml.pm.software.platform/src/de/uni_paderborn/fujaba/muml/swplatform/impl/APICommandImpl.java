@@ -2,14 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.swplatform.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-
 import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
 import de.uni_paderborn.fujaba.muml.swplatform.APIRepository;
 import de.uni_paderborn.fujaba.muml.swplatform.Constraint;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 import java.util.Collection;
 
@@ -30,6 +26,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
 import org.muml.core.impl.NamedElementImpl;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

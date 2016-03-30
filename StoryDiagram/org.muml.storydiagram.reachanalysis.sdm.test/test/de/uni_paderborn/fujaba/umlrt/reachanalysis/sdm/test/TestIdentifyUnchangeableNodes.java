@@ -14,6 +14,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.TextualExpression;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.instance.InstanceFactory;
+import org.muml.pim.instance.InstancePackage;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
@@ -30,12 +35,6 @@ import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PatternsFactory;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
-
-import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 /**
  * TODO: test cases for Cases 5, 6, 7

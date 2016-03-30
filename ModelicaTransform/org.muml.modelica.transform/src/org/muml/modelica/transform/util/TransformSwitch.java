@@ -2,9 +2,6 @@
  */
 package org.muml.modelica.transform.util;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -12,6 +9,8 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.modelica.transform.*;
+import org.muml.pim.realtimestatechart.PrioritizedElement;
+import org.muml.pim.realtimestatechart.Region;
 
 /**
  * <!-- begin-user-doc -->

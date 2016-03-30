@@ -8,8 +8,8 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.expression;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.behavior.ParameterBinding;
 
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 
 /**
@@ -66,7 +66,7 @@ public interface ReconfigurationRuleCallExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Bindings</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding}.
+	 * The list contents are of type {@link org.muml.pim.behavior.ParameterBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameter Bindings</em>' containment reference list isn't clear,

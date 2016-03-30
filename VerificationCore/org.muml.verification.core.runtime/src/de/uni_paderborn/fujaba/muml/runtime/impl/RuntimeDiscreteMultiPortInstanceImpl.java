@@ -11,7 +11,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import de.uni_paderborn.fujaba.muml.instance.impl.DiscreteMultiPortInstanceImpl;
+import org.muml.pim.instance.impl.DiscreteMultiPortInstanceImpl;
+import org.muml.pim.types.DataType;
+
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
@@ -19,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
-import de.uni_paderborn.fujaba.muml.types.DataType;
+
 import java.util.Collection;
 
 /**

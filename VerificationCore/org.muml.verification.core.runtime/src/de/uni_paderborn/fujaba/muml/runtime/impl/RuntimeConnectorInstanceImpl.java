@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.connector.impl.ConnectorInstanceImpl;
 
-import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorInstanceImpl;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;

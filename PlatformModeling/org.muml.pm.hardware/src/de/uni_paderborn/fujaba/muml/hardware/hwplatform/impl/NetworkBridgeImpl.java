@@ -3,10 +3,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl;
 
-import de.uni_paderborn.fujaba.muml.connector.Connector;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
@@ -30,6 +26,9 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
+import org.muml.pim.connector.Connector;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorPackage;
 
 /**
  * <!-- begin-user-doc -->

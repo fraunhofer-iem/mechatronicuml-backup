@@ -89,10 +89,10 @@ public class SinglePortVariable3EditPart extends BorderedBorderItemEditPart {
 				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.SinglePortVariable3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
+				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -145,14 +145,14 @@ public class SinglePortVariable3EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure();
+		return primaryShape = new org.muml.pim.common.figures.CustomPortFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure getPrimaryShape() {
-		return (de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure) primaryShape;
+	public org.muml.pim.common.figures.CustomPortFigure getPrimaryShape() {
+		return (org.muml.pim.common.figures.CustomPortFigure) primaryShape;
 	}
 
 	/**

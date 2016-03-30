@@ -16,15 +16,15 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import org.muml.pim.valuetype.ValuetypePackage;
 import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvider;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode} object.
@@ -112,7 +112,7 @@ public class ControllerExchangeNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
+				 org.muml.pim.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,
@@ -154,7 +154,7 @@ public class ControllerExchangeNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
+				 org.muml.pim.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,

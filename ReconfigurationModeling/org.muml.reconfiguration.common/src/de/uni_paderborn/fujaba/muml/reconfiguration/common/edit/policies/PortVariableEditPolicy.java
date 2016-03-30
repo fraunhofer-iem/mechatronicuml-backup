@@ -4,12 +4,12 @@ import org.eclipse.draw2d.Label;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy;
+import org.muml.pim.common.figures.CustomPortFigure.PortKind;
+import org.muml.pim.common.figures.CustomPortFigure.PortType;
+import org.muml.pim.component.Port;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy;
-import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
-import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
-import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;

@@ -2,9 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
-
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.constraint.VerificationConstraintRepository;
 
 /**
  * <!-- begin-user-doc -->

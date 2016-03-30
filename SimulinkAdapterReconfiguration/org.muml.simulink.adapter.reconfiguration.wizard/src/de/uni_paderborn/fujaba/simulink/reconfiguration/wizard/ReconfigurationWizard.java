@@ -3,8 +3,8 @@ package de.uni_paderborn.fujaba.simulink.reconfiguration.wizard;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.simulink.wizard.TransformationWizard;
 
 /**

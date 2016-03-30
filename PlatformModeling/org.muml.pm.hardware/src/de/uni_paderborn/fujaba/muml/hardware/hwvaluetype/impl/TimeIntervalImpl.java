@@ -5,8 +5,6 @@ package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval;
 
-import de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl;
-
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.valuetype.impl.RangeImpl;
 
 /**
  * <!-- begin-user-doc -->

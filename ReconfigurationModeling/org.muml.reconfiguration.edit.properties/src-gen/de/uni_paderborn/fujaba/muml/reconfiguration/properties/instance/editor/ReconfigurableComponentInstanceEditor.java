@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.instance.editor;
  */
 public abstract class ReconfigurableComponentInstanceEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.instance.editor.ComponentInstanceEditor {
+			org.muml.pim.properties.instance.editor.ComponentInstanceEditor {
 
 	/**
 	 * @generated

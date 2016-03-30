@@ -2,8 +2,6 @@
  */
 package org.muml.modelica.transform.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -26,6 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.modelica.transform.Entry;
 import org.muml.modelica.transform.Map;
 import org.muml.modelica.transform.TransformPackage;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

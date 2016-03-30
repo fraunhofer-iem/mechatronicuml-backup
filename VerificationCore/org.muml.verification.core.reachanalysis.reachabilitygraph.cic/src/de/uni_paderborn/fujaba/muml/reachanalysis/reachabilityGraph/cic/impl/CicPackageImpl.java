@@ -12,8 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CICZoneGraphState;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CicFactory;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CicPackage;
@@ -25,6 +23,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.pim.instance.InstancePackage;
 
 /**
  * <!-- begin-user-doc -->

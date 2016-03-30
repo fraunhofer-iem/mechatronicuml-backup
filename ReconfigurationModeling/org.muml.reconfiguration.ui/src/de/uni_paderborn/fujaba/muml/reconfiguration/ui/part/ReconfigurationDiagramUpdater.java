@@ -20,11 +20,11 @@ public class ReconfigurationDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getSemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getSemanticChildren(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+		switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID:
 			return getReconfigurableAtomicComponent_2078SemanticChildren(view);
@@ -45,7 +45,7 @@ public class ReconfigurationDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getModelElementCategory_1000SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getModelElementCategory_1000SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -53,38 +53,38 @@ public class ReconfigurationDiagramUpdater {
 		}
 		org.muml.core.modelinstance.ModelElementCategory modelElement = (org.muml.core.modelinstance.ModelElementCategory) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getModelElements().iterator(); it
 				.hasNext();) {
 			ExtendableElement childElement = (ExtendableElement) it.next();
-			int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			int visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
@@ -94,41 +94,41 @@ public class ReconfigurationDiagramUpdater {
 		return result;
 	}
 
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getReconfigurableStructuredComponent_2076SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getReconfigurableStructuredComponent_2076SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
 		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.Port childElement = (de.uni_paderborn.fujaba.muml.component.Port) it
+			org.muml.pim.component.Port childElement = (org.muml.pim.component.Port) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
@@ -140,7 +140,7 @@ public class ReconfigurationDiagramUpdater {
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 			}
 		}
@@ -149,46 +149,46 @@ public class ReconfigurationDiagramUpdater {
 	}
 
 	
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getReconfigurableAtomicComponent_2078SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getReconfigurableAtomicComponent_2078SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
 		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.Port childElement = (de.uni_paderborn.fujaba.muml.component.Port) it
+			org.muml.pim.component.Port childElement = (org.muml.pim.component.Port) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
@@ -201,7 +201,7 @@ public class ReconfigurationDiagramUpdater {
 	}
 	
 	
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getReconfigurableStructuredComponentCompartment_7077SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getReconfigurableStructuredComponentCompartment_7077SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -212,27 +212,27 @@ public class ReconfigurationDiagramUpdater {
 		}
 		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent) containerView
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getEmbeddedComponentParts()
 				.iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.ComponentPart childElement = (de.uni_paderborn.fujaba.muml.component.ComponentPart) it
+			org.muml.pim.component.ComponentPart childElement = (org.muml.pim.component.ComponentPart) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
 		}
 		for (Iterator<?> it = modelElement.getCoordinationProtocolParts()
 				.iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart childElement = (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) it
+			org.muml.pim.component.CoordinationProtocolPart childElement = (org.muml.pim.component.CoordinationProtocolPart) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
@@ -241,7 +241,7 @@ public class ReconfigurationDiagramUpdater {
 		return result;
 	}
 
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getRuleBasedReconfigurationController_7076SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getRuleBasedReconfigurationController_7076SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -249,14 +249,14 @@ public class ReconfigurationDiagramUpdater {
 
 		de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		if (modelElement.getManager() != null) {
 			de.uni_paderborn.fujaba.muml.reconfiguration.Manager childElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Manager) modelElement
 					.getManager();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 			}
 		}
@@ -267,7 +267,7 @@ public class ReconfigurationDiagramUpdater {
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 			}
 		}
@@ -275,7 +275,7 @@ public class ReconfigurationDiagramUpdater {
 		return result;
 	}
 
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getManager_2075SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getManager_2075SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -283,7 +283,7 @@ public class ReconfigurationDiagramUpdater {
 
 		de.uni_paderborn.fujaba.muml.reconfiguration.Manager modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Manager) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (ReconfigurationPort curPort : modelElement.getPorts()) {
 
 			if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -293,7 +293,7 @@ public class ReconfigurationDiagramUpdater {
 				int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getNodeVisualID(view, childElement);
 				if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID) {
-					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+					result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
 				}
@@ -305,7 +305,7 @@ public class ReconfigurationDiagramUpdater {
 				int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getNodeVisualID(view, childElement);
 				if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart.VISUAL_ID) {
-					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+					result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
 				}
@@ -315,7 +315,7 @@ public class ReconfigurationDiagramUpdater {
 		return result;
 	}
 
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getExecutor_2077SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getExecutor_2077SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -323,7 +323,7 @@ public class ReconfigurationDiagramUpdater {
 
 		de.uni_paderborn.fujaba.muml.reconfiguration.Executor modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Executor) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (ReconfigurationPort curPort : modelElement.getPorts()) {
 
 			if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -333,7 +333,7 @@ public class ReconfigurationDiagramUpdater {
 				int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getNodeVisualID(view, childElement);
 				if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID) {
-					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+					result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
 				}
@@ -345,7 +345,7 @@ public class ReconfigurationDiagramUpdater {
 				int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getNodeVisualID(view, childElement);
 				if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart.VISUAL_ID) {
-					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+					result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
 				}
@@ -355,7 +355,7 @@ public class ReconfigurationDiagramUpdater {
 		return result;
 	}
 
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getFadingComponent_2079SemanticChildren(
+	public static List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> getFadingComponent_2079SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -363,15 +363,15 @@ public class ReconfigurationDiagramUpdater {
 
 		de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.Port childElement = (de.uni_paderborn.fujaba.muml.component.Port) it
+			org.muml.pim.component.Port childElement = (org.muml.pim.component.Port) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+			if (visualID == org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID) {
+				result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
 			}
@@ -380,16 +380,16 @@ public class ReconfigurationDiagramUpdater {
 		return result;
 	}
 	
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getModelElementCategory_1000ContainedLinks(
+	public static List<org.muml.pim.component.diagram.part.MumlLinkDescriptor> getModelElementCategory_1000ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
 
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getReconfigurableStructuredComponent_2076ContainedLinks(
+	public static List<org.muml.pim.component.diagram.part.MumlLinkDescriptor> getReconfigurableStructuredComponent_2076ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent) view
 				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_ReconfigurationPortAssemblyConnector_4075(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ReconfigurationPortDelegationConnector_4076(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
@@ -400,17 +400,17 @@ public class ReconfigurationDiagramUpdater {
 	
 	
 
-	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_DelegationConnector_4002(
-			de.uni_paderborn.fujaba.muml.component.StructuredComponent container) {
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+	private static Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_DelegationConnector_4002(
+			org.muml.pim.component.StructuredComponent container) {
+		LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.component.DelegationConnector) {
+			if (false == linkObject instanceof org.muml.pim.component.DelegationConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.component.DelegationConnector link = (de.uni_paderborn.fujaba.muml.component.DelegationConnector) linkObject;
-			if (de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			org.muml.pim.component.DelegationConnector link = (org.muml.pim.component.DelegationConnector) linkObject;
+			if (org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID != org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
@@ -418,40 +418,40 @@ public class ReconfigurationDiagramUpdater {
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG
 														// #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted
 																			// for
 																			// MUML-BUG
 																			// #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
-			result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
+			result.add(new org.muml.pim.component.diagram.part.MumlLinkDescriptor(
 					src,
 					dst,
 					link,
-					de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002,
-					de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID));
+					org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002,
+					org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID));
 		}
 		return result;
 	}
 
-	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_AssemblyConnector_4001(
-			de.uni_paderborn.fujaba.muml.component.StructuredComponent container) {
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+	private static Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_AssemblyConnector_4001(
+			org.muml.pim.component.StructuredComponent container) {
+		LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.component.AssemblyConnector) {
+			if (false == linkObject instanceof org.muml.pim.component.AssemblyConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.component.AssemblyConnector link = (de.uni_paderborn.fujaba.muml.component.AssemblyConnector) linkObject;
-			if (de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			org.muml.pim.component.AssemblyConnector link = (org.muml.pim.component.AssemblyConnector) linkObject;
+			if (org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID != org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
@@ -459,32 +459,32 @@ public class ReconfigurationDiagramUpdater {
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG
 														// #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted
 																			// for
 																			// MUML-BUG
 																			// #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
-			result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
+			result.add(new org.muml.pim.component.diagram.part.MumlLinkDescriptor(
 					src,
 					dst,
 					link,
-					de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001,
-					de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID));
+					org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001,
+					org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID));
 		}
 		return result;
 	}
 
-	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_ReconfigurationPortAssemblyConnector_4075(
+	private static Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_ReconfigurationPortAssemblyConnector_4075(
 			de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent container) {
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
@@ -500,20 +500,20 @@ public class ReconfigurationDiagramUpdater {
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG
 														// #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted
 																			// for
 																			// MUML-BUG
 																			// #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
-			result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
+			result.add(new org.muml.pim.component.diagram.part.MumlLinkDescriptor(
 					src,
 					dst,
 					link,
@@ -523,9 +523,9 @@ public class ReconfigurationDiagramUpdater {
 		return result;
 	}
 
-	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_ReconfigurationPortDelegationConnector_4076(
+	private static Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_ReconfigurationPortDelegationConnector_4076(
 			de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent container) {
-		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
@@ -541,20 +541,20 @@ public class ReconfigurationDiagramUpdater {
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG
 														// #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted
 																			// for
 																			// MUML-BUG
 																			// #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
-			result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
+			result.add(new org.muml.pim.component.diagram.part.MumlLinkDescriptor(
 					src,
 					dst,
 					link,

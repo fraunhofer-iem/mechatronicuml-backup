@@ -2,11 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval;
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->

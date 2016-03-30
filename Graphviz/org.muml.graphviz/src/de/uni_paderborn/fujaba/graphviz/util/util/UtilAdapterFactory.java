@@ -2,14 +2,13 @@
  */
 package de.uni_paderborn.fujaba.graphviz.util.util;
 
-import de.uni_paderborn.fujaba.graphviz.util.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.graphviz.util.Point;
+import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,8 +2,7 @@ package org.muml.modelica.adapter.rtsc.transformation;
 
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.muml.modelica.adapter.transformation.QVToTransformationRunner;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RealtimeStatechartLayouter {
 	private static final String TRANSFORMATION = "/de.uni_paderborn.fujaba.modelica.m2t/transforms/layout.qvto";

@@ -6,9 +6,10 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.ClockConstraint;
+import org.muml.pim.valuetype.TimeValue;
+
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Action;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.State;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Transition;

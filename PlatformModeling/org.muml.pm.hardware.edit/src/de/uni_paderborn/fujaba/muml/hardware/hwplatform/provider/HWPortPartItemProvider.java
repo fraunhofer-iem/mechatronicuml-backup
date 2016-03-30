@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider;
 
 
-import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorEndpointItemProvider;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
@@ -16,6 +15,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.connector.provider.ConnectorEndpointItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart} object.

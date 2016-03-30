@@ -53,7 +53,7 @@ public class ReconfigurationExecutionPortCreateCommand extends EditElementComman
 		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort newElement = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory.eINSTANCE
 				.createReconfigurationExecutionPort();
 
-		de.uni_paderborn.fujaba.muml.component.Component owner = (de.uni_paderborn.fujaba.muml.component.Component) getElementToEdit();
+		org.muml.pim.component.Component owner = (org.muml.pim.component.Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
 		((de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ElementInitializers)de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ElementInitializers

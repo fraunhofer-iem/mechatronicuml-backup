@@ -4,11 +4,11 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
 
 import org.muml.core.NamedElement;
+import org.muml.pim.valuetype.Cardinality;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->

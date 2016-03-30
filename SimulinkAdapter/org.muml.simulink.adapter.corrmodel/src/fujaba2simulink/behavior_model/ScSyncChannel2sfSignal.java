@@ -6,7 +6,8 @@
  */
 package fujaba2simulink.behavior_model;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
+
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Event;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

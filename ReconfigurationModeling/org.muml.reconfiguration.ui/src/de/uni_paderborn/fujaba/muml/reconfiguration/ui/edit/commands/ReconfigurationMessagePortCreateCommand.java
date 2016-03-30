@@ -53,7 +53,7 @@ public class ReconfigurationMessagePortCreateCommand extends EditElementCommand 
 		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort newElement = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory.eINSTANCE
 				.createReconfigurationMessagePort();
 
-		de.uni_paderborn.fujaba.muml.component.Component owner = (de.uni_paderborn.fujaba.muml.component.Component) getElementToEdit();
+		org.muml.pim.component.Component owner = (org.muml.pim.component.Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
 		//TODO check if we have to initialize

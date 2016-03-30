@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_instance.impl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -13,9 +11,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
-
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
@@ -63,6 +58,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.pim.actionlanguage.ActionlanguagePackage;
+import org.muml.pim.instance.InstancePackage;
 
 /**
  * <!-- begin-user-doc -->

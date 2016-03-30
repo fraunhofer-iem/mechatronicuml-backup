@@ -4,7 +4,7 @@
 
     <!--Set a providers for the parserfactory and for the editpartfactory in order to induce your own editparts/parsers. The priority needs to be hicher than "Lowest" -->
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.providers.CustomMumlParserProvider">
+      <ParserProvider class="org.muml.pim.pattern.diagram.custom.providers.CustomMumlParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
    </extension>  
@@ -17,13 +17,13 @@
          point="org.eclipse.ui.exportWizards">
       <wizard
             category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
+            class="org.muml.pim.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
             id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardPatternToProtocol"
             name="Pattern To Protocol Transformation Wizard">
       </wizard>
       <wizard
             category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.ProtocolToPatternExportWizard"
+            class="org.muml.pim.pattern.diagram.custom.export.wizard.ProtocolToPatternExportWizard"
             id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardProtocolToPattern"
             name="Protocol To Pattern Transformation Wizard">
       </wizard>

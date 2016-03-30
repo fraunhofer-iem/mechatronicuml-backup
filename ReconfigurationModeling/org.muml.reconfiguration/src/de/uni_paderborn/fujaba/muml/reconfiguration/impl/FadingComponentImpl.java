@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.component.impl.AtomicComponentImpl;
 
-import de.uni_paderborn.fujaba.muml.component.impl.AtomicComponentImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;

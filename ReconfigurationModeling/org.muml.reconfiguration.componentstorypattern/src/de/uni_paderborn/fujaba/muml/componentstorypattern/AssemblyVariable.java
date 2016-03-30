@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern;
 
-import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
+import org.muml.pim.component.AssemblyConnector;
 
 /**
  * <!-- begin-user-doc -->

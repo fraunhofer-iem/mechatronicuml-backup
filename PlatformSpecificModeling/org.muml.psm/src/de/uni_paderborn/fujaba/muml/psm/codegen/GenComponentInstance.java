@@ -2,12 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.instance.ComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

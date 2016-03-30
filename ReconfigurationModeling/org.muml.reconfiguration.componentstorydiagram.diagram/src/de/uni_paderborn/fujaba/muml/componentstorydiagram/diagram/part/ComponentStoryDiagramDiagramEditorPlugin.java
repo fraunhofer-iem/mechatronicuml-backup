@@ -165,25 +165,25 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
+				.add(new org.muml.pim.component.provider.ComponentItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
+				.add(new org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
+				.add(new org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
+				.add(new org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+				.add(new org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
+				.add(new org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
+				.add(new org.muml.pim.types.provider.TypesItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
+				.add(new org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
+				.add(new org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
+				.add(new org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
 		factories

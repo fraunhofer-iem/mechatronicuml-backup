@@ -18,8 +18,7 @@ import org.eclipse.xpand2.output.OutputImpl;
 import org.eclipse.xtend.expression.Variable;
 import org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel;
 import org.muml.core.ExtendableElement;
-
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import org.muml.pim.actionlanguage.ActionlanguagePackage;
 
 
 /**

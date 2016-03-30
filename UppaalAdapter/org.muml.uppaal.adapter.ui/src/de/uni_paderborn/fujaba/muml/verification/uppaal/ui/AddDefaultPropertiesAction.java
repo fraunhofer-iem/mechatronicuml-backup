@@ -11,8 +11,8 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Shell;
+import org.muml.pim.constraint.VerifiableElement;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
 

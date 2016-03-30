@@ -7,8 +7,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.ProcessorArchitecture;
 
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -16,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.valuetype.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

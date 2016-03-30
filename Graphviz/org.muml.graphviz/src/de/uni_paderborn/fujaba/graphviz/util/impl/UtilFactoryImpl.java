@@ -2,15 +2,15 @@
  */
 package de.uni_paderborn.fujaba.graphviz.util.impl;
 
-import de.uni_paderborn.fujaba.graphviz.util.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.graphviz.util.Point;
+import de.uni_paderborn.fujaba.graphviz.util.UtilFactory;
+import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
 
 /**
  * <!-- begin-user-doc -->

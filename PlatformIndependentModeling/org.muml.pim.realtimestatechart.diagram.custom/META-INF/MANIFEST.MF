@@ -15,4 +15,4 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Import-Package: de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers
+Import-Package: org.muml.pim.realtimestatechart.diagram.parsers

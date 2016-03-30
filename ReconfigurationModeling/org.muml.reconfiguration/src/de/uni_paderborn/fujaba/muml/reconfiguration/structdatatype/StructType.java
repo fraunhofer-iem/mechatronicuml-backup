@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.types.StructureDataType;
+import org.muml.pim.types.StructureDataType;
 
 /**
  * <!-- begin-user-doc -->

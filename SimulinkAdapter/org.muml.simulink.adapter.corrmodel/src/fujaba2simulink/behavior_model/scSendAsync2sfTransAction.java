@@ -7,10 +7,10 @@
 package fujaba2simulink.behavior_model;
 
 import org.eclipse.emf.ecore.EParameter;
+import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
+import org.muml.pim.realtimestatechart.Message;
 
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Action;
 import fujaba2simulink.AbstractContainerCorrespondenceNode;
 

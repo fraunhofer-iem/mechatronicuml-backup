@@ -16,8 +16,7 @@ import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.Event;
 import org.muml.cbs.dependencylanguage.Synchronization;
 import org.muml.core.expressions.Expression;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

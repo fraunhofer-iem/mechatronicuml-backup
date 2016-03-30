@@ -2,15 +2,17 @@
  */
 package de.uni_paderborn.fujaba.graphviz.plain.impl;
 
-import de.uni_paderborn.fujaba.graphviz.plain.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.graphviz.plain.PlainEdge;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainFactory;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
 
 /**
  * <!-- begin-user-doc -->

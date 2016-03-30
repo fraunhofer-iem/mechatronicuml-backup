@@ -12,8 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
-
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CICZoneGraphState;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CicPackage;
 
@@ -26,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 /**
  * <!-- begin-user-doc -->

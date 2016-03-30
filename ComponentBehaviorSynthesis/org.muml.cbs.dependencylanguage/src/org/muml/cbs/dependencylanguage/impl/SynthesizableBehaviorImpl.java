@@ -12,10 +12,9 @@ import org.muml.cbs.dependencylanguage.DependencyModel;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
 import org.muml.core.impl.ExtensionImpl;
-
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import org.muml.pim.behavior.Behavior;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

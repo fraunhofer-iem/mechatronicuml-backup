@@ -3,7 +3,6 @@
 package org.muml.cbs.dependencylanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -21,6 +20,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.StateStatusCondition;
 import org.muml.cbs.dependencylanguage.StateStatusKind;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.StateStatusCondition} object.

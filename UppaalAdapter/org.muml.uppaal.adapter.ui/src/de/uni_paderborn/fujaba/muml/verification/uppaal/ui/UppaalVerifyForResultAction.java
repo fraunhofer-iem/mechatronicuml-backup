@@ -6,8 +6,8 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Shell;
+import org.muml.pim.pattern.AbstractCoordinationPattern;
 
-import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.VerifyForResultsJob;
 
 public class UppaalVerifyForResultAction extends AbstractUppaalAction {

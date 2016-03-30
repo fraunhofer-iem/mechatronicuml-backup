@@ -2,13 +2,12 @@
  */
 package org.muml.modelica.transform;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->

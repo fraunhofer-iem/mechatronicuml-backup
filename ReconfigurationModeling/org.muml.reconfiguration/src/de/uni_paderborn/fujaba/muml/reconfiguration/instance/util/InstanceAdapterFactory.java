@@ -9,13 +9,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.DiscreteInteractionEndpointInstance;
+import org.muml.pim.instance.AtomicComponentInstance;
+import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.instance.PortInstance;
+import org.muml.pim.instance.StructuredComponentInstance;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 import de.uni_paderborn.fujaba.muml.reconfiguration.instance.ControllerInstance;
 import de.uni_paderborn.fujaba.muml.reconfiguration.instance.ExecutorInstance;
 import de.uni_paderborn.fujaba.muml.reconfiguration.instance.InstancePackage;
@@ -387,13 +387,13 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance <em>Component Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.instance.ComponentInstance <em>Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstance
+	 * @see org.muml.pim.instance.ComponentInstance
 	 * @generated
 	 */
 	public Adapter createComponentInstanceAdapter() {
@@ -415,13 +415,13 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance <em>Endpoint Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.ConnectorEndpointInstance <em>Endpoint Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance
+	 * @see org.muml.pim.connector.ConnectorEndpointInstance
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointInstanceAdapter() {
@@ -429,13 +429,13 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.PortInstance <em>Port Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.instance.PortInstance <em>Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.instance.PortInstance
+	 * @see org.muml.pim.instance.PortInstance
 	 * @generated
 	 */
 	public Adapter createPortInstanceAdapter() {
@@ -443,13 +443,13 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance <em>Discrete Interaction Endpoint Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.connector.DiscreteInteractionEndpointInstance <em>Discrete Interaction Endpoint Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance
+	 * @see org.muml.pim.connector.DiscreteInteractionEndpointInstance
 	 * @generated
 	 */
 	public Adapter createDiscreteInteractionEndpointInstanceAdapter() {
@@ -457,13 +457,13 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance <em>Atomic Component Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.instance.AtomicComponentInstance <em>Atomic Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance
+	 * @see org.muml.pim.instance.AtomicComponentInstance
 	 * @generated
 	 */
 	public Adapter createAtomicComponentInstanceAdapter() {
@@ -471,13 +471,13 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance <em>Structured Component Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.instance.StructuredComponentInstance <em>Structured Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance
+	 * @see org.muml.pim.instance.StructuredComponentInstance
 	 * @generated
 	 */
 	public Adapter createStructuredComponentInstanceAdapter() {

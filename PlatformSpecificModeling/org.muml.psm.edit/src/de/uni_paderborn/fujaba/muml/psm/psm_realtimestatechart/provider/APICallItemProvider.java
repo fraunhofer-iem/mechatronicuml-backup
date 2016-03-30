@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.provider.OperationCallItemProvider;
-
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
@@ -23,6 +21,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
+import org.muml.pim.actionlanguage.provider.OperationCallItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.APICall} object.

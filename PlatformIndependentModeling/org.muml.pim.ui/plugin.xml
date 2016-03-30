@@ -152,47 +152,47 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component.CopyRolePropertiesToPortHandler"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.CopyRolePropertiesToPortHandler"
             description="Copy Properties defined in the Role to the Port."
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
             name="Copy Role Properties To Port">
       </command>
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component.EmbedAllPortBehaviorsToACHandler"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.EmbedAllPortBehaviorsToACHandler"
             description="Embeds the behavior of all DiscretePorts into the Behavior of this Atomic Component"
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
             name="Embed All Port Behaviors">
       </command>
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component.CreateCompRTSCCopyRolePropertiesHandler"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.CreateCompRTSCCopyRolePropertiesHandler"
             description="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports"
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
             name="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports">
       </command>
        <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.coordinationprotocol.CreateRoleRTSCHandler"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.coordinationprotocol.CreateRoleRTSCHandler"
             description="Create the Role&apos;s RTSC and it&apos;s Diagram"
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
             name="Create Role RTSC">
       </command>
           <command
-            defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.realtimestatechart.DisassembleOne2ManyComSchemataHandler"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.realtimestatechart.DisassembleOne2ManyComSchemataHandler"
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
             name="Disassemble One-To-Many Communication Schemata">
       </command>
        <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component.EmbedAsPartsHandler"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.EmbedAsPartsHandler"
             description="Embeds Atomic Components as Component Parts in a new Structured Component."
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
             name="Embed As Parts">
       </command>
        <command
              categoryId="de.uni_paderborn.fujaba"
-             defaultHandler="de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.discreteInteractionEndpoint.CreateMessageBufferForEveryReceiverMessageTypeHandler"
+             defaultHandler="org.muml.pim.ui.contextmenu.handlers.discreteInteractionEndpoint.CreateMessageBufferForEveryReceiverMessageTypeHandler"
              description="Create a MessageBuffer for every Receiver MessageType"
              id="de.uni_paderborn.fujaba.muml.component.diagram.custom.createBufferForMsgType"
              name="Create MessageBuffer for every receiver message type">

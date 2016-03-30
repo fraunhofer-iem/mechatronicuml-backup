@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_instance.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_instance.ParameterisableDiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instancePackage;
 
@@ -21,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pim.instance.impl.DiscreteSinglePortInstanceImpl;
 
 /**
  * <!-- begin-user-doc -->

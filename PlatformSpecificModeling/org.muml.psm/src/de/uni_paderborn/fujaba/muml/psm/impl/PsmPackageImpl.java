@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.impl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -51,6 +49,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.pim.actionlanguage.ActionlanguagePackage;
 
 /**
  * <!-- begin-user-doc -->

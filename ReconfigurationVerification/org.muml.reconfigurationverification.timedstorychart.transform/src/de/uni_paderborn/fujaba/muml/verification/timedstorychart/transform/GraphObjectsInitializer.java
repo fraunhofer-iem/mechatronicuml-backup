@@ -3,12 +3,12 @@ package de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.protocol.RoleConnector;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.State;
 
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;

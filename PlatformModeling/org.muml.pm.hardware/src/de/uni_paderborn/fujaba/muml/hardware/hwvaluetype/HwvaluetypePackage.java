@@ -2,13 +2,12 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype;
 
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.muml.pim.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -7,8 +7,6 @@ import de.uni_paderborn.fujaba.muml.swplatform.EnumerationDataType;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformFactory;
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
-import de.uni_paderborn.fujaba.muml.types.provider.DataTypeItemProvider;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +19,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.types.provider.DataTypeItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.swplatform.EnumerationDataType} object.

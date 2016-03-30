@@ -3,14 +3,9 @@
 package de.uni_paderborn.fujaba.graphviz.common.provider;
 
 
-import de.uni_paderborn.fujaba.graphviz.common.CommonFactory;
-import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
-import de.uni_paderborn.fujaba.graphviz.common.Graph;
-import de.uni_paderborn.fujaba.graphviz.dot.DotFactory;
-import de.uni_paderborn.fujaba.graphviz.plain.PlainFactory;
-import de.uni_paderborn.fujaba.graphviz.provider.GraphvizEditPlugin;
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -23,6 +18,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.uni_paderborn.fujaba.graphviz.common.CommonFactory;
+import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
+import de.uni_paderborn.fujaba.graphviz.common.Graph;
+import de.uni_paderborn.fujaba.graphviz.dot.DotFactory;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainFactory;
+import de.uni_paderborn.fujaba.graphviz.provider.GraphvizEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.graphviz.common.Graph} object.

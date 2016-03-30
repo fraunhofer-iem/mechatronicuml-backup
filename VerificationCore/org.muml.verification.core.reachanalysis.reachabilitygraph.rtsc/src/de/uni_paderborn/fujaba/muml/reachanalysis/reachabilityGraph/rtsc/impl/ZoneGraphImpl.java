@@ -12,10 +12,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphImpl;
+import org.muml.pim.realtimestatechart.Clock;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.RtscPackage;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraph;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 
 /**
  * <!-- begin-user-doc -->

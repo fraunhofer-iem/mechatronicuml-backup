@@ -3,21 +3,21 @@ package de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.normalizat
 import java.util.HashMap;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pim.component.AssemblyConnector;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.DelegationConnector;
+import org.muml.pim.component.DiscretePort;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.ValuetypeFactory;
 
-import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
-import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 public class NormalizationTransformation 
 {

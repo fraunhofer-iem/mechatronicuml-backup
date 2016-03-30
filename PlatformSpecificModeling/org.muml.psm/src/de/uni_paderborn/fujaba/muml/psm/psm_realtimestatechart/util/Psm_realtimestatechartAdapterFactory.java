@@ -2,13 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.util;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
-
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.*;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -20,6 +14,9 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.actionlanguage.OperationCall;
+import org.muml.pim.behavior.Behavior;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->
@@ -204,13 +201,13 @@ public class Psm_realtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.Behavior <em>Behavior</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.Behavior
+	 * @see org.muml.pim.behavior.Behavior
 	 * @generated
 	 */
 	public Adapter createBehaviorAdapter() {
@@ -218,13 +215,13 @@ public class Psm_realtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart <em>Realtime Statechart</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.realtimestatechart.RealtimeStatechart <em>Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart
+	 * @see org.muml.pim.realtimestatechart.RealtimeStatechart
 	 * @generated
 	 */
 	public Adapter createRealtimeStatechartAdapter() {
@@ -246,13 +243,13 @@ public class Psm_realtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall <em>Operation Call</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.actionlanguage.OperationCall <em>Operation Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall
+	 * @see org.muml.pim.actionlanguage.OperationCall
 	 * @generated
 	 */
 	public Adapter createOperationCallAdapter() {

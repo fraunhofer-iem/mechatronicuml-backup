@@ -53,7 +53,7 @@ public class BroadcastPortCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPort newElement = de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory.eINSTANCE
 				.createBroadcastPort();
 
-		de.uni_paderborn.fujaba.muml.component.Component owner = (de.uni_paderborn.fujaba.muml.component.Component) getElementToEdit();
+		org.muml.pim.component.Component owner = (org.muml.pim.component.Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
 		//TODO check if we have to initialize

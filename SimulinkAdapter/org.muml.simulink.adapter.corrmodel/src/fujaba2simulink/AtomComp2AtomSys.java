@@ -6,7 +6,8 @@
  */
 package fujaba2simulink;
 
-import de.uni_paderborn.fujaba.muml.component.Component;
+import org.muml.pim.component.Component;
+
 import de.uni_paderborn.fujaba.simulink.model.InPortBlock;
 import de.uni_paderborn.fujaba.simulink.model.SubSystem;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Chart;

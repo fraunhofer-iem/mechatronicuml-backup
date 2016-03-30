@@ -1050,16 +1050,16 @@ public class ComponentSDDDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor(
 					src,
 					dst,
@@ -1090,16 +1090,16 @@ public class ComponentSDDDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor(
 					src,
 					dst,
@@ -1178,13 +1178,13 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getIncomingTypeModelFacetLinks_AssemblyVariable_4002(
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+			org.muml.pim.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != org.muml.pim.connector.ConnectorPackage.eINSTANCE
 					.getConnector_ConnectorEndpoints()
 					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable) {
 				continue;
@@ -1197,10 +1197,10 @@ public class ComponentSDDDiagramUpdater {
 			}
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor(
 					src,
 					target,
@@ -1215,13 +1215,13 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getIncomingTypeModelFacetLinks_DelegationVariable_4003(
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+			org.muml.pim.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != org.muml.pim.connector.ConnectorPackage.eINSTANCE
 					.getConnector_ConnectorEndpoints()
 					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable) {
 				continue;
@@ -1234,10 +1234,10 @@ public class ComponentSDDDiagramUpdater {
 			}
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor(
 					src,
 					target,
@@ -1332,7 +1332,7 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getOutgoingTypeModelFacetLinks_AssemblyVariable_4002(
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
+			org.muml.pim.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -1361,16 +1361,16 @@ public class ComponentSDDDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
 			if (src != source) {
 				continue;
 			}
@@ -1388,7 +1388,7 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getOutgoingTypeModelFacetLinks_DelegationVariable_4003(
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
+			org.muml.pim.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -1417,16 +1417,16 @@ public class ComponentSDDDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			org.muml.pim.connector.ConnectorEndpoint dst = (org.muml.pim.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			org.muml.pim.connector.ConnectorEndpoint src = (org.muml.pim.connector.ConnectorEndpoint) theSource;
 			if (src != source) {
 				continue;
 			}

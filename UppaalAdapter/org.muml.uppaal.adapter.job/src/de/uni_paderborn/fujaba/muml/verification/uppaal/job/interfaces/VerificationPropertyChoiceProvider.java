@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import org.muml.pim.constraint.VerifiableElement;
+
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 
 public interface VerificationPropertyChoiceProvider {

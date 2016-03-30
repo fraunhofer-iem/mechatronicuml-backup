@@ -66,7 +66,7 @@ public class StructTypeEditor extends org.muml.ape.runtime.editors.ClassProperty
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAttributes_GeneralTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAttributes_GeneralTab_Editor() {
 		if (this.editorAttributes_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.types.TypesPackage.eINSTANCE
 					.getStructureDataType_Attributes();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);

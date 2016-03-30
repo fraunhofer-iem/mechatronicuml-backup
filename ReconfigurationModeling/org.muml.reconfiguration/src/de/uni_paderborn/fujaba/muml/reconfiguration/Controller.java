@@ -8,8 +8,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.muml.core.CommentableElement;
 import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import org.muml.pim.behavior.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

@@ -11,8 +11,8 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
+import org.muml.pim.pattern.AbstractCoordinationPattern;
 
-import de.uni_paderborn.fujaba.muml.pattern.AbstractCoordinationPattern;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2TraceImageJob;
 
 public class ExportTraceImageAction extends AbstractUppaalAction {

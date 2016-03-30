@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.TextualExpression;
+import org.muml.pim.realtimestatechart.Action;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import fujaba2simulink.behavior_model.Behavior_modelPackage;
 import fujaba2simulink.behavior_model.ScSyncReceiveAction2sfAction;
 import fujaba2simulink.impl.AbstractContainerCorrespondenceNodeImpl;

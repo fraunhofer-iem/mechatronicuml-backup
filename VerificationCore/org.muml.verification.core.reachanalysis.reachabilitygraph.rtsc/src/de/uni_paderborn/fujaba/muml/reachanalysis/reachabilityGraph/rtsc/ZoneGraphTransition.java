@@ -8,8 +8,7 @@ package de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 public interface ZoneGraphTransition extends ActionTransition {
 	/**
 	 * Returns the value of the '<em><b>Fired RTSC Transitions</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition}.
+	 * The list contents are of type {@link org.muml.pim.realtimestatechart.Transition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fired RTSC Transitions</em>' reference list isn't clear,

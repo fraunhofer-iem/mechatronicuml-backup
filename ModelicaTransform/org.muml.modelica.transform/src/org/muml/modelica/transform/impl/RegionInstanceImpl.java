@@ -2,10 +2,6 @@
  */
 package org.muml.modelica.transform.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -15,6 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.modelica.transform.RegionInstance;
 import org.muml.modelica.transform.TransformPackage;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.impl.RegionImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -25,8 +25,7 @@ import org.muml.core.export.pages.ElementSelectionMode;
 import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 import org.muml.modelica.adapter.Activator;
 import org.muml.modelica.adapter.ui.common.Generator;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class ModelicaExportWizard extends AbstractFujabaExportWizard {
 	

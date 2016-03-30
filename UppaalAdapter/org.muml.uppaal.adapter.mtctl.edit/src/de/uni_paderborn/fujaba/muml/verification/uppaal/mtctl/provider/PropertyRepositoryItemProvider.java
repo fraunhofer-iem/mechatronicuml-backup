@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider;
 
 
-import de.uni_paderborn.fujaba.muml.constraint.provider.VerificationConstraintRepositoryItemProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
@@ -16,6 +15,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.constraint.provider.VerificationConstraintRepositoryItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository} object.

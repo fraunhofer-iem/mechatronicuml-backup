@@ -78,7 +78,7 @@
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.OpenTypeDialogCommand"
+           defaultHandler="org.muml.pim.common.internal.ui.commands.OpenTypeDialogCommand"
            description="Open Type Dialog"
            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
            name="Open Type Dialog">
@@ -91,7 +91,7 @@
         point="org.eclipse.ui.commands">
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.UseSharedTypesCommand"
+           defaultHandler="org.muml.pim.common.internal.ui.commands.UseSharedTypesCommand"
            description="Use Shared Types"
            id="de.uni_paderborn.fujaba.muml.common.commands.UseSharedTypesCommand"
            name="Open Type Dialog">
@@ -117,14 +117,14 @@
   <extension
        point="org.muml.core.modelinstance.ui.modelinitializer">
       <initializer
-          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
+          initializer="org.muml.pim.common.modelinitializer.TypeCategoryInitializer">
       </initializer>
   </extension>
   
   <extension
        point="org.muml.core.modelinstance.ui.modelinitializer">
       <initializer
-          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.DefaultCategoriesInitializer">
+          initializer="org.muml.pim.common.modelinitializer.DefaultCategoriesInitializer">
       </initializer>
   </extension>
  
@@ -132,7 +132,7 @@
   <extension
        point="org.eclipse.ltk.core.refactoring.moveParticipants">
     <moveParticipant
-          class="de.uni_paderborn.fujaba.muml.common.refactoring.XMIMoveParticipant"
+          class="org.muml.pim.common.refactoring.XMIMoveParticipant"
           id="de.uni_paderborn.fujaba.muml.common.refactoring.xmiMoveParticipant"
           name="Move XMI File">
        <enablement>
@@ -144,7 +144,7 @@
    <extension
          point="org.eclipse.ltk.core.refactoring.renameParticipants">
       <renameParticipant
-            class="de.uni_paderborn.fujaba.muml.common.refactoring.XMIRenameParticipant"
+            class="org.muml.pim.common.refactoring.XMIRenameParticipant"
             id="de.uni_paderborn.fujaba.muml.common.refactoring.xmiRenameParticipant"
             name="Rename XMI File">
         <enablement>
@@ -158,13 +158,13 @@
    <extension
          point="org.muml.core.common.elementInitializer">
          <initializer
-               initializer="de.uni_paderborn.fujaba.muml.common.elementinitializer.ClockConstraintElementInitializer"
+               initializer="org.muml.pim.common.elementinitializer.ClockConstraintElementInitializer"
                qualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint"/>
    </extension>
    <extension
          point="org.muml.core.common.editingdomain.editingDomainInitializer">
       <initializer
-            ref="de.uni_paderborn.fujaba.muml.common.editingdomain.PIMEditingDomainInitializer">
+            ref="org.muml.pim.common.editingdomain.PIMEditingDomainInitializer">
       </initializer>
    </extension>
   

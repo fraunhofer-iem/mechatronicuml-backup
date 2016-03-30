@@ -6,7 +6,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource.provider;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.ProcessorOwnedCacheItemProvider;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor} object.

@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.util;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -12,6 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
+import org.muml.pim.constraint.VerificationConstraintRepository;
 
 /**
  * <!-- begin-user-doc -->

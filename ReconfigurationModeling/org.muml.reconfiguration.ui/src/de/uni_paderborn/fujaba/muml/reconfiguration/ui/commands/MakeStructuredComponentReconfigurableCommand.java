@@ -62,9 +62,9 @@ import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
+import org.muml.pim.component.StaticStructuredComponent;
+import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart;
 
-import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 
 public class MakeStructuredComponentReconfigurableCommand extends AbstractHandler {

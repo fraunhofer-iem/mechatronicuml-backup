@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.instance.ComponentInstance;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.simulink.model.LibraryReference;
 import fujaba2simulink.CompInst2LibRef;
 import fujaba2simulink.Fujaba2simulinkPackage;

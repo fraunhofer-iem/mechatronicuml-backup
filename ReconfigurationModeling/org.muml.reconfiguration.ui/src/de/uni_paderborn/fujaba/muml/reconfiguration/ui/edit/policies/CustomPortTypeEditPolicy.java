@@ -6,20 +6,20 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
+import org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy;
+import org.muml.pim.common.figures.CustomPortFigure.PortKind;
+import org.muml.pim.common.figures.CustomPortFigure.PortType;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.diagram.edit.parts.PortPartEditPart;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.valuetype.ValuetypePackage;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy;
-import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
-import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 

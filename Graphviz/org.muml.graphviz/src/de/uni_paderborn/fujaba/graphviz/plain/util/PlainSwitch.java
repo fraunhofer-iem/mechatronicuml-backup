@@ -2,18 +2,19 @@
  */
 package de.uni_paderborn.fujaba.graphviz.plain.util;
 
-import de.uni_paderborn.fujaba.graphviz.common.Edge;
-import de.uni_paderborn.fujaba.graphviz.common.Graph;
-import de.uni_paderborn.fujaba.graphviz.common.Node;
-
-import de.uni_paderborn.fujaba.graphviz.plain.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+
+import de.uni_paderborn.fujaba.graphviz.common.Edge;
+import de.uni_paderborn.fujaba.graphviz.common.Graph;
+import de.uni_paderborn.fujaba.graphviz.common.Node;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainEdge;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -28,9 +28,9 @@
          icon="icons/obj16/ModelinstanceDiagramFile.gif"
          extensions="operationrepository_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramActionBarContributor">
+         class="org.muml.pim.operationrepository.diagram.part.MumlDiagramEditor"
+         matchingStrategy="org.muml.pim.operationrepository.diagram.part.MumlMatchingStrategy"
+         contributorClass="org.muml.pim.operationrepository.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    	</extension>
    	<extension point="org.eclipse.ui.contexts" id="ui-context">
@@ -49,7 +49,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlCreationWizard"
+  	     class="org.muml.pim.operationrepository.diagram.part.MumlCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -107,7 +107,7 @@
 	<extension point="org.eclipse.ui.commands">
 	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
+           defaultHandler="org.muml.pim.operationrepository.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Operation Repository"
            id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
@@ -204,7 +204,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlMarkerNavigationProvider">
+      <MarkerNavigationProvider class="org.muml.pim.operationrepository.diagram.providers.MumlMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.operationrepository.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -219,7 +219,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlValidationDecoratorProvider">
+      <decoratorProvider class="org.muml.pim.operationrepository.diagram.providers.MumlValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -228,7 +228,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.pim.operationrepository.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -237,31 +237,31 @@
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.pim.operationrepository.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.appearance"
             category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.pim.operationrepository.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.connections"
             category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.pim.operationrepository.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.printing"
             category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.pim.operationrepository.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.pim.operationrepository.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -269,7 +269,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.operationrepository.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.operationrepository.diagram.sheet.MumlSheetLabelProvider">
+            labelProvider="org.muml.pim.operationrepository.diagram.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -329,10 +329,10 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.sheet.MumlPropertySection">
+            class="org.muml.pim.operationrepository.diagram.sheet.MumlPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
+            <input type="org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
          </propertySection>
          <propertySection
             id="property.section.general" 
@@ -384,22 +384,22 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
+      <modelingAssistantProvider class="org.muml.pim.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
          <context elements="ModelElementCategory_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfOperationRepositoryEditPart">
+            <modelingAssistantProvider class="org.muml.pim.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfOperationRepositoryEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart" id="OperationRepository_2001"/>
          <context elements="OperationRepository_2001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfOperationEditPart">
+            <modelingAssistantProvider class="org.muml.pim.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfOperationEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart" id="Operation_3001"/>
          <context elements="Operation_3001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfParameterEditPart">
+            <modelingAssistantProvider class="org.muml.pim.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfParameterEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart" id="Parameter_3002"/>
          <context elements="Parameter_3002"/>
@@ -410,7 +410,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlIconProvider">
+      <IconProvider class="org.muml.pim.operationrepository.diagram.providers.MumlIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
@@ -423,7 +423,7 @@
                name="%metatype.name.ModelElementCategory_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ModelElementCategory"
-               edithelper="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.helpers.ModelElementCategoryEditHelper">
+               edithelper="org.muml.pim.operationrepository.diagram.edit.helpers.ModelElementCategoryEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -433,7 +433,7 @@
                name="%metatype.name.OperationRepository_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="OperationRepository"
-               edithelper="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.helpers.OperationRepositoryEditHelper">
+               edithelper="org.muml.pim.operationrepository.diagram.edit.helpers.OperationRepositoryEditHelper">
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
@@ -443,7 +443,7 @@
                name="%metatype.name.Operation_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Operation"
-               edithelper="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.helpers.OperationEditHelper">
+               edithelper="org.muml.pim.operationrepository.diagram.edit.helpers.OperationEditHelper">
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
@@ -453,7 +453,7 @@
                name="%metatype.name.Parameter_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Parameter"
-               edithelper="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.helpers.ParameterEditHelper">
+               edithelper="org.muml.pim.operationrepository.diagram.edit.helpers.ParameterEditHelper">
             <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
@@ -483,7 +483,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.muml.operationrepository.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlUriEditorInputTester">
+           class="org.muml.pim.operationrepository.diagram.part.MumlUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -509,8 +509,8 @@
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorLabelProvider"
+            contentProvider="org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorContentProvider" 
+            labelProvider="org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorLabelProvider"
             icon="icons/obj16/ModelinstanceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -519,24 +519,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="operationrepository_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
+               <instanceof value="org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
+         	   <instanceof value="org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorSorter">
+               class="org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="operationrepository_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
+                  <instanceof value="org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -545,8 +545,8 @@
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlDomainNavigatorLabelProvider"
+            contentProvider="org.muml.pim.operationrepository.diagram.navigator.MumlDomainNavigatorContentProvider" 
+            labelProvider="org.muml.pim.operationrepository.diagram.navigator.MumlDomainNavigatorLabelProvider"
             icon="icons/obj16/ModelinstanceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -555,19 +555,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlDomainNavigatorItem"/>
+               <instanceof value="org.muml.pim.operationrepository.diagram.navigator.MumlDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlDomainNavigatorItem"/>
+            <instanceof value="org.muml.pim.operationrepository.diagram.navigator.MumlDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorActionProvider">
+            class="org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
+               <instanceof value="org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -577,7 +577,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlNavigatorLinkHelper">
+            class="org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -585,7 +585,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
+            <instanceof value="org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -593,7 +593,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramUpdateCommand"
+         defaultHandler="org.muml.pim.operationrepository.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -620,7 +620,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart"/>
+                     <instanceof value="org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -634,7 +634,7 @@
       <command id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.pim.operationrepository.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
@@ -642,7 +642,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlParserProvider">
+      <ParserProvider class="org.muml.pim.operationrepository.diagram.providers.MumlParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -658,7 +658,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlInitDiagramFileAction"
+			defaultHandler="org.muml.pim.operationrepository.diagram.part.MumlInitDiagramFileAction"
 			id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>

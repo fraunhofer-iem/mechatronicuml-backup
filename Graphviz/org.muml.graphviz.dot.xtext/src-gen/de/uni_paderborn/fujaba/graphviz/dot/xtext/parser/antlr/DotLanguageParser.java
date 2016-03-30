@@ -3,9 +3,10 @@
 */
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.parser.antlr;
 
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+
 import com.google.inject.Inject;
 
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import de.uni_paderborn.fujaba.graphviz.dot.xtext.services.DotLanguageGrammarAccess;
 
 public class DotLanguageParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {

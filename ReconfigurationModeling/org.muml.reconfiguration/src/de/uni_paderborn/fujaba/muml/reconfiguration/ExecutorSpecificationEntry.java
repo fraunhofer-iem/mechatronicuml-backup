@@ -7,8 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.muml.core.ExtendableElement;
-
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import org.muml.pim.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

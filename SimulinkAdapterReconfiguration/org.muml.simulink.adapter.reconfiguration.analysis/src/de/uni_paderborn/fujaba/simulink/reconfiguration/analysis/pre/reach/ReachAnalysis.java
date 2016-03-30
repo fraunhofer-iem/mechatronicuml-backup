@@ -13,6 +13,10 @@ import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.RootNode;
 import org.muml.core.reachanalysis.core.HashLevel;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.StructuredComponentInstance;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
@@ -20,11 +24,7 @@ import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.BindingState;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach.state.IndividualStateGenerator;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.reach.state.StateGenerator;
 

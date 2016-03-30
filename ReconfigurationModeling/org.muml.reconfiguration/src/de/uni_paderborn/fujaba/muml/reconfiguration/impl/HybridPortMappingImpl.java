@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.component.HybridPort;
-
 import de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 
@@ -16,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.component.HybridPort;
 
 /**
  * <!-- begin-user-doc -->

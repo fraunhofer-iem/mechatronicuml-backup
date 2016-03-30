@@ -2,13 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.util;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
-
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.*;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -18,6 +12,9 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.actionlanguage.OperationCall;
+import org.muml.pim.behavior.Behavior;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

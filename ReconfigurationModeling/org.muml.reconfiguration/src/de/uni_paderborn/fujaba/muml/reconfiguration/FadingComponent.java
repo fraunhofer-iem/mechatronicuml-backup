@@ -3,8 +3,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
+import org.muml.pim.component.AtomicComponent;
 
 /**
  * <!-- begin-user-doc -->

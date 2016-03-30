@@ -27,7 +27,7 @@ ShapeCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StaticStructuredComponentComponentCompartmentEditPart_title;
+		return org.muml.pim.component.diagram.part.Messages.StaticStructuredComponentComponentCompartmentEditPart_title;
 	}
 
 	/**
@@ -63,7 +63,7 @@ ShapeCompartmentEditPart {
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+						org.muml.pim.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(

@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.impl.OperationCallImpl;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.APICall;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage;
 
@@ -15,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.actionlanguage.impl.OperationCallImpl;
 
 /**
  * <!-- begin-user-doc -->

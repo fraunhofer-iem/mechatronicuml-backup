@@ -2,15 +2,13 @@
  */
 package de.uni_paderborn.fujaba.graphviz.util.impl;
 
-import de.uni_paderborn.fujaba.graphviz.util.Point;
-import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import de.uni_paderborn.fujaba.graphviz.util.Point;
+import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
 
 /**
  * <!-- begin-user-doc -->

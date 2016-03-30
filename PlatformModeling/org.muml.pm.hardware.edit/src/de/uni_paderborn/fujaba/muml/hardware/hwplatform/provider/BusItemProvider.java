@@ -4,8 +4,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider;
 
 
-import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorEndpointItemProvider;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 
@@ -20,6 +18,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.connector.provider.ConnectorEndpointItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus} object.

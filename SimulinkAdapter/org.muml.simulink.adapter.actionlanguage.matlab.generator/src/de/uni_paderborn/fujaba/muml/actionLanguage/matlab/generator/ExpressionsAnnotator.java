@@ -17,13 +17,11 @@ import org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel;
 import org.muml.core.ExtendableElement;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.TextualExpression;
-
-//______________________________________________________________________________________
-import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
-import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import org.muml.pim.actionlanguage.Block;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.realtimestatechart.*;
 
 @Deprecated
 public class ExpressionsAnnotator extends AbstractWorkflowComponent {

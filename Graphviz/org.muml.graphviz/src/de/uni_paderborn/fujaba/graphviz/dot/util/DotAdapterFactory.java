@@ -2,20 +2,21 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.util;
 
-import de.uni_paderborn.fujaba.graphviz.common.Edge;
-import de.uni_paderborn.fujaba.graphviz.common.Graph;
-import de.uni_paderborn.fujaba.graphviz.common.Node;
-
-import de.uni_paderborn.fujaba.graphviz.dot.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+
+import de.uni_paderborn.fujaba.graphviz.common.Edge;
+import de.uni_paderborn.fujaba.graphviz.common.Graph;
+import de.uni_paderborn.fujaba.graphviz.common.Node;
+import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
+import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
+import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
+import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
+import de.uni_paderborn.fujaba.graphviz.dot.Setting;
 
 /**
  * <!-- begin-user-doc -->

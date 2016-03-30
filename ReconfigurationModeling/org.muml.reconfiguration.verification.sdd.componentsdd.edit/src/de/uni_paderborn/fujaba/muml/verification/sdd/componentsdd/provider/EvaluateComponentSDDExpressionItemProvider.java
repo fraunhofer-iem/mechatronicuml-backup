@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,6 +14,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.behavior.BehaviorFactory;
+
 import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.TriggerEmbeddedComponentExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.EvaluateComponentSDDExpression;

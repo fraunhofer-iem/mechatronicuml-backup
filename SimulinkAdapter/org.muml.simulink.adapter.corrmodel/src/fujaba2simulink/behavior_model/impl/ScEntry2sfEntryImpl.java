@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.EntryEvent;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.simulink.model.stateflow.Action;
 import fujaba2simulink.behavior_model.Behavior_modelPackage;
 import fujaba2simulink.behavior_model.ScEntry2sfEntry;
@@ -66,7 +66,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Action scEntryAction;
+	protected org.muml.pim.realtimestatechart.Action scEntryAction;
 
 	/**
 	 * The cached value of the '{@link #getScExpr() <em>Sc Expr</em>}' reference.
@@ -188,10 +188,10 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimestatechart.Action getScEntryAction() {
+	public org.muml.pim.realtimestatechart.Action getScEntryAction() {
 		if (scEntryAction != null && scEntryAction.eIsProxy()) {
 			InternalEObject oldScEntryAction = (InternalEObject)scEntryAction;
-			scEntryAction = (de.uni_paderborn.fujaba.muml.realtimestatechart.Action)eResolveProxy(oldScEntryAction);
+			scEntryAction = (org.muml.pim.realtimestatechart.Action)eResolveProxy(oldScEntryAction);
 			if (scEntryAction != oldScEntryAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Behavior_modelPackage.SC_ENTRY2SF_ENTRY__SC_ENTRY_ACTION, oldScEntryAction, scEntryAction));
@@ -205,7 +205,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimestatechart.Action basicGetScEntryAction() {
+	public org.muml.pim.realtimestatechart.Action basicGetScEntryAction() {
 		return scEntryAction;
 	}
 
@@ -214,8 +214,8 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setScEntryAction(de.uni_paderborn.fujaba.muml.realtimestatechart.Action newScEntryAction) {
-		de.uni_paderborn.fujaba.muml.realtimestatechart.Action oldScEntryAction = scEntryAction;
+	public void setScEntryAction(org.muml.pim.realtimestatechart.Action newScEntryAction) {
+		org.muml.pim.realtimestatechart.Action oldScEntryAction = scEntryAction;
 		scEntryAction = newScEntryAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Behavior_modelPackage.SC_ENTRY2SF_ENTRY__SC_ENTRY_ACTION, oldScEntryAction, scEntryAction));
@@ -339,7 +339,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 				setSfEntryAction((Action)newValue);
 				return;
 			case Behavior_modelPackage.SC_ENTRY2SF_ENTRY__SC_ENTRY_ACTION:
-				setScEntryAction((de.uni_paderborn.fujaba.muml.realtimestatechart.Action)newValue);
+				setScEntryAction((org.muml.pim.realtimestatechart.Action)newValue);
 				return;
 			case Behavior_modelPackage.SC_ENTRY2SF_ENTRY__SC_EXPR:
 				setScExpr((Expression)newValue);
@@ -366,7 +366,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 				setSfEntryAction((Action)null);
 				return;
 			case Behavior_modelPackage.SC_ENTRY2SF_ENTRY__SC_ENTRY_ACTION:
-				setScEntryAction((de.uni_paderborn.fujaba.muml.realtimestatechart.Action)null);
+				setScEntryAction((org.muml.pim.realtimestatechart.Action)null);
 				return;
 			case Behavior_modelPackage.SC_ENTRY2SF_ENTRY__SC_EXPR:
 				setScExpr((Expression)null);

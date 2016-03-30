@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
 
-public class AbstractAPIMappingLanguageJavaValidator extends de.uni_paderborn.fujaba.muml.validation.ActionLanguageJavaValidator {
+public class AbstractAPIMappingLanguageJavaValidator extends org.muml.pim.actionlanguage.xtext.validation.ActionLanguageJavaValidator {
 
 	@Override
 	protected List<EPackage> getEPackages() {

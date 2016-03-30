@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.StateEvent;
 import org.muml.cbs.dependencylanguage.StateEventKind;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.State;
 
 /**
  * <!-- begin-user-doc -->

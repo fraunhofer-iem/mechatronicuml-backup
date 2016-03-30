@@ -3,8 +3,8 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.instance.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.muml.pim.instance.impl.ComponentInstanceImpl;
 
-import de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.instance.ReconfigurableComponentInstance;
 

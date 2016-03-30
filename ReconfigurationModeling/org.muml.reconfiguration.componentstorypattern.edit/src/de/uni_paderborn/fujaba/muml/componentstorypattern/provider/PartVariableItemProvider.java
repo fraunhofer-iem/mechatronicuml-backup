@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -13,6 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.behavior.BehaviorPackage;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;

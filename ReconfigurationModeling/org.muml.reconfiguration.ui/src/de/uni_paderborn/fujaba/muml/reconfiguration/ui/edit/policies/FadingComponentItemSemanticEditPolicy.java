@@ -16,19 +16,19 @@ import org.eclipse.gmf.runtime.notation.View;
 
 public class FadingComponentItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	public FadingComponentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.StaticAtomicComponent_2006);
+				org.muml.pim.component.diagram.providers.MumlElementTypes.StaticAtomicComponent_2006);
 	}
 
 	
 	protected Command getCreateCommand(CreateElementRequest req) {
 		
-		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011 == req
+		if (org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ContinuousPortCreateCommand(
+			return getGEFWrapper(new org.muml.pim.component.diagram.edit.commands.ContinuousPortCreateCommand(
 					req));
 			
 		}
@@ -60,15 +60,15 @@ public class FadingComponentItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getVisualID(node)) {
 			
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+			case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
 						.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
+					if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(
 								incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
@@ -76,8 +76,8 @@ public class FadingComponentItemSemanticEditPolicy
 								incomingLink));
 						continue;
 					}
-					if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
+					if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(
 								incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
@@ -89,8 +89,8 @@ public class FadingComponentItemSemanticEditPolicy
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it
 						.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
+					if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(
 								outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
@@ -98,8 +98,8 @@ public class FadingComponentItemSemanticEditPolicy
 								outgoingLink));
 						continue;
 					}
-					if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
+					if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(
 								outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));

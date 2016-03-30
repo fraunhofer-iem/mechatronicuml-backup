@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.muml.core.CorePackage;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->

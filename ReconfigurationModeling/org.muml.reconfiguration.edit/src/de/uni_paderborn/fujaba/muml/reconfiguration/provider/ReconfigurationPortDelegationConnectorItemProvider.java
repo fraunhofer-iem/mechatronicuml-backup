@@ -11,10 +11,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
+import org.muml.pim.component.provider.PortConnectorItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.component.provider.PortConnectorItemProvider;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
 
 /**

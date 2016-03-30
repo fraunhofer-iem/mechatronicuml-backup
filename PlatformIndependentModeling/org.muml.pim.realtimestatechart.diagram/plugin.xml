@@ -28,9 +28,9 @@
          icon="icons/obj16/RealtimestatechartDiagramFile.gif"
          extensions="realtimestatechart_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramActionBarContributor">
+         class="org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditor"
+         matchingStrategy="org.muml.pim.realtimestatechart.diagram.part.MumlMatchingStrategy"
+         contributorClass="org.muml.pim.realtimestatechart.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    	</extension>
    	<extension point="org.eclipse.ui.contexts" id="ui-context">
@@ -49,7 +49,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/RealtimestatechartDiagramFile.gif"
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlCreationWizard"
+  	     class="org.muml.pim.realtimestatechart.diagram.part.MumlCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -70,7 +70,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart"/>
+                     <instanceof value="org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -83,7 +83,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdateCommand"
+         defaultHandler="org.muml.pim.realtimestatechart.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -140,7 +140,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlMarkerNavigationProvider">
+      <MarkerNavigationProvider class="org.muml.pim.realtimestatechart.diagram.providers.MumlMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -155,7 +155,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlValidationDecoratorProvider">
+      <decoratorProvider class="org.muml.pim.realtimestatechart.diagram.providers.MumlValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -164,7 +164,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.pim.realtimestatechart.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -173,31 +173,31 @@
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.pim.realtimestatechart.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.appearance"
             category="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.pim.realtimestatechart.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.connections"
             category="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.pim.realtimestatechart.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.printing"
             category="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.pim.realtimestatechart.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.pim.realtimestatechart.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -241,62 +241,62 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
+      <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart" id="RealtimeStatechart_1000"/>
          <context elements="RealtimeStatechart_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRealtimeStatechartEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRealtimeStatechartEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="RealtimeStatechart_2007"/>
          <context elements="RealtimeStatechart_2007"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfStateEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfStateEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart" id="State_3032"/>
          <context elements="State_3032"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfEntryEventEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfEntryEventEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart" id="EntryEvent_3033"/>
          <context elements="EntryEvent_3033"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfDoEventEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfDoEventEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart" id="DoEvent_3034"/>
          <context elements="DoEvent_3034"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfExitEventEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfExitEventEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart" id="ExitEvent_3035"/>
          <context elements="ExitEvent_3035"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfClockConstraintEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfClockConstraintEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart" id="ClockConstraint_3036"/>
          <context elements="ClockConstraint_3036"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfSynchronizationChannelEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfSynchronizationChannelEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart" id="SynchronizationChannel_3037"/>
          <context elements="SynchronizationChannel_3037"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRegionEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRegionEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart" id="Region_3042"/>
          <context elements="Region_3042"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRealtimeStatechart2EditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRealtimeStatechart2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart" id="RealtimeStatechart_3043"/>
          <context elements="RealtimeStatechart_3043"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfEntryPointEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfEntryPointEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart" id="EntryPoint_3040"/>
          <context elements="EntryPoint_3040"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfExitPointEditPart">
+            <modelingAssistantProvider class="org.muml.pim.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfExitPointEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart" id="ExitPoint_3041"/>
          <context elements="ExitPoint_3041"/>
@@ -306,14 +306,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlIconProvider">
+      <IconProvider class="org.muml.pim.realtimestatechart.diagram.providers.MumlIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider">
+      <ParserProvider class="org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -326,7 +326,7 @@
                name="%metatype.name.RealtimeStatechart_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="RealtimeStatechart"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.ModelElementCategoryEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.ModelElementCategoryEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -345,7 +345,7 @@
                name="%metatype.name.State_3032"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="State"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.StateEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.StateEditHelper">
             <param name="semanticHint" value="3032"/>
          </metamodelType>
       </metamodel>
@@ -355,7 +355,7 @@
                name="%metatype.name.EntryEvent_3033"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="EntryEvent"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.EntryEventEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.EntryEventEditHelper">
             <param name="semanticHint" value="3033"/>
          </metamodelType>
       </metamodel>
@@ -365,7 +365,7 @@
                name="%metatype.name.DoEvent_3034"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DoEvent"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.DoEventEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.DoEventEditHelper">
             <param name="semanticHint" value="3034"/>
          </metamodelType>
       </metamodel>
@@ -375,7 +375,7 @@
                name="%metatype.name.ExitEvent_3035"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ExitEvent"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.ExitEventEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.ExitEventEditHelper">
             <param name="semanticHint" value="3035"/>
          </metamodelType>
       </metamodel>
@@ -385,7 +385,7 @@
                name="%metatype.name.ClockConstraint_3036"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ClockConstraint"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.ClockConstraintEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.ClockConstraintEditHelper">
             <param name="semanticHint" value="3036"/>
          </metamodelType>
       </metamodel>
@@ -395,7 +395,7 @@
                name="%metatype.name.SynchronizationChannel_3037"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="SynchronizationChannel"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.SynchronizationChannelEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.SynchronizationChannelEditHelper">
             <param name="semanticHint" value="3037"/>
          </metamodelType>
       </metamodel>
@@ -405,7 +405,7 @@
                name="%metatype.name.Region_3042"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Region"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.RegionEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.RegionEditHelper">
             <param name="semanticHint" value="3042"/>
          </metamodelType>
       </metamodel>
@@ -424,7 +424,7 @@
                name="%metatype.name.EntryPoint_3040"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="EntryPoint"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.EntryPointEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.EntryPointEditHelper">
             <param name="semanticHint" value="3040"/>
          </metamodelType>
       </metamodel>
@@ -434,7 +434,7 @@
                name="%metatype.name.ExitPoint_3041"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ExitPoint"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.ExitPointEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.ExitPointEditHelper">
             <param name="semanticHint" value="3041"/>
          </metamodelType>
       </metamodel>
@@ -444,7 +444,7 @@
                name="%metatype.name.Transition_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Transition"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.helpers.TransitionEditHelper">
+               edithelper="org.muml.pim.realtimestatechart.diagram.edit.helpers.TransitionEditHelper">
             <param name="semanticHint" value="4003"/>
          </metamodelType>
       </metamodel>
@@ -483,7 +483,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlUriEditorInputTester">
+           class="org.muml.pim.realtimestatechart.diagram.part.MumlUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -509,8 +509,8 @@
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorLabelProvider"
+            contentProvider="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartNavigatorContentProvider" 
+            labelProvider="org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorLabelProvider"
             icon="icons/obj16/RealtimestatechartDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -519,24 +519,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="realtimestatechart_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
+               <instanceof value="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
+         	   <instanceof value="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorSorter">
+               class="org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="realtimestatechart_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
+                  <instanceof value="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -545,8 +545,8 @@
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorLabelProvider"
+            contentProvider="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartDomainNavigatorContentProvider" 
+            labelProvider="org.muml.pim.realtimestatechart.diagram.navigator.MumlDomainNavigatorLabelProvider"
             icon="icons/obj16/RealtimestatechartDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -555,19 +555,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem"/>
+               <instanceof value="org.muml.pim.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem"/>
+            <instanceof value="org.muml.pim.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartNavigatorActionProvider">
+            class="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
+               <instanceof value="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -577,7 +577,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorLinkHelper">
+            class="org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -585,7 +585,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
+            <instanceof value="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -595,7 +595,7 @@
       <command id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.pim.realtimestatechart.diagram.part.LoadResourceAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
@@ -616,7 +616,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.sheet.MumlSheetLabelProvider">
+            labelProvider="org.muml.pim.realtimestatechart.diagram.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -691,10 +691,10 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.sheet.MumlPropertySection">
+            class="org.muml.pim.realtimestatechart.diagram.sheet.MumlPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
+            <input type="org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
          </propertySection>
          <propertySection
             id="property.section.general" 
@@ -776,7 +776,7 @@
 <extension point="org.eclipse.ui.commands">
 	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
+           defaultHandler="org.muml.pim.realtimestatechart.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Real-Time Statechart"
            id="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart.browser.create"
@@ -833,7 +833,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlInitDiagramFileAction"
+			defaultHandler="org.muml.pim.realtimestatechart.diagram.part.MumlInitDiagramFileAction"
 			id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>

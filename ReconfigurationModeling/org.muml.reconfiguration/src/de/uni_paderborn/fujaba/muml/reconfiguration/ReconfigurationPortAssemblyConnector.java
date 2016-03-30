@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.component.PortConnector;
+import org.muml.pim.component.PortConnector;
 
 /**
  * <!-- begin-user-doc -->

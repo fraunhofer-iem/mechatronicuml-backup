@@ -2,6 +2,14 @@
  */
 package de.uni_paderborn.fujaba.graphviz.plain.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.core.CorePackage;
+
 import de.uni_paderborn.fujaba.graphviz.GraphvizPackage;
 import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
 import de.uni_paderborn.fujaba.graphviz.common.impl.CommonPackageImpl;
@@ -15,13 +23,6 @@ import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
 import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
 import de.uni_paderborn.fujaba.graphviz.util.impl.UtilPackageImpl;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

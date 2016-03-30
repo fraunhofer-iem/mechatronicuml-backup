@@ -22,11 +22,11 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
+import org.muml.pim.component.diagram.custom.part.Activator;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.storydriven.storydiagrams.activities.Activity;
 
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation;
 import de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export.SDMReachabilityGraphExporter;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;

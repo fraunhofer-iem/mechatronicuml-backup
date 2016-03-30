@@ -9,8 +9,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.CommentableElement;
 import org.muml.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import org.muml.pim.behavior.Parameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 public interface StructuralCondition extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
+	 * The list contents are of type {@link org.muml.pim.behavior.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,

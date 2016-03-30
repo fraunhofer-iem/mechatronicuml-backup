@@ -3,8 +3,6 @@
 package org.muml.cbs.dependencylanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -29,6 +27,7 @@ import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.ExtensionItemProvider;
+import org.muml.pim.behavior.BehaviorPackage;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.SynthesizableBehavior} object.

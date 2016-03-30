@@ -8,9 +8,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramFactory;
@@ -19,8 +21,6 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.util.ComponentstorydiagramValidator;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 
 /**

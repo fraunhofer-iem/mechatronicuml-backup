@@ -36,13 +36,13 @@ import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.impl.ModelElementCategoryImpl;
 import org.muml.core.modelinstance.impl.ModelinstanceFactoryImpl;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.protocol.CoordinationProtocol;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.CheckMTCTL;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.NodeSpecification;
 import de.uni_paderborn.fujaba.muml.testlanguage.specification.PortType;

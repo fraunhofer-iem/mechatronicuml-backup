@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: UI
 Bundle-SymbolicName: org.muml.pim.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.ui.Activator
+Bundle-Activator: org.muml.pim.ui.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.commands,
  org.eclipse.ui.workbench,
@@ -18,6 +18,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.pim.actionlanguage;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component,
- de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.coordinationprotocol,
- de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.realtimestatechart
+Export-Package: org.muml.pim.ui.contextmenu.handlers.component,
+ org.muml.pim.ui.contextmenu.handlers.coordinationprotocol,
+ org.muml.pim.ui.contextmenu.handlers.realtimestatechart

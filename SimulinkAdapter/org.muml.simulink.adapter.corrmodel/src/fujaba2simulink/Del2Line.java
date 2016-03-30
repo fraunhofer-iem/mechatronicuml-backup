@@ -7,8 +7,8 @@
 package fujaba2simulink;
 
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.instance.DelegationConnectorInstance;
 
-import de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance;
 import de.uni_paderborn.fujaba.simulink.model.Line;
 
 /**

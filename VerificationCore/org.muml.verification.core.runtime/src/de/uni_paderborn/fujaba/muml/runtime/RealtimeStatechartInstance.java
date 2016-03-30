@@ -8,11 +8,10 @@ package de.uni_paderborn.fujaba.muml.runtime;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.ExtendableElement;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->

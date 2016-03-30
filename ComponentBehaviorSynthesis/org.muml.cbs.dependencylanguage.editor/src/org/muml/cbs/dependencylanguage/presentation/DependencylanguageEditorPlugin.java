@@ -2,16 +2,14 @@
  */
 package org.muml.cbs.dependencylanguage.presentation;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin;
+import org.muml.pim.component.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the Dependencylanguage editor plugin.

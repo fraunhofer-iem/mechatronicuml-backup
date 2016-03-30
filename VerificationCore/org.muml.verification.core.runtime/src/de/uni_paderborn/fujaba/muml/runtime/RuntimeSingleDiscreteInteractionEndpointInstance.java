@@ -12,9 +12,8 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
-
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.connector.DiscreteSingleInteractionEndpointInstance;
 
 /**
  * <!-- begin-user-doc -->

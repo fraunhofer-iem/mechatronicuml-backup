@@ -12,9 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.cbs.dependencylanguage.DataMerge;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.component.HybridPort;
+import org.muml.pim.behavior.Variable;
+import org.muml.pim.component.HybridPort;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,11 +2,11 @@
  */
 package de.uni_paderborn.fujaba.graphviz.common.impl;
 
-import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
-import de.uni_paderborn.fujaba.graphviz.common.Node;
-
 import org.eclipse.emf.ecore.EClass;
 import org.muml.core.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
+import de.uni_paderborn.fujaba.graphviz.common.Node;
 
 /**
  * <!-- begin-user-doc -->

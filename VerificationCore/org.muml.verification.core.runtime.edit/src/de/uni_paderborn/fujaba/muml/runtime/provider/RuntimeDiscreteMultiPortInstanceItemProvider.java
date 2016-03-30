@@ -22,8 +22,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.pim.instance.provider.DiscreteMultiPortInstanceItemProvider;
 
-import de.uni_paderborn.fujaba.muml.instance.provider.DiscreteMultiPortInstanceItemProvider;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;

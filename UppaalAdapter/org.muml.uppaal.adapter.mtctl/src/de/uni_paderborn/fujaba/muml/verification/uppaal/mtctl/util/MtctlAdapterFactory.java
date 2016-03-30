@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.util;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -14,6 +12,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
+import org.muml.pim.constraint.VerificationConstraintRepository;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,13 +171,13 @@ public class MtctlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository <em>Verification Constraint Repository</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.constraint.VerificationConstraintRepository <em>Verification Constraint Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository
+	 * @see org.muml.pim.constraint.VerificationConstraintRepository
 	 * @generated
 	 */
 	public Adapter createVerificationConstraintRepositoryAdapter() {

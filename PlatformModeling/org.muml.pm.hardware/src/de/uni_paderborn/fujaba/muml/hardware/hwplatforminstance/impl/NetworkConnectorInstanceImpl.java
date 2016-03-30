@@ -3,7 +3,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl;
 
-import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorInstanceImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -16,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.muml.pim.connector.impl.ConnectorInstanceImpl;
 
 /**
  * <!-- begin-user-doc -->

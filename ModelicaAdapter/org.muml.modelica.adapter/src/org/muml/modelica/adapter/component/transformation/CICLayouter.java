@@ -7,8 +7,7 @@ import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.modelica.adapter.transformation.QVToTransformationRunner;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class CICLayouter {
 private static final String TRANSFORMATION = "/de.uni_paderborn.fujaba.modelica.m2t/transforms/ciclayout.qvto";

@@ -2,8 +2,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
-
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts.CustomStructuredcomponentEditPartFactory;
+import org.muml.pim.component.diagram.custom.edit.parts.CustomStructuredcomponentEditPartFactory;
 
 public class CustomReconfigurationEditPartFactory extends
 		CustomStructuredcomponentEditPartFactory {
@@ -13,7 +12,7 @@ public class CustomReconfigurationEditPartFactory extends
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry
 					.getVisualID(view)) {
 
 			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID:

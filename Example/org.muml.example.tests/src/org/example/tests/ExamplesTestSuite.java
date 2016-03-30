@@ -7,9 +7,9 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.muml.core.CorePackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.MumlPackage;
+import org.muml.pim.actionlanguage.ActionlanguagePackage;
 
-import de.uni_paderborn.fujaba.muml.MumlPackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
 

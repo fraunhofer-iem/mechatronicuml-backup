@@ -12,8 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.verificationExtension.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-
 import de.uni_paderborn.fujaba.muml.verification.verificationExtension.ClockBinding;
 import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage;
 
@@ -24,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.muml.pim.realtimestatechart.Clock;
 
 /**
  * <!-- begin-user-doc -->

@@ -28,9 +28,9 @@
          icon="icons/obj16/ModelinstanceDiagramFile.gif"
          extensions="coordinationprotocol_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramActionBarContributor">
+         class="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor"
+         matchingStrategy="org.muml.pim.coordinationprotocol.diagram.part.MumlMatchingStrategy"
+         contributorClass="org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    	</extension>
    	<extension point="org.eclipse.ui.contexts" id="ui-context">
@@ -49,7 +49,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlCreationWizard"
+  	     class="org.muml.pim.coordinationprotocol.diagram.part.MumlCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -70,7 +70,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart"/>
+                     <instanceof value="org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -83,7 +83,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdateCommand"
+         defaultHandler="org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -140,7 +140,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlMarkerNavigationProvider">
+      <MarkerNavigationProvider class="org.muml.pim.coordinationprotocol.diagram.providers.MumlMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -155,7 +155,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlValidationDecoratorProvider">
+      <decoratorProvider class="org.muml.pim.coordinationprotocol.diagram.providers.MumlValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -164,7 +164,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.pim.coordinationprotocol.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -173,31 +173,31 @@
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
-            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.pim.coordinationprotocol.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.appearance"
             category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.pim.coordinationprotocol.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.connections"
             category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.pim.coordinationprotocol.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.printing"
             category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.pim.coordinationprotocol.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.pim.coordinationprotocol.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -242,42 +242,42 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
+      <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
          <context elements="ModelElementCategory_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationProtocolEditPart">
+            <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationProtocolEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart" id="CoordinationProtocol_2005"/>
          <context elements="CoordinationProtocol_2005"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationProtocol2EditPart">
+            <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationProtocol2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart" id="CoordinationProtocol_3015"/>
          <context elements="CoordinationProtocol_3015"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfRoleEditPart">
+            <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfRoleEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart" id="Role_3006"/>
          <context elements="Role_3006"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfMessageBufferEditPart">
+            <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfMessageBufferEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart" id="MessageBuffer_3013"/>
          <context elements="MessageBuffer_3013"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfMessageTypeEditPart">
+            <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfMessageTypeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart" id="MessageType_3009"/>
          <context elements="MessageType_3009"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfParameterEditPart">
+            <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfParameterEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart" id="Parameter_3016"/>
          <context elements="Parameter_3016"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfConnectorQualityOfServiceAssumptionsEditPart">
+            <modelingAssistantProvider class="org.muml.pim.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfConnectorQualityOfServiceAssumptionsEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart" id="ConnectorQualityOfServiceAssumptions_3014"/>
          <context elements="ConnectorQualityOfServiceAssumptions_3014"/>
@@ -287,14 +287,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlIconProvider">
+      <IconProvider class="org.muml.pim.coordinationprotocol.diagram.providers.MumlIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlParserProvider">
+      <ParserProvider class="org.muml.pim.coordinationprotocol.diagram.providers.MumlParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -307,7 +307,7 @@
                name="%metatype.name.ModelElementCategory_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ModelElementCategory"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.ModelElementCategoryEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.ModelElementCategoryEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -317,7 +317,7 @@
                name="%metatype.name.CoordinationProtocol_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CoordinationProtocol"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.CoordinationProtocolEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.CoordinationProtocolEditHelper">
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
@@ -336,7 +336,7 @@
                name="%metatype.name.Role_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Role"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.RoleEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.RoleEditHelper">
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
@@ -346,7 +346,7 @@
                name="%metatype.name.MessageBuffer_3013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MessageBuffer"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.MessageBufferEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.MessageBufferEditHelper">
             <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
@@ -356,7 +356,7 @@
                name="%metatype.name.MessageType_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MessageType"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.MessageTypeEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.MessageTypeEditHelper">
             <param name="semanticHint" value="3009"/>
          </metamodelType>
       </metamodel>
@@ -366,7 +366,7 @@
                name="%metatype.name.Parameter_3016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Parameter"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.ParameterEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.ParameterEditHelper">
             <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
@@ -376,7 +376,7 @@
                name="%metatype.name.ConnectorQualityOfServiceAssumptions_3014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ConnectorQualityOfServiceAssumptions"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.ConnectorQualityOfServiceAssumptionsEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.ConnectorQualityOfServiceAssumptionsEditHelper">
             <param name="semanticHint" value="3014"/>
          </metamodelType>
       </metamodel>
@@ -395,7 +395,7 @@
                name="%metatype.name.RoleConnector_4006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="RoleConnector"
-               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.RoleConnectorEditHelper">
+               edithelper="org.muml.pim.coordinationprotocol.diagram.edit.helpers.RoleConnectorEditHelper">
             <param name="semanticHint" value="4006"/>
          </metamodelType>
       </metamodel>
@@ -453,7 +453,7 @@
       <command id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.pim.coordinationprotocol.diagram.part.LoadResourceAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
@@ -474,7 +474,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.sheet.MumlSheetLabelProvider">
+            labelProvider="org.muml.pim.coordinationprotocol.diagram.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -544,7 +544,7 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.sheet.MumlPropertySection">
+            class="org.muml.pim.coordinationprotocol.diagram.sheet.MumlPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
          </propertySection>
@@ -622,7 +622,7 @@
 <extension point="org.eclipse.ui.commands">
 	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
+           defaultHandler="org.muml.pim.coordinationprotocol.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Coordination Protocol"
            id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
@@ -681,7 +681,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlInitDiagramFileAction"
+			defaultHandler="org.muml.pim.coordinationprotocol.diagram.part.MumlInitDiagramFileAction"
 			id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>

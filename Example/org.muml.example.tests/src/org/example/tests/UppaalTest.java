@@ -28,11 +28,11 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.NamedElement;
 import org.muml.core.tests.TestUtilities;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.VerifyForResultsJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyChoiceProvider;

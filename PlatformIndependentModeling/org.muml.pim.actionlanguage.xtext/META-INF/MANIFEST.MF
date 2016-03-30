@@ -23,15 +23,15 @@ Require-Bundle: org.eclipse.xtext.generator;resolution:=optional,
  org.muml.core.modelinstance;bundle-version="0.3.1",
  org.muml.pim.types;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml,
- de.uni_paderborn.fujaba.muml.common,
- de.uni_paderborn.fujaba.muml.formatting,
- de.uni_paderborn.fujaba.muml.naming,
- de.uni_paderborn.fujaba.muml.parseTreeConstruction,
- de.uni_paderborn.fujaba.muml.parser.antlr,
- de.uni_paderborn.fujaba.muml.parser.antlr.internal,
- de.uni_paderborn.fujaba.muml.scoping,
- de.uni_paderborn.fujaba.muml.services,
- de.uni_paderborn.fujaba.muml.storage,
- de.uni_paderborn.fujaba.muml.validation
+Export-Package: org.muml.pim.actionlanguage.xtext,
+ org.muml.pim.actionlanguage.xtext.common,
+ org.muml.pim.actionlanguage.xtext.formatting,
+ org.muml.pim.actionlanguage.xtext.naming,
+ org.muml.pim.actionlanguage.xtext.parseTreeConstruction,
+ org.muml.pim.actionlanguage.xtext.parser.antlr,
+ org.muml.pim.actionlanguage.xtext.parser.antlr.internal,
+ org.muml.pim.actionlanguage.xtext.scoping,
+ org.muml.pim.actionlanguage.xtext.services,
+ org.muml.pim.actionlanguage.xtext.storage,
+ org.muml.pim.actionlanguage.xtext.validation
 Import-Package: org.apache.log4j

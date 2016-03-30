@@ -15,7 +15,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/component/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory"
+            class="org.muml.pim.component.provider.ComponentItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -27,7 +27,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/constraint/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory"
+            class="org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -39,7 +39,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/instance/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory"
+            class="org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -51,7 +51,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/protocol/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory"
+            class="org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -63,7 +63,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/realtimestatechart/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory"
+            class="org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -76,7 +76,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory"
+            class="org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -88,7 +88,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/msgtype/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory"
+            class="org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -100,7 +100,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/types/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory"
+            class="org.muml.pim.types.provider.TypesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -112,7 +112,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/connector/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory"
+            class="org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -124,7 +124,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/valuetype/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory"
+            class="org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -136,7 +136,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/behavior/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory"
+            class="org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -149,7 +149,7 @@
       <!-- @generated muml -->
       <factory
             uri="http://www.fujaba.de/muml/pattern/0.3.18"
-            class="de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory"
+            class="org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

@@ -2,8 +2,6 @@
  */
 package org.muml.modelica.transform.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -15,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.muml.modelica.transform.Entry;
 import org.muml.modelica.transform.TransformPackage;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

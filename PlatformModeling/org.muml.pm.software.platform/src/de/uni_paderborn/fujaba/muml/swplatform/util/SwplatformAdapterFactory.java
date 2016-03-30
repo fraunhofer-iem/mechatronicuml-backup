@@ -4,8 +4,6 @@ package de.uni_paderborn.fujaba.muml.swplatform.util;
 
 import de.uni_paderborn.fujaba.muml.swplatform.*;
 
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -15,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -295,13 +294,13 @@ public class SwplatformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.types.DataType <em>Data Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.types.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.types.DataType
+	 * @see org.muml.pim.types.DataType
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {

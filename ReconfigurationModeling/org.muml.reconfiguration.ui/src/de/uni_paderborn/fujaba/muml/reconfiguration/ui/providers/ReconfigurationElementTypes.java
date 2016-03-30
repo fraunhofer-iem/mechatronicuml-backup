@@ -32,7 +32,7 @@ public class ReconfigurationElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
+			org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().getItemProvidersAdapterFactory());
 
 	/**
@@ -119,25 +119,25 @@ public class ReconfigurationElementTypes {
 
 			elements.put(
 					ComponentPart_3012,
-					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					org.muml.pim.component.ComponentPackage.eINSTANCE
 							.getComponentPart());
 
 			elements.put(
 					DiscretePort_3010,
-					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					org.muml.pim.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
 			elements.put(
 					HybridPort_3013,
-					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					org.muml.pim.component.ComponentPackage.eINSTANCE
 							.getHybridPort());
 			elements.put(
 					ContinuousPort_3011,
-					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					org.muml.pim.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
 			
 			elements.put(
 					CoordinationProtocolPart_3016,
-					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					org.muml.pim.component.ComponentPackage.eINSTANCE
 							.getCoordinationProtocolPart());
 
 			elements.put(
@@ -205,15 +205,15 @@ public class ReconfigurationElementTypes {
 			return Manager_2075;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortDelegationConnectorEditPart.VISUAL_ID:
 			return ReconfigurationPortDelegationConnector_4076;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
 			return ComponentPart_3012;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return DiscretePort_3010;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return HybridPort_3013;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 			return ContinuousPort_3011;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
+		case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
 			return CoordinationProtocolPart_3016;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart.VISUAL_ID:
 			return FadingComponent_2079;
