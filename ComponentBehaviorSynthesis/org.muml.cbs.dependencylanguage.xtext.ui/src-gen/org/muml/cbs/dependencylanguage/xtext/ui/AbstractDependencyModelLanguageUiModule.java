@@ -7,7 +7,7 @@ package org.muml.cbs.dependencylanguage.xtext.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageUiModule}
+ * Manual modifications go to {org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractDependencyModelLanguageUiModule extends org.eclipse.xtext.common.types.ui.DefaultCommonTypesUiModule {
@@ -84,32 +84,32 @@ public abstract class AbstractDependencyModelLanguageUiModule extends org.eclips
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return de.uni_paderborn.fujaba.muml.ui.labeling.DependencyModelLanguageLabelProvider.class;
+		return org.muml.cbs.dependencylanguage.xtext.ui.labeling.DependencyModelLanguageLabelProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(de.uni_paderborn.fujaba.muml.ui.labeling.DependencyModelLanguageDescriptionLabelProvider.class);
+		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.muml.cbs.dependencylanguage.xtext.ui.labeling.DependencyModelLanguageDescriptionLabelProvider.class);
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
-		return de.uni_paderborn.fujaba.muml.ui.outline.DependencyModelLanguageOutlineTreeProvider.class;
+		return org.muml.cbs.dependencylanguage.xtext.ui.outline.DependencyModelLanguageOutlineTreeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
-		return de.uni_paderborn.fujaba.muml.ui.outline.DependencyModelLanguageOutlineTreeProvider.class;
+		return org.muml.cbs.dependencylanguage.xtext.ui.outline.DependencyModelLanguageOutlineTreeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
-		return de.uni_paderborn.fujaba.muml.ui.quickfix.DependencyModelLanguageQuickfixProvider.class;
+		return org.muml.cbs.dependencylanguage.xtext.ui.quickfix.DependencyModelLanguageQuickfixProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
-		return de.uni_paderborn.fujaba.muml.ui.contentassist.DependencyModelLanguageProposalProvider.class;
+		return org.muml.cbs.dependencylanguage.xtext.ui.contentassist.DependencyModelLanguageProposalProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment

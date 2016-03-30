@@ -41,7 +41,7 @@
       <propertySections contributorId="">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.tabs.De_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTabElementFilter"
+            filter="org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.tabs.De_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTabElementFilter"
             id="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config"
             tab="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config">
              <input
@@ -58,7 +58,7 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.config.editor.Opt4jConfigurationEditor$Factory"
+             factory="org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.config.editor.Opt4jConfigurationEditor$Factory"
              type="http://www.fujaba.de/muml/allocation/algorithm/ilp/opt4j/0.1.0/config#Opt4jConfiguration">
        </propertyEditor>
     
@@ -69,7 +69,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -77,7 +77,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

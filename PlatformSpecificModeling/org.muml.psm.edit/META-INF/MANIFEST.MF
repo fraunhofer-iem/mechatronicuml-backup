@@ -4,48 +4,48 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.psm.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin$Implementation
+Bundle-Activator: org.muml.psm.provider.PsmEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.provider;
+Export-Package: org.muml.psm.allocation.provider;
   uses:="org.eclipse.emf.ecore,
    org.storydriven.core.provider,
    org.eclipse.emf.common.util,
    de.uni_paderborn.fujaba.muml.psm.allocation.util,
    org.eclipse.emf.edit.provider,
    org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.apiexpressions.provider;
+ org.muml.psm.apiexpressions.provider;
   uses:="de.uni_paderborn.fujaba.muml.psm.apiexpressions.util,
    org.eclipse.emf.ecore,
    org.eclipse.emf.common.util,
    org.eclipse.emf.edit.provider,
    org.storydriven.core.expressions.provider,
    org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.codegen.provider,
- de.uni_paderborn.fujaba.muml.psm.portapimapping.provider;
+ org.muml.psm.codegen.provider,
+ org.muml.psm.portapimapping.provider;
   uses:="org.eclipse.emf.ecore,
    org.storydriven.core.provider,
    org.eclipse.emf.common.util,
    de.uni_paderborn.fujaba.muml.psm.portapimapping.util,
    org.eclipse.emf.edit.provider,
    org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.properties.provider;
+ org.muml.psm.properties.provider;
   uses:="org.eclipse.emf.ecore,
    org.eclipse.emf.common.util,
    org.eclipse.emf.edit.provider,
    org.eclipse.emf.common.notify,
    de.uni_paderborn.fujaba.muml.psm.properties.util",
- de.uni_paderborn.fujaba.muml.psm.provider;
+ org.muml.psm.provider;
   uses:="de.uni_paderborn.fujaba.muml.psm.util,
    org.eclipse.emf.common.util,
    org.eclipse.emf.common,
    org.eclipse.emf.edit.provider,
    org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.psm_instance.provider,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.provider,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.provider
+ org.muml.psm.psm_instance.provider,
+ org.muml.psm.psm_realtimestatechart.provider,
+ org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider,
+ org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.provider
 Require-Bundle: org.eclipse.ocl.ecore,
  org.eclipse.core.runtime,
  org.muml.psm;visibility:=reexport,

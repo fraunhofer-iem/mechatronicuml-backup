@@ -5,7 +5,7 @@
          point="org.eclipse.ui.exportWizards">
       <wizard
             category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.muml.psm.transformation.ui.CodegenWizard"
+            class="org.muml.psm.transformation.ui.CodegenWizard"
             id="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CodeGenWizard"
             name="Create Code-Generation Model">
       </wizard>

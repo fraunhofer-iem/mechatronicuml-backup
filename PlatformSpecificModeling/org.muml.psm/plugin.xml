@@ -10,7 +10,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.PsmPackage"
+            class="org.muml.psm.PsmPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -18,7 +18,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/allocation/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage"
+            class="org.muml.psm.allocation.AllocationPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -26,7 +26,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/properties/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage"
+            class="org.muml.psm.properties.PropertiesPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -34,7 +34,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage"
+            class="org.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -42,7 +42,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage"
+            class="org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -50,7 +50,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage"
+            class="org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -58,7 +58,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/instance/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_instance.Psm_instancePackage"
+            class="org.muml.psm.psm_instance.Psm_instancePackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -66,7 +66,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/portapimapping/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage"
+            class="org.muml.psm.portapimapping.PortapimappingPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -74,7 +74,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage"
+            class="org.muml.psm.apiexpressions.ApiexpressionsPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -82,7 +82,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/codegen/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage"
+            class="org.muml.psm.codegen.CodegenPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 

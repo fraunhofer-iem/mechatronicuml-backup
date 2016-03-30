@@ -8,7 +8,7 @@
  * and return the appropriate list (or define your own one).
  * See below for examples of these methods.
  */
-package de.uni_paderborn.fujaba.muml.scoping
+package org.muml.cbs.dependencylanguage.xtext.scoping
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory
 import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin
