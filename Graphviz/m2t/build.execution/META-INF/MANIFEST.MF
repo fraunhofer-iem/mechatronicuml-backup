@@ -9,3 +9,4 @@ Require-Bundle: org.eclipse.equinox.registry,
  org.eclipse.osgi,
  org.eclipse.core.jobs;bundle-version="3.7.0"
 Bundle-Activator: Activator
+Bundle-ActivationPolicy: lazy
