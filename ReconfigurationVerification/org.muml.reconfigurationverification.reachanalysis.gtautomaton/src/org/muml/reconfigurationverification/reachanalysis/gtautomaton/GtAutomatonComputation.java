@@ -57,8 +57,7 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.IntWrap
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.LongWrapper;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.StringWrapper;
 import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation;
-
-import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import org.muml.verification.core.runtime.VariableBinding;
 
 /*TODO:
  *  - generate identifiers for unchangeable nodes -> generate once and use for all nodes

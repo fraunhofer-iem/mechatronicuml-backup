@@ -2,8 +2,6 @@
  */
 package org.muml.example.railcab.profiles.impl;
 
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.example.railcab.profiles.Profile;
 import org.muml.example.railcab.profiles.ProfilesPackage;
 import org.muml.example.railcab.profiles.RoleProfiles;
+import org.muml.verification.core.runtime.RuntimeDiscreteInteractionEndpointInstance;
 
 /**
  * <!-- begin-user-doc -->

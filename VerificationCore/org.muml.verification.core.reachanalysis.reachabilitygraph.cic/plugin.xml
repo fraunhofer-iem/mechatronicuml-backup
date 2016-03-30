@@ -9,7 +9,7 @@
       <!-- @generated CICReachabilityGraph -->
       <package
             uri="http://www.fujaba.de/reachabilityGraph/cic/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CicPackage"
+            class="org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CicPackage"
             genModel="model/CICReachabilityGraph.genmodel"/>
    </extension>
 

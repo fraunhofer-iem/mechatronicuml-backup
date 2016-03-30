@@ -23,8 +23,7 @@ import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider
 import org.muml.uppaal.adapter.mtctl.Property;
 import org.muml.uppaal.adapter.mtctl.Quantifiers.TemporalQuantifierExpr;
 import org.muml.uppaal.options.Options;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraph;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph;
 
 public class Muml2TraceOperation implements IWorkspaceRunnable {
 	

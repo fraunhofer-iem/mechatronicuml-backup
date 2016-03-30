@@ -2,11 +2,10 @@
  */
 package org.muml.example.railcab.profiles;
 
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.verification.core.runtime.RuntimeDiscreteInteractionEndpointInstance;
 
 /**
  * <!-- begin-user-doc -->

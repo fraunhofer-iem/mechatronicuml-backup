@@ -6,7 +6,7 @@
       <!-- @generated RuntimeModel -->
       <package
             uri="http://www.fujaba.de/muml/runtime/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.runtime.RuntimePackage"
+            class="org.muml.verification.core.runtime.RuntimePackage"
             genModel="model/RuntimeModel.genmodel"/>
    </extension>
 

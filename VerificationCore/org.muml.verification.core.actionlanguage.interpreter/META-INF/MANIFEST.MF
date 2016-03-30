@@ -3,11 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Action Language Interpreter Plugin
 Bundle-SymbolicName: org.muml.verification.core.actionlanguage.interpreter;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.Activator
+Bundle-Activator: org.muml.verification.core.actionlanguage.interpreter.Activator
 Require-Bundle: org.muml.verification.core.runtime;bundle-version="0.3.1",
  org.muml.pim.actionlanguage;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter,
- de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions
+Export-Package: org.muml.verification.core.actionlanguage.interpreter,
+ org.muml.verification.core.actionlanguage.interpreter.exceptions
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

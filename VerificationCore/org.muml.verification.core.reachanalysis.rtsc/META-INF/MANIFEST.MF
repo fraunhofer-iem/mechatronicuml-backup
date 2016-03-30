@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: RTSC Reachanalysis Plugin
 Bundle-SymbolicName: org.muml.verification.core.reachanalysis.rtsc;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.Activator
+Bundle-Activator: org.muml.verification.core.reachanalysis.rtsc.Activator
 Require-Bundle: org.eclipse.ui,
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
  org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc;bundle-version="0.4.0",
@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.ui,
  org.muml.udbm.java;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc,
- de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.actions,
- de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.export
+Export-Package: org.muml.verification.core.reachanalysis.rtsc,
+ org.muml.verification.core.reachanalysis.rtsc.actions,
+ org.muml.verification.core.reachanalysis.rtsc.export
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

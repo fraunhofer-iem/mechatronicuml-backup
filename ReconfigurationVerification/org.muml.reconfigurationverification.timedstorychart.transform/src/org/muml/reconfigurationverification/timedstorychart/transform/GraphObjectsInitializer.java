@@ -9,12 +9,11 @@ import org.muml.pim.protocol.RoleConnector;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;
-
-import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RoleInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
-import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import org.muml.verification.core.runtime.RealtimeStatechartInstance;
+import org.muml.verification.core.runtime.RoleInstance;
+import org.muml.verification.core.runtime.RuntimeFactory;
+import org.muml.verification.core.runtime.RuntimeMessageBuffer;
+import org.muml.verification.core.runtime.VariableBinding;
 
 public class GraphObjectsInitializer {
 

@@ -2,8 +2,6 @@
  */
 package org.muml.example.railcab.profiles.impl;
 
-import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -16,6 +14,7 @@ import org.muml.example.railcab.profiles.ProfileStore;
 import org.muml.example.railcab.profiles.ProfilesFactory;
 import org.muml.example.railcab.profiles.ProfilesPackage;
 import org.muml.example.railcab.profiles.RoleProfiles;
+import org.muml.verification.core.runtime.RuntimePackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -14,8 +14,7 @@ import org.muml.uppaal.adapter.job.graphviz.CICGraphvizExport;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
 import org.muml.uppaal.adapter.job.operations.Muml2TraceOperation;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraph;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph;
 
 public class Muml2TraceImageJob extends Job {
 	

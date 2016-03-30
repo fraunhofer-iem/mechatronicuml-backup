@@ -6,8 +6,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
-
-import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import org.muml.verification.core.runtime.VariableBinding;
 
 public class ValueLibrary {
 

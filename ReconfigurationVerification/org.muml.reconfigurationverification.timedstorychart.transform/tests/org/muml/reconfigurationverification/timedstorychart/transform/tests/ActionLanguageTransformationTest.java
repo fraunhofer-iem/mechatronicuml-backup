@@ -68,9 +68,8 @@ import org.muml.storydiagram.interpreter.core.notifications.StoryDrivenOutputStr
 import org.muml.storydiagram.patterns.AbstractLinkVariable;
 import org.muml.storydiagram.patterns.AbstractVariable;
 import org.muml.storydiagram.patterns.StoryPattern;
-
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
-import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import org.muml.verification.core.runtime.RuntimeFactory;
+import org.muml.verification.core.runtime.VariableBinding;
 
 public class ActionLanguageTransformationTest {
 	

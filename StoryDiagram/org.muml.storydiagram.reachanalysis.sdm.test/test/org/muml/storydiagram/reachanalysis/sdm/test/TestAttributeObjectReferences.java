@@ -20,12 +20,11 @@ import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmFactory;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
-
-import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RoleInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
-import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import org.muml.verification.core.runtime.RealtimeStatechartInstance;
+import org.muml.verification.core.runtime.RoleInstance;
+import org.muml.verification.core.runtime.RuntimeFactory;
+import org.muml.verification.core.runtime.RuntimePackage;
+import org.muml.verification.core.runtime.VariableBinding;
 
 /**
  * A meta-model may contain attributes that map arbitrary Java objects into an 

@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.muml.uppaal.adapter.mtctl.xtext.MtctlStandaloneSetup;
-
-import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
+import org.muml.verification.core.preferences.VerificationPreferencesPlugin;
 
 @RunWith(Suite.class)
 @SuiteClasses({ RunTestCases.class })

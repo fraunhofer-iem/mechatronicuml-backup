@@ -10,8 +10,7 @@ import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.pim.MumlPackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.uppaal.adapter.mtctl.xtext.MtctlStandaloneSetup;
-
-import de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencesPlugin;
+import org.muml.verification.core.preferences.VerificationPreferencesPlugin;
 
 @RunWith(Suite.class)
 @SuiteClasses({  CodegenTest.class,

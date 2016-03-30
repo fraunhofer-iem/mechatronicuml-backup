@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Verify Refinement Plugin
 Bundle-SymbolicName: org.muml.verification.core.refinement.testautomata;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.Activator
+Bundle-Activator: org.muml.verification.core.refinement.testautomata.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.muml.pim;bundle-version="0.3.2",
@@ -21,8 +21,8 @@ Require-Bundle: org.eclipse.ui,
  org.muml.core.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.refinement.testautomata,
- de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.commands
+Export-Package: org.muml.verification.core.refinement.testautomata,
+ org.muml.verification.core.refinement.testautomata.commands
 Import-Package: org.eclipse.gmf.runtime.diagram.ui.parts,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts,
  org.eclipse.m2m.qvt.oml,

@@ -27,21 +27,20 @@ import org.muml.uppaal.adapter.extension.verificationextension.VerificationExten
 import org.muml.uppaal.adapter.job.graphviz.html.GraphvizHTMLTable;
 import org.muml.uppaal.adapter.job.graphviz.html.GraphvizHTMLTableCell;
 import org.muml.uppaal.adapter.job.graphviz.html.GraphvizHTMLTableRow;
-
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.CICZoneGraphState;
-import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTransition;
-import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
-import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeAssemblyConnectorInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeComponentInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeConnectorInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CICZoneGraphState;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.DelayTransition;
+import org.muml.verification.core.runtime.MessageOnConnector;
+import org.muml.verification.core.runtime.RealtimeStatechartInstance;
+import org.muml.verification.core.runtime.RuntimeAssemblyConnectorInstance;
+import org.muml.verification.core.runtime.RuntimeBehavioralElement;
+import org.muml.verification.core.runtime.RuntimeComponentInstance;
+import org.muml.verification.core.runtime.RuntimeConnectorInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteMultiPortInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteSinglePortInstance;
+import org.muml.verification.core.runtime.RuntimeMessage;
+import org.muml.verification.core.runtime.RuntimeMessageBuffer;
+import org.muml.verification.core.runtime.RuntimeParameter;
+import org.muml.verification.core.runtime.VariableBinding;
 
 public class CICGraphvizExport extends GraphVizExport {
 	

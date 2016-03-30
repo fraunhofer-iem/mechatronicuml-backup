@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.verification.core.reachanalysis.rtsc.test
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.test.Activator
+Bundle-Activator: org.muml.verification.core.reachanalysis.rtsc.test.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc;bundle-version="0.4.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",

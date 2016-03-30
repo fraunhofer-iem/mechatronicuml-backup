@@ -11,12 +11,11 @@ import org.muml.pim.types.PrimitiveTypes;
 import org.muml.pim.types.TypesFactory;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonFactory;
+import org.muml.verification.core.runtime.RuntimeFactory;
+import org.muml.verification.core.runtime.VariableBinding;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
-
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
-import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
 
 public class TestSanitizeVariableBindings {
 
