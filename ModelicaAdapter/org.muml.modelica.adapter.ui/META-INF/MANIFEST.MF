@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Modelica Code Generator Module IDE Plug-in
 Bundle-SymbolicName: org.muml.modelica.adapter.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.modelica.m2t.ui.Activator
+Bundle-Activator: org.muml.modelica.adapter.ui.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: de.uni_paderborn.fujaba.modelica.m2t.ui,
- de.uni_paderborn.fujaba.modelica.m2t.ui.common,
- de.uni_paderborn.fujaba.modelica.m2t.ui.export,
- de.uni_paderborn.fujaba.modelica.m2t.ui.handler
+Export-Package: org.muml.modelica.adapter.ui,
+ org.muml.modelica.adapter.ui.common,
+ org.muml.modelica.adapter.ui.export,
+ org.muml.modelica.adapter.ui.handler

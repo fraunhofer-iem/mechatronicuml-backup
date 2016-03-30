@@ -2,12 +2,12 @@
 				   'http://www.storydriven.org/core/0.3.1',
 				   'http://www.fujaba.de/muml/actionlanguage/0.4.0')/]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::expression]
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::queries]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::transition::queries]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
+[import org::muml::modelica::adapter::rtsc::async::helper::queries]
+[import org::muml::modelica::adapter::rtsc::transition::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
 
 [**
 * @TODO We need a genmodel where the user can decide, if every transition has micro second aftertime. Further, also the option loop check can be set in the genmodel.

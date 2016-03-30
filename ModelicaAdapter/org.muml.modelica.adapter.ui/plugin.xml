@@ -5,7 +5,7 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.modelica.m2t.ui.handler.GenerateModelicaCodeHandler"
+            defaultHandler="org.muml.modelica.adapter.ui.handler.GenerateModelicaCodeHandler"
             id="de.uni_paderborn.fujaba.modelica.m2t.ui.GenerateModelicaCodeCommand"
             name="Generate Modelica Code">
       </command>
@@ -36,7 +36,7 @@
          point="org.eclipse.ui.exportWizards">
       <wizard
             category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.modelica.m2t.ui.export.ModelicaExportWizard"
+            class="org.muml.modelica.adapter.ui.export.ModelicaExportWizard"
             id="de.uni_paderborn.fujaba.modelica.m2t.ui.export.ModelicaExportWizard"
             name="Modelica">
       </wizard>

@@ -8,13 +8,13 @@
                 'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
                 'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::expression]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::pkg]
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+[import org::muml::modelica::adapter::rtsc::util::pkg]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::state::queries]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::time]
+[import org::muml::modelica::adapter::rtsc::state::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
+[import org::muml::modelica::adapter::rtsc::util::query::time]
 
 [**
  * Create declarations for the states

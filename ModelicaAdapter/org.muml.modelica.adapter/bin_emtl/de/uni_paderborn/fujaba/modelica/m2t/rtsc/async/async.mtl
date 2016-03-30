@@ -3,13 +3,13 @@
 			  'http://www.fujaba.de/muml/msgtype/0.4.0',
 			  'http://www.fujaba.de/modelica/m2t/transform/0.4.0')]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::expression]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::port]
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+[import org::muml::modelica::adapter::rtsc::async::helper::port]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::queries]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::queries]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
+[import org::muml::modelica::adapter::rtsc::async::queries]
+[import org::muml::modelica::adapter::rtsc::async::helper::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
 
 [**
  * Create raise message declarations.

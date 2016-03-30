@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+
+[import org::muml::modelica::adapter::component::component]
+
+[template public generateElement(cic : ComponentInstanceConfiguration)]
+[comment @main/]
+	[cic.generateRootCIC(cic.createRegionInstances())/]
+[/template]
+
+[**
+ * Invokes the qvto transformation which transforms a Region into a
+ * RegionInstance. This is an in-place m2m transformation and does not
+ * change the original/source model.
+ * @param cic the "root" component instance configuration
+*/]
+[query public createRegionInstances(cic : ComponentInstanceConfiguration) : Map =
+	invoke('de.uni_paderborn.fujaba.modelica.m2t.instantiator.RegionInstanceInstantiator',
+		'instantiate(de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)',
+		Sequence{cic}) 
+/]

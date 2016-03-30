@@ -10,7 +10,7 @@
 				'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::component::component]
+[import org::muml::modelica::adapter::component::component]
 
 [template public generateElement(aRootNode : RootNode)] 
 [comment @main/]

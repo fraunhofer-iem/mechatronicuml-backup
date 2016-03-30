@@ -126,7 +126,7 @@ public class ModelicaTest {
 			IFolder f = project.getFolder("gen-folder");
 			f.create(true, true, new NullProgressMonitor());
 
-			de.uni_paderborn.fujaba.modelica.m2t.ui.common.Generator.generateCode(configuration, f,
+			org.muml.modelica.adapter.ui.common.Generator.generateCode(configuration, f,
 					new NullProgressMonitor());
 			IFolder sourceFolder = f;
 			Process myProcess = new ProcessBuilder("/data/jenkins/modelica/moparser","-v","3.1", "-a", "-x", "-r" , new File(sourceFolder.getRawLocation().makeAbsolute().toOSString()).toString() ).start();

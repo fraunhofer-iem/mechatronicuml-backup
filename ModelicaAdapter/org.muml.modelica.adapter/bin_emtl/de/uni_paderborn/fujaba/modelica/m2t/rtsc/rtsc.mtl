@@ -9,21 +9,21 @@
 			 'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
 			 'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::variable]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::operation]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::state::state]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::transition::transition]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::clock::clock]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::async]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::hybrid::hybrid]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::pkg]
-[import de::uni_paderborn::fujaba::modelica::m2t::component::port]
+[import org::muml::modelica::adapter::rtsc::actionlanguage::variable]
+[import org::muml::modelica::adapter::rtsc::actionlanguage::operation]
+[import org::muml::modelica::adapter::rtsc::state::state]
+[import org::muml::modelica::adapter::rtsc::transition::transition]
+[import org::muml::modelica::adapter::rtsc::clock::clock]
+[import org::muml::modelica::adapter::rtsc::async::async]
+[import org::muml::modelica::adapter::rtsc::hybrid::hybrid]
+[import org::muml::modelica::adapter::rtsc::util::pkg]
+[import org::muml::modelica::adapter::component::port]
 
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::annotation]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::keyword]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::state::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::annotation]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
+[import org::muml::modelica::adapter::rtsc::util::query::keyword]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::state::queries]
 
 
 [**
