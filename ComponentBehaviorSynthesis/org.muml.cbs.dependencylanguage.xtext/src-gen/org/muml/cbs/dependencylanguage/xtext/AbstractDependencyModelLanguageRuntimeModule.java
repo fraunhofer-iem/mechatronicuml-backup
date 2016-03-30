@@ -89,8 +89,8 @@ public abstract class AbstractDependencyModelLanguageRuntimeModule extends org.e
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends de.uni_paderborn.fujaba.muml.validation.DependencyModelLanguageValidator> bindDependencyModelLanguageValidator() {
-		return de.uni_paderborn.fujaba.muml.validation.DependencyModelLanguageValidator.class;
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.muml.cbs.dependencylanguage.xtext.validation.DependencyModelLanguageValidator> bindDependencyModelLanguageValidator() {
+		return org.muml.cbs.dependencylanguage.xtext.validation.DependencyModelLanguageValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.exporting.QualifiedNamesFragment
@@ -100,7 +100,7 @@ public abstract class AbstractDependencyModelLanguageRuntimeModule extends org.e
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
-		return de.uni_paderborn.fujaba.muml.scoping.DependencyModelLanguageScopeProvider.class;
+		return org.muml.cbs.dependencylanguage.xtext.scoping.DependencyModelLanguageScopeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
@@ -135,12 +135,12 @@ public abstract class AbstractDependencyModelLanguageRuntimeModule extends org.e
 
 	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
 	public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
-		return de.uni_paderborn.fujaba.muml.generator.DependencyModelLanguageGenerator.class;
+		return org.muml.cbs.dependencylanguage.xtext.generator.DependencyModelLanguageGenerator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
-		return de.uni_paderborn.fujaba.muml.formatting.DependencyModelLanguageFormatter.class;
+		return org.muml.cbs.dependencylanguage.xtext.formatting.DependencyModelLanguageFormatter.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment

@@ -49,7 +49,6 @@ class Mtctl2English {
 	def serializeProperty(Property it) '''«expr(it.expression, true).toString().toFirstUpper».'''
 	def propertyWithResult(Property it, boolean fulfilled) '''The verification result is that «expr(it.expression, fulfilled).toString()».'''
 	
-	
 	def dispatch expr(QuantifierExpr expr, boolean positive) {
 		var thereIs = (expr instanceof ExistenceQuantExpr == positive);
 		if (specialCase(expr, positive) != null)

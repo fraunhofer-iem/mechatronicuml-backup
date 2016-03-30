@@ -22,7 +22,7 @@ public class ExamplesTestSuite {
 	@BeforeClass 
 	public static void init() {
 
-	 MtctlStandaloneSetup.doSetup();
+		MtctlStandaloneSetup.doSetup();
 		CorePackage.eINSTANCE.eClass();
 		ModelinstancePackage.eINSTANCE.eClass();
 

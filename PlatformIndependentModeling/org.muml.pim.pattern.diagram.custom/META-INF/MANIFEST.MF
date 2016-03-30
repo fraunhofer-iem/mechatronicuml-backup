@@ -21,7 +21,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.swt,
  org.eclipse.jface,
  org.muml.modelcopy.qvto.library;bundle-version="1.0.0",
- org.muml.pim.coordinationspecification.common;bundle-version="0.5.0"
+ org.muml.pim.coordinationspecification.common;bundle-version="0.5.0",
+ org.muml.pim.actionlanguage.xtext
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

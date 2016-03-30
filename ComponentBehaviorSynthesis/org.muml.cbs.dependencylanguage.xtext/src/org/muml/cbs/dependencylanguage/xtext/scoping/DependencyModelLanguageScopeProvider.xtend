@@ -10,35 +10,6 @@
  */
 package org.muml.cbs.dependencylanguage.xtext.scoping
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory
-import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin
-import de.uni_paderborn.fujaba.modelinstance.RootNode
-import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment
-import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall
-import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression
-import de.uni_paderborn.fujaba.muml.behavior.Operation
-import de.uni_paderborn.fujaba.muml.behavior.Parameter
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement
-import de.uni_paderborn.fujaba.muml.behavior.Variable
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent
-import de.uni_paderborn.fujaba.muml.component.HybridPort
-import de.uni_paderborn.fujaba.muml.component.Port
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint
-import de.uni_paderborn.fujaba.muml.dependencylanguage.DependencyModel
-import de.uni_paderborn.fujaba.muml.dependencylanguage.ForbiddenStateCombination
-import de.uni_paderborn.fujaba.muml.dependencylanguage.SynthesizableBehavior
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType
-import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository
-import de.uni_paderborn.fujaba.muml.naming.MumlQualifiedNameProvider
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State
-import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition
-import de.uni_paderborn.fujaba.muml.types.DataType
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType
 import java.util.List
 import org.eclipse.emf.common.util.BasicEList
 import org.eclipse.emf.ecore.EObject
@@ -47,6 +18,35 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import org.muml.cbs.dependencylanguage.DependencyModel
+import org.muml.cbs.dependencylanguage.ForbiddenStateCombination
+import org.muml.cbs.dependencylanguage.SynthesizableBehavior
+import org.muml.cbs.dependencylanguage.xtext.naming.MumlQualifiedNameProvider
+import org.muml.core.modelinstance.ModelElementCategory
+import org.muml.core.modelinstance.ModelInstancePlugin
+import org.muml.core.modelinstance.RootNode
+import org.muml.pim.actionlanguage.Assignment
+import org.muml.pim.actionlanguage.OperationCall
+import org.muml.pim.actionlanguage.TriggerMessageExpression
+import org.muml.pim.behavior.Operation
+import org.muml.pim.behavior.Parameter
+import org.muml.pim.behavior.ParameterBinding
+import org.muml.pim.behavior.TypedNamedElement
+import org.muml.pim.behavior.Variable
+import org.muml.pim.component.AtomicComponent
+import org.muml.pim.component.HybridPort
+import org.muml.pim.component.Port
+import org.muml.pim.connector.DiscreteInteractionEndpoint
+import org.muml.pim.msgtype.MessageType
+import org.muml.pim.msgtype.MessageTypeRepository
+import org.muml.pim.realtimestatechart.Clock
+import org.muml.pim.realtimestatechart.RealtimeStatechart
+import org.muml.pim.realtimestatechart.Region
+import org.muml.pim.realtimestatechart.State
+import org.muml.pim.realtimestatechart.SynchronizationChannel
+import org.muml.pim.realtimestatechart.Transition
+import org.muml.pim.types.DataType
+import org.muml.pim.types.PrimitiveDataType
 
 /**
  * This class contains custom scoping description.

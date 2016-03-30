@@ -22,7 +22,6 @@ import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.pim.behavior.Parameter;
 import org.muml.pim.behavior.ParameterBinding;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
-import org.muml.pim.pattern.CoordinationPattern;
 import org.muml.pim.pattern.VerifiedConfiguration;
 
 

@@ -6,7 +6,7 @@ package org.muml.cbs.dependencylanguage.xtext.formatting
 import com.google.inject.Inject
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter
 import org.eclipse.xtext.formatting.impl.FormattingConfig
-import de.uni_paderborn.fujaba.muml.services.DependencyModelLanguageGrammarAccess
+import org.muml.cbs.dependencylanguage.xtext.services.DependencyModelLanguageGrammarAccess
 
 /**
  * This class contains custom formatting description.

@@ -25,6 +25,7 @@ import org.muml.uppaal.declarations.global.ChannelPriority
 import org.muml.uppaal.declarations.global.DefaultChannelPriority
 import org.muml.uppaal.declarations.system.InstantiationList
 import org.muml.uppaal.declarations.system.ProgressMeasure
+import org.muml.uppaal.declarations.system.System
 import org.muml.uppaal.declarations.system.TemplateDeclaration
 import org.muml.uppaal.expressions.ArithmeticExpression
 import org.muml.uppaal.expressions.ArithmeticOperator
@@ -346,7 +347,7 @@ class UppaalSerialization {
 	def dispatch expression(BitShiftExpression it) '''«expressionOptionalParentheses(firstExpr)» «IF operator==BitShiftOperator::LEFT»<<«ENDIF»«IF operator==BitShiftOperator::RIGHT»>>«ENDIF» «expressionOptionalParenthesesNonAssoc(secondExpr)»'''
 	
 	/* define system */
-	def system(org.muml.uppaal.declarations.system.System it) '''system «FOR i : instantiationList ?:emptyList SEPARATOR ' < '»«instantiationList(i)»«ENDFOR»;'''
+	def system(System it) '''system «FOR i : instantiationList ?:emptyList SEPARATOR ' < '»«instantiationList(i)»«ENDFOR»;'''
 	
 	def instantiationList(InstantiationList it) '''«FOR AbstractTemplate i : template ?:emptyList SEPARATOR ','»«name(i)»«ENDFOR»'''
 	

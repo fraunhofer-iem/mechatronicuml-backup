@@ -5,8 +5,6 @@ import org.eclipse.xtext.scoping.IScopeProvider;
 
 import com.google.inject.Provider;
 
-import de.uni_paderborn.fujaba.muml.scoping.DependencyModelLanguageScopeProvider;
-
 
 
 public class DependencyModelLanguageScopeProviderFactory implements Provider<IScopeProvider> {
