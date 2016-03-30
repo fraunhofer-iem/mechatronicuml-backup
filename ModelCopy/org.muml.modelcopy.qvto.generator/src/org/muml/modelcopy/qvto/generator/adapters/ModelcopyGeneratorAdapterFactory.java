@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelcopy.qvto.generator.adapters;
+package org.muml.modelcopy.qvto.generator.adapters;
 
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.generator.GeneratorAdapter;

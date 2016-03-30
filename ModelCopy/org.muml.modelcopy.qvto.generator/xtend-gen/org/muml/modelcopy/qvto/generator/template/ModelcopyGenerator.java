@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelcopy.qvto.generator.template;
+package org.muml.modelcopy.qvto.generator.template;
 
 import com.google.common.collect.Iterables;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelcopy.qvto.library;
+package org.muml.modelcopy.qvto.library;
 
 import java.util.ArrayList;
 import java.util.Collection;

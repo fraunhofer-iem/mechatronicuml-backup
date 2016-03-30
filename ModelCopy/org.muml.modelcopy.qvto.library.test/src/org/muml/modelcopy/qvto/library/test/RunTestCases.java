@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelcopy.qvto.library.test;
+package org.muml.modelcopy.qvto.library.test;
 
 import java.util.Collection;
 import java.util.LinkedList;

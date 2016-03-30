@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelcopy.qvto.generator.template
+package org.muml.modelcopy.qvto.generator.template
 
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EPackage

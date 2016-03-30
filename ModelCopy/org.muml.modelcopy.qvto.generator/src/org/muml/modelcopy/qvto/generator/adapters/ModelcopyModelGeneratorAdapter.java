@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelcopy.qvto.generator.adapters;
+package org.muml.modelcopy.qvto.generator.adapters;
 
 import java.io.PrintWriter;
 
@@ -11,7 +11,7 @@ import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 
-import de.uni_paderborn.fujaba.modelcopy.qvto.generator.template.ModelcopyGenerator;
+import org.muml.modelcopy.qvto.generator.template.ModelcopyGenerator;
 
 public class ModelcopyModelGeneratorAdapter extends GenModelGeneratorAdapter {
 

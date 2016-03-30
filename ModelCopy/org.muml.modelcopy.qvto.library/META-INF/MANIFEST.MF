@@ -7,4 +7,4 @@ Bundle-Vendor:
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml,
  org.eclipse.m2m.qvt.oml.runtime;bundle-version="3.5.0"
-Export-Package: de.uni_paderborn.fujaba.modelcopy.qvto.library
+Export-Package: org.muml.modelcopy.qvto.library

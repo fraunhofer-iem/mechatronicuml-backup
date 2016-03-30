@@ -1,6 +1,6 @@
 library ModelcopyLibrary;
 
-import de.uni_paderborn.fujaba.modelcopy.qvto._library.ModelcopyBlackbox;
+import org.muml.modelcopy.qvto._library.ModelcopyBlackbox;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
