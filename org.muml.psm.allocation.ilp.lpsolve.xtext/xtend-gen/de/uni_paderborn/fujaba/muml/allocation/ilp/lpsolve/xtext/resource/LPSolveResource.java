@@ -1,12 +1,14 @@
 package de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext.resource;
 
-import com.google.inject.Injector;
-import de.uni_paderborn.fujaba.muml.allocation.ilp.IntegerLinearProgram;
-import de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext.LPSolveStandaloneSetup;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.common.xtext.AbstractLanguageResource;
+import org.muml.psm.allocation.ilp.IntegerLinearProgram;
+import org.muml.psm.allocation.ilp.lpsolve.xtext.LPSolveStandaloneSetup;
+
+import com.google.inject.Injector;
 
 @SuppressWarnings("all")
-public class LPSolveResource /* implements AbstractLanguageResource  */{
+public class LPSolveResource extends AbstractLanguageResource {
   @Override
   protected Injector getInjector() {
     LPSolveStandaloneSetup _lPSolveStandaloneSetup = new LPSolveStandaloneSetup();
