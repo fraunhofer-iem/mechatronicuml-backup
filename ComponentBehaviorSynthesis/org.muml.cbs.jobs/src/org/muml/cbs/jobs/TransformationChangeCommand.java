@@ -1,4 +1,4 @@
-package org.muml.cbs.dependencylanguage.synthesis.jobs;
+package org.muml.cbs.jobs;
 
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.Diagnostic;

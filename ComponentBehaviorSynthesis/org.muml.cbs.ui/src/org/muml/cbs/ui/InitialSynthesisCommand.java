@@ -1,4 +1,4 @@
-package org.muml.cbs.dependencylanguage.synthesis.ui;
+package org.muml.cbs.ui;
 
 import java.util.Iterator;
 
@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.muml.cbs.dependencylanguage.synthesis.jobs.InitialSynthesisJob;
+import org.muml.cbs.jobs.InitialSynthesisJob;
 
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;

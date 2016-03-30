@@ -1,4 +1,4 @@
-package org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox;
+package org.muml.cbs.qvtoblackbox;
 
 import org.eclipse.emf.ecore.EObject;
 import org.muml.cbs.dependencylanguage.xtext.common.DependencyModelLanguageResource;

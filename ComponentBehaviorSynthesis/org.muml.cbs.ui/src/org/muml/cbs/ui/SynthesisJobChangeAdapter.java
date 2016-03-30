@@ -1,4 +1,4 @@
-package org.muml.cbs.dependencylanguage.synthesis.ui;
+package org.muml.cbs.ui;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;

@@ -26,7 +26,7 @@
 								<with variable="selection">
 									<iterate ifEmpty="false">
 									<instanceof
-									value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart">
+									value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart">
 									</instanceof>
 									</iterate>
 								</with>
@@ -45,7 +45,7 @@
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="org.muml.cbs.dependencylanguage.synthesis.ui.InitialSynthesisCommand"
+           defaultHandler="org.muml.cbs.ui.InitialSynthesisCommand"
            description="Intially synthesize the component's behavior"
            id="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui.commands.InitialSynthesis"
            name="Synthesize Intra-Behavior">

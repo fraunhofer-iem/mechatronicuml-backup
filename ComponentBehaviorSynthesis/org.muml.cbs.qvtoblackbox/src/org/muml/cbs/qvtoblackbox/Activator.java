@@ -1,4 +1,4 @@
-package org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox;
+package org.muml.cbs.qvtoblackbox;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;

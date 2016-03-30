@@ -6,9 +6,9 @@
       <unit
             description="serializes EObjects using their XText representation"
             name="XTextSerializerLibUnit"
-            namespace="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox">
+            namespace="org.muml.cbs.qvtoblackbox">
          <library
-               class="org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox.XTextSerializerBlackbox"
+               class="org.muml.cbs.qvtoblackbox.XTextSerializerBlackbox"
                name="XTextSerializerLibrary">
             <metamodel
                   nsURI="http://www.eclipse.org/emf/2002/Ecore">

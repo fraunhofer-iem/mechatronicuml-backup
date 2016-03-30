@@ -12,4 +12,4 @@ Require-Bundle: org.muml.pim,
  org.eclipse.m2m.qvt.oml,
  org.eclipse.gmf.runtime.common.core,
  org.muml.cbs.jobs
-Export-Package: org.muml.cbs.dependencylanguage.synthesis.ui
+Export-Package: org.muml.cbs.ui
