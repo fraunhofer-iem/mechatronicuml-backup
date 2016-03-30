@@ -3,9 +3,9 @@ package de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.export
 import org.muml.core.reachanalysis.core.export.ApplicationSpecificDecorator;
 import org.muml.core.reachanalysis.core.export.GraphVizColors;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.pim.realtimestatechart.State;
 
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 
 public class TestAutomatonGraphDecorator extends ApplicationSpecificDecorator {

@@ -3,8 +3,6 @@
  */
 package de.uni_paderborn.fujaba.graphviz.plain.xtext.serializer;
 
-import de.uni_paderborn.fujaba.graphviz.plain.xtext.serializer.AbstractGraphvizPlainSyntacticSequencer;
-
 @SuppressWarnings("all")
 public class GraphvizPlainSyntacticSequencer extends AbstractGraphvizPlainSyntacticSequencer {
 }

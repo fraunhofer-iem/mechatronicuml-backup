@@ -3,8 +3,6 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.validation;
 
-import de.uni_paderborn.fujaba.graphviz.dot.xtext.validation.AbstractDotLanguageValidator;
-
 /**
  * Custom validation rules.
  * 

@@ -1,11 +1,5 @@
 package de.uni_paderborn.fujaba.graphviz.plain.xtext.tests;
 
-import com.google.inject.Inject;
-import de.uni_paderborn.fujaba.graphviz.plain.PlainEdge;
-import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
-import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
-import de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlainInjectorProvider;
-import de.uni_paderborn.fujaba.graphviz.util.Point;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
@@ -15,6 +9,14 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.google.inject.Inject;
+
+import de.uni_paderborn.fujaba.graphviz.plain.PlainEdge;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
+import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
+import de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlainInjectorProvider;
+import de.uni_paderborn.fujaba.graphviz.util.Point;
 
 @RunWith(XtextRunner.class)
 @InjectWith(GraphvizPlainInjectorProvider.class)

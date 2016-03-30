@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english;
 
 import com.google.common.base.Objects;
-import de.uni_paderborn.fujaba.muml.common.naming.QualifiedName;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.AndExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.ImplyExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.NotExpr;
@@ -52,6 +51,7 @@ import java.util.concurrent.TimeUnit;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.muml.pim.common.naming.QualifiedName;
 
 @SuppressWarnings("all")
 public class Mtctl2English {

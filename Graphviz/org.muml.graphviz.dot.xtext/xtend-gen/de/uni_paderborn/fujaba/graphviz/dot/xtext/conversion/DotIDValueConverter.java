@@ -1,13 +1,15 @@
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.conversion;
 
-import com.google.common.base.Objects;
 import java.util.Collections;
+
 import org.eclipse.xtext.conversion.IValueConverter;
 import org.eclipse.xtext.conversion.ValueConverterException;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+
+import com.google.common.base.Objects;
 
 @SuppressWarnings("all")
 public class DotIDValueConverter implements IValueConverter<String> {
