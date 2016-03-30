@@ -20,8 +20,8 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  org.muml.core.common;bundle-version="0.5.0",
  org.muml.core;bundle-version="1.0.1",
  org.muml.uppaal.options;bundle-version="0.5.0"
-Export-Package: de.uni_paderborn.uppaal.job,
- de.uni_paderborn.uppaal.job.layout
+Export-Package: org.muml.uppaal.job,
+ org.muml.uppaal.job.layout
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy

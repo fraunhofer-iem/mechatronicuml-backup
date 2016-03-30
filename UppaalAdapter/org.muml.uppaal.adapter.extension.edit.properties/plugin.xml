@@ -33,22 +33,22 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.extension.properties.verificationExtension.editor.CommittedExtensionEditor$Factory"
+             factory="org.muml.uppaal.adapter.extension.verificationextension.properties.verificationExtension.editor.CommittedExtensionEditor$Factory"
              type="http://www.fujaba.de/muml/verification/extension/0.4.0#CommittedExtension">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.extension.properties.verificationExtension.editor.ClockBindingEditor$Factory"
+             factory="org.muml.uppaal.adapter.extension.verificationextension.properties.verificationExtension.editor.ClockBindingEditor$Factory"
              type="http://www.fujaba.de/muml/verification/extension/0.4.0#ClockBinding">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.extension.properties.verificationExtension.editor.ElementToVerifyExtensionEditor$Factory"
+             factory="org.muml.uppaal.adapter.extension.verificationextension.properties.verificationExtension.editor.ElementToVerifyExtensionEditor$Factory"
              type="http://www.fujaba.de/muml/verification/extension/0.4.0#ElementToVerifyExtension">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.extension.properties.verificationExtension.editor.ClockBindingsExtensionEditor$Factory"
+             factory="org.muml.uppaal.adapter.extension.verificationextension.properties.verificationExtension.editor.ClockBindingsExtensionEditor$Factory"
              type="http://www.fujaba.de/muml/verification/extension/0.4.0#ClockBindingsExtension">
        </propertyEditor>
     
@@ -59,7 +59,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.verification.extension.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.uppaal.adapter.extension.verificationextension.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -67,7 +67,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.verification.extension.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.uppaal.adapter.extension.verificationextension.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

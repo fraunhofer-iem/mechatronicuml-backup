@@ -4,7 +4,7 @@
 	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
    	<unit name="TraceLibUnit" namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
     <library name="TraceLib" 
-             class="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox.TraceLibrary">
+             class="org.muml.uppaal.adapter.blackbox.TraceLibrary">
       <metamodel nsURI="http://www.uni-paderborn.de/uppaal/0.4.0"/>       
       <metamodel nsURI="http://www.uni-paderborn.de/uppaal/trace/0.4.0"/>
       <metamodel
@@ -19,7 +19,7 @@
           name="ValueUnit"
           namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
        <library
-             class="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox.ValueLibrary"
+             class="org.muml.uppaal.adapter.blackbox.ValueLibrary"
              name="ValueLib">
           <metamodel
                 nsURI="http://www.uni-paderborn.de/uppaal/trace/0.4.0">
@@ -33,7 +33,7 @@
           name="ProgressUnit"
           namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
        <library
-             class="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox.ProgressLibrary"
+             class="org.muml.uppaal.adapter.blackbox.ProgressLibrary"
              name="ProgressLib">
        </library>
     </unit>
@@ -41,7 +41,7 @@
           name="CharSubstitutionUnit"
           namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
        <library
-             class="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox.CharSubstitutionLibrary"
+             class="org.muml.uppaal.adapter.blackbox.CharSubstitutionLibrary"
              name="CharSubstitutionLibrary">
        </library>
     </unit>
@@ -52,7 +52,7 @@
           name="MtctlLibrary"
           namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
        <library
-             class="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox.MtctlLibrary"
+             class="org.muml.uppaal.adapter.blackbox.MtctlLibrary"
              name="MtctlLibrary">
              <metamodel
              	nsURI="http://www.eclipse.org/emf/2002/Ecore">
@@ -81,7 +81,7 @@
           name="TimeLibUnit"
           namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
        <library
-             class="de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox.TimeUnitLibrary"
+             class="org.muml.uppaal.adapter.blackbox.TimeUnitLibrary"
              name="TimeLib">
           <metamodel
                 nsURI="http://www.fujaba.de/muml/valuetype/0.4.0">

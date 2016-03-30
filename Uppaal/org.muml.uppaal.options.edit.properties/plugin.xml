@@ -41,7 +41,7 @@
       <propertySections contributorId="">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.tabs.OptionsTabElementFilter"
+            filter="org.muml.uppaal.options.properties.tabs.OptionsTabElementFilter"
             id="options"
             tab="options">
              <input
@@ -58,17 +58,17 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.options.editor.OptionsEditor$Factory"
+             factory="org.muml.uppaal.options.properties.options.editor.OptionsEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options#Options">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.options.editor.CoordinationProtocolOptionsEditor$Factory"
+             factory="org.muml.uppaal.options.properties.options.editor.CoordinationProtocolOptionsEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options#CoordinationProtocolOptions">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.options.editor.HideOptionExtensionEditor$Factory"
+             factory="org.muml.uppaal.options.properties.options.editor.HideOptionExtensionEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options#HideOptionExtension">
        </propertyEditor>
     
@@ -79,7 +79,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.uppaal.options.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -87,7 +87,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.verification.uppaal.options.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.uppaal.options.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

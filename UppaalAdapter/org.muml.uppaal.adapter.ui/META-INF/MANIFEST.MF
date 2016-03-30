@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.muml.uppaal.adapter.mtctl.english;bundle-version="0.4.0",
  org.muml.core.export;bundle-version="0.4.0",
  org.muml.pim.pattern.diagram.custom;bundle-version="0.5.0"
-Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.ui
+Export-Package: org.muml.uppaal.adapter.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

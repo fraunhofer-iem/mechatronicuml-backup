@@ -7,7 +7,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.UppaalVerificationAction"
          name="Run UPPAAL Model Checking"
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.UppaalVerifyForResultAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.UppaalVerifyForResultAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
@@ -15,7 +15,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalXMLAction"
          name="Export UPPAAL XML File"
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportUppaalXMLAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalXMLAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.commands" id="menu-commands">
@@ -23,7 +23,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalModelAction"
          name="Export UPPAAL Model"
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportUppaalModelAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalModelAction"/>
    </extension>
 
 
@@ -33,7 +33,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalWizardModelAction"
          name="Export UPPAAL Model (Wizard)..."
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.MUML2ExportUppaalWizardDialogAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.wizard.MUML2ExportUppaalWizardDialogAction"/>
    </extension>
 
 
@@ -44,7 +44,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportTraceImageAction"
          name="Run UPPAAL Model Checking for a Trace"
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportTraceImageAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.ExportTraceImageAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.commands" id="menu-commands">
@@ -52,7 +52,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.AddDefaultPropertiesAction"
          name="Add Default Verification Properties"
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.AddDefaultPropertiesAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.AddDefaultPropertiesAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.menus">
@@ -174,7 +174,7 @@
          point="org.eclipse.ui.exportWizards">
       <wizard
             category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.MUML2UppaalExportWizard"
+            class="org.muml.uppaal.adapter.ui.wizard.MUML2UppaalExportWizard"
             id="de.uni_paderborn.fujaba.verification.upaal.export"
             name="MechatronicUML to Uppaal">
       </wizard>

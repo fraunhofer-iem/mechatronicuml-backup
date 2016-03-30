@@ -13,13 +13,12 @@ import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.options.CoordinationProtocolOptions;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
-import de.uni_paderborn.uppaal.NTA;
-import de.uni_paderborn.uppaal.job.VerifyTAOperation;
-import de.uni_paderborn.uppaal.requirements.PropertyRepository;
+import org.muml.uppaal.NTA;
+import org.muml.uppaal.job.VerifyTAOperation;
+import org.muml.uppaal.options.CoordinationProtocolOptions;
+import org.muml.uppaal.options.OptionsFactory;
+import org.muml.uppaal.options.TraceOptions;
+import org.muml.uppaal.requirements.PropertyRepository;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -58,14 +57,14 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements
 	public void initialize() {
 		this.setLabel("Check UPPAAL");
 		this.addPortSpecification(PortType.IN, "nta", false,
-				de.uni_paderborn.uppaal.NTA.class);
+				org.muml.uppaal.NTA.class);
 		this.addPortSpecification(PortType.IN, "property_repository", false,
-				de.uni_paderborn.uppaal.requirements.PropertyRepository.class);
+				org.muml.uppaal.requirements.PropertyRepository.class);
 		this.addPortSpecification(
 				PortType.IN,
 				"options",
 				true,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);
+				org.muml.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "trace_repository", false);
 	}
 

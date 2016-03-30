@@ -43,18 +43,17 @@ import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
+import org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionFactory;
+import org.muml.uppaal.adapter.mtctl.PropertyRepository;
+import org.muml.uppaal.adapter.mtctl.xtext.MtctlRuntimeModule;
+import org.muml.uppaal.adapter.mtctl.xtext.scoping.MtctlScopeProvider;
+import org.muml.uppaal.options.CoordinationProtocolOptions;
+import org.muml.uppaal.options.OptionsFactory;
+import org.muml.uppaal.options.TraceOptions;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlRuntimeModule;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.options.CoordinationProtocolOptions;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.options.TraceOptions;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvider;
-import de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionFactory;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -144,7 +143,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 				EObject.class);
 //				de.uni_paderborn.fujaba.modelinstance.RootNode.class);
 		this.addPortSpecification(PortType.IN, "options", true,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);
+				org.muml.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "results", false);
 	}
 
@@ -189,7 +188,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 			}
 			
 			
-			extension = protocol.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE.getElementToVerifyExtension());
+			extension = protocol.getExtension(org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE.getElementToVerifyExtension());
 			if (extension == null) {
 				extension = VerificationExtensionFactory.eINSTANCE.createElementToVerifyExtension();
 				protocol.getExtensions().add(extension);
@@ -227,7 +226,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 				protocol = (CoordinationProtocol) cur;
 
 				if (protocol
-						.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE
+						.getExtension(org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
 								.getElementToVerifyExtension()) != null) {
 					break;
 				}

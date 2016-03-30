@@ -10,7 +10,7 @@
       <!-- @generated results -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results"
-            class="de.uni_paderborn.fujaba.muml.verification.uppaal.results.ResultsPackage"
+            class="org.muml.uppaal.adapter.results.ResultsPackage"
             genModel="model/results.genmodel"/>
    </extension>
 

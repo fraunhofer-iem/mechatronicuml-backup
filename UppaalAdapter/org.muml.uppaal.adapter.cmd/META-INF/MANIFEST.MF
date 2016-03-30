@@ -8,9 +8,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core.common;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.cmd,
- de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.misc,
- de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.trace,
- de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.tuning
+Export-Package: org.muml.uppaal.adapter.cmd,
+ org.muml.uppaal.adapter.cmd.options.misc,
+ org.muml.uppaal.adapter.cmd.options.trace,
+ org.muml.uppaal.adapter.cmd.options.tuning
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

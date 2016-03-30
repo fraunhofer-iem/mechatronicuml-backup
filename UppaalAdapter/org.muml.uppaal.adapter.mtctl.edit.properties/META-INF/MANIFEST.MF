@@ -13,12 +13,13 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.uppaal.adapter.mtctl.xtext.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.constraint,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.BooleanLogic.editor,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.mtctl.editor,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.tabs
+Export-Package: org.muml.uppaal.adapter.mtctl.properties.BooleanLogic.editor,
+ org.muml.uppaal.adapter.mtctl.properties.Comparables.editor,
+ org.muml.uppaal.adapter.mtctl.properties.Predicates.editor,
+ org.muml.uppaal.adapter.mtctl.properties.Quantifiers.editor,
+ org.muml.uppaal.adapter.mtctl.properties.Sets.editor,
+ org.muml.uppaal.adapter.mtctl.properties.constraint,
+ org.muml.uppaal.adapter.mtctl.properties.metamodel,
+ org.muml.uppaal.adapter.mtctl.properties.mtctl.editor,
+ org.muml.uppaal.adapter.mtctl.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

@@ -10,7 +10,7 @@
       <!-- @generated options -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options"
-            class="de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsPackage"
+            class="org.muml.uppaal.options.OptionsPackage"
             genModel="model/options.genmodel"/>
    </extension>
 

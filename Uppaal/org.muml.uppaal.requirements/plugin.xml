@@ -10,7 +10,7 @@
       <!-- @generated requirements -->
       <package
             uri="http://www.uni-paderborn.de/requirements/0.4.0"
-            class="de.uni_paderborn.uppaal.requirements.RequirementsPackage"
+            class="org.muml.uppaal.requirements.RequirementsPackage"
             genModel="model/requirements.genmodel"/>
    </extension>
 
@@ -18,7 +18,7 @@
       <!-- @generated requirements -->
       <parser
             type="requirements"
-            class="de.uni_paderborn.uppaal.requirements.util.RequirementsResourceFactoryImpl"/>
+            class="org.muml.uppaal.requirements.util.RequirementsResourceFactoryImpl"/>
    </extension>
 
 </plugin>

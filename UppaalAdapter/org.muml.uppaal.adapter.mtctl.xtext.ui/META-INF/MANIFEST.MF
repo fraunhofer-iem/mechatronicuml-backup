@@ -28,10 +28,10 @@ Require-Bundle: org.muml.uppaal.adapter.mtctl.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.fujaba.muml.ui.properties,
- de.uni_paderborn.fujaba.muml.verification.uppaal.ui,
- de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist,
- de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.antlr,
- de.uni_paderborn.fujaba.muml.verification.uppaal.ui.internal,
- de.uni_paderborn.fujaba.muml.verification.uppaal.ui.quickfix
-Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.uppaal.ui.internal.MtctlActivator
+Export-Package: org.muml.uppaal.adapter.mtctl.xtext.ui,
+ org.muml.uppaal.adapter.mtctl.xtext.ui.contentassist,
+ org.muml.uppaal.adapter.mtctl.xtext.ui.contentassist.antlr,
+ org.muml.uppaal.adapter.mtctl.xtext.ui.internal,
+ org.muml.uppaal.adapter.mtctl.xtext.ui.properties,
+ org.muml.uppaal.adapter.mtctl.xtext.ui.quickfix
+Bundle-Activator: org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator

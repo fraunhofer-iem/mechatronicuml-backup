@@ -20,7 +20,7 @@
       <!-- @generated verificationExtension -->
       <factory
             uri="http://www.fujaba.de/muml/verification/extension/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.verification.verificationExtension.provider.VerificationExtensionItemProviderAdapterFactory"
+            class="org.muml.uppaal.adapter.extension.verificationextension.provider.VerificationExtensionItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

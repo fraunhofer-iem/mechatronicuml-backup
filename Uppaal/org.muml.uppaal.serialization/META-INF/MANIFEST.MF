@@ -18,5 +18,5 @@ Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.uppaal.serialization
+Export-Package: org.muml.uppaal.serialization
 

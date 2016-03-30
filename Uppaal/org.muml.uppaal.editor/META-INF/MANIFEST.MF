@@ -4,19 +4,19 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.uppaal.editor;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.uppaal.presentation.UppaalEditorPlugin$Implementation
+Bundle-Activator: org.muml.uppaal.presentation.UppaalEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.uppaal.declarations.global.presentation,
- de.uni_paderborn.uppaal.declarations.presentation,
- de.uni_paderborn.uppaal.declarations.system.presentation,
- de.uni_paderborn.uppaal.expressions.presentation,
- de.uni_paderborn.uppaal.presentation,
- de.uni_paderborn.uppaal.statements.presentation,
- de.uni_paderborn.uppaal.templates.presentation,
- de.uni_paderborn.uppaal.types.presentation,
- de.uni_paderborn.uppaal.visuals.presentation
+Export-Package: org.muml.uppaal.declarations.global.presentation,
+ org.muml.uppaal.declarations.presentation,
+ org.muml.uppaal.declarations.system.presentation,
+ org.muml.uppaal.expressions.presentation,
+ org.muml.uppaal.presentation,
+ org.muml.uppaal.statements.presentation,
+ org.muml.uppaal.templates.presentation,
+ org.muml.uppaal.types.presentation,
+ org.muml.uppaal.visuals.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.muml.uppaal.edit;visibility:=reexport,

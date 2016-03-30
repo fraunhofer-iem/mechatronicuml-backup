@@ -24,16 +24,16 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.6.0";visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.uppaal.trace,
- de.uni_paderborn.uppaal.trace.diagnosticTrace,
- de.uni_paderborn.uppaal.trace.diagnosticTrace.impl,
- de.uni_paderborn.uppaal.trace.diagnosticTrace.util,
- de.uni_paderborn.uppaal.trace.formatting,
- de.uni_paderborn.uppaal.trace.generator,
- de.uni_paderborn.uppaal.trace.parser.antlr,
- de.uni_paderborn.uppaal.trace.parser.antlr.internal,
- de.uni_paderborn.uppaal.trace.scoping,
- de.uni_paderborn.uppaal.trace.serializer,
- de.uni_paderborn.uppaal.trace.services,
- de.uni_paderborn.uppaal.trace.validation
+Export-Package: org.muml.uppaal.trace,
+ org.muml.uppaal.trace.diagnosticTrace,
+ org.muml.uppaal.trace.diagnosticTrace.impl,
+ org.muml.uppaal.trace.diagnosticTrace.util,
+ org.muml.uppaal.trace.formatting,
+ org.muml.uppaal.trace.generator,
+ org.muml.uppaal.trace.parser.antlr,
+ org.muml.uppaal.trace.parser.antlr.internal,
+ org.muml.uppaal.trace.scoping,
+ org.muml.uppaal.trace.serializer,
+ org.muml.uppaal.trace.services,
+ org.muml.uppaal.trace.validation
 

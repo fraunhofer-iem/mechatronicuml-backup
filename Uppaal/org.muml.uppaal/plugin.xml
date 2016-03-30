@@ -10,7 +10,7 @@
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/0.4.0"
-            class="de.uni_paderborn.uppaal.UppaalPackage"
+            class="org.muml.uppaal.UppaalPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -18,14 +18,14 @@
       <!-- @generated uppaal -->
       <parser
             type="uppaal"
-            class="de.uni_paderborn.uppaal.util.UppaalResourceFactoryImpl"/>
+            class="org.muml.uppaal.util.UppaalResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/core/0.4.0"
-            class="de.uni_paderborn.uppaal.core.CorePackage"
+            class="org.muml.uppaal.core.CorePackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -33,7 +33,7 @@
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/types/0.4.0"
-            class="de.uni_paderborn.uppaal.types.TypesPackage"
+            class="org.muml.uppaal.types.TypesPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -41,14 +41,14 @@
       <!-- @generated uppaal -->
       <parser
             type="types"
-            class="de.uni_paderborn.uppaal.types.util.TypesResourceFactoryImpl"/>
+            class="org.muml.uppaal.types.util.TypesResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/declarations/0.4.0"
-            class="de.uni_paderborn.uppaal.declarations.DeclarationsPackage"
+            class="org.muml.uppaal.declarations.DeclarationsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -56,14 +56,14 @@
       <!-- @generated uppaal -->
       <parser
             type="declarations"
-            class="de.uni_paderborn.uppaal.declarations.util.DeclarationsResourceFactoryImpl"/>
+            class="org.muml.uppaal.declarations.util.DeclarationsResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/declarations/global"
-            class="de.uni_paderborn.uppaal.declarations.global.GlobalPackage"
+            class="org.muml.uppaal.declarations.global.GlobalPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -71,14 +71,14 @@
       <!-- @generated uppaal -->
       <parser
             type="global"
-            class="de.uni_paderborn.uppaal.declarations.global.util.GlobalResourceFactoryImpl"/>
+            class="org.muml.uppaal.declarations.global.util.GlobalResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/declarations/system"
-            class="de.uni_paderborn.uppaal.declarations.system.SystemPackage"
+            class="org.muml.uppaal.declarations.system.SystemPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -86,14 +86,14 @@
       <!-- @generated uppaal -->
       <parser
             type="system"
-            class="de.uni_paderborn.uppaal.declarations.system.util.SystemResourceFactoryImpl"/>
+            class="org.muml.uppaal.declarations.system.util.SystemResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/templates/0.4.0"
-            class="de.uni_paderborn.uppaal.templates.TemplatesPackage"
+            class="org.muml.uppaal.templates.TemplatesPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -101,14 +101,14 @@
       <!-- @generated uppaal -->
       <parser
             type="templates"
-            class="de.uni_paderborn.uppaal.templates.util.TemplatesResourceFactoryImpl"/>
+            class="org.muml.uppaal.templates.util.TemplatesResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/statements/0.4.0"
-            class="de.uni_paderborn.uppaal.statements.StatementsPackage"
+            class="org.muml.uppaal.statements.StatementsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -116,14 +116,14 @@
       <!-- @generated uppaal -->
       <parser
             type="statements"
-            class="de.uni_paderborn.uppaal.statements.util.StatementsResourceFactoryImpl"/>
+            class="org.muml.uppaal.statements.util.StatementsResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/expressions/0.4.0"
-            class="de.uni_paderborn.uppaal.expressions.ExpressionsPackage"
+            class="org.muml.uppaal.expressions.ExpressionsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
 
@@ -131,14 +131,14 @@
       <!-- @generated uppaal -->
       <parser
             type="expressions"
-            class="de.uni_paderborn.uppaal.expressions.util.ExpressionsResourceFactoryImpl"/>
+            class="org.muml.uppaal.expressions.util.ExpressionsResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
             uri="http://www.uni-paderborn.de/uppaal/visuals/0.4.0"
-            class="de.uni_paderborn.uppaal.visuals.VisualsPackage"
+            class="org.muml.uppaal.visuals.VisualsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
    

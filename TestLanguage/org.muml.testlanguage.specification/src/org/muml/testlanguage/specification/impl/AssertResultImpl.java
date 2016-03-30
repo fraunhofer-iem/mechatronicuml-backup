@@ -2,8 +2,6 @@
  */
 package org.muml.testlanguage.specification.impl;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResult;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
@@ -14,6 +12,8 @@ import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
+import org.muml.uppaal.adapter.results.PropertyResult;
+import org.muml.uppaal.adapter.results.PropertyResultRepository;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -54,7 +54,7 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 				PortType.IN,
 				"property_result_repository",
 				false,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository.class);
+				org.muml.uppaal.adapter.results.PropertyResultRepository.class);
 	}
 
 	/**

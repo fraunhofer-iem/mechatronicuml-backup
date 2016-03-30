@@ -2,9 +2,6 @@
  */
 package org.muml.testlanguage.specification.impl;
 
-import de.uni_paderborn.uppaal.trace.diagnosticTrace.Result;
-import de.uni_paderborn.uppaal.trace.diagnosticTrace.Trace;
-import de.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +12,9 @@ import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
+import org.muml.uppaal.trace.diagnosticTrace.Result;
+import org.muml.uppaal.trace.diagnosticTrace.Trace;
+import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -56,7 +56,7 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements
 				PortType.IN,
 				"trace_repository",
 				false,
-				de.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository.class);
+				org.muml.uppaal.trace.diagnosticTrace.TraceRepository.class);
 	}
 
 	/**

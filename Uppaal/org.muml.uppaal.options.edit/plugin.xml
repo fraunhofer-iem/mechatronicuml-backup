@@ -10,7 +10,7 @@
       <!-- @generated options -->
       <factory
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options"
-            class="de.uni_paderborn.fujaba.muml.verification.uppaal.options.provider.OptionsItemProviderAdapterFactory"
+            class="org.muml.uppaal.options.provider.OptionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

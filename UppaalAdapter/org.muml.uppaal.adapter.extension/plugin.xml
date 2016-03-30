@@ -10,7 +10,7 @@
       <!-- @generated verificationExtension -->
       <package
             uri="http://www.fujaba.de/muml/verification/extension/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage"
+            class="org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage"
             genModel="model/verificationExtension.genmodel"/>
    </extension>
 

@@ -19,7 +19,7 @@ Require-Bundle: org.muml.uppaal.trace;visibility:=reexport,
  org.eclipse.compare
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.uppaal.trace.ui.contentassist,
- de.uni_paderborn.uppaal.trace.ui.contentassist.antlr,
- de.uni_paderborn.uppaal.trace.ui.quickfix
-Bundle-Activator: de.uni_paderborn.uppaal.trace.ui.internal.DiagnosticTraceActivator
+Export-Package: org.muml.uppaal.trace.ui.contentassist,
+ org.muml.uppaal.trace.ui.contentassist.antlr,
+ org.muml.uppaal.trace.ui.quickfix
+Bundle-Activator: org.muml.uppaal.trace.ui.internal.DiagnosticTraceActivator

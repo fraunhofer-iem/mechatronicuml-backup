@@ -14,7 +14,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.presentation.UppaalModelWizardID"
             name="%_UI_UppaalModelWizard_label"
-            class="de.uni_paderborn.uppaal.presentation.UppaalModelWizard"
+            class="org.muml.uppaal.presentation.UppaalModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/UppaalModelFile.gif">
          <description>%_UI_UppaalModelWizard_description</description>
@@ -29,8 +29,8 @@
             name="%_UI_UppaalEditor_label"
             icon="icons/full/obj16/UppaalModelFile.gif"
             extensions="uppaal"
-            class="de.uni_paderborn.uppaal.presentation.UppaalEditor"
-            contributorClass="de.uni_paderborn.uppaal.presentation.UppaalActionBarContributor">
+            class="org.muml.uppaal.presentation.UppaalEditor"
+            contributorClass="org.muml.uppaal.presentation.UppaalActionBarContributor">
       </editor>
    </extension>
 
@@ -42,7 +42,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.types.presentation.TypesModelWizardID"
             name="%_UI_TypesModelWizard_label"
-            class="de.uni_paderborn.uppaal.types.presentation.TypesModelWizard"
+            class="org.muml.uppaal.types.presentation.TypesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/TypesModelFile.gif">
          <description>%_UI_TypesModelWizard_description</description>
@@ -57,8 +57,8 @@
             name="%_UI_TypesEditor_label"
             icon="icons/full/obj16/TypesModelFile.gif"
             extensions="types"
-            class="de.uni_paderborn.uppaal.types.presentation.TypesEditor"
-            contributorClass="de.uni_paderborn.uppaal.types.presentation.TypesActionBarContributor">
+            class="org.muml.uppaal.types.presentation.TypesEditor"
+            contributorClass="org.muml.uppaal.types.presentation.TypesActionBarContributor">
       </editor>
    </extension>
 
@@ -70,7 +70,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.declarations.presentation.DeclarationsModelWizardID"
             name="%_UI_DeclarationsModelWizard_label"
-            class="de.uni_paderborn.uppaal.declarations.presentation.DeclarationsModelWizard"
+            class="org.muml.uppaal.declarations.presentation.DeclarationsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/DeclarationsModelFile.gif">
          <description>%_UI_DeclarationsModelWizard_description</description>
@@ -85,8 +85,8 @@
             name="%_UI_DeclarationsEditor_label"
             icon="icons/full/obj16/DeclarationsModelFile.gif"
             extensions="declarations"
-            class="de.uni_paderborn.uppaal.declarations.presentation.DeclarationsEditor"
-            contributorClass="de.uni_paderborn.uppaal.declarations.presentation.DeclarationsActionBarContributor">
+            class="org.muml.uppaal.declarations.presentation.DeclarationsEditor"
+            contributorClass="org.muml.uppaal.declarations.presentation.DeclarationsActionBarContributor">
       </editor>
    </extension>
 
@@ -98,7 +98,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.declarations.global.presentation.GlobalModelWizardID"
             name="%_UI_GlobalModelWizard_label"
-            class="de.uni_paderborn.uppaal.declarations.global.presentation.GlobalModelWizard"
+            class="org.muml.uppaal.declarations.global.presentation.GlobalModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/GlobalModelFile.gif">
          <description>%_UI_GlobalModelWizard_description</description>
@@ -113,8 +113,8 @@
             name="%_UI_GlobalEditor_label"
             icon="icons/full/obj16/GlobalModelFile.gif"
             extensions="global"
-            class="de.uni_paderborn.uppaal.declarations.global.presentation.GlobalEditor"
-            contributorClass="de.uni_paderborn.uppaal.declarations.global.presentation.GlobalActionBarContributor">
+            class="org.muml.uppaal.declarations.global.presentation.GlobalEditor"
+            contributorClass="org.muml.uppaal.declarations.global.presentation.GlobalActionBarContributor">
       </editor>
    </extension>
 
@@ -126,7 +126,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.declarations.system.presentation.SystemModelWizardID"
             name="%_UI_SystemModelWizard_label"
-            class="de.uni_paderborn.uppaal.declarations.system.presentation.SystemModelWizard"
+            class="org.muml.uppaal.declarations.system.presentation.SystemModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/SystemModelFile.gif">
          <description>%_UI_SystemModelWizard_description</description>
@@ -141,8 +141,8 @@
             name="%_UI_SystemEditor_label"
             icon="icons/full/obj16/SystemModelFile.gif"
             extensions="system"
-            class="de.uni_paderborn.uppaal.declarations.system.presentation.SystemEditor"
-            contributorClass="de.uni_paderborn.uppaal.declarations.system.presentation.SystemActionBarContributor">
+            class="org.muml.uppaal.declarations.system.presentation.SystemEditor"
+            contributorClass="org.muml.uppaal.declarations.system.presentation.SystemActionBarContributor">
       </editor>
    </extension>
 
@@ -154,7 +154,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.templates.presentation.TemplatesModelWizardID"
             name="%_UI_TemplatesModelWizard_label"
-            class="de.uni_paderborn.uppaal.templates.presentation.TemplatesModelWizard"
+            class="org.muml.uppaal.templates.presentation.TemplatesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/TemplatesModelFile.gif">
          <description>%_UI_TemplatesModelWizard_description</description>
@@ -169,8 +169,8 @@
             name="%_UI_TemplatesEditor_label"
             icon="icons/full/obj16/TemplatesModelFile.gif"
             extensions="templates"
-            class="de.uni_paderborn.uppaal.templates.presentation.TemplatesEditor"
-            contributorClass="de.uni_paderborn.uppaal.templates.presentation.TemplatesActionBarContributor">
+            class="org.muml.uppaal.templates.presentation.TemplatesEditor"
+            contributorClass="org.muml.uppaal.templates.presentation.TemplatesActionBarContributor">
       </editor>
    </extension>
 
@@ -182,7 +182,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.statements.presentation.StatementsModelWizardID"
             name="%_UI_StatementsModelWizard_label"
-            class="de.uni_paderborn.uppaal.statements.presentation.StatementsModelWizard"
+            class="org.muml.uppaal.statements.presentation.StatementsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/StatementsModelFile.gif">
          <description>%_UI_StatementsModelWizard_description</description>
@@ -197,8 +197,8 @@
             name="%_UI_StatementsEditor_label"
             icon="icons/full/obj16/StatementsModelFile.gif"
             extensions="statements"
-            class="de.uni_paderborn.uppaal.statements.presentation.StatementsEditor"
-            contributorClass="de.uni_paderborn.uppaal.statements.presentation.StatementsActionBarContributor">
+            class="org.muml.uppaal.statements.presentation.StatementsEditor"
+            contributorClass="org.muml.uppaal.statements.presentation.StatementsActionBarContributor">
       </editor>
    </extension>
 
@@ -210,7 +210,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.expressions.presentation.ExpressionsModelWizardID"
             name="%_UI_ExpressionsModelWizard_label"
-            class="de.uni_paderborn.uppaal.expressions.presentation.ExpressionsModelWizard"
+            class="org.muml.uppaal.expressions.presentation.ExpressionsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ExpressionsModelFile.gif">
          <description>%_UI_ExpressionsModelWizard_description</description>
@@ -225,8 +225,8 @@
             name="%_UI_ExpressionsEditor_label"
             icon="icons/full/obj16/ExpressionsModelFile.gif"
             extensions="expressions"
-            class="de.uni_paderborn.uppaal.expressions.presentation.ExpressionsEditor"
-            contributorClass="de.uni_paderborn.uppaal.expressions.presentation.ExpressionsActionBarContributor">
+            class="org.muml.uppaal.expressions.presentation.ExpressionsEditor"
+            contributorClass="org.muml.uppaal.expressions.presentation.ExpressionsActionBarContributor">
       </editor>
    </extension>
 
@@ -238,7 +238,7 @@
       <wizard
             id="de.uni_paderborn.uppaal.visuals.presentation.VisualsModelWizardID"
             name="%_UI_VisualsModelWizard_label"
-            class="de.uni_paderborn.uppaal.visuals.presentation.VisualsModelWizard"
+            class="org.muml.uppaal.visuals.presentation.VisualsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/VisualsModelFile.gif">
          <description>%_UI_VisualsModelWizard_description</description>
@@ -253,8 +253,8 @@
             name="%_UI_VisualsEditor_label"
             icon="icons/full/obj16/VisualsModelFile.gif"
             extensions="visuals"
-            class="de.uni_paderborn.uppaal.visuals.presentation.VisualsEditor"
-            contributorClass="de.uni_paderborn.uppaal.visuals.presentation.VisualsActionBarContributor">
+            class="org.muml.uppaal.visuals.presentation.VisualsEditor"
+            contributorClass="org.muml.uppaal.visuals.presentation.VisualsActionBarContributor">
       </editor>
    </extension>
 
