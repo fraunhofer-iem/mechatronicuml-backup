@@ -3,8 +3,8 @@
 <!-- Place this file in the target project and call it with "External Tools > Run As > Ant Build" -->
 <!-- You have to change the MODEL and the TARGET values -->
 
-<project basedir="." default="dotSample" name="org.muml.graphviz.m2tSample">
-	<import file="../../org.muml.graphviz.m2t/tasks/dot.xml"/>
+<project basedir="." default="dotSample" name="org.muml.graphviz.adapterSample">
+	<import file="../../org.muml.graphviz.adapter/tasks/dot.xml"/>
 
     <!-- Change the values of MODEL and TARGET to point to your model and output folder -->
 	<property name="MODEL" value="${basedir}/model/file.xmi"/>

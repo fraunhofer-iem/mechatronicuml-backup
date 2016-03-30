@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="dot" name="org.muml.graphviz.m2t">
-    <property name="ECLIPSE_HOME" value="../../../../../opt/eclipse"/>
+<project default="dot" name="org.muml.graphviz.adapter">
+    <property name="ECLIPSE_HOME" value="../../../eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="org.muml.graphviz.m2t.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/org.muml.graphviz.m2t/bin"/>
+    <path id="org.muml.graphviz.adapter.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/org.muml.graphviz.adapter/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.11.1.v20150903-1804.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.annotation_1.2.0.v201401042248.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.inject_1.0.0.v20091030.jar"/>
@@ -34,23 +34,23 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_2.1.0.v20150906-1225.jar"/>
     </path>
 
-    <path id="org.muml.graphviz.m2t.classpath">
-        <path refid="org.muml.graphviz.m2t.libraryclasspath"/>
+    <path id="org.muml.graphviz.adapter.classpath">
+        <path refid="org.muml.graphviz.adapter.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="org.muml.graphviz.m2t.libraryclasspath.alljars">
-        <pathelement location="../org.muml.graphviz.m2t/bin"/>
+    <path id="org.muml.graphviz.adapter.libraryclasspath.alljars">
+        <pathelement location="../org.muml.graphviz.adapter/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="org.muml.graphviz.m2t.classpath.alljars">
-        <path refid="org.muml.graphviz.m2t.libraryclasspath.alljars"/>
+    <path id="org.muml.graphviz.adapter.classpath.alljars">
+        <path refid="org.muml.graphviz.adapter.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="dot">
-        <java classname="de.uni_paderborn.fujaba.graphviz.m2t.main.Dot" classpathref="org.muml.graphviz.m2t.classpath">
+        <java classname="de.uni_paderborn.fujaba.graphviz.m2t.main.Dot" classpathref="org.muml.graphviz.adapter.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -61,7 +61,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="dot.alljars">
-        <java classname="de.uni_paderborn.fujaba.graphviz.m2t.main.Dot" classpathref="org.muml.graphviz.m2t.classpath">
+        <java classname="de.uni_paderborn.fujaba.graphviz.m2t.main.Dot" classpathref="org.muml.graphviz.adapter.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
