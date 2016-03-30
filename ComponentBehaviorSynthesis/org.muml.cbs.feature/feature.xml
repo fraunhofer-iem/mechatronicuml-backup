@@ -69,7 +69,7 @@
       <import plugin="org.muml.core.common"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.jface.text"/>
-      <import plugin="org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.cbs.qvtoblackbox" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.cbs.dependencylanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
@@ -102,28 +102,28 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.cbs.dependencylanguage.synthesis"
+         id="org.muml.cbs"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.cbs.dependencylanguage.synthesis.jobs"
+         id="org.muml.cbs.jobs"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.cbs.dependencylanguage.synthesis.qvtoblackbox"
+         id="org.muml.cbs.qvtoblackbox"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.cbs.dependencylanguage.synthesis.ui"
+         id="org.muml.cbs.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
