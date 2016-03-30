@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.psm.allocation.algorithm.ilp.opt4j.config
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.metamodel, de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.constraint,
- de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.config.editor,
- de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config.properties.tabs
+Export-Package: org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.config.editor,
+ org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.constraint,
+ org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.metamodel,
+ org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

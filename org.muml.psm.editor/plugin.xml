@@ -14,7 +14,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.presentation.PsmModelWizardID"
             name="%_UI_PsmModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.presentation.PsmModelWizard"
+            class="org.muml.psm.presentation.PsmModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/PsmModelFile.gif">
          <description>%_UI_PsmModelWizard_description</description>
@@ -29,8 +29,8 @@
             name="%_UI_PsmEditor_label"
             icon="icons/full/obj16/PsmModelFile.gif"
             extensions="muml_psm"
-            class="de.uni_paderborn.fujaba.muml.psm.presentation.PsmEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.presentation.PsmActionBarContributor">
+            class="org.muml.psm.presentation.PsmEditor"
+            contributorClass="org.muml.psm.presentation.PsmActionBarContributor">
       </editor>
    </extension>
 
@@ -42,7 +42,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.allocation.presentation.AllocationModelWizardID"
             name="%_UI_AllocationModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.allocation.presentation.AllocationModelWizard"
+            class="org.muml.psm.allocation.presentation.AllocationModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/AllocationModelFile.gif">
          <description>%_UI_AllocationModelWizard_description</description>
@@ -57,8 +57,8 @@
             name="%_UI_AllocationEditor_label"
             icon="icons/full/obj16/AllocationModelFile.gif"
             extensions="allocation"
-            class="de.uni_paderborn.fujaba.muml.psm.allocation.presentation.AllocationEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.allocation.presentation.AllocationActionBarContributor">
+            class="org.muml.psm.allocation.presentation.AllocationEditor"
+            contributorClass="org.muml.psm.allocation.presentation.AllocationActionBarContributor">
       </editor>
    </extension>
 
@@ -70,7 +70,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.properties.presentation.PropertiesModelWizardID"
             name="%_UI_PropertiesModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.properties.presentation.PropertiesModelWizard"
+            class="org.muml.psm.properties.presentation.PropertiesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/PropertiesModelFile.gif">
          <description>%_UI_PropertiesModelWizard_description</description>
@@ -85,8 +85,8 @@
             name="%_UI_PropertiesEditor_label"
             icon="icons/full/obj16/PropertiesModelFile.gif"
             extensions="properties"
-            class="de.uni_paderborn.fujaba.muml.psm.properties.presentation.PropertiesEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.properties.presentation.PropertiesActionBarContributor">
+            class="org.muml.psm.properties.presentation.PropertiesEditor"
+            contributorClass="org.muml.psm.properties.presentation.PropertiesActionBarContributor">
       </editor>
    </extension>
 
@@ -98,7 +98,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.presentation.Psm_realtimestatechartModelWizardID"
             name="%_UI_Psm_realtimestatechartModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.presentation.Psm_realtimestatechartModelWizard"
+            class="org.muml.psm.psm_realtimestatechart.presentation.Psm_realtimestatechartModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/Psm_realtimestatechartModelFile.gif">
          <description>%_UI_Psm_realtimestatechartModelWizard_description</description>
@@ -113,8 +113,8 @@
             name="%_UI_Psm_realtimestatechartEditor_label"
             icon="icons/full/obj16/Psm_realtimestatechartModelFile.gif"
             extensions="psm_realtimestatechart"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.presentation.Psm_realtimestatechartEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.presentation.Psm_realtimestatechartActionBarContributor">
+            class="org.muml.psm.psm_realtimestatechart.presentation.Psm_realtimestatechartEditor"
+            contributorClass="org.muml.psm.psm_realtimestatechart.presentation.Psm_realtimestatechartActionBarContributor">
       </editor>
    </extension>
 
@@ -126,7 +126,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation.RealtimestatechartparameterModelWizardID"
             name="%_UI_RealtimestatechartparameterModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation.RealtimestatechartparameterModelWizard"
+            class="org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation.RealtimestatechartparameterModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RealtimestatechartparameterModelFile.gif">
          <description>%_UI_RealtimestatechartparameterModelWizard_description</description>
@@ -141,8 +141,8 @@
             name="%_UI_RealtimestatechartparameterEditor_label"
             icon="icons/full/obj16/RealtimestatechartparameterModelFile.gif"
             extensions="realtimestatechartparameter"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation.RealtimestatechartparameterEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation.RealtimestatechartparameterActionBarContributor">
+            class="org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation.RealtimestatechartparameterEditor"
+            contributorClass="org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation.RealtimestatechartparameterActionBarContributor">
       </editor>
    </extension>
 
@@ -154,7 +154,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingModelWizardID"
             name="%_UI_RealtimestatechartparameterbindingModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingModelWizard"
+            class="org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RealtimestatechartparameterbindingModelFile.gif">
          <description>%_UI_RealtimestatechartparameterbindingModelWizard_description</description>
@@ -169,8 +169,8 @@
             name="%_UI_RealtimestatechartparameterbindingEditor_label"
             icon="icons/full/obj16/RealtimestatechartparameterbindingModelFile.gif"
             extensions="realtimestatechartparameterbinding"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingActionBarContributor">
+            class="org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingEditor"
+            contributorClass="org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingActionBarContributor">
       </editor>
    </extension>
 
@@ -182,7 +182,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.psm_instance.presentation.Psm_instanceModelWizardID"
             name="%_UI_Psm_instanceModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_instance.presentation.Psm_instanceModelWizard"
+            class="org.muml.psm.psm_instance.presentation.Psm_instanceModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/Psm_instanceModelFile.gif">
          <description>%_UI_Psm_instanceModelWizard_description</description>
@@ -197,8 +197,8 @@
             name="%_UI_Psm_instanceEditor_label"
             icon="icons/full/obj16/Psm_instanceModelFile.gif"
             extensions="psm_instance"
-            class="de.uni_paderborn.fujaba.muml.psm.psm_instance.presentation.Psm_instanceEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.psm_instance.presentation.Psm_instanceActionBarContributor">
+            class="org.muml.psm.psm_instance.presentation.Psm_instanceEditor"
+            contributorClass="org.muml.psm.psm_instance.presentation.Psm_instanceActionBarContributor">
       </editor>
    </extension>
 
@@ -210,7 +210,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingModelWizardID"
             name="%_UI_PortapimappingModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingModelWizard"
+            class="org.muml.psm.portapimapping.presentation.PortapimappingModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/PortapimappingModelFile.gif">
          <description>%_UI_PortapimappingModelWizard_description</description>
@@ -225,8 +225,8 @@
             name="%_UI_PortapimappingEditor_label"
             icon="icons/full/obj16/PortapimappingModelFile.gif"
             extensions="portapimapping"
-            class="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingActionBarContributor">
+            class="org.muml.psm.portapimapping.presentation.PortapimappingEditor"
+            contributorClass="org.muml.psm.portapimapping.presentation.PortapimappingActionBarContributor">
       </editor>
    </extension>
 
@@ -238,7 +238,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsModelWizardID"
             name="%_UI_ApiexpressionsModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsModelWizard"
+            class="org.muml.psm.apiexpressions.presentation.ApiexpressionsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ApiexpressionsModelFile.gif">
          <description>%_UI_ApiexpressionsModelWizard_description</description>
@@ -253,8 +253,8 @@
             name="%_UI_ApiexpressionsEditor_label"
             icon="icons/full/obj16/ApiexpressionsModelFile.gif"
             extensions="apiexpressions"
-            class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsActionBarContributor">
+            class="org.muml.psm.apiexpressions.presentation.ApiexpressionsEditor"
+            contributorClass="org.muml.psm.apiexpressions.presentation.ApiexpressionsActionBarContributor">
       </editor>
    </extension>
 
@@ -266,7 +266,7 @@
       <wizard
             id="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenModelWizardID"
             name="%_UI_CodegenModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenModelWizard"
+            class="org.muml.psm.codegen.presentation.CodegenModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/CodegenModelFile.gif">
          <description>%_UI_CodegenModelWizard_description</description>
@@ -281,8 +281,8 @@
             name="%_UI_CodegenEditor_label"
             icon="icons/full/obj16/CodegenModelFile.gif"
             extensions="codegen"
-            class="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenActionBarContributor">
+            class="org.muml.psm.codegen.presentation.CodegenEditor"
+            contributorClass="org.muml.psm.codegen.presentation.CodegenActionBarContributor">
       </editor>
    </extension>
 

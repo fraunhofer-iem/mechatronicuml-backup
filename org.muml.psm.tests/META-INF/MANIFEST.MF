@@ -7,17 +7,17 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.tests,
- de.uni_paderborn.fujaba.muml.psm.apiexpressions.tests,
- de.uni_paderborn.fujaba.muml.psm.codegen.tests,
- de.uni_paderborn.fujaba.muml.psm.portapimapping.tests,
- de.uni_paderborn.fujaba.muml.psm.properties.tests,
- de.uni_paderborn.fujaba.muml.psm.psm_instance.tests,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.tests,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.tests,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.tests,
- de.uni_paderborn.fujaba.muml.psm.tests,
- de.uni_paderborn.fujaba.muml.psm.tests.packages
+Export-Package: org.muml.psm.allocation.tests,
+ org.muml.psm.apiexpressions.tests,
+ org.muml.psm.codegen.tests,
+ org.muml.psm.portapimapping.tests,
+ org.muml.psm.properties.tests,
+ org.muml.psm.psm_instance.tests,
+ org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.tests,
+ org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.tests,
+ org.muml.psm.psm_realtimestatechart.tests,
+ org.muml.psm.tests,
+ org.muml.psm.tests.packages
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.psm;visibility:=reexport,
  org.muml.pim.actionlanguage;visibility:=reexport,

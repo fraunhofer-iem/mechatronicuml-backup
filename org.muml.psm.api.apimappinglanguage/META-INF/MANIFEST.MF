@@ -26,13 +26,13 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.services,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.parser.antlr,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.parser.antlr.internal,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.validation,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.scoping,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.generator,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.formatting,
- de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.parseTreeConstruction
+Export-Package: org.muml.psm.api.apimappinglanguage,
+ org.muml.psm.api.apimappinglanguage.formatting,
+ org.muml.psm.api.apimappinglanguage.generator,
+ org.muml.psm.api.apimappinglanguage.parseTreeConstruction,
+ org.muml.psm.api.apimappinglanguage.parser.antlr,
+ org.muml.psm.api.apimappinglanguage.parser.antlr.internal,
+ org.muml.psm.api.apimappinglanguage.scoping,
+ org.muml.psm.api.apimappinglanguage.services,
+ org.muml.psm.api.apimappinglanguage.validation
 

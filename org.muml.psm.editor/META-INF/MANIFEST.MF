@@ -4,20 +4,20 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.psm.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.psm.presentation.PsmEditorPlugin$Implementation
+Bundle-Activator: org.muml.psm.presentation.PsmEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.presentation,
- de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation,
- de.uni_paderborn.fujaba.muml.psm.codegen.presentation,
- de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation,
- de.uni_paderborn.fujaba.muml.psm.presentation,
- de.uni_paderborn.fujaba.muml.psm.properties.presentation,
- de.uni_paderborn.fujaba.muml.psm.psm_instance.presentation,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.presentation,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation,
- de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation
+Export-Package: org.muml.psm.allocation.presentation,
+ org.muml.psm.apiexpressions.presentation,
+ org.muml.psm.codegen.presentation,
+ org.muml.psm.portapimapping.presentation,
+ org.muml.psm.presentation,
+ org.muml.psm.properties.presentation,
+ org.muml.psm.psm_instance.presentation,
+ org.muml.psm.psm_realtimestatechart.presentation,
+ org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.presentation,
+ org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

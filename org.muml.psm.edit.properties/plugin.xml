@@ -41,7 +41,7 @@
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.muml.psm.properties.tabs.Property_tab_psmTabElementFilter"
+            filter="org.muml.psm.properties.tabs.Property_tab_psmTabElementFilter"
             id="property.tab.psm"
             tab="property.tab.psm">
              <input
@@ -58,147 +58,147 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechartparameterbinding.editor.APICallParameterBindingEditor$Factory"
+             factory="org.muml.psm.properties.realtimestatechartparameterbinding.editor.APICallParameterBindingEditor$Factory"
              type="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/#APICallParameterBinding">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechartparameterbinding.editor.TimeParameterBindingEditor$Factory"
+             factory="org.muml.psm.properties.realtimestatechartparameterbinding.editor.TimeParameterBindingEditor$Factory"
              type="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/#TimeParameterBinding">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.properties.editor.WCETEditor$Factory"
+             factory="org.muml.psm.properties.properties.editor.WCETEditor$Factory"
              type="http://www.fujaba.de/muml/psm/properties/0.4.0/#WCET">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.properties.editor.RequiredMemoryEditor$Factory"
+             factory="org.muml.psm.properties.properties.editor.RequiredMemoryEditor$Factory"
              type="http://www.fujaba.de/muml/psm/properties/0.4.0/#RequiredMemory">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.properties.editor.SchedulingEditor$Factory"
+             factory="org.muml.psm.properties.properties.editor.SchedulingEditor$Factory"
              type="http://www.fujaba.de/muml/psm/properties/0.4.0/#Scheduling">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.properties.editor.MessageFrameEditor$Factory"
+             factory="org.muml.psm.properties.properties.editor.MessageFrameEditor$Factory"
              type="http://www.fujaba.de/muml/psm/properties/0.4.0/#MessageFrame">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.properties.editor.CANMessageFrameEditor$Factory"
+             factory="org.muml.psm.properties.properties.editor.CANMessageFrameEditor$Factory"
              type="http://www.fujaba.de/muml/psm/properties/0.4.0/#CANMessageFrame">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.RefinedAtomicComponentInstanceEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.RefinedAtomicComponentInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#RefinedAtomicComponentInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.RefinedStructuredResourceInstanceEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.RefinedStructuredResourceInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#RefinedStructuredResourceInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.CodeGenAllocationEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.CodeGenAllocationEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#CodeGenAllocation">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.GenComponentInstanceEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.GenComponentInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#GenComponentInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.GenPortInstanceEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.GenPortInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#GenPortInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.GenECUEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.GenECUEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#GenECU">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.GenTaskEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.GenTaskEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#GenTask">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.codegen.editor.GenSystemEditor$Factory"
+             factory="org.muml.psm.properties.codegen.editor.GenSystemEditor$Factory"
              type="http://www.fujaba.de/muml/psm/codegen/0.4.0/#GenSystem">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.psm.editor.ImportEditor$Factory"
+             factory="org.muml.psm.properties.psm.editor.ImportEditor$Factory"
              type="http://www.fujaba.de/muml/psm/0.4.0/#Import">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.psm_realtimestatechart.editor.ParameterizedRealtimeStatechartEditor$Factory"
+             factory="org.muml.psm.properties.psm_realtimestatechart.editor.ParameterizedRealtimeStatechartEditor$Factory"
              type="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/#ParameterizedRealtimeStatechart">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.psm_realtimestatechart.editor.APICallEditor$Factory"
+             factory="org.muml.psm.properties.psm_realtimestatechart.editor.APICallEditor$Factory"
              type="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/#APICall">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor.SystemAllocationEditor$Factory"
+             factory="org.muml.psm.properties.allocation.editor.SystemAllocationEditor$Factory"
              type="http://www.fujaba.de/muml/psm/allocation/0.4.0/#SystemAllocation">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor.AllocationEditor$Factory"
+             factory="org.muml.psm.properties.allocation.editor.AllocationEditor$Factory"
              type="http://www.fujaba.de/muml/psm/allocation/0.4.0/#Allocation">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor.AssemblyConnectorInstanceAllocationEditor$Factory"
+             factory="org.muml.psm.properties.allocation.editor.AssemblyConnectorInstanceAllocationEditor$Factory"
              type="http://www.fujaba.de/muml/psm/allocation/0.4.0/#AssemblyConnectorInstanceAllocation">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.portapimapping.editor.PortApiMappingEditor$Factory"
+             factory="org.muml.psm.properties.portapimapping.editor.PortApiMappingEditor$Factory"
              type="http://www.fujaba.de/muml/psm/portapimapping/0.4.0/#PortApiMapping">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.portapimapping.editor.MappingRepositoryEditor$Factory"
+             factory="org.muml.psm.properties.portapimapping.editor.MappingRepositoryEditor$Factory"
              type="http://www.fujaba.de/muml/psm/portapimapping/0.4.0/#MappingRepository">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechartparameter.editor.APICallParameterEditor$Factory"
+             factory="org.muml.psm.properties.realtimestatechartparameter.editor.APICallParameterEditor$Factory"
              type="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/#APICallParameter">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.realtimestatechartparameter.editor.TimeParameterEditor$Factory"
+             factory="org.muml.psm.properties.realtimestatechartparameter.editor.TimeParameterEditor$Factory"
              type="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/#TimeParameter">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.apiexpressions.editor.APICallExpressionEditor$Factory"
+             factory="org.muml.psm.properties.apiexpressions.editor.APICallExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/#APICallExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.apiexpressions.editor.EnumerationValueExpressionEditor$Factory"
+             factory="org.muml.psm.properties.apiexpressions.editor.EnumerationValueExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/#EnumerationValueExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.apiexpressions.editor.ContinuousPortExpressionEditor$Factory"
+             factory="org.muml.psm.properties.apiexpressions.editor.ContinuousPortExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/#ContinuousPortExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.psm.properties.psm_instance.editor.ParameterisableDiscreteSinglePortInstanceEditor$Factory"
+             factory="org.muml.psm.properties.psm_instance.editor.ParameterisableDiscreteSinglePortInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/psm/instance/0.4.0/#ParameterisableDiscreteSinglePortInstance">
        </propertyEditor>
     
@@ -209,7 +209,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.psm.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.psm.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -217,7 +217,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.psm.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.psm.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 
