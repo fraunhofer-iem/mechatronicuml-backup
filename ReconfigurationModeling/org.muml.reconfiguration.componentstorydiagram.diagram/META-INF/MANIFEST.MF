@@ -4,15 +4,15 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.reconfiguration.componentstorydiagram.diagram;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+Bundle-Activator: org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.commands,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers
+Export-Package: org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands,
+ org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts,
+ org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies,
+ org.muml.reconfiguration.componentstorydiagram.diagram.parsers,
+ org.muml.reconfiguration.componentstorydiagram.diagram.part,
+ org.muml.reconfiguration.componentstorydiagram.diagram.providers
 Require-Bundle: org.eclipse.emf.ecore.editor,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,

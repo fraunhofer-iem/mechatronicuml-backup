@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.reconfiguration.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.reconfiguration.ui.Activator
+Bundle-Activator: org.muml.reconfiguration.ui.Activator
 Bundle-Vendor: %providerName
 Require-Bundle: org.muml.reconfiguration;bundle-version="0.3.1",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.6.0",
@@ -22,5 +22,5 @@ Require-Bundle: org.muml.reconfiguration;bundle-version="0.3.1",
  org.muml.storydiagram.reachanalysis.sdm;bundle-version="0.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts,
- de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies
+Export-Package: org.muml.reconfiguration.ui.edit.parts,
+ org.muml.reconfiguration.ui.edit.policies

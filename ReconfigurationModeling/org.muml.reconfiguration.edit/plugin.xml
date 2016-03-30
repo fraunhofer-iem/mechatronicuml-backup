@@ -5,7 +5,7 @@
       <!-- @generated MumlReconfiguration -->
       <factory
             uri="http://www.fujaba.de/muml/reconfiguration/0.3.18"
-            class="de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory"
+            class="org.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -17,7 +17,7 @@
       <!-- @generated MumlReconfiguration -->
       <factory
             uri="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
-            class="de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory"
+            class="org.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -29,7 +29,7 @@
       <!-- @generated MumlReconfiguration -->
       <factory
             uri="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"
-            class="de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory"
+            class="org.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -42,7 +42,7 @@
       <!-- @generated MumlReconfiguration -->
       <factory
             uri="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.provider.ProtocolinstantiationItemProviderAdapterFactory"
+            class="org.muml.reconfiguration.protocolinstantiation.provider.ProtocolinstantiationItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -55,7 +55,7 @@
       <!-- @generated MumlReconfiguration -->
       <factory
             uri="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.provider.ReconfInstanceItemProviderAdapterFactory"
+            class="org.muml.reconfiguration.reconfInstance.provider.ReconfInstanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

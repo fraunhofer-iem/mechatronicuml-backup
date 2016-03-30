@@ -30,13 +30,13 @@ import org.muml.pim.instance.InstanceFactory;
 import org.muml.pim.instance.PortConnectorInstance;
 import org.muml.pim.instance.PortInstance;
 import org.muml.pim.instance.StructuredComponentInstance;
+import org.muml.reconfiguration.Executor;
+import org.muml.reconfiguration.Manager;
+import org.muml.reconfiguration.ReconfigurableStructuredComponent;
+import org.muml.reconfiguration.ReconfigurationPort;
+import org.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
+import org.muml.reconfiguration.ReconfigurationPortDelegationConnector;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
-import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
 import de.uni_paderborn.fujaba.simulink.reconfiguration.analysis.pre.normalization.NormalizationTransformation;
 
 /**

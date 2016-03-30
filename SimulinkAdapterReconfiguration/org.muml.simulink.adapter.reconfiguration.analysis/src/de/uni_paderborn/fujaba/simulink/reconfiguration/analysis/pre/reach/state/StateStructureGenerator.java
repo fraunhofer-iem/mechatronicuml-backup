@@ -15,10 +15,9 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.valuetype.Cardinality;
 import org.muml.pim.valuetype.NaturalNumber;
 import org.muml.pim.valuetype.ValuetypeFactory;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import org.muml.reconfiguration.Executor;
+import org.muml.reconfiguration.ReconfigurationExecutionPort;
+import org.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
 
 /**
  * Generator for the structure of a State. Generates both types and instances.

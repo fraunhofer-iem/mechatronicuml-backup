@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
             uri="http://www.fujaba.de/muml/componentstorypattern/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory"
+            class="org.muml.reconfiguration.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

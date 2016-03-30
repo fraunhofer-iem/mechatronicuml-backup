@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.impl,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.util
+Export-Package: org.muml.reconfiguration.componentstorydiagram,
+ org.muml.reconfiguration.componentstorydiagram.impl,
+ org.muml.reconfiguration.componentstorydiagram.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,

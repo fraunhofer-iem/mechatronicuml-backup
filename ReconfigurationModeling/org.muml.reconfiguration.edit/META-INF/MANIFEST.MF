@@ -4,16 +4,16 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.reconfiguration.edit;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfigurationEditPlugin$Implementation
+Bundle-Activator: org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider,
- de.uni_paderborn.fujaba.muml.reconfiguration.instance.provider,
- de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.provider,
- de.uni_paderborn.fujaba.muml.reconfiguration.provider,
- de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.provider,
- de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider
+Export-Package: org.muml.reconfiguration.expression.provider,
+ org.muml.reconfiguration.instance.provider,
+ org.muml.reconfiguration.protocolinstantiation.provider,
+ org.muml.reconfiguration.provider,
+ org.muml.reconfiguration.reconfInstance.provider,
+ org.muml.reconfiguration.structdatatype.provider
 Require-Bundle: org.eclipse.ocl.ecore,
  org.eclipse.core.runtime,
  org.muml.reconfiguration;visibility:=reexport,

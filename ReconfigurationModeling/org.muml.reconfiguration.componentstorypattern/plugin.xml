@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.fujaba.de/muml/componentstorypattern/0.4.0"
-            class="de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage"
+            class="org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage"
             genModel="model/ComponentStoryPattern.genmodel"/>
    </extension>
 

@@ -15,11 +15,11 @@ Import-Package: de.uni_paderborn.fujaba.muml.actionLanguage.matlab.generator,
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm,
  de.uni_paderborn.fujaba.muml.reachanalysis.sdm,
  de.uni_paderborn.fujaba.muml.reachanalysis.sdm.export,
- de.uni_paderborn.fujaba.muml.reconfiguration,
  org.eclipse.core.resources,
  org.muml.core.modelinstance,
  org.muml.core.reachanalysis.reachabilitygraph,
  org.muml.pim.actionlanguage,
  org.muml.pim.instance,
+ org.muml.reconfiguration,
  org.storydriven.storydiagrams.activities
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

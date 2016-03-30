@@ -12,12 +12,11 @@ import org.muml.pim.connector.ConnectorEndpoint;
 import org.muml.pim.valuetype.Cardinality;
 import org.muml.pim.valuetype.NaturalNumber;
 import org.muml.pim.valuetype.ValuetypeFactory;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
-import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
+import org.muml.reconfiguration.Executor;
+import org.muml.reconfiguration.Manager;
+import org.muml.reconfiguration.ReconfigurationPort;
+import org.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
+import org.muml.reconfiguration.ReconfigurationPortDelegationConnector;
 
 public class NormalizationTransformation 
 {

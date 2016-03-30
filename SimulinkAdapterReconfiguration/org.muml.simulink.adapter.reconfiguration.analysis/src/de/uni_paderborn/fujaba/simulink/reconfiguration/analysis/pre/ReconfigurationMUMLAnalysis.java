@@ -74,11 +74,11 @@ import org.muml.pim.realtimestatechart.impl.RealtimestatechartFactoryImpl;
 import org.muml.pim.realtimestatechart.impl.SynchronizationChannelImpl;
 import org.muml.pim.types.ArrayDataType;
 import org.muml.pim.valuetype.TimeValue;
+import org.muml.reconfiguration.Manager;
+import org.muml.reconfiguration.ReconfigurableStructuredComponent;
+import org.muml.reconfiguration.ReconfigurationPort;
 
 import de.uni_paderborn.fujaba.muml.actionLanguage.matlab.generator.ExpressionTransformation;
-import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.simulink.model.msglib.LinkLayer;
 import de.uni_paderborn.fujaba.simulink.model.msglib.MsglibFactory;
 

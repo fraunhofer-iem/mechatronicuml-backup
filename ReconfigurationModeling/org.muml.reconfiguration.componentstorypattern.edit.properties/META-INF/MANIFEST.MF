@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.componentstorypattern.properties.metamodel, de.uni_paderborn.fujaba.muml.componentstorypattern.properties.constraint,
- de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor,
- de.uni_paderborn.fujaba.muml.componentstorypattern.properties.tabs
+Export-Package: org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor,
+ org.muml.reconfiguration.componentstorypattern.properties.constraint,
+ org.muml.reconfiguration.componentstorypattern.properties.metamodel,
+ org.muml.reconfiguration.componentstorypattern.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

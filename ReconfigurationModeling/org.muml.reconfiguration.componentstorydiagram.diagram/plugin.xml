@@ -28,9 +28,9 @@
          icon="icons/obj16/ComponentStoryDiagramFile.gif"
          extensions="componentstorydiagram_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramActionBarContributor">
+         class="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditor"
+         matchingStrategy="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramMatchingStrategy"
+         contributorClass="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramActionBarContributor">
       </editor>
    	</extension>
    	<extension point="org.eclipse.ui.contexts" id="ui-context">
@@ -49,7 +49,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/ComponentStoryDiagramFile.gif"
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramCreationWizard"
+  	     class="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -82,7 +82,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramInitDiagramFileAction"
+			defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramInitDiagramFileAction"
 			id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>
@@ -175,7 +175,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.reconfiguration.componentstorydiagram.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -184,31 +184,31 @@
             id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.appearance"
             category="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.connections"
             category="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.printing"
             category="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -253,92 +253,92 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryRuleEditPart">
+      <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryRuleEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart" id="ComponentStoryRule_1000"/>
          <context elements="ComponentStoryRule_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfActivityEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfActivityEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEditPart" id="Activity_2003"/>
          <context elements="Activity_2003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart" id="ComponentStoryNode_3001"/>
          <context elements="ComponentStoryNode_3001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryPatternEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryPatternEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternEditPart" id="ComponentStoryPattern_3011"/>
          <context elements="ComponentStoryPattern_3011"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart" id="ComponentVariable_3012"/>
          <context elements="ComponentVariable_3012"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfPartVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfPartVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PartVariableEditPart" id="ComponentPartVariable_3014"/>
          <context elements="ComponentPartVariable_3014"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart" id="MultiPortVariable_3016"/>
          <context elements="MultiPortVariable_3016"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart" id="SinglePortVariable_3017"/>
          <context elements="SinglePortVariable_3017"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariable2EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariable2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart" id="SinglePortVariable_3018"/>
          <context elements="SinglePortVariable_3018"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart" id="MultiPortVariable_3019"/>
          <context elements="MultiPortVariable_3019"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariable3EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariable3EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart" id="SinglePortVariable_3020"/>
          <context elements="SinglePortVariable_3020"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_3007"/>
          <context elements="InitialNode_3007"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfJunctionNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfJunctionNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_3008"/>
          <context elements="JunctionNode_3008"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfActivityFinalNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfActivityFinalNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_3010"/>
          <context elements="ActivityFinalNode_3010"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfControllerExchangeNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfControllerExchangeNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart" id="ControllerExchangeNode_3021"/>
          <context elements="ControllerExchangeNode_3021"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryPattern2EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryPattern2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart" id="ComponentStoryPattern_3022"/>
          <context elements="ComponentStoryPattern_3022"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentVariable2EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentVariable2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart" id="ComponentVariable_3023"/>
          <context elements="ComponentVariable_3023"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfFadingComponentPartVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfFadingComponentPartVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart" id="FadingComponentPartVariable_3024"/>
          <context elements="FadingComponentPartVariable_3024"/>
@@ -348,7 +348,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramIconProvider">
+      <IconProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
@@ -361,7 +361,7 @@
                name="%metatype.name.ComponentStoryRule_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryRule"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentStoryRuleEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ComponentStoryRuleEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -371,7 +371,7 @@
                name="%metatype.name.Activity_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Activity"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ActivityEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ActivityEditHelper">
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
@@ -381,7 +381,7 @@
                name="%metatype.name.ComponentStoryNode_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryNode"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentStoryNodeEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ComponentStoryNodeEditHelper">
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
@@ -391,7 +391,7 @@
                name="%metatype.name.ComponentStoryPattern_3011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryPattern"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentStoryPatternEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ComponentStoryPatternEditHelper">
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
@@ -401,7 +401,7 @@
                name="%metatype.name.ComponentVariable_3012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentVariableEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ComponentVariableEditHelper">
             <param name="semanticHint" value="3012"/>
          </metamodelType>
       </metamodel>
@@ -411,7 +411,7 @@
                name="%metatype.name.ComponentPartVariable_3014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentPartVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.PartVariableEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.PartVariableEditHelper">
             <param name="semanticHint" value="3014"/>
          </metamodelType>
       </metamodel>
@@ -421,7 +421,7 @@
                name="%metatype.name.MultiPortVariable_3016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MultiPortVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.MultiPortVariableEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.MultiPortVariableEditHelper">
             <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
@@ -431,7 +431,7 @@
                name="%metatype.name.SinglePortVariable_3017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="SinglePortVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.SinglePortVariableEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.SinglePortVariableEditHelper">
             <param name="semanticHint" value="3017"/>
          </metamodelType>
       </metamodel>
@@ -468,7 +468,7 @@
                name="%metatype.name.InitialNode_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InitialNode"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.InitialNodeEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.InitialNodeEditHelper">
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
@@ -478,7 +478,7 @@
                name="%metatype.name.JunctionNode_3008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="JunctionNode"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.JunctionNodeEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.JunctionNodeEditHelper">
             <param name="semanticHint" value="3008"/>
          </metamodelType>
       </metamodel>
@@ -488,7 +488,7 @@
                name="%metatype.name.ActivityFinalNode_3010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityFinalNode"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ActivityFinalNodeEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ActivityFinalNodeEditHelper">
             <param name="semanticHint" value="3010"/>
          </metamodelType>
       </metamodel>
@@ -498,7 +498,7 @@
                name="%metatype.name.ControllerExchangeNode_3021"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ControllerExchangeNode"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ControllerExchangeNodeEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ControllerExchangeNodeEditHelper">
             <param name="semanticHint" value="3021"/>
          </metamodelType>
       </metamodel>
@@ -526,7 +526,7 @@
                name="%metatype.name.FadingComponentPartVariable_3024"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="FadingComponentPartVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.FadingComponentPartVariableEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.FadingComponentPartVariableEditHelper">
             <param name="semanticHint" value="3024"/>
          </metamodelType>
       </metamodel>
@@ -536,7 +536,7 @@
                name="%metatype.name.ActivityEdge_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityEdge"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ActivityEdgeEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ActivityEdgeEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
@@ -546,7 +546,7 @@
                name="%metatype.name.AssemblyVariable_4004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AssemblyVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.AssemblyVariableEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.AssemblyVariableEditHelper">
             <param name="semanticHint" value="4004"/>
          </metamodelType>
       </metamodel>
@@ -556,7 +556,7 @@
                name="%metatype.name.DelegationVariable_4005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DelegationVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.DelegationVariableEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.DelegationVariableEditHelper">
             <param name="semanticHint" value="4005"/>
          </metamodelType>
       </metamodel>
@@ -566,7 +566,7 @@
                name="%metatype.name.MultiPortOrderConstraint_4006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MultiPortOrderConstraint"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.MultiPortOrderConstraintEditHelper">
+               edithelper="org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.MultiPortOrderConstraintEditHelper">
             <param name="semanticHint" value="4006"/>
          </metamodelType>
       </metamodel>
@@ -614,7 +614,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdateCommand"
+         defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -641,7 +641,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart"/>
+                     <instanceof value="org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -655,7 +655,7 @@
       <command id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
@@ -663,13 +663,13 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramParserProvider">
+      <ParserProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramMarkerNavigationProvider">
+      <MarkerNavigationProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -682,7 +682,7 @@
       <persistent value="true"/>
    </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramValidationDecoratorProvider">
+      <decoratorProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -692,7 +692,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.sheet.ComponentStoryDiagramSheetLabelProvider">
+            labelProvider="org.muml.reconfiguration.componentstorydiagram.diagram.sheet.ComponentStoryDiagramSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -752,7 +752,7 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.sheet.ComponentStoryDiagramPropertySection">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.sheet.ComponentStoryDiagramPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
          </propertySection>

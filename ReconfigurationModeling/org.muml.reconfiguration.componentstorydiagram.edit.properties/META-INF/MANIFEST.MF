@@ -22,7 +22,8 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.metamodel, de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.constraint,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.componentstorydiagram.editor,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.tabs
+Export-Package: org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor,
+ org.muml.reconfiguration.componentstorydiagram.properties.constraint,
+ org.muml.reconfiguration.componentstorydiagram.properties.metamodel,
+ org.muml.reconfiguration.componentstorydiagram.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

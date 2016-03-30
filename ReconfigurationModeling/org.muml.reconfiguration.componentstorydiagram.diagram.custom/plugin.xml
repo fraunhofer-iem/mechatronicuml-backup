@@ -15,7 +15,7 @@
 <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
 	      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
 	         <adviceBinding
-                class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
                 id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017Advice"
                 inheritance="all"
                 typeId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017">
@@ -23,7 +23,7 @@
 	      </metamodel>
 	    <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
 	         <adviceBinding
-                class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
                 id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018Advice"
                 inheritance="all"
                 typeId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018">
@@ -31,7 +31,7 @@
 	      </metamodel>
 	      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
 	         <adviceBinding
-                class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
                 id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020Advice"
                 inheritance="all"
                 typeId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020">
@@ -132,7 +132,7 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.common.properties"
-            labelProvider="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
+            labelProvider="org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory
                category="diagram">

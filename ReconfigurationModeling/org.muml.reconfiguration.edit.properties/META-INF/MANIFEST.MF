@@ -21,11 +21,12 @@ Require-Bundle: org.muml.pim.edit,
  org.muml.storydiagram.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamodel, de.uni_paderborn.fujaba.muml.reconfiguration.properties.constraint,
- de.uni_paderborn.fujaba.muml.reconfiguration.properties.protocolinstantiation.editor,
- de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor,
- de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor,
- de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.editor,
- de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor,
- de.uni_paderborn.fujaba.muml.reconfiguration.properties.tabs
+Export-Package: org.muml.reconfiguration.properties.constraint,
+ org.muml.reconfiguration.properties.expression.editor,
+ org.muml.reconfiguration.properties.metamodel,
+ org.muml.reconfiguration.properties.protocolinstantiation.editor,
+ org.muml.reconfiguration.properties.reconfInstance.editor,
+ org.muml.reconfiguration.properties.reconfiguration.editor,
+ org.muml.reconfiguration.properties.structdatatype.editor,
+ org.muml.reconfiguration.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

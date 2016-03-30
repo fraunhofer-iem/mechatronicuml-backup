@@ -23,9 +23,9 @@
          icon="icons/obj16/ComponentsddDiagramFile.gif"
          extensions="componentsdd_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramActionBarContributor">
+         class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditor"
+         matchingStrategy="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDMatchingStrategy"
+         contributorClass="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramActionBarContributor">
       </editor>
    	</extension>
    
@@ -45,7 +45,7 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/ComponentsddDiagramFile.gif"
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	     class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDCreationWizard"
+  	     class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
@@ -98,7 +98,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -107,31 +107,31 @@
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.preferences.DiagramGeneralPreferencePage">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.appearance"
             category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.preferences.DiagramAppearancePreferencePage">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.connections"
             category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.printing"
             category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.preferences.DiagramPrintingPreferencePage">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -139,7 +139,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.sheet.ComponentSDDSheetLabelProvider">
+            labelProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.sheet.ComponentSDDSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -199,10 +199,10 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.sheet.ComponentSDDPropertySection">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.sheet.ComponentSDDPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
+            <input type="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
          </propertySection>
          <propertySection
             id="property.section.general" 
@@ -255,67 +255,67 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentStoryDecisionDiagramEditPart">
+      <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentStoryDecisionDiagramEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart" id="ComponentStoryDecisionDiagram_1000"/>
          <context elements="ComponentStoryDecisionDiagram_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart" id="ComponentStoryPatternNode_2003"/>
          <context elements="ComponentStoryPatternNode_2003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfLeafNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfLeafNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart" id="LeafNode_2002"/>
          <context elements="LeafNode_2002"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfInitialNodeEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfInitialNodeEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2004"/>
          <context elements="InitialNode_2004"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentStoryPatternEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentStoryPatternEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart" id="ComponentStoryPattern_3001"/>
          <context elements="ComponentStoryPattern_3001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart" id="ComponentVariable_3002"/>
          <context elements="ComponentVariable_3002"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentPartVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentPartVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentPartVariableEditPart" id="ComponentPartVariable_3003"/>
          <context elements="ComponentPartVariable_3003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfMultiPortVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfMultiPortVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart" id="MultiPortVariable_3004"/>
          <context elements="MultiPortVariable_3004"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfSinglePortVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfSinglePortVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart" id="SinglePortVariable_3005"/>
          <context elements="SinglePortVariable_3005"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfSinglePortVariable2EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfSinglePortVariable2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart" id="SinglePortVariable_3006"/>
          <context elements="SinglePortVariable_3006"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfMultiPortVariable2EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfMultiPortVariable2EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart" id="MultiPortVariable_3007"/>
          <context elements="MultiPortVariable_3007"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfSinglePortVariable3EditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfSinglePortVariable3EditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart" id="SinglePortVariable_3008"/>
          <context elements="SinglePortVariable_3008"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfFadingComponentPartVariableEditPart">
+            <modelingAssistantProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfFadingComponentPartVariableEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart" id="FadingComponentPartVariable_3009"/>
          <context elements="FadingComponentPartVariable_3009"/>
@@ -326,7 +326,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDIconProvider">
+      <IconProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
@@ -340,7 +340,7 @@
                name="%metatype.name.ComponentStoryDecisionDiagram_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryDecisionDiagram"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.ComponentStoryDecisionDiagramEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentStoryDecisionDiagramEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -350,7 +350,7 @@
                name="%metatype.name.ComponentStoryPatternNode_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryPatternNode"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.ComponentStoryPatternNodeEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentStoryPatternNodeEditHelper">
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
@@ -360,7 +360,7 @@
                name="%metatype.name.LeafNode_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="LeafNode"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.LeafNodeEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.LeafNodeEditHelper">
             <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
@@ -370,7 +370,7 @@
                name="%metatype.name.InitialNode_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InitialNode"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.InitialNodeEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.InitialNodeEditHelper">
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
@@ -380,7 +380,7 @@
                name="%metatype.name.ComponentStoryPattern_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryPattern"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.ComponentStoryPatternEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentStoryPatternEditHelper">
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
@@ -390,7 +390,7 @@
                name="%metatype.name.ComponentVariable_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.ComponentVariableEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentVariableEditHelper">
             <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
@@ -400,7 +400,7 @@
                name="%metatype.name.ComponentPartVariable_3003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentPartVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.ComponentPartVariableEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentPartVariableEditHelper">
             <param name="semanticHint" value="3003"/>
          </metamodelType>
       </metamodel>
@@ -410,7 +410,7 @@
                name="%metatype.name.MultiPortVariable_3004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MultiPortVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.MultiPortVariableEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.MultiPortVariableEditHelper">
             <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
@@ -420,7 +420,7 @@
                name="%metatype.name.SinglePortVariable_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="SinglePortVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.SinglePortVariableEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.SinglePortVariableEditHelper">
             <param name="semanticHint" value="3005"/>
          </metamodelType>
       </metamodel>
@@ -457,7 +457,7 @@
                name="%metatype.name.FadingComponentPartVariable_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="FadingComponentPartVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.FadingComponentPartVariableEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.FadingComponentPartVariableEditHelper">
             <param name="semanticHint" value="3009"/>
          </metamodelType>
       </metamodel>
@@ -467,7 +467,7 @@
                name="%metatype.name.Edge_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Edge"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.EdgeEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.EdgeEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
@@ -477,7 +477,7 @@
                name="%metatype.name.AssemblyVariable_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AssemblyVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.AssemblyVariableEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.AssemblyVariableEditHelper">
             <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
@@ -487,7 +487,7 @@
                name="%metatype.name.DelegationVariable_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DelegationVariable"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.DelegationVariableEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.DelegationVariableEditHelper">
             <param name="semanticHint" value="4003"/>
          </metamodelType>
       </metamodel>
@@ -497,7 +497,7 @@
                name="%metatype.name.MultiPortOrderConstraint_4004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MultiPortOrderConstraint"
-               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.MultiPortOrderConstraintEditHelper">
+               edithelper="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.MultiPortOrderConstraintEditHelper">
             <param name="semanticHint" value="4004"/>
          </metamodelType>
       </metamodel>
@@ -540,7 +540,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDUriEditorInputTester">
+           class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -566,8 +566,8 @@
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorLabelProvider"
+            contentProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorContentProvider" 
+            labelProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorLabelProvider"
             icon="icons/obj16/ComponentsddDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -576,24 +576,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="componentsdd_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
+               <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
+         	   <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorSorter">
+               class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="componentsdd_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
+                  <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -602,8 +602,8 @@
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorLabelProvider"
+            contentProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorContentProvider" 
+            labelProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorLabelProvider"
             icon="icons/obj16/ComponentsddDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -612,19 +612,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorItem"/>
+               <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorItem"/>
+            <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorActionProvider">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
+               <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -634,7 +634,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorLinkHelper">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -642,7 +642,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
+            <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -650,7 +650,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramUpdateCommand"
+         defaultHandler="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -677,7 +677,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart"/>
+                     <instanceof value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -691,7 +691,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.LoadResourceAction"/>
+         defaultHandler="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
@@ -702,7 +702,7 @@
 
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDMarkerNavigationProvider">
+      <MarkerNavigationProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -715,7 +715,7 @@
       <persistent value="true"/>
    </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDValidationDecoratorProvider">
+      <decoratorProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -723,7 +723,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider">
+      <ParserProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -750,7 +750,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDInitDiagramFileAction"
+			defaultHandler="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDInitDiagramFileAction"
 			id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>

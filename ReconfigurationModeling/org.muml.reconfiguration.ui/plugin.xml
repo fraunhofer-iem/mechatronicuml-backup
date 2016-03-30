@@ -5,28 +5,28 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+            defaultHandler="org.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
             description="Transforms this structured component into a reconfigurable structured component."
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
             name="Make Reconfigurable">
       </command>
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+            defaultHandler="org.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
             description="Generates Real-Time Statecharts for the Manager and Executor of this ReconfigurableStructuredComponent."
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
             name="Generate Manager and Executor Implementation">
       </command>
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationController"
+            defaultHandler="org.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationController"
             description="Generates RuleBasedReconfigurationController"
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
             name="Generate RuleBasedReconfigurationController">
       </command>
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.handlers.ComputePossibleConfigurationsHandler"
+            defaultHandler="org.muml.reconfiguration.ui.edit.handlers.ComputePossibleConfigurationsHandler"
             description="Computes possible Configurations for a ReconfigurableStructuredComponent"
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
             name="Compute Possible Configurations">
@@ -76,7 +76,7 @@
                               value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
+                              value="org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
                         </instanceof>
                      </or>
                   </iterate>
@@ -99,7 +99,7 @@
                               value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
+                              value="org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
                         </instanceof>
                      </or>
                   </iterate>
@@ -122,7 +122,7 @@
                               value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
+                              value="org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
                         </instanceof>
                      </or>
                   </iterate>
@@ -160,7 +160,7 @@
          <editor
                id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"></editor>
          <contribution
-               factoryClass="de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationPaletteFactory">
+               factoryClass="org.muml.reconfiguration.ui.part.ReconfigurationPaletteFactory">
             <entry
                   id="reconfDrawer"
                   kind="drawer"
@@ -243,7 +243,7 @@
                 nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18">
              <metamodelType
                    eclass="Manager"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ManagerEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ManagerEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.Manager_2075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="Manager">
@@ -254,7 +254,7 @@
              </metamodelType>
              <metamodelType
                    eclass="InternalReconfigurationCommunicationPort"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.InternalReconfigurationCommunicationPortEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.InternalReconfigurationCommunicationPortEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort_3075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="InternalReconfigurationCommunicationPort">
@@ -265,7 +265,7 @@
              </metamodelType>
              <metamodelType
                    eclass="Executor"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ExecutorEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ExecutorEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.Executor_2077"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="Executor">
@@ -276,7 +276,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationMessagePort"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationMessagePortEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationMessagePortEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort_3076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationMessagePort">
@@ -287,7 +287,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationPortAssemblyConnector"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortAssemblyEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortAssemblyEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationPortAssemblyConnector">
@@ -298,7 +298,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationExecutionPort"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationExecutionPortEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationExecutionPortEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort_3077"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationExecutionPort">
@@ -309,7 +309,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationPortDelegationConnector"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortDelegationConnectorEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortDelegationConnectorEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationPortDelegationConnector">
@@ -320,7 +320,7 @@
              </metamodelType>
              <metamodelType
                    eclass="RuleBasedReconfigurationController"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.RuleBasedReconfigurationControllerEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.RuleBasedReconfigurationControllerEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_7076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="RuleBasedReconfigurationController">
@@ -331,7 +331,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurableStructuredComponent"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurableStructuredComponentEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurableStructuredComponentEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurableStructuredComponent">
@@ -342,7 +342,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurableAtomicComponent"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurableAtomicComponentEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurableAtomicComponentEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent_2078"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurableAtomicComponent">
@@ -353,7 +353,7 @@
              </metamodelType>
              <metamodelType
                    eclass="FadingComponent"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.FadingComponentEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.FadingComponentEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent_2079"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="FadingComponent">
@@ -367,7 +367,7 @@
                 nsURI="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0">
              <metamodelType
                    eclass="BroadcastPort"
-                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.BroadcastPortEditHelper"
+                   edithelper="org.muml.reconfiguration.ui.edit.helpers.BroadcastPortEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="BroadcastPort">

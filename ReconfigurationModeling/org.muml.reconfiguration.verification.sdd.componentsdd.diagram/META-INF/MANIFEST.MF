@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.reconfiguration.verification.sdd.componentsdd.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
+Bundle-Activator: org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
@@ -63,8 +63,8 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part,
- de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers
+Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts,
+ org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies,
+ org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part,
+ org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers
 Import-Package: org.eclipse.emf.ecore.presentation

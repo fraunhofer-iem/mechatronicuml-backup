@@ -27,7 +27,7 @@
       <metamodel
             nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <adviceBinding
-               class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.custom.edit.helper.SinglePortVariableEditHelperAdvice"
+               class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom.edit.helper.SinglePortVariableEditHelperAdvice"
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3005Advice"
                inheritance="all"
                typeId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005">
@@ -37,7 +37,7 @@
    <extension
          point="org.muml.core.modelinstance.ui.modelinitializer">
       <initializer
-            initializer="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.custom.initializer.ComponentStoryDecisionDiagramInitializer">
+            initializer="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom.initializer.ComponentStoryDecisionDiagramInitializer">
       </initializer>
    </extension>
 

@@ -42,7 +42,7 @@
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.muml.reconfiguration.properties.tabs.ConstraintTabElementFilter"
+            filter="org.muml.reconfiguration.properties.tabs.ConstraintTabElementFilter"
             id="property.tab.constraint"
             tab="property.tab.constraint">
              <input
@@ -59,202 +59,202 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.protocolinstantiation.editor.BroadcastPortEditor$Factory"
+             factory="org.muml.reconfiguration.properties.protocolinstantiation.editor.BroadcastPortEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0#BroadcastPort">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.protocolinstantiation.editor.ProtocolInstantiationPortSpecificationEditor$Factory"
+             factory="org.muml.reconfiguration.properties.protocolinstantiation.editor.ProtocolInstantiationPortSpecificationEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0#ProtocolInstantiationPortSpecification">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.protocolinstantiation.editor.DiscoveryPortSpecificationEditor$Factory"
+             factory="org.muml.reconfiguration.properties.protocolinstantiation.editor.DiscoveryPortSpecificationEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0#DiscoveryPortSpecification">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurableAtomicComponentEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurableAtomicComponentEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurableAtomicComponent">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurableStructuredComponentEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurableStructuredComponentEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurableStructuredComponent">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortInterfaceEntryEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortInterfaceEntryEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationPortInterfaceEntry">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationMessagePortEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationMessagePortEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationMessagePort">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationMessagePortInterfaceEntryEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationMessagePortInterfaceEntryEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationMessagePortInterfaceEntry">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionPortEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionPortEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationExecutionPort">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionPortInterfaceEntryEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionPortInterfaceEntryEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationExecutionPortInterfaceEntry">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ExecutionTimingSpecificationSinglePhaseEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutionTimingSpecificationSinglePhaseEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ExecutionTimingSpecificationSinglePhase">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ExecutionTimingSpecificationThreePhaseEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutionTimingSpecificationThreePhaseEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ExecutionTimingSpecificationThreePhase">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.InternalReconfigurationCommunicationPortEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.InternalReconfigurationCommunicationPortEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#InternalReconfigurationCommunicationPort">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.RuleBasedReconfigurationControllerEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.RuleBasedReconfigurationControllerEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#RuleBasedReconfigurationController">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ManagerEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ManagerEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#Manager">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ManagerSpecificationEntryEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ManagerSpecificationEntryEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ManagerSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ExecutorEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutorEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#Executor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ExecutorSpecificationEntryEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutorSpecificationEntryEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ExecutorSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.SignatureEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.SignatureEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#Signature">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortAssemblyConnectorEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortAssemblyConnectorEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationPortAssemblyConnector">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortDelegationConnectorEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortDelegationConnectorEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationPortDelegationConnector">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.FadingComponentEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.FadingComponentEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#FadingComponent">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.FadingFunctionEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.FadingFunctionEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#FadingFunction">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.HybridPortMappingEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.HybridPortMappingEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#HybridPortMapping">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionSpecificationEntryEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionSpecificationEntryEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationExecutionSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationManagementSpecificationEntryEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationManagementSpecificationEntryEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationManagementSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor.ActivityCallExpressionEditor$Factory"
+             factory="org.muml.reconfiguration.properties.expression.editor.ActivityCallExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#ActivityCallExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor.ReconfigurationRuleCallExpressionEditor$Factory"
+             factory="org.muml.reconfiguration.properties.expression.editor.ReconfigurationRuleCallExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#ReconfigurationRuleCallExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor.EvaluateStructuralConditionExpressionEditor$Factory"
+             factory="org.muml.reconfiguration.properties.expression.editor.EvaluateStructuralConditionExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#EvaluateStructuralConditionExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.editor.StructTypeEditor$Factory"
+             factory="org.muml.reconfiguration.properties.structdatatype.editor.StructTypeEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#StructType">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.editor.ReferenceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.structdatatype.editor.ReferenceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#Reference">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationPortInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationPortInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationPortInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationMessagePortInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationMessagePortInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationMessagePortInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationExecutionPortInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationExecutionPortInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationExecutionPortInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.InternalReconfigurationCommunicationPortInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.InternalReconfigurationCommunicationPortInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#InternalReconfigurationCommunicationPortInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.RuleBasedReconfigurationControllerInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.RuleBasedReconfigurationControllerInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#RuleBasedReconfigurationControllerInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ManagerInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.ManagerInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ManagerInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ExecutorInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.ExecutorInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ExecutorInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableAtomicComponentInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableAtomicComponentInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurableAtomicComponentInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableStructuredComponentInstanceEditor$Factory"
+             factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableStructuredComponentInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurableStructuredComponentInstance">
        </propertyEditor>
     
@@ -265,7 +265,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.reconfiguration.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -273,7 +273,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.reconfiguration.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.reconfiguration.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

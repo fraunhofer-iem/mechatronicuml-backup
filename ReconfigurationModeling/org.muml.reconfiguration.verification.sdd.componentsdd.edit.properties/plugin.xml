@@ -42,7 +42,7 @@
       <propertySections contributorId="de.uni_paderborn.fujaba.common.properties">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.tabs.ConstraintTabElementFilter"
+            filter="org.muml.reconfiguration.verification.sdd.componentsdd.properties.tabs.ConstraintTabElementFilter"
             id="property.tab.constraint"
             tab="property.tab.constraint">
              <input
@@ -59,22 +59,22 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.ComponentStoryDecisionDiagramEditor$Factory"
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.ComponentStoryDecisionDiagramEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#ComponentStoryDecisionDiagram">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.ComponentStoryPatternNodeEditor$Factory"
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.ComponentStoryPatternNodeEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#ComponentStoryPatternNode">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.EvaluateComponentSDDExpressionEditor$Factory"
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.EvaluateComponentSDDExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#EvaluateComponentSDDExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.InitialNodeEditor$Factory"
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.InitialNodeEditor$Factory"
              type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#InitialNode">
        </propertyEditor>
     
@@ -85,7 +85,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.reconfiguration.verification.sdd.componentsdd.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -93,7 +93,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.reconfiguration.verification.sdd.componentsdd.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

@@ -42,7 +42,7 @@
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.tabs.ConstraintTabElementFilter"
+            filter="org.muml.reconfiguration.componentstorypattern.properties.tabs.ConstraintTabElementFilter"
             id="property.tab.constraint"
             tab="property.tab.constraint">
              <input
@@ -59,57 +59,57 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.ComponentStoryPatternEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentStoryPatternEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#ComponentStoryPattern">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.ComponentStoryPatternVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentStoryPatternVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#ComponentStoryPatternVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.ComponentVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#ComponentVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.AssemblyVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.AssemblyVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#AssemblyVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.DelegationVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.DelegationVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#DelegationVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.SinglePortVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.SinglePortVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#SinglePortVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.MultiPortVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.MultiPortVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#MultiPortVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.FadingComponentPartVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.FadingComponentPartVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#FadingComponentPartVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.ComponentPartVariableEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentPartVariableEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#ComponentPartVariable">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.MultiPortOrderConstraintEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.MultiPortOrderConstraintEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#MultiPortOrderConstraint">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.MultiPortPositionConstraintEditor$Factory"
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.MultiPortPositionConstraintEditor$Factory"
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#MultiPortPositionConstraint">
        </propertyEditor>
     
@@ -120,7 +120,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.reconfiguration.componentstorypattern.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -128,7 +128,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.reconfiguration.componentstorypattern.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 

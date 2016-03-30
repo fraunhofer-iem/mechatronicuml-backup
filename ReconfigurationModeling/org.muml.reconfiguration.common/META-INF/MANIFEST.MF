@@ -17,5 +17,5 @@ Require-Bundle: org.muml.pim.edit;bundle-version="0.3.1",
  org.muml.reconfiguration.ui;bundle-version="0.4.0";visibility:=reexport,
  org.eclipse.xtext.ui;bundle-version="2.8.3"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies,
- de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext
+Export-Package: org.muml.reconfiguration.common.edit.policies,
+ org.muml.reconfiguration.common.xtext
