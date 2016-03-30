@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen;
 
-import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
+import org.muml.pim.instance.AtomicComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

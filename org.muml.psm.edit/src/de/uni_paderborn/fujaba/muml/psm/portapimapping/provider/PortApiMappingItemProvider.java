@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.portapimapping.provider;
 
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
-
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping;
@@ -31,6 +29,7 @@ import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.provider.CommentableElementItemProvider;
+import org.muml.pim.actionlanguage.ActionlanguageFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping} object.

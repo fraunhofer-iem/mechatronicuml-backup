@@ -4,8 +4,7 @@ package de.uni_paderborn.fujaba.muml.psm.portapimapping;
 
 import org.muml.core.CommentableElement;
 import org.muml.core.expressions.Expression;
-
-import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
+import org.muml.pim.instance.ContinuousPortInstance;
 
 /**
  * <!-- begin-user-doc -->

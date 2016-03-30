@@ -4,9 +4,8 @@ package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart;
 
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-
 import org.eclipse.emf.common.util.EList;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

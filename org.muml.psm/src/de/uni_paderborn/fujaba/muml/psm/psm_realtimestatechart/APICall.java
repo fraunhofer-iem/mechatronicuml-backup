@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
+import org.muml.pim.actionlanguage.OperationCall;
 
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.APICallParameter;
 

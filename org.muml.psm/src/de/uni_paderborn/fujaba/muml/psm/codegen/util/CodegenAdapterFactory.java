@@ -4,10 +4,6 @@ package de.uni_paderborn.fujaba.muml.psm.codegen.util;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
-
-import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -18,6 +14,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.instance.AtomicComponentInstance;
+import org.muml.pim.instance.ComponentInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -292,13 +290,13 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance <em>Component Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.instance.ComponentInstance <em>Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstance
+	 * @see org.muml.pim.instance.ComponentInstance
 	 * @generated
 	 */
 	public Adapter createComponentInstanceAdapter() {
@@ -306,13 +304,13 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance <em>Atomic Component Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.instance.AtomicComponentInstance <em>Atomic Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance
+	 * @see org.muml.pim.instance.AtomicComponentInstance
 	 * @generated
 	 */
 	public Adapter createAtomicComponentInstanceAdapter() {

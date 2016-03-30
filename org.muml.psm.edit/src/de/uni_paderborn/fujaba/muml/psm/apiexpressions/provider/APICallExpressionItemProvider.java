@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.apiexpressions.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.APICallExpression;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
 
@@ -26,6 +24,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
+import org.muml.pim.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.apiexpressions.APICallExpression} object.

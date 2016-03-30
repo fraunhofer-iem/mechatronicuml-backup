@@ -11,8 +11,7 @@ import java.util.List;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.eclipse.xtext.service.AbstractElementFinder.*;
-
-import de.uni_paderborn.fujaba.muml.services.ActionLanguageGrammarAccess;
+import org.muml.pim.actionlanguage.xtext.services.ActionLanguageGrammarAccess;
 
 @Singleton
 public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinder {

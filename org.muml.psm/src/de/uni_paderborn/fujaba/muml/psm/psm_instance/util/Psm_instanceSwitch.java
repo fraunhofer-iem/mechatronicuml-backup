@@ -2,14 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_instance.util;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
-
-import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_instance.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -19,6 +11,12 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.DiscreteInteractionEndpointInstance;
+import org.muml.pim.connector.DiscreteSingleInteractionEndpointInstance;
+import org.muml.pim.instance.DiscretePortInstance;
+import org.muml.pim.instance.DiscreteSinglePortInstance;
+import org.muml.pim.instance.PortInstance;
 
 /**
  * <!-- begin-user-doc -->

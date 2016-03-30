@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.psm_instance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.instance.provider.DiscreteSinglePortInstanceItemProvider;
-
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
@@ -28,6 +26,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
+import org.muml.pim.instance.provider.DiscreteSinglePortInstanceItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.psm_instance.ParameterisableDiscreteSinglePortInstance} object.

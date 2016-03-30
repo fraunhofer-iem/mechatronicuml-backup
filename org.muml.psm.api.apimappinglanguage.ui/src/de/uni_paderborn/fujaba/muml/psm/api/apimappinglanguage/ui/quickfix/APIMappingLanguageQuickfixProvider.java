@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui.quickfix;
  *
  * see http://www.eclipse.org/Xtext/documentation.html#quickfixes
  */
-public class APIMappingLanguageQuickfixProvider extends de.uni_paderborn.fujaba.muml.ui.quickfix.ActionLanguageQuickfixProvider {
+public class APIMappingLanguageQuickfixProvider extends org.muml.pim.actionlanguage.xtext.ui.quickfix.ActionLanguageQuickfixProvider {
 
 //	@Fix(MyJavaValidator.INVALID_NAME)
 //	public void capitalizeName(final Issue issue, IssueResolutionAcceptor acceptor) {

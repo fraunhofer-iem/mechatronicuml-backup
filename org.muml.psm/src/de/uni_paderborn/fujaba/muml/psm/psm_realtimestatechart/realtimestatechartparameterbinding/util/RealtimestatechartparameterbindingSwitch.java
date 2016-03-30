@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -13,6 +11,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.behavior.Operation;
 
 /**
  * <!-- begin-user-doc -->

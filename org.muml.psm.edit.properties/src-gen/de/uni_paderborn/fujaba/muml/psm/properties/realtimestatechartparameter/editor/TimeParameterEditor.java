@@ -94,9 +94,9 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInitializeExpression_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInitializeExpression_property_tab_generalTab_Editor() {
 		if (this.editorInitializeExpression_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getVariable_InitializeExpression();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
@@ -110,7 +110,7 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConstant_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConstant_property_tab_generalTab_Editor() {
 		if (this.editorConstant_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getVariable_Constant();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
@@ -154,7 +154,7 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataType_property_tab_generalTab_Editor() {
 		if (this.editorDataType_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getTypedNamedElement_DataType();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);

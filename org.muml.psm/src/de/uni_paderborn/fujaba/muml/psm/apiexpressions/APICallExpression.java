@@ -2,12 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.apiexpressions;
 
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
-
 import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.behavior.ParameterBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +57,7 @@ public interface APICallExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Bindings</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding}.
+	 * The list contents are of type {@link org.muml.pim.behavior.ParameterBinding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

@@ -2,13 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.muml.pim.actionlanguage.ActionlanguagePackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->

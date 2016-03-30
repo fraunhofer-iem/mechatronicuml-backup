@@ -3,9 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.allocation.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
-
-import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation;
 
@@ -16,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.muml.pim.instance.AssemblyConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->

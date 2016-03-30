@@ -2,12 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance;
-
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,6 +13,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.muml.core.expressions.Expression;
+import org.muml.pim.instance.PortInstance;
+import org.muml.pim.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

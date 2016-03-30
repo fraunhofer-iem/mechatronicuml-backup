@@ -118,7 +118,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentRegion_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentRegion_property_tab_generalTab_Editor() {
 		if (this.editorParentRegion_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_ParentRegion();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -134,7 +134,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTransitions_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTransitions_property_tab_generalTab_Editor() {
 		if (this.editorTransitions_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_Transitions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -149,7 +149,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStates_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorStates_property_tab_generalTab_Editor() {
 		if (this.editorStates_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_States();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -164,7 +164,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClocks_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClocks_property_tab_generalTab_Editor() {
 		if (this.editorClocks_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_Clocks();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -179,7 +179,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUsedOperationRepositories_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUsedOperationRepositories_property_tab_generalTab_Editor() {
 		if (this.editorUsedOperationRepositories_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_UsedOperationRepositories();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -195,7 +195,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubRoleSpecificVariables_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubRoleSpecificVariables_property_tab_generalTab_Editor() {
 		if (this.editorSubRoleSpecificVariables_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_SubRoleSpecificVariables();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -241,7 +241,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubRoleSpecificClocks_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubRoleSpecificClocks_property_tab_generalTab_Editor() {
 		if (this.editorSubRoleSpecificClocks_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_SubRoleSpecificClocks();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -287,7 +287,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubRoleSpecificOperations_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubRoleSpecificOperations_property_tab_generalTab_Editor() {
 		if (this.editorSubRoleSpecificOperations_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getRealtimeStatechart_SubRoleSpecificOperations();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -362,7 +362,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavioralElement_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavioralElement_property_tab_generalTab_Editor() {
 		if (this.editorBehavioralElement_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_BehavioralElement();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -377,7 +377,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperations_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperations_property_tab_generalTab_Editor() {
 		if (this.editorOperations_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_Operations();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -393,7 +393,7 @@ public class ParameterizedRealtimeStatechartEditor
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariables_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariables_property_tab_generalTab_Editor() {
 		if (this.editorVariables_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_Variables();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);

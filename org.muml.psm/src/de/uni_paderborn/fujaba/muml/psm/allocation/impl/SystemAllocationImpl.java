@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.allocation.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AssemblyConnectorInstanceAllocation;
@@ -23,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.impl.ExtendableElementImpl;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 /**
  * <!-- begin-user-doc -->

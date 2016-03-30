@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.portapimapping.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
@@ -19,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.expressions.Expression;
 import org.muml.core.impl.CommentableElementImpl;
+import org.muml.pim.instance.ContinuousPortInstance;
 
 /**
  * <!-- begin-user-doc -->

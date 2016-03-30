@@ -2,14 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.APICallParameterBinding;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -38,6 +32,10 @@ import org.muml.core.Extension;
 import org.muml.core.NamedElement;
 import org.muml.core.expressions.Expression;
 import org.muml.core.util.ExtendableElementOperations;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

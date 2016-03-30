@@ -2,10 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -66,6 +62,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
+import org.muml.pim.actionlanguage.ActionlanguagePackage;
+import org.muml.pim.behavior.BehaviorPackage;
 
 /**
  * <!-- begin-user-doc -->

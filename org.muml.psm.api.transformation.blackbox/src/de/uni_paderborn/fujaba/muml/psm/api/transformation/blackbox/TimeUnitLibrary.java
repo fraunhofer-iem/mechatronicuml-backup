@@ -6,10 +6,9 @@ import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.core.expressions.common.impl.CommonExpressionsFactoryImpl;
-
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
-import de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypeFactoryImpl;
+import org.muml.pim.valuetype.TimeValue;
+import org.muml.pim.valuetype.ValuetypeFactory;
+import org.muml.pim.valuetype.impl.ValuetypeFactoryImpl;
 
 public class TimeUnitLibrary {
 

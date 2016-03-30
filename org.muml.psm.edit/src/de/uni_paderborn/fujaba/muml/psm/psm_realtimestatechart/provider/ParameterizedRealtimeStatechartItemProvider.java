@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
@@ -15,10 +13,6 @@ import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestate
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingFactory;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimeStatechartItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -34,6 +28,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.provider.RealtimeStatechartItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.ParameterizedRealtimeStatechart} object.

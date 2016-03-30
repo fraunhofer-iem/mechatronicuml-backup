@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -15,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.pim.behavior.Operation;
 
 /**
  * <!-- begin-user-doc -->
@@ -205,13 +204,13 @@ public class RealtimestatechartparameterbindingAdapterFactory extends AdapterFac
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.behavior.Operation <em>Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.behavior.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.behavior.Operation
+	 * @see org.muml.pim.behavior.Operation
 	 * @generated
 	 */
 	public Adapter createOperationAdapter() {

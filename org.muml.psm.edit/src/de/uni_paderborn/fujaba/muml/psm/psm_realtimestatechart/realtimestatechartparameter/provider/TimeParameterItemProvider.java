@@ -3,10 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider;
 
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.Psm_realtimestatechartFactory;
@@ -28,6 +24,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.pim.actionlanguage.ActionlanguageFactory;
+import org.muml.pim.behavior.BehaviorPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.TimeParameter} object.

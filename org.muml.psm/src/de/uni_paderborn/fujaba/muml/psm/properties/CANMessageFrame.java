@@ -2,8 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
