@@ -12,6 +12,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.pim;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.swplatform,
- de.uni_paderborn.fujaba.muml.swplatform.impl,
- de.uni_paderborn.fujaba.muml.swplatform.util
+Export-Package: org.muml.pm.software.platform,
+ org.muml.pm.software.platform.impl,
+ org.muml.pm.software.platform.util

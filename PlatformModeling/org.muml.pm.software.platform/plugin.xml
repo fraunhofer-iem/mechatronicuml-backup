@@ -10,7 +10,7 @@
       <!-- @generated swplatform -->
       <package
             uri="http://www.fujaba.de/muml/swplatform/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage"
+            class="org.muml.pm.software.platform.SwplatformPackage"
             genModel="model/swplatform.genmodel"/>
    </extension>
 

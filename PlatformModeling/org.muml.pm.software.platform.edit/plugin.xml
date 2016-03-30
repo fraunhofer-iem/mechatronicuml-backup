@@ -10,7 +10,7 @@
       <!-- @generated swplatform -->
       <factory
             uri="http://www.fujaba.de/muml/swplatform/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.swplatform.provider.SwplatformItemProviderAdapterFactory"
+            class="org.muml.pm.software.platform.provider.SwplatformItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

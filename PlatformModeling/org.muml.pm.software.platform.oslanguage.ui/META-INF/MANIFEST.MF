@@ -24,8 +24,8 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
  org.muml.core.modelinstance
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.fujaba.muml.swplatform.oslanguage.ui.contentassist,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.ui.contentassist.antlr,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.ui.internal,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.ui.quickfix
-Bundle-Activator: de.uni_paderborn.fujaba.muml.swplatform.oslanguage.ui.internal.OperatingSystemLanguageActivator
+Export-Package: org.muml.pm.software.platform.oslanguage.ui.contentassist,
+ org.muml.pm.software.platform.oslanguage.ui.contentassist.antlr,
+ org.muml.pm.software.platform.oslanguage.ui.internal,
+ org.muml.pm.software.platform.oslanguage.ui.quickfix
+Bundle-Activator: org.muml.pm.software.platform.oslanguage.ui.internal.OperatingSystemLanguageActivator

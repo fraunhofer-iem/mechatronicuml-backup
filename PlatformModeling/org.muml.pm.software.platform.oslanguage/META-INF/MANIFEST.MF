@@ -26,14 +26,14 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: de.uni_paderborn.fujaba.muml.swplatform.oslanguage,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.formatting,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.generator,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.parseTreeConstruction,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.parser.antlr,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.parser.antlr.internal,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.scoping,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.services,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.validation,
- de.uni_paderborn.fujaba.muml.swplatform.oslanguage.valueconverter
+Export-Package: org.muml.pm.software.platform.oslanguage,
+ org.muml.pm.software.platform.oslanguage.formatting,
+ org.muml.pm.software.platform.oslanguage.generator,
+ org.muml.pm.software.platform.oslanguage.parseTreeConstruction,
+ org.muml.pm.software.platform.oslanguage.parser.antlr,
+ org.muml.pm.software.platform.oslanguage.parser.antlr.internal,
+ org.muml.pm.software.platform.oslanguage.scoping,
+ org.muml.pm.software.platform.oslanguage.services,
+ org.muml.pm.software.platform.oslanguage.validation,
+ org.muml.pm.software.platform.oslanguage.valueconverter
 
