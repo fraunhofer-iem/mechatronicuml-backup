@@ -3,8 +3,7 @@
 package de.uni_paderborn.fujaba.muml.psm.apiexpressions;
 
 import org.muml.core.expressions.Expression;
-
-import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
+import org.muml.pm.software.platform.EnumerationValue;
 
 /**
  * <!-- begin-user-doc -->

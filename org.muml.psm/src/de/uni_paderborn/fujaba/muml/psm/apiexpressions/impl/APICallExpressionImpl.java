@@ -5,8 +5,6 @@ package de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.APICallExpression;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
 
-import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,6 +21,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pm.software.platform.APICommand;
 
 /**
  * <!-- begin-user-doc -->

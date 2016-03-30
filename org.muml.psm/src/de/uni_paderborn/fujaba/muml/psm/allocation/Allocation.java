@@ -4,8 +4,7 @@ package de.uni_paderborn.fujaba.muml.psm.allocation;
 
 import org.muml.core.ExtendableElement;
 import org.muml.pim.instance.ComponentInstance;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
 /**
  * <!-- begin-user-doc -->

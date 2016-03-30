@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
 
@@ -14,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.impl.ExtendableElementImpl;
 import org.muml.pim.instance.ComponentInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
 /**
  * <!-- begin-user-doc -->

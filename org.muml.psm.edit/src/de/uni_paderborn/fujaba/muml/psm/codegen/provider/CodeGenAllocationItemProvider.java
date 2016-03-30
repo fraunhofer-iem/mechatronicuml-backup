@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.provider;
 
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 
@@ -29,6 +28,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.instance.InstanceFactory;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation} object.

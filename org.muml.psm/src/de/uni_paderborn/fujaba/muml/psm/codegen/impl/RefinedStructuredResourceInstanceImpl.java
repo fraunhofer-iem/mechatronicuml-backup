@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.StructuredResourceInstanceImpl;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
@@ -18,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.muml.pm.hardware.hwresourceinstance.impl.StructuredResourceInstanceImpl;
 
 /**
  * <!-- begin-user-doc -->

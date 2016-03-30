@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.util;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -16,6 +14,8 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.instance.AtomicComponentInstance;
 import org.muml.pim.instance.ComponentInstance;
+import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -318,13 +318,13 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance <em>Resource Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pm.hardware.hwresourceinstance.ResourceInstance <em>Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance
+	 * @see org.muml.pm.hardware.hwresourceinstance.ResourceInstance
 	 * @generated
 	 */
 	public Adapter createResourceInstanceAdapter() {
@@ -332,13 +332,13 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance <em>Structured Resource Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance <em>Structured Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance
+	 * @see org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance
 	 * @generated
 	 */
 	public Adapter createStructuredResourceInstanceAdapter() {

@@ -18,11 +18,11 @@ import org.muml.pim.behavior.Parameter;
 import org.muml.pim.instance.ContinuousPortInstance;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.types.DataType;
+import org.muml.pm.software.platform.APICommand;
+import org.muml.pm.software.platform.EnumerationValue;
+import org.muml.pm.software.platform.SwplatformPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.APICallExpression;
-import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
-import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
-import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 /**
  * This class contains custom scoping description.

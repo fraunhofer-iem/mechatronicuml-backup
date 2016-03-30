@@ -2,12 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.pim.instance.InstancePackage;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 
 /**
  * <!-- begin-user-doc -->

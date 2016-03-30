@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.properties.provider;
 
 
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
-
 import de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
@@ -26,6 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.ExtensionItemProvider;
 import org.muml.pim.valuetype.ValuetypeFactory;
+import org.muml.pm.hardware.hwvaluetype.HwvaluetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame} object.
