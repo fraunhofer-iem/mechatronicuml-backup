@@ -3,8 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.provider;
 
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider.StructuredResourceInstanceItemProvider;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
 
@@ -23,6 +21,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
+import org.muml.pm.hardware.hwresourceinstance.provider.StructuredResourceInstanceItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance} object.

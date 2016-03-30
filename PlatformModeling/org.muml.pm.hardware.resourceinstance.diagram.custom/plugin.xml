@@ -13,7 +13,7 @@
    <extension
          point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
       <ParserProvider
-            class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.providers.CustomResourceInstanceParserProvider">
+            class="org.muml.pm.hardware.resourceinstance.diagram.custom.providers.CustomResourceInstanceParserProvider">
          <Priority
                name="Low">
          </Priority>
@@ -53,7 +53,7 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.handlers.InstantiateResourceTypeHandler"
+            defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.custom.handlers.InstantiateResourceTypeHandler"
             description="InstanticateResource"
             id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.instantiateResource"
             name="Instantiate Resource">

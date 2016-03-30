@@ -8,9 +8,9 @@ Require-Bundle: org.muml.pm.hardware.common;bundle-version="1.0.0",
  org.muml.pm.hardware.platform.diagram,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0"
-Export-Package:  de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parsers,
- de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.part,
- de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parts,
- de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.providers
-Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.part.Activator
+Export-Package: org.muml.pm.hardware.platform.diagram.custom.parsers,
+ org.muml.pm.hardware.platform.diagram.custom.part,
+ org.muml.pm.hardware.platform.diagram.custom.parts,
+ org.muml.pm.hardware.platform.diagram.custom.providers
+Bundle-Activator: org.muml.pm.hardware.platform.diagram.custom.part.Activator
 Bundle-ActivationPolicy: lazy

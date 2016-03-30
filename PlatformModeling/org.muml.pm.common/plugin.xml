@@ -4,7 +4,7 @@
 <extension
           point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-              class="de.uni_paderborn.fujaba.muml.pm.common.xtext.FujabaResourceServiceProvider"
+              class="org.muml.pm.common.xtext.FujabaResourceServiceProvider"
               uriExtension="fujaba">
         </resourceServiceProvider>
     </extension>

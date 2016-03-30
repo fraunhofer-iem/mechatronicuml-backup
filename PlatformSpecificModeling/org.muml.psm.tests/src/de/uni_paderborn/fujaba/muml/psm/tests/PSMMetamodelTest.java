@@ -16,9 +16,8 @@ import org.muml.core.CorePackage;
 import org.muml.core.tests.MetamodelTest;
 import org.muml.core.tests.TestUtilities;
 import org.muml.pim.MumlPackage;
-
-import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
-import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
+import org.muml.pm.hardware.HardwarePackage;
+import org.muml.pm.software.platform.SwplatformPackage;
 
 @RunWith(Parameterized.class)
 public class PSMMetamodelTest extends MetamodelTest {

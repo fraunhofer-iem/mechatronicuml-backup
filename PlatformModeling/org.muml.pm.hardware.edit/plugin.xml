@@ -12,7 +12,7 @@
       <!-- @generated hardware -->
       <factory
             uri="http://www.fujaba.de/muml/hardware/hwplatform/1.1/"
-            class="de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory"
+            class="org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -24,7 +24,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
             uri="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/"
-            class="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory"
+            class="org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -37,7 +37,7 @@
       <!-- @generated hardware -->
       <factory
             uri="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/"
-            class="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory"
+            class="org.muml.pm.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -50,7 +50,7 @@
       <!-- @generated hardware -->
       <factory
             uri="http://www.fujaba.de/muml/hardware/hwresource/1.1/"
-            class="de.uni_paderborn.fujaba.muml.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory"
+            class="org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -63,7 +63,7 @@
       <!-- @generated hardware -->
       <factory
             uri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
-            class="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory"
+            class="org.muml.pm.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

@@ -3,10 +3,8 @@
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
 import org.muml.core.Extension;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
+import org.muml.pm.hardware.hwvaluetype.DataSize;
 
 /**
  * <!-- begin-user-doc -->

@@ -44,7 +44,7 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.edit.handler.InitHWPlatformInstanceHandler"
+            defaultHandler="org.muml.pm.hardware.platforminstance.diagram.custom.edit.handler.InitHWPlatformInstanceHandler"
             id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.InitPlatformInstance"
             name="Initialize a Hardware Platform Instance">
       </command>
@@ -54,7 +54,7 @@
       <metamodel
             nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <adviceBinding
-               class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.edit.helper.HWPlatformInstanceEditHelperAdvice"
+               class="org.muml.pm.hardware.platforminstance.diagram.custom.edit.helper.HWPlatformInstanceEditHelperAdvice"
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.adviceBinding1"
                inheritance="none"
                typeId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstance_2005">

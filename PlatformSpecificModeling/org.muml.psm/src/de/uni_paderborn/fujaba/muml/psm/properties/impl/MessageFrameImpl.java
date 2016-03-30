@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
-
 import de.uni_paderborn.fujaba.muml.psm.properties.MessageFrame;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
@@ -16,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.impl.ExtensionImpl;
 import org.muml.pim.valuetype.TimeValue;
+import org.muml.pm.hardware.hwvaluetype.DataSize;
 
 /**
  * <!-- begin-user-doc -->

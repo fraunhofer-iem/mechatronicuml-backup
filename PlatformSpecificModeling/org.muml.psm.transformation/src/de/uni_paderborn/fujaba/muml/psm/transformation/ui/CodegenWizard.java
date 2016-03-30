@@ -18,6 +18,7 @@ import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
 import org.muml.core.export.pages.AbstractFujabaExportTargetPage;
 import org.muml.core.export.pages.ElementSelectionMode;
 import org.muml.core.export.wizard.AbstractFujabaExportWizard;
+import org.muml.pm.common.xtext.FujabaResourceServiceProvider;
 
 import com.google.inject.Injector;
 
@@ -25,7 +26,6 @@ import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.CodegenFlatHierarc
 import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.MumlPIM2MumlPSMJob;
 import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.MumlPSM2CodegenJob;
 import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.SystemAllocation2CodegenJob;
-import de.uni_paderborn.fujaba.muml.pm.common.xtext.FujabaResourceServiceProvider;
 import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 import de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator;

@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
-
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.ExtendableElement;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 
 /**
  * <!-- begin-user-doc -->

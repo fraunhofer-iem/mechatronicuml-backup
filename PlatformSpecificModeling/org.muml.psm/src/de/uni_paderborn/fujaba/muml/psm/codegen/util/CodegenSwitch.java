@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.util;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -14,6 +12,8 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.instance.AtomicComponentInstance;
 import org.muml.pim.instance.ComponentInstance;
+import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
 /**
  * <!-- begin-user-doc -->

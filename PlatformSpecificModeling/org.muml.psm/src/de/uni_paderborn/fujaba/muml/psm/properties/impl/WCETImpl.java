@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.muml.psm.properties.WCET;
 
@@ -16,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.impl.ExtensionImpl;
 import org.muml.pim.valuetype.TimeValue;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
 /**
  * <!-- begin-user-doc -->

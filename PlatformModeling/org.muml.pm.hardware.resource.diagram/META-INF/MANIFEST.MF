@@ -4,13 +4,13 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.pm.hardware.resource.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+Bundle-Activator: org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers,
- de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part,
- de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers
+Export-Package: org.muml.pm.hardware.resource.diagram.edit.parts,
+ org.muml.pm.hardware.resource.diagram.parsers,
+ org.muml.pm.hardware.resource.diagram.part,
+ org.muml.pm.hardware.resource.diagram.providers
 Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.ui.navigator,
  org.eclipse.ui.navigator.resources,

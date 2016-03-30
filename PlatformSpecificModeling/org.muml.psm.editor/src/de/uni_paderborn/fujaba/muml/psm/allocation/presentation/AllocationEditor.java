@@ -134,12 +134,13 @@ import org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schem
 import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
 import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
 import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory;
+import org.muml.pm.software.platform.provider.SwplatformItemProviderAdapterFactory;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory;
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory;
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.provider.ApiexpressionsItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.provider.CodegenItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.provider.PortapimappingItemProviderAdapterFactory;
@@ -150,7 +151,6 @@ import de.uni_paderborn.fujaba.muml.psm.psm_instance.provider.Psm_instanceItemPr
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.provider.Psm_realtimestatechartItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider.RealtimestatechartparameterItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.provider.RealtimestatechartparameterbindingItemProviderAdapterFactory;
-import de.uni_paderborn.fujaba.muml.swplatform.provider.SwplatformItemProviderAdapterFactory;
 
 
 /**

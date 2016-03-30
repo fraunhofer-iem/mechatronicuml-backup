@@ -5,8 +5,6 @@ package de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.EnumerationValueExpression;
 
-import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -14,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.pm.software.platform.EnumerationValue;
 
 /**
  * <!-- begin-user-doc -->

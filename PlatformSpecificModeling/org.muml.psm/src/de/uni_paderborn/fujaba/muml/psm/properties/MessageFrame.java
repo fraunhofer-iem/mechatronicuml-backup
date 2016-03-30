@@ -4,8 +4,7 @@ package de.uni_paderborn.fujaba.muml.psm.properties;
 
 import org.muml.core.Extension;
 import org.muml.pim.valuetype.TimeValue;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
+import org.muml.pm.hardware.hwvaluetype.DataSize;
 
 /**
  * <!-- begin-user-doc -->

@@ -13,7 +13,7 @@
    <extension
          point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
       <ParserProvider
-            class="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.providers.CustomPlatformParserProvider">
+            class="org.muml.pm.hardware.platform.diagram.custom.providers.CustomPlatformParserProvider">
          <Priority
                name="Low">
          </Priority>
@@ -22,7 +22,7 @@
    <extension
          point="org.muml.core.modelinstance.ui.modelinitializer">
       <initializer
-            initializer="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.HWPlatformDiagramInitializer">
+            initializer="org.muml.pm.hardware.platform.diagram.custom.HWPlatformDiagramInitializer">
       </initializer>
    </extension>
 

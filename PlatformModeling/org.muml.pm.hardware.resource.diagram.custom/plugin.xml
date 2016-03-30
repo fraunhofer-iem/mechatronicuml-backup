@@ -18,7 +18,7 @@
             id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.objectContribution1"
             objectClass="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart">
          <action
-               class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
+               class="org.muml.pm.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.action1"
                label="Choose Communication Protocol ">
          </action>
@@ -28,7 +28,7 @@
             id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.objectContribution1"
             objectClass="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart">
          <action
-               class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
+               class="org.muml.pm.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.action1"
                label="Choose Communication Protocol ">
          </action>
@@ -38,7 +38,7 @@
             id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.objectContribution1"
             objectClass="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart">
          <action
-               class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
+               class="org.muml.pm.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.action1"
                label="Choose Communication Protocol ">
          </action>

@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.apiexpressions;
 
-import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
-
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.expressions.Expression;
 import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pm.software.platform.APICommand;
 
 /**
  * <!-- begin-user-doc -->

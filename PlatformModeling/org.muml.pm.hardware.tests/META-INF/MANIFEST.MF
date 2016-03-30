@@ -7,12 +7,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.hardware.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwplatform.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwresource.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.tests
+Export-Package: org.muml.pm.hardware.hwplatform.tests,
+ org.muml.pm.hardware.hwplatforminstance.tests,
+ org.muml.pm.hardware.hwresource.tests,
+ org.muml.pm.hardware.hwresourceinstance.tests,
+ org.muml.pm.hardware.hwvaluetype.tests,
+ org.muml.pm.hardware.tests
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.junit;bundle-version="4.11.0";visibility:=reexport,
  org.eclipse.emf.ecore;bundle-version="2.10.0",

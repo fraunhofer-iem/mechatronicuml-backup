@@ -2,10 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
-
 import org.eclipse.emf.ecore.EObject;
 import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->

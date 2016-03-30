@@ -13,6 +13,6 @@ Require-Bundle: org.muml.pm.hardware.platforminstance.diagram;bundle-version="1.
  org.muml.pm.hardware,
  org.eclipse.gmf.runtime.diagram.ui
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.part.Activator
-Export-Package: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wizard
+Bundle-Activator: org.muml.pm.hardware.platforminstance.diagram.custom.part.Activator
+Export-Package: org.muml.pm.hardware.platforminstance.diagram.custom.wizard
 Import-Package: com.google.common.collect

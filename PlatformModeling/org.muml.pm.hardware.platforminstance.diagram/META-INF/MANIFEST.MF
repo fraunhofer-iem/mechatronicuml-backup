@@ -49,12 +49,12 @@ Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.gef;visibility:=reexport,
  org.muml.core.common.editingdomain;visibility:=reexport
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+Bundle-Activator: org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part,
- de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers
+Export-Package: org.muml.pm.hardware.platforminstance.diagram.edit.parts,
+ org.muml.pm.hardware.platforminstance.diagram.edit.policies,
+ org.muml.pm.hardware.platforminstance.diagram.part,
+ org.muml.pm.hardware.platforminstance.diagram.providers
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

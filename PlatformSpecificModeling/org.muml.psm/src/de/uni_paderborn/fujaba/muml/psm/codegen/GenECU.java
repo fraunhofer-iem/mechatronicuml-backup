@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
 /**
  * <!-- begin-user-doc -->
