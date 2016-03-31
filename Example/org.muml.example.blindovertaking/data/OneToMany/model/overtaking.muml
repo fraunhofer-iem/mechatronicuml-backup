@@ -51,7 +51,18 @@
       <states xmi:id="_TTDlcKy-EeKcdYkvlDMjkw" name="NoOvertaking" incomingTransitions="_Lwt7UCnDEeOtyOUSDkuf3A" initial="true">
         <embeddedRegions xmi:id="_VV_GgKy-EeKcdYkvlDMjkw" priority="1">
           <embeddedStatechart xmi:id="_VWA7sKy-EeKcdYkvlDMjkw" name="overtaker_noOvertaking">
-            <transitions xmi:id="_aU5QQCngEeOLOOFBfu_IMg" priority="3" target="_J8_qUNPvEeW0oNW54uyJfQ" source="_oZZpwITBEeKO9r0VL65xcg">
+            <transitions xmi:id="_aU5QQCngEeOLOOFBfu_IMg" priority="3" target="_J8_qUNPvEeW0oNW54uyJfQ" source="_oZZpwITBEeKO9r0VL65xcg" urgent="false">
+              <clockConstraints xmi:id="_umcJYPdPEeWCIrnPicvA6w" clock="_HMl0sITDEeKO9r0VL65xcg">
+                <bound xmi:id="_vRSdMPdPEeWCIrnPicvA6w" unit="SECONDS">
+                  <value xsi:type="sdcec:ArithmeticExpression" xmi:id="_8lXiYPdPEeWCIrnPicvA6w">
+                    <leftExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8lXiYfdPEeWCIrnPicvA6w" value="4"/>
+                    <rightExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_8lXiYvdPEeWCIrnPicvA6w" operator="TIMES">
+                      <leftExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8lXiY_dPEeWCIrnPicvA6w" value="2"/>
+                      <rightExpression xsi:type="actionlanguage:TimeValueExpression" xmi:id="_8lXiZPdPEeWCIrnPicvA6w" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
+                    </rightExpression>
+                  </value>
+                </bound>
+              </clockConstraints>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_QvoiQKzFEeKcdYkvlDMjkw" kind="TRIGGER">
                 <message xmi:id="_QvoiQazFEeKcdYkvlDMjkw" instanceOf="_R2wRUNPuEeW0oNW54uyJfQ"/>
                 <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:MultiReceive" xmi:id="_skBvwNPvEeW0oNW54uyJfQ">
@@ -109,11 +120,11 @@
               </entryEvent>
               <invariants xmi:id="_u4NMEIpaEeK8UOyix3Z7KQ" clock="_HMl0sITDEeKO9r0VL65xcg">
                 <bound xmi:id="_xrdW0IpaEeK8UOyix3Z7KQ" unit="SECONDS">
-                  <value xsi:type="sdcec:ArithmeticExpression" xmi:id="_Du7NQNPpEeW0oNW54uyJfQ">
-                    <leftExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Du7NQdPpEeW0oNW54uyJfQ" value="4"/>
-                    <rightExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_Du7NQtPpEeW0oNW54uyJfQ" operator="TIMES">
-                      <leftExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Du7NQ9PpEeW0oNW54uyJfQ" value="2"/>
-                      <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Du7NRNPpEeW0oNW54uyJfQ" value="1"/>
+                  <value xsi:type="sdcec:ArithmeticExpression" xmi:id="_srYx8PdPEeWCIrnPicvA6w">
+                    <leftExpression xsi:type="sdcec:LiteralExpression" xmi:id="_srYx8fdPEeWCIrnPicvA6w" value="4"/>
+                    <rightExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_srYx8vdPEeWCIrnPicvA6w" operator="TIMES">
+                      <leftExpression xsi:type="sdcec:LiteralExpression" xmi:id="_srYx8_dPEeWCIrnPicvA6w" value="2"/>
+                      <rightExpression xsi:type="actionlanguage:TimeValueExpression" xmi:id="_srYx9PdPEeWCIrnPicvA6w" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
                     </rightExpression>
                   </value>
                 </bound>
@@ -356,7 +367,7 @@
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_8RGzMM86EeW344JiqAKLMQ" value="0"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_eXEMsITCEeKO9r0VL65xcg" unit="SECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_ZXVVkNPoEeW0oNW54uyJfQ" value="1"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_DHOs4PdQEeWCIrnPicvA6w" value="1"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
