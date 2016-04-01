@@ -31,6 +31,7 @@ public class BuildExecution {
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.err.println("Iterating Exception");
 		}
 		try {
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
