@@ -31,7 +31,7 @@ function build_command(){
 	BUILDCOMMAND="build -c"
 	if [ -n "$XTEND" -o  -n "$ACCELEO" ] 
 	then
-		if [ -z $(grep "id=\"build.execution\"" "$BUCKMINSTER_FEATURE_DIR/feature.xml") ]
+		if [ -z $(grep "id=\"build.test\"" "$BUCKMINSTER_FEATURE_DIR/feature.xml") ]
 		then
 			sed -i 's#</feature>#<plugin\nid="build.test"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
 		fi
