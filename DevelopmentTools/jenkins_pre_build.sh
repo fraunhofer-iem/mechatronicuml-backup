@@ -35,7 +35,7 @@ function build_command(){
 		then
 			sed -i 's#</feature>#<plugin\nid="build.execution"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
 		fi
-		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr")
+		BUILDCOMMAND=$(echo -e "build -c --continueonerror \nlaunch -l build.execution/New_configuration.launch --stdout --stderr")
 		if [ -n "$XTEND" ]
 		then
 			BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n build")
