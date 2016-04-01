@@ -25,19 +25,29 @@
 function build_command(){
 	svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.execution
 	QUERY=$(find . -maxdepth 2 -iname "*.cquery" -printf "%P")
+	BUCKMINSTER_FEATURE_DIR=${QUERY%/*}
 	XTEND=$(find . -iname "*.xtend")
+	ACCELEO=$(find . -iname "*.mtl")
 	BUILDCOMMAND="build -c"
-	if [ -n "$XTEND" ] 
+	if [ -n "$XTEND" -o  -n "$ACCELEO" ] 
 	then
-		BUILDCOMMAND="build -c --continueonerror
-launch -l build.execution/New_configuration.launch --stdout --stderr
-build"
-	fi
+		if [ -z $(grep "id=\"build.execution\"" "$BUCKMINSTER_FEATURE_DIR/feature.xml") ]
+		then
+			sed -i 's#</feature>#   <plugin
+         id="build.execution"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
+		fi
+		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr \n build")
+	fi	
 	cat <<EOF > build_command.txt
 importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.targetPlatformBuild/headless.target'
 import $QUERY
 $BUILDCOMMAND
-perform -D target.os=* -D target.ws=* -D target.arch=* ${QUERY%/*}#site.p2
+perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#site.p2
 EOF
 }
  
