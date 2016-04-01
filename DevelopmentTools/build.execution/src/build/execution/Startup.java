@@ -1,5 +1,6 @@
 package build.execution;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.ui.IStartup;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
@@ -13,7 +14,13 @@ public class Startup implements IStartup {
 			public void run() {
 				
 				BuildExecution build = new BuildExecution();
-				build.test();
+				try {
+					build.test();
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					System.out.println("Failed to Build");
+				}
 				workbench.close();
 				
 			}

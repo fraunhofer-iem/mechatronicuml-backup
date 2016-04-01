@@ -12,43 +12,26 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 
 public class BuildExecution {
 
-	public void test() {
+	public void test() throws CoreException {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
-		try {
-			root.accept(new IResourceVisitor() {
+		root.accept(new IResourceVisitor() {
 
-				@Override
-				public boolean visit(IResource resource) throws CoreException {
-					System.out.println(resource.getName());
-					if (resource instanceof IWorkspaceRoot)
-						return true;
-					return false;
-				}
-			});
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.err.println("Iterating Exception");
-		}
-		try {
-			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.err.println("Failed to Build");
-			throw new RuntimeException("Acceleo Build / Xtend Build Failed!!!!!");
-		}
+			@Override
+			public boolean visit(IResource resource) throws CoreException {
+				System.out.println(resource.getName());
+				if (resource instanceof IWorkspaceRoot)
+					return true;
+				return false;
+			}
+		});
 
-		try {
-			workspace.save(true, progressMonitor);
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.err.println("Failed to Save");
-		}
+		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+
+		workspace.save(true, progressMonitor);
+
 	}
 
 }
