@@ -38,7 +38,7 @@ function build_command(){
 		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr \n build")
 		if [ -n "$ACCELEO" ] 
 		then
-			BUILDCOMMAND="$BUILDCOMMAND \n launch -l build.execution/New_configuration.launch --stdout --stderr"
+			BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n launch -l build.execution/New_configuration.launch --stdout --stderr")
 		fi
 	fi	
 	cat <<EOF > build_command.txt
