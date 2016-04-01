@@ -38,6 +38,7 @@ public class BuildExecution {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.err.println("Failed to Build");
+			throw new RuntimeException("Acceleo Build / Xtend Build Failed!!!!!");
 		}
 
 		try {
