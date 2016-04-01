@@ -68,4 +68,5 @@ function manage_copyright_license_vendor(){
 
 
 manage_copyright_license_vendor
+build_command
 junit_test
